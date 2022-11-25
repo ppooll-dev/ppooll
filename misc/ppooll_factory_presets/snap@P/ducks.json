@@ -1,0 +1,309 @@
+{
+	"pattrstorage" : 	{
+		"name" : "pat",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 0 ],
+					"presets" : [ 1 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "ƒ ducks" ],
+					"tetris_menu" : [ "ƒ ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
+					"act::active_store" : [ 0 ]
+				}
+
+			}
+,
+			"2" : 			{
+				"id" : 2,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 2 ],
+					"presets" : [ 16.0 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "ducks" ],
+					"tetris_menu" : [ "ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
+					"act::active_store" : [ 0 ]
+				}
+
+			}
+,
+			"3" : 			{
+				"id" : 3,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 2 ],
+					"presets" : [ 16.0 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "ducks" ],
+					"tetris_menu" : [ "ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
+					"act::active_store" : [ 0 ]
+				}
+
+			}
+,
+			"4" : 			{
+				"id" : 4,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 2 ],
+					"presets" : [ 2 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "ducks" ],
+					"tetris_menu" : [ "ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
+					"act::active_store" : [ 0 ]
+				}
+
+			}
+,
+			"5" : 			{
+				"id" : 5,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 2 ],
+					"presets" : [ 3.0 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "ducks" ],
+					"tetris_menu" : [ "ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
+					"act::active_store" : [ 0 ]
+				}
+
+			}
+,
+			"6" : 			{
+				"id" : 6,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 2 ],
+					"presets" : [ 6.0 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "ducks" ],
+					"tetris_menu" : [ "ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
+					"act::active_store" : [ 0 ]
+				}
+
+			}
+,
+			"7" : 			{
+				"id" : 7,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 2 ],
+					"presets" : [ 6.0 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "ducks" ],
+					"tetris_menu" : [ "ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
+					"act::active_store" : [ 0 ]
+				}
+
+			}
+,
+			"8" : 			{
+				"id" : 8,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 2 ],
+					"presets" : [ 7.0 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "ducks" ],
+					"tetris_menu" : [ "ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
+					"act::active_store" : [ 0 ]
+				}
+
+			}
+,
+			"9" : 			{
+				"id" : 9,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 2 ],
+					"presets" : [ 8.0 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "ducks" ],
+					"tetris_menu" : [ "ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
+					"act::active_store" : [ 0 ]
+				}
+
+			}
+,
+			"10" : 			{
+				"id" : 10,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 2 ],
+					"presets" : [ 3.0 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "ducks" ],
+					"tetris_menu" : [ "ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
+					"act::active_store" : [ 0 ]
+				}
+
+			}
+,
+			"11" : 			{
+				"id" : 11,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 2 ],
+					"presets" : [ 16.0 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "ducks" ],
+					"tetris_menu" : [ "ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
+					"act::active_store" : [ 0 ]
+				}
+
+			}
+,
+			"12" : 			{
+				"id" : 12,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 2 ],
+					"presets" : [ 13.0 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "ducks" ],
+					"tetris_menu" : [ "ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
+					"act::active_store" : [ 0 ]
+				}
+
+			}
+,
+			"13" : 			{
+				"id" : 13,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 2 ],
+					"presets" : [ 5.0 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "ducks" ],
+					"tetris_menu" : [ "ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
+					"act::active_store" : [ 0 ]
+				}
+
+			}
+,
+			"14" : 			{
+				"id" : 14,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 2 ],
+					"presets" : [ 8.0 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "ducks" ],
+					"tetris_menu" : [ "ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
+					"act::active_store" : [ 0 ]
+				}
+
+			}
+,
+			"15" : 			{
+				"id" : 15,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 2 ],
+					"presets" : [ 15.0 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "ducks" ],
+					"tetris_menu" : [ "ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
+					"act::active_store" : [ 0 ]
+				}
+
+			}
+,
+			"16" : 			{
+				"id" : 16,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 2 ],
+					"presets" : [ 16.0 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "ducks" ],
+					"tetris_menu" : [ "ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
+					"act::active_store" : [ 0 ]
+				}
+
+			}
+,
+			"1000" : 			{
+				"id" : 1000,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 0 ],
+					"presets" : [ 1 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "write" ],
+					"tetris_menu" : [ "ƒ ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
+					"act::active_store" : [ 0 ]
+				}
+
+			}
+
+		}
+,
+		"clientstate" : 		{
+			"active" : 			{
+				"presets" : 0,
+				"preset-ramp" : 0,
+				"title_menu" : 0,
+				"pres_menu" : 0,
+				"tetris_menu" : 0
+			}
+
+		}
+
+	}
+
+}

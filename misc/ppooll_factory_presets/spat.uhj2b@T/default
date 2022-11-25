@@ -1,0 +1,1 @@
+window, 291 408 385 493;out1label, 0 19 27 20 0 bgcolor 1. 1. 1. 0. fontsize 12.;out2label, 0 42 27 20 0 bgcolor 1. 1. 1. 0. fontsize 12.;out3label, 0 65 27 20 0 bgcolor 1. 1. 1. 0. fontsize 12.;def, 37 35 55 27 0 textcolor 0. 0. 0. 1. bgoncolor 0.55 0.55 0.55 1. bgcolor 0.607843 0.643137 0.823529 1. textoncolor 1. 1. 1. 1. textovercolor 0. 0. 0. 1. fontsize 12.;

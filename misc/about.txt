@@ -1,0 +1,60 @@
+
+includes externals:
+ll_number a GUI combination of numberbox and slider including multislider option.
+ll_2dsliders a GUI providing a canvas with multiple 2d slider.
+ll_fastforward fast forward (send) concatuation external.
+all by klaus filip
+
+externals from 3rd parties:
+* 11clicks
+by 11olsen http://www.11olsen.de
+* a-lorenz
+* a-rossler
+by André Sier
+*f0.smooth
+by Fredrik Olofsson
+* pattrexists
+* shell
+by Jeremy Bernstein
+* aka.keyboard
+* aka.mouse
+by Masayuki Akamatsu
+freeverb~
+by Olaf Matthes
+* xsample
+by Thomas Grill
+* +chebyshev~
+* +spectralcompand~
+* +spectralgate~
+by Tom Erbe, Soundhack
+* analyzer~
+by Tristan Jehan
+* vbap
+by Ville Pulkki
+
+Mac 32/64 bit
+Windows 32 bit (64bit most of it)
+
+ppooll needs the following packages installed (sorted by most frequent appearance)
+jasch
+CNMAT
+ICST
+cv.jit
+karma
+link
+LowkeyNW
+PeRColate
+
+
+on windows, the following acts are currently not working:
+aka.keys    
+chebyshev
+the following acts do not work on windows 64bit
+analyze@
+beast
+buffub
+chaos
+freeverb@
+spectcomp
+spectral_sins
+

@@ -1,0 +1,1 @@
+function anything(){var f = new File(messagename);outlet(0,f.filetype);}

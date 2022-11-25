@@ -1,0 +1,1 @@
+var tppp;function clearall(){tppp = this.patcher.parentpatcher.parentpatcher;	tppp.apply(remove);}function remove(a){	if (a.maxclass == "flonum")		{		tppp.remove(a);		}	return true;}

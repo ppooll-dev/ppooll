@@ -1,0 +1,6 @@
+1. Download
+http://www.cycling74.com/download/maxmspruntime462.dmg
+
+2. Open [clr_kdai.txt]
+
+3. Have Fun...

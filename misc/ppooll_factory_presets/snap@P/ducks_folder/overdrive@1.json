@@ -1,0 +1,356 @@
+{
+	"pattrstorage" : 	{
+		"name" : "pat",
+		"slots" : 		{
+			"1001" : 			{
+				"id" : 1001,
+				"data" : 				{
+					"preset-ramp" : [ 0.0 ],
+					"presets" : [ 0 ],
+					"left-drive" : [ 20 ],
+					"right-drive" : [ 51 ],
+					"drive-link" : [ 0 ],
+					"title_menu" : [ "info" ],
+					"pres_menu" : [ "" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ 0 ],
+					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+				}
+
+			}
+,
+			"1002" : 			{
+				"id" : 1002,
+				"data" : 				{
+					"preset-ramp" : [ 0.0 ],
+					"presets" : [ 0 ],
+					"left-drive" : [ 61 ],
+					"right-drive" : [ 51 ],
+					"drive-link" : [ 0 ],
+					"title_menu" : [ "info" ],
+					"pres_menu" : [ "" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ 0 ],
+					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+				}
+
+			}
+,
+			"1003" : 			{
+				"id" : 1003,
+				"data" : 				{
+					"preset-ramp" : [ 0.0 ],
+					"presets" : [ 0 ],
+					"left-drive" : [ 82 ],
+					"right-drive" : [ 87 ],
+					"drive-link" : [ 0 ],
+					"title_menu" : [ "info" ],
+					"pres_menu" : [ "" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ 0 ],
+					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+				}
+
+			}
+,
+			"1004" : 			{
+				"id" : 1004,
+				"data" : 				{
+					"preset-ramp" : [ 0.0 ],
+					"presets" : [ 0 ],
+					"left-drive" : [ 61 ],
+					"right-drive" : [ 51 ],
+					"drive-link" : [ 0 ],
+					"title_menu" : [ "info" ],
+					"pres_menu" : [ "" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ 0 ],
+					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+				}
+
+			}
+,
+			"1005" : 			{
+				"id" : 1005,
+				"data" : 				{
+					"preset-ramp" : [ 0.0 ],
+					"presets" : [ 0 ],
+					"left-drive" : [ 61 ],
+					"right-drive" : [ 51 ],
+					"drive-link" : [ 0 ],
+					"title_menu" : [ "info" ],
+					"pres_menu" : [ "" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ 0 ],
+					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+				}
+
+			}
+,
+			"1006" : 			{
+				"id" : 1006,
+				"data" : 				{
+					"preset-ramp" : [ 0.0 ],
+					"presets" : [ 0 ],
+					"left-drive" : [ 82 ],
+					"right-drive" : [ 87 ],
+					"drive-link" : [ 0 ],
+					"title_menu" : [ "info" ],
+					"pres_menu" : [ "" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ 0 ],
+					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+				}
+
+			}
+,
+			"1007" : 			{
+				"id" : 1007,
+				"data" : 				{
+					"preset-ramp" : [ 0.0 ],
+					"presets" : [ 0 ],
+					"left-drive" : [ 82 ],
+					"right-drive" : [ 87 ],
+					"drive-link" : [ 0 ],
+					"title_menu" : [ "info" ],
+					"pres_menu" : [ "" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ 0 ],
+					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+				}
+
+			}
+,
+			"1008" : 			{
+				"id" : 1008,
+				"data" : 				{
+					"preset-ramp" : [ 0.0 ],
+					"presets" : [ 0 ],
+					"left-drive" : [ 77 ],
+					"right-drive" : [ 94 ],
+					"drive-link" : [ 0 ],
+					"title_menu" : [ "info" ],
+					"pres_menu" : [ "" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ 0 ],
+					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+				}
+
+			}
+,
+			"1009" : 			{
+				"id" : 1009,
+				"data" : 				{
+					"preset-ramp" : [ 0.0 ],
+					"presets" : [ 0 ],
+					"left-drive" : [ 1 ],
+					"right-drive" : [ 17 ],
+					"drive-link" : [ 0 ],
+					"title_menu" : [ "info" ],
+					"pres_menu" : [ "" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ 0 ],
+					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+				}
+
+			}
+,
+			"1010" : 			{
+				"id" : 1010,
+				"data" : 				{
+					"preset-ramp" : [ 0.0 ],
+					"presets" : [ 0 ],
+					"left-drive" : [ 100 ],
+					"right-drive" : [ 98 ],
+					"drive-link" : [ 0 ],
+					"title_menu" : [ "info" ],
+					"pres_menu" : [ "" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ 0 ],
+					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+				}
+
+			}
+,
+			"1011" : 			{
+				"id" : 1011,
+				"data" : 				{
+					"preset-ramp" : [ 0.0 ],
+					"presets" : [ 0 ],
+					"left-drive" : [ 82 ],
+					"right-drive" : [ 87 ],
+					"drive-link" : [ 0 ],
+					"title_menu" : [ "info" ],
+					"pres_menu" : [ "" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ 0 ],
+					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+				}
+
+			}
+,
+			"1012" : 			{
+				"id" : 1012,
+				"data" : 				{
+					"preset-ramp" : [ 0.0 ],
+					"presets" : [ 0 ],
+					"left-drive" : [ 87 ],
+					"right-drive" : [ 90 ],
+					"drive-link" : [ 0 ],
+					"title_menu" : [ "info" ],
+					"pres_menu" : [ "" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ 0 ],
+					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+				}
+
+			}
+,
+			"1013" : 			{
+				"id" : 1013,
+				"data" : 				{
+					"preset-ramp" : [ 0.0 ],
+					"presets" : [ 0 ],
+					"left-drive" : [ 51 ],
+					"right-drive" : [ 38 ],
+					"drive-link" : [ 0 ],
+					"title_menu" : [ "info" ],
+					"pres_menu" : [ "" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ 0 ],
+					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+				}
+
+			}
+,
+			"1014" : 			{
+				"id" : 1014,
+				"data" : 				{
+					"preset-ramp" : [ 0.0 ],
+					"presets" : [ 0 ],
+					"left-drive" : [ 82 ],
+					"right-drive" : [ 78 ],
+					"drive-link" : [ 0 ],
+					"title_menu" : [ "info" ],
+					"pres_menu" : [ "" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ 0 ],
+					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+				}
+
+			}
+,
+			"1015" : 			{
+				"id" : 1015,
+				"data" : 				{
+					"preset-ramp" : [ 0.0 ],
+					"presets" : [ 0 ],
+					"left-drive" : [ 82 ],
+					"right-drive" : [ 78 ],
+					"drive-link" : [ 0 ],
+					"title_menu" : [ "info" ],
+					"pres_menu" : [ "" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ 0 ],
+					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+				}
+
+			}
+,
+			"1016" : 			{
+				"id" : 1016,
+				"data" : 				{
+					"preset-ramp" : [ 0.0 ],
+					"presets" : [ 0 ],
+					"left-drive" : [ 77 ],
+					"right-drive" : [ 55 ],
+					"drive-link" : [ 0 ],
+					"title_menu" : [ "info" ],
+					"pres_menu" : [ "" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ 0 ],
+					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+				}
+
+			}
+
+		}
+,
+		"clientstate" : 		{
+			"active" : 			{
+				"preset-ramp" : 0,
+				"presets" : 0,
+				"title_menu" : 0,
+				"pres_menu" : 0,
+				"tetris_menu" : 0
+			}
+
+		}
+
+	}
+
+}
