@@ -236,7 +236,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@chans", "min", 2, "@chans", "max", 2, "@chans_in", "min", 2, "@chans_in", "max", 2, "@in_mix", 1 ],
+					"args" : [ "@state", 2, 1, 0, 0, 1, 0 ],
 					"bgmode" : 0,
 					"border" : 1,
 					"clickthrough" : 0,
@@ -491,7 +491,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "multichannelsignal" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 100.0, 16.0, 30.0, 30.0 ]
 								}
 
@@ -733,13 +733,10 @@
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
 						"title_menu" : 0,
-						"act::active_store" : 0,
-						"ll.blues::levels" : 0,
-						"ll.blues::outputs" : 0,
-						"ll.blues::state" : 0,
-						"ll.blues[1]::state" : 0,
-						"ll.blues[1]::levels" : 0,
-						"ll.blues[1]::outputs" : 0
+						"act::active_store" : 1,
+						"ll.blues::levels" : 1,
+						"ll.blues::outputs" : 1,
+						"ll.blues::state" : 1
 					}
 ,
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -769,7 +766,7 @@
 						"client_rect" : [ 499, 162, 1139, 402 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 0, 0, 640, 240 ]
+						"storage_rect" : [ 25, 106, 665, 346 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -826,7 +823,7 @@
 					"patching_rect" : [ 549.0, 366.0, 107.0, 22.0 ],
 					"restore" : 					{
 						"bit" : [ 24 ],
-						"clip" : [ 0.0001 ],
+						"clip" : [ 1.0 ],
 						"clip_mcspread" : [ 0.0 ],
 						"clip_ramp" : [ 0 ],
 						"gain" : [ 0.996232104768538 ],
@@ -835,12 +832,12 @@
 						"interval" : [ 0 ],
 						"interval_mcspread" : [ 0.0 ],
 						"interval_ramp" : [ 0 ],
-						"master" : [ 0 ],
+						"master" : [ 0, 1 ],
 						"pres_menu" : [ "_" ],
 						"preset-ramp" : [ 0.0 ],
 						"presets" : [ 0 ],
 						"tetris_menu" : [ "" ],
-						"title_menu" : [ "titlebar" ]
+						"title_menu" : [ "subpatch" ]
 					}
 ,
 					"text" : "autopattr autopattr",
@@ -997,7 +994,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 664.0, 255.0, 100.0, 22.0 ],
-					"restore" : [ "in(2)", "0(1)", "gain(2)", "clip(2)", "bit(2)", "interval(2)", "s_interval(2)" ],
+					"restore" : [ "in(2)", "0(1)", "gain(1)", "clip(1)", "bit(1)", "interval(1)", "s_interval(2)" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1022,22 +1019,6 @@
 					"destination" : [ "obj-43", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-37", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-37", 0 ],
-					"hidden" : 1,
-					"source" : [ "obj-5", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-43", 0 ],
-					"hidden" : 1,
-					"source" : [ "obj-5", 0 ]
 				}
 
 			}
@@ -1100,13 +1081,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.in_mix.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../abstractions/ll.blues",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ll.inputmix.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
@@ -1117,6 +1091,13 @@
 				"name" : "ll.mc.r.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.mc.stereo_pan.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
+				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
 				"implicit" : 1
 			}
