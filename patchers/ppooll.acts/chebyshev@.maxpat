@@ -253,9 +253,9 @@
 						"master" : [ 0 ],
 						"pres_menu" : [ "_" ],
 						"preset-ramp" : [ 0.0 ],
-						"presets" : [ 0 ],
+						"presets" : [ 9 ],
 						"tetris_menu" : [ "" ],
-						"title_menu" : [ "subpatch" ]
+						"title_menu" : [ "info" ]
 					}
 ,
 					"text" : "autopattr autopattr",

@@ -48,7 +48,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 53.0, 87.0, 326.0, 33.0 ],
-					"text" : "port from the cheby demo patch from cycling'74\nppooll adaption by c hausch"
+					"text" : "port from the cheby demo patch by r. luke dubois\nppooll adaption by c hausch"
 				}
 
 			}
@@ -70,12 +70,12 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-3",
-					"linecount" : 6,
+					"linecount" : 13,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 53.0, 175.0, 326.0, 87.0 ],
-					"text" : "chebyshev@ is a distortion unit which uses various low-order chebyshev polynomials (1,2,3,4,5,7) to add even or odd harmonic distortion. \n\nHarmonics are added using corresponding polynomial (ie. p3 adds the 3rd harmonic)."
+					"patching_rect" : [ 53.0, 131.0, 494.0, 181.0 ],
+					"text" : "Waveshaping is a form of distortion synthesis whereby an input signal (typically a cosine wave) is fed through a transfer function to produce an altered spectrum. Waveshapers are used to simulate many different types of distortion, from the modeling of guitar amplifiers to different synthetic overdrive effects.  Because the system produces complex spectra with only a single oscillator and a lookup table, it's an efficient way to create a richer tone.  One of the common classes of transfer functions used in waveshaping are Chebyshev polynomials: these mathematical functions will distort a cosine wave to produce perfectly harmonic derivatives.  For example, passing a cosine wave of frequency n through the the third Chebyshev polynomial function (4(x^3)-3x) will produce a cosine wave at frequency 3n (one-octave and a fifth higher).  Mixing these polynomials to create a transfer function allows us to produce any harmonic output spectra. The Chebyshev equations used in this patch can be found in Curtis Roads' Computer Music Tutorial, p. 257. Here we process a sample to demonstrate the distortion."
 				}
 
 			}
