@@ -103,7 +103,7 @@ function script_in_mix(){
 	//var llr = tp.getnamed("ll.r");
 	//if (llr.varname == "llr") post("rr");
 	if (!tp.getnamed("llr")){
- 		post("rr");
+ 		//post("rr");
 		var bits = tp.getnamed("bits");
 		var pmeter = tp.getnamed("pmeter");
 		var llr = tp.newdefault(120,50,"ll.in_mix");
