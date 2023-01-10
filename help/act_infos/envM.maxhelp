@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 850.0, 313.0, 787.0, 583.0 ],
+		"rect" : [ 100.0, 100.0, 795.0, 772.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,84 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"hidden" : 1,
+					"id" : "obj-22",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 380.0, 427.0, 58.0, 22.0 ],
+					"text" : "loadbang"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"hidden" : 1,
+					"id" : "obj-21",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 380.0, 457.0, 265.0, 22.0 ],
+					"text" : "set 0 0 0, set 1 0 1, set 2 0 2, set 3 0 3, set 4 0 4"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"cols" : 5,
+					"fontface" : 0,
+					"fontname" : "Arial",
+					"fontsize" : 10.0,
+					"hscroll" : 0,
+					"id" : "obj-7",
+					"just" : 1,
+					"maxclass" : "jit.cellblock",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "list", "", "", "" ],
+					"patching_rect" : [ 23.0, 431.0, 330.0, 20.0 ],
+					"rowheight" : 20,
+					"rows" : 1,
+					"varname" : "cellblock",
+					"vscroll" : 0
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"candycane" : 4,
+					"chans" : 21,
+					"data" : [ 						{
+							"addpoints" : [ 0.0, 0.0, 0, 282.610062893081761, 0.981481481481482, 0, 550.345911949685501, 0.067901234567901, 0, 2365.0, 0.0, 0 ]
+						}
+, 						{
+							"addpoints" : [ 29.748427672955973, 0.0, 0, 528.034591194968584, 0.703703703703704, 0, 1271.745283018867894, 0.302469135802469, 0, 1554.355345911949598, 0.561728395061728, 0, 1636.163522012578596, 0.407407407407407, 0, 2112.138364779874337, 1.0, 0, 2365.0, 0.0, 0 ]
+						}
+, 						{
+
+						}
+, 						{
+
+						}
+ ],
+					"domain" : 2365.0,
+					"frozen_box_attributes" : [ "chans" ],
+					"id" : "obj-17",
+					"maxclass" : "mc.function",
+					"numinlets" : 1,
+					"numoutlets" : 5,
+					"outlettype" : [ "float", "", "", "bang", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 23.0, 493.0, 330.0, 205.0 ],
+					"style" : "default",
+					"varname" : "function"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-19",
@@ -60,9 +138,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 27.0, 487.0, 392.0, 33.0 ],
-					"presentation_linecount" : 2,
-					"text" : "trigger the envelopes with the numbers above the evnvelope-window.\nclicking 0 will fire all envelopes together."
+					"patching_rect" : [ 23.0, 451.0, 268.0, 33.0 ],
+					"text" : "trigger the envelopes with these numbers.\nclicking 0 will fire all envelopes together."
 				}
 
 			}
@@ -74,7 +151,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 260.0, 368.0, 360.0, 20.0 ],
+					"patching_rect" : [ 259.0, 402.0, 360.0, 20.0 ],
 					"text" : "(eg. for noise_freq a range of 0. to 10000. makes more sense.)"
 				}
 
@@ -87,7 +164,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 240.0, 346.0, 360.0, 20.0 ],
+					"patching_rect" : [ 239.0, 380.0, 360.0, 20.0 ],
 					"text" : "by default it is 0. to 1. in each channel."
 				}
 
@@ -100,9 +177,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 240.0, 324.0, 360.0, 20.0 ],
-					"presentation_linecount" : 2,
-					"text" : "in this extra window, you have to define the range of the envelope."
+					"patching_rect" : [ 239.0, 358.0, 360.0, 20.0 ],
+					"text" : "in this extra window, you may define the range of the envelope."
 				}
 
 			}
@@ -114,7 +190,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 260.0, 301.0, 328.0, 20.0 ],
+					"patching_rect" : [ 259.0, 335.0, 328.0, 20.0 ],
 					"text" : "(eg. open noise@ and route to noise_freq.1)"
 				}
 
@@ -126,7 +202,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 470.5, 250.0, 129.5, 22.0 ],
+					"patching_rect" : [ 469.5, 284.0, 129.5, 22.0 ],
 					"text" : "def_outputs.maxhelp"
 				}
 
@@ -141,7 +217,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 549.5, 319.0, 81.0, 22.0 ],
+					"patching_rect" : [ 548.5, 353.0, 81.0, 22.0 ],
 					"text" : "prepend load"
 				}
 
@@ -156,7 +232,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 549.5, 346.0, 53.0, 22.0 ],
+					"patching_rect" : [ 548.5, 380.0, 53.0, 22.0 ],
 					"text" : "pcontrol"
 				}
 
@@ -169,8 +245,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 240.0, 279.0, 328.0, 20.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 239.0, 313.0, 328.0, 20.0 ],
 					"text" : "every channel can be routed seperately to any signal inputs."
 				}
 
@@ -184,7 +259,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 27.0, 413.0, 392.0, 60.0 ],
+					"patching_rect" : [ 23.0, 700.0, 392.0, 60.0 ],
 					"text" : "at the bottom of the envelope-window, select a channel wit the dots\nand then edit the selected envelope above:\nclick in void to add a point.\nshift-click a point to delete it."
 				}
 
@@ -197,7 +272,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 226.5, 252.0, 242.0, 20.0 ],
+					"patching_rect" : [ 225.5, 286.0, 242.0, 20.0 ],
 					"text" : "define the signal output in the extra window:"
 				}
 
@@ -211,7 +286,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 171.5, 193.0, 392.0, 47.0 ],
+					"patching_rect" : [ 171.5, 213.0, 392.0, 47.0 ],
 					"text" : "trigger a selected envelope by changing this number.\nor control it from another act (control@)\n0 triggers all envelopes together."
 				}
 
@@ -224,7 +299,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 90.0, 164.0, 392.0, 20.0 ],
+					"patching_rect" : [ 90.0, 169.0, 392.0, 20.0 ],
 					"text" : "length in milliseconds of the envelope"
 				}
 
@@ -237,7 +312,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 35.0, 137.0, 392.0, 20.0 ],
+					"patching_rect" : [ 35.0, 130.0, 392.0, 20.0 ],
 					"text" : "how many envelopes (channels)."
 				}
 
@@ -256,7 +331,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 171.5, 105.0, 55.0, 20.0 ],
+					"patching_rect" : [ 171.5, 191.0, 55.0, 20.0 ],
 					"sliderstyle" : 2,
 					"varname" : "trigger"
 				}
@@ -277,7 +352,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 90.0, 106.0, 80.0, 20.0 ],
+					"patching_rect" : [ 90.0, 150.0, 80.0, 20.0 ],
 					"slidercolornofocus" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"sliderlog" : 4.5,
 					"slidermax" : 60000.0,
@@ -300,7 +375,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 226.5, 105.0, 38.5, 20.0 ],
+					"patching_rect" : [ 225.5, 262.0, 38.5, 20.0 ],
 					"prototypename" : "M4L.toggle",
 					"text" : "outs",
 					"textcolor" : [ 0.941176, 0.098039, 0.098039, 1.0 ],
@@ -365,6 +440,22 @@
 					"destination" : [ "obj-14", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-21", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-21", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-22", 0 ]
 				}
 
 			}
