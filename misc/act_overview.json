@@ -21,7 +21,7 @@
 		"12" : "network",
 		"13" : "signal router",
 		"14" : "audio converter",
-		"15" : "multichannel (mc) support",
+		"15" : "multichannel (mc) support"
 	}
 ,
 	"acts" : 	{
@@ -67,7 +67,7 @@
 		"freeverb@" : [ "reverb", 9 ],
 		"frequenzteiler" : [ "trautonium synthesizer", 1, 11 ],
 		"gg.rainer" : [ "granular sample player", 1, 3 ],
-		"gizmo@" : [ "pitch shifter", 9, 15],
+		"gizmo@" : [ "pitch shifter", 9, 15 ],
 		"gverb@" : [ "reverb plugin", 9 ],
 		"hardplay" : [ "plays soundfiles from hd or cd", 1, 6, 15 ],
 		"jit.2oscbank" : [ "video to oscilator bank", 1, 7, 11 ],
@@ -111,13 +111,14 @@
 		"paf@" : [ "Phase Aligned Formant Synthesizer", 9, 15 ],
 		"peakfinder" : [ "dynamic gate", 9 ],
 		"peakfollow@" : [ "envelope follower", 4, 5, 14 ],
-		"period" : ["signal-based step sequencer",1, 5],
+		"period" : [ "signal-based step sequencer", 1, 5 ],
 		"pr.6groov" : [ "multiple sample player", 1, 3 ],
 		"pr.spectfreeze" : [ "spectrum freezer", 9 ],
 		"pr.spectplay" : [ "spectrum player", 9 ],
 		"prdelay@" : [ "simple delay with feedback", 9 ],
 		"pulse@" : [ "lfo pulse generator", 1, 4, 5 ],
 		"pulsegen" : [ "pulse wave generator", 1, 4, 15 ],
+		"quant" : [ "signal based frequency/rhythm quantizer", 9, 5 ],
 		"random0_1-" : [ "simple ranomizer spitting 0 and 1", 4 ],
 		"random@" : [ "randomize parameters", 4 ],
 		"rec@" : [ "record to harddisc", 2, 6, 10, 15 ],
