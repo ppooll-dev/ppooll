@@ -44,8 +44,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 283.0, 522.0, 98.0, 22.0 ],
-					"text" : "ll.s in_mix_right~"
+					"patching_rect" : [ 168.833333333333343, 513.0, 68.0, 22.0 ],
+					"text" : "ll.s in_mix~"
 				}
 
 			}
@@ -70,19 +70,6 @@
 					"outlettype" : [ "multichannelsignal" ],
 					"patching_rect" : [ 106.5, 327.0, 41.0, 22.0 ],
 					"text" : "ll.r~ in"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-12",
-					"maxclass" : "newobj",
-					"numinlets" : 3,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"patching_rect" : [ 168.833333333333343, 513.0, 50.0, 22.0 ],
-					"text" : "ll.pf sub",
-					"varname" : "sub"
 				}
 
 			}
@@ -411,13 +398,6 @@
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../../javascript",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.pf.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../filip",
-				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{

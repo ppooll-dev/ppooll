@@ -262,10 +262,10 @@
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
 						"act" : 0,
-						"act::active_store" : 0,
-						"ll.blues::levels" : 0,
-						"ll.blues::outputs" : 0,
-						"ll.blues::state" : 0
+						"act::active_store" : 1,
+						"ll.blues::levels" : 1,
+						"ll.blues::outputs" : 1,
+						"ll.blues::state" : 1
 					}
 ,
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -522,7 +522,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 444.0, 391.0, 665.0, 742.0 ],
+										"rect" : [ 449.0, 391.0, 839.0, 651.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -552,13 +552,27 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"fontname" : "Arial",
+													"fontsize" : 14.0,
+													"id" : "obj-22",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 13.0, 528.0, 293.0, 38.0 ],
+													"presentation_linecount" : 2,
+													"text" : "(it is a plain receive object rather than a signal-receive, to save some latency)"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-30",
 													"linecount" : 4,
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 253.0, 669.0, 150.0, 60.0 ],
-													"presentation_linecount" : 4,
+													"patching_rect" : [ 252.0, 583.0, 150.0, 60.0 ],
 													"text" : "make sure, you have an in_mix slider in the main patch, set to wet and volume is > 0."
 												}
 
@@ -569,7 +583,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 253.0, 651.0, 150.0, 20.0 ],
+													"patching_rect" : [ 252.0, 565.0, 150.0, 20.0 ],
 													"text" : "brief example of a plugin:"
 												}
 
@@ -581,7 +595,7 @@
 													"numinlets" : 3,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 419.0, 688.0, 68.0, 22.0 ],
+													"patching_rect" : [ 418.0, 602.0, 68.0, 22.0 ],
 													"text" : "ll.pf ll.blues",
 													"varname" : "pf"
 												}
@@ -594,7 +608,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "signal" ],
-													"patching_rect" : [ 430.0, 622.0, 43.0, 22.0 ],
+													"patching_rect" : [ 429.0, 536.0, 43.0, 22.0 ],
 													"text" : "cycle~"
 												}
 
@@ -608,7 +622,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 430.0, 592.0, 50.0, 22.0 ]
+													"patching_rect" : [ 429.0, 506.0, 50.0, 22.0 ]
 												}
 
 											}
@@ -619,7 +633,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "signal" ],
-													"patching_rect" : [ 419.0, 650.0, 30.0, 22.0 ],
+													"patching_rect" : [ 418.0, 564.0, 30.0, 22.0 ],
 													"text" : "*~ 1"
 												}
 
@@ -629,12 +643,12 @@
 													"fontname" : "Arial",
 													"fontsize" : 14.0,
 													"id" : "obj-20",
-													"linecount" : 3,
+													"linecount" : 2,
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 14.0, 571.0, 293.0, 53.0 ],
-													"text" : "the \"right\" outlet of input_mix is sent via ll.s to:\nthe term \"right\" here refers to the right==wet position of the input_mix slider."
+													"patching_rect" : [ 13.0, 485.0, 293.0, 38.0 ],
+													"text" : "in your subpatch (like here) \nreceive this (mc) signal via [ll.r in_mix~] !"
 												}
 
 											}
@@ -645,7 +659,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "float" ],
-													"patching_rect" : [ 313.0, 600.0, 96.0, 28.0 ]
+													"patching_rect" : [ 312.0, 514.0, 96.0, 28.0 ]
 												}
 
 											}
@@ -656,8 +670,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 313.0, 572.0, 96.0, 22.0 ],
-													"text" : "ll.r in_mix_right~"
+													"patching_rect" : [ 312.0, 486.0, 66.0, 22.0 ],
+													"text" : "ll.r in_mix~"
 												}
 
 											}
@@ -674,7 +688,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 4,
 													"outlettype" : [ "list", "", "", "" ],
-													"patching_rect" : [ 14.0, 548.0, 277.0, 20.0 ],
+													"patching_rect" : [ 528.0, 429.0, 277.0, 20.0 ],
 													"rows" : 1,
 													"vscroll" : 0
 												}
@@ -687,7 +701,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "multichannelsignal" ],
-													"patching_rect" : [ 14.0, 518.0, 58.0, 22.0 ],
+													"patching_rect" : [ 528.0, 399.0, 58.0, 22.0 ],
 													"text" : "ll.r~ bla 4"
 												}
 
@@ -701,8 +715,8 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 14.0, 474.0, 503.0, 38.0 ],
-													"text" : "a second argument to ll.r~ will overwrite this behaviour and fix the channels to the argument."
+													"patching_rect" : [ 528.0, 354.0, 308.0, 38.0 ],
+													"text" : "a second argument to ll.r~ will overwrite this \nbehaviour and fix the channels to the argument."
 												}
 
 											}
@@ -1600,7 +1614,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-9",
-													"items" : [ "no", ",", "_act_overview1", ",", "ho_st1", ",", "jit.grab@1", ",", "ll.blues.help1", ",", "noize@1", ",", "paf@1", ",", "tetris@1" ],
+													"items" : [ "no", ",", "ho_st1", ",", "ll.blues.help1", ",", "w_filter1" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
