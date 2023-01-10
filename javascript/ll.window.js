@@ -23,7 +23,7 @@ function size(width,height)
 
 function loc(x,y)
 {
-	post("loc");
+	//post("loc");
 	if (w.visible) {
 
         var width,height;
