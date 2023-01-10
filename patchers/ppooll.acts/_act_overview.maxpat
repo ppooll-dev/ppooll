@@ -49,7 +49,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 15.5, 25.0, 74.0, 24.0 ],
-					"presentation_linecount" : 2,
 					"text" : "open_json"
 				}
 
@@ -480,6 +479,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontsize" : 14.0,
@@ -3405,6 +3405,32 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-3",
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 984.0, 256.0, 137.0, 18.0 ],
+													"presentation_linecount" : 2,
+													"text" : "look for all acts in your ppooll"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontsize" : 14.0,
+													"id" : "obj-2",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 250.833333333333258, 84.0, 282.0, 38.0 ],
+													"presentation_linecount" : 4,
+													"text" : "this is to be done manually..\nnew acts need to be updated in the json file."
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-125",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
@@ -3412,18 +3438,6 @@
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 373.333333333333258, 331.0, 98.0, 20.0 ],
 													"text" : "route _act_overview"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-2",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 31.0, 28.0, 58.0, 20.0 ],
-													"text" : "loadbang"
 												}
 
 											}
@@ -3723,7 +3737,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 792.166666666666515, 218.0, 117.0, 29.0 ],
+													"patching_rect" : [ 792.166666666666515, 218.0, 119.0, 29.0 ],
 													"text" : "remove not existing acts from act_overview."
 												}
 
@@ -3738,8 +3752,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 844.999999999999773, 509.0, 81.0, 42.0 ],
-													"text" : "jit.videoplanes jit.videoplanesP jit.videowall"
+													"patching_rect" : [ 844.999999999999773, 509.0, 25.0, 42.0 ],
+													"text" : "PEQ@"
 												}
 
 											}
@@ -4472,13 +4486,6 @@
 												"patchline" : 												{
 													"destination" : [ "obj-41", 0 ],
 													"source" : [ "obj-125", 1 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-121", 0 ],
-													"source" : [ "obj-2", 0 ]
 												}
 
 											}
