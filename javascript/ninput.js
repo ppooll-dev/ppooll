@@ -23,7 +23,7 @@ function getbpatcher()
 	var x = String(patcherargs).search(sym);
 	if(x!=-1)showchans = 0;
 		else showchans = 1;
-	post ("xxx ", x, patcherargs, "show ", showchans, "\n");
+	//post ("xxx ", x, patcherargs, "show ", showchans, "\n");
 	
 	bp = a.rect;
 	w = a.rect[2]-a.rect[0];

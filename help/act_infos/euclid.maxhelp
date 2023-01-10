@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 3,
+			"minor" : 5,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 595.0, 807.0, 839.0, 485.0 ],
+		"rect" : [ 100.0, 100.0, 839.0, 485.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontsize" : 12.0,
@@ -78,7 +79,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 411.0, 79.5, 247.0, 20.0 ],
-					"presentation_linecount" : 2,
 					"text" : "basic frequency (only when not synced)"
 				}
 
@@ -110,7 +110,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 153.0, 55.5, 186.0, 20.0 ],
-					"presentation_linecount" : 2,
 					"text" : "sync frequency to other act"
 				}
 
@@ -229,7 +228,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 388.0, 108.0, 97.0, 89.0 ],
+					"patching_rect" : [ 388.0, 108.0, 97.0, 87.0 ],
 					"text" : "^\n|\n|\n|\n|\n|"
 				}
 
@@ -268,7 +267,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 34.5, 117.5, 285.0, 48.0 ],
+					"patching_rect" : [ 34.5, 117.5, 285.0, 47.0 ],
 					"text" : "2 modes\nAM off -> Low frequency signal (o <--> 1)\nAM on -> amplitude modulation of incoming signal"
 				}
 
@@ -560,7 +559,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 11.0, 14.0, 198.0, 20.0 ],
-					"text" : "LFO widh Euclidean sequencer"
+					"text" : "LFO with Euclidean sequencer"
 				}
 
 			}
@@ -592,8 +591,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 569.0, 422.0, 283.0, 30.0 ],
-					"text" : ";\r\njitter launch_browser https://en.wikipedia.org/wiki/Euclidean_rhythm"
+					"patching_rect" : [ 569.0, 422.0, 283.0, 29.0 ],
+					"text" : ";\rjitter launch_browser https://en.wikipedia.org/wiki/Euclidean_rhythm"
 				}
 
 			}
@@ -608,8 +607,8 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "ll_number.mxe64",
-				"type" : "mx64"
+				"name" : "ll_number.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,
@@ -617,13 +616,13 @@
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}
@@ -634,18 +633,18 @@
 , 			{
 				"name" : "Manuel1",
 				"default" : 				{
-					"fontsize" : [ 10.0 ],
 					"bgfillcolor" : 					{
-						"type" : "gradient",
+						"angle" : 270.0,
+						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 						"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
-						"proportion" : 0.39
+						"proportion" : 0.39,
+						"type" : "gradient"
 					}
 ,
+					"fontface" : [ 0 ],
 					"fontname" : [ "Arial Bold" ],
-					"fontface" : [ 0 ]
+					"fontsize" : [ 10.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -726,8 +725,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"fontsize" : [ 12.059008 ],
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
+					"fontsize" : [ 12.059008 ]
 				}
 ,
 				"parentstyle" : "",
@@ -745,8 +744,8 @@
 , 			{
 				"name" : "rsliderGold",
 				"default" : 				{
-					"color" : [ 0.646639, 0.821777, 0.854593, 1.0 ],
-					"bgcolor" : [ 0.764706, 0.592157, 0.101961, 1.0 ]
+					"bgcolor" : [ 0.764706, 0.592157, 0.101961, 1.0 ],
+					"color" : [ 0.646639, 0.821777, 0.854593, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

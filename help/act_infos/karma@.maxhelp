@@ -2,13 +2,14 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
-			"minor" : 3,
-			"revision" : 1,
-			"architecture" : "x86",
+			"major" : 8,
+			"minor" : 5,
+			"revision" : 2,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
+		"classnamespace" : "box",
 		"rect" : [ 100.0, 100.0, 756.0, 741.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -36,7 +37,23 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-12",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 240.0, 10.0, 161.0, 36.0 ],
+					"presentation_linecount" : 2,
+					"text" : "needs package karma installed !!"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 13.0,
@@ -46,8 +63,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 9.388733, 135.0, 233.0, 50.0 ],
-					"presentation_rect" : [ 9.0, 135.0, 0.0, 0.0 ],
-					"style" : "",
 					"text" : "record will only work when you assign some audio from another act into the audio inlets of karma@"
 				}
 
@@ -62,7 +77,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 5.0, 1334.0, 738.0, 181.0 ],
-					"style" : "",
 					"text" : "The append mode allows you to add additional audio to the end of the initial loop without having to create a new loop from scratch. Sending a message of 'append' will put karma back in it's \"initial loop creation\" state, allowing for new defitions of the loop in/out points. From a stopped state, after creating an initial loop, sending an 'append' message will show the whole buffer in the GUI showing that the existing loop is ready to be appended. Hitting record will then begin recording where the loop previously ended. You can leave this append state by hitting play, record, or stop. If you send an 'append' message while in a play state, you can play into a new part of the buffer, and if you send an 'append' message while in an overdub state, you can record into a new part of the buffer.\n\nAppend mode will wraparound the highest point visited in the same manner as how wraparound works while creating the initial loop.\n\nWhen a reverse wraparound loop has been created, you can only append to the beginning of the loop by recording in reverse.",
 					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ]
 				}
@@ -78,7 +92,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 5.0, 1220.0, 488.0, 108.0 ],
-					"style" : "",
 					"text" : "While creating the initial loop you can wraparound the area recorded thus far by going below \"zero\" (or above \"one\" if creating the loop in reverse). When doing this you will overdub (and hear) the audio that was previously written to that part of the buffer.\n\nWhen creating a wraparound loop in reverse, karma~ will set the loop in/out points so that only the recorded part of the buffer is used for playback.",
 					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ]
 				}
@@ -94,7 +107,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 5.0, 1048.0, 661.0, 166.0 ],
-					"style" : "",
 					"text" : "It is possible to jump around the loop by sending jump messages as floats between 0. and 1. If the object is playing, jumping will immediately jump to the phase indicated by the incoming message and carry on playing. Jumping while overdubbing will jump to that position and carry on recording. Jumping while the object is stopped will set the start position for the next time the play message is received.\n\nIt is also possible to jump while creating the initial loop. In this case when a jump message is received the 0. to 1. message will refer to the relative phase of however far into the buffer the record head as gone up to that point.\n\nWhen using position/window controls in conjunction with jumps, jumping within the defined window jumps to the new position and carries on looping within the window. Jumping outside of the defined window will play around the loop until the playhead is back in the window and then continue looping from there.",
 					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ]
 				}
@@ -110,7 +122,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 5.0, 892.0, 589.0, 152.0 ],
-					"style" : "",
 					"text" : "Once the initial loop is defined, it is possible to loop a smaller section of it. This is defined by the position and window controls. Both are set with a range between 0. to 1. The window parameter sets the legnth of the section to be looped and the position parameter sets the offset for this window.\n\nThe position/window loop can wrap around \"zero\" allowing for looped sections that are generally not possible with absolute start/end controls.\n\nThe playhead will always remain within the position/window boundaries (unless jumped outside of), even when the position/window parameters are moved dynamically. This allows for dynamic scrubbing of the buffer.",
 					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ]
 				}
@@ -126,7 +137,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 5.0, 733.0, 486.0, 152.0 ],
-					"style" : "",
 					"text" : "When a loop is created you can overdub onto the existing audio or replace the audio in the buffer (or anywhere in between) by using the overdub message. A mesage of 'overdub 1' (the default) records the incoming audio at the same level as the loop (can distort over time). A message of 'overdub 0' replaces the audio in the buffer. A float value will multiply the prewritten audio by that value, allowing for anything in between replace and overdub, as well as creating out of phase samples (negative values) or distorted samples (by using very high overdub amounts).\n\nThe overdub parameter can be altered dynamically while recording.",
 					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ]
 				}
@@ -142,7 +152,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 5.0, 673.0, 486.0, 50.0 ],
-					"style" : "",
 					"text" : "Varispeed works at all stages, including initial loop creation and overdub/replace mode. This works for both discreet speed changes (ie halfspeed/reverse) as well as continuous speed control.",
 					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ]
 				}
@@ -155,7 +164,14 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.388733, 514.193909, 311.0, 13.0 ]
+					"patching_rect" : [ 16.388732999999998, 514.193908999999962, 311.0, 13.0 ],
+					"saved_attribute_attributes" : 					{
+						"linecolor" : 						{
+							"expression" : ""
+						}
+
+					}
+
 				}
 
 			}
@@ -166,7 +182,14 @@
 					"maxclass" : "live.line",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.388733, 368.237427, 311.0, 13.0 ]
+					"patching_rect" : [ 16.388732999999998, 368.237427000000025, 311.0, 13.0 ],
+					"saved_attribute_attributes" : 					{
+						"linecolor" : 						{
+							"expression" : ""
+						}
+
+					}
+
 				}
 
 			}
@@ -180,8 +203,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.388733, 205.520264, 321.0, 442.0 ],
-					"style" : "",
+					"patching_rect" : [ 16.388732999999998, 205.520263999999997, 321.0, 442.0 ],
 					"text" : "Hit RECORD to begin recording a new loop.\n\nIf you end the loop by hitting RECORD, the loop will begin playing in OVERDUB mode.\n\nIf you end the loop by hitting PLAY, the loop will begin playing.\n\nIf you end the loop by hitting STOP, you define the loop length and stop playback.\n\n\nHit PLAY to begin playing the newly created loop.\n\nIf you hit RECORD, you will go into OVERDUB mode.\n\nIf you hit PLAY, you will begin playback from the start of the defined position/window..\n\nIf you hit STOP, you will stop playback.\n\n\nHit RECORD while playing loop to enter OVERDUB mode.\n\nIf you hit RECORD, you will go into PLAY mode.\n\nIf you hit PLAY, you will go into PLAY mode.\n\nIf you hit STOP, you will stop playback.",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
@@ -193,8 +215,7 @@
 					"maxclass" : "panel",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 9.388733, 199.020264, 325.0, 470.0 ],
-					"style" : ""
+					"patching_rect" : [ 9.388733, 199.020263999999997, 325.0, 470.0 ]
 				}
 
 			}
@@ -209,8 +230,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 499.050537, 71.0, 202.0, 52.0 ],
-					"style" : "",
+					"patching_rect" : [ 499.05053700000002, 71.0, 202.0, 52.0 ],
 					"text" : ";\rmax launchbrowser http://www.rodrigoconstanzo.com"
 				}
 
@@ -224,7 +244,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "bang", "bang", "", "int" ],
-					"patching_rect" : [ 578.050537, 10.0, 120.0, 21.0 ]
+					"parameter_enable" : 0,
+					"patching_rect" : [ 578.050536999999963, 10.0, 120.0, 21.0 ]
 				}
 
 			}
@@ -236,8 +257,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 499.050537, 46.0, 199.0, 21.0 ],
-					"style" : "",
+					"patching_rect" : [ 499.05053700000002, 46.0, 199.0, 21.0 ],
 					"text" : "v1.0",
 					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ],
 					"textjustification" : 2
@@ -253,8 +273,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 499.050537, 10.0, 199.0, 36.0 ],
-					"style" : "",
+					"patching_rect" : [ 499.05053700000002, 10.0, 199.0, 36.0 ],
 					"text" : "designed by Rodrigo Constanzo\ncoded by raja ",
 					"textjustification" : 2
 				}
@@ -270,7 +289,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 5.0, 87.0, 486.0, 36.0 ],
-					"style" : "",
 					"text" : "A dynamically lengthed varispeed record/playback looper object with complex functionality.",
 					"textcolor" : [ 0.426676, 0.426663, 0.42667, 1.0 ]
 				}
@@ -285,7 +303,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 5.0, 67.0, 161.0, 21.0 ],
-					"style" : "",
 					"text" : "Varispeed audio looper"
 				}
 
@@ -298,8 +315,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 5.0, 6.0, 486.0, 60.0 ],
-					"style" : "",
+					"patching_rect" : [ 5.0, 6.0, 191.0, 60.0 ],
 					"text" : "karma~"
 				}
 
@@ -308,7 +324,6 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
-					"disabled" : 0,
 					"hidden" : 1,
 					"source" : [ "obj-3", 1 ]
 				}
@@ -321,13 +336,13 @@
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}
