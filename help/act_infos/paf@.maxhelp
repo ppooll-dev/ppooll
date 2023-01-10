@@ -1,24 +1,58 @@
 {
 	"patcher" : 	{
 		"fileversion" : 1,
-		"rect" : [ 25.0, 69.0, 640.0, 480.0 ],
+		"appversion" : 		{
+			"major" : 8,
+			"minor" : 5,
+			"revision" : 2,
+			"architecture" : "x64",
+			"modernui" : 1
+		}
+,
+		"classnamespace" : "box",
+		"rect" : [ 34.0, 87.0, 640.0, 480.0 ],
 		"bglocked" : 0,
-		"defrect" : [ 25.0, 69.0, 640.0, 480.0 ],
-		"openrect" : [ 0.0, 0.0, 0.0, 0.0 ],
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
-		"gridonopen" : 0,
+		"gridonopen" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 0,
+		"gridsnaponopen" : 1,
+		"objectsnaponopen" : 1,
+		"statusbarvisible" : 2,
 		"toolbarvisible" : 1,
+		"lefttoolbarpinned" : 0,
+		"toptoolbarpinned" : 0,
+		"righttoolbarpinned" : 0,
+		"bottomtoolbarpinned" : 0,
+		"toolbars_unpinned_last_save" : 0,
+		"tallnewobj" : 0,
 		"boxanimatetime" : 200,
-		"imprint" : 0,
 		"enablehscroll" : 1,
 		"enablevscroll" : 1,
 		"devicewidth" : 0.0,
+		"description" : "",
+		"digest" : "",
+		"tags" : "",
+		"style" : "",
+		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-1",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 287.0, 431.0, 308.0, 20.0 ],
+					"presentation_linecount" : 3,
+					"text" : "ppooll mc adaption by c. hausch / hausch@moozak.org "
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
@@ -118,7 +152,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 67.0, 326.0, 207.0, 48.0 ],
+					"patching_rect" : [ 67.0, 326.0, 207.0, 47.0 ],
 					"text" : "phase: phase arguements, base osculator, frequency shift, osculator vibrato osculator"
 				}
 
@@ -127,13 +161,12 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : [ 0.960784, 0.12549, 0.011765, 1.0 ],
 					"id" : "obj-48",
 					"linecount" : 7,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 270.0, 218.0, 213.0, 103.0 ],
+					"patching_rect" : [ 270.0, 218.0, 216.0, 100.0 ],
 					"text" : "Warning: the algorithms implemented here are covered by patents held by IRCAM. While this probably does not restrict anyone from distributing software implementing the paf, any hardware implementor should obtain a license from IRCAM.",
 					"textcolor" : [ 0.960784, 0.12549, 0.011765, 1.0 ]
 				}
@@ -185,7 +218,8 @@
 					"id" : "obj-40",
 					"maxclass" : "fpic",
 					"numinlets" : 1,
-					"numoutlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "jit_matrix" ],
 					"patching_rect" : [ 30.0, 35.0, 65.0, 29.0 ]
 				}
 
@@ -199,7 +233,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 29.0, 92.0, 503.0, 34.0 ],
+					"patching_rect" : [ 29.0, 92.0, 503.0, 33.0 ],
 					"text" : "The paf~ object synthesizes a formant with a specified center frequency, bandwidth, and amplitude. Each parameter change takes a target time as in the line object."
 				}
 
@@ -226,13 +260,15 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 30.0, 125.0, 419.0, 62.0 ],
+					"patching_rect" : [ 30.0, 125.0, 419.0, 60.0 ],
 					"text" : "The \"paf\" generator, is described in a paper in JAES 43/1 pp. 40-47, reprinted on Miller Puckette's web page. The paf generator is often used in Philippe Manoury's music. The important controls are center frequency (\"cf\") and bandwidth (\"bw\") here controlled as MIDI values."
 				}
 
 			}
  ],
-		"lines" : [  ]
+		"lines" : [  ],
+		"dependency_cache" : [  ],
+		"autosave" : 0
 	}
 
 }
