@@ -3,7 +3,7 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
+			"minor" : 5,
 			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
@@ -457,7 +457,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
+							"minor" : 5,
 							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -492,7 +492,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-10",
@@ -516,14 +515,14 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 5,
 											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 470.0, 391.0, 597.0, 718.0 ],
+										"rect" : [ 444.0, 391.0, 665.0, 742.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -553,14 +552,89 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
-													"fontname" : "Arial",
-													"fontsize" : 14.0,
-													"id" : "obj-20",
+													"id" : "obj-30",
+													"linecount" : 4,
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 14.0, 606.0, 293.0, 22.0 ],
-													"text" : "the \"right\" outlet of input_mix is sent via ll.s to:"
+													"patching_rect" : [ 253.0, 669.0, 150.0, 60.0 ],
+													"presentation_linecount" : 4,
+													"text" : "make sure, you have an in_mix slider in the main patch, set to wet and volume is > 0."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-29",
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 253.0, 651.0, 150.0, 20.0 ],
+													"text" : "brief example of a plugin:"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-25",
+													"maxclass" : "newobj",
+													"numinlets" : 3,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
+													"patching_rect" : [ 419.0, 688.0, 68.0, 22.0 ],
+													"text" : "ll.pf ll.blues",
+													"varname" : "pf"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-24",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "signal" ],
+													"patching_rect" : [ 430.0, 622.0, 43.0, 22.0 ],
+													"text" : "cycle~"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"format" : 6,
+													"id" : "obj-23",
+													"maxclass" : "flonum",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 430.0, 592.0, 50.0, 22.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-21",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "signal" ],
+													"patching_rect" : [ 419.0, 650.0, 30.0, 22.0 ],
+													"text" : "*~ 1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontname" : "Arial",
+													"fontsize" : 14.0,
+													"id" : "obj-20",
+													"linecount" : 3,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 14.0, 571.0, 293.0, 53.0 ],
+													"text" : "the \"right\" outlet of input_mix is sent via ll.s to:\nthe term \"right\" here refers to the right==wet position of the input_mix slider."
 												}
 
 											}
@@ -571,7 +645,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "float" ],
-													"patching_rect" : [ 313.0, 635.0, 96.0, 28.0 ]
+													"patching_rect" : [ 313.0, 600.0, 96.0, 28.0 ]
 												}
 
 											}
@@ -582,7 +656,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 313.0, 607.0, 96.0, 22.0 ],
+													"patching_rect" : [ 313.0, 572.0, 96.0, 22.0 ],
 													"text" : "ll.r in_mix_right~"
 												}
 
@@ -600,7 +674,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 4,
 													"outlettype" : [ "list", "", "", "" ],
-													"patching_rect" : [ 14.0, 583.0, 277.0, 20.0 ],
+													"patching_rect" : [ 14.0, 548.0, 277.0, 20.0 ],
 													"rows" : 1,
 													"vscroll" : 0
 												}
@@ -613,7 +687,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "multichannelsignal" ],
-													"patching_rect" : [ 14.0, 553.0, 58.0, 22.0 ],
+													"patching_rect" : [ 14.0, 518.0, 58.0, 22.0 ],
 													"text" : "ll.r~ bla 4"
 												}
 
@@ -627,7 +701,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 14.0, 509.0, 503.0, 38.0 ],
+													"patching_rect" : [ 14.0, 474.0, 503.0, 38.0 ],
 													"text" : "a second argument to ll.r~ will overwrite this behaviour and fix the channels to the argument."
 												}
 
@@ -640,7 +714,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 14.0, 467.0, 503.0, 22.0 ],
+													"patching_rect" : [ 14.0, 432.0, 503.0, 22.0 ],
 													"text" : "change the chans_in amount in ll.blues and watch the cellblock here."
 												}
 
@@ -653,14 +727,14 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 67.0, 415.0, 251.0, 22.0 ],
+													"patching_rect" : [ 67.0, 380.0, 251.0, 22.0 ],
 													"text" : "turn ON audio to see what comes out..."
 												}
 
 											}
 , 											{
 												"box" : 												{
-													"cols" : 2,
+													"cols" : 1,
 													"colwidth" : 20,
 													"fontface" : 0,
 													"fontname" : "Arial",
@@ -671,7 +745,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 4,
 													"outlettype" : [ "list", "", "", "" ],
-													"patching_rect" : [ 14.0, 445.0, 277.0, 20.0 ],
+													"patching_rect" : [ 14.0, 410.0, 277.0, 20.0 ],
 													"rows" : 1,
 													"vscroll" : 0
 												}
@@ -684,7 +758,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "multichannelsignal" ],
-													"patching_rect" : [ 14.0, 415.0, 48.0, 22.0 ],
+													"patching_rect" : [ 14.0, 380.0, 48.0, 22.0 ],
 													"text" : "ll.r~ ext"
 												}
 
@@ -697,7 +771,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 14.0, 389.0, 503.0, 22.0 ],
+													"patching_rect" : [ 14.0, 354.0, 503.0, 22.0 ],
 													"text" : "note, that all other ll.r~ in your act will also follow the chans_in value !"
 												}
 
@@ -709,7 +783,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 88.0, 209.5, 371.0, 33.0 ],
+													"patching_rect" : [ 88.0, 196.5, 371.0, 33.0 ],
 													"text" : "it could be also @in_mix 0.5.\nif there is no @in_mix argument, the input slider will vanish."
 												}
 
@@ -721,7 +795,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 14.0, 220.5, 32.0, 22.0 ],
+													"patching_rect" : [ 14.0, 207.5, 32.0, 22.0 ],
 													"text" : "args"
 												}
 
@@ -735,7 +809,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 14.0, 297.0, 503.0, 69.0 ],
+													"patching_rect" : [ 14.0, 262.0, 503.0, 69.0 ],
 													"text" : "this will also add an input~ in ll.blues that other patches will see as \"in.x\".\n\nby default it has a channel-count of 2 \nbut it will change its channel-count according to the chans_in number in ll.blues."
 												}
 
@@ -746,7 +820,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 88.0, 188.0, 371.0, 20.0 ],
+													"patching_rect" : [ 88.0, 175.0, 371.0, 20.0 ],
 													"text" : "will add the in_mix slider into the ll.blues and set it to 1."
 												}
 
@@ -758,7 +832,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 14.0, 188.0, 65.0, 22.0 ],
+													"patching_rect" : [ 14.0, 175.0, 65.0, 22.0 ],
 													"text" : "@in_mix 1"
 												}
 
@@ -769,7 +843,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 88.0, 157.0, 371.0, 20.0 ],
+													"patching_rect" : [ 88.0, 144.0, 371.0, 20.0 ],
 													"text" : "will add the in_mix slider into the ll.blues and set it to 0."
 												}
 
@@ -781,7 +855,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 14.0, 249.0, 55.0, 22.0 ],
+													"patching_rect" : [ 14.0, 236.0, 55.0, 22.0 ],
 													"text" : "s #0args"
 												}
 
@@ -793,7 +867,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 14.0, 157.0, 65.0, 22.0 ],
+													"patching_rect" : [ 14.0, 144.0, 65.0, 22.0 ],
 													"text" : "@in_mix 0"
 												}
 
@@ -806,7 +880,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 14.0, 124.0, 171.0, 22.0 ],
+													"patching_rect" : [ 14.0, 111.0, 171.0, 22.0 ],
 													"text" : "the argument is @in_mix !"
 												}
 
@@ -856,7 +930,37 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-25", 0 ],
+													"source" : [ "obj-21", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-24", 0 ],
+													"source" : [ "obj-23", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-21", 1 ],
+													"source" : [ "obj-24", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-19", 0 ],
+													"order" : 1,
+													"source" : [ "obj-3", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-21", 0 ],
+													"order" : 0,
 													"source" : [ "obj-3", 0 ]
 												}
 
@@ -913,7 +1017,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 5,
 											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -1041,7 +1145,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 49.0, 421.0, 462.0, 22.0 ],
-													"text" : "2 1 0 0 2 0"
+													"text" : "2 1 0 0 1 0"
 												}
 
 											}
@@ -1221,7 +1325,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 5,
 											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -1421,7 +1525,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 5,
 											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -1456,7 +1560,6 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
-										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-13",
@@ -1497,7 +1600,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-9",
-													"items" : [ "no", ",", "distort@1", ",", "ho_st1", ",", "ll.blues.help1" ],
+													"items" : [ "no", ",", "_act_overview1", ",", "ho_st1", ",", "jit.grab@1", ",", "ll.blues.help1", ",", "noize@1", ",", "paf@1", ",", "tetris@1" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -1593,7 +1696,7 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
+															"minor" : 5,
 															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
@@ -2096,8 +2199,7 @@
 													"numoutlets" : 4,
 													"outlettype" : [ "", "int", "", "" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 213.0, 215.0, 443.0, 64.0 ],
-													"text" : "@chans min 2 @chans max 2 @chans_in min 2 @chans_in max 2 @in_mix 1"
+													"patching_rect" : [ 213.0, 215.0, 443.0, 64.0 ]
 												}
 
 											}
@@ -2112,7 +2214,7 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
+															"minor" : 5,
 															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
@@ -2281,7 +2383,7 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 2,
+																			"minor" : 5,
 																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
@@ -3232,7 +3334,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 5,
 											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -3629,7 +3731,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 399.0, 15.0, 100.0, 22.0 ],
-					"restore" : [ "in(2)", "ext(2)", "bla(4)" ],
+					"restore" : [ "in(1)", "ext(1)", "bla(4)" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -3747,6 +3849,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.mc.stereo_pan.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
+				"patcherrelativepath" : "../../patchers/abstractions/ll.blues",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.movewindow.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
@@ -3852,8 +3961,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll_fastforward.mxo",
-				"type" : "iLaX"
+				"name" : "ll_fastforward.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/externals/filip",
+				"patcherrelativepath" : "../../externals/filip",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
 				"name" : "ll_number.mxo",
