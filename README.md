@@ -1,6 +1,6 @@
 <h1>ppooll</h1>
 
-test test
+test test TEST
 
 <h2>about</h2>
 ppooll is a audio and visual networking system created from Max/MSP and Jitter patches.<br/>
