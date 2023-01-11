@@ -17,8 +17,8 @@ contains additional code by bill orcutt, CNMAT, jasch, jhno, nicolaj kirisits, n
 drag ppooll package folder to ~usr/Documents/Max 8/Packages/
 <h3>windows:</h3>
 drag ppooll package folder to ~usr\My Documents\Max 8\Packages\
-
-install additional required packages via the max package folder:
+<h3>all platforms:</h3>
+install additional required packages via the max package manager:
 cv.jit, karma, link, LowkeyNW, PeRColate, CBNMAT Externals, ICST Ambisonics
 
 <h2>requirements</h2>
