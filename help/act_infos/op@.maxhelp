@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 1,
+			"minor" : 5,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -47,8 +47,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 93.0, 171.0, 463.0, 47.0 ],
-					"presentation_linecount" : 4,
+					"patching_rect" : [ 93.0, 171.0, 466.0, 47.0 ],
 					"text" : "(top right) amount of channels. useful for mc processing. in this mode each left & right inputs as well the outputs operate on multichannel signals. the user interface only reflects channel nr. 1 of a mc signal stream."
 				}
 
@@ -623,7 +622,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 711.0, 534.5, 47.0 ],
+					"patching_rect" : [ 39.0, 711.0, 538.0, 47.0 ],
 					"text" : "output section - outputs can be either signal or message, determined by the switch to the left. in case multichannel processing is on and output mode is in number mode a list is generated form the mc channels."
 				}
 
@@ -1702,7 +1701,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 36.0, 285.5, 20.0 ],
-					"text" : "v3.1 - 23/01/2022 - hausch@moozak.org"
+					"text" : "v3.2 - 11/01/2023 - hausch@moozak.org"
 				}
 
 			}
