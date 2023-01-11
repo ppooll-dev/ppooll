@@ -235,6 +235,7 @@
 			}
 , 			{
 				"box" : 				{
+					"args" : [ "@in_mix", 1 ],
 					"bgmode" : 0,
 					"border" : 1,
 					"clickthrough" : 0,
@@ -271,7 +272,7 @@
 					"fontname" : "Arial",
 					"fontsize" : 11.0,
 					"id" : "obj-61",
-					"items" : [ "no", ",", "[1][1][1][3][1][1][3][2][1][1][1][1][1][2][3][3][1][17][4][1][1]", ",", "demosound@1", ",", "ho_st1", ",", "kompressor1", ",", "noize@1", ",", "quant1", ",", "quant2" ],
+					"items" : [ "no", ",", "feedbacker1", ",", "ho_st1", ",", "kompressor1" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -414,9 +415,8 @@
 					"hidden" : 1,
 					"id" : "obj-17",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "multichannelsignal" ],
+					"numinlets" : 0,
+					"numoutlets" : 0,
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
@@ -457,6 +457,30 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-15",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 140.0, 192.0, 66.0, 22.0 ],
+									"text" : "ll.r in_mix~"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-13",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 140.0, 289.0, 68.0, 22.0 ],
+									"text" : "ll.pf ll.blues"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-29",
 									"maxclass" : "newobj",
@@ -574,19 +598,6 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 187.333333333333343, 52.0, 93.0, 22.0 ],
 									"text" : "ll.r source_chan"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"comment" : "",
-									"id" : "obj-11",
-									"index" : 1,
-									"maxclass" : "inlet",
-									"numinlets" : 0,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 140.0, 110.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -1942,19 +1953,6 @@
 								}
 
 							}
-, 							{
-								"box" : 								{
-									"comment" : "",
-									"id" : "obj-17",
-									"index" : 1,
-									"maxclass" : "outlet",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 140.0, 291.0, 30.0, 30.0 ],
-									"varname" : "out1"
-								}
-
-							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -1965,15 +1963,15 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
-									"source" : [ "obj-11", 0 ]
+									"destination" : [ "obj-29", 0 ],
+									"source" : [ "obj-12", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-29", 0 ],
-									"source" : [ "obj-12", 0 ]
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-15", 0 ]
 								}
 
 							}
@@ -2035,7 +2033,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
+									"destination" : [ "obj-13", 0 ],
 									"source" : [ "obj-3", 0 ]
 								}
 
@@ -2434,7 +2432,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 327.0, 92.0, 100.0, 22.0 ],
-					"restore" : [ "in(2)", "sidechain(1)" ],
+					"restore" : [ "in(1)", "sidechain(1)" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -2451,14 +2449,6 @@
 					"destination" : [ "obj-8", 1 ],
 					"hidden" : 1,
 					"source" : [ "obj-10", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-50", 0 ],
-					"hidden" : 1,
-					"source" : [ "obj-17", 0 ]
 				}
 
 			}
@@ -2518,6 +2508,13 @@
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.in_mix.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
+				"patcherrelativepath" : "../abstractions/ll.blues",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
