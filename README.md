@@ -9,7 +9,7 @@ a collection and system of interacting max patches designed to create an individ
 <h2>credits:</h2>
 created by klaus filip.<br/>
 currently maintained by klaus filip & c. hausch.<br/>
-authors: klaus filip, c. hausch, noid, paulo raposo, léo dupleix, oliver stotz, boris hauf, gilles aubry, nicolaj kirisits, david michael, bill d, AntonioDellaMarina.<br/>
+authors: klaus filip, c. hausch, noid, taku unami, paulo raposo, léo dupleix, oliver stotz, boris hauf, gilles aubry, david michael, bill d, AntonioDellaMarina.<br/>
 contains additional code by bill orcutt, CNMAT, jasch, jhno, nicolaj kirisits, nathan wolek, olaf matthes, PeRColate, peter elsea, puckette-apel, RTC, thomas grill, tristan jehan, ville pulkki, CRFMW<br/>
 
 <h2>requirements</h2>
