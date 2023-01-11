@@ -12,6 +12,10 @@ currently maintained by klaus filip & c. hausch.<br/>
 authors: klaus filip, c. hausch, noid, paulo raposo, léo dupleix, oliver stotz, boris hauf, gilles aubry, nicolaj kirisits, david michael, bill d, AntonioDellaMarina.<br/>
 contains additional code by bill orcutt, CNMAT, jasch, jhno, nicolaj kirisits, nathan wolek, olaf matthes, PeRColate, peter elsea, puckette-apel, RTC, thomas grill, tristan jehan, ville pulkki, CRFMW<br/>
 
+<h2>requirements</h2>
+current ppooll 8.5 reqires an installation of cyclin'74's max 8.5: https://cycling74.com/<br />
+platforms: mac os (x64 & m1) & windows (?)
+
 <h2>installation:</h2>
 <h3>macos:</h3>
 drag ppooll package folder to ~usr/Documents/Max 8/Packages/
@@ -20,9 +24,5 @@ drag ppooll package folder to ~usr\My Documents\Max 8\Packages\
 <h3>all platforms:</h3>
 install additional required packages via the max package manager:
 cv.jit, karma, link, LowkeyNW, PeRColate, CBNMAT Externals, ICST Ambisonics
-
-<h2>requirements</h2>
-current ppooll 8.5 reqires an installation of cyclin'74's max 8.5: https://cycling74.com/
-platforms: mac os (x64 & m1) & windows (?)
 
 <h2>known issues:</h2>
