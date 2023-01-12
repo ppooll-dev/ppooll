@@ -9,7 +9,7 @@
 	"tags" : 	{
 		"1" : "audio generator",
 		"2" : "audio input",
-		"3" : "deals with buffers",
+		"3" : "uses buffer_host",
 		"4" : "controls parameters",
 		"5" : "controls signals",
 		"6" : "deals with harddisc",
@@ -21,14 +21,13 @@
 		"12" : "network",
 		"13" : "signal router",
 		"14" : "audio converter",
-		"15" : "multichannel (mc) support"
+		"15" : "multichannel (mc)"
 	}
 ,
 	"acts" : 	{
 		"2Dsliders" : [ "control parameters by dragging points", 4 ],
 		"INmulti" : [ "(multiple) audio input", 2, 13, 15 ],
 		"LFFO" : [ "dynamic ring modulator", 9, 15 ],
-		"PEQ@" : [ "bank of parametric EQs", 9 ],
 		"SDIFter" : [ "SDIF soundfile player", 1, 11 ],
 		"TFF" : [ "4 band resonant filter", 4, 9, 11 ],
 		"TSSSF" : [ "substractive synthesis", 1, 8, 11 ],
@@ -80,7 +79,7 @@
 		"jit.display@" : [ "video screening and recording", 7 ],
 		"jit.grab@" : [ "camera input", 7 ],
 		"jit.lcd@" : [ "draft drawing", 7 ],
-		"jit.ndi@" : [ "video input from ndi devices", 7 ],
+		"jit.ndi@" : [ "video input from ndi devices", 7, 12 ],
 		"jit.op@" : [ "image operater", 7 ],
 		"jit.player" : [ "qt movie player", 7 ],
 		"jit.slide@" : [ "slide and repositin incoming texture", 7 ],
@@ -141,9 +140,7 @@
 		"spat.ambipanning@" : [ "ambisonics panner", 9, 13, 15 ],
 		"spat.ambitransform@" : [ "ambisonics soundfield transform", 9, 14, 15 ],
 		"spat.uhj2b@" : [ "ambisonics uhj-to-b format converter", 9, 15 ],
-		"spectcomp" : [ "spectral compressor", 9 ],
 		"spectral_sins" : [ "sinwaves following incoming audio", 1, 11 ],
-		"stutdly" : "??",
 		"svf2@" : [ "cutoff filter", 9, 15 ],
 		"tetris@" : "customize your act layout (and act-building)",
 		"timeline@" : [ "graphical timeline sequencer for parameters", 4 ],
