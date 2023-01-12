@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 8,
+			"minor" : 5,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -353,6 +353,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-32",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "ll.blues.maxpat",
 					"numinlets" : 1,
@@ -655,6 +656,7 @@
 						"presets" : 0,
 						"tetris_menu" : 0,
 						"title_menu" : 0,
+						"act::active_store" : 0,
 						"ll.blues" : 0,
 						"ll.blues::levels" : 0,
 						"ll.blues::outputs" : 0,
@@ -738,7 +740,7 @@
 						"oscA_slope" : [ 43.0 ],
 						"oscB_pwm" : [ 71.0 ],
 						"oscB_slope" : [ 30.0 ],
-						"pres_menu" : [ "1st" ],
+						"pres_menu" : [ "_" ],
 						"preset-ramp" : [ 0.0 ],
 						"presets" : [ 1 ],
 						"rnd" : [ -1 ],
@@ -785,7 +787,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-63",
 					"ignoreclick" : 1,
-					"items" : [ "1st", ",", "1st2", ",", 2, ",", "2nd", ",", "clik", ",", "gdfgd", ",", "-", ",", "write", ",", "clear!", ",", "TEXT" ],
+					"items" : [ "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -808,7 +810,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-68",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "default", ",", "green", ",", "-", ",", "ƒ", "default" ],
+					"items" : "-",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -850,8 +852,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 8,
+							"minor" : 5,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1073,7 +1075,7 @@
 								"box" : 								{
 									"id" : "obj-55",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"patching_rect" : [ 1001.0, 245.0, 115.0, 22.0 ],
@@ -1085,7 +1087,7 @@
 								"box" : 								{
 									"id" : "obj-54",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"patching_rect" : [ 899.0, 245.0, 93.0, 22.0 ],
@@ -1097,7 +1099,7 @@
 								"box" : 								{
 									"id" : "obj-53",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"patching_rect" : [ 811.0, 245.0, 89.0, 22.0 ],
@@ -1109,7 +1111,7 @@
 								"box" : 								{
 									"id" : "obj-52",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"patching_rect" : [ 713.0, 245.0, 89.0, 22.0 ],
@@ -1121,7 +1123,7 @@
 								"box" : 								{
 									"id" : "obj-48",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"patching_rect" : [ 1001.0, 72.0, 64.0, 22.0 ],
@@ -1133,7 +1135,7 @@
 								"box" : 								{
 									"id" : "obj-47",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"patching_rect" : [ 896.5, 64.0, 80.0, 22.0 ],
@@ -1145,7 +1147,7 @@
 								"box" : 								{
 									"id" : "obj-46",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"patching_rect" : [ 806.428571428571445, 66.0, 85.0, 22.0 ],
@@ -1157,7 +1159,7 @@
 								"box" : 								{
 									"id" : "obj-45",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"patching_rect" : [ 698.0, 78.0, 91.0, 22.0 ],
@@ -1193,7 +1195,7 @@
 								"box" : 								{
 									"id" : "obj-33",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"patching_rect" : [ 55.0, 287.0, 56.0, 22.0 ],
@@ -1285,8 +1287,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 8,
+											"minor" : 5,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1783,8 +1785,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 8,
+											"minor" : 5,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2713,8 +2715,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 8,
+											"minor" : 5,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2825,8 +2827,8 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 554.499756000000048, 35.0, 185.0, 22.0 ],
-													"text" : "oscillators & filters by ernest"
+													"patching_rect" : [ 554.499756000000048, 35.0, 240.000182999999993, 22.0 ],
+													"text" : "oscillators & filters by ernest meyer"
 												}
 
 											}
@@ -3065,8 +3067,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 8,
+															"minor" : 5,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3127,8 +3129,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -3466,8 +3468,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -3805,8 +3807,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4144,8 +4146,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4916,8 +4918,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -5255,8 +5257,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -5594,8 +5596,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -5933,8 +5935,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -7078,8 +7080,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -7789,8 +7791,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -8500,8 +8502,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -9241,8 +9243,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -9952,8 +9954,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -10678,8 +10680,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -11417,8 +11419,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -13419,8 +13421,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -16753,7 +16755,7 @@
 												"box" : 												{
 													"code" : "/*=============================================================/*\r\n         FM sync Variable-Width Pulse Oscillator with \r\n\tEnhanced Polynomial transition Region (EPTR) Antialiasing\r\n\t \t      and 3x oversampling in the upper octave\r\n\t\t\t\tBy Ernest Meyer (http://yofiel.com)\r\n===============================================================*/\r\n/* *************************************************************/\r\n/* Functions                                                   \r\n// the Pulse is divided into five stages. Antialiasing calucations\r\n//only occur during the rising and falling transionts, (8 clock\r\n//cycles max for each wave cycle). \r\n/* *************************************************************/\r\neptr(ramp,d1,w1){\r\n\tBuffer buf(\"eptr\"); // loads eptr buffer from Max\r\n\td2 = 8192  / d1;\t// buffer transition coefficient;\r\n\t//d2 = twopi *.213332 / d1;\t// transcendental coefficient;\r\n\tw2 = 1-w1;\t\t\t\t// inverted duty cycle \r\n \te0= 0; // pi5  = pi *.5;\r\n\t\r\n\tif (ramp <=  w1 -d1)\t\t\t\t// fixed low region at start\t\t \r\n\t\treturn -1;\t\t\t\t\r\n\telse if (ramp < w1 +d1) { \t\t\t// rising region\r\n\t\te0 = peek(buf, d2*(ramp -w1 +d1), 0);\r\n\t\t//e0 = tanh(4 * sin(d2*(ramp -w1 +d1) -pi5)); \r\n\t\treturn e0;\r\n\t} \r\n\telse if (ramp <= w2 -d1)\t\t\t// middle fixed hi region\r\n\t\treturn 1; \r\n\telse if (ramp < w2+d1){\t\t\t//  falling region\r\n\t\te0 = peek(buf,d2*(ramp -w2 +d1), 0);\r\n\t\t//e0 = tanh(4 * sin(d2*(ramp -w2 +d1) +pi5)); \r\n\t\treturn neg(e0);\r\n\t} \r\n\telse return -1;  \t\t\t\t\t// fixed low region at end\r\n}\r\n/* *************************************************************/\r\n/* Declarations                                                   \r\n/* *************************************************************/\r\nHistory z0; History z1; History z2; History z3; History z4;\r\nHistory zt; History zr; History za; History zb; History Zc;\r\nHistory Zd; History Ze; History Zf; t0=0; t1=0; t2=0; d1=0;\r\nfc   = in1; \t\t// freq (Hz)\r\ninc  = in2;\t\t\t// phase increment(including FM), Fc/2*sr\r\nsnc  = in3; \t\t// resets phase on positive transitions\r\nw1   = scale(in4,0,100,.0025,.4975); // Duty cycle 5%~95%.\r\nsr2  = in5;\t\t\t// 2/SR constant.\r\n\r\n/* *************************************************************/\r\n/* Phase accumulator                                                   \r\n// The ramp works in the range -1~+1,\r\n// to prevent phase inversion by negative wraps from FM signals\r\n/* *************************************************************/\r\nr1 = (snc)? 0: wrap(inc + z0,-1,1); \nz0 = r1; \n// In case FM present, a new inc is interpolated from phase history\r\nz1=inc; \r\nz2=z1; \r\nz3=z2; \r\nz4=z3;\t\t\t\r\ninc2 = interp(inc,z1,z2,z3,z4,mode=\"spline\");\r\n\r\n/* *************************************************************/\r\n/* Main\r\n/* *************************************************************/\r\nr2 = r1 *.5 + .5;\t// ramp rescaled to 0-1 for EPTR calcs\r\nif (inc2<.125){\t\t// if Fc<sr/16 (2756Hz @441000 sr)\r\n\td1 = inc * 2; \t// width of phase transition region (4*fc/sr)\r\n\tout1 = eptr(r2, d1, w1);\r\n} else { \t\t\t// adding 3x oversampling at higher freqs\r\n\tt0 = delta(r2);\r\n\tif (t0>0){ t2 = r2 -t0 *.6666667;             //z-2\r\n\t\t\t   t1 = r2 -t0 *.3333333;             //z-1\r\n \t} else {   t2 =wrap(zt *.3333333 +zr, 0, 1);  //z-2 \r\n\t\t\t   t1 =wrap(zt *.6666667 +zr, 0, 1);  //z-1\r\n\t}\r\n\tzt = t0; // ramp and delta history for interp\r\n\tzr = r2; \r\n\td1  = inc2;\t// shrink transition region\r\n\tt2 =eptr(t2, d1, w1); \r\n\tt1 =eptr(t1, d1, w1); \r\n\tt0 =eptr(r2, d1, w1);\r\n\r\n\r\n\r\n\tif      (t2==t1 && t1==t0)           out1 = t0;\r\n\telse if (t2!=-1 && t1==-1 && t0!=-1) out1 = -1;\r\n\telse if (t2!=1  && t1==1  && t0!=1)  out1 =  1;\r\n\telse out1 = (t2 + t1 + t0) * .33333333;\r\n}\r\n//out1 = dcblock(out1);\r\n/* *************************************************************/\r\n// PM's PTR for comparison\r\n\tramp = phasor(fc); \t\t\t\t\t\t\r\n\twidth = scale(abs(in4 -50), 0, 50, 1, .1); \n\tout2 = tanh(cycle(ramp/width,index=\"phase\") \r\n\t\t* width * max(100,12000/(fc *(1-log10(fc)))));\r\n\tout2 = dcblock(out2);\r\n/* *************************************************************/\r\nout3 = inc;",
 													"fontface" : 0,
-													"fontname" : "Menlo",
+													"fontname" : "<Monospaced>",
 													"fontsize" : 12.0,
 													"id" : "obj-82",
 													"maxclass" : "codebox",
@@ -16880,7 +16882,7 @@
 												"box" : 												{
 													"code" : "Buffer tanh_buf(\"tanh_buf\"); Buffer xlog_buf(\"xlog_buf\");\nHistory h1 (0); History h2 (0); History h3 (0); History h4 (0);\r\ndx=0; dx1 = 0; w1 = 0; w2 = 0; lx = 0;w3=0;\r\nramp = (in5)? 0 : wrap(in2 + in4 + h1, -1, 1);  \t// ramp with FM and sync\nramp2 = ramp *.5 + .5;\t\t\t\t\t\t// utility ramp in 0~1 range\r\nif (in1 == 0)  { \t\t\t\t// SINE \n\tout1 = triangle(ramp2,in3);\r\n\tdx1 = delta(out1);\r\n\tout1 = cycle(wrap(out1 + .25, 0, 1), index=\"phase\");\n\tout2 = out1;\r\n\tif (in3>0 && in3<=.99){\r\n\t\tif (dx1>0 && in3<.5) out1 *= (in3 *2);\n\t\telse if (dx1<0 && in3>.5) out1 *= (2 - in3 *2);\r\n\t\telse -1;\r\n\t}\r\n} else if (in1==1) {\t\t\t// SAW OR TRIANGLE \n\tdx = delta(ramp2) ; \r\n\tif (in3>.99) {  \t\t\t// falling saw\n\t\tif (dx<0) out1 = 0; \t// ELTR\n\t\telse out1 = ramp;\n\t} else if (in3<.01) { \t\t// rising saw\n\t\tif (dx<0) out1 = 0; \t// ELTR \n\t\telse out1 = neg(ramp);\n\t} else { \t\t\t\t    // variable slope\n\t\tif (dx<0) out1 = -1;    // ELTR on fall-to-rise\n\t\telse if (ramp2>in3 && h2<in3) out1 = 1; // LTR on rise-to-fall\n\t\telse out1 = triangle(ramp2, in3) * 2 -1;\r\n\t}\r\n\tout2 = triangle(ramp2, in5) *2 - 1;\n} else {  \t\t\t\t\t\t// PULSE \r\n\tw0 = in3 * .9 + .05;\r\n\tw1 = 1 - abs(in3 -.5) * .9;\n\tif (ramp2<.5) w2 = ramp2 * w1 * 2;\r\n\telse w2 = w1 + (ramp2 -.5) * 2 * (1-w1);\r\n\t//out1 = ramp2 / w1;\r\n\tout1 = cycle(w2, index=\"phase\"); \n\t//out1 *= w1;\r\n\tout1 *= peek (xlog_buf, in6, interp=\"none\");\n\tout1 = tanh(out1);\r\n\tout2 = (ramp2>w0)? 1 : -1;\r\n}\nh1 = ramp; \t\t\t// FM phase accumulator\nh2 = ramp2;\t\t\t\t\t// previous ramp value for ELTRs\r\nh3 = in4;\t\t\t\t\t// previous FM value for delta correction\r\n// out1 = dcblock(out1); \t// for later use\r\n",
 													"fontface" : 0,
-													"fontname" : "Menlo",
+													"fontname" : "<Monospaced>",
 													"fontsize" : 12.0,
 													"id" : "obj-68",
 													"maxclass" : "codebox",
@@ -17141,8 +17143,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 8,
+															"minor" : 5,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -17203,8 +17205,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -17542,8 +17544,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -17881,8 +17883,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -18220,8 +18222,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -18992,8 +18994,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -19331,8 +19333,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -19670,8 +19672,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -20009,8 +20011,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -21154,8 +21156,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -21865,8 +21867,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -22576,8 +22578,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -23317,8 +23319,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -24028,8 +24030,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -24754,8 +24756,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -25493,8 +25495,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -27495,8 +27497,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 1,
-																			"revision" : 8,
+																			"minor" : 5,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -30774,7 +30776,7 @@
 												"box" : 												{
 													"code" : "Buffer tanh_buf(\"tanh_buf\"); Buffer xlog_buf(\"xlog_buf\");\nHistory h1 (0); History h2 (0); History h3 (0); History h4 (0);\r\ndx=0; dx1 = 0; w1 = 0; w2 = 0; lx = 0;w3=0;\r\nramp = (in5)? 0 : wrap(in2 + in4 + h1, -1, 1);  \t// ramp with FM and sync\nramp2 = ramp *.5 + .5;\t\t\t\t\t\t// utility ramp in 0~1 range\r\nif (in1 == 0)  { \t\t\t\t// SINE \n\tout1 = triangle(ramp2,in3);\r\n\tdx1 = delta(out1);\r\n\tout1 = cycle(wrap(out1 + .25, 0, 1), index=\"phase\");\n\tout2 = out1;\r\n\tif (in3>0 && in3<=.99){\r\n\t\tif (dx1>0 && in3<.5) out1 *= (in3 *2);\n\t\telse if (dx1<0 && in3>.5) out1 *= (2 - in3 *2);\r\n\t\telse -1;\r\n\t}\r\n} else if (in1==1) {\t\t\t// SAW OR TRIANGLE \n\tdx = delta(ramp2) ; \r\n\tif (in3>.99) {  \t\t\t// falling saw\n\t\tif (dx<0) out1 = 0; \t// ELTR\n\t\telse out1 = ramp;\n\t} else if (in3<.01) { \t\t// rising saw\n\t\tif (dx<0) out1 = 0; \t// ELTR \n\t\telse out1 = neg(ramp);\n\t} else { \t\t\t\t    // variable slope\n\t\tif (dx<0) out1 = -1;    // ELTR on fall-to-rise\n\t\telse if (ramp2>in3 && h2<in3) out1 = 1; // LTR on rise-to-fall\n\t\telse out1 = triangle(ramp2, in3) * 2 -1;\r\n\t}\r\n\tout2 = triangle(ramp2, in5) *2 - 1;\n} else {  \t\t\t\t\t\t// PULSE \r\n\tw0 = in3 * .9 + .05;\r\n\tw1 = 1 - abs(in3 -.5) * .9;\n\tif (ramp2<.5) w2 = ramp2 * w1 * 2;\r\n\telse w2 = w1 + (ramp2 -.5) * 2 * (1-w1);\r\n\t//out1 = ramp2 / w1;\r\n\tout1 = cycle(w2, index=\"phase\"); \n\t//out1 *= w1;\r\n\tout1 *= peek (xlog_buf, in6, interp=\"none\");\n\tout1 = tanh(out1);\r\n\tout2 = (ramp2>w0)? 1 : -1;\r\n}\nh1 = ramp; \t\t\t// FM phase accumulator\nh2 = ramp2;\t\t\t\t\t// previous ramp value for ELTRs\r\nh3 = in4;\t\t\t\t\t// previous FM value for delta correction\r\n// out1 = dcblock(out1); \t// for later use\r\n",
 													"fontface" : 0,
-													"fontname" : "Menlo",
+													"fontname" : "<Monospaced>",
 													"fontsize" : 12.0,
 													"id" : "obj-35",
 													"maxclass" : "codebox",
@@ -30901,7 +30903,7 @@
 												"box" : 												{
 													"code" : "/*=============================================================/*\r\n         FM sync Variable-Width Pulse Oscillator with \r\n\tEnhanced Polynomial transition Region (EPTR) Antialiasing\r\n\t \t      and 3x oversampling in the upper octave\r\n\t\t\t\tBy Ernest Meyer (http://yofiel.com)\r\n===============================================================*/\r\n/* *************************************************************/\r\n/* Functions                                                   \r\n// the Pulse is divided into five stages. Antialiasing calucations\r\n//only occur during the rising and falling transionts, (8 clock\r\n//cycles max for each wave cycle). \r\n/* *************************************************************/\r\neptr(ramp,d1,w1){\r\n\tBuffer buf(\"eptr\"); // loads eptr buffer from Max\r\n\td2 = 8192  / d1;\t// buffer transition coefficient;\r\n\t//d2 = twopi *.213332 / d1;\t// transcendental coefficient;\r\n\tw2 = 1-w1;\t\t\t\t// inverted duty cycle \r\n \te0= 0; // pi5  = pi *.5;\r\n\t\r\n\tif (ramp <=  w1 -d1)\t\t\t\t// fixed low region at start\t\t \r\n\t\treturn -1;\t\t\t\t\r\n\telse if (ramp < w1 +d1) { \t\t\t// rising region\r\n\t\te0 = peek(buf, d2*(ramp -w1 +d1), 0);\r\n\t\t//e0 = tanh(4 * sin(d2*(ramp -w1 +d1) -pi5)); \r\n\t\treturn e0;\r\n\t} \r\n\telse if (ramp <= w2 -d1)\t\t\t// middle fixed hi region\r\n\t\treturn 1; \r\n\telse if (ramp < w2+d1){\t\t\t//  falling region\r\n\t\te0 = peek(buf,d2*(ramp -w2 +d1), 0);\r\n\t\t//e0 = tanh(4 * sin(d2*(ramp -w2 +d1) +pi5)); \r\n\t\treturn neg(e0);\r\n\t} \r\n\telse return -1;  \t\t\t\t\t// fixed low region at end\r\n}\r\n/* *************************************************************/\r\n/* Declarations                                                   \r\n/* *************************************************************/\r\nHistory z0; History z1; History z2; History z3; History z4;\r\nHistory zt; History zr; History za; History zb; History Zc;\r\nHistory Zd; History Ze; History Zf; t0=0; t1=0; t2=0; d1=0;\r\nfc   = in1; \t\t// freq (Hz)\r\ninc  = in2;\t\t\t// phase increment(including FM), Fc/2*sr\r\nsnc  = in3; \t\t// resets phase on positive transitions\r\nw1   = scale(in4,0,100,.0025,.4975); // Duty cycle 5%~95%.\r\nsr2  = in5;\t\t\t// 2/SR constant.\r\n\r\n/* *************************************************************/\r\n/* Phase accumulator                                                   \r\n// The ramp works in the range -1~+1,\r\n// to prevent phase inversion by negative wraps from FM signals\r\n/* *************************************************************/\r\nr1 = (snc)? 0: wrap(inc + z0,-1,1); \nz0 = r1; \n// In case FM present, a new inc is interpolated from phase history\r\nz1=inc; \r\nz2=z1; \r\nz3=z2; \r\nz4=z3;\t\t\t\r\ninc2 = interp(inc,z1,z2,z3,z4,mode=\"spline\");\r\n\r\n/* *************************************************************/\r\n/* Main\r\n/* *************************************************************/\r\nr2 = r1 *.5 + .5;\t// ramp rescaled to 0-1 for EPTR calcs\r\nif (inc2<.125){\t\t// if Fc<sr/16 (2756Hz @441000 sr)\r\n\td1 = inc * 2; \t// width of phase transition region (4*fc/sr)\r\n\tout1 = eptr(r2, d1, w1);\r\n} else { \t\t\t// adding 3x oversampling at higher freqs\r\n\tt0 = delta(r2);\r\n\tif (t0>0){ t2 = r2 -t0 *.6666667;             //z-2\r\n\t\t\t   t1 = r2 -t0 *.3333333;             //z-1\r\n \t} else {   t2 =wrap(zt *.3333333 +zr, 0, 1);  //z-2 \r\n\t\t\t   t1 =wrap(zt *.6666667 +zr, 0, 1);  //z-1\r\n\t}\r\n\tzt = t0; // ramp and delta history for interp\r\n\tzr = r2; \r\n\td1  = inc2;\t// shrink transition region\r\n\tt2 =eptr(t2, d1, w1); \r\n\tt1 =eptr(t1, d1, w1); \r\n\tt0 =eptr(r2, d1, w1);\r\n\r\n\r\n\r\n\tif      (t2==t1 && t1==t0)           out1 = t0;\r\n\telse if (t2!=-1 && t1==-1 && t0!=-1) out1 = -1;\r\n\telse if (t2!=1  && t1==1  && t0!=1)  out1 =  1;\r\n\telse out1 = (t2 + t1 + t0) * .33333333;\r\n}\r\n//out1 = dcblock(out1);\r\n/* *************************************************************/\r\n// PM's PTR for comparison\r\n\tramp = phasor(fc); \t\t\t\t\t\t\r\n\twidth = scale(abs(in4 -50), 0, 50, 1, .1); \n\tout2 = tanh(cycle(ramp/width,index=\"phase\") \r\n\t\t* width * max(100,12000/(fc *(1-log10(fc)))));\r\n\tout2 = dcblock(out2);\r\n/* *************************************************************/\r\nout3 = inc;",
 													"fontface" : 0,
-													"fontname" : "Menlo",
+													"fontname" : "<Monospaced>",
 													"fontsize" : 12.0,
 													"id" : "obj-21",
 													"maxclass" : "codebox",
@@ -31008,8 +31010,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 8,
+															"minor" : 5,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -31287,8 +31289,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 8,
+															"minor" : 5,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -33448,7 +33450,21 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "ll.r.maxpat",
+				"name" : "actmaker.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.actmenu.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.actname.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
@@ -33469,72 +33485,9 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.pf.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.actname.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.movewindow.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "actmaker.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "tetrishelp.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "n.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.psto.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.shut.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.wsendback.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.strip#.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
+				"name" : "ll.blues.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
+				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -33546,42 +33499,21 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.textsize.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.blues.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip/ll.blues",
-				"patcherrelativepath" : "../abstractions/filip/ll.blues",
+				"name" : "ll.mc.stereo_pan.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
+				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "nblue.js",
+				"name" : "ll.movewindow.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.s~.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.p.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.actmenu.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
@@ -33595,16 +33527,110 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "pattrexists.mxo",
-				"type" : "iLaX"
+				"name" : "ll.pf.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
-				"name" : "ll_fastforward.mxo",
-				"type" : "iLaX"
+				"name" : "ll.psto.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.psto1.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.r.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.s.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.shut.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.strip#.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.s~.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.textsize.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.wsendback.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll_fastforward.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/externals/filip",
+				"patcherrelativepath" : "../../externals/filip",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
 				"name" : "ll_number.mxo",
 				"type" : "iLaX"
+			}
+, 			{
+				"name" : "n.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "nblue.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "pattrexists.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "tetrishelp.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
 			}
  ],
 		"autosave" : 0,
