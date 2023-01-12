@@ -9,7 +9,7 @@ a collection and system of interacting max patches designed to create an individ
 <h2>credits:</h2>
 created by klaus filip.<br/>
 currently maintained by klaus filip & c. hausch.<br/>
-authors: klaus filip, c. hausch, noid, taku unami, paulo raposo, léo dupleix, oliver stotz, boris hauf, gilles aubry, gustavo n., david michael, bill d, AntonioDellaMarina.<br/>
+authors: klaus filip, c. hausch, noid, taku unami, joe steccato, paulo raposo, léo dupleix, oliver stotz, boris hauf, gilles aubry, gustavo n., david michael, bill d, AntonioDellaMarina.<br/>
 contains additional code by Bertrand Fraysse, bill orcutt, CNMAT, Ernest Meyer, jasch, jhno, nicolaj kirisits, nathan wolek, olaf matthes, PeRColate, peter elsea, puckette-apel, RTC, thomas grill, tristan jehan, ville pulkki, CRFMW, Cycling'74<br/>
 
 <h2>requirements</h2>
@@ -47,7 +47,7 @@ if yes, see if you can extend an existing act before creating a new one. check b
 <li>choose unique name for act to avoid conflict with existing externals / patchers</li>
 <li>try to save screen estate by making patcher window reasonably small<br />
 (tip: tetris helps with organizing ui)</li>
-<li>keep ui clean (loook out for ophaned elements in the back)</li>
+<li>keep ui clean (look out for orphaned elements in the back)</li>
 <li>recommendation: group elements by color</li>
 <li>create tetris default layout</li>
 
