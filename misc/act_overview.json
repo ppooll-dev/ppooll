@@ -2,8 +2,8 @@
 	"comments" : 	{
 		"1" : "act_overview for ppooll",
 		"2" : "edit with care, the file is located at ppooll/misc/",
-		"3" : "tags appear in acts as numbers",
-		"4" : "more tags could be added under tags"
+		"3" : "tags appear in acts as numbers after the description",
+		"4" : "authors appear in acts as numbers before the description"
 	}
 ,
 	"tags" : 	{
@@ -39,15 +39,16 @@
 		"12" : [ "raja", "?" ],
 		"13" : [ "elin", "elinsound@icloud.com" ],
 		"14" : [ "Joe Steccato", "steech914@gmail.com" ],
-		"15" : [ "?", "?@?" ]
+		"15" : [ "bill d", "?" ],
+		"16" : [ "cycling'74", "?@?" ]
 	}
 ,
 	"acts" : 	{
 		"2Dsliders" : [ 1, "control parameters by dragging points", 4 ],
 		"INmulti" : [ 1, "(multiple) audio input", 2, 13, 15 ],
 		"LFFO" : [ 4, "dynamic ring modulator", 9, 15 ],
-		"SDIFter" : [ 1, "SDIF soundfile player", 1, 11 ],
-		"TFF" : [ 15, "4 band resonant filter", 4, 9, 11 ],
+		"SDIFter" : [ 1, 2, 15, "SDIF soundfile player", 1, 11 ],
+		"TFF" : [ 5, "4 band resonant filter", 4, 9, 11 ],
 		"TSSSF" : [ 5, "substractive synthesis", 1, 8, 11 ],
 		"analyze@" : [ 1, "loudness, brightness of audio", 4, 14 ],
 		"animator@" : [ 3, "5 band lfo", 9 ],
@@ -68,7 +69,7 @@
 		"cloud" : [ 10, "oscillator bank with pitch distribution system", 1, 11 ],
 		"control@" : [ 1, "external device input (midi-osc-etc)", 4, 8, 12 ],
 		"delayloops" : [ 4, "3 delay lines", 9 ],
-		"demosound@" : [ 15, "cycling's demosound to ppooll", 1 ],
+		"demosound@" : [ 16, "cycling's demosound to ppooll", 1 ],
 		"distort@" : [ 1, 3, "degrade sample-rate & bit-resolution", 9, 15 ],
 		"envM" : [ 1, "mc version of multiple envelopes", 5, 15 ],
 		"envMM" : [ 1, "multiple envelopes", 4 ],
@@ -78,7 +79,7 @@
 		"feedbacker" : [ 2, "feedback generator for audio-inputs", 9, 15 ],
 		"fffb@" : [ 1, "filter bank", 9 ],
 		"flop" : [ 1, "sample looper", 1, 3 ],
-		"fmrm" : [ 1, 3, "fm synt & ring modulator", 1, 9, 11, 15 ],
+		"fmrm" : [ 1, 3, 16, "fm synt & ring modulator", 1, 9, 11, 15 ],
 		"forbiddenP" : [ 1, "spectral filter or vocoder", 9 ],
 		"frack" : [ 11, "record parameter movements", 4 ],
 		"freeverb@" : [ 2, "reverb", 9 ],
@@ -105,8 +106,8 @@
 		"kaos@" : [ 1, "random mouse clicks", 4 ],
 		"karma@" : [ 12, "Varispeed audio looper", 1, 3 ],
 		"kk.rainer" : [ 2, "granular sample player", 1, 3 ],
-		"kocyu@P" : [9, 13, "soft synth", 1, 11 ],
-		"kompressor" : [ 15, "audio compressor", 9, 15 ],
+		"kocyu@P" : [ 9, 13, "soft synth", 1, 11 ],
+		"kompressor" : [ 16, "audio compressor", 9, 15 ],
 		"link@" : [ 3, "ableton link sync interface", 1 ],
 		"matriarch@" : [ 14, "audio matrix on steroids", 5, 13 ],
 		"matrix@" : [ 1, "audio matrix", 5, 13 ],

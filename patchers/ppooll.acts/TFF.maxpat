@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 437.0, 189.0, 366.0, 207.0 ],
+		"rect" : [ 437.0, 189.0, 319.0, 184.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -100,7 +100,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 8.0,
 					"id" : "obj-87",
-					"items" : [ "no", ",", "TFF1", ",", "ho_st1", ",", "ll.blues.help1", ",", "noize@1", ",", "sinus1", ",", "spectcomp1", ",", "tetris@1" ],
+					"items" : [ "no", ",", "TFF1", ",", "_act_overview1", ",", "arpanner1", ",", "autocount@1", ",", "buffer_host1", ",", "freeverb@1", ",", "ho_st1", ",", "peakfinder1", ",", "tetris@1", ",", "xgroove@1" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -887,7 +887,9 @@
 						"title_menu" : 0,
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
+						"master" : 0,
 						"act::active_store" : 0,
+						"ll.blues" : 0,
 						"ll.blues::levels" : 0,
 						"ll.blues::outputs" : 0,
 						"ll.blues::state" : 0
@@ -908,10 +910,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 715, 79, 1255, 788 ],
+						"client_rect" : [ 313, 472, 906, 1006 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 365, 44, 816, 172 ]
+						"storage_rect" : [ 200, 200, 800, 500 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -994,7 +996,7 @@
 						"ramp" : [ 2037.0 ],
 						"smooth" : [ 1579.013309806844745 ],
 						"tetris_menu" : [ "" ],
-						"title_menu" : [ "titlebar" ]
+						"title_menu" : [ "info" ]
 					}
 ,
 					"text" : "autopattr autopattr",
