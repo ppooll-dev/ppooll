@@ -58,7 +58,7 @@
 		"eq@" : [ "crossover-filter based graphic equalizer", 9, 15 ],
 		"equalAmp" : [ "????", 9 ],
 		"euclid" : [ "LFO with Euclidean sequencer", 1, 11 ],
-		"feedbacker" : [ "feedback generator for audio-inputs", 9 ],
+		"feedbacker" : [ "feedback generator for audio-inputs", 9, 15 ],
 		"fffb@" : [ "filter bank", 9 ],
 		"flop" : [ "sample looper", 1, 3 ],
 		"fmrm" : [ "fm synt & ring modulator", 1, 9, 11, 15 ],

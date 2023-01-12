@@ -26,7 +26,11 @@ install additional required packages via the max package manager:<br />
 cv.jit, karma, link, LowkeyNW, PeRColate, CNMAT Externals, ICST Ambisonics
 
 <h2>known issues:</h2>
-probably many 😅
+probably many 😅<br />
+<h3>currenlty broken acts</h3>
+<li>pr.spectrfreeze</li>
+<h3>problems by platform</h3>
+<li>?</li>
 <h2>development guidelines:</h2>
 <h3>todo before creating a ppooll act:</h3> 
 <li>avoid redundancy: check if there is already another act that does (exactly) what yours does.</li>
