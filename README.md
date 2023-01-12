@@ -27,7 +27,7 @@ cv.jit, karma, link, LowkeyNW, PeRColate, CNMAT Externals, ICST Ambisonics
 
 <h2>known issues:</h2>
 probably many 😅<br />
-<h3>currenlty broken acts</h3>
+<h3>currently broken acts</h3>
 <li>pr.spectrfreeze</li>
 <h3>problems by platform</h3>
 <li>?</li>
@@ -49,10 +49,11 @@ if yes, see if you can extend an existing act before creating a new one. check b
 (tip: tetris helps with organizing ui)</li>
 <li>keep ui clean (loook out for ophaned elements in the back)</li>
 <li>recommendation: group elements by color</li>
+<li>create tetris default layout</li>
 
 <h3>todo before committing a ppooll act:</h3>
 <li>include help file</li>
 <li>include authorship and license information</li>
-<li>review included code for their license. if the license conflicts with ours (mit license -> link) remove externals from ppooll repository and include them as link in xxxx</li>
+<li>review included code for their license. if the license conflicts with ours (mit license) remove externals from ppooll repository and get in contact with dev team. if possible such externals should be included as link to package-manager installable packages in ho_st info. </li>
 <li>add act description to act_overview.json</li>
 
