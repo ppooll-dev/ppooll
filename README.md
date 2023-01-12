@@ -10,7 +10,7 @@ a collection and system of interacting max patches designed to create an individ
 created by klaus filip.<br/>
 currently maintained by klaus filip & c. hausch.<br/>
 authors: klaus filip, c. hausch, noid, taku unami, joe steccato, elin, paulo raposo, léo dupleix, oliver stotz, boris hauf, gilles aubry, gustavo n., david michael, bill d, AntonioDellaMarina.<br/>
-contains additional code by Bertrand Fraysse, bill orcutt, CNMAT, Ernest Meyer, jasch, jhno, nicolaj kirisits, nathan wolek, olaf matthes, PeRColate, peter elsea, puckette-apel, RTC, thomas grill, tristan jehan, uhito kiyosue, ville pulkki, volker böhm, CRFMW, Cycling'74<br/>
+contains additional code by adrian freed (CNMAT), Bertrand Fraysse, bill orcutt, CRFMW, Cycling'74, Ernest Meyer, jasch, jhno, miller puckette, nicolaj kirisits, nathan wolek, olaf matthes, PeRColate, peter elsea, RTC, thomas grill, ted appel, tristan jehan, uhito kiyosue, ville pulkki, volker böhm <br/>
 
 <h2>requirements</h2>
 current ppooll 8.5 reqires an installation of cycling'74's max 8.5: https://cycling74.com/products/max<br />
