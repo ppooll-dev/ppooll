@@ -241,10 +241,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 710, 58, 1470, 1102 ],
+						"client_rect" : [ 1176, 213, 1791, 873 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 430, 270, 1276, 999 ]
+						"storage_rect" : [ 200, 200, 800, 500 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -302,7 +302,7 @@
 					"restore" : 					{
 						"master" : [ 0 ],
 						"pres_menu" : [ "_" ],
-						"select" : [ "all" ],
+						"select" : [ "ppooll_basic" ],
 						"tetris_menu" : [ "" ],
 						"title_menu" : [ "subpatch" ]
 					}
@@ -856,12 +856,13 @@
 													"fontname" : "Verdana",
 													"fontsize" : 10.0,
 													"id" : "obj-1",
+													"linecount" : 3,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 162.5, 104.5, 248.0, 33.0 ],
-													"text" : "0 79"
+													"text" : "0 35 ll.mc.r~ ppooll_basic \"combined mc-signal & parameter receive plus spread & ramp functionality\""
 												}
 
 											}
@@ -926,13 +927,13 @@
 													"fontname" : "Verdana",
 													"fontsize" : 10.0,
 													"id" : "obj-53",
-													"linecount" : 3,
+													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 162.5, 174.5, 46.0, 33.0 ],
-													"text" : "ll_mcwaveform"
+													"text" : "ll.mc.r~"
 												}
 
 											}
@@ -1688,7 +1689,7 @@
 , 							{
 								"box" : 								{
 									"coll_data" : 									{
-										"count" : 57,
+										"count" : 58,
 										"data" : [ 											{
 												"key" : "actmaker",
 												"value" : [ "ppooll_basic", "makes any patch part of the system" ]
@@ -1916,6 +1917,10 @@
 , 											{
 												"key" : "ll_mcwaveform",
 												"value" : [ "UIs", "multichannel enabled replacement for waveform~" ]
+											}
+, 											{
+												"key" : "ll.mc.r",
+												"value" : [ "ppooll_basic", "combined mc-signal & parameter receive plus spread & ramp functionality" ]
 											}
  ]
 									}
