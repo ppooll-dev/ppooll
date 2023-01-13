@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 307.0, 249.0, 159.0, 102.0 ],
+		"rect" : [ 170.0, 237.0, 159.0, 102.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -164,7 +164,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 453.0, 450.0, 79.0, 22.0 ],
-					"restore" : [ 541, 360 ],
+					"restore" : [ 100, 600 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -186,7 +186,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 447.0, 486.0, 91.0, 22.0 ],
-					"restore" : [ "∆í Macintosh HD:/Library/Audio/Plug-Ins/Components/" ],
+					"restore" : [ "all" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -215,7 +215,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@in_mix", 1 ],
+					"args" : [ "@in_mix", 1, "@state", 2, 1, 0, 0, 2, 0 ],
 					"bgmode" : 0,
 					"border" : 1,
 					"clickthrough" : 0,
@@ -336,7 +336,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-6",
-					"items" : [ "def_folders", ",", "all", ",", "auto", ",", "-" ],
+					"items" : [ "def_folders", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/Components/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/IEM/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST3/", ",", "all", ",", "auto", ",", "-", ",", "+binaural.component", ",", "+morphfilter.component", ",", "+spectralcompand.component", ",", "+spectralgate.component", ",", "C3 Multi Band Compressor 1_2.component", ",", "Chip32.component", ",", "Elephant.component", ",", "elysia mpressor.component", ",", "iZInsightAUHook.component", ",", "iZMeterTapAUHook.component", ",", "iZRX5ConnectAUHook.component", ",", "iZRX5DeclickerAUHook.component", ",", "iZRX5DeclipperAUHook.component", ",", "iZRX5DecracklerAUHook.component", ",", "iZRX5DenoiserAUHook.component", ",", "iZRX5DereverbAUHook.component", ",", "iZRX5DialogueDenoiserAUHook.component", ",", "iZRX5HumRemovalAUHook.component", ",", "iZRX5MonitorAUHook.component", ",", "JACK-insert.component", ",", "Komplete Kontrol.component", ",", "Kontakt 7.component", ",", "MSED.component", ",", "NorthPole.component", ",", "NorthPole32.component", ",", "Replika.component", ",", "ROLI Studio Player.component", ",", "SideChainComp.component", ",", "WaveShell-AU 7.0.component", ",", "+binaural.vst", ",", "+morphfilter.vst", ",", "+spectralcompand.vst", ",", "+spectralgate.vst", ",", "C3 Multi Band Compressor 1_2.vst", ",", "Chip32.vst", ",", "ComboF.pdf", ",", "ComboF.vst", ",", "compass_binaural.vst", ",", "compass_decoder.vst", ",", "compass_sidechain.vst", ",", "compass_upmixer.vst", ",", "cropac_binaural.vst", ",", "DtBlkFx.vst", ",", "DtBlkFxS.vst", ",", "ExSlSilentWay.vst", ",", "IEM", ",", "iZotope Insight.vst", ",", "iZotope Meter Tap.vst", ",", "iZotope RX 5 Connect.vst", ",", "iZotope RX 5 De-click.vst", ",", "iZotope RX 5 De-clip.vst", ",", "iZotope RX 5 De-crackle.vst", ",", "iZotope RX 5 De-hum.vst", ",", "iZotope RX 5 De-noise.vst", ",", "iZotope RX 5 De-reverb.vst", ",", "iZotope RX 5 Dialogue De-noise.vst", ",", "iZotope RX 5 Monitor.vst", ",", "JACK-insert.vst", ",", "Komplete Kontrol.vst", ",", "NorthPole.dll", ",", "NorthPoleVST", ",", "PROSONIQ NorthPole RTAS Carbon", ",", "Replika.vst", ",", "ROLI Studio Player.vst", ",", "SideChainCompMn.vst", ",", "SideChainCompSt.vst", ",", "sparta_ambiBIN.vst", ",", "sparta_ambiDEC.vst", ",", "sparta_ambiDRC.vst", ",", "sparta_ambiENC.vst", ",", "sparta_array2sh.vst", ",", "sparta_beamformer.vst", ",", "sparta_binauraliser.vst", ",", "sparta_dirass.vst", ",", "sparta_matrixconv.vst", ",", "sparta_multiconv.vst", ",", "sparta_panner.vst", ",", "sparta_powermap.vst", ",", "sparta_rotator.vst", ",", "sparta_sldoa.vst", ",", "Synth1 Chris Preset Bank Vol 2", ",", "Synth1.vst", ",", "WaveShell-VST 7.0.vst", ",", "zr3.vst", ",", "AllRADecoder.vst", ",", "BinauralDecoder.vst", ",", "CoordinateConverter.vst", ",", "DirectionalCompressor.vst", ",", "DirectivityShaper.vst", ",", "DistanceCompensator.vst", ",", "DualDelay.vst", ",", "EnergyVisualizer.vst", ",", "FdnReverb.vst", ",", "MatrixMultiplier.vst", ",", "MultiBandCompressor.vst", ",", "MultiEncoder.vst", ",", "MultiEQ.vst", ",", "OmniCompressor.vst", ",", "ProbeDecoder.vst", ",", "RoomEncoder.vst", ",", "SceneRotator.vst", ",", "SimpleDecoder.vst", ",", "StereoEncoder.vst", ",", "ToolBox.vst", ",", "iZotope Insight.vst3", ",", "iZotope Meter Tap.vst3", ",", "iZotope RX 5 Connect.vst3", ",", "iZotope RX 5 De-click.vst3", ",", "iZotope RX 5 De-clip.vst3", ",", "iZotope RX 5 De-crackle.vst3", ",", "iZotope RX 5 De-hum.vst3", ",", "iZotope RX 5 De-noise.vst3", ",", "iZotope RX 5 De-reverb.vst3", ",", "iZotope RX 5 Dialogue De-noise.vst3", ",", "iZotope RX 5 Monitor.vst3", ",", "Komplete Kontrol.vst3", ",", "Kontakt 7.vst3" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -405,7 +405,8 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"patching_rect" : [ 118.0, 280.0, 68.0, 22.0 ],
-									"text" : "ll.pf ll.blues"
+									"text" : "ll.pf ll.blues",
+									"varname" : "out"
 								}
 
 							}
@@ -417,7 +418,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 118.0, 80.0, 66.0, 22.0 ],
-									"text" : "ll.r in_mix~"
+									"text" : "ll.r in_mix~",
+									"varname" : "in"
 								}
 
 							}
@@ -1572,7 +1574,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 561.0, 317.0, 50.0, 22.0 ],
-																	"text" : "22"
+																	"text" : "11"
 																}
 
 															}
@@ -3040,7 +3042,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 537.0, 313.0, 54.0, 22.0 ],
-													"text" : "541 360"
+													"text" : "100 600"
 												}
 
 											}
@@ -3199,7 +3201,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 564.5, 119.0, 201.0, 22.0 ],
-													"text" : "541. 360. 976 690"
+													"text" : "0. 0. 500 200"
 												}
 
 											}
@@ -4192,7 +4194,7 @@
 																				"box" : 																				{
 																					"fontsize" : 13.0,
 																					"id" : "obj-9",
-																					"items" : [ "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AllRADecoder", ",", "BinauralDecoder", ",", "C3 Multi Band Compressor 1_2", ",", "Chip32", ",", "ComboF", ",", "compass_binaural", ",", "compass_decoder", ",", "compass_sidechain", ",", "compass_upmixer", ",", "CoordinateConverter", ",", "cropac_binaural", ",", "DirectionalCompressor", ",", "DirectivityShaper", ",", "DistanceCompensator", ",", "DtBlkFx", ",", "DtBlkFxS", ",", "DualDelay", ",", "EnergyVisualizer", ",", "ExSlSilentWay", ",", "FdnReverb", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "JACK-insert", ",", "MatrixMultiplier", ",", "MultiBandCompressor", ",", "MultiEncoder", ",", "MultiEQ", ",", "OmniCompressor", ",", "ProbeDecoder", ",", "Replika", ",", "ROLI Studio Player", ",", "RoomEncoder", ",", "SceneRotator", ",", "SideChainCompMn", ",", "SideChainCompSt", ",", "SimpleDecoder", ",", "sparta_ambiBIN", ",", "sparta_ambiDEC", ",", "sparta_ambiDRC", ",", "sparta_ambiENC", ",", "sparta_array2sh", ",", "sparta_beamformer", ",", "sparta_binauraliser", ",", "sparta_dirass", ",", "sparta_matrixconv", ",", "sparta_multiconv", ",", "sparta_panner", ",", "sparta_powermap", ",", "sparta_rotator", ",", "sparta_sldoa", ",", "StereoEncoder", ",", "Synth1", ",", "ToolBox", ",", "WaveShell-VST 7.0", ",", "zr3", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AllRADecoder", ",", "BinauralDecoder", ",", "C3 Multi Band Compressor 1_2", ",", "Chip32", ",", "ComboF", ",", "compass_binaural", ",", "compass_decoder", ",", "compass_sidechain", ",", "compass_upmixer", ",", "CoordinateConverter", ",", "cropac_binaural", ",", "DirectionalCompressor", ",", "DirectivityShaper", ",", "DistanceCompensator", ",", "DtBlkFx", ",", "DtBlkFxS", ",", "DualDelay", ",", "EnergyVisualizer", ",", "ExSlSilentWay", ",", "FdnReverb", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "JACK-insert", ",", "MatrixMultiplier", ",", "MultiBandCompressor", ",", "MultiEncoder", ",", "MultiEQ", ",", "OmniCompressor", ",", "ProbeDecoder", ",", "Replika", ",", "ROLI Studio Player", ",", "RoomEncoder", ",", "SceneRotator", ",", "SideChainCompMn", ",", "SideChainCompSt", ",", "SimpleDecoder", ",", "sparta_ambiBIN", ",", "sparta_ambiDEC", ",", "sparta_ambiDRC", ",", "sparta_ambiENC", ",", "sparta_array2sh", ",", "sparta_beamformer", ",", "sparta_binauraliser", ",", "sparta_dirass", ",", "sparta_matrixconv", ",", "sparta_multiconv", ",", "sparta_panner", ",", "sparta_powermap", ",", "sparta_rotator", ",", "sparta_sldoa", ",", "StereoEncoder", ",", "Synth1", ",", "ToolBox", ",", "WaveShell-VST 7.0", ",", "zr3", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AUAudioFilePlayer", ",", "AUBandpass", ",", "AUDelay", ",", "AUDistortion", ",", "AUDynamicsProcessor", ",", "AUFilter", ",", "AUGraphicEQ", ",", "AUHighShelfFilter", ",", "AUHipass", ",", "AULowpass", ",", "AULowShelfFilter", ",", "AUMatrixReverb", ",", "AUMIDISynth", ",", "AUMultibandCompressor", ",", "AUNBandEQ", ",", "AUNetReceive", ",", "AUNetSend", ",", "AUNewPitch", ",", "AUParametricEQ", ",", "AUPeakLimiter", ",", "AUPitch", ",", "AUReverb2", ",", "AURogerBeep", ",", "AURoundTripAAC", ",", "AUSampleDelay", ",", "AUSampler", ",", "AUScheduledSoundPlayer", ",", "AUSoundFieldPanner", ",", "AUSpeechSynthesis", ",", "AUSphericalHeadPanner", ",", "AUVectorPanner", ",", "DLSMusicDevice", ",", "Elephant", ",", "elysia mpressor", ",", "HRTFPanner", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "MSED", ",", "NorthPole", ",", "Replika", ",", "ROLI Studio Player", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AllRADecoder", ",", "BinauralDecoder", ",", "C3 Multi Band Compressor 1_2", ",", "Chip32", ",", "ComboF", ",", "compass_binaural", ",", "compass_decoder", ",", "compass_sidechain", ",", "compass_upmixer", ",", "CoordinateConverter", ",", "cropac_binaural", ",", "DirectionalCompressor", ",", "DirectivityShaper", ",", "DistanceCompensator", ",", "DtBlkFx", ",", "DtBlkFxS", ",", "DualDelay", ",", "EnergyVisualizer", ",", "ExSlSilentWay", ",", "FdnReverb", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "JACK-insert", ",", "MatrixMultiplier", ",", "MultiBandCompressor", ",", "MultiEncoder", ",", "MultiEQ", ",", "OmniCompressor", ",", "ProbeDecoder", ",", "Replika", ",", "ROLI Studio Player", ",", "RoomEncoder", ",", "SceneRotator", ",", "SideChainCompMn", ",", "SideChainCompSt", ",", "SimpleDecoder", ",", "sparta_ambiBIN", ",", "sparta_ambiDEC", ",", "sparta_ambiDRC", ",", "sparta_ambiENC", ",", "sparta_array2sh", ",", "sparta_beamformer", ",", "sparta_binauraliser", ",", "sparta_dirass", ",", "sparta_matrixconv", ",", "sparta_multiconv", ",", "sparta_panner", ",", "sparta_powermap", ",", "sparta_rotator", ",", "sparta_sldoa", ",", "StereoEncoder", ",", "Synth1", ",", "ToolBox", ",", "WaveShell-VST 7.0", ",", "zr3", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AUAudioFilePlayer", ",", "AUBandpass", ",", "AUDelay", ",", "AUDistortion", ",", "AUDynamicsProcessor", ",", "AUFilter", ",", "AUGraphicEQ", ",", "AUHighShelfFilter", ",", "AUHipass", ",", "AULowpass", ",", "AULowShelfFilter", ",", "AUMatrixReverb", ",", "AUMIDISynth", ",", "AUMultibandCompressor", ",", "AUNBandEQ", ",", "AUNetReceive", ",", "AUNetSend", ",", "AUNewPitch", ",", "AUParametricEQ", ",", "AUPeakLimiter", ",", "AUPitch", ",", "AUReverb2", ",", "AURogerBeep", ",", "AURoundTripAAC", ",", "AUSampleDelay", ",", "AUSampler", ",", "AUScheduledSoundPlayer", ",", "AUSoundFieldPanner", ",", "AUSpeechSynthesis", ",", "AUSphericalHeadPanner", ",", "AUVectorPanner", ",", "DLSMusicDevice", ",", "Elephant", ",", "elysia mpressor", ",", "HRTFPanner", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "MSED", ",", "NorthPole", ",", "Replika", ",", "ROLI Studio Player" ],
+																					"items" : [ "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AllRADecoder", ",", "BinauralDecoder", ",", "C3 Multi Band Compressor 1_2", ",", "Chip32", ",", "ComboF", ",", "compass_binaural", ",", "compass_decoder", ",", "compass_sidechain", ",", "compass_upmixer", ",", "CoordinateConverter", ",", "cropac_binaural", ",", "DirectionalCompressor", ",", "DirectivityShaper", ",", "DistanceCompensator", ",", "DtBlkFx", ",", "DtBlkFxS", ",", "DualDelay", ",", "EnergyVisualizer", ",", "ExSlSilentWay", ",", "FdnReverb", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "JACK-insert", ",", "MatrixMultiplier", ",", "MultiBandCompressor", ",", "MultiEncoder", ",", "MultiEQ", ",", "OmniCompressor", ",", "ProbeDecoder", ",", "Replika", ",", "ROLI Studio Player", ",", "RoomEncoder", ",", "SceneRotator", ",", "SideChainCompMn", ",", "SideChainCompSt", ",", "SimpleDecoder", ",", "sparta_ambiBIN", ",", "sparta_ambiDEC", ",", "sparta_ambiDRC", ",", "sparta_ambiENC", ",", "sparta_array2sh", ",", "sparta_beamformer", ",", "sparta_binauraliser", ",", "sparta_dirass", ",", "sparta_matrixconv", ",", "sparta_multiconv", ",", "sparta_panner", ",", "sparta_powermap", ",", "sparta_rotator", ",", "sparta_sldoa", ",", "StereoEncoder", ",", "Synth1", ",", "ToolBox", ",", "WaveShell-VST 7.0", ",", "zr3", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AllRADecoder", ",", "BinauralDecoder", ",", "C3 Multi Band Compressor 1_2", ",", "Chip32", ",", "ComboF", ",", "compass_binaural", ",", "compass_decoder", ",", "compass_sidechain", ",", "compass_upmixer", ",", "CoordinateConverter", ",", "cropac_binaural", ",", "DirectionalCompressor", ",", "DirectivityShaper", ",", "DistanceCompensator", ",", "DtBlkFx", ",", "DtBlkFxS", ",", "DualDelay", ",", "EnergyVisualizer", ",", "ExSlSilentWay", ",", "FdnReverb", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "JACK-insert", ",", "MatrixMultiplier", ",", "MultiBandCompressor", ",", "MultiEncoder", ",", "MultiEQ", ",", "OmniCompressor", ",", "ProbeDecoder", ",", "Replika", ",", "ROLI Studio Player", ",", "RoomEncoder", ",", "SceneRotator", ",", "SideChainCompMn", ",", "SideChainCompSt", ",", "SimpleDecoder", ",", "sparta_ambiBIN", ",", "sparta_ambiDEC", ",", "sparta_ambiDRC", ",", "sparta_ambiENC", ",", "sparta_array2sh", ",", "sparta_beamformer", ",", "sparta_binauraliser", ",", "sparta_dirass", ",", "sparta_matrixconv", ",", "sparta_multiconv", ",", "sparta_panner", ",", "sparta_powermap", ",", "sparta_rotator", ",", "sparta_sldoa", ",", "StereoEncoder", ",", "Synth1", ",", "ToolBox", ",", "WaveShell-VST 7.0", ",", "zr3", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AUAudioFilePlayer", ",", "AUBandpass", ",", "AUDelay", ",", "AUDistortion", ",", "AUDynamicsProcessor", ",", "AUFilter", ",", "AUGraphicEQ", ",", "AUHighShelfFilter", ",", "AUHipass", ",", "AULowpass", ",", "AULowShelfFilter", ",", "AUMatrixReverb", ",", "AUMIDISynth", ",", "AUMultibandCompressor", ",", "AUNBandEQ", ",", "AUNetReceive", ",", "AUNetSend", ",", "AUNewPitch", ",", "AUParametricEQ", ",", "AUPeakLimiter", ",", "AUPitch", ",", "AUReverb2", ",", "AURogerBeep", ",", "AURoundTripAAC", ",", "AUSampleDelay", ",", "AUSampler", ",", "AUScheduledSoundPlayer", ",", "AUSoundFieldPanner", ",", "AUSpeechSynthesis", ",", "AUSphericalHeadPanner", ",", "AUVectorPanner", ",", "DLSMusicDevice", ",", "Elephant", ",", "elysia mpressor", ",", "HRTFPanner", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "MSED", ",", "NorthPole", ",", "Replika", ",", "ROLI Studio Player", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AllRADecoder", ",", "BinauralDecoder", ",", "C3 Multi Band Compressor 1_2", ",", "Chip32", ",", "ComboF", ",", "compass_binaural", ",", "compass_decoder", ",", "compass_sidechain", ",", "compass_upmixer", ",", "CoordinateConverter", ",", "cropac_binaural", ",", "DirectionalCompressor", ",", "DirectivityShaper", ",", "DistanceCompensator", ",", "DtBlkFx", ",", "DtBlkFxS", ",", "DualDelay", ",", "EnergyVisualizer", ",", "ExSlSilentWay", ",", "FdnReverb", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "JACK-insert", ",", "MatrixMultiplier", ",", "MultiBandCompressor", ",", "MultiEncoder", ",", "MultiEQ", ",", "OmniCompressor", ",", "ProbeDecoder", ",", "Replika", ",", "ROLI Studio Player", ",", "RoomEncoder", ",", "SceneRotator", ",", "SideChainCompMn", ",", "SideChainCompSt", ",", "SimpleDecoder", ",", "sparta_ambiBIN", ",", "sparta_ambiDEC", ",", "sparta_ambiDRC", ",", "sparta_ambiENC", ",", "sparta_array2sh", ",", "sparta_beamformer", ",", "sparta_binauraliser", ",", "sparta_dirass", ",", "sparta_matrixconv", ",", "sparta_multiconv", ",", "sparta_panner", ",", "sparta_powermap", ",", "sparta_rotator", ",", "sparta_sldoa", ",", "StereoEncoder", ",", "Synth1", ",", "ToolBox", ",", "WaveShell-VST 7.0", ",", "zr3", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AUAudioFilePlayer", ",", "AUBandpass", ",", "AUDelay", ",", "AUDistortion", ",", "AUDynamicsProcessor", ",", "AUFilter", ",", "AUGraphicEQ", ",", "AUHighShelfFilter", ",", "AUHipass", ",", "AULowpass", ",", "AULowShelfFilter", ",", "AUMatrixReverb", ",", "AUMIDISynth", ",", "AUMultibandCompressor", ",", "AUNBandEQ", ",", "AUNetReceive", ",", "AUNetSend", ",", "AUNewPitch", ",", "AUParametricEQ", ",", "AUPeakLimiter", ",", "AUPitch", ",", "AUReverb2", ",", "AURogerBeep", ",", "AURoundTripAAC", ",", "AUSampleDelay", ",", "AUSampler", ",", "AUScheduledSoundPlayer", ",", "AUSoundFieldPanner", ",", "AUSpeechSynthesis", ",", "AUSphericalHeadPanner", ",", "AUVectorPanner", ",", "DLSMusicDevice", ",", "Elephant", ",", "elysia mpressor", ",", "HRTFPanner", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "MSED", ",", "NorthPole", ",", "Replika", ",", "ROLI Studio Player", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AllRADecoder", ",", "BinauralDecoder", ",", "C3 Multi Band Compressor 1_2", ",", "Chip32", ",", "ComboF", ",", "compass_binaural", ",", "compass_decoder", ",", "compass_sidechain", ",", "compass_upmixer", ",", "CoordinateConverter", ",", "cropac_binaural", ",", "DirectionalCompressor", ",", "DirectivityShaper", ",", "DistanceCompensator", ",", "DtBlkFx", ",", "DtBlkFxS", ",", "DualDelay", ",", "EnergyVisualizer", ",", "ExSlSilentWay", ",", "FdnReverb", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "JACK-insert", ",", "Komplete Kontrol", ",", "MatrixMultiplier", ",", "MultiBandCompressor", ",", "MultiEncoder", ",", "MultiEQ", ",", "OmniCompressor", ",", "ProbeDecoder", ",", "Replika", ",", "ROLI Studio Player", ",", "RoomEncoder", ",", "SceneRotator", ",", "SideChainCompMn", ",", "SideChainCompSt", ",", "SimpleDecoder", ",", "sparta_ambiBIN", ",", "sparta_ambiDEC", ",", "sparta_ambiDRC", ",", "sparta_ambiENC", ",", "sparta_array2sh", ",", "sparta_beamformer", ",", "sparta_binauraliser", ",", "sparta_dirass", ",", "sparta_matrixconv", ",", "sparta_multiconv", ",", "sparta_panner", ",", "sparta_powermap", ",", "sparta_rotator", ",", "sparta_sldoa", ",", "StereoEncoder", ",", "Synth1", ",", "ToolBox", ",", "WaveShell-VST 7.0", ",", "zr3", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "Komplete Kontrol", ",", "Kontakt 7", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AUAudioFilePlayer", ",", "AUBandpass", ",", "AUDelay", ",", "AUDistortion", ",", "AUDynamicsProcessor", ",", "AUFilter", ",", "AUGraphicEQ", ",", "AUHighShelfFilter", ",", "AUHipass", ",", "AULowpass", ",", "AULowShelfFilter", ",", "AUMatrixReverb", ",", "AUMIDISynth", ",", "AUMultibandCompressor", ",", "AUNBandEQ", ",", "AUNetReceive", ",", "AUNetSend", ",", "AUNewPitch", ",", "AUParametricEQ", ",", "AUPeakLimiter", ",", "AUPitch", ",", "AUReverb2", ",", "AURogerBeep", ",", "AURoundTripAAC", ",", "AUSampleDelay", ",", "AUSampler", ",", "AUScheduledSoundPlayer", ",", "AUSoundFieldPanner", ",", "AUSpeechSynthesis", ",", "AUSphericalHeadPanner", ",", "AUVectorPanner", ",", "DLSMusicDevice", ",", "Elephant", ",", "elysia mpressor", ",", "HRTFPanner", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "Komplete Kontrol", ",", "Kontakt 7", ",", "MSED", ",", "NorthPole", ",", "Replika", ",", "ROLI Studio Player", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AllRADecoder", ",", "BinauralDecoder", ",", "C3 Multi Band Compressor 1_2", ",", "Chip32", ",", "ComboF", ",", "compass_binaural", ",", "compass_decoder", ",", "compass_sidechain", ",", "compass_upmixer", ",", "CoordinateConverter", ",", "cropac_binaural", ",", "DirectionalCompressor", ",", "DirectivityShaper", ",", "DistanceCompensator", ",", "DtBlkFx", ",", "DtBlkFxS", ",", "DualDelay", ",", "EnergyVisualizer", ",", "ExSlSilentWay", ",", "FdnReverb", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "JACK-insert", ",", "Komplete Kontrol", ",", "MatrixMultiplier", ",", "MultiBandCompressor", ",", "MultiEncoder", ",", "MultiEQ", ",", "OmniCompressor", ",", "ProbeDecoder", ",", "Replika", ",", "ROLI Studio Player", ",", "RoomEncoder", ",", "SceneRotator", ",", "SideChainCompMn", ",", "SideChainCompSt", ",", "SimpleDecoder", ",", "sparta_ambiBIN", ",", "sparta_ambiDEC", ",", "sparta_ambiDRC", ",", "sparta_ambiENC", ",", "sparta_array2sh", ",", "sparta_beamformer", ",", "sparta_binauraliser", ",", "sparta_dirass", ",", "sparta_matrixconv", ",", "sparta_multiconv", ",", "sparta_panner", ",", "sparta_powermap", ",", "sparta_rotator", ",", "sparta_sldoa", ",", "StereoEncoder", ",", "Synth1", ",", "ToolBox", ",", "WaveShell-VST 7.0", ",", "zr3", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "Komplete Kontrol", ",", "Kontakt 7", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AUAudioFilePlayer", ",", "AUBandpass", ",", "AUDelay", ",", "AUDistortion", ",", "AUDynamicsProcessor", ",", "AUFilter", ",", "AUGraphicEQ", ",", "AUHighShelfFilter", ",", "AUHipass", ",", "AULowpass", ",", "AULowShelfFilter", ",", "AUMatrixReverb", ",", "AUMIDISynth", ",", "AUMultibandCompressor", ",", "AUNBandEQ", ",", "AUNetReceive", ",", "AUNetSend", ",", "AUNewPitch", ",", "AUParametricEQ", ",", "AUPeakLimiter", ",", "AUPitch", ",", "AUReverb2", ",", "AURogerBeep", ",", "AURoundTripAAC", ",", "AUSampleDelay", ",", "AUSampler", ",", "AUScheduledSoundPlayer", ",", "AUSoundFieldPanner", ",", "AUSpeechSynthesis", ",", "AUSphericalHeadPanner", ",", "AUVectorPanner", ",", "DLSMusicDevice", ",", "Elephant", ",", "elysia mpressor", ",", "HRTFPanner", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "Komplete Kontrol", ",", "Kontakt 7", ",", "MSED", ",", "NorthPole", ",", "Replika", ",", "ROLI Studio Player" ],
 																					"maxclass" : "umenu",
 																					"numinlets" : 1,
 																					"numoutlets" : 3,
@@ -4438,7 +4440,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 498.666687000000024, 98.693420000000003, 273.0, 23.0 ],
-																	"text" : "+binaural.component"
+																	"text" : "AUHipass"
 																}
 
 															}
@@ -4650,7 +4652,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 194.0, 96.0, 122.0, 22.0 ],
-																					"text" : "+binaural.component"
+																					"text" : "AUHipass"
 																				}
 
 																			}
@@ -8193,7 +8195,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 204.833313000000004, 126.0, 265.0, 22.0 ],
-													"text" : "+binaural.component"
+													"text" : "all"
 												}
 
 											}
@@ -9266,7 +9268,7 @@
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "", "" ],
 																	"patching_rect" : [ 472.75, 387.0, 103.0, 22.0 ],
-																	"restore" : [ "fmrm" ],
+																	"restore" : [ "vst@" ],
 																	"saved_object_attributes" : 																	{
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
@@ -9352,12 +9354,13 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-5",
+																	"linecount" : 5,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 688.0, 233.0, 144.0, 35.0 ],
-																	"text" : "vst@1 fmrm1 ho_st1"
+																	"text" : "buffer_host1 noize@1 vst@1 ho_st1 spat.ambidecode@1 smpseq@1 _act_overview1"
 																}
 
 															}
@@ -10932,7 +10935,7 @@
 									"clickthrough" : 0,
 									"enablehscroll" : 0,
 									"enablevscroll" : 0,
-									"id" : "obj-16",
+									"id" : "obj-39",
 									"lockeddragscroll" : 0,
 									"lockedsize" : 0,
 									"maxclass" : "newobj",
@@ -10973,59 +10976,22 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-16", 0 ],
+									"destination" : [ "obj-39", 0 ],
 									"source" : [ "obj-12", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-16", 0 ],
+									"destination" : [ "obj-39", 0 ],
+									"source" : [ "obj-13", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-39", 0 ],
 									"source" : [ "obj-14", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"source" : [ "obj-16", 6 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-19", 0 ],
-									"order" : 0,
-									"source" : [ "obj-16", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-26", 0 ],
-									"order" : 1,
-									"source" : [ "obj-16", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-26", 1 ],
-									"source" : [ "obj-16", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"source" : [ "obj-16", 4 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-54", 0 ],
-									"source" : [ "obj-16", 5 ]
 								}
 
 							}
@@ -11033,6 +10999,57 @@
 								"patchline" : 								{
 									"destination" : [ "obj-26", 2 ],
 									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-15", 0 ],
+									"source" : [ "obj-39", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"source" : [ "obj-39", 6 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"order" : 0,
+									"source" : [ "obj-39", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-26", 0 ],
+									"order" : 1,
+									"source" : [ "obj-39", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-26", 1 ],
+									"source" : [ "obj-39", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-39", 4 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-54", 0 ],
+									"source" : [ "obj-39", 5 ]
 								}
 
 							}
@@ -11101,7 +11118,7 @@
 					"arrow" : 0,
 					"fontsize" : 9.0,
 					"id" : "obj-80",
-					"items" : [ "to Max 1", ",", "to Max 2" ],
+					"items" : [ "IAC Driver Bus 1", ",", "to Max 1", ",", "to Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -11138,11 +11155,13 @@
 						"title_menu" : 0,
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
+						"master" : 0,
 						"act" : 0,
-						"act::active_store" : 1,
-						"ll.blues::levels" : 1,
-						"ll.blues::outputs" : 1,
-						"ll.blues::state" : 1
+						"act::active_store" : 0,
+						"ll.blues" : 0,
+						"ll.blues::levels" : 0,
+						"ll.blues::outputs" : 0,
+						"ll.blues::state" : 0
 					}
 ,
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -11159,94 +11178,6 @@
 						"vst-folder" : 3,
 						"program_files" : 5,
 						"vst_program" : 6,
-						"Bypass" : 100,
-						"Input Ambisonic Order" : 100,
-						"N Channels" : 100,
-						"Room Size" : 100,
-						"angle" : 100,
-						"attack" : 100,
-						"signal" : 100,
-						"Input Normalization" : 101,
-						"Oversmp" : 101,
-						"Reverberation Time" : 101,
-						"invert" : 101,
-						"midi lfo tempo" : 101,
-						"pitchShift" : 101,
-						"Decoder Order" : 102,
-						"FFTSize" : 102,
-						"InGain" : 102,
-						"Lows Cutoff Frequency" : 102,
-						"keyinput" : 102,
-						"lfo divide" : 102,
-						"Export Decoder" : 103,
-						"Lows Q Factor" : 103,
-						"OutGain" : 103,
-						"OverSamp" : 103,
-						"filter number" : 103,
-						"learn" : 103,
-						"ratio" : 103,
-						"Export Layout" : 104,
-						"Lows Gain" : 104,
-						"RlsEnab" : 104,
-						"lfo speed" : 104,
-						"release" : 104,
-						"Ambisonic Weights" : 105,
-						"Highs Cutoff Frequency" : 105,
-						"Release" : 105,
-						"learnpeak" : 105,
-						"lfo position" : 105,
-						"makeupgain" : 105,
-						"DCEnabl" : 106,
-						"Highs Q Factor" : 106,
-						"gain" : 106,
-						"learnaverage" : 106,
-						"peaktrack" : 106,
-						"DCFreq" : 107,
-						"Highs Gain" : 107,
-						"point 1 value" : 107,
-						"reset" : 107,
-						"DCType" : 108,
-						"Dry/Wet" : 108,
-						"point 2 value" : 108,
-						"threshold" : 108,
-						"DithEnb" : 109,
-						"Fade-in Time" : 109,
-						"point 3 value" : 109,
-						"stereolink" : 109,
-						"DithBit" : 110,
-						"Fdn Size (internal)" : 110,
-						"point 4 value" : 110,
-						"tilt" : 110,
-						"DithTyp" : 111,
-						"logscale" : 111,
-						"point 5 value" : 111,
-						"type" : 111,
-						"DithShp" : 112,
-						"autogain" : 112,
-						"point 6 value" : 112,
-						"DithBln" : 113,
-						"point 7 value" : 113,
-						"Meterin" : 114,
-						"point 8 value" : 114,
-						"ChLink" : 115,
-						"point 1 time" : 115,
-						"point 2 time" : 115,
-						"Mode" : 116,
-						"point 3 time" : 116,
-						"ELAIGC" : 117,
-						"point 4 time" : 117,
-						"Knee" : 118,
-						"point 5 time" : 118,
-						"XTime" : 119,
-						"point 6 time" : 119,
-						"XForm" : 120,
-						"point 7 time" : 120,
-						"XShape" : 121,
-						"DRCType" : 122,
-						"point 8 time" : 122,
-						"Timing" : 123,
-						"RlsRto" : 124,
-						"RlsShp" : 125,
 						"midi-channel" : 900,
 						"midi-port" : 901,
 						"open!" : 910,
@@ -11255,14 +11186,16 @@
 						"title_menu" : 2010,
 						"pres_menu" : 2011,
 						"tetris_menu" : 2012,
-						"master" : 2013
+						"master" : 2013,
+						"Cutoff Frequency" : 100,
+						"Resonance" : 101
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 499, 162, 1139, 402 ],
+						"client_rect" : [ 313, 472, 906, 1006 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 0, 0, 640, 240 ]
+						"storage_rect" : [ 200, 200, 800, 500 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -11318,16 +11251,18 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 456.0, 287.0, 107.0, 22.0 ],
 					"restore" : 					{
+						"Cutoff Frequency" : [ 0.049460992217064 ],
+						"Resonance" : [ 0.554250001907349 ],
 						"master" : [ 0 ],
 						"midi-channel" : [ 0 ],
-						"midi-port" : [ "to Max 1" ],
-						"open!" : [ 1 ],
+						"midi-port" : [ "IAC Driver Bus 1" ],
+						"open!" : [ 0 ],
 						"pres_menu" : [ "_" ],
 						"preset-ramp" : [ 0.0 ],
 						"presets" : [ 2 ],
 						"program_files" : [ "write" ],
 						"tetris_menu" : [ "" ],
-						"title_menu" : [ "titlebar" ],
+						"title_menu" : [ "subpatch" ],
 						"vst-folder" : [ "def_folders" ],
 						"vst_program" : [ 1 ]
 					}
@@ -11374,7 +11309,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-13",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
+					"items" : [ "organ1", ",", "organ18", ",", "organ2", ",", "organ3", ",", "test", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -11478,7 +11413,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 571.0, 177.0, 100.0, 22.0 ],
-					"restore" : [ "in(1)" ],
+					"restore" : [ "in(2)" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -11486,6 +11421,86 @@
 ,
 					"text" : "pattr inputs~",
 					"varname" : "inputs~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-16",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-22",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-24",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-26",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-28",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Cutoff Frequency"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-30",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Resonance"
 				}
 
 			}
@@ -11532,7 +11547,7 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-18::obj-16" : [ "vst", "vst", 0 ],
+			"obj-18::obj-39" : [ "vst", "vst", 0 ],
 			"parameterbanks" : 			{
 
 			}
@@ -11598,13 +11613,6 @@
 			}
 , 			{
 				"name" : "ll.in_mix.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../abstractions/ll.blues",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.mc.stereo_pan.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
