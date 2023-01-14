@@ -1,0 +1,191 @@
+{
+	"patcher" : 	{
+		"fileversion" : 1,
+		"appversion" : 		{
+			"major" : 8,
+			"minor" : 5,
+			"revision" : 2,
+			"architecture" : "x64",
+			"modernui" : 1
+		}
+,
+		"classnamespace" : "dsp.gen",
+		"rect" : [ 361.0, 104.0, 1285.0, 885.0 ],
+		"bglocked" : 0,
+		"openinpresentation" : 0,
+		"default_fontsize" : 12.0,
+		"default_fontface" : 0,
+		"default_fontname" : "Arial",
+		"gridonopen" : 1,
+		"gridsize" : [ 15.0, 15.0 ],
+		"gridsnaponopen" : 1,
+		"objectsnaponopen" : 1,
+		"statusbarvisible" : 2,
+		"toolbarvisible" : 1,
+		"lefttoolbarpinned" : 0,
+		"toptoolbarpinned" : 0,
+		"righttoolbarpinned" : 0,
+		"bottomtoolbarpinned" : 0,
+		"toolbars_unpinned_last_save" : 0,
+		"tallnewobj" : 0,
+		"boxanimatetime" : 200,
+		"enablehscroll" : 1,
+		"enablevscroll" : 1,
+		"devicewidth" : 0.0,
+		"description" : "",
+		"digest" : "",
+		"tags" : "",
+		"style" : "",
+		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
+		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1170.0, 834.0, 37.0, 22.0 ],
+					"text" : "out 3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 635.5, 834.0, 37.0, 22.0 ],
+					"text" : "out 2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1170.0, 14.0, 30.0, 22.0 ],
+					"text" : "in 4"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 813.666687000000024, 14.0, 30.0, 22.0 ],
+					"text" : "in 3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 101.0, 14.0, 30.0, 22.0 ],
+					"text" : "in 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 457.333344000000011, 14.0, 30.0, 22.0 ],
+					"text" : "in 2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"code" : "// op@ v3.04\n// 30.5.2020 by c. hausch \n// hausch@moozak.org\n// rampsmooth implementation by Mauricio Giri\n\ncalc(mode, a, b) {\n\tresult = 0;\n\n\tif (mode == 0) {\n\t\tresult = 0;\n\t}\telse if (mode == 1) {\n\t\tresult = a;\n\t}\telse if (mode == 2) {\n\t\tresult = b;\n\t} \telse if (mode == 3) {\n\t\tresult = a + b;\n\t} \telse if (mode == 4) {\n\t\tresult = a - b;\n\t}\telse if (mode == 5) {\n\t\tresult = a * b;\n\t}\telse if (mode == 6) {\n\t\tresult = a / b;\n\t}\telse if (mode == 7) {\n\t\tresult = a % b;\n\t}\telse if (mode == 8) {\n\t\tresult = absdiff(a, b);\n\t}\telse if (mode == 9) {\n\t\tresult = minimum(a, b);\n\t}\telse if (mode == 10) {\n\t\tresult = maximum(a, b);\n\t}\telse if (mode == 11) {\n\t\tresult = (a+b)/2;\n\t}\telse if (mode == 12) {\n\t\tresult = and(a, b);\n\t}\telse if (mode == 13) {\n\t\tresult = or(a, b);\n\t}\telse if (mode == 14) {\n\t\tresult = xor(a, b);\n\t}\telse if (mode == 15) {\n\t\tresult = not(a, b);\n\t}\telse if (mode == 16) {\n\t\tresult = a == b;\n\t}\telse if (mode == 17) {\n\t\tresult = a ==p b;\n\t}\telse if (mode == 18) {\n\t\tresult = a > b;\n\t}\telse if (mode == 19) {\n\t\tresult = a >= b;\n\t}\telse if (mode == 20) {\n\t\tresult = a >p b;\n\t}\telse if (mode == 21) {\n\t\tresult = a >=p b;\n\t}\telse if (mode == 22) {\n\t\tresult = a < b;\n\t}\telse if (mode == 23) {\n\t\tresult = a <= b;\n\t}\telse if (mode == 24) {\n\t\tresult = a <p b;\n\t}\telse if (mode == 25) {\n\t\tresult = a <=p b;\n\t}\telse if (mode == 26) {\n\t\tresult = sah(a, b, 0.5);\n\t}\n\treturn result;\n\t\n}\n\nscaleval(value, scaleInMin, scaleInMax, scaleOutMin, scaleOutMax, scaleExpVal, scaleSym, pRamp) {\n\tresult = 0;\n\tscaleInMin = rampsmooth(scaleInMin, pRamp, pRamp);\n\tscaleInMax = rampsmooth(scaleInMax, pRamp, pRamp);\n\tscaleOutMin = rampsmooth(scaleOutMin, pRamp, pRamp);\n\tscaleOutMax = rampsmooth(scaleOutMax, pRamp, pRamp);\n\tscaleExpVal = rampsmooth(scaleExpVal, pRamp, pRamp);\n\tif (scaleSym == 0) {\n\t\tresult = scale(value, scaleInMin, scaleInMax, scaleOutMin, scaleOutMax, scaleExpVal);\n\t} else if (scaleSym == 1) {\n\t\tinMid = scaleInMax - scaleInMin;\n \t\toutMid = scaleOutMax - scaleOutMin;\n\t\tif (value > 0) {\n\t\t\tresult = scale(value, inMid, scaleInMax, outMid, scaleOutMax, scaleExpVal);\n\t\t} else if (value < 0) {\n\t\t\tresult = -1 * scale(abs(value), inMid, abs(scaleInMin), outMid, abs(scaleOutMin), scaleExpVal);\n\t\t} else {\n\t\t\tresult = 0;\n\t\t}\n\t} else if (scaleSym == 2) {\n\t\tinMid = ((scaleInMax - scaleInMin)/2) + scaleInMin;\n \t\toutMid = ((scaleOutMax - scaleOutMin)/2) + scaleOutMin;\n\t\tif (value > inMid) {\n\t\t\tresult = scale(value, inMid, scaleInMax, outMid, scaleOutMax, scaleExpVal);\n\t\t} else if (value < inMid) {\n\t\t\tresult = -1 * scale(abs(value), inMid, abs(scaleInMin), outMid, abs(scaleOutMin), scaleExpVal);\n\t\t} else if (value == inMid) {\n\t\t\tresult = outMid;\n\t\t}\n\t}\n\treturn result;\n}\n\nclipval(value, clipMin, clipMax, clipMode, pRamp) {\n\tresult = 0;\n\tclipMin = rampsmooth(clipMin, pRamp, pRamp);\n\tclipMax = rampsmooth(clipMax, pRamp, pRamp);\n\tif (clipMode == 1) {\n\t\tresult = clip(value, clipMin, clipMax);\n\t} else if (clipMode == 2) {\n\t\tresult = wrap(value, clipMin, clipMax);\n\t} else if (clipMode == 3) {\n\t\tresult = fold(value, clipMin, clipMax);\n\t} else if (clipMode == 4) {\n\t\tpreClipScale = scale(value, -1, 1, 1/clipMin, 1/clipMax, 1);\n\t\tresult = scale(tanh(preClipScale), -1, 1, clipMin, clipMax, 1);\n\t}\n\treturn result;\n}\n\nrampsmooth(value, rampUp, rampDown) {\n\t// by Mauricio Giri\n\t// https://cycling74.com/forums/topic/rampsmooth-in-gen/\n\t\n\tHistory last(0.);\n\tHistory dirflag(0);\n\tHistory stepcounter(0);\n\tHistory increment(0.);\n\n\t// deltavar = 0; \n\t// non serve dichiararlo perché viene inizializzato nell'else\n\n\tinsig = value;\n\trampup = max(rampUp, 1);\n\trampdown = max(rampDown, 1);\n\toutsig = last;\n\n\t// se il delta è uguale a 0 e non ci sono modifiche ai tempi di rampsmooth \n\t// si procede con il precedente incremento\n\tif((delta(insig) == 0) && (delta(rampup)==0) && (delta(rampdown)==0)) {\n\t\tif (dirflag > 0) {\n\t\t\tif (stepcounter < rampup) {\n\t\t\t\toutsig += increment;\n\t\t\t\tstepcounter += 1;\n\t\t\t} else { outsig = insig; }\n\t\t} else if (stepcounter < rampdown) {\n\t\t\t\toutsig += increment;\n\t\t\t\tstepcounter += 1;\n\t\t} else { outsig = insig; }\n\t\t\t\n\t} \n\t// altrimenti si verifica se il segnale deve salire o scendere\n\t// e si incrementa opportunamente\n\t// outsig rappresenta l'uscita precedente\n\telse {\n\t\tdeltavar = insig - outsig;\n\t\tif (deltavar > 0) {\n\t\t\tincrement = deltavar / rampup;\n\t\t\toutsig += increment;\n\t\t\tstepcounter = 1;\n\t\t\tdirflag = 1;\n\t\t\n\t\t} else {\n\t\t\tincrement = deltavar / rampdown;\n\t\t\toutsig += increment;\n\t\t\tstepcounter = 1;\n\t\t\tdirflag = -1;\n\t\t}\n\t} \n\n\tlast = outsig;\n\treturn outsig;\n}\n\ninput(leftSig, rightSig, leftNum, rightNum, leftMode, rightMode, dcBlockPreA, dcBlockPreB, lAbsPlus, lAbsMinus, rAbsPlus, rAbsMinus) {\n\t\n\tleft = leftMode ? leftNum : (dcBlockPreA ? dcblock(leftSig) : leftSig);\n\tright = rightMode ? rightNum : (dcBlockPreB ? dcblock(rightSig) : rightSig);\n\n\tif (lAbsPlus == 0 && lAbsMinus == 0) {\n\t\tleft = left;\n\t} else if (lAbsPlus == 1) {\n\t\tleft = abs(left);\n\t} else if (lAbsMinus == 1) {\n\t\tleft = -abs(left);\n\t}\n\tif (rAbsPlus == 0 && rAbsMinus == 0) {\n\t\tright = right;\n\t} else if (rAbsPlus == 1) {\n\t\tright = abs(right);\n\t} else if (rAbsMinus == 1) {\n\t\tright = -abs(right);\n\t}\n\treturn left, right;\n}\n\n// parameters\n\nParam operator(0);\nParam leftMode(0);\nParam rightMode(0);\nParam switchOps(0);\nParam dcBlockPreA(0);\nParam dcBlockPreB(0);\nParam dcBlockPostOp(0);\nParam dcBlockPostScale(0);\nParam scaleMode(0);\nParam scaleInMin(-1);\nParam scaleInMax(1);\nParam scaleOutMin(-1);\nParam scaleOutMax(1);\nParam scaleExpVal(1);\nParam scaleSym(0);\nParam clipMode(0);\nParam clipMin(-1);\nParam clipMax(1);\nParam smoothMode(0);\nParam smoothUp(0);\nParam smoothDown(0);\nParam lAbsPlus(0);\nParam lAbsMinus(0);\nParam rAbsPlus(0);\nParam rAbsMinus(0);\nParam pRampMs(10);\n\n\n// processing\nleft, right = input(in1, in2, in3, in4, leftMode, rightMode, dcBlockPreA, dcBlockPreB, lAbsPlus, lAbsMinus, rAbsPlus, rAbsMinus);\n\na = switchOps ? right : left;\nb = switchOps ? left : right;\n\r\npRamp = mstosamps(pRampMs);\r\n\nresult = calc(operator, a, b);\nresultDcBlocked = dcBlockPostOp ? dcblock(result) : result;\nresultScaled = scaleMode ? scaleval(resultDcBlocked, scaleInMin, scaleInMax, scaleOutMin, scaleOutMax, scaleExpVal, scaleSym, pRamp) : resultDcBlocked;\nresultDcBlockedScaled = dcBlockPostScale ? dcblock(resultScaled) : resultScaled;\nresultClipped = clipMode ? clipval(resultDcBlockedScaled, clipMin, clipMax, clipMode, pRamp) : resultDcBlockedScaled;\nrampUp = rampsmooth(smoothUp, pRamp, pRamp);\nrampDown = rampsmooth(smoothDown, pRamp, pRamp);\nresultSmoothed = smoothMode ? rampsmooth(resultClipped, rampUp, rampDown) : resultClipped;\n\nout1 = resultSmoothed;\nout2 = leftMode ? 0 : left;\nout3 = rightMode ? 0 : right;",
+					"fontface" : 0,
+					"fontname" : "<Monospaced>",
+					"fontsize" : 12.0,
+					"id" : "obj-3",
+					"maxclass" : "codebox",
+					"numinlets" : 4,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 101.0, 60.0, 1088.0, 750.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 101.0, 834.0, 37.0, 22.0 ],
+					"text" : "out 1"
+				}
+
+			}
+ ],
+		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 1 ],
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"source" : [ "obj-3", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"source" : [ "obj-3", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 2 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 3 ],
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+ ],
+		"editing_bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ]
+	}
+
+}

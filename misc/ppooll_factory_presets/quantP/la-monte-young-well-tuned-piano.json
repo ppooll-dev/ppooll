@@ -1,0 +1,107 @@
+{
+	"pattrstorage" : 	{
+		"name" : "pat",
+		"slots" : 		{
+			"1000" : 			{
+				"id" : 1000,
+				"data" : 				{
+					"outputs~" : [ "no~-no-" ],
+					"inputs~" : [ "sync_in(1)", "chans(1)", "in(1)" ],
+					"1-denom" : [ 1 ],
+					"1-num" : [ 1 ],
+					"1-num-root" : [ 0 ],
+					"1-num-root-mult" : [ 2 ],
+					"1-switch" : [ 1 ],
+					"10-denom" : [ 4 ],
+					"10-num" : [ 7 ],
+					"10-num-root" : [ 0 ],
+					"10-num-root-mult" : [ 2 ],
+					"10-switch" : [ 1 ],
+					"11-denom" : [ 256 ],
+					"11-num" : [ 441 ],
+					"11-num-root" : [ 0 ],
+					"11-num-root-mult" : [ 2 ],
+					"11-switch" : [ 1 ],
+					"2-denom" : [ 512 ],
+					"2-num" : [ 567 ],
+					"2-num-root" : [ 0 ],
+					"2-num-root-mult" : [ 2 ],
+					"2-switch" : [ 1 ],
+					"3-denom" : [ 8 ],
+					"3-num" : [ 9 ],
+					"3-num-root" : [ 0 ],
+					"3-num-root-mult" : [ 2 ],
+					"3-switch" : [ 1 ],
+					"4-denom" : [ 128 ],
+					"4-num" : [ 147 ],
+					"4-num-root" : [ 0 ],
+					"4-num-root-mult" : [ 2 ],
+					"4-switch" : [ 1 ],
+					"5-denom" : [ 16 ],
+					"5-num" : [ 21 ],
+					"5-num-root" : [ 0 ],
+					"5-num-root-mult" : [ 2 ],
+					"5-switch" : [ 1 ],
+					"6-denom" : [ 1024 ],
+					"6-num" : [ 1323 ],
+					"6-num-root" : [ 0 ],
+					"6-num-root-mult" : [ 2 ],
+					"6-switch" : [ 1 ],
+					"7-denom" : [ 128 ],
+					"7-num" : [ 189 ],
+					"7-num-root" : [ 0 ],
+					"7-num-root-mult" : [ 2 ],
+					"7-switch" : [ 1 ],
+					"8-denom" : [ 2 ],
+					"8-num" : [ 3 ],
+					"8-num-root" : [ 0 ],
+					"8-num-root-mult" : [ 2 ],
+					"8-switch" : [ 1 ],
+					"9-denom" : [ 32 ],
+					"9-num" : [ 49 ],
+					"9-num-root" : [ 0 ],
+					"9-num-root-mult" : [ 2 ],
+					"9-switch" : [ 1 ],
+					"base" : [ 440.0 ],
+					"chans" : [ 1 ],
+					"def" : [ -1 ],
+					"exp" : [ 0 ],
+					"fix" : [ 1 ],
+					"map" : [ 1.0, 1.107421875, 1.125, 1.1484375, 1.3125, 1.2919921875, 1.4765625, 1.5, 1.53125, 1.75, 1.72265625, 1.96875 ],
+					"master" : [ 0 ],
+					"multi" : [ 1.0 ],
+					"notes" : [ 12 ],
+					"pres_menu" : [ "write" ],
+					"presets" : [ 0 ],
+					"rate" : [ 13.0 ],
+					"sort" : [ 1 ],
+					"syncto" : [ "sync-off" ],
+					"temp" : [ 1 ],
+					"tempo" : [ 1.0 ],
+					"tetris_menu" : [ "" ],
+					"title_menu" : [ "clientwindow" ],
+					"12-num-root" : [ 0 ],
+					"12-num-root-mult" : [ 2 ],
+					"12-denom" : [ 32 ],
+					"12-num" : [ 63 ],
+					"12-switch" : [ 1 ],
+					"act::active_store" : [ " " ]
+				}
+
+			}
+
+		}
+,
+		"clientstate" : 		{
+			"active" : 			{
+				"pres_menu" : 0,
+				"presets" : 0,
+				"tetris_menu" : 0,
+				"title_menu" : 0
+			}
+
+		}
+
+	}
+
+}

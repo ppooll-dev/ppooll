@@ -3,7 +3,7 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
+			"minor" : 5,
 			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
@@ -218,7 +218,9 @@
 					"active" : 					{
 						"title_menu" : 0,
 						"pres_menu" : 0,
-						"tetris_menu" : 0
+						"tetris_menu" : 0,
+						"master" : 0,
+						"act::active_store" : 0
 					}
 ,
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -239,10 +241,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 1048, 77, 1588, 786 ],
+						"client_rect" : [ 1176, 213, 1791, 873 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 430, 270, 1276, 999 ]
+						"storage_rect" : [ 200, 200, 800, 500 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -300,7 +302,7 @@
 					"restore" : 					{
 						"master" : [ 0 ],
 						"pres_menu" : [ "_" ],
-						"select" : [ "all" ],
+						"select" : [ "ppooll_basic" ],
 						"tetris_menu" : [ "" ],
 						"title_menu" : [ "subpatch" ]
 					}
@@ -412,7 +414,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
+							"minor" : 5,
 							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -459,7 +461,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 5,
 											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -814,7 +816,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 5,
 											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -854,12 +856,13 @@
 													"fontname" : "Verdana",
 													"fontsize" : 10.0,
 													"id" : "obj-1",
+													"linecount" : 3,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 162.5, 104.5, 248.0, 33.0 ],
-													"text" : "0 79"
+													"text" : "0 35 ll.mc.r~ ppooll_basic \"combined mc-signal & parameter receive plus spread & ramp functionality\""
 												}
 
 											}
@@ -924,12 +927,13 @@
 													"fontname" : "Verdana",
 													"fontsize" : 10.0,
 													"id" : "obj-53",
+													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 162.5, 174.5, 46.0, 33.0 ],
-													"text" : "ll.lsub"
+													"text" : "ll.mc.r~"
 												}
 
 											}
@@ -1094,7 +1098,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 5,
 											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -1685,7 +1689,7 @@
 , 							{
 								"box" : 								{
 									"coll_data" : 									{
-										"count" : 56,
+										"count" : 58,
 										"data" : [ 											{
 												"key" : "actmaker",
 												"value" : [ "ppooll_basic", "makes any patch part of the system" ]
@@ -1900,7 +1904,7 @@
 											}
 , 											{
 												"key" : "ll.sub",
-												"value" : [ "ppooll_advanced", "raplace an item of a list parameter" ]
+												"value" : [ "ppooll_advanced", "replace an item of a list parameter" ]
 											}
 , 											{
 												"key" : "ll.vlog",
@@ -1909,6 +1913,14 @@
 , 											{
 												"key" : "n",
 												"value" : [ "general_helpers", "shortcut for print" ]
+											}
+, 											{
+												"key" : "ll_mcwaveform",
+												"value" : [ "UIs", "multichannel enabled replacement for waveform~" ]
+											}
+, 											{
+												"key" : "ll.mc.r",
+												"value" : [ "ppooll_basic", "combined mc-signal & parameter receive plus spread & ramp functionality" ]
 											}
  ]
 									}
@@ -2000,7 +2012,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 5,
 											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -2409,6 +2421,20 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.actnamehelper.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.an.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.createact8.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
@@ -2500,8 +2526,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll_fastforward.mxo",
-				"type" : "iLaX"
+				"name" : "ll_fastforward.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/externals/filip",
+				"patcherrelativepath" : "../../externals/filip",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
 				"name" : "n.maxpat",

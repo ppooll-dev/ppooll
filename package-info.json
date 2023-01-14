@@ -1,6 +1,6 @@
 {
-	"author" : ["klaus filip, clemens hausch, noid, paulo raposo, léo dupleix, oliver stotz, boris hauf, gilles aubry, nicolaj kirisits, david michael, bill d, AntonioDellaMarina"],
-	"authors" : ["klaus filip", "clemens hausch", "noid", "paulo raposo","léo dupleix", "oliver stotz","boris hauf","gilles aubry","david michael","bill d","luc gross","AntonioDellaMarina","nicolaj kirisits" ],
+	"author" : ["klaus filip, c. hausch, noid, paulo raposo, léo dupleix, oliver stotz, boris hauf, gilles aubry, nicolaj kirisits, david michael, bill d, AntonioDellaMarina"],
+	"authors" : ["klaus filip", "c. hausch", "noid", "paulo raposo","léo dupleix", "oliver stotz","boris hauf","gilles aubry","david michael","bill d","luc gross","AntonioDellaMarina","nicolaj kirisits" ],
 	"description" : "a collection and system of interacting max patches designed to create an individual setup for live improvisation or installations. open to use with own patches and equipped with useful GUIs. ppooll comes as a basic package and is extensible.",
 	"displayname" : "",
 	"extends" : "",
@@ -27,7 +27,7 @@
 	}
 ,
 	"tags" : [ "audio", "instrument", "versatile",  ],
-	"version" : "8.1",
+	"version" : "8.5",
 	"website" : "http://ppooll.klingt.org",
 	"filelist" : 	{
 		"externals" : [ "ll_number","ll_fastforward", "ll_2dslider", "shell", "pattrexists", "xsample", "vbap"],

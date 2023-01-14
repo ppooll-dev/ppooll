@@ -103,7 +103,7 @@ function script_in_mix(){
 	//var llr = tp.getnamed("ll.r");
 	//if (llr.varname == "llr") post("rr");
 	if (!tp.getnamed("llr")){
- 		post("rr");
+ 		//post("rr");
 		var bits = tp.getnamed("bits");
 		var pmeter = tp.getnamed("pmeter");
 		var llr = tp.newdefault(120,50,"ll.in_mix");
@@ -219,7 +219,7 @@ function draw_lcd()
 	if(w<300){
 		a.message("moveto", lw/2-1, 10);
 		a.message("write", "i");
-		if (mix)a.message("paintrect", 1,13,lw+1,26, dr, dg, db);
+		if (mix%2)a.message("paintrect", 1,13,lw+1,26, dr, dg, db);
 		else a.message("paintrect", 1,13,lw,26, lr, lg, lb);
 		a.message("linesegment", 0,13,30,13, 0,0,0);
 		a.message("frgb", tr,tg,tb);
@@ -292,10 +292,10 @@ function smix()
 {
 	//tpp = this.patcher.parentpatcher;
 	draw_lcd();
-	act_1.hidden = 1-mix;
-	act_0.hidden = mix;
-	chan_1.hidden = 1-mix;
-	chan_0.hidden = mix;
+	act_1.hidden = 1-mix%2;
+	act_0.hidden = mix%2;
+	chan_1.hidden = 1-mix%2;
+	chan_0.hidden = mix%2;
 	}
 
 function script_signals(b,c)

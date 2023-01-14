@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 1,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 359.0, 331.0, 159.0, 113.0 ],
+		"rect" : [ 170.0, 237.0, 159.0, 102.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -164,7 +164,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 453.0, 450.0, 79.0, 22.0 ],
-					"restore" : [ 541, 360 ],
+					"restore" : [ 100, 600 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -186,7 +186,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 447.0, 486.0, 91.0, 22.0 ],
-					"restore" : [ "∆í Macintosh HD:/Library/Audio/Plug-Ins/Components/" ],
+					"restore" : [ "all" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -215,6 +215,7 @@
 			}
 , 			{
 				"box" : 				{
+					"args" : [ "@in_mix", 1, "@state", 2, 1, 0, 0, 2, 0 ],
 					"bgmode" : 0,
 					"border" : 1,
 					"clickthrough" : 0,
@@ -228,31 +229,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 61.0, 159.0, 53.0 ],
+					"patching_rect" : [ 0.0, 49.0, 159.0, 53.0 ],
 					"varname" : "ll.blues",
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"args" : [ "var", "@default", 4 ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-16",
-					"lockeddragscroll" : 0,
-					"lockedsize" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "ll.inputmix.maxpat",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "multichannelsignal", "multichannelsignal" ],
-					"patching_rect" : [ 0.0, 49.0, 160.0, 12.0 ],
-					"varname" : "ll.inputmix",
 					"viewvisibility" : 1
 				}
 
@@ -358,7 +336,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-6",
-					"items" : [ "def_folders", ",", "all", ",", "auto", ",", "-" ],
+					"items" : [ "def_folders", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/Components/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/IEM/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST3/", ",", "all", ",", "auto", ",", "-", ",", "+binaural.component", ",", "+morphfilter.component", ",", "+spectralcompand.component", ",", "+spectralgate.component", ",", "C3 Multi Band Compressor 1_2.component", ",", "Chip32.component", ",", "Elephant.component", ",", "elysia mpressor.component", ",", "iZInsightAUHook.component", ",", "iZMeterTapAUHook.component", ",", "iZRX5ConnectAUHook.component", ",", "iZRX5DeclickerAUHook.component", ",", "iZRX5DeclipperAUHook.component", ",", "iZRX5DecracklerAUHook.component", ",", "iZRX5DenoiserAUHook.component", ",", "iZRX5DereverbAUHook.component", ",", "iZRX5DialogueDenoiserAUHook.component", ",", "iZRX5HumRemovalAUHook.component", ",", "iZRX5MonitorAUHook.component", ",", "JACK-insert.component", ",", "Komplete Kontrol.component", ",", "Kontakt 7.component", ",", "MSED.component", ",", "NorthPole.component", ",", "NorthPole32.component", ",", "Replika.component", ",", "ROLI Studio Player.component", ",", "SideChainComp.component", ",", "WaveShell-AU 7.0.component", ",", "+binaural.vst", ",", "+morphfilter.vst", ",", "+spectralcompand.vst", ",", "+spectralgate.vst", ",", "C3 Multi Band Compressor 1_2.vst", ",", "Chip32.vst", ",", "ComboF.pdf", ",", "ComboF.vst", ",", "compass_binaural.vst", ",", "compass_decoder.vst", ",", "compass_sidechain.vst", ",", "compass_upmixer.vst", ",", "cropac_binaural.vst", ",", "DtBlkFx.vst", ",", "DtBlkFxS.vst", ",", "ExSlSilentWay.vst", ",", "IEM", ",", "iZotope Insight.vst", ",", "iZotope Meter Tap.vst", ",", "iZotope RX 5 Connect.vst", ",", "iZotope RX 5 De-click.vst", ",", "iZotope RX 5 De-clip.vst", ",", "iZotope RX 5 De-crackle.vst", ",", "iZotope RX 5 De-hum.vst", ",", "iZotope RX 5 De-noise.vst", ",", "iZotope RX 5 De-reverb.vst", ",", "iZotope RX 5 Dialogue De-noise.vst", ",", "iZotope RX 5 Monitor.vst", ",", "JACK-insert.vst", ",", "Komplete Kontrol.vst", ",", "NorthPole.dll", ",", "NorthPoleVST", ",", "PROSONIQ NorthPole RTAS Carbon", ",", "Replika.vst", ",", "ROLI Studio Player.vst", ",", "SideChainCompMn.vst", ",", "SideChainCompSt.vst", ",", "sparta_ambiBIN.vst", ",", "sparta_ambiDEC.vst", ",", "sparta_ambiDRC.vst", ",", "sparta_ambiENC.vst", ",", "sparta_array2sh.vst", ",", "sparta_beamformer.vst", ",", "sparta_binauraliser.vst", ",", "sparta_dirass.vst", ",", "sparta_matrixconv.vst", ",", "sparta_multiconv.vst", ",", "sparta_panner.vst", ",", "sparta_powermap.vst", ",", "sparta_rotator.vst", ",", "sparta_sldoa.vst", ",", "Synth1 Chris Preset Bank Vol 2", ",", "Synth1.vst", ",", "WaveShell-VST 7.0.vst", ",", "zr3.vst", ",", "AllRADecoder.vst", ",", "BinauralDecoder.vst", ",", "CoordinateConverter.vst", ",", "DirectionalCompressor.vst", ",", "DirectivityShaper.vst", ",", "DistanceCompensator.vst", ",", "DualDelay.vst", ",", "EnergyVisualizer.vst", ",", "FdnReverb.vst", ",", "MatrixMultiplier.vst", ",", "MultiBandCompressor.vst", ",", "MultiEncoder.vst", ",", "MultiEQ.vst", ",", "OmniCompressor.vst", ",", "ProbeDecoder.vst", ",", "RoomEncoder.vst", ",", "SceneRotator.vst", ",", "SimpleDecoder.vst", ",", "StereoEncoder.vst", ",", "ToolBox.vst", ",", "iZotope Insight.vst3", ",", "iZotope Meter Tap.vst3", ",", "iZotope RX 5 Connect.vst3", ",", "iZotope RX 5 De-click.vst3", ",", "iZotope RX 5 De-clip.vst3", ",", "iZotope RX 5 De-crackle.vst3", ",", "iZotope RX 5 De-hum.vst3", ",", "iZotope RX 5 De-noise.vst3", ",", "iZotope RX 5 De-reverb.vst3", ",", "iZotope RX 5 Dialogue De-noise.vst3", ",", "iZotope RX 5 Monitor.vst3", ",", "Komplete Kontrol.vst3", ",", "Kontakt 7.vst3" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -378,21 +356,20 @@
 					"hidden" : 1,
 					"id" : "obj-18",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "multichannelsignal" ],
+					"numinlets" : 0,
+					"numoutlets" : 0,
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 121.0, 535.0, 692.0, 359.0 ],
+						"rect" : [ 121.0, 535.0, 531.0, 343.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -422,13 +399,27 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-5",
-									"maxclass" : "message",
-									"numinlets" : 2,
+									"id" : "obj-15",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 118.0, 280.0, 68.0, 22.0 ],
+									"text" : "ll.pf ll.blues",
+									"varname" : "out"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-13",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 430.0, 80.0, 29.5, 22.0 ],
-									"text" : "test"
+									"patching_rect" : [ 118.0, 80.0, 66.0, 22.0 ],
+									"text" : "ll.r in_mix~",
+									"varname" : "in"
 								}
 
 							}
@@ -444,7 +435,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -480,6 +471,18 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-6",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 68.0, 58.0, 47.0, 22.0 ],
+													"text" : "zl nth 5"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-2",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
@@ -494,11 +497,11 @@
 												"box" : 												{
 													"id" : "obj-22",
 													"maxclass" : "newobj",
-													"numinlets" : 3,
-													"numoutlets" : 2,
-													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 68.0, 31.0, 119.0, 22.0 ],
-													"text" : "ll.p ll.inputmix::chans"
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 68.0, 8.0, 95.0, 22.0 ],
+													"text" : "ll.r ll.blues::state"
 												}
 
 											}
@@ -516,25 +519,13 @@
 											}
 , 											{
 												"box" : 												{
-													"id" : "obj-21",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 93.0, 60.0, 105.0, 22.0 ],
-													"text" : "ll.r ll.blues::state 1"
-												}
-
-											}
-, 											{
-												"box" : 												{
 													"id" : "obj-19",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 68.0, 121.0, 44.0, 22.0 ],
-													"text" : "pak i 2"
+													"patching_rect" : [ 68.0, 121.0, 50.0, 22.0 ],
+													"text" : "pack i 2"
 												}
 
 											}
@@ -668,14 +659,23 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-20", 0 ],
-													"source" : [ "obj-21", 0 ]
+													"order" : 0,
+													"source" : [ "obj-22", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-6", 0 ],
+													"order" : 1,
+													"source" : [ "obj-22", 0 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-19", 0 ],
-													"source" : [ "obj-22", 0 ]
+													"source" : [ "obj-6", 0 ]
 												}
 
 											}
@@ -726,7 +726,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1326,7 +1326,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1445,7 +1445,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 1,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1574,7 +1574,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 561.0, 317.0, 50.0, 22.0 ],
-																	"text" : "22"
+																	"text" : "11"
 																}
 
 															}
@@ -2972,7 +2972,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3042,7 +3042,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 537.0, 313.0, 54.0, 22.0 ],
-													"text" : "541 360"
+													"text" : "100 600"
 												}
 
 											}
@@ -3201,7 +3201,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 564.5, 119.0, 201.0, 22.0 ],
-													"text" : "541. 360. 976 690"
+													"text" : "0. 0. 500 200"
 												}
 
 											}
@@ -3589,7 +3589,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3717,7 +3717,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 1,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4033,7 +4033,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 1,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4079,7 +4079,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 1,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4194,7 +4194,7 @@
 																				"box" : 																				{
 																					"fontsize" : 13.0,
 																					"id" : "obj-9",
-																					"items" : [ "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AllRADecoder", ",", "BinauralDecoder", ",", "C3 Multi Band Compressor 1_2", ",", "Chip32", ",", "ComboF", ",", "compass_binaural", ",", "compass_decoder", ",", "compass_sidechain", ",", "compass_upmixer", ",", "CoordinateConverter", ",", "cropac_binaural", ",", "DirectionalCompressor", ",", "DirectivityShaper", ",", "DistanceCompensator", ",", "DtBlkFx", ",", "DtBlkFxS", ",", "DualDelay", ",", "EnergyVisualizer", ",", "ExSlSilentWay", ",", "FdnReverb", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "JACK-insert", ",", "MatrixMultiplier", ",", "MultiBandCompressor", ",", "MultiEncoder", ",", "MultiEQ", ",", "OmniCompressor", ",", "ProbeDecoder", ",", "Replika", ",", "ROLI Studio Player", ",", "RoomEncoder", ",", "SceneRotator", ",", "SideChainCompMn", ",", "SideChainCompSt", ",", "SimpleDecoder", ",", "sparta_ambiBIN", ",", "sparta_ambiDEC", ",", "sparta_ambiDRC", ",", "sparta_ambiENC", ",", "sparta_array2sh", ",", "sparta_beamformer", ",", "sparta_binauraliser", ",", "sparta_dirass", ",", "sparta_matrixconv", ",", "sparta_multiconv", ",", "sparta_panner", ",", "sparta_powermap", ",", "sparta_rotator", ",", "sparta_sldoa", ",", "StereoEncoder", ",", "Synth1", ",", "ToolBox", ",", "WaveShell-VST 7.0", ",", "zr3", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AllRADecoder", ",", "BinauralDecoder", ",", "C3 Multi Band Compressor 1_2", ",", "Chip32", ",", "ComboF", ",", "compass_binaural", ",", "compass_decoder", ",", "compass_sidechain", ",", "compass_upmixer", ",", "CoordinateConverter", ",", "cropac_binaural", ",", "DirectionalCompressor", ",", "DirectivityShaper", ",", "DistanceCompensator", ",", "DtBlkFx", ",", "DtBlkFxS", ",", "DualDelay", ",", "EnergyVisualizer", ",", "ExSlSilentWay", ",", "FdnReverb", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "JACK-insert", ",", "MatrixMultiplier", ",", "MultiBandCompressor", ",", "MultiEncoder", ",", "MultiEQ", ",", "OmniCompressor", ",", "ProbeDecoder", ",", "Replika", ",", "ROLI Studio Player", ",", "RoomEncoder", ",", "SceneRotator", ",", "SideChainCompMn", ",", "SideChainCompSt", ",", "SimpleDecoder", ",", "sparta_ambiBIN", ",", "sparta_ambiDEC", ",", "sparta_ambiDRC", ",", "sparta_ambiENC", ",", "sparta_array2sh", ",", "sparta_beamformer", ",", "sparta_binauraliser", ",", "sparta_dirass", ",", "sparta_matrixconv", ",", "sparta_multiconv", ",", "sparta_panner", ",", "sparta_powermap", ",", "sparta_rotator", ",", "sparta_sldoa", ",", "StereoEncoder", ",", "Synth1", ",", "ToolBox", ",", "WaveShell-VST 7.0", ",", "zr3", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AUAudioFilePlayer", ",", "AUBandpass", ",", "AUDelay", ",", "AUDistortion", ",", "AUDynamicsProcessor", ",", "AUFilter", ",", "AUGraphicEQ", ",", "AUHighShelfFilter", ",", "AUHipass", ",", "AULowpass", ",", "AULowShelfFilter", ",", "AUMatrixReverb", ",", "AUMIDISynth", ",", "AUMultibandCompressor", ",", "AUNBandEQ", ",", "AUNetReceive", ",", "AUNetSend", ",", "AUNewPitch", ",", "AUParametricEQ", ",", "AUPeakLimiter", ",", "AUPitch", ",", "AUReverb2", ",", "AURogerBeep", ",", "AURoundTripAAC", ",", "AUSampleDelay", ",", "AUSampler", ",", "AUScheduledSoundPlayer", ",", "AUSoundFieldPanner", ",", "AUSpeechSynthesis", ",", "AUSphericalHeadPanner", ",", "AUVectorPanner", ",", "DLSMusicDevice", ",", "Elephant", ",", "elysia mpressor", ",", "HRTFPanner", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "MSED", ",", "NorthPole", ",", "Replika", ",", "ROLI Studio Player", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AllRADecoder", ",", "BinauralDecoder", ",", "C3 Multi Band Compressor 1_2", ",", "Chip32", ",", "ComboF", ",", "compass_binaural", ",", "compass_decoder", ",", "compass_sidechain", ",", "compass_upmixer", ",", "CoordinateConverter", ",", "cropac_binaural", ",", "DirectionalCompressor", ",", "DirectivityShaper", ",", "DistanceCompensator", ",", "DtBlkFx", ",", "DtBlkFxS", ",", "DualDelay", ",", "EnergyVisualizer", ",", "ExSlSilentWay", ",", "FdnReverb", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "JACK-insert", ",", "MatrixMultiplier", ",", "MultiBandCompressor", ",", "MultiEncoder", ",", "MultiEQ", ",", "OmniCompressor", ",", "ProbeDecoder", ",", "Replika", ",", "ROLI Studio Player", ",", "RoomEncoder", ",", "SceneRotator", ",", "SideChainCompMn", ",", "SideChainCompSt", ",", "SimpleDecoder", ",", "sparta_ambiBIN", ",", "sparta_ambiDEC", ",", "sparta_ambiDRC", ",", "sparta_ambiENC", ",", "sparta_array2sh", ",", "sparta_beamformer", ",", "sparta_binauraliser", ",", "sparta_dirass", ",", "sparta_matrixconv", ",", "sparta_multiconv", ",", "sparta_panner", ",", "sparta_powermap", ",", "sparta_rotator", ",", "sparta_sldoa", ",", "StereoEncoder", ",", "Synth1", ",", "ToolBox", ",", "WaveShell-VST 7.0", ",", "zr3", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AUAudioFilePlayer", ",", "AUBandpass", ",", "AUDelay", ",", "AUDistortion", ",", "AUDynamicsProcessor", ",", "AUFilter", ",", "AUGraphicEQ", ",", "AUHighShelfFilter", ",", "AUHipass", ",", "AULowpass", ",", "AULowShelfFilter", ",", "AUMatrixReverb", ",", "AUMIDISynth", ",", "AUMultibandCompressor", ",", "AUNBandEQ", ",", "AUNetReceive", ",", "AUNetSend", ",", "AUNewPitch", ",", "AUParametricEQ", ",", "AUPeakLimiter", ",", "AUPitch", ",", "AUReverb2", ",", "AURogerBeep", ",", "AURoundTripAAC", ",", "AUSampleDelay", ",", "AUSampler", ",", "AUScheduledSoundPlayer", ",", "AUSoundFieldPanner", ",", "AUSpeechSynthesis", ",", "AUSphericalHeadPanner", ",", "AUVectorPanner", ",", "DLSMusicDevice", ",", "Elephant", ",", "elysia mpressor", ",", "HRTFPanner", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "MSED", ",", "NorthPole", ",", "Replika", ",", "ROLI Studio Player" ],
+																					"items" : [ "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AllRADecoder", ",", "BinauralDecoder", ",", "C3 Multi Band Compressor 1_2", ",", "Chip32", ",", "ComboF", ",", "compass_binaural", ",", "compass_decoder", ",", "compass_sidechain", ",", "compass_upmixer", ",", "CoordinateConverter", ",", "cropac_binaural", ",", "DirectionalCompressor", ",", "DirectivityShaper", ",", "DistanceCompensator", ",", "DtBlkFx", ",", "DtBlkFxS", ",", "DualDelay", ",", "EnergyVisualizer", ",", "ExSlSilentWay", ",", "FdnReverb", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "JACK-insert", ",", "MatrixMultiplier", ",", "MultiBandCompressor", ",", "MultiEncoder", ",", "MultiEQ", ",", "OmniCompressor", ",", "ProbeDecoder", ",", "Replika", ",", "ROLI Studio Player", ",", "RoomEncoder", ",", "SceneRotator", ",", "SideChainCompMn", ",", "SideChainCompSt", ",", "SimpleDecoder", ",", "sparta_ambiBIN", ",", "sparta_ambiDEC", ",", "sparta_ambiDRC", ",", "sparta_ambiENC", ",", "sparta_array2sh", ",", "sparta_beamformer", ",", "sparta_binauraliser", ",", "sparta_dirass", ",", "sparta_matrixconv", ",", "sparta_multiconv", ",", "sparta_panner", ",", "sparta_powermap", ",", "sparta_rotator", ",", "sparta_sldoa", ",", "StereoEncoder", ",", "Synth1", ",", "ToolBox", ",", "WaveShell-VST 7.0", ",", "zr3", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AllRADecoder", ",", "BinauralDecoder", ",", "C3 Multi Band Compressor 1_2", ",", "Chip32", ",", "ComboF", ",", "compass_binaural", ",", "compass_decoder", ",", "compass_sidechain", ",", "compass_upmixer", ",", "CoordinateConverter", ",", "cropac_binaural", ",", "DirectionalCompressor", ",", "DirectivityShaper", ",", "DistanceCompensator", ",", "DtBlkFx", ",", "DtBlkFxS", ",", "DualDelay", ",", "EnergyVisualizer", ",", "ExSlSilentWay", ",", "FdnReverb", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "JACK-insert", ",", "MatrixMultiplier", ",", "MultiBandCompressor", ",", "MultiEncoder", ",", "MultiEQ", ",", "OmniCompressor", ",", "ProbeDecoder", ",", "Replika", ",", "ROLI Studio Player", ",", "RoomEncoder", ",", "SceneRotator", ",", "SideChainCompMn", ",", "SideChainCompSt", ",", "SimpleDecoder", ",", "sparta_ambiBIN", ",", "sparta_ambiDEC", ",", "sparta_ambiDRC", ",", "sparta_ambiENC", ",", "sparta_array2sh", ",", "sparta_beamformer", ",", "sparta_binauraliser", ",", "sparta_dirass", ",", "sparta_matrixconv", ",", "sparta_multiconv", ",", "sparta_panner", ",", "sparta_powermap", ",", "sparta_rotator", ",", "sparta_sldoa", ",", "StereoEncoder", ",", "Synth1", ",", "ToolBox", ",", "WaveShell-VST 7.0", ",", "zr3", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AUAudioFilePlayer", ",", "AUBandpass", ",", "AUDelay", ",", "AUDistortion", ",", "AUDynamicsProcessor", ",", "AUFilter", ",", "AUGraphicEQ", ",", "AUHighShelfFilter", ",", "AUHipass", ",", "AULowpass", ",", "AULowShelfFilter", ",", "AUMatrixReverb", ",", "AUMIDISynth", ",", "AUMultibandCompressor", ",", "AUNBandEQ", ",", "AUNetReceive", ",", "AUNetSend", ",", "AUNewPitch", ",", "AUParametricEQ", ",", "AUPeakLimiter", ",", "AUPitch", ",", "AUReverb2", ",", "AURogerBeep", ",", "AURoundTripAAC", ",", "AUSampleDelay", ",", "AUSampler", ",", "AUScheduledSoundPlayer", ",", "AUSoundFieldPanner", ",", "AUSpeechSynthesis", ",", "AUSphericalHeadPanner", ",", "AUVectorPanner", ",", "DLSMusicDevice", ",", "Elephant", ",", "elysia mpressor", ",", "HRTFPanner", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "MSED", ",", "NorthPole", ",", "Replika", ",", "ROLI Studio Player", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AllRADecoder", ",", "BinauralDecoder", ",", "C3 Multi Band Compressor 1_2", ",", "Chip32", ",", "ComboF", ",", "compass_binaural", ",", "compass_decoder", ",", "compass_sidechain", ",", "compass_upmixer", ",", "CoordinateConverter", ",", "cropac_binaural", ",", "DirectionalCompressor", ",", "DirectivityShaper", ",", "DistanceCompensator", ",", "DtBlkFx", ",", "DtBlkFxS", ",", "DualDelay", ",", "EnergyVisualizer", ",", "ExSlSilentWay", ",", "FdnReverb", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "JACK-insert", ",", "MatrixMultiplier", ",", "MultiBandCompressor", ",", "MultiEncoder", ",", "MultiEQ", ",", "OmniCompressor", ",", "ProbeDecoder", ",", "Replika", ",", "ROLI Studio Player", ",", "RoomEncoder", ",", "SceneRotator", ",", "SideChainCompMn", ",", "SideChainCompSt", ",", "SimpleDecoder", ",", "sparta_ambiBIN", ",", "sparta_ambiDEC", ",", "sparta_ambiDRC", ",", "sparta_ambiENC", ",", "sparta_array2sh", ",", "sparta_beamformer", ",", "sparta_binauraliser", ",", "sparta_dirass", ",", "sparta_matrixconv", ",", "sparta_multiconv", ",", "sparta_panner", ",", "sparta_powermap", ",", "sparta_rotator", ",", "sparta_sldoa", ",", "StereoEncoder", ",", "Synth1", ",", "ToolBox", ",", "WaveShell-VST 7.0", ",", "zr3", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AUAudioFilePlayer", ",", "AUBandpass", ",", "AUDelay", ",", "AUDistortion", ",", "AUDynamicsProcessor", ",", "AUFilter", ",", "AUGraphicEQ", ",", "AUHighShelfFilter", ",", "AUHipass", ",", "AULowpass", ",", "AULowShelfFilter", ",", "AUMatrixReverb", ",", "AUMIDISynth", ",", "AUMultibandCompressor", ",", "AUNBandEQ", ",", "AUNetReceive", ",", "AUNetSend", ",", "AUNewPitch", ",", "AUParametricEQ", ",", "AUPeakLimiter", ",", "AUPitch", ",", "AUReverb2", ",", "AURogerBeep", ",", "AURoundTripAAC", ",", "AUSampleDelay", ",", "AUSampler", ",", "AUScheduledSoundPlayer", ",", "AUSoundFieldPanner", ",", "AUSpeechSynthesis", ",", "AUSphericalHeadPanner", ",", "AUVectorPanner", ",", "DLSMusicDevice", ",", "Elephant", ",", "elysia mpressor", ",", "HRTFPanner", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "MSED", ",", "NorthPole", ",", "Replika", ",", "ROLI Studio Player", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AllRADecoder", ",", "BinauralDecoder", ",", "C3 Multi Band Compressor 1_2", ",", "Chip32", ",", "ComboF", ",", "compass_binaural", ",", "compass_decoder", ",", "compass_sidechain", ",", "compass_upmixer", ",", "CoordinateConverter", ",", "cropac_binaural", ",", "DirectionalCompressor", ",", "DirectivityShaper", ",", "DistanceCompensator", ",", "DtBlkFx", ",", "DtBlkFxS", ",", "DualDelay", ",", "EnergyVisualizer", ",", "ExSlSilentWay", ",", "FdnReverb", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "JACK-insert", ",", "Komplete Kontrol", ",", "MatrixMultiplier", ",", "MultiBandCompressor", ",", "MultiEncoder", ",", "MultiEQ", ",", "OmniCompressor", ",", "ProbeDecoder", ",", "Replika", ",", "ROLI Studio Player", ",", "RoomEncoder", ",", "SceneRotator", ",", "SideChainCompMn", ",", "SideChainCompSt", ",", "SimpleDecoder", ",", "sparta_ambiBIN", ",", "sparta_ambiDEC", ",", "sparta_ambiDRC", ",", "sparta_ambiENC", ",", "sparta_array2sh", ",", "sparta_beamformer", ",", "sparta_binauraliser", ",", "sparta_dirass", ",", "sparta_matrixconv", ",", "sparta_multiconv", ",", "sparta_panner", ",", "sparta_powermap", ",", "sparta_rotator", ",", "sparta_sldoa", ",", "StereoEncoder", ",", "Synth1", ",", "ToolBox", ",", "WaveShell-VST 7.0", ",", "zr3", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "Komplete Kontrol", ",", "Kontakt 7", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AUAudioFilePlayer", ",", "AUBandpass", ",", "AUDelay", ",", "AUDistortion", ",", "AUDynamicsProcessor", ",", "AUFilter", ",", "AUGraphicEQ", ",", "AUHighShelfFilter", ",", "AUHipass", ",", "AULowpass", ",", "AULowShelfFilter", ",", "AUMatrixReverb", ",", "AUMIDISynth", ",", "AUMultibandCompressor", ",", "AUNBandEQ", ",", "AUNetReceive", ",", "AUNetSend", ",", "AUNewPitch", ",", "AUParametricEQ", ",", "AUPeakLimiter", ",", "AUPitch", ",", "AUReverb2", ",", "AURogerBeep", ",", "AURoundTripAAC", ",", "AUSampleDelay", ",", "AUSampler", ",", "AUScheduledSoundPlayer", ",", "AUSoundFieldPanner", ",", "AUSpeechSynthesis", ",", "AUSphericalHeadPanner", ",", "AUVectorPanner", ",", "DLSMusicDevice", ",", "Elephant", ",", "elysia mpressor", ",", "HRTFPanner", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "Komplete Kontrol", ",", "Kontakt 7", ",", "MSED", ",", "NorthPole", ",", "Replika", ",", "ROLI Studio Player", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AllRADecoder", ",", "BinauralDecoder", ",", "C3 Multi Band Compressor 1_2", ",", "Chip32", ",", "ComboF", ",", "compass_binaural", ",", "compass_decoder", ",", "compass_sidechain", ",", "compass_upmixer", ",", "CoordinateConverter", ",", "cropac_binaural", ",", "DirectionalCompressor", ",", "DirectivityShaper", ",", "DistanceCompensator", ",", "DtBlkFx", ",", "DtBlkFxS", ",", "DualDelay", ",", "EnergyVisualizer", ",", "ExSlSilentWay", ",", "FdnReverb", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "JACK-insert", ",", "Komplete Kontrol", ",", "MatrixMultiplier", ",", "MultiBandCompressor", ",", "MultiEncoder", ",", "MultiEQ", ",", "OmniCompressor", ",", "ProbeDecoder", ",", "Replika", ",", "ROLI Studio Player", ",", "RoomEncoder", ",", "SceneRotator", ",", "SideChainCompMn", ",", "SideChainCompSt", ",", "SimpleDecoder", ",", "sparta_ambiBIN", ",", "sparta_ambiDEC", ",", "sparta_ambiDRC", ",", "sparta_ambiENC", ",", "sparta_array2sh", ",", "sparta_beamformer", ",", "sparta_binauraliser", ",", "sparta_dirass", ",", "sparta_matrixconv", ",", "sparta_multiconv", ",", "sparta_panner", ",", "sparta_powermap", ",", "sparta_rotator", ",", "sparta_sldoa", ",", "StereoEncoder", ",", "Synth1", ",", "ToolBox", ",", "WaveShell-VST 7.0", ",", "zr3", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "Komplete Kontrol", ",", "Kontakt 7", ",", "+binaural", ",", "+morphfilter", ",", "+spectralcompand", ",", "+spectralgate", ",", "AUAudioFilePlayer", ",", "AUBandpass", ",", "AUDelay", ",", "AUDistortion", ",", "AUDynamicsProcessor", ",", "AUFilter", ",", "AUGraphicEQ", ",", "AUHighShelfFilter", ",", "AUHipass", ",", "AULowpass", ",", "AULowShelfFilter", ",", "AUMatrixReverb", ",", "AUMIDISynth", ",", "AUMultibandCompressor", ",", "AUNBandEQ", ",", "AUNetReceive", ",", "AUNetSend", ",", "AUNewPitch", ",", "AUParametricEQ", ",", "AUPeakLimiter", ",", "AUPitch", ",", "AUReverb2", ",", "AURogerBeep", ",", "AURoundTripAAC", ",", "AUSampleDelay", ",", "AUSampler", ",", "AUScheduledSoundPlayer", ",", "AUSoundFieldPanner", ",", "AUSpeechSynthesis", ",", "AUSphericalHeadPanner", ",", "AUVectorPanner", ",", "DLSMusicDevice", ",", "Elephant", ",", "elysia mpressor", ",", "HRTFPanner", ",", "iZotope Insight", ",", "iZotope Meter Tap", ",", "iZotope RX 5 Connect", ",", "iZotope RX 5 De-click", ",", "iZotope RX 5 De-clip", ",", "iZotope RX 5 De-crackle", ",", "iZotope RX 5 De-hum", ",", "iZotope RX 5 De-noise", ",", "iZotope RX 5 De-reverb", ",", "iZotope RX 5 Dialogue De-noise", ",", "iZotope RX 5 Monitor", ",", "Komplete Kontrol", ",", "Kontakt 7", ",", "MSED", ",", "NorthPole", ",", "Replika", ",", "ROLI Studio Player" ],
 																					"maxclass" : "umenu",
 																					"numinlets" : 1,
 																					"numoutlets" : 3,
@@ -4440,7 +4440,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 498.666687000000024, 98.693420000000003, 273.0, 23.0 ],
-																	"text" : "+binaural.component"
+																	"text" : "AUHipass"
 																}
 
 															}
@@ -4513,7 +4513,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 1,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4652,7 +4652,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 194.0, 96.0, 122.0, 22.0 ],
-																					"text" : "+binaural.component"
+																					"text" : "AUHipass"
 																				}
 
 																			}
@@ -4908,7 +4908,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 1,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -5239,7 +5239,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 1,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -5902,7 +5902,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 1,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -6296,7 +6296,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 1,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -6645,7 +6645,7 @@
 																						"appversion" : 																						{
 																							"major" : 8,
 																							"minor" : 5,
-																							"revision" : 1,
+																							"revision" : 2,
 																							"architecture" : "x64",
 																							"modernui" : 1
 																						}
@@ -8195,7 +8195,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 204.833313000000004, 126.0, 265.0, 22.0 ],
-													"text" : "+binaural.component"
+													"text" : "all"
 												}
 
 											}
@@ -8410,7 +8410,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -8775,7 +8775,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -8986,7 +8986,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 1,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -9268,7 +9268,7 @@
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "", "" ],
 																	"patching_rect" : [ 472.75, 387.0, 103.0, 22.0 ],
-																	"restore" : [ "fmrm" ],
+																	"restore" : [ "vst@" ],
 																	"saved_object_attributes" : 																	{
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
@@ -9354,12 +9354,13 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-5",
+																	"linecount" : 5,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 688.0, 233.0, 144.0, 35.0 ],
-																	"text" : "vst@1 fmrm1 ho_st1"
+																	"text" : "buffer_host1 noize@1 vst@1 ho_st1 spat.ambidecode@1 smpseq@1 _act_overview1"
 																}
 
 															}
@@ -10065,7 +10066,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 1,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -10928,40 +10929,13 @@
 							}
 , 							{
 								"box" : 								{
-									"comment" : "",
-									"id" : "obj-42",
-									"index" : 1,
-									"maxclass" : "inlet",
-									"numinlets" : 0,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 118.5, 28.0, 30.0, 30.0 ],
-									"varname" : "in"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"comment" : "",
-									"id" : "obj-46",
-									"index" : 1,
-									"maxclass" : "outlet",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 118.5, 226.0, 30.0, 30.0 ],
-									"varname" : "out"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"autosave" : 1,
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
 									"enablehscroll" : 0,
 									"enablevscroll" : 0,
-									"id" : "obj-3",
+									"id" : "obj-39",
 									"lockeddragscroll" : 0,
 									"lockedsize" : 0,
 									"maxclass" : "newobj",
@@ -10970,7 +10944,7 @@
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "multichannelsignal", "", "list", "int", "", "", "" ],
 									"patching_rect" : [ 118.0, 145.0, 279.0, 22.0 ],
-									"save" : [ "#N", "mcs.vst~", "loaduniqueid", 0, 4, 2, ";" ],
+									"save" : [ "#N", "mcs.vst~", "loaduniqueid", 0, 2, 2, ";" ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_invisible" : 1,
@@ -10986,7 +10960,7 @@
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "mcs.vst~ 4 2",
+									"text" : "mcs.vst~ 2 2",
 									"varname" : "vst",
 									"viewvisibility" : 0
 								}
@@ -11002,14 +10976,21 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
+									"destination" : [ "obj-39", 0 ],
 									"source" : [ "obj-12", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
+									"destination" : [ "obj-39", 0 ],
+									"source" : [ "obj-13", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-39", 0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -11023,8 +11004,15 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-15", 0 ],
+									"source" : [ "obj-39", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
-									"source" : [ "obj-3", 6 ]
+									"source" : [ "obj-39", 6 ]
 								}
 
 							}
@@ -11032,7 +11020,7 @@
 								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
 									"order" : 0,
-									"source" : [ "obj-3", 2 ]
+									"source" : [ "obj-39", 2 ]
 								}
 
 							}
@@ -11040,42 +11028,28 @@
 								"patchline" : 								{
 									"destination" : [ "obj-26", 0 ],
 									"order" : 1,
-									"source" : [ "obj-3", 2 ]
+									"source" : [ "obj-39", 2 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-26", 1 ],
-									"source" : [ "obj-3", 1 ]
+									"source" : [ "obj-39", 1 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
-									"source" : [ "obj-3", 4 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-46", 0 ],
-									"source" : [ "obj-3", 0 ]
+									"source" : [ "obj-39", 4 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-54", 0 ],
-									"source" : [ "obj-3", 5 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
-									"source" : [ "obj-42", 0 ]
+									"source" : [ "obj-39", 5 ]
 								}
 
 							}
@@ -11144,7 +11118,7 @@
 					"arrow" : 0,
 					"fontsize" : 9.0,
 					"id" : "obj-80",
-					"items" : [ "to Max 1", ",", "to Max 2" ],
+					"items" : [ "IAC Driver Bus 1", ",", "to Max 1", ",", "to Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -11181,11 +11155,13 @@
 						"title_menu" : 0,
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
+						"master" : 0,
 						"act" : 0,
-						"act::active_store" : 1,
-						"ll.blues::outputs" : 1,
-						"ll.blues::levels" : 1,
-						"ll.blues::state" : 1
+						"act::active_store" : 0,
+						"ll.blues" : 0,
+						"ll.blues::levels" : 0,
+						"ll.blues::outputs" : 0,
+						"ll.blues::state" : 0
 					}
 ,
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -11202,94 +11178,6 @@
 						"vst-folder" : 3,
 						"program_files" : 5,
 						"vst_program" : 6,
-						"Bypass" : 100,
-						"Input Ambisonic Order" : 100,
-						"N Channels" : 100,
-						"Room Size" : 100,
-						"angle" : 100,
-						"attack" : 100,
-						"signal" : 100,
-						"Input Normalization" : 101,
-						"Oversmp" : 101,
-						"Reverberation Time" : 101,
-						"invert" : 101,
-						"midi lfo tempo" : 101,
-						"pitchShift" : 101,
-						"Decoder Order" : 102,
-						"FFTSize" : 102,
-						"InGain" : 102,
-						"Lows Cutoff Frequency" : 102,
-						"keyinput" : 102,
-						"lfo divide" : 102,
-						"Export Decoder" : 103,
-						"Lows Q Factor" : 103,
-						"OutGain" : 103,
-						"OverSamp" : 103,
-						"filter number" : 103,
-						"learn" : 103,
-						"ratio" : 103,
-						"Export Layout" : 104,
-						"Lows Gain" : 104,
-						"RlsEnab" : 104,
-						"lfo speed" : 104,
-						"release" : 104,
-						"Ambisonic Weights" : 105,
-						"Highs Cutoff Frequency" : 105,
-						"Release" : 105,
-						"learnpeak" : 105,
-						"lfo position" : 105,
-						"makeupgain" : 105,
-						"DCEnabl" : 106,
-						"Highs Q Factor" : 106,
-						"gain" : 106,
-						"learnaverage" : 106,
-						"peaktrack" : 106,
-						"DCFreq" : 107,
-						"Highs Gain" : 107,
-						"point 1 value" : 107,
-						"reset" : 107,
-						"DCType" : 108,
-						"Dry/Wet" : 108,
-						"point 2 value" : 108,
-						"threshold" : 108,
-						"DithEnb" : 109,
-						"Fade-in Time" : 109,
-						"point 3 value" : 109,
-						"stereolink" : 109,
-						"DithBit" : 110,
-						"Fdn Size (internal)" : 110,
-						"point 4 value" : 110,
-						"tilt" : 110,
-						"DithTyp" : 111,
-						"logscale" : 111,
-						"point 5 value" : 111,
-						"type" : 111,
-						"DithShp" : 112,
-						"autogain" : 112,
-						"point 6 value" : 112,
-						"DithBln" : 113,
-						"point 7 value" : 113,
-						"Meterin" : 114,
-						"point 8 value" : 114,
-						"ChLink" : 115,
-						"point 1 time" : 115,
-						"point 2 time" : 115,
-						"Mode" : 116,
-						"point 3 time" : 116,
-						"ELAIGC" : 117,
-						"point 4 time" : 117,
-						"Knee" : 118,
-						"point 5 time" : 118,
-						"XTime" : 119,
-						"point 6 time" : 119,
-						"XForm" : 120,
-						"point 7 time" : 120,
-						"XShape" : 121,
-						"DRCType" : 122,
-						"point 8 time" : 122,
-						"Timing" : 123,
-						"RlsRto" : 124,
-						"RlsShp" : 125,
 						"midi-channel" : 900,
 						"midi-port" : 901,
 						"open!" : 910,
@@ -11299,19 +11187,15 @@
 						"pres_menu" : 2011,
 						"tetris_menu" : 2012,
 						"master" : 2013,
-						"ll.blues::levels" : 1000,
-						"ll.blues::state" : 1000,
-						"def_folder" : 1,
-						"def_shell" : 2,
-						"program_file" : 10,
-						"position" : 2000
+						"Cutoff Frequency" : 100,
+						"Resonance" : 101
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 499, 162, 1139, 402 ],
+						"client_rect" : [ 313, 472, 906, 1006 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 0, 0, 640, 240 ]
+						"storage_rect" : [ 200, 200, 800, 500 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -11367,104 +11251,18 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 456.0, 287.0, 107.0, 22.0 ],
 					"restore" : 					{
-						"Ambisonic Weights" : [ 0.0 ],
-						"Bypass" : [ 0.0 ],
-						"ChLink" : [ 1.0 ],
-						"DCEnabl" : [ 0.0 ],
-						"DCFreq" : [ 0.5 ],
-						"DCType" : [ 0.384615391492844 ],
-						"DRCType" : [ 0.5 ],
-						"Decoder Order" : [ 0.0 ],
-						"DithBit" : [ 0.5 ],
-						"DithBln" : [ 0.0 ],
-						"DithEnb" : [ 0.0 ],
-						"DithShp" : [ 0.5 ],
-						"DithTyp" : [ 1.0 ],
-						"Dry/Wet" : [ 0.0 ],
-						"ELAIGC" : [ 0.0 ],
-						"Export Decoder" : [ 0.0 ],
-						"Export Layout" : [ 0.0 ],
-						"FFTSize" : [ 0.600000023841858 ],
-						"Fade-in Time" : [ 0.0 ],
-						"Fdn Size (internal)" : [ 0.0 ],
-						"Highs Cutoff Frequency" : [ 0.0 ],
-						"Highs Gain" : [ 0.0 ],
-						"Highs Q Factor" : [ 0.0 ],
-						"InGain" : [ 0.111111111938953 ],
-						"Input Ambisonic Order" : [ 0.0 ],
-						"Input Normalization" : [ 0.0 ],
-						"Knee" : [ 0.200000002980232 ],
-						"Lows Cutoff Frequency" : [ 0.0 ],
-						"Lows Gain" : [ 0.0 ],
-						"Lows Q Factor" : [ 0.0 ],
-						"Meterin" : [ 0.0 ],
-						"Mode" : [ 0.636363625526428 ],
-						"N Channels" : [ 0.0 ],
-						"OutGain" : [ 0.833333313465118 ],
-						"OverSamp" : [ 0.25 ],
-						"Oversmp" : [ 0.25 ],
-						"Release" : [ 0.403694421052933 ],
-						"Reverberation Time" : [ 0.0 ],
-						"RlsEnab" : [ 0.0 ],
-						"RlsRto" : [ 0.688323259353638 ],
-						"RlsShp" : [ 0.666666686534882 ],
-						"Room Size" : [ 0.0 ],
-						"Timing" : [ 0.130434781312943 ],
-						"XForm" : [ 0.5 ],
-						"XShape" : [ 0.25 ],
-						"XTime" : [ 0.362930357456207 ],
-						"angle" : [ 0.5 ],
-						"attack" : [ 0.0 ],
-						"autogain" : [ 0.0 ],
-						"filter number" : [ 0.0 ],
-						"gain" : [ 0.0 ],
-						"invert" : [ 0.0 ],
-						"keyinput" : [ 0.0 ],
-						"learn" : [ 0.0 ],
-						"learnaverage" : [ 0.0 ],
-						"learnpeak" : [ 0.0 ],
-						"lfo divide" : [ 0.0 ],
-						"lfo position" : [ 0.0 ],
-						"lfo speed" : [ 0.5 ],
-						"logscale" : [ 0.0 ],
-						"makeupgain" : [ 0.556995749473572 ],
+						"Cutoff Frequency" : [ 0.049460992217064 ],
+						"Resonance" : [ 0.554250001907349 ],
 						"master" : [ 0 ],
-						"midi lfo tempo" : [ 0.0 ],
 						"midi-channel" : [ 0 ],
-						"midi-port" : [ "to Max 1" ],
-						"open!" : [ 1 ],
-						"peaktrack" : [ 0.0 ],
-						"pitchShift" : [ 0.333333343267441 ],
-						"point 1 time" : [ 0.0 ],
-						"point 1 value" : [ 0.0 ],
-						"point 2 time" : [ 0.142857149243355 ],
-						"point 2 value" : [ 0.142857149243355 ],
-						"point 3 time" : [ 0.28571429848671 ],
-						"point 3 value" : [ 0.28571429848671 ],
-						"point 4 time" : [ 0.428571432828903 ],
-						"point 4 value" : [ 0.428571432828903 ],
-						"point 5 time" : [ 0.571428596973419 ],
-						"point 5 value" : [ 0.571428596973419 ],
-						"point 6 time" : [ 0.714285731315613 ],
-						"point 6 value" : [ 0.714285731315613 ],
-						"point 7 time" : [ 0.857142865657806 ],
-						"point 7 value" : [ 0.857142865657806 ],
-						"point 8 time" : [ 1.0 ],
-						"point 8 value" : [ 1.0 ],
+						"midi-port" : [ "IAC Driver Bus 1" ],
+						"open!" : [ 0 ],
 						"pres_menu" : [ "_" ],
 						"preset-ramp" : [ 0.0 ],
 						"presets" : [ 2 ],
 						"program_files" : [ "write" ],
-						"ratio" : [ 0.5 ],
-						"release" : [ 0.0 ],
-						"reset" : [ 0.0 ],
-						"signal" : [ 0.0 ],
-						"stereolink" : [ 0.0 ],
 						"tetris_menu" : [ "" ],
-						"threshold" : [ 0.0 ],
-						"tilt" : [ 0.0 ],
 						"title_menu" : [ "subpatch" ],
-						"type" : [ 0.0 ],
 						"vst-folder" : [ "def_folders" ],
 						"vst_program" : [ 1 ]
 					}
@@ -11511,7 +11309,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-13",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
+					"items" : [ "organ1", ",", "organ18", ",", "organ2", ",", "organ3", ",", "test", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -11608,8 +11406,28 @@
 			}
 , 			{
 				"box" : 				{
+					"hidden" : 1,
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 571.0, 177.0, 100.0, 22.0 ],
+					"restore" : [ "in(2)" ],
+					"saved_object_attributes" : 					{
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
+					}
+,
+					"text" : "pattr inputs~",
+					"varname" : "inputs~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"format" : 6,
-					"id" : "obj-14",
+					"id" : "obj-16",
 					"maxclass" : "flonum",
 					"numinlets" : 1,
 					"numoutlets" : 2,
@@ -11667,7 +11485,8 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Cutoff Frequency"
 				}
 
 			}
@@ -11680,2208 +11499,8 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-32",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-34",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-36",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-38",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-40",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-43",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-45",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-47",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-50",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-52",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-54",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-56",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-58",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-60",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-62",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-64",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-66",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-68",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-70",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"hidden" : 1,
-					"id" : "obj-5",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 571.0, 177.0, 100.0, 22.0 ],
-					"restore" : [ "in(4)" ],
-					"saved_object_attributes" : 					{
-						"parameter_enable" : 0,
-						"parameter_mappable" : 0
-					}
-,
-					"text" : "pattr inputs~",
-					"varname" : "inputs~"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-23",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
 					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "signal"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-25",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-29",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-33",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-37",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-41",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-46",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-51",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-55",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-59",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-63",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-67",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-71",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-73",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Input Ambisonic Order"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-75",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Input Normalization"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-77",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Decoder Order"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-79",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Export Decoder"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-82",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Export Layout"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-84",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Ambisonic Weights"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-86",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-88",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-90",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-92",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-94",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-96",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-98",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-100",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-102",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-104",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-106",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-108",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Room Size"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-110",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Reverberation Time"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-112",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Lows Cutoff Frequency"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-114",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Lows Q Factor"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-118",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Lows Gain"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-120",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Highs Cutoff Frequency"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-122",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Highs Q Factor"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-124",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Highs Gain"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-126",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Dry/Wet"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-128",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Fade-in Time"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-130",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Fdn Size (internal)"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-132",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "N Channels"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-134",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "pitchShift"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-136",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "FFTSize"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-138",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "OverSamp"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-27",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-35",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-44",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-53",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-61",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-69",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-74",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-78",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-83",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-87",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-91",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-95",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-99",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-103",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-107",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-111",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "point 1 time"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-115",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-121",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-125",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-129",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-133",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-137",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-140",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "point 8 time"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-142",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-144",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-31",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Bypass"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-48",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Oversmp"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-65",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "InGain"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-76",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "OutGain"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-85",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "RlsEnab"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-93",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Release"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-101",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "DCEnabl"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-109",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "DCFreq"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-119",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "DCType"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-127",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "DithEnb"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-135",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "DithBit"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-141",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "DithTyp"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-145",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "DithShp"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-147",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "DithBln"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-149",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Meterin"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-151",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "ChLink"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-153",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Mode"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-155",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "ELAIGC"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-157",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Knee"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-159",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "XTime"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-161",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "XForm"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-163",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "XShape"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-165",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "DRCType"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-167",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Timing"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-169",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "RlsRto"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-171",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "RlsShp"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-173",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-175",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-177",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "keyinput"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-179",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "learn"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-181",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-183",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "makeupgain"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-185",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "peaktrack"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-187",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-189",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-191",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-193",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-195",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "type"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-197",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "autogain"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-199",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "attack"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-201",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "invert"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-203",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-205",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "ratio"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-207",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "release"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-209",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "learnpeak"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-211",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "learnaverage"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-213",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "reset"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-215",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "threshold"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-217",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "stereolink"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-219",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "tilt"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-221",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "logscale"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-223",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "angle"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-225",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "midi lfo tempo"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-227",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "lfo divide"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-229",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "filter number"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-231",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "lfo speed"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-233",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "lfo position"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-235",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "gain"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-237",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "point 1 value"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-239",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "point 2 value"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-241",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "point 3 value"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-243",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "point 4 value"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-245",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "point 5 value"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-247",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "point 6 value"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-249",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "point 7 value"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-251",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "point 8 value"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-253",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "point 2 time"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-255",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "point 3 time"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-257",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "point 4 time"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-259",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "point 5 time"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-261",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "point 6 time"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-263",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "point 7 time"
+					"varname" : "Resonance"
 				}
 
 			}
@@ -13891,14 +11510,6 @@
 					"destination" : [ "obj-6405", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-12", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"hidden" : 1,
-					"source" : [ "obj-18", 0 ]
 				}
 
 			}
@@ -13936,7 +11547,7 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-18::obj-3" : [ "vst", "vst", 0 ],
+			"obj-18::obj-39" : [ "vst", "vst", 0 ],
 			"parameterbanks" : 			{
 
 			}
@@ -14001,14 +11612,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.inputmix.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../abstractions/ll.blues",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.mc.stereo_pan.maxpat",
+				"name" : "ll.in_mix.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
@@ -14188,13 +11792,6 @@
 			}
 , 			{
 				"name" : "nblue.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ninput.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
