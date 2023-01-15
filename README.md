@@ -50,6 +50,7 @@ if yes, see if you can extend an existing act before creating a new one. check b
 <li>keep ui clean (look out for orphaned elements in the back)</li>
 <li>recommendation: group elements by color</li>
 <li>create tetris default layout</li>
+<li>incorporate ll.syncs to provide tempo syncing across ppooll (and external apps)</li>
 
 <h3>todo before committing a ppooll act:</h3>
 <li>include help file</li>
