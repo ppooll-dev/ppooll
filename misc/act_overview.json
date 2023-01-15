@@ -40,7 +40,8 @@
 		"13" : [ "elin", "elinsound@icloud.com" ],
 		"14" : [ "Joe Steccato", "steech914@gmail.com" ],
 		"15" : [ "bill d", "?" ],
-		"16" : [ "cycling'74", "?@?" ]
+		"16" : [ "cycling'74", "?@?" ],
+		"17" : [ "romain macagni", "?"]
 	}
 ,
 	"acts" : 	{
@@ -135,7 +136,7 @@
 		"pr.spectplay" : [ 6, "spectrum player", 9 ],
 		"prdelay@" : [ 6, "simple delay with feedback", 9 ],
 		"pulse@" : [ 3, "lfo pulse generator", 1, 4, 5 ],
-		"pulsegen" : [ 3, "pulse wave generator", 1, 4, 15 ],
+		"pulsegen" : [ 17, "pulse wave generator", 1, 4, 15 ],
 		"quant" : [ 3, "signal based frequency/rhythm quantizer", 9, 5 ],
 		"random0_1-" : [ 1, "simple ranomizer spitting 0 and 1", 4 ],
 		"random@" : [ 1, "randomize parameters", 4 ],
