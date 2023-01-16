@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 889.0, 109.0, 635.0, 934.0 ],
+		"rect" : [ 100.0, 100.0, 635.0, 934.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -48,8 +48,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 269.0, 301.0, 98.0, 33.0 ],
-					"text" : "master volume ramp time"
+					"patching_rect" : [ 284.763157894736878, 303.0, 84.236842105263122, 33.0 ],
+					"text" : "main volume ramp time"
 				}
 
 			}
@@ -64,7 +64,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 303.0, 371.0, 80.0, 48.0 ],
+					"patching_rect" : [ 305.0, 373.0, 69.0, 48.0 ],
 					"text" : "write environment"
 				}
 
@@ -79,7 +79,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 216.0, 371.0, 80.0, 48.0 ],
+					"patching_rect" : [ 222.0, 373.0, 69.0, 48.0 ],
 					"text" : "screen background"
 				}
 
@@ -92,7 +92,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 55.5, 345.0, 117.0, 22.0 ],
+					"patching_rect" : [ 57.5, 347.0, 117.0, 22.0 ],
 					"text" : "jitter main switch"
 				}
 
@@ -108,7 +108,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 149.5, 371.0, 63.0, 48.0 ],
+					"patching_rect" : [ 151.5, 373.0, 63.0, 48.0 ],
 					"text" : "menubar off/on"
 				}
 
@@ -123,7 +123,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 458.0, 367.0, 144.0, 33.0 ],
+					"patching_rect" : [ 460.0, 369.0, 144.0, 33.0 ],
 					"text" : "clock/stopwatch (click to open menu)"
 				}
 
@@ -134,11 +134,12 @@
 					"bubble" : 1,
 					"bubblepoint" : 0.0,
 					"id" : "obj-7",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 468.0, 310.0, 144.0, 22.0 ],
-					"text" : "stereo mixdown on/off"
+					"patching_rect" : [ 470.0, 312.0, 144.0, 33.0 ],
+					"text" : "stereo mixdown on/off\n(forces output to 1&2)"
 				}
 
 			}
@@ -151,7 +152,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 464.0, 276.0, 144.0, 22.0 ],
+					"patching_rect" : [ 466.0, 278.0, 144.0, 22.0 ],
 					"text" : "output channel count"
 				}
 
@@ -165,8 +166,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 370.0, 242.0, 206.0, 22.0 ],
-					"text" : "master volume number box"
+					"patching_rect" : [ 372.0, 244.0, 153.0, 22.0 ],
+					"text" : "main volume number box"
 				}
 
 			}
@@ -176,11 +177,12 @@
 					"bubble" : 1,
 					"bubblepoint" : 1.0,
 					"id" : "obj-9",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 475.0, 63.0, 148.0, 22.0 ],
-					"text" : "master volume slider"
+					"patching_rect" : [ 477.0, 65.0, 120.0, 33.0 ],
+					"text" : "master volume slider\n+ level meters"
 				}
 
 			}
@@ -192,7 +194,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 331.0, 163.0, 198.0, 22.0 ],
+					"patching_rect" : [ 333.0, 165.0, 198.0, 22.0 ],
 					"text" : "record soundfile into max-folder"
 				}
 
@@ -205,7 +207,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 331.0, 117.0, 128.0, 22.0 ],
+					"patching_rect" : [ 333.0, 119.0, 128.0, 22.0 ],
 					"text" : "audio main switch"
 				}
 
@@ -220,7 +222,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 312.0, 20.0, 90.0, 48.0 ],
+					"patching_rect" : [ 314.0, 22.0, 90.0, 48.0 ],
 					"text" : "opens define subwindow"
 				}
 
@@ -233,7 +235,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 220.0, 33.0, 72.0, 37.0 ],
+					"patching_rect" : [ 222.0, 35.0, 72.0, 37.0 ],
 					"text" : "title menu"
 				}
 
@@ -246,7 +248,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 48.5, 301.0, 131.0, 22.0 ],
+					"patching_rect" : [ 50.5, 303.0, 131.0, 22.0 ],
 					"text" : "enviroments menu"
 				}
 
@@ -259,7 +261,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 68.5, 258.0, 108.0, 22.0 ],
+					"patching_rect" : [ 70.5, 260.0, 108.0, 22.0 ],
 					"text" : "favorites menu"
 				}
 
@@ -272,7 +274,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 11.0, 208.0, 170.0, 22.0 ],
+					"patching_rect" : [ 29.0, 210.0, 154.0, 22.0 ],
 					"text" : "act menu (opens modules)"
 				}
 
@@ -285,7 +287,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 27.0, 163.0, 154.0, 22.0 ],
+					"patching_rect" : [ 41.0, 165.0, 142.0, 22.0 ],
 					"text" : "info (opens this window)"
 				}
 
@@ -298,7 +300,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 6.5, 111.0, 170.0, 22.0 ],
+					"patching_rect" : [ 28.5, 113.0, 150.0, 22.0 ],
 					"text" : "displays current cpu usage"
 				}
 
@@ -312,7 +314,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 44.0, 150.0, 22.0 ],
+					"patching_rect" : [ 50.5, 59.0, 125.0, 22.0 ],
 					"text" : "drag to move window"
 				}
 
@@ -326,7 +328,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "jit_matrix" ],
-					"patching_rect" : [ 96.760233918128677, 12.0, 454.005847953216346, 441.107954545454504 ],
+					"patching_rect" : [ 98.760233918128677, 14.0, 454.005847953216346, 441.107954545454504 ],
 					"pic" : "ho_st_info.png"
 				}
 
