@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 2,
+			"minor" : 3,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ -973.0, 540.0, 640.0, 480.0 ],
+		"rect" : [ 430.0, 378.0, 640.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -41,12 +41,12 @@
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-2",
-					"linecount" : 24,
+					"linecount" : 21,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 21.0, 11.0, 412.0, 342.0 ],
-					"text" : "matriarch@\n\nby joe steccato (steechubba)\n\n\n\"matrix on steroids\"\n\nan act for mixing and panning stereo pairs of audio\n\nreceive audio from another act into one of the Input Rows by selecting \"matriarch@1\" as act and \"in[X].1\"  \n(X should be the row number you want to route to)\n\nsend audio using the purple drop downs at the top\n\nthere are two \"view\" modes\n\nVolume & Panning\n\nyou can toggle between Vol/Pan using the orange/blue button labeled volume or pan\n\nor toggle between modes on the fly by clicking the act (so that is the active window) and press&hold \"t\"\n"
+					"patching_rect" : [ 21.0, 11.0, 412.0, 301.0 ],
+					"text" : "matriarch@\n\nby steech\n\nan act for mixing and panning stereo pairs of audio\n\nreceive audio by selecting an input \"row\"\n\nsend audio using the purple drop downs at the top of \"columns\"\n\nthere are two \"view\" modes\n\nVolume & Panning\n\nyou can toggle between Vol/Pan using the orange/blue button labeled volume or pan\n\nor toggle between modes on the fly by clicking the act (so that is the active window) and press&hold \"t\"\n\ncontrol vol/pan using list values (by \"row\" number)\n"
 				}
 
 			}
