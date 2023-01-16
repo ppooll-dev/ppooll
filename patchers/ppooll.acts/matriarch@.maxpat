@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 274.0, 333.0, 256.0, 166.0 ],
+		"rect" : [ 219.0, 112.0, 256.0, 166.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -86,7 +86,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 580.0, 547.0, 68.0, 22.0 ],
-					"restore" : [ "no~-no-", "no~-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-" ],
+					"restore" : [ "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -106,7 +106,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 580.0, 521.0, 66.0, 22.0 ],
-					"restore" : [ "no~-no-", "no~-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-" ],
+					"restore" : [ "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-", "no.-no-" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -15418,11 +15418,18 @@
 , 			{
 				"box" : 				{
 					"active" : 					{
+						"master" : 0,
+						"num_inputs" : 0,
+						"num_outputs" : 0,
 						"pres_menu" : 0,
 						"preset-ramp" : 0,
 						"presets" : 0,
 						"tetris_menu" : 0,
 						"title_menu" : 0,
+						"toggleVolPan" : 0,
+						"in_labels" : 0,
+						"out_L" : 0,
+						"out_R" : 0,
 						"act::active_store" : 1
 					}
 ,
@@ -15435,7 +15442,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 880.0, 42.0, 100.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 249, 525, 1327, 768 ],
+						"client_rect" : [ 387, 139, 1512, 814 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 0, 0, 640, 240 ]
