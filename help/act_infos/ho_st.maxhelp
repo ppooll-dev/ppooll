@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 464.0, 86.0, 652.0, 983.0 ],
+		"rect" : [ 107.0, 81.0, 652.0, 983.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -62,7 +62,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 25.0, 1125.0, 504.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "stereo mixdown. mixes multichannel outputs into a 2-channel stereo mix. overrides channel count number box."
 				}
 
@@ -77,7 +76,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 25.0, 1065.0, 234.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "(on the right, below main fader)\nadjust system for multichannel output"
 				}
 
@@ -318,8 +316,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 314.0, 22.0, 90.0, 48.0 ],
-					"text" : "opens define subwindow"
+					"patching_rect" : [ 314.0, 22.0, 105.0, 48.0 ],
+					"text" : "opens prefecences subwindow"
 				}
 
 			}
