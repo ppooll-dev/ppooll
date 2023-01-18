@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 805.0, 124.0, 636.0, 709.0 ],
+		"rect" : [ 234.0, 205.0, 636.0, 709.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -40,6 +40,26 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-40",
+					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "additional_info.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 48.0, 606.5, 243.0, 23.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontsize" : 13.0,
 					"id" : "obj-20",
 					"linecount" : 6,
@@ -47,7 +67,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 478.0, 434.0, 94.0 ],
-					"presentation_linecount" : 6,
 					"text" : "the channel count however is independant from your \"Input Device\".\nfor example, if your \"input Device\" is the built-in microphone with only 1 audio-input-channel, you still could use 4 channels in INmulti and route\nthe microphone into 4 different acts.\nif your \"Input Device\" is a soundcard with 8 inputs, you maybe only want to use 3 of them, etc.."
 				}
 
@@ -64,7 +83,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 62.0, 346.5, 424.0, 113.0 ],
-					"presentation_linecount" : 8,
 					"text" : "inputs_mapping\ndefine which audio-input number you want to receive.\nby default it is the same as the channel-number,\nbut you may want another audio input. \nyou also can receive the same audio-input into several channels.\nthe amount of possible audio inputs depends on your \"Input Device\""
 				}
 
@@ -93,7 +111,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 198.0, 246.5, 320.0, 40.0 ],
-					"presentation_linecount" : 2,
 					"text" : "opens an extra window for defining the output routing."
 				}
 
@@ -124,7 +141,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 101.0, 191.0, 233.0, 40.0 ],
-					"presentation_linecount" : 2,
 					"text" : "link all gain-sliders to the first one."
 				}
 
@@ -140,7 +156,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 62.0, 164.0, 298.0, 40.0 ],
-					"presentation_linecount" : 2,
 					"text" : "how many channels do you like to handle with."
 				}
 
@@ -154,7 +169,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 335.0, 113.0, 262.0, 36.0 ],
-					"presentation_linecount" : 4,
 					"text" : "- dsp(audio settings) from ho_st\n- or Options>Audio Status from Max Titlebar"
 				}
 
@@ -167,7 +181,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 42.0, 86.0, 434.0, 21.0 ],
-					"presentation_linecount" : 3,
 					"text" : "make sure you have your \"Input Device\" set in the \"Audio Status\" window."
 				}
 
@@ -379,6 +392,13 @@
  ],
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
+				"name" : "additional_info.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll_number.mxo",
 				"type" : "iLaX"
 			}
