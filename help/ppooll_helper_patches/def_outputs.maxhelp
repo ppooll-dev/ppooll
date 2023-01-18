@@ -645,7 +645,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 531.0, 679.5, 82.0, 20.0 ],
-					"restore" : [ "ho_st1~out.1", "_", "ho_st1~out.1", "_", "_", "_", "_", "_" ],
+					"restore" : [ "ho_st1~out.1", "_", "_", "_", "_", "_", "_", "_" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -815,7 +815,7 @@
 						"master" : [ 0 ],
 						"pres_menu" : [ "_" ],
 						"tetris_menu" : [ "" ],
-						"title_menu" : [ "clientwindow" ]
+						"title_menu" : [ "subpatch" ]
 					}
 ,
 					"text" : "autopattr autopattr",
