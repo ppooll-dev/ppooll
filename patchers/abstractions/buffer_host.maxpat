@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 308.0, 87.0, 119.0, 186.0 ],
+		"rect" : [ 436.0, 157.0, 119.0, 186.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -59,7 +59,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 35.0, 170.0, 27.5, 19.0 ],
-					"text" : "48.",
+					"text" : "44.1",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "sr-box"
 				}
@@ -139,7 +139,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 227.0, 167.0, 114.0, 22.0 ],
-					"restore" : [ "wei:/Users/klaus/Documents/Max 7/Library/ppooll/ll.samples/feedback-beat.aif" ],
+					"restore" : [ "Macintosh HD:/Users/klaus/Documents/Max 8/Packages/ppooll/media/ll.samples/3dem.aif" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -216,7 +216,7 @@
 					"fontsize" : 11.0,
 					"hint" : "soundfiles in the folder selected above - select to load it into a buffer",
 					"id" : "obj-60",
-					"items" : "<empty>",
+					"items" : [ "3dem.aif", ",", "apollo13.aif", ",", "artradioC.aiff", ",", "bass-harmonics.aif", ",", "bowed_floss.aif", ",", "cellodots.aif", ",", "claire_de_la_lune.aif", ",", "feedback-beat.aif", ",", "saturn.aiff" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -224,7 +224,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 0.0, 33.0, 118.0, 21.0 ],
 					"pattrmode" : 1,
-					"prefix" : "empty",
+					"prefix" : "~/Documents/Max 8/Packages/ppooll/media/ll.samples/",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "file_menu"
 				}
@@ -245,7 +245,7 @@
 					"fontsize" : 11.0,
 					"hint" : "soundfile folder(s)",
 					"id" : "obj-61",
-					"items" : [ "-", ",", "clear_selected", ",", "clear_all", ",", "add_folder" ],
+					"items" : [ "ll.samples/", ",", "msp/", ",", "rec/", ",", "Music/", ",", "-", ",", "clear_selected", ",", "clear_all", ",", "add_folder" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -402,7 +402,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 430.0, 356.0, 656.0, 413.0 ],
+						"rect" : [ 389.0, 524.0, 656.0, 413.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1686,7 +1686,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 667.0, 287.0, 539.0, 715.0 ],
+														"rect" : [ 687.0, 198.0, 539.0, 715.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 12.0,
@@ -1746,7 +1746,7 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 284.0, 494.0, 93.0, 22.0 ],
+																	"patching_rect" : [ 284.0, 470.0, 93.0, 22.0 ],
 																	"text" : "join @triggers 1"
 																}
 
@@ -1758,8 +1758,8 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 284.0, 527.0, 78.0, 22.0 ],
-																	"text" : "sprintf %s%s"
+																	"patching_rect" : [ 284.0, 503.0, 120.0, 22.0 ],
+																	"text" : "sprintf symout %s%s"
 																}
 
 															}
@@ -1770,7 +1770,7 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "" ],
-																	"patching_rect" : [ 358.0, 465.0, 47.0, 22.0 ],
+																	"patching_rect" : [ 358.0, 441.0, 47.0, 22.0 ],
 																	"text" : "zl nth 2"
 																}
 
@@ -1988,13 +1988,12 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-16",
-																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 143.0, 18.0, 222.0, 35.0 ],
-																	"text" : "wei:/Users/klaus/Music/mp3Players/staub_clicks/"
+																	"patching_rect" : [ 143.0, 18.0, 304.0, 22.0 ],
+																	"text" : "\"Macintosh HD:/Users/klaus/Music/3313/\""
 																}
 
 															}
@@ -2612,7 +2611,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 497.0, 517.0, 491.0, 406.0 ],
+										"rect" : [ 208.0, 633.0, 491.0, 406.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -4463,7 +4462,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 873.0, 151.0, 583.0, 531.0 ],
+														"rect" : [ 670.0, 178.0, 583.0, 531.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 12.0,
@@ -4498,7 +4497,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "bang" ],
-																	"patching_rect" : [ 273.0, 186.0, 85.0, 22.0 ],
+																	"patching_rect" : [ 297.5, 206.0, 85.0, 22.0 ],
 																	"saved_object_attributes" : 																	{
 																		"embed" : 0
 																	}
@@ -4516,7 +4515,7 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 398.0, 32.0, 37.0, 22.0 ],
+																	"patching_rect" : [ 450.0, 102.0, 37.0, 22.0 ],
 																	"text" : "clear"
 																}
 
@@ -4530,7 +4529,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
 																	"outlettype" : [ "", "", "", "" ],
-																	"patching_rect" : [ 395.0, 76.0, 91.0, 19.0 ],
+																	"patching_rect" : [ 450.0, 139.0, 91.0, 19.0 ],
 																	"saved_object_attributes" : 																	{
 																		"embed" : 0,
 																		"precision" : 6
@@ -4564,7 +4563,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 212.0, 13.0, 99.0, 22.0 ],
-																	"text" : "_"
+																	"text" : "test"
 																}
 
 															}
@@ -4590,7 +4589,7 @@
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 30.0, 203.0, 117.0, 22.0 ],
+																	"patching_rect" : [ 67.0, 206.0, 117.0, 22.0 ],
 																	"text" : "s update_buffer_list"
 																}
 
@@ -4618,7 +4617,7 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 362.0, 113.0, 29.5, 19.0 ],
+																	"patching_rect" : [ 353.0, 108.0, 29.5, 19.0 ],
 																	"text" : "clear"
 																}
 
@@ -4632,7 +4631,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
 																	"outlettype" : [ "", "", "", "" ],
-																	"patching_rect" : [ 362.0, 135.0, 92.0, 19.0 ],
+																	"patching_rect" : [ 418.0, 206.0, 92.0, 19.0 ],
 																	"saved_object_attributes" : 																	{
 																		"embed" : 0,
 																		"precision" : 6
@@ -5492,7 +5491,7 @@
 					"patching_rect" : [ -1.0, 51.0, 120.0, 93.0 ],
 					"precision" : 4,
 					"rowheight" : 15,
-					"rows" : 2,
+					"rows" : 7,
 					"sccolor" : [ 0.321569, 0.184314, 0.454902, 1.0 ],
 					"sgcolor" : [ 0.082353, 0.25098, 0.431373, 1.0 ],
 					"stcolor" : [ 0.286275, 0.286275, 0.890196, 1.0 ],
@@ -5506,6 +5505,7 @@
 						"title_menu" : 0,
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
+						"master" : 0,
 						"act::active_store" : 1
 					}
 ,
@@ -5527,10 +5527,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 842, 164, 1920, 407 ],
+						"client_rect" : [ 545, 133, 1800, 849 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 0, 0, 640, 240 ]
+						"storage_rect" : [ 583, 68, 1034, 196 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -5586,17 +5586,17 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 468.0, 210.0, 107.0, 22.0 ],
 					"restore" : 					{
-						"action_menu" : [ "samplebuffers" ],
-						"channels" : [ 1 ],
+						"action_menu" : [ "clearall" ],
+						"channels" : [ 2 ],
 						"f" : [ -1 ],
 						"ff" : [ -1 ],
-						"file_menu" : [ "" ],
-						"folder_menu" : [ "" ],
+						"file_menu" : [ "3dem.aif" ],
+						"folder_menu" : [ "ll.samples/" ],
 						"master" : [ 0 ],
 						"normalize" : [ -1 ],
 						"open!" : [ -1 ],
-						"pres_menu" : [ "_" ],
-						"size-box" : [ 2000.0 ],
+						"pres_menu" : [ "test" ],
+						"size-box" : [ 502506.666666999983136 ],
 						"tetris_menu" : [ "" ],
 						"title_menu" : [ "titlebar" ]
 					}
@@ -5643,7 +5643,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-22",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_", ",", "-", ",", "ƒ", "factorybank" ],
+					"items" : [ "3313", ",", "musiq_casque", ",", "sr_tester", ",", "test", ",", "test2", ",", "test_new", ",", "testpb", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_", ",", "-", ",", "ƒ", "factorybank" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -5933,9 +5933,9 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ppooll_preferences",
-				"bootpath" : "~/Documents/Max 8/Library/ppooll_presets",
-				"patcherrelativepath" : "../../../../Library/ppooll_presets",
+				"name" : "test",
+				"bootpath" : "~/Documents/Max 8/Library/ppooll_presets/buffer_hostP",
+				"patcherrelativepath" : "../../../../Library/ppooll_presets/buffer_hostP",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
