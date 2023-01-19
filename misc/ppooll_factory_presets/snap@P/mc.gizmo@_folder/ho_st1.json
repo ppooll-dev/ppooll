@@ -1,0 +1,353 @@
+{
+	"pattrstorage" : 	{
+		"name" : "pat",
+		"slots" : 		{
+			"1001" : 			{
+				"id" : 1001,
+				"data" : 				{
+					"act_menu" : [ "snap@" ],
+					"audioON/OFF" : [ 0 ],
+					"chans" : [ 2 ],
+					"def" : [ -1 ],
+					"envi_menu" : [ "mc.gizmo_tutorial.json" ],
+					"favorites" : [ "modul.ator" ],
+					"jit.on" : [ 0 ],
+					"master" : [ "we" ],
+					"menubar" : [ 0 ],
+					"ppooll" : [ -1 ],
+					"pres_menu" : [ "_" ],
+					"rec" : [ 0 ],
+					"screen" : [ 1 ],
+					"stereo" : [ 0 ],
+					"tetris_menu" : [ "" ],
+					"title_menu" : [ "closeall" ],
+					"vol" : [ 1.0 ],
+					"vol_ramp" : [ 10 ],
+					"vol_slider" : [ 1.0 ],
+					"watch_menu" : [ "time" ],
+					"write_envi" : [  ],
+					"osc_port" : [ 7400 ],
+					"ll.dims" : [ 0 ],
+					"pfl_act_menu" : [ "no" ],
+					"pfl_par_menu" : [ "-no-" ],
+					"params_only" : [ 0 ],
+					"inputs~" : [ "out(2)" ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+,
+			"1002" : 			{
+				"id" : 1002,
+				"data" : 				{
+					"act_menu" : [ "snap@" ],
+					"audioON/OFF" : [ 1 ],
+					"chans" : [ 2 ],
+					"def" : [ -1 ],
+					"envi_menu" : [ "mc.gizmo_tutorial.json" ],
+					"favorites" : [ "modul.ator" ],
+					"jit.on" : [ 0 ],
+					"master" : [ "we" ],
+					"menubar" : [ 0 ],
+					"ppooll" : [ -1 ],
+					"pres_menu" : [ "_" ],
+					"rec" : [ 0 ],
+					"screen" : [ 1 ],
+					"stereo" : [ 0 ],
+					"tetris_menu" : [ "" ],
+					"title_menu" : [ "closeall" ],
+					"vol" : [ 1.0 ],
+					"vol_ramp" : [ 10 ],
+					"vol_slider" : [ 1.0 ],
+					"watch_menu" : [ "time" ],
+					"write_envi" : [  ],
+					"osc_port" : [ 7400 ],
+					"ll.dims" : [ 0 ],
+					"pfl_act_menu" : [ "no" ],
+					"pfl_par_menu" : [ "-no-" ],
+					"params_only" : [ 0 ],
+					"inputs~" : [ "out(2)" ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+,
+			"1003" : 			{
+				"id" : 1003,
+				"data" : 				{
+					"act_menu" : [ "snap@" ],
+					"audioON/OFF" : [ 1 ],
+					"chans" : [ 2 ],
+					"def" : [ -1 ],
+					"envi_menu" : [ "mc.gizmo_tutorial.json" ],
+					"favorites" : [ "modul.ator" ],
+					"jit.on" : [ 0 ],
+					"master" : [ "we" ],
+					"menubar" : [ 0 ],
+					"ppooll" : [ -1 ],
+					"pres_menu" : [ "_" ],
+					"rec" : [ 0 ],
+					"screen" : [ 1 ],
+					"stereo" : [ 0 ],
+					"tetris_menu" : [ "" ],
+					"title_menu" : [ "closeall" ],
+					"vol" : [ 1.0 ],
+					"vol_ramp" : [ 10 ],
+					"vol_slider" : [ 1.0 ],
+					"watch_menu" : [ "time" ],
+					"write_envi" : [  ],
+					"osc_port" : [ 7400 ],
+					"ll.dims" : [ 0 ],
+					"pfl_act_menu" : [ "no" ],
+					"pfl_par_menu" : [ "-no-" ],
+					"params_only" : [ 0 ],
+					"inputs~" : [ "out(2)" ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+,
+			"1004" : 			{
+				"id" : 1004,
+				"data" : 				{
+					"act_menu" : [ "snap@" ],
+					"audioON/OFF" : [ 1 ],
+					"chans" : [ 2 ],
+					"def" : [ -1 ],
+					"envi_menu" : [ "mc.gizmo_tutorial.json" ],
+					"favorites" : [ "modul.ator" ],
+					"jit.on" : [ 0 ],
+					"master" : [ "we" ],
+					"menubar" : [ 0 ],
+					"ppooll" : [ -1 ],
+					"pres_menu" : [ "_" ],
+					"rec" : [ 0 ],
+					"screen" : [ 1 ],
+					"stereo" : [ 0 ],
+					"tetris_menu" : [ "" ],
+					"title_menu" : [ "closeall" ],
+					"vol" : [ 1.0 ],
+					"vol_ramp" : [ 10 ],
+					"vol_slider" : [ 1.0 ],
+					"watch_menu" : [ "time" ],
+					"write_envi" : [  ],
+					"osc_port" : [ 7400 ],
+					"ll.dims" : [ 0 ],
+					"pfl_act_menu" : [ "no" ],
+					"pfl_par_menu" : [ "-no-" ],
+					"params_only" : [ 0 ],
+					"inputs~" : [ "out(2)" ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+,
+			"1005" : 			{
+				"id" : 1005,
+				"data" : 				{
+					"act_menu" : [ "snap@" ],
+					"audioON/OFF" : [ 1 ],
+					"chans" : [ 8 ],
+					"def" : [ -1 ],
+					"envi_menu" : [ "mc.gizmo_tutorial.json" ],
+					"favorites" : [ "modul.ator" ],
+					"jit.on" : [ 0 ],
+					"master" : [ "we" ],
+					"menubar" : [ 0 ],
+					"ppooll" : [ -1 ],
+					"pres_menu" : [ "_" ],
+					"rec" : [ 0 ],
+					"screen" : [ 1 ],
+					"stereo" : [ 0 ],
+					"tetris_menu" : [ "" ],
+					"title_menu" : [ "closeall" ],
+					"vol" : [ 1.0 ],
+					"vol_ramp" : [ 10 ],
+					"vol_slider" : [ 1.0 ],
+					"watch_menu" : [ "time" ],
+					"write_envi" : [  ],
+					"osc_port" : [ 7400 ],
+					"ll.dims" : [ 0 ],
+					"pfl_act_menu" : [ "no" ],
+					"pfl_par_menu" : [ "-no-" ],
+					"params_only" : [ 0 ],
+					"inputs~" : [ "out(8)" ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+,
+			"1006" : 			{
+				"id" : 1006,
+				"data" : 				{
+					"act_menu" : [ "snap@" ],
+					"audioON/OFF" : [ 1 ],
+					"chans" : [ 8 ],
+					"def" : [ -1 ],
+					"envi_menu" : [ "mc.gizmo_tutorial.json" ],
+					"favorites" : [ "modul.ator" ],
+					"jit.on" : [ 0 ],
+					"master" : [ "we" ],
+					"menubar" : [ 0 ],
+					"ppooll" : [ -1 ],
+					"pres_menu" : [ "_" ],
+					"rec" : [ 0 ],
+					"screen" : [ 1 ],
+					"stereo" : [ 1 ],
+					"tetris_menu" : [ "" ],
+					"title_menu" : [ "clientwindow" ],
+					"vol" : [ 1.0 ],
+					"vol_ramp" : [ 10 ],
+					"vol_slider" : [ 1.0 ],
+					"watch_menu" : [ "time" ],
+					"write_envi" : [  ],
+					"osc_port" : [ 7400 ],
+					"ll.dims" : [ 0 ],
+					"pfl_act_menu" : [ "no" ],
+					"pfl_par_menu" : [ "-no-" ],
+					"params_only" : [ 0 ],
+					"inputs~" : [ "out(8)" ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+,
+			"1009" : 			{
+				"id" : 1009,
+				"data" : 				{
+					"act_menu" : [ "snap@" ],
+					"audioON/OFF" : [ 1 ],
+					"chans" : [ 8 ],
+					"def" : [ -1 ],
+					"envi_menu" : [ "mc.gizmo_tutorial.json" ],
+					"favorites" : [ "modul.ator" ],
+					"jit.on" : [ 0 ],
+					"master" : [ "we" ],
+					"menubar" : [ 0 ],
+					"ppooll" : [ -1 ],
+					"pres_menu" : [ "_" ],
+					"rec" : [ 0 ],
+					"screen" : [ 1 ],
+					"stereo" : [ 1 ],
+					"tetris_menu" : [ "" ],
+					"title_menu" : [ "clientwindow" ],
+					"vol" : [ 1.0 ],
+					"vol_ramp" : [ 10 ],
+					"vol_slider" : [ 1.0 ],
+					"watch_menu" : [ "time" ],
+					"write_envi" : [  ],
+					"osc_port" : [ 7400 ],
+					"ll.dims" : [ 0 ],
+					"pfl_act_menu" : [ "no" ],
+					"pfl_par_menu" : [ "-no-" ],
+					"params_only" : [ 0 ],
+					"inputs~" : [ "out(8)" ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+,
+			"1010" : 			{
+				"id" : 1010,
+				"data" : 				{
+					"act_menu" : [ "snap@" ],
+					"audioON/OFF" : [ 1 ],
+					"chans" : [ 8 ],
+					"def" : [ -1 ],
+					"envi_menu" : [ "mc.gizmo_tutorial.json" ],
+					"favorites" : [ "modul.ator" ],
+					"jit.on" : [ 0 ],
+					"master" : [ "we" ],
+					"menubar" : [ 0 ],
+					"ppooll" : [ -1 ],
+					"pres_menu" : [ "_" ],
+					"rec" : [ 0 ],
+					"screen" : [ 1 ],
+					"stereo" : [ 1 ],
+					"tetris_menu" : [ "" ],
+					"title_menu" : [ "clientwindow" ],
+					"vol" : [ 1.0 ],
+					"vol_ramp" : [ 10 ],
+					"vol_slider" : [ 1.0 ],
+					"watch_menu" : [ "time" ],
+					"write_envi" : [  ],
+					"osc_port" : [ 7400 ],
+					"ll.dims" : [ 0 ],
+					"pfl_act_menu" : [ "no" ],
+					"pfl_par_menu" : [ "-no-" ],
+					"params_only" : [ 0 ],
+					"inputs~" : [ "out(8)" ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+,
+			"1011" : 			{
+				"id" : 1011,
+				"data" : 				{
+					"act_menu" : [ "snap@" ],
+					"audioON/OFF" : [ 1 ],
+					"chans" : [ 8 ],
+					"def" : [ -1 ],
+					"envi_menu" : [ "mc.gizmo_tutorial.json" ],
+					"favorites" : [ "modul.ator" ],
+					"jit.on" : [ 0 ],
+					"master" : [ "we" ],
+					"menubar" : [ 0 ],
+					"ppooll" : [ -1 ],
+					"pres_menu" : [ "_" ],
+					"rec" : [ 0 ],
+					"screen" : [ 1 ],
+					"stereo" : [ 1 ],
+					"tetris_menu" : [ "" ],
+					"title_menu" : [ "clientwindow" ],
+					"vol" : [ 1.0 ],
+					"vol_ramp" : [ 10 ],
+					"vol_slider" : [ 1.0 ],
+					"watch_menu" : [ "time" ],
+					"write_envi" : [  ],
+					"osc_port" : [ 7400 ],
+					"ll.dims" : [ 0 ],
+					"pfl_act_menu" : [ "no" ],
+					"pfl_par_menu" : [ "-no-" ],
+					"params_only" : [ 0 ],
+					"inputs~" : [ "out(8)" ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+
+		}
+,
+		"clientstate" : 		{
+			"active" : 			{
+				"act_menu" : 0,
+				"def" : 0,
+				"envi_menu" : 0,
+				"favorites" : 0,
+				"jit.on" : 0,
+				"master" : 0,
+				"menubar" : 0,
+				"ppooll" : 0,
+				"pres_menu" : 0,
+				"rec" : 0,
+				"screen" : 0,
+				"tetris_menu" : 0,
+				"title_menu" : 0,
+				"vol_slider" : 0,
+				"watch_menu" : 0,
+				"osc_port" : 0,
+				"ll.dims" : 0,
+				"pfl_act_menu" : 0,
+				"pfl_par_menu" : 0,
+				"params_only" : 0,
+				"inputs~" : 0,
+				"act" : 0,
+				"act::active_store" : 0
+			}
+
+		}
+
+	}
+
+}

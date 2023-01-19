@@ -1,0 +1,222 @@
+{
+	"pattrstorage" : 	{
+		"name" : "pat",
+		"slots" : 		{
+			"1001" : 			{
+				"id" : 1001,
+				"data" : 				{
+					"inputs~" : [ "in(1)" ],
+					"1st2all" : [ 0 ],
+					"preset-ramp" : [ 0 ],
+					"presets" : [ 0 ],
+					"random" : [ -1 ],
+					"zero" : [ -1 ],
+					"pitch" : [ -3.75 ],
+					"title_menu" : [ "clientwindow" ],
+					"pres_menu" : [ "_" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ "_" ],
+					"ll.blues::levels" : [ 0.297187506488316, 0.297187506488316, 0.0, 1.0, 0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "no~-no-" ],
+					"ll.blues::state" : [ 1, 1, 0, 0, 1, 0 ]
+				}
+
+			}
+,
+			"1002" : 			{
+				"id" : 1002,
+				"data" : 				{
+					"inputs~" : [ "in(1)" ],
+					"1st2all" : [ 0 ],
+					"preset-ramp" : [ 0 ],
+					"presets" : [ 0 ],
+					"random" : [ -1 ],
+					"zero" : [ -1 ],
+					"pitch" : [ -3.75 ],
+					"title_menu" : [ "clientwindow" ],
+					"pres_menu" : [ "_" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ "_" ],
+					"ll.blues::levels" : [ 0.297187506488316, 0.297187506488316, 0.0, 1.0, 0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "no~-no-" ],
+					"ll.blues::state" : [ 1, 1, 0, 0, 1, 0 ]
+				}
+
+			}
+,
+			"1003" : 			{
+				"id" : 1003,
+				"data" : 				{
+					"inputs~" : [ "in(1)" ],
+					"1st2all" : [ 0 ],
+					"preset-ramp" : [ 0 ],
+					"presets" : [ 0 ],
+					"random" : [ -1 ],
+					"zero" : [ -1 ],
+					"pitch" : [ -3.75, 0 ],
+					"title_menu" : [ "clientwindow" ],
+					"pres_menu" : [ "_" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ "_" ],
+					"ll.blues::levels" : [ 0.297187506488316, 0.297187506488316, 0.0, 1.0, 0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "no~-no-" ],
+					"ll.blues::state" : [ 2, 1, 0, 0, 1, 0 ]
+				}
+
+			}
+,
+			"1004" : 			{
+				"id" : 1004,
+				"data" : 				{
+					"inputs~" : [ "in(1)" ],
+					"1st2all" : [ 0 ],
+					"preset-ramp" : [ 0 ],
+					"presets" : [ 0 ],
+					"random" : [ -1 ],
+					"zero" : [ -1 ],
+					"pitch" : [ -3.75, 0, 3.096774193548391, 6.75 ],
+					"title_menu" : [ "clientwindow" ],
+					"pres_menu" : [ "_" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ "_" ],
+					"ll.blues::levels" : [ 0.297187506488316, 0.297187506488316, 0.0, 1.0, 0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "no~-no-" ],
+					"ll.blues::state" : [ 4, 1, 0, 0, 1, 0 ]
+				}
+
+			}
+,
+			"1005" : 			{
+				"id" : 1005,
+				"data" : 				{
+					"inputs~" : [ "in(1)" ],
+					"1st2all" : [ 0 ],
+					"preset-ramp" : [ 0 ],
+					"presets" : [ 0 ],
+					"random" : [ -1 ],
+					"zero" : [ -1 ],
+					"pitch" : [ -3.75, 0, 3.096774193548391, 6.75 ],
+					"title_menu" : [ "clientwindow" ],
+					"pres_menu" : [ "_" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ "_" ],
+					"ll.blues::levels" : [ 0.297187506488316, 0.297187506488316, 0.0, 1.0, 0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "no~-no-" ],
+					"ll.blues::state" : [ 4, 1, 0, 0, 1, 0 ]
+				}
+
+			}
+,
+			"1006" : 			{
+				"id" : 1006,
+				"data" : 				{
+					"inputs~" : [ "in(1)" ],
+					"1st2all" : [ 0 ],
+					"preset-ramp" : [ 0 ],
+					"presets" : [ 0 ],
+					"random" : [ -1 ],
+					"zero" : [ -1 ],
+					"pitch" : [ -3.75, 0, 3.096774193548391, 6.75 ],
+					"title_menu" : [ "clientwindow" ],
+					"pres_menu" : [ "_" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ "_" ],
+					"ll.blues::levels" : [ 0.297187506488316, 0.297187506488316, 0.0, 1.0, 0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "no~-no-" ],
+					"ll.blues::state" : [ 4, 1, 0, 0, 1, 0 ]
+				}
+
+			}
+,
+			"1009" : 			{
+				"id" : 1009,
+				"data" : 				{
+					"inputs~" : [ "in(2)" ],
+					"1st2all" : [ 0 ],
+					"preset-ramp" : [ 0 ],
+					"presets" : [ 0 ],
+					"random" : [ -1 ],
+					"zero" : [ -1 ],
+					"pitch" : [ -8.516129032258064, -4.125, -2.322580645161292, -0.774193548387096 ],
+					"title_menu" : [ "clientwindow" ],
+					"pres_menu" : [ "_" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ "_" ],
+					"ll.blues::levels" : [ 0.297187506488316, 0.297187506488316, 0.0, 1.0, 0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "no~-no-" ],
+					"ll.blues::state" : [ 4, 1, 0, 0, 2, 0 ]
+				}
+
+			}
+,
+			"1010" : 			{
+				"id" : 1010,
+				"data" : 				{
+					"inputs~" : [ "in(2)" ],
+					"1st2all" : [ 0 ],
+					"preset-ramp" : [ 0 ],
+					"presets" : [ 0 ],
+					"random" : [ -1 ],
+					"zero" : [ -1 ],
+					"pitch" : [ -8.516129032258064, -4.125, -2.322580645161292, -0.774193548387096, 0, 1.93548387096774 ],
+					"title_menu" : [ "clientwindow" ],
+					"pres_menu" : [ "_" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ "_" ],
+					"ll.blues::levels" : [ 0.297187506488316, 0.297187506488316, 0.0, 1.0, 10, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "no~-no-" ],
+					"ll.blues::state" : [ 6, 1, 0, 0, 2, 0 ]
+				}
+
+			}
+,
+			"1011" : 			{
+				"id" : 1011,
+				"data" : 				{
+					"inputs~" : [ "in(2)" ],
+					"1st2all" : [ 0 ],
+					"preset-ramp" : [ 0 ],
+					"presets" : [ 0 ],
+					"random" : [ -1 ],
+					"zero" : [ -1 ],
+					"pitch" : [ 4.5, -2.322580645161292, 3.483870967741936, -4.258064516129032, 2.625, -5.41935483870968 ],
+					"title_menu" : [ "clientwindow" ],
+					"pres_menu" : [ "_" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ "_" ],
+					"ll.blues::levels" : [ 0.297187506488316, 0.297187506488316, 0.0, 1.0, 10, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "no~-no-" ],
+					"ll.blues::state" : [ 6, 1, 0, 0, 2, 0 ]
+				}
+
+			}
+
+		}
+,
+		"clientstate" : 		{
+			"active" : 			{
+				"preset-ramp" : 0,
+				"presets" : 0,
+				"title_menu" : 0,
+				"pres_menu" : 0,
+				"tetris_menu" : 0,
+				"master" : 0,
+				"act::active_store" : 0,
+				"ll.blues::levels" : 0,
+				"ll.blues::outputs" : 0
+			}
+
+		}
+
+	}
+
+}

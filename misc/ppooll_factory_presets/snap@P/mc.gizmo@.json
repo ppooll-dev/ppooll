@@ -1,0 +1,193 @@
+{
+	"pattrstorage" : 	{
+		"name" : "pat",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 3 ],
+					"presets" : [ 1 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "test" ],
+					"tetris_menu" : [ "ƒ ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "flop1", "sinus1", "gizmo@1", "notepad@1", "ho_st1" ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+,
+			"2" : 			{
+				"id" : 2,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 3 ],
+					"presets" : [ 1 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "test" ],
+					"tetris_menu" : [ "ƒ ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "flop1", "sinus1", "gizmo@1", "notepad@1", "ho_st1" ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+,
+			"3" : 			{
+				"id" : 3,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 0 ],
+					"presets" : [ 3 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "test" ],
+					"tetris_menu" : [ "ƒ ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "sinus1", "gizmo@1", "flop1", "notepad@1", "ho_st1" ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+,
+			"4" : 			{
+				"id" : 4,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 0 ],
+					"presets" : [ 3 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "test" ],
+					"tetris_menu" : [ "ƒ ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "sinus1", "gizmo@1", "flop1", "notepad@1", "ho_st1" ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+,
+			"5" : 			{
+				"id" : 5,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 0 ],
+					"presets" : [ 5 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "test" ],
+					"tetris_menu" : [ "ƒ ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "sinus1", "gizmo@1", "flop1", "notepad@1", "ho_st1" ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+,
+			"6" : 			{
+				"id" : 6,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 0 ],
+					"presets" : [ 6 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "test" ],
+					"tetris_menu" : [ "ƒ ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "sinus1", "gizmo@1", "flop1", "notepad@1", "ho_st1" ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+,
+			"9" : 			{
+				"id" : 9,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 0 ],
+					"presets" : [ 9 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "test" ],
+					"tetris_menu" : [ "ƒ ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "sinus1", "gizmo@1", "flop1", "notepad@1", "ho_st1" ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+,
+			"10" : 			{
+				"id" : 10,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 0 ],
+					"presets" : [ 10 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "info" ],
+					"pres_menu" : [ "test" ],
+					"tetris_menu" : [ "ƒ ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "sinus1", "gizmo@1", "flop1", "notepad@1", "ho_st1" ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+,
+			"11" : 			{
+				"id" : 11,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 0 ],
+					"presets" : [ 11 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "info" ],
+					"pres_menu" : [ "test" ],
+					"tetris_menu" : [ "ƒ ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "sinus1", "gizmo@1", "flop1", "notepad@1", "ho_st1" ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+,
+			"1000" : 			{
+				"id" : 1000,
+				"data" : 				{
+					"next" : [ -1 ],
+					"select_acts" : [ 3 ],
+					"presets" : [ 0 ],
+					"preset-ramp" : [ 0 ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "write" ],
+					"tetris_menu" : [ "ƒ ducks" ],
+					"master" : [ 0 ],
+					"selected_acts" : [ "flop1", "sinus1", "gizmo@1", "notepad@1", "ho_st1" ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+
+		}
+,
+		"clientstate" : 		{
+			"active" : 			{
+				"presets" : 0,
+				"preset-ramp" : 0,
+				"title_menu" : 0,
+				"pres_menu" : 0,
+				"tetris_menu" : 0,
+				"master" : 0,
+				"act" : 0,
+				"act::active_store" : 0
+			}
+
+		}
+
+	}
+
+}

@@ -1,0 +1,305 @@
+{
+	"pattrstorage" : 	{
+		"name" : "pat",
+		"slots" : 		{
+			"1001" : 			{
+				"id" : 1001,
+				"data" : 				{
+					"inputs~" : [ "freq(1)", "ring(1)", "phase(1)" ],
+					"freq" : [ 440.0 ],
+					"freq-relative" : [ 0.0 ],
+					"oct.div" : [ 12.0 ],
+					"base-freq" : [ 440.0 ],
+					"takeover" : [ -1 ],
+					"use-env" : [ 1 ],
+					"bang-env" : [ -1 ],
+					"loop-env" : [ 1 ],
+					"f-rel>trigger" : [ 0 ],
+					"length" : [ 1070 ],
+					"length-slider" : [ 0.484808711493186 ],
+					"presets" : [ 0 ],
+					"preset-ramp" : [ 0 ],
+					"envelope" : [ 1070.0, 0.0, 1.0, 0.0, 0.0, 0, 323.018867969094742, 0.725, 0, 1003.81445225607024, 0.925, 0, 1069.999999999999545, 0.0, 0, "linear" ],
+					"freqNOramp" : [ 0 ],
+					"title_menu" : [ "clientwindow" ],
+					"tetris_menu" : [ "" ],
+					"pres_menu" : [ "_" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ "_" ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 0.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.0", "gizmo@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 0, 0, 1, 0 ]
+				}
+
+			}
+,
+			"1002" : 			{
+				"id" : 1002,
+				"data" : 				{
+					"inputs~" : [ "freq(1)", "ring(1)", "phase(1)" ],
+					"freq" : [ 440.0 ],
+					"freq-relative" : [ 0.0 ],
+					"oct.div" : [ 12.0 ],
+					"base-freq" : [ 440.0 ],
+					"takeover" : [ -1 ],
+					"use-env" : [ 1 ],
+					"bang-env" : [ -1 ],
+					"loop-env" : [ 1 ],
+					"f-rel>trigger" : [ 0 ],
+					"length" : [ 1070 ],
+					"length-slider" : [ 0.484808711493186 ],
+					"presets" : [ 0 ],
+					"preset-ramp" : [ 0 ],
+					"envelope" : [ 1070.0, 0.0, 1.0, 0.0, 0.0, 0, 323.018867969094742, 0.725, 0, 1003.81445225607024, 0.925, 0, 1069.999999999999545, 0.0, 0, "linear" ],
+					"freqNOramp" : [ 0 ],
+					"title_menu" : [ "clientwindow" ],
+					"tetris_menu" : [ "" ],
+					"pres_menu" : [ "_" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ "_" ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 0.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.0", "gizmo@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 0, 0, 1, 0 ]
+				}
+
+			}
+,
+			"1003" : 			{
+				"id" : 1003,
+				"data" : 				{
+					"inputs~" : [ "freq(1)", "ring(1)", "phase(1)" ],
+					"freq" : [ 440.0 ],
+					"freq-relative" : [ 0.0 ],
+					"oct.div" : [ 12.0 ],
+					"base-freq" : [ 440.0 ],
+					"takeover" : [ -1 ],
+					"use-env" : [ 1 ],
+					"bang-env" : [ -1 ],
+					"loop-env" : [ 1 ],
+					"f-rel>trigger" : [ 0 ],
+					"length" : [ 1070 ],
+					"length-slider" : [ 0.484808711493186 ],
+					"presets" : [ 0 ],
+					"preset-ramp" : [ 0 ],
+					"envelope" : [ 1070.0, 0.0, 1.0, 0.0, 0.0, 0, 323.018867969094742, 0.725, 0, 1003.81445225607024, 0.925, 0, 1069.999999999999545, 0.0, 0, "linear" ],
+					"freqNOramp" : [ 0 ],
+					"title_menu" : [ "clientwindow" ],
+					"tetris_menu" : [ "" ],
+					"pres_menu" : [ "_" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ "_" ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 0.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.0", "gizmo@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 0, 0, 1, 0 ]
+				}
+
+			}
+,
+			"1004" : 			{
+				"id" : 1004,
+				"data" : 				{
+					"inputs~" : [ "freq(1)", "ring(1)", "phase(1)" ],
+					"freq" : [ 440.0 ],
+					"freq-relative" : [ 0.0 ],
+					"oct.div" : [ 12.0 ],
+					"base-freq" : [ 440.0 ],
+					"takeover" : [ -1 ],
+					"use-env" : [ 1 ],
+					"bang-env" : [ -1 ],
+					"loop-env" : [ 1 ],
+					"f-rel>trigger" : [ 0 ],
+					"length" : [ 1070 ],
+					"length-slider" : [ 0.484808711493186 ],
+					"presets" : [ 0 ],
+					"preset-ramp" : [ 0 ],
+					"envelope" : [ 1070.0, 0.0, 1.0, 0.0, 0.0, 0, 323.018867969094742, 0.725, 0, 1003.81445225607024, 0.925, 0, 1069.999999999999545, 0.0, 0, "linear" ],
+					"freqNOramp" : [ 0 ],
+					"title_menu" : [ "clientwindow" ],
+					"tetris_menu" : [ "" ],
+					"pres_menu" : [ "_" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ "_" ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 0.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.0", "gizmo@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 0, 0, 1, 0 ]
+				}
+
+			}
+,
+			"1005" : 			{
+				"id" : 1005,
+				"data" : 				{
+					"inputs~" : [ "freq(1)", "ring(1)", "phase(1)" ],
+					"freq" : [ 440.0 ],
+					"freq-relative" : [ 0.0 ],
+					"oct.div" : [ 12.0 ],
+					"base-freq" : [ 440.0 ],
+					"takeover" : [ -1 ],
+					"use-env" : [ 1 ],
+					"bang-env" : [ -1 ],
+					"loop-env" : [ 1 ],
+					"f-rel>trigger" : [ 0 ],
+					"length" : [ 1070 ],
+					"length-slider" : [ 0.484808711493186 ],
+					"presets" : [ 0 ],
+					"preset-ramp" : [ 0 ],
+					"envelope" : [ 1070.0, 0.0, 1.0, 0.0, 0.0, 0, 323.018867969094742, 0.725, 0, 1003.81445225607024, 0.925, 0, 1069.999999999999545, 0.0, 0, "linear" ],
+					"freqNOramp" : [ 0 ],
+					"title_menu" : [ "clientwindow" ],
+					"tetris_menu" : [ "" ],
+					"pres_menu" : [ "_" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ "_" ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 0.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.0", "gizmo@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 0, 0, 1, 0 ]
+				}
+
+			}
+,
+			"1006" : 			{
+				"id" : 1006,
+				"data" : 				{
+					"inputs~" : [ "freq(1)", "ring(1)", "phase(1)" ],
+					"freq" : [ 440.0 ],
+					"freq-relative" : [ 0.0 ],
+					"oct.div" : [ 12.0 ],
+					"base-freq" : [ 440.0 ],
+					"takeover" : [ -1 ],
+					"use-env" : [ 1 ],
+					"bang-env" : [ -1 ],
+					"loop-env" : [ 1 ],
+					"f-rel>trigger" : [ 0 ],
+					"length" : [ 1070 ],
+					"length-slider" : [ 0.484808711493186 ],
+					"presets" : [ 0 ],
+					"preset-ramp" : [ 0 ],
+					"envelope" : [ 1070.0, 0.0, 1.0, 0.0, 0.0, 0, 323.018867969094742, 0.725, 0, 1003.81445225607024, 0.925, 0, 1069.999999999999545, 0.0, 0, "linear" ],
+					"freqNOramp" : [ 0 ],
+					"title_menu" : [ "clientwindow" ],
+					"tetris_menu" : [ "" ],
+					"pres_menu" : [ "_" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ "_" ],
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 0.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.0", "gizmo@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 0, 0, 1, 0 ]
+				}
+
+			}
+,
+			"1009" : 			{
+				"id" : 1009,
+				"data" : 				{
+					"inputs~" : [ "freq(1)", "ring(1)", "phase(1)" ],
+					"freq" : [ 440.0 ],
+					"freq-relative" : [ 0.0 ],
+					"oct.div" : [ 12.0 ],
+					"base-freq" : [ 440.0 ],
+					"takeover" : [ -1 ],
+					"use-env" : [ 1 ],
+					"bang-env" : [ -1 ],
+					"loop-env" : [ 1 ],
+					"f-rel>trigger" : [ 0 ],
+					"length" : [ 1070 ],
+					"length-slider" : [ 0.484808711493186 ],
+					"presets" : [ 0 ],
+					"preset-ramp" : [ 0 ],
+					"envelope" : [ 1070.0, 0.0, 1.0, 0.0, 0.0, 0, 323.018867969094742, 0.725, 0, 1003.81445225607024, 0.925, 0, 1069.999999999999545, 0.0, 0, "linear" ],
+					"freqNOramp" : [ 0 ],
+					"title_menu" : [ "clientwindow" ],
+					"tetris_menu" : [ "" ],
+					"pres_menu" : [ "_" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ "_" ],
+					"ll.blues::levels" : [ 0.0, 0.0, 1.0, 0.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.0", "gizmo@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 0, 0, 1, 0 ]
+				}
+
+			}
+,
+			"1010" : 			{
+				"id" : 1010,
+				"data" : 				{
+					"inputs~" : [ "freq(1)", "ring(1)", "phase(1)" ],
+					"freq" : [ 440.0 ],
+					"freq-relative" : [ 0.0 ],
+					"oct.div" : [ 12.0 ],
+					"base-freq" : [ 440.0 ],
+					"takeover" : [ -1 ],
+					"use-env" : [ 1 ],
+					"bang-env" : [ -1 ],
+					"loop-env" : [ 1 ],
+					"f-rel>trigger" : [ 0 ],
+					"length" : [ 1070 ],
+					"length-slider" : [ 0.484808711493186 ],
+					"presets" : [ 0 ],
+					"preset-ramp" : [ 0 ],
+					"envelope" : [ 1070.0, 0.0, 1.0, 0.0, 0.0, 0, 323.018867969094742, 0.725, 0, 1003.81445225607024, 0.925, 0, 1069.999999999999545, 0.0, 0, "linear" ],
+					"freqNOramp" : [ 0 ],
+					"title_menu" : [ "clientwindow" ],
+					"tetris_menu" : [ "" ],
+					"pres_menu" : [ "_" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ "_" ],
+					"ll.blues::levels" : [ 0.578533567948971, 0.578533567948971, 1.0, 0.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.0", "gizmo@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 0, 0, 1, 0 ]
+				}
+
+			}
+,
+			"1011" : 			{
+				"id" : 1011,
+				"data" : 				{
+					"inputs~" : [ "freq(1)", "ring(1)", "phase(1)" ],
+					"freq" : [ 440.0 ],
+					"freq-relative" : [ 0.0 ],
+					"oct.div" : [ 12.0 ],
+					"base-freq" : [ 440.0 ],
+					"takeover" : [ -1 ],
+					"use-env" : [ 1 ],
+					"bang-env" : [ -1 ],
+					"loop-env" : [ 1 ],
+					"f-rel>trigger" : [ 0 ],
+					"length" : [ 1070 ],
+					"length-slider" : [ 0.484808711493186 ],
+					"presets" : [ 0 ],
+					"preset-ramp" : [ 0 ],
+					"envelope" : [ 1070.0, 0.0, 1.0, 0.0, 0.0, 0, 323.018867969094742, 0.725, 0, 1003.81445225607024, 0.925, 0, 1069.999999999999545, 0.0, 0, "linear" ],
+					"freqNOramp" : [ 0 ],
+					"title_menu" : [ "clientwindow" ],
+					"tetris_menu" : [ "" ],
+					"pres_menu" : [ "_" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ "_" ],
+					"ll.blues::levels" : [ 0.578533567948971, 0.578533567948971, 1.0, 0.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.0", "gizmo@1~in.1" ],
+					"ll.blues::state" : [ 1, 1, 0, 0, 1, 0 ]
+				}
+
+			}
+
+		}
+,
+		"clientstate" : 		{
+			"active" : 			{
+				"takeover" : 0,
+				"bang-env" : 0,
+				"length-slider" : 0,
+				"presets" : 0,
+				"preset-ramp" : 0,
+				"freqNOramp" : 0,
+				"title_menu" : 0,
+				"tetris_menu" : 0,
+				"pres_menu" : 0,
+				"master" : 0,
+				"act::active_store" : 0
+			}
+
+		}
+
+	}
+
+}
