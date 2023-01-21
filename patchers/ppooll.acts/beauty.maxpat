@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 538.0, 484.0, 587.0, 133.0 ],
+		"rect" : [ 482.0, 660.0, 587.0, 133.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -83,7 +83,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@volL", "slidermax", 30, "@levels", 0, 0, 0, 0, 10, 0, 0.5, "@volL", "sliderlog", 8, "@volR", "sliderlog", 8, "@pfl", "sliderlog", 8, "@state", 2, 1, 0, 0, 2, 0 ],
+					"args" : [ "@volL", "slidermax", 30, "@levels", 0, 0, 0, 0, 10, 0, 0.5, "@state", 2, 1, 0, 0, 2, 0, "@chans_in", "min", 2, "@chans_in", "max", 2 ],
 					"bgmode" : 0,
 					"border" : 1,
 					"clickthrough" : 0,
@@ -584,7 +584,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 813.0, 550.0, 758.0, 498.0 ],
+						"rect" : [ 720.0, 550.0, 758.0, 498.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3399,10 +3399,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 915, 206, 1503, 719 ],
+						"client_rect" : [ 499, 162, 1139, 402 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 200, 200, 800, 500 ]
+						"storage_rect" : [ 0, 0, 640, 240 ]
 					}
 ,
 					"text" : "pattrstorage pat",
