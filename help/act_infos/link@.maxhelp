@@ -2,13 +2,14 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
-			"minor" : 3,
-			"revision" : 5,
+			"major" : 8,
+			"minor" : 5,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
+		"classnamespace" : "box",
 		"rect" : [ 100.0, 100.0, 371.0, 336.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -36,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-10",
@@ -44,8 +46,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 71.0, 252.0, 289.0, 33.0 ],
-					"presentation_rect" : [ 71.0, 257.0, 0.0, 0.0 ],
-					"style" : "",
 					"text" : "connected peers starting from 1 (the first link enabled patch)."
 				}
 
@@ -57,8 +57,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 71.0, 230.0, 289.0, 20.0 ],
-					"presentation_rect" : [ 73.0, 233.0, 0.0, 0.0 ],
-					"style" : "",
 					"text" : "beats subdivision"
 				}
 
@@ -70,8 +68,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 125.0, 206.0, 235.0, 20.0 ],
-					"presentation_rect" : [ 125.0, 209.0, 0.0, 0.0 ],
-					"style" : "",
 					"text" : "bpm - can be changed manually"
 				}
 
@@ -97,7 +93,6 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 69.0, 291.0, 50.0, 21.0 ],
 					"pattrmode" : 1,
-					"style" : "",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "par_link"
 				}
@@ -124,7 +119,6 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 17.0, 291.0, 50.0, 21.0 ],
 					"pattrmode" : 1,
-					"style" : "",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "act_link"
 				}
@@ -191,7 +185,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 125.0, 291.0, 235.0, 33.0 ],
-					"style" : "",
 					"text" : "sends the sync ramp divided by the beats to the selected act"
 				}
 
@@ -204,8 +197,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 17.0, 138.0, 343.0, 60.0 ],
-					"style" : "",
-					"text" : "usage: just open it, and any machine with an ableton link compatible app running will synchronize with you. this is not a master / slave sync - any device in the network changing the tempo will do so for all other peers!"
+					"text" : "usage: just open it, and any machine with an ableton link compatible app running will synchronize with you. this is not a leader / follower sync - any device in the network changing the tempo will do so for all other peers!"
 				}
 
 			}
@@ -217,7 +209,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 17.0, 70.0, 343.0, 60.0 ],
-					"style" : "",
 					"text" : "exposes ppooll to the ableton link sync interface.\natop of allowing to sync to live it also allows syncing between computers running ppooll in the same network - without any ableton live present!"
 				}
 
@@ -229,8 +220,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 17.0, 41.0, 343.0, 20.0 ],
-					"style" : "",
-					"text" : "v1.0 - 2019/01/18 - clemens.hausch@moozak.org"
+					"text" : "v1.0 - 2019/01/18 - hausch@moozak.org"
 				}
 
 			}
@@ -243,7 +233,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 17.0, 16.0, 225.0, 27.0 ],
-					"style" : "",
 					"text" : "link@"
 				}
 
