@@ -74,7 +74,6 @@
 					"annotation" : "position_random",
 					"bgcolor" : [ 0.823529411764706, 0.925490196078431, 0.129411764705882, 0.0 ],
 					"bgoncolor" : [ 0.823529411764706, 0.925490196078431, 0.129411764705882, 1.0 ],
-					"fontlink" : 1,
 					"fontsize" : 10.0,
 					"hint" : "position_random",
 					"id" : "obj-66",
@@ -86,7 +85,7 @@
 					"outlettype" : [ "", "", "int" ],
 					"outputmode" : 0,
 					"parameter_enable" : 0,
-					"patching_rect" : [ 131.0, 76.0, 28.0, 19.0 ],
+					"patching_rect" : [ 131.0, 76.0, 28.0, 19.171875 ],
 					"prototypename" : "jit_on",
 					"style" : "default",
 					"text" : "rand",
@@ -630,7 +629,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 175.878787878787875, 84.0, 54.829546209537625, 17.0 ],
-					"presentation_linecount" : 2,
 					"text" : "vol     r   sp",
 					"textcolor" : [ 0.658824, 0.658824, 0.658824, 1.0 ]
 				}
@@ -4367,7 +4365,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 549.0, 119.0, 100.0, 22.0 ],
-					"restore" : [ "in(4)" ],
+					"restore" : [ "in(1)" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -4461,6 +4459,13 @@
 			}
 , 			{
 				"name" : "ll.in_mix.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
+				"patcherrelativepath" : "../abstractions/ll.blues",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.mc.stereo_pan.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",

@@ -119,7 +119,7 @@
 		"morph" : [ 10, "morphing between two audio signals (mc)", 9 ],
 		"mubugrain@" : [ 14, "granular player", 1, 3 ],
 		"multitap" : [ 2, "delay bank", 9 ],
-		"munger@" : [ 2, "granulator plugin", 9 ],
+		"munger@" : [ 2, 3, "granulator plugin", 9, 15 ],
 		"noize@" : [ 1, 2, "noise-generator", 1, 11, 15 ],
 		"normalize" : [ 2, "get maximum level of audio", 9, 15 ],
 		"notepad@" : [ 1, 3, "write something to yourself" ],
