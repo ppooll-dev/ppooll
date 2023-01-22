@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 760.0, 460.0, 640.0, 480.0 ],
+		"rect" : [ 735.0, 338.0, 640.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -48,8 +48,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 239.0, 257.0, 53.0, 66.0 ],
-					"presentation_linecount" : 3,
+					"patching_rect" : [ 239.0, 257.0, 56.0, 66.0 ],
 					"text" : "link hi & low freqs"
 				}
 
@@ -849,7 +848,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 50.0, 70.0, 256.0, 33.0 ],
-					"text" : "original patch by ?\nmc-port by c. hausch / hausch@moozak.org"
+					"text" : "original patch by romain macagni\nmc-port by c. hausch / hausch@moozak.org"
 				}
 
 			}

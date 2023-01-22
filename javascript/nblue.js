@@ -106,7 +106,7 @@ function script_in_mix(){
  		//post("rr");
 		var bits = tp.getnamed("bits");
 		var pmeter = tp.getnamed("pmeter");
-		var llr = tp.newdefault(120,50,"ll.in_mix");
+		var llr = tp.newdefault(90,90,"ll.in_mix");
 		llr.varname = "llr";	
 		tp.connect(llr, 0, bits, 0);
 		tp.connect(llr, 1, pmeter, 0);

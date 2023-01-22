@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 641.0, 218.0, 318.0, 272.0 ],
+		"rect" : [ 694.0, 204.0, 318.0, 272.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -937,6 +937,7 @@
 			}
 , 			{
 				"box" : 				{
+					"args" : [ "@state", 2, 1, 0, 0, 2, 0 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -1294,7 +1295,7 @@
 					"arrow" : 0,
 					"fontsize" : 9.0,
 					"id" : "obj-49",
-					"items" : "bowed_floss.aif",
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -10797,10 +10798,12 @@
 						"title_menu" : 0,
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
-						"act::active_store" : 1,
-						"ll.blues::levels" : 1,
-						"ll.blues::outputs" : 1,
-						"ll.blues::state" : 1
+						"master" : 0,
+						"act::active_store" : 0,
+						"ll.blues" : 0,
+						"ll.blues::levels" : 0,
+						"ll.blues::outputs" : 0,
+						"ll.blues::state" : 0
 					}
 ,
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -10905,7 +10908,7 @@
 						"autochangeinterval" : [ 100 ],
 						"autochangemenu" : [ 0 ],
 						"autosliders" : [ 0.569999992847443, 0.959999978542328, 0.588235318660736, 0.899999976158142, 0.479999989271164, 0.600000023841858, 0.699999988079071, 0.790000021457672 ],
-						"buffermenu" : [ "bowed_floss.aif" ],
+						"buffermenu" : [ "" ],
 						"controlmode" : [ 0 ],
 						"density" : [ 100.0 ],
 						"fix_lang" : [ 0 ],
@@ -10925,9 +10928,9 @@
 						"playbackspeed" : [ 1.0 ],
 						"playbackspeed_ramp" : [ 0 ],
 						"playbackspeed_ramp_stop" : [ -1 ],
-						"pres_menu" : [ "_" ],
+						"pres_menu" : [ "" ],
 						"preset-ramp" : [ 0 ],
-						"presets" : [ 4 ],
+						"presets" : [ 0 ],
 						"random" : [ 22.534057299767255 ],
 						"start" : [ 0.0 ],
 						"start_rel" : [ 0.0 ],
@@ -11172,13 +11175,6 @@
 				"name" : "ll.ld.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.mc.stereo_pan.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
 				"implicit" : 1
 			}

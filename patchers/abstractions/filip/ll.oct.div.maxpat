@@ -2,14 +2,15 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
-			"minor" : 3,
-			"revision" : 5,
+			"major" : 8,
+			"minor" : 5,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 273.0, 114.0, 442.0, 365.0 ],
+		"classnamespace" : "box",
+		"rect" : [ 732.0, 92.0, 442.0, 365.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -36,17 +37,17 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Arial",
-					"fontsize" : 9.0,
+					"fontsize" : 13.0,
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 203.0, 78.0, 99.0, 19.0 ],
-					"style" : "",
+					"patching_rect" : [ 203.0, 78.0, 140.0, 23.0 ],
 					"text" : "patcherargs 12 440"
 				}
 
@@ -54,14 +55,13 @@
 , 			{
 				"box" : 				{
 					"fontname" : "Arial",
-					"fontsize" : 9.0,
+					"fontsize" : 13.0,
 					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 203.0, 113.0, 50.0, 19.0 ],
-					"style" : "",
+					"patching_rect" : [ 203.0, 113.0, 68.0, 23.0 ],
 					"text" : "zl slice 1"
 				}
 
@@ -69,14 +69,13 @@
 , 			{
 				"box" : 				{
 					"fontname" : "Arial",
-					"fontsize" : 9.0,
+					"fontsize" : 13.0,
 					"id" : "obj-3",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 34.0, 87.0, 101.0, 27.0 ],
-					"style" : "",
+					"patching_rect" : [ 29.0, 7.0, 96.0, 36.0 ],
 					"text" : "by assif tsahar & klaus filip"
 				}
 
@@ -89,24 +88,21 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "float" ],
-					"patching_rect" : [ 339.0, 127.0, 15.0, 15.0 ],
-					"style" : ""
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 339.0, 127.0, 15.0, 15.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"fontname" : "Arial",
-					"fontsize" : 9.0,
+					"fontsize" : 13.0,
 					"id" : "obj-5",
-					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 203.0, 52.0, 45.0, 29.0 ],
-					"style" : "",
+					"patching_rect" : [ 203.0, 52.0, 103.0, 23.0 ],
 					"text" : "loadbang"
 				}
 
@@ -119,8 +115,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 104.0, 235.0, 15.0, 15.0 ],
-					"style" : ""
+					"patching_rect" : [ 104.5, 256.0, 15.0, 15.0 ]
 				}
 
 			}
@@ -133,8 +128,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 174.0, 165.0, 15.0, 15.0 ],
-					"style" : ""
+					"patching_rect" : [ 174.0, 165.0, 15.0, 15.0 ]
 				}
 
 			}
@@ -146,24 +140,22 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 104.0, 175.0, 15.0, 15.0 ],
-					"style" : ""
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 104.5, 127.0, 15.0, 15.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"fontname" : "Arial",
-					"fontsize" : 9.0,
+					"fontsize" : 13.0,
 					"id" : "obj-9",
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 104.0, 205.0, 121.0, 19.0 ],
-					"style" : "",
-					"text" : "expr exp(ln(2)/$f2 * $f1)*$f3"
+					"patching_rect" : [ 104.0, 205.0, 270.0, 23.0 ],
+					"text" : "vexpr exp(ln(2)/$f2 * $f1)*$f3 @scalarmode 1"
 				}
 
 			}

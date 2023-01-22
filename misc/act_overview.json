@@ -40,7 +40,8 @@
 		"13" : [ "elin", "elinsound@icloud.com" ],
 		"14" : [ "Joe Steccato", "steech914@gmail.com" ],
 		"15" : [ "bill d", "?" ],
-		"16" : [ "cycling'74", "?@?" ]
+		"16" : [ "cycling'74", "?@?" ],
+		"17" : [ "romain macagni", "?" ]
 	}
 ,
 	"acts" : 	{
@@ -60,7 +61,6 @@
 		"beauty" : [ 2, "delay-feedback machine", 1, 9, 11 ],
 		"benjolino" : [ 7, "shift-register oscillator (rungler)", 1, 11 ],
 		"bildsynthi" : [ 8, "video driven bandpass filter", 7, 9 ],
-		"buffer_host" : [ 1, "holds all your buffers", 3, 15 ],
 		"buffub" : [ 1, 3, "records into buffers", 2, 3, 10, 15 ],
 		"chaos" : [ 1, 2, "lorenz-roessler generator", 4, 5 ],
 		"chebyshev@" : [ 3, "distortion unit", 9, 15 ],
@@ -98,7 +98,6 @@
 		"jit.display@" : [ 1, "video screening and recording", 7 ],
 		"jit.grab@" : [ 1, "camera input", 7 ],
 		"jit.lcd@" : [ 1, "draft drawing", 7 ],
-		"jit.ndi@" : [ 1, "video input from ndi devices", 7, 12 ],
 		"jit.op@" : [ 1, "image operater", 7 ],
 		"jit.player" : [ 1, "qt movie player", 7 ],
 		"jit.slide@" : [ 1, "slide and repositin incoming texture", 7 ],
@@ -135,7 +134,7 @@
 		"pr.spectplay" : [ 6, "spectrum player", 9 ],
 		"prdelay@" : [ 6, "simple delay with feedback", 9 ],
 		"pulse@" : [ 3, "lfo pulse generator", 1, 4, 5 ],
-		"pulsegen" : [ 3, "pulse wave generator", 1, 4, 15 ],
+		"pulsegen" : [ 17, "pulse wave generator", 1, 4, 15 ],
 		"quant" : [ 3, "signal based frequency/rhythm quantizer", 9, 5 ],
 		"random0_1-" : [ 1, "simple ranomizer spitting 0 and 1", 4 ],
 		"random@" : [ 1, "randomize parameters", 4 ],
@@ -170,7 +169,7 @@
 		"waveshapers@" : [ 3, "waveshaping functions and demos", 1, 9, 11, 15 ],
 		"wrapfilter" : [ 2, "1 - 4 band stereo filter/eq", 9, 15 ],
 		"x_filter" : [ 3, "cheyshev & butterworth filter", 9, 15 ],
-		"xgroove@" : [ 1, "sample player", 1, 3 ]
+		"xgroove@" : [ 1, 14, "sample player", 1, 3 ]
 	}
 
 }

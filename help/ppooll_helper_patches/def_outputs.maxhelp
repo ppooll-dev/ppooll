@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 1,
+			"minor" : 5,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 80.0, 162.0, 580.0, 757.0 ],
+		"rect" : [ 45.0, 83.0, 580.0, 757.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -42,11 +42,35 @@
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontsize" : 12.0,
+					"id" : "obj-10",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 15.0, 1032.0, 550.0, 20.0 ],
+					"text" : "of course you can route to any other act providing audio-inputs."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 12.0,
+					"id" : "obj-8",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 91.0, 107.5, 363.0, 20.0 ],
+					"text" : "please open this extra window now, to follow the description below."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 12.0,
 					"id" : "obj-23",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 68.0, 954.0, 550.0, 20.0 ],
+					"patching_rect" : [ 68.0, 988.0, 550.0, 20.0 ],
 					"text" : "like this the first 2 channels go to host, the rest back to this act."
 				}
 
@@ -58,7 +82,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 15.0, 954.0, 51.0, 20.0 ],
+					"patching_rect" : [ 15.0, 988.0, 51.0, 20.0 ],
 					"text" : "click here"
 				}
 
@@ -71,7 +95,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 483.0, 1032.0, 229.0, 20.0 ],
+					"patching_rect" : [ 483.0, 1066.0, 229.0, 20.0 ],
 					"text" : "ho_st1~out.1 _ def_outputs1~audio_in.1 _ _ _ _ _"
 				}
 
@@ -83,7 +107,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 932.0, 550.0, 20.0 ],
+					"patching_rect" : [ 15.0, 966.0, 550.0, 20.0 ],
 					"text" : "also you can split the signal into several different acts:"
 				}
 
@@ -96,7 +120,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 7.0, 1032.0, 74.0, 20.0 ],
+					"patching_rect" : [ 653.0, 572.0, 74.0, 20.0 ],
 					"text" : "setvalue $1 $2"
 				}
 
@@ -109,7 +133,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "list" ],
-					"patching_rect" : [ 7.0, 1008.0, 56.0, 20.0 ],
+					"patching_rect" : [ 653.0, 548.0, 56.0, 20.0 ],
 					"text" : "listfunnel 1"
 				}
 
@@ -122,7 +146,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 7.0, 979.0, 44.0, 20.0 ],
+					"patching_rect" : [ 653.0, 519.0, 44.0, 20.0 ],
 					"text" : "ll.r freqs"
 				}
 
@@ -130,6 +154,7 @@
 , 			{
 				"box" : 				{
 					"amount" : 8,
+					"bgcolor" : [ 0.72156862745098, 0.870588235294118, 0.415686274509804, 1.0 ],
 					"fontface" : 0,
 					"format" : [ 3 ],
 					"id" : "obj-82",
@@ -140,20 +165,25 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 484.0, 187.5, 74.0, 121.0 ],
+					"patching_rect" : [ 482.0, 215.5, 74.0, 121.0 ],
 					"varname" : "freqs"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 0.72156862745098, 0.870588235294118, 0.415686274509804, 1.0 ],
+					"bubble" : 1,
+					"bubbleside" : 3,
+					"bubbleusescolors" : 1,
 					"fontsize" : 12.0,
 					"id" : "obj-81",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 14.0, 194.5, 550.0, 20.0 ],
-					"text" : "this example plays 8 sinewaves with 200 300 400 500 600 700 800 and 900 Hertz."
+					"patching_rect" : [ 14.0, 215.5, 463.0, 37.0 ],
+					"text" : "this example-act here plays 8 sinewaves \nwith 200 300 400 500 600 700 800 and 900 Hertz."
 				}
 
 			}
@@ -164,7 +194,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 29.5, 904.0, 29.5, 20.0 ],
+					"patching_rect" : [ 29.5, 938.0, 29.5, 20.0 ],
 					"text" : "1"
 				}
 
@@ -176,7 +206,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 243.75, 904.0, 29.5, 20.0 ],
+					"patching_rect" : [ 243.75, 938.0, 29.5, 20.0 ],
 					"text" : "8"
 				}
 
@@ -188,7 +218,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 211.75, 904.0, 29.5, 20.0 ],
+					"patching_rect" : [ 211.75, 938.0, 29.5, 20.0 ],
 					"text" : "7"
 				}
 
@@ -200,7 +230,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 180.75, 904.0, 29.5, 20.0 ],
+					"patching_rect" : [ 180.75, 938.0, 29.5, 20.0 ],
 					"text" : "6"
 				}
 
@@ -212,7 +242,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 150.0, 904.0, 29.5, 20.0 ],
+					"patching_rect" : [ 150.0, 938.0, 29.5, 20.0 ],
 					"text" : "5"
 				}
 
@@ -224,7 +254,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 120.0, 904.0, 29.5, 20.0 ],
+					"patching_rect" : [ 120.0, 938.0, 29.5, 20.0 ],
 					"text" : "4"
 				}
 
@@ -236,7 +266,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 89.0, 904.0, 29.5, 20.0 ],
+					"patching_rect" : [ 89.0, 938.0, 29.5, 20.0 ],
 					"text" : "3"
 				}
 
@@ -248,7 +278,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 59.0, 904.0, 29.5, 20.0 ],
+					"patching_rect" : [ 59.0, 938.0, 29.5, 20.0 ],
 					"text" : "2"
 				}
 
@@ -261,7 +291,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 557.0, 1008.0, 229.0, 20.0 ],
+					"patching_rect" : [ 557.0, 1042.0, 229.0, 20.0 ],
 					"text" : "def_outputs1~audio_in.1 _ _ _ _ _ _ ho_st1~out.1"
 				}
 
@@ -274,7 +304,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 541.0, 993.0, 333.0, 20.0 ],
+					"patching_rect" : [ 541.0, 1027.0, 333.0, 20.0 ],
 					"text" : "def_outputs1~audio_in.1 _ _ _ _ _ ho_st1~out.1 def_outputs1~audio_in.1"
 				}
 
@@ -287,7 +317,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 525.0, 971.0, 333.0, 20.0 ],
+					"patching_rect" : [ 525.0, 1005.0, 333.0, 20.0 ],
 					"text" : "def_outputs1~audio_in.1 _ _ _ _ ho_st1~out.1 def_outputs1~audio_in.1 _"
 				}
 
@@ -300,7 +330,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 505.0, 949.0, 333.0, 20.0 ],
+					"patching_rect" : [ 505.0, 983.0, 333.0, 20.0 ],
 					"text" : "def_outputs1~audio_in.1 _ _ _ ho_st1~out.1 def_outputs1~audio_in.1 _ _"
 				}
 
@@ -313,7 +343,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 490.0, 932.5, 333.0, 20.0 ],
+					"patching_rect" : [ 490.0, 966.5, 333.0, 20.0 ],
 					"text" : "def_outputs1~audio_in.1 _ _ ho_st1~out.1 def_outputs1~audio_in.1 _ _ _"
 				}
 
@@ -326,7 +356,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 473.0, 916.0, 333.0, 20.0 ],
+					"patching_rect" : [ 473.0, 950.0, 333.0, 20.0 ],
 					"text" : "def_outputs1~audio_in.1 _ ho_st1~out.1 def_outputs1~audio_in.1 _ _ _ _"
 				}
 
@@ -339,7 +369,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 431.0, 904.0, 333.0, 20.0 ],
+					"patching_rect" : [ 431.0, 938.0, 333.0, 20.0 ],
 					"text" : "def_outputs1~audio_in.1 ho_st1~out.1 def_outputs1~audio_in.1 _ _ _ _ _"
 				}
 
@@ -352,7 +382,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 420.0, 888.0, 229.0, 20.0 ],
+					"patching_rect" : [ 420.0, 922.0, 229.0, 20.0 ],
 					"text" : "ho_st1~out.1 def_outputs1~audio_in.1 _ _ _ _ _ _"
 				}
 
@@ -364,7 +394,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 73.0, 838.0, 51.0, 20.0 ],
+					"patching_rect" : [ 73.0, 872.0, 51.0, 20.0 ],
 					"text" : "click here"
 				}
 
@@ -378,7 +408,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 383.5, 837.0, 374.0, 31.0 ],
+					"patching_rect" : [ 383.5, 871.0, 374.0, 31.0 ],
 					"text" : "ho_st1~out.2 ho_st1~out.2 ho_st1~out.2 ho_st1~out.2 ho_st1~out.2 ho_st1~out.2 ho_st1~out.2 ho_st1~out.2"
 				}
 
@@ -390,7 +420,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 73.0, 813.0, 51.0, 20.0 ],
+					"patching_rect" : [ 73.0, 847.0, 51.0, 20.0 ],
 					"text" : "click here"
 				}
 
@@ -404,7 +434,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 391.0, 797.0, 313.0, 31.0 ],
+					"patching_rect" : [ 391.0, 831.0, 313.0, 31.0 ],
 					"text" : "ho_st1~out.1 ho_st1~out.1 ho_st1~out.1 ho_st1~out.1 ho_st1~out.1 ho_st1~out.1 ho_st1~out.1 ho_st1~out.1"
 				}
 
@@ -417,7 +447,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 175.0, 503.0, 43.0, 53.0 ],
+					"patching_rect" : [ 175.0, 537.0, 43.0, 53.0 ],
 					"text" : "click here to set this state"
 				}
 
@@ -430,7 +460,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 235.0, 517.0, 178.0, 20.0 ],
+					"patching_rect" : [ 235.0, 551.0, 178.0, 20.0 ],
 					"text" : "ho_st1~out.1 _ ho_st1~out.1 _ _ _ _ _"
 				}
 
@@ -443,7 +473,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 195.0, 701.0, 43.0, 53.0 ],
+					"patching_rect" : [ 195.0, 735.0, 43.0, 53.0 ],
 					"text" : "click here to set this state"
 				}
 
@@ -456,7 +486,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 151.0, 276.0, 43.0, 53.0 ],
+					"patching_rect" : [ 151.0, 310.0, 43.0, 53.0 ],
 					"text" : "click here to set this state"
 				}
 
@@ -469,7 +499,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 250.5, 288.0, 125.0, 20.0 ],
+					"patching_rect" : [ 250.5, 322.0, 125.0, 20.0 ],
 					"text" : "ho_st1~out.1 _ _ _ _ _ _ _"
 				}
 
@@ -483,7 +513,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 311.0, 712.0, 216.0, 31.0 ],
+					"patching_rect" : [ 311.0, 746.0, 216.0, 31.0 ],
 					"text" : "ho_st1~out.1 _ ho_st1~out.1 _ ho_st1~out.1 _ ho_st1~out.1 _"
 				}
 
@@ -496,7 +526,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "multichannelsignal" ],
-					"patching_rect" : [ 350.0, 1069.0, 74.0, 20.0 ],
+					"patching_rect" : [ 350.0, 1103.0, 74.0, 20.0 ],
 					"text" : "ll.r~ audio_in 8"
 				}
 
@@ -509,8 +539,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 223.0, 550.0, 677.0 ],
-					"text" : "by default this patch sends a 8-channel signal to ho_st.\nthis is idicated in the def_outputs-window by a list that looks like this:\nho_st1 out.1\n_          _\n_          _\n_          _\n_          _\n_          _\n_          _\n_          _\n\nso a line with _   _ means another channel to the multichannel signal of the above adress.\nyou would hear all the 8 channels, if you had 8 speakers connected to ho_st.\nnormally you hear only the first 2 channels.\n\nif we want to hear all 8 channels of this patch, we need to create several 2-channel signals: that all go to the the first 2 outputs of ho_st.\nclick in the 3rd line of the colum \"act\", select ho_st1 and then choose out.1 in the colum \"chan\".\n\nho_st1 out.1\n_          _\nho_st1 out.1\n_          _\n_          _\n_          _\n_          _\n_          _\n\nnow the first 2 channels of this patch go to the first 2 channels of ho_st \nAND channels 3-8 of this patch go as 6-channel-signal to ho_st (starting at channel out.1).\nwe can hear 4 channels already.\n\nkeep editing to this state:\nho_st1 out.1\n_          _\nho_st1 out.1\n_          _\nho_st1 out.1\n_          _\nho_st1 out.1\n_          _\n\nnow we hear all 8 signals of this patch on channels 1and2 of ho_st.\n\nlike this                      all signals of this patch go to out.1 (left_out) of ho_st.\n\nlike this                       all signals go to out.2 of ho_st.\n\ntry these to only route 1 channel of this patch to ho_st. (the other channels go to this act here, where nothing is connected)."
+					"patching_rect" : [ 15.0, 257.0, 550.0, 677.0 ],
+					"text" : "by default this patch sends a 8-channel signal to ho_st.\nthis is idicated in the def_outputs-window by a list that looks like this:\nho_st1 out.1\n_          _\n_          _\n_          _\n_          _\n_          _\n_          _\n_          _\n\nso a line with _   _ means another channel of the multichannel signal of the above adress.\nyou would hear all the 8 channels, if you had 8 speakers connected to ho_st.\nnormally you hear only the first 2 channels.\n\nif we want to hear all 8 channels of this patch, we need to create several 2-channel signals: that all go to the the first 2 outputs of ho_st.\nclick in the 3rd line of the colum \"act\", select ho_st1 and then choose out.1 in the colum \"chan\".\n\nho_st1 out.1\n_          _\nho_st1 out.1\n_          _\n_          _\n_          _\n_          _\n_          _\n\nnow the first 2 channels of this patch go to the first 2 channels of ho_st \nAND channels 3-8 of this patch go as 6-channel-signal to ho_st (starting at channel out.1).\nwe can hear 4 channels already.\n\nkeep editing to this state:\nho_st1 out.1\n_          _\nho_st1 out.1\n_          _\nho_st1 out.1\n_          _\nho_st1 out.1\n_          _\n\nnow we hear all 8 signals of this patch on channels 1and2 of ho_st.\n\nlike this                      all signals of this patch go to out.1 (left_out) of ho_st.\n\nlike this                       all signals go to out.2 of ho_st.\n\ntry these to only route 1 channel of this patch to ho_st. (the other channels go to this act here, where nothing is connected)."
 				}
 
 			}
@@ -523,7 +553,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 73.0, 1109.0, 50.0, 20.0 ]
+					"patching_rect" : [ 719.0, 649.0, 50.0, 20.0 ]
 				}
 
 			}
@@ -535,7 +565,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 14.0, 129.5, 550.0, 47.0 ],
+					"patching_rect" : [ 14.0, 163.5, 550.0, 47.0 ],
 					"text" : "with the extra orange window we can define, where the audio-signals should be sent to\nand if it will be one multichannel-signal, several multichannel sognals or\nsingle (mono-) signals. leave that window open aside with this info-text."
 				}
 
@@ -548,7 +578,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "multichannelsignal" ],
-					"patching_rect" : [ 7.0, 1109.0, 60.0, 20.0 ],
+					"patching_rect" : [ 653.0, 649.0, 60.0, 20.0 ],
 					"text" : "mc.*~ 0.1"
 				}
 
@@ -560,7 +590,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 91.0, 107.5, 355.0, 20.0 ],
+					"patching_rect" : [ 91.0, 141.5, 355.0, 20.0 ],
 					"text" : "move/close that window in its top-left corner !"
 				}
 
@@ -614,8 +644,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 531.0, 645.5, 82.0, 20.0 ],
-					"restore" : [ "ho_st1~out.1", "_", "def_outputs1~audio_in.1", "_", "_", "_", "_", "_" ],
+					"patching_rect" : [ 531.0, 679.5, 82.0, 20.0 ],
+					"restore" : [ "ho_st1~out.1", "_", "_", "_", "_", "_", "_", "_" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -660,7 +690,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "multichannelsignal" ],
-					"patching_rect" : [ 7.0, 1079.0, 299.0, 20.0 ],
+					"patching_rect" : [ 653.0, 619.0, 299.0, 20.0 ],
 					"text" : "mc.cycle~ @chans 8 @values 200 300 400 500 600 700 800 900"
 				}
 
@@ -675,7 +705,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "list" ],
-					"patching_rect" : [ 7.0, 1140.0, 126.0, 24.0 ],
+					"patching_rect" : [ 653.0, 680.0, 126.0, 24.0 ],
 					"text" : "ll.mc.def_outputs 8",
 					"varname" : "ll.mc.def_outputs"
 				}
@@ -702,7 +732,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 595.0, 179.0, 105.0, 20.0 ],
+					"patching_rect" : [ 595.0, 213.0, 105.0, 20.0 ],
 					"text" : "actmaker def_outputs",
 					"varname" : "act"
 				}
@@ -714,7 +744,8 @@
 						"master" : 0,
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
-						"title_menu" : 0
+						"title_menu" : 0,
+						"act::active_store" : 0
 					}
 ,
 					"color" : [ 0.4, 0.4, 0.8, 1.0 ],
@@ -724,7 +755,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 608.0, 158.0, 100.0, 20.0 ],
+					"patching_rect" : [ 608.0, 192.0, 100.0, 20.0 ],
 					"saved_object_attributes" : 					{
 						"client_rect" : [ 391, 87, 931, 796 ],
 						"parameter_enable" : 0,
@@ -746,7 +777,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 595.0, 200.0, 107.0, 20.0 ],
+					"patching_rect" : [ 595.0, 234.0, 107.0, 20.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 					"text" : "thispatcher",
 					"varname" : "thispatcher"
@@ -762,7 +793,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 595.0, 221.0, 107.0, 20.0 ],
+					"patching_rect" : [ 595.0, 255.0, 107.0, 20.0 ],
 					"text" : "pattrmarker no",
 					"varname" : "pattrmarker"
 				}
@@ -777,14 +808,14 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 595.0, 242.0, 107.0, 20.0 ],
+					"patching_rect" : [ 595.0, 276.0, 107.0, 20.0 ],
 					"restore" : 					{
 						"def" : [ -1 ],
 						"freqs" : [ 200, 300, 400, 500, 600, 700, 800, 900 ],
 						"master" : [ 0 ],
-						"pres_menu" : [ "" ],
+						"pres_menu" : [ "_" ],
 						"tetris_menu" : [ "" ],
-						"title_menu" : [ "clientwindow" ]
+						"title_menu" : [ "subpatch" ]
 					}
 ,
 					"text" : "autopattr autopattr",
@@ -823,7 +854,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-9",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "write", ",", "clear!", ",", "TEXT" ],
+					"items" : [ "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -884,7 +915,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 608.0, 134.0, 100.0, 20.0 ],
+					"patching_rect" : [ 608.0, 168.0, 100.0, 20.0 ],
 					"restore" : [ "audio_in(8)" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
@@ -1179,105 +1210,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "ll.movewindow.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "actmaker.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../patchers/abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "tetrishelp.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "n.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../patchers/abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.psto.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../patchers/abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.actname.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../patchers/abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.shut.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../patchers/abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.wsendback.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.strip#.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../patchers/abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.createact8.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.textsize.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.mc.def_outputs.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../patchers/abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.window.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.s~.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../patchers/abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.p.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
@@ -1291,28 +1224,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.pf.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../patchers/abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.getacts2.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../patchers/abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.pnth.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../patchers/abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.r.maxpat",
+				"name" : "ll.actname.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
@@ -1326,20 +1238,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.an.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.sub.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../patchers/abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ll.address.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
@@ -1347,7 +1245,28 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.sizelist.maxpat",
+				"name" : "ll.an.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.createact8.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.getacts2.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.mc.def_outputs.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
@@ -1361,7 +1280,84 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.movewindow.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.movewindow2.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.p.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.pf.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.plusminus.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.pnth.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.psto.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.psto1.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.r.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.r~.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.shut.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.sizelist.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
@@ -1375,14 +1371,67 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.movewindow2.js",
+				"name" : "ll.strip#.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.sub.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.sub_inputs.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.s~.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.textsize.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.r~.maxpat",
+				"name" : "ll.window.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.wsendback.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll_fastforward.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/externals/filip",
+				"patcherrelativepath" : "../../externals/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll_number.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "n.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
@@ -1393,12 +1442,11 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "ll_fastforward.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "ll_number.mxo",
-				"type" : "iLaX"
+				"name" : "tetrishelp.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
 			}
  ],
 		"autosave" : 0,

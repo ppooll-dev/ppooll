@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 2,
+			"minor" : 3,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 518.0, 287.0, 159.0, 237.0 ],
+		"rect" : [ 835.0, 234.0, 159.0, 258.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -48,7 +48,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 148.0, 87.0, 48.0, 35.0 ],
+					"patching_rect" : [ 259.0, 85.5, 48.0, 35.0 ],
 					"restore" : [ "in(1)" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
@@ -76,7 +76,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 132.0, 159.0, 17.0 ],
+					"patching_rect" : [ 0.0, 144.0, 159.0, 17.0 ],
 					"sliderlog" : 4.0,
 					"slidermax" : 30000.0,
 					"varname" : "del3"
@@ -99,7 +99,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 82.0, 159.0, 17.0 ],
+					"patching_rect" : [ 0.0, 94.0, 159.0, 17.0 ],
 					"sliderlog" : 4.0,
 					"slidermax" : 30000.0,
 					"varname" : "del2"
@@ -122,7 +122,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 32.0, 159.0, 17.0 ],
+					"patching_rect" : [ 0.0, 44.0, 159.0, 17.0 ],
 					"sliderlog" : 4.0,
 					"slidermax" : 30000.0,
 					"varname" : "del1"
@@ -145,7 +145,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 183.0, 159.0, 53.0 ],
+					"patching_rect" : [ 0.0, 206.0, 159.0, 53.0 ],
 					"varname" : "ll.blues",
 					"viewvisibility" : 1
 				}
@@ -193,7 +193,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 112.0, 165.0, 47.0, 17.0 ],
+					"patching_rect" : [ 112.0, 177.0, 47.0, 17.0 ],
 					"size" : 1.0,
 					"varname" : "del3_pan"
 				}
@@ -212,7 +212,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 165.0, 112.0, 17.0 ],
+					"patching_rect" : [ 0.0, 177.0, 112.0, 17.0 ],
 					"size" : 1.0,
 					"varname" : "del3_gain"
 				}
@@ -231,7 +231,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 1.0, 149.0, 159.0, 17.0 ],
+					"patching_rect" : [ 1.0, 161.0, 159.0, 17.0 ],
 					"size" : 1.0,
 					"varname" : "del3_feedback"
 				}
@@ -250,7 +250,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 112.0, 115.0, 47.0, 17.0 ],
+					"patching_rect" : [ 112.0, 127.0, 47.0, 17.0 ],
 					"size" : 1.0,
 					"varname" : "del2_pan"
 				}
@@ -269,7 +269,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 115.0, 112.0, 17.0 ],
+					"patching_rect" : [ 0.0, 127.0, 112.0, 17.0 ],
 					"size" : 1.0,
 					"varname" : "del2_gain"
 				}
@@ -288,7 +288,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 99.0, 159.0, 17.0 ],
+					"patching_rect" : [ 0.0, 111.0, 159.0, 17.0 ],
 					"size" : 1.0,
 					"varname" : "del2_feedback"
 				}
@@ -307,7 +307,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 112.0, 65.0, 47.0, 17.0 ],
+					"patching_rect" : [ 112.0, 77.0, 47.0, 17.0 ],
 					"size" : 1.0,
 					"varname" : "del1_pan"
 				}
@@ -326,7 +326,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 65.0, 112.0, 17.0 ],
+					"patching_rect" : [ 0.0, 77.0, 112.0, 17.0 ],
 					"size" : 1.0,
 					"varname" : "del1_gain"
 				}
@@ -345,7 +345,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 49.0, 159.0, 17.0 ],
+					"patching_rect" : [ 0.0, 61.0, 159.0, 17.0 ],
 					"size" : 1.0,
 					"varname" : "del1_feedback"
 				}
@@ -365,14 +365,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 742.0, 396.0, 736.0, 482.0 ],
+						"rect" : [ 742.0, 317.0, 736.0, 482.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -419,8 +419,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 76.0, 46.5, 59.0, 22.0 ],
-									"text" : "ll.r in_mix"
+									"patching_rect" : [ 76.0, 46.5, 66.0, 22.0 ],
+									"text" : "ll.r in_mix~"
 								}
 
 							}
@@ -461,8 +461,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1262,8 +1262,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2063,8 +2063,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2864,8 +2864,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3827,7 +3827,9 @@
 						"title_menu" : 0,
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
+						"master" : 0,
 						"act::active_store" : 0,
+						"ll.blues" : 0,
 						"ll.blues::levels" : 0,
 						"ll.blues::outputs" : 0,
 						"ll.blues::state" : 0
@@ -3853,10 +3855,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 44, 137, 584, 846 ],
+						"client_rect" : [ 710, 58, 1470, 1102 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 365, 44, 816, 172 ]
+						"storage_rect" : [ 430, 270, 1276, 999 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -3928,7 +3930,7 @@
 						"pres_menu" : [ "_" ],
 						"preset-ramp" : [ 0.0 ],
 						"presets" : [ 0 ],
-						"tetris_menu" : [ "" ],
+						"tetris_menu" : [ "ƒ default" ],
 						"title_menu" : [ "subpatch" ]
 					}
 ,
@@ -4078,6 +4080,19 @@
 
 			}
  ],
+		"parameters" : 		{
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
 		"dependency_cache" : [ 			{
 				"name" : "actmaker.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
@@ -4128,6 +4143,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.in_mix.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
+				"patcherrelativepath" : "../abstractions/ll.blues",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.mc.stereo_pan.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
@@ -4139,6 +4161,13 @@
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.og.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -4184,6 +4213,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.r~.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.s.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
@@ -4199,6 +4235,13 @@
 			}
 , 			{
 				"name" : "ll.strip#.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.sub_inputs.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
