@@ -499,7 +499,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 70.0, 106.0, 58.0, 20.0 ],
-					"text" : "15:42:09",
+					"text" : "16:31:19",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "time"
 				}
@@ -683,7 +683,7 @@
 					"fontsize" : 12.0,
 					"hint" : "act menu (open acts from here)",
 					"id" : "obj-50",
-					"items" : [ "2Dsliders", ",", "_act_overview", ",", "analyze@", ",", "animator@", ",", "arpanner", ",", "autocount@", ",", "bandfollower", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "bildsynthi", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "envMM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "forbiddenP", ",", "frack", ",", "freeverb@", ",", "frequenzteiler", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.2oscbank", ",", "jit.3m@", ",", "jit.blobs", ",", "jit.brcosa@", ",", "jit.buf", ",", "jit.buffer@", ",", "jit.copyprot.act", ",", "jit.display@", ",", "jit.grab@", ",", "jit.lcd@", ",", "jit.op@", ",", "jit.player", ",", "jit.slide@", ",", "jit.world@", ",", "kaos@", ",", "karma@", ",", "kk.rainer", ",", "kocyu@P", ",", "kompressor", ",", "LFFO", ",", "link@", ",", "matriarch@", ",", "matrix@", ",", "mcpanner", ",", "midikeys", ",", "mixer@", ",", "modul.ator", ",", "morph", ",", "mubugrain@", ",", "multitap", ",", "munger@", ",", "noize@", ",", "normalize", ",", "notepad@", ",", "op@", ",", "oscbank@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "period", ",", "pHARM4@", ",", "pr.6groov", ",", "pr.spectfreeze", ",", "pr.spectplay", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "SDIFter", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.abba@", ",", "spat.ambicontrol@", ",", "spat.ambidecode@", ",", "spat.ambiencode@", ",", "spat.ambimonitor@", ",", "spat.ambipanning@", ",", "spat.ambitransform@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "timeline@", ",", "TSSSF", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(comunity contributions)", ",", "jit.lcd@", ",", "jit.ndi@", ",", "kokofrantz", ",", "smpseq@" ],
+					"items" : [ "2Dsliders", ",", "_act_overview", ",", "analyze@", ",", "animator@", ",", "arpanner", ",", "autocount@", ",", "bandfollower", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "bildsynthi", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "envMM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "forbiddenP", ",", "frack", ",", "freeverb@", ",", "frequenzteiler", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.2oscbank", ",", "jit.3m@", ",", "jit.blobs", ",", "jit.brcosa@", ",", "jit.buf", ",", "jit.buffer@", ",", "jit.copyprot.act", ",", "jit.display@", ",", "jit.grab@", ",", "jit.lcd@", ",", "jit.op@", ",", "jit.player", ",", "jit.slide@", ",", "jit.videoplanes", ",", "jit.videoplanesP", ",", "jit.world@", ",", "kaos@", ",", "karma@", ",", "kk.rainer", ",", "kocyu@P", ",", "kompressor", ",", "LFFO", ",", "link@", ",", "matriarch@", ",", "matrix@", ",", "mcpanner", ",", "midikeys", ",", "mixer@", ",", "modul.ator", ",", "morph", ",", "mubugrain@", ",", "multitap", ",", "munger@", ",", "noize@", ",", "normalize", ",", "notepad@", ",", "op@", ",", "oscbank@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "period", ",", "pHARM4@", ",", "pr.6groov", ",", "pr.spectfreeze", ",", "pr.spectplay", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "SDIFter", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.abba@", ",", "spat.ambicontrol@", ",", "spat.ambidecode@", ",", "spat.ambiencode@", ",", "spat.ambimonitor@", ",", "spat.ambipanning@", ",", "spat.ambitransform@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "timeline@", ",", "TSSSF", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(comunity contributions)", ",", "jit.lcd@", ",", "jit.ndi@", ",", "kokofrantz", ",", "smpseq@" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -859,7 +859,7 @@
 													"allowdrag" : 0,
 													"fontsize" : 13.0,
 													"id" : "obj-17",
-													"items" : [ "no", ",", "buffer_host1", ",", "ho_st1", ",", "modul.ator1" ],
+													"items" : [ "no", ",", "ho_st1" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -3762,14 +3762,13 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-5",
-													"linecount" : 2,
+													"linecount" : 3,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 58.0, 373.0, 79.0, 35.0 ],
-													"presentation_linecount" : 2,
-													"text" : "::flop1::pres_menu"
+													"text" : "::jit.videoplanesP1::pres_menu"
 												}
 
 											}
@@ -3814,12 +3813,13 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-42",
+													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 25.0, 132.0, 79.0, 22.0 ],
-													"text" : "flop 1"
+													"text" : "jit.videoplanesP 1"
 												}
 
 											}
@@ -6687,7 +6687,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 188.0, 243.0, 254.0, 35.0 ],
-																	"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 8/Library/ppooll_presets/flopP\""
+																	"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 8/Library/ppooll_presets/jit.videoplanesPP\""
 																}
 
 															}
@@ -8207,13 +8207,13 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-37",
-																	"linecount" : 2,
+																	"linecount" : 3,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 353.0, 413.0, 186.0, 35.0 ],
-																	"text" : "10 \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \""
+																	"text" : "10 \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \" \""
 																}
 
 															}
@@ -8232,12 +8232,13 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-23",
+																	"linecount" : 3,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 536.0, 69.0, 50.0, 35.0 ],
-																	"text" : "flop1"
+																	"text" : "jit.videoplanesP1"
 																}
 
 															}
@@ -10098,7 +10099,7 @@
 																									"numoutlets" : 1,
 																									"outlettype" : [ "" ],
 																									"patching_rect" : [ 198.0, 381.0, 154.0, 22.0 ],
-																									"text" : "6 3"
+																									"text" : "31 1"
 																								}
 
 																							}
@@ -10371,12 +10372,13 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-20",
+																					"linecount" : 2,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 12.0, 37.0, 90.0, 22.0 ],
-																					"text" : "flop1"
+																					"text" : "jit.videoplanesP1"
 																				}
 
 																			}
@@ -10489,12 +10491,13 @@
 																					"fontname" : "Arial",
 																					"fontsize" : 12.0,
 																					"id" : "obj-10",
+																					"linecount" : 2,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 262.0, 240.0, 107.0, 22.0 ],
-																					"text" : "\"flop _\""
+																					"text" : "\"jit.videoplanesP _\""
 																				}
 
 																			}
@@ -11233,12 +11236,13 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-12",
+																					"linecount" : 3,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 240.0, 96.0, 50.0, 35.0 ],
-																					"text" : "flop"
+																					"text" : "jit.videoplanesP"
 																				}
 
 																			}
@@ -11868,7 +11872,7 @@
 																			}
 , 																			{
 																				"box" : 																				{
-																					"cols" : 6,
+																					"cols" : 31,
 																					"colwidth" : 20,
 																					"fontface" : 0,
 																					"fontname" : "Arial",
@@ -11880,7 +11884,7 @@
 																					"numoutlets" : 4,
 																					"outlettype" : [ "list", "", "", "" ],
 																					"patching_rect" : [ 13.0, 70.0, 477.0, 389.0 ],
-																					"rows" : 3,
+																					"rows" : 1,
 																					"selmode" : 5,
 																					"vscroll" : 0
 																				}
@@ -11954,12 +11958,13 @@
 																					"fontname" : "Arial",
 																					"fontsize" : 12.0,
 																					"id" : "obj-7",
+																					"linecount" : 2,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 13.0, 2.0, 87.0, 22.0 ],
-																					"text" : "flop1"
+																					"text" : "jit.videoplanesP1"
 																				}
 
 																			}
@@ -12898,13 +12903,13 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-3",
-																	"linecount" : 7,
+																	"linecount" : 12,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 125.0, 281.0, 24.0, 143.0 ],
-																	"text" : "send ::flop1::pat"
+																	"text" : "send ::jit.videoplanesP1::pat"
 																}
 
 															}
@@ -13386,7 +13391,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 106.0, 138.0, 139.0, 22.0 ],
-													"text" : "flop1 _"
+													"text" : "jit.videoplanesP1 _"
 												}
 
 											}
@@ -13479,6 +13484,21 @@
 														"subpatcher_template" : "",
 														"assistshowspatchername" : 0,
 														"boxes" : [ 															{
+																"box" : 																{
+																	"fontname" : "Arial",
+																	"fontsize" : 10.0,
+																	"id" : "obj-8",
+																	"maxclass" : "message",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 177.0, 241.0, 28.0, 20.0 ],
+																	"text" : "dum",
+																	"varname" : "dum"
+																}
+
+															}
+, 															{
 																"box" : 																{
 																	"id" : "obj-9",
 																	"maxclass" : "message",
@@ -14704,12 +14724,13 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-40",
+																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 463.0, 420.0, 72.0, 22.0 ],
-																	"text" : "flop1"
+																	"text" : "jit.videoplanesP1"
 																}
 
 															}
@@ -14806,7 +14827,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 272.0, 179.5, 111.0, 22.0 ],
-																					"text" : "flop1"
+																					"text" : "jit.videoplanesP1"
 																				}
 
 																			}
@@ -17192,7 +17213,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 392.0, 201.0, 216.0, 29.0 ],
-																					"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 8/Library/ppooll_presets/flopP\""
+																					"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 8/Library/ppooll_presets/jit.videoplanesPP\""
 																				}
 
 																			}
@@ -17286,7 +17307,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 208.0, 226.0, 134.0, 19.0 ],
-																					"text" : "flop1"
+																					"text" : "jit.videoplanesP1"
 																				}
 
 																			}
@@ -18070,7 +18091,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-10",
-																	"items" : [ "33-roaches.json", ",", "33-rythm.json" ],
+																	"items" : "fugen.json",
 																	"maxclass" : "umenu",
 																	"numinlets" : 1,
 																	"numoutlets" : 3,
@@ -18468,13 +18489,13 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-1",
-																	"linecount" : 3,
+																	"linecount" : 4,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 546.0, 120.0, 223.0, 49.0 ],
-																	"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 8/Library/ppooll_presets/flopP\""
+																	"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 8/Library/ppooll_presets/jit.videoplanesPP\""
 																}
 
 															}
@@ -27588,7 +27609,7 @@
 													"bgfillcolor_proportion" : 0.39,
 													"bgfillcolor_type" : "color",
 													"id" : "obj-38",
-													"items" : [ "no", ",", "buffer_host1", ",", "ho_st1", ",", "modul.ator1" ],
+													"items" : [ "no", ",", "ho_st1" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -29813,7 +29834,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 314.0, 52.5, 29.0, 35.0 ],
-													"text" : "",
+													"text" : "#",
 													"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 												}
 
@@ -54280,7 +54301,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 256.0, 442.0, 212.0, 53.0 ],
-													"text" : "load sliding_tiles.maxpat"
+													"text" : "load jit.videoplanesP.maxpat"
 												}
 
 											}
@@ -58189,10 +58210,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 644.0, 103.0, 92.0, 21.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 54, 397, 594, 1106 ],
+						"client_rect" : [ 161, 1011, 921, 2055 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 365, 44, 816, 172 ]
+						"storage_rect" : [ 430, 270, 1276, 999 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -58248,7 +58269,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 493.0, 168.0, 107.0, 21.0 ],
 					"restore" : 					{
-						"act_menu" : [ "flop" ],
+						"act_menu" : [ "jit.videoplanesP" ],
 						"audioON/OFF" : [ 0 ],
 						"chans" : [ 16 ],
 						"def" : [ -1 ],
@@ -58447,13 +58468,6 @@
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../patchers/abstractions/filip",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "default",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/misc/ppooll_factory_presets/flopT",
-				"patcherrelativepath" : "../misc/ppooll_factory_presets/flopT",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
