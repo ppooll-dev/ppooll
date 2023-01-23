@@ -569,7 +569,7 @@
 		"pr.spectfreeze" : 		{
 			"description" : "spectrum freezer",
 			"authors" : 6,
-			"tags" : 9
+			"tags" : [ 9, 15 ]
 		}
 ,
 		"pr.spectplay" : 		{
