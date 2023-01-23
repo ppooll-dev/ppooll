@@ -346,7 +346,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@state", 2, 1, 0, 0, 2, 0 ],
+					"args" : [ "@state", 2, 1, 0, 0, 2, 0, "@chans_in", "min", 2, "@chans_in", "max", 2 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -673,10 +673,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 493.0, 54.0, 100.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 313, 472, 906, 1006 ],
+						"client_rect" : [ 842, 164, 1920, 407 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 200, 200, 800, 500 ]
+						"storage_rect" : [ 0, 0, 640, 240 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -741,7 +741,7 @@
 						"oscA_slope" : [ 43.0 ],
 						"oscB_pwm" : [ 71.0 ],
 						"oscB_slope" : [ 30.0 ],
-						"pres_menu" : [ "" ],
+						"pres_menu" : [ "_" ],
 						"preset-ramp" : [ 0.0 ],
 						"presets" : [ 0 ],
 						"rnd" : [ -1 ],
