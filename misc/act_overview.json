@@ -45,133 +45,766 @@
 	}
 ,
 	"acts" : 	{
-		"2Dsliders" : [ 1, "control parameters by dragging points", 4 ],
-		"INmulti" : [ 1, "(multiple) audio input", 2, 13, 15 ],
-		"LFFO" : [ 4, "dynamic ring modulator", 9, 15 ],
-		"SDIFter" : [ 1, 2, 15, "SDIF soundfile player", 1, 11 ],
-		"TFF" : [ 5, "4 band resonant filter", 4, 9, 11 ],
-		"TSSSF" : [ 5, "substractive synthesis", 1, 8, 11 ],
-		"analyze@" : [ 1, "loudness, brightness of audio", 4, 14 ],
-		"animator@" : [ 3, "5 band lfo", 9 ],
-		"arpanner" : [ 4, "audiorate panner", 9 ],
-		"autocount@" : [ 6, "number generator", 4 ],
-		"bandfollower" : [ 1, "generate loudness data from filters", 4, 14 ],
-		"banger" : [ 1, "send synchronized bangs", 4, 14 ],
-		"beast" : [ 2, "non-trivial buffer machine", 1, 3, 11 ],
-		"beauty" : [ 2, "delay-feedback machine", 1, 9, 11 ],
-		"benjolino" : [ 7, "shift-register oscillator (rungler)", 1, 11 ],
-		"bildsynthi" : [ 8, "video driven bandpass filter", 7, 9 ],
-		"buffub" : [ 1, 3, "records into buffers", 2, 3, 10, 15 ],
-		"chaos" : [ 1, 2, "lorenz-roessler generator", 4, 5 ],
-		"chebyshev@" : [ 3, "distortion unit", 9, 15 ],
-		"cll_cltl@" : [ 1, 9, "ondomusic noise", 1, 11 ],
-		"clocker@" : [ 1, "event sequencer", 4 ],
-		"cloud" : [ 10, "oscillator bank with pitch distribution system", 1, 11 ],
-		"control@" : [ 1, "external device input (midi-osc-etc)", 4, 8, 12 ],
-		"delayloops" : [ 4, "3 delay lines", 9 ],
-		"demosound@" : [ 16, "cycling's demosound to ppooll", 1 ],
-		"distort@" : [ 1, 3, "degrade sample-rate & bit-resolution", 9, 15 ],
-		"envM" : [ 1, "mc version of multiple envelopes", 5, 15 ],
-		"envMM" : [ 1, "multiple envelopes", 4 ],
-		"eq@" : [ 3, "crossover-filter based graphic equalizer", 9, 15 ],
-		"equalAmp" : [ 10, "????", 9 ],
-		"euclid" : [ 10, "LFO with Euclidean sequencer", 1, 11 ],
-		"feedbacker" : [ 2, "feedback generator for audio-inputs", 9, 15 ],
-		"fffb@" : [ 1, "filter bank", 9 ],
-		"flop" : [ 1, "sample looper", 1, 3 ],
-		"fmrm" : [ 1, 3, 16, "fm synt & ring modulator", 1, 9, 11, 15 ],
-		"forbiddenP" : [ 1, "spectral filter or vocoder", 9 ],
-		"frack" : [ 11, "record parameter movements", 4 ],
-		"freeverb@" : [ 2, "reverb", 9 ],
-		"frequenzteiler" : [ 1, "trautonium synthesizer", 1, 11 ],
-		"gg.rainer" : [ 2, "granular sample player", 1, 3 ],
-		"gizmo@" : [ 2, "pitch shifter", 9, 15 ],
-		"gverb@" : [ 2, "reverb plugin", 9 ],
-		"hardplay" : [ 1, 2, "plays soundfiles from hd or cd", 1, 6, 15 ],
-		"jit.2oscbank" : [ 1, "video to oscilator bank", 1, 7, 11 ],
-		"jit.3m@" : [ 1, "cheap image analyser", 4, 7 ],
-		"jit.blobs" : [ 1, "outputs a list with blobs tracked in an image", 4, 7 ],
-		"jit.brcosa@" : [ 1, "video brcosa settings", 7 ],
-		"jit.buf" : [ 1, "store images and play (textures)", 7 ],
-		"jit.buffer@" : [ 1, "store images and play later", 7 ],
-		"jit.copyprot.act" : [ 1, "grab video from screen", 7 ],
-		"jit.display@" : [ 1, "video screening and recording", 7 ],
-		"jit.grab@" : [ 1, "camera input", 7 ],
-		"jit.lcd@" : [ 1, "draft drawing", 7 ],
-		"jit.op@" : [ 1, "image operater", 7 ],
-		"jit.player" : [ 1, "qt movie player", 7 ],
-		"jit.slide@" : [ 1, "slide and repositin incoming texture", 7 ],
-		"jit.videoplanes" : [ 1, 2, "mix and position video", 7],
-		"jit.videoplanesP" : [ 1, "mix and position video (list-version)", 7],
-		"jit.world@" : [ 1, "texture host to movie rec", 7 ],
-		"kaos@" : [ 1, "random mouse clicks", 4 ],
-		"karma@" : [ 12, "Varispeed audio looper", 1, 3 ],
-		"kk.rainer" : [ 2, "granular sample player", 1, 3 ],
-		"kocyu@P" : [ 9, 13, "soft synth", 1, 11 ],
-		"kompressor" : [ 16, "audio compressor", 9, 15 ],
-		"link@" : [ 3, "ableton link sync interface", 1 ],
-		"matriarch@" : [ 14, "audio matrix on steroids", 5, 13 ],
-		"matrix@" : [ 1, "audio matrix", 5, 13 ],
-		"mcpanner" : [ 1, "simple random panner for mc signals", 9, 15 ],
-		"midikeys" : [ 1, "midi keyboard parser", 4, 8 ],
-		"mixer@" : [ 1, "audio mixer", 5, 13 ],
-		"modul.ator" : [ 1, "modulates anything", 1, 3, 4, 5, 9, 11 ],
-		"morph" : [ 10, "morphing between two audio signals (mc)", 9 ],
-		"mubugrain@" : [ 14, "granular player", 1, 3 ],
-		"multitap" : [ 2, "delay bank", 9 ],
-		"munger@" : [ 2, 3, "granulator plugin", 9, 15 ],
-		"noize@" : [ 1, 2, "noise-generator", 1, 11, 15 ],
-		"normalize" : [ 2, "get maximum level of audio", 9, 15 ],
-		"notepad@" : [ 1, 3, "write something to yourself" ],
-		"op@" : [ 3, "signal/number operator", 4, 5, 9, 14, 15 ],
-		"oscbank@" : [ 1, "multiple sinus generator", 1, 11 ],
-		"overdrive@" : [ 1, "audio overdrive", 9, 15 ],
-		"pHARM4@" : [ 6, "4 band harmonizer", 9 ],
-		"paf@" : [ 1, 2, 3, "Phase Aligned Formant Synthesizer", 9, 15 ],
-		"peakfinder" : [ 2, "dynamic gate", 9 ],
-		"peakfollow@" : [ 2, "envelope follower", 4, 5, 14 ],
-		"period" : [ 3, "signal-based step sequencer", 1, 5 ],
-		"pr.6groov" : [ 6, "multiple sample player", 1, 3 ],
-		"pr.spectfreeze" : [ 6, "spectrum freezer", 9 ],
-		"pr.spectplay" : [ 6, "spectrum player", 9 ],
-		"prdelay@" : [ 6, "simple delay with feedback", 9 ],
-		"pulse@" : [ 3, "lfo pulse generator", 1, 4, 5 ],
-		"pulsegen" : [ 17, "pulse wave generator", 1, 4, 15 ],
-		"quant" : [ 3, "signal based frequency/rhythm quantizer", 9, 5 ],
-		"random0_1-" : [ 1, "simple ranomizer spitting 0 and 1", 4 ],
-		"random@" : [ 1, "randomize parameters", 4 ],
-		"rec@" : [ 1, "record to harddisc", 2, 6, 10, 15 ],
-		"rec_events" : [ 1, "records parameter events", 4 ],
-		"rez@" : [ 3, "spectral rezonators", 1, 9, 11 ],
-		"rm@" : [ 1, "ring modulator", 9 ],
-		"scope@" : [ 1, 3, "view audio signal", 14, 15 ],
-		"signaltocontrol" : [ 1, "signals to control@", 14, 15 ],
-		"simproov" : [ 1, "simple 4 fold sample player", 1, 3 ],
-		"sinsE" : [ 1, "sinus bank with envelopes", 1, 11, 15 ],
-		"sinus" : [ 1, "sinus tone generator", 1, 11, 15 ],
-		"snap@" : [ 1, "snapshot all parameters as preset", 4 ],
-		"sonogram@" : [ 1, "audio signal viewer", 14 ],
-		"spat.abba@" : [ 3, "ambisonics a-to-b/b-to-a format converter", 9 ],
-		"spat.ambicontrol@" : [ 1, 3, "ambimonitor controller", 4, 15 ],
-		"spat.ambidecode@" : [ 3, "ambisonics b-format decoder", 9, 13, 14, 15 ],
-		"spat.ambiencode@" : [ 3, "ambisonics b-format encoder", 9, 13, 14, 15 ],
-		"spat.ambimonitor@" : [ 1, 3, "monitor for ambisonics encoder", 14, 15 ],
-		"spat.ambipanning@" : [ 3, "ambisonics panner", 9, 13, 15 ],
-		"spat.ambitransform@" : [ 3, "ambisonics soundfield transform", 9, 14, 15 ],
-		"spat.uhj2b@" : [ 3, "ambisonics uhj-to-b format converter", 9, 15 ],
-		"spectral_sins" : [ 1, "sinwaves following incoming audio", 1, 11 ],
-		"svf2@" : [ 1, 3, "cutoff filter", 9, 15 ],
-		"tetris@" : [ 1, "customize your act layout (and act-building)" ],
-		"timeline@" : [ 1, "graphical timeline sequencer for parameters", 4 ],
-		"vbap@" : [ 1, "multi-speaker-spat or plugin-router", 9, 13, 15 ],
-		"vst@" : [ 1, 3, "host for vst plugins", 9, 15 ],
-		"w_filter" : [ 1, "n-band filter/eq", 9, 15 ],
-		"walk" : [ 1, "random walk a parameter", 4 ],
-		"wavelets" : [ 2, "time based oscilator", 1, 11 ],
-		"waveshapers@" : [ 3, "waveshaping functions and demos", 1, 9, 11, 15 ],
-		"wrapfilter" : [ 2, "1 - 4 band stereo filter/eq", 9, 15 ],
-		"x_filter" : [ 3, "cheyshev & butterworth filter", 9, 15 ],
-		"xgroove@" : [ 1, 14, "sample player", 1, 3 ]
+		"2Dsliders" : 		{
+			"description" : "control parameters by dragging points",
+			"authors" : 1,
+			"tags" : 4
+		}
+,
+		"INmulti" : 		{
+			"description" : "(multiple) audio input",
+			"authors" : 1,
+			"tags" : [ 2, 13, 15 ]
+		}
+,
+		"LFFO" : 		{
+			"description" : "dynamic ring modulator",
+			"authors" : 4,
+			"tags" : [ 9, 15 ]
+		}
+,
+		"SDIFter" : 		{
+			"description" : "SDIF soundfile player",
+			"authors" : [ 1, 2, 15 ],
+			"tags" : [ 1, 11 ]
+		}
+,
+		"TFF" : 		{
+			"description" : "4 band resonant filter",
+			"authors" : 5,
+			"tags" : [ 4, 9, 11 ]
+		}
+,
+		"TSSSF" : 		{
+			"description" : "substractive synthesis",
+			"authors" : 5,
+			"tags" : [ 1, 8, 11 ]
+		}
+,
+		"analyze@" : 		{
+			"description" : "loudness, brightness of audio",
+			"authors" : 1,
+			"tags" : [ 4, 14 ]
+		}
+,
+		"animator@" : 		{
+			"description" : "5 band lfo",
+			"authors" : 3,
+			"tags" : 9
+		}
+,
+		"arpanner" : 		{
+			"description" : "audiorate panner",
+			"authors" : 4,
+			"tags" : 9
+		}
+,
+		"autocount@" : 		{
+			"description" : "number generator",
+			"authors" : 6,
+			"tags" : 4
+		}
+,
+		"bandfollower" : 		{
+			"description" : "generate loudness data from filters",
+			"authors" : 1,
+			"tags" : [ 4, 14 ]
+		}
+,
+		"banger" : 		{
+			"description" : "send synchronized bangs",
+			"authors" : 1,
+			"tags" : [ 4, 14 ]
+		}
+,
+		"beast" : 		{
+			"description" : "non-trivial buffer machine",
+			"authors" : 2,
+			"tags" : [ 1, 3, 11 ]
+		}
+,
+		"beauty" : 		{
+			"description" : "delay-feedback machine",
+			"authors" : 2,
+			"tags" : [ 1, 9, 11 ]
+		}
+,
+		"benjolino" : 		{
+			"description" : "shift-register oscillator (rungler)",
+			"authors" : 7,
+			"tags" : [ 1, 11 ]
+		}
+,
+		"bildsynthi" : 		{
+			"description" : "video driven bandpass filter",
+			"authors" : [ 1, 8 ],
+			"tags" : [ 7, 9 ]
+		}
+,
+		"buffub" : 		{
+			"description" : "records into buffers",
+			"authors" : [ 1, 3 ],
+			"tags" : [ 2, 3, 10, 15 ]
+		}
+,
+		"chaos" : 		{
+			"description" : "lorenz-roessler generator",
+			"authors" : [ 1, 2 ],
+			"tags" : [ 4, 5 ]
+		}
+,
+		"chebyshev@" : 		{
+			"description" : "distortion unit",
+			"authors" : 3,
+			"tags" : [ 9, 15 ]
+		}
+,
+		"cll_cltl@" : 		{
+			"description" : "ondomusic noise",
+			"authors" : [ 1, 9 ],
+			"tags" : [ 1, 11 ]
+		}
+,
+		"clocker@" : 		{
+			"description" : "event sequencer",
+			"authors" : 1,
+			"tags" : 4
+		}
+,
+		"cloud" : 		{
+			"description" : "oscillator bank with pitch distribution system",
+			"authors" : 10,
+			"tags" : [ 1, 11 ]
+		}
+,
+		"control@" : 		{
+			"description" : "external device input (midi-osc-etc)",
+			"authors" : 1,
+			"tags" : [ 4, 8, 12 ]
+		}
+,
+		"delayloops" : 		{
+			"description" : "3 delay lines",
+			"authors" : 4,
+			"tags" : 9
+		}
+,
+		"demosound@" : 		{
+			"description" : "cycling's demosound to ppooll",
+			"authors" : 16,
+			"tags" : 1
+		}
+,
+		"distort@" : 		{
+			"description" : "degrade sample-rate & bit-resolution",
+			"authors" : [ 1, 3 ],
+			"tags" : [ 9, 15 ]
+		}
+,
+		"envM" : 		{
+			"description" : "mc version of multiple envelopes",
+			"authors" : 1,
+			"tags" : [ 5, 15 ]
+		}
+,
+		"envMM" : 		{
+			"description" : "multiple envelopes",
+			"authors" : 1,
+			"tags" : 4
+		}
+,
+		"eq@" : 		{
+			"description" : "crossover-filter based graphic equalizer",
+			"authors" : 3,
+			"tags" : [ 9, 15 ]
+		}
+,
+		"equalAmp" : 		{
+			"description" : "????",
+			"authors" : 10,
+			"tags" : 9
+		}
+,
+		"euclid" : 		{
+			"description" : "LFO with Euclidean sequencer",
+			"authors" : 10,
+			"tags" : [ 1, 11 ]
+		}
+,
+		"feedbacker" : 		{
+			"description" : "feedback generator for audio-inputs",
+			"authors" : 2,
+			"tags" : [ 9, 15 ]
+		}
+,
+		"fffb@" : 		{
+			"description" : "filter bank",
+			"authors" : 1,
+			"tags" : 9
+		}
+,
+		"flop" : 		{
+			"description" : "sample looper",
+			"authors" : 1,
+			"tags" : [ 1, 3 ]
+		}
+,
+		"fmrm" : 		{
+			"description" : "fm synt & ring modulator",
+			"authors" : [ 1, 3, 16 ],
+			"tags" : [ 1, 9, 11, 15 ]
+		}
+,
+		"forbiddenP" : 		{
+			"description" : "spectral filter or vocoder",
+			"authors" : 1,
+			"tags" : 9
+		}
+,
+		"frack" : 		{
+			"description" : "record parameter movements",
+			"authors" : 11,
+			"tags" : 4
+		}
+,
+		"freeverb@" : 		{
+			"description" : "reverb",
+			"authors" : 2,
+			"tags" : 9
+		}
+,
+		"frequenzteiler" : 		{
+			"description" : "trautonium synthesizer",
+			"authors" : 1,
+			"tags" : [ 1, 11 ]
+		}
+,
+		"gg.rainer" : 		{
+			"description" : "granular sample player",
+			"authors" : 2,
+			"tags" : [ 1, 3 ]
+		}
+,
+		"gizmo@" : 		{
+			"description" : "pitch shifter",
+			"authors" : 2,
+			"tags" : [ 9, 15 ]
+		}
+,
+		"gverb@" : 		{
+			"description" : "reverb plugin",
+			"authors" : 2,
+			"tags" : 9
+		}
+,
+		"hardplay" : 		{
+			"description" : "plays soundfiles from hd or cd",
+			"authors" : [ 1, 2 ],
+			"tags" : [ 1, 6, 15 ]
+		}
+,
+		"jit.2oscbank" : 		{
+			"description" : "video to oscilator bank",
+			"authors" : 1,
+			"tags" : [ 1, 7, 11 ]
+		}
+,
+		"jit.3m@" : 		{
+			"description" : "cheap image analyser",
+			"authors" : 1,
+			"tags" : [ 4, 7 ]
+		}
+,
+		"jit.blobs" : 		{
+			"description" : "outputs a list with blobs tracked in an image",
+			"authors" : 1,
+			"tags" : [ 4, 7 ]
+		}
+,
+		"jit.brcosa@" : 		{
+			"description" : "video brcosa settings",
+			"authors" : 1,
+			"tags" : 7
+		}
+,
+		"jit.buf" : 		{
+			"description" : "store images and play (textures)",
+			"authors" : 1,
+			"tags" : 7
+		}
+,
+		"jit.buffer@" : 		{
+			"description" : "store images and play later",
+			"authors" : 1,
+			"tags" : 7
+		}
+,
+		"jit.copyprot.act" : 		{
+			"description" : "grab video from screen",
+			"authors" : 1,
+			"tags" : 7
+		}
+,
+		"jit.display@" : 		{
+			"description" : "video screening and recording",
+			"authors" : 1,
+			"tags" : 7
+		}
+,
+		"jit.grab@" : 		{
+			"description" : "camera input",
+			"authors" : 1,
+			"tags" : 7
+		}
+,
+		"jit.lcd@" : 		{
+			"description" : "draft drawing",
+			"authors" : 1,
+			"tags" : 7
+		}
+,
+		"jit.op@" : 		{
+			"description" : "image operater",
+			"authors" : 1,
+			"tags" : 7
+		}
+,
+		"jit.player" : 		{
+			"description" : "qt movie player",
+			"authors" : 1,
+			"tags" : 7
+		}
+,
+		"jit.slide@" : 		{
+			"description" : "slide and repositin incoming texture",
+			"authors" : 1,
+			"tags" : 7
+		}
+,
+		"jit.videoplanes" : 		{
+			"description" : "mix and position video",
+			"authors" : [ 1, 2 ],
+			"tags" : 7
+		}
+,
+		"jit.videoplanesP" : 		{
+			"description" : "mix and position video (list-version)",
+			"authors" : 1,
+			"tags" : 7
+		}
+,
+		"jit.world@" : 		{
+			"description" : "texture host to movie rec",
+			"authors" : 1,
+			"tags" : 7
+		}
+,
+		"kaos@" : 		{
+			"description" : "random mouse clicks",
+			"authors" : 1,
+			"tags" : 4
+		}
+,
+		"karma@" : 		{
+			"description" : "Varispeed audio looper",
+			"authors" : 12,
+			"tags" : [ 1, 3 ]
+		}
+,
+		"kk.rainer" : 		{
+			"description" : "granular sample player",
+			"authors" : 2,
+			"tags" : [ 1, 3 ]
+		}
+,
+		"kocyu@P" : 		{
+			"description" : "soft synth",
+			"authors" : [ 9, 13 ],
+			"tags" : [ 1, 11 ]
+		}
+,
+		"kompressor" : 		{
+			"description" : "audio compressor",
+			"authors" : 16,
+			"tags" : [ 9, 15 ]
+		}
+,
+		"link@" : 		{
+			"description" : "ableton link sync interface",
+			"authors" : 3,
+			"tags" : 1
+		}
+,
+		"matriarch@" : 		{
+			"description" : "audio matrix on steroids",
+			"authors" : 14,
+			"tags" : [ 5, 13 ]
+		}
+,
+		"matrix@" : 		{
+			"description" : "audio matrix",
+			"authors" : 1,
+			"tags" : [ 5, 13 ]
+		}
+,
+		"mcpanner" : 		{
+			"description" : "simple random panner for mc signals",
+			"authors" : 1,
+			"tags" : [ 9, 15 ]
+		}
+,
+		"midikeys" : 		{
+			"description" : "midi keyboard parser",
+			"authors" : 1,
+			"tags" : [ 4, 8 ]
+		}
+,
+		"mixer@" : 		{
+			"description" : "audio mixer",
+			"authors" : 1,
+			"tags" : [ 5, 13 ]
+		}
+,
+		"modul.ator" : 		{
+			"description" : "modulates anything",
+			"authors" : 1,
+			"tags" : [ 1, 3, 4, 5, 9, 11 ]
+		}
+,
+		"morph" : 		{
+			"description" : "morphing between two audio signals (mc)",
+			"authors" : 10,
+			"tags" : 9
+		}
+,
+		"mubugrain@" : 		{
+			"description" : "granular player",
+			"authors" : 14,
+			"tags" : [ 1, 3 ]
+		}
+,
+		"multitap" : 		{
+			"description" : "delay bank",
+			"authors" : 2,
+			"tags" : 9
+		}
+,
+		"munger@" : 		{
+			"description" : "granulator plugin",
+			"authors" : [ 2, 3 ],
+			"tags" : [ 9, 15 ]
+		}
+,
+		"noize@" : 		{
+			"description" : "noise-generator",
+			"authors" : [ 1, 2 ],
+			"tags" : [ 1, 11, 15 ]
+		}
+,
+		"normalize" : 		{
+			"description" : "get maximum level of audio",
+			"authors" : 2,
+			"tags" : [ 9, 15 ]
+		}
+,
+		"notepad@" : 		{
+			"description" : "write something to yourself",
+			"authors" : [ 1, 3 ]
+		}
+,
+		"op@" : 		{
+			"description" : "signal/number operator",
+			"authors" : 3,
+			"tags" : [ 4, 5, 9, 14, 15 ]
+		}
+,
+		"oscbank@" : 		{
+			"description" : "multiple sinus generator",
+			"authors" : 1,
+			"tags" : [ 1, 11 ]
+		}
+,
+		"overdrive@" : 		{
+			"description" : "audio overdrive",
+			"authors" : 1,
+			"tags" : [ 9, 15 ]
+		}
+,
+		"pHARM4@" : 		{
+			"description" : "4 band harmonizer",
+			"authors" : 6,
+			"tags" : 9
+		}
+,
+		"paf@" : 		{
+			"description" : "Phase Aligned Formant Synthesizer",
+			"authors" : [ 1, 2, 3 ],
+			"tags" : [ 9, 15 ]
+		}
+,
+		"peakfinder" : 		{
+			"description" : "dynamic gate",
+			"authors" : 2,
+			"tags" : 9
+		}
+,
+		"peakfollow@" : 		{
+			"description" : "envelope follower",
+			"authors" : 2,
+			"tags" : [ 4, 5, 14 ]
+		}
+,
+		"period" : 		{
+			"description" : "signal-based step sequencer",
+			"authors" : 3,
+			"tags" : [ 1, 5 ]
+		}
+,
+		"pr.6groov" : 		{
+			"description" : "multiple sample player",
+			"authors" : 6,
+			"tags" : [ 1, 3 ]
+		}
+,
+		"pr.spectfreeze" : 		{
+			"description" : "spectrum freezer",
+			"authors" : 6,
+			"tags" : 9
+		}
+,
+		"pr.spectplay" : 		{
+			"description" : "spectrum player",
+			"authors" : 6,
+			"tags" : 9
+		}
+,
+		"prdelay@" : 		{
+			"description" : "simple delay with feedback",
+			"authors" : 6,
+			"tags" : 9
+		}
+,
+		"pulse@" : 		{
+			"description" : "lfo pulse generator",
+			"authors" : 3,
+			"tags" : [ 1, 4, 5 ]
+		}
+,
+		"pulsegen" : 		{
+			"description" : "pulse wave generator",
+			"authors" : 17,
+			"tags" : [ 1, 4, 15 ]
+		}
+,
+		"quant" : 		{
+			"description" : "signal based frequency/rhythm quantizer",
+			"authors" : 3,
+			"tags" : [ 9, 5 ]
+		}
+,
+		"random0_1-" : 		{
+			"description" : "simple ranomizer spitting 0 and 1",
+			"authors" : 1,
+			"tags" : 4
+		}
+,
+		"random@" : 		{
+			"description" : "randomize parameters",
+			"authors" : 1,
+			"tags" : 4
+		}
+,
+		"rec@" : 		{
+			"description" : "record to harddisc",
+			"authors" : 1,
+			"tags" : [ 2, 6, 10, 15 ]
+		}
+,
+		"rec_events" : 		{
+			"description" : "records parameter events",
+			"authors" : 1,
+			"tags" : 4
+		}
+,
+		"rez@" : 		{
+			"description" : "spectral rezonators",
+			"authors" : 3,
+			"tags" : [ 1, 9, 11 ]
+		}
+,
+		"rm@" : 		{
+			"description" : "ring modulator",
+			"authors" : 1,
+			"tags" : 9
+		}
+,
+		"scope@" : 		{
+			"description" : "view audio signal",
+			"authors" : [ 1, 3 ],
+			"tags" : [ 14, 15 ]
+		}
+,
+		"signaltocontrol" : 		{
+			"description" : "signals to control@",
+			"authors" : 1,
+			"tags" : [ 14, 15 ]
+		}
+,
+		"simproov" : 		{
+			"description" : "simple 4 fold sample player",
+			"authors" : 1,
+			"tags" : [ 1, 3 ]
+		}
+,
+		"sinsE" : 		{
+			"description" : "sinus bank with envelopes",
+			"authors" : 1,
+			"tags" : [ 1, 11, 15 ]
+		}
+,
+		"sinus" : 		{
+			"description" : "sinus tone generator",
+			"authors" : 1,
+			"tags" : [ 1, 11, 15 ]
+		}
+,
+		"snap@" : 		{
+			"description" : "snapshot all parameters as preset",
+			"authors" : 1,
+			"tags" : 4
+		}
+,
+		"sonogram@" : 		{
+			"description" : "audio signal viewer",
+			"authors" : 1,
+			"tags" : 14
+		}
+,
+		"spat.abba@" : 		{
+			"description" : "ambisonics a-to-b/b-to-a format converter",
+			"authors" : 3,
+			"tags" : 9
+		}
+,
+		"spat.ambicontrol@" : 		{
+			"description" : "ambimonitor controller",
+			"authors" : [ 1, 3 ],
+			"tags" : [ 4, 15 ]
+		}
+,
+		"spat.ambidecode@" : 		{
+			"description" : "ambisonics b-format decoder",
+			"authors" : 3,
+			"tags" : [ 9, 13, 14, 15 ]
+		}
+,
+		"spat.ambiencode@" : 		{
+			"description" : "ambisonics b-format encoder",
+			"authors" : 3,
+			"tags" : [ 9, 13, 14, 15 ]
+		}
+,
+		"spat.ambimonitor@" : 		{
+			"description" : "monitor for ambisonics encoder",
+			"authors" : [ 1, 3 ],
+			"tags" : [ 14, 15 ]
+		}
+,
+		"spat.ambipanning@" : 		{
+			"description" : "ambisonics panner",
+			"authors" : 3,
+			"tags" : [ 9, 13, 15 ]
+		}
+,
+		"spat.ambitransform@" : 		{
+			"description" : "ambisonics soundfield transform",
+			"authors" : 3,
+			"tags" : [ 9, 14, 15 ]
+		}
+,
+		"spat.uhj2b@" : 		{
+			"description" : "ambisonics uhj-to-b format converter",
+			"authors" : 3,
+			"tags" : [ 9, 15 ]
+		}
+,
+		"spectral_sins" : 		{
+			"description" : "sinwaves following incoming audio",
+			"authors" : 1,
+			"tags" : [ 1, 11 ]
+		}
+,
+		"svf2@" : 		{
+			"description" : "cutoff filter",
+			"authors" : [ 1, 3 ],
+			"tags" : [ 9, 15 ]
+		}
+,
+		"tetris@" : 		{
+			"description" : "customize your act layout (and act-building)",
+			"authors" : 1
+		}
+,
+		"timeline@" : 		{
+			"description" : "graphical timeline sequencer for parameters",
+			"authors" : 1,
+			"tags" : 4
+		}
+,
+		"vbap@" : 		{
+			"description" : "multi-speaker-spat or plugin-router",
+			"authors" : 1,
+			"tags" : [ 9, 13, 15 ]
+		}
+,
+		"vst@" : 		{
+			"description" : "host for vst plugins",
+			"authors" : [ 1, 3 ],
+			"tags" : [ 9, 15 ]
+		}
+,
+		"w_filter" : 		{
+			"description" : "n-band filter/eq",
+			"authors" : 1,
+			"tags" : [ 9, 15 ]
+		}
+,
+		"walk" : 		{
+			"description" : "random walk a parameter",
+			"authors" : 1,
+			"tags" : 4
+		}
+,
+		"wavelets" : 		{
+			"description" : "time based oscilator",
+			"authors" : 2,
+			"tags" : [ 1, 11 ]
+		}
+,
+		"waveshapers@" : 		{
+			"description" : "waveshaping functions and demos",
+			"authors" : 3,
+			"tags" : [ 1, 9, 11, 15 ]
+		}
+,
+		"wrapfilter" : 		{
+			"description" : "1 - 4 band stereo filter/eq",
+			"authors" : 2,
+			"tags" : [ 9, 15 ]
+		}
+,
+		"x_filter" : 		{
+			"description" : "cheyshev & butterworth filter",
+			"authors" : 3,
+			"tags" : [ 9, 15 ]
+		}
+,
+		"xgroove@" : 		{
+			"description" : "sample player",
+			"authors" : [ 1, 14 ],
+			"tags" : [ 1, 3 ]
+		}
+
 	}
 
 }
