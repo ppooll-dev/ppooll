@@ -29,7 +29,7 @@
 	"version" : "8.5",
 	"website" : "http://ppooll.klingt.org",
 	"filelist" : 	{
-		"externals" : [ "ll_number","ll_fastforward", "ll_2dslider", "shell", "pattrexists", "xsample", "vbap"],
+		"externals" : [ "ll_number","ll_fastforward", "ll_2dslider", "shell", "pattrexists", "vbap"],
 		"patchers" : [ ],
 		"help" : [ ],
 		"misc" : [ ],
