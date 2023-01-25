@@ -23,7 +23,7 @@ drag ppooll package folder to ~usr/Documents/Max 8/Packages/
 drag ppooll package folder to \My Documents\Max 8\Packages\
 <h3>all platforms:</h3>
 install additional required packages via the max package manager:<br />
-cv.jit, karma, link, LowkeyNW, PeRColate, CNMAT Externals, ICST Ambisonics
+cv.jit, karma, link, LowkeyNW, PeRColate, CNMAT Externals, ICST Ambisonics, jasch objects
 
 <h2>known issues:</h2>
 probably many 😅<br />
