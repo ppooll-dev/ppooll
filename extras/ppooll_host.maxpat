@@ -379,7 +379,7 @@
 			}
 , 			{
 				"box" : 				{
-					"annotation" : "record a stereo file of whatever is currently audible quickly into the max5 application folder.",
+					"annotation" : "record a stereo file of whatever is currently audible quickly into the max application folder or a folder you have set in the preferences menu (i.e., prf)",
 					"bgcolor" : [ 0.74902, 0.74902, 0.74902, 0.0 ],
 					"bgoncolor" : [ 0.917647, 0.12549, 0.12549, 0.0 ],
 					"fontface" : 1,
