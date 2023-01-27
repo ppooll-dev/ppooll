@@ -83,7 +83,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-10",
-					"items" : [ "tags", ",", "authors", ",", "usage" ],
+					"items" : [ "tags", ",", "authors", ",", "-", ",", "usage" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -2704,7 +2704,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 482.0, 273.0, 115.0, 22.0 ],
-																	"text" : "vbap@ 8"
+																	"text" : "pr.spectplay 5"
 																}
 
 															}
@@ -7692,7 +7692,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 745.0, 549.0, 96.0, 31.0 ],
-													"text" : "dictionary u050013423"
+													"text" : "dictionary u396005762"
 												}
 
 											}
@@ -7856,7 +7856,7 @@
 													"numinlets" : 5,
 													"numoutlets" : 5,
 													"outlettype" : [ "", "", "", "", "" ],
-													"patching_rect" : [ 492.333333333333258, 335.0, 125.0, 42.0 ],
+													"patching_rect" : [ 492.333333333333258, 335.0, 128.0, 42.0 ],
 													"text" : "routepass _act_overview - \"(comunity contributions)\" --unshared_acts--"
 												}
 
@@ -9981,13 +9981,13 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-8",
-																	"linecount" : 5,
+																	"linecount" : 4,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 216.0, 156.0, 42.0, 62.0 ],
-																	"text" : "symbol chess_starter"
+																	"text" : "symbol chess_poly"
 																}
 
 															}
@@ -11032,7 +11032,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 97.0, 185.0, 50.0, 35.0 ],
-																	"text" : "symbol INmulti"
+																	"text" : "symbol LFFO"
 																}
 
 															}
@@ -13230,7 +13230,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 413.333333333333371, 93.0, 136.0, 22.0 ],
-													"text" : "20"
+													"text" : "19"
 												}
 
 											}
@@ -13272,7 +13272,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 346.0, 40.0, 151.0, 22.0 ],
-													"text" : "sync click 1 0 0 0"
+													"text" : "sync select 1 19"
 												}
 
 											}
