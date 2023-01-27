@@ -742,7 +742,8 @@
 ,
 		"tetris@" : 		{
 			"description" : "customize your act layout (and act-building)",
-			"authors" : 1
+			"authors" : 1,
+			"tags" : ""
 		}
 ,
 		"timeline@" : 		{
