@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 1,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 359.0, 331.0, 159.0, 113.0 ],
+		"rect" : [ 918.0, 108.0, 159.0, 113.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,6 @@
 					"bgcolor" : [ 0.107977, 0.766704, 0.422636, 1.0 ],
 					"fontface" : 0,
 					"format" : [ 1 ],
-					"hidden" : 1,
 					"id" : "obj-1045",
 					"max" : 16.0,
 					"maxclass" : "ll_number",
@@ -186,7 +185,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 447.0, 486.0, 91.0, 22.0 ],
-					"restore" : [ "∆í Macintosh HD:/Library/Audio/Plug-Ins/Components/" ],
+					"restore" : [ "∆í Macintosh HD:/Library/Audio/Plug-Ins/VST/" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -358,7 +357,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-6",
-					"items" : [ "def_folders", ",", "all", ",", "auto", ",", "-" ],
+					"items" : [ "def_folders", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Soundtoys/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/Components/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Valhalla DSP/", ",", "all", ",", "auto", ",", "-", ",", ".Dune3.reg", ",", ".Dune3.response", ",", ".Dune3.sn", ",", "AmpliTube 5.vst", ",", "Arturia V 5", ",", "Audio Damage", ",", "Bitter.vst", ",", "Black Rooster Audio.vst", ",", "CamelCrusher.vst", ",", "chipsounds Multi.vst", ",", "chipsounds.vst", ",", "FabFilter", ",", "GForce", ",", "GSiRotary.vst", ",", "KORG", ",", "LABS.vst", ",", "Lexicon", ",", "Listento-Receiver.vst", ",", "Listento.vst", ",", "M-Tron Pro.vst", ",", "Massive X.vst", ",", "MeldaProduction", ",", "Neutron 3 Compressor.vst", ",", "Neutron 3 Equalizer.vst", ",", "Neutron 3 Exciter.vst", ",", "Neutron 3 Gate.vst", ",", "Neutron 3 Sculptor.vst", ",", "Neutron 3 Transient Shaper.vst", ",", "Neutron 3 Visual Mixer.vst", ",", "Neutron 3.vst", ",", "Noiiz Player.vst", ",", "Oddity_VST2MachO.vst", ",", "Overloud", ",", "PG-8X.vst", ",", "Pop Drummer.vst", ",", "PSPaudioware", ",", "quadraSID.vst", ",", "Relay.vst", ",", "Serum.vst", ",", "Slate Digital", ",", "Sonarworks Reference 4 plugin.vst", ",", "Sonic Charge", ",", "SoundID Reference VST Plugin.vst", ",", "Soundtoys", ",", "TAL-Chorus-LX.vst", ",", "TAL-Sampler.vst", ",", "TAL-U-No-LX-V2.vst", ",", "The Glue.vst", ",", "Tonal Balance Control 2.vst", ",", "tr8Controller.vst", ",", "u-he", ",", "ValhallaDelay.vst", ",", "ValhallaPlate.vst", ",", "ValhallaRoom_x64.vst", ",", "ValhallaShimmer_x64.vst", ",", "ValhallaUberMod_x64.vst", ",", "ValhallaVintageVerb_x64.vst", ",", "VB3-II.vst", ",", "VirtualCZ.vst", ",", "WaveShell-VST 9.7.vst", ",", "WaveShell-VST 9.91.vst", ",", "WaveShell2-VST 9.91.vst" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -386,7 +385,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -444,7 +443,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -726,7 +725,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1326,7 +1325,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1445,7 +1444,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 1,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1574,7 +1573,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 561.0, 317.0, 50.0, 22.0 ],
-																	"text" : "22"
+																	"text" : "30"
 																}
 
 															}
@@ -2972,7 +2971,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3589,7 +3588,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3717,7 +3716,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 1,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4033,13 +4032,13 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 1,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 731.0, 173.0, 1155.0, 799.0 ],
+														"rect" : [ 323.0, 173.0, 1155.0, 799.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 12.0,
@@ -4067,7 +4066,6 @@
 														"style" : "",
 														"subpatcher_template" : "",
 														"assistshowspatchername" : 0,
-														"visible" : 1,
 														"boxes" : [ 															{
 																"box" : 																{
 																	"id" : "obj-8",
@@ -4121,7 +4119,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 1,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4482,7 +4480,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 498.666687000000024, 98.693420000000003, 273.0, 23.0 ],
-																	"text" : "+binaural.component"
+																	"text" : "ValhallaVintageVerb_x64.vst"
 																}
 
 															}
@@ -4496,7 +4494,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 76.166672000000005, 49.693420000000003, 273.0, 23.0 ],
-																	"text" : "component"
+																	"text" : "vst"
 																}
 
 															}
@@ -4555,7 +4553,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 1,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4689,12 +4687,13 @@
 																					"fontname" : "Arial",
 																					"fontsize" : 12.0,
 																					"id" : "obj-6",
+																					"linecount" : 2,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 194.0, 96.0, 122.0, 22.0 ],
-																					"text" : "+binaural.component"
+																					"text" : "ValhallaVintageVerb_x64.vst"
 																				}
 
 																			}
@@ -4950,7 +4949,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 1,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -5281,7 +5280,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 1,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -5931,7 +5930,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 1,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -6317,7 +6316,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 1,
+																			"revision" : 2,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -6962,7 +6961,7 @@
 																						"appversion" : 																						{
 																							"major" : 8,
 																							"minor" : 5,
-																							"revision" : 1,
+																							"revision" : 2,
 																							"architecture" : "x64",
 																							"modernui" : 1
 																						}
@@ -7178,13 +7177,13 @@
 																					"fontname" : "Arial",
 																					"fontsize" : 12.0,
 																					"id" : "obj-49",
-																					"linecount" : 4,
+																					"linecount" : 2,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 220.5, 410.0, 24.0, 62.0 ],
-																					"text" : "0 3 new"
+																					"text" : "0 0"
 																				}
 
 																			}
@@ -8416,7 +8415,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 204.833313000000004, 126.0, 265.0, 22.0 ],
-													"text" : "+binaural.component"
+													"text" : "ValhallaVintageVerb_x64.vst"
 												}
 
 											}
@@ -8631,7 +8630,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -8996,7 +8995,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9207,7 +9206,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 1,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -9489,7 +9488,7 @@
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "", "" ],
 																	"patching_rect" : [ 472.75, 387.0, 103.0, 22.0 ],
-																	"restore" : [ "fmrm" ],
+																	"restore" : [ "beauty1" ],
 																	"saved_object_attributes" : 																	{
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
@@ -9575,12 +9574,13 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-5",
+																	"linecount" : 4,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 688.0, 233.0, 144.0, 35.0 ],
-																	"text" : "vst@1 fmrm1 ho_st1"
+																	"text" : "modul.ator2 vst@1 banger1 rings1 beauty1 control@1 ho_st1 modul.ator1"
 																}
 
 															}
@@ -10286,7 +10286,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 1,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -11182,7 +11182,7 @@
 									"clickthrough" : 0,
 									"enablehscroll" : 0,
 									"enablevscroll" : 0,
-									"id" : "obj-3",
+									"id" : "obj-8",
 									"lockeddragscroll" : 0,
 									"lockedsize" : 0,
 									"maxclass" : "newobj",
@@ -11191,7 +11191,7 @@
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "multichannelsignal", "", "list", "int", "", "", "" ],
 									"patching_rect" : [ 118.0, 145.0, 279.0, 22.0 ],
-									"save" : [ "#N", "mcs.vst~", "loaduniqueid", 0, 4, 2, ";" ],
+									"save" : [ "#N", "mcs.vst~", "loaduniqueid", 0, 2, 2, ";" ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_invisible" : 1,
@@ -11207,7 +11207,63 @@
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "mcs.vst~ 4 2",
+									"snapshot" : 									{
+										"filetype" : "C74Snapshot",
+										"version" : 2,
+										"minorversion" : 0,
+										"name" : "snapshotlist",
+										"origin" : "mcs.vst~",
+										"type" : "list",
+										"subtype" : "Undefined",
+										"embed" : 1,
+										"snapshot" : 										{
+											"pluginname" : "ValhallaVintageVerb_x64.vst",
+											"plugindisplayname" : "ValhallaVintageVerb",
+											"pluginsavedname" : "/Library/Audio/Plug-Ins/VST/ValhallaVintageVerb_x64.vst",
+											"pluginsaveduniqueid" : 0,
+											"version" : 1,
+											"isbank" : 0,
+											"isbase64" : 1,
+											"blob" : "558.CMlaKA....fQPMDZ....AXWYkMC.BH......A........................................Df7VMjLgjd....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVEFanEFarElUo4FcgcVYVUlbhABbrU2Yo4lUkI2bo8la8HhLtHiKvHBHvIWYyUFcNEVak0iHDUlYgUGazIBHMkFd8HBLtjSN4.CLv.SLxfyMzXCLyLiHf.kbkQTYrEVd8HBLtHSMh.BQkMVX40iHv3BMv.SN4jSN4LCL3TCN1DiLh.xTooWY8HRLt.iHfDDczE1Xq0iHv3RMh.hPgM2bMUGaz0iHv3hMxLCLyfyM1fyM1fyLw.SMh.hPgM2bX8lckIWOh.iKzPCM2.SLw.SMyTiMxDiMzHBHHk1YnMEZkwlY8HBLt.iHffTZmglQxUVb8HBLtTiHfTTXxwVdDklYlU2bo8la8HRLt.iHfvTXzUFQoYlY0MWZu4VOhDiKvHBHM8FYREFck0iHv3BLh.RSuQFQkAGcn0iHv3BLh.BRocFZCUGc8HBLt.iHfvza2MTcz0iHv3BLh.xPuw1ax0zajUVOh.iKyLyLyLyLyPyLxXyMzPCL3HBHRUlckImXM8FYk0iHv3BLzDiM1XiM1bSNvfCMy.SLh.RaogGSuM1Z8HBLh.RcocUZjQGZ8HRNyTiHfTWZHUVZmgFc8HBMyTiHu3C."
+										}
+,
+										"snapshotlist" : 										{
+											"current_snapshot" : 0,
+											"entries" : [ 												{
+													"filetype" : "C74Snapshot",
+													"version" : 2,
+													"minorversion" : 0,
+													"name" : "ValhallaVintageVerb",
+													"origin" : "ValhallaVintageVerb_x64.vst",
+													"type" : "VST",
+													"subtype" : "AudioEffect",
+													"embed" : 0,
+													"snapshot" : 													{
+														"pluginname" : "ValhallaVintageVerb_x64.vst",
+														"plugindisplayname" : "ValhallaVintageVerb",
+														"pluginsavedname" : "/Library/Audio/Plug-Ins/VST/ValhallaVintageVerb_x64.vst",
+														"pluginsaveduniqueid" : 0,
+														"version" : 1,
+														"isbank" : 0,
+														"isbase64" : 1,
+														"blob" : "558.CMlaKA....fQPMDZ....AXWYkMC.BH......A........................................Df7VMjLgjd....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVEFanEFarElUo4FcgcVYVUlbhABbrU2Yo4lUkI2bo8la8HhLtHiKvHBHvIWYyUFcNEVak0iHDUlYgUGazIBHMkFd8HBLtjSN4.CLv.SLxfyMzXCLyLiHf.kbkQTYrEVd8HBLtHSMh.BQkMVX40iHv3BMv.SN4jSN4LCL3TCN1DiLh.xTooWY8HRLt.iHfDDczE1Xq0iHv3RMh.hPgM2bMUGaz0iHv3hMxLCLyfyM1fyM1fyLw.SMh.hPgM2bX8lckIWOh.iKzPCM2.SLw.SMyTiMxDiMzHBHHk1YnMEZkwlY8HBLt.iHffTZmglQxUVb8HBLtTiHfTTXxwVdDklYlU2bo8la8HRLt.iHfvTXzUFQoYlY0MWZu4VOhDiKvHBHM8FYREFck0iHv3BLh.RSuQFQkAGcn0iHv3BLh.BRocFZCUGc8HBLt.iHfvza2MTcz0iHv3BLh.xPuw1ax0zajUVOh.iKyLyLyLyLyPyLxXyMzPCL3HBHRUlckImXM8FYk0iHv3BLzDiM1XiM1bSNvfCMy.SLh.RaogGSuM1Z8HBLh.RcocUZjQGZ8HRNyTiHfTWZHUVZmgFc8HBMyTiHu3C."
+													}
+,
+													"fileref" : 													{
+														"name" : "ValhallaVintageVerb",
+														"filename" : "ValhallaVintageVerb.maxsnap",
+														"filepath" : "~/Documents/Max 8/Snapshots",
+														"filepos" : -1,
+														"snapshotfileid" : "4e168c9614f099b0acb63b3ec6851811"
+													}
+
+												}
+ ]
+										}
+
+									}
+,
+									"text" : "mcs.vst~ 2 2",
 									"varname" : "vst",
 									"viewvisibility" : 0
 								}
@@ -11223,14 +11279,14 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
+									"destination" : [ "obj-8", 0 ],
 									"source" : [ "obj-12", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
+									"destination" : [ "obj-8", 0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -11244,58 +11300,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"source" : [ "obj-3", 6 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-19", 0 ],
-									"order" : 0,
-									"source" : [ "obj-3", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-26", 0 ],
-									"order" : 1,
-									"source" : [ "obj-3", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-26", 1 ],
-									"source" : [ "obj-3", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"source" : [ "obj-3", 4 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-46", 0 ],
-									"source" : [ "obj-3", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-54", 0 ],
-									"source" : [ "obj-3", 5 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
+									"destination" : [ "obj-8", 0 ],
 									"source" : [ "obj-42", 0 ]
 								}
 
@@ -11320,6 +11325,57 @@
 									"destination" : [ "obj-6", 0 ],
 									"order" : 0,
 									"source" : [ "obj-7", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"source" : [ "obj-8", 6 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"order" : 0,
+									"source" : [ "obj-8", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-26", 0 ],
+									"order" : 1,
+									"source" : [ "obj-8", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-26", 1 ],
+									"source" : [ "obj-8", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-8", 4 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-46", 0 ],
+									"source" : [ "obj-8", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-54", 0 ],
+									"source" : [ "obj-8", 5 ]
 								}
 
 							}
@@ -11402,11 +11458,13 @@
 						"title_menu" : 0,
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
+						"master" : 0,
 						"act" : 0,
 						"act::active_store" : 1,
-						"ll.blues::outputs" : 1,
-						"ll.blues::levels" : 1,
-						"ll.blues::state" : 1
+						"ll.blues" : 0,
+						"ll.blues::outputs" : 0,
+						"ll.blues::levels" : 0,
+						"ll.blues::state" : 0
 					}
 ,
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -11520,6 +11578,23 @@
 						"pres_menu" : 2011,
 						"tetris_menu" : 2012,
 						"master" : 2013,
+						"Mix" : 100,
+						"PreDelay" : 101,
+						"Decay" : 102,
+						"Size" : 103,
+						"Attack" : 104,
+						"BassMult" : 105,
+						"BassXover" : 106,
+						"HighShelf" : 107,
+						"HighFreq" : 108,
+						"EarlyDiffusion" : 109,
+						"LateDiffusion" : 110,
+						"ModRate" : 111,
+						"ModDepth" : 112,
+						"HighCut" : 113,
+						"LowCut" : 114,
+						"ColorMode" : 115,
+						"ReverbMode" : 116,
 						"ll.blues::levels" : 1000,
 						"ll.blues::state" : 1000,
 						"def_folder" : 1,
@@ -11588,52 +11663,69 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 456.0, 287.0, 107.0, 22.0 ],
 					"restore" : 					{
-						"Ambisonic Weights" : [ 0.0 ],
-						"Bypass" : [ 0.0 ],
-						"ChLink" : [ 1.0 ],
-						"DCEnabl" : [ 0.0 ],
-						"DCFreq" : [ 0.5 ],
-						"DCType" : [ 0.384615391492844 ],
+						"Ambisonic Weights" : [ 0.200000002980232 ],
+						"Attack" : [ 0.5 ],
+						"BassMult" : [ 0.623038768768311 ],
+						"BassXover" : [ 0.444701105356216 ],
+						"Bypass" : [ 0.611999988555908 ],
+						"ChLink" : [ 0.523000001907349 ],
+						"ColorMode" : [ 0.333333343267441 ],
+						"DCEnabl" : [ 1.0 ],
+						"DCFreq" : [ 0.757000029087067 ],
+						"DCType" : [ 0.5 ],
 						"DRCType" : [ 0.5 ],
-						"Decoder Order" : [ 0.0 ],
-						"DithBit" : [ 0.5 ],
-						"DithBln" : [ 0.0 ],
-						"DithEnb" : [ 0.0 ],
-						"DithShp" : [ 0.5 ],
+						"Decay" : [ 0.400999993085861 ],
+						"Decoder Order" : [ 0.200000002980232 ],
+						"DithBit" : [ 1.0 ],
+						"DithBln" : [ 1.0 ],
+						"DithEnb" : [ 0.614141404628754 ],
+						"DithShp" : [ 1.0 ],
 						"DithTyp" : [ 1.0 ],
 						"Dry/Wet" : [ 0.0 ],
 						"ELAIGC" : [ 0.0 ],
+						"EarlyDiffusion" : [ 1.0 ],
 						"Export Decoder" : [ 0.0 ],
-						"Export Layout" : [ 0.0 ],
+						"Export Layout" : [ 0.25 ],
 						"FFTSize" : [ 0.600000023841858 ],
 						"Fade-in Time" : [ 0.0 ],
 						"Fdn Size (internal)" : [ 0.0 ],
+						"HighCut" : [ 0.0 ],
+						"HighFreq" : [ 0.5 ],
+						"HighShelf" : [ 0.0 ],
 						"Highs Cutoff Frequency" : [ 0.0 ],
 						"Highs Gain" : [ 0.0 ],
 						"Highs Q Factor" : [ 0.0 ],
 						"InGain" : [ 0.111111111938953 ],
 						"Input Ambisonic Order" : [ 0.0 ],
-						"Input Normalization" : [ 0.0 ],
-						"Knee" : [ 0.200000002980232 ],
+						"Input Normalization" : [ 0.25 ],
+						"Knee" : [ 0.5 ],
+						"LateDiffusion" : [ 1.0 ],
+						"LowCut" : [ 0.0 ],
 						"Lows Cutoff Frequency" : [ 0.0 ],
 						"Lows Gain" : [ 0.0 ],
 						"Lows Q Factor" : [ 0.0 ],
-						"Meterin" : [ 0.0 ],
-						"Mode" : [ 0.636363625526428 ],
+						"Meterin" : [ 1.0 ],
+						"Mix" : [ 0.999000012874603 ],
+						"ModDepth" : [ 0.0 ],
+						"ModRate" : [ 0.0 ],
+						"Mode" : [ 0.0 ],
 						"N Channels" : [ 0.0 ],
 						"OutGain" : [ 0.833333313465118 ],
 						"OverSamp" : [ 0.25 ],
 						"Oversmp" : [ 0.25 ],
+						"PreDelay" : [ 0.25 ],
 						"Release" : [ 0.403694421052933 ],
+						"ReverbMode" : [ 0.04166666790843 ],
 						"Reverberation Time" : [ 0.0 ],
 						"RlsEnab" : [ 0.0 ],
 						"RlsRto" : [ 0.688323259353638 ],
-						"RlsShp" : [ 0.666666686534882 ],
+						"RlsShp" : [ 0.5 ],
 						"Room Size" : [ 0.0 ],
+						"Size" : [ 1.0 ],
 						"Timing" : [ 0.130434781312943 ],
-						"XForm" : [ 0.5 ],
+						"XForm" : [ 1.0 ],
 						"XShape" : [ 0.25 ],
-						"XTime" : [ 0.362930357456207 ],
+						"XTime" : [ 0.0 ],
 						"angle" : [ 0.5 ],
 						"attack" : [ 0.0 ],
 						"autogain" : [ 0.0 ],
@@ -11660,7 +11752,7 @@
 						"point 1 value" : [ 0.0 ],
 						"point 2 time" : [ 0.142857149243355 ],
 						"point 2 value" : [ 0.142857149243355 ],
-						"point 3 time" : [ 0.28571429848671 ],
+						"point 3 time" : [ 1.0 ],
 						"point 3 value" : [ 0.28571429848671 ],
 						"point 4 time" : [ 0.428571432828903 ],
 						"point 4 value" : [ 0.428571432828903 ],
@@ -11675,7 +11767,7 @@
 						"pres_menu" : [ "_" ],
 						"preset-ramp" : [ 0.0 ],
 						"presets" : [ 0 ],
-						"program_files" : [ "write" ],
+						"program_files" : [ "writepgm" ],
 						"ratio" : [ 0.5 ],
 						"release" : [ 0.0 ],
 						"reset" : [ 0.0 ],
@@ -11686,7 +11778,7 @@
 						"tilt" : [ 0.0 ],
 						"title_menu" : [ "subpatch" ],
 						"type" : [ 0.0 ],
-						"vst-folder" : [ "def_folders" ],
+						"vst-folder" : [ "ValhallaVintageVerb_x64.vst" ],
 						"vst_program" : [ 1 ]
 					}
 ,
@@ -11814,7 +11906,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 9.0,
 					"id" : "obj-400",
-					"items" : [ "write", ",", "read", ",", "-" ],
+					"items" : [ "writepgm", ",", "writebank", ",", "read", ",", "-" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12161,7 +12253,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 571.0, 177.0, 100.0, 22.0 ],
-					"restore" : [ "in(4)" ],
+					"restore" : [ "in(2)" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -14106,6 +14198,244 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-39",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Mix"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-72",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "PreDelay"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-89",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Decay"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-105",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Size"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-123",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Attack"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-139",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "BassMult"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-146",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "BassXover"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-150",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "HighShelf"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-154",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "HighFreq"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-158",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "EarlyDiffusion"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-162",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "LateDiffusion"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-166",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "ModRate"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-170",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "ModDepth"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-174",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "HighCut"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-178",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "LowCut"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-182",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "ColorMode"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-186",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "ReverbMode"
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -14157,7 +14487,7 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-18::obj-3" : [ "vst", "vst", 0 ],
+			"obj-18::obj-8" : [ "vst", "vst", 0 ],
 			"parameterbanks" : 			{
 
 			}
@@ -14166,6 +14496,13 @@
 		}
 ,
 		"dependency_cache" : [ 			{
+				"name" : "ValhallaVintageVerb.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../../Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "actmaker.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
@@ -14223,13 +14560,6 @@
 			}
 , 			{
 				"name" : "ll.inputmix.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../abstractions/ll.blues",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.mc.stereo_pan.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
