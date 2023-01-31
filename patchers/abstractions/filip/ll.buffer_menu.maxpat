@@ -658,8 +658,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 83.0, 87.0, 50.0, 22.0 ],
-									"text" : "del 100"
+									"patching_rect" : [ 83.0, 76.0, 48.0, 22.0 ],
+									"text" : "del 300"
 								}
 
 							}
@@ -671,7 +671,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 83.0, 141.0, 104.0, 22.0 ],
+									"patching_rect" : [ 83.0, 131.0, 104.0, 22.0 ],
 									"text" : "s ll.loadbufferhost"
 								}
 
@@ -713,7 +713,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "int", "bang" ],
-									"patching_rect" : [ 83.0, 114.0, 34.0, 22.0 ],
+									"patching_rect" : [ 83.0, 104.0, 34.0, 22.0 ],
 									"text" : "t 0 b"
 								}
 

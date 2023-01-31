@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 436.0, 157.0, 119.0, 186.0 ],
+		"rect" : [ 310.0, 365.0, 119.0, 186.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -245,7 +245,7 @@
 					"fontsize" : 11.0,
 					"hint" : "soundfile folder(s)",
 					"id" : "obj-61",
-					"items" : [ "ll.samples/", ",", "msp/", ",", "rec/", ",", "Music/", ",", "-", ",", "clear_selected", ",", "clear_all", ",", "add_folder" ],
+					"items" : [ "ll.samples/", ",", "msp/", ",", "Music/", ",", "-", ",", "clear_selected", ",", "clear_all", ",", "add_folder" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -402,7 +402,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 389.0, 524.0, 656.0, 413.0 ],
+						"rect" : [ 625.0, 409.0, 656.0, 413.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -599,7 +599,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 524.0, 363.0, 136.0, 19.0 ],
+													"patching_rect" : [ 580.0, 363.0, 136.0, 19.0 ],
 													"text" : "rows 1, set 0 0 new, select 0 0"
 												}
 
@@ -4563,7 +4563,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 212.0, 13.0, 99.0, 22.0 ],
-																	"text" : "test"
+																	"text" : "_"
 																}
 
 															}
@@ -5491,7 +5491,7 @@
 					"patching_rect" : [ -1.0, 51.0, 120.0, 93.0 ],
 					"precision" : 4,
 					"rowheight" : 15,
-					"rows" : 7,
+					"rows" : 1,
 					"sccolor" : [ 0.321569, 0.184314, 0.454902, 1.0 ],
 					"sgcolor" : [ 0.082353, 0.25098, 0.431373, 1.0 ],
 					"stcolor" : [ 0.286275, 0.286275, 0.890196, 1.0 ],
@@ -5587,7 +5587,7 @@
 					"patching_rect" : [ 468.0, 210.0, 107.0, 22.0 ],
 					"restore" : 					{
 						"action_menu" : [ "clearall" ],
-						"channels" : [ 2 ],
+						"channels" : [ 1 ],
 						"f" : [ -1 ],
 						"ff" : [ -1 ],
 						"file_menu" : [ "3dem.aif" ],
@@ -5595,10 +5595,10 @@
 						"master" : [ 0 ],
 						"normalize" : [ -1 ],
 						"open!" : [ -1 ],
-						"pres_menu" : [ "test" ],
-						"size-box" : [ 502506.666666999983136 ],
+						"pres_menu" : [ "_" ],
+						"size-box" : [ 2867.30158730158746 ],
 						"tetris_menu" : [ "" ],
-						"title_menu" : [ "titlebar" ]
+						"title_menu" : [ "subpatch" ]
 					}
 ,
 					"text" : "autopattr autopattr",
@@ -5668,7 +5668,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-53",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "-", ",", "ƒ", "default" ],
+					"items" : [ "-", ",", "-", ",", "ƒ", "default", ",", "ƒ", "default.json" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -5771,6 +5771,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "factorybank",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/misc/ppooll_factory_presets/buffer_hostP",
+				"patcherrelativepath" : "../../misc/ppooll_factory_presets/buffer_hostP",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.actname.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
@@ -5855,13 +5862,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.ppoollpaths.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ll.psto.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
@@ -5931,13 +5931,6 @@
 , 			{
 				"name" : "pattrexists.mxo",
 				"type" : "iLaX"
-			}
-, 			{
-				"name" : "test",
-				"bootpath" : "~/Documents/Max 8/Library/ppooll_presets/buffer_hostP",
-				"patcherrelativepath" : "../../../../Library/ppooll_presets/buffer_hostP",
-				"type" : "TEXT",
-				"implicit" : 1
 			}
 , 			{
 				"name" : "tetrishelp.js",
