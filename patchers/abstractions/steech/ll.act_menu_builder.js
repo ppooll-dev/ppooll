@@ -3,12 +3,12 @@
 
 		on bang, build the act menu and set coll objects
 */
-autosave = 1
+autowatch = 1
 
 var console = { log: function(args){ post(args); post(); } }
 
 inlets = 1;
-outlets = 4;
+outlets = 5;
 
 var MAIN = 			"Package:/ppooll/patchers/ppooll.acts"
 var CONTRIBUTIONS = "Package:/ppooll_contributions/patchers/ppooll.acts"
@@ -32,7 +32,14 @@ function append(name){
 	outlet(0, ["append",name])
 	outlet(2, ['store',name,count])
 	count++;
+}
 
+function store(name){
+	outlet(1, ['store',name,1])
+}
+
+function watch_folder(folder){
+	outlet(3, folder)
 }
 
 
@@ -45,10 +52,12 @@ function load_acts_from_folder(folder){
 		var file_ext = get_extension(f.filename)
 
 		if(file_ext[1] === 'maxpat'){
-			if(IGNORE_LIST.indexOf(file_ext[0]) === -1){
+			if(IGNORE_LIST.indexOf(" "+file_ext[0]+" ") === -1){
 				append(file_ext[0])
 			}
-			outlet(1, ['store',f.filename,1])
+			if(file_ext[0] !== '_act_overview'){
+				store(file_ext[0])
+			}
 		}
 		f.next()
 	}
@@ -65,24 +74,29 @@ function bang(){
 	var dict_preferences = new Dict("ppooll-preferences")
 
 	var UNSHARED = dict_preferences.get('file_paths::unshared_acts')
-	IGNORE_LIST = dict_preferences.get('act_usage::never_used_acts') + " _act_overview"
+	IGNORE_LIST = " "+dict_preferences.get('act_usage::never_used_acts') + " _act_overview "
 
 	// MAIN
 	append("(__acts__)")
 	append("_act_overview")
+	store("_act_overview")
+
 	load_acts_from_folder(MAIN)
+	watch_folder(MAIN)
 
 	// CONTRIBUTIONS
 	append("-")
 	append("(community contributions)")
 	load_acts_from_folder(CONTRIBUTIONS)
+	watch_folder(CONTRIBUTIONS)
 
 	// UNSHARED
 	append("-")
 	append("--unshared_acts--")
 	if(UNSHARED !== ""){
 		load_acts_from_folder(UNSHARED)
+		watch_folder(UNSHARED)
 	}
 
-	outlet(3, 'bang');
+	outlet(4, 'bang');
 }	
