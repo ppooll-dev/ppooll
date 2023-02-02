@@ -7,7 +7,6 @@ function make(n,s,i,x,y,z,h)
 {
 	name = n;
 	size = s;
-	
 	instance = i;
 	r=x;g=y;b=z;
 	hash=h;
@@ -29,6 +28,7 @@ function make(n,s,i,x,y,z,h)
 
 	first_dump();
 	
+	outlet(0, [name, instance])
 }
 
 function givename()
