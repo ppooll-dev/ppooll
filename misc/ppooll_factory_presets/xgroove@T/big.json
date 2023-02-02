@@ -1,0 +1,165 @@
+{
+	"window" : [ 234, 320, 1182, 540 ],
+	"interp" : 	{
+		"patching_rect" : [ 425, 0, 41, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"xfade_mode" : 	{
+		"patching_rect" : [ 323, 0, 63, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"xshape" : 	{
+		"patching_rect" : [ 388, 0, 35, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 193, 318, 27 ],
+		"hidden" : 0
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 885, 0, 62, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 466, 0, 420, 15 ],
+		"hidden" : 0,
+		"jsarguments" : [ 13, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "noize@1" ]
+	}
+,
+	"full_select" : 	{
+		"patching_rect" : [ 135, 0, 24, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"keep_length" : 	{
+		"patching_rect" : [ 76, 0, 58, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"buffer" : 	{
+		"patching_rect" : [ 540, 193, 152, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"loop_mode" : 	{
+		"patching_rect" : [ 689, 193, 69, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"start" : 	{
+		"patching_rect" : [ 0, 15, 947, 15 ],
+		"hidden" : 0,
+		"fontsize" : 16
+	}
+,
+	"end" : 	{
+		"patching_rect" : [ 0, 45, 947, 15 ],
+		"hidden" : 0,
+		"fontsize" : 16
+	}
+,
+	"play/stop" : 	{
+		"patching_rect" : [ 318, 193, 31, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"speed" : 	{
+		"patching_rect" : [ 399, 193, 141, 19 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"autotrigger" : 	{
+		"patching_rect" : [ 370, 193, 28, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"vzoom" : 	{
+		"patching_rect" : [ 241, 0, 81, 15 ],
+		"hidden" : 0,
+		"fontsize" : 13
+	}
+,
+	"full_display" : 	{
+		"patching_rect" : [ 160, 0, 40, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"display_selected" : 	{
+		"patching_rect" : [ 201, 0, 40, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"show_envelope" : 	{
+		"patching_rect" : [ 812, 194, 35, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"toggle_env" : 	{
+		"patching_rect" : [ 758, 194, 53, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"clear_env" : 	{
+		"patching_rect" : [ 848, 194, 38, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"full_env" : 	{
+		"patching_rect" : [ 887, 194, 28, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"wf" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 1, 60, 946, 133 ],
+		"hidden" : 0
+	}
+,
+	"trigger" : 	{
+		"patching_rect" : [ 349, 193, 22, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"envelope_display" : 	{
+		"patching_rect" : [ 0, 60, 946, 132 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"length" : 	{
+		"patching_rect" : [ 0, 30, 947, 16 ],
+		"hidden" : 0,
+		"fontsize" : 16
+	}
+,
+	"xzone" : 	{
+		"patching_rect" : [ 758, 193, 136, 19 ],
+		"hidden" : 1,
+		"fontsize" : 13
+	}
+
+}
