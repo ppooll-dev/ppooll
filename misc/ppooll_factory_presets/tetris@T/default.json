@@ -1,5 +1,5 @@
 {
-	"window" : [ 79, 574, 421, 1096 ],
+	"window" : [ 97, 309, 439, 831 ],
 	"par_menu" : 	{
 		"patching_rect" : [ 47, 83, 146, 24 ],
 		"hidden" : 0,
@@ -128,7 +128,7 @@
 ,
 	"fontsize!" : 	{
 		"patching_rect" : [ 47, 154, 69, 22 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 12
 	}
 ,
