@@ -1,0 +1,165 @@
+{
+	"window" : [ 889, 525, 1111, 602 ],
+	"preset-ramp" : 	{
+		"fontsize" : 12.0,
+		"patching_rect" : [ 154, 0, 50, 14 ],
+		"hidden" : 0
+	}
+,
+	"presets" : 	{
+		"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "2Dsliders1" ],
+		"patching_rect" : [ 76, 0, 79, 14 ],
+		"hidden" : 0
+	}
+,
+	"grid" : 	{
+		"fontsize" : 11.0,
+		"patching_rect" : [ 102, 31, 28, 15 ],
+		"hidden" : 0
+	}
+,
+	"ally0" : 	{
+		"fontsize" : 12.0,
+		"patching_rect" : [ 132, 46, 34, 15 ],
+		"hidden" : 0
+	}
+,
+	"def_colors" : 	{
+		"fontsize" : 12.0,
+		"patching_rect" : [ 63, 31, 40, 15 ],
+		"hidden" : 0
+	}
+,
+	"def_grid" : 	{
+		"fontsize" : 12.0,
+		"patching_rect" : [ 128, 31, 52, 15 ],
+		"hidden" : 0
+	}
+,
+	"show_window" : 	{
+		"fontsize" : 11.0,
+		"patching_rect" : [ 125, 16, 48, 15 ],
+		"hidden" : 0
+	}
+,
+	"pos_x" : 	{
+		"fontsize" : 9.5,
+		"patching_rect" : [ 0, 16, 32, 15 ],
+		"hidden" : 0
+	}
+,
+	"pos_y" : 	{
+		"fontsize" : 9.5,
+		"patching_rect" : [ 31, 16, 32, 15 ],
+		"hidden" : 0
+	}
+,
+	"size_x" : 	{
+		"fontsize" : 9.5,
+		"patching_rect" : [ 62, 16, 32, 15 ],
+		"hidden" : 0
+	}
+,
+	"size_y" : 	{
+		"fontsize" : 9.5,
+		"patching_rect" : [ 93, 16, 32, 15 ],
+		"hidden" : 0
+	}
+,
+	"w_titlebar" : 	{
+		"fontsize" : 12.0,
+		"patching_rect" : [ 173, 16, 48, 15 ],
+		"hidden" : 0
+	}
+,
+	"amount" : 	{
+		"fontsize" : 9.5,
+		"patching_rect" : [ 0, 31, 32, 15 ],
+		"hidden" : 0
+	}
+,
+	"scale" : 	{
+		"fontsize" : 9.5,
+		"patching_rect" : [ 31, 31, 32, 15 ],
+		"hidden" : 0
+	}
+,
+	"selected" : 	{
+		"fontsize" : 9.5,
+		"patching_rect" : [ 0, 46, 32, 15 ],
+		"hidden" : 0
+	}
+,
+	"current_x" : 	{
+		"fontsize" : 9.5,
+		"patching_rect" : [ 31, 46, 32, 15 ],
+		"hidden" : 0
+	}
+,
+	"current_y" : 	{
+		"fontsize" : 9.5,
+		"patching_rect" : [ 62, 46, 32, 15 ],
+		"hidden" : 0
+	}
+,
+	"spread" : 	{
+		"fontsize" : 11.0,
+		"patching_rect" : [ 165, 46, 44, 15 ],
+		"hidden" : 0
+	}
+,
+	"set_current" : 	{
+		"fontsize" : 12.0,
+		"patching_rect" : [ 94, 46, 39, 15 ],
+		"hidden" : 0
+	}
+,
+	"auto" : 	{
+		"fontsize" : 11.0,
+		"patching_rect" : [ 0, 61, 31, 15 ],
+		"hidden" : 0
+	}
+,
+	"alt_grid" : 	{
+		"fontsize" : 12.0,
+		"patching_rect" : [ 178, 31, 52, 15 ],
+		"hidden" : 0
+	}
+,
+	"ctrl-time" : 	{
+		"fontsize" : 12.0,
+		"patching_rect" : [ 106, 61, 55, 15 ],
+		"hidden" : 0
+	}
+,
+	"auto_time" : 	{
+		"fontsize" : 12.0,
+		"patching_rect" : [ 31, 61, 76, 15 ],
+		"hidden" : 0
+	}
+,
+	"zoomreset" : 	{
+		"fontsize" : 12.0,
+		"patching_rect" : [ 67, 0, 46, 15 ],
+		"hidden" : 0
+	}
+,
+	"ZH" : 	{
+		"fontsize" : 12.0,
+		"patching_rect" : [ 205, 0, 15, 15 ],
+		"hidden" : 0
+	}
+,
+	"function" : 	{
+		"fontsize" : 10.0,
+		"patching_rect" : [ 180, 59, 46, 20 ],
+		"hidden" : 0
+	}
+,
+	"alt" : 	{
+		"fontsize" : 11.0,
+		"patching_rect" : [ 161, 61, 21, 18 ],
+		"hidden" : 0
+	}
+
+}

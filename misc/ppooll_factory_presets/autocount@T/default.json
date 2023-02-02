@@ -1,0 +1,116 @@
+{
+	"window" : [ 220, 123, 427, 231 ],
+	"preset-ramp" : 	{
+		"fontsize" : 12.0,
+		"patching_rect" : [ 93, 40, 43, 14 ],
+		"hidden" : 0
+	}
+,
+	"presets" : 	{
+		"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "autocount@1" ],
+		"patching_rect" : [ 93, 0, 106, 41 ],
+		"hidden" : 0
+	}
+,
+	"steps_comm" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 136, 43, 30, 17 ],
+		"hidden" : 0
+	}
+,
+	"step" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 136, 56, 35, 19 ],
+		"hidden" : 0
+	}
+,
+	"rate" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 172, 56, 35, 19 ],
+		"hidden" : 0
+	}
+,
+	"wave" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 1, 66, 61, 19 ],
+		"hidden" : 0
+	}
+,
+	"act_menu" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 1, 90, 53, 19 ],
+		"hidden" : 0
+	}
+,
+	"par_menu" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 54, 90, 53, 19 ],
+		"hidden" : 0
+	}
+,
+	"min_comm" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 61, 54, 30, 17 ],
+		"hidden" : 0
+	}
+,
+	"max_comm" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 61, 73, 30, 17 ],
+		"hidden" : 0
+	}
+,
+	"rate_comm" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 172, 43, 30, 17 ],
+		"hidden" : 0
+	}
+,
+	"line" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 172, 73, 35, 19 ],
+		"hidden" : 0
+	}
+,
+	"Lgate_on/off" : 	{
+		"patching_rect" : [ 156, 74, 15, 15 ],
+		"hidden" : 0
+	}
+,
+	"on/offramp_comm" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 129, 91, 78, 17 ],
+		"hidden" : 0
+	}
+,
+	"min_value" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 86, 55, 46, 19 ],
+		"hidden" : 0
+	}
+,
+	"max_value" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 86, 72, 46, 19 ],
+		"hidden" : 0
+	}
+,
+	"list_item" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 106, 90, 21, 19 ],
+		"hidden" : 0
+	}
+,
+	"auto_ON/OFF" : 	{
+		"fontsize" : 12.0,
+		"patching_rect" : [ 2, 16, 35, 20 ],
+		"hidden" : 0
+	}
+,
+	"trigger" : 	{
+		"fontsize" : 13.0,
+		"patching_rect" : [ 38, 17, 47, 19 ],
+		"hidden" : 0
+	}
+
+}

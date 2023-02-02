@@ -1,0 +1,68 @@
+{
+	"window" : [ 692, 284, 962, 451 ],
+	"filtergraph_1" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ -1, 82, 267, 82 ],
+		"hidden" : 0
+	}
+,
+	"presets" : 	{
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "wrapfilter1" ],
+		"patching_rect" : [ 117, 0, 151, 17 ],
+		"hidden" : 0
+	}
+,
+	"edit_filter" : 	{
+		"fontsize" : 10.0,
+		"patching_rect" : [ 94, -1, 24, 20 ],
+		"hidden" : 0
+	}
+,
+	"filtergraph_2" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ -1, 82, 267, 82 ],
+		"hidden" : 0
+	}
+,
+	"filtergraph_3" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ -1, 82, 267, 82 ],
+		"hidden" : 0
+	}
+,
+	"filtergraph_4" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ -1, 82, 267, 82 ],
+		"hidden" : 0
+	}
+,
+	"listen" : 	{
+		"patching_rect" : [ 250, 16, 18, 66 ],
+		"hidden" : 0
+	}
+,
+	"freqs" : 	{
+		"fontsize" : 15.0,
+		"patching_rect" : [ 0, 16, 92, 66 ],
+		"hidden" : 0
+	}
+,
+	"gains" : 	{
+		"fontsize" : 15.0,
+		"patching_rect" : [ 92, 16, 56, 66 ],
+		"hidden" : 0
+	}
+,
+	"Qs" : 	{
+		"fontsize" : 15.0,
+		"patching_rect" : [ 148, 16, 51, 66 ],
+		"hidden" : 0
+	}
+,
+	"smooth" : 	{
+		"fontsize" : 15.0,
+		"patching_rect" : [ 199, 16, 51, 66 ],
+		"hidden" : 0
+	}
+
+}

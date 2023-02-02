@@ -1,0 +1,51 @@
+{
+	"window" : [ 183, 116, 342, 260 ],
+	"preset-ramp" : 	{
+		"patching_rect" : [ 110, 0, 49, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 62, 0, 49, 17 ],
+		"hidden" : 0,
+		"jsarguments" : [ 15, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "noize@1" ]
+	}
+,
+	"mode!" : 	{
+		"patching_rect" : [ 25, 35, 40, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"noise_freq" : 	{
+		"patching_rect" : [ 0, 16, 159, 19 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"freq" : 	{
+		"patching_rect" : [ 0, 53, 159, 19 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"res" : 	{
+		"patching_rect" : [ 64, 34, 95, 19 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 91, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"ramp" : 	{
+		"patching_rect" : [ 0, 72, 159, 19 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+
+}

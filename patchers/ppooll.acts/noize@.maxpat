@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
+			"minor" : 5,
 			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 239.0, 142.0, 159.0, 144.0 ],
+		"rect" : [ 183.0, 116.0, 159.0, 144.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -121,7 +121,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 0.0, 53.0, 159.0, 19.0 ],
 					"sliderlog" : 7.0,
-					"slidermax" : 11025.0,
+					"slidermax" : 12000.0,
 					"slidermin" : 20.0,
 					"varname" : "freq"
 				}
@@ -227,7 +227,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
+							"minor" : 5,
 							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -419,7 +419,7 @@
 									"fontsize" : 12.0,
 									"id" : "obj-4",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"patching_rect" : [ 614.0, 81.0, 68.0, 22.0 ],
@@ -725,7 +725,13 @@
 						"preset-ramp" : 0,
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
-						"title_menu" : 0
+						"title_menu" : 0,
+						"master" : 0,
+						"act::active_store" : 0,
+						"ll.blues" : 0,
+						"ll.blues::levels" : 0,
+						"ll.blues::outputs" : 0,
+						"ll.blues::state" : 0
 					}
 ,
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -750,10 +756,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 842, 164, 1920, 407 ],
+						"client_rect" : [ 54, 397, 594, 1106 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 0, 0, 640, 240 ]
+						"storage_rect" : [ 365, 44, 816, 172 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -809,7 +815,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 268.0, 233.0, 107.0, 20.0 ],
 					"restore" : 					{
-						"freq" : [ 761 ],
+						"freq" : [ 1652 ],
 						"master" : [ 0 ],
 						"mode!" : [ 0 ],
 						"noise_freq" : [ 1571.388743250543484 ],
@@ -818,7 +824,7 @@
 						"presets" : [ 0 ],
 						"ramp" : [ 0 ],
 						"res" : [ 0.0 ],
-						"tetris_menu" : [ "" ],
+						"tetris_menu" : [ "ƒ default.json" ],
 						"title_menu" : [ "subpatch" ]
 					}
 ,
@@ -864,7 +870,7 @@
 					"fontsize" : 10.0,
 					"id" : "obj-101",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
+					"items" : [ "test", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -889,7 +895,7 @@
 					"fontsize" : 10.0,
 					"id" : "obj-103",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "-", ",", "ƒ", "default" ],
+					"items" : [ "-", ",", "testing.json", ",", "-", ",", "ƒ", "default.json" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -979,7 +985,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 334.0, 99.0, 100.0, 20.0 ],
-					"restore" : [ "noise_freq(4)", "res(4)", "freq(4)" ],
+					"restore" : [ "noise_freq(2)", "res(2)", "freq(2)" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1073,17 +1079,17 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.mc.stereo_pan.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../abstractions/ll.blues",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ll.movewindow.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.og.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -1178,8 +1184,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll_fastforward.mxo",
-				"type" : "iLaX"
+				"name" : "ll_fastforward.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/externals/filip",
+				"patcherrelativepath" : "../../externals/filip",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
 				"name" : "ll_number.mxo",
