@@ -1,0 +1,155 @@
+{
+	"window" : [ 359, 476, 946, 609 ],
+	"preset-ramp" : 	{
+		"fontsize" : 12.0,
+		"patching_rect" : [ 444, 1, 66, 14 ],
+		"hidden" : 0
+	}
+,
+	"presets" : 	{
+		"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "beauty1" ],
+		"patching_rect" : [ 64, 1, 301, 14 ],
+		"hidden" : 0
+	}
+,
+	"delays" : 	{
+		"patching_rect" : [ 100, 17, 337, 61 ],
+		"hidden" : 0
+	}
+,
+	"pans" : 	{
+		"patching_rect" : [ 441, 17, 69, 62 ],
+		"hidden" : 0
+	}
+,
+	"delay_label" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 188, 47, 34, 17 ],
+		"hidden" : 0
+	}
+,
+	"lp" : 	{
+		"patching_rect" : [ 50, 17, 29, 115 ],
+		"hidden" : 0
+	}
+,
+	"lp_label" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 59, 108, 22, 17 ],
+		"hidden" : 0
+	}
+,
+	"hp" : 	{
+		"patching_rect" : [ 17, 17, 29, 115 ],
+		"hidden" : 0
+	}
+,
+	"smooth" : 	{
+		"patching_rect" : [ 100, 109, 248, 23 ],
+		"hidden" : 0
+	}
+,
+	"smooth_label" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 181, 117, 103, 17 ],
+		"hidden" : 0
+	}
+,
+	"hp_label" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 21, 30, 18, 27 ],
+		"hidden" : 0
+	}
+,
+	"average" : 	{
+		"patching_rect" : [ 100, 83, 248, 23 ],
+		"hidden" : 0
+	}
+,
+	"del_ramp" : 	{
+		"patching_rect" : [ 83, 17, 13, 115 ],
+		"hidden" : 0
+	}
+,
+	"pan_label" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 462, 47, 27, 17 ],
+		"hidden" : 0
+	}
+,
+	"average_label" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 148, 87, 46, 17 ],
+		"hidden" : 0
+	}
+,
+	"r_label" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 84, 42, 16, 17 ],
+		"hidden" : 0
+	}
+,
+	"a_label" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 83, 55, 16, 17 ],
+		"hidden" : 0
+	}
+,
+	"m_label" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 84, 68, 16, 17 ],
+		"hidden" : 0
+	}
+,
+	"p_label" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 84, 80, 16, 17 ],
+		"hidden" : 0
+	}
+,
+	"noise" : 	{
+		"patching_rect" : [ 0, 17, 13, 115 ],
+		"hidden" : 0
+	}
+,
+	"n_label" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 1, 35, 16, 17 ],
+		"hidden" : 0
+	}
+,
+	"o_label" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 1, 48, 16, 17 ],
+		"hidden" : 0
+	}
+,
+	"i_label" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 1, 62, 16, 17 ],
+		"hidden" : 0
+	}
+,
+	"s_label" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 1, 74, 16, 17 ],
+		"hidden" : 0
+	}
+,
+	"e_label" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 1, 87, 16, 17 ],
+		"hidden" : 0
+	}
+,
+	"spectrum_view" : 	{
+		"patching_rect" : [ 511, 0, 75, 135 ],
+		"hidden" : 0
+	}
+,
+	"ll.blues" : 	{
+		"patching_rect" : [ 349, 80, 159, 53 ],
+		"hidden" : 0
+	}
+
+}

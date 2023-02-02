@@ -1,0 +1,120 @@
+{
+	"window" : [ 632, 118, 1276, 372 ],
+	"patching_rect" : [ 412, 240, 31, 17 ],
+	"hidden" : 0,
+	"satb" : 	{
+		"patching_rect" : [ 273, 0, 47, 15 ],
+		"hidden" : 0
+	}
+,
+	"satt" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 273, -1, 30, 17 ],
+		"hidden" : 0
+	}
+,
+	"brib" : 	{
+		"patching_rect" : [ 181, 0, 47, 15 ],
+		"hidden" : 0
+	}
+,
+	"brit" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 181, -1, 30, 17 ],
+		"hidden" : 0
+	}
+,
+	"counter" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 320, 238, 90, 19 ],
+		"hidden" : 0
+	}
+,
+	"conb" : 	{
+		"patching_rect" : [ 227, 0, 47, 15 ],
+		"hidden" : 0
+	}
+,
+	"cont" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 227, -1, 30, 17 ],
+		"hidden" : 0
+	}
+,
+	"bw" : 	{
+		"patching_rect" : [ 443, 239, 15, 15 ],
+		"hidden" : 0
+	}
+,
+	"bri" : 	{
+		"fontsize" : 10.0,
+		"patching_rect" : [ 196, -1, 30, 20 ],
+		"hidden" : 0
+	}
+,
+	"con" : 	{
+		"fontsize" : 10.0,
+		"patching_rect" : [ 242, -1, 30, 20 ],
+		"hidden" : 0
+	}
+,
+	"sat" : 	{
+		"fontsize" : 10.0,
+		"patching_rect" : [ 290, -1, 30, 20 ],
+		"hidden" : 0
+	}
+,
+	"fontsize" : 9.0,
+	"metroON" : 	{
+		"patching_rect" : [ 390, 205, 16, 16 ],
+		"hidden" : 0
+	}
+,
+	"x_pos" : 	{
+		"fontsize" : 10.0,
+		"patching_rect" : [ 390, 222, 35, 20 ],
+		"hidden" : 0
+	}
+,
+	"jit_on" : 	{
+		"fontsize" : 8.0,
+		"patching_rect" : [ 78, 0, 21, 15 ],
+		"hidden" : 0
+	}
+,
+	"jit_ms" : 	{
+		"fontsize" : 9.5,
+		"patching_rect" : [ 99, 0, 25, 15 ],
+		"hidden" : 0
+	}
+,
+	"jit_input1" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 124, 0, 57, 19 ],
+		"hidden" : 0
+	}
+,
+	"ll.blues" : 	{
+		"patching_rect" : [ 481, 205, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"tresh" : 	{
+		"fontsize" : 12.0,
+		"patching_rect" : [ 410, 205, 70, 19 ],
+		"hidden" : 0
+	}
+,
+	"metro" : 	{
+		"fontsize" : 12.0,
+		"patching_rect" : [ 320, 205, 70, 19 ],
+		"hidden" : 0
+	}
+,
+	"time" : 	{
+		"fontsize" : 12.0,
+		"patching_rect" : [ 320, 221, 70, 19 ],
+		"hidden" : 0
+	}
+
+}
