@@ -18,6 +18,12 @@
 		"fontsize" : 10
 	}
 ,
+	"filter_comment" : 	{
+		"patching_rect" : [ 0, 36, 28, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
 	"noise_freq" : 	{
 		"patching_rect" : [ 0, 16, 159, 19 ],
 		"hidden" : 0,

@@ -62,24 +62,14 @@ function applydict(dn)
 function objdict(a)
 {
 	var d = new Dict(dict_name);
-	var att = new Array();
-	if (a.maxclass == "comment") {
-		
-		var aa = new Array();
-		aa = a.getattrnames();
-	//post ("comment", aa.toString(),a.value, "\n");
-	}
-    if (a.varname){
-	
+    if (a.varname){	
 	if (class_excludes.indexOf(" " + a.maxclass + " ") == -1){
 	if (name_excludes.indexOf(" " + a.varname + " ") == -1){
 		//post(a.varname);
 		d.setparse(a.varname, "so");
-		//d.setparse(a.varname, '{ "patching_rect" : "so", "hidden" : "0" }');
 		if (a.maxclass == "patcher") d.set(a.varname+"::patcher", "bang");
 		d.set(a.varname+"::patching_rect", a.rect[0], a.rect[1], a.rect[2]-a.rect[0], a.rect[3]-a.rect[1]);
-		d.set(a.varname+"::hidden", a.hidden);
-		
+		d.set(a.varname+"::hidden", a.hidden);		
 		attributes = a.getattrnames();	
 		//post(a.varname, a.maxclass, "\n", attributes, "\n");	
 		for (i=0;i<attributes.length;i++) {
@@ -88,13 +78,12 @@ function objdict(a)
 					d.set(a.varname+"::fontsize" , a.getattr(attributes[i]));			
 			}
 			if (attributes[i] == "jsarguments"){
-				//post("iii",a.getattr(attributes[i])[0]);	
 				d.set(a.varname+"::jsarguments" , a.getattr(attributes[i]));			
 			}
 		}
 	}
 	}
-}
+	}
     return true;
 }
 

@@ -188,7 +188,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 0.0, 36.0, 28.0, 18.0 ],
-					"text" : "filter"
+					"text" : "filter",
+					"varname" : "filter_comment"
 				}
 
 			}
@@ -756,10 +757,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 54, 397, 594, 1106 ],
+						"client_rect" : [ 842, 164, 1920, 407 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 365, 44, 816, 172 ]
+						"storage_rect" : [ 0, 0, 640, 240 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -824,7 +825,7 @@
 						"presets" : [ 0 ],
 						"ramp" : [ 0 ],
 						"res" : [ 0.0 ],
-						"tetris_menu" : [ "ƒ default.json" ],
+						"tetris_menu" : [ "" ],
 						"title_menu" : [ "subpatch" ]
 					}
 ,

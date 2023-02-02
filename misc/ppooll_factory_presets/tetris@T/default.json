@@ -134,7 +134,7 @@
 ,
 	"grid_size" : 	{
 		"patching_rect" : [ 146, 154, 76, 22 ],
-		"hidden" : 1,
+		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
