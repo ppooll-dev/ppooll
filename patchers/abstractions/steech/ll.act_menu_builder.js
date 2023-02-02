@@ -38,8 +38,8 @@ function store(name){
 	outlet(1, ['store',name,1])
 }
 
-function watch_folder(folder){
-	outlet(3, folder)
+function watch_folder(id,folder){
+	outlet(3, [id, folder])
 }
 
 
@@ -82,20 +82,20 @@ function bang(){
 	store("_act_overview")
 
 	load_acts_from_folder(MAIN)
-	watch_folder(MAIN)
+	watch_folder(1,MAIN)
 
 	// CONTRIBUTIONS
 	append("-")
 	append("(community contributions)")
 	load_acts_from_folder(CONTRIBUTIONS)
-	watch_folder(CONTRIBUTIONS)
+	watch_folder(2,CONTRIBUTIONS)
 
 	// UNSHARED
 	append("-")
 	append("--unshared_acts--")
 	if(UNSHARED !== ""){
 		load_acts_from_folder(UNSHARED)
-		watch_folder(UNSHARED)
+		watch_folder(3,UNSHARED)
 	}
 
 	outlet(4, 'bang');
