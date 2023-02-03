@@ -48,8 +48,10 @@ function name(name){
 		  var coords = [arr[0], arr[1], arr[2]-arr[0], arr[3]-arr[1]]
 
 		  // set patching rect of act's bpatcher & bring to front
-		  owner.patcher.message("script","sendbox",nameInstance,"patching_rect",coords)
-		  owner.patcher.message("script","bringtofront",nameInstance)
+		  this.patcher.parentpatcher.parentpatcher.box.rect = arr
+
+		  // owner.patcher.message("script","sendbox",nameInstance,"patching_rect",coords)
+		  // owner.patcher.message("script","bringtofront",nameInstance)
 		}else{
 			console.log("MISSING "+relativePath)
 		}
