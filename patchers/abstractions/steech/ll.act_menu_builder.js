@@ -52,7 +52,8 @@ function load_acts_from_folder(folder){
 		var file_ext = get_extension(f.filename)
 
 		if(file_ext[1] === 'maxpat'){
-			if(IGNORE_LIST.indexOf(" "+file_ext[0]+" ") === -1){
+
+			if(IGNORE_LIST.indexOf(","+file_ext[0]+",") === -1){
 				append(file_ext[0])
 			}
 			if(file_ext[0] !== '_act_overview'){
@@ -74,7 +75,7 @@ function bang(){
 	var dict_preferences = new Dict("ppooll-preferences")
 
 	var UNSHARED = dict_preferences.get('file_paths::unshared_acts')
-	IGNORE_LIST = " "+dict_preferences.get('act_usage::never_used_acts') + " _act_overview "
+	IGNORE_LIST = ","+dict_preferences.get('act_usage::never_used_acts') + ",_act_overview,"
 
 	// MAIN
 	append("(__acts__)")
