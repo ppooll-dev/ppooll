@@ -84,7 +84,7 @@ messnamed ("ll_amh_receiver", "there", this.patcher.parentpatcher.parentpatcher,
 function getloc()
 {
 	if(!is_bpatcher()){
-		console.log('is Max runtime; getloc')
+		// console.log('is Max runtime; getloc')
 		messnamed ("tetristhis", this.patcher.parentpatcher.parentpatcher.wind.location);
 	}else{
 		console.log('is bpatcher; getloc '+ this.patcher.parentpatcher.parentpatcher.box.rect)
@@ -95,7 +95,7 @@ function getloc()
 function setloc(x,y)
 {
 	if(!is_bpatcher()){
-		console.log('is Max runtime; set patch window location')
+		// console.log('is Max runtime; set patch window location')
 		var p = this.patcher.parentpatcher.parentpatcher;
 		p.wind.location = [x,y,p.wind.location[2]-p.wind.location[0]+x,p.wind.location[3]-p.wind.location[1]+y];
 
