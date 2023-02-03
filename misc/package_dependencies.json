@@ -2,8 +2,7 @@
 	"comments" : 	{
 		"package (keys) " : "act[s] that need this package"
 	}
-,
-	"test" : "tesst",
+	,
 	"jasch objects" : "all",
 	"cv.jit" : "jit.blobs",
 	"karma" : "karma@",
@@ -11,5 +10,6 @@
 	"LowkeyNW" : "gverb@",
 	"PeRColate" : "munger@",
 	"CNMAT Externals" : [ "PEQ@", "pr.spectplay", "rez@", "SDIFter" ],
-	"ICST Ambisonics" : [ "spat.ambicontrol@", "spat.ambidecode@", "spat.ambiencode@", "spat.ambimonitor@", "spat.ambipanning@" ]
+	"ICST Ambisonics" : [ "spat.ambicontrol@", "spat.ambidecode@", "spat.ambiencode@", "spat.ambimonitor@", "spat.ambipanning@" ],
+	"MuBu For Max" : "mubugrain@"
 }

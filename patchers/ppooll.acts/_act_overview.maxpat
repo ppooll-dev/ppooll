@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 148.0, 259.0, 577.0, 738.0 ],
+		"rect" : [ 115.0, 130.0, 577.0, 738.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -431,7 +431,7 @@
 					"fontsize" : 10.0,
 					"id" : "obj-33",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "-", ",", "ƒ", "default" ],
+					"items" : [ "-", ",", "-", ",", "ƒ", "default.json" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -9774,7 +9774,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 840.0, 198.0, 656.0, 630.0 ],
+														"rect" : [ 822.0, 198.0, 656.0, 630.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 12.0,
@@ -9857,8 +9857,8 @@
 																	"numinlets" : 6,
 																	"numoutlets" : 6,
 																	"outlettype" : [ "", "", "", "", "", "" ],
-																	"patching_rect" : [ 68.333333333333314, 212.0, 446.0, 22.0 ],
-																	"text" : "routepass (__acts__) _act_overview - \"(comunity contributions)\" --unshared_acts--"
+																	"patching_rect" : [ 68.333333333333314, 212.0, 456.0, 22.0 ],
+																	"text" : "routepass (__acts__) _act_overview - \"(community contributions)\" --unshared_acts--"
 																}
 
 															}
