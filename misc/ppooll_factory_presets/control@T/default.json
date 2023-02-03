@@ -50,7 +50,7 @@
 ,
 	"midi_channels" : 	{
 		"patching_rect" : [ 82, 16, 36, 19 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 9
 	}
 ,
@@ -68,19 +68,19 @@
 ,
 	"midi_receive_port" : 	{
 		"patching_rect" : [ 24, 16, 58, 19 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 9
 	}
 ,
 	"act_menu" : 	{
 		"patching_rect" : [ 24, 16, 81, 19 ],
-		"hidden" : 1,
+		"hidden" : 0,
 		"fontsize" : 9
 	}
 ,
 	"note_mode" : 	{
 		"patching_rect" : [ 119, 16, 34, 19 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 9
 	}
 ,
