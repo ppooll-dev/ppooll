@@ -6,7 +6,7 @@ var console = {
 }
 
 
-var HARDCODED_PATH = "Package:/ppooll/ppooll_factory_presets/"
+var HARDCODED_PATH = "Package:/ppooll/misc/ppooll_factory_presets/"
 
 var IGNORE_ACTS_LIST = [
   'live.midi_in',
