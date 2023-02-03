@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 819.0, 275.0, 191.0, 53.0 ],
+		"rect" : [ 839.0, 333.0, 191.0, 53.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -984,8 +984,44 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-32",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 340.0, 381.0, 89.0, 22.0 ],
+									"text" : "ll.pf thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-29",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 260.0, 348.0, 109.0, 22.0 ],
+									"text" : "ll.pf act_suggested"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-10",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "" ],
+									"patching_rect" : [ 260.0, 313.0, 179.0, 22.0 ],
+									"text" : "route act_suggested thispatcher",
+									"varname" : "llpf_route"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-35",
 									"maxclass" : "newobj",
@@ -24237,8 +24273,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 13.0, 341.0, 288.0, 19.0 ],
-													"text" : "script connect ll_actmenu 1 in 1, script connect llr_actsuggested 0 in 2"
+													"patching_rect" : [ 13.0, 341.0, 412.0, 19.0 ],
+													"text" : "script connect ll_actmenu 1 in 1, script connect llr_actsuggested 0 in 2, script connect in 1 llpf_route 0"
 												}
 
 											}
@@ -24290,7 +24326,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 58.0, 63.0, 50.0, 22.0 ],
-													"text" : "ppooll"
+													"text" : "midi"
 												}
 
 											}
@@ -25608,7 +25644,7 @@
 													"arrow" : 0,
 													"hidden" : 1,
 													"id" : "obj-4",
-													"items" : [ "no", ",", "control@1", ",", "ho_st1" ],
+													"items" : [ "no", ",", "banger1", ",", "control@1", ",", "ho_st1" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -25811,7 +25847,7 @@
 														"list_in" : [ -1 ],
 														"listsize" : [ 8 ],
 														"mencellblock" : [ "no" ],
-														"ms" : [ 0.03999999910593, 0.297297297297297, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+														"ms" : [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 														"mv" : [ 0 ],
 														"numcellblock" : [ 0 ],
 														"reset" : [ -1 ],
@@ -30924,19 +30960,33 @@
 								"box" : 								{
 									"fontname" : "Geneva",
 									"fontsize" : 9.0,
-									"id" : "obj-34",
+									"id" : "obj-39",
 									"maxclass" : "newobj",
-									"numinlets" : 3,
+									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 140.0, 100.0, 78.0, 20.0 ],
-									"text" : "ll.2control@",
+									"patching_rect" : [ 140.0, 100.0, 78.0, 0.0 ],
+									"text" : "ll.ctlin",
 									"varname" : "in"
 								}
 
 							}
  ],
 						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-29", 0 ],
+									"source" : [ "obj-10", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-32", 0 ],
+									"source" : [ "obj-10", 1 ]
+								}
+
+							}
+, 							{
 								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
 									"source" : [ "obj-12", 0 ]
@@ -30976,7 +31026,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-34", 0 ],
+									"destination" : [ "obj-39", 0 ],
 									"source" : [ "obj-21", 0 ]
 								}
 
@@ -31011,27 +31061,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-34", 1 ],
-									"source" : [ "obj-31", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-38", 0 ],
-									"source" : [ "obj-34", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-34", 2 ],
-									"source" : [ "obj-35", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-96", 0 ],
 									"source" : [ "obj-36", 0 ]
 								}
@@ -31050,6 +31079,13 @@
 									"destination" : [ "obj-7", 0 ],
 									"order" : 0,
 									"source" : [ "obj-38", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-38", 0 ],
+									"source" : [ "obj-39", 0 ]
 								}
 
 							}
@@ -31129,11 +31165,11 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 939.0, 206.0, 107.0, 22.0 ],
 					"restore" : 					{
-						"act_menu" : [ "ho_st1" ],
+						"act_menu" : [ "control@1" ],
 						"act_suggested" : [ 1 ],
 						"baud_rate" : [ "57600" ],
 						"hi_menu" : [ "Magic Keyboard" ],
-						"input_menu" : [ "ppooll" ],
+						"input_menu" : [ "midi" ],
 						"master" : [ 0 ],
 						"midi_channels" : [ 0 ],
 						"midi_receive_port" : [ "to Max 1" ],
@@ -31295,7 +31331,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-32",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "-", ",", "ƒ", "default.json" ],
+					"items" : "-",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -31370,7 +31406,6 @@
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "color",
 					"fontsize" : 9.0,
-					"hidden" : 1,
 					"id" : "obj-15",
 					"items" : [ "no_notes", ",", "notes_single", ",", "notes_range", ",", "notes_chords" ],
 					"maxclass" : "umenu",
@@ -31398,8 +31433,9 @@
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "color",
 					"fontsize" : 9.0,
+					"hidden" : 1,
 					"id" : "obj-13",
-					"items" : [ "no", ",", "control@1", ",", "ho_st1" ],
+					"items" : [ "no", ",", "banger1", ",", "control@1", ",", "ho_st1" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -31425,7 +31461,6 @@
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "color",
 					"fontsize" : 9.0,
-					"hidden" : 1,
 					"id" : "obj-22",
 					"items" : [ "to Max 1", ",", "to Max 2" ],
 					"maxclass" : "umenu",
@@ -31498,7 +31533,6 @@
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "color",
 					"fontsize" : 9.0,
-					"hidden" : 1,
 					"id" : "obj-7",
 					"items" : [ "all_channels", ",", 1, ",", 2, ",", 3, ",", 4, ",", 5, ",", 6, ",", 7, ",", 8, ",", 9, ",", 10, ",", 11, ",", 12, ",", 13, ",", 14, ",", 15, ",", 16 ],
 					"maxclass" : "umenu",
@@ -31739,13 +31773,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.2control@.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/control@patches",
-				"patcherrelativepath" : "../abstractions/control@patches",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ll.actmenu.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
@@ -31785,6 +31812,13 @@
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.ctlin.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/control@patches",
+				"patcherrelativepath" : "../abstractions/control@patches",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -31904,13 +31938,6 @@
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.qlim2.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -32034,6 +32061,13 @@
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "x2MSB&LSB.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/Trond Lossius",
+				"patcherrelativepath" : "../abstractions/Trond Lossius",
+				"type" : "JSON",
 				"implicit" : 1
 			}
  ],
