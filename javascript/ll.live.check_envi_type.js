@@ -27,7 +27,7 @@ outlets = 1;
 
 var console = {
   log: function(message){
-    post(message)
+  	post("ll.live.check_envi_type: " + message)
     post()
   }
 }
@@ -54,10 +54,8 @@ function list(){
 		"ppooll_host" === prev.patcher.name ||
 		prev.patcher.name === patcherName
 	){
-		// load '.maxpat' in Max Environment
-		console.log('load in max envi '+patch)
-
-
+		// // load '.maxpat' in Max Environment
+		// console.log('load in max envi '+patch)
 		outlet(0,patch)
 	}else{
 		// load '.maxpat' in Max For Live as bpatcher
