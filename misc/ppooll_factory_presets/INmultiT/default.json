@@ -1,5 +1,5 @@
 {
-	"window" : [ 555, 203, 730, 275 ],
+	"window" : [ 390, 268, 565, 340 ],
 	"presets" : 	{
 		"patching_rect" : [ 60, -1, 112, 15 ],
 		"hidden" : 0,
@@ -19,7 +19,7 @@
 ,
 	"def" : 	{
 		"patching_rect" : [ 135, 16, 39, 19 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 11
 	}
 ,
@@ -45,6 +45,18 @@
 		"patching_rect" : [ 1, 36, 45, 34 ],
 		"hidden" : 0,
 		"fontsize" : 16
+	}
+,
+	"def_outputs" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 175, 19, 163, 54 ],
+		"hidden" : 0
+	}
+,
+	"def_2" : 	{
+		"patching_rect" : [ 134, 16, 39, 19 ],
+		"hidden" : 0,
+		"fontsize" : 11
 	}
 
 }
