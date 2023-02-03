@@ -1,0 +1,50 @@
+{
+	"window" : [ 555, 203, 730, 275 ],
+	"presets" : 	{
+		"patching_rect" : [ 60, -1, 112, 15 ],
+		"hidden" : 0,
+		"jsarguments" : [ 13, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "INmulti1" ]
+	}
+,
+	"gains" : 	{
+		"patching_rect" : [ 43, 36, 130, 34 ],
+		"hidden" : 0,
+		"fontsize" : 16
+	}
+,
+	"meter" : 	{
+		"patching_rect" : [ 44, 36, 130, 39 ],
+		"hidden" : 0
+	}
+,
+	"def" : 	{
+		"patching_rect" : [ 135, 16, 39, 19 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"gain_ramp" : 	{
+		"patching_rect" : [ 64, 16, 71, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"chans" : 	{
+		"patching_rect" : [ 0, 16, 37, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"1st2all" : 	{
+		"patching_rect" : [ 39, 16, 25, 19 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"inputs_mapping" : 	{
+		"patching_rect" : [ 1, 36, 45, 34 ],
+		"hidden" : 0,
+		"fontsize" : 16
+	}
+
+}
