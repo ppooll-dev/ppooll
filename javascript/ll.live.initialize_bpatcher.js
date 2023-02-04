@@ -88,13 +88,10 @@ function make(name, instance) {
   //set box varname to nameInstance
   prev.patcher.box.varname = nameInstance
   
-  // path to this acts tetris default file with window properties        
-  var relativePath = HARDCODED_PATH+name+"T/default.json"
-
-  // open tetris file
-  var tetris_dict = new Dict('this_tetris')
-  tetris_dict.import_json(relativePath)
-  var arr = tetris_dict.get('window')
+  var dict_act_sizes = new Dict("act_sizes")
+  dict_act_sizes.import_json(HARDCODED_PATH + "act_sizes.json")
+  
+  var arr = dict_act_sizes.get(name)
 
   if(arr){
     var coords = [arr[0], arr[1], arr[2]-arr[0], arr[3]-arr[1]]
