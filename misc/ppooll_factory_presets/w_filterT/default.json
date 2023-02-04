@@ -1,0 +1,69 @@
+{
+	"window" : [ 263, 442, 575, 645 ],
+	"type" : 	{
+		"patching_rect" : [ 38, 15, 63, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"filtergraph" : 	{
+		"patching_rect" : [ 0, 35, 311, 142 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 256, 1, 55, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 179, 1, 79, 14 ],
+		"hidden" : 0,
+		"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "wrapfilter1" ]
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 176, 311, 27 ],
+		"hidden" : 0
+	}
+,
+	"Hz" : 	{
+		"patching_rect" : [ 100, 16, 64, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"dB" : 	{
+		"patching_rect" : [ 164, 16, 64, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Q" : 	{
+		"patching_rect" : [ 228, 16, 64, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"amount" : 	{
+		"patching_rect" : [ 64, 0, 42, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"select" : 	{
+		"patching_rect" : [ 0, 17, 37, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"print" : 	{
+		"patching_rect" : [ 293, 17, 17, 16 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+
+}

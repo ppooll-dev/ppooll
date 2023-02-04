@@ -1,0 +1,73 @@
+{
+	"window" : [ 490, 320, 762, 477 ],
+	"preset-ramp" : 	{
+		"patching_rect" : [ 59, 16, 53, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 0, 16, 61, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "pr.spectfreeze1" ]
+	}
+,
+	"start" : 	{
+		"patching_rect" : [ 390, 208, 17, 17 ],
+		"hidden" : 1
+	}
+,
+	"fadetime" : 	{
+		"patching_rect" : [ 467, 60, 35, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"freeze" : 	{
+		"patching_rect" : [ 1, 81, 270, 60 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"choice" : 	{
+		"patching_rect" : [ 1, 33, 110, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"metrospeed" : 	{
+		"patching_rect" : [ 16, 48, 95, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"metro" : 	{
+		"patching_rect" : [ 1, 48, 15, 15 ],
+		"hidden" : 0
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 112, 11, 160, 53 ],
+		"hidden" : 0
+	}
+,
+	"denoise" : 	{
+		"patching_rect" : [ 1, 63, 134, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"slide" : 	{
+		"patching_rect" : [ 136, 63, 135, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"framescan" : 	{
+		"patching_rect" : [ 1, 141, 270, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+
+}

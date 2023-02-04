@@ -1,0 +1,693 @@
+{
+	"window" : [ 918, 108, 1077, 221 ],
+	"ReverbMode" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"ColorMode" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"LowCut" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"HighCut" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"ModDepth" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"ModRate" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"LateDiffusion" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"EarlyDiffusion" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"HighFreq" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"HighShelf" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"BassXover" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"BassMult" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Attack" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Size" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Decay" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"PreDelay" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Mix" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"point 7 time" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"point 6 time" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"point 5 time" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"point 4 time" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"point 3 time" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"point 2 time" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"point 8 value" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"point 7 value" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"point 6 value" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"point 5 value" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"point 4 value" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"point 3 value" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"point 2 value" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"point 1 value" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"gain" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"lfo position" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"lfo speed" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"filter number" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"lfo divide" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"midi lfo tempo" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"angle" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"logscale" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"tilt" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"stereolink" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"threshold" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"reset" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"learnaverage" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"learnpeak" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"release" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"ratio" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"invert" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"attack" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"autogain" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"type" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"peaktrack" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"makeupgain" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"learn" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"keyinput" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"RlsShp" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"RlsRto" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Timing" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"DRCType" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"XShape" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"XForm" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"XTime" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Knee" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"ELAIGC" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Mode" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"ChLink" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Meterin" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"DithBln" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"DithShp" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"DithTyp" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"DithBit" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"DithEnb" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"DCType" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"DCFreq" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"DCEnabl" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Release" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"RlsEnab" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"OutGain" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"InGain" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Oversmp" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Bypass" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"point 8 time" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"point 1 time" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"OverSamp" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"FFTSize" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"pitchShift" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"N Channels" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Fdn Size (internal)" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Fade-in Time" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Dry/Wet" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Highs Gain" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Highs Q Factor" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Highs Cutoff Frequency" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Lows Gain" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Lows Q Factor" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Lows Cutoff Frequency" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Reverberation Time" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Room Size" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Ambisonic Weights" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Export Layout" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Export Decoder" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Decoder Order" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Input Normalization" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Input Ambisonic Order" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"signal" : 	{
+		"patching_rect" : [ 66, 200, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"program_files" : 	{
+		"patching_rect" : [ 44, 33, 43, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 0, 33, 45, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"midi-port" : 	{
+		"patching_rect" : [ 100, 33, 44, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"vst-folder" : 	{
+		"patching_rect" : [ 50, 0, 75, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"open!" : 	{
+		"patching_rect" : [ 124, 0, 35, 16 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"ll.inputmix" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 49, 160, 12 ],
+		"hidden" : 0
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 61, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 2, 16, 154, 18 ],
+		"hidden" : 0,
+		"jsarguments" : [ 16, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "vst@1" ]
+	}
+,
+	"midi-channel" : 	{
+		"patching_rect" : [ 143, 33, 16, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"vst_program" : 	{
+		"patching_rect" : [ 85, 34, 16, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

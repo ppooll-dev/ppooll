@@ -1,0 +1,29 @@
+{
+	"window" : [ 77, 401, 485, 617 ],
+	"patching_rect" : [ 194, -1, 76, 19 ],
+	"hidden" : 0,
+	"fontsize" : 9,
+	"source-menu" : 	{
+		"patching_rect" : [ 118, -1, 66, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"interval" : 	{
+		"patching_rect" : [ 107, 15, 34, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"on/off" : 	{
+		"patching_rect" : [ 90, 0, 19, 17 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"gain" : 	{
+		"patching_rect" : [ 256, 15, 102, 18 ],
+		"hidden" : 0
+	}
+
+}

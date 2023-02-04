@@ -1,0 +1,27 @@
+{
+	"window" : [ 268, 433, 508, 663 ],
+	"number_of_channels" : 	{
+		"patching_rect" : [ 192, 0, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"value" : 	{
+		"patching_rect" : [ 0, 24, 120, 200 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"threshold" : 	{
+		"patching_rect" : [ 122, 24, 120, 200 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"x_threshold" : 	{
+		"patching_rect" : [ 127, 0, 25, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

@@ -1,0 +1,140 @@
+{
+	"window" : [ 1025, 162, 1295, 328 ],
+	"presets" : 	{
+		"patching_rect" : [ 139, 0, 128, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 17, "255 255 255", "50 50 50", "255 0 0", "0 255 0" ]
+	}
+,
+	"order" : 	{
+		"patching_rect" : [ 2, 40, 47, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"1active" : 	{
+		"patching_rect" : [ 2, 18, 20, 20 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"2active" : 	{
+		"patching_rect" : [ 24, 18, 20, 20 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"3active" : 	{
+		"patching_rect" : [ 46, 18, 20, 20 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"4active" : 	{
+		"patching_rect" : [ 68, 18, 20, 20 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"5active" : 	{
+		"patching_rect" : [ 90, 18, 20, 20 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"6active" : 	{
+		"patching_rect" : [ 112, 18, 20, 20 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"7active" : 	{
+		"patching_rect" : [ 134, 18, 20, 20 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"8active" : 	{
+		"patching_rect" : [ 156, 18, 20, 20 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"type" : 	{
+		"patching_rect" : [ 177, 40, 92, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"distance_mode" : 	{
+		"patching_rect" : [ 106, 124, 86, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"db_unit" : 	{
+		"patching_rect" : [ 192, 124, 80, 20 ],
+		"hidden" : 1,
+		"fontsize" : 10
+	}
+,
+	"dist_att" : 	{
+		"patching_rect" : [ 192, 124, 80, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"center_size" : 	{
+		"patching_rect" : [ 2, 146, 90, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"center_curve" : 	{
+		"patching_rect" : [ 182, 146, 90, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"center_att_db" : 	{
+		"patching_rect" : [ 92, 146, 90, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"distance_graph" : 	{
+		"patching_rect" : [ 2, 62, 270, 60 ],
+		"hidden" : 0
+	}
+,
+	"gain" : 	{
+		"patching_rect" : [ 178, 18, 89, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"def" : 	{
+		"patching_rect" : [ 80, 40, 43, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"chan_amt" : 	{
+		"patching_rect" : [ 51, 40, 27, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"dist_ui" : 	{
+		"patching_rect" : [ 125, 40, 50, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"chn_offset" : 	{
+		"patching_rect" : [ 2, 124, 61, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+
+}

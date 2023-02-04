@@ -1,0 +1,116 @@
+{
+	"window" : [ 13, 66, 1196, 156 ],
+	"range" : 	{
+		"patching_rect" : [ 435, 117, 35, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"note" : 	{
+		"patching_rect" : [ 477, 5, 25, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"vel" : 	{
+		"patching_rect" : [ 528, 5, 25, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"offset" : 	{
+		"patching_rect" : [ 505, 117, 35, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"vel_factor" : 	{
+		"patching_rect" : [ 200, 129, 35, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"frequency" : 	{
+		"patching_rect" : [ 582, 5, 39, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"keyslider_mode" : 	{
+		"patching_rect" : [ 123, 2, 66, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"stop" : 	{
+		"patching_rect" : [ 187, 2, 42, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"mapping" : 	{
+		"patching_rect" : [ 73, 2, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"cb" : 	{
+		"patching_rect" : [ 1124, 1, 30, 79 ],
+		"hidden" : 0,
+		"fontsize" : 7
+	}
+,
+	"random_cents" : 	{
+		"patching_rect" : [ 328, 2, 70, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"release_time" : 	{
+		"patching_rect" : [ 231, 2, 95, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"keyboard" : 	{
+		"patching_rect" : [ 0, 24, 988, 79 ],
+		"hidden" : 0
+	}
+,
+	"def_output" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 573, 209, 75, 22 ],
+		"hidden" : 0
+	}
+,
+	"def" : 	{
+		"patching_rect" : [ 621, 4, 58, 20 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"cb2" : 	{
+		"patching_rect" : [ 1153, -78, 30, 158 ],
+		"hidden" : 0,
+		"fontsize" : 7
+	}
+,
+	"sust_off" : 	{
+		"patching_rect" : [ 830, 4, 47, 18 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"vol_max" : 	{
+		"patching_rect" : [ 879, 4, 109, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"out_sel" : 	{
+		"patching_rect" : [ 693, 2, 92, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11.595186999999999
+	}
+
+}

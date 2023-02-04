@@ -1,0 +1,21 @@
+{
+	"window" : [ 671, 192, 902, 339 ],
+	"textfield" : 	{
+		"patching_rect" : [ 0, 16, 232, 131 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 80, 0, 121, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "beast1" ]
+	}
+,
+	"fontsize" : 	{
+		"patching_rect" : [ 204, 0, 26, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

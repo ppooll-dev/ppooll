@@ -1,0 +1,123 @@
+{
+	"window" : [ 653, 106, 788, 250 ],
+	"loudness_send-listitem" : 	{
+		"patching_rect" : [ 110, 78, 25, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"on/off" : 	{
+		"patching_rect" : [ 29, 89, 39, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 94, 0, 40, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 68, 15, 66, 27 ],
+		"hidden" : 0,
+		"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "peakfollow@1" ]
+	}
+,
+	"loudness_display1" : 	{
+		"patching_rect" : [ 0, 13, 67, 39 ],
+		"hidden" : 0
+	}
+,
+	"loudness_display2" : 	{
+		"patching_rect" : [ 0, 103, 67, 40 ],
+		"hidden" : 0
+	}
+,
+	"loudness_send-act" : 	{
+		"patching_rect" : [ 67, 63, 67, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"loudness_send-par" : 	{
+		"patching_rect" : [ 67, 78, 46, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"loudness_in-low" : 	{
+		"patching_rect" : [ 0, 61, 34, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"loudness_in-high" : 	{
+		"patching_rect" : [ 33, 61, 34, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"loudness_out-low" : 	{
+		"patching_rect" : [ 0, 75, 34, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"loudness_out-high" : 	{
+		"patching_rect" : [ 33, 75, 34, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"loudness_log" : 	{
+		"patching_rect" : [ 0, 89, 31, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"act~" : 	{
+		"patching_rect" : [ 66, 94, 47, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"par~" : 	{
+		"patching_rect" : [ 66, 109, 68, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"slide_up" : 	{
+		"patching_rect" : [ 67, 126, 33, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"slide_down" : 	{
+		"patching_rect" : [ 99, 126, 36, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"minmax" : 	{
+		"patching_rect" : [ -1, 51, 68, 12 ],
+		"hidden" : 0
+	}
+,
+	"on/off~" : 	{
+		"patching_rect" : [ 113, 95, 21, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"decay" : 	{
+		"patching_rect" : [ 66, 41, 68, 12 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"patching_rect" : [ 66, 52, 68, 12 ],
+	"hidden" : 0,
+	"fontsize" : 10
+}

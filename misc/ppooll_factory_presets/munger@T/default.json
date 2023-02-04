@@ -1,0 +1,184 @@
+{
+	"window" : [ 703, 411, 928, 644 ],
+	"direction" : 	{
+		"patching_rect" : [ 137, 0, 26, 17 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"gain" : 	{
+		"patching_rect" : [ 179, 252, 32, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"gain_rand" : 	{
+		"patching_rect" : [ 179, 265, 32, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"stereo_spread" : 	{
+		"patching_rect" : [ 213, 76, 12, 103 ],
+		"hidden" : 0
+	}
+,
+	"random_gain_slider" : 	{
+		"patching_rect" : [ 199, 76, 12, 103 ],
+		"hidden" : 0
+	}
+,
+	"gain_slider" : 	{
+		"patching_rect" : [ 176, 76, 21, 103 ],
+		"hidden" : 0
+	}
+,
+	"smooth" : 	{
+		"patching_rect" : [ 110, 158, 49, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"grain_pitch_variation" : 	{
+		"patching_rect" : [ 162, 76, 12, 103 ],
+		"hidden" : 0
+	}
+,
+	"scale" : 	{
+		"patching_rect" : [ 0, 97, 96, 81 ],
+		"hidden" : 0
+	}
+,
+	"power" : 	{
+		"patching_rect" : [ 75, 0, 19, 16 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"record" : 	{
+		"patching_rect" : [ 164, 0, 60, 33 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 164, 220, 61, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 164, 181, 61, 37 ],
+		"hidden" : 0,
+		"jsarguments" : [ 11, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "fmrm1" ]
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 180, 164, 53 ],
+		"hidden" : 0
+	}
+,
+	"voices" : 	{
+		"patching_rect" : [ 96, 0, 40, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"ramptime" : 	{
+		"patching_rect" : [ 0, 16, 101, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"grain_size" : 	{
+		"patching_rect" : [ 1, 34, 100, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"grain_separation" : 	{
+		"patching_rect" : [ 1, 55, 100, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"delay" : 	{
+		"patching_rect" : [ 144, 55, 80, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"position" : 	{
+		"patching_rect" : [ 21, 76, 109, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"grain_pitch" : 	{
+		"patching_rect" : [ 97, 138, 62, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"setscalezero" : 	{
+		"patching_rect" : [ 97, 158, 12, 19 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"semitones" : 	{
+		"patching_rect" : [ 97, 97, 62, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"semitones_amount" : 	{
+		"patching_rect" : [ 97, 118, 62, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"clear" : 	{
+		"patching_rect" : [ 172, 34, 52, 19 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"setposminusone" : 	{
+		"patching_rect" : [ 1, 76, 19, 19 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"grain_rate_variation" : 	{
+		"patching_rect" : [ 102, 55, 41, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"grain_size_variation" : 	{
+		"patching_rect" : [ 131, 34, 42, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"easy_rand" : 	{
+		"patching_rect" : [ 118, 16, 45, 17 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"position_random" : 	{
+		"patching_rect" : [ 131, 76, 28, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"grain_size_random" : 	{
+		"patching_rect" : [ 102, 34, 28, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+
+}

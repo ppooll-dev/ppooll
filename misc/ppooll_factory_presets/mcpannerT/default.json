@@ -1,0 +1,39 @@
+{
+	"window" : [ 992, 425, 1145, 590 ],
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 113, 153, 53 ],
+		"hidden" : 0
+	}
+,
+	"pans" : 	{
+		"patching_rect" : [ 0, 33, 153, 79 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"slide" : 	{
+		"patching_rect" : [ 78, 0, 70, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"metro" : 	{
+		"patching_rect" : [ 0, 17, 42, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"time" : 	{
+		"patching_rect" : [ 42, 16, 65, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"center" : 	{
+		"patching_rect" : [ 111, 16, 42, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

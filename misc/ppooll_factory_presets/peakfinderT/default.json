@@ -1,0 +1,56 @@
+{
+	"window" : [ 201, 265, 362, 433 ],
+	"preset-ramp" : 	{
+		"patching_rect" : [ 102, 16, 58, 13 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"meter_in" : 	{
+		"patching_rect" : [ 0, 45, 13, 58 ],
+		"hidden" : 0
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 116, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"threshold" : 	{
+		"patching_rect" : [ 0, 30, 100, 15 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"attack" : 	{
+		"patching_rect" : [ -1, 103, 79, 13 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"decay" : 	{
+		"patching_rect" : [ 79, 103, 79, 13 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"operating_mode" : 	{
+		"patching_rect" : [ 127, 29, 32, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 89, 0, 71, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 13, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "peakfinder1" ]
+	}
+,
+	"mode!" : 	{
+		"patching_rect" : [ 100, 29, 27, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+
+}

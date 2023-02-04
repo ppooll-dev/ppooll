@@ -1,0 +1,113 @@
+{
+	"window" : [ 178, 192, 374, 428 ],
+	"presets" : 	{
+		"patching_rect" : [ 1, 15, 193, 13 ],
+		"hidden" : 0,
+		"jsarguments" : [ 11, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "oscbank@1" ]
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 81, 0, 52, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"spectral_weights" : 	{
+		"patching_rect" : [ 0, 27, 197, 80 ],
+		"hidden" : 0
+	}
+,
+	"freq_smooth" : 	{
+		"patching_rect" : [ 124, 116, 73, 15 ],
+		"hidden" : 0
+	}
+,
+	"size_label" : 	{
+		"patching_rect" : [ 146, 0, 25, 17 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"keyboard" : 	{
+		"patching_rect" : [ 0, 150, 196, 34 ],
+		"hidden" : 0
+	}
+,
+	"sw_label" : 	{
+		"patching_rect" : [ 74, 37, 48, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"low-key" : 	{
+		"patching_rect" : [ 167, 184, 29, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"spectrum-size" : 	{
+		"patching_rect" : [ 167, 0, 31, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"spect_range" : 	{
+		"patching_rect" : [ 21, 116, 43, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"spect_scale" : 	{
+		"patching_rect" : [ 63, 116, 31, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"spect_type" : 	{
+		"patching_rect" : [ 0, 116, 22, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"dist_LCD" : 	{
+		"patching_rect" : [ 0, 106, 148, 11 ],
+		"hidden" : 0
+	}
+,
+	"lk_label" : 	{
+		"patching_rect" : [ 168, 202, 31, 27 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"freqmax" : 	{
+		"patching_rect" : [ 146, 104, 52, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"zero_weights" : 	{
+		"patching_rect" : [ 133, 0, 15, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"freq_window" : 	{
+		"patching_rect" : [ 162, 132, 35, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"freq" : 	{
+		"patching_rect" : [ 0, 132, 162, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 184, 159, 53 ],
+		"hidden" : 0
+	}
+
+}

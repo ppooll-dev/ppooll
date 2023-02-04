@@ -1,0 +1,138 @@
+{
+	"window" : [ 291, 277, 584, 486 ],
+	"waveform" : 	{
+		"patching_rect" : [ 173, 96, 45, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 235, 0, 57, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 74, 0, 161, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 15, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "wavelets1" ]
+	}
+,
+	"multiply_ramp_on/off" : 	{
+		"patching_rect" : [ 147, 66, 14, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"cycles_max" : 	{
+		"patching_rect" : [ 124, 47, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"wf" : 	{
+		"patching_rect" : [ 0, 114, 218, 42 ],
+		"hidden" : 0
+	}
+,
+	"on/off" : 	{
+		"patching_rect" : [ 147, 84, 25, 31 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"display" : 	{
+		"patching_rect" : [ 0, 156, 133, 53 ],
+		"hidden" : 0
+	}
+,
+	"smooth" : 	{
+		"patching_rect" : [ 218, 84, 75, 72 ],
+		"hidden" : 0
+	}
+,
+	"shape_label" : 	{
+		"patching_rect" : [ 237, 103, 42, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"multi=1" : 	{
+		"patching_rect" : [ 159, 66, 32, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"time_ramp_on/off" : 	{
+		"patching_rect" : [ 281, 16, 12, 17 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"freq_ramp_on/off" : 	{
+		"patching_rect" : [ 281, 33, 12, 17 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"time" : 	{
+		"patching_rect" : [ 0, 15, 281, 18 ],
+		"hidden" : 0,
+		"fontsize" : 18
+	}
+,
+	"freq" : 	{
+		"patching_rect" : [ 0, 32, 281, 18 ],
+		"hidden" : 0,
+		"fontsize" : 18
+	}
+,
+	"multiply" : 	{
+		"patching_rect" : [ 0, 66, 147, 18 ],
+		"hidden" : 0,
+		"fontsize" : 16
+	}
+,
+	"ramp" : 	{
+		"patching_rect" : [ 171, 66, 122, 18 ],
+		"hidden" : 0,
+		"fontsize" : 16
+	}
+,
+	"LCfreq" : 	{
+		"patching_rect" : [ 0, 83, 147, 17 ],
+		"hidden" : 0,
+		"fontsize" : 16
+	}
+,
+	"resonance" : 	{
+		"patching_rect" : [ 0, 98, 147, 17 ],
+		"hidden" : 0,
+		"fontsize" : 16
+	}
+,
+	"divide" : 	{
+		"patching_rect" : [ 0, 49, 116, 18 ],
+		"hidden" : 0,
+		"fontsize" : 16
+	}
+,
+	"cycles" : 	{
+		"patching_rect" : [ 171, 49, 122, 18 ],
+		"hidden" : 0,
+		"fontsize" : 16
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 134, 156, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"one" : 	{
+		"patching_rect" : [ 173, 84, 45, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+
+}

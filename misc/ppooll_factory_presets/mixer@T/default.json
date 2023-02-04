@@ -1,0 +1,119 @@
+{
+	"window" : [ 424, 404, 597, 616 ],
+	"meter" : 	{
+		"patching_rect" : [ 0, 15, 168, 120 ],
+		"hidden" : 0
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 116, 0, 43, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 64, 0, 53, 14 ],
+		"hidden" : 0,
+		"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "mixer@1" ]
+	}
+,
+	"vols" : 	{
+		"patching_rect" : [ 0, 15, 168, 120 ],
+		"hidden" : 0
+	}
+,
+	"pans" : 	{
+		"patching_rect" : [ 0, 15, 168, 120 ],
+		"hidden" : 1
+	}
+,
+	"inputs" : 	{
+		"patching_rect" : [ 1, 137, 30, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"vol/pan" : 	{
+		"patching_rect" : [ 31, 139, 30, 17 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"pre/post" : 	{
+		"patching_rect" : [ 124, 139, 30, 17 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"unity" : 	{
+		"patching_rect" : [ 61, 139, 33, 17 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"link" : 	{
+		"patching_rect" : [ 94, 139, 30, 17 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 159, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"links" : 	{
+		"patching_rect" : [ 0, 100, 168, 20 ],
+		"hidden" : 1
+	}
+,
+	"c1" : 	{
+		"patching_rect" : [ 0, 115, 23, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"c2" : 	{
+		"patching_rect" : [ 21, 115, 23, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"c3" : 	{
+		"patching_rect" : [ 42, 115, 23, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"c4" : 	{
+		"patching_rect" : [ 63, 115, 23, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"c5" : 	{
+		"patching_rect" : [ 84, 115, 23, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"c6" : 	{
+		"patching_rect" : [ 105, 115, 23, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"c7" : 	{
+		"patching_rect" : [ 126, 115, 23, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"c8" : 	{
+		"patching_rect" : [ 147, 115, 23, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

@@ -1,0 +1,63 @@
+{
+	"window" : [ 159, 658, 1099, 897 ],
+	"bp" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 1, 18, 929, 220 ],
+		"hidden" : 0
+	}
+,
+	"play/stop" : 	{
+		"patching_rect" : [ 82, 0, 52, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"locate" : 	{
+		"patching_rect" : [ 134, 0, 85, 18 ],
+		"hidden" : 0,
+		"fontsize" : 13
+	}
+,
+	"progress" : 	{
+		"patching_rect" : [ 451, 0, 98, 18 ],
+		"hidden" : 0,
+		"fontsize" : 13
+	}
+,
+	"size_x" : 	{
+		"patching_rect" : [ 660, 0, 69, 19 ],
+		"hidden" : 0,
+		"fontsize" : 13
+	}
+,
+	"size_y" : 	{
+		"patching_rect" : [ 731, 0, 69, 19 ],
+		"hidden" : 0,
+		"fontsize" : 13
+	}
+,
+	"loop_min" : 	{
+		"patching_rect" : [ 292, 0, 72, 18 ],
+		"hidden" : 0,
+		"fontsize" : 13
+	}
+,
+	"loop_max" : 	{
+		"patching_rect" : [ 363, 0, 72, 18 ],
+		"hidden" : 0,
+		"fontsize" : 13
+	}
+,
+	"loop" : 	{
+		"patching_rect" : [ 257, 0, 36, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"locate0" : 	{
+		"patching_rect" : [ 218, 0, 23, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

@@ -1,0 +1,60 @@
+{
+	"window" : [ 504, 540, 745, 599 ],
+	"parmenu" : 	{
+		"patching_rect" : [ 78, 36, 78, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11.595186999999999
+	}
+,
+	"actmenu" : 	{
+		"patching_rect" : [ 2, 36, 78, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11.595186999999999
+	}
+,
+	"listitem" : 	{
+		"patching_rect" : [ 155, 36, 53, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"on/off" : 	{
+		"patching_rect" : [ 52, 3, 25, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"time" : 	{
+		"patching_rect" : [ 160, 3, 80, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"min_time" : 	{
+		"patching_rect" : [ 78, 3, 82, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"patching_rect" : [ 78, 3, 82, 15 ],
+	"hidden" : 0,
+	"fontsize" : 12,
+	"amount" : 	{
+		"patching_rect" : [ 0, 18, 82, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"min" : 	{
+		"patching_rect" : [ 82, 18, 82, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"max" : 	{
+		"patching_rect" : [ 160, 18, 82, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}
