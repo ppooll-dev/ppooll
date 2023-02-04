@@ -1,0 +1,80 @@
+{
+	"window" : [ 310, 365, 429, 551 ],
+	"buffer_list" : 	{
+		"patching_rect" : [ -1, 51, 120, 93 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"size-box" : 	{
+		"patching_rect" : [ 73, 169, 46, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"action_menu" : 	{
+		"patching_rect" : [ 0, 168, 38, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"wf1" : 	{
+		"patching_rect" : [ 13, 143, 105, 26 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"channels" : 	{
+		"patching_rect" : [ 58, 169, 19, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"dropfile" : 	{
+		"patching_rect" : [ 2, 51, 99, 90 ],
+		"hidden" : 0
+	}
+,
+	"folder_menu" : 	{
+		"patching_rect" : [ 30, 16, 88, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"file_menu" : 	{
+		"patching_rect" : [ 0, 33, 118, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"ff" : 	{
+		"patching_rect" : [ 0, 16, 17, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"f" : 	{
+		"patching_rect" : [ 16, 16, 14, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"normalize" : 	{
+		"patching_rect" : [ 0, 142, 13, 27 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"open!" : 	{
+		"patching_rect" : [ 82, 0, 36, 17 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"sr-box" : 	{
+		"patching_rect" : [ 35, 170, 27, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+
+}
