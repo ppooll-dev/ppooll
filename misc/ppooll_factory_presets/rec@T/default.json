@@ -1,0 +1,87 @@
+{
+	"window" : [ 772, 158, 981, 268 ],
+	"folder_menu" : 	{
+		"patching_rect" : [ 81, 0, 88, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"textedit" : 	{
+		"patching_rect" : [ 0, 16, 210, 21 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"ff" : 	{
+		"patching_rect" : [ 52, 0, 17, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"f" : 	{
+		"patching_rect" : [ 68, 0, 14, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"open!!" : 	{
+		"patching_rect" : [ 168, 0, 40, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"timer" : 	{
+		"patching_rect" : [ 175, 59, 30, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"clock" : 	{
+		"patching_rect" : [ 52, 56, 122, 25 ],
+		"hidden" : 0,
+		"fontsize" : 24
+	}
+,
+	"samptype" : 	{
+		"patching_rect" : [ 73, 36, 33, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"filetype" : 	{
+		"patching_rect" : [ 107, 36, 29, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"rec" : 	{
+		"patching_rect" : [ 1, 56, 51, 25 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"channels" : 	{
+		"patching_rect" : [ 1, 36, 72, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"input" : 	{
+		"patching_rect" : [ 137, 35, 71, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"def" : 	{
+		"patching_rect" : [ 149, 83, 59, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"gain" : 	{
+		"patching_rect" : [ 1, 83, 149, 26 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+
+}

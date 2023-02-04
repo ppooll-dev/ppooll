@@ -1,0 +1,39 @@
+{
+	"window" : [ 370, 693, 570, 753 ],
+	"spk_amt" : 	{
+		"patching_rect" : [ 0, 40, 47, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"def" : 	{
+		"patching_rect" : [ 49, 40, 50, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"type" : 	{
+		"patching_rect" : [ 106, 18, 92, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"gain" : 	{
+		"patching_rect" : [ 100, 40, 98, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"order" : 	{
+		"patching_rect" : [ 0, 18, 47, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 134, 0, 64, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 17, "255 255 255", "50 50 50", "255 0 0", "0 255 0" ]
+	}
+
+}

@@ -1,0 +1,107 @@
+{
+	"window" : [ 484, 563, 834, 770 ],
+	"source-menu" : 	{
+		"patching_rect" : [ 106, -1, 66, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"drawstyle" : 	{
+		"patching_rect" : [ 323, 186, 28, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"red" : 	{
+		"patching_rect" : [ 248, -1, 27, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"green" : 	{
+		"patching_rect" : [ 272, -1, 27, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"blue" : 	{
+		"patching_rect" : [ 297, -1, 27, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"alpha" : 	{
+		"patching_rect" : [ 322, -1, 27, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"color_menu" : 	{
+		"patching_rect" : [ 172, -1, 76, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"buffersize" : 	{
+		"patching_rect" : [ 176, 186, 42, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"c_bs" : 	{
+		"patching_rect" : [ 136, 186, 46, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"buffer/pixel" : 	{
+		"patching_rect" : [ 106, 186, 30, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"c_b/p" : 	{
+		"patching_rect" : [ 58, 186, 48, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"range" : 	{
+		"patching_rect" : [ 220, 186, 35, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"range_lo" : 	{
+		"patching_rect" : [ 249, 186, 35, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"range_hi" : 	{
+		"patching_rect" : [ 286, 186, 35, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 66, 0, 32, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "PEQ@1" ]
+	}
+,
+	"scope" : 	{
+		"patching_rect" : [ 0, 18, 351, 169 ],
+		"hidden" : 0
+	}
+,
+	"chans" : 	{
+		"patching_rect" : [ 32, 186, 30, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"patching_rect" : [ 0, 186, 36, 18 ],
+	"hidden" : 0,
+	"fontsize" : 10
+}

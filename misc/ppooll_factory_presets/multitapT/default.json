@@ -1,0 +1,132 @@
+{
+	"window" : [ 161, 256, 462, 434 ],
+	"presets" : 	{
+		"patching_rect" : [ 70, 0, 136, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "multitap1" ]
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 150, 16, 56, 17 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"lcd" : 	{
+		"patching_rect" : [ 0, 65, 205, 60 ],
+		"hidden" : 0
+	}
+,
+	"loop-length" : 	{
+		"patching_rect" : [ 81, 32, 52, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"time-ramp" : 	{
+		"patching_rect" : [ 25, 32, 39, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"edit" : 	{
+		"patching_rect" : [ 205, 82, 56, 43 ],
+		"hidden" : 0
+	}
+,
+	"select_edit" : 	{
+		"patching_rect" : [ 229, 65, 32, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"mod_freq" : 	{
+		"patching_rect" : [ 193, 154, 54, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"mod_depth" : 	{
+		"patching_rect" : [ 193, 136, 54, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"rand_menu" : 	{
+		"patching_rect" : [ 86, 48, 29, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"rand_metro" : 	{
+		"patching_rect" : [ 113, 48, 36, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"step_size" : 	{
+		"patching_rect" : [ 145, 49, 61, 16 ],
+		"hidden" : 0
+	}
+,
+	"distribution" : 	{
+		"patching_rect" : [ 14, 48, 72, 17 ],
+		"hidden" : 0
+	}
+,
+	"delay_mix" : 	{
+		"patching_rect" : [ 284, 65, 17, 111 ],
+		"hidden" : 0
+	}
+,
+	"delay_feedback" : 	{
+		"patching_rect" : [ 261, 65, 15, 111 ],
+		"hidden" : 0
+	}
+,
+	"rev>delay_feedback" : 	{
+		"patching_rect" : [ 273, 65, 15, 111 ],
+		"hidden" : 0
+	}
+,
+	"rev_out" : 	{
+		"patching_rect" : [ 274, 67, 12, 109 ],
+		"hidden" : 0
+	}
+,
+	"clear-delay" : 	{
+		"patching_rect" : [ 119, 32, 30, 17 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"sort" : 	{
+		"patching_rect" : [ 205, 65, 24, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"freeze-delay" : 	{
+		"patching_rect" : [ 149, 33, 57, 16 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"delay_outs" : 	{
+		"patching_rect" : [ 262, 67, 12, 109 ],
+		"hidden" : 0
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 125, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"delay-time" : 	{
+		"patching_rect" : [ 0, 16, 150, 17 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+
+}

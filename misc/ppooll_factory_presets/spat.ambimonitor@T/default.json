@@ -1,0 +1,103 @@
+{
+	"window" : [ 977, 406, 1204, 798 ],
+	"labels" : 	{
+		"patching_rect" : [ 135, 12, 39, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"disp_mode" : 	{
+		"patching_rect" : [ 91, 15, 45, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"speaker_monitor" : 	{
+		"patching_rect" : [ 0, 44, 226, 347 ],
+		"hidden" : 0
+	}
+,
+	"input_monitor" : 	{
+		"patching_rect" : [ 0, 44, 226, 347 ],
+		"hidden" : 0
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 176, 15, 50, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 135, -1, 91, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "vbap@1" ]
+	}
+,
+	"outputs" : 	{
+		"patching_rect" : [ 26, 23, 29, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"inputs" : 	{
+		"patching_rect" : [ 0, 23, 29, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"input_label" : 	{
+		"patching_rect" : [ 1, 12, 21, 17 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"output_label" : 	{
+		"patching_rect" : [ 21, 12, 28, 17 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"default" : 	{
+		"patching_rect" : [ 53, 16, 37, 14 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"define" : 	{
+		"patching_rect" : [ 53, 30, 37, 14 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"edit_in_out" : 	{
+		"patching_rect" : [ 136, 30, 24, 13 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"grid" : 	{
+		"patching_rect" : [ 161, 30, 19, 13 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"zoom" : 	{
+		"patching_rect" : [ 262, -1, 62, 45 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"size" : 	{
+		"patching_rect" : [ 91, 30, 45, 14 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"min_distance" : 	{
+		"patching_rect" : [ 181, 30, 45, 14 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+
+}

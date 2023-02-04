@@ -1,0 +1,63 @@
+{
+	"window" : [ 544, 534, 769, 620 ],
+	"directivity" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 569, 432, 156, 21 ],
+		"hidden" : 1
+	}
+,
+	"outputs" : 	{
+		"patching_rect" : [ 27, 24, 28, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"inputs" : 	{
+		"patching_rect" : [ 1, 24, 28, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"input_label" : 	{
+		"patching_rect" : [ 2, 13, 21, 17 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"output_label" : 	{
+		"patching_rect" : [ 22, 13, 28, 17 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"order" : 	{
+		"patching_rect" : [ 59, 16, 75, 15 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"distance_encoding" : 	{
+		"patching_rect" : [ 60, 31, 105, 13 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"showorder" : 	{
+		"patching_rect" : [ 132, 17, 32, 13 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"def" : 	{
+		"patching_rect" : [ 132, 4, 32, 13 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"add_sub" : 	{
+		"patching_rect" : [ 1, 44, 61, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+
+}

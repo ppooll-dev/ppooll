@@ -1,0 +1,129 @@
+{
+	"window" : [ 1069, 379, 1512, 550 ],
+	"preset-ramp" : 	{
+		"patching_rect" : [ 371, 0, 72, 17 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 51, 0, 321, 17 ],
+		"hidden" : 0,
+		"jsarguments" : [ 15, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "paf@1" ]
+	}
+,
+	"fundamental_freq" : 	{
+		"patching_rect" : [ 0, 17, 254, 22 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"fundamental_freq_ramp" : 	{
+		"patching_rect" : [ 313, 17, 130, 22 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"center_freq" : 	{
+		"patching_rect" : [ 0, 38, 254, 22 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"center_freq_ramp" : 	{
+		"patching_rect" : [ 313, 38, 130, 22 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"bandwidth" : 	{
+		"patching_rect" : [ 0, 59, 254, 22 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"bandwith_ramp" : 	{
+		"patching_rect" : [ 313, 59, 130, 22 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"vibrato_depth" : 	{
+		"patching_rect" : [ 0, 80, 254, 22 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"vibrato_depth_ramp" : 	{
+		"patching_rect" : [ 313, 80, 130, 22 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"vibrato_freq" : 	{
+		"patching_rect" : [ 0, 101, 254, 22 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"vibrato_freq_ramp" : 	{
+		"patching_rect" : [ 313, 101, 130, 22 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"shift" : 	{
+		"patching_rect" : [ 0, 122, 254, 22 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"shift_ramp" : 	{
+		"patching_rect" : [ 313, 122, 130, 22 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 1, 144, 442, 27 ],
+		"hidden" : 0
+	}
+,
+	"fundamental_freq_mcspread" : 	{
+		"patching_rect" : [ 253, 17, 61, 22 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"center_freq_mcspread" : 	{
+		"patching_rect" : [ 253, 38, 61, 22 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"bandwidth_mcspread" : 	{
+		"patching_rect" : [ 253, 59, 61, 22 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"vibrato_depth_mcspread" : 	{
+		"patching_rect" : [ 253, 80, 61, 22 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"vibrato_freq_mcspread" : 	{
+		"patching_rect" : [ 253, 101, 61, 22 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"shift_mcspread" : 	{
+		"patching_rect" : [ 253, 122, 61, 22 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+
+}

@@ -1,0 +1,260 @@
+{
+	"window" : [ 38, 66, 433, 425 ],
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 235, 305, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"Play" : 	{
+		"patching_rect" : [ 196, 176, 34, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 350, 0, 42, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 86, 0, 264, 15 ],
+		"hidden" : 0,
+		"jsarguments" : [ 13, "255 255 255", "50 50 50", "255 0 0", "0 255 0" ]
+	}
+,
+	"buffermenu" : 	{
+		"patching_rect" : [ 1, 176, 173, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"Density" : 	{
+		"patching_rect" : [ 0, 34, 251, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Length" : 	{
+		"patching_rect" : [ 0, 49, 251, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Pitch" : 	{
+		"patching_rect" : [ 0, 18, 251, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"PitchVar" : 	{
+		"patching_rect" : [ 252, 18, 140, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"PlayDirection" : 	{
+		"patching_rect" : [ 232, 175, 57, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"PlayBi" : 	{
+		"patching_rect" : [ 291, 175, 103, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Attack" : 	{
+		"patching_rect" : [ 0, 71, 159, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"Release" : 	{
+		"patching_rect" : [ 196, 72, 158, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"wf" : 	{
+		"patching_rect" : [ 2, 197, 369, 78 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"HeadDirection" : 	{
+		"patching_rect" : [ 196, 283, 89, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"StartPos" : 	{
+		"patching_rect" : [ 235, 549, 52, 20 ],
+		"hidden" : 1,
+		"fontsize" : 10
+	}
+,
+	"EndPos" : 	{
+		"patching_rect" : [ 288, 549, 57, 20 ],
+		"hidden" : 1,
+		"fontsize" : 10
+	}
+,
+	"RandPanning" : 	{
+		"patching_rect" : [ 30, 305, 89, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"RandomPanDepth" : 	{
+		"patching_rect" : [ 26, 318, 41, 39 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"attrui" : 	{
+		"patching_rect" : [ 4, 474, 150, 22 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"RandomPanSpeed" : 	{
+		"patching_rect" : [ 80, 318, 41, 39 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"DensityVar" : 	{
+		"patching_rect" : [ 252, 34, 140, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"LengthVar" : 	{
+		"patching_rect" : [ 252, 49, 140, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"PositionVar" : 	{
+		"patching_rect" : [ 196, 92, 141, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"StereoMono" : 	{
+		"patching_rect" : [ 152, 305, 81, 52 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"TranportSpeed" : 	{
+		"patching_rect" : [ 4, 289, 136, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"LevelVar" : 	{
+		"patching_rect" : [ 0, 92, 194, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"FilterMode" : 	{
+		"patching_rect" : [ 239, 153, 85, 16 ],
+		"hidden" : 0,
+		"fontsize" : 7
+	}
+,
+	"Filter" : 	{
+		"patching_rect" : [ 0, 118, 170, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"FilterVar" : 	{
+		"patching_rect" : [ 172, 118, 113, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"attack-rel" : 	{
+		"patching_rect" : [ 160, 71, 35, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"release-rel" : 	{
+		"patching_rect" : [ 355, 72, 37, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"FilterQ" : 	{
+		"patching_rect" : [ 0, 135, 170, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"FilterQVar" : 	{
+		"patching_rect" : [ 172, 135, 113, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"FilterQVar-rel" : 	{
+		"patching_rect" : [ 286, 135, 107, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"filtervar-rel" : 	{
+		"patching_rect" : [ 286, 118, 107, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"FilterGain" : 	{
+		"patching_rect" : [ 0, 153, 237, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"filterReset" : 	{
+		"patching_rect" : [ 324, 153, 69, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"RefreshBuffer" : 	{
+		"patching_rect" : [ 176, 176, 19, 19 ],
+		"hidden" : 0
+	}
+,
+	"start_rel" : 	{
+		"patching_rect" : [ 285, 281, 99, 11 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"length_rel" : 	{
+		"patching_rect" : [ 285, 291, 99, 13 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"start_ms" : 	{
+		"patching_rect" : [ 252, 452, 45, 20 ],
+		"hidden" : 1,
+		"fontsize" : 10
+	}
+,
+	"lang_ms" : 	{
+		"patching_rect" : [ 309, 452, 46, 20 ],
+		"hidden" : 1,
+		"fontsize" : 10
+	}
+
+}

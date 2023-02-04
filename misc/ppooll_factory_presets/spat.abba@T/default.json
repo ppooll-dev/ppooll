@@ -1,0 +1,27 @@
+{
+	"window" : [ 761, 185, 892, 235 ],
+	"abba" : 	{
+		"patching_rect" : [ 0, 18, 44, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"wNrm" : 	{
+		"patching_rect" : [ 45, 18, 49, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 93, 0, 38, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 17, "255 255 255", "50 50 50", "255 0 0", "0 255 0" ]
+	}
+,
+	"def" : 	{
+		"patching_rect" : [ 95, 18, 36, 19 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+
+}

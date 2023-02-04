@@ -1,0 +1,69 @@
+{
+	"window" : [ 632, 439, 790, 607 ],
+	"pitch" : 	{
+		"patching_rect" : [ 0, 93, 56, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 112, 155, 53 ],
+		"hidden" : 0
+	}
+,
+	"main_pitch" : 	{
+		"patching_rect" : [ 33, 32, 122, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"phasors" : 	{
+		"patching_rect" : [ 33, 62, 122, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"rows" : 	{
+		"patching_rect" : [ 33, 77, 122, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"sec_pitch" : 	{
+		"patching_rect" : [ 33, 47, 122, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"buffers" : 	{
+		"patching_rect" : [ 55, 93, 100, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 55, 0, 100, 16 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 0, 16, 155, 15 ],
+		"hidden" : 0,
+		"jsarguments" : [ 13, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "delayloops1" ]
+	}
+,
+	"random" : 	{
+		"patching_rect" : [ 0, 32, 33, 31 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"swap" : 	{
+		"patching_rect" : [ 0, 62, 33, 31 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

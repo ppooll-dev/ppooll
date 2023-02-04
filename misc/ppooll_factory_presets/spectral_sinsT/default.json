@@ -1,0 +1,93 @@
+{
+	"window" : [ 545, 414, 1049, 586 ],
+	"1st_Q" : 	{
+		"patching_rect" : [ 129, -1, 30, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"1st_gain" : 	{
+		"patching_rect" : [ 99, -1, 31, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"viewlog" : 	{
+		"patching_rect" : [ 319, 12, 63, 39 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 382, 0, 121, 13 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 382, 13, 121, 25 ],
+		"hidden" : 0,
+		"jsarguments" : [ 11, "255 255 255", "50 50 50", "255 0 0", "0 255 0" ]
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 159, 0, 160, 53 ],
+		"hidden" : 0
+	}
+,
+	"freqs" : 	{
+		"patching_rect" : [ 0, 52, 309, 121 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"gains" : 	{
+		"patching_rect" : [ 308, 51, 88, 121 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"Qs" : 	{
+		"patching_rect" : [ 395, 51, 108, 121 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"boost" : 	{
+		"patching_rect" : [ 382, 38, 121, 13 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"noise" : 	{
+		"patching_rect" : [ 35, 27, 111, 12 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"steady" : 	{
+		"patching_rect" : [ 35, 39, 111, 12 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"log_bend" : 	{
+		"patching_rect" : [ 319, -1, 63, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"proposal" : 	{
+		"patching_rect" : [ 0, 27, 34, 24 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"ramp2freqs" : 	{
+		"patching_rect" : [ 145, 38, 15, 13 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+
+}

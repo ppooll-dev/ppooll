@@ -1,0 +1,51 @@
+{
+	"window" : [ 518, 418, 666, 498 ],
+	"presets" : 	{
+		"patching_rect" : [ 0, 16, 90, 19 ],
+		"hidden" : 0,
+		"jsarguments" : [ 17, "255 255 255", "50 50 50", "255 0 0", "0 255 0" ]
+	}
+,
+	"rotate" : 	{
+		"patching_rect" : [ 0, 37, 73, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"tilt" : 	{
+		"patching_rect" : [ 73, 37, 73, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"flipx" : 	{
+		"patching_rect" : [ 0, 58, 34, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"flipy" : 	{
+		"patching_rect" : [ 36, 58, 34, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"flipz" : 	{
+		"patching_rect" : [ 72, 58, 34, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 92, 16, 55, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"def" : 	{
+		"patching_rect" : [ 108, 58, 38, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

@@ -1,0 +1,62 @@
+{
+	"window" : [ 539, 393, 698, 586 ],
+	"preset-ramp" : 	{
+		"patching_rect" : [ 59, 0, 100, 16 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 84, 126, 73, 12 ],
+		"hidden" : 0,
+		"jsarguments" : [ 11, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "svf2@1" ]
+	}
+,
+	"freq" : 	{
+		"patching_rect" : [ 0, 16, 159, 30 ],
+		"hidden" : 0,
+		"fontsize" : 16
+	}
+,
+	"res" : 	{
+		"patching_rect" : [ 0, 75, 159, 20 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"res_ramp" : 	{
+		"patching_rect" : [ 0, 108, 159, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 140, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"mat" : 	{
+		"patching_rect" : [ 0, 123, 81, 17 ],
+		"hidden" : 0
+	}
+,
+	"freq_ramp" : 	{
+		"patching_rect" : [ 0, 60, 159, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"res_mcspread" : 	{
+		"patching_rect" : [ 0, 93, 159, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"freq_mcspread" : 	{
+		"patching_rect" : [ 0, 45, 159, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

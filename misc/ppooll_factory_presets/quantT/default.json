@@ -1,0 +1,292 @@
+{
+	"window" : [ 222, 600, 502, 800 ],
+	"map" : 	{
+		"patching_rect" : [ 35, 90, 245, 110 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"fix" : 	{
+		"patching_rect" : [ 238, 18, 42, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"multi" : 	{
+		"patching_rect" : [ 50, 18, 70, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"base" : 	{
+		"patching_rect" : [ 121, 18, 85, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"temp" : 	{
+		"patching_rect" : [ 0, 42, 42, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 59, 0, 221, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 16, "255 255 255", "50 50 50", "255 0 0", "0 255 0" ]
+	}
+,
+	"syncto" : 	{
+		"patching_rect" : [ 44, 42, 76, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"rate" : 	{
+		"patching_rect" : [ 233, 42, 47, 21 ],
+		"hidden" : 0,
+		"fontsize" : 15
+	}
+,
+	"sort" : 	{
+		"patching_rect" : [ 208, 18, 28, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"chans" : 	{
+		"patching_rect" : [ 156, 66, 60, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"def" : 	{
+		"patching_rect" : [ 220, 66, 60, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"tempo" : 	{
+		"patching_rect" : [ 121, 42, 110, 21 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"notes" : 	{
+		"patching_rect" : [ 0, 18, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"view" : 	{
+		"patching_rect" : [ 0, 66, 85, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"1-panel" : 	{
+		"patching_rect" : [ 35, 90, 245, 22 ],
+		"hidden" : 0
+	}
+,
+	"1-num-root" : 	{
+		"patching_rect" : [ 51, 90, 22, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"1-num-root-mult" : 	{
+		"patching_rect" : [ 35, 90, 17, 17 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"1-ui" : 	{
+		"patching_rect" : [ 111, 90, 20, 22 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"1-denom" : 	{
+		"patching_rect" : [ 130, 90, 40, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"1-num" : 	{
+		"patching_rect" : [ 72, 90, 40, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"1-switch" : 	{
+		"patching_rect" : [ 0, 90, 34, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"2-panel" : 	{
+		"patching_rect" : [ 35, 112, 245, 22 ],
+		"hidden" : 0
+	}
+,
+	"2-num-root" : 	{
+		"patching_rect" : [ 51, 112, 22, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"2-num-root-mult" : 	{
+		"patching_rect" : [ 35, 112, 17, 17 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"2-ui" : 	{
+		"patching_rect" : [ 111, 112, 20, 22 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"2-denom" : 	{
+		"patching_rect" : [ 130, 112, 40, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"2-num" : 	{
+		"patching_rect" : [ 72, 112, 40, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"2-switch" : 	{
+		"patching_rect" : [ 0, 112, 34, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"3-panel" : 	{
+		"patching_rect" : [ 35, 134, 245, 22 ],
+		"hidden" : 0
+	}
+,
+	"3-num-root" : 	{
+		"patching_rect" : [ 51, 134, 22, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"3-num-root-mult" : 	{
+		"patching_rect" : [ 35, 134, 17, 17 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"3-ui" : 	{
+		"patching_rect" : [ 111, 134, 20, 22 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"3-denom" : 	{
+		"patching_rect" : [ 130, 134, 40, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"3-num" : 	{
+		"patching_rect" : [ 72, 134, 40, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"3-switch" : 	{
+		"patching_rect" : [ 0, 134, 34, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"4-panel" : 	{
+		"patching_rect" : [ 35, 156, 245, 22 ],
+		"hidden" : 0
+	}
+,
+	"4-num-root" : 	{
+		"patching_rect" : [ 51, 156, 22, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"4-num-root-mult" : 	{
+		"patching_rect" : [ 35, 156, 17, 17 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"4-ui" : 	{
+		"patching_rect" : [ 111, 156, 20, 22 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"4-denom" : 	{
+		"patching_rect" : [ 130, 156, 40, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"4-num" : 	{
+		"patching_rect" : [ 72, 156, 40, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"4-switch" : 	{
+		"patching_rect" : [ 0, 156, 34, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"5-panel" : 	{
+		"patching_rect" : [ 35, 178, 245, 22 ],
+		"hidden" : 0
+	}
+,
+	"5-num-root" : 	{
+		"patching_rect" : [ 51, 178, 22, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"5-num-root-mult" : 	{
+		"patching_rect" : [ 35, 178, 17, 17 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"5-ui" : 	{
+		"patching_rect" : [ 111, 178, 20, 22 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"5-denom" : 	{
+		"patching_rect" : [ 130, 178, 40, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"5-num" : 	{
+		"patching_rect" : [ 72, 178, 40, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"5-switch" : 	{
+		"patching_rect" : [ 0, 178, 34, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}
