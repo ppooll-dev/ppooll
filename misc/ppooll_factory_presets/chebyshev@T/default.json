@@ -1,0 +1,27 @@
+{
+	"window" : [ 300, 359, 460, 537 ],
+	"preset-ramp" : 	{
+		"patching_rect" : [ 94, 0, 66, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 0, 15, 157, 14 ],
+		"hidden" : 0,
+		"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "chebyshev@1" ]
+	}
+,
+	"harmonics" : 	{
+		"patching_rect" : [ 0, 28, 159, 97 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 125, 159, 53 ],
+		"hidden" : 0
+	}
+
+}

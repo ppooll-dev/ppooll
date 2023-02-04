@@ -1,0 +1,128 @@
+{
+	"window" : [ 710, 166, 956, 451 ],
+	"Resonance" : 	{
+		"patching_rect" : [ -1, 162, 50, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"Saturation" : 	{
+		"patching_rect" : [ 51, 162, 50, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"lp_bp_hp" : 	{
+		"patching_rect" : [ 103, 162, 50, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"2p_4p" : 	{
+		"patching_rect" : [ 155, 162, 54, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"oscA_pwm" : 	{
+		"patching_rect" : [ -1, 213, 50, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"oscB_slope" : 	{
+		"patching_rect" : [ 155, 213, 54, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"oscA_slope" : 	{
+		"patching_rect" : [ 103, 213, 50, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"oscB_pwm" : 	{
+		"patching_rect" : [ 51, 213, 50, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ -1, 235, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 160, 269, 85, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 159, 237, 85, 30 ],
+		"hidden" : 0,
+		"jsarguments" : [ 13, "255 255 255", "50 50 50", "255 0 0", "0 255 0" ]
+	}
+,
+	"multi" : 	{
+		"patching_rect" : [ 0, 18, 244, 103 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"multidrag" : 	{
+		"patching_rect" : [ 191, 123, 16, 16 ],
+		"hidden" : 0
+	}
+,
+	"rnd" : 	{
+		"patching_rect" : [ 209, 122, 35, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"Async" : 	{
+		"patching_rect" : [ 209, 142, 35, 33 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"Bsync" : 	{
+		"patching_rect" : [ 209, 178, 35, 33 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"rnd2" : 	{
+		"patching_rect" : [ 209, 213, 35, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"sl_min" : 	{
+		"patching_rect" : [ 155, 0, 46, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"sl_max" : 	{
+		"patching_rect" : [ 201, 0, 43, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"n_min" : 	{
+		"patching_rect" : [ 69, 123, 34, 17 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"n_max" : 	{
+		"patching_rect" : [ 106, 123, 33, 17 ],
+		"hidden" : 0,
+		"fontsize" : 7.598484039461276
+	}
+
+}

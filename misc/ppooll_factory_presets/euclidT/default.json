@@ -1,0 +1,123 @@
+{
+	"window" : [ 569, 599, 1109, 909 ],
+	"multiplication" : 	{
+		"patching_rect" : [ 25, 91, 60, 200 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"def" : 	{
+		"patching_rect" : [ 59, 16, 68, 24 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"division" : 	{
+		"patching_rect" : [ 87, 91, 60, 200 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"steps" : 	{
+		"patching_rect" : [ 341, 91, 60, 200 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"rotate" : 	{
+		"patching_rect" : [ 462, 92, 60, 200 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"beats" : 	{
+		"patching_rect" : [ 402, 92, 60, 200 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"wave" : 	{
+		"patching_rect" : [ 215, 91, 60, 200 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"tap" : 	{
+		"patching_rect" : [ 130, 48, 52, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"sync" : 	{
+		"patching_rect" : [ 62, 72, 33, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"exp" : 	{
+		"patching_rect" : [ 276, 91, 60, 200 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"FreqRand" : 	{
+		"patching_rect" : [ 92, 72, 19, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"EucRand" : 	{
+		"patching_rect" : [ 502, 73, 20, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"WaveRand" : 	{
+		"patching_rect" : [ 320, 72, 16, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 130, 0, 122, 45 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "animator@1" ]
+	}
+,
+	"mode" : 	{
+		"patching_rect" : [ 0, 91, 20, 200 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"frequency" : 	{
+		"patching_rect" : [ 184, 48, 199, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"syncto" : 	{
+		"patching_rect" : [ 0, 48, 125, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"1st_slider" : 	{
+		"patching_rect" : [ 410, 48, 51, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"phase" : 	{
+		"patching_rect" : [ 153, 91, 60, 200 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"LFOamount" : 	{
+		"patching_rect" : [ 59, 0, 70, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

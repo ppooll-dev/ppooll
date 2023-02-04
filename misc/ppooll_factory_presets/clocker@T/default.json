@@ -1,0 +1,51 @@
+{
+	"window" : [ 364, 245, 585, 286 ],
+	"openC" : 	{
+		"patching_rect" : [ 74, 0, 34, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"edit" : 	{
+		"patching_rect" : [ 107, 0, 28, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"set_offset" : 	{
+		"patching_rect" : [ 135, 0, 16, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"offset" : 	{
+		"patching_rect" : [ 150, 0, 37, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"GO" : 	{
+		"patching_rect" : [ 0, 16, 23, 24 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"follow" : 	{
+		"patching_rect" : [ 346, 24, 34, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"time_disp" : 	{
+		"patching_rect" : [ 36, 16, 184, 24 ],
+		"hidden" : 0,
+		"fontsize" : 24
+	}
+,
+	"Restart" : 	{
+		"patching_rect" : [ 23, 16, 16, 24 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+
+}

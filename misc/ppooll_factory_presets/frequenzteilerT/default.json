@@ -1,0 +1,56 @@
+{
+	"window" : [ 573, 234, 905, 387 ],
+	"input_menu" : 	{
+		"patching_rect" : [ 0, 30, 53, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"freq" : 	{
+		"patching_rect" : [ 0, 47, 331, 21 ],
+		"hidden" : 0,
+		"fontsize" : 18
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 0, 15, 103, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 105, -1, 226, 31 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "frequenzteiler1" ]
+	}
+,
+	"vol" : 	{
+		"patching_rect" : [ 85, 68, 72, 85 ],
+		"hidden" : 0
+	}
+,
+	"freq_ramp" : 	{
+		"patching_rect" : [ 196, 29, 135, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"teiler" : 	{
+		"patching_rect" : [ 0, 68, 85, 85 ],
+		"hidden" : 0,
+		"fontsize" : 18
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 207, 78, 124, 53 ],
+		"hidden" : 0
+	}
+,
+	"sync" : 	{
+		"patching_rect" : [ 110, 29, 52, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+
+}
