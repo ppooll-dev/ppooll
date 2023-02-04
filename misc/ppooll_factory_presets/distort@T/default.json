@@ -1,0 +1,81 @@
+{
+	"window" : [ 954, 604, 1115, 819 ],
+	"preset-ramp" : 	{
+		"patching_rect" : [ 0, 17, 74, 12 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 77, 0, 85, 29 ],
+		"hidden" : 0,
+		"jsarguments" : [ 13, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "distort@1" ]
+	}
+,
+	"interval" : 	{
+		"patching_rect" : [ 0, 31, 162, 24 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"gain" : 	{
+		"patching_rect" : [ 0, 137, 162, 24 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"gain_ramp" : 	{
+		"patching_rect" : [ 0, 119, 80, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"interval_ramp" : 	{
+		"patching_rect" : [ 82, 57, 80, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 162, 162, 53 ],
+		"hidden" : 0
+	}
+,
+	"interval_mcspread" : 	{
+		"patching_rect" : [ 0, 57, 80, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"gain_mcspread" : 	{
+		"patching_rect" : [ 82, 119, 80, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"clip_ramp" : 	{
+		"patching_rect" : [ 0, 101, 80, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"clip_mcspread" : 	{
+		"patching_rect" : [ 82, 101, 80, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"clip" : 	{
+		"patching_rect" : [ 41, 75, 121, 24 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"bit" : 	{
+		"patching_rect" : [ 0, 75, 40, 24 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

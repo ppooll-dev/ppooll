@@ -1,0 +1,9 @@
+{
+	"window" : [ 642, 252, 828, 405 ],
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 100, 186, 53 ],
+		"hidden" : 0
+	}
+
+}

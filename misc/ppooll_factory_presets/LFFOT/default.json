@@ -1,0 +1,73 @@
+{
+	"window" : [ 474, 286, 633, 455 ],
+	"preset-ramp" : 	{
+		"patching_rect" : [ 0, 16, 53, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 53, 0, 106, 30 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "LFFO1" ]
+	}
+,
+	"clipper" : 	{
+		"patching_rect" : [ 124, 94, 35, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"phase" : 	{
+		"patching_rect" : [ 89, 94, 36, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"frequency" : 	{
+		"patching_rect" : [ 0, 94, 50, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"rndonoff" : 	{
+		"patching_rect" : [ 109, 66, 15, 15 ],
+		"hidden" : 0
+	}
+,
+	"threshold" : 	{
+		"patching_rect" : [ 50, 94, 40, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"volume" : 	{
+		"patching_rect" : [ 146, 29, 13, 51 ],
+		"hidden" : 0
+	}
+,
+	"wfmenu" : 	{
+		"patching_rect" : [ 109, 44, 27, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"int/ext" : 	{
+		"patching_rect" : [ 126, 29, 18, 15 ],
+		"hidden" : 0,
+		"jsarguments" : [ "int", "ext", "255 255 255", "255 255 255", "85 76 65", "62 55 120", 0, 0.7 ]
+	}
+,
+	"on/off" : 	{
+		"patching_rect" : [ 110, 29, 17, 15 ],
+		"hidden" : 0,
+		"jsarguments" : [ "ON", "ON", "250 0 0", "255 255 255", "180 180 180", "255 0 0", 0, 0.6 ]
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 115, 159, 53 ],
+		"hidden" : 0
+	}
+
+}

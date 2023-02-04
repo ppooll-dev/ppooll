@@ -1,0 +1,33 @@
+{
+	"window" : [ 741, 195, 844, 285 ],
+	"tempo" : 	{
+		"patching_rect" : [ 0, 18, 102, 21 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"quantum" : 	{
+		"patching_rect" : [ 0, 41, 50, 21 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"peers" : 	{
+		"patching_rect" : [ 52, 41, 50, 21 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"act_link" : 	{
+		"patching_rect" : [ 0, 64, 50, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"par_link" : 	{
+		"patching_rect" : [ 52, 64, 50, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+
+}

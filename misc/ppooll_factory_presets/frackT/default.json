@@ -1,0 +1,107 @@
+{
+	"window" : [ 458, 390, 646, 625 ],
+	"s.lcd" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 236, 413, 36, 19 ],
+		"hidden" : 1
+	}
+,
+	"lcd" : 	{
+		"patching_rect" : [ 0, 14, 190, 188 ],
+		"hidden" : 0
+	}
+,
+	"x-min" : 	{
+		"patching_rect" : [ 0, 202, 43, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"x-max" : 	{
+		"patching_rect" : [ 41, 202, 43, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"y-min" : 	{
+		"patching_rect" : [ 0, 217, 43, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"y-max" : 	{
+		"patching_rect" : [ 41, 217, 43, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"x-act" : 	{
+		"patching_rect" : [ 82, 202, 50, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"y-act" : 	{
+		"patching_rect" : [ 82, 217, 50, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"x-param" : 	{
+		"patching_rect" : [ 130, 202, 41, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"y-param" : 	{
+		"patching_rect" : [ 130, 217, 41, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"auto-menu" : 	{
+		"patching_rect" : [ 134, -1, 36, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"patcher" : "bang",
+	"patching_rect" : [ 285, 413, 41, 19 ],
+	"hidden" : 1,
+	"clear-button" : 	{
+		"patching_rect" : [ 170, -1, 18, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"rec" : 	{
+		"patching_rect" : [ 51, -1, 25, 16 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"play" : 	{
+		"patching_rect" : [ 75, -1, 30, 16 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"loop" : 	{
+		"patching_rect" : [ 104, -1, 30, 16 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"x-listitem" : 	{
+		"patching_rect" : [ 168, 202, 22, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"y-listitem" : 	{
+		"patching_rect" : [ 168, 217, 22, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+
+}
