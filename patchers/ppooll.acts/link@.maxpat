@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 506.0, 244.0, 103.0, 86.0 ],
+		"rect" : [ 741.0, 195.0, 103.0, 90.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -95,7 +95,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-73",
-					"items" : [ "no", ",", "ho_st1", ",", "link@1", ",", "modul.ator1", ",", "tetris@1" ],
+					"items" : [ "no", ",", "LFFO1", ",", "buffer_host1", ",", "ho_st1", ",", "kaos@1", ",", "kk.rainer1", ",", "kocyu@1", ",", "kompressor1", ",", "link@1", ",", "matriarch@1", ",", "matrix@1", ",", "tetris@1" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -202,10 +202,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 1176, 213, 1791, 873 ],
+						"client_rect" : [ 1115, 172, 1655, 881 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 200, 200, 800, 500 ]
+						"storage_rect" : [ 430, 270, 1276, 999 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -259,7 +259,7 @@
 						"pres_menu" : [ "_" ],
 						"quantum" : [ 4.0 ],
 						"tempo" : [ 120.0 ],
-						"tetris_menu" : [ "ƒ default" ],
+						"tetris_menu" : [ "" ],
 						"title_menu" : [ "titlebar" ]
 					}
 ,
@@ -279,7 +279,6 @@
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "color",
 					"id" : "obj-7",
-					"ignoreclick" : 1,
 					"items" : [ "info", ",", "clientwindow", ",", "storagewindow", ",", "-", ",", "titlebar", ",", "close", ",", "back", ",", "grow", ",", "master", ",", "active_store", ",", "-", ",", "subpatch", ",", "actmaker" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
@@ -304,6 +303,7 @@
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "color",
 					"id" : "obj-9",
+					"ignoreclick" : 1,
 					"items" : [ "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
@@ -329,7 +329,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-11",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "-", ",", "ƒ", "default" ],
+					"items" : [ "-", ",", "-", ",", "ƒ", "default.json" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -932,6 +932,13 @@
 			}
 , 			{
 				"name" : "ll.createact8.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.live.initialize_bpatcher.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
