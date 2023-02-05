@@ -1,0 +1,84 @@
+{
+	"window" : [ 520, 444, 679, 682 ],
+	"preset-ramp" : 	{
+		"patching_rect" : [ 83, 0, 75, 16 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 2, 16, 155, 15 ],
+		"hidden" : 0,
+		"jsarguments" : [ 13, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "delayloops1" ]
+	}
+,
+	"del1_feedback" : 	{
+		"patching_rect" : [ 0, 50, 159, 17 ],
+		"hidden" : 0
+	}
+,
+	"del1_gain" : 	{
+		"patching_rect" : [ 0, 66, 112, 17 ],
+		"hidden" : 0
+	}
+,
+	"del1_pan" : 	{
+		"patching_rect" : [ 112, 66, 47, 17 ],
+		"hidden" : 0
+	}
+,
+	"del2_feedback" : 	{
+		"patching_rect" : [ 0, 100, 159, 17 ],
+		"hidden" : 0
+	}
+,
+	"del2_gain" : 	{
+		"patching_rect" : [ 0, 116, 112, 17 ],
+		"hidden" : 0
+	}
+,
+	"del2_pan" : 	{
+		"patching_rect" : [ 112, 116, 47, 17 ],
+		"hidden" : 0
+	}
+,
+	"del3_feedback" : 	{
+		"patching_rect" : [ 1, 150, 159, 17 ],
+		"hidden" : 0
+	}
+,
+	"del3_gain" : 	{
+		"patching_rect" : [ 0, 166, 112, 17 ],
+		"hidden" : 0
+	}
+,
+	"del3_pan" : 	{
+		"patching_rect" : [ 112, 166, 47, 17 ],
+		"hidden" : 0
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 185, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"del1" : 	{
+		"patching_rect" : [ 0, 33, 159, 17 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"del2" : 	{
+		"patching_rect" : [ 0, 83, 159, 17 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"del3" : 	{
+		"patching_rect" : [ 0, 133, 159, 17 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+
+}
