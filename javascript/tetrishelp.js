@@ -35,15 +35,6 @@ function name(name){
 	  return
 	}
 	if( is_bpatcher() ){
-		// path to this acts tetris default file with window properties        
-		// var relativePath = HARDCODED_PATH+name+"T/default.json"
-		// console.log(relativePath)
-
-		// // open tetris file
-		// var tetris_dict = new Dict('this_tetris')
-		// tetris_dict.import_json(relativePath)
-		// var arr = tetris_dict.get('window')
-
 		var dict_act_sizes = new Dict("act_sizes")
 		dict_act_sizes.import_json(HARDCODED_PATH + "act_sizes.json")
 		
@@ -54,9 +45,6 @@ function name(name){
 
 		  // set patching rect of act's bpatcher & bring to front
 		  this.patcher.parentpatcher.parentpatcher.box.rect = arr
-
-		  // owner.patcher.message("script","sendbox",nameInstance,"patching_rect",coords)
-		  // owner.patcher.message("script","bringtofront",nameInstance)
 		}else{
 			console.log("MISSING "+relativePath)
 		}
