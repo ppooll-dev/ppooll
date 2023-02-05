@@ -44,16 +44,18 @@ function list(){
 	var owner = this.patcher.box
 
 	// naviagate to top patcher
-	while (owner) {
+	var isLiveEnvi = false;
+
+	while (owner && !isLiveEnvi) {
 	  prev = owner
 	  owner = owner.patcher.box
+	  // the scripting name of the subpatch of the "environment" in live.ppooll
+	  if(prev.patcher.name === 'LIVE_PPOOLL_ENVIRONMENT'){
+	  	isLiveEnvi = true;
+	  }
 	}
 
-	// if this is the top level patcher
-	if(
-		"ppooll_host" === prev.patcher.name ||
-		prev.patcher.name === patcherName
-	){
+	if(	!isLiveEnvi ){
 		// // load '.maxpat' in Max Environment
 		// console.log('load in max envi '+patch)
 		outlet(0,patch)
