@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 835.0, 234.0, 485.0, 438.0 ],
+		"rect" : [ 1002.0, 239.0, 159.0, 238.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -76,7 +76,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 144.0, 159.0, 17.0 ],
+					"patching_rect" : [ 0.0, 133.0, 159.0, 17.0 ],
 					"sliderlog" : 4.0,
 					"slidermax" : 30000.0,
 					"varname" : "del3"
@@ -99,7 +99,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 94.0, 159.0, 17.0 ],
+					"patching_rect" : [ 0.0, 83.0, 159.0, 17.0 ],
 					"sliderlog" : 4.0,
 					"slidermax" : 30000.0,
 					"varname" : "del2"
@@ -122,7 +122,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 44.0, 159.0, 17.0 ],
+					"patching_rect" : [ 0.0, 33.0, 159.0, 17.0 ],
 					"sliderlog" : 4.0,
 					"slidermax" : 30000.0,
 					"varname" : "del1"
@@ -145,7 +145,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 206.0, 159.0, 53.0 ],
+					"patching_rect" : [ 0.0, 185.0, 159.0, 53.0 ],
 					"varname" : "ll.blues",
 					"viewvisibility" : 1
 				}
@@ -193,7 +193,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 112.0, 177.0, 47.0, 17.0 ],
+					"patching_rect" : [ 112.0, 166.0, 47.0, 17.0 ],
 					"size" : 1.0,
 					"varname" : "del3_pan"
 				}
@@ -212,7 +212,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 177.0, 112.0, 17.0 ],
+					"patching_rect" : [ 0.0, 166.0, 112.0, 17.0 ],
 					"size" : 1.0,
 					"varname" : "del3_gain"
 				}
@@ -231,7 +231,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 1.0, 161.0, 159.0, 17.0 ],
+					"patching_rect" : [ 1.0, 150.0, 159.0, 17.0 ],
 					"size" : 1.0,
 					"varname" : "del3_feedback"
 				}
@@ -250,7 +250,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 112.0, 127.0, 47.0, 17.0 ],
+					"patching_rect" : [ 112.0, 116.0, 47.0, 17.0 ],
 					"size" : 1.0,
 					"varname" : "del2_pan"
 				}
@@ -269,7 +269,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 127.0, 112.0, 17.0 ],
+					"patching_rect" : [ 0.0, 116.0, 112.0, 17.0 ],
 					"size" : 1.0,
 					"varname" : "del2_gain"
 				}
@@ -288,7 +288,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 111.0, 159.0, 17.0 ],
+					"patching_rect" : [ 0.0, 100.0, 159.0, 17.0 ],
 					"size" : 1.0,
 					"varname" : "del2_feedback"
 				}
@@ -307,7 +307,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 112.0, 77.0, 47.0, 17.0 ],
+					"patching_rect" : [ 112.0, 66.0, 47.0, 17.0 ],
 					"size" : 1.0,
 					"varname" : "del1_pan"
 				}
@@ -326,7 +326,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 77.0, 112.0, 17.0 ],
+					"patching_rect" : [ 0.0, 66.0, 112.0, 17.0 ],
 					"size" : 1.0,
 					"varname" : "del1_gain"
 				}
@@ -345,7 +345,7 @@
 					"orientation" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 61.0, 159.0, 17.0 ],
+					"patching_rect" : [ 0.0, 50.0, 159.0, 17.0 ],
 					"size" : 1.0,
 					"varname" : "del1_feedback"
 				}
@@ -400,7 +400,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-5",
@@ -4002,7 +4001,7 @@
 					"fontsize" : 12.0,
 					"id" : "obj-13",
 					"ignoreclick" : 1,
-					"items" : "-",
+					"items" : [ "-", ",", "-", ",", "ƒ", "default.json" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -4081,19 +4080,6 @@
 
 			}
  ],
-		"parameters" : 		{
-			"parameterbanks" : 			{
-				"0" : 				{
-					"index" : 0,
-					"name" : "",
-					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
-				}
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
 		"dependency_cache" : [ 			{
 				"name" : "actmaker.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
