@@ -190,51 +190,6 @@
 		"tetris_menu" : " ",
 		"master" : 0
 	}
-,
-	"prdelay@1" : 	{
-		"_actwindow" : [ "prdelay@", 281, 323, 441, 463, "act" ],
-		"ll.blues" : 		{
-			"state" : [ 1, 1, 1, 1, 0, 0, 1 ],
-			"outputs" : [ "ho_st1~out.1", "fffb@1~in.1" ],
-			"levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ]
-		}
-,
-		"ll.inputmix" : 		{
-			"levels" : [ 1.0, 1.0, 1 ]
-		}
-,
-		"act" : 		{
-			"active_store" : 0
-		}
-,
-		"presets" : 0,
-		"preset-ramp" : 0,
-		"delayL" : 163,
-		"delayR" : 261,
-		"feedback" : 0.135,
-		"link!" : 0,
-		"straight/cross" : 1,
-		"master" : 0,
-		"title_menu" : "info",
-		"tetris_menu" : " ",
-		"pres_menu" : " "
-	}
-,
-	"snap@1" : 	{
-		"_actwindow" : [ "snap@", 458, 330, 683, 416, "ƒ ducks", "act" ],
-		"act" : 		{
-			"active_store" : 0
-		}
-,
-		"selected_acts" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
-		"select_acts" : 0,
-		"next" : -1,
-		"presets" : 0,
-		"preset-ramp" : 0,
-		"title_menu" : "subpatch",
-		"pres_menu" : "ƒ ducks",
-		"tetris_menu" : "ƒ ducks.json",
-		"master" : 0
-	}
+
 
 }

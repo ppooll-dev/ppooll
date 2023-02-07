@@ -34,6 +34,7 @@ messnamed ("tetristhis", this.patcher.parentpatcher.parentpatcher.wind.location)
 
 function setloc(x,y)
 {
+	//post ("SL", x, y);
 	var p = this.patcher.parentpatcher.parentpatcher;
     p.wind.location = [x,y,p.wind.location[2]-p.wind.location[0]+x,p.wind.location[3]-p.wind.location[1]+y];
 }

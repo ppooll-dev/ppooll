@@ -1,3 +1,6 @@
+//create act AND manage actname-sending when an act is loaded 
+
+
 outlets = 1;
 autowatch = 1;
 var tpp, obj;
