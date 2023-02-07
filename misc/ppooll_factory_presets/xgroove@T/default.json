@@ -1,9 +1,15 @@
 {
-	"window" : [ 234, 320, 485, 603 ],
+	"window" : [ 249, 162, 500, 445 ],
 	"envelope_display" : 	{
 		"patching_rect" : [ -6, 98, 262, 94 ],
 		"hidden" : 0,
 		"fontsize" : 12
+	}
+,
+	"wf" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ -1, 101, 252, 94 ],
+		"hidden" : 0
 	}
 ,
 	"interp" : 	{
@@ -104,7 +110,7 @@
 ,
 	"autotrigger" : 	{
 		"patching_rect" : [ 51, 81, 28, 19 ],
-		"hidden" : 1,
+		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
@@ -154,12 +160,6 @@
 		"patching_rect" : [ 223, 194, 28, 18 ],
 		"hidden" : 0,
 		"fontsize" : 10
-	}
-,
-	"wf" : 	{
-		"patcher" : "bang",
-		"patching_rect" : [ -1, 101, 252, 94 ],
-		"hidden" : 0
 	}
 
 }
