@@ -1,0 +1,144 @@
+{
+	"window" : [ 670, 277, 879, 532 ],
+	"buffer" : 	{
+		"patching_rect" : [ 108, 79, 101, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"mix-level" : 	{
+		"patching_rect" : [ 71, 17, 14, 81 ],
+		"hidden" : 0
+	}
+,
+	"pos_act" : 	{
+		"patching_rect" : [ 151, 16, 57, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"pos_par" : 	{
+		"patching_rect" : [ 151, 31, 57, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"ps_act" : 	{
+		"patching_rect" : [ 174, 47, 35, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"ps_par" : 	{
+		"patching_rect" : [ 174, 62, 35, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"mix-switch" : 	{
+		"patching_rect" : [ 85, 79, 25, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"rec-switch" : 	{
+		"patching_rect" : [ 114, 47, 30, 29 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"<>key-switch" : 	{
+		"patching_rect" : [ 85, 62, 29, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"loop-switch" : 	{
+		"patching_rect" : [ 85, 47, 29, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"append-switch" : 	{
+		"patching_rect" : [ 85, 32, 43, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"link-switch" : 	{
+		"patching_rect" : [ 85, 17, 29, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"pos_send_now" : 	{
+		"patching_rect" : [ 145, 48, 30, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"full_select" : 	{
+		"patching_rect" : [ 167, 182, 18, 18 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"start" : 	{
+		"patching_rect" : [ 0, 181, 75, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"length" : 	{
+		"patching_rect" : [ 91, 182, 75, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"end" : 	{
+		"patching_rect" : [ 429, 16, 54, 18 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"wf" : 	{
+		"patching_rect" : [ 0, 103, 185, 76 ],
+		"hidden" : 0
+	}
+,
+	"tools" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 187, 104, 20, 59 ],
+		"hidden" : 0
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 201, 207, 53 ],
+		"hidden" : 0
+	}
+,
+	"zoom_out" : 	{
+		"patching_rect" : [ 187, 183, 20, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"zoom_in" : 	{
+		"patching_rect" : [ 187, 165, 20, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"gain" : 	{
+		"patching_rect" : [ 0, 17, 69, 84 ],
+		"hidden" : 0
+	}
+,
+	"position" : 	{
+		"patching_rect" : [ 0, 103, 185, 76 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}
