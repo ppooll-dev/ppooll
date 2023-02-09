@@ -376,7 +376,7 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
-										"globalpatchername" : "1068n[1][3][2][1][1][1][6][1][1][1][2][2][2][1][1]",
+										"globalpatchername" : "1068n[1][3][2][1][1][1][6][1][1][1][2][2][2][1][1][3]",
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-4",
@@ -430,12 +430,13 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-5",
+													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 270.0, 57.0, 221.0, 22.0 ],
-													"text" : "markerlist"
+													"text" : "markerlist ho_st1 buffer_host1 xgroove@1"
 												}
 
 											}
@@ -1029,7 +1030,7 @@
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
-										"globalpatchername" : "1068n[1][3][2][1][1][1][6][1][1][1][2][2][2][1][1]",
+										"globalpatchername" : "1068n[1][3][2][1][1][1][6][1][1][1][2][2][2][1][1][3]",
 										"tags" : ""
 									}
 ,
@@ -6663,7 +6664,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 200.0, 107.0, 22.0, 20.0 ],
+									"patching_rect" : [ 156.0, 107.0, 22.0, 20.0 ],
 									"text" : "t 1"
 								}
 
@@ -6677,7 +6678,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 200.0, 129.0, 43.0, 19.0 ],
+									"patching_rect" : [ 156.0, 129.0, 43.0, 19.0 ],
 									"text" : "gate 2 2"
 								}
 
@@ -7122,7 +7123,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-19", 1 ],
+									"destination" : [ "obj-24", 0 ],
 									"source" : [ "obj-10", 1 ]
 								}
 
@@ -7179,7 +7180,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-18", 0 ],
-									"midpoints" : [ 233.5, 153.0, 185.0, 153.0, 185.0, 93.0, 209.5, 93.0 ],
+									"midpoints" : [ 189.5, 153.0, 141.0, 153.0, 141.0, 93.0, 165.5, 93.0 ],
 									"source" : [ "obj-19", 1 ]
 								}
 
@@ -11207,24 +11208,17 @@
 			}
  ],
 		"dependency_cache" : [ 			{
+				"name" : "ll.actname.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.actname.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.actnamehelper.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.an.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../../javascript",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
