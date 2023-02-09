@@ -1,11 +1,11 @@
 {
 	"ho_st1" : 	{
-		"_actwindow" : [ "ho_st", 457, 196, 587, 321, "", "act" ],
+		"_actwindow" : [ "ho_st", 457, 196, 587, 321 ],
 		"act" : 		{
 			"active_store" : "_"
 		}
 ,
-		"inputs~" : [ "out(2)", "res(1)", "freq(1)", "noise_freq(1)" ],
+		"inputs~" : [ "out(16)", "res(1)", "freq(1)", "noise_freq(1)" ],
 		"params_only" : 0,
 		"pfl_par_menu" : "-no-",
 		"pfl_act_menu" : "no",
@@ -16,7 +16,7 @@
 		"vol_slider" : 1.0,
 		"vol_ramp" : 10,
 		"vol" : 1.0,
-		"title_menu" : "closeall",
+		"title_menu" : "info",
 		"tetris_menu" : "",
 		"stereo" : 0,
 		"screen" : 1,
@@ -31,11 +31,11 @@
 		"def" : -1,
 		"chans" : 16,
 		"audioON/OFF" : 1,
-		"act_menu" : "flop"
+		"act_menu" : "(__acts__)"
 	}
 ,
 	"buffer_host1" : 	{
-		"_actwindow" : [ "buffer_host", 456, 333, 575, 519, "", "act" ],
+		"_actwindow" : [ "buffer_host", 456, 333, 575, 519 ],
 		"act" : 		{
 			"active_store" : "_"
 		}
@@ -57,7 +57,7 @@
 	}
 ,
 	"flop1" : 	{
-		"_actwindow" : [ "flop", 614, 193, 796, 471, "", "act" ],
+		"_actwindow" : [ "flop", 614, 193, 796, 471 ],
 		"act" : 		{
 			"active_store" : "_"
 		}
@@ -65,27 +65,27 @@
 		"ll.blues" : 		{
 			"state" : [ 2, 1, 0, 0, 2, 0 ],
 			"outputs" : [ "ho_st1~out.1", "no~-no-" ],
-			"levels" : [ 0.382880942000301, 0.382880942000301, 0.0, 0.0, 10.0, 0.0, 0.5 ]
+			"levels" : [ 0.346591922589714, 0.346591922589714, 0.0, 0.0, 10.0, 0.0, 0.5 ]
 		}
 ,
 		"ubumenu" : "start",
 		"keep-time" : 0,
 		"full_select" : -1,
-		"end" : 1300.0999755859375,
-		"current_start" : 800.0,
-		"current_end" : 500.100006103515625,
+		"end" : 1800.449951171875,
+		"current_start" : 1100.280029296875,
+		"current_end" : 700.16998291015625,
 		"inputs~" : [ "vol(2)", "start(2)", "length(2)", "pitch(2)" ],
 		"buffer" : "3dem.aif",
-		"start" : 800.0,
-		"length" : 500.100006103515625,
+		"start" : 1100.280029296875,
+		"length" : 700.16998291015625,
 		"pitch" : 0.0,
 		"on/off" : 1,
 		"oneshot" : 0,
 		"oneshot_trigger" : -1,
 		"ext~vol" : 0,
 		"lookup" : 1,
-		"start_rel" : 0.279007978789077,
-		"length_rel" : 0.174414864869184,
+		"start_rel" : 0.383733633845134,
+		"length_rel" : 0.244191264675681,
 		"s-ramp" : 0.0,
 		"s-ramp-mode" : 1,
 		"start-ramp-stop" : -1,
@@ -93,7 +93,7 @@
 		"l-ramp-mode" : 1,
 		"length-ramp-stop" : -1,
 		"length/end" : 0,
-		"env-scale" : 56.956520080566406,
+		"env-scale" : 40.243243243243242,
 		"pitchmenu" : 0,
 		"play-mode" : 0,
 		"ramp2pitch" : 0,
@@ -109,7 +109,7 @@
 	}
 ,
 	"flop2" : 	{
-		"_actwindow" : [ "flop", 808, 196, 990, 474, "", "act" ],
+		"_actwindow" : [ "flop", 808, 196, 1586, 371 ],
 		"act" : 		{
 			"active_store" : "_"
 		}
@@ -156,7 +156,7 @@
 		"presets" : 0,
 		"title_menu" : "clientwindow",
 		"pres_menu" : "_",
-		"tetris_menu" : "",
+		"tetris_menu" : "ƒ quer.json",
 		"master" : 0
 	}
 
