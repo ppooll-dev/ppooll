@@ -1,15 +1,9 @@
 {
-	"window" : [ 204, 263, 580, 313 ],
+	"window" : [ 540, 432, 916, 482 ],
 	"common_on" : 	{
-		"patching_rect" : [ 252, -2, 36, 19 ],
+		"patching_rect" : [ 215, -2, 60, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
-	}
-,
-	"preset-ramp" : 	{
-		"patching_rect" : [ 211, -1, 42, 15 ],
-		"hidden" : 0,
-		"fontsize" : 10
 	}
 ,
 	"presets" : 	{
@@ -119,8 +113,8 @@
 	}
 ,
 	"trigger" : 	{
-		"patching_rect" : [ 341, 29, 34, 17 ],
-		"hidden" : 0,
+		"patching_rect" : [ 341, 30, 34, 17 ],
+		"hidden" : 1,
 		"fontsize" : 12
 	}
 

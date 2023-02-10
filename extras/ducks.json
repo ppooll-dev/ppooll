@@ -1,0 +1,53 @@
+{
+	"pattrstorage" : 	{
+		"name" : "pat",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"data" : 				{
+					"fontsize" : [ 12 ],
+					"presets" : [ 1 ],
+					"textfield" : [ "thats", "an", "environment", "to", "introduce", "snap@\n\n", "click", "or", "scroll", "in", "the", "grid..\n", "presets", "from", "all", "acts", "will", "be", "recalled.\n\n", "move", "the", "ramp-slider", "on", "top", "of", "snap@1\n", "to", "get", "a", "smooth", "transition", "between", "the", "presets." ],
+					"title_menu" : [ "subpatch" ],
+					"pres_menu" : [ "duckx_new" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ "_" ]
+				}
+
+			}
+,
+			"2" : 			{
+				"id" : 2,
+				"data" : 				{
+					"fontsize" : [ 12 ],
+					"presets" : [ 0 ],
+					"textfield" : [ "amazing" ],
+					"title_menu" : [ "clientwindow" ],
+					"pres_menu" : [ "duckx_new" ],
+					"tetris_menu" : [ "" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ " " ]
+				}
+
+			}
+
+		}
+,
+		"clientstate" : 		{
+			"active" : 			{
+				"fontsize" : 0,
+				"presets" : 0,
+				"title_menu" : 0,
+				"pres_menu" : 0,
+				"tetris_menu" : 0,
+				"master" : 0,
+				"act" : 0,
+				"act::active_store" : 0
+			}
+
+		}
+
+	}
+
+}

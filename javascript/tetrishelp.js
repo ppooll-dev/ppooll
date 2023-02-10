@@ -32,11 +32,24 @@ function getloc()
 messnamed ("tetristhis", this.patcher.parentpatcher.parentpatcher.wind.location);
 }
 
+function getloc_to(a)
+{
+messnamed (a, this.patcher.parentpatcher.parentpatcher.wind.location);
+}
+
 function setloc(x,y)
 {
 	//post ("SL", x, y);
 	var p = this.patcher.parentpatcher.parentpatcher;
     p.wind.location = [x,y,p.wind.location[2]-p.wind.location[0]+x,p.wind.location[3]-p.wind.location[1]+y];
+}
+
+function setwin(a)
+{
+	rec = arrayfromargs(arguments);
+	//post ("SW", a, rec); 
+	var p = this.patcher.parentpatcher.parentpatcher.wind;
+    p.location = rec;
 }
 
 function wsize(width,height)

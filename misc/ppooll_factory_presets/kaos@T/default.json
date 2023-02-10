@@ -1,73 +1,73 @@
 {
-	"window" : [ 90, 168, 249, 355 ],
+	"window" : [ 100, 100, 247, 302 ],
 	"presets" : 	{
-		"patching_rect" : [ 59, 0, 86, 16 ],
+		"patching_rect" : [ 58, 0, 86, 16 ],
 		"hidden" : 0,
 		"jsarguments" : [ 16, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "kaos@1" ]
 	}
 ,
 	"x_min" : 	{
-		"patching_rect" : [ 6, 119, 34, 22 ],
+		"patching_rect" : [ 5, 119, 34, 22 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"x_max" : 	{
-		"patching_rect" : [ 71, 119, 34, 22 ],
+		"patching_rect" : [ 70, 119, 34, 22 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"y_min" : 	{
-		"patching_rect" : [ 38, 119, 34, 22 ],
+		"patching_rect" : [ 37, 119, 34, 22 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"y_max" : 	{
-		"patching_rect" : [ 106, 119, 34, 22 ],
+		"patching_rect" : [ 105, 119, 34, 22 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"set!" : 	{
-		"patching_rect" : [ 43, 107, 32, 14 ],
+		"patching_rect" : [ 42, 107, 32, 14 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"click_on" : 	{
-		"patching_rect" : [ 4, 35, 140, 36 ],
+		"patching_rect" : [ 3, 35, 140, 36 ],
 		"hidden" : 0,
 		"fontsize" : 10
 	}
 ,
 	"on" : 	{
-		"patching_rect" : [ 8, 139, 128, 36 ],
+		"patching_rect" : [ 7, 156, 128, 36 ],
 		"hidden" : 0,
 		"fontsize" : 10
 	}
 ,
 	"fullscreen" : 	{
-		"patching_rect" : [ 75, 107, 60, 14 ],
+		"patching_rect" : [ 74, 107, 60, 14 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"doubleclick" : 	{
-		"patching_rect" : [ 72, 57, 72, 14 ],
+		"patching_rect" : [ 71, 57, 72, 14 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"metro_min" : 	{
-		"patching_rect" : [ 5, 73, 138, 16 ],
+		"patching_rect" : [ 4, 73, 138, 16 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"metro_max" : 	{
-		"patching_rect" : [ 5, 88, 138, 16 ],
+		"patching_rect" : [ 4, 88, 138, 16 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
