@@ -86,7 +86,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 304.0, 288.0, 85.0, 22.0 ],
-					"restore" : [ 1.0, 1.0, 1.0, 998.0, 0.0, 1.0 ],
+					"restore" : [ 1.0, 1.0, 0.0, 703.0, 1.0, 295.0, 0.0, 1.0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -417,7 +417,7 @@
 					"id" : "obj-7",
 					"label" : [ "end" ],
 					"maxclass" : "ll_number",
-					"min" : 0.1,
+					"min" : 51752.958933528243506,
 					"mousefocus" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -504,7 +504,7 @@
 					"fontname" : "Arial",
 					"fontsize" : 11.0,
 					"id" : "obj-40",
-					"items" : "<empty>",
+					"items" : "Track  4.wav",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -637,26 +637,26 @@
 					"patching_rect" : [ 442.0, 188.0, 107.0, 22.0 ],
 					"restore" : 					{
 						"autotrigger" : [ 0 ],
-						"buffer" : [ "" ],
+						"buffer" : [ "Track  4.wav" ],
 						"clear_env" : [ -1 ],
 						"display_selected" : [ -1 ],
-						"end" : [ 3.0 ],
-						"envelope_display" : [ 1000.0, 0.0, 1.0, 0.0, 0.0, 1, 1.0, 1.0, 0, 999.0, 1.0, 0, 1000.0, 0.0, 1, "linear" ],
+						"end" : [ 54505.534765733464155 ],
+						"envelope_display" : [ 1000.0, 0.0, 1.0, 0.0, 0.0, 1, 1.0, 1.0, 0, 704.0, 0.0, 0, 999.0, 1.0, 0, 1000.0, 0.0, 1, "linear" ],
 						"full_display" : [ -1 ],
 						"full_env" : [ -1 ],
 						"full_select" : [ -1 ],
 						"interp" : [ 2 ],
 						"keep_length" : [ 1 ],
-						"length" : [ 3.0 ],
+						"length" : [ 2752.675832205219194 ],
 						"loop_mode" : [ 0 ],
 						"master" : [ 0 ],
 						"play/stop" : [ 0 ],
-						"pres_menu" : [ "" ],
+						"pres_menu" : [ "_" ],
 						"preset-ramp" : [ 0 ],
 						"presets" : [ 0 ],
 						"show_envelope" : [ 0 ],
-						"speed" : [ 1.0 ],
-						"start" : [ 0.0 ],
+						"speed" : [ 2.343658238321288 ],
+						"start" : [ 51752.858933528244961 ],
 						"tetris_menu" : [ "" ],
 						"title_menu" : [ "subpatch" ],
 						"toggle_env" : [ 0 ],
@@ -664,7 +664,7 @@
 						"vzoom" : [ 1.0 ],
 						"xfade_mode" : [ 0 ],
 						"xshape" : [ 1 ],
-						"xzone" : [ 0 ]
+						"xzone" : [ 1342 ]
 					}
 ,
 					"text" : "autopattr autopattr",
@@ -1620,6 +1620,7 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
+										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-77",
@@ -3152,7 +3153,7 @@
 															}
 , 															{
 																"box" : 																{
-																	"code" : "/*\r\n\tno.groove\r\n\t\tgenexpr version of thomas grill's xgroove~\r\n\r\n \t\tby joe steccato 2023\r\n*/\r\n\r\n\r\n//////////////////////////\r\n// FUNCTION DEFINITIONS //\r\n//////////////////////////\r\n/*\r\n \tpeek_interp(source, i, interp_num)\r\n\r\n \t\tpeek w/ interpolation selection\r\n\r\n*/\r\npeek_interp(source, i, interp_num){\r\n\t// audio_L, audio_R, index = \r\n\tif(interp_num == 0.){\r\n\t\treturn peek(source, i, 0, interp=\"none\", channels=2);\r\n\t}else if(interp_num == 1.){\r\n\t\treturn peek(source, i, 0, interp=\"cubic\", channels=2);\r\n\t}else if(interp_num == 2.){\r\n\t\treturn peek(source, i, 0, interp=\"linear\", channels=2);\r\n\t}\n}\r\n\r\n/*\r\n \tquarter_sine(val)\r\n\r\n \t\tget 1/4 sine value\r\n\r\n*/\r\nquarter_sine(val){\r\n\treturn sin( val * ( PI/2 ) );\r\n}\r\n\r\n\r\n/*\r\n \thalf_sine(val)\r\n\r\n \t\tget 1/2 sine value\r\n\r\n*/\r\nhalf_sine(val){\r\n\treturn (sin( (val * PI) - ( PI/2 ) ) + 1.) * 0.5;\r\n}\r\n\r\n\r\ncalc_fades(c_index, x_samps, x_shape){\r\n\t\tc_gain = 1.;\r\n\t\tp_gain = 0.;\r\n\t\t\r\n\t\tif(c_index < x_samps){\r\n\t\t\t// linear\r\n\t\t\tc_gain = (c_index / x_samps);\r\n\t\t\tp_gain = (1. - c_gain);\r\n\t\t\t// quarter sine\r\n\t\t\tif(x_shape == 1.){\r\n\t\t\t\tc_gain = quarter_sine( c_gain );\r\n\t\t\t\tp_gain = quarter_sine( p_gain );\r\n\t\t\t// half sine\r\n\t\t\t}else if(x_shape == 2.){\r\n\t\t\t\tc_gain = half_sine( c_gain );\r\n\t\t\t\tp_gain = half_sine( p_gain );\r\n\t\t\t}\r\n\t\t\tp_gain = (1. - c_gain);\r\n\r\n\t\r\n\t\t\t\r\n\t\t}\r\n\t\treturn c_gain, p_gain;\r\n}\r\n\r\n\r\n/*\r\n \tdo_xfade(buf, count, xzone_samps, previous_index, interp, speed)\r\n\r\n \t\tread buffer and apply xfade\r\n\r\n*/\r\ndo_xfade(source, c_index, x_samps, p_index, interpolation, speed){\t\r\n\txAudio_L, xAudio_R = 0.;\r\n\t\r\n\tif(c_index < x_samps){\r\n\t\txfade_index = p_index + (c_index * (speed/abs(speed))) + ( speed );\r\n\t\t\r\n\t\t// if p_index is -1, this is the initial fade-in-- don't play\r\n\t\tif(p_index >= 0.){\r\n\t\t\txAudio_L, xAudio_R = peek_interp(source, xfade_index, interpolation);\r\n\t\t}\r\n\t}\r\n\treturn xAudio_L, xAudio_R;\r\n}\r\n\r\n\r\n\r\n\r\n//////////////////////////\r\n//         MAIN         //\r\n//////////////////////////\r\n\r\nBuffer buf(\"buf\");\r\nBuffer env_buf(\"env_buf\");\r\n\r\n// peek interpolation\r\n//\t\t0 = none\r\n//\t\t1 = cubic\r\n//\t\t2 = linear\r\nParam interp(2., min=0.);\r\n\r\n// loop selection\r\nParam start\t(0., min=0.);\r\nParam len\t(3., min=3.);\nParam end\t(3., min=3.);\r\nParam env_on(0., min=0.);\r\n\r\n// xfade (fade mode)\r\n//\t\t0 = fade within loop\r\n//\t\t1 = fade outside loop\r\nParam xfade\t(0., min=0.);\r\n\r\n// xzone (length of xfade in ms)\r\nParam xzone\t(0., min=0.0);\r\n\r\n// xshape (shape of xfade)\r\n//\t\t0 = linear\r\n//  \t1 = quarter sine\r\n//  \t2 = half sine\r\nParam xshape(2., min=0.);\r\n\r\n// mode (playback mode)\r\n// \t\t0 = one-shot\r\n// \t\t1 = forward\r\n// \t\t2 = bidirectional\r\nParam mode(0, min=0.);\r\n\r\nParam play(0, min=-1.);\r\nParam speed(1., min=-4.0);\r\n\r\nHistory counter_reset(0);\r\nHistory direction(1.);\r\nHistory current_ms(0.);\r\nHistory previous_index(-1.);\r\n\r\ntrigger = in2;\r\n\r\n// latched params release on main counter reset\r\nstart_ms = latch(start, counter_reset, init=0);\r\nlength_ms = latch(len, counter_reset, init=250);\r\nend_ms = latch(end, counter_reset, init=250);\r\nxzone_ms = latch(xzone, counter_reset, init=1);\r\n\r\n// convert ms to samps\r\nstart_samps = mstosamps(start_ms);\r\nlength_samps = mstosamps(length_ms);\r\nend_samps = mstosamps(end_ms);\r\nxzone_samps = mstosamps(xzone_ms);\r\n\r\n// SET LOOP START AND END POINTS\r\n// \t\twe won't use the latched params so we can skip ahead immediately\r\n//\t\t*** this is prob where the other \"xfade keep length, keep fade\" apply...\r\nloop_start = mstosamps(start); \r\nloop_end = mstosamps(end);\r\n\r\n//\r\n// --- PLAY MODE & DIRECTION ---\r\n//\r\n\r\n// oneshot & forwards\r\nif(mode == 0. || mode == 1.){\r\n\tdirection = abs(speed)/speed;\r\n}\r\n\r\n// we reset the previous_index when playback is stopped\r\n//\t\totherwise we will hear the previous xfade section played fade out\r\nif(play == 0.){\r\n\tprevious_index = -1.;\r\n}\r\n\r\n\r\n// xfade mode is \"inside\"\r\nif(xfade == 1.){\r\n\txzone_samps = clamp(xzone_samps, 0., ((length_samps/2.) - direction));\r\n\tif(direction == 1.){\n\t\tloop_end -= xzone_samps;\n\t}else if(direction == -1.){\n\t\tloop_start += xzone_samps;\n\t}\r\n}\r\n// xfade mode is \"outside\"\r\nelse{\r\n\txzone_samps = clamp( xzone_samps, 0., length_samps );\r\n}\r\n\r\n// CURSOR PLAYBACK\r\ncount = counter(abs(speed * play), counter_reset, 0);\r\npercent = count/mstosamps(len);\r\ncurrent_samps = count;\r\n\r\n// adjust counter percent based on forwards/backwards playback\r\nif(direction < 0.){\r\n\tcurrent_samps = end_samps - current_samps;\r\n\tpercent = 1. - percent;\r\n}else{\r\n\tcurrent_samps += start_samps;\r\n}\r\n\r\n\n//\n// get audio from regular playback\r\n//\naudio_L, audio_R, index = peek_interp(buf, current_samps, interp);\n\r\n//\r\n// get audio for xfade playback\r\n//\r\nprev_L, prev_R = do_xfade(buf, count, xzone_samps, previous_index, interp, speed);\r\n\r\n//\r\n// calc fade gain values\r\n//\r\ncurrent_gain, prev_gain = calc_fades(count, xzone_samps, xshape);\r\n\r\n//\r\n// should loop reset??\r\n//\r\nend_bang = (current_samps < loop_start) || (current_samps > loop_end);\r\n\r\n// counter for cursor/main playback should reset\r\ncounter_reset = clamp( (end_bang + in2), 0., 1. );\r\n\r\n//\r\n// IS LOOP END??\r\n//\r\nif(\tcounter_reset ){\r\n\t// store this index for xfade peek object\t\r\n\tprevious_index = index;\t\t\r\n\t\t// we will immediately play from start in main counter at 0. -> 1. gain\r\n\t\t// also play from previous_index in 2nd counter at at 1. -> 0. gain\r\n\t\r\n\t// if bidirectional, change direction\r\n\tif(mode == 2.){\r\n\t\tdirection = direction * -1;\r\n\t}\t\r\n\t\r\n\tif(mode == 0.){\r\n\t\tcounter_reset = -1;\r\n\t}\r\n}\r\n\r\nenv_value = 1.;\r\nif(env_on){\r\n\tenv_value = peek(env_buf, percent * mstosamps(1000.), interp=\"linear\");\r\n}\r\n\t\r\nout1 = ((audio_L * current_gain) + (prev_L * prev_gain)) * env_value * play;\r\nout2 = ((audio_R * current_gain) + (prev_R * prev_gain)) * env_value * play;\n\nout3 = percent; // sync\nout4 = sampstoms(current_samps);\n\t\nout5 = end_bang;",
+																	"code" : "/*\r\n\tno.groove\r\n\t\tgenexpr version of thomas grill's xgroove~\r\n\r\n \t\tby joe steccato 2023\r\n*/\r\n\r\n\r\n//////////////////////////\r\n// FUNCTION DEFINITIONS //\r\n//////////////////////////\r\n/*\r\n \tpeek_interp(source, i, interp_num)\r\n\r\n \t\tpeek w/ interpolation selection\r\n\r\n*/\r\npeek_interp(source, i, interp_num){\r\n\t// audio_L, audio_R, index = \r\n\tif(interp_num == 0.){\r\n\t\treturn peek(source, i, 0, interp=\"none\", channels=2);\r\n\t}else if(interp_num == 1.){\r\n\t\treturn peek(source, i, 0, interp=\"cubic\", channels=2);\r\n\t}else if(interp_num == 2.){\r\n\t\treturn peek(source, i, 0, interp=\"linear\", channels=2);\r\n\t}\n}\r\n\r\n/*\r\n \tquarter_sine(val)\r\n\r\n \t\tget 1/4 sine value\r\n\r\n*/\r\nquarter_sine(val){\r\n\treturn sin( val * ( PI/2 ) );\r\n}\r\n\r\n\r\n/*\r\n \thalf_sine(val)\r\n\r\n \t\tget 1/2 sine value\r\n\r\n*/\r\nhalf_sine(val){\r\n\treturn (sin( (val * PI) - ( PI/2 ) ) + 1.) * 0.5;\r\n}\r\n\r\n\r\ncalc_fades(c_index, x_samps, x_shape){\r\n\t\tc_gain = 1.;\r\n\t\tp_gain = 0.;\r\n\t\t\r\n\t\tif(c_index < x_samps){\r\n\t\t\t// linear\r\n\t\t\tc_gain = (c_index / x_samps);\r\n\t\t\tp_gain = (1. - c_gain);\r\n\t\t\t// quarter sine\r\n\t\t\tif(x_shape == 1.){\r\n\t\t\t\tc_gain = quarter_sine( c_gain );\r\n\t\t\t\tp_gain = quarter_sine( p_gain );\r\n\t\t\t// half sine\r\n\t\t\t}else if(x_shape == 2.){\r\n\t\t\t\tc_gain = half_sine( c_gain );\r\n\t\t\t\tp_gain = half_sine( p_gain );\r\n\t\t\t}\r\n\t\t\tp_gain = (1. - c_gain);\r\n\t\t}\r\n\t\treturn c_gain, p_gain;\r\n}\r\n\r\n\r\n/*\r\n \tdo_xfade(buf, count, xzone_samps, previous_index, interp, speed)\r\n\r\n \t\tread buffer and apply xfade\r\n\r\n*/\r\ndo_xfade(source, c_index, x_samps, p_index, interpolation, speed){\t\r\n\txAudio_L, xAudio_R = 0.;\r\n\t\r\n\tif(c_index <= x_samps){\r\n\t\txfade_index = p_index + (c_index * (speed/abs(speed))) + ( speed );\r\n\t\t\r\n\t\t// if p_index is -1, this is the initial fade-in-- don't play\r\n\t\tif(p_index >= 0.){\r\n\t\t\txAudio_L, xAudio_R = peek_interp(source, xfade_index, interpolation);\r\n\t\t}\r\n\t}\r\n\treturn xAudio_L, xAudio_R;\r\n}\r\n\r\n\r\n\r\n\r\n//////////////////////////\r\n//         MAIN         //\r\n//////////////////////////\r\n\r\nBuffer buf(\"buf\");\r\nBuffer env_buf(\"env_buf\");\r\n\r\n// peek interpolation\r\n//\t\t0 = none\r\n//\t\t1 = cubic\r\n//\t\t2 = linear\r\nParam interp(2., min=0.);\r\n\r\n// loop selection\r\nParam start\t(0., min=0.);\r\nParam len\t(3., min=3.);\nParam end\t(3., min=3.);\r\nParam env_on(0., min=0.);\r\n\r\n// xfade (fade mode)\r\n//\t\t0 = fade within loop\r\n//\t\t1 = fade outside loop\r\nParam xfade\t(0., min=0.);\r\n\r\n// xzone (length of xfade in ms)\r\nParam xzone\t(0., min=0.0);\r\n\r\n// xshape (shape of xfade)\r\n//\t\t0 = linear\r\n//  \t1 = quarter sine\r\n//  \t2 = half sine\r\nParam xshape(2., min=0.);\r\n\r\n// mode (playback mode)\r\n// \t\t0 = one-shot\r\n// \t\t1 = forward\r\n// \t\t2 = bidirectional\r\nParam mode(0, min=0.);\r\n\r\nParam play(0, min=-1.);\r\nParam speed(1., min=-4.0);\r\n\r\nHistory counter_reset(0);\r\nHistory direction(1.);\r\nHistory current_ms(0.);\r\nHistory previous_index(-1.);\r\n\r\ntrigger = in2;\r\n\r\n// latched params release on main counter reset\r\nstart_ms = latch(start, counter_reset, init=0);\r\nlength_ms = latch(len, counter_reset, init=250);\r\nend_ms = latch(end, counter_reset, init=250);\r\nxzone_ms = latch(xzone, counter_reset, init=1);\r\n\r\n// convert ms to samps\r\nstart_samps = mstosamps(start_ms);\r\nlength_samps = mstosamps(length_ms);\r\nend_samps = mstosamps(end_ms);\r\nxzone_samps = mstosamps(xzone_ms);\r\n\r\n// SET LOOP START AND END POINTS\r\n// \t\twe won't use the latched params so we can skip ahead immediately\r\n//\t\t*** this is prob where the other \"xfade keep length, keep fade\" apply...\r\nloop_start = mstosamps(start); \r\nloop_end = mstosamps(end);\r\n\r\n//\r\n// --- PLAY MODE & DIRECTION ---\r\n//\r\n\r\n// oneshot & forwards\r\nif(mode == 0. || mode == 1.){\r\n\tdirection = abs(speed)/speed;\r\n}\r\n\r\n// we reset the previous_index when playback is stopped\r\n//\t\totherwise we will hear the previous xfade section played fade out\r\nif(play == 0.){\r\n\tprevious_index = -1.;\r\n}\r\n\r\n\r\n// xfade mode is \"inside\"\r\nif(xfade == 1.){\r\n\txzone_samps = clamp(xzone_samps, 0., ((length_samps/2.) - direction));\r\n\tif(direction == 1.){\n\t\tloop_end -= xzone_samps;\n\t}else if(direction == -1.){\n\t\tloop_start += xzone_samps;\n\t}\r\n}\r\n// xfade mode is \"outside\"\r\nelse{\r\n\txzone_samps = clamp( xzone_samps, 0., length_samps );\r\n}\r\n\r\n// CURSOR PLAYBACK\r\ncount = counter(abs(speed * play), counter_reset, 0);\r\npercent = count/mstosamps(len);\r\ncurrent_samps = count;\r\n\r\n// adjust counter percent based on forwards/backwards playback\r\nif(direction < 0.){\r\n\tcurrent_samps = end_samps - current_samps;\r\n\tpercent = 1. - percent;\r\n}else{\r\n\tcurrent_samps += start_samps;\r\n}\r\n\r\n\n//\n// get audio from regular playback\r\n//\naudio_L, audio_R, index = peek_interp(buf, current_samps, interp);\n\r\n//\r\n// get audio for xfade playback\r\n//\r\nprev_L, prev_R = do_xfade(buf, count, xzone_samps, previous_index, interp, speed);\r\n\r\n//\r\n// calc fade gain values\r\n//\r\ncurrent_gain, prev_gain = calc_fades(count, xzone_samps, xshape);\r\n\r\n//\r\n// should loop reset??\r\n//\r\nend_bang = (index < loop_start) || (index > loop_end);\r\n\r\n// counter for cursor/main playback should reset\r\ncounter_reset = clamp( (end_bang + in2), 0., 1. );\r\n\r\n//\r\n// IS LOOP END??\r\n//\r\nif(\tcounter_reset ){\r\n\t// store this index for xfade peek object\t\r\n\tprevious_index = index;\t\t\r\n\t\t// we will immediately play from start in main counter at 0. -> 1. gain\r\n\t\t// also play from previous_index in 2nd counter at at 1. -> 0. gain\r\n\t\r\n\t// if bidirectional, change direction\r\n\tif(mode == 2.){\r\n\t\tdirection = direction * -1;\r\n\t}\t\r\n}\r\n\r\nenv_value = 1.;\r\nif(env_on){\r\n\tenv_value = peek(env_buf, percent * mstosamps(1000.), interp=\"linear\");\r\n}\r\n\r\n//current_gain = 0;\r\n\t\r\nout1 = ((audio_L * current_gain) + (prev_L * prev_gain)) * env_value * play;\r\nout2 = ((audio_R * current_gain) + (prev_R * prev_gain)) * env_value * play;\n\nout3 = percent; // sync\nout4 = sampstoms(index);\n\t\nout5 = end_bang;",
 																	"fontface" : 0,
 																	"fontname" : "<Monospaced>",
 																	"fontsize" : 12.0,
@@ -3270,12 +3271,84 @@
 														"assistshowspatchername" : 0,
 														"boxes" : [ 															{
 																"box" : 																{
+																	"id" : "obj-27",
+																	"maxclass" : "message",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 291.0, 761.0, 29.5, 22.0 ],
+																	"text" : "1"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-26",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "int" ],
+																	"patching_rect" : [ 296.0, 737.0, 33.0, 22.0 ],
+																	"text" : "== 0"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-10",
+																	"maxclass" : "button",
+																	"numinlets" : 1,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "bang" ],
+																	"parameter_enable" : 0,
+																	"patching_rect" : [ 249.0, 687.0, 24.0, 24.0 ]
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-7",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 225.0, 659.0, 59.0, 22.0 ],
+																	"text" : "ll.r trigger"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-6",
+																	"maxclass" : "message",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 296.0, 709.0, 50.0, 22.0 ],
+																	"text" : "0"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-3",
+																	"maxclass" : "newobj",
+																	"numinlets" : 3,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "bang" ],
+																	"patching_rect" : [ 333.0, 677.0, 75.0, 22.0 ],
+																	"text" : "ll.p play/stop"
+																}
+
+															}
+, 															{
+																"box" : 																{
 																	"id" : "obj-58",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 452.0, 473.0, 59.0, 22.0 ],
+																	"patching_rect" : [ 452.0, 460.0, 59.0, 22.0 ],
 																	"text" : "ll.r trigger"
 																}
 
@@ -3766,12 +3839,13 @@
 																					"fontname" : "Arial",
 																					"fontsize" : 12.0,
 																					"id" : "obj-4",
+																					"linecount" : 2,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 139.0, 305.0, 45.0, 22.0 ],
-																					"text" : "1."
+																					"text" : "2.343658"
 																				}
 
 																			}
@@ -4189,6 +4263,13 @@
  ],
 														"lines" : [ 															{
 																"patchline" : 																{
+																	"destination" : [ "obj-6", 0 ],
+																	"source" : [ "obj-10", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
 																	"destination" : [ "obj-12", 0 ],
 																	"source" : [ "obj-107", 0 ]
 																}
@@ -4334,6 +4415,20 @@
 															}
 , 															{
 																"patchline" : 																{
+																	"destination" : [ "obj-27", 0 ],
+																	"source" : [ "obj-26", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-3", 0 ],
+																	"source" : [ "obj-27", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
 																	"destination" : [ "obj-2", 0 ],
 																	"source" : [ "obj-29", 0 ]
 																}
@@ -4344,6 +4439,13 @@
 																	"destination" : [ "obj-95", 0 ],
 																	"midpoints" : [ 242.0, 557.0, 196.0, 557.0 ],
 																	"source" : [ "obj-29", 1 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-6", 1 ],
+																	"source" : [ "obj-3", 0 ]
 																}
 
 															}
@@ -4402,7 +4504,15 @@
 , 															{
 																"patchline" : 																{
 																	"destination" : [ "obj-47", 0 ],
+																	"disabled" : 1,
 																	"source" : [ "obj-58", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-26", 0 ],
+																	"source" : [ "obj-6", 0 ]
 																}
 
 															}
@@ -4448,6 +4558,13 @@
 																	"destination" : [ "obj-4", 0 ],
 																	"order" : 0,
 																	"source" : [ "obj-69", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-10", 0 ],
+																	"source" : [ "obj-7", 0 ]
 																}
 
 															}
@@ -9820,7 +9937,7 @@
 			}
 , 			{
 				"box" : 				{
-					"addpoints" : [ 0.0, 0.0, 1, 1.0, 1.0, 0, 999.0, 1.0, 0, 1000.0, 0.0, 1 ],
+					"addpoints" : [ 0.0, 0.0, 1, 1.0, 1.0, 0, 704.0, 0.0, 0, 999.0, 1.0, 0, 1000.0, 0.0, 1 ],
 					"bgcolor" : [ 0.815686, 0.709804, 0.85098, 0.41 ],
 					"fontsize" : 12.0,
 					"gridcolor" : [ 0.34902, 0.34902, 0.34902, 0.0 ],
@@ -9887,6 +10004,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "bg-track4",
+				"bootpath" : "~/Documents/Max 8/Library/ppooll_presets/buffer_hostP",
+				"patcherrelativepath" : "../../../../Library/ppooll_presets/buffer_hostP",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.actmenu.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
@@ -9947,6 +10071,20 @@
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.live.check_envi_type.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.live.initialize_bpatcher.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
