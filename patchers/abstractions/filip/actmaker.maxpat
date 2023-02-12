@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 436.0, 378.0, 567.0, 241.0 ],
+		"rect" : [ 668.0, 259.0, 567.0, 241.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,25 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"bgcolor" : [ 0.835294117647059, 0.180392156862745, 0.423529411764706, 1.0 ],
+					"color" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 17.0, 147.0, 158.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"filename" : "ll.live.initialize_bpatcher.js",
+						"parameter_enable" : 0
+					}
+,
+					"text" : "js ll.live.initialize_bpatcher.js"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -56,7 +75,8 @@
 					"id" : "obj-4",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
-					"numoutlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
@@ -68,7 +88,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1084.0, 467.0, 339.0, 273.0 ],
+						"rect" : [ 884.0, 542.0, 339.0, 273.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -97,6 +117,30 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-5",
+									"index" : 1,
+									"maxclass" : "outlet",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 46.0, 251.0, 30.0, 30.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 46.0, 222.0, 85.0, 22.0 ],
+									"text" : "prepend make"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-6",
 									"maxclass" : "newobj",
@@ -435,7 +479,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 270.0, 57.0, 221.0, 22.0 ],
-													"text" : "markerlist ho_st1 noize@1"
+													"text" : "markerlist"
 												}
 
 											}
@@ -656,8 +700,8 @@
 													"id" : "obj-23",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "", "" ],
+													"numoutlets" : 3,
+													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 172.0, 224.0, 50.0, 22.0 ],
 													"text" : "ll.strip#"
 												}
@@ -1044,7 +1088,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 46.0, 223.0, 85.0, 22.0 ],
+									"patching_rect" : [ 46.0, 196.0, 85.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "ll.createact8",
 										"parameter_enable" : 0
@@ -2071,6 +2115,13 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-24", 0 ],
 									"midpoints" : [ 55.5, 43.5, 233.833333333333343, 43.5 ],
 									"order" : 0,
@@ -2092,6 +2143,13 @@
 									"destination" : [ "obj-6", 0 ],
 									"order" : 2,
 									"source" : [ "obj-12", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-2", 0 ]
 								}
 
 							}
@@ -3839,7 +3897,7 @@
 														"style" : "",
 														"subpatcher_template" : "",
 														"assistshowspatchername" : 0,
-														"globalpatchername" : "#0n",
+														"globalpatchername" : "#0n[1]",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -4139,8 +4197,8 @@
 																	"id" : "obj-35",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 2,
-																	"outlettype" : [ "", "" ],
+																	"numoutlets" : 3,
+																	"outlettype" : [ "", "", "" ],
 																	"patching_rect" : [ 193.5, 393.0, 42.0, 18.0 ],
 																	"text" : "ll.strip#"
 																}
@@ -4181,8 +4239,8 @@
 																	"id" : "obj-19",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 2,
-																	"outlettype" : [ "", "" ],
+																	"numoutlets" : 3,
+																	"outlettype" : [ "", "", "" ],
 																	"patching_rect" : [ 127.5, 349.0, 42.0, 18.0 ],
 																	"text" : "ll.strip#"
 																}
@@ -4622,7 +4680,7 @@
 													"saved_object_attributes" : 													{
 														"description" : "",
 														"digest" : "",
-														"globalpatchername" : "#0n",
+														"globalpatchername" : "#0n[1]",
 														"tags" : ""
 													}
 ,
@@ -5628,7 +5686,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 17.0, 170.0, 36.0, 22.0 ],
+					"patching_rect" : [ 17.0, 208.0, 36.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -6160,7 +6218,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 58.0, 170.0, 68.0, 22.0 ],
+					"patching_rect" : [ 58.0, 208.0, 68.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -7496,7 +7554,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 17.0, 146.0, 76.0, 22.0 ],
+					"patching_rect" : [ 17.0, 184.0, 76.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -11312,6 +11370,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"source" : [ "obj-4", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-19", 0 ],
 					"source" : [ "obj-45", 1 ]
 				}
@@ -11319,13 +11384,6 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "ll.actname.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ll.actname.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : ".",
@@ -11333,7 +11391,21 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.an.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.createact8.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.live.initialize_bpatcher.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../../javascript",
 				"type" : "TEXT",
