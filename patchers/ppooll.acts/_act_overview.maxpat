@@ -507,7 +507,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"bgcolor" : [ 0.647058823529412, 0.352941176470588, 0.270588235294118, 1.0 ],
@@ -763,6 +762,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-20",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
@@ -973,6 +973,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-4",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
@@ -1431,6 +1432,7 @@
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-25",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -2370,6 +2372,7 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-54",
+																					"linecount" : 2,
 																					"maxclass" : "newobj",
 																					"numinlets" : 0,
 																					"numoutlets" : 1,
@@ -2430,6 +2433,7 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-46",
+																					"linecount" : 2,
 																					"maxclass" : "newobj",
 																					"numinlets" : 1,
 																					"numoutlets" : 0,
@@ -3800,6 +3804,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-23",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
@@ -5646,6 +5651,7 @@
 														"boxes" : [ 															{
 																"box" : 																{
 																	"id" : "obj-3",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
@@ -6171,6 +6177,7 @@
 																					"fontname" : "Arial",
 																					"fontsize" : 13.0,
 																					"id" : "obj-11",
+																					"linecount" : 2,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
@@ -6183,6 +6190,7 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-3",
+																					"linecount" : 2,
 																					"maxclass" : "newobj",
 																					"numinlets" : 0,
 																					"numoutlets" : 1,
@@ -6231,6 +6239,7 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-23",
+																					"linecount" : 2,
 																					"maxclass" : "newobj",
 																					"numinlets" : 1,
 																					"numoutlets" : 0,
@@ -8377,7 +8386,7 @@
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-1",
-													"linecount" : 2,
+													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -10621,6 +10630,7 @@
 														"boxes" : [ 															{
 																"box" : 																{
 																	"id" : "obj-1",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
@@ -11251,7 +11261,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-72",
-																	"linecount" : 2,
+																	"linecount" : 3,
 																	"maxclass" : "newobj",
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
@@ -12719,6 +12729,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-54",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
@@ -12730,6 +12741,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-46",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
@@ -12822,6 +12834,7 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-27",
+																					"linecount" : 2,
 																					"maxclass" : "newobj",
 																					"numinlets" : 0,
 																					"numoutlets" : 1,
@@ -13558,6 +13571,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-25",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
@@ -13699,6 +13713,7 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-20",
+																					"linecount" : 2,
 																					"maxclass" : "newobj",
 																					"numinlets" : 0,
 																					"numoutlets" : 1,
@@ -13826,6 +13841,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-23",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
@@ -14465,8 +14481,8 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "actmaker.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
+				"bootpath" : "~/.Trash/ppooll 15.33.25/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../../../../../.Trash/ppooll 15.33.25/patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -14474,6 +14490,13 @@
 				"name" : "ll.actname.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.actnamehelper.maxpat",
+				"bootpath" : "~/.Trash/ppooll 15.33.25/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../../../../../.Trash/ppooll 15.33.25/patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -14514,15 +14537,15 @@
 			}
 , 			{
 				"name" : "ll.psto.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
+				"bootpath" : "~/.Trash/ppooll 15.33.25/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../../../../../.Trash/ppooll 15.33.25/patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.psto1.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
+				"bootpath" : "~/.Trash/ppooll 15.33.25/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../../../../../.Trash/ppooll 15.33.25/patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -14542,8 +14565,8 @@
 			}
 , 			{
 				"name" : "ll.shut.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
+				"bootpath" : "~/.Trash/ppooll 15.33.25/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../../../../../.Trash/ppooll 15.33.25/patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -14556,8 +14579,8 @@
 			}
 , 			{
 				"name" : "ll.strip#.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
+				"bootpath" : "~/.Trash/ppooll 15.33.25/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../../../../../.Trash/ppooll 15.33.25/patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
