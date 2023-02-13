@@ -133,6 +133,6 @@ function make(name, instance) {
 
     // create live.ppooll-specific acts
     owner.patcher.message("script", "hidden", "newdefault", "live.midi_in1", 5, 91, "live.midi_in")
-    owner.patcher.message("script", "hidden", "newdefault", "live.params_in1", 48, 124, "live.params_in")
+    owner.patcher.message("script", "hidden", "newdefault", "live.params_in1", 5, 117, "live.params_in")
   }
 }
