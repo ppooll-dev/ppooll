@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 205.0, 126.0, 598.0, 641.0 ],
+		"rect" : [ 825.0, 236.0, 598.0, 641.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -58,7 +58,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 69.0, 312.5, 62.0, 20.0 ],
+					"patching_rect" : [ 86.75, 308.5, 62.0, 20.0 ],
 					"text" : "channels $1"
 				}
 
@@ -82,7 +82,6 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
-					"hidden" : 1,
 					"id" : "obj-16",
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
@@ -91,7 +90,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 415.0, 188.0, 192.0, 85.0 ],
+					"patching_rect" : [ 415.0, 188.0, 162.0, 85.0 ],
 					"varname" : "def_outputs",
 					"viewvisibility" : 1
 				}
@@ -147,7 +146,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 63.0, 916.0, 733.0, 631.0 ],
+						"rect" : [ 197.0, 424.0, 733.0, 631.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -175,7 +174,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-31",
@@ -183,7 +181,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 53.0, 414.0, 35.0, 22.0 ],
+									"patching_rect" : [ 168.0, 487.0, 35.0, 22.0 ],
 									"text" : "open"
 								}
 
@@ -195,7 +193,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 10.0, 282.0, 93.0, 22.0 ],
+									"patching_rect" : [ 34.0, 507.0, 93.0, 22.0 ],
 									"text" : "ll.pf def_outputs"
 								}
 
@@ -207,7 +205,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 10.0, 240.0, 89.0, 22.0 ],
+									"patching_rect" : [ 34.0, 465.0, 89.0, 22.0 ],
 									"text" : "prepend extras"
 								}
 
@@ -220,7 +218,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 349.0, 391.0, 163.0, 22.0 ],
-									"text" : "1 0 0 0 0"
+									"text" : "4 0 0 0 0"
 								}
 
 							}
@@ -435,21 +433,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 439.0, 501.0, 195.0, 20.0 ],
+									"patching_rect" : [ 205.0, 495.0, 195.0, 20.0 ],
 									"text" : "open ll.mc.defoutputs.subpatch"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-63",
-									"linecount" : 2,
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 448.0, 526.0, 145.0, 35.0 ],
-									"text" : ";\rll.mc.defoutputs.sub bang"
 								}
 
 							}
@@ -730,7 +715,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.5, 562.0, 461.0, 33.0 ],
-					"text" : "the 3rd inlet and the outlet provide the option to add extra parameters that are bound to the channels. see inside vbap@ subpatch how to use this."
+					"text" : "option to add extra parameters that are bound to the channels. see vbap@ as an example."
 				}
 
 			}
@@ -776,18 +761,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-35",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 148.5, 348.0, 365.0, 29.0 ],
-					"text" : "a future version should take another argument to change the bound parameter to something else but outputs~ to maybe have more mc.output paths."
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-34",
 					"maxclass" : "number",
 					"numinlets" : 1,
@@ -802,12 +775,11 @@
 				"box" : 				{
 					"fontsize" : 12.0,
 					"id" : "obj-32",
-					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 166.5, 299.0, 294.0, 47.0 ],
-					"text" : "the argument is the initial amount of channels.\n(it is recommended to use this argument, to preserve the stored output~ list, of a saved act)"
+					"patching_rect" : [ 156.5, 308.5, 294.0, 20.0 ],
+					"text" : "the amount of channels."
 				}
 
 			}
@@ -859,7 +831,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 320.5, 94.5, 82.0, 20.0 ],
-					"restore" : [ "ho_st1~-no-", "_", "_", "_" ],
+					"restore" : [ "ho_st1~out.1", "_", "_", "_" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -956,7 +928,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 454.0, 5.0, 100.0, 20.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 842, 164, 1920, 676 ],
+						"client_rect" : [ 741, 163, 1819, 1043 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 0, 0, 640, 240 ]
@@ -1009,11 +981,11 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 441.0, 89.0, 107.0, 20.0 ],
 					"restore" : 					{
-						"def" : [ 0 ],
+						"def" : [ 1 ],
 						"master" : [ 0 ],
 						"pres_menu" : [ "_" ],
 						"tetris_menu" : [ "" ],
-						"title_menu" : [ "titlebar" ]
+						"title_menu" : [ "clientwindow" ]
 					}
 ,
 					"text" : "autopattr autopattr",

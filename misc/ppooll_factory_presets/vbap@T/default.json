@@ -1,5 +1,5 @@
 {
-	"window" : [ 402, 363, 702, 708 ],
+	"window" : [ 391, 343, 691, 688 ],
 	"lcd" : 	{
 		"patching_rect" : [ 0, 45, 300, 300 ],
 		"hidden" : 0
@@ -108,7 +108,7 @@
 	}
 ,
 	"walk_amount" : 	{
-		"patching_rect" : [ 444, 16, 35, 20 ],
+		"patching_rect" : [ 518, 17, 35, 20 ],
 		"hidden" : 1,
 		"fontsize" : 10
 	}
@@ -132,13 +132,13 @@
 	}
 ,
 	"walk_min" : 	{
-		"patching_rect" : [ 474, 16, 36, 20 ],
+		"patching_rect" : [ 548, 17, 36, 20 ],
 		"hidden" : 1,
 		"fontsize" : 10
 	}
 ,
 	"walk_max" : 	{
-		"patching_rect" : [ 510, 16, 36, 20 ],
+		"patching_rect" : [ 584, 17, 36, 20 ],
 		"hidden" : 1,
 		"fontsize" : 10
 	}
@@ -192,6 +192,12 @@
 		"patching_rect" : [ 540, 409, 50, 20 ],
 		"hidden" : 1,
 		"fontsize" : 10
+	}
+,
+	"def_outputs" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 302, 3, 222, 85 ],
+		"hidden" : 1
 	}
 
 }
