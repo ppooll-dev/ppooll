@@ -1,78 +1,78 @@
 {
-	"window" : [ 670, 277, 879, 532 ],
+	"window" : [ 618, 94, 827, 349 ],
 	"buffer" : 	{
-		"patching_rect" : [ 108, 79, 101, 22 ],
+		"patching_rect" : [ 118, 79, 87, 22 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"mix-level" : 	{
-		"patching_rect" : [ 71, 17, 14, 81 ],
+		"patching_rect" : [ 71, 17, 14, 84 ],
 		"hidden" : 0
 	}
 ,
 	"pos_act" : 	{
-		"patching_rect" : [ 151, 16, 57, 19 ],
+		"patching_rect" : [ 151, 1, 57, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
 ,
 	"pos_par" : 	{
-		"patching_rect" : [ 151, 31, 57, 19 ],
+		"patching_rect" : [ 151, 16, 57, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
 ,
 	"ps_act" : 	{
-		"patching_rect" : [ 174, 47, 35, 19 ],
+		"patching_rect" : [ 172, 35, 35, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
 ,
 	"ps_par" : 	{
-		"patching_rect" : [ 174, 62, 35, 19 ],
+		"patching_rect" : [ 172, 50, 35, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
 ,
 	"mix-switch" : 	{
-		"patching_rect" : [ 85, 79, 25, 15 ],
+		"patching_rect" : [ 87, 85, 29, 15 ],
 		"hidden" : 0,
 		"fontsize" : 10
 	}
 ,
 	"rec-switch" : 	{
-		"patching_rect" : [ 114, 47, 30, 29 ],
+		"patching_rect" : [ 118, 52, 36, 26 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"<>key-switch" : 	{
-		"patching_rect" : [ 85, 62, 29, 15 ],
+		"patching_rect" : [ 87, 67, 29, 15 ],
 		"hidden" : 0,
 		"fontsize" : 10
 	}
 ,
 	"loop-switch" : 	{
-		"patching_rect" : [ 85, 47, 29, 15 ],
+		"patching_rect" : [ 87, 50, 29, 15 ],
 		"hidden" : 0,
 		"fontsize" : 10
 	}
 ,
 	"append-switch" : 	{
-		"patching_rect" : [ 85, 32, 43, 15 ],
+		"patching_rect" : [ 87, 33, 43, 15 ],
 		"hidden" : 0,
 		"fontsize" : 10
 	}
 ,
 	"link-switch" : 	{
-		"patching_rect" : [ 85, 17, 29, 15 ],
+		"patching_rect" : [ 87, 17, 29, 15 ],
 		"hidden" : 0,
 		"fontsize" : 10
 	}
 ,
 	"pos_send_now" : 	{
-		"patching_rect" : [ 145, 48, 30, 16 ],
+		"patching_rect" : [ 143, 35, 30, 16 ],
 		"hidden" : 0,
 		"fontsize" : 10
 	}
@@ -108,7 +108,7 @@
 ,
 	"tools" : 	{
 		"patcher" : "bang",
-		"patching_rect" : [ 187, 104, 20, 59 ],
+		"patching_rect" : [ 187, 103, 20, 59 ],
 		"hidden" : 0
 	}
 ,
@@ -119,13 +119,13 @@
 	}
 ,
 	"zoom_out" : 	{
-		"patching_rect" : [ 187, 183, 20, 16 ],
+		"patching_rect" : [ 188, 183, 18, 16 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 11
 	}
 ,
 	"zoom_in" : 	{
-		"patching_rect" : [ 187, 165, 20, 16 ],
+		"patching_rect" : [ 188, 164, 18, 16 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}

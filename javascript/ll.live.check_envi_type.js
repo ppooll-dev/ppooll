@@ -33,12 +33,11 @@ var console = {
 }
 
 
-function list(){
+function Xlist(){ //see below
 	// ignore arguments[0], 'dummy' 
 
 	var patch = arguments[1]				// patch to load, ie sinus.maxpat
 	var patcherName = arguments[2]	// this patch's actname
-
 	var patcher = this.patcher.box;
 	var prev = 0
 	var owner = this.patcher.box
@@ -69,4 +68,38 @@ function list(){
 		// outlet(1,patch)
 	}
 
+}
+
+function anything(){
+	//works without prepending 0
+	var patch = messagename				// patch to load, ie sinus.maxpat
+	//post(patch)
+	var owner = this.patcher.box
+	
+	
+	// naviagate to top patcher
+	var isLiveEnvi = false;
+	
+	while (owner && !isLiveEnvi) {
+	  prev = owner
+	  owner = owner.patcher.box
+	  // the scripting name of the subpatch of the "environment" in live.ppooll
+	  if(prev.patcher.name === 'LIVE_PPOOLL_ENVIRONMENT'){
+	  	isLiveEnvi = true;
+	  }
+	}
+
+	if(	!isLiveEnvi ){
+		// // load '.maxpat' in Max Environment
+		// console.log('load in max envi '+patch)
+		outlet(0,patch)
+	}else{
+		// load '.maxpat' in Max For Live as bpatcher
+		console.log('creating bpatcher for: '+patch)
+
+		var g = new Global("test")
+		g.act_name = patch
+		g.sendnamed("live.load_act","act_name")
+		// outlet(1,patch)
+	}
 }

@@ -85,9 +85,14 @@ function getloc()
 	}
 }
 
-function getloc_to(a)
+function getloc_to(a,o)
 {
-messnamed (a, this.patcher.parentpatcher.parentpatcher.wind.location);
+		
+	if (o) { //objects varname
+		messnamed (a, this.patcher.parentpatcher.parentpatcher.getnamed(o).rect);
+		}
+	//window
+	else messnamed (a, this.patcher.parentpatcher.parentpatcher.wind.location);
 }
 
 function setloc(x,y)
