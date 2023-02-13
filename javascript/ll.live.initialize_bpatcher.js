@@ -28,6 +28,8 @@ autowatch = 1;
 
 var HARDCODED_PATH = "~/Documents/Max 8/Packages/ppooll/misc/ppooll_factory_presets/"
 
+var TO_HIDE = ['audioON/OFF','menubar','screen']
+
 var IGNORE_ACTS_LIST = [
   'live.midi_in',
   'live.params_in',
@@ -101,29 +103,6 @@ function make(name, instance) {
     owner.patcher.message("script","bringtofront",nameInstance)
   }
 
-  // var f = new File(relativePath, 'read', [])
-  // f.close()        
-  // f.open(relativePath)
-
-  // while(f.isopen && f.position < f.eof ){
-  //   // read file line by line to find 'window' property
-  //   var line = f.readline()
-  //   if(line.indexOf("window, ") > -1)
-  //   {
-  //     // parse property to coordinate array
-  //     var temp = line.split("window, ").pop().replace(";","")
-  //     var arr = temp.split(" ")
-  //     var coords = [arr[0], arr[1], arr[2]-arr[0], arr[3] - arr[1]]
-
-  //     // set patching rect of act's bpatcher & bring to front
-  //     owner.patcher.message("script","sendbox",nameInstance,"patching_rect",coords)
-  //     owner.patcher.message("script","bringtofront",nameInstance)
-
-  //   }
-  // }
-
-  // if(f.isopen)
-  //   f.close()
 
   // locate draggable jsui corner for acts and replace with moveable_ui for bpatcher
   if(prev.patcher.getnamed('master'))
@@ -135,6 +114,12 @@ function make(name, instance) {
   // initialize other acts if this is the ho_st
   if(name === 'ho_st'){
     console.log('create ho_st1')
+
+    for(var i=0; i<TO_HIDE.length; i++){
+      if(prev.patcher.getnamed(TO_HIDE[i])){
+        prev.patcher.message("script","hide",TO_HIDE[i])
+      }
+    }
 
     // clear out old, live.ppooll-specific acts
     if( owner.patcher.getnamed("live.midi_in1") ){
@@ -148,6 +133,6 @@ function make(name, instance) {
 
     // create live.ppooll-specific acts
     owner.patcher.message("script", "hidden", "newdefault", "live.midi_in1", 5, 91, "live.midi_in")
-    owner.patcher.message("script", "hidden", "newdefault", "live.params_in1", 48, 124, "live.params_in")
+    owner.patcher.message("script", "hidden", "newdefault", "live.params_in1", 5, 117, "live.params_in")
   }
 }
