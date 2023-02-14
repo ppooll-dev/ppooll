@@ -248,7 +248,7 @@
 ,
 		"presets" : 1,
 		"preset-ramp" : 0.0,
-		"inputs~" : "in(0)",
+		"inputs~" : "in(2)",
 		"delayL" : 163,
 		"delayR" : 261,
 		"feedback" : 0.135,

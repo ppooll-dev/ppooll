@@ -379,7 +379,8 @@
 				"pres_menu" : 0,
 				"tetris_menu" : 0,
 				"title_menu" : 0,
-				"act" : 0
+				"act" : 0,
+				"act::active_store" : 0
 			}
 
 		}

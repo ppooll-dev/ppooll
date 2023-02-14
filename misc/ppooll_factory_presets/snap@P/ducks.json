@@ -279,13 +279,13 @@
 				"data" : 				{
 					"next" : [ -1 ],
 					"select_acts" : [ 0 ],
-					"presets" : [ 1 ],
+					"presets" : [ 0 ],
 					"preset-ramp" : [ 0 ],
-					"title_menu" : [ "storagewindow" ],
+					"title_menu" : [ "clientwindow" ],
 					"pres_menu" : [ "write" ],
 					"tetris_menu" : [ "ƒ ducks.json" ],
 					"master" : [ 0 ],
-					"selected_acts" : [ "tetris@1", "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
+					"selected_acts" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
 					"act::active_store" : [ " " ]
 				}
 
@@ -300,7 +300,8 @@
 				"title_menu" : 0,
 				"pres_menu" : 0,
 				"tetris_menu" : 0,
-				"act" : 0
+				"act" : 0,
+				"act::active_store" : 0
 			}
 
 		}
