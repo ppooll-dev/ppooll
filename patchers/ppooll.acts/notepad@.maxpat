@@ -3,7 +3,7 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
+			"minor" : 5,
 			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
@@ -155,7 +155,9 @@
 						"title_menu" : 0,
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
-						"act" : 0
+						"master" : 0,
+						"act" : 0,
+						"act::active_store" : 0
 					}
 ,
 					"hidden" : 1,
@@ -173,7 +175,7 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 20, 87, 680, 542 ],
+						"client_rect" : [ 1011, 146, 1671, 601 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 430, 270, 1276, 999 ]
@@ -227,8 +229,8 @@
 						"master" : [ 0 ],
 						"pres_menu" : [ "_" ],
 						"presets" : [ 0 ],
-						"tetris_menu" : [ "" ],
-						"textfield" : [ "nota", "bene" ],
+						"tetris_menu" : [ "ƒ default.json" ],
+						"textfield" : [ "nota bene" ],
 						"title_menu" : [ "clientwindow" ]
 					}
 ,
@@ -298,7 +300,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-13",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "bigger", ",", "-", ",", "ƒ", "default" ],
+					"items" : [ "-", ",", "-", ",", "ƒ", "bigger.json", ",", "ƒ", "default.json" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -340,7 +342,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
+							"minor" : 5,
 							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -555,6 +557,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.actname.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.actname.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
@@ -646,8 +655,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll_fastforward.mxo",
-				"type" : "iLaX"
+				"name" : "ll_fastforward.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/externals/filip",
+				"patcherrelativepath" : "../../externals/filip",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
 				"name" : "ll_number.mxo",

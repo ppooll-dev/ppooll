@@ -5,6 +5,7 @@
 			"1001" : 			{
 				"id" : 1001,
 				"data" : 				{
+					"inputs~" : [ "in(2)" ],
 					"preset-ramp" : [ 0 ],
 					"presets" : [ 0 ],
 					"delayL" : [ 163 ],
@@ -17,11 +18,9 @@
 					"tetris_menu" : [ "" ],
 					"title_menu" : [ "info" ],
 					"act::active_store" : [ 0 ],
-					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
 					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::dest_acts" : [ "ho_st1", "ho_st1", "fffb@1", "fffb@1" ],
-					"ll.blues::dest_channels" : [ "out_l", "out_r", "left_in", "right_in" ],
-					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+					"ll.blues::outputs" : [ "ho_st1~out.1", "fffb@1~in.1" ],
+					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
 				}
 
 			}
@@ -29,6 +28,7 @@
 			"1002" : 			{
 				"id" : 1002,
 				"data" : 				{
+					"inputs~" : [ "in(2)" ],
 					"preset-ramp" : [ 0 ],
 					"presets" : [ 0 ],
 					"delayL" : [ 163 ],
@@ -41,11 +41,9 @@
 					"tetris_menu" : [ "" ],
 					"title_menu" : [ "info" ],
 					"act::active_store" : [ 0 ],
-					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
 					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::dest_acts" : [ "ho_st1", "ho_st1", "fffb@1", "fffb@1" ],
-					"ll.blues::dest_channels" : [ "out_l", "out_r", "left_in", "right_in" ],
-					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+					"ll.blues::outputs" : [ "ho_st1~out.1", "fffb@1~in.1" ],
+					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
 				}
 
 			}
@@ -53,6 +51,7 @@
 			"1003" : 			{
 				"id" : 1003,
 				"data" : 				{
+					"inputs~" : [ "in(2)" ],
 					"preset-ramp" : [ 0 ],
 					"presets" : [ 0 ],
 					"delayL" : [ 115 ],
@@ -65,11 +64,9 @@
 					"tetris_menu" : [ "" ],
 					"title_menu" : [ "info" ],
 					"act::active_store" : [ 0 ],
-					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
 					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::dest_acts" : [ "ho_st1", "ho_st1", "fffb@1", "fffb@1" ],
-					"ll.blues::dest_channels" : [ "out_l", "out_r", "left_in", "right_in" ],
-					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+					"ll.blues::outputs" : [ "ho_st1~out.1", "fffb@1~in.1" ],
+					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
 				}
 
 			}
@@ -77,6 +74,7 @@
 			"1004" : 			{
 				"id" : 1004,
 				"data" : 				{
+					"inputs~" : [ "in(2)" ],
 					"preset-ramp" : [ 0 ],
 					"presets" : [ 0 ],
 					"delayL" : [ 163 ],
@@ -89,11 +87,9 @@
 					"tetris_menu" : [ "" ],
 					"title_menu" : [ "info" ],
 					"act::active_store" : [ 0 ],
-					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
 					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::dest_acts" : [ "ho_st1", "ho_st1", "fffb@1", "fffb@1" ],
-					"ll.blues::dest_channels" : [ "out_l", "out_r", "left_in", "right_in" ],
-					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+					"ll.blues::outputs" : [ "ho_st1~out.1", "fffb@1~in.1" ],
+					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
 				}
 
 			}
@@ -101,6 +97,7 @@
 			"1005" : 			{
 				"id" : 1005,
 				"data" : 				{
+					"inputs~" : [ "in(2)" ],
 					"preset-ramp" : [ 0 ],
 					"presets" : [ 0 ],
 					"delayL" : [ 88 ],
@@ -113,11 +110,9 @@
 					"tetris_menu" : [ "" ],
 					"title_menu" : [ "info" ],
 					"act::active_store" : [ 0 ],
-					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
 					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::dest_acts" : [ "ho_st1", "ho_st1", "fffb@1", "fffb@1" ],
-					"ll.blues::dest_channels" : [ "out_l", "out_r", "left_in", "right_in" ],
-					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+					"ll.blues::outputs" : [ "ho_st1~out.1", "fffb@1~in.1" ],
+					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
 				}
 
 			}
@@ -125,6 +120,7 @@
 			"1006" : 			{
 				"id" : 1006,
 				"data" : 				{
+					"inputs~" : [ "in(2)" ],
 					"preset-ramp" : [ 0 ],
 					"presets" : [ 0 ],
 					"delayL" : [ 115 ],
@@ -137,11 +133,9 @@
 					"tetris_menu" : [ "" ],
 					"title_menu" : [ "info" ],
 					"act::active_store" : [ 0 ],
-					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
 					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::dest_acts" : [ "ho_st1", "ho_st1", "fffb@1", "fffb@1" ],
-					"ll.blues::dest_channels" : [ "out_l", "out_r", "left_in", "right_in" ],
-					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+					"ll.blues::outputs" : [ "ho_st1~out.1", "fffb@1~in.1" ],
+					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
 				}
 
 			}
@@ -149,6 +143,7 @@
 			"1007" : 			{
 				"id" : 1007,
 				"data" : 				{
+					"inputs~" : [ "in(2)" ],
 					"preset-ramp" : [ 0 ],
 					"presets" : [ 0 ],
 					"delayL" : [ 115 ],
@@ -161,11 +156,9 @@
 					"tetris_menu" : [ "" ],
 					"title_menu" : [ "info" ],
 					"act::active_store" : [ 0 ],
-					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
 					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::dest_acts" : [ "ho_st1", "ho_st1", "fffb@1", "fffb@1" ],
-					"ll.blues::dest_channels" : [ "out_l", "out_r", "left_in", "right_in" ],
-					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+					"ll.blues::outputs" : [ "ho_st1~out.1", "fffb@1~in.1" ],
+					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
 				}
 
 			}
@@ -173,6 +166,7 @@
 			"1008" : 			{
 				"id" : 1008,
 				"data" : 				{
+					"inputs~" : [ "in(2)" ],
 					"preset-ramp" : [ 0 ],
 					"presets" : [ 0 ],
 					"delayL" : [ 1584 ],
@@ -185,11 +179,9 @@
 					"tetris_menu" : [ "" ],
 					"title_menu" : [ "info" ],
 					"act::active_store" : [ 0 ],
-					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
-					"ll.blues::levels" : [ 1.0, 1.0, 0.55, 0.55, 10.0, 0.0, 0.5 ],
-					"ll.blues::dest_acts" : [ "ho_st1", "ho_st1", "fffb@1", "fffb@1" ],
-					"ll.blues::dest_channels" : [ "out_l", "out_r", "left_in", "right_in" ],
-					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+					"ll.blues::levels" : [ 1.0, 1.0, 0.55, 1.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "fffb@1~in.1" ],
+					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
 				}
 
 			}
@@ -197,6 +189,7 @@
 			"1009" : 			{
 				"id" : 1009,
 				"data" : 				{
+					"inputs~" : [ "in(2)" ],
 					"preset-ramp" : [ 0 ],
 					"presets" : [ 0 ],
 					"delayL" : [ 13 ],
@@ -209,11 +202,9 @@
 					"tetris_menu" : [ "" ],
 					"title_menu" : [ "info" ],
 					"act::active_store" : [ 0 ],
-					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
 					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::dest_acts" : [ "ho_st1", "ho_st1", "fffb@1", "fffb@1" ],
-					"ll.blues::dest_channels" : [ "out_l", "out_r", "left_in", "right_in" ],
-					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+					"ll.blues::outputs" : [ "ho_st1~out.1", "fffb@1~in.1" ],
+					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
 				}
 
 			}
@@ -221,6 +212,7 @@
 			"1010" : 			{
 				"id" : 1010,
 				"data" : 				{
+					"inputs~" : [ "in(2)" ],
 					"preset-ramp" : [ 0 ],
 					"presets" : [ 0 ],
 					"delayL" : [ 92 ],
@@ -233,11 +225,9 @@
 					"tetris_menu" : [ "" ],
 					"title_menu" : [ "info" ],
 					"act::active_store" : [ 0 ],
-					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
 					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::dest_acts" : [ "ho_st1", "ho_st1", "fffb@1", "fffb@1" ],
-					"ll.blues::dest_channels" : [ "out_l", "out_r", "left_in", "right_in" ],
-					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+					"ll.blues::outputs" : [ "ho_st1~out.1", "fffb@1~in.1" ],
+					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
 				}
 
 			}
@@ -245,6 +235,7 @@
 			"1011" : 			{
 				"id" : 1011,
 				"data" : 				{
+					"inputs~" : [ "in(2)" ],
 					"preset-ramp" : [ 0 ],
 					"presets" : [ 0 ],
 					"delayL" : [ 115 ],
@@ -257,11 +248,9 @@
 					"tetris_menu" : [ "" ],
 					"title_menu" : [ "info" ],
 					"act::active_store" : [ 0 ],
-					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
 					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::dest_acts" : [ "ho_st1", "ho_st1", "fffb@1", "fffb@1" ],
-					"ll.blues::dest_channels" : [ "out_l", "out_r", "left_in", "right_in" ],
-					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+					"ll.blues::outputs" : [ "ho_st1~out.1", "fffb@1~in.1" ],
+					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
 				}
 
 			}
@@ -269,6 +258,7 @@
 			"1012" : 			{
 				"id" : 1012,
 				"data" : 				{
+					"inputs~" : [ "in(2)" ],
 					"preset-ramp" : [ 0 ],
 					"presets" : [ 0 ],
 					"delayL" : [ 1766 ],
@@ -281,11 +271,9 @@
 					"tetris_menu" : [ "" ],
 					"title_menu" : [ "info" ],
 					"act::active_store" : [ 0 ],
-					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
 					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::dest_acts" : [ "ho_st1", "ho_st1", "fffb@1", "fffb@1" ],
-					"ll.blues::dest_channels" : [ "out_l", "out_r", "left_in", "right_in" ],
-					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+					"ll.blues::outputs" : [ "ho_st1~out.1", "fffb@1~in.1" ],
+					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
 				}
 
 			}
@@ -293,6 +281,7 @@
 			"1013" : 			{
 				"id" : 1013,
 				"data" : 				{
+					"inputs~" : [ "in(2)" ],
 					"preset-ramp" : [ 0 ],
 					"presets" : [ 0 ],
 					"delayL" : [ 0 ],
@@ -305,11 +294,9 @@
 					"tetris_menu" : [ "" ],
 					"title_menu" : [ "info" ],
 					"act::active_store" : [ 0 ],
-					"ll.inputmix::levels" : [ 0.7, 0.7, 1 ],
-					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::dest_acts" : [ "ho_st1", "ho_st1", "fffb@1", "fffb@1" ],
-					"ll.blues::dest_channels" : [ "out_l", "out_r", "left_in", "right_in" ],
-					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 0.7, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "fffb@1~in.1" ],
+					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
 				}
 
 			}
@@ -317,6 +304,7 @@
 			"1014" : 			{
 				"id" : 1014,
 				"data" : 				{
+					"inputs~" : [ "in(2)" ],
 					"preset-ramp" : [ 0 ],
 					"presets" : [ 0 ],
 					"delayL" : [ 26.290001 ],
@@ -329,11 +317,9 @@
 					"tetris_menu" : [ "" ],
 					"title_menu" : [ "info" ],
 					"act::active_store" : [ 0 ],
-					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
 					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::dest_acts" : [ "ho_st1", "ho_st1", "fffb@1", "fffb@1" ],
-					"ll.blues::dest_channels" : [ "out_l", "out_r", "left_in", "right_in" ],
-					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+					"ll.blues::outputs" : [ "ho_st1~out.1", "fffb@1~in.1" ],
+					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
 				}
 
 			}
@@ -341,6 +327,7 @@
 			"1015" : 			{
 				"id" : 1015,
 				"data" : 				{
+					"inputs~" : [ "in(2)" ],
 					"preset-ramp" : [ 0 ],
 					"presets" : [ 0 ],
 					"delayL" : [ 26.290001 ],
@@ -353,11 +340,9 @@
 					"tetris_menu" : [ "" ],
 					"title_menu" : [ "info" ],
 					"act::active_store" : [ 0 ],
-					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
 					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::dest_acts" : [ "ho_st1", "ho_st1", "fffb@1", "fffb@1" ],
-					"ll.blues::dest_channels" : [ "out_l", "out_r", "left_in", "right_in" ],
-					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+					"ll.blues::outputs" : [ "ho_st1~out.1", "fffb@1~in.1" ],
+					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
 				}
 
 			}
@@ -365,6 +350,7 @@
 			"1016" : 			{
 				"id" : 1016,
 				"data" : 				{
+					"inputs~" : [ "in(2)" ],
 					"preset-ramp" : [ 0 ],
 					"presets" : [ 0 ],
 					"delayL" : [ 1584 ],
@@ -377,11 +363,9 @@
 					"tetris_menu" : [ "" ],
 					"title_menu" : [ "info" ],
 					"act::active_store" : [ 0 ],
-					"ll.inputmix::levels" : [ 1.0, 1.0, 1 ],
-					"ll.blues::levels" : [ 1.0, 1.0, 0.55, 0.55, 10.0, 0.0, 0.5 ],
-					"ll.blues::dest_acts" : [ "ho_st1", "ho_st1", "fffb@1", "fffb@1" ],
-					"ll.blues::dest_channels" : [ "out_l", "out_r", "left_in", "right_in" ],
-					"ll.blues::state" : [ 1, 1, 1, 1, 0, 0, 1 ]
+					"ll.blues::levels" : [ 1.0, 1.0, 0.55, 1.0, 10.0, 0.0, 0.5 ],
+					"ll.blues::outputs" : [ "ho_st1~out.1", "fffb@1~in.1" ],
+					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
 				}
 
 			}
@@ -394,7 +378,9 @@
 				"presets" : 0,
 				"pres_menu" : 0,
 				"tetris_menu" : 0,
-				"title_menu" : 0
+				"title_menu" : 0,
+				"act" : 0,
+				"act::active_store" : 0
 			}
 
 		}

@@ -257,7 +257,7 @@
 ,
 		"forbiddenP" : 		{
 			"description" : "spectral filter or vocoder",
-			"authors" : 1,
+			"authors" : [ 1, 16 ],
 			"tags" : 9
 		}
 ,

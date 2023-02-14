@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 772.0, 158.0, 209.0, 110.0 ],
+		"rect" : [ 694.0, 192.0, 209.0, 110.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -513,10 +513,20 @@
 , 			{
 				"box" : 				{
 					"active" : 					{
+						"folder_menu" : 0,
+						"clock" : 0,
+						"def" : 0,
+						"filetype" : 0,
+						"rec" : 0,
 						"title_menu" : 0,
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
 						"master" : 0,
+						"f" : 0,
+						"ff" : 0,
+						"open!!" : 0,
+						"timer" : 0,
+						"act" : 0,
 						"act::active_store" : 0
 					}
 ,
@@ -531,7 +541,15 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 646.0, 30.0, 96.0, 22.0 ],
 					"priority" : 					{
+						"channels" : 1,
 						"folder_menu" : 8,
+						"clock" : 9,
+						"def" : 9,
+						"filetype" : 9,
+						"gain" : 9,
+						"input" : 9,
+						"rec" : 9,
+						"samptype" : 9,
 						"title_menu" : 2010,
 						"pres_menu" : 2011,
 						"tetris_menu" : 2012,
@@ -539,7 +557,10 @@
 						"f" : 3000,
 						"ff" : 3000,
 						"open!!" : 3000,
-						"timer" : 3000
+						"timer" : 3000,
+						"act::active_store" : 9,
+						"inputs~" : 2,
+						"outputs~" : 3
 					}
 ,
 					"saved_object_attributes" : 					{
@@ -618,7 +639,7 @@
 						"samptype" : [ "int24" ],
 						"tetris_menu" : [ "" ],
 						"timer" : [ -1 ],
-						"title_menu" : [ "subpatch" ]
+						"title_menu" : [ "clientwindow" ]
 					}
 ,
 					"text" : "autopattr autopattr",
@@ -688,7 +709,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-78",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "-", ",", "ƒ", "default" ],
+					"items" : [ "-", ",", "-", ",", "ƒ", "default.json" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -2233,7 +2254,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 358.5, 164.0, 133.0, 29.0 ],
-																	"text" : "symbol \"Macintosh HD:/Users/klaus/Music/\""
+																	"text" : "\"Macintosh HD:/Users/klaus/Music/\""
 																}
 
 															}

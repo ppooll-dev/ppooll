@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 810.0, 510.0, 225.0, 86.0 ],
+		"rect" : [ 458.0, 330.0, 225.0, 86.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -50,7 +50,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 404.0, 313.0, 94.0, 20.0 ],
-					"restore" : [ "flop1", "sinus1", "gizmo@1", "notepad@1", "ho_st1" ],
+					"restore" : [ "ho_st1", "overdrive@1", "modul.ator1", "prdelay@1", "modul.ator2", "fffb@1" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -465,12 +465,13 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-5",
+																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 273.333333333333371, 200.0, 322.0, 22.0 ],
-																	"text" : "ho_st1 sinus1 flop1 notepad@1 gizmo@1"
+																	"text" : "ho_st1 overdrive@1 modul.ator1 prdelay@1 modul.ator2 fffb@1"
 																}
 
 															}
@@ -627,7 +628,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 298.333333333333371, 73.797607421875, 321.0, 35.0 ],
-																	"text" : "sinus1 ho_st1 buffer_host1 flop1 notepad@1 snap@1 gizmo@1"
+																	"text" : "overdrive@1 modul.ator1 snap@1 ho_st1 prdelay@1 modul.ator2 fffb@1"
 																}
 
 															}
@@ -791,13 +792,13 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-31",
-													"linecount" : 7,
+													"linecount" : 10,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 622.0, 109.0, 50.0, 102.0 ],
-													"text" : "flop1 sinus1 gizmo@1 notepad@1 ho_st1"
+													"text" : "ho_st1 overdrive@1 modul.ator1 prdelay@1 modul.ator2 fffb@1"
 												}
 
 											}
@@ -835,13 +836,13 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-29",
-													"linecount" : 9,
+													"linecount" : 10,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 113.0, 135.0, 50.0, 102.0 ],
-													"text" : "ho_st1 sinus1 flop1 notepad@1 tetris@1 gizmo@1"
+													"text" : "ho_st1 overdrive@1 modul.ator1 prdelay@1 modul.ator2 fffb@1"
 												}
 
 											}
@@ -940,7 +941,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 372.0, 296.0, 50.0, 22.0 ],
-													"text" : "3"
+													"text" : "0"
 												}
 
 											}
@@ -3245,7 +3246,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 341.0, 155.0, 50.0, 22.0 ],
-																	"text" : "clear!"
+																	"text" : "_"
 																}
 
 															}
@@ -3410,12 +3411,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-32",
+													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 526.0, 221.0, 184.0, 20.0 ],
-													"text" : "flop1 sinus1 gizmo@1 ho_st1"
+													"text" : "modul.ator1 prdelay@1 fffb@1 modul.ator2 overdrive@1"
 												}
 
 											}
@@ -3814,7 +3816,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 552.0, 372.0, 50.0, 20.0 ]
+													"patching_rect" : [ 552.0, 372.0, 50.0, 20.0 ],
+													"text" : "_"
 												}
 
 											}
@@ -3940,7 +3943,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 507.0, 124.0, 154.0, 20.0 ],
-													"text" : "test.json 1"
+													"text" : "ducks.json 1"
 												}
 
 											}
@@ -3982,7 +3985,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 597.0, 501.0, 186.0, 20.0 ],
-													"text" : "send ho_st1"
+													"text" : "send overdrive@1"
 												}
 
 											}
@@ -3991,13 +3994,13 @@
 													"fontname" : "Arial",
 													"fontsize" : 10.0,
 													"id" : "obj-93",
-													"linecount" : 4,
+													"linecount" : 5,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 474.0, 530.0, 206.0, 53.0 ],
-													"text" : "read \"Macintosh HD:/Users/klaus/Documents/Max 8/Library/ppooll_presets/snap@P/test_folder/ho_st1.json\""
+													"text" : "read \"Macintosh HD:/Users/klaus/Documents/Max 8/Packages/ppooll/misc/ppooll_factory_presets/snap@P/ducks_folder/overdrive@1.json\""
 												}
 
 											}
@@ -5938,12 +5941,12 @@
 					"restore" : 					{
 						"master" : [ 0 ],
 						"next" : [ -1 ],
-						"pres_menu" : [ "" ],
+						"pres_menu" : [ "_" ],
 						"preset-ramp" : [ 0 ],
 						"presets" : [ 0 ],
-						"select_acts" : [ 3 ],
-						"tetris_menu" : [ "ƒ default" ],
-						"title_menu" : [ "subpatch" ]
+						"select_acts" : [ 0 ],
+						"tetris_menu" : [ "ƒ default.json" ],
+						"title_menu" : [ "clientwindow" ]
 					}
 ,
 					"text" : "autopattr autopattr",
@@ -5988,7 +5991,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-5",
 					"ignoreclick" : 1,
-					"items" : [ "ambi_demo", ",", "ducks_new", ",", "fugen10", ",", "fugen12", ",", "fugen13", ",", "fugen14", ",", "fugen15", ",", "fugen6", ",", "fugen7", ",", "fugen8", ",", "fugen9", ",", "spread1", ",", "spread2", ",", "spread3", ",", "spread4", ",", "spread5", ",", "test", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_", ",", "-", ",", "ƒ ducks" ],
+					"items" : [ "ambi_demo", ",", "ducks_new", ",", "fugen10", ",", "fugen12", ",", "fugen13", ",", "fugen14", ",", "fugen15", ",", "fugen6", ",", "fugen7", ",", "fugen8", ",", "fugen9", ",", "spread1", ",", "spread2", ",", "spread3", ",", "spread4", ",", "spread5", ",", "test", ",", "ƒ mc.gizmo@", ",", "ƒ te", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_", ",", "-", ",", "ƒ ducks" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -6013,7 +6016,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-7",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "ducks", ",", "fugen", ",", "many_slots", ",", "-", ",", "ƒ", "default", ",", "ƒ", "ducks" ],
+					"items" : [ "-", ",", "fugen", ",", "fugen.json", ",", "many_slots", ",", "many_slots.json", ",", "-", ",", "ƒ", "default.json", ",", "ƒ", "ducks.json" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -6073,7 +6076,7 @@
 					"elementcolor" : [ 0.376471, 0.384314, 0.4, 1.0 ],
 					"fontsize" : 10.0,
 					"id" : "obj-13",
-					"items" : [ "ho_st1", ",", "sinus1", ",", "flop1", ",", "notepad@1", ",", "gizmo@1" ],
+					"items" : [ "ho_st1", ",", "overdrive@1", ",", "modul.ator1", ",", "prdelay@1", ",", "modul.ator2", ",", "fffb@1" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -6276,13 +6279,6 @@
 , 			{
 				"name" : "shell.mxo",
 				"type" : "iLaX"
-			}
-, 			{
-				"name" : "test.json",
-				"bootpath" : "~/Documents/Max 8/Library/ppooll_presets/snap@P",
-				"patcherrelativepath" : "../../../../Library/ppooll_presets/snap@P",
-				"type" : "JSON",
-				"implicit" : 1
 			}
 , 			{
 				"name" : "tetrishelp.js",

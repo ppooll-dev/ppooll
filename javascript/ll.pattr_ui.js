@@ -387,6 +387,7 @@ function onclick(x,y,but,mod1,shift,capslock,option,mod2)
 						outlet(0,"ctrl", click);
 					}
 					else {
+						//post ("recall", click);
 				outlet(0,"recall", click);
 				messnamed(act_name, "active_set", "recall", click);
 				set_current(click);

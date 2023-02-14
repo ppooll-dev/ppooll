@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 321.0, 240.0, 182.0, 278.0 ],
+		"rect" : [ 270.0, 202.0, 182.0, 278.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -114,7 +114,7 @@
 					"hidden" : 1,
 					"id" : "obj-31",
 					"maxclass" : "ll_number",
-					"min" : 0.108843537414966,
+					"min" : 417.078844758118123,
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
@@ -123,7 +123,7 @@
 					"selectcolor" : [ 0.45098, 1.0, 0.698039, 0.470588 ],
 					"slidercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 					"slidercolornofocus" : [ 0.478431, 0.478431, 0.478431, 0.0 ],
-					"slidermax" : 2867.301514000000225,
+					"slidermax" : 2311.541950113378789,
 					"varname" : "end"
 				}
 
@@ -290,7 +290,7 @@
 					"selectcolor" : [ 0.45098, 1.0, 0.698039, 0.470588 ],
 					"slidercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 					"slidercolornofocus" : [ 0.478431, 0.478431, 0.478431, 0.0 ],
-					"slidermax" : 2867.301514000000225,
+					"slidermax" : 2311.541950113378789,
 					"varname" : "length"
 				}
 
@@ -313,7 +313,7 @@
 					"selectcolor" : [ 0.45098, 1.0, 0.698039, 0.470588 ],
 					"slidercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 					"slidercolornofocus" : [ 0.478431, 0.478431, 0.478431, 0.0 ],
-					"slidermax" : 2867.301514000000225,
+					"slidermax" : 2311.541950113378789,
 					"varname" : "start"
 				}
 
@@ -842,7 +842,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 10.0,
 					"id" : "obj-39",
-					"items" : [ "lop", ",", "flop_smooth", ",", "flop_sm_env0", ",", "flop_quik", ",", "flop_qu_env0", ",", "lloopp_smooth", ",", "lloopp_quick", ",", "xloop_smooth", ",", "xloop_quick" ],
+					"items" : [ "lop", ",", "flop_smooth", ",", "flop_sm_env0", ",", "flop_quik", ",", "flop_qu_env0", ",", "lloopp_smooth", ",", "lloopp_quick" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -868,7 +868,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-40",
-					"items" : [ "3dem.aif", ",", "anton.aif", ",", "artradioC.aiff", ",", "bass-harmonics.aif", ",", "bowed_floss.aif", ",", "saturn.aiff" ],
+					"items" : [ "anton.aif", ",", "apollo13.aif", ",", "artradioC.aiff", ",", "bass-harmonics.aif", ",", "bowed_floss.aif", ",", "saturn.aiff" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -964,7 +964,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 231.0, 265.0, 25.0, 25.0 ]
+									"patching_rect" : [ 235.5, 305.0, 25.0, 25.0 ]
 								}
 
 							}
@@ -1645,7 +1645,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 282.0, 134.0, 96.0, 22.0 ],
-									"text" : "length 0.1"
+									"text" : "length 244.57"
 								}
 
 							}
@@ -1895,7 +1895,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 231.0, 234.0, 83.0, 22.0 ],
+									"patching_rect" : [ 235.5, 274.0, 83.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -7225,10 +7225,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 54, 397, 594, 1106 ],
+						"client_rect" : [ 545, 133, 1800, 849 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 365, 44, 816, 172 ]
+						"storage_rect" : [ 583, 68, 1034, 196 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -7284,20 +7284,20 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 655.0, 136.0, 107.0, 22.0 ],
 					"restore" : 					{
-						"buffer" : [ "3dem.aif" ],
-						"current_end" : [ 0.100000001490116 ],
-						"current_start" : [ 0.0 ],
-						"end" : [ 0.109999999403954 ],
-						"env-scale" : [ 56.956520080566406 ],
+						"buffer" : [ "anton.aif" ],
+						"current_end" : [ 244.57000732421875 ],
+						"current_start" : [ 416.970001220703125 ],
+						"end" : [ 661.53997802734375 ],
+						"env-scale" : [ 24.189189189189189 ],
 						"ext~vol" : [ 0 ],
 						"full_select" : [ -1 ],
 						"keep-time" : [ 0 ],
 						"l-ramp" : [ 0.0 ],
 						"l-ramp-mode" : [ 1 ],
-						"length" : [ 0.100000001490116 ],
+						"length" : [ 244.57000732421875 ],
 						"length-ramp-stop" : [ -1 ],
 						"length/end" : [ 0 ],
-						"length_rel" : [ 0.000034875997868 ],
+						"length_rel" : [ 0.105803836833774 ],
 						"lookup" : [ 1 ],
 						"master" : [ 0 ],
 						"on/off" : [ 0 ],
@@ -7314,11 +7314,11 @@
 						"ramp2pitch" : [ 0 ],
 						"s-ramp" : [ 0.0 ],
 						"s-ramp-mode" : [ 1 ],
-						"start" : [ 0.0 ],
+						"start" : [ 416.970001220703125 ],
 						"start-ramp-stop" : [ -1 ],
-						"start_rel" : [ 0.0 ],
+						"start_rel" : [ 0.18038608436254 ],
 						"tetris_menu" : [ "" ],
-						"title_menu" : [ "clientwindow" ],
+						"title_menu" : [ "subpatch" ],
 						"ubumenu" : [ "start" ],
 						"zero" : [ -1 ]
 					}
@@ -7587,8 +7587,8 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "actmaker.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
+				"bootpath" : "~/.Trash/ppooll 15.33.25/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../../../../../.Trash/ppooll 15.33.25/patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -7622,8 +7622,8 @@
 			}
 , 			{
 				"name" : "ll.actnamehelper.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
+				"bootpath" : "~/.Trash/ppooll 15.33.25/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../../../../../.Trash/ppooll 15.33.25/patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -7684,7 +7684,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.flop_lop.maxpat",
+				"name" : "ll.flop_lloopp.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
@@ -7769,8 +7769,8 @@
 			}
 , 			{
 				"name" : "ll.psto1.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
+				"bootpath" : "~/.Trash/ppooll 15.33.25/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../../../../../.Trash/ppooll 15.33.25/patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -7818,8 +7818,8 @@
 			}
 , 			{
 				"name" : "ll.strip#.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
+				"bootpath" : "~/.Trash/ppooll 15.33.25/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../../../../../.Trash/ppooll 15.33.25/patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}

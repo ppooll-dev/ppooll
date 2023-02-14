@@ -1,0 +1,203 @@
+{
+	"window" : [ 391, 343, 691, 688 ],
+	"lcd" : 	{
+		"patching_rect" : [ 0, 45, 300, 300 ],
+		"hidden" : 0
+	}
+,
+	"auto_rotate" : 	{
+		"patching_rect" : [ 199, 15, 25, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 149, 0, 50, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 61, 0, 91, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "vbap@1" ]
+	}
+,
+	"outputs" : 	{
+		"patching_rect" : [ 26, 28, 29, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"inputs" : 	{
+		"patching_rect" : [ 0, 28, 29, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"selected" : 	{
+		"patching_rect" : [ 0, 60, 28, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"spread" : 	{
+		"patching_rect" : [ 0, 45, 30, 20 ],
+		"hidden" : 1,
+		"fontsize" : 10
+	}
+,
+	"selected_label" : 	{
+		"patching_rect" : [ 2, 71, 24, 17 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"2D<>3D" : 	{
+		"patching_rect" : [ 74, 14, 21, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"size" : 	{
+		"patching_rect" : [ 42, 15, 32, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"spread_com" : 	{
+		"patching_rect" : [ 28, 44, 40, 17 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"input_label" : 	{
+		"patching_rect" : [ 1, 17, 21, 17 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"output_label" : 	{
+		"patching_rect" : [ 21, 17, 28, 17 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"default" : 	{
+		"patching_rect" : [ 53, 30, 39, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"def" : 	{
+		"patching_rect" : [ 89, 30, 36, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"lcd_p" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 191, 352, 49, 20 ],
+		"hidden" : 1
+	}
+,
+	"snap2close" : 	{
+		"patching_rect" : [ 93, 15, 31, 16 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"walk_amount" : 	{
+		"patching_rect" : [ 518, 17, 35, 20 ],
+		"hidden" : 1,
+		"fontsize" : 10
+	}
+,
+	"walk_on" : 	{
+		"patching_rect" : [ 199, 0, 36, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"out_ramp" : 	{
+		"patching_rect" : [ 124, 30, 75, 15 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"jump_ramp" : 	{
+		"patching_rect" : [ 124, 15, 75, 15 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"walk_min" : 	{
+		"patching_rect" : [ 548, 17, 36, 20 ],
+		"hidden" : 1,
+		"fontsize" : 10
+	}
+,
+	"walk_max" : 	{
+		"patching_rect" : [ 584, 17, 36, 20 ],
+		"hidden" : 1,
+		"fontsize" : 10
+	}
+,
+	"auto_bounce" : 	{
+		"patching_rect" : [ 223, 15, 30, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"auto_clear" : 	{
+		"patching_rect" : [ 252, 15, 17, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"walk_time" : 	{
+		"patching_rect" : [ 235, 0, 65, 16 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"auto_move" : 	{
+		"patching_rect" : [ 268, 15, 32, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"walk_list" : 	{
+		"patching_rect" : [ 448, 366, 18, 83 ],
+		"hidden" : 1
+	}
+,
+	"rotate_list" : 	{
+		"patching_rect" : [ 474, 366, 23, 83 ],
+		"hidden" : 1
+	}
+,
+	"bounce_list" : 	{
+		"patching_rect" : [ 510, 366, 21, 83 ],
+		"hidden" : 1
+	}
+,
+	"clear_rotate" : 	{
+		"patching_rect" : [ 540, 375, 50, 20 ],
+		"hidden" : 1,
+		"fontsize" : 10
+	}
+,
+	"clear_bounce" : 	{
+		"patching_rect" : [ 540, 409, 50, 20 ],
+		"hidden" : 1,
+		"fontsize" : 10
+	}
+,
+	"def_outputs" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 302, 3, 222, 85 ],
+		"hidden" : 1
+	}
+
+}
