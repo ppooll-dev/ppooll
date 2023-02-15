@@ -95,22 +95,29 @@ function getloc_to(a,o)
 	else messnamed (a, this.patcher.parentpatcher.parentpatcher.wind.location);
 }
 
-function setloc(x,y)
+function setloc(x,y,o)
 {
-	if(!is_bpatcher()){
-		// console.log('is Max runtime; set patch window location')
-		var p = this.patcher.parentpatcher.parentpatcher;
-		p.wind.location = [x,y,p.wind.location[2]-p.wind.location[0]+x,p.wind.location[3]-p.wind.location[1]+y];
+	if (o) { //an object
+		var obj = this.patcher.parentpatcher.parentpatcher.getnamed(o);
+		obj.rect = [x,y,obj.rect[2]-obj.rect[0]+x,obj.rect[3]-obj.rect[1]+y];
+		//post(o, obj.rect, "\n");
+	}
+	else {
+		if(!is_bpatcher()){
+			// console.log('is Max runtime; set patch window location')
+			var p = this.patcher.parentpatcher.parentpatcher;
+			p.wind.location = [x,y,p.wind.location[2]-p.wind.location[0]+x,p.wind.location[3]-p.wind.location[1]+y];
 
-	}else{
-		console.log('is live.ppooll; set patch window location')
-		var currentRect = this.patcher.parentpatcher.parentpatcher.box.rect
-		var objSize = [currentRect[2] - currentRect[0], currentRect[3] - currentRect[1]];
+		}else{
+			console.log('is live.ppooll; set patch window location')
+			var currentRect = this.patcher.parentpatcher.parentpatcher.box.rect
+			var objSize = [currentRect[2] - currentRect[0], currentRect[3] - currentRect[1]];
 
-		this.patcher.parentpatcher.parentpatcher.box.rect = [x, y, x+objSize[0], y+objSize[1]]
+			this.patcher.parentpatcher.parentpatcher.box.rect = [x, y, x+objSize[0], y+objSize[1]]
 
-		// environment.message("script","sendbox",nameInstance,"position",x,y)
-		// environment.message("script","bringtofront",nameInstance)
+			// environment.message("script","sendbox",nameInstance,"position",x,y)
+			// environment.message("script","bringtofront",nameInstance)
+		}
 	}
 }
 
