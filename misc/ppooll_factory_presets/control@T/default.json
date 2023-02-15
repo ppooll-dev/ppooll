@@ -1,5 +1,5 @@
 {
-	"window" : [ 839, 333, 1030, 386 ],
+	"window" : [ 488, 441, 679, 494 ],
 	"on/off" : 	{
 		"patching_rect" : [ 124, 0, 23, 16 ],
 		"hidden" : 0,
@@ -122,6 +122,12 @@
 	"send_back_light" : 	{
 		"patching_rect" : [ 99, 35, 17, 17 ],
 		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"chans" : 	{
+		"patching_rect" : [ 73, 18, 55, 14 ],
+		"hidden" : 1,
 		"fontsize" : 12
 	}
 
