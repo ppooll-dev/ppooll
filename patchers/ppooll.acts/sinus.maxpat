@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 600.0, 190.0, 133.0, 200.0 ],
+		"rect" : [ 725.0, 313.0, 133.0, 200.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -66,7 +66,7 @@
 , 			{
 				"box" : 				{
 					"annotation" : "ll.blues",
-					"args" : [ "@levels", 0.0, 0.0, 0.0, 0.0, 10.0, 0.0, 0.5, "@outputs", "ho_st1~out.0", "no~-no-", "@state", 2, 1, 0, 0, 1, 0 ],
+					"args" : [ "@outputs", "ho_st1~out.1", "no~-no-", "@state", 2, 1, 0, 0, 1, 0 ],
 					"bgmode" : 0,
 					"border" : 1,
 					"clickthrough" : 0,
@@ -857,7 +857,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 364.0, 344.0, 50.0, 20.0 ],
-													"text" : "0. 20"
+													"text" : "1. 20"
 												}
 
 											}
@@ -2741,7 +2741,7 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 842, 164, 1920, 676 ],
+						"client_rect" : [ 842, 164, 1920, 407 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 0, 0, 640, 240 ]
@@ -2809,7 +2809,7 @@
 						"freqNOramp" : [ 0 ],
 						"length" : [ 1070 ],
 						"length-slider" : [ 0.484808711493186 ],
-						"loop-env" : [ 1 ],
+						"loop-env" : [ 0 ],
 						"master" : [ 0 ],
 						"oct.div" : [ 12.0 ],
 						"pres_menu" : [ "_" ],
@@ -2818,7 +2818,7 @@
 						"takeover" : [ -1 ],
 						"tetris_menu" : [ "" ],
 						"title_menu" : [ "subpatch" ],
-						"use-env" : [ 1 ]
+						"use-env" : [ 0 ]
 					}
 ,
 					"text" : "autopattr autopattr",
