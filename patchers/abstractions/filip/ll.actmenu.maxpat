@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 2,
+			"minor" : 5,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -37,17 +37,18 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
-		"globalpatchername" : "1440n",
+		"assistshowspatchername" : 0,
+		"globalpatchername" : "#0n",
 		"boxes" : [ 			{
 				"box" : 				{
 					"comment" : "connect to umenu",
 					"id" : "obj-7",
-					"index" : 3,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 272.0, 555.0, 25.0, 25.0 ]
+					"patching_rect" : [ 223.5, 557.0, 25.0, 25.0 ]
 				}
 
 			}
@@ -60,7 +61,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 390.0, 353.0, 72.0, 20.0 ],
+					"patching_rect" : [ 50.0, 228.0, 72.0, 20.0 ],
 					"text" : "outputmode 1"
 				}
 
@@ -74,7 +75,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 424.0, 298.0, 72.0, 20.0 ],
+					"patching_rect" : [ 425.5, 228.0, 72.0, 20.0 ],
 					"text" : "outputmode 0"
 				}
 
@@ -85,10 +86,10 @@
 					"fontsize" : 10.0,
 					"id" : "obj-5",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
+					"numinlets" : 3,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
-					"patching_rect" : [ 468.0, 414.0, 46.0, 20.0 ],
+					"patching_rect" : [ 541.0, 271.0, 46.0, 20.0 ],
 					"text" : "ll.pf pat"
 				}
 
@@ -114,7 +115,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 210.0, 121.0, 33.0, 20.0 ],
+					"patching_rect" : [ 288.0, 92.0, 33.0, 20.0 ],
 					"text" : "defer"
 				}
 
@@ -128,7 +129,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 210.0, 96.0, 38.0, 20.0 ],
+					"patching_rect" : [ 288.0, 67.0, 38.0, 20.0 ],
 					"text" : "del 10"
 				}
 
@@ -151,7 +152,7 @@
 				"box" : 				{
 					"comment" : "connect to umenu",
 					"id" : "obj-18",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -169,7 +170,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 178.0, 671.0, 95.0, 20.0 ],
+					"patching_rect" : [ 175.166666666666686, 483.0, 95.0, 20.0 ],
 					"text" : "prepend setsymbol"
 				}
 
@@ -183,7 +184,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 178.0, 646.0, 35.0, 20.0 ],
+					"patching_rect" : [ 175.166666666666686, 458.0, 35.0, 20.0 ],
 					"text" : "zl reg"
 				}
 
@@ -194,10 +195,10 @@
 					"fontsize" : 10.0,
 					"id" : "obj-3",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
+					"numinlets" : 3,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
-					"patching_rect" : [ 195.0, 618.0, 76.0, 20.0 ],
+					"patching_rect" : [ 195.0, 594.0, 76.0, 20.0 ],
 					"text" : "ll.p #1 #2"
 				}
 
@@ -223,7 +224,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 51.0, 132.0, 58.0, 20.0 ],
+					"patching_rect" : [ 51.0, 132.0, 95.0, 20.0 ],
 					"text" : "route bang"
 				}
 
@@ -232,11 +233,11 @@
 				"box" : 				{
 					"comment" : "dumps out act names on bang in 2nd inlet",
 					"id" : "obj-6",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 240.0, 710.0, 25.0, 25.0 ]
+					"patching_rect" : [ 194.75, 634.0, 25.0, 25.0 ]
 				}
 
 			}
@@ -249,7 +250,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 109.0, 345.0, 37.0, 20.0 ],
+					"patching_rect" : [ 300.333333333333371, 360.0, 37.0, 20.0 ],
 					"text" : "zl sort"
 				}
 
@@ -258,7 +259,7 @@
 				"box" : 				{
 					"comment" : "connect to umenu",
 					"id" : "obj-10",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -290,7 +291,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 382.0, 577.0, 97.0, 21.0 ],
+					"patching_rect" : [ 425.5, 543.0, 97.0, 21.0 ],
 					"text" : "clear, append no"
 				}
 
@@ -304,7 +305,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 110.0, 463.0, 95.0, 21.0 ],
+					"patching_rect" : [ 300.333333333333371, 423.0, 95.0, 21.0 ],
 					"text" : "prepend append"
 				}
 
@@ -318,7 +319,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 109.0, 376.0, 48.0, 21.0 ],
+					"patching_rect" : [ 300.333333333333371, 391.0, 48.0, 21.0 ],
 					"text" : "zl iter 1"
 				}
 
@@ -332,7 +333,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 109.0, 320.0, 90.0, 21.0 ],
+					"patching_rect" : [ 300.333333333333371, 335.0, 90.0, 21.0 ],
 					"text" : "route markerlist"
 				}
 
@@ -346,7 +347,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 109.0, 290.0, 169.0, 21.0 ],
+					"patching_rect" : [ 300.333333333333371, 305.0, 176.0, 21.0 ],
 					"text" : "pattrmarker #0n @invisible 1"
 				}
 
@@ -360,7 +361,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 109.0, 264.0, 75.0, 21.0 ],
+					"patching_rect" : [ 300.333333333333371, 279.0, 75.0, 21.0 ],
 					"text" : "getmarkerlist"
 				}
 
@@ -369,11 +370,11 @@
 				"box" : 				{
 					"comment" : "connect to umenu",
 					"id" : "obj-51",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 106.0, 685.0, 25.0, 25.0 ]
+					"patching_rect" : [ 178.0, 717.0, 25.0, 25.0 ]
 				}
 
 			}
@@ -434,7 +435,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
-					"order" : 1,
+					"order" : 0,
 					"source" : [ "obj-14", 3 ]
 				}
 
@@ -463,7 +464,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
-					"order" : 0,
+					"order" : 1,
 					"source" : [ "obj-14", 3 ]
 				}
 
@@ -485,7 +486,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
-					"midpoints" : [ 187.5, 702.0, 160.0, 702.0, 160.0, 596.0, 204.5, 596.0 ],
 					"order" : 0,
 					"source" : [ "obj-17", 0 ]
 				}
@@ -550,7 +550,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-21", 0 ],
+					"destination" : [ "obj-28", 0 ],
 					"source" : [ "obj-24", 0 ]
 				}
 
@@ -565,6 +565,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-15", 1 ],
+					"midpoints" : [ 204.5, 624.0, 157.583333333333343, 624.0, 157.583333333333343, 447.0, 200.666666666666686, 447.0 ],
 					"order" : 1,
 					"source" : [ "obj-3", 0 ]
 				}
@@ -573,7 +574,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-28", 0 ],
-					"midpoints" : [ 261.5, 645.0, 243.0, 645.0, 243.0, 147.0, 219.5, 147.0 ],
+					"midpoints" : [ 261.5, 626.0, 287.0, 626.0, 287.0, 147.0, 219.5, 147.0 ],
 					"source" : [ "obj-3", 1 ]
 				}
 
@@ -614,7 +615,48 @@
 				}
 
 			}
- ]
+ ],
+		"dependency_cache" : [ 			{
+				"name" : "ll.actname.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.an2.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.p.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.pf.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "n.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "pattrexists.mxo",
+				"type" : "iLaX"
+			}
+ ],
+		"autosave" : 0
 	}
 
 }

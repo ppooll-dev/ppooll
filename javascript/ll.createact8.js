@@ -41,6 +41,7 @@ function givename()
 	obj = tpp.getnamed("thispatcher");
 	obj.message("patcher", cname);
 	messnamed("actname", cname);
+	//post("actname", cname);
 	messnamed(hash+"actname",cname);
 	messnamed("::actname", "::"+cname+"::");
 	messnamed(hash+"::actname","::"+cname+"::");
@@ -127,6 +128,7 @@ function first_dump()
 	obj.message("dump");
 	messnamed("acting",name,instance,1);
 	messnamed("act_ready", cname);
+	//post("act_ready", cname);
 }
 
 function create_rest()
