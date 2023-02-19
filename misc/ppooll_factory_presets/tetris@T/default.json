@@ -1,5 +1,5 @@
 {
-	"window" : [ 197, 164, 539, 686 ],
+	"window" : [ 144, 180, 486, 702 ],
 	"par_menu" : 	{
 		"patching_rect" : [ 47, 83, 146, 24 ],
 		"hidden" : 0,
@@ -67,7 +67,7 @@
 	}
 ,
 	"write_default" : 	{
-		"patching_rect" : [ 244, 231, 88, 18 ],
+		"patching_rect" : [ 244, 218, 88, 19 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
@@ -128,13 +128,13 @@
 ,
 	"fontsize!" : 	{
 		"patching_rect" : [ 47, 154, 69, 22 ],
-		"hidden" : 1,
+		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"grid_size" : 	{
 		"patching_rect" : [ 146, 154, 76, 22 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 12
 	}
 ,
@@ -152,6 +152,12 @@
 ,
 	"hover" : 	{
 		"patching_rect" : [ 47, 67, 145, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"act_size" : 	{
+		"patching_rect" : [ 244, 238, 88, 17 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}

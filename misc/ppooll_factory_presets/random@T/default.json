@@ -1,66 +1,61 @@
 {
-	"window" : [ 540, 432, 916, 482 ],
+	"window" : [ 325, 413, 704, 471 ],
 	"common_on" : 	{
-		"patching_rect" : [ 215, -2, 60, 19 ],
+		"patching_rect" : [ 195, 0, 60, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
 ,
 	"presets" : 	{
-		"patching_rect" : [ 76, -1, 136, 15 ],
+		"patching_rect" : [ 73, 0, 121, 18 ],
 		"hidden" : 0,
 		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "random@1" ]
 	}
 ,
 	"act_menu" : 	{
-		"patching_rect" : [ 26, 13, 45, 19 ],
+		"patching_rect" : [ 26, 17, 45, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
 ,
 	"par_menu" : 	{
-		"patching_rect" : [ 70, 13, 41, 19 ],
+		"patching_rect" : [ 70, 17, 41, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
 ,
 	"metro-time" : 	{
-		"patching_rect" : [ 281, -2, 40, 19 ],
+		"patching_rect" : [ 256, -2, 40, 19 ],
 		"hidden" : 1,
 		"fontsize" : 9
 	}
 ,
 	"randt-min" : 	{
-		"patching_rect" : [ 335, -2, 40, 19 ],
+		"patching_rect" : [ 310, -2, 40, 19 ],
 		"hidden" : 1,
 		"fontsize" : 9
 	}
 ,
 	"stage" : 	{
-		"patching_rect" : [ 0, 13, 20, 19 ],
+		"patching_rect" : [ 0, 17, 20, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
 ,
 	"time-min" : 	{
-		"patching_rect" : [ 261, 13, 45, 19 ],
+		"patching_rect" : [ 261, 17, 45, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
 ,
-	"dip" : 	{
-		"patching_rect" : [ 31, 202, 278, 16 ],
-		"hidden" : 1
-	}
-,
 	"time-max" : 	{
-		"patching_rect" : [ 305, 13, 45, 19 ],
+		"patching_rect" : [ 305, 17, 45, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
 ,
 	"max" : 	{
-		"patching_rect" : [ 183, 13, 50, 19 ],
+		"patching_rect" : [ 183, 17, 50, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
@@ -72,50 +67,51 @@
 	}
 ,
 	"min" : 	{
-		"patching_rect" : [ 135, 13, 50, 19 ],
+		"patching_rect" : [ 135, 17, 50, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
 ,
 	"log" : 	{
-		"patching_rect" : [ 231, 13, 30, 19 ],
+		"patching_rect" : [ 231, 17, 30, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
 ,
 	"float/int" : 	{
-		"patching_rect" : [ 347, 14, 14, 15 ],
+		"patching_rect" : [ 349, 18, 14, 18 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"abs/rel" : 	{
-		"patching_rect" : [ 361, 14, 14, 15 ],
+		"patching_rect" : [ 364, 18, 14, 18 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"randt-on" : 	{
-		"patching_rect" : [ 320, -1, 17, 16 ],
+		"patching_rect" : [ 295, -1, 17, 16 ],
 		"hidden" : 1,
 		"fontsize" : 12
 	}
 ,
 	"listparam_item" : 	{
-		"patching_rect" : [ 109, 13, 28, 19 ],
+		"patching_rect" : [ 109, 17, 28, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
 ,
-	"switch" : 	{
-		"patching_rect" : [ 17, 31, 321, 17 ],
-		"hidden" : 0
-	}
-,
 	"trigger" : 	{
-		"patching_rect" : [ 341, 30, 34, 17 ],
+		"patching_rect" : [ 351, 1, 28, 17 ],
 		"hidden" : 1,
 		"fontsize" : 12
+	}
+,
+	"hori" : 	{
+		"patching_rect" : [ 0, 37, 379, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
 	}
 
 }
