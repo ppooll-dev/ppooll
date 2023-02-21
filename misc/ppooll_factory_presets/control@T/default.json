@@ -1,5 +1,5 @@
 {
-	"window" : [ 488, 441, 679, 494 ],
+	"window" : [ 407, 428, 598, 481 ],
 	"on/off" : 	{
 		"patching_rect" : [ 124, 0, 23, 16 ],
 		"hidden" : 0,
@@ -7,9 +7,9 @@
 	}
 ,
 	"input_menu" : 	{
-		"patching_rect" : [ 74, 0, 51, 21 ],
+		"patching_rect" : [ 74, 0, 51, 20 ],
 		"hidden" : 0,
-		"fontsize" : 11
+		"fontsize" : 10
 	}
 ,
 	"baud_rate" : 	{
