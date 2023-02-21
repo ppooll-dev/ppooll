@@ -92,9 +92,22 @@ function make(name, instance) {
   
   var dict_act_sizes = new Dict("act_sizes")
   dict_act_sizes.import_json(HARDCODED_PATH + "act_sizes.json")
+  if (dict_act_sizes.contains(name)){
+	var arr = dict_act_sizes.get(name)
+	}
+  else { //get the patching rect from file.
+	var file_as_dict = new Dict("fad");
+	file_as_dict.readany(prev.patcher.filepath);
+	if (file_as_dict.contains("patcher::rect")){
+		//post("soso");
+		var arr = file_as_dict.get("patcher::rect");
+		arr = [arr[0], arr[1], arr[2]+arr[0], arr[3]+arr[1]] //tja, the other rect-format ;)
+		dict_act_sizes.set(name, arr);
+		dict_act_sizes.export_json(HARDCODED_PATH + "act_sizes.json");
+		
+	}
+	}
   
-  var arr = dict_act_sizes.get(name)
-
   if(arr){
     var coords = [arr[0], arr[1], arr[2]-arr[0], arr[3]-arr[1]]
 
