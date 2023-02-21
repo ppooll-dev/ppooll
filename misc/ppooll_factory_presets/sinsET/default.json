@@ -1,19 +1,5 @@
 {
-	"window" : [ 3, 432, 850, 737 ],
-	"patching_rect" : [ 165, 434, 78, 20 ],
-	"hidden" : 1,
-	"midi_note" : 	{
-		"patching_rect" : [ 691, 95, 32, 20 ],
-		"hidden" : 0,
-		"fontsize" : 10
-	}
-,
-	"1st2all2" : 	{
-		"patching_rect" : [ 723, 95, 39, 20 ],
-		"hidden" : 0,
-		"fontsize" : 10
-	}
-,
+	"window" : [ 130, 250, 977, 555 ],
 	"env12" : 	{
 		"patching_rect" : [ 207, 290, 50, 16 ],
 		"hidden" : 0
@@ -57,6 +43,18 @@
 	"env4" : 	{
 		"patching_rect" : [ 207, 162, 50, 16 ],
 		"hidden" : 0
+	}
+,
+	"midi_note" : 	{
+		"patching_rect" : [ 691, 95, 32, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"1st2all2" : 	{
+		"patching_rect" : [ 723, 95, 39, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
 	}
 ,
 	"preset-ramp" : 	{
@@ -109,6 +107,8 @@
 		"fontsize" : 12
 	}
 ,
+	"patching_rect" : [ 165, 434, 78, 20 ],
+	"hidden" : 1,
 	"fontsize" : 9,
 	"loop" : 	{
 		"patching_rect" : [ 395, 575, 15, 193 ],

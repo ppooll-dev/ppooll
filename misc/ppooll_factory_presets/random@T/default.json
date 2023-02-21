@@ -1,13 +1,13 @@
 {
 	"window" : [ 325, 413, 704, 471 ],
 	"common_on" : 	{
-		"patching_rect" : [ 195, 0, 60, 19 ],
+		"patching_rect" : [ 224, 0, 60, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
 ,
 	"presets" : 	{
-		"patching_rect" : [ 73, 0, 121, 18 ],
+		"patching_rect" : [ 73, 0, 150, 19 ],
 		"hidden" : 0,
 		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "random@1" ]
 	}
@@ -25,13 +25,13 @@
 	}
 ,
 	"metro-time" : 	{
-		"patching_rect" : [ 256, -2, 40, 19 ],
+		"patching_rect" : [ 284, -2, 40, 19 ],
 		"hidden" : 1,
 		"fontsize" : 9
 	}
 ,
 	"randt-min" : 	{
-		"patching_rect" : [ 310, -2, 40, 19 ],
+		"patching_rect" : [ 338, -2, 40, 19 ],
 		"hidden" : 1,
 		"fontsize" : 9
 	}
@@ -91,7 +91,7 @@
 	}
 ,
 	"randt-on" : 	{
-		"patching_rect" : [ 295, -1, 17, 16 ],
+		"patching_rect" : [ 323, -1, 17, 16 ],
 		"hidden" : 1,
 		"fontsize" : 12
 	}

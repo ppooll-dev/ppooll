@@ -101,11 +101,11 @@
 			}
 , 			{
 				"box" : 				{
-					"annotation" : "trigger manually",
+					"annotation" : "trigger manually or from external",
 					"bgcolor" : [ 0.75, 0.75, 0.75, 1.0 ],
 					"bgoncolor" : [ 0.176471, 0.176471, 0.176471, 1.0 ],
 					"hidden" : 1,
-					"hint" : "trigger manually",
+					"hint" : "trigger manually or from external",
 					"id" : "obj-36",
 					"legacytextcolor" : 1,
 					"maxclass" : "textbutton",
@@ -167,7 +167,7 @@
 					"outlettype" : [ "", "", "int" ],
 					"outputmode" : 0,
 					"parameter_enable" : 0,
-					"patching_rect" : [ 295.0, -1.0, 17.0, 16.0 ],
+					"patching_rect" : [ 323.0, -1.0, 17.0, 16.0 ],
 					"prototypename" : "jit_on",
 					"rounded" : 2.0,
 					"text" : "rt",
@@ -901,7 +901,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 310.0, -2.0, 40.0, 19.0 ],
+					"patching_rect" : [ 338.0, -2.0, 40.0, 19.0 ],
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"tricolor" : [ 0.75, 0.75, 0.75, 1.0 ],
 					"triscale" : 0.9,
@@ -925,7 +925,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 256.0, -2.0, 40.0, 19.0 ],
+					"patching_rect" : [ 284.0, -2.0, 40.0, 19.0 ],
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"tricolor" : [ 0.75, 0.75, 0.75, 1.0 ],
 					"triscale" : 0.9,
@@ -989,7 +989,7 @@
 					"fontsize" : 9.0,
 					"hint" : "act",
 					"id" : "obj-61",
-					"items" : [ "no", ",", "ho_st1", ",", "random@1" ],
+					"items" : [ "no", ",", "ho_st1", ",", "random@1", ",", "sinsE1" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -6731,10 +6731,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 842, 112, 1642, 883 ],
+						"client_rect" : [ 530, 401, 1418, 889 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 200, 200, 800, 500 ]
+						"storage_rect" : [ 0, 0, 640, 240 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -6920,7 +6920,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 73.0, 0.0, 121.0, 18.0 ],
+					"patching_rect" : [ 73.0, 0.0, 150.0, 19.0 ],
 					"varname" : "presets"
 				}
 
@@ -6947,7 +6947,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 195.0, 0.0, 60.0, 19.0 ],
+					"patching_rect" : [ 224.0, 0.0, 60.0, 19.0 ],
 					"textcolor" : [ 0.149, 0.149, 0.149, 1.0 ],
 					"varname" : "common_on"
 				}
