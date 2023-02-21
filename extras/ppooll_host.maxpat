@@ -514,7 +514,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 70.0, 106.0, 58.0, 20.0 ],
-					"text" : "16:02:35",
+					"text" : "16:10:06",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "time"
 				}
@@ -615,7 +615,7 @@
 					"fontsize" : 12.0,
 					"hint" : "environment menu",
 					"id" : "obj-22",
-					"items" : [ "(environments)", ",", ".json", ",", "duckhalf.json", ",", "ducks2.json", ",", "ducks?.json", ",", "ducks_copy2.json", ",", "ducks_new.json", ",", "envM_test.json", ",", "fmsimpletest.json", ",", "fugen19.json", ",", "joestest.json", ",", "mc.gizmo_tutorial.json", ",", "mctest.json", ",", "modsynctest.json", ",", "rectest.json", ",", "rectest2.json", ",", "sins12_komp.json", ",", "sins12_komp.json#.json", ",", "sins24_keys.json", ",", "sins24_komp.json", ",", "sinsE_keys.json", ",", "sinsE_MC.json", ",", "sinsE_MC>>movierec.json", ",", "snaptesttt.json", ",", "superspreading11.json", ",", "superspreading7", ",", "superspreading7.json", ",", "test.json", ",", "test_note.json", ",", "testffb.json", ",", "testm.json", ",", "testmod1.json", ",", "vbap@plugins.json", ",", "vbap@plugins2.json", ",", "vbap@test.json", ",", "w_filter_test.json", ",", "xgroovetest.json", ",", "-", ",", "write", ",", "clear!", ",", "opentext", ",", "merge...", ",", "params_only", ",", "-", ",", "buffertest.json", ",", "ducks.json", ",", "envM_test.json" ],
+					"items" : [ "(environments)", ",", "write", ",", "clear!", ",", "opentext", ",", "merge...", ",", "params_only", ",", "-", ",", "buffertest.json", ",", "ducks.json", ",", "envM_test.json" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -670,7 +670,7 @@
 					"fontsize" : 12.0,
 					"hint" : "favorites menu",
 					"id" : "obj-48",
-					"items" : [ "(favorites)", ",", "control@", ",", "xgroove@", ",", "INmulti", ",", "hardplay", ",", "modul.ator", ",", "noize@", ",", "sinsE", ",", "snap@", ",", "tetris@", ",", "vbap@", ",", "(favorites)", ",", "-", ",", "add_favorit", ",", "del_favorit" ],
+					"items" : [ "(favorites)", ",", "-", ",", "add_favorit", ",", "del_favorit" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -57779,12 +57779,12 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 493.0, 168.0, 107.0, 21.0 ],
 					"restore" : 					{
-						"act_menu" : [ "distort@" ],
+						"act_menu" : [ "(__acts__)" ],
 						"audioON/OFF" : [ 0 ],
 						"chans" : [ 16 ],
 						"def" : [ -1 ],
 						"envi_menu" : [ "(environments)" ],
-						"favorites" : [ "noize@" ],
+						"favorites" : [ "(favorites)" ],
 						"jit.on" : [ 0 ],
 						"master" : [ "we" ],
 						"menubar" : [ 0 ],
@@ -57795,9 +57795,9 @@
 						"stereo" : [ 0 ],
 						"tetris_menu" : [ "" ],
 						"title_menu" : [ "subpatch" ],
-						"vol" : [ 0.419999986886978 ],
+						"vol" : [ 1 ],
 						"vol_ramp" : [ 10 ],
-						"vol_slider" : [ 0.801316988563506 ],
+						"vol_slider" : [ 1.0 ],
 						"watch_menu" : [ "time" ],
 						"write_envi" : [ -1 ]
 					}
