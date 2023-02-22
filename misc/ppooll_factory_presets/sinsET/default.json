@@ -1,47 +1,53 @@
 {
-	"window" : [ 130, 250, 977, 555 ],
+	"window" : [ 3, 432, 850, 737 ],
+	"1st_freq_env" : 	{
+		"patching_rect" : [ 205, 98, 26, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
 	"env12" : 	{
-		"patching_rect" : [ 207, 290, 50, 16 ],
+		"patching_rect" : [ 207, 289, 50, 16 ],
 		"hidden" : 0
 	}
 ,
 	"env11" : 	{
-		"patching_rect" : [ 207, 274, 50, 16 ],
+		"patching_rect" : [ 207, 273, 50, 16 ],
 		"hidden" : 0
 	}
 ,
 	"env10" : 	{
-		"patching_rect" : [ 207, 258, 50, 16 ],
+		"patching_rect" : [ 207, 257, 50, 16 ],
 		"hidden" : 0
 	}
 ,
 	"env9" : 	{
-		"patching_rect" : [ 207, 242, 50, 16 ],
+		"patching_rect" : [ 207, 241, 50, 16 ],
 		"hidden" : 0
 	}
 ,
 	"env8" : 	{
-		"patching_rect" : [ 207, 226, 50, 16 ],
+		"patching_rect" : [ 207, 225, 50, 16 ],
 		"hidden" : 0
 	}
 ,
 	"env7" : 	{
-		"patching_rect" : [ 207, 210, 50, 16 ],
+		"patching_rect" : [ 207, 209, 50, 16 ],
 		"hidden" : 0
 	}
 ,
 	"env6" : 	{
-		"patching_rect" : [ 207, 194, 50, 16 ],
+		"patching_rect" : [ 207, 193, 50, 16 ],
 		"hidden" : 0
 	}
 ,
 	"env5" : 	{
-		"patching_rect" : [ 207, 178, 50, 16 ],
+		"patching_rect" : [ 207, 177, 50, 16 ],
 		"hidden" : 0
 	}
 ,
 	"env4" : 	{
-		"patching_rect" : [ 207, 162, 50, 16 ],
+		"patching_rect" : [ 207, 161, 50, 16 ],
 		"hidden" : 0
 	}
 ,
@@ -70,29 +76,18 @@
 	}
 ,
 	"env3" : 	{
-		"patching_rect" : [ 207, 146, 50, 16 ],
+		"patching_rect" : [ 207, 145, 50, 16 ],
 		"hidden" : 0
 	}
 ,
 	"env2" : 	{
-		"patching_rect" : [ 207, 130, 50, 16 ],
+		"patching_rect" : [ 207, 129, 50, 16 ],
 		"hidden" : 0
 	}
 ,
 	"env1" : 	{
-		"patching_rect" : [ 207, 114, 50, 16 ],
+		"patching_rect" : [ 207, 113, 50, 16 ],
 		"hidden" : 0
-	}
-,
-	"comment_1st" : 	{
-		"patching_rect" : [ 848, 30, 42, 17 ],
-		"hidden" : 1,
-		"fontsize" : 9
-	}
-,
-	"ext_vol" : 	{
-		"patching_rect" : [ 412, 575, 15, 241 ],
-		"hidden" : 1
 	}
 ,
 	"zero_ext" : 	{
@@ -107,28 +102,15 @@
 		"fontsize" : 12
 	}
 ,
-	"patching_rect" : [ 165, 434, 78, 20 ],
-	"hidden" : 1,
-	"fontsize" : 9,
-	"loop" : 	{
-		"patching_rect" : [ 395, 575, 15, 193 ],
-		"hidden" : 1
-	}
-,
-	"trigger_sel" : 	{
-		"patching_rect" : [ 380, 575, 15, 193 ],
-		"hidden" : 1
-	}
-,
-	"patcher" : "bang",
-	"interpolate" : 	{
-		"patching_rect" : [ 436, 575, 15, 193 ],
-		"hidden" : 1
-	}
-,
 	"env_LCD" : 	{
-		"patching_rect" : [ 207, 114, 50, 192 ],
+		"patching_rect" : [ 207, 113, 50, 192 ],
 		"hidden" : 0
+	}
+,
+	"vols_LCD_p" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 179, 448, 78, 20 ],
+		"hidden" : 1
 	}
 ,
 	"wave-calc" : 	{
@@ -228,7 +210,7 @@
 	}
 ,
 	"envfreqs" : 	{
-		"patching_rect" : [ 0, 114, 207, 192 ],
+		"patching_rect" : [ 0, 113, 207, 192 ],
 		"hidden" : 0,
 		"fontsize" : 18
 	}
@@ -239,16 +221,10 @@
 		"fontsize" : 14
 	}
 ,
-	"1st_freq_env" : 	{
-		"patching_rect" : [ 205, 98, 26, 19 ],
-		"hidden" : 0,
-		"fontsize" : 9
-	}
-,
 	"multibuttons" : 	{
 		"patching_rect" : [ 256, 97, 71, 208 ],
 		"hidden" : 0,
-		"fontsize" : 18
+		"fontsize" : 14
 	}
 ,
 	"vol_ramp" : 	{
@@ -355,6 +331,12 @@
 ,
 	"recent_index" : 	{
 		"patching_rect" : [ 691, 76, 100, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"c_recents" : 	{
+		"patching_rect" : [ 749, 79, 46, 18 ],
 		"hidden" : 0,
 		"fontsize" : 10
 	}
