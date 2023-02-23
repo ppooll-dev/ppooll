@@ -1,5 +1,5 @@
 {
-	"window" : [ 144, 180, 486, 702 ],
+	"window" : [ 860, 258, 1202, 780 ],
 	"par_menu" : 	{
 		"patching_rect" : [ 47, 83, 146, 24 ],
 		"hidden" : 0,
@@ -67,7 +67,7 @@
 	}
 ,
 	"write_default" : 	{
-		"patching_rect" : [ 244, 218, 88, 19 ],
+		"patching_rect" : [ 243, 225, 88, 19 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
@@ -152,12 +152,6 @@
 ,
 	"hover" : 	{
 		"patching_rect" : [ 47, 67, 145, 15 ],
-		"hidden" : 0,
-		"fontsize" : 12
-	}
-,
-	"act_size" : 	{
-		"patching_rect" : [ 244, 238, 88, 17 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}

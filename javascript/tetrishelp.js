@@ -26,26 +26,6 @@ function is_bpatcher(){
 	return true
 }
 
-function name(name){
-	post("function name called");
-
-	if( is_bpatcher() ){
-		var dict_act_sizes = new Dict("act_sizes")
-		dict_act_sizes.import_json(HARDCODED_PATH + "act_sizes.json")
-		
-		var arr = dict_act_sizes.get(name)
-
-		if(arr){
-		  var coords = [arr[0], arr[1], arr[2]-arr[0], arr[3]-arr[1]]
-
-		  // set patching rect of act's bpatcher & bring to front
-		  this.patcher.parentpatcher.parentpatcher.box.rect = arr
-		}else{
-			console.log("MISSING "+relativePath)
-		}
-	}
-}
-
 /////////////////////////////////////////////////////////////////////////////
 
 function bang()
