@@ -26,11 +26,7 @@
 	4) perform the first dump of stored parameters
 	
 	5) close with announcing this new act:
-		sending to "acting":  name instance 1
-	
-  ( 6) only in live.environment: eventually load 2 special acts 
-		- live.midi_in
-        - live.params_in )
+		send to "acting":  name instance 1
           
 */
 
@@ -66,21 +62,19 @@ function make(n,s,i,x,y,z,h) // main function called by actmaker
 	messnamed("act_ready", cname);
 	//post("act_ready", cname);
 	//outlet(0, [name, instance])
-	live_extras(); //load additional acts for the live.environment
 }
 
 function check_live(){
 	//post("check################");
 	var a = Global("ll.max_live_envi")
-	if (!a.envi) //post("envi is ", a.envi, "\n")
+	if (!a.envi) //a.envi not yet defined
 	{
-		if (tpp.parentpatcher){
-			//post("\n", "islive: ", tpp.parentpatcher.name);
+		if (tpp.parentpatcher){ // the act was loaded as bpatcher in another patcher
 			a.envi = "live";
 		}
 		else a.envi = "max"
 	}
-	//post("envi is ", a.envi, "\n")
+
 	if (a.envi == "live") make_live();
 }
 
@@ -325,34 +319,9 @@ function make_live() {
 				tpp.message("script","hide",TO_HIDE[i])
       		}
 		}
-	    if( lpe.getnamed("live.midi_in1") ){
-      // console.log('delete live.midi_in')
-      		lpe.message("script", "delete", "live.midi_in1")
-    	}
-    	if( lpe.getnamed("live.params_in1") ){
-      	// console.log('delete live.params_in')
-      		lpe.message("script", "delete", "live.params_in1")
-    	}
-    	// create live.ppooll-specific acts
-    	//lpe.message("script", "hidden", "newdefault", "live.midi_in1", 5, 91, "live.midi_in")
-    	//lpe.message("script", "hidden", "newdefault", "live.params_in1", 5, 117, "live.params_in")
   	}
 }
 
-function live_extras(){
-	//need to create these acts after acting and also the 2 patches one by one....
-	var a = Global("ll.max_live_envi")
-	if (a.envi === "live"){
-		var lpe = tpp.parentpatcher;
-		if (name === "ho_st"){
-			//post("create extra live-patchers");
-	    	lpe.message("script", "hidden", "newdefault", "live.midi_in1", 5, 91, "live.midi_in")
-		}
-		if (name === "live.midi_in"){
-    		lpe.message("script", "hidden", "newdefault", "live.params_in1", 5, 117, "live.params_in")
-		}
-	}
-}
 
 function getcoords(a){
 	var f = new File(a);
