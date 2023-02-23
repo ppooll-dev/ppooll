@@ -378,7 +378,7 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
-										"globalpatchername" : "1068n[1][3][2][1][1][1][6][1][1][1][2][2][2][1][1][3][2][1][3][3]",
+										"globalpatchername" : "1068n[1][3][2][1][1][1][6][1][1][1][2][2][2][1][1][3][2][1][3][3][1]",
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-4",
@@ -438,7 +438,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 270.0, 57.0, 59.0, 35.0 ],
-													"text" : "markerlist"
+													"text" : "markerlist ho_st1"
 												}
 
 											}
@@ -1032,7 +1032,7 @@
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
-										"globalpatchername" : "1068n[1][3][2][1][1][1][6][1][1][1][2][2][2][1][1][3][2][1][3][3]",
+										"globalpatchername" : "1068n[1][3][2][1][1][1][6][1][1][1][2][2][2][1][1][3][2][1][3][3][1]",
 										"tags" : ""
 									}
 ,
@@ -7922,7 +7922,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 667.375, 156.0, 74.0, 22.0 ],
+									"patching_rect" : [ 618.887481999999977, 177.0, 74.0, 22.0 ],
 									"text" : "wsize $1 $2"
 								}
 
@@ -7936,7 +7936,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 586.375, 156.0, 75.0, 22.0 ],
+									"patching_rect" : [ 552.899984000000018, 146.0, 75.0, 22.0 ],
 									"text" : "setloc $1 $2"
 								}
 
@@ -7950,7 +7950,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 526.375, 156.0, 43.0, 22.0 ],
+									"patching_rect" : [ 486.912486000000001, 141.0, 43.0, 22.0 ],
 									"text" : "getloc"
 								}
 
@@ -10985,7 +10985,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 499.0, 207.0, 83.0, 22.0 ],
+									"patching_rect" : [ 420.924987999999985, 222.0, 83.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"filename" : "tetrishelp.js",
 										"parameter_enable" : 0

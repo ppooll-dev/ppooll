@@ -8,10 +8,7 @@ var console = {
 
 var HARDCODED_PATH = "Package:/ppooll/misc/ppooll_factory_presets/"
 
-var IGNORE_ACTS_LIST = [
-  'live.midi_in',
-  'live.params_in',
-]
+
 
 
 var newstate = new Array();
@@ -30,10 +27,8 @@ function is_bpatcher(){
 }
 
 function name(name){
-	if(IGNORE_ACTS_LIST.indexOf(name) > -1){
-	  // console.log('skip tetrishelp  "'+ name +'"')
-	  return
-	}
+	post("function name called");
+
 	if( is_bpatcher() ){
 		var dict_act_sizes = new Dict("act_sizes")
 		dict_act_sizes.import_json(HARDCODED_PATH + "act_sizes.json")
@@ -123,14 +118,20 @@ function setloc(x,y,o)
 
 function setwin(a)
 {
-	rec = arrayfromargs(arguments);
+	rect = arrayfromargs(arguments);
 	//post ("SW", a, rec); 
-	var p = this.patcher.parentpatcher.parentpatcher.wind;
-    p.location = rec;
+	if(!is_bpatcher()){
+		var p = this.patcher.parentpatcher.parentpatcher.wind;
+    	p.location = rect;
+	}else{
+		var w = this.patcher.parentpatcher.parentpatcher.box;
+		w.rect = rect;
+	}
 }
 
 function wsize(width,height)
 {
+	//post("wsize");
 	if(!is_bpatcher()){
 		var w = this.patcher.parentpatcher.parentpatcher.wind;
 		var r = new Array();
@@ -200,51 +201,6 @@ function objdict(a)
     return true;
 }
 
-function applynew()
-{
-    this.patcher.parentpatcher.parentpatcher.apply(obj);
-}
-
-function obj(a)
-{
-	//post("ee");
-	var att = new Array();
-	if (a.maxclass == "comment") {
-		
-		var aa = new Array();
-		aa = a.getattrnames();
-	//post ("comment", aa.toString(),a.value, "\n");
-	}
-    if (a.varname){
-	
-	if (class_excludes.indexOf(" " + a.maxclass + " ") == -1){
-	if (name_excludes.indexOf(" " + a.varname + " ") == -1){
-		//post("varname");
-		att.push(a.varname, a.rect[0], a.rect[1], a.rect[2]-a.rect[0], a.rect[3]-a.rect[1], Number(a.hidden));
-		//post (att,"\n");
-		attributes = a.getattrnames();
-
-		
-		for (i=0;i<attributes.length;i++) {
-			if (attributes[i] == "fontsize"){				
-				att.push(attributes[i], a.getattr(attributes[i]));
-			}
-			if (attributes[i] == "jsarguments"){
-				//post("iii",a.getattr(attributes[i])[0]);				
-				att.push(attributes[i], a.getattr(attributes[i])[0]);
-			}
-		}
-		var atts = att.join(" ");
-		//post("eeeee", att, atts, atts.replace(/\,/g," "), "\n");
-		//post("eeeee", att, atts.replace(/\,/g," "), "\n");
-        //messnamed ("tetrisobj", a.varname, a.rect[0], a.rect[1], a.rect[2]-a.rect[0], a.rect[3]-a.rect[1], a.hidden, atts.replace(/\,/g," "));
-		messnamed ("tetrisobj", att.join(" "));
-
-	}
-	}
-}
-    return true;
-}
 
 function apply()
 {
