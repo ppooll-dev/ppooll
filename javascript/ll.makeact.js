@@ -31,35 +31,26 @@
 outlets = 1;
 autowatch = 1;
 var tpp, obj;
-var am, name, cname, size,s,fg, m, pat, instance,hash;
+var am, name, cname, size,s,fg, m, pat, instance, hash;
 var r, g, b; // color
 
 function make(n,s,i,x,y,z,h) // main function called by actmaker
 {
-	name = n;	
-	instance = i;
-	cname = name+instance;
-	
-	size = s;
-	r=x;g=y;b=z;
-	hash=h;
-	
+	name=n; size=s; instance=i; r=x; g=y; b=z; hash=h;
+	cname = name+instance;	
+	//post("cname", cname, hash, size);
 	tpp = this.patcher.parentpatcher.parentpatcher;
-	am = this.patcher.parentpatcher.box;
-	
+	am = this.patcher.parentpatcher.box;	
 	am.hidden = 1;
 	if (am.varname != "act") am.varname = "act";
-
-	
 	
 	if (!tpp.getnamed("pattrmarker")) createbasics();
 	
 	if (r>-1 & !tpp.getnamed("title_LCD")) create_rest();
-	//if (tpp.getnamed("title_LCD")) size_title();
 
 	givename();
 	
-	make_live();
+	check_live();
 
 	first_dump();
 	
@@ -67,8 +58,23 @@ function make(n,s,i,x,y,z,h) // main function called by actmaker
 	messnamed("acting",name,instance,1);
 	messnamed("act_ready", cname);
 	//post("act_ready", cname);
-	
-	outlet(0, [name, instance])
+	//outlet(0, [name, instance])
+	live_extras();
+}
+
+function check_live(){
+	//post("check################");
+	var a = Global("ll.max_live_envi")
+	if (!a.envi) //post("envi is ", a.envi, "\n")
+	{
+		if (tpp.parentpatcher){
+			//post("\n", "islive: ", tpp.parentpatcher.name);
+			a.envi = "live";
+		}
+		else a.envi = "max"
+	}
+	//post("envi is ", a.envi, "\n")
+	if (a.envi == "live") make_live();
 }
 
 function givename()
@@ -275,112 +281,68 @@ function size_title()
 }
 
 // ########################### LIVE ############################################
-
-var console = {
-  log: function(message){
-    post("ll.live.initialize_bpatcher: " + message)
-    post()
-  }
-}
-
 function make_live() {
   // var name = arguments[0]            // ie 'sinus'
   // var instance = arguments[1]        // ie '1'
   // cname is ie 'sinus1'
-
-  var TO_HIDE = ['audioON/OFF','menubar','screen']
-
-  var IGNORE_ACTS_LIST = [
-  'live.midi_in',
-  'live.params_in',
-  ]
-
-  var patcher = this.patcher.box;
-  var prev = 0
-  var owner = this.patcher.box
-
-  // ignore acts that are meant to be hidden and will always load in environment
-  if(IGNORE_ACTS_LIST.indexOf(name) > -1){
-    return
-  }
-
-  var isMaxForLive = false
-
-  // iterate over parent patches to find the act-level bpatcher
-  while ( owner ) {
-    prev = owner
-    owner = owner.patcher.box
-
-    if(prev.patcher.name === name || prev.patcher.name === "ppooll_host")
-      isMaxForLive = true
-      break;
-  }
-
-  if(!isMaxForLive || !prev.patcher.box){
-    // console.log('is Max runtime; set ll.movewindow.js')
-    // reset movewindow ppooll jsui to ppooll default file (for dragging around desktop)
-
-    // why do we have to do this ??????????????????????????????????????????????????????????????????
-  /* 
-   if(prev.patcher.getnamed('master'))
-      prev.patcher.message("script","sendbox","master", "filename", "ll.movewindow.js")
-
-    if(prev.patcher.getnamed('movewind'))
-      prev.patcher.message("script","sendbox","movewind", "filename", "ll.movewindow.js")
-  */
-   post("not is live");
-    return
-  }
-
-  // found the act's patcher box-- time to initialize...
-  // console.log('will rename bpatcher to "'+ cname +'"')
-  
-  //set box varname to nameInstance
-  prev.patcher.box.varname = cname
-  
-
-  var coords = [0, 0, 200,200];
-  coords = getcoords(prev.patcher.filepath);
-
+	var lpe = tpp.parentpatcher; //live ppooll environment patcher
+  	var TO_HIDE = ['audioON/OFF','menubar','screen']
+  	var IGNORE_ACTS_LIST = ['live.midi_in', 'live.params_in']
+	var coords = [0, 0, 200,200];
+	// ignore acts that are meant to be hidden and will always load in environment
+	if(IGNORE_ACTS_LIST.indexOf(name) > -1){
+    	return
+  	}
+  	//set box varname to nameInstance
+	tpp.box.varname = cname	
+	coords = getcoords(tpp.filepath);
 
     // set patching rect of act's bpatcher & bring to front
-    owner.patcher.message("script","sendbox",cname,"patching_rect",coords)
-    owner.patcher.message("script","bringtofront",cname)
+    lpe.message("script","sendbox",cname,"patching_rect",coords)
+    lpe.message("script","bringtofront",cname)
 
+	// locate draggable jsui corner for acts and replace with moveable_ui for bpatcher
+	if(tpp.getnamed('master'))
+    	tpp.message("script","sendbox","master", "filename", "jsui_drag_bpatcher.js")
+	if(tpp.getnamed('movewind'))
+		tpp.message("script","sendbox","movewind", "filename", "jsui_drag_bpatcher.js")
 
-
-  // locate draggable jsui corner for acts and replace with moveable_ui for bpatcher
-  if(prev.patcher.getnamed('master'))
-    prev.patcher.message("script","sendbox","master", "filename", "jsui_drag_bpatcher.js")
-
-  if(prev.patcher.getnamed('movewind'))
-    prev.patcher.message("script","sendbox","movewind", "filename", "jsui_drag_bpatcher.js")
-
-  // initialize other acts if this is the ho_st
-  if(name === 'ho_st'){
-    console.log('create ho_st1')
-
-    for(var i=0; i<TO_HIDE.length; i++){
-      if(prev.patcher.getnamed(TO_HIDE[i])){
-        prev.patcher.message("script","hide",TO_HIDE[i])
-      }
-    }
-
-    // clear out old, live.ppooll-specific acts
-	// do we need this ????????????????????????????????????????????????????????????????????????
-    if( owner.patcher.getnamed("live.midi_in1") ){
+	// if this is the ho_st hide defined objects
+	if(name === 'ho_st'){
+    	post('create ho_st1')
+		for(var i=0; i<TO_HIDE.length; i++){
+			if(tpp.getnamed(TO_HIDE[i])){
+				tpp.message("script","hide",TO_HIDE[i])
+      		}
+		}
+	    if( lpe.getnamed("live.midi_in1") ){
       // console.log('delete live.midi_in')
-      owner.patcher.message("script", "delete", "live.midi_in1")
-    }
-    if( owner.patcher.getnamed("live.params_in1") ){
-      // console.log('delete live.params_in')
-      owner.patcher.message("script", "delete", "live.params_in1")
-    }
+      		lpe.message("script", "delete", "live.midi_in1")
+    	}
+    	if( lpe.getnamed("live.params_in1") ){
+      	// console.log('delete live.params_in')
+      		lpe.message("script", "delete", "live.params_in1")
+    	}
+    	// create live.ppooll-specific acts
+    	//lpe.message("script", "hidden", "newdefault", "live.midi_in1", 5, 91, "live.midi_in")
+    	//lpe.message("script", "hidden", "newdefault", "live.params_in1", 5, 117, "live.params_in")
+  	}
+}
 
-    // create live.ppooll-specific acts
-    owner.patcher.message("script", "hidden", "newdefault", "live.midi_in1", 5, 91, "live.midi_in")
-    owner.patcher.message("script", "hidden", "newdefault", "live.params_in1", 5, 117, "live.params_in")
-  }
+function live_extras(){
+	//need to create an act after acting and then the 2 patches one by one....
+	var a = Global("ll.max_live_envi")
+	if (a.envi === "live"){
+		var lpe = tpp.parentpatcher;
+		if (name === "ho_st"){
+			post("create extra live-patchers");
+	    	lpe.message("script", "hidden", "newdefault", "live.midi_in1", 5, 91, "live.midi_in")
+		}
+		if (name === "live.midi_in"){
+    		lpe.message("script", "hidden", "newdefault", "live.params_in1", 5, 117, "live.params_in")
+		}
+	}
+}
 
 function getcoords(a){
 	var f = new File(a);
@@ -406,4 +368,5 @@ function getcoords(a){
 	//post("get",coords, "\n");
 	return coords;
 }
-}
+
+
