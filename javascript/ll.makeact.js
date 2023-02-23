@@ -1,5 +1,7 @@
 
 /*
+  ppooll specific
+
   create act AND manage actname-sending when an act is loaded 
   by klaus filip
   merged with
@@ -7,24 +9,29 @@
   for running ppooll in live
   by steech
 
-    2nd step in a 2-step, act-loading process
 
-    arguments:
-      instance: (int) instance number, ie '1' in 'sinus1'
-      name: (symbol) act name, ie 'sinus' in 'sinus1'
-
-    1) user selects an act from ho_st
-        ho_st sends the actname to the [environment] subpatch
-        a bpatcher is created in the [environment] subpatch with the act .maxpat file
-
-    2) this script runs within "actmaker" object in the newly loaded bpatcher
-        find this bpatcher as an object within [environment] patch
-        set bpatcher object size based on act tetris setting
+	this script must sit in a subpatcher of the [actmaker] external of ppooll.
+	
+	1) if actmaker created in a plain patch, this script will create all other essential externals
+		depending on given arguments
+	
+	2) if the patch is loaded with everything there already 
+		give its unique name and write the title
+		
+	3) check, if we are in plain max or in the ableton live-wrapper of ppooll.
+		if in live, change properties for the patcher to work as bpatcher.
+		set bpatcher object size based on the individual act.maxpat file
         set 'movewind' jsui object at top-level of act to draggable jsui
-        
-        if this is the ho_st bpatcher, it will load additional acts 
-          - live.midi_in
-          - live.params_in
+		
+	4) perform the first dump of stored parameters
+	
+	5) close with announcing this new act:
+		sending to "acting":  name instance 1
+	
+  ( 6) only in live.environment: eventually load 2 special acts 
+		- live.midi_in
+        - live.params_in )
+          
 */
 
 
@@ -37,7 +44,7 @@ var r, g, b; // color
 function make(n,s,i,x,y,z,h) // main function called by actmaker
 {
 	name=n; size=s; instance=i; r=x; g=y; b=z; hash=h;
-	cname = name+instance;	
+	cname = name+instance;	//eg sinus1 = sinus + 1 
 	//post("cname", cname, hash, size);
 	tpp = this.patcher.parentpatcher.parentpatcher;
 	am = this.patcher.parentpatcher.box;	
@@ -59,7 +66,7 @@ function make(n,s,i,x,y,z,h) // main function called by actmaker
 	messnamed("act_ready", cname);
 	//post("act_ready", cname);
 	//outlet(0, [name, instance])
-	live_extras();
+	live_extras(); //load additional acts for the live.environment
 }
 
 function check_live(){
@@ -280,7 +287,10 @@ function size_title()
 	
 }
 
-// ########################### LIVE ############################################
+// ########################### LIVE #########################################################
+
+
+
 function make_live() {
   // var name = arguments[0]            // ie 'sinus'
   // var instance = arguments[1]        // ie '1'
@@ -330,12 +340,12 @@ function make_live() {
 }
 
 function live_extras(){
-	//need to create an act after acting and then the 2 patches one by one....
+	//need to create these acts after acting and also the 2 patches one by one....
 	var a = Global("ll.max_live_envi")
 	if (a.envi === "live"){
 		var lpe = tpp.parentpatcher;
 		if (name === "ho_st"){
-			post("create extra live-patchers");
+			//post("create extra live-patchers");
 	    	lpe.message("script", "hidden", "newdefault", "live.midi_in1", 5, 91, "live.midi_in")
 		}
 		if (name === "live.midi_in"){
