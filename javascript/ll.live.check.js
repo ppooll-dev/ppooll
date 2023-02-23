@@ -8,34 +8,34 @@ outlets = 2;
 
 
 
-var g = new Global("ll.max_live_envi")
+var a = new Global("ll.max_live_envi")
+
 
 function bang(){
-	//works without prepending 0
-	var patch = messagename				// patch to load, ie sinus.maxpat
-	//post(patch)
-	var owner = this.patcher.box
 	
-	
+	if (!a.envi)
+ 	{
+		check()
+	}
+	outlet(0,a.envi);
+	outlet(1,(a.envi=="live")+1); //ready for gate 2
+
+}
+
+function check(){
+	var owner = this.patcher.box	
 	// naviagate to top patcher
-	var isLiveEnvi = false;
-	
+	var isLiveEnvi = false;	
 	while (owner && !isLiveEnvi) {
 	  prev = owner
 	  owner = owner.patcher.box
+		post(prev.patcher.name);
 	  // the scripting name of the subpatch of the "environment" in live.ppooll
 	  if(prev.patcher.name === 'LIVE_PPOOLL_ENVIRONMENT'){
 	  	isLiveEnvi = true;
 	  }
 	}
-
-	if(	!isLiveEnvi ){
-		g.envi = "max";
-		outlet(0,"max");
-		outlet(1,1);
-	}else{
-		g.envi = "live";
-		outlet(0,"live");
-		outlet(1,2);
-	}
+	if(	!isLiveEnvi )a.envi = "max"
+	else a.envi = "live"
+	
 }
