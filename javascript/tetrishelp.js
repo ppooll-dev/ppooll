@@ -1,3 +1,13 @@
+/*
+ppooll special
+
+script must be located in actmaker, 2 subpatches down.
+various requests about window and objects in an act.
+
+*/
+
+
+
 var console = {
   log: function(message){
     post("tetrishelp: " + message)
@@ -5,10 +15,7 @@ var console = {
   }
 }
 
-
-var HARDCODED_PATH = "Package:/ppooll/misc/ppooll_factory_presets/"
-
-
+var tpp = this.patcher.parentpatcher.parentpatcher;
 
 
 var newstate = new Array();
@@ -20,7 +27,7 @@ var dict_name = "so";
 //////////////////////////////////////////////////////////////////////
 
 function is_bpatcher(){
-	if(!this.patcher.parentpatcher.parentpatcher.parentpatcher){
+	if(!tpp.parentpatcher){
 		return false
 	}
 	return true
@@ -31,21 +38,21 @@ function is_bpatcher(){
 function bang()
 {
 
-messnamed ("tetristhis", "there", this.patcher.parentpatcher.parentpatcher);
+messnamed ("tetristhis", "there", tpp);
 
 }
 
 function ll_new(a)
 {
 
-messnamed ("ll_new", "there", this.patcher.parentpatcher.parentpatcher, this.patcher.parentpatcher.box, a);
+messnamed ("ll_new", "there", tpp, this.patcher.parentpatcher.box, a);
 
 }
 
 function ll_amh(a)
 {
 
-messnamed ("ll_amh_receiver", "there", this.patcher.parentpatcher.parentpatcher, this.patcher.parentpatcher.box, a);
+messnamed ("ll_amh_receiver", "there", tpp, this.patcher.parentpatcher.box, a);
 
 }
 
@@ -53,10 +60,10 @@ function getloc()
 {
 	if(!is_bpatcher()){
 		// console.log('is Max runtime; getloc')
-		messnamed ("tetristhis", this.patcher.parentpatcher.parentpatcher.wind.location);
+		messnamed ("tetristhis", tpp.wind.location);
 	}else{
-		console.log('is bpatcher; getloc '+ this.patcher.parentpatcher.parentpatcher.box.rect)
-		messnamed ("tetristhis", this.patcher.parentpatcher.parentpatcher.box.rect);
+		console.log('is bpatcher; getloc '+ tpp.box.rect)
+		messnamed ("tetristhis", tpp.box.rect);
 	}
 }
 
@@ -64,31 +71,31 @@ function getloc_to(a,o)
 {
 		
 	if (o) { //objects varname
-		messnamed (a, this.patcher.parentpatcher.parentpatcher.getnamed(o).rect);
+		messnamed (a, tpp.getnamed(o).rect);
 		}
 	//window
-	else messnamed (a, this.patcher.parentpatcher.parentpatcher.wind.location);
+	else messnamed (a, tpp.wind.location);
 }
 
 function setloc(x,y,o)
 {
 	if (o) { //an object
-		var obj = this.patcher.parentpatcher.parentpatcher.getnamed(o);
+		var obj = tpp.getnamed(o);
 		obj.rect = [x,y,obj.rect[2]-obj.rect[0]+x,obj.rect[3]-obj.rect[1]+y];
 		//post(o, obj.rect, "\n");
 	}
 	else {
 		if(!is_bpatcher()){
 			// console.log('is Max runtime; set patch window location')
-			var p = this.patcher.parentpatcher.parentpatcher;
+			var p = tpp;
 			p.wind.location = [x,y,p.wind.location[2]-p.wind.location[0]+x,p.wind.location[3]-p.wind.location[1]+y];
 
 		}else{
 			console.log('is live.ppooll; set patch window location')
-			var currentRect = this.patcher.parentpatcher.parentpatcher.box.rect
+			var currentRect = tpp.box.rect
 			var objSize = [currentRect[2] - currentRect[0], currentRect[3] - currentRect[1]];
 
-			this.patcher.parentpatcher.parentpatcher.box.rect = [x, y, x+objSize[0], y+objSize[1]]
+			tpp.box.rect = [x, y, x+objSize[0], y+objSize[1]]
 
 			// environment.message("script","sendbox",nameInstance,"position",x,y)
 			// environment.message("script","bringtofront",nameInstance)
@@ -101,10 +108,10 @@ function setwin(a)
 	rect = arrayfromargs(arguments);
 	//post ("SW", a, rec); 
 	if(!is_bpatcher()){
-		var p = this.patcher.parentpatcher.parentpatcher.wind;
+		var p = tpp.wind;
     	p.location = rect;
 	}else{
-		var w = this.patcher.parentpatcher.parentpatcher.box;
+		var w = tpp.box;
 		w.rect = rect;
 	}
 }
@@ -113,7 +120,7 @@ function wsize(width,height)
 {
 	//post("wsize");
 	if(!is_bpatcher()){
-		var w = this.patcher.parentpatcher.parentpatcher.wind;
+		var w = tpp.wind;
 		var r = new Array();
 
 		r[0] = w.location[0];
@@ -127,7 +134,7 @@ function wsize(width,height)
 		r[3] = w.location[1]+height;
 		w.location = r;
 	}else{
-		var w = this.patcher.parentpatcher.parentpatcher.box;
+		var w = tpp.box;
 		var r = new Array();
 
 		r[0] = w.rect[0];
@@ -147,10 +154,10 @@ function wsize(width,height)
 function applydict(dn)
 {
 	dict_name = dn;
-	var w = this.patcher.parentpatcher.parentpatcher.wind;
+	var w = tpp.wind;
 	var d = new Dict(dict_name);
 	d.set("window", w.location);
-    this.patcher.parentpatcher.parentpatcher.apply(objdict);
+    tpp.apply(objdict);
 }
 
 function objdict(a)
@@ -184,7 +191,7 @@ function objdict(a)
 
 function apply()
 {
-    this.patcher.parentpatcher.parentpatcher.apply(printobj);
+    tpp.apply(printobj);
 }
 
 function printobj(a)
@@ -198,7 +205,7 @@ function printobj(a)
 
 function getobj(a)
 {
-	a = this.patcher.parentpatcher.parentpatcher.a;
+	a = tpp.a;
     if (a.varname)
         messnamed ("tetrislist", a.maxclass, a.varname, a.rect[0], a.rect[1], a.rect[2], a.rect[3], a.hidden);
     return true;
@@ -210,7 +217,7 @@ function applyblue(b)
 	newstate = b.split(' ');
 	for (i=1;i<newstate.length;i++) newstate[i] = Number(newstate[i]);
 	//post ("new: " + newstate, "\n");
-    this.patcher.parentpatcher.parentpatcher.apply(getblueargs);
+    tpp.apply(getblueargs);
 }
 
 function getblueargs(a)
@@ -239,6 +246,6 @@ function getblueargs(a)
 }
 
 function getblueargsonly(){
-	a = this.patcher.parentpatcher.parentpatcher.getnamed("ll.blues");
+	a = tpp.getnamed("ll.blues");
 	messnamed ("getargs", a.getboxattr("args"));
 }
