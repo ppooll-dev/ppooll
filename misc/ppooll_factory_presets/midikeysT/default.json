@@ -1,5 +1,17 @@
 {
-	"window" : [ 17, 108, 1037, 205 ],
+	"window" : [ 18, 9, 1038, 106 ],
+	"def" : 	{
+		"patching_rect" : [ 837, 0, 60, 20 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"ratios_select" : 	{
+		"patching_rect" : [ 514, -2, 70, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
 	"keyslider_mode" : 	{
 		"patching_rect" : [ 73, -2, 81, 21 ],
 		"hidden" : 0,
@@ -43,7 +55,7 @@
 	}
 ,
 	"random_cents" : 	{
-		"patching_rect" : [ 514, 0, 70, 17 ],
+		"patching_rect" : [ 594, 0, 70, 17 ],
 		"hidden" : 0,
 		"fontsize" : 11
 	}
@@ -65,12 +77,6 @@
 		"hidden" : 1
 	}
 ,
-	"def" : 	{
-		"patching_rect" : [ 837, 0, 60, 17 ],
-		"hidden" : 0,
-		"fontsize" : 11
-	}
-,
 	"cb2" : 	{
 		"patching_rect" : [ 1227, 57, 30, 158 ],
 		"hidden" : 1,
@@ -84,7 +90,7 @@
 	}
 ,
 	"vol_max" : 	{
-		"patching_rect" : [ 654, 0, 70, 17 ],
+		"patching_rect" : [ 734, 0, 70, 17 ],
 		"hidden" : 0,
 		"fontsize" : 11
 	}
@@ -114,8 +120,14 @@
 	}
 ,
 	"frequency" : 	{
-		"patching_rect" : [ 586, 0, 66, 17 ],
+		"patching_rect" : [ 666, 0, 66, 17 ],
 		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"oct_div" : 	{
+		"patching_rect" : [ 514, 0, 23, 17 ],
+		"hidden" : 1,
 		"fontsize" : 11
 	}
 

@@ -131,12 +131,6 @@
 		"fontsize" : 10
 	}
 ,
-	"frel_vol" : 	{
-		"patching_rect" : [ 1, 65, 20, 15 ],
-		"hidden" : 0,
-		"fontsize" : 9
-	}
-,
 	"sTb" : 	{
 		"patching_rect" : [ 537, 40, 19, 15 ],
 		"hidden" : 0,
@@ -258,7 +252,7 @@
 	}
 ,
 	"select_2D" : 	{
-		"patching_rect" : [ 1, 79, 30, 14 ],
+		"patching_rect" : [ 1, 76, 34, 17 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
@@ -339,6 +333,18 @@
 		"patching_rect" : [ 749, 79, 46, 18 ],
 		"hidden" : 0,
 		"fontsize" : 10
+	}
+,
+	"def_outputs" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 848, 0, 162, 221 ],
+		"hidden" : 1
+	}
+,
+	"v_trig" : 	{
+		"patching_rect" : [ 587, 53, 37, 14 ],
+		"hidden" : 0,
+		"fontsize" : 11
 	}
 
 }

@@ -438,7 +438,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 270.0, 57.0, 59.0, 35.0 ],
-													"text" : "markerlist ho_st1"
+													"text" : "markerlist"
 												}
 
 											}

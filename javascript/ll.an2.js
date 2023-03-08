@@ -22,3 +22,21 @@ function hash(h)
 		tpp = tpp.parentpatcher;
 		}
 }
+
+function locked(h)
+{
+
+	tpp = this.patcher.parentpatcher;
+	
+	while (tpp){
+		if (!tpp.locked){
+			outlet(0,"bang");
+			hash(h);
+ 			//post("unlocked:",tpp.locked,"\n");
+			return;
+		}
+		tpp = tpp.parentpatcher;
+		}
+
+	
+}
