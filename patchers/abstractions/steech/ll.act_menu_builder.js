@@ -47,10 +47,10 @@ function watch_folder(id,folder){
 function load_acts_from_folder(folder){
 	var f = new Folder(folder)
 	f.typelist = ['JSON']
-
+	//post("\n", "folder",folder,f,"\n");
 	while (!f.end) {
 		var file_ext = get_extension(f.filename)
-
+		//post(f.filename);
 		if(file_ext[1] === 'maxpat'){
 
 			if(IGNORE_LIST.indexOf(","+file_ext[0]+",") === -1){
