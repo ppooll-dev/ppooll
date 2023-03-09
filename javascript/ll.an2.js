@@ -15,15 +15,17 @@ function hash(h)
 	while (tpp){
 		act = tpp.getnamed("act");
 		if (act && (act.getboxattr("boxatoms")[0]=="actmaker")) {
-			am = act.subpatcher().getnamed("inlet")
+			
+			am = act.subpatcher().getnamed("inlet");
 			am.message("actname","to",h+"here");
+			//post("an_to_here ", h);
 			return;
 			}
 		tpp = tpp.parentpatcher;
 		}
 }
 
-function locked(h)
+function unlocked(h)
 {
 
 	tpp = this.patcher.parentpatcher;
