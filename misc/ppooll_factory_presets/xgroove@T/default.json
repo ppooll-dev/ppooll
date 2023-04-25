@@ -1,5 +1,5 @@
 {
-	"window" : [ 249, 162, 500, 445 ],
+	"window" : [ 537, 107, 788, 390 ],
 	"envelope_display" : 	{
 		"patching_rect" : [ -6, 98, 262, 94 ],
 		"hidden" : 0,
@@ -110,7 +110,7 @@
 ,
 	"autotrigger" : 	{
 		"patching_rect" : [ 51, 81, 28, 19 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 12
 	}
 ,
