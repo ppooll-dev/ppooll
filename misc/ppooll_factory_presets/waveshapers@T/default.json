@@ -1,5 +1,5 @@
 {
-	"window" : [ 570, 434, 771, 618 ],
+	"window" : [ 138, 393, 339, 576 ],
 	"shapermode" : 	{
 		"patching_rect" : [ 31, 36, 169, 22 ],
 		"hidden" : 0,
@@ -42,8 +42,20 @@
 		"hidden" : 0
 	}
 ,
-	"p3" : 	{
+	"p4" : 	{
 		"patching_rect" : [ 0, 60, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p5" : 	{
+		"patching_rect" : [ 0, 78, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p6" : 	{
+		"patching_rect" : [ 0, 95, 200, 16 ],
 		"hidden" : 1,
 		"fontsize" : 12
 	}
@@ -54,43 +66,13 @@
 		"fontsize" : 12
 	}
 ,
+	"p3" : 	{
+		"patching_rect" : [ 0, 60, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
 	"p8" : 	{
-		"patching_rect" : [ 0, 60, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p9" : 	{
-		"patching_rect" : [ 0, 60, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p10" : 	{
-		"patching_rect" : [ 0, 60, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p11" : 	{
-		"patching_rect" : [ 0, 60, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p12" : 	{
-		"patching_rect" : [ 0, 78, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p13" : 	{
-		"patching_rect" : [ 0, 60, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p14" : 	{
 		"patching_rect" : [ 0, 60, 200, 16 ],
 		"hidden" : 1,
 		"fontsize" : 12
@@ -120,8 +102,44 @@
 		"fontsize" : 12
 	}
 ,
-	"p19" : 	{
-		"patching_rect" : [ 0, 59, 200, 16 ],
+	"p14" : 	{
+		"patching_rect" : [ 0, 60, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p13" : 	{
+		"patching_rect" : [ 0, 60, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p11" : 	{
+		"patching_rect" : [ 0, 60, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p12" : 	{
+		"patching_rect" : [ 0, 78, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p2" : 	{
+		"patching_rect" : [ 0, 78, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p9" : 	{
+		"patching_rect" : [ 0, 60, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p10" : 	{
+		"patching_rect" : [ 0, 60, 200, 16 ],
 		"hidden" : 1,
 		"fontsize" : 12
 	}
@@ -156,26 +174,8 @@
 		"fontsize" : 12
 	}
 ,
-	"p2" : 	{
-		"patching_rect" : [ 0, 78, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p4" : 	{
-		"patching_rect" : [ 0, 60, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p5" : 	{
-		"patching_rect" : [ 0, 78, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p6" : 	{
-		"patching_rect" : [ 0, 95, 200, 16 ],
+	"p19" : 	{
+		"patching_rect" : [ 0, 59, 200, 16 ],
 		"hidden" : 1,
 		"fontsize" : 12
 	}
