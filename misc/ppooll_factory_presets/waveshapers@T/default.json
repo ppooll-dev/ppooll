@@ -42,48 +42,6 @@
 		"hidden" : 0
 	}
 ,
-	"p4" : 	{
-		"patching_rect" : [ 0, 60, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p5" : 	{
-		"patching_rect" : [ 0, 78, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p6" : 	{
-		"patching_rect" : [ 0, 95, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p7" : 	{
-		"patching_rect" : [ 0, 60, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p3" : 	{
-		"patching_rect" : [ 0, 60, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p8" : 	{
-		"patching_rect" : [ 0, 60, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p15" : 	{
-		"patching_rect" : [ 0, 60, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
 	"p16" : 	{
 		"patching_rect" : [ 0, 60, 200, 16 ],
 		"hidden" : 1,
@@ -98,48 +56,6 @@
 ,
 	"p18" : 	{
 		"patching_rect" : [ 0, 78, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p14" : 	{
-		"patching_rect" : [ 0, 60, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p13" : 	{
-		"patching_rect" : [ 0, 60, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p11" : 	{
-		"patching_rect" : [ 0, 60, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p12" : 	{
-		"patching_rect" : [ 0, 78, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p2" : 	{
-		"patching_rect" : [ 0, 78, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p9" : 	{
-		"patching_rect" : [ 0, 60, 200, 16 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
-	"p10" : 	{
-		"patching_rect" : [ 0, 60, 200, 16 ],
 		"hidden" : 1,
 		"fontsize" : 12
 	}
@@ -181,6 +97,90 @@
 	}
 ,
 	"p1" : 	{
+		"patching_rect" : [ 0, 60, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p2" : 	{
+		"patching_rect" : [ 0, 78, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p3" : 	{
+		"patching_rect" : [ 0, 60, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p4" : 	{
+		"patching_rect" : [ 0, 60, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p5" : 	{
+		"patching_rect" : [ 0, 78, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p6" : 	{
+		"patching_rect" : [ 0, 95, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p7" : 	{
+		"patching_rect" : [ 0, 60, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p8" : 	{
+		"patching_rect" : [ 0, 60, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p9" : 	{
+		"patching_rect" : [ 0, 60, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p10" : 	{
+		"patching_rect" : [ 0, 60, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p11" : 	{
+		"patching_rect" : [ 0, 60, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p12" : 	{
+		"patching_rect" : [ 0, 78, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p13" : 	{
+		"patching_rect" : [ 0, 60, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p14" : 	{
+		"patching_rect" : [ 0, 60, 200, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"p15" : 	{
 		"patching_rect" : [ 0, 60, 200, 16 ],
 		"hidden" : 0,
 		"fontsize" : 12
