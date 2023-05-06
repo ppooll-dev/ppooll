@@ -1,5 +1,5 @@
 {
-	"window" : [ 111, 355, 500, 1302 ],
+	"window" : [ 36, 171, 415, 1117 ],
 	"freq_smooth" : 	{
 		"patching_rect" : [ 159, 565, 212, 18 ],
 		"hidden" : 0,
@@ -97,16 +97,16 @@
 		"hidden" : 0
 	}
 ,
-	"presets" : 	{
-		"patching_rect" : [ 279, 2, 92, 74 ],
-		"hidden" : 0,
-		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "animator@1" ]
-	}
-,
 	"range" : 	{
 		"patching_rect" : [ 0, 18, 278, 58 ],
 		"hidden" : 0,
 		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 279, 0, 92, 50 ],
+		"hidden" : 0,
+		"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "fmrm1" ]
 	}
 
 }
