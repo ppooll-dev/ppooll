@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 394.0, 352.0, 159.0, 113.0 ],
+		"rect" : [ 618.0, 196.0, 159.0, 113.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -163,7 +163,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 421.0, 123.0, 79.0, 22.0 ],
-					"restore" : [ 541, 360 ],
+					"restore" : [ 842, 214 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -357,7 +357,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-6",
-					"items" : [ "def_folders", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST3/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/", ",", "all", ",", "auto", ",", "-", ",", ".Dune3.reg", ",", ".Dune3.response", ",", ".Dune3.sn", ",", "AmpliTube 5.vst", ",", "Arturia V 5", ",", "Audio Damage", ",", "Bitter.vst", ",", "Black Rooster Audio.vst", ",", "CamelCrusher.vst", ",", "chipsounds Multi.vst", ",", "chipsounds.vst", ",", "FabFilter Micro (Mono).vst", ",", "FabFilter Micro.vst", ",", "FabFilter One.vst", ",", "FabFilter Pro-C 2 (Mono).vst", ",", "FabFilter Pro-C 2.vst", ",", "FabFilter Pro-DS (Mono).vst", ",", "FabFilter Pro-DS.vst", ",", "FabFilter Pro-G (Mono).vst", ",", "FabFilter Pro-G.vst", ",", "FabFilter Pro-L 2.vst", ",", "FabFilter Pro-MB (Mono).vst", ",", "FabFilter Pro-MB.vst", ",", "FabFilter Pro-Q 3.vst", ",", "FabFilter Pro-R (Mono).vst", ",", "FabFilter Pro-R.vst", ",", "FabFilter Saturn 2.vst", ",", "FabFilter Simplon.vst", ",", "FabFilter Timeless 3.vst", ",", "FabFilter Twin 2.vst", ",", "FabFilter Volcano 2 (Mono).vst", ",", "FabFilter Volcano 2 (SC Mono).vst", ",", "FabFilter Volcano 2 (SC).vst", ",", "FabFilter Volcano 2.vst", ",", "GForce", ",", "GSiRotary.vst", ",", "KORG", ",", "LABS.vst", ",", "Lexicon", ",", "Listento-Receiver.vst", ",", "Listento.vst", ",", "M-Tron Pro.vst", ",", "Massive X.vst", ",", "MeldaProduction", ",", "Neutron 3 Compressor.vst", ",", "Neutron 3 Equalizer.vst", ",", "Neutron 3 Exciter.vst", ",", "Neutron 3 Gate.vst", ",", "Neutron 3 Sculptor.vst", ",", "Neutron 3 Transient Shaper.vst", ",", "Neutron 3 Visual Mixer.vst", ",", "Neutron 3.vst", ",", "Noiiz Player.vst", ",", "Oddity_VST2MachO.vst", ",", "Omnisphere.vst", ",", "Overloud", ",", "PG-8X.vst", ",", "Pop Drummer.vst", ",", "PSPaudioware", ",", "quadraSID.vst", ",", "Relay.vst", ",", "Serum.vst", ",", "Slate Digital", ",", "Sonarworks Reference 4 plugin.vst", ",", "Sonic Charge", ",", "SoundID Reference VST Plugin.vst", ",", "Soundtoys", ",", "TAL-Chorus-LX.vst", ",", "TAL-Sampler.vst", ",", "TAL-U-No-LX-V2.vst", ",", "The Glue.vst", ",", "Tonal Balance Control 2.vst", ",", "tr8Controller.vst", ",", "u-he", ",", "ValhallaDelay.vst", ",", "ValhallaPlate.vst", ",", "ValhallaRoom_x64.vst", ",", "ValhallaShimmer_x64.vst", ",", "ValhallaUberMod_x64.vst", ",", "ValhallaVintageVerb_x64.vst", ",", "VB3-II.vst", ",", "VirtualCZ.vst", ",", "WaveShell-VST 9.7.vst", ",", "WaveShell-VST 9.91.vst", ",", "WaveShell2-VST 9.91.vst" ],
+					"items" : [ "def_folders", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Audio Damage/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/PSPaudioware/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Sonic Charge/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Soundtoys/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/Components/", ",", "all", ",", "auto", ",", "-", ",", ".Dune3.reg", ",", ".Dune3.response", ",", ".Dune3.sn", ",", "AmpliTube 5.vst", ",", "Arturia V 5", ",", "Audio Damage", ",", "Bitter.vst", ",", "Black Rooster Audio.vst", ",", "CamelCrusher.vst", ",", "chipsounds Multi.vst", ",", "chipsounds.vst", ",", "FabFilter Micro (Mono).vst", ",", "FabFilter Micro.vst", ",", "FabFilter One.vst", ",", "FabFilter Pro-C 2 (Mono).vst", ",", "FabFilter Pro-C 2.vst", ",", "FabFilter Pro-DS (Mono).vst", ",", "FabFilter Pro-DS.vst", ",", "FabFilter Pro-G (Mono).vst", ",", "FabFilter Pro-G.vst", ",", "FabFilter Pro-L 2.vst", ",", "FabFilter Pro-MB (Mono).vst", ",", "FabFilter Pro-MB.vst", ",", "FabFilter Pro-Q 3.vst", ",", "FabFilter Pro-R (Mono).vst", ",", "FabFilter Pro-R.vst", ",", "FabFilter Saturn 2.vst", ",", "FabFilter Simplon.vst", ",", "FabFilter Timeless 3.vst", ",", "FabFilter Twin 2.vst", ",", "FabFilter Volcano 2 (Mono).vst", ",", "FabFilter Volcano 2 (SC Mono).vst", ",", "FabFilter Volcano 2 (SC).vst", ",", "FabFilter Volcano 2.vst", ",", "GForce", ",", "GSiRotary.vst", ",", "KORG", ",", "LABS.vst", ",", "Lexicon", ",", "Listento-Receiver.vst", ",", "Listento.vst", ",", "M-Tron Pro.vst", ",", "Massive X.vst", ",", "MeldaProduction", ",", "Neutron 3 Compressor.vst", ",", "Neutron 3 Equalizer.vst", ",", "Neutron 3 Exciter.vst", ",", "Neutron 3 Gate.vst", ",", "Neutron 3 Sculptor.vst", ",", "Neutron 3 Transient Shaper.vst", ",", "Neutron 3 Visual Mixer.vst", ",", "Neutron 3.vst", ",", "Noiiz Player.vst", ",", "Oddity_VST2MachO.vst", ",", "Omnisphere.vst", ",", "Overloud", ",", "PG-8X.vst", ",", "Pop Drummer.vst", ",", "PSPaudioware", ",", "quadraSID.vst", ",", "Relay.vst", ",", "Serum.vst", ",", "Slate Digital", ",", "Sonarworks Reference 4 plugin.vst", ",", "Sonic Charge", ",", "SoundID Reference VST Plugin.vst", ",", "Soundtoys", ",", "TAL-Chorus-LX.vst", ",", "TAL-Sampler.vst", ",", "TAL-U-No-LX-V2.vst", ",", "The Glue.vst", ",", "Tonal Balance Control 2.vst", ",", "tr8Controller.vst", ",", "u-he", ",", "ValhallaDelay.vst", ",", "ValhallaPlate.vst", ",", "ValhallaRoom_x64.vst", ",", "ValhallaShimmer_x64.vst", ",", "ValhallaUberMod_x64.vst", ",", "ValhallaVintageVerb_x64.vst", ",", "VB3-II.vst", ",", "VirtualCZ.vst", ",", "WaveShell-VST 9.7.vst", ",", "WaveShell-VST 9.91.vst", ",", "WaveShell2-VST 9.91.vst" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -495,7 +495,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 68.0, 331.0, 85.0, 22.0 ],
+													"patching_rect" : [ 7.0, 391.0, 85.0, 22.0 ],
 													"text" : "prepend script"
 												}
 
@@ -507,7 +507,7 @@
 													"numinlets" : 3,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 68.0, 31.0, 119.0, 22.0 ],
+													"patching_rect" : [ 7.0, 12.0, 119.0, 22.0 ],
 													"text" : "ll.p ll.inputmix::chans"
 												}
 
@@ -519,7 +519,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 93.0, 87.0, 55.0, 22.0 ],
+													"patching_rect" : [ 32.0, 68.0, 55.0, 22.0 ],
 													"text" : "zl slice 1"
 												}
 
@@ -531,7 +531,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 93.0, 60.0, 105.0, 22.0 ],
+													"patching_rect" : [ 32.0, 41.0, 105.0, 22.0 ],
 													"text" : "ll.r ll.blues::state 1"
 												}
 
@@ -543,7 +543,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 68.0, 121.0, 44.0, 22.0 ],
+													"patching_rect" : [ 7.0, 102.0, 44.0, 22.0 ],
 													"text" : "pak i 2"
 												}
 
@@ -551,12 +551,12 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-18",
-													"linecount" : 2,
+													"linecount" : 5,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 68.0, 278.0, 704.0, 35.0 ],
+													"patching_rect" : [ 7.0, 259.0, 287.0, 76.0 ],
 													"text" : "size vst 279 22, connect vst 6 preset_names 0, connect vst 5 folder 0, connect vst 4 pgmfile 0, connect vst 2 getParams 1, connect vst 1 getParams 0, connect vst 0 out 0, connect in 0 vst 0, connect to_vst~ 0 vst 0, connect midi 0 vst 0"
 												}
 
@@ -568,7 +568,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 89.0, 196.0, 60.0, 22.0 ],
+													"patching_rect" : [ 179.0, 167.0, 60.0, 22.0 ],
 													"text" : "delete vst"
 												}
 
@@ -582,7 +582,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 78.5, 230.5, 251.0, 22.0 ],
+													"patching_rect" : [ 93.0, 198.5, 251.0, 22.0 ],
 													"text" : "sprintf newdefault vst 118 145 mcs.vst~ %i %i"
 												}
 
@@ -594,7 +594,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "bang", "", "bang" ],
-													"patching_rect" : [ 68.0, 151.0, 40.0, 22.0 ],
+													"patching_rect" : [ 7.0, 132.0, 191.0, 22.0 ],
 													"text" : "t b l b"
 												}
 
@@ -607,7 +607,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 68.0, 378.0, 30.0, 30.0 ]
+													"patching_rect" : [ 7.0, 438.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -2624,13 +2624,6 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-28", 1 ],
-													"source" : [ "obj-17", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-21", 0 ],
 													"source" : [ "obj-18", 1 ]
 												}
@@ -3488,6 +3481,17 @@
 														"assistshowspatchername" : 0,
 														"boxes" : [ 															{
 																"box" : 																{
+																	"id" : "obj-4",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 0,
+																	"patching_rect" : [ 285.0, 541.0, 85.0, 22.0 ],
+																	"text" : "print vst-folder"
+																}
+
+															}
+, 															{
+																"box" : 																{
 																	"id" : "obj-22",
 																	"maxclass" : "button",
 																	"numinlets" : 1,
@@ -4268,7 +4272,7 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 618.166564999999991, 289.693420000000003, 138.0, 38.0 ],
+																	"patching_rect" : [ 618.166564999999991, 289.693420000000003, 138.0, 23.0 ],
 																	"text" : "TAL-Chorus-LX.vst"
 																}
 
@@ -6891,7 +6895,7 @@
 																									"numoutlets" : 4,
 																									"outlettype" : [ "list", "", "", "" ],
 																									"patching_rect" : [ 0.0, 38.0, 431.0, 195.0 ],
-																									"rows" : 3,
+																									"rows" : 7,
 																									"vscroll" : 0
 																								}
 
@@ -7685,8 +7689,17 @@
 															}
 , 															{
 																"patchline" : 																{
+																	"destination" : [ "obj-4", 0 ],
+																	"order" : 0,
+																	"source" : [ "obj-17", 1 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
 																	"color" : [ 1.0, 0.0, 0.0, 1.0 ],
 																	"destination" : [ "obj-6", 0 ],
+																	"order" : 1,
 																	"source" : [ "obj-17", 1 ]
 																}
 
@@ -8162,7 +8175,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 204.833313000000004, 126.0, 265.0, 22.0 ],
-													"text" : "TAL-Chorus-LX.vst"
+													"text" : "def_folders"
 												}
 
 											}
@@ -8857,7 +8870,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 84.0, 241.0, 109.0, 22.0 ],
-																	"text" : "open 541 360"
+																	"text" : "open 842 214"
 																}
 
 															}
@@ -8871,7 +8884,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 537.0, 313.0, 54.0, 22.0 ],
-																	"text" : "541 360"
+																	"text" : "842 214"
 																}
 
 															}
@@ -9030,7 +9043,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 564.5, 119.0, 201.0, 22.0 ],
-																	"text" : "541. 360. 1476 795"
+																	"text" : "842. 214. 1242 454"
 																}
 
 															}
@@ -10651,7 +10664,7 @@
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "" ],
 																					"patching_rect" : [ 472.75, 387.0, 103.0, 22.0 ],
-																					"restore" : [ "vst@" ],
+																					"restore" : [ "modul.ator" ],
 																					"saved_object_attributes" : 																					{
 																						"parameter_enable" : 0,
 																						"parameter_mappable" : 0
@@ -10742,7 +10755,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 688.0, 233.0, 144.0, 62.0 ],
-																					"text" : "ho_st1 vst@1"
+																					"text" : "vst@1 ho_st1"
 																				}
 
 																			}
@@ -11821,7 +11834,7 @@
 									"clickthrough" : 0,
 									"enablehscroll" : 0,
 									"enablevscroll" : 0,
-									"id" : "obj-9",
+									"id" : "obj-10",
 									"lockeddragscroll" : 0,
 									"lockedsize" : 0,
 									"maxclass" : "newobj",
@@ -11855,6 +11868,48 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"source" : [ "obj-10", 6 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-26", 1 ],
+									"source" : [ "obj-10", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-26", 0 ],
+									"source" : [ "obj-10", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-10", 4 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-46", 0 ],
+									"source" : [ "obj-10", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-54", 0 ],
+									"source" : [ "obj-10", 5 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-32", 0 ],
 									"source" : [ "obj-11", 0 ]
 								}
@@ -11862,14 +11917,14 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-9", 0 ],
+									"destination" : [ "obj-10", 0 ],
 									"source" : [ "obj-12", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-9", 0 ],
+									"destination" : [ "obj-10", 0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -11883,7 +11938,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-9", 0 ],
+									"destination" : [ "obj-10", 0 ],
 									"source" : [ "obj-42", 0 ]
 								}
 
@@ -11915,48 +11970,6 @@
 									"destination" : [ "obj-6", 0 ],
 									"order" : 0,
 									"source" : [ "obj-7", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"source" : [ "obj-9", 6 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-26", 1 ],
-									"source" : [ "obj-9", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-26", 0 ],
-									"source" : [ "obj-9", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"source" : [ "obj-9", 4 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-46", 0 ],
-									"source" : [ "obj-9", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-54", 0 ],
-									"source" : [ "obj-9", 5 ]
 								}
 
 							}
@@ -12002,7 +12015,7 @@
 					"arrow" : 0,
 					"fontsize" : 9.0,
 					"id" : "obj-80",
-					"items" : [ "Scarlett 18i20 USB", ",", "to Max 1", ",", "to Max 2" ],
+					"items" : [ "to Max 1", ",", "to Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12045,11 +12058,9 @@
 						"tetris_menu" : 0,
 						"master" : 0,
 						"def_folder" : 0,
-						"position" : 0,
-						"def_shell" : 0,
-						"program_file" : 0,
 						"act" : 0,
 						"act::active_store" : 0,
+						"ll.inputmix::chans" : 0,
 						"ll.blues" : 0,
 						"ll.blues::levels" : 0,
 						"ll.blues::outputs" : 0,
@@ -12071,10 +12082,38 @@
 						"program_files" : 5,
 						"vst_program" : 6,
 						"Volume" : 100,
+						"wetDry" : 100,
+						"Mix" : 100,
 						"Dry / Wet" : 101,
+						"shift" : 101,
+						"PreDelay" : 101,
 						"Stereo" : 102,
+						"feedback" : 102,
+						"Decay" : 102,
 						"Chorus 1" : 103,
+						"diffusion" : 103,
+						"Size" : 103,
 						"Chorus 2" : 104,
+						"Attack" : 104,
+						"lowCut" : 105,
+						"BassMult" : 105,
+						"highCut" : 106,
+						"BassXover" : 106,
+						"modRate" : 107,
+						"HighShelf" : 107,
+						"modDepth" : 108,
+						"HighFreq" : 108,
+						"reverbMode" : 109,
+						"EarlyDiffusion" : 109,
+						"shiftMode" : 110,
+						"LateDiffusion" : 110,
+						"colorMode" : 111,
+						"ModRate" : 111,
+						"ModDepth" : 112,
+						"HighCut" : 113,
+						"LowCut" : 114,
+						"ColorMode" : 115,
+						"ReverbMode" : 116,
 						"midi-channel" : 900,
 						"midi-port" : 901,
 						"open!" : 910,
@@ -12087,10 +12126,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 14, 100, 757, 996 ],
+						"client_rect" : [ 25, 87, 1288, 313 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 200, 200, 800, 500 ]
+						"storage_rect" : [ 0, 0, 640, 240 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -12148,7 +12187,7 @@
 					"restore" : 					{
 						"master" : [ 0 ],
 						"midi-channel" : [ 0 ],
-						"midi-port" : [ "Scarlett 18i20 USB" ],
+						"midi-port" : [ "to Max 1" ],
 						"open!" : [ 0 ],
 						"pres_menu" : [ "" ],
 						"preset-ramp" : [ 0.0 ],
@@ -12202,7 +12241,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-13",
 					"ignoreclick" : 1,
-					"items" : [ "vintage-verb", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
+					"items" : [ "echoboy", ",", "vintage-verb", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12376,7 +12415,7 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-18::obj-9" : [ "vst", "vst", 0 ],
+			"obj-18::obj-10" : [ "vst", "vst", 0 ],
 			"parameterbanks" : 			{
 
 			}
