@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 618.0, 196.0, 159.0, 113.0 ],
+		"rect" : [ 636.0, 62.0, 159.0, 113.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -357,7 +357,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-6",
-					"items" : [ "def_folders", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Audio Damage/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/PSPaudioware/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Sonic Charge/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Soundtoys/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/Components/", ",", "all", ",", "auto", ",", "-", ",", ".Dune3.reg", ",", ".Dune3.response", ",", ".Dune3.sn", ",", "AmpliTube 5.vst", ",", "Arturia V 5", ",", "Audio Damage", ",", "Bitter.vst", ",", "Black Rooster Audio.vst", ",", "CamelCrusher.vst", ",", "chipsounds Multi.vst", ",", "chipsounds.vst", ",", "FabFilter Micro (Mono).vst", ",", "FabFilter Micro.vst", ",", "FabFilter One.vst", ",", "FabFilter Pro-C 2 (Mono).vst", ",", "FabFilter Pro-C 2.vst", ",", "FabFilter Pro-DS (Mono).vst", ",", "FabFilter Pro-DS.vst", ",", "FabFilter Pro-G (Mono).vst", ",", "FabFilter Pro-G.vst", ",", "FabFilter Pro-L 2.vst", ",", "FabFilter Pro-MB (Mono).vst", ",", "FabFilter Pro-MB.vst", ",", "FabFilter Pro-Q 3.vst", ",", "FabFilter Pro-R (Mono).vst", ",", "FabFilter Pro-R.vst", ",", "FabFilter Saturn 2.vst", ",", "FabFilter Simplon.vst", ",", "FabFilter Timeless 3.vst", ",", "FabFilter Twin 2.vst", ",", "FabFilter Volcano 2 (Mono).vst", ",", "FabFilter Volcano 2 (SC Mono).vst", ",", "FabFilter Volcano 2 (SC).vst", ",", "FabFilter Volcano 2.vst", ",", "GForce", ",", "GSiRotary.vst", ",", "KORG", ",", "LABS.vst", ",", "Lexicon", ",", "Listento-Receiver.vst", ",", "Listento.vst", ",", "M-Tron Pro.vst", ",", "Massive X.vst", ",", "MeldaProduction", ",", "Neutron 3 Compressor.vst", ",", "Neutron 3 Equalizer.vst", ",", "Neutron 3 Exciter.vst", ",", "Neutron 3 Gate.vst", ",", "Neutron 3 Sculptor.vst", ",", "Neutron 3 Transient Shaper.vst", ",", "Neutron 3 Visual Mixer.vst", ",", "Neutron 3.vst", ",", "Noiiz Player.vst", ",", "Oddity_VST2MachO.vst", ",", "Omnisphere.vst", ",", "Overloud", ",", "PG-8X.vst", ",", "Pop Drummer.vst", ",", "PSPaudioware", ",", "quadraSID.vst", ",", "Relay.vst", ",", "Serum.vst", ",", "Slate Digital", ",", "Sonarworks Reference 4 plugin.vst", ",", "Sonic Charge", ",", "SoundID Reference VST Plugin.vst", ",", "Soundtoys", ",", "TAL-Chorus-LX.vst", ",", "TAL-Sampler.vst", ",", "TAL-U-No-LX-V2.vst", ",", "The Glue.vst", ",", "Tonal Balance Control 2.vst", ",", "tr8Controller.vst", ",", "u-he", ",", "ValhallaDelay.vst", ",", "ValhallaPlate.vst", ",", "ValhallaRoom_x64.vst", ",", "ValhallaShimmer_x64.vst", ",", "ValhallaUberMod_x64.vst", ",", "ValhallaVintageVerb_x64.vst", ",", "VB3-II.vst", ",", "VirtualCZ.vst", ",", "WaveShell-VST 9.7.vst", ",", "WaveShell-VST 9.91.vst", ",", "WaveShell2-VST 9.91.vst" ],
+					"items" : [ "def_folders", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Audio Damage/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/PSPaudioware/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Sonic Charge/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Soundtoys/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/Components/", ",", "all", ",", "auto", ",", "-" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -419,6 +419,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-8",
@@ -3866,8 +3867,8 @@
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 165.0, 136.0, 89.0, 22.0 ],
-																	"text" : "print def_folder"
+																	"patching_rect" : [ 165.0, 136.0, 116.0, 22.0 ],
+																	"text" : "print vst@-vst-folder"
 																}
 
 															}
@@ -6778,7 +6779,7 @@
 																						}
 ,
 																						"classnamespace" : "box",
-																						"rect" : [ 455.0, 320.0, 431.0, 233.0 ],
+																						"rect" : [ 176.0, 302.0, 431.0, 233.0 ],
 																						"bglocked" : 0,
 																						"openinpresentation" : 0,
 																						"default_fontsize" : 12.0,
@@ -11834,7 +11835,7 @@
 									"clickthrough" : 0,
 									"enablehscroll" : 0,
 									"enablevscroll" : 0,
-									"id" : "obj-10",
+									"id" : "obj-3",
 									"lockeddragscroll" : 0,
 									"lockedsize" : 0,
 									"maxclass" : "newobj",
@@ -11868,48 +11869,6 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"source" : [ "obj-10", 6 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-26", 1 ],
-									"source" : [ "obj-10", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-26", 0 ],
-									"source" : [ "obj-10", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"source" : [ "obj-10", 4 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-46", 0 ],
-									"source" : [ "obj-10", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-54", 0 ],
-									"source" : [ "obj-10", 5 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-32", 0 ],
 									"source" : [ "obj-11", 0 ]
 								}
@@ -11917,14 +11876,14 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-10", 0 ],
+									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-12", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-10", 0 ],
+									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -11938,7 +11897,49 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-10", 0 ],
+									"destination" : [ "obj-17", 0 ],
+									"source" : [ "obj-3", 6 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-26", 1 ],
+									"source" : [ "obj-3", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-26", 0 ],
+									"source" : [ "obj-3", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-3", 4 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-46", 0 ],
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-54", 0 ],
+									"source" : [ "obj-3", 5 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-42", 0 ]
 								}
 
@@ -12057,7 +12058,6 @@
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
 						"master" : 0,
-						"def_folder" : 0,
 						"act" : 0,
 						"act::active_store" : 0,
 						"ll.inputmix::chans" : 0,
@@ -12081,39 +12081,6 @@
 						"vst-folder" : 3,
 						"program_files" : 5,
 						"vst_program" : 6,
-						"Volume" : 100,
-						"wetDry" : 100,
-						"Mix" : 100,
-						"Dry / Wet" : 101,
-						"shift" : 101,
-						"PreDelay" : 101,
-						"Stereo" : 102,
-						"feedback" : 102,
-						"Decay" : 102,
-						"Chorus 1" : 103,
-						"diffusion" : 103,
-						"Size" : 103,
-						"Chorus 2" : 104,
-						"Attack" : 104,
-						"lowCut" : 105,
-						"BassMult" : 105,
-						"highCut" : 106,
-						"BassXover" : 106,
-						"modRate" : 107,
-						"HighShelf" : 107,
-						"modDepth" : 108,
-						"HighFreq" : 108,
-						"reverbMode" : 109,
-						"EarlyDiffusion" : 109,
-						"shiftMode" : 110,
-						"LateDiffusion" : 110,
-						"colorMode" : 111,
-						"ModRate" : 111,
-						"ModDepth" : 112,
-						"HighCut" : 113,
-						"LowCut" : 114,
-						"ColorMode" : 115,
-						"ReverbMode" : 116,
 						"midi-channel" : 900,
 						"midi-port" : 901,
 						"open!" : 910,
@@ -12126,7 +12093,7 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 25, 87, 1288, 313 ],
+						"client_rect" : [ 0, 100, 756, 886 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 0, 0, 640, 240 ]
@@ -12194,7 +12161,7 @@
 						"presets" : [ 0 ],
 						"program_files" : [ "writepgm" ],
 						"tetris_menu" : [ "" ],
-						"title_menu" : [ "subpatch" ],
+						"title_menu" : [ "clientwindow" ],
 						"vst-folder" : [ "def_folders" ],
 						"vst_program" : [ 1 ]
 					}
@@ -12415,7 +12382,7 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-18::obj-10" : [ "vst", "vst", 0 ],
+			"obj-18::obj-3" : [ "vst", "vst", 0 ],
 			"parameterbanks" : 			{
 
 			}
