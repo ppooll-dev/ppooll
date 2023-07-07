@@ -1,5 +1,5 @@
 {
-	"window" : [ 694, 204, 1012, 476 ],
+	"window" : [ 383, 52, 701, 324 ],
 	"start" : 	{
 		"patching_rect" : [ 28, 218, 45, 19 ],
 		"hidden" : 0,
@@ -55,18 +55,6 @@
 ,
 	"length" : 	{
 		"patching_rect" : [ 96, 218, 45, 19 ],
-		"hidden" : 0,
-		"fontsize" : 9
-	}
-,
-	"buffermenu" : 	{
-		"patching_rect" : [ 0, 124, 136, 19 ],
-		"hidden" : 0,
-		"fontsize" : 9
-	}
-,
-	"grainenvelope" : 	{
-		"patching_rect" : [ 43, 107, 48, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
@@ -177,6 +165,24 @@
 		"patching_rect" : [ 0, 93, 36, 14 ],
 		"hidden" : 0,
 		"fontsize" : 10
+	}
+,
+	"env-view" : 	{
+		"patching_rect" : [ 0, 108, 100, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"grainenvelope" : 	{
+		"patching_rect" : [ 96, 108, 40, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"buffermenu" : 	{
+		"patching_rect" : [ 0, 124, 136, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
 	}
 
 }

@@ -1,33 +1,57 @@
 {
-	"window" : [ 741, 195, 844, 285 ],
-	"tempo" : 	{
-		"patching_rect" : [ 0, 18, 102, 21 ],
+	"window" : [ 844, 416, 947, 547 ],
+	"freq" : 	{
+		"patching_rect" : [ 0, 18, 63, 22 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"quantum" : 	{
-		"patching_rect" : [ 0, 41, 50, 21 ],
-		"hidden" : 0,
-		"fontsize" : 12
-	}
-,
-	"peers" : 	{
-		"patching_rect" : [ 52, 41, 50, 21 ],
+		"patching_rect" : [ 0, 42, 50, 21 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"act_link" : 	{
-		"patching_rect" : [ 0, 64, 50, 21 ],
+		"patching_rect" : [ 0, 85, 50, 21 ],
 		"hidden" : 0,
 		"fontsize" : 11
 	}
 ,
 	"par_link" : 	{
-		"patching_rect" : [ 52, 64, 50, 21 ],
+		"patching_rect" : [ 52, 85, 50, 21 ],
 		"hidden" : 0,
 		"fontsize" : 11
+	}
+,
+	"hz-ms-switch" : 	{
+		"patching_rect" : [ 65, 18, 37, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"midiclock_out" : 	{
+		"patching_rect" : [ 0, 108, 78, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"midi_refresh" : 	{
+		"patching_rect" : [ 80, 108, 22, 22 ],
+		"hidden" : 0,
+		"fontsize" : 20
+	}
+,
+	"estbpm" : 	{
+		"patching_rect" : [ 0, 65, 102, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"link_status" : 	{
+		"patching_rect" : [ 52, 42, 50, 21 ],
+		"hidden" : 0,
+		"fontsize" : 12
 	}
 
 }
