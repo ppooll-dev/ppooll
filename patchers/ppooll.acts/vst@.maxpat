@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 636.0, 62.0, 159.0, 113.0 ],
+		"rect" : [ 398.0, 373.0, 159.0, 113.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -163,7 +163,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 421.0, 123.0, 79.0, 22.0 ],
-					"restore" : [ 842, 214 ],
+					"restore" : [ -1205, 279 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -357,7 +357,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-6",
-					"items" : [ "def_folders", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Audio Damage/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/PSPaudioware/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Sonic Charge/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Soundtoys/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/Components/", ",", "all", ",", "auto", ",", "-" ],
+					"items" : [ "def_folders", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Audio Damage/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/PSPaudioware/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Sonic Charge/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Soundtoys/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/Components/", ",", "all", ",", "auto", ",", "-", ",", ".Dune3.reg", ",", ".Dune3.response", ",", ".Dune3.sn", ",", "AmpliTube 5.vst", ",", "Arturia V 5", ",", "Audio Damage", ",", "Bitter.vst", ",", "Black Rooster Audio.vst", ",", "CamelCrusher.vst", ",", "chipsounds Multi.vst", ",", "chipsounds.vst", ",", "FabFilter Micro (Mono).vst", ",", "FabFilter Micro.vst", ",", "FabFilter One.vst", ",", "FabFilter Pro-C 2 (Mono).vst", ",", "FabFilter Pro-C 2.vst", ",", "FabFilter Pro-DS (Mono).vst", ",", "FabFilter Pro-DS.vst", ",", "FabFilter Pro-G (Mono).vst", ",", "FabFilter Pro-G.vst", ",", "FabFilter Pro-L 2.vst", ",", "FabFilter Pro-MB (Mono).vst", ",", "FabFilter Pro-MB.vst", ",", "FabFilter Pro-Q 3.vst", ",", "FabFilter Pro-R (Mono).vst", ",", "FabFilter Pro-R.vst", ",", "FabFilter Saturn 2.vst", ",", "FabFilter Simplon.vst", ",", "FabFilter Timeless 3.vst", ",", "FabFilter Twin 2.vst", ",", "FabFilter Volcano 2 (Mono).vst", ",", "FabFilter Volcano 2 (SC Mono).vst", ",", "FabFilter Volcano 2 (SC).vst", ",", "FabFilter Volcano 2.vst", ",", "GForce", ",", "GSiRotary.vst", ",", "KORG", ",", "LABS.vst", ",", "Lexicon", ",", "Listento-Receiver.vst", ",", "Listento.vst", ",", "M-Tron Pro.vst", ",", "Massive X.vst", ",", "MeldaProduction", ",", "Neutron 3 Visual Mixer.vst", ",", "Noiiz Player.vst", ",", "Oddity_VST2MachO.vst", ",", "Omnisphere.vst", ",", "Overloud", ",", "Ozone 8 Dynamic EQ.vst", ",", "Ozone 8 Dynamics.vst", ",", "Ozone 8 Equalizer.vst", ",", "Ozone 8 Exciter.vst", ",", "Ozone 8 Imager.vst", ",", "Ozone 8 Maximizer.vst", ",", "Ozone 8 Spectral Shaper.vst", ",", "Ozone 8 Vintage Compressor.vst", ",", "Ozone 8 Vintage EQ.vst", ",", "Ozone 8 Vintage Limiter.vst", ",", "Ozone 8 Vintage Tape.vst", ",", "Ozone 8.vst", ",", "Ozone 9 Dynamic EQ.vst", ",", "Ozone 9 Dynamics.vst", ",", "Ozone 9 Equalizer.vst", ",", "Ozone 9 Exciter.vst", ",", "Ozone 9 Imager.vst", ",", "Ozone 9 Low End Focus.vst", ",", "Ozone 9 Master Rebalance.vst", ",", "Ozone 9 Match EQ.vst", ",", "Ozone 9 Maximizer.vst", ",", "Ozone 9 Spectral Shaper.vst", ",", "Ozone 9 Vintage Compressor.vst", ",", "Ozone 9 Vintage EQ.vst", ",", "Ozone 9 Vintage Limiter.vst", ",", "Ozone 9 Vintage Tape.vst", ",", "Ozone 9.vst", ",", "PG-8X.vst", ",", "Pop Drummer.vst", ",", "PSPaudioware", ",", "quadraSID.vst", ",", "Relay.vst", ",", "Serum.vst", ",", "Slate Digital", ",", "Sonarworks Reference 4 plugin.vst", ",", "Sonic Charge", ",", "SoundID Reference VST Plugin.vst", ",", "Soundtoys", ",", "TAL-Chorus-LX.vst", ",", "TAL-Sampler.vst", ",", "TAL-U-No-LX-V2.vst", ",", "The Glue.vst", ",", "Tonal Balance Control 2.vst", ",", "Tonal Balance Control.vst", ",", "tr8Controller.vst", ",", "u-he", ",", "ValhallaDelay.vst", ",", "ValhallaPlate.vst", ",", "ValhallaRoom_x64.vst", ",", "ValhallaShimmer_x64.vst", ",", "ValhallaUberMod_x64.vst", ",", "ValhallaVintageVerb_x64.vst", ",", "VB3-II.vst", ",", "VirtualCZ.vst", ",", "WaveShell-VST 9.7.vst", ",", "WaveShell-VST 9.91.vst", ",", "WaveShell2-VST 9.91.vst" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -419,7 +419,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-8",
@@ -1608,7 +1607,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 561.0, 317.0, 50.0, 22.0 ],
-																	"text" : "20"
+																	"text" : "17"
 																}
 
 															}
@@ -3867,7 +3866,7 @@
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 165.0, 136.0, 116.0, 22.0 ],
+																	"patching_rect" : [ 165.0, 142.0, 116.0, 22.0 ],
 																	"text" : "print vst@-vst-folder"
 																}
 
@@ -4274,7 +4273,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 618.166564999999991, 289.693420000000003, 138.0, 23.0 ],
-																	"text" : "TAL-Chorus-LX.vst"
+																	"text" : "\"M-Tron Pro.vst\""
 																}
 
 															}
@@ -4487,7 +4486,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 194.0, 96.0, 122.0, 22.0 ],
-																					"text" : "TAL-Chorus-LX.vst"
+																					"text" : "\"M-Tron Pro.vst\""
 																				}
 
 																			}
@@ -4779,6 +4778,17 @@
 																		"assistshowspatchername" : 0,
 																		"boxes" : [ 																			{
 																				"box" : 																				{
+																					"id" : "obj-16",
+																					"maxclass" : "newobj",
+																					"numinlets" : 1,
+																					"numoutlets" : 0,
+																					"patching_rect" : [ 88.0, 81.0, 46.0, 22.0 ],
+																					"text" : "print ∆í"
+																				}
+
+																			}
+, 																			{
+																				"box" : 																				{
 																					"comment" : "",
 																					"id" : "obj-15",
 																					"index" : 5,
@@ -5018,6 +5028,14 @@
 																				"patchline" : 																				{
 																					"destination" : [ "obj-12", 0 ],
 																					"order" : 0,
+																					"source" : [ "obj-1", 0 ]
+																				}
+
+																			}
+, 																			{
+																				"patchline" : 																				{
+																					"destination" : [ "obj-16", 0 ],
+																					"order" : 2,
 																					"source" : [ "obj-1", 0 ]
 																				}
 
@@ -6120,7 +6138,7 @@
 																	"fontsize" : 12.0,
 																	"id" : "obj-27",
 																	"maxclass" : "newobj",
-																	"numinlets" : 1,
+																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "bang" ],
 																	"patcher" : 																	{
@@ -6163,6 +6181,31 @@
 																		"subpatcher_template" : "",
 																		"assistshowspatchername" : 0,
 																		"boxes" : [ 																			{
+																				"box" : 																				{
+																					"comment" : "",
+																					"id" : "obj-11",
+																					"index" : 2,
+																					"maxclass" : "inlet",
+																					"numinlets" : 0,
+																					"numoutlets" : 1,
+																					"outlettype" : [ "" ],
+																					"patching_rect" : [ 584.0, 16.0, 30.0, 30.0 ]
+																				}
+
+																			}
+, 																			{
+																				"box" : 																				{
+																					"id" : "obj-10",
+																					"maxclass" : "message",
+																					"numinlets" : 2,
+																					"numoutlets" : 1,
+																					"outlettype" : [ "" ],
+																					"patching_rect" : [ 584.0, 60.0, 37.0, 22.0 ],
+																					"text" : "close"
+																				}
+
+																			}
+, 																			{
 																				"box" : 																				{
 																					"id" : "obj-9",
 																					"maxclass" : "newobj",
@@ -6779,7 +6822,7 @@
 																						}
 ,
 																						"classnamespace" : "box",
-																						"rect" : [ 176.0, 302.0, 431.0, 233.0 ],
+																						"rect" : [ 533.0, 391.0, 431.0, 233.0 ],
 																						"bglocked" : 0,
 																						"openinpresentation" : 0,
 																						"default_fontsize" : 12.0,
@@ -7194,6 +7237,20 @@
 																			}
  ],
 																		"lines" : [ 																			{
+																				"patchline" : 																				{
+																					"destination" : [ "obj-78", 0 ],
+																					"source" : [ "obj-10", 0 ]
+																				}
+
+																			}
+, 																			{
+																				"patchline" : 																				{
+																					"destination" : [ "obj-10", 0 ],
+																					"source" : [ "obj-11", 0 ]
+																				}
+
+																			}
+, 																			{
 																				"patchline" : 																				{
 																					"destination" : [ "obj-16", 0 ],
 																					"source" : [ "obj-15", 0 ]
@@ -8079,7 +8136,7 @@
 															}
 , 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-39", 0 ],
+																	"destination" : [ "obj-27", 1 ],
 																	"order" : 0,
 																	"source" : [ "obj-6", 0 ]
 																}
@@ -8087,8 +8144,16 @@
 															}
 , 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-48", 0 ],
+																	"destination" : [ "obj-39", 0 ],
 																	"order" : 1,
+																	"source" : [ "obj-6", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-48", 0 ],
+																	"order" : 2,
 																	"source" : [ "obj-6", 0 ]
 																}
 
@@ -8175,8 +8240,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 204.833313000000004, 126.0, 265.0, 22.0 ],
-													"text" : "def_folders"
+													"patching_rect" : [ 204.833313000000004, 126.0, 344.0, 22.0 ],
+													"text" : "\"M-Tron Pro.vst\""
 												}
 
 											}
@@ -8203,8 +8268,8 @@
 													"numinlets" : 3,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 108.0, 103.5, 89.0, 22.0 ],
-													"text" : "ll.p vst-folder 1"
+													"patching_rect" : [ 108.0, 103.5, 77.0, 22.0 ],
+													"text" : "ll.p vst-folder"
 												}
 
 											}
@@ -8271,6 +8336,13 @@
 													"destination" : [ "obj-23", 0 ],
 													"order" : 1,
 													"source" : [ "obj-15", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-23", 0 ],
+													"source" : [ "obj-20", 0 ]
 												}
 
 											}
@@ -8871,7 +8943,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 84.0, 241.0, 109.0, 22.0 ],
-																	"text" : "open 842 214"
+																	"text" : "open -1205 279"
 																}
 
 															}
@@ -8880,12 +8952,13 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-33",
+																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 537.0, 313.0, 54.0, 22.0 ],
-																	"text" : "842 214"
+																	"text" : "-1205 279"
 																}
 
 															}
@@ -9044,7 +9117,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 564.5, 119.0, 201.0, 22.0 ],
-																	"text" : "842. 214. 1242 454"
+																	"text" : "-1205. 279. -5 917"
 																}
 
 															}
@@ -10665,7 +10738,7 @@
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "" ],
 																					"patching_rect" : [ 472.75, 387.0, 103.0, 22.0 ],
-																					"restore" : [ "modul.ator" ],
+																					"restore" : [ "(__acts__)" ],
 																					"saved_object_attributes" : 																					{
 																						"parameter_enable" : 0,
 																						"parameter_mappable" : 0
@@ -11860,6 +11933,62 @@
 										"parameter_mappable" : 0
 									}
 ,
+									"snapshot" : 									{
+										"filetype" : "C74Snapshot",
+										"version" : 2,
+										"minorversion" : 0,
+										"name" : "snapshotlist",
+										"origin" : "mcs.vst~",
+										"type" : "list",
+										"subtype" : "Undefined",
+										"embed" : 1,
+										"snapshot" : 										{
+											"pluginname" : "M-Tron Pro.vst",
+											"plugindisplayname" : "MTPro",
+											"pluginsavedname" : "/Library/Audio/Plug-Ins/VST/M-Tron Pro.vst",
+											"pluginsaveduniqueid" : 0,
+											"version" : 1,
+											"isbank" : 0,
+											"isbase64" : 1,
+											"blob" : "590.CMlaKA....fQPMDZ....AbVHMQG...P..............................................HfDv3RLJDiL3nCLtXCNJDiL4nCLtXCNJDyLvnCLtTiBwLSL5.iK0nPLyHiNzLiBwLyL5byMJDyLznCMynPLyTiN2biBwLiM5.iBwLyM5.iBwLCN5.iKwHSMJDyL4nCLJDCMvnCLJDCMwnCLJDCMxnCLtDiL0nPLzLiNvnPLzPiNx.CLv.iBwPSM5.iBwPiM5.iKvDiBwPyM5.iKynPLzfiNvnPLzjiNwnPL0.iNv3BMJDSMwnCLtLiBwTiL5.iBwTyL5DiBwTCM5.iKynPL1LiNvnPL1PiNvnPL1TiNvnPL1XiNv3hM3nPL1biNvnPL1fiNx.CLv.iBwXSN5.iBwbCL5.iKvDiBwbSL5.iKynPL2HiNvnPL2LiNwnPL2PiNv3BMJDyM0nCLtLiBwbiM5.iBwbyM5DiBwbCN5.iKynPL2jiNvnPL3.iNvnPL3DiNvnPL3HiNvnPL3LiNvnPL3PiNvnPL3TiNvnPL3XiNvnfL0TiNJHSM1niBxTyM5.iBxTSN5.iBxXCL5.iBxXSL5.iBxXyL5nfL1PiNvnfL1TiNxnfL1XiNxnfL1biNvnfL1fiNvnfL1jiNv3RMJHyMvnCLtTiBxbSL5HSMJHyMxniL0nfL2LiNvnfL2PiNvnfL2TiNvnfL2XiNvnfL2biNvnfL2fiNvnfL2jiNvnfL3.iNvnfL3DiNvnfL3HiNvnvLyPiNvn."
+										}
+,
+										"snapshotlist" : 										{
+											"current_snapshot" : 0,
+											"entries" : [ 												{
+													"filetype" : "C74Snapshot",
+													"version" : 2,
+													"minorversion" : 0,
+													"name" : "MTPro",
+													"origin" : "M-Tron Pro.vst",
+													"type" : "VST",
+													"subtype" : "Instrument",
+													"embed" : 0,
+													"snapshot" : 													{
+														"pluginname" : "M-Tron Pro.vst",
+														"plugindisplayname" : "MTPro",
+														"pluginsavedname" : "/Library/Audio/Plug-Ins/VST/M-Tron Pro.vst",
+														"pluginsaveduniqueid" : 0,
+														"version" : 1,
+														"isbank" : 0,
+														"isbase64" : 1,
+														"blob" : "590.CMlaKA....fQPMDZ....AbVHMQG...P..............................................HfDv3RLJDiL3nCLtXCNJDiL4nCLtXCNJDyLvnCLtTiBwLSL5.iK0nPLyHiNzLiBwLyL5byMJDyLznCMynPLyTiN2biBwLiM5.iBwLyM5.iBwLCN5.iKwHSMJDyL4nCLJDCMvnCLJDCMwnCLJDCMxnCLtDiL0nPLzLiNvnPLzPiNx.CLv.iBwPSM5.iBwPiM5.iKvDiBwPyM5.iKynPLzfiNvnPLzjiNwnPL0.iNv3BMJDSMwnCLtLiBwTiL5.iBwTyL5DiBwTCM5.iKynPL1LiNvnPL1PiNvnPL1TiNvnPL1XiNv3hM3nPL1biNvnPL1fiNx.CLv.iBwXSN5.iBwbCL5.iKvDiBwbSL5.iKynPL2HiNvnPL2LiNwnPL2PiNv3BMJDyM0nCLtLiBwbiM5.iBwbyM5DiBwbCN5.iKynPL2jiNvnPL3.iNvnPL3DiNvnPL3HiNvnPL3LiNvnPL3PiNvnPL3TiNvnPL3XiNvnfL0TiNJHSM1niBxTyM5.iBxTSN5.iBxXCL5.iBxXSL5.iBxXyL5nfL1PiNvnfL1TiNxnfL1XiNxnfL1biNvnfL1fiNvnfL1jiNv3RMJHyMvnCLtTiBxbSL5HSMJHyMxniL0nfL2LiNvnfL2PiNvnfL2TiNvnfL2XiNvnfL2biNvnfL2fiNvnfL2jiNvnfL3.iNvnfL3DiNvnfL3HiNvnvLyPiNvn."
+													}
+,
+													"fileref" : 													{
+														"name" : "MTPro",
+														"filename" : "MTPro.maxsnap",
+														"filepath" : "~/Documents/Max 8/Snapshots",
+														"filepos" : -1,
+														"snapshotfileid" : "5d7344cc23ec5f3ae886ed3d389acb5a"
+													}
+
+												}
+ ]
+										}
+
+									}
+,
 									"text" : "mcs.vst~ 4 2",
 									"varname" : "vst",
 									"viewvisibility" : 0
@@ -12089,7 +12218,85 @@
 						"title_menu" : 2010,
 						"pres_menu" : 2011,
 						"tetris_menu" : 2012,
-						"master" : 2013
+						"master" : 2013,
+						"Lyr A Mix" : 100,
+						"Lyr B Mix" : 101,
+						"Lyr A Pan" : 102,
+						"Lyr B Pan" : 103,
+						"Lyr A Low Note" : 104,
+						"Lyr A High Note" : 105,
+						"Lyr B Low Note" : 106,
+						"Lyr B High Note" : 107,
+						"Lyr A Tune" : 108,
+						"Lyr A Detune" : 109,
+						"Lyr A LFO Rate" : 110,
+						"Lyr A LFO Amount" : 111,
+						"Lyr B Tune" : 112,
+						"Lyr B Detune" : 113,
+						"Lyr B LFO Rate" : 114,
+						"Lyr B LFO Amount" : 115,
+						"Lyr A VCF Cut" : 116,
+						"Lyr A VCF Mode" : 117,
+						"Lyr A VCF Res" : 118,
+						"Lyr A VCF Env A" : 119,
+						"Lyr A VCF Env D" : 120,
+						"Lyr A VCF Env S" : 121,
+						"Lyr A VCF Env R" : 122,
+						"Lyr A Amp Env A" : 123,
+						"Lyr A Amp Env D" : 124,
+						"Lyr A Amp Env S" : 125,
+						"Lyr A Amp Env R" : 126,
+						"Ens Voices" : 127,
+						"Ens Detune" : 128,
+						"Ens Mix" : 129,
+						"Master Gain" : 130,
+						"Master Tune" : 131,
+						"Lyr B VCF Cut" : 132,
+						"Lyr B VCF Mode" : 133,
+						"Lyr B VCF Res" : 134,
+						"Lyr B VCF Env A" : 135,
+						"Lyr B VCF Env D" : 136,
+						"Lyr B VCF Env S" : 137,
+						"Lyr B VCF Env R" : 138,
+						"Lyr B Amp Env A" : 139,
+						"Lyr B Amp Env D" : 140,
+						"Lyr B Amp Env S" : 141,
+						"Lyr B Amp Env R" : 142,
+						"Lyr A VCF Env Amt" : 143,
+						"Lyr B VCF Env Amt" : 144,
+						"Lyr A Vel->VCF" : 145,
+						"Lyr B Vel->VCF" : 146,
+						"Lyr A AFT->VCF" : 147,
+						"Lyr B AFT->VCF" : 148,
+						"Lyr A Vel->Amp" : 149,
+						"Lyr B Vel->Amp" : 150,
+						"Lyr A Inst" : 151,
+						"Lyr B Inst" : 152,
+						"Lyr Edit Select" : 153,
+						"Wide" : 154,
+						"Lyr A LFO Sync" : 155,
+						"Lyr B LFO Sync" : 156,
+						"Original Patch" : 157,
+						"Patch Edited" : 158,
+						"Lyr A Bend Amt" : 159,
+						"Lyr B Bend Amt" : 160,
+						"Lyr A Samp Offs" : 161,
+						"Lyr B Samp Offs" : 162,
+						"Dly Speed L" : 163,
+						"Dly Speed R" : 164,
+						"Dly Feedback L" : 165,
+						"Dly Feedback R" : 166,
+						"Dly Mix" : 167,
+						"Dly CF" : 168,
+						"Lyr A Samp Reverse" : 169,
+						"Lyr B Samp Reverse" : 170,
+						"Lyr A Half Speed" : 171,
+						"Lyr B Half Speed" : 172,
+						"Lid Open" : 173,
+						"Dly Sync" : 174,
+						"Lyr A Octave Shift" : 175,
+						"Lyr B Octave Shift" : 176,
+						"ModWheel Flywheel Braking" : 177
 					}
 ,
 					"saved_object_attributes" : 					{
@@ -12161,8 +12368,8 @@
 						"presets" : [ 0 ],
 						"program_files" : [ "writepgm" ],
 						"tetris_menu" : [ "" ],
-						"title_menu" : [ "clientwindow" ],
-						"vst-folder" : [ "def_folders" ],
+						"title_menu" : [ "subpatch" ],
+						"vst-folder" : [ "M-Tron Pro.vst" ],
 						"vst_program" : [ 1 ]
 					}
 ,
@@ -12391,6 +12598,13 @@
 		}
 ,
 		"dependency_cache" : [ 			{
+				"name" : "MTPro.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../../Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "actmaker.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
