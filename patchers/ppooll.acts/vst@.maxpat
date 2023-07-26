@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 802.0, 64.0, 159.0, 113.0 ],
+		"rect" : [ 751.0, 82.0, 159.0, 113.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -358,7 +358,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-6",
-					"items" : [ "def_folders", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Audio Damage/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/PSPaudioware/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Sonic Charge/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Soundtoys/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/Components/", ",", "all", ",", "auto", ",", "-", ",", ".Dune3.reg", ",", ".Dune3.response", ",", ".Dune3.sn", ",", "Absynth 5.component", ",", "AmpliTube 5.component", ",", "ARP 2600 V3.component", ",", "B-3 V.component", ",", "Battery 3.component", ",", "Bitter.component", ",", "Black Rooster Audio.component", ",", "BREVERB 2.component", ",", "CamelCrusher.component", ",", "chipsounds.component", ",", "Crystallizer.component", ",", "CS-80 V3.component", ",", "Decapitator.component", ",", "Devil-Loc.component", ",", "Devil-Loc_Deluxe.component", ",", "Dexed.component", ",", "DrumStarPlugin.component", ",", "Echobode.component", ",", "EchoBoy.component", ",", "EchoBoyJr.component", ",", "EffectRack.component", ",", "FabFilter Micro.component", ",", "FabFilter One.component", ",", "FabFilter Pro-C 2.component", ",", "FabFilter Pro-DS.component", ",", "FabFilter Pro-G.component", ",", "FabFilter Pro-L 2.component", ",", "FabFilter Pro-MB.component", ",", "FabFilter Pro-Q 3.component", ",", "FabFilter Pro-R.component", ",", "FabFilter Saturn 2.component", ",", "FabFilter Simplon.component", ",", "FabFilter Timeless 3.component", ",", "FabFilter Twin 2.component", ",", "FabFilter Volcano 2.component", ",", "Farfisa V.component", ",", "FilterFreak1.component", ",", "FilterFreak2.component", ",", "FM8.component", ",", "Fresh Air.component", ",", "GSiRotary.component", ",", "Guitar Rig 5.component", ",", "iZInsightAUHook.component", ",", "iZMeterTapAUHook.component", ",", "iZNeutron3VisualMixerAUHook.component", ",", "iZOzone10AUHook.component", ",", "iZOzone10DynamicEQAUHook.component", ",", "iZOzone10DynamicsAUHook.component", ",", "iZOzone10EqualizerAUHook.component", ",", "iZOzone10ExciterAUHook.component", ",", "iZOzone10ImagerAUHook.component", ",", "iZOzone10ImpactAUHook.component", ",", "iZOzone10LowEndFocusAUHook.component", ",", "iZOzone10MasterRebalanceAUHook.component", ",", "iZOzone10MatchEQAUHook.component", ",", "iZOzone10MaximizerAUHook.component", ",", "iZOzone10SpectralShaperAUHook.component", ",", "iZOzone10StabilizerAUHook.component", ",", "iZOzone10VintageCompressorAUHook.component", ",", "iZOzone10VintageEQAUHook.component", ",", "iZOzone10VintageLimiterAUHook.component", ",", "iZOzone10VintageTapeAUHook.component", ",", "iZOzone7AUHook.component", ",", "iZOzone7DynamicEQAUHook.component", ",", "iZOzone7DynamicsAUHook.component", ",", "iZOzone7EqualizerAUHook.component", ",", "iZOzone7ExciterAUHook.component", ",", "iZOzone7ImagerAUHook.component", ",", "iZOzone7MaximizerAUHook.component", ",", "iZOzone7VintageCompressorAUHook.component", ",", "iZOzone7VintageEQAUHook.component", ",", "iZOzone7VintageLimiterAUHook.component", ",", "iZOzone7VintageTapeAUHook.component", ",", "iZOzone8AUHook.component", ",", "iZOzone8DynamicEQAUHook.component", ",", "iZOzone8DynamicsAUHook.component", ",", "iZOzone8EqualizerAUHook.component", ",", "iZOzone8ExciterAUHook.component", ",", "iZOzone8ImagerAUHook.component", ",", "iZOzone8MaximizerAUHook.component", ",", "iZOzone8SpectralShaperAUHook.component", ",", "iZOzone8VintageCompressorAUHook.component", ",", "iZOzone8VintageEQAUHook.component", ",", "iZOzone8VintageLimiterAUHook.component", ",", "iZOzone8VintageTapeAUHook.component", ",", "iZOzone9AUHook.component", ",", "iZOzone9DynamicEQAUHook.component", ",", "iZOzone9DynamicsAUHook.component", ",", "iZOzone9EqualizerAUHook.component", ",", "iZOzone9ExciterAUHook.component", ",", "iZOzone9ImagerAUHook.component", ",", "iZOzone9LowEndFocusAUHook.component", ",", "iZOzone9MasterRebalanceAUHook.component", ",", "iZOzone9MatchEQAUHook.component", ",", "iZOzone9MaximizerAUHook.component", ",", "iZOzone9SpectralShaperAUHook.component", ",", "iZOzone9VintageCompressorAUHook.component", ",", "iZOzone9VintageEQAUHook.component", ",", "iZOzone9VintageLimiterAUHook.component", ",", "iZOzone9VintageTapeAUHook.component", ",", "iZRelayAUHook.component", ",", "iZRX5ConnectAUHook.component", ",", "iZRX5DeclickerAUHook.component", ",", "iZRX5DeclipperAUHook.component", ",", "iZRX5DecracklerAUHook.component", ",", "iZRX5DenoiserAUHook.component", ",", "iZRX5DereverbAUHook.component", ",", "iZRX5DialogueDenoiserAUHook.component", ",", "iZRX5HumRemovalAUHook.component", ",", "iZRX5MonitorAUHook.component", ",", "iZTonalBalanceControl2AUHook.component", ",", "iZTonalBalanceControlAUHook.component", ",", "Jup-8 V3.component", ",", "Kontakt 5.component", ",", "LABS.component", ",", "Lexicon PSP42.component", ",", "LIRA-8.component", ",", "Listento-Receiver.component", ",", "Listento.component", ",", "LittleAlterBoy.component", ",", "LittleMicroShift.component", ",", "LittlePlate.component", ",", "LittlePrimalTap.component", ",", "LittleRadiator.component", ",", "LXPChamber.component", ",", "LXPHall.component", ",", "LXPPlate.component", ",", "LXPRoom.component", ",", "M-Tron Pro.component", ",", "M1.component", ",", "MAGC.component", ",", "MAmp.component", ",", "MAnalyzer.component", ",", "Massive X.component", ",", "Massive.component", ",", "Matrix-12 V2.component", ",", "MAutoAlign.component", ",", "MAutoDynamicEq.component", ",", "MAutoEqualizer.component", ",", "MAutoEqualizerLP.component", ",", "MAutopan.component", ",", "MAutopanMB.component", ",", "MAutoPitch.component", ",", "MAutoStereoFix.component", ",", "MAutoVolume.component", ",", "MBandPass.component", ",", "MBassador.component", ",", "MBitFun.component", ",", "MBitFunMB.component", ",", "MCabinet.component", ",", "MChannelMatrix.component", ",", "MCharacter.component", ",", "MChorusMB.component", ",", "MComb.component", ",", "MCombMB.component", ",", "MCompare.component", ",", "MCompressor.component", ",", "MConvolutionEZ.component", ",", "MConvolutionMB.component", ",", "MDelayMB.component", ",", "MDistortionMB.component", ",", "MDoubleTracker.component", ",", "MDoubleTrackerMB.component", ",", "MDrumEnhancer.component", ",", "MDrumLeveler.component", ",", "MDrummer.component", ",", "MDrummer16out.component", ",", "MDrummer1out.component", ",", "MDynamicEq.component", ",", "MDynamics.component", ",", "MDynamicsMB.component", ",", "MDynamicsMBLarge.component", ",", "MEqualizer.component", ",", "MEqualizerLP.component", ",", "MFilter.component", ",", "MFlanger.component", ",", "MFlangerMB.component", ",", "MFreeformAnalogEq.component", ",", "MFreeformEqualizer.component", ",", "MFreeformPhase.component", ",", "MFreqShifter.component", ",", "MFreqShifterMB.component", ",", "MGranularMB.component", ",", "MHarmonizerMB.component", ",", "MicroShift.component", ",", "Mini V3.component", ",", "MLimiterMB.component", ",", "MLimiterX.component", ",", "MLoudnessAnalyzer.component", ",", "MModernCompressor.component", ",", "MMorph.component", ",", "MMultiAnalyzer.component", ",", "MNoiseGenerator.component", ",", "MNotepad.component", ",", "MOscillator.component", ",", "MOscilloscope.component", ",", "MPhaser.component", ",", "MPhaserMB.component", ",", "MPhatik.component", ",", "MPolySaturator.component", ",", "MPowerSynth.component", ",", "MRatio.component", ",", "MRatioMB.component", ",", "MRecorder.component", ",", "MReverb.component", ",", "MReverbMB.component", ",", "MRhythmizer.component", ",", "MRhythmizerMB.component", ",", "MRingModulator.component", ",", "MRingModulatorMB.component", ",", "MRotary.component", ",", "MSaturator.component", ",", "MSaturatorMB.component", ",", "MSoundFactory.component", ",", "MSoundFactory6out.component", ",", "MSpectralDelay.component", ",", "MSpectralDynamics.component", ",", "MSpectralDynamicsMini.component", ",", "MSpectralPan.component", ",", "MStereoExpander.component", ",", "MStereoGenerator.component", ",", "MStereoProcessor.component", ",", "MStereoScope.component", ",", "MStereoSpread.component", ",", "MTransformer.component", ",", "MTransient.component", ",", "MTransientMB.component", ",", "MTremolo.component", ",", "MTremoloMB.component", ",", "MTuner.component", ",", "MTurboComp.component", ",", "MTurboCompMB.component", ",", "MTurboDelay.component", ",", "MTurboEQ.component", ",", "MTurboReverb.component", ",", "MTurboReverbMB.component", ",", "MUltraMaximizer.component", ",", "MUnison.component", ",", "MUtility.component", ",", "MVibrato.component", ",", "MVibratoMB.component", ",", "MVintageRotary.component", ",", "MVocoder.component", ",", "MWaveFolder.component", ",", "MWaveFolderMB.component", ",", "MWaveShaper.component", ",", "MWaveShaperMB.component", ",", "MWobbler.component", ",", "MWobblerMB.component", ",", "MXXX.component", ",", "MXXX1.component", ",", "NilsK1v.component", ",", "Noiiz Player.component", ",", "Oddity_AUMachO.component", ",", "Omnisphere.component", ",", "Other Desert Cities.component", ",", "PanMan.component", ",", "PaulXStretch.component", ",", "PhaseMistress.component", ",", "Piano V.component", ",", "POP Drummer.component", ",", "PrimalTap.component", ",", "Prophet V3.component", ",", "PSP 608 MultiDelay.component", ",", "PSP 85.component", ",", "PSP BussPressor.component", ",", "PSP ClassicQ.component", ",", "PSP ClassicQex.component", ",", "PSP ConsoleQ.component", ",", "PSP EasyVerb.component", ",", "PSP Echo.component", ",", "PSP MasterComp.component", ",", "PSP McQ.component", ",", "PSP MicroComp.component", ",", "PSP MicroWarmer.component", ",", "PSP MixBass2.component", ",", "PSP MixGate2.component", ",", "PSP MixPressor2.component", ",", "PSP MixSaturator2.component", ",", "PSP MixSync2.component", ",", "PSP MixTreble2.component", ",", "PSP N2O.component", ",", "PSP Neon HR.component", ",", "PSP Neon MIX.component", ",", "PSP Neon STD.component", ",", "PSP NobleQ.component", ",", "PSP NobleQex.component", ",", "PSP oldTimer.component", ",", "PSP oldTimerME.component", ",", "PSP PianoVerb2.component", ",", "PSP PPM2.component", ",", "PSP PPM2M.component", ",", "PSP preQursor.component", ",", "PSP PseudoStereo.component", ",", "PSP RetroQ.component", ",", "PSP SpringBox.component", ",", "PSP StereoAnalyser.component", ",", "PSP StereoController.component", ",", "PSP StereoEnhancer.component", ",", "PSP VintageWarmer.component", ",", "PSP VintageWarmer2.component", ",", "PSP VU2.component", ",", "PSP VU2M.component", ",", "PSP X-Dither.component", ",", "PSP Xenon.component", ",", "quadraSID.component", ",", "Radiator.component", ",", "Reaktor5.component", ",", "SEM V2.component", ",", "Serum.component", ",", "SieQ.component", ",", "Solina V2.component", ",", "Sonarworks Reference 4 plugin.component", ",", "SoundID Reference AU Plugin.component", ",", "SpringAge.component", ",", "Stage-73 V.component", ",", "Surge XT Effects.component", ",", "Surge XT.component", ",", "Synclavier V.component", ",", "TAL-Chorus-LX.component", ",", "TAL-Sampler.component", ",", "TAL-U-No-LX-V2.component", ",", "The Glue.component", ",", "The Glue.vst", ",", "Tremolator.component", ",", "TRITON.component", ",", "ValhallaDelay.component", ",", "ValhallaPlate.component", ",", "ValhallaRoomAU64.component", ",", "ValhallaShimmerAU64.component", ",", "ValhallaUberModAU64.component", ",", "ValhallaVintageVerbAU64.component", ",", "VB3-II.component", ",", "Vintage Keyboard FX.component", ",", "VirtualCZ.component", ",", "VOX Continental V2.component", ",", "WaveShell-AU 9.7.component", ",", "WaveShell-AU 9.91.component", ",", "WaveShell2-AU 9.91.component", ",", "Wurli V2.component", ",", "Zebra2.component" ],
+					"items" : [ "def_folders", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Audio Damage/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/PSPaudioware/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Sonic Charge/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Soundtoys/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/Components/", ",", "all", ",", "auto", ",", "-" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -392,7 +392,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 100.0, 1444.0, 786.0 ],
+						"rect" : [ 758.0, 350.0, 688.0, 787.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -7652,8 +7652,8 @@
 																	"numinlets" : 3,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "bang" ],
-																	"patching_rect" : [ 225.0, 493.0, 79.0, 22.0 ],
-																	"text" : "ll.p vst-folder"
+																	"patching_rect" : [ 225.0, 493.0, 80.0, 22.0 ],
+																	"text" : "ll.pf vst-folder"
 																}
 
 															}
@@ -8203,7 +8203,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 204.833313000000004, 126.0, 344.0, 22.0 ],
-													"text" : "ValhallaVintageVerbAU64.component"
+													"text" : "def_folders"
 												}
 
 											}
@@ -8230,8 +8230,8 @@
 													"numinlets" : 3,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 108.0, 103.5, 77.0, 22.0 ],
-													"text" : "ll.p vst-folder"
+													"patching_rect" : [ 108.0, 103.5, 87.0, 22.0 ],
+													"text" : "ll.p vst-folder 1"
 												}
 
 											}
@@ -8431,7 +8431,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 897.0, 436.0, 600.0, 426.0 ],
+										"rect" : [ 790.0, 100.0, 688.0, 787.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -8460,6 +8460,246 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-22",
+													"maxclass" : "newobj",
+													"numinlets" : 3,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patcher" : 													{
+														"fileversion" : 1,
+														"appversion" : 														{
+															"major" : 8,
+															"minor" : 5,
+															"revision" : 4,
+															"architecture" : "x64",
+															"modernui" : 1
+														}
+,
+														"classnamespace" : "box",
+														"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+														"bglocked" : 0,
+														"openinpresentation" : 0,
+														"default_fontsize" : 12.0,
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"gridonopen" : 1,
+														"gridsize" : [ 15.0, 15.0 ],
+														"gridsnaponopen" : 1,
+														"objectsnaponopen" : 1,
+														"statusbarvisible" : 2,
+														"toolbarvisible" : 1,
+														"lefttoolbarpinned" : 0,
+														"toptoolbarpinned" : 0,
+														"righttoolbarpinned" : 0,
+														"bottomtoolbarpinned" : 0,
+														"toolbars_unpinned_last_save" : 0,
+														"tallnewobj" : 0,
+														"boxanimatetime" : 200,
+														"enablehscroll" : 1,
+														"enablevscroll" : 1,
+														"devicewidth" : 0.0,
+														"description" : "",
+														"digest" : "",
+														"tags" : "",
+														"style" : "",
+														"subpatcher_template" : "",
+														"assistshowspatchername" : 0,
+														"boxes" : [ 															{
+																"box" : 																{
+																	"id" : "obj-15",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 100.714285714285722, 141.0, 32.0, 22.0 ],
+																	"text" : "gate"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-12",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "int" ],
+																	"patching_rect" : [ 113.714285714285722, 114.0, 33.0, 22.0 ],
+																	"text" : "== 0"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-11",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "int" ],
+																	"patching_rect" : [ 50.0, 100.0, 33.0, 22.0 ],
+																	"text" : "== 1"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-10",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 50.0, 134.0, 32.0, 22.0 ],
+																	"text" : "gate"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"comment" : "",
+																	"id" : "obj-16",
+																	"index" : 1,
+																	"maxclass" : "inlet",
+																	"numinlets" : 0,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "int" ],
+																	"patching_rect" : [ 49.999991714285727, 40.0, 30.0, 30.0 ]
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"comment" : "",
+																	"id" : "obj-17",
+																	"index" : 2,
+																	"maxclass" : "inlet",
+																	"numinlets" : 0,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 84.999991714285727, 40.0, 30.0, 30.0 ]
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"comment" : "",
+																	"id" : "obj-18",
+																	"index" : 3,
+																	"maxclass" : "inlet",
+																	"numinlets" : 0,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 119.999991714285727, 40.0, 30.0, 30.0 ]
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"comment" : "",
+																	"id" : "obj-19",
+																	"index" : 1,
+																	"maxclass" : "outlet",
+																	"numinlets" : 1,
+																	"numoutlets" : 0,
+																	"patching_rect" : [ 49.999991714285727, 223.0, 30.0, 30.0 ]
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"comment" : "",
+																	"id" : "obj-21",
+																	"index" : 2,
+																	"maxclass" : "outlet",
+																	"numinlets" : 1,
+																	"numoutlets" : 0,
+																	"patching_rect" : [ 100.714285714285722, 223.0, 30.0, 30.0 ]
+																}
+
+															}
+ ],
+														"lines" : [ 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-19", 0 ],
+																	"source" : [ "obj-10", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-10", 0 ],
+																	"source" : [ "obj-11", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-15", 1 ],
+																	"source" : [ "obj-12", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-21", 0 ],
+																	"source" : [ "obj-15", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-11", 0 ],
+																	"source" : [ "obj-16", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-10", 1 ],
+																	"order" : 1,
+																	"source" : [ "obj-17", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-15", 0 ],
+																	"order" : 0,
+																	"source" : [ "obj-17", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-11", 1 ],
+																	"order" : 1,
+																	"source" : [ "obj-18", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-12", 0 ],
+																	"order" : 0,
+																	"source" : [ "obj-18", 0 ]
+																}
+
+															}
+ ]
+													}
+,
+													"patching_rect" : [ 263.285713999999984, 253.0, 98.0, 22.0 ],
+													"saved_object_attributes" : 													{
+														"description" : "",
+														"digest" : "",
+														"globalpatchername" : "",
+														"tags" : ""
+													}
+,
+													"text" : "p midi-chan-gate"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-9",
 													"maxclass" : "newobj",
@@ -8492,7 +8732,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 325.0, 331.0, 92.0, 19.0 ],
+													"patching_rect" : [ 145.0, 279.0, 92.0, 19.0 ],
 													"text" : "midievent 128 62 64"
 												}
 
@@ -8533,7 +8773,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 292.0, 276.0, 25.0, 25.0 ]
+													"patching_rect" : [ 281.285714285714221, 379.0, 25.0, 25.0 ]
 												}
 
 											}
@@ -8604,7 +8844,7 @@
 													"numinlets" : 3,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 36.0, 71.0, 76.0, 19.0 ],
+													"patching_rect" : [ 341.0, 220.0, 76.0, 19.0 ],
 													"text" : "ll.p midi-channel"
 												}
 
@@ -8668,6 +8908,29 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-20", 1 ],
+													"order" : 1,
+													"source" : [ "obj-22", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-7", 0 ],
+													"source" : [ "obj-22", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-7", 0 ],
+													"order" : 0,
+													"source" : [ "obj-22", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-7", 0 ],
 													"source" : [ "obj-3", 0 ]
 												}
@@ -8682,17 +8945,15 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-20", 1 ],
-													"order" : 0,
+													"destination" : [ "obj-22", 1 ],
 													"source" : [ "obj-39", 7 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-7", 0 ],
-													"order" : 1,
-													"source" : [ "obj-39", 7 ]
+													"destination" : [ "obj-22", 0 ],
+													"source" : [ "obj-39", 6 ]
 												}
 
 											}
@@ -8707,6 +8968,13 @@
 												"patchline" : 												{
 													"destination" : [ "obj-4", 0 ],
 													"source" : [ "obj-5", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-22", 2 ],
+													"source" : [ "obj-6", 0 ]
 												}
 
 											}
@@ -11903,62 +12171,6 @@
 										"parameter_mappable" : 0
 									}
 ,
-									"snapshot" : 									{
-										"filetype" : "C74Snapshot",
-										"version" : 2,
-										"minorversion" : 0,
-										"name" : "snapshotlist",
-										"origin" : "mcs.vst~",
-										"type" : "list",
-										"subtype" : "Undefined",
-										"embed" : 1,
-										"snapshot" : 										{
-											"pluginname" : "ValhallaVintageVerbAU64.component",
-											"plugindisplayname" : "ValhallaVintageVerb",
-											"pluginsavedname" : "/Library/Audio/Plug-Ins/Components/ValhallaVintageVerbAU64.component",
-											"pluginsaveduniqueid" : 0,
-											"version" : 1,
-											"isbank" : 0,
-											"isbase64" : 1,
-											"blob" : "978.hAGaoMGcv.C1AHv.DTfAGfPBJrvDTTgEWvUag4VclE1XzUmbkIGUjEFcgwUYrUVak4Fcs3VXsU1UyUmXzkGbkckckI2bo8laTQWdvU1WP7fZ0MVYPwVcmklaSQWXzUFUtEVakIwaDklaOAAk..............PD....v7Cf......PL9.H......HiOWmjL....y7Cf.......M+........TyOe7Gd....13y3u1M...vM.........fyO........47Cf.....XvG+.H.....F.hO6gUb..fAg3ivOxE..XfH+bQKNB..FLB.......fAj3ipptJ..XPI8nhpqJMCM3PDQESTxD8CPDELUkjavUGcQ+fDV8TczAWczIgckU1LP.fDgUmY38TDBrjUCISHBI...vyO30FafXWYxMWZu4VOhDiKvHBHk41XuQVZtcVOhTEUF0BNh7iOfviUgwFZgwFagYUZtQWXmUlUkImXf.Ga0cVZtYUYxMWZu4VOhHiKx3BLh.BbxU1bkQmSg0VY8HBQkYVX0wFch.RSogWOhDiKvHBHPIWYDUFagkWOh.iKxXSM0DCLwbSL1TSL3PCLxHBHDU1XgkWOh.iKyPCN3jCNvTyLwXSNxTCL0HBHSkldk0iHw3BLh.RPzQWXisVOh.iK1DSM4jSN4jiM1XiLwLSN4HBHBE1by0TcrQWOh.iK0TyL0fCM4jiL3fSM0fSN1HBHBE1byg0a1Ulb8HBLtPiMzjiMzfSN1PCMvTCL1HBHHk1YnMEZkwlY8HBLtTiHffTZmglQxUVb8HBLtPSN2TyM4bSMyLSN3fSN0LiHfTTXxwVdDklYlU2bo8la8HRLt.iHfvTXzUFQoYlY0MWZu4VOhDiKvHBHM8FYREFck0iHv3RL2TSN4jSN4jCLzXyLxTyMh.RSuQFQkAGcn0iHv3xMvLSN4jSN4XSL3TyLvHyMh.BRocFZCUGc8HBLtPSLwjiLyjyMzbSMxPiL1DiHfvza2MTcz0iHv3BLwPSN4jSN4jiM1PyMxLCN2HBHC8FauIWSuQVY8HBLtXiM1XiM1XCN1TyLzfCNwXiHfHUY1Ulbh0zajUVOh.iK2jSL1XiM1fiM0LCM3fSL1HBHskFdL81Xq0iHvHBH0k1UoQFcn0iH4LSMh.RcogTYocFZz0iHzLSMh7hO.fUUtQWZzwVYjA.B.jA.l.vJ.fC..A.R.zD.eA.Y.jV..DPAAbP.ID.CA3P.TDvEA3Q.iDPIAnx.4A.......HP..........fA..................Lff"
-										}
-,
-										"snapshotlist" : 										{
-											"current_snapshot" : 0,
-											"entries" : [ 												{
-													"filetype" : "C74Snapshot",
-													"version" : 2,
-													"minorversion" : 0,
-													"name" : "ValhallaVintageVerb",
-													"origin" : "ValhallaVintageVerbAU64.component",
-													"type" : "AudioUnit",
-													"subtype" : "AudioEffect",
-													"embed" : 0,
-													"snapshot" : 													{
-														"pluginname" : "ValhallaVintageVerbAU64.component",
-														"plugindisplayname" : "ValhallaVintageVerb",
-														"pluginsavedname" : "/Library/Audio/Plug-Ins/Components/ValhallaVintageVerbAU64.component",
-														"pluginsaveduniqueid" : 0,
-														"version" : 1,
-														"isbank" : 0,
-														"isbase64" : 1,
-														"blob" : "978.hAGaoMGcv.C1AHv.DTfAGfPBJrvDTTgEWvUag4VclE1XzUmbkIGUjEFcgwUYrUVak4Fcs3VXsU1UyUmXzkGbkckckI2bo8laTQWdvU1WP7fZ0MVYPwVcmklaSQWXzUFUtEVakIwaDklaOAAk..............PD....v7Cf......PL9.H......HiOWmjL....y7Cf.......M+........TyOe7Gd....13y3u1M...vM.........fyO........47Cf.....XvG+.H.....F.hO6gUb..fAg3ivOxE..XfH+bQKNB..FLB.......fAj3ipptJ..XPI8nhpqJMCM3PDQESTxD8CPDELUkjavUGcQ+fDV8TczAWczIgckU1LP.fDgUmY38TDBrjUCISHBI...vyO30FafXWYxMWZu4VOhDiKvHBHk41XuQVZtcVOhTEUF0BNh7iOfviUgwFZgwFagYUZtQWXmUlUkImXf.Ga0cVZtYUYxMWZu4VOhHiKx3BLh.BbxU1bkQmSg0VY8HBQkYVX0wFch.RSogWOhDiKvHBHPIWYDUFagkWOh.iKxXSM0DCLwbSL1TSL3PCLxHBHDU1XgkWOh.iKyPCN3jCNvTyLwXSNxTCL0HBHSkldk0iHw3BLh.RPzQWXisVOh.iK1DSM4jSN4jiM1XiLwLSN4HBHBE1by0TcrQWOh.iK0TyL0fCM4jiL3fSM0fSN1HBHBE1byg0a1Ulb8HBLtPiMzjiMzfSN1PCMvTCL1HBHHk1YnMEZkwlY8HBLtTiHffTZmglQxUVb8HBLtPSN2TyM4bSMyLSN3fSN0LiHfTTXxwVdDklYlU2bo8la8HRLt.iHfvTXzUFQoYlY0MWZu4VOhDiKvHBHM8FYREFck0iHv3RL2TSN4jSN4jCLzXyLxTyMh.RSuQFQkAGcn0iHv3xMvLSN4jSN4XSL3TyLvHyMh.BRocFZCUGc8HBLtPSLwjiLyjyMzbSMxPiL1DiHfvza2MTcz0iHv3BLwPSN4jSN4jiM1PyMxLCN2HBHC8FauIWSuQVY8HBLtXiM1XiM1XCN1TyLzfCNwXiHfHUY1Ulbh0zajUVOh.iK2jSL1XiM1fiM0LCM3fSL1HBHskFdL81Xq0iHvHBH0k1UoQFcn0iH4LSMh.RcogTYocFZz0iHzLSMh7hO.fUUtQWZzwVYjA.B.jA.l.vJ.fC..A.R.zD.eA.Y.jV..DPAAbP.ID.CA3P.TDvEA3Q.iDPIAnx.4A.......HP..........fA..................Lff"
-													}
-,
-													"fileref" : 													{
-														"name" : "ValhallaVintageVerb",
-														"filename" : "ValhallaVintageVerb_20230723.maxsnap",
-														"filepath" : "~/Documents/Max 8/Snapshots",
-														"filepos" : -1,
-														"snapshotfileid" : "4d140195fa6446c93b5b3861041db199"
-													}
-
-												}
- ]
-										}
-
-									}
-,
 									"text" : "mcs.vst~ 4 2",
 									"varname" : "vst",
 									"viewvisibility" : 0
@@ -12115,7 +12327,7 @@
 					"arrow" : 0,
 					"fontsize" : 9.0,
 					"id" : "obj-80",
-					"items" : [ "to Max 1", ",", "to Max 2" ],
+					"items" : [ "to Max 1", ",", "to Max 2", ",", "Additive Heaven.amxd" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12189,31 +12401,14 @@
 						"title_menu" : 2010,
 						"pres_menu" : 2011,
 						"tetris_menu" : 2012,
-						"master" : 2013,
-						"Mix" : 100,
-						"PreDelay" : 101,
-						"Decay" : 102,
-						"Size" : 103,
-						"Attack" : 104,
-						"BassMult" : 105,
-						"BassXover" : 106,
-						"HighShelf" : 107,
-						"HighFreq" : 108,
-						"EarlyDiffusion" : 109,
-						"LateDiffusion" : 110,
-						"ModRate" : 111,
-						"ModDepth" : 112,
-						"HighCut" : 113,
-						"LowCut" : 114,
-						"ColorMode" : 115,
-						"ReverbMode" : 116
+						"master" : 2013
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 545, 133, 1800, 849 ],
+						"client_rect" : [ 756, 100, 1512, 886 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 583, 68, 1034, 196 ]
+						"storage_rect" : [ 0, 0, 640, 240 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -12279,7 +12474,7 @@
 						"program_files" : [ "writepgm" ],
 						"tetris_menu" : [ "" ],
 						"title_menu" : [ "subpatch" ],
-						"vst-folder" : [ "ValhallaVintageVerbAU64.component" ],
+						"vst-folder" : [ "def_folders" ],
 						"vst_program" : [ 1 ]
 					}
 ,
@@ -12508,13 +12703,6 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "ValhallaVintageVerb_20230723.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../../../../Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "actmaker.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
