@@ -1,5 +1,5 @@
 {
-	"window" : [ 569, 394, 778, 649 ],
+	"window" : [ 640, 384, 849, 639 ],
 	"buffer" : 	{
 		"patching_rect" : [ 118, 79, 87, 22 ],
 		"hidden" : 0,
@@ -139,24 +139,6 @@
 		"patching_rect" : [ 0, 103, 185, 76 ],
 		"hidden" : 0,
 		"fontsize" : 12
-	}
-,
-	"left_input_menu" : 	{
-		"patching_rect" : [ 84, 0, 51, 19 ],
-		"hidden" : 1,
-		"fontsize" : 9
-	}
-,
-	"right_input_menu" : 	{
-		"patching_rect" : [ 132, 0, 51, 19 ],
-		"hidden" : 1,
-		"fontsize" : 9
-	}
-,
-	"adc-switch" : 	{
-		"patching_rect" : [ 60, 0, 25, 15 ],
-		"hidden" : 0,
-		"fontsize" : 10
 	}
 
 }
