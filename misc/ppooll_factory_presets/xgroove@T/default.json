@@ -1,5 +1,5 @@
 {
-	"window" : [ 556, 72, 806, 354 ],
+	"window" : [ 693, 120, 944, 403 ],
 	"envelope_display" : 	{
 		"patching_rect" : [ -6, 98, 262, 94 ],
 		"hidden" : 0,
@@ -7,8 +7,7 @@
 	}
 ,
 	"wf" : 	{
-		"patcher" : "bang",
-		"patching_rect" : [ -1, 101, 252, 94 ],
+		"patching_rect" : [ -1, 98, 252, 91 ],
 		"hidden" : 0
 	}
 ,
