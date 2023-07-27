@@ -1,1 +1,1 @@
-var tppp;function clearall(){	tppp = this.patcher.parentpatcher.parentpatcher;	tppp.apply(remove);}function remove(a){		if (a.maxclass === "number"){		tppp.remove(a);	}	return true;}
+var tppp;function clearall(){	tppp = this.patcher.parentpatcher.parentpatcher;	tppp.apply(remove);}function remove(a){		if (a.maxclass === "number"){		if(a.varname !== 'midi__stream'){			tppp.remove(a);		}	}	return true;}
