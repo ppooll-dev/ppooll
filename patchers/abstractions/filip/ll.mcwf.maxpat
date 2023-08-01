@@ -75,7 +75,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 0.0, 0.0, 252.0, 94.0 ],
 					"selcolor" : [ 0.816, 0.71, 0.851, 0.529 ],
-					"setmode" : 3,
+					"setmode" : 2,
 					"varname" : "wf1",
 					"wfcolor" : [ 0.816, 0.71, 0.851, 1.0 ]
 				}
@@ -536,7 +536,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 289.0, 427.0, 60.0, 22.0 ],
-													"text" : "0.91875"
+													"text" : "1."
 												}
 
 											}
@@ -2352,7 +2352,6 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-14",
-																	"linecount" : 3,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
@@ -2761,7 +2760,6 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-1",
-																	"linecount" : 3,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
@@ -2775,7 +2773,6 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-10",
-																	"linecount" : 3,
 																	"maxclass" : "newobj",
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
@@ -3567,7 +3564,6 @@
 																					"fontname" : "Arial",
 																					"fontsize" : 12.0,
 																					"id" : "obj-76",
-																					"linecount" : 3,
 																					"maxclass" : "newobj",
 																					"numinlets" : 0,
 																					"numoutlets" : 1,
@@ -3848,7 +3844,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-4",
-													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -3903,7 +3898,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-24",
-													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -4125,7 +4119,6 @@
 																					"fontname" : "Arial",
 																					"fontsize" : 12.0,
 																					"id" : "obj-76",
-																					"linecount" : 3,
 																					"maxclass" : "newobj",
 																					"numinlets" : 0,
 																					"numoutlets" : 1,
@@ -4514,7 +4507,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-75",
-													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -4725,7 +4717,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-1",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -4740,7 +4731,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-24",
-													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -5160,7 +5150,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-5",
-													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -5175,7 +5164,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-24",
-													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -7341,7 +7329,6 @@
 , 															{
 																"patchline" : 																{
 																	"destination" : [ "obj-15", 0 ],
-																	"disabled" : 1,
 																	"source" : [ "obj-31", 0 ]
 																}
 
@@ -9009,7 +8996,7 @@
 					"comment" : "",
 					"hidden" : 1,
 					"id" : "obj-1",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -9134,6 +9121,65 @@
 
 			}
  ],
+		"dependency_cache" : [ 			{
+				"name" : "ll.actname.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.an2.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.buffer_menu.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.ld.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.p.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.parentWsize.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.s.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll_mcwaveform.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "pattrexists.mxo",
+				"type" : "iLaX"
+			}
+ ],
+		"autosave" : 0,
 		"bgcolor" : [ 0.711957, 0.711957, 0.711957, 1.0 ]
 	}
 
