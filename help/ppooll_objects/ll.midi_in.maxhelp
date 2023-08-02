@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 419.0, 127.0, 420.0, 297.0 ],
+		"rect" : [ 852.0, 146.0, 382.0, 303.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "ll.midi_in2",
+		"globalpatchername" : "ll.midi_in1",
 		"boxes" : [ 			{
 				"box" : 				{
 					"color" : [ 0.4, 0.4, 0.8, 1.0 ],
@@ -60,7 +60,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 7.0, 544.0, 87.0 ],
+					"patching_rect" : [ 15.0, 7.0, 338.0, 87.0 ],
 					"text" : "\"ll.midi_in\" by joe steccato\n- receive a midi stream from ppooll or midi device\n- can be connected to 2 umenus for \"port\" and \"channel\"\n- select port and channel\n\ninspired by klaus' ll.actmenu "
 				}
 
