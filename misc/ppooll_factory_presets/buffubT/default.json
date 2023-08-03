@@ -1,5 +1,5 @@
 {
-	"window" : [ 594, 233, 803, 488 ],
+	"window" : [ 640, 384, 849, 639 ],
 	"buffer" : 	{
 		"patching_rect" : [ 118, 79, 87, 22 ],
 		"hidden" : 0,
@@ -12,25 +12,25 @@
 	}
 ,
 	"pos_act" : 	{
-		"patching_rect" : [ 151, 1, 57, 19 ],
+		"patching_rect" : [ 150, 13, 57, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
 ,
 	"pos_par" : 	{
-		"patching_rect" : [ 151, 16, 57, 19 ],
+		"patching_rect" : [ 150, 28, 57, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
 ,
 	"ps_act" : 	{
-		"patching_rect" : [ 172, 35, 35, 19 ],
+		"patching_rect" : [ 171, 47, 35, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
 ,
 	"ps_par" : 	{
-		"patching_rect" : [ 172, 50, 35, 19 ],
+		"patching_rect" : [ 171, 62, 35, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
@@ -42,7 +42,7 @@
 	}
 ,
 	"rec-switch" : 	{
-		"patching_rect" : [ 118, 52, 36, 26 ],
+		"patching_rect" : [ 118, 50, 26, 28 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
@@ -72,9 +72,9 @@
 	}
 ,
 	"pos_send_now" : 	{
-		"patching_rect" : [ 143, 35, 30, 16 ],
+		"patching_rect" : [ 143, 47, 29, 14 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 9
 	}
 ,
 	"full_select" : 	{
