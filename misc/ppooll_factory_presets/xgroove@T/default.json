@@ -1,5 +1,5 @@
 {
-	"window" : [ 729, 80, 980, 362 ],
+	"window" : [ 549, 322, 800, 604 ],
 	"envelope_display" : 	{
 		"patching_rect" : [ -6, 98, 262, 94 ],
 		"hidden" : 0,
@@ -160,6 +160,12 @@
 		"patching_rect" : [ 223, 194, 28, 18 ],
 		"hidden" : 0,
 		"fontsize" : 10
+	}
+,
+	"ms_format" : 	{
+		"patching_rect" : [ 88, 0, 58, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
 	}
 
 }
