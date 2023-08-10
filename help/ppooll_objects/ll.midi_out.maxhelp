@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 15.0, 168.0, 412.0, 308.0 ],
+		"rect" : [ 657.0, 349.0, 412.0, 308.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -51,7 +51,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 258.5, 202.0, 97.0, 22.0 ],
+					"patching_rect" : [ 262.5, 214.0, 97.0, 22.0 ],
 					"prefix_mode" : 2,
 					"showdotfiles" : 1
 				}
@@ -65,7 +65,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 258.5, 180.0, 55.0, 20.0 ],
+					"patching_rect" : [ 262.5, 192.0, 55.0, 20.0 ],
 					"text" : "see also"
 				}
 
@@ -77,7 +77,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 20.0, 188.0, 108.0, 22.0 ],
+					"patching_rect" : [ 5.0, 199.0, 108.0, 22.0 ],
 					"text" : "pack 0 0"
 				}
 
@@ -89,7 +89,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "float" ],
-					"patching_rect" : [ 20.0, 162.0, 108.0, 22.0 ],
+					"patching_rect" : [ 5.0, 173.0, 108.0, 22.0 ],
 					"text" : "makenote 100 100"
 				}
 
@@ -101,7 +101,7 @@
 					"numinlets" : 7,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "" ],
-					"patching_rect" : [ 20.0, 216.0, 123.0, 22.0 ],
+					"patching_rect" : [ 5.0, 227.0, 123.0, 22.0 ],
 					"text" : "midiformat"
 				}
 
@@ -114,19 +114,19 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 20.0, 96.0, 336.0, 53.0 ]
+					"patching_rect" : [ 5.0, 107.0, 336.0, 53.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 6,
+					"linecount" : 7,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 3.0, 1.0, 338.0, 87.0 ],
-					"text" : "\"ll.midi_out\" by joe steccato\n- send a midi stream to ppooll or midi output device\n- can be connected to 2 umenus for \"port\" and \"channel\"\n- select port and channel\n\ninspired by klaus' ll.actmenu "
+					"patching_rect" : [ 3.0, 1.0, 338.0, 100.0 ],
+					"text" : "\"ll.midi_out\" by joe steccato\n- send a midi stream to ppooll or midi output device\n- can be connected to 2 umenus for \"port\" and \"channel\"\n- select port and channel\n- you can refresh port-names by selecting \"-no-\"\n\ninspired by klaus' ll.actmenu "
 				}
 
 			}
@@ -153,20 +153,20 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 213.5, 259.0, 100.0, 22.0 ]
+					"patching_rect" : [ 198.5, 270.0, 100.0, 22.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-7",
-					"items" : [ "-no-", ",", "ll.midi", ",", "AU DLS Synth 1", ",", "from Max 1", ",", "from Max 2" ],
+					"items" : [ "-no-", ",", "ll.midi", ",", "AU DLS Synth 1", ",", "from Max 1", ",", "from Max 2", ",", "jBBL_v1.2.amxd", ",", "Chiral.amxd" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 108.5, 259.0, 100.0, 22.0 ]
+					"patching_rect" : [ 93.5, 270.0, 100.0, 22.0 ]
 				}
 
 			}
@@ -177,7 +177,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 20.0, 259.0, 83.0, 22.0 ],
+					"patching_rect" : [ 5.0, 270.0, 83.0, 22.0 ],
 					"text" : "ll.midi_out"
 				}
 
@@ -263,7 +263,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 262.0, 202.0, 65.0, 22.0 ],
+					"patching_rect" : [ 266.0, 214.0, 65.0, 22.0 ],
 					"text" : "ll.autohelp"
 				}
 

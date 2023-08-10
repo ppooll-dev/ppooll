@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 647.0, 467.0, 397.0, 305.0 ],
+		"rect" : [ 268.0, 346.0, 382.0, 360.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -51,7 +51,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 244.75, 78.0, 97.0, 22.0 ],
+					"patching_rect" : [ 230.0, 105.0, 97.0, 22.0 ],
 					"prefix_mode" : 2,
 					"showdotfiles" : 1
 				}
@@ -65,7 +65,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 244.75, 56.0, 55.0, 20.0 ],
+					"patching_rect" : [ 230.0, 83.0, 55.0, 20.0 ],
 					"text" : "see also"
 				}
 
@@ -79,7 +79,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 248.25, 78.0, 65.0, 22.0 ],
+					"patching_rect" : [ 233.5, 105.0, 65.0, 22.0 ],
 					"text" : "ll.autohelp"
 				}
 
@@ -101,12 +101,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-91",
-					"linecount" : 6,
+					"linecount" : 7,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 7.0, 338.0, 87.0 ],
-					"text" : "\"ll.midi_in\" by joe steccato\n- receive a midi stream from ppooll or midi device\n- can be connected to 2 umenus for \"port\" and \"channel\"\n- select port and channel\n\ninspired by klaus' ll.actmenu "
+					"patching_rect" : [ 3.0, 3.0, 338.0, 100.0 ],
+					"text" : "\"ll.midi_in\" by joe steccato\n- receive a midi stream from ppooll or midi device\n- can be connected to 2 umenus for \"port\" and \"channel\"\n- select port and channel for input\n- you can refresh port-names by selecting \"-no-\"\n\ninspired by klaus' ll.actmenu "
 				}
 
 			}
@@ -117,7 +117,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "int" ],
-					"patching_rect" : [ 226.0, 178.0, 67.0, 22.0 ],
+					"patching_rect" : [ 213.0, 210.0, 67.0, 22.0 ],
 					"text" : "unpack 0 0"
 				}
 
@@ -129,7 +129,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 8,
 					"outlettype" : [ "", "", "", "int", "int", "", "int", "" ],
-					"patching_rect" : [ 226.0, 149.0, 92.5, 22.0 ],
+					"patching_rect" : [ 213.0, 181.0, 92.5, 22.0 ],
 					"text" : "midiparse"
 				}
 
@@ -142,7 +142,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 26.0, 215.0, 336.0, 53.0 ]
+					"patching_rect" : [ 13.0, 247.0, 336.0, 53.0 ]
 				}
 
 			}
@@ -155,20 +155,20 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 122.0, 117.0, 100.0, 22.0 ]
+					"patching_rect" : [ 109.0, 149.0, 100.0, 22.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-2",
-					"items" : [ "-no-", ",", "ll.midi", ",", "to Max 1", ",", "to Max 2" ],
+					"items" : [ "-no-", ",", "ll.midi", ",", "to Max 1", ",", "to Max 2", ",", "jBBL_v1.2.amxd", ",", "Chiral.amxd" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 20.0, 117.0, 100.0, 22.0 ]
+					"patching_rect" : [ 7.0, 149.0, 100.0, 22.0 ]
 				}
 
 			}
@@ -179,7 +179,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
-					"patching_rect" : [ 226.0, 117.0, 55.0, 22.0 ],
+					"patching_rect" : [ 213.0, 149.0, 55.0, 22.0 ],
 					"text" : "ll.midi_in"
 				}
 
