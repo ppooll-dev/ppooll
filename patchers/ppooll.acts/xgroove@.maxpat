@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 458.0, 398.0, 251.0, 282.0 ],
+		"rect" : [ 683.0, 200.0, 251.0, 282.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -470,7 +470,7 @@
 					"patching_rect" : [ 0.0, 30.0, 251.0, 16.0 ],
 					"selectcolor" : [ 0.45098, 1.0, 0.698039, 0.470588 ],
 					"slidercolornofocus" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"slidermax" : 1883463.401360544143245,
+					"slidermax" : 15292.698412698413449,
 					"textcolornofocus" : [ 1.0, 1.0, 1.0, 0.788235 ],
 					"varname" : "length"
 				}
@@ -488,7 +488,7 @@
 					"id" : "obj-7",
 					"label" : [ "end" ],
 					"maxclass" : "ll_number",
-					"min" : 953187.099999999976717,
+					"min" : 0.1,
 					"mousefocus" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -497,7 +497,7 @@
 					"patching_rect" : [ 0.0, 46.0, 251.0, 16.0 ],
 					"selectcolor" : [ 0.45098, 1.0, 0.698039, 0.470588 ],
 					"slidercolornofocus" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"slidermax" : 1883463.401360544143245,
+					"slidermax" : 15292.698412698413449,
 					"textcolornofocus" : [ 1.0, 1.0, 1.0, 0.788235 ],
 					"varname" : "end"
 				}
@@ -524,7 +524,7 @@
 					"patching_rect" : [ 0.0, 15.0, 251.0, 16.0 ],
 					"selectcolor" : [ 0.45098, 1.0, 0.698039, 0.470588 ],
 					"slidercolornofocus" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"slidermax" : 1883463.401360544143245,
+					"slidermax" : 15292.698412698413449,
 					"textcolornofocus" : [ 1.0, 1.0, 1.0, 0.788235 ],
 					"varname" : "start"
 				}
@@ -575,7 +575,7 @@
 					"fontname" : "Arial",
 					"fontsize" : 11.0,
 					"id" : "obj-40",
-					"items" : "2022.10.9llrec21.37.14.aif",
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -648,10 +648,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 455.0, 104.0, 100.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 25, 87, 1288, 313 ],
+						"client_rect" : [ 545, 133, 1800, 849 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 0, 0, 640, 240 ]
+						"storage_rect" : [ 583, 68, 1034, 196 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -708,27 +708,27 @@
 					"patching_rect" : [ 442.0, 188.0, 107.0, 22.0 ],
 					"restore" : 					{
 						"autotrigger" : [ 0 ],
-						"buffer" : [ "2022.10.9llrec21.37.14.aif" ],
+						"buffer" : [ "" ],
 						"clear_env" : [ -1 ],
 						"display_selected" : [ -1 ],
-						"end" : [ 954904.397666480857879 ],
+						"end" : [ 0.1 ],
 						"envelope_display" : [ 1000.0, 0.0, 1.0, 0.0, 0.0, 1, 1.0, 1.0, 0, 999.0, 1.0, 0, 1000.0, 0.0, 1, "linear" ],
 						"full_display" : [ -1 ],
 						"full_env" : [ -1 ],
 						"full_select" : [ -1 ],
 						"interp" : [ 2 ],
 						"keep_length" : [ 1 ],
-						"length" : [ 1717.397666480857879 ],
+						"length" : [ 3.0 ],
 						"loop_mode" : [ 1 ],
 						"master" : [ 0 ],
 						"ms_format" : [ 1 ],
 						"play/stop" : [ 0 ],
-						"pres_menu" : [ "" ],
+						"pres_menu" : [ "_" ],
 						"preset-ramp" : [ 0 ],
 						"presets" : [ 0 ],
 						"show_envelope" : [ 0 ],
-						"speed" : [ 2.0 ],
-						"start" : [ 953187.0 ],
+						"speed" : [ 1.0 ],
+						"start" : [ 0.0 ],
 						"tetris_menu" : [ "" ],
 						"title_menu" : [ "subpatch" ],
 						"toggle_env" : [ 0 ],
@@ -736,7 +736,7 @@
 						"vzoom" : [ 1.0 ],
 						"xfade_mode" : [ 1 ],
 						"xshape" : [ 1 ],
-						"xzone" : [ 340 ]
+						"xzone" : [ 0 ]
 					}
 ,
 					"text" : "autopattr autopattr",
@@ -765,7 +765,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 538.0, 490.0, 229.0 ],
+						"rect" : [ 34.0, 679.0, 490.0, 229.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2188,7 +2188,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 175.0, 382.0, 688.0, 345.0 ],
+														"rect" : [ 790.0, 337.0, 688.0, 345.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 12.0,
@@ -2694,7 +2694,6 @@
 , 															{
 																"patchline" : 																{
 																	"destination" : [ "obj-14", 0 ],
-																	"order" : 1,
 																	"source" : [ "obj-45", 3 ]
 																}
 
@@ -2709,7 +2708,7 @@
 , 															{
 																"patchline" : 																{
 																	"destination" : [ "obj-2", 0 ],
-																	"order" : 0,
+																	"disabled" : 1,
 																	"source" : [ "obj-45", 3 ]
 																}
 
@@ -3840,8 +3839,8 @@
 																		"linecount" : 7,
 																		"id" : "obj-1",
 																		"numinlets" : 1,
-																		"numoutlets" : 0,
-																		"patching_rect" : [ 843.0, 41.003323240280167, 290.000004172325134, 100.0 ]
+																		"patching_rect" : [ 843.0, 41.003323240280167, 290.000004172325134, 100.0 ],
+																		"numoutlets" : 0
 																	}
 
 																}
@@ -3851,8 +3850,8 @@
 																		"text" : "out 4 end-bang",
 																		"id" : "obj-2",
 																		"numinlets" : 1,
-																		"numoutlets" : 0,
-																		"patching_rect" : [ 822.0, 724.666676998138428, 89.0, 22.0 ]
+																		"patching_rect" : [ 822.0, 724.666676998138428, 89.0, 22.0 ],
+																		"numoutlets" : 0
 																	}
 
 																}
@@ -3860,11 +3859,11 @@
 																	"box" : 																	{
 																		"maxclass" : "newobj",
 																		"text" : "in 2 trigger",
+																		"outlettype" : [ "" ],
 																		"id" : "obj-13",
 																		"numinlets" : 0,
-																		"numoutlets" : 1,
-																		"outlettype" : [ "" ],
-																		"patching_rect" : [ 822.0, 4.0, 65.0, 22.0 ]
+																		"patching_rect" : [ 822.0, 4.0, 65.0, 22.0 ],
+																		"numoutlets" : 1
 																	}
 
 																}
@@ -3872,11 +3871,11 @@
 																	"box" : 																	{
 																		"maxclass" : "newobj",
 																		"text" : "in 1",
+																		"outlettype" : [ "" ],
 																		"id" : "obj-12",
 																		"numinlets" : 0,
-																		"numoutlets" : 1,
-																		"outlettype" : [ "" ],
-																		"patching_rect" : [ 4.0, 4.0, 28.0, 22.0 ]
+																		"patching_rect" : [ 4.0, 4.0, 28.0, 22.0 ],
+																		"numoutlets" : 1
 																	}
 
 																}
@@ -3886,8 +3885,8 @@
 																		"text" : "out 3 current_position",
 																		"id" : "obj-10",
 																		"numinlets" : 1,
-																		"numoutlets" : 0,
-																		"patching_rect" : [ 549.333333333333371, 724.666676998138428, 124.0, 22.0 ]
+																		"patching_rect" : [ 549.333333333333371, 724.666676998138428, 124.0, 22.0 ],
+																		"numoutlets" : 0
 																	}
 
 																}
@@ -3897,8 +3896,8 @@
 																		"text" : "out 2 sync",
 																		"id" : "obj-9",
 																		"numinlets" : 1,
-																		"numoutlets" : 0,
-																		"patching_rect" : [ 276.666666666666686, 724.666676998138428, 63.0, 22.0 ]
+																		"patching_rect" : [ 276.666666666666686, 724.666676998138428, 63.0, 22.0 ],
+																		"numoutlets" : 0
 																	}
 
 																}
@@ -3908,22 +3907,22 @@
 																		"text" : "out 1 outL",
 																		"id" : "obj-7",
 																		"numinlets" : 1,
-																		"numoutlets" : 0,
-																		"patching_rect" : [ 4.0, 724.666676998138428, 62.0, 22.0 ]
+																		"patching_rect" : [ 4.0, 724.666676998138428, 62.0, 22.0 ],
+																		"numoutlets" : 0
 																	}
 
 																}
 , 																{
 																	"box" : 																	{
 																		"maxclass" : "codebox",
-																		"id" : "obj-6",
-																		"fontsize" : 12.0,
-																		"numinlets" : 2,
-																		"numoutlets" : 4,
 																		"fontname" : "<Monospaced>",
 																		"outlettype" : [ "", "", "", "" ],
 																		"fontface" : 0,
+																		"id" : "obj-6",
+																		"fontsize" : 12.0,
+																		"numinlets" : 2,
 																		"patching_rect" : [ 4.0, 27.999999761581421, 837.0, 690.666676998138428 ],
+																		"numoutlets" : 4,
 																		"code" : "/*\n\tno.groove\n\t\tgenexpr version of thomas grill's xgroove~\n\n \t\tby joe steccato 2023\n*/\n\n\n//////////////////////////\n// FUNCTION DEFINITIONS //\n//////////////////////////\n/*\n \tpeek_interp(source, i, interp_num)\n\n \t\tpeek w/ interpolation selection\n\n*/\npeek_interp(source, i, interp_num){\n\t// audio_L, audio_R, index = \n\tif(interp_num == 0.){\n\t\treturn peek(source, i, (mc_channel - 1), interp=\"none\", channels=1);\n\t}else if(interp_num == 1.){\n\t\treturn peek(source, i, (mc_channel - 1), interp=\"cubic\", channels=1);\n\t}else if(interp_num == 2.){\n\t\treturn peek(source, i, (mc_channel - 1), interp=\"linear\", channels=1);\n\t}\n}\n\n/*\n \tquarter_sine(val)\n\n \t\tget 1/4 sine value\n\n*/\nquarter_sine(val){\n\treturn sin( val * ( PI/2 ) );\n}\n\n\n/*\n \thalf_sine(val)\n\n \t\tget 1/2 sine value\n\n*/\nhalf_sine(val){\n\treturn (sin( (val * PI) - ( PI/2 ) ) + 1.) * 0.5;\n}\n\n\ncalc_fades(c_index, x_samps, x_shape){\n\t\tc_gain = 1.;\n\t\tp_gain = 0.;\n\t\t\n\t\tif(c_index < x_samps){\n\t\t\t// linear\n\t\t\tc_gain = (c_index / x_samps);\n\t\t\tp_gain = (1. - c_gain);\n\t\t\t// quarter sine\n\t\t\tif(x_shape == 1.){\n\t\t\t\tc_gain = quarter_sine( c_gain );\n\t\t\t\tp_gain = quarter_sine( p_gain );\n\t\t\t// half sine\n\t\t\t}else if(x_shape == 2.){\n\t\t\t\tc_gain = half_sine( c_gain );\n\t\t\t\tp_gain = half_sine( p_gain );\n\t\t\t}\n\t\t\tp_gain = (1. - c_gain);\n\t\t}\n\t\treturn c_gain, p_gain;\n}\n\n\n/*\n \tdo_xfade(buf, count, xzone_samps, previous_index, interp, speed)\n\n \t\tread buffer and apply xfade\n\n*/\ndo_xfade(source, c_index, x_samps, p_index, interpolation, speed){\t\n\txAudio = 0.;\n\t\n\tif(c_index <= x_samps){\n\t\txfade_index = p_index + (c_index * (speed/abs(speed))) + ( speed );\n\t\t\n\t\t// if p_index is -1, this is the initial fade-in-- don't play\n\t\tif(p_index >= 0.){\n\t\t\txAudio = peek_interp(source, xfade_index, interpolation);\n\t\t}\n\t}\n\treturn xAudio;\n}\n\n\n\n\n//////////////////////////\n//         MAIN         //\n//////////////////////////\n\nBuffer buf(\"buf\");\nBuffer env_buf(\"env_buf\");\n\n// peek interpolation\n//\t\t0 = none\n//\t\t1 = cubic\n//\t\t2 = linear\nParam interp(2., min=0.);\n\n// loop selection\nParam start\t(0., min=0.);\nParam len\t(3., min=3.);\nParam end\t(3., min=3.);\nParam env_on(0., min=0.);\n\n// xfade (fade mode)\n//\t\t0 = fade within loop\n//\t\t1 = fade outside loop\nParam xfade\t(0., min=0.);\n\n// xzone (length of xfade in ms)\nParam xzone\t(0., min=0.0);\n\n// xshape (shape of xfade)\n//\t\t0 = linear\n//  \t1 = quarter sine\n//  \t2 = half sine\nParam xshape(2., min=0.);\n\n// mode (playback mode)\n// \t\t0 = one-shot\n// \t\t1 = forward\n// \t\t2 = bidirectional\nParam mode(0, min=0.);\n\nParam play(0, min=-1.);\nParam speed(1., min=-4.0);\n\nParam buf_sr(0, min=0.);\n\nHistory counter_reset(0);\nHistory direction(1.);\nHistory current_ms(0.);\nHistory previous_index(-1.);\n\n// calculate the sample rate factor for speed and ms position\nsr_factor = buf_sr / samplerate;\n\ntrigger = in2;\n\n// latched params release on main counter reset\nstart_ms = latch(start, counter_reset, init=0);\nlength_ms = latch(len, counter_reset, init=250);\nend_ms = latch(end, counter_reset, init=250);\nxzone_ms = latch(xzone, counter_reset, init=1);\n\n// convert ms to samps\nstart_samps = mstosamps(start_ms) * sr_factor;\nlength_samps = mstosamps(length_ms) * sr_factor;\nend_samps = mstosamps(end_ms) * sr_factor;\nxzone_samps = mstosamps(xzone_ms) * sr_factor;\n\n// SET LOOP START AND END POINTS\n// \t\twe won't use the latched params so we can skip ahead immediately\n//\t\t*** this is prob where the other \"xfade keep length, keep fade\" apply...\nloop_start = mstosamps(start) * sr_factor;\nloop_end = mstosamps(end) * sr_factor;\n\n//\n// --- PLAY MODE & DIRECTION ---\n//\n\n// oneshot & forwards\nif(mode == 0. || mode == 1.){\n\tdirection = abs(speed)/speed;\n}\n\n// we reset the previous_index when playback is stopped\n//\t\totherwise we will hear the previous xfade section played fade out\nif(play == 0.){\n\tprevious_index = -1.;\n}\n\n\n// xfade mode is \"inside\"\nif(xfade == 1.){\n\txzone_samps = clamp(xzone_samps, 0., ((length_samps/2.) - (direction * sr_factor)));\n\tif(direction == 1.){\n\t\tloop_end -= xzone_samps;\n\t}else if(direction == -1.){\n\t\tloop_start += xzone_samps;\n\t}\n}\n// xfade mode is \"outside\"\nelse{\n\txzone_samps = clamp( xzone_samps, 0., length_samps );\n}\n\n// CURSOR PLAYBACK\ncount = counter(abs(speed * play * sr_factor), counter_reset, 0);\npercent = (count/(loop_end - loop_start) );\ncurrent_samps = count;\n\n// adjust counter percent based on forwards/backwards playback\nif(direction < 0.){\n\tcurrent_samps = end_samps - current_samps;\n\tpercent = 1. - percent;\n}else{\n\tcurrent_samps += start_samps;\n}\n\n\n//\n// get audio from regular playback\n//\naudio, index = peek_interp(buf, current_samps, interp);\n//\n// get audio for xfade playback\n//\nprev = do_xfade(buf, count, xzone_samps, previous_index, interp, speed);\n\n//\n// calc fade gain values\n//\ncurrent_gain, prev_gain = calc_fades(count, xzone_samps, xshape);\n\n//\n// should loop reset??\n//\nend_bang = (index < loop_start) || (index > loop_end);\n\n\n// counter for cursor/main playback should reset\ncounter_reset = clamp( (end_bang + in2), 0., 1. );\n\n//\n// IS LOOP END??\n//\nif(\tcounter_reset ){\n\t// store this index for xfade peek object\t\n\tprevious_index = index;\t\t\n\t\t// we will immediately play from start in main counter at 0. -> 1. gain\n\t\t// also play from previous_index in 2nd counter at at 1. -> 0. gain\n\t\n\t// if bidirectional, change direction\n\tif(mode == 2.){\n\t\tdirection = direction * -1;\n\t}\t\n}\n\nenv_value = 1.;\nif(env_on){\n\tenv_value = peek(env_buf, percent * mstosamps(1000.), interp=\"linear\");\n}\n\n//current_gain = 0;\n\t\nout1 = ((audio * current_gain) + (prev * prev_gain)) * env_value * play;\n\nout2 = percent; // sync\nout3 = sampstoms(index / sr_factor);\n\t\nout4 = end_bang;"
 																	}
 
@@ -3984,7 +3983,7 @@
 													"patching_rect" : [ 30.959999999999923, 321.0, 805.0, 22.0 ],
 													"style" : "xgroove",
 													"text" : "mc.gen~",
-													"wrapper_uniquekey" : "u440002529"
+													"wrapper_uniquekey" : "u453012137"
 												}
 
 											}
@@ -4669,7 +4668,7 @@
 																									"numoutlets" : 1,
 																									"outlettype" : [ "" ],
 																									"patching_rect" : [ 139.0, 305.0, 45.0, 22.0 ],
-																									"text" : "2."
+																									"text" : "1."
 																								}
 
 																							}
