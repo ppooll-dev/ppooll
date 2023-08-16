@@ -1,5 +1,5 @@
 {
-	"window" : [ 624, 495, 833, 750 ],
+	"window" : [ 1001, 272, 1210, 527 ],
 	"buffer" : 	{
 		"patching_rect" : [ 118, 79, 87, 22 ],
 		"hidden" : 0,
@@ -143,7 +143,7 @@
 ,
 	"my_INmulti" : 	{
 		"patching_rect" : [ 56, 0, 78, 16 ],
-		"hidden" : 1,
+		"hidden" : 0,
 		"fontsize" : 11
 	}
 
