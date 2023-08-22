@@ -1,5 +1,5 @@
 {
-	"window" : [ 390, 268, 567, 339 ],
+	"window" : [ 540, 523, 715, 595 ],
 	"presets" : 	{
 		"patching_rect" : [ 60, -1, 112, 15 ],
 		"hidden" : 0,
@@ -50,7 +50,7 @@
 	"def_outputs" : 	{
 		"patcher" : "bang",
 		"patching_rect" : [ 176, 19, 162, 51 ],
-		"hidden" : 1
+		"hidden" : 0
 	}
 
 }
