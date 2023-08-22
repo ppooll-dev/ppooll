@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 697.0, 249.0, 159.0, 113.0 ],
+		"rect" : [ 563.0, 332.0, 159.0, 113.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -187,7 +187,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 421.0, 149.0, 91.0, 22.0 ],
-					"restore" : [ "∆í Macintosh HD:/Library/Audio/Plug-Ins/VST/Soundtoys/" ],
+					"restore" : [ "bla" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -359,7 +359,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-6",
-					"items" : [ "def_folders", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Audio Damage/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/PSPaudioware/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Sonic Charge/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Soundtoys/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/Components/", ",", "all", ",", "auto", ",", "-" ],
+					"items" : [ "def_folders", ",", "all", ",", "auto", ",", "-" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -393,7 +393,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 514.0, 149.0, 688.0, 787.0 ],
+						"rect" : [ 34.0, 100.0, 688.0, 787.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -449,8 +449,8 @@
 									"id" : "obj-11",
 									"maxclass" : "newobj",
 									"numinlets" : 0,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
@@ -462,7 +462,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 517.0, 100.0, 688.0, 786.0 ],
+										"rect" : [ 790.0, 100.0, 405.0, 786.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -492,25 +492,323 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
-													"id" : "obj-5",
+													"id" : "obj-27",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "", "int", "int" ],
-													"patching_rect" : [ 144.5, 68.0, 48.0, 22.0 ],
-													"text" : "change"
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patcher" : 													{
+														"fileversion" : 1,
+														"appversion" : 														{
+															"major" : 8,
+															"minor" : 5,
+															"revision" : 4,
+															"architecture" : "x64",
+															"modernui" : 1
+														}
+,
+														"classnamespace" : "box",
+														"rect" : [ 59.0, 119.0, 640.0, 480.0 ],
+														"bglocked" : 0,
+														"openinpresentation" : 0,
+														"default_fontsize" : 12.0,
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"gridonopen" : 1,
+														"gridsize" : [ 15.0, 15.0 ],
+														"gridsnaponopen" : 1,
+														"objectsnaponopen" : 1,
+														"statusbarvisible" : 2,
+														"toolbarvisible" : 1,
+														"lefttoolbarpinned" : 0,
+														"toptoolbarpinned" : 0,
+														"righttoolbarpinned" : 0,
+														"bottomtoolbarpinned" : 0,
+														"toolbars_unpinned_last_save" : 0,
+														"tallnewobj" : 0,
+														"boxanimatetime" : 200,
+														"enablehscroll" : 1,
+														"enablevscroll" : 1,
+														"devicewidth" : 0.0,
+														"description" : "",
+														"digest" : "",
+														"tags" : "",
+														"style" : "",
+														"subpatcher_template" : "",
+														"assistshowspatchername" : 0,
+														"boxes" : [ 															{
+																"box" : 																{
+																	"comment" : "",
+																	"id" : "obj-1",
+																	"index" : 1,
+																	"maxclass" : "inlet",
+																	"numinlets" : 0,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 60.0, 18.0, 30.0, 30.0 ]
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-25",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 3,
+																	"outlettype" : [ "bang", "", "bang" ],
+																	"patching_rect" : [ 60.0, 60.7109375, 40.0, 22.0 ],
+																	"text" : "t b l b"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-2",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 50.0, 284.7109375, 85.0, 22.0 ],
+																	"text" : "prepend script"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-18",
+																	"linecount" : 5,
+																	"maxclass" : "message",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 50.0, 173.7109375, 293.0, 76.0 ],
+																	"text" : "size vst 279 22, connect vst 6 preset_names 0, connect vst 5 folder 0, connect vst 4 pgmfile 0, connect vst 2 getParams 1, connect vst 1 getParams 0, connect vst 0 out 0, connect in 0 vst 0, connect to_vst~ 0 vst 0, connect midi 0 vst 0"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-17",
+																	"maxclass" : "message",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 278.5, 109.2109375, 60.0, 22.0 ],
+																	"text" : "delete vst"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"fontname" : "Arial",
+																	"fontsize" : 12.0,
+																	"id" : "obj-15",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 164.25, 138.2109375, 251.0, 22.0 ],
+																	"text" : "sprintf newdefault vst 118 145 mcs.vst~ %i %i"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"comment" : "",
+																	"id" : "obj-26",
+																	"index" : 1,
+																	"maxclass" : "outlet",
+																	"numinlets" : 1,
+																	"numoutlets" : 0,
+																	"patching_rect" : [ 50.0, 366.7109375, 30.0, 30.0 ]
+																}
+
+															}
+ ],
+														"lines" : [ 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-25", 0 ],
+																	"source" : [ "obj-1", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-2", 0 ],
+																	"source" : [ "obj-15", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-2", 0 ],
+																	"source" : [ "obj-17", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-2", 0 ],
+																	"source" : [ "obj-18", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-26", 0 ],
+																	"source" : [ "obj-2", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-15", 0 ],
+																	"source" : [ "obj-25", 1 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-17", 0 ],
+																	"source" : [ "obj-25", 2 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-18", 0 ],
+																	"source" : [ "obj-25", 0 ]
+																}
+
+															}
+ ]
+													}
+,
+													"patching_rect" : [ 178.5, 196.0, 111.0, 22.0 ],
+													"saved_object_attributes" : 													{
+														"description" : "",
+														"digest" : "",
+														"globalpatchername" : "",
+														"tags" : ""
+													}
+,
+													"text" : "p script-create-vst~"
 												}
 
 											}
 , 											{
 												"box" : 												{
-													"id" : "obj-2",
+													"comment" : "",
+													"id" : "obj-6",
+													"index" : 1,
+													"maxclass" : "outlet",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 29.5, 269.0, 30.0, 30.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontname" : "Arial",
+													"fontsize" : 12.0,
+													"id" : "obj-4",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 7.0, 667.0, 32.5, 22.0 ],
+													"text" : "1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontname" : "Arial",
+													"fontsize" : 12.0,
+													"id" : "obj-31",
+													"maxclass" : "newobj",
+													"numinlets" : 3,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
+													"patching_rect" : [ 7.0, 692.0, 63.0, 22.0 ],
+													"text" : "ll.pf open!"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontname" : "Arial",
+													"fontsize" : 12.0,
+													"id" : "obj-7",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "bang", "" ],
+													"patching_rect" : [ 7.0, 641.0, 36.0, 22.0 ],
+													"text" : "sel 1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontname" : "Arial",
+													"fontsize" : 12.0,
+													"id" : "obj-32",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 7.0, 616.0, 77.0, 22.0 ],
+													"text" : "ll.preg open!"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-9",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 7.0, 391.0, 85.0, 22.0 ],
-													"text" : "prepend script"
+													"patching_rect" : [ 38.5, 196.0, 125.0, 22.0 ],
+													"text" : "ll.r last_loaded_plugin"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-12",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 29.5, 236.0, 51.0, 22.0 ],
+													"text" : "zl.group"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-3",
+													"linecount" : 6,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 288.0, 12.0, 150.0, 87.0 ],
+													"text" : "1) store params\n2) delete\n3) create new\n4) set params\n5) re-set vst\n6) re-set params"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-5",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 3,
+													"outlettype" : [ "", "int", "int" ],
+													"patching_rect" : [ 144.5, 67.0, 58.0, 22.0 ],
+													"text" : "change 2"
 												}
 
 											}
@@ -557,47 +855,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 7.0, 102.0, 44.0, 22.0 ],
+													"patching_rect" : [ 7.0, 102.0, 156.5, 22.0 ],
 													"text" : "pak i 2"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-18",
-													"linecount" : 5,
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 7.0, 259.0, 293.0, 76.0 ],
-													"text" : "size vst 279 22, connect vst 6 preset_names 0, connect vst 5 folder 0, connect vst 4 pgmfile 0, connect vst 2 getParams 1, connect vst 1 getParams 0, connect vst 0 out 0, connect in 0 vst 0, connect to_vst~ 0 vst 0, connect midi 0 vst 0"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-17",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 179.0, 167.0, 60.0, 22.0 ],
-													"text" : "delete vst"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontname" : "Arial",
-													"fontsize" : 12.0,
-													"id" : "obj-15",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 93.0, 198.5, 251.0, 22.0 ],
-													"text" : "sprintf newdefault vst 118 145 mcs.vst~ %i %i"
 												}
 
 											}
@@ -606,10 +865,10 @@
 													"id" : "obj-13",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "", "bang" ],
-													"patching_rect" : [ 7.0, 132.0, 191.0, 22.0 ],
-													"text" : "t b l b"
+													"numoutlets" : 5,
+													"outlettype" : [ "bang", "int", "bang", "", "int" ],
+													"patching_rect" : [ 7.0, 132.0, 61.0, 22.0 ],
+													"text" : "t b 1 b l 0"
 												}
 
 											}
@@ -617,54 +876,40 @@
 												"box" : 												{
 													"comment" : "",
 													"id" : "obj-1",
-													"index" : 1,
+													"index" : 2,
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 7.0, 438.0, 30.0, 30.0 ]
+													"patching_rect" : [ 178.5, 231.0, 30.0, 30.0 ]
 												}
 
 											}
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
-													"destination" : [ "obj-15", 0 ],
-													"source" : [ "obj-13", 1 ]
+													"destination" : [ "obj-6", 0 ],
+													"source" : [ "obj-12", 0 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-17", 0 ],
+													"destination" : [ "obj-12", 0 ],
 													"source" : [ "obj-13", 2 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-18", 0 ],
+													"destination" : [ "obj-27", 0 ],
+													"source" : [ "obj-13", 3 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-32", 0 ],
 													"source" : [ "obj-13", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-2", 0 ],
-													"source" : [ "obj-15", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-2", 0 ],
-													"source" : [ "obj-17", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-2", 0 ],
-													"source" : [ "obj-18", 0 ]
 												}
 
 											}
@@ -672,13 +917,6 @@
 												"patchline" : 												{
 													"destination" : [ "obj-13", 0 ],
 													"source" : [ "obj-19", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-1", 0 ],
-													"source" : [ "obj-2", 0 ]
 												}
 
 											}
@@ -705,8 +943,43 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-1", 0 ],
+													"source" : [ "obj-27", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-7", 0 ],
+													"source" : [ "obj-32", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-31", 0 ],
+													"source" : [ "obj-4", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-19", 1 ],
 													"source" : [ "obj-5", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-4", 0 ],
+													"source" : [ "obj-7", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-12", 0 ],
+													"source" : [ "obj-9", 0 ]
 												}
 
 											}
@@ -740,7 +1013,8 @@
 										"tags" : ""
 									}
 ,
-									"text" : "p scripting"
+									"text" : "p scripting",
+									"varname" : "scripting"
 								}
 
 							}
@@ -1569,13 +1843,13 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-29",
-																	"linecount" : 2,
+																	"linecount" : 3,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 504.0, 451.0, 50.0, 35.0 ],
-																	"text" : "tal-test.fxp"
+																	"text" : "tal-write-test.fxp"
 																}
 
 															}
@@ -1617,7 +1891,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 561.0, 317.0, 50.0, 22.0 ],
-																	"text" : "19"
+																	"text" : "6"
 																}
 
 															}
@@ -1655,13 +1929,13 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-22",
-																	"linecount" : 9,
+																	"linecount" : 15,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 322.0, 340.0, 61.0, 129.0 ],
-																	"text" : "84 65 76 45 67 104 111 114 117 115 45 76 88 46 118 115 116 8218 224 232"
+																	"text" : "86 97 108 104 97 108 108 97 86 105 110 116 97 103 101 86 101 114 98 95 120 54 52 46 118 115 116 8218 224 232"
 																}
 
 															}
@@ -2994,7 +3268,7 @@
 									"fontsize" : 12.0,
 									"id" : "obj-54",
 									"maxclass" : "newobj",
-									"numinlets" : 1,
+									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"patcher" : 									{
@@ -3008,7 +3282,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 110.0, 195.0, 572.0, 509.0 ],
+										"rect" : [ 640.0, 226.0, 572.0, 509.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -3037,6 +3311,30 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-9",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 0,
+													"patching_rect" : [ 367.5, 417.0, 127.0, 22.0 ],
+													"text" : "ll.s last_loaded_plugin"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-11",
+													"index" : 2,
+													"maxclass" : "inlet",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 212.0, 218.0, 30.0, 30.0 ]
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
@@ -3428,7 +3726,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 273.0, 305.0, 25.0, 25.0 ]
+													"patching_rect" : [ 265.770142000000021, 448.0, 25.0, 25.0 ]
 												}
 
 											}
@@ -4252,7 +4550,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 618.166564999999991, 289.693420000000003, 225.0, 23.0 ],
-																	"text" : "Crystallizer.vst"
+																	"text" : "bla"
 																}
 
 															}
@@ -4465,7 +4763,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 194.0, 96.0, 122.0, 22.0 ],
-																					"text" : "Crystallizer.vst"
+																					"text" : "bla"
 																				}
 
 																			}
@@ -4492,7 +4790,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 120.0, 290.0, 114.0, 35.0 ],
-																					"text" : "\"WaveShell-VST 7.0.vst\""
+																					"text" : "\"WaveShell-VST 9.91.vst\""
 																				}
 
 																			}
@@ -8202,7 +8500,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 204.833313000000004, 126.0, 344.0, 22.0 ],
-													"text" : "def_folders"
+													"text" : "EchoBoy.vst"
 												}
 
 											}
@@ -8286,6 +8584,13 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-24", 0 ],
+													"source" : [ "obj-11", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-20", 1 ],
 													"order" : 0,
 													"source" : [ "obj-15", 0 ]
@@ -8325,6 +8630,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-3", 0 ],
+													"order" : 1,
 													"source" : [ "obj-24", 2 ]
 												}
 
@@ -8341,6 +8647,14 @@
 													"destination" : [ "obj-8", 0 ],
 													"order" : 1,
 													"source" : [ "obj-24", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-9", 0 ],
+													"order" : 0,
+													"source" : [ "obj-24", 2 ]
 												}
 
 											}
@@ -8397,7 +8711,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 334.666666666666629, 181.0, 61.0, 22.0 ],
+									"patching_rect" : [ 334.666666666666629, 184.0, 49.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -9136,7 +9450,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ -907.0, 362.0, 984.0, 514.0 ],
+														"rect" : [ 34.0, 362.0, 984.0, 514.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 12.0,
@@ -9359,7 +9673,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 564.5, 119.0, 201.0, 22.0 ],
-																	"text" : "100. 600. 970 883"
+																	"text" : "100. 600. 1035 1035"
 																}
 
 															}
@@ -10169,7 +10483,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 48.25, 230.0, 50.0, 35.0 ],
-													"text" : "recall 2."
+													"text" : "delete 1"
 												}
 
 											}
@@ -10455,7 +10769,7 @@
 													"numinlets" : 3,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 198.0, 682.0, 81.0, 22.0 ],
+													"patching_rect" : [ 198.0, 715.0, 81.0, 22.0 ],
 													"text" : "ll.pf act"
 												}
 
@@ -10633,17 +10947,6 @@
 														"subpatcher_template" : "",
 														"assistshowspatchername" : 0,
 														"boxes" : [ 															{
-																"box" : 																{
-																	"id" : "obj-14",
-																	"maxclass" : "newobj",
-																	"numinlets" : 1,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 205.0, 74.0, 100.0, 22.0 ]
-																}
-
-															}
-, 															{
 																"box" : 																{
 																	"id" : "obj-11",
 																	"linecount" : 2,
@@ -10988,7 +11291,7 @@
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "" ],
 																					"patching_rect" : [ 472.75, 387.0, 103.0, 22.0 ],
-																					"restore" : [ "control@1" ],
+																					"restore" : [ "vst@" ],
 																					"saved_object_attributes" : 																					{
 																						"parameter_enable" : 0,
 																						"parameter_mappable" : 0
@@ -11074,13 +11377,12 @@
 																					"fontname" : "Arial",
 																					"fontsize" : 12.0,
 																					"id" : "obj-5",
-																					"linecount" : 6,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 688.0, 233.0, 144.0, 49.0 ],
-																					"text" : "modul.ator2 vst@1 control@1 romb1 ho_st1 vp.sourcefilter1 modul.ator1 buffer_host1 xgroove@1 beauty1 modul.ator3"
+																					"patching_rect" : [ 688.0, 233.0, 144.0, 22.0 ],
+																					"text" : "ho_st1 vst@1"
 																				}
 
 																			}
@@ -11385,17 +11687,18 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-12",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
 																	"outlettype" : [ "", "", "", "" ],
-																	"patching_rect" : [ 392.5, 269.0, 59.5, 22.0 ],
+																	"patching_rect" : [ 392.5, 269.0, 124.0, 22.0 ],
 																	"saved_object_attributes" : 																	{
 																		"embed" : 0,
 																		"precision" : 6
 																	}
 ,
-																	"text" : "coll"
+																	"text" : "coll #0_vst_params"
 																}
 
 															}
@@ -12184,6 +12487,62 @@
 										"parameter_mappable" : 0
 									}
 ,
+									"snapshot" : 									{
+										"filetype" : "C74Snapshot",
+										"version" : 2,
+										"minorversion" : 0,
+										"name" : "snapshotlist",
+										"origin" : "mcs.vst~",
+										"type" : "list",
+										"subtype" : "Undefined",
+										"embed" : 1,
+										"snapshot" : 										{
+											"pluginname" : "EchoBoy.vst",
+											"plugindisplayname" : "EchoBoy",
+											"pluginsavedname" : "/Library/Audio/Plug-Ins/VST/Soundtoys/EchoBoy.vst",
+											"pluginsaveduniqueid" : 0,
+											"version" : 1,
+											"isbank" : 0,
+											"isbase64" : 1,
+											"blob" : "2053.CMlaKA....fQPMDZ....ALEcEID...P.....APTYlEVcrQG..............................bPxWkDQGUDUfzCHEMFZuIza4sSCVUjTSkzSNAROfPyNMLUPVUDQeITVeYUQRMURO4DH8.RMtLiKxrSCBUURLQjSU0DH8.RL0HSMyrSCPIUQSUDUfzCLw.SLv.CLvDCN4XCLw.SLv.CL0LEO.wUZQ8FUcwkZrgSTvrERckSTMIUaRgDSeM1MrY0Q+HiWFsCWYQ0Shw0OrElPKoEV93iauYzaMwjLgAENnIzLVQjR131T3H1NwfSPAcDOxrSSmQEOLIzRcUjNxTzLfoiZkIkRRQkZ3nVYTMVSE0kZ2XDPYg0YPc0OOEEWIUVYZ8kXmkFZ8DULUkzLacSRhYCak0FQoEiLXQSOJcyLUAVS1.FY4nUa4P0P03FL.wCLW8VZEI0Y7fFW2vDNDAFUHEFOLwDXWwiabkCYCUzSoMTLdcDOHI1O13VQKMVQGUCX0n1PCQ1MXclL73zPdUCYbAjXrEzXhEzTcQDRscVRJYCREAyZMgCSawFPpASXnc0ZjEESQ81Y5zVT1P1NTglO97iWrsUZG8kUaQ0ZDUjZro1UPEFU2fkaiI0WuYkaCgEY+PVQJMjZEwzPJcjaaUENS4UVX8TYKwURE00MqA1XX0SNH8DN3njWdMyUMY0OHwDQOcFL8v0PNwDR0nCOdMkSiszZeAyNH4jLncSWy3zOZcEOIMTNsUUUJcCNL0iQUI0SSIDUwjyVLszU4fCUqUEPpQiOkgiY7XFNpEVXro1PMkyYgs0W6PkLkQVaqM0MNQ1SU4CPvHFaXgULUgVLoESUnwzWoYDTqQlNuYUMI4lShMSWrg0V2fSNKkzZtAEMCsEVjIFUwjyVLszU4fCUqUEPpQiOkgiY7XFNpEVXro1PMkyYgs0W6PkLkQVaqM0MNQ1SU4CPvHFaXgULUgVLoESUnwzWoYDTqQlNuYUMIITY1DiQYQTNZ81QHUyOU80SKUDXtsUYWU0TY0iNOMiMeYFNgIiV+zCRtACZlAkRwvkXCAVPYoVUgoVUyXVOLYyRAMVX7PDYwP0YMIVUyrTM4LiLi8jUeETOlw1aA40Yh8iRg8EPvDiL430VeQUSaQSTZAUR4zkZHEkTHoVLjQ1V9fiL9PkS6PkQnACRPMyLRsyN5PCT7LFThI0N0rzVY8CT5XEXUAkTg4VZSAkQw7lS2nTaoczL0biVb8FafEiQFQVaEgTaYATN8z1VlIkTjYyShwSRg4FUxnzW9.iXMYTYIcyO2nzazXkTdEVVAQjQNk1L17iThEDPU8iMAM1MaAFQf01LV4zZwHEPB4TVL4TV.01TGEyT6fjUO0kaMYTZZ8kQNYjOTQVVrwiRfkCNxfjUZkTLzviNOkkPb8EREQzPXg0LgkETd0zMgsiRus1Z6DiNekkVhQUL4rESKcUN3P0ZUAjZz3SY3XFOlgiZgEFapMTS4bVXa80NTISYj01ZSciSj8TU9.DLhwFVXESUnESZwTEZL8UZFA0ZjoyaVUSRlIiRtE1UAgVPYsVXYozQWAENogVV.EFT7zETrkURBg0RskkSDMzLCgjPBA0OB8VPoACXFAjU3zDa07jRx7SZ+LyRmslRbwEQaYiS8bUYIcUSD8iLjEUMeMkXm8jTwPjNzbUO2rjTi8lO8T0Rp4EQZQjOWkVO0z0Wd4TPrYzTXQlZwLTP2vEN4HVXs0EYrYSOsAiSA00Y5PCMGwkMboyTeQkL0flLuwSW2f0XuETW27TU3vEPxXlOPECSbgCNUcjSzXja+rSStgSM.gkPLQVSdsyOrglYE8kVoITV.o1STQ1ZnsyTM8kNfU1RLAjWLckUWsyNncDOFgSZFQUWpEyXL0kNrQkauAkU0nEM2rCY7T1MYgzQXIVUj8CUGoDOsgUUDgDWCAzZ8jDaTYDQe8lS+DyThAkX2LyQvvEQKIVXYoyLFUSOvXUTrYVXlYzNS40UPQTLksiYuQCU43yQG0FZIIENZoULh0yXqkEai0jWaQDTTI0ZJgVN1TDPqQiQdE0aNADN2rDU6TSZ5bTNuETQJcSNbYTXFQjR131T3H1NwfSPAcDOxrSSmQEOOETSPMlSFYVMH0jUKsjPrMVM2Lza1PDPDYFVwHUTWACTtsVYtw0PhEFYmglZq8UPLUiasY0LXcyVC4USkcUOFsCRwTUQ83lZskUQ3nCO7XzMjsCSMglOjIESb0yP5bSVzrCVIolZcU0ap0UM73TQpMTaqQzZYMFTbQTWO0CP0L0Pu4jaO8CUC0STCMjQjM0XA8jU4HEUa0UOqczOicCNCUSX5bjVFEjaDkDWFMiLoEELP8VPQQ1aDEzWGUlSXYFaRc1PoIyUyzlSWYCYrYkPYAlRS80UB4jLHA0MBAiN5DjR3nzOas0S7f0LHEEXYQkUAMTSeMTZJoEat0yTRQyLR8DRQ81MBciS.4FQmwkR03DRi4EYC0jO4PFXwb1XOIkaWUjNDEjLGs1O5HTSfMjYi4UN5TjQjMkLg8CL5TUQ9PTaVMER13FY4TUSPAkNOIVRGESV8XiQZsSa0HEPpoyYXM0XRwESCsDYbgjNQcVQLEyWscDPIQFXL0DWynSVuojZpYVZYwjRJ4jQ2z0ORUDVL4DWogVVpYyNncCZMAEWo8TOL0URuoTOg40VAojUdoCT2z0NEk0WZwzYzjEMkAjVxvFLv.SQqACLv.yNM."
+										}
+,
+										"snapshotlist" : 										{
+											"current_snapshot" : 0,
+											"entries" : [ 												{
+													"filetype" : "C74Snapshot",
+													"version" : 2,
+													"minorversion" : 0,
+													"name" : "EchoBoy",
+													"origin" : "EchoBoy.vst",
+													"type" : "VST",
+													"subtype" : "AudioEffect",
+													"embed" : 0,
+													"snapshot" : 													{
+														"pluginname" : "EchoBoy.vst",
+														"plugindisplayname" : "EchoBoy",
+														"pluginsavedname" : "/Library/Audio/Plug-Ins/VST/Soundtoys/EchoBoy.vst",
+														"pluginsaveduniqueid" : 0,
+														"version" : 1,
+														"isbank" : 0,
+														"isbase64" : 1,
+														"blob" : "2053.CMlaKA....fQPMDZ....ALEcEID...P.....APTYlEVcrQG..............................bPxWkDQGUDUfzCHEMFZuIza4sSCVUjTSkzSNAROfPyNMLUPVUDQeITVeYUQRMURO4DH8.RMtLiKxrSCBUURLQjSU0DH8.RL0HSMyrSCPIUQSUDUfzCLw.SLv.CLvDCN4XCLw.SLv.CL0LEO.wUZQ8FUcwkZrgSTvrERckSTMIUaRgDSeM1MrY0Q+HiWFsCWYQ0Shw0OrElPKoEV93iauYzaMwjLgAENnIzLVQjR131T3H1NwfSPAcDOxrSSmQEOLIzRcUjNxTzLfoiZkIkRRQkZ3nVYTMVSE0kZ2XDPYg0YPc0OOEEWIUVYZ8kXmkFZ8DULUkzLacSRhYCak0FQoEiLXQSOJcyLUAVS1.FY4nUa4P0P03FL.wCLW8VZEI0Y7fFW2vDNDAFUHEFOLwDXWwiabkCYCUzSoMTLdcDOHI1O13VQKMVQGUCX0n1PCQ1MXclL73zPdUCYbAjXrEzXhEzTcQDRscVRJYCREAyZMgCSawFPpASXnc0ZjEESQ81Y5zVT1P1NTglO97iWrsUZG8kUaQ0ZDUjZro1UPEFU2fkaiI0WuYkaCgEY+PVQJMjZEwzPJcjaaUENS4UVX8TYKwURE00MqA1XX0SNH8DN3njWdMyUMY0OHwDQOcFL8v0PNwDR0nCOdMkSiszZeAyNH4jLncSWy3zOZcEOIMTNsUUUJcCNL0iQUI0SSIDUwjyVLszU4fCUqUEPpQiOkgiY7XFNpEVXro1PMkyYgs0W6PkLkQVaqM0MNQ1SU4CPvHFaXgULUgVLoESUnwzWoYDTqQlNuYUMI4lShMSWrg0V2fSNKkzZtAEMCsEVjIFUwjyVLszU4fCUqUEPpQiOkgiY7XFNpEVXro1PMkyYgs0W6PkLkQVaqM0MNQ1SU4CPvHFaXgULUgVLoESUnwzWoYDTqQlNuYUMIITY1DiQYQTNZ81QHUyOU80SKUDXtsUYWU0TY0iNOMiMeYFNgIiV+zCRtACZlAkRwvkXCAVPYoVUgoVUyXVOLYyRAMVX7PDYwP0YMIVUyrTM4LiLi8jUeETOlw1aA40Yh8iRg8EPvDiL430VeQUSaQSTZAUR4zkZHEkTHoVLjQ1V9fiL9PkS6PkQnACRPMyLRsyN5PCT7LFThI0N0rzVY8CT5XEXUAkTg4VZSAkQw7lS2nTaoczL0biVb8FafEiQFQVaEgTaYATN8z1VlIkTjYyShwSRg4FUxnzW9.iXMYTYIcyO2nzazXkTdEVVAQjQNk1L17iThEDPU8iMAM1MaAFQf01LV4zZwHEPB4TVL4TV.01TGEyT6fjUO0kaMYTZZ8kQNYjOTQVVrwiRfkCNxfjUZkTLzviNOkkPb8EREQzPXg0LgkETd0zMgsiRus1Z6DiNekkVhQUL4rESKcUN3P0ZUAjZz3SY3XFOlgiZgEFapMTS4bVXa80NTISYj01ZSciSj8TU9.DLhwFVXESUnESZwTEZL8UZFA0ZjoyaVUSRlIiRtE1UAgVPYsVXYozQWAENogVV.EFT7zETrkURBg0RskkSDMzLCgjPBA0OB8VPoACXFAjU3zDa07jRx7SZ+LyRmslRbwEQaYiS8bUYIcUSD8iLjEUMeMkXm8jTwPjNzbUO2rjTi8lO8T0Rp4EQZQjOWkVO0z0Wd4TPrYzTXQlZwLTP2vEN4HVXs0EYrYSOsAiSA00Y5PCMGwkMboyTeQkL0flLuwSW2f0XuETW27TU3vEPxXlOPECSbgCNUcjSzXja+rSStgSM.gkPLQVSdsyOrglYE8kVoITV.o1STQ1ZnsyTM8kNfU1RLAjWLckUWsyNncDOFgSZFQUWpEyXL0kNrQkauAkU0nEM2rCY7T1MYgzQXIVUj8CUGoDOsgUUDgDWCAzZ8jDaTYDQe8lS+DyThAkX2LyQvvEQKIVXYoyLFUSOvXUTrYVXlYzNS40UPQTLksiYuQCU43yQG0FZIIENZoULh0yXqkEai0jWaQDTTI0ZJgVN1TDPqQiQdE0aNADN2rDU6TSZ5bTNuETQJcSNbYTXFQjR131T3H1NwfSPAcDOxrSSmQEOOETSPMlSFYVMH0jUKsjPrMVM2Lza1PDPDYFVwHUTWACTtsVYtw0PhEFYmglZq8UPLUiasY0LXcyVC4USkcUOFsCRwTUQ83lZskUQ3nCO7XzMjsCSMglOjIESb0yP5bSVzrCVIolZcU0ap0UM73TQpMTaqQzZYMFTbQTWO0CP0L0Pu4jaO8CUC0STCMjQjM0XA8jU4HEUa0UOqczOicCNCUSX5bjVFEjaDkDWFMiLoEELP8VPQQ1aDEzWGUlSXYFaRc1PoIyUyzlSWYCYrYkPYAlRS80UB4jLHA0MBAiN5DjR3nzOas0S7f0LHEEXYQkUAMTSeMTZJoEat0yTRQyLR8DRQ81MBciS.4FQmwkR03DRi4EYC0jO4PFXwb1XOIkaWUjNDEjLGs1O5HTSfMjYi4UN5TjQjMkLg8CL5TUQ9PTaVMER13FY4TUSPAkNOIVRGESV8XiQZsSa0HEPpoyYXM0XRwESCsDYbgjNQcVQLEyWscDPIQFXL0DWynSVuojZpYVZYwjRJ4jQ2z0ORUDVL4DWogVVpYyNncCZMAEWo8TOL0URuoTOg40VAojUdoCT2z0NEk0WZwzYzjEMkAjVxvFLv.SQqACLv.yNM."
+													}
+,
+													"fileref" : 													{
+														"name" : "EchoBoy",
+														"filename" : "EchoBoy.maxsnap",
+														"filepath" : "~/Documents/Max 8/Snapshots",
+														"filepos" : -1,
+														"snapshotfileid" : "f126926171b7f865e07d6641be5e8b45"
+													}
+
+												}
+ ]
+										}
+
+									}
+,
 									"text" : "mcs.vst~ 4 2",
 									"varname" : "vst",
 									"viewvisibility" : 0
@@ -12194,6 +12553,13 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-32", 0 ],
+									"source" : [ "obj-11", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-54", 1 ],
 									"source" : [ "obj-11", 0 ]
 								}
 
@@ -12340,7 +12706,7 @@
 					"arrow" : 0,
 					"fontsize" : 9.0,
 					"id" : "obj-80",
-					"items" : [ "to Max 1", ",", "to Max 2" ],
+					"items" : [ "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "to Max 1", ",", "to Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12381,7 +12747,6 @@
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
 						"master" : 0,
-						"def_folder" : 0,
 						"act" : 0,
 						"act::active_store" : 0,
 						"ll.inputmix::chans" : 0,
@@ -12413,14 +12778,53 @@
 						"title_menu" : 2010,
 						"pres_menu" : 2011,
 						"tetris_menu" : 2012,
-						"master" : 2013
+						"master" : 2013,
+						"Mix" : 103,
+						"PreDelay" : 101,
+						"Decay" : 102,
+						"Size" : 103,
+						"Attack" : 104,
+						"BassMult" : 105,
+						"BassXover" : 106,
+						"HighShelf" : 107,
+						"HighFreq" : 108,
+						"EarlyDiffusion" : 109,
+						"LateDiffusion" : 110,
+						"ModRate" : 111,
+						"ModDepth" : 112,
+						"HighCut" : 117,
+						"LowCut" : 116,
+						"ColorMode" : 115,
+						"ReverbMode" : 116,
+						"Bypass" : 100,
+						"InputGain" : 101,
+						"OutputGain" : 102,
+						"Mode" : 104,
+						"Echo1Mode" : 105,
+						"Echo1Note" : 106,
+						"Echo1Time" : 107,
+						"Echo2Mode" : 108,
+						"Echo2Note" : 109,
+						"Echo2Time" : 110,
+						"Feedback" : 111,
+						"PrimeNumbers" : 112,
+						"Groove" : 113,
+						"Feel" : 114,
+						"Saturation" : 115,
+						"RhythmMode" : 118,
+						"RhythmNote" : 119,
+						"RhythmTime" : 120,
+						"RhythmRepeats" : 121,
+						"RhythmDecay" : 122,
+						"Style" : 123,
+						"Tempo" : 124
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 257, 133, 1512, 849 ],
+						"client_rect" : [ 882, 100, 1422, 809 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 583, 68, 1034, 196 ]
+						"storage_rect" : [ 365, 44, 816, 172 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -12478,9 +12882,9 @@
 					"restore" : 					{
 						"master" : [ 0 ],
 						"midi-channel" : [ 0 ],
-						"midi-port" : [ "to Max 1" ],
+						"midi-port" : [ "IAC Driver Bus 1" ],
 						"open!" : [ 0 ],
-						"pres_menu" : [ "_" ],
+						"pres_menu" : [ "" ],
 						"preset-ramp" : [ 0.0 ],
 						"presets" : [ 0 ],
 						"program_files" : [ "writepgm" ],
@@ -12715,6 +13119,13 @@
 		}
 ,
 		"dependency_cache" : [ 			{
+				"name" : "EchoBoy.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../../Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "actmaker.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
