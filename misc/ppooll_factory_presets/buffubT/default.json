@@ -1,5 +1,5 @@
 {
-	"window" : [ 819, 210, 1028, 465 ],
+	"window" : [ 563, 182, 772, 437 ],
 	"buffer" : 	{
 		"patching_rect" : [ 118, 79, 87, 22 ],
 		"hidden" : 0,
@@ -72,7 +72,7 @@
 	}
 ,
 	"pos_send_now" : 	{
-		"patching_rect" : [ 143, 47, 29, 14 ],
+		"patching_rect" : [ 144, 47, 28, 14 ],
 		"hidden" : 0,
 		"fontsize" : 9
 	}
