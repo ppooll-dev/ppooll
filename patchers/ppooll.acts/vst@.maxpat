@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 563.0, 332.0, 159.0, 113.0 ],
+		"rect" : [ 833.0, 174.0, 159.0, 113.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -8500,7 +8500,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 204.833313000000004, 126.0, 344.0, 22.0 ],
-													"text" : "EchoBoy.vst"
+													"text" : "ValhallaDelay.vst"
 												}
 
 											}
@@ -9673,7 +9673,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 564.5, 119.0, 201.0, 22.0 ],
-																	"text" : "100. 600. 1035 1035"
+																	"text" : "0. 0. 500 200"
 																}
 
 															}
@@ -11291,7 +11291,7 @@
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "" ],
 																					"patching_rect" : [ 472.75, 387.0, 103.0, 22.0 ],
-																					"restore" : [ "vst@" ],
+																					"restore" : [ "xgroove@" ],
 																					"saved_object_attributes" : 																					{
 																						"parameter_enable" : 0,
 																						"parameter_mappable" : 0
@@ -11377,12 +11377,13 @@
 																					"fontname" : "Arial",
 																					"fontsize" : 12.0,
 																					"id" : "obj-5",
+																					"linecount" : 2,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 688.0, 233.0, 144.0, 22.0 ],
-																					"text" : "ho_st1 vst@1"
+																					"text" : "buffer_host1 vst@1 ho_st1 xgroove@1"
 																				}
 
 																			}
@@ -11687,7 +11688,6 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-12",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -12497,14 +12497,14 @@
 										"subtype" : "Undefined",
 										"embed" : 1,
 										"snapshot" : 										{
-											"pluginname" : "EchoBoy.vst",
-											"plugindisplayname" : "EchoBoy",
-											"pluginsavedname" : "/Library/Audio/Plug-Ins/VST/Soundtoys/EchoBoy.vst",
+											"pluginname" : "ValhallaDelay.vst",
+											"plugindisplayname" : "ValhallaDelay",
+											"pluginsavedname" : "/Library/Audio/Plug-Ins/VST/ValhallaDelay.vst",
 											"pluginsaveduniqueid" : 0,
 											"version" : 1,
 											"isbank" : 0,
 											"isbase64" : 1,
-											"blob" : "2053.CMlaKA....fQPMDZ....ALEcEID...P.....APTYlEVcrQG..............................bPxWkDQGUDUfzCHEMFZuIza4sSCVUjTSkzSNAROfPyNMLUPVUDQeITVeYUQRMURO4DH8.RMtLiKxrSCBUURLQjSU0DH8.RL0HSMyrSCPIUQSUDUfzCLw.SLv.CLvDCN4XCLw.SLv.CL0LEO.wUZQ8FUcwkZrgSTvrERckSTMIUaRgDSeM1MrY0Q+HiWFsCWYQ0Shw0OrElPKoEV93iauYzaMwjLgAENnIzLVQjR131T3H1NwfSPAcDOxrSSmQEOLIzRcUjNxTzLfoiZkIkRRQkZ3nVYTMVSE0kZ2XDPYg0YPc0OOEEWIUVYZ8kXmkFZ8DULUkzLacSRhYCak0FQoEiLXQSOJcyLUAVS1.FY4nUa4P0P03FL.wCLW8VZEI0Y7fFW2vDNDAFUHEFOLwDXWwiabkCYCUzSoMTLdcDOHI1O13VQKMVQGUCX0n1PCQ1MXclL73zPdUCYbAjXrEzXhEzTcQDRscVRJYCREAyZMgCSawFPpASXnc0ZjEESQ81Y5zVT1P1NTglO97iWrsUZG8kUaQ0ZDUjZro1UPEFU2fkaiI0WuYkaCgEY+PVQJMjZEwzPJcjaaUENS4UVX8TYKwURE00MqA1XX0SNH8DN3njWdMyUMY0OHwDQOcFL8v0PNwDR0nCOdMkSiszZeAyNH4jLncSWy3zOZcEOIMTNsUUUJcCNL0iQUI0SSIDUwjyVLszU4fCUqUEPpQiOkgiY7XFNpEVXro1PMkyYgs0W6PkLkQVaqM0MNQ1SU4CPvHFaXgULUgVLoESUnwzWoYDTqQlNuYUMI4lShMSWrg0V2fSNKkzZtAEMCsEVjIFUwjyVLszU4fCUqUEPpQiOkgiY7XFNpEVXro1PMkyYgs0W6PkLkQVaqM0MNQ1SU4CPvHFaXgULUgVLoESUnwzWoYDTqQlNuYUMIITY1DiQYQTNZ81QHUyOU80SKUDXtsUYWU0TY0iNOMiMeYFNgIiV+zCRtACZlAkRwvkXCAVPYoVUgoVUyXVOLYyRAMVX7PDYwP0YMIVUyrTM4LiLi8jUeETOlw1aA40Yh8iRg8EPvDiL430VeQUSaQSTZAUR4zkZHEkTHoVLjQ1V9fiL9PkS6PkQnACRPMyLRsyN5PCT7LFThI0N0rzVY8CT5XEXUAkTg4VZSAkQw7lS2nTaoczL0biVb8FafEiQFQVaEgTaYATN8z1VlIkTjYyShwSRg4FUxnzW9.iXMYTYIcyO2nzazXkTdEVVAQjQNk1L17iThEDPU8iMAM1MaAFQf01LV4zZwHEPB4TVL4TV.01TGEyT6fjUO0kaMYTZZ8kQNYjOTQVVrwiRfkCNxfjUZkTLzviNOkkPb8EREQzPXg0LgkETd0zMgsiRus1Z6DiNekkVhQUL4rESKcUN3P0ZUAjZz3SY3XFOlgiZgEFapMTS4bVXa80NTISYj01ZSciSj8TU9.DLhwFVXESUnESZwTEZL8UZFA0ZjoyaVUSRlIiRtE1UAgVPYsVXYozQWAENogVV.EFT7zETrkURBg0RskkSDMzLCgjPBA0OB8VPoACXFAjU3zDa07jRx7SZ+LyRmslRbwEQaYiS8bUYIcUSD8iLjEUMeMkXm8jTwPjNzbUO2rjTi8lO8T0Rp4EQZQjOWkVO0z0Wd4TPrYzTXQlZwLTP2vEN4HVXs0EYrYSOsAiSA00Y5PCMGwkMboyTeQkL0flLuwSW2f0XuETW27TU3vEPxXlOPECSbgCNUcjSzXja+rSStgSM.gkPLQVSdsyOrglYE8kVoITV.o1STQ1ZnsyTM8kNfU1RLAjWLckUWsyNncDOFgSZFQUWpEyXL0kNrQkauAkU0nEM2rCY7T1MYgzQXIVUj8CUGoDOsgUUDgDWCAzZ8jDaTYDQe8lS+DyThAkX2LyQvvEQKIVXYoyLFUSOvXUTrYVXlYzNS40UPQTLksiYuQCU43yQG0FZIIENZoULh0yXqkEai0jWaQDTTI0ZJgVN1TDPqQiQdE0aNADN2rDU6TSZ5bTNuETQJcSNbYTXFQjR131T3H1NwfSPAcDOxrSSmQEOOETSPMlSFYVMH0jUKsjPrMVM2Lza1PDPDYFVwHUTWACTtsVYtw0PhEFYmglZq8UPLUiasY0LXcyVC4USkcUOFsCRwTUQ83lZskUQ3nCO7XzMjsCSMglOjIESb0yP5bSVzrCVIolZcU0ap0UM73TQpMTaqQzZYMFTbQTWO0CP0L0Pu4jaO8CUC0STCMjQjM0XA8jU4HEUa0UOqczOicCNCUSX5bjVFEjaDkDWFMiLoEELP8VPQQ1aDEzWGUlSXYFaRc1PoIyUyzlSWYCYrYkPYAlRS80UB4jLHA0MBAiN5DjR3nzOas0S7f0LHEEXYQkUAMTSeMTZJoEat0yTRQyLR8DRQ81MBciS.4FQmwkR03DRi4EYC0jO4PFXwb1XOIkaWUjNDEjLGs1O5HTSfMjYi4UN5TjQjMkLg8CL5TUQ9PTaVMER13FY4TUSPAkNOIVRGESV8XiQZsSa0HEPpoyYXM0XRwESCsDYbgjNQcVQLEyWscDPIQFXL0DWynSVuojZpYVZYwjRJ4jQ2z0ORUDVL4DWogVVpYyNncCZMAEWo8TOL0URuoTOg40VAojUdoCT2z0NEk0WZwzYzjEMkAjVxvFLv.SQqACLv.yNM."
+											"blob" : "764.CMlaKA....fQPMDZ....APFSgkG.BD......A........................................H.vVMjLgbq....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVEFanEFarEFQkwVX4ABbrU2Yo4lUkI2bo8la8HhLtDiKvHBHvIWYyUFcNEVak0iHDUlYgUGazIBHMkFd8HBLt.iHfPTYrEVdSQWdrUVOh.iKvHBHDUFagkGSSkmai0iHv3BLh.BQkwVX4wjSuQWY8HBLt.iHfPTYrEVdL8USy0iHv3BLh.BQkwVX4I0T441X8HBLt.iHfPTYrEVdR4zazUVOh.iKvHBHDUFagkmTe0zb8HBLt.iHfPTYrEVdSAmbkEFY8HBLt.iHfPTYrEVdSAWXiklam0iHv3BLh.BQkwVX4IUXzk1a8HBLt.iHfHUYvUVXzM0ckwFa8HBLt.iHfPUXvETOh.iKvHBHTEFbB0iHv3BLh.BUgA2P8HBLt.iHfPUXvQTOh.iKvHBHFUVYjIVXisVOh.iKvHBHWkFYzgVOh.iKvHBHDIWZ1UVRt0iHv3BLh.RPmUVOh.iKvHBHDklYlU2bo8la8HBLt.iHfPTZlY1TooWY8HBLt.iHfvza2MTcz0iHv3BLh.BRocFZCUGc8HBLt.iHfzzajIUXzUVOh.iKvHBHM8FYDUFbzgVOh.iKvHBHW81c8HBLt.iHfXDa0QGckIWOh.iKvHBHFIWYwMEZoYFc8HBLt.iHfXjbkEGQkQWctUVOh.iKvHBHPkFcig1TnklYz0iHv3BLh.BToQ2XnQTYzUmak0iHv3BLh.RSuQVY8HBLt.iHfTjbg0iHv3BLh.BQ0M1Zo41Y8HBLt.iHfHUYyUlb1UFYxziHv3BLh.hTkMWYxYWYjMSOh.iKvHBHRU1bkImckQFM8HBLt.iHfzVZ3wzaisVOh.iHfTWZWkFYzgVOhjCM0HBH0kFRkk1YnQWOhPyL0HxK9.."
 										}
 ,
 										"snapshotlist" : 										{
@@ -12513,28 +12513,28 @@
 													"filetype" : "C74Snapshot",
 													"version" : 2,
 													"minorversion" : 0,
-													"name" : "EchoBoy",
-													"origin" : "EchoBoy.vst",
+													"name" : "ValhallaDelay",
+													"origin" : "ValhallaDelay.vst",
 													"type" : "VST",
 													"subtype" : "AudioEffect",
 													"embed" : 0,
 													"snapshot" : 													{
-														"pluginname" : "EchoBoy.vst",
-														"plugindisplayname" : "EchoBoy",
-														"pluginsavedname" : "/Library/Audio/Plug-Ins/VST/Soundtoys/EchoBoy.vst",
+														"pluginname" : "ValhallaDelay.vst",
+														"plugindisplayname" : "ValhallaDelay",
+														"pluginsavedname" : "/Library/Audio/Plug-Ins/VST/ValhallaDelay.vst",
 														"pluginsaveduniqueid" : 0,
 														"version" : 1,
 														"isbank" : 0,
 														"isbase64" : 1,
-														"blob" : "2053.CMlaKA....fQPMDZ....ALEcEID...P.....APTYlEVcrQG..............................bPxWkDQGUDUfzCHEMFZuIza4sSCVUjTSkzSNAROfPyNMLUPVUDQeITVeYUQRMURO4DH8.RMtLiKxrSCBUURLQjSU0DH8.RL0HSMyrSCPIUQSUDUfzCLw.SLv.CLvDCN4XCLw.SLv.CL0LEO.wUZQ8FUcwkZrgSTvrERckSTMIUaRgDSeM1MrY0Q+HiWFsCWYQ0Shw0OrElPKoEV93iauYzaMwjLgAENnIzLVQjR131T3H1NwfSPAcDOxrSSmQEOLIzRcUjNxTzLfoiZkIkRRQkZ3nVYTMVSE0kZ2XDPYg0YPc0OOEEWIUVYZ8kXmkFZ8DULUkzLacSRhYCak0FQoEiLXQSOJcyLUAVS1.FY4nUa4P0P03FL.wCLW8VZEI0Y7fFW2vDNDAFUHEFOLwDXWwiabkCYCUzSoMTLdcDOHI1O13VQKMVQGUCX0n1PCQ1MXclL73zPdUCYbAjXrEzXhEzTcQDRscVRJYCREAyZMgCSawFPpASXnc0ZjEESQ81Y5zVT1P1NTglO97iWrsUZG8kUaQ0ZDUjZro1UPEFU2fkaiI0WuYkaCgEY+PVQJMjZEwzPJcjaaUENS4UVX8TYKwURE00MqA1XX0SNH8DN3njWdMyUMY0OHwDQOcFL8v0PNwDR0nCOdMkSiszZeAyNH4jLncSWy3zOZcEOIMTNsUUUJcCNL0iQUI0SSIDUwjyVLszU4fCUqUEPpQiOkgiY7XFNpEVXro1PMkyYgs0W6PkLkQVaqM0MNQ1SU4CPvHFaXgULUgVLoESUnwzWoYDTqQlNuYUMI4lShMSWrg0V2fSNKkzZtAEMCsEVjIFUwjyVLszU4fCUqUEPpQiOkgiY7XFNpEVXro1PMkyYgs0W6PkLkQVaqM0MNQ1SU4CPvHFaXgULUgVLoESUnwzWoYDTqQlNuYUMIITY1DiQYQTNZ81QHUyOU80SKUDXtsUYWU0TY0iNOMiMeYFNgIiV+zCRtACZlAkRwvkXCAVPYoVUgoVUyXVOLYyRAMVX7PDYwP0YMIVUyrTM4LiLi8jUeETOlw1aA40Yh8iRg8EPvDiL430VeQUSaQSTZAUR4zkZHEkTHoVLjQ1V9fiL9PkS6PkQnACRPMyLRsyN5PCT7LFThI0N0rzVY8CT5XEXUAkTg4VZSAkQw7lS2nTaoczL0biVb8FafEiQFQVaEgTaYATN8z1VlIkTjYyShwSRg4FUxnzW9.iXMYTYIcyO2nzazXkTdEVVAQjQNk1L17iThEDPU8iMAM1MaAFQf01LV4zZwHEPB4TVL4TV.01TGEyT6fjUO0kaMYTZZ8kQNYjOTQVVrwiRfkCNxfjUZkTLzviNOkkPb8EREQzPXg0LgkETd0zMgsiRus1Z6DiNekkVhQUL4rESKcUN3P0ZUAjZz3SY3XFOlgiZgEFapMTS4bVXa80NTISYj01ZSciSj8TU9.DLhwFVXESUnESZwTEZL8UZFA0ZjoyaVUSRlIiRtE1UAgVPYsVXYozQWAENogVV.EFT7zETrkURBg0RskkSDMzLCgjPBA0OB8VPoACXFAjU3zDa07jRx7SZ+LyRmslRbwEQaYiS8bUYIcUSD8iLjEUMeMkXm8jTwPjNzbUO2rjTi8lO8T0Rp4EQZQjOWkVO0z0Wd4TPrYzTXQlZwLTP2vEN4HVXs0EYrYSOsAiSA00Y5PCMGwkMboyTeQkL0flLuwSW2f0XuETW27TU3vEPxXlOPECSbgCNUcjSzXja+rSStgSM.gkPLQVSdsyOrglYE8kVoITV.o1STQ1ZnsyTM8kNfU1RLAjWLckUWsyNncDOFgSZFQUWpEyXL0kNrQkauAkU0nEM2rCY7T1MYgzQXIVUj8CUGoDOsgUUDgDWCAzZ8jDaTYDQe8lS+DyThAkX2LyQvvEQKIVXYoyLFUSOvXUTrYVXlYzNS40UPQTLksiYuQCU43yQG0FZIIENZoULh0yXqkEai0jWaQDTTI0ZJgVN1TDPqQiQdE0aNADN2rDU6TSZ5bTNuETQJcSNbYTXFQjR131T3H1NwfSPAcDOxrSSmQEOOETSPMlSFYVMH0jUKsjPrMVM2Lza1PDPDYFVwHUTWACTtsVYtw0PhEFYmglZq8UPLUiasY0LXcyVC4USkcUOFsCRwTUQ83lZskUQ3nCO7XzMjsCSMglOjIESb0yP5bSVzrCVIolZcU0ap0UM73TQpMTaqQzZYMFTbQTWO0CP0L0Pu4jaO8CUC0STCMjQjM0XA8jU4HEUa0UOqczOicCNCUSX5bjVFEjaDkDWFMiLoEELP8VPQQ1aDEzWGUlSXYFaRc1PoIyUyzlSWYCYrYkPYAlRS80UB4jLHA0MBAiN5DjR3nzOas0S7f0LHEEXYQkUAMTSeMTZJoEat0yTRQyLR8DRQ81MBciS.4FQmwkR03DRi4EYC0jO4PFXwb1XOIkaWUjNDEjLGs1O5HTSfMjYi4UN5TjQjMkLg8CL5TUQ9PTaVMER13FY4TUSPAkNOIVRGESV8XiQZsSa0HEPpoyYXM0XRwESCsDYbgjNQcVQLEyWscDPIQFXL0DWynSVuojZpYVZYwjRJ4jQ2z0ORUDVL4DWogVVpYyNncCZMAEWo8TOL0URuoTOg40VAojUdoCT2z0NEk0WZwzYzjEMkAjVxvFLv.SQqACLv.yNM."
+														"blob" : "764.CMlaKA....fQPMDZ....APFSgkG.BD......A........................................H.vVMjLgbq....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVEFanEFarEFQkwVX4ABbrU2Yo4lUkI2bo8la8HhLtDiKvHBHvIWYyUFcNEVak0iHDUlYgUGazIBHMkFd8HBLt.iHfPTYrEVdSQWdrUVOh.iKvHBHDUFagkGSSkmai0iHv3BLh.BQkwVX4wjSuQWY8HBLt.iHfPTYrEVdL8USy0iHv3BLh.BQkwVX4I0T441X8HBLt.iHfPTYrEVdR4zazUVOh.iKvHBHDUFagkmTe0zb8HBLt.iHfPTYrEVdSAmbkEFY8HBLt.iHfPTYrEVdSAWXiklam0iHv3BLh.BQkwVX4IUXzk1a8HBLt.iHfHUYvUVXzM0ckwFa8HBLt.iHfPUXvETOh.iKvHBHTEFbB0iHv3BLh.BUgA2P8HBLt.iHfPUXvQTOh.iKvHBHFUVYjIVXisVOh.iKvHBHWkFYzgVOh.iKvHBHDIWZ1UVRt0iHv3BLh.RPmUVOh.iKvHBHDklYlU2bo8la8HBLt.iHfPTZlY1TooWY8HBLt.iHfvza2MTcz0iHv3BLh.BRocFZCUGc8HBLt.iHfzzajIUXzUVOh.iKvHBHM8FYDUFbzgVOh.iKvHBHW81c8HBLt.iHfXDa0QGckIWOh.iKvHBHFIWYwMEZoYFc8HBLt.iHfXjbkEGQkQWctUVOh.iKvHBHPkFcig1TnklYz0iHv3BLh.BToQ2XnQTYzUmak0iHv3BLh.RSuQVY8HBLt.iHfTjbg0iHv3BLh.BQ0M1Zo41Y8HBLt.iHfHUYyUlb1UFYxziHv3BLh.hTkMWYxYWYjMSOh.iKvHBHRU1bkImckQFM8HBLt.iHfzVZ3wzaisVOh.iHfTWZWkFYzgVOhjCM0HBH0kFRkk1YnQWOhPyL0HxK9.."
 													}
 ,
 													"fileref" : 													{
-														"name" : "EchoBoy",
-														"filename" : "EchoBoy.maxsnap",
+														"name" : "ValhallaDelay",
+														"filename" : "ValhallaDelay.maxsnap",
 														"filepath" : "~/Documents/Max 8/Snapshots",
 														"filepos" : -1,
-														"snapshotfileid" : "f126926171b7f865e07d6641be5e8b45"
+														"snapshotfileid" : "e4c535243f8930b7d1da19d25823bfd8"
 													}
 
 												}
@@ -12738,9 +12738,6 @@
 , 			{
 				"box" : 				{
 					"active" : 					{
-						"program_files" : 0,
-						"vst_program" : 0,
-						"open!" : 0,
 						"presets" : 0,
 						"preset-ramp" : 0,
 						"title_menu" : 0,
@@ -12749,7 +12746,6 @@
 						"master" : 0,
 						"act" : 0,
 						"act::active_store" : 0,
-						"ll.inputmix::chans" : 0,
 						"ll.blues" : 0,
 						"ll.blues::levels" : 0,
 						"ll.blues::outputs" : 0,
@@ -12779,52 +12775,51 @@
 						"pres_menu" : 2011,
 						"tetris_menu" : 2012,
 						"master" : 2013,
-						"Mix" : 103,
-						"PreDelay" : 101,
-						"Decay" : 102,
-						"Size" : 103,
-						"Attack" : 104,
-						"BassMult" : 105,
-						"BassXover" : 106,
-						"HighShelf" : 107,
-						"HighFreq" : 108,
-						"EarlyDiffusion" : 109,
-						"LateDiffusion" : 110,
-						"ModRate" : 111,
-						"ModDepth" : 112,
-						"HighCut" : 117,
-						"LowCut" : 116,
-						"ColorMode" : 115,
-						"ReverbMode" : 116,
-						"Bypass" : 100,
-						"InputGain" : 101,
-						"OutputGain" : 102,
-						"Mode" : 104,
-						"Echo1Mode" : 105,
-						"Echo1Note" : 106,
-						"Echo1Time" : 107,
-						"Echo2Mode" : 108,
-						"Echo2Note" : 109,
-						"Echo2Time" : 110,
-						"Feedback" : 111,
-						"PrimeNumbers" : 112,
-						"Groove" : 113,
-						"Feel" : 114,
-						"Saturation" : 115,
-						"RhythmMode" : 118,
-						"RhythmNote" : 119,
-						"RhythmTime" : 120,
-						"RhythmRepeats" : 121,
-						"RhythmDecay" : 122,
-						"Style" : 123,
-						"Tempo" : 124
+						"Mix" : 100,
+						"DelayStyle" : 101,
+						"DelayLSync" : 102,
+						"DelayLNote" : 103,
+						"DelayL_Ms" : 104,
+						"DelayRSync" : 105,
+						"DelayRNote" : 106,
+						"DelayR_Ms" : 107,
+						"DelaySpread" : 108,
+						"DelaySpacing" : 109,
+						"DelayRatio" : 110,
+						"RepeatSwell" : 111,
+						"TapA" : 112,
+						"TapB" : 113,
+						"TapC" : 114,
+						"TapD" : 115,
+						"Feedback" : 116,
+						"Width" : 117,
+						"DriveIn" : 118,
+						"Age" : 119,
+						"Diffusion" : 120,
+						"DiffSize" : 121,
+						"LowCut" : 122,
+						"HighCut" : 123,
+						"ModRate" : 124,
+						"ModDepth" : 125,
+						"Wow" : 126,
+						"Flutter" : 127,
+						"FreqShift" : 128,
+						"FreqDetune" : 129,
+						"PitchShift" : 130,
+						"PitchDetune" : 131,
+						"Mode" : 132,
+						"Era" : 133,
+						"Ducking" : 134,
+						"Reserved2" : 135,
+						"Reserved3" : 136,
+						"Reserved4" : 137
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 882, 100, 1422, 809 ],
+						"client_rect" : [ 545, 133, 1800, 849 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 365, 44, 816, 172 ]
+						"storage_rect" : [ 583, 68, 1034, 196 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -12882,13 +12877,13 @@
 					"restore" : 					{
 						"master" : [ 0 ],
 						"midi-channel" : [ 0 ],
-						"midi-port" : [ "IAC Driver Bus 1" ],
+						"midi-port" : [ "to Max 1" ],
 						"open!" : [ 0 ],
 						"pres_menu" : [ "" ],
 						"preset-ramp" : [ 0.0 ],
 						"presets" : [ 0 ],
 						"program_files" : [ "writepgm" ],
-						"tetris_menu" : [ "" ],
+						"tetris_menu" : [ "ƒ default.json" ],
 						"title_menu" : [ "subpatch" ],
 						"vst-folder" : [ "def_folders" ],
 						"vst_program" : [ 1 ]
@@ -13064,6 +13059,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
 					"hidden" : 1,
+					"source" : [ "obj-16", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"hidden" : 1,
 					"source" : [ "obj-16", 0 ]
 				}
 
@@ -13119,7 +13122,7 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "EchoBoy.maxsnap",
+				"name" : "ValhallaDelay.maxsnap",
 				"bootpath" : "~/Documents/Max 8/Snapshots",
 				"patcherrelativepath" : "../../../../Snapshots",
 				"type" : "mx@s",
@@ -13387,6 +13390,13 @@
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "vintage-verb.json",
+				"bootpath" : "~/Documents/Max 8/Library/ppooll_presets/vst@P",
+				"patcherrelativepath" : "../../../../Library/ppooll_presets/vst@P",
+				"type" : "JSON",
 				"implicit" : 1
 			}
  ],
