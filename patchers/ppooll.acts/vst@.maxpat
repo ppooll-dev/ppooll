@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 833.0, 174.0, 159.0, 113.0 ],
+		"rect" : [ 682.0, 199.0, 159.0, 113.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -1848,7 +1848,7 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 504.0, 451.0, 50.0, 35.0 ],
+																	"patching_rect" : [ 504.0, 451.0, 50.0, 49.0 ],
 																	"text" : "tal-write-test.fxp"
 																}
 
@@ -1929,12 +1929,12 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-22",
-																	"linecount" : 15,
+																	"linecount" : 13,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 322.0, 340.0, 61.0, 129.0 ],
+																	"patching_rect" : [ 322.0, 340.0, 64.0, 183.0 ],
 																	"text" : "86 97 108 104 97 108 108 97 86 105 110 116 97 103 101 86 101 114 98 95 120 54 52 46 118 115 116 8218 224 232"
 																}
 
@@ -5312,7 +5312,7 @@
 , 																			{
 																				"patchline" : 																				{
 																					"destination" : [ "obj-16", 0 ],
-																					"order" : 2,
+																					"disabled" : 1,
 																					"source" : [ "obj-1", 0 ]
 																				}
 
@@ -11382,7 +11382,7 @@
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 688.0, 233.0, 144.0, 22.0 ],
+																					"patching_rect" : [ 688.0, 233.0, 144.0, 35.0 ],
 																					"text" : "buffer_host1 vst@1 ho_st1 xgroove@1"
 																				}
 
@@ -11688,6 +11688,7 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-12",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
@@ -12435,7 +12436,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "multichannelsignal" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 118.5, 28.0, 30.0, 30.0 ],
 									"varname" : "in"
 								}
@@ -12485,62 +12486,6 @@
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 1,
 										"parameter_mappable" : 0
-									}
-,
-									"snapshot" : 									{
-										"filetype" : "C74Snapshot",
-										"version" : 2,
-										"minorversion" : 0,
-										"name" : "snapshotlist",
-										"origin" : "mcs.vst~",
-										"type" : "list",
-										"subtype" : "Undefined",
-										"embed" : 1,
-										"snapshot" : 										{
-											"pluginname" : "ValhallaDelay.vst",
-											"plugindisplayname" : "ValhallaDelay",
-											"pluginsavedname" : "/Library/Audio/Plug-Ins/VST/ValhallaDelay.vst",
-											"pluginsaveduniqueid" : 0,
-											"version" : 1,
-											"isbank" : 0,
-											"isbase64" : 1,
-											"blob" : "764.CMlaKA....fQPMDZ....APFSgkG.BD......A........................................H.vVMjLgbq....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVEFanEFarEFQkwVX4ABbrU2Yo4lUkI2bo8la8HhLtDiKvHBHvIWYyUFcNEVak0iHDUlYgUGazIBHMkFd8HBLt.iHfPTYrEVdSQWdrUVOh.iKvHBHDUFagkGSSkmai0iHv3BLh.BQkwVX4wjSuQWY8HBLt.iHfPTYrEVdL8USy0iHv3BLh.BQkwVX4I0T441X8HBLt.iHfPTYrEVdR4zazUVOh.iKvHBHDUFagkmTe0zb8HBLt.iHfPTYrEVdSAmbkEFY8HBLt.iHfPTYrEVdSAWXiklam0iHv3BLh.BQkwVX4IUXzk1a8HBLt.iHfHUYvUVXzM0ckwFa8HBLt.iHfPUXvETOh.iKvHBHTEFbB0iHv3BLh.BUgA2P8HBLt.iHfPUXvQTOh.iKvHBHFUVYjIVXisVOh.iKvHBHWkFYzgVOh.iKvHBHDIWZ1UVRt0iHv3BLh.RPmUVOh.iKvHBHDklYlU2bo8la8HBLt.iHfPTZlY1TooWY8HBLt.iHfvza2MTcz0iHv3BLh.BRocFZCUGc8HBLt.iHfzzajIUXzUVOh.iKvHBHM8FYDUFbzgVOh.iKvHBHW81c8HBLt.iHfXDa0QGckIWOh.iKvHBHFIWYwMEZoYFc8HBLt.iHfXjbkEGQkQWctUVOh.iKvHBHPkFcig1TnklYz0iHv3BLh.BToQ2XnQTYzUmak0iHv3BLh.RSuQVY8HBLt.iHfTjbg0iHv3BLh.BQ0M1Zo41Y8HBLt.iHfHUYyUlb1UFYxziHv3BLh.hTkMWYxYWYjMSOh.iKvHBHRU1bkImckQFM8HBLt.iHfzVZ3wzaisVOh.iHfTWZWkFYzgVOhjCM0HBH0kFRkk1YnQWOhPyL0HxK9.."
-										}
-,
-										"snapshotlist" : 										{
-											"current_snapshot" : 0,
-											"entries" : [ 												{
-													"filetype" : "C74Snapshot",
-													"version" : 2,
-													"minorversion" : 0,
-													"name" : "ValhallaDelay",
-													"origin" : "ValhallaDelay.vst",
-													"type" : "VST",
-													"subtype" : "AudioEffect",
-													"embed" : 0,
-													"snapshot" : 													{
-														"pluginname" : "ValhallaDelay.vst",
-														"plugindisplayname" : "ValhallaDelay",
-														"pluginsavedname" : "/Library/Audio/Plug-Ins/VST/ValhallaDelay.vst",
-														"pluginsaveduniqueid" : 0,
-														"version" : 1,
-														"isbank" : 0,
-														"isbase64" : 1,
-														"blob" : "764.CMlaKA....fQPMDZ....APFSgkG.BD......A........................................H.vVMjLgbq....O+fWarAhckI2bo8la8HRLt.iHfTlai8FYo41Y8HRUTYTK3HxO9.BOVEFanEFarEFQkwVX4ABbrU2Yo4lUkI2bo8la8HhLtDiKvHBHvIWYyUFcNEVak0iHDUlYgUGazIBHMkFd8HBLt.iHfPTYrEVdSQWdrUVOh.iKvHBHDUFagkGSSkmai0iHv3BLh.BQkwVX4wjSuQWY8HBLt.iHfPTYrEVdL8USy0iHv3BLh.BQkwVX4I0T441X8HBLt.iHfPTYrEVdR4zazUVOh.iKvHBHDUFagkmTe0zb8HBLt.iHfPTYrEVdSAmbkEFY8HBLt.iHfPTYrEVdSAWXiklam0iHv3BLh.BQkwVX4IUXzk1a8HBLt.iHfHUYvUVXzM0ckwFa8HBLt.iHfPUXvETOh.iKvHBHTEFbB0iHv3BLh.BUgA2P8HBLt.iHfPUXvQTOh.iKvHBHFUVYjIVXisVOh.iKvHBHWkFYzgVOh.iKvHBHDIWZ1UVRt0iHv3BLh.RPmUVOh.iKvHBHDklYlU2bo8la8HBLt.iHfPTZlY1TooWY8HBLt.iHfvza2MTcz0iHv3BLh.BRocFZCUGc8HBLt.iHfzzajIUXzUVOh.iKvHBHM8FYDUFbzgVOh.iKvHBHW81c8HBLt.iHfXDa0QGckIWOh.iKvHBHFIWYwMEZoYFc8HBLt.iHfXjbkEGQkQWctUVOh.iKvHBHPkFcig1TnklYz0iHv3BLh.BToQ2XnQTYzUmak0iHv3BLh.RSuQVY8HBLt.iHfTjbg0iHv3BLh.BQ0M1Zo41Y8HBLt.iHfHUYyUlb1UFYxziHv3BLh.hTkMWYxYWYjMSOh.iKvHBHRU1bkImckQFM8HBLt.iHfzVZ3wzaisVOh.iHfTWZWkFYzgVOhjCM0HBH0kFRkk1YnQWOhPyL0HxK9.."
-													}
-,
-													"fileref" : 													{
-														"name" : "ValhallaDelay",
-														"filename" : "ValhallaDelay.maxsnap",
-														"filepath" : "~/Documents/Max 8/Snapshots",
-														"filepos" : -1,
-														"snapshotfileid" : "e4c535243f8930b7d1da19d25823bfd8"
-													}
-
-												}
- ]
-										}
-
 									}
 ,
 									"text" : "mcs.vst~ 4 2",
@@ -12774,45 +12719,7 @@
 						"title_menu" : 2010,
 						"pres_menu" : 2011,
 						"tetris_menu" : 2012,
-						"master" : 2013,
-						"Mix" : 100,
-						"DelayStyle" : 101,
-						"DelayLSync" : 102,
-						"DelayLNote" : 103,
-						"DelayL_Ms" : 104,
-						"DelayRSync" : 105,
-						"DelayRNote" : 106,
-						"DelayR_Ms" : 107,
-						"DelaySpread" : 108,
-						"DelaySpacing" : 109,
-						"DelayRatio" : 110,
-						"RepeatSwell" : 111,
-						"TapA" : 112,
-						"TapB" : 113,
-						"TapC" : 114,
-						"TapD" : 115,
-						"Feedback" : 116,
-						"Width" : 117,
-						"DriveIn" : 118,
-						"Age" : 119,
-						"Diffusion" : 120,
-						"DiffSize" : 121,
-						"LowCut" : 122,
-						"HighCut" : 123,
-						"ModRate" : 124,
-						"ModDepth" : 125,
-						"Wow" : 126,
-						"Flutter" : 127,
-						"FreqShift" : 128,
-						"FreqDetune" : 129,
-						"PitchShift" : 130,
-						"PitchDetune" : 131,
-						"Mode" : 132,
-						"Era" : 133,
-						"Ducking" : 134,
-						"Reserved2" : 135,
-						"Reserved3" : 136,
-						"Reserved4" : 137
+						"master" : 2013
 					}
 ,
 					"saved_object_attributes" : 					{
@@ -12877,13 +12784,13 @@
 					"restore" : 					{
 						"master" : [ 0 ],
 						"midi-channel" : [ 0 ],
-						"midi-port" : [ "to Max 1" ],
+						"midi-port" : [ "IAC Driver Bus 1" ],
 						"open!" : [ 0 ],
 						"pres_menu" : [ "" ],
 						"preset-ramp" : [ 0.0 ],
 						"presets" : [ 0 ],
 						"program_files" : [ "writepgm" ],
-						"tetris_menu" : [ "ƒ default.json" ],
+						"tetris_menu" : [ "" ],
 						"title_menu" : [ "subpatch" ],
 						"vst-folder" : [ "def_folders" ],
 						"vst_program" : [ 1 ]
@@ -13057,22 +12964,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-18", 0 ],
-					"hidden" : 1,
-					"source" : [ "obj-16", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"hidden" : 1,
-					"source" : [ "obj-16", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-18", 0 ]
@@ -13122,13 +13013,6 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "ValhallaDelay.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../../../../Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "actmaker.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
@@ -13390,13 +13274,6 @@
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "vintage-verb.json",
-				"bootpath" : "~/Documents/Max 8/Library/ppooll_presets/vst@P",
-				"patcherrelativepath" : "../../../../Library/ppooll_presets/vst@P",
-				"type" : "JSON",
 				"implicit" : 1
 			}
  ],
