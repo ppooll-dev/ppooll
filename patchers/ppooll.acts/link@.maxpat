@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 792.0, 423.0, 103.0, 131.0 ],
+		"rect" : [ 305.0, 345.0, 103.0, 131.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -50,7 +50,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 505.0, 651.0, 59.0, 20.0 ],
-					"restore" : [ 120.0 ],
+					"restore" : [ 77.999997138977051 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -85,7 +85,7 @@
 			}
 , 			{
 				"box" : 				{
-					"bgcolor" : [ 0.784, 0.145, 0.24, 1.0 ],
+					"bgcolor" : [ 0.0, 0.533, 0.169, 1.0 ],
 					"fontsize" : 12.0,
 					"id" : "obj-14",
 					"maxclass" : "textbutton",
@@ -180,7 +180,7 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-17",
-					"items" : [ "AU DLS Synth 1", ",", "Netzwerk cxh", ",", "from Max 1", ",", "from Max 2" ],
+					"items" : [ "AU DLS Synth 1", ",", "Netzwerk cxh", ",", "IAC-Treiber Bus 1", ",", "from Max 1", ",", "from Max 2" ],
 					"labelclick" : 1,
 					"maxclass" : "umenu",
 					"numinlets" : 1,
@@ -203,7 +203,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 199.0, 288.0, 68.0, 20.0 ],
-					"restore" : [ 2.0 ],
+					"restore" : [ 1.299999952316284 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -296,7 +296,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-73",
-					"items" : [ "no", ",", "ho_st1", ",", "link@1", ",", "subseq1" ],
+					"items" : [ "no", ",", "ho_st1", ",", "link@1", ",", "subryth1", ",", "subseq1" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -332,6 +332,7 @@
 				"box" : 				{
 					"annotation" : "tempo",
 					"fontface" : 0,
+					"format" : [ 3.4 ],
 					"id" : "obj-28",
 					"label" : [ 0 ],
 					"maxclass" : "ll_number",
@@ -341,7 +342,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 0.0, 18.0, 63.0, 22.0 ],
 					"sliderlog" : 13.0,
-					"slidermax" : 99999.0,
+					"slidermax" : 14000.0,
 					"sliderstyle" : 2,
 					"varname" : "freq"
 				}
@@ -385,7 +386,7 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 304, 626, 885, 1013 ],
+						"client_rect" : [ 25, 87, 640, 853 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 0, 0, 640, 240 ]
@@ -436,10 +437,10 @@
 					"patching_rect" : [ 324.0, 216.0, 107.0, 22.0 ],
 					"restore" : 					{
 						"act_link" : [ "no" ],
-						"estbpm" : [ 120.0 ],
-						"freq" : [ 120.0 ],
-						"hz-ms-switch" : [ "bpm" ],
-						"link_status" : [ 0 ],
+						"estbpm" : [ 78.0 ],
+						"freq" : [ 1.299999952316284 ],
+						"hz-ms-switch" : [ "Hz" ],
+						"link_status" : [ 1 ],
 						"master" : [ 0 ],
 						"midi_refresh" : [ -1 ],
 						"midiclock_out" : [ 0 ],
@@ -542,7 +543,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -584,7 +585,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 449.0, 189.0, 50.0, 22.0 ],
-									"text" : "120."
+									"text" : "78."
 								}
 
 							}
@@ -601,7 +602,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -644,7 +645,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 553.0, 414.0, 58.0, 22.0 ],
-													"text" : "120."
+													"text" : "78."
 												}
 
 											}
@@ -1504,7 +1505,7 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-21",
-									"items" : [ "AU DLS Synth 1", ",", "Netzwerk cxh", ",", "from Max 1", ",", "from Max 2" ],
+									"items" : [ "AU DLS Synth 1", ",", "Netzwerk cxh", ",", "IAC-Treiber Bus 1", ",", "from Max 1", ",", "from Max 2" ],
 									"labelclick" : 1,
 									"maxclass" : "umenu",
 									"numinlets" : 1,
