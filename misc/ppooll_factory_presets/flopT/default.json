@@ -1,5 +1,5 @@
 {
-	"window" : [ 270, 202, 452, 480 ],
+	"window" : [ 658, 257, 842, 536 ],
 	"lookup" : 	{
 		"patching_rect" : [ 0, 147, 30, 20 ],
 		"hidden" : 0,
@@ -144,13 +144,13 @@
 	}
 ,
 	"starts_LCD" : 	{
-		"patching_rect" : [ 60, 33, 62, 126 ],
-		"hidden" : 0
+		"patching_rect" : [ 444, 37, 62, 126 ],
+		"hidden" : 1
 	}
 ,
 	"lengths_LCD" : 	{
-		"patching_rect" : [ 122, 33, 62, 126 ],
-		"hidden" : 0
+		"patching_rect" : [ 554, 37, 62, 126 ],
+		"hidden" : 1
 	}
 ,
 	"full_select" : 	{
@@ -163,18 +163,6 @@
 		"patching_rect" : [ 156, 0, 13, 14 ],
 		"hidden" : 0,
 		"fontsize" : 10
-	}
-,
-	"start" : 	{
-		"patching_rect" : [ 60, 148, 62, 14 ],
-		"hidden" : 0,
-		"fontsize" : 12
-	}
-,
-	"length" : 	{
-		"patching_rect" : [ 122, 148, 62, 14 ],
-		"hidden" : 0,
-		"fontsize" : 12
 	}
 ,
 	"s-ramp" : 	{
@@ -206,12 +194,6 @@
 		"hidden" : 0
 	}
 ,
-	"end" : 	{
-		"patching_rect" : [ 122, 148, 62, 14 ],
-		"hidden" : 1,
-		"fontsize" : 12
-	}
-,
 	"current_start" : 	{
 		"patching_rect" : [ 60, 173, 62, 14 ],
 		"hidden" : 0,
@@ -227,6 +209,42 @@
 	"keep-time" : 	{
 		"patching_rect" : [ 168, 16, 15, 15 ],
 		"hidden" : 0
+	}
+,
+	"start-jsui" : 	{
+		"patching_rect" : [ 59, 36, 62, 126 ],
+		"hidden" : 0,
+		"jsarguments" : [ "@bgcolor", 0.4, 0.4, 0.8, 1, "@output_mode", 1 ]
+	}
+,
+	"end-jsui" : 	{
+		"patching_rect" : [ 121, 36, 62, 126 ],
+		"hidden" : 1,
+		"jsarguments" : [ "@output_mode", 1, "@bgcolor", 0.29, 0.69, 0.369, 1 ]
+	}
+,
+	"length-jsui" : 	{
+		"patching_rect" : [ 121, 36, 62, 126 ],
+		"hidden" : 0,
+		"jsarguments" : [ "@output_mode", 1, "@bgcolor", 0.29, 0.69, 0.369, 1, "@min", 0.1 ]
+	}
+,
+	"start" : 	{
+		"patching_rect" : [ 59, 149, 62, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"length" : 	{
+		"patching_rect" : [ 121, 149, 62, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"end" : 	{
+		"patching_rect" : [ 121, 149, 62, 14 ],
+		"hidden" : 1,
+		"fontsize" : 12
 	}
 
 }
