@@ -1,5 +1,5 @@
 {
-	"window" : [ 658, 257, 842, 536 ],
+	"window" : [ 610, 196, 796, 476 ],
 	"lookup" : 	{
 		"patching_rect" : [ 0, 147, 30, 20 ],
 		"hidden" : 0,
@@ -143,16 +143,6 @@
 		"fontsize" : 11
 	}
 ,
-	"starts_LCD" : 	{
-		"patching_rect" : [ 444, 37, 62, 126 ],
-		"hidden" : 1
-	}
-,
-	"lengths_LCD" : 	{
-		"patching_rect" : [ 554, 37, 62, 126 ],
-		"hidden" : 1
-	}
-,
 	"full_select" : 	{
 		"patching_rect" : [ 170, 0, 12, 14 ],
 		"hidden" : 0,
@@ -230,7 +220,7 @@
 	}
 ,
 	"start" : 	{
-		"patching_rect" : [ 59, 149, 62, 14 ],
+		"patching_rect" : [ 59, 148, 62, 14 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
@@ -242,7 +232,7 @@
 	}
 ,
 	"end" : 	{
-		"patching_rect" : [ 121, 149, 62, 14 ],
+		"patching_rect" : [ 121, 147, 62, 14 ],
 		"hidden" : 1,
 		"fontsize" : 12
 	}
