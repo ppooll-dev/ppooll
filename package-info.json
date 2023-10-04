@@ -12,21 +12,15 @@
 		"macintosh" : 		{
 			"platform" : [ "x64", "aarch64" ],
 			"min_version" : "none"
-		}
-,
+		},
 		"windows" : 		{
 			"platform" : [ "x64" ],
 			"min_version" : "none"
 		}
-
-	}
-,
-	"package_extra" : 	{
-
-	}
-,
+	},
+	"package_extra" : 	{},
 	"tags" : [ "audio", "instrument", "versatile" ],
-	"version" : "8.5",
+	"version" : "8.5.0",
 	"website" : "http://ppooll.klingt.org",
 	"filelist" : 	{
 		"externals" : [ "ll_number","ll_fastforward", "ll_2dslider", "shell", "pattrexists", "vbap"],
@@ -35,5 +29,4 @@
 		"misc" : [ ],
 		"extras" : [ "ppooll_host.maxpat" ]
 	}
-
 }

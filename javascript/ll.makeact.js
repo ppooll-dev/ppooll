@@ -67,14 +67,12 @@ function make(n,s,i,x,y,z,h) // main function called by actmaker
 function check_live(){
 	//post("check################");
 	var a = Global("ll.max_live_envi")
-	if (!a.envi) //a.envi not yet defined
-	{
-		if (tpp.parentpatcher){ // the act was loaded as bpatcher in another patcher
-			a.envi = "live";
-		}
-		else a.envi = "max"
-	}
 
+	if (tpp.parentpatcher){ // the act was loaded as bpatcher in another patcher
+		a.envi = "live";
+	}
+	else a.envi = "max"
+	
 	if (a.envi == "live") make_live();
 }
 

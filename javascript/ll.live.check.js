@@ -12,13 +12,10 @@ var a = new Global("ll.max_live_envi")
 
 
 function bang(){
-	
-	if (!a.envi)
- 	{
-		check()
-	}
+	check()
+
 	outlet(0,a.envi);
-	outlet(1,(a.envi=="live")+1); //ready for gate 2
+	outlet(1,(a.envi==="live")+1); //ready for gate 2
 
 }
 
@@ -29,7 +26,6 @@ function check(){
 	while (owner && !isLiveEnvi) {
 	  prev = owner
 	  owner = owner.patcher.box
-		post(prev.patcher.name);
 	  // the scripting name of the subpatch of the "environment" in live.ppooll
 	  if(prev.patcher.name === 'LIVE_PPOOLL_ENVIRONMENT'){
 	  	isLiveEnvi = true;
