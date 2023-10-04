@@ -1,5 +1,5 @@
 {
-	"window" : [ 432, 320, 672, 510 ],
+	"window" : [ 840, 327, 1080, 517 ],
 	"number_of_channels" : 	{
 		"patching_rect" : [ 192, 0, 50, 22 ],
 		"hidden" : 0,

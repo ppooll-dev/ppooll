@@ -1,7 +1,7 @@
 {
-	"window" : [ 677, 238, 902, 353 ],
+	"window" : [ 992, 184, 1217, 319 ],
 	"cellblock" : 	{
-		"patching_rect" : [ 0, 34, 165, 80 ],
+		"patching_rect" : [ 0, 34, 185, 100 ],
 		"hidden" : 0,
 		"fontsize" : 10
 	}
@@ -103,7 +103,7 @@
 	}
 ,
 	"meter" : 	{
-		"patching_rect" : [ 1, 55, 105, 60 ],
+		"patching_rect" : [ 1, 55, 105, 80 ],
 		"hidden" : 0
 	}
 ,
@@ -115,7 +115,7 @@
 ,
 	"def_outputs" : 	{
 		"patcher" : "bang",
-		"patching_rect" : [ 165, 34, 162, 68 ],
+		"patching_rect" : [ 246, 14, 84, 20 ],
 		"hidden" : 1
 	}
 
