@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 1,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 992.0, 425.0, 153.0, 165.0 ],
+		"rect" : [ 981.0, 432.0, 153.0, 165.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -74,7 +74,6 @@
 					"label" : [ "" ],
 					"maxclass" : "ll_number",
 					"min" : 0.0,
-					"mousefocus" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
@@ -223,13 +222,15 @@
 , 			{
 				"box" : 				{
 					"active" : 					{
+						"master" : 0,
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
 						"title_menu" : 0,
 						"act::active_store" : 1,
-						"ll.blues::levels" : 1,
-						"ll.blues::outputs" : 1,
-						"ll.blues::state" : 1
+						"ll.blues" : 0,
+						"ll.blues::levels" : 0,
+						"ll.blues::outputs" : 0,
+						"ll.blues::state" : 0
 					}
 ,
 					"color" : [ 0.4, 0.4, 0.8, 1.0 ],
@@ -241,10 +242,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 373.0, 40.0, 100.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 1006, 202, 1838, 741 ],
+						"client_rect" : [ 928, 124, 2195, 936 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 365, 44, 816, 172 ]
+						"storage_rect" : [ 0, 0, 640, 240 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -297,11 +298,11 @@
 						"center" : [ -1 ],
 						"master" : [ 0 ],
 						"metro" : [ 0 ],
-						"pans" : [ 0.5, 0.366013071895425, 0.444444444444444, 0.516339869281046, 0.568627450980392, 0.620915032679739, 0.666666666666667, 0.725490196078431, 0.751633986928105, 0.777777777777778, 0.803921568627451, 0.856209150326797 ],
+						"pans" : [ 0.640083672556146, 0.439957698062628, 0.665456984197721, 0.787823448805895, 0.543114175985677, 0.135022366892215, 0.309367024061671, 0.359534193045235, 0.720627887830561, 0.353598577570535, 0.651047074384496, 0.376887727017145 ],
 						"pres_menu" : [ "_" ],
-						"slide" : [ 1594 ],
+						"slide" : [ 1000 ],
 						"tetris_menu" : [ "" ],
-						"time" : [ 1307 ],
+						"time" : [ 1000 ],
 						"title_menu" : [ "subpatch" ]
 					}
 ,
@@ -364,7 +365,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-13",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "-", ",", "ƒ", "default" ],
+					"items" : [ "-", ",", "-", ",", "ƒ", "default.json" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -406,13 +407,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 232.0, 436.0, 592.0, 439.0 ],
+						"rect" : [ 1133.0, 328.0, 592.0, 439.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -441,6 +442,18 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "signal", "bang" ],
+									"patching_rect" : [ 356.0, 79.0, 34.0, 22.0 ],
+									"text" : "line~"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-14",
 									"maxclass" : "newobj",
@@ -502,7 +515,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -647,13 +660,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-20",
-													"linecount" : 23,
+													"linecount" : 24,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 219.0, 266.0, 50.0, 317.0 ],
-													"text" : "0.5 0.366013 0.444444 0.51634 0.568627 0.620915 0.666667 0.72549 0.751634 0.777778 0.803922 0.856209"
+													"patching_rect" : [ 219.0, 266.0, 50.0, 330.0 ],
+													"text" : "0.640084 0.439958 0.665457 0.787823 0.543114 0.135022 0.309367 0.359534 0.720628 0.353599 0.651047 0.376888"
 												}
 
 											}
@@ -1043,8 +1056,8 @@
 									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 296.0, 262.0, 203.0, 22.0 ],
-									"text" : "mc.slide~ 44100. 44100."
+									"patching_rect" : [ 296.0, 262.0, 182.0, 22.0 ],
+									"text" : "mc.rampsmooth~ 44100. 44100."
 								}
 
 							}
@@ -1269,14 +1282,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.actnamehelper.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.an.js",
+				"name" : "ll.an2.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
@@ -1290,7 +1296,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.createact8.js",
+				"name" : "ll.makeact.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
@@ -1301,6 +1307,13 @@
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.og.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -1402,11 +1415,8 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll_fastforward.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/externals/filip",
-				"patcherrelativepath" : "../../externals/filip",
-				"type" : "JSON",
-				"implicit" : 1
+				"name" : "ll_fastforward.mxo",
+				"type" : "iLaX"
 			}
 , 			{
 				"name" : "ll_number.mxo",

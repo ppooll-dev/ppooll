@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 2,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -40,6 +40,32 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "bang", "" ],
+					"patching_rect" : [ 210.5, 248.0, 29.5, 22.0 ],
+					"text" : "t b l"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "bang when ready",
+					"comment" : "",
+					"id" : "obj-1",
+					"index" : 2,
+					"maxclass" : "outlet",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 203.0, 280.0, 25.0, 25.0 ],
+					"varname" : "outlet_2"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-20",
@@ -61,7 +87,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 248.0, 145.0, 167.0, 22.0 ],
+					"patching_rect" : [ 237.5, 127.0, 167.0, 22.0 ],
 					"text" : "t b s"
 				}
 
@@ -75,7 +101,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 248.0, 109.0, 25.0, 25.0 ]
+					"patching_rect" : [ 237.5, 91.0, 25.0, 25.0 ]
 				}
 
 			}
@@ -100,7 +126,7 @@
 					"numinlets" : 4,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 221.0, 233.0, 194.0, 22.0 ],
+					"patching_rect" : [ 210.5, 215.0, 247.0, 22.0 ],
 					"text" : "combine :: a :: #1 @triggers 1"
 				}
 
@@ -111,8 +137,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"patching_rect" : [ 279.333333333333371, 184.0, 63.0, 22.0 ],
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 268.833333333333371, 166.0, 63.0, 22.0 ],
 					"text" : "ll.actname"
 				}
 
@@ -126,8 +152,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 279.0, 367.0, 146.0, 22.0 ],
-					"text" : "::rm@1::in_mix~"
+					"patching_rect" : [ 279.0, 367.0, 171.0, 22.0 ],
+					"text" : "::control@4::midi_receive_port"
 				}
 
 			}
@@ -263,6 +289,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"source" : [ "obj-2", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-33", 0 ],
 					"source" : [ "obj-20", 0 ]
 				}
@@ -284,7 +324,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-14", 0 ],
+					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-25", 0 ]
 				}
 
