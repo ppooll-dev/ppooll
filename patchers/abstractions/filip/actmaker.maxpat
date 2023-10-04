@@ -2335,17 +2335,6 @@
 											}
 , 											{
 												"box" : 												{
-													"id" : "obj-35",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 139.0, 255.0, 19.0, 22.0 ],
-													"text" : "n"
-												}
-
-											}
-, 											{
-												"box" : 												{
 													"id" : "obj-34",
 													"maxclass" : "message",
 													"numinlets" : 2,
@@ -2385,8 +2374,8 @@
 													"id" : "obj-10",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 49.0, 286.0, 85.0, 22.0 ],
 													"text" : "ll.r pres_menu"
 												}
@@ -3704,16 +3693,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-35", 0 ],
-													"order" : 1,
-													"source" : [ "obj-9", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-6", 0 ],
-													"order" : 0,
 													"source" : [ "obj-9", 0 ]
 												}
 
@@ -11400,11 +11380,8 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll_fastforward.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/externals/filip",
-				"patcherrelativepath" : "../../../externals/filip",
-				"type" : "JSON",
-				"implicit" : 1
+				"name" : "ll_fastforward.mxo",
+				"type" : "iLaX"
 			}
 , 			{
 				"name" : "n.maxpat",
