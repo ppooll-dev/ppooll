@@ -1,7 +1,7 @@
 {
-	"window" : [ 18, 9, 1038, 106 ],
+	"window" : [ 48, 24, 1068, 121 ],
 	"def" : 	{
-		"patching_rect" : [ 837, 0, 60, 20 ],
+		"patching_rect" : [ 867, 0, 60, 20 ],
 		"hidden" : 0,
 		"fontsize" : 11
 	}
@@ -67,7 +67,7 @@
 	}
 ,
 	"keyboard" : 	{
-		"patching_rect" : [ 0, 17, 988, 79 ],
+		"patching_rect" : [ 0, 17, 969, 79 ],
 		"hidden" : 0
 	}
 ,
@@ -96,13 +96,13 @@
 	}
 ,
 	"poly" : 	{
-		"patching_rect" : [ 896, 0, 27, 17 ],
+		"patching_rect" : [ 926, 0, 27, 17 ],
 		"hidden" : 0,
 		"fontsize" : 11
 	}
 ,
 	"note_on" : 	{
-		"patching_rect" : [ 923, 0, 30, 17 ],
+		"patching_rect" : [ 953, 0, 30, 17 ],
 		"hidden" : 0,
 		"fontsize" : 11
 	}
@@ -128,6 +128,12 @@
 	"oct_div" : 	{
 		"patching_rect" : [ 514, 0, 23, 17 ],
 		"hidden" : 1,
+		"fontsize" : 11
+	}
+,
+	"note_offset" : 	{
+		"patching_rect" : [ 807, 0, 70, 17 ],
+		"hidden" : 0,
 		"fontsize" : 11
 	}
 
