@@ -1,5 +1,5 @@
 {
-	"window" : [ 177, 547, 545, 606 ],
+	"window" : [ 403, 191, 771, 250 ],
 	"waves" : 	{
 		"patching_rect" : [ 307, -2, 30, 19 ],
 		"hidden" : 0,
@@ -109,9 +109,9 @@
 	}
 ,
 	"ramp" : 	{
-		"patching_rect" : [ 51, 14, 53, 15 ],
+		"patching_rect" : [ 51, 14, 33, 15 ],
 		"hidden" : 0,
-		"fontsize" : 14
+		"fontsize" : 11
 	}
 ,
 	"size" : 	{
@@ -190,6 +190,12 @@
 		"patching_rect" : [ 284, 15, 83, 44 ],
 		"hidden" : 0,
 		"fontsize" : 10
+	}
+,
+	"unipolar" : 	{
+		"patching_rect" : [ 84, 14, 20, 17 ],
+		"hidden" : 0,
+		"fontsize" : 8
 	}
 
 }
