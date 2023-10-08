@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 498.0, 185.0, 130.0, 125.0 ],
+		"rect" : [ 490.0, 183.0, 130.0, 125.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 11.595186999999999,
@@ -514,7 +514,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 70.0, 106.0, 58.0, 20.0 ],
-					"text" : "13:37:58",
+					"text" : "13:38:18",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "time"
 				}
@@ -615,7 +615,7 @@
 					"fontsize" : 12.0,
 					"hint" : "environment menu",
 					"id" : "obj-22",
-					"items" : [ "(environments)", ",", "write", ",", "clear!", ",", "opentext", ",", "merge...", ",", "params_only", ",", "-", ",", "buffertest.json", ",", "ducks.json", ",", "envM_test.json" ],
+					"items" : [ "(environments)", ",", ".json", ",", "_HARDCORE.json", ",", "_test-inmulti.json", ",", "adv-handholding-2.json", ",", "adv-handholding-3.json", ",", "advanced-handholding.json", ",", "amplitude-test.json", ",", "amxd-test.json", ",", "amxd-test2.json", ",", "amxd-test3.json", ",", "amxd-vs-vst.json", ",", "amxd-vs-vst2.json", ",", "amxd-window.json", ",", "atlast.json", ",", "axmd-save.json", ",", "bufftest.json", ",", "chiral-test.json", ",", "chriral-rcloop.json", ",", "commencement.json", ",", "commencement2.json", ",", "component-test.json", ",", "drankit.json", ",", "ear-smoke.json", ",", "echoboy.json", ",", "elastic-walls.json", ",", "first-percs.json", ",", "funfuntimes.json", ",", "gg_test.json", ",", "groanchant.json", ",", "hands-interconnected.json", ",", "henry-will-ham.json", ",", "hg-230303-envi-romb.json", ",", "hg-230303-envi.json", ",", "hg-230405-fullsample.json", ",", "hg-230601.json", ",", "hg-230624-2.json", ",", "hg-230624.json", ",", "hg-230728.json", ",", "inmulti-save-values.json", ",", "kylon.json", ",", "lastlaugh.json", ",", "many-mmods.json", ",", "many-vst.json", ",", "mmods-color.json", ",", "mmods-env-test.json", ",", "mmods-gran.json", ",", "mmods-please.json", ",", "mmods-test.json", ",", "mod-test.json", ",", "morff-test.json", ",", "ola-tester.json", ",", "osc-label-test.json", ",", "osc-wavjam.json", ",", "perc-expanded.json", ",", "pg-8x.json", ",", "ppooll-presets.sublime-project", ",", "ppooll-presets.sublime-workspace", ",", "random-bang-interval.json", ",", "really-nice-guitar.json", ",", "source-filter-beauty.json", ",", "squiggles.json", ",", "swamp-rising-snapd.json", ",", "swamp-rising.json", ",", "talking-funny.json", ",", "talking-funny2.json", ",", "teast-mtron.json", ",", "test-amxd.json", ",", "test-echobode.json", ",", "test-echoboy.json", ",", "test-env-write.json", ",", "test-panman-spazpong.json", ",", "test-recall-vst.json", ",", "test-vintage.json", ",", "test-vst-changes.json", ",", "test-vst-echobode.json", ",", "test-vst-mod-au.json", ",", "test-vst-mod.json", ",", "test-vst-odc.json", ",", "test-vst-params.json", ",", "test-vst-sinus.json", ",", "test-vst-tal.json", ",", "test-vst-vitnage.json", ",", "test-vst.json", ",", "test-xgroove.json", ",", "test.json", ",", "test3.json", ",", "test4.json", ",", "test?.json", ",", "testtwo.json", ",", "testvintageverb.json", ",", "vst-save-test.json", ",", "vst-test-2.json", ",", "vst-test.json", ",", "washy-well.json", ",", "wetdry.json", ",", "wetdryuniverse.json", ",", "wipply.json", ",", "wishing well.json", ",", "-", ",", "write", ",", "clear!", ",", "opentext", ",", "merge...", ",", "params_only", ",", "-", ",", "buffertest.json", ",", "ducks.json", ",", "envM_test.json" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -670,7 +670,7 @@
 					"fontsize" : 12.0,
 					"hint" : "favorites menu",
 					"id" : "obj-48",
-					"items" : [ "(favorites)", ",", "-", ",", "add_favorit", ",", "del_favorit" ],
+					"items" : [ "(favorites)", ",", "INmulti", ",", "banger", ",", "beauty", ",", "buffub", ",", "chaos", ",", "control@", ",", "matriarch@", ",", "modul.ator", ",", "(favorites)", ",", "-", ",", "add_favorit", ",", "del_favorit" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -8292,7 +8292,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 314.0, 52.5, 29.0, 35.0 ],
-													"text" : "\r",
 													"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 												}
 
@@ -11427,7 +11426,6 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
-										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-9",
@@ -58576,7 +58574,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 442.0, 382.0, 81.0, 20.0 ],
-																	"text" : "-0.503369"
+																	"text" : "-0.005009"
 																}
 
 															}
@@ -59430,7 +59428,7 @@
 						"audioON/OFF" : [ 0 ],
 						"chans" : [ 16 ],
 						"def" : [ -1 ],
-						"envi_menu" : [ "(environments)" ],
+						"envi_menu" : [ "" ],
 						"favorites" : [ "(favorites)" ],
 						"jit.on" : [ 0 ],
 						"master" : [ "we" ],
@@ -59441,7 +59439,7 @@
 						"screen" : [ 0 ],
 						"stereo" : [ 0 ],
 						"tetris_menu" : [ "" ],
-						"title_menu" : [ "subpatch" ],
+						"title_menu" : [ "info" ],
 						"vol" : [ 1.0 ],
 						"vol_ramp" : [ 10 ],
 						"vol_slider" : [ 1.0 ],
