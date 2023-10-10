@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 596.0, 277.0, 484.0, 71.0 ],
+		"rect" : [ 657.0, 282.0, 484.0, 71.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -382,7 +382,7 @@
 					"arrow" : 0,
 					"fontsize" : 10.0,
 					"id" : "obj-39",
-					"items" : [ "Scarlett 18i20 USB", ",", "to Max 1", ",", "to Max 2", ",", "IAC Driver Bus 1 #3", ",", "IAC Driver Bus 2 #3" ],
+					"items" : [ "Scarlett 18i20 USB", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "to Max 1", ",", "to Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -681,10 +681,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 1048, 77, 1588, 786 ],
+						"client_rect" : [ 499, 162, 1157, 766 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 430, 270, 1276, 999 ]
+						"storage_rect" : [ 0, 0, 640, 240 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -750,11 +750,11 @@
 						"master" : [ 0 ],
 						"metro" : [ 674 ],
 						"metroON" : [ 1 ],
-						"midi_port" : [ "to Max 1" ],
+						"midi_port" : [ "Scarlett 18i20 USB" ],
 						"midi_refresh" : [ -1 ],
 						"midiclock_on" : [ 0 ],
 						"my_control@" : [ -1 ],
-						"pres_menu" : [ "" ],
+						"pres_menu" : [ "_" ],
 						"presets" : [ 0 ],
 						"tetris_menu" : [ "" ],
 						"title_menu" : [ "subpatch" ],
@@ -1745,7 +1745,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 74.5, 156.0, 121.0, 22.0 ],
-													"text" : "\"to Max 1\""
+													"text" : "\"Scarlett 18i20 USB\""
 												}
 
 											}
@@ -3444,7 +3444,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 21.0, 180.0, 103.0, 22.0 ],
-													"restore" : [ "_", "metro1", "metro2" ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -3479,7 +3479,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 212.0, 140.0, 103.0, 22.0 ],
-													"restore" : [ "::_::_", "::sinus1::bang-env", "::sinus1::bang-env" ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -3500,7 +3500,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 51.0, 50.0, 121.0, 22.0 ],
-													"text" : "control@1"
+													"text" : "control@2"
 												}
 
 											}
@@ -4491,7 +4491,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 7.0, 28.0, 140.0, 18.0 ],
-																	"text" : "0 0"
+																	"text" : "1 0 0"
 																}
 
 															}
@@ -9195,7 +9195,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 739.0, 192.0, 862.0, 771.0 ],
+										"rect" : [ 616.0, 192.0, 862.0, 771.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -9273,8 +9273,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 49.0, 524.0, 57.0, 22.0 ],
-													"text" : "del 5000"
+													"patching_rect" : [ 49.0, 524.0, 55.0, 22.0 ],
+													"text" : "del 2000"
 												}
 
 											}
@@ -9541,13 +9541,13 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-52",
-																	"linecount" : 2,
+																	"linecount" : 3,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 455.5, 50.0, 45.0 ],
-																	"text" : "sinsE1 s"
+																	"text" : "mmods@1 ppooll"
 																}
 
 															}
@@ -9666,7 +9666,7 @@
 																	"numoutlets" : 3,
 																	"outlettype" : [ "", "", "" ],
 																	"patching_rect" : [ 124.0, 371.5, 103.0, 20.0 ],
-																	"restore" : [ "sinsE1" ],
+																	"restore" : [ "mmods@1" ],
 																	"saved_object_attributes" : 																	{
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
@@ -9696,13 +9696,13 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-40",
-																	"linecount" : 6,
+																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 247.0, 149.0, 50.0, 58.0 ],
-																	"text" : "control@1 control@2 control@3"
+																	"text" : "control@1"
 																}
 
 															}
@@ -10118,7 +10118,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 216.0, 362.0, 103.0, 22.0 ],
-													"restore" : [ "banger1" ],
+													"restore" : [ 0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
