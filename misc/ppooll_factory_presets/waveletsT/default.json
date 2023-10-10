@@ -1,5 +1,5 @@
 {
-	"window" : [ 291, 277, 584, 486 ],
+	"window" : [ 268, 188, 561, 397 ],
 	"waveform" : 	{
 		"patching_rect" : [ 173, 96, 45, 21 ],
 		"hidden" : 0,
@@ -133,6 +133,12 @@
 		"patching_rect" : [ 173, 84, 45, 16 ],
 		"hidden" : 0,
 		"fontsize" : 10
+	}
+,
+	"syncto" : 	{
+		"patching_rect" : [ 3, 215, 126, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
 	}
 
 }

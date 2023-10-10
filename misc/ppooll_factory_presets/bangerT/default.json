@@ -1,104 +1,110 @@
 {
-	"window" : [ 644, 250, 1128, 321 ],
+	"window" : [ 657, 282, 1141, 353 ],
 	"metroON" : 	{
 		"patching_rect" : [ 102, 36, 17, 17 ],
 		"hidden" : 0
 	}
 ,
 	"my_control@" : 	{
-		"fontsize" : 13.0,
 		"patching_rect" : [ 0, 16, 94, 20 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 13
 	}
 ,
 	"incoming" : 	{
-		"fontsize" : 13.0,
 		"patching_rect" : [ 94, 16, 117, 20 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 13
 	}
 ,
 	"colums" : 	{
-		"fontsize" : 12.0,
 		"patching_rect" : [ 266, 16, 29, 22 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 12
 	}
 ,
 	"blink" : 	{
-		"fontsize" : 13.0,
 		"patching_rect" : [ 0, 37, 53, 16 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 13
 	}
 ,
 	"presets" : 	{
-		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "xgroove@1" ],
 		"patching_rect" : [ 63, 0, 241, 16 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "xgroove@1" ]
 	}
 ,
 	"metro" : 	{
-		"fontsize" : 13.0,
 		"patching_rect" : [ 119, 36, 92, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 13
 	}
 ,
 	"midi_port" : 	{
-		"fontsize" : 10.0,
 		"patching_rect" : [ 389, 18, 61, 20 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 10
 	}
 ,
 	"beats_in_bar" : 	{
-		"fontsize" : 10.0,
 		"patching_rect" : [ 371, 0, 18, 20 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 10
 	}
 ,
 	"use_metro" : 	{
-		"fontsize" : 11.0,
 		"patching_rect" : [ 66, 36, 39, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 11
 	}
 ,
 	"use_midiclock_ext" : 	{
-		"fontsize" : 11.0,
 		"patching_rect" : [ 305, 18, 39, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 11
 	}
 ,
 	"use_midiclock_int" : 	{
-		"fontsize" : 11.0,
 		"patching_rect" : [ 305, 35, 39, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 11
 	}
 ,
 	"bpm" : 	{
-		"fontsize" : 12.0,
 		"patching_rect" : [ 405, 35, 48, 22 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 12
 	}
 ,
 	"midiclock_on" : 	{
-		"fontsize" : 11.0,
 		"patching_rect" : [ 387, 36, 20, 18 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 11
 	}
 ,
 	"colwidth" : 	{
-		"fontsize" : 12.0,
 		"patching_rect" : [ 264, 33, 36, 22 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 12
 	}
 ,
 	"cellblock" : 	{
-		"fontsize" : 12.0,
 		"patching_rect" : [ 0, 53, 484, 20 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 12
 	}
 ,
 	"del_edit" : 	{
-		"fontsize" : 12.0,
 		"patching_rect" : [ 200, 53, 59, 22 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"midi_refresh" : 	{
+		"patching_rect" : [ 449, 18, 34, 17 ],
+		"hidden" : 0,
+		"fontsize" : 8
 	}
 
 }

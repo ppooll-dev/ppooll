@@ -1,5 +1,5 @@
 {
-	"window" : [ 432, 320, 672, 510 ],
+	"window" : [ 381, 384, 621, 494 ],
 	"number_of_channels" : 	{
 		"patching_rect" : [ 192, 0, 50, 22 ],
 		"hidden" : 0,
@@ -7,13 +7,13 @@
 	}
 ,
 	"value" : 	{
-		"patching_rect" : [ 0, 24, 120, 160 ],
+		"patching_rect" : [ 0, 24, 120, 80 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"threshold" : 	{
-		"patching_rect" : [ 122, 24, 120, 160 ],
+		"patching_rect" : [ 122, 24, 120, 80 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
