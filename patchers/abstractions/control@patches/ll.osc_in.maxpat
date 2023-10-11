@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 663.0, 112.0, 688.0, 787.0 ],
+		"rect" : [ 121.0, 129.0, 688.0, 787.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -104,7 +104,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 406.0, 386.0, 39.0, 62.0 ],
-					"text" : "host jps-ipad.local"
+					"text" : "host 192.168.1.101"
 				}
 
 			}
@@ -156,7 +156,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 748.0, 663.0, 138.0 ],
+						"rect" : [ 693.0, 309.0, 566.0, 180.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -167,7 +167,7 @@
 						"gridsnaponopen" : 1,
 						"objectsnaponopen" : 1,
 						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
+						"toolbarvisible" : 0,
 						"lefttoolbarpinned" : 0,
 						"toptoolbarpinned" : 0,
 						"righttoolbarpinned" : 0,
@@ -185,6 +185,19 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"fontsize" : 10.0,
+									"id" : "obj-7",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 239.0, 2.0, 31.0, 20.0 ],
+									"text" : "label"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"hidden" : 1,
 									"id" : "obj-30",
@@ -658,7 +671,7 @@
 									"hidden" : 1,
 									"id" : "obj-17",
 									"maxclass" : "newobj",
-									"numinlets" : 0,
+									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patcher" : 									{
@@ -702,13 +715,26 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"comment" : "",
 													"id" : "obj-2",
-													"linecount" : 15,
-													"maxclass" : "comment",
+													"index" : 1,
+													"maxclass" : "inlet",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 66.5, -3.0, 30.0, 30.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-1",
+													"maxclass" : "button",
 													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 265.0, 88.0, 181.0, 221.0 ],
-													"text" : "this subpatch will rename labels in TouchOSC app based on act-param names\n\n1) TouchOSC address should be like:\n\n     /1/fader1            (the fader)\n     /1/fader1_label  (the label)\n\n2) Assign act-params in routing window\n\n3) Labels should automatically update on changes\n"
+													"numoutlets" : 1,
+													"outlettype" : [ "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 66.5, 37.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -785,7 +811,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 66.5, 182.0, 171.0, 22.0 ],
-													"text" : "0"
+													"text" : "_"
 												}
 
 											}
@@ -828,8 +854,22 @@
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
+													"destination" : [ "obj-10", 0 ],
+													"source" : [ "obj-1", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-47", 0 ],
 													"source" : [ "obj-10", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-1", 0 ],
+													"source" : [ "obj-2", 0 ]
 												}
 
 											}
@@ -894,7 +934,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 346.0, 35.0, 75.0, 22.0 ],
+									"patching_rect" : [ 447.0, 73.0, 75.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -915,7 +955,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 346.0, 73.0, 30.0, 30.0 ]
+									"patching_rect" : [ 447.0, 111.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -927,9 +967,9 @@
 									"id" : "obj-1",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 431.0, 35.0, 100.0, 19.0 ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 532.0, 73.0, 100.0, 19.0 ],
 									"text" : "ll.r osc_sendIPwindow"
 								}
 
@@ -944,7 +984,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "front" ],
-									"patching_rect" : [ 431.0, 56.0, 40.0, 19.0 ],
+									"patching_rect" : [ 532.0, 94.0, 40.0, 19.0 ],
 									"text" : "t front"
 								}
 
@@ -959,7 +999,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 431.0, 76.0, 61.0, 19.0 ],
+									"patching_rect" : [ 532.0, 114.0, 61.0, 19.0 ],
 									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 									"text" : "thispatcher"
 								}
@@ -1051,7 +1091,7 @@
 									"outlettype" : [ "", "int", "", "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 35.0, 64.0, 112.0, 18.0 ],
-									"text" : "jps-ipad.local"
+									"text" : "192.168.1.101"
 								}
 
 							}
@@ -1065,6 +1105,18 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 9.0, 26.0, 219.0, 17.0 ],
 									"text" : "define IP and port of the receiving osc-device:"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"linecount" : 11,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 235.0, 7.0, 329.0, 154.0 ],
+									"text" : "          button will rename labels in TouchOSC app based on act-param names\n\n1) TouchOSC address should be like:\n\n     /1/fader1            (the fader)\n     /1/fader1_label  (the label, just append \"_label)\n\n2) Assign act-params in routing window\n\n3) Labels should automatically update on changes"
 								}
 
 							}
@@ -1138,6 +1190,14 @@
 									"destination" : [ "obj-8", 0 ],
 									"hidden" : 1,
 									"source" : [ "obj-30", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-7", 0 ]
 								}
 
 							}
