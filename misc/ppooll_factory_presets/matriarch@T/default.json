@@ -1,5 +1,5 @@
 {
-	"window" : [ 710, 203, 966, 369 ],
+	"window" : [ 480, 154, 736, 320 ],
 	"out_meter" : 	{
 		"patching_rect" : [ 70, 41, 745, 126 ],
 		"hidden" : 0
@@ -24,7 +24,7 @@
 	}
 ,
 	"patcher" : "bang",
-	"patching_rect" : [ 0, 418, 806, 31 ],
+	"patching_rect" : [ 0, 430, 806, 31 ],
 	"hidden" : 0,
 	"num_inputs" : 	{
 		"patching_rect" : [ 3, 25, 33, 22 ],
