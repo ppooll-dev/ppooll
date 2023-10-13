@@ -20,7 +20,7 @@
 	},
 	"package_extra" : 	{},
 	"tags" : [ "audio", "instrument", "versatile" ],
-	"version" : "8.5.0",
+	"version" : "8.6.0",
 	"website" : "http://ppooll.klingt.org",
 	"filelist" : 	{
 		"externals" : [ "ll_number","ll_fastforward", "ll_2dslider", "shell", "pattrexists", "vbap"],
