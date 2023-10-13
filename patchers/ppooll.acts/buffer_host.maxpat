@@ -245,7 +245,7 @@
 					"fontsize" : 11.0,
 					"hint" : "soundfile folder(s)",
 					"id" : "obj-61",
-					"items" : [ "-", ",", "clear_selected", ",", "clear_all", ",", "add_folder" ],
+					"items" : [ "ll.samples/", ",", "msp/", ",", "Music/", ",", "-", ",", "clear_selected", ",", "clear_all", ",", "add_folder" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -4103,8 +4103,8 @@
 													"id" : "obj-7",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 21.0, 5.0, 82.0, 19.0 ],
 													"text" : "ll.r action_menu 1"
 												}
@@ -4561,7 +4561,8 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 212.0, 13.0, 99.0, 22.0 ]
+																	"patching_rect" : [ 212.0, 13.0, 99.0, 22.0 ],
+																	"text" : "_"
 																}
 
 															}
@@ -5589,11 +5590,11 @@
 						"f" : [ -1 ],
 						"ff" : [ -1 ],
 						"file_menu" : [ "3dem.aif" ],
-						"folder_menu" : [ "" ],
+						"folder_menu" : [ "ll.samples/" ],
 						"master" : [ 0 ],
 						"normalize" : [ -1 ],
 						"open!" : [ -1 ],
-						"pres_menu" : [ "" ],
+						"pres_menu" : [ "_" ],
 						"size-box" : [ 2867.30158730158746 ],
 						"tetris_menu" : [ "" ],
 						"title_menu" : [ "subpatch" ]
@@ -5641,7 +5642,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-22",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_", ",", "-", ",", "ƒ", "factorybank" ],
+					"items" : [ "3313", ",", "joestest", ",", "musiq_casque", ",", "sr_tester", ",", "test", ",", "test2", ",", "test_new", ",", "testpb", ",", "wer", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_", ",", "-", ",", "ƒ", "factorybank" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
