@@ -796,7 +796,7 @@
 ,
 		"x_filter" : 		{
 			"description" : "cheyshev & butterworth filter",
-			"authors" : 3,
+			"authors" : [ 2, 3],
 			"tags" : [ 9, 15 ]
 		}
 ,
