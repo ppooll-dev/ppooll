@@ -10,6 +10,10 @@ outlets = 2;
 
 var a = new Global("ll.max_live_envi")
 
+// add new ppooll global
+// -- currently only used by flop to override show/hide cursor
+var a = new Global("ppooll")
+
 
 function bang(){
 	check()
