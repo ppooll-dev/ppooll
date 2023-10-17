@@ -30,6 +30,10 @@ var empty_prf_DEFAULT = {
         "favorite_acts" : "",
         "never_used_acts" : "",
         "sometimes_used_acts" : ""
+    },
+    "buffer_host": {
+        "channels": 2,
+        "length": 100,
     }
 }
 
