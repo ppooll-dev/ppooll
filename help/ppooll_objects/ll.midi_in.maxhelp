@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 268.0, 346.0, 382.0, 360.0 ],
+		"rect" : [ 67.0, 100.0, 382.0, 360.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -41,6 +41,40 @@
 		"globalpatchername" : "ll.midi_in1",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-15",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 308.0, 317.0, 20.0 ],
+					"text" : "send a bang to [s ll_midi_flush] to flush any hanging notes"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-14",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 13.0, 306.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 13.0, 332.0, 84.0, 22.0 ],
+					"text" : "s ll_midi_flush"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"allowdrag" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
@@ -51,7 +85,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 230.0, 105.0, 97.0, 22.0 ],
+					"patching_rect" : [ 230.0, 111.0, 97.0, 22.0 ],
 					"prefix_mode" : 2,
 					"showdotfiles" : 1
 				}
@@ -65,7 +99,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 230.0, 83.0, 55.0, 20.0 ],
+					"patching_rect" : [ 230.0, 93.0, 55.0, 20.0 ],
 					"text" : "see also"
 				}
 
@@ -101,12 +135,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-91",
-					"linecount" : 7,
+					"linecount" : 9,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 3.0, 3.0, 338.0, 100.0 ],
-					"text" : "\"ll.midi_in\" by joe steccato\n- receive a midi stream from ppooll or midi device\n- can be connected to 2 umenus for \"port\" and \"channel\"\n- select port and channel for input\n- you can refresh port-names by selecting \"-no-\"\n\ninspired by klaus' ll.actmenu "
+					"patching_rect" : [ 3.0, 3.0, 338.0, 127.0 ],
+					"text" : "\"ll.midi_in\" by joe steccato\n\n- receive a midi stream from ppooll or midi device\n- can be connected to 2 umenus for \"port\" and \"channel\"\n- select port and channel for input\n- refresh port-names / flush hanging midi notes by selecting \"-no-\"\n\ninspired by klaus' ll.actmenu "
 				}
 
 			}
@@ -138,6 +172,7 @@
 				"box" : 				{
 					"id" : "obj-5",
 					"maxclass" : "kslider",
+					"mode" : 1,
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "int" ],
@@ -162,7 +197,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-2",
-					"items" : [ "-no-", ",", "ll.midi", ",", "to Max 1", ",", "to Max 2", ",", "jBBL_v1.2.amxd", ",", "Chiral.amxd" ],
+					"items" : [ "-no-", ",", "ll.midi", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "TouchOSC Bridge", ",", "to Max 1", ",", "to Max 2", ",", "Chiral.amxd" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -199,10 +234,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 421.0, 115.0, 100.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 710, 58, 1470, 1102 ],
+						"client_rect" : [ 499, 162, 1157, 766 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 430, 270, 1276, 999 ]
+						"storage_rect" : [ 0, 0, 640, 240 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -285,6 +320,13 @@
 					"destination" : [ "obj-9", 1 ],
 					"hidden" : 1,
 					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"source" : [ "obj-14", 0 ]
 				}
 
 			}

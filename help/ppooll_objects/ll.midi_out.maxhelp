@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 657.0, 349.0, 412.0, 308.0 ],
+		"rect" : [ 100.0, 100.0, 412.0, 308.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -160,7 +160,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-7",
-					"items" : [ "-no-", ",", "ll.midi", ",", "AU DLS Synth 1", ",", "from Max 1", ",", "from Max 2", ",", "jBBL_v1.2.amxd", ",", "Chiral.amxd" ],
+					"items" : [ "-no-", ",", "ll.midi", ",", "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "TouchOSC Bridge", ",", "from Max 1", ",", "from Max 2", ",", "Chiral.amxd" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -197,10 +197,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 460.0, 78.0, 100.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 710, 58, 1470, 1102 ],
+						"client_rect" : [ 499, 162, 1157, 766 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 430, 270, 1276, 999 ]
+						"storage_rect" : [ 0, 0, 640, 240 ]
 					}
 ,
 					"text" : "pattrstorage pat",
