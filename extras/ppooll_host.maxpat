@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 525.0, 102.0, 130.0, 125.0 ],
+		"rect" : [ 409.0, 168.0, 130.0, 125.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 11.595186999999999,
@@ -514,7 +514,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 70.0, 106.0, 58.0, 20.0 ],
-					"text" : "01:01:21",
+					"text" : "01:12:41",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "time"
 				}
@@ -6897,7 +6897,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 777.0, 88.0, 437.0, 523.0 ],
+										"rect" : [ 833.0, 125.0, 437.0, 523.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -12866,7 +12866,7 @@
 													"bgfillcolor_proportion" : 0.39,
 													"bgfillcolor_type" : "color",
 													"id" : "obj-38",
-													"items" : [ "no", ",", "buffer_host1", ",", "flop1", ",", "ho_st1" ],
+													"items" : [ "no", ",", "flop1", ",", "ho_st1" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -13426,6 +13426,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 314.0, 52.5, 29.0, 35.0 ],
+													"text" : "",
 													"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 												}
 
@@ -13878,7 +13879,7 @@
 													"allowdrag" : 0,
 													"fontsize" : 13.0,
 													"id" : "obj-17",
-													"items" : [ "no", ",", "buffer_host1", ",", "flop1", ",", "ho_st1" ],
+													"items" : [ "no", ",", "flop1", ",", "ho_st1" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -42872,7 +42873,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 563.0, 825.0, 152.0, 76.0 ],
-																	"text" : "buffer_host1 ho_st1 flop1"
+																	"text" : "ho_st1 flop1"
 																}
 
 															}
@@ -53494,7 +53495,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 209.5, 48.0, 95.0, 20.0 ],
+													"patching_rect" : [ 186.5, 48.0, 95.0, 20.0 ],
 													"text" : "8.6.0.231016.27",
 													"textjustification" : 2
 												}
@@ -54608,7 +54609,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 192.5, 13.0, 83.0, 34.0 ],
+													"patching_rect" : [ 184.5, 13.0, 83.0, 34.0 ],
 													"text" : "ppooll"
 												}
 
@@ -64624,13 +64625,6 @@
 , 			{
 				"name" : "pattrexists.mxo",
 				"type" : "iLaX"
-			}
-, 			{
-				"name" : "ppooll_preferences",
-				"bootpath" : "~/Documents/Max 8/Library/ppooll_presets",
-				"patcherrelativepath" : "../../../Library/ppooll_presets",
-				"type" : "TEXT",
-				"implicit" : 1
 			}
 , 			{
 				"name" : "shell.mxo",
