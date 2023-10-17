@@ -2,7 +2,7 @@
 * @Author: josephsteccato
 * @Date:   2023-09-24 14:47:08
 * @Last Modified by:   josephsteccato
-* @Last Modified time: 2023-10-02 10:29:34
+* @Last Modified time: 2023-10-16 23:38:35
 
     "three-slider.js" - JSUI by steech (joe steccato)
 
@@ -66,6 +66,7 @@ var mouseCoords = null //
 
 var sliderStartAmount = 0;
 
+var ppooll_global = new Global("ppooll");
 
 /* INLET MESSAGES */
 function bang(){
@@ -140,7 +141,11 @@ function onclick(x, y, button, cmd, shift, capslock, option, ctrl) {
     sliderStartAmount = 1 - (mouseStart / height);
 
     handleMouse()
-    max.hidecursor();
+
+    if(!ppooll_global.flop_disable_cursor){
+        max.hidecursor();
+    }
+
     outlet(1, 'bang')
 }
 
