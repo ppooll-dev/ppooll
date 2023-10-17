@@ -34,6 +34,13 @@ var empty_prf_DEFAULT = {
 }
 
 
+function newPref(){
+    var ppooll_prf = new Dict("ppooll-preferences")
+    ppooll_prf.parse(JSON.stringify(empty_prf_DEFAULT));
+
+}
+
+
 function read(path){
     // get dict from path
     var ppooll_prf = new Dict("ppooll-preferences")

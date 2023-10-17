@@ -44,7 +44,7 @@ function shouldCheckForUpdates(){
 	dictPreferences.import_json('ppooll-preferences.json')
 
 	var check_for_updates = dictPreferences.get("general::check-for-updates")
-	return check_for_updates
+	return check_for_updates || 0
 }
 
 
