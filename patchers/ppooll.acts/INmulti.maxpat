@@ -209,7 +209,6 @@
 				"box" : 				{
 					"bgcolor" : [ 0.156862745098039, 0.156862745098039, 0.156862745098039, 0.0 ],
 					"coldcolor" : [ 0.047058823529412, 0.972549019607843, 0.392156862745098, 0.3 ],
-					"hidden" : 1,
 					"hotcolor" : [ 1.0, 0.756862745098039, 0.03921568627451, 0.28 ],
 					"id" : "obj-9",
 					"ignoreclick" : 1,
@@ -443,7 +442,7 @@
 					"fontsize" : 10.0,
 					"id" : "obj-120",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
+					"items" : [ "drøm_soniccell_230928", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -3197,7 +3196,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 252.0, 230.0, 152.0, 22.0 ],
-													"text" : "0. 0."
+													"text" : "0.7 0.7"
 												}
 
 											}
