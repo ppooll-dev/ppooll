@@ -69,5 +69,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create $VERSION ppooll.zip --title "$VERSION" --notes "Automated release for $VERSION"
+          gh release create $VERSION ppooll.zip --title "$VERSION" --notes "Manual release for $VERSION"
 
