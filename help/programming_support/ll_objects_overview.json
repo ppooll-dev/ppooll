@@ -1,0 +1,76 @@
+{
+    "ppooll_basic": [
+        {"name": "actmaker", "desc": "makes any patch part of the system"},
+        {"name": "ll.actname", "desc": "outputs the name (icluding instance) of a patch"},
+        {"name": "ll.actout", "desc": "outputs all local parameters by name"},
+        {"name": "ll.blues", "desc": "blue output section"},
+        {"name": "ll.buffer_menu", "desc": "connected to a menu that should show all samples from buffer_host"},
+        {"name": "ll.getacts", "desc": "reports all loaded acts"},
+        {"name": "ll.inputmix", "desc": "blue input mix section for plugins"},
+        {"name": "ll.jact", "desc": "define an act as jitter act"},
+        {"name": "ll.p", "desc": "bind to a parameter"},
+        {"name": "ll.par", "desc": "send to a parameter from anywhere"},
+        {"name": "ll.pf", "desc": "send to a local parameter"},
+        {"name": "ll.pp", "desc": "bind to a parameter via pattr"},
+        {"name": "ll.r", "desc": "receive a local parameter OR local value"},
+        {"name": "ll.r~", "desc": "receive audio from other acts"},
+        {"name": "ll.rj", "desc": "receive jitter matrices from other acts"},
+        {"name": "ll.s", "desc": "local send"},
+        {"name": "ll.s~", "desc": "send audio anywhere"},
+        {"name": "ll.mc.r", "desc": "combined mc-signal & parameter receive plus spread & ramp functionality"}
+    ],
+    "numbers": [
+        {"name": "ll.!og", "desc": "scale with logarithm (inverse to ll.og)"},
+        {"name": "ll.bs", "desc": "bigger-equal-smaller to seperate outputs"},
+        {"name": "ll.ibin", "desc": "binary conversion"},
+        {"name": "ll.oct.div", "desc": "divides octaves in any amount of tones"},
+        {"name": "ll.og", "desc": "scaler with logarithm"}
+    ],
+    "general_helpers": [
+        {"name": "ll.arrows", "desc": "arrow keys"},
+        {"name": "ll.ld", "desc": "delayed loadbang"},
+        {"name": "ll.midi_in", "desc": "receive a midi stream from ppooll or midi port & channel"},
+        {"name": "ll.midi_out", "desc": "send a midi stream from ppooll or midi port & channel"},
+        {"name": "ll.mkdir", "desc": "make a directory on the hard disc"},
+        {"name": "ll.modifiers", "desc": "modifier keys as numbers"},
+        {"name": "ll.n_line", "desc": "multiple lines"},
+        {"name": "ll.no1", "desc": "mute the first message"},
+        {"name": "ll.qlim", "desc": "speedlim any messages"},
+        {"name": "ll.shut", "desc": "resetable pass only one message"},
+        {"name": "ll.sp", "desc": "send and prepend"},
+        {"name": "ll.strip#", "desc": "strip a number at the end of a symbol"},
+        {"name": "n", "desc": "shortcut for print"}
+    ],
+    "ppooll_advanced": [
+        {"name": "ll.envi_wait", "desc": "pauses environment loading if bound to a parameter"},
+        {"name": "ll.fff", "desc": "folder_folder_file manages two menus for file search"},
+        {"name": "ll_fastforward", "desc": "send to the header of a message"},
+        {"name": "ll.getp", "desc": "get a local parameter value"},
+        {"name": "ll.mp", "desc": "multiple parameter receive if parameters are numbered"},
+        {"name": "ll.mps", "desc": "multiple parameter receive"},
+        {"name": "ll.pm", "desc": "multiple parameter receive out one outlet"},
+        {"name": "ll.preg", "desc": "bangable ll.p"},
+        {"name": "ll.psto", "desc": "communicate with pattrstorage"},
+        {"name": "ll.psto1", "desc": "communicate with pattrstorage restricted to only one message"},
+        {"name": "ll.sub", "desc": "replace an item of a list parameter"}
+    ],
+    "ppooll_intern": [
+        {"name": "ll.folderfilter", "desc": "looks inside ppooll_presets"},
+        {"name": "ll.ppoollpaths", "desc": "report user paths"},
+        {"name": "ll.presetdialog", "desc": "used by ll.presets"}
+    ],
+    "lists": [
+        {"name": "ll.lline", "desc": "line for lists"},
+        {"name": "ll.lreplace", "desc": "replace an item in a list"},
+        {"name": "ll.lsub", "desc": "another replace list_item method"},
+        {"name": "ll.sizelist", "desc": "make a list of specific size"},
+        {"name": "ll.slice1", "desc": "shortcut for first list item out first then the rest"},
+        {"name": "ll.vlog", "desc": "list scaler with logarithm"}
+    ],
+    "UIs": [
+        {"name": "ll_number", "desc": "fancy numberbox"},
+        {"name": "ll_2dslider", "desc": "array of xy-sliders"},
+        {"name": "ll.rslider", "desc": "min-max slider"},
+        {"name": "ll_mcwaveform", "desc": "multichannel enabled replacement for waveform~"}
+    ]
+}
