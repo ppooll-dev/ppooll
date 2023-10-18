@@ -42,21 +42,16 @@ jobs:
         run: |
           # Extract base_version from the JSON
           BASE_VERSION=$(jq -r '.base_version' package-info.json)
+
           # Get today's date in the format YYMMDD
           DATE=$(date -u +"%y%m%d")
-          # Extract the date and count from the version key
-          VERSION_DATE=$(jq -r '.version' package-info.json | cut -d'.' -f4)
-          VERSION_COUNT=$(jq -r '.version' package-info.json | cut -d'.' -f5)
-          # Determine the count
-          if [[ $DATE -gt $VERSION_DATE ]]; then
-            COUNT=1
-          else
-            COUNT=$((VERSION_COUNT+1))
-          fi
+
           # Construct the new version
-          NEW_VERSION="${BASE_VERSION}.${DATE}.${COUNT}"
+          NEW_VERSION="${BASE_VERSION}.${DATE}"
+
           # Update the version in the JSON using jq
           jq --arg v "$NEW_VERSION" '.version = $v' package-info.json > temp.json && mv temp.json package-info.json
+
           # Extract the updated version
           VERSION=$(jq -r '.version' package-info.json)
           echo "VERSION=$VERSION" >> $GITHUB_ENV
