@@ -1,32 +1,10 @@
-name: Automate Versioning and Release
+name: Manual Release
 
 on:
-  schedule:
-    - cron: '0 0 * * *' # This runs every day at midnight
+  workflow_dispatch: # This allows the workflow to be run manually
 
 jobs:
-  check-for-changes: # check for any changes to "main" branch
-    runs-on: ubuntu-latest
-    outputs:
-      has_changes: ${{ steps.check_changes.outputs.has_changes }}
-    steps:
-    - name: Check for changes since last release
-      id: check_changes
-      run: |
-        LATEST_RELEASE_DATE=$(curl --silent "https://api.github.com/repos/$GITHUB_REPOSITORY/releases/latest" | jq -r .created_at)
-        git fetch origin main
-        LAST_COMMIT_DATE=$(git log -1 --pretty=format:"%cI" origin/main)
-        if [[ "$LAST_COMMIT_DATE" > "$LATEST_RELEASE_DATE" ]]; then
-          echo "::set-output name=has_changes::true"
-        else
-          echo "::set-output name=has_changes::false"
-        fi
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
   release: # create a nightly release
-    needs: check-for-changes
-    if: needs.check-for-changes.outputs.has_changes == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
