@@ -10,6 +10,11 @@ jobs:
     outputs:
       has_changes: ${{ steps.check_changes.outputs.has_changes }}
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+          token: ${{ secrets.MACHINE_USER_PAT }}
+
     - name: Check for changes since last release
       id: check_changes
       run: |
@@ -62,7 +67,7 @@ jobs:
 
           # Update the version in the JSON using jq
           jq --arg v "$NEW_VERSION" '.version = $v' package-info.json > temp.json && mv temp.json package-info.json
-          
+
           # Extract the updated version
           VERSION=$(jq -r '.version' package-info.json)
           echo "VERSION=$VERSION" >> $GITHUB_ENV
@@ -92,4 +97,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release create $VERSION ppooll.zip --title "$VERSION" --notes "Automated release for $VERSION"
+      - name: Notify Discord
+        run: |
+          # Get the URL of the latest release
+          RELEASE_URL="https://github.com/$GITHUB_REPOSITORY/releases/latest"
+          
+          # Construct the content for the Discord message
+          CONTENT="There's a new release! Check it out [here]($RELEASE_URL)."
+          
+          # Send a POST request to the Discord webhook
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d "{\"content\": \"$CONTENT\"}" \
+               ${{ secrets.DISCORD_WEBHOOK_URL }}
 
