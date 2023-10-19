@@ -14,7 +14,7 @@
 ,
 	"meter" : 	{
 		"patching_rect" : [ 44, 36, 130, 39 ],
-		"hidden" : 1
+		"hidden" : 0
 	}
 ,
 	"def" : 	{
