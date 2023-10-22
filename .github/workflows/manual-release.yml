@@ -70,4 +70,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release create $VERSION ppooll.zip --title "$VERSION" --notes "Manual release for $VERSION"
+      - name: Notify Discord
+        run: |
+          # Get the URL of the latest release
+          RELEASE_URL="https://github.com/$GITHUB_REPOSITORY/releases/latest"
+          
+          # Construct the content for the Discord message
+          CONTENT="There's a new release! Check out version $VERSION [here]($RELEASE_URL)."
+          
+          # Send a POST request to the Discord webhook
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d "{\"content\": \"$CONTENT\"}" \
+               ${{ secrets.DISCORD_WEBHOOK_URL }}
 
