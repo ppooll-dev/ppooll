@@ -72,49 +72,49 @@ function make(name, instance) {
       break;
   }
 
-  if(!isMaxForLive || !prev.patcher.box){
-    // console.log('is Max runtime; set ll.movewindow.js')
-    // reset movewindow ppooll jsui to ppooll default file (for dragging around desktop)
-    if(prev.patcher.getnamed('master'))
-      prev.patcher.message("script","sendbox","master", "filename", "ll.movewindow.js")
+  // if(!isMaxForLive || !prev.patcher.box){
+  //   // console.log('is Max runtime; set ll.movewindow.js')
+  //   // reset movewindow ppooll jsui to ppooll default file (for dragging around desktop)
+  //   if(prev.patcher.getnamed('master'))
+  //     prev.patcher.message("script","sendbox","master", "filename", "ll.movewindow.js")
 
-    if(prev.patcher.getnamed('movewind'))
-      prev.patcher.message("script","sendbox","movewind", "filename", "ll.movewindow.js")
+  //   if(prev.patcher.getnamed('movewind'))
+  //     prev.patcher.message("script","sendbox","movewind", "filename", "ll.movewindow.js")
 
-    return
-  }
+  //   return
+  // }
 
   // found the act's patcher box-- time to initialize...
   console.log('will rename bpatcher to "'+ nameInstance +'"')
   
   //set box varname to nameInstance
   prev.patcher.box.varname = nameInstance
-  
+  max.front(nameInstance)
   var dict_act_sizes = new Dict("act_sizes")
   dict_act_sizes.import_json(HARDCODED_PATH + "act_sizes.json")
+
   if (dict_act_sizes.contains(name)){
-	var arr = dict_act_sizes.get(name)
+	  var arr = dict_act_sizes.get(name)
 	}
   else { //get the patching rect from file.
-	var file_as_dict = new Dict("fad");
-	file_as_dict.readany(prev.patcher.filepath);
-	if (file_as_dict.contains("patcher::rect")){
-		//post("soso");
-		var arr = file_as_dict.get("patcher::rect");
-		arr = [arr[0], arr[1], arr[2]+arr[0], arr[3]+arr[1]] //tja, the other rect-format ;)
-		dict_act_sizes.set(name, arr);
-		dict_act_sizes.export_json(HARDCODED_PATH + "act_sizes.json");
-		
-	}
+	  var file_as_dict = new Dict("fad");
+	  file_as_dict.readany(prev.patcher.filepath);
+	  if (file_as_dict.contains("patcher::rect")){
+		  //post("soso");
+		  var arr = file_as_dict.get("patcher::rect");
+		  arr = [arr[0], arr[1], arr[2]+arr[0], arr[3]+arr[1]] //tja, the other rect-format ;)
+		  dict_act_sizes.set(name, arr);
+		  dict_act_sizes.export_json(HARDCODED_PATH + "act_sizes.json");
+	  }
 	}
   
-  if(arr){
-    var coords = [arr[0], arr[1], arr[2]-arr[0], arr[3]-arr[1]]
+  // if(arr){
+  //   var coords = [arr[0], arr[1], arr[2]-arr[0], arr[3]-arr[1]]
 
-    // set patching rect of act's bpatcher & bring to front
-    owner.patcher.message("script","sendbox",nameInstance,"patching_rect",coords)
-    owner.patcher.message("script","bringtofront",nameInstance)
-  }
+  //   // set patching rect of act's bpatcher & bring to front
+  //   owner.patcher.message("script","sendbox",nameInstance,"patching_rect",coords)
+  //   owner.patcher.message("script","bringtofront",nameInstance)
+  // }
 
 
   // locate draggable jsui corner for acts and replace with moveable_ui for bpatcher

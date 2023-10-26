@@ -24,15 +24,6 @@ var name_excludes = " route master movewind tetris_menu pres_menu title_menu tit
 var attributes = new Array();
 var dict_name = "so";
 
-//////////////////////////////////////////////////////////////////////
-
-function is_bpatcher(){
-	if(!tpp.parentpatcher){
-		return false
-	}
-	return true
-}
-
 /////////////////////////////////////////////////////////////////////////////
 
 function bang()
@@ -58,13 +49,7 @@ messnamed ("ll_amh_receiver", "there", tpp, this.patcher.parentpatcher.box, a);
 
 function getloc()
 {
-	if(!is_bpatcher()){
-		// console.log('is Max runtime; getloc')
-		messnamed ("tetristhis", tpp.wind.location);
-	}else{
-		console.log('is bpatcher; getloc '+ tpp.box.rect)
-		messnamed ("tetristhis", tpp.box.rect);
-	}
+	messnamed ("tetristhis", tpp.wind.location);
 }
 
 function getloc_to(a,o)
@@ -85,21 +70,9 @@ function setloc(x,y,o)
 		//post(o, obj.rect, "\n");
 	}
 	else {
-		if(!is_bpatcher()){
-			// console.log('is Max runtime; set patch window location')
-			var p = tpp;
-			p.wind.location = [x,y,p.wind.location[2]-p.wind.location[0]+x,p.wind.location[3]-p.wind.location[1]+y];
-
-		}else{
-			console.log('is live.ppooll; set patch window location')
-			var currentRect = tpp.box.rect
-			var objSize = [currentRect[2] - currentRect[0], currentRect[3] - currentRect[1]];
-
-			tpp.box.rect = [x, y, x+objSize[0], y+objSize[1]]
-
-			// environment.message("script","sendbox",nameInstance,"position",x,y)
-			// environment.message("script","bringtofront",nameInstance)
-		}
+		// console.log('is Max runtime; set patch window location')
+		var p = tpp;
+		p.wind.location = [x,y,p.wind.location[2]-p.wind.location[0]+x,p.wind.location[3]-p.wind.location[1]+y];
 	}
 }
 
@@ -107,48 +80,26 @@ function setwin(a)
 {
 	rect = arrayfromargs(arguments);
 	//post ("SW", a, rec); 
-	if(!is_bpatcher()){
-		var p = tpp.wind;
-    	p.location = rect;
-	}else{
-		var w = tpp.box;
-		w.rect = rect;
-	}
+	var p = tpp.wind;
+    p.location = rect;
 }
 
 function wsize(width,height)
 {
 	//post("wsize");
-	if(!is_bpatcher()){
-		var w = tpp.wind;
-		var r = new Array();
+	var w = tpp.wind;
+	var r = new Array();
 
-		r[0] = w.location[0];
-		r[1] = w.location[1];
+	r[0] = w.location[0];
+	r[1] = w.location[1];
 
-		if (width > 0) 
-			r[2] = w.location[0]+width;
-		else 
-			r[2] = w.location[2];
-		
-		r[3] = w.location[1]+height;
-		w.location = r;
-	}else{
-		var w = tpp.box;
-		var r = new Array();
-
-		r[0] = w.rect[0];
-		r[1] = w.rect[1];
-
-		if (width > 0) 
-			r[2] = r[0]+width;
-		else 
-			r[2] = w.rect[2];
-		
-		r[3] = r[1]+height;
-
-		w.rect = r;
-	}
+	if (width > 0) 
+		r[2] = w.location[0]+width;
+	else 
+		r[2] = w.location[2];
+	
+	r[3] = w.location[1]+height;
+	w.location = r;
 }
 
 function applydict(dn)

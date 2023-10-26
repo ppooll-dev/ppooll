@@ -288,8 +288,8 @@ function make_live() {
   // var instance = arguments[1]        // ie '1'
   // cname is ie 'sinus1'
 	var lpe = tpp.parentpatcher; //live ppooll environment patcher
-  	var TO_HIDE = ['audioON/OFF','menubar','screen']
-  	var IGNORE_ACTS_LIST = ['live.midi_in', 'live.params_in']
+  var TO_HIDE = ['audioON/OFF']
+  var IGNORE_ACTS_LIST = []
 	var coords = [0, 0, 200,200];
 	// ignore acts that are meant to be hidden and will always load in environment
 	if(IGNORE_ACTS_LIST.indexOf(name) > -1){
@@ -299,25 +299,20 @@ function make_live() {
 	tpp.box.varname = cname	
 	coords = getcoords(tpp.filepath);
 
-    // set patching rect of act's bpatcher & bring to front
-    lpe.message("script","sendbox",cname,"patching_rect",coords)
-    lpe.message("script","bringtofront",cname)
-
-	// locate draggable jsui corner for acts and replace with moveable_ui for bpatcher
-	if(tpp.getnamed('master'))
-    	tpp.message("script","sendbox","master", "filename", "jsui_drag_bpatcher.js")
-	if(tpp.getnamed('movewind'))
-		tpp.message("script","sendbox","movewind", "filename", "jsui_drag_bpatcher.js")
+  // set patching rect of act's bpatcher & bring to front
+  lpe.message("script","sendbox",cname,"patching_rect",coords)
+  lpe.message("script","bringtofront",cname)
+  messnamed(cname, "TP", "front")
 
 	// if this is the ho_st hide defined objects
 	if(name === 'ho_st'){
-    	post('create ho_st1')
+    post('create ho_st1')
 		for(var i=0; i<TO_HIDE.length; i++){
 			if(tpp.getnamed(TO_HIDE[i])){
 				tpp.message("script","hide",TO_HIDE[i])
-      		}
+      }
 		}
-  	}
+  }
 }
 
 
