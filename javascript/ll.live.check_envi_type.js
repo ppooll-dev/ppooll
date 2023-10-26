@@ -14,7 +14,7 @@
 
     2) sends name of act/patch to load conditionally
     		0: load within Max Environment (msg set through outlet)
-    		1: load within Max For Live subpatcher as bpatcher (send to named receive 'live.load_act')
+    		1: load within Max For Live subpatcher as abstraction (send to named receive 'live.load_act')
 */
 
 
@@ -59,8 +59,8 @@ function Xlist(){ //see below
 		// console.log('load in max envi '+patch)
 		outlet(0,patch)
 	}else{
-		// load '.maxpat' in Max For Live as bpatcher
-		console.log('creating bpatcher for: '+patch)
+		// load '.maxpat' in Max For Live as abstraction
+		// console.log('creating abstraction for: '+patch)
 
 		var g = new Global("test")
 		g.act_name = patch
@@ -94,8 +94,8 @@ function anything(){
 		// console.log('load in max envi '+patch)
 		outlet(0,patch)
 	}else{
-		// load '.maxpat' in Max For Live as bpatcher
-		console.log('creating bpatcher for: '+patch)
+		// load '.maxpat' in Max For Live as abstraction
+		// console.log('creating abstraction for: '+patch)
 
 		var g = new Global("test")
 		g.act_name = patch
