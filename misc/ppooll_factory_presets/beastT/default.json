@@ -1,15 +1,39 @@
 {
-	"window" : [ 250, 75, 678, 309 ],
+	"window" : [ 514, 344, 942, 578 ],
+	"phas-send_act" : 	{
+		"patching_rect" : [ 357, 68, 36, 17 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"phas-send_par" : 	{
+		"patching_rect" : [ 392, 68, 36, 17 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"vib-send_act" : 	{
+		"patching_rect" : [ 357, 36, 36, 17 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"vib-send_par" : 	{
+		"patching_rect" : [ 392, 36, 36, 17 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
 	"preset-ramp" : 	{
-		"fontsize" : 12.0,
 		"patching_rect" : [ 355, 0, 73, 16 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 12
 	}
 ,
 	"presets" : 	{
-		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "beast1" ],
 		"patching_rect" : [ 55, 0, 300, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "beast1" ]
 	}
 ,
 	"freq_mod" : 	{
@@ -18,9 +42,9 @@
 	}
 ,
 	"freq_mod-label" : 	{
-		"fontsize" : 9.0,
 		"patching_rect" : [ 0, 39, 53, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 9
 	}
 ,
 	"phas_damp" : 	{
@@ -34,15 +58,15 @@
 	}
 ,
 	"phas_label" : 	{
-		"fontsize" : 9.0,
 		"patching_rect" : [ 0, 85, 30, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 9
 	}
 ,
 	"phas_damp-label" : 	{
-		"fontsize" : 9.0,
 		"patching_rect" : [ 0, 101, 59, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 9
 	}
 ,
 	"vib_damp" : 	{
@@ -56,23 +80,13 @@
 	}
 ,
 	"vib_damp-label" : 	{
-		"fontsize" : 9.0,
 		"patching_rect" : [ 0, 70, 53, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 9
 	}
 ,
 	"buffer_length" : 	{
 		"patching_rect" : [ 0, 186, 251, 16 ],
-		"hidden" : 0
-	}
-,
-	"rec_mix" : 	{
-		"patching_rect" : [ 0, 203, 251, 16 ],
-		"hidden" : 0
-	}
-,
-	"rec_damp" : 	{
-		"patching_rect" : [ 0, 220, 251, 13 ],
 		"hidden" : 0
 	}
 ,
@@ -82,27 +96,15 @@
 	}
 ,
 	"buffer_length-label" : 	{
-		"fontsize" : 9.0,
 		"patching_rect" : [ 0, 189, 71, 17 ],
-		"hidden" : 0
-	}
-,
-	"rec_mix-label" : 	{
-		"fontsize" : 9.0,
-		"patching_rect" : [ 0, 205, 48, 17 ],
-		"hidden" : 0
-	}
-,
-	"rec_damp-label" : 	{
-		"fontsize" : 9.0,
-		"patching_rect" : [ 0, 221, 54, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 9
 	}
 ,
 	"filt_type" : 	{
-		"fontsize" : 9.0,
 		"patching_rect" : [ 345, 103, 49, 19 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 9
 	}
 ,
 	"filt_freq" : 	{
@@ -116,125 +118,120 @@
 	}
 ,
 	"filt_mod" : 	{
-		"fontsize" : 9.0,
 		"patching_rect" : [ 327, 121, 67, 19 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 9
 	}
 ,
 	"filt_Q-label" : 	{
-		"fontsize" : 9.0,
 		"patching_rect" : [ 414, 168, 16, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 9
 	}
 ,
 	"filt_type-label" : 	{
-		"fontsize" : 9.0,
 		"patching_rect" : [ 299, 103, 50, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 9
 	}
 ,
 	"modulation-label" : 	{
-		"fontsize" : 9.0,
 		"patching_rect" : [ 367, 137, 26, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 9
 	}
 ,
 	"f-label" : 	{
-		"fontsize" : 9.0,
 		"patching_rect" : [ 398, 168, 16, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 9
 	}
 ,
 	"wf" : 	{
-		"fontsize" : 10.0,
 		"patching_rect" : [ 0, 116, 251, 68 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 10
 	}
 ,
 	"vib_label" : 	{
-		"fontsize" : 9.0,
 		"patching_rect" : [ 0, 54, 22, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 9
 	}
 ,
 	"filt-label" : 	{
-		"fontsize" : 9.0,
 		"patching_rect" : [ 375, 168, 22, 17 ],
-		"hidden" : 0
-	}
-,
-	"phas-send_act" : 	{
-		"fontsize" : 8.0,
-		"patching_rect" : [ 357, 68, 36, 17 ],
-		"hidden" : 0
-	}
-,
-	"phas-send_par" : 	{
-		"fontsize" : 8.0,
-		"patching_rect" : [ 392, 68, 36, 17 ],
-		"hidden" : 0
-	}
-,
-	"vib-send_act" : 	{
-		"fontsize" : 8.0,
-		"patching_rect" : [ 357, 36, 36, 17 ],
-		"hidden" : 0
-	}
-,
-	"vib-send_par" : 	{
-		"fontsize" : 8.0,
-		"patching_rect" : [ 392, 36, 36, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 9
 	}
 ,
 	"duck-send_act" : 	{
-		"fontsize" : 8.0,
 		"patching_rect" : [ 291, 167, 36, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 8
 	}
 ,
 	"duck-send_par" : 	{
-		"fontsize" : 8.0,
 		"patching_rect" : [ 326, 167, 36, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 8
 	}
 ,
 	"phas-send_label" : 	{
-		"fontsize" : 9.0,
 		"patching_rect" : [ 296, 69, 65, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 9
 	}
 ,
 	"vib-send_label" : 	{
-		"fontsize" : 9.0,
 		"patching_rect" : [ 300, 38, 59, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 9
 	}
 ,
 	"duck-send_label" : 	{
-		"fontsize" : 9.0,
 		"patching_rect" : [ 291, 155, 56, 17 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 9
 	}
 ,
 	"clear_buffer" : 	{
-		"fontsize" : 12.0,
-		"patching_rect" : [ 291, 122, 36, 16 ],
-		"hidden" : 0
+		"patching_rect" : [ 269, 122, 36, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
 	}
 ,
 	"ll.blues" : 	{
+		"patcher" : "bang",
 		"patching_rect" : [ 269, 182, 159, 53 ],
 		"hidden" : 0
 	}
 ,
 	"freq" : 	{
-		"fontsize" : 18.0,
 		"patching_rect" : [ 0, 16, 428, 21 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"fontsize" : 18
 	}
 ,
-	"fontsize" : 10.0,
 	"patching_rect" : [ 253, 145, 17, 85 ],
-	"hidden" : 0
+	"hidden" : 0,
+	"fontsize" : 10,
+	"buffer-menu" : 	{
+		"patching_rect" : [ 269, 139, 68, 17 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"rec_mix" : 	{
+		"patching_rect" : [ 0, 202, 251, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"rec_damp" : 	{
+		"patching_rect" : [ 0, 218, 251, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
 }
