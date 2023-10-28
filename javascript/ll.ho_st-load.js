@@ -51,6 +51,10 @@ function shouldCheckForUpdates(){
 // get latest version from package-info.json downloaded from GitHub
 function getLatestVersion(){
 	var dictPackageInfoLatest = new Dict("ppooll_package_info_latest")
+	if(dictPackageInfoLatest.get("status") !== 200){
+		return null
+	}
+
 	var latestVersion = dictPackageInfoLatest.get('body::version')   // 8.6 hardcoded for testing
 	return latestVersion
 }
@@ -68,9 +72,16 @@ function getCurrentVersion(){
 
 // check for updates
 function checkVersion(thisVersion, latestVersion){
+	var OUTPUT = []
+
+	// checkVersion HTTP status !== 200
+	if(!latestVersion){
+		outlet(1, "OK")
+		return []
+	}
+
 	var needsUpdate = cmpVersions(latestVersion, thisVersion)
 
-	var OUTPUT = []
 	if(needsUpdate){
 		var stringOut = "latest: " + latestVersion + "\ncurrent: " + thisVersion
 		OUTPUT.push("--------------------------update-available-"+latestVersion+"------------------------------")
