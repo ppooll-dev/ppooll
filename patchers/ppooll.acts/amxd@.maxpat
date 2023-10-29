@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 864.0, 165.0, 158.0, 112.0 ],
+		"rect" : [ 483.0, 307.0, 158.0, 112.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -50,7 +50,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 413.0, 342.0, 93.0, 22.0 ],
-					"restore" : [ 233, 170 ],
+					"restore" : [ 588, 170 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -405,7 +405,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 603.0, 425.0, 688.0, 345.0 ],
+						"rect" : [ 34.0, 466.0, 688.0, 345.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -592,8 +592,8 @@
 																	"id" : "obj-16",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "" ],
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "bang" ],
 																	"patching_rect" : [ 53.0, 147.0, 97.0, 22.0 ],
 																	"text" : "ll.r midi__stream"
 																}
@@ -961,8 +961,8 @@
 									"id" : "obj-18",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
 									"patching_rect" : [ 44.071426000000002, 66.0, 84.0, 22.0 ],
 									"text" : "ll.r to_pcontrol",
 									"varname" : "to_vst~[1]"
@@ -989,7 +989,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "multichannelsignal" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 145.535712999999987, 32.0, 30.0, 30.0 ]
 								}
 
@@ -1024,7 +1024,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 852.0, 220.0, 660.0, 437.0 ],
+										"rect" : [ 852.0, 220.0, 233.0, 170.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -2246,8 +2246,8 @@
 																					"id" : "obj-21",
 																					"maxclass" : "newobj",
 																					"numinlets" : 1,
-																					"numoutlets" : 1,
-																					"outlettype" : [ "" ],
+																					"numoutlets" : 2,
+																					"outlettype" : [ "", "bang" ],
 																					"patching_rect" : [ 32.0, 41.0, 105.0, 22.0 ],
 																					"text" : "ll.r ll.blues::state 1"
 																				}
@@ -3025,13 +3025,13 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 97.5, 306.0, 102.0, 22.0 ],
+													"patching_rect" : [ 97.5, 306.0, 111.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"filename" : "amxd_create.js",
+														"filename" : "ll.amxd_create.js",
 														"parameter_enable" : 0
 													}
 ,
-													"text" : "js amxd_create.js"
+													"text" : "js ll.amxd_create.js"
 												}
 
 											}
@@ -3101,7 +3101,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "multichannelsignal" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 51.5, 177.0, 30.0, 30.0 ],
 													"varname" : "in_1_audioin"
 												}
@@ -3116,7 +3116,6 @@
 													"enablehscroll" : 0,
 													"enablevscroll" : 0,
 													"id" : "obj-2",
-													"linecount" : 2,
 													"lockeddragscroll" : 0,
 													"lockedsize" : 0,
 													"maxclass" : "newobj",
@@ -3124,8 +3123,7 @@
 													"numoutlets" : 3,
 													"offset" : [ 0.0, 0.0 ],
 													"outlettype" : [ "multichannelsignal", "", "" ],
-													"patching_rect" : [ 0.0, 0.0, 233.0, 170.0 ],
-													"presentation_linecount" : 2,
+													"patching_rect" : [ 0.0, 0.0, 588.0, 170.0 ],
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
 															"parameter_invisible" : 1,
@@ -3138,8 +3136,8 @@
 ,
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 1,
-														"patchername" : "Swirl_1.1 (1).amxd",
-														"patchername_fallback" : "~/Desktop/amxd/Swirl_1.1 (1).amxd",
+														"patchername" : "Chiral.amxd",
+														"patchername_fallback" : "~/Desktop/amxd/Chiral.amxd",
 														"realtime_params" : 1,
 														"showheader" : 0
 													}
@@ -3154,27 +3152,112 @@
 														"subtype" : "Undefined",
 														"embed" : 1,
 														"snapshot" : 														{
-															"name" : "Swirl_1.1 (1).amxd",
-															"origname" : "~/Desktop/amxd/Swirl_1.1 (1).amxd",
+															"name" : "Chiral.amxd",
+															"origname" : "~/Desktop/amxd/Chiral.amxd",
 															"valuedictionary" : 															{
 																"parameter_values" : 																{
-																	"freeze toggle" : 0.0,
-																	"main density" : 0.0,
-																	"main duration" : 0.0,
-																	"main shape" : 0.0,
-																	"main size" : 0.0,
-																	"main trigger" : 0.0,
-																	"main twist" : 0.0,
-																	"prs amount" : 0.0,
-																	"prs gradient" : 0.0,
-																	"rev curve" : 0.0,
-																	"rev time" : 0.0,
-																	"rev time*3" : 0.0,
-																	"rev toggle" : 0.0,
-																	"util mix" : 0.0,
-																	"util vol" : -9.0,
-																	"util width" : 0.0,
-																	"util width-st" : 0.0
+																	"AM Depth" : 0.0,
+																	"AM Feedback" : 0.0,
+																	"AM Frequency" : 0.0,
+																	"Amp Attack" : 0.0,
+																	"Amp Decay" : 0.0,
+																	"Amp Release" : 0.0,
+																	"Amp Sustain" : 0.0,
+																	"Dirt" : 0.0,
+																	"Jitter Speed" : 0.1,
+																	"Jitter Type" : 0.0,
+																	"Jitter to Bend" : 0.0,
+																	"Jitter to Fold" : 0.0,
+																	"Jitter to Noise" : 0.0,
+																	"Jitter to Sync" : 0.0,
+																	"Osc Bend" : 0.0,
+																	"Osc Fold" : 0.0,
+																	"Osc Noise" : 0.0,
+																	"Osc Sync" : 0.0,
+																	"Slope Angle" : 0.0,
+																	"Slope Mode" : 0.0,
+																	"Slope Output" : 0.0,
+																	"Slope Rate" : 0.0,
+																	"Slope Shape" : 0.0,
+																	"Space Dry/Wet" : 0.0,
+																	"Space Gravity" : 0.0,
+																	"Space Trail" : 0.0,
+																	"Sync Window Size" : 1.0,
+																	"Synth Volume" : 0.0,
+																	"Tone Amount" : 0.0,
+																	"blob" : 																	{
+																		"EDO" : [ 12 ],
+																		"MPE" : [ 1 ],
+																		"Octave" : [ 4.0 ],
+																		"Reference Pitch" : [ 440 ],
+																		"Voices" : [ 7 ],
+																		"live.numbox[100]" : [ 0.0 ],
+																		"live.numbox[101]" : [ 0.0 ],
+																		"live.numbox[102]" : [ 0.0 ],
+																		"live.numbox[103]" : [ 0.0 ],
+																		"live.numbox[105]" : [ 0.0 ],
+																		"live.numbox[106]" : [ 0.0 ],
+																		"live.numbox[107]" : [ 0.0 ],
+																		"live.numbox[108]" : [ 0.0 ],
+																		"live.numbox[109]" : [ 0.0 ],
+																		"live.numbox[110]" : [ 0.0 ],
+																		"live.numbox[111]" : [ 0.0 ],
+																		"live.numbox[112]" : [ 0.0 ],
+																		"live.numbox[113]" : [ 0.0 ],
+																		"live.numbox[114]" : [ 0.0 ],
+																		"live.numbox[115]" : [ 0.0 ],
+																		"live.numbox[12]" : [ 0.0 ],
+																		"live.numbox[13]" : [ 0.0 ],
+																		"live.numbox[15]" : [ 0.0 ],
+																		"live.numbox[17]" : [ 0.0 ],
+																		"live.numbox[18]" : [ 0.0 ],
+																		"live.numbox[19]" : [ 0.0 ],
+																		"live.numbox[26]" : [ 0.0 ],
+																		"live.numbox[27]" : [ 0.0 ],
+																		"live.numbox[28]" : [ 0.0 ],
+																		"live.numbox[29]" : [ 0.0 ],
+																		"live.numbox[30]" : [ 0.0 ],
+																		"live.numbox[37]" : [ 0.0 ],
+																		"live.numbox[39]" : [ 0.0 ],
+																		"live.numbox[40]" : [ 0.0 ],
+																		"live.numbox[41]" : [ 0.0 ],
+																		"live.numbox[42]" : [ 0.0 ],
+																		"live.numbox[45]" : [ 0.0 ],
+																		"live.numbox[46]" : [ 0.0 ],
+																		"live.numbox[47]" : [ 0.0 ],
+																		"live.numbox[48]" : [ 0.0 ],
+																		"live.numbox[49]" : [ 0.0 ],
+																		"live.numbox[50]" : [ 0.0 ],
+																		"live.numbox[51]" : [ 0.0 ],
+																		"live.numbox[52]" : [ 0.0 ],
+																		"live.numbox[53]" : [ 0.0 ],
+																		"live.numbox[54]" : [ 0.0 ],
+																		"live.numbox[55]" : [ 0.0 ],
+																		"live.numbox[56]" : [ 0.0 ],
+																		"live.numbox[57]" : [ 0.0 ],
+																		"live.numbox[58]" : [ 0.0 ],
+																		"live.numbox[59]" : [ 0.0 ],
+																		"live.numbox[60]" : [ 0.0 ],
+																		"live.numbox[61]" : [ 0.0 ],
+																		"live.numbox[62]" : [ 0.0 ],
+																		"live.numbox[63]" : [ 0.0 ],
+																		"live.numbox[64]" : [ 0.0 ],
+																		"live.numbox[79]" : [ 0.0 ],
+																		"live.numbox[80]" : [ 0.0 ],
+																		"live.numbox[81]" : [ 0.0 ],
+																		"live.numbox[83]" : [ 0.0 ],
+																		"live.numbox[84]" : [ 0.0 ],
+																		"live.numbox[87]" : [ 0.0 ],
+																		"live.numbox[92]" : [ 0.0 ],
+																		"live.numbox[93]" : [ 0.0 ],
+																		"live.numbox[94]" : [ 0.0 ],
+																		"live.numbox[95]" : [ 0.0 ],
+																		"live.numbox[96]" : [ 0.0 ],
+																		"live.numbox[97]" : [ 0.0 ],
+																		"live.numbox[98]" : [ 0.0 ],
+																		"live.numbox[99]" : [ 0.0 ]
+																	}
+
 																}
 
 															}
@@ -3187,33 +3270,118 @@
 																	"filetype" : "C74Snapshot",
 																	"version" : 2,
 																	"minorversion" : 0,
-																	"name" : "Swirl_1.1 (1).amxd",
-																	"origin" : "Swirl_1.1 (1).amxd",
+																	"name" : "Chiral.amxd",
+																	"origin" : "Chiral.amxd",
 																	"type" : "amxd",
 																	"subtype" : "Undefined",
 																	"embed" : 0,
 																	"snapshot" : 																	{
-																		"name" : "Swirl_1.1 (1).amxd",
-																		"origname" : "~/Desktop/amxd/Swirl_1.1 (1).amxd",
+																		"name" : "Chiral.amxd",
+																		"origname" : "~/Desktop/amxd/Chiral.amxd",
 																		"valuedictionary" : 																		{
 																			"parameter_values" : 																			{
-																				"freeze toggle" : 0.0,
-																				"main density" : 0.0,
-																				"main duration" : 0.0,
-																				"main shape" : 0.0,
-																				"main size" : 0.0,
-																				"main trigger" : 0.0,
-																				"main twist" : 0.0,
-																				"prs amount" : 0.0,
-																				"prs gradient" : 0.0,
-																				"rev curve" : 0.0,
-																				"rev time" : 0.0,
-																				"rev time*3" : 0.0,
-																				"rev toggle" : 0.0,
-																				"util mix" : 0.0,
-																				"util vol" : -9.0,
-																				"util width" : 0.0,
-																				"util width-st" : 0.0
+																				"AM Depth" : 0.0,
+																				"AM Feedback" : 0.0,
+																				"AM Frequency" : 0.0,
+																				"Amp Attack" : 0.0,
+																				"Amp Decay" : 0.0,
+																				"Amp Release" : 0.0,
+																				"Amp Sustain" : 0.0,
+																				"Dirt" : 0.0,
+																				"Jitter Speed" : 0.1,
+																				"Jitter Type" : 0.0,
+																				"Jitter to Bend" : 0.0,
+																				"Jitter to Fold" : 0.0,
+																				"Jitter to Noise" : 0.0,
+																				"Jitter to Sync" : 0.0,
+																				"Osc Bend" : 0.0,
+																				"Osc Fold" : 0.0,
+																				"Osc Noise" : 0.0,
+																				"Osc Sync" : 0.0,
+																				"Slope Angle" : 0.0,
+																				"Slope Mode" : 0.0,
+																				"Slope Output" : 0.0,
+																				"Slope Rate" : 0.0,
+																				"Slope Shape" : 0.0,
+																				"Space Dry/Wet" : 0.0,
+																				"Space Gravity" : 0.0,
+																				"Space Trail" : 0.0,
+																				"Sync Window Size" : 1.0,
+																				"Synth Volume" : 0.0,
+																				"Tone Amount" : 0.0,
+																				"blob" : 																				{
+																					"EDO" : [ 12 ],
+																					"MPE" : [ 1 ],
+																					"Octave" : [ 4.0 ],
+																					"Reference Pitch" : [ 440 ],
+																					"Voices" : [ 7 ],
+																					"live.numbox[100]" : [ 0.0 ],
+																					"live.numbox[101]" : [ 0.0 ],
+																					"live.numbox[102]" : [ 0.0 ],
+																					"live.numbox[103]" : [ 0.0 ],
+																					"live.numbox[105]" : [ 0.0 ],
+																					"live.numbox[106]" : [ 0.0 ],
+																					"live.numbox[107]" : [ 0.0 ],
+																					"live.numbox[108]" : [ 0.0 ],
+																					"live.numbox[109]" : [ 0.0 ],
+																					"live.numbox[110]" : [ 0.0 ],
+																					"live.numbox[111]" : [ 0.0 ],
+																					"live.numbox[112]" : [ 0.0 ],
+																					"live.numbox[113]" : [ 0.0 ],
+																					"live.numbox[114]" : [ 0.0 ],
+																					"live.numbox[115]" : [ 0.0 ],
+																					"live.numbox[12]" : [ 0.0 ],
+																					"live.numbox[13]" : [ 0.0 ],
+																					"live.numbox[15]" : [ 0.0 ],
+																					"live.numbox[17]" : [ 0.0 ],
+																					"live.numbox[18]" : [ 0.0 ],
+																					"live.numbox[19]" : [ 0.0 ],
+																					"live.numbox[26]" : [ 0.0 ],
+																					"live.numbox[27]" : [ 0.0 ],
+																					"live.numbox[28]" : [ 0.0 ],
+																					"live.numbox[29]" : [ 0.0 ],
+																					"live.numbox[30]" : [ 0.0 ],
+																					"live.numbox[37]" : [ 0.0 ],
+																					"live.numbox[39]" : [ 0.0 ],
+																					"live.numbox[40]" : [ 0.0 ],
+																					"live.numbox[41]" : [ 0.0 ],
+																					"live.numbox[42]" : [ 0.0 ],
+																					"live.numbox[45]" : [ 0.0 ],
+																					"live.numbox[46]" : [ 0.0 ],
+																					"live.numbox[47]" : [ 0.0 ],
+																					"live.numbox[48]" : [ 0.0 ],
+																					"live.numbox[49]" : [ 0.0 ],
+																					"live.numbox[50]" : [ 0.0 ],
+																					"live.numbox[51]" : [ 0.0 ],
+																					"live.numbox[52]" : [ 0.0 ],
+																					"live.numbox[53]" : [ 0.0 ],
+																					"live.numbox[54]" : [ 0.0 ],
+																					"live.numbox[55]" : [ 0.0 ],
+																					"live.numbox[56]" : [ 0.0 ],
+																					"live.numbox[57]" : [ 0.0 ],
+																					"live.numbox[58]" : [ 0.0 ],
+																					"live.numbox[59]" : [ 0.0 ],
+																					"live.numbox[60]" : [ 0.0 ],
+																					"live.numbox[61]" : [ 0.0 ],
+																					"live.numbox[62]" : [ 0.0 ],
+																					"live.numbox[63]" : [ 0.0 ],
+																					"live.numbox[64]" : [ 0.0 ],
+																					"live.numbox[79]" : [ 0.0 ],
+																					"live.numbox[80]" : [ 0.0 ],
+																					"live.numbox[81]" : [ 0.0 ],
+																					"live.numbox[83]" : [ 0.0 ],
+																					"live.numbox[84]" : [ 0.0 ],
+																					"live.numbox[87]" : [ 0.0 ],
+																					"live.numbox[92]" : [ 0.0 ],
+																					"live.numbox[93]" : [ 0.0 ],
+																					"live.numbox[94]" : [ 0.0 ],
+																					"live.numbox[95]" : [ 0.0 ],
+																					"live.numbox[96]" : [ 0.0 ],
+																					"live.numbox[97]" : [ 0.0 ],
+																					"live.numbox[98]" : [ 0.0 ],
+																					"live.numbox[99]" : [ 0.0 ]
+																				}
+
 																			}
 
 																		}
@@ -3221,11 +3389,11 @@
 																	}
 ,
 																	"fileref" : 																	{
-																		"name" : "Swirl_1.1 (1).amxd",
-																		"filename" : "Swirl_1.1 (1).amxd.maxsnap",
+																		"name" : "Chiral.amxd",
+																		"filename" : "Chiral.amxd.maxsnap",
 																		"filepath" : "~/Documents/Max 8/Snapshots",
 																		"filepos" : -1,
-																		"snapshotfileid" : "6b1e37f84900bfb17215ce6e6cd8d11c"
+																		"snapshotfileid" : "52357b4c0dbaebe4cd51ffe95a18e44a"
 																	}
 
 																}
@@ -3723,8 +3891,8 @@
 									"id" : "obj-14",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
 									"patching_rect" : [ 160.535712999999987, 66.0, 66.0, 22.0 ],
 									"text" : "ll.r to_vst~",
 									"varname" : "to_vst~"
@@ -5498,17 +5666,6 @@
 																		"assistshowspatchername" : 0,
 																		"boxes" : [ 																			{
 																				"box" : 																				{
-																					"id" : "obj-16",
-																					"maxclass" : "newobj",
-																					"numinlets" : 1,
-																					"numoutlets" : 0,
-																					"patching_rect" : [ 88.0, 81.0, 46.0, 22.0 ],
-																					"text" : "print ∆í"
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
 																					"id" : "obj-12",
 																					"maxclass" : "newobj",
 																					"numinlets" : 1,
@@ -5724,14 +5881,6 @@
 																				"patchline" : 																				{
 																					"destination" : [ "obj-12", 0 ],
 																					"order" : 0,
-																					"source" : [ "obj-1", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-16", 0 ],
-																					"order" : 2,
 																					"source" : [ "obj-1", 0 ]
 																				}
 
@@ -8911,7 +9060,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 315.833312999999976, 119.0, 344.0, 22.0 ],
-													"text" : "\"Swirl_1.1 (1).amxd\""
+													"text" : "Chiral.amxd"
 												}
 
 											}
@@ -9524,8 +9673,8 @@
 													"id" : "obj-8",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 594.0, 38.0, 118.0, 22.0 ],
 													"text" : "ll.r vst_custom_clear"
 												}
@@ -10369,8 +10518,8 @@
 													"id" : "obj-43",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 21.25, 176.0, 78.0, 22.0 ],
 													"text" : "ll.r presetsUI"
 												}
@@ -11048,7 +11197,7 @@
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "" ],
 																					"patching_rect" : [ 472.75, 387.0, 103.0, 22.0 ],
-																					"restore" : [ "xgroove@" ],
+																					"restore" : [ "amxd@" ],
 																					"saved_object_attributes" : 																					{
 																						"parameter_enable" : 0,
 																						"parameter_mappable" : 0
@@ -11134,13 +11283,12 @@
 																					"fontname" : "Arial",
 																					"fontsize" : 12.0,
 																					"id" : "obj-5",
-																					"linecount" : 2,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 688.0, 233.0, 144.0, 49.0 ],
-																					"text" : "amxd@1 ho_st1 xgroove@1 buffer_host1"
+																					"text" : "ho_st1 amxd@1"
 																				}
 
 																			}
@@ -12266,7 +12414,7 @@
 					"arrow" : 0,
 					"fontsize" : 9.0,
 					"id" : "obj-80",
-					"items" : [ "-no-", ",", "ll.midi", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "to Max 1", ",", "to Max 2" ],
+					"items" : [ "-no-", ",", "ll.midi", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "TouchOSC Bridge", ",", "to Max 1", ",", "to Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12333,23 +12481,35 @@
 						"pres_menu" : 2011,
 						"tetris_menu" : 2012,
 						"master" : 2013,
-						"freeze toggle" : 100,
-						"main density" : 101,
-						"main duration" : 102,
-						"main shape" : 103,
-						"main size" : 104,
-						"main trigger" : 105,
-						"main twist" : 106,
-						"prs amount" : 107,
-						"prs gradient" : 108,
-						"rev curve" : 109,
-						"rev time" : 110,
-						"rev time*3" : 111,
-						"rev toggle" : 112,
-						"util mix" : 113,
-						"util vol" : 114,
-						"util width" : 115,
-						"util width-st" : 116
+						"AM Depth" : 100,
+						"AM Feedback" : 101,
+						"AM Frequency" : 102,
+						"Amp Attack" : 103,
+						"Amp Decay" : 104,
+						"Amp Release" : 105,
+						"Amp Sustain" : 106,
+						"Dirt" : 107,
+						"Jitter Speed" : 108,
+						"Jitter Type" : 109,
+						"Jitter to Bend" : 110,
+						"Jitter to Fold" : 111,
+						"Jitter to Noise" : 112,
+						"Jitter to Sync" : 113,
+						"Osc Bend" : 114,
+						"Osc Fold" : 115,
+						"Osc Noise" : 116,
+						"Osc Sync" : 117,
+						"Slope Angle" : 118,
+						"Slope Mode" : 119,
+						"Slope Output" : 120,
+						"Slope Rate" : 121,
+						"Slope Shape" : 122,
+						"Space Dry/Wet" : 123,
+						"Space Gravity" : 124,
+						"Space Trail" : 125,
+						"Sync Window Size" : 126,
+						"Synth Volume" : 127,
+						"Tone Amount" : 128
 					}
 ,
 					"saved_object_attributes" : 					{
@@ -12412,6 +12572,35 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 278.0, 365.0, 107.0, 22.0 ],
 					"restore" : 					{
+						"AM Depth" : [ 0.0 ],
+						"AM Feedback" : [ 0.0 ],
+						"AM Frequency" : [ 0.0 ],
+						"Amp Attack" : [ 0.0 ],
+						"Amp Decay" : [ 0.0 ],
+						"Amp Release" : [ 0.0 ],
+						"Amp Sustain" : [ 0.0 ],
+						"Dirt" : [ 0.0 ],
+						"Jitter Speed" : [ 0.1 ],
+						"Jitter Type" : [ 0.0 ],
+						"Jitter to Bend" : [ 0.0 ],
+						"Jitter to Fold" : [ 0.0 ],
+						"Jitter to Noise" : [ 0.0 ],
+						"Jitter to Sync" : [ 0.0 ],
+						"Osc Bend" : [ 0.0 ],
+						"Osc Fold" : [ 0.0 ],
+						"Osc Noise" : [ 0.0 ],
+						"Osc Sync" : [ 0.0 ],
+						"Slope Angle" : [ 0.0 ],
+						"Slope Mode" : [ 0.0 ],
+						"Slope Output" : [ 0.0 ],
+						"Slope Rate" : [ 0.0 ],
+						"Slope Shape" : [ 0.0 ],
+						"Space Dry/Wet" : [ 0.0 ],
+						"Space Gravity" : [ 0.0 ],
+						"Space Trail" : [ 0.0 ],
+						"Sync Window Size" : [ 1.0 ],
+						"Synth Volume" : [ 0.0 ],
+						"Tone Amount" : [ 0.0 ],
 						"master" : [ 0 ],
 						"midi-channel-in" : [ 1 ],
 						"midi-channel-out" : [ 1 ],
@@ -12419,10 +12608,10 @@
 						"midi-port-out" : [ "-no-" ],
 						"midi__stream" : [ 0 ],
 						"open!" : [ 0 ],
-						"pres_menu" : [ "" ],
+						"pres_menu" : [ "_" ],
 						"preset-ramp" : [ 0 ],
 						"presets" : [ 0 ],
-						"tetris_menu" : [ "default.json" ],
+						"tetris_menu" : [ "" ],
 						"title_menu" : [ "subpatch" ],
 						"vst-folder" : [ "def_folders" ]
 					}
@@ -12494,7 +12683,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-15",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "default.json" ],
+					"items" : [ "-", ",", "default.json", ",", "-", ",", "ƒ", "default.json" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12549,7 +12738,7 @@
 					"arrow" : 0,
 					"fontsize" : 9.0,
 					"id" : "obj-81",
-					"items" : [ "-no-", ",", "ll.midi", ",", "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "from Max 1", ",", "from Max 2" ],
+					"items" : [ "-no-", ",", "ll.midi", ",", "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "TouchOSC Bridge", ",", "from Max 1", ",", "from Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12561,28 +12750,418 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-144",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "AM Depth"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-146",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "AM Feedback"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-148",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "AM Frequency"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-150",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Amp Attack"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-152",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Amp Decay"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-154",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Amp Release"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-156",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Amp Sustain"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-158",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Dirt"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-160",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Jitter Speed"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-162",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Jitter Type"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-164",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Jitter to Bend"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-166",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Jitter to Fold"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-168",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Jitter to Noise"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-170",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Jitter to Sync"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-172",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Osc Bend"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-174",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Osc Fold"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-176",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Osc Noise"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-178",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Osc Sync"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-180",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Slope Angle"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-182",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Slope Mode"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-184",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Slope Output"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-186",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Slope Rate"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-188",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Slope Shape"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-190",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Space Dry/Wet"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-192",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Space Gravity"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-194",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Space Trail"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-196",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Sync Window Size"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-198",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Synth Volume"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-200",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Tone Amount"
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-6405", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-12", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-18", 0 ],
-					"hidden" : 1,
-					"source" : [ "obj-16", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"hidden" : 1,
-					"source" : [ "obj-16", 0 ]
 				}
 
 			}
@@ -12637,302 +13216,262 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "Swirl_1.1 (1).amxd",
+				"name" : "Chiral.amxd",
 				"bootpath" : "~/Desktop/amxd",
-				"patcherrelativepath" : "../../../../../Desktop/amxd",
+				"patcherrelativepath" : "../../../../../../Desktop/amxd",
 				"type" : "amxd",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "Swirl_1.1 (1).amxd.maxsnap",
+				"name" : "Chiral.amxd.maxsnap",
 				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../../../Snapshots",
+				"patcherrelativepath" : "../../../../Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "actmaker.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "amxd_create.js",
-				"bootpath" : "~/Documents/Max 8/Library/ppooll_local/javascript",
-				"patcherrelativepath" : "../javascript",
+				"name" : "adsr.js",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "jsui_cstmDial_1.2.js",
+				"name" : "checkbox.js",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "jsui_cstmDial_bg_1.0.js",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "jsui_cstmDial_fr_1.0.js",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "jsui_grProto1_bg.js",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "jsui_grProto1_main.js",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "jsui_grProto1_main_bg.js",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "jsui_grProto1_main_decGUI.js",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "jsui_grProto1_speedLineGUI.js",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "jsui_ledTab.js",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "jsui_pNormCurve.js",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "jsui_rampsmooth_bg.js",
+				"name" : "credits.js",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.actmenu.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.actname.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.amxd_create.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.an2.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../../Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.blues.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/ll.blues",
+				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.getacts.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.inputmix.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/ll.blues",
+				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.makeact.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../../Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.midi_in.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/steech",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/steech",
+				"patcherrelativepath" : "../abstractions/steech",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.midi_out.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/steech",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/steech",
+				"patcherrelativepath" : "../abstractions/steech",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.movewindow.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../../Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.no1.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.og.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.p.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.pattr_ui.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../../Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.pf.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.pm.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.preg.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.psto.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.psto1.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.r.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.r~.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.s.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.shut.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.slice1.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.strip#.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.sub_inputs.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.s~.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.textsize.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../../Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.vsthelper.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../../Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.wsendback.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../../Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.xroute.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -12945,23 +13484,48 @@
 				"type" : "iLaX"
 			}
 , 			{
+				"name" : "mini_knob_lcd.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mini_levl_lcd.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mini_sin_lcd.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "modbox.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "movewin.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "n.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../../Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "nblue.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../../Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ninput.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../../Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
@@ -12970,9 +13534,34 @@
 				"type" : "iLaX"
 			}
 , 			{
+				"name" : "popup.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "randgen.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "slope.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "tetrishelp.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../../Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "tinydial.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "wave_display.js",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
