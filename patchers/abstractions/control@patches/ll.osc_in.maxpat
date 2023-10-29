@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 121.0, 129.0, 688.0, 787.0 ],
+		"rect" : [ 91.0, 122.0, 688.0, 787.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -156,7 +156,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 693.0, 309.0, 566.0, 180.0 ],
+						"rect" : [ 693.0, 308.0, 566.0, 180.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -793,13 +793,13 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 52.5, 313.0, 101.0, 22.0 ],
+													"patching_rect" : [ 52.5, 313.0, 98.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"filename" : "ll_osc_labels.js",
+														"filename" : "ll.osc_labels.js",
 														"parameter_enable" : 0
 													}
 ,
-													"text" : "js ll_osc_labels.js"
+													"text" : "js ll.osc_labels.js"
 												}
 
 											}
