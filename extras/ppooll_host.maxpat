@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 487.0, 136.0, 130.0, 125.0 ],
+		"rect" : [ 484.0, 153.0, 130.0, 125.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 11.595186999999999,
@@ -514,7 +514,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 70.0, 106.0, 58.0, 20.0 ],
-					"text" : "11:48:39",
+					"text" : "17:41:48",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "time"
 				}
@@ -698,7 +698,7 @@
 					"fontsize" : 12.0,
 					"hint" : "act menu (open acts from here)",
 					"id" : "obj-50",
-					"items" : [ "(__acts__)", ",", "_act_overview", ",", "amxd@", ",", "arpanner", ",", "autocount@", ",", "bandfollower", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "envMM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "frack", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "link@", ",", "matriarch@", ",", "matrix@", ",", "mixer@", ",", "modul.ator", ",", "morph", ",", "munger@", ",", "noize@", ",", "notepad@", ",", "op@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "pHARM4@", ",", "pr.spectplay", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "signaltocontrol", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "timeline@", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gf.graindelay", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "lk.stutz@", ",", "oer_prcs", ",", "oer_prcss", ",", "polyrhythmus", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "smpseq@", ",", "snes@", ",", "snesHardmode@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "ar.bitglitter@", ",", "dd.rainer", ",", "djrone@", ",", "djrone_buff@", ",", "fcbControl", ",", "feedbliss", ",", "gigaverb@", ",", "granu.ll.ator", ",", "INa", ",", "miClouds", ",", "miVerb", ",", "mlooch@", ",", "mmods@", ",", "moog.ladder@", ",", "MubuConcat", ",", "MubuGrain", ",", "ola.granular", ",", "pitchchainer", ",", "polyrhythmus", ",", "pr.spectdelay", ",", "rc.loop@", ",", "rings", ",", "sc.gendy3@", ",", "sidechainer", ",", "slur@", ",", "tuner", ",", "uclid", ",", "vp.sourcefilter" ],
+					"items" : [ "(__acts__)", ",", "_act_overview", ",", "amxd@", ",", "arpanner", ",", "autocount@", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "envMM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "frack", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "link@", ",", "matriarch@", ",", "matrix@", ",", "mixer@", ",", "modul.ator", ",", "munger@", ",", "noize@", ",", "notepad@", ",", "op@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "pHARM4@", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "signaltocontrol", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "timeline@", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "oer_prcs", ",", "oer_prcss", ",", "polyrhythmus", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "ar.bitglitter@", ",", "dd.rainer", ",", "djrone@", ",", "djrone_buff@", ",", "fcbControl", ",", "feedbliss", ",", "gigaverb@", ",", "granu.ll.ator", ",", "INa", ",", "miClouds", ",", "miVerb", ",", "mlooch@", ",", "mmods@", ",", "moog.ladder@", ",", "MubuConcat", ",", "MubuGrain", ",", "ola.granular", ",", "pitchchainer", ",", "polyrhythmus", ",", "pr.spectdelay", ",", "rc.loop@", ",", "rings", ",", "sc.gendy3@", ",", "sidechainer", ",", "slur@", ",", "tuner", ",", "uclid", ",", "vp.sourcefilter" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -6405,7 +6405,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-25",
-													"items" : [ "(__acts__)", ",", "_act_overview", ",", "amxd@", ",", "arpanner", ",", "autocount@", ",", "bandfollower", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "envMM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "frack", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "link@", ",", "matriarch@", ",", "matrix@", ",", "mixer@", ",", "modul.ator", ",", "morph", ",", "munger@", ",", "noize@", ",", "notepad@", ",", "op@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "pHARM4@", ",", "pr.spectplay", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "signaltocontrol", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "timeline@", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gf.graindelay", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "lk.stutz@", ",", "oer_prcs", ",", "oer_prcss", ",", "polyrhythmus", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "smpseq@", ",", "snes@", ",", "snesHardmode@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "ar.bitglitter@", ",", "dd.rainer", ",", "djrone@", ",", "djrone_buff@", ",", "fcbControl", ",", "feedbliss", ",", "gigaverb@", ",", "granu.ll.ator", ",", "INa", ",", "miClouds", ",", "miVerb", ",", "mlooch@", ",", "mmods@", ",", "moog.ladder@", ",", "MubuConcat", ",", "MubuGrain", ",", "ola.granular", ",", "pitchchainer", ",", "polyrhythmus", ",", "pr.spectdelay", ",", "rc.loop@", ",", "rings", ",", "sc.gendy3@", ",", "sidechainer", ",", "slur@", ",", "tuner", ",", "uclid", ",", "vp.sourcefilter" ],
+													"items" : [ "(__acts__)", ",", "_act_overview", ",", "amxd@", ",", "arpanner", ",", "autocount@", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "envMM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "frack", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "link@", ",", "matriarch@", ",", "matrix@", ",", "mixer@", ",", "modul.ator", ",", "munger@", ",", "noize@", ",", "notepad@", ",", "op@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "pHARM4@", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "signaltocontrol", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "timeline@", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "oer_prcs", ",", "oer_prcss", ",", "polyrhythmus", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "ar.bitglitter@", ",", "dd.rainer", ",", "djrone@", ",", "djrone_buff@", ",", "fcbControl", ",", "feedbliss", ",", "gigaverb@", ",", "granu.ll.ator", ",", "INa", ",", "miClouds", ",", "miVerb", ",", "mlooch@", ",", "mmods@", ",", "moog.ladder@", ",", "MubuConcat", ",", "MubuGrain", ",", "ola.granular", ",", "pitchchainer", ",", "polyrhythmus", ",", "pr.spectdelay", ",", "rc.loop@", ",", "rings", ",", "sc.gendy3@", ",", "sidechainer", ",", "slur@", ",", "tuner", ",", "uclid", ",", "vp.sourcefilter" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -12805,7 +12805,7 @@
 													"allowdrag" : 0,
 													"fontsize" : 11.595186999999999,
 													"id" : "obj-22",
-													"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
+													"items" : [ "Off", ",", 1, "Front Left", ",", 2, "Front Right" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -13861,7 +13861,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 87.0, 680.0, 554.0, 366.0 ],
+										"rect" : [ 148.0, 291.0, 554.0, 366.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -14717,7 +14717,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 452.0, 575.0, 640.0, 480.0 ],
+														"rect" : [ 452.0, 407.0, 640.0, 480.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 12.0,
@@ -14873,12 +14873,8 @@
 , 															{
 																"box" : 																{
 																	"coll_data" : 																	{
-																		"count" : 1,
-																		"data" : [ 																			{
-																				"key" : "freeverb@",
-																				"value" : [ "freeverb~" ]
-																			}
- ]
+																		"count" : 0,
+																		"data" : [  ]
 																	}
 ,
 																	"id" : "obj-23",
@@ -15254,12 +15250,8 @@
 , 											{
 												"box" : 												{
 													"coll_data" : 													{
-														"count" : 1,
-														"data" : [ 															{
-																"key" : "freeverb@",
-																"value" : [ "freeverb~" ]
-															}
- ]
+														"count" : 0,
+														"data" : [  ]
 													}
 ,
 													"id" : "obj-23",
@@ -53520,7 +53512,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 186.5, 48.0, 95.0, 20.0 ],
-													"text" : "8.6.0.231020.1",
+													"text" : "8.6.0.231027.1",
 													"textjustification" : 2
 												}
 
@@ -54126,12 +54118,12 @@
 												"box" : 												{
 													"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"fontsize" : 14.0,
+													"hidden" : 1,
 													"id" : "obj-45",
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 105.0, 721.0, 330.0, 22.0 ],
-													"text" : "chaos, chebyshev@, freeverb@, spectcomp, buffub",
 													"textcolor" : [ 0.458823529411765, 0.458823529411765, 0.458823529411765, 1.0 ]
 												}
 
@@ -54139,6 +54131,7 @@
 , 											{
 												"box" : 												{
 													"fontsize" : 14.0,
+													"hidden" : 1,
 													"id" : "obj-44",
 													"maxclass" : "comment",
 													"numinlets" : 1,
@@ -64381,8 +64374,8 @@
 			}
 , 			{
 				"name" : "ll.act_menu_builder.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/steech",
-				"patcherrelativepath" : "../patchers/abstractions/steech",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
