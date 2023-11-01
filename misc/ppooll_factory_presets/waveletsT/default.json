@@ -1,5 +1,5 @@
 {
-	"window" : [ 268, 188, 561, 397 ],
+	"window" : [ 169, 179, 461, 408 ],
 	"waveform" : 	{
 		"patching_rect" : [ 173, 96, 45, 21 ],
 		"hidden" : 0,
@@ -42,7 +42,7 @@
 	}
 ,
 	"display" : 	{
-		"patching_rect" : [ 0, 156, 133, 53 ],
+		"patching_rect" : [ 0, 156, 131, 73 ],
 		"hidden" : 0
 	}
 ,
@@ -125,7 +125,7 @@
 ,
 	"ll.blues" : 	{
 		"patcher" : "bang",
-		"patching_rect" : [ 134, 156, 159, 53 ],
+		"patching_rect" : [ 131, 176, 161, 53 ],
 		"hidden" : 0
 	}
 ,
@@ -136,9 +136,9 @@
 	}
 ,
 	"syncto" : 	{
-		"patching_rect" : [ 3, 215, 126, 22 ],
+		"patching_rect" : [ 190, 156, 102, 20 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 10
 	}
 
 }
