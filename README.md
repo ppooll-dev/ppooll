@@ -15,20 +15,20 @@ contains additional code by adrian freed (CNMAT), Bertrand Fraysse, bill orcutt,
 ## requirements
 1. Max >=8.5 (https://cycling74.com/products/max)
 2. additional Max Packages (download via Max Package Manager):
-  - cv.jit
-  - karma 
-  - link 
-  - LowkeyNW 
-  - PeRColate 
-  - CNMAT Externals 
-  - ICST Ambisonics 
-  - jasch objects
-  - MuBu
+    - cv.jit
+    - karma 
+    - link 
+    - LowkeyNW 
+    - PeRColate 
+    - CNMAT Externals 
+    - ICST Ambisonics 
+    - jasch objects
+    - MuBu
 
 
 ## install
 1. download [ppooll.zip](https://github.com/ppooll-dev/ppooll/releases/latest)
 2. extract & place folder in:
-  - Mac: `~/Documents/Max 8/Packages`
-  - Win: `My Documents\Max 8\Packages`
+    - Mac: `~/Documents/Max 8/Packages`
+    - Win: `My Documents\Max 8\Packages`
 3. restart Max
