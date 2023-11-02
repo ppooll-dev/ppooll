@@ -15,16 +15,18 @@ contains additional code by adrian freed (CNMAT), Bertrand Fraysse, bill orcutt,
 ## requirements
 1. Max >=8.5 (https://cycling74.com/products/max)
 2. additional Max Packages (download via [Max Package Manager](https://docs.cycling74.com/max8/vignettes/package_manager)):
-    - cv.jit
-    - karma 
-    - link 
-    - LowkeyNW 
-    - PeRColate 
-    - CNMAT Externals 
-    - ICST Ambisonics 
-    - jasch objects
-    - MuBu
 
+| package            | act(s)                                                                 |
+|--------------------|-------------------------------------------------------------------------------------|
+| jasch objects      | all                                                                                 |
+| cv.jit             | jit.blobs                                                                           |
+| karma              | karma@                                                                              |
+| link               | link@                                                                               |
+| LowkeyNW           | gverb@                                                                              |
+| PeRColate          | munger@                                                                             |
+| CNMAT Externals    | PEQ@, pr.spectplay, rez@, SDIFter                                                    |
+| ICST Ambisonics    | spat.ambicontrol@, spat.ambidecode@, spat.ambiencode@, spat.ambimonitor@, spat.ambipanning@ |
+| MuBu For Max       | mubugrain                                                                           |
 
 ## install
 1. download [ppooll.zip](https://github.com/ppooll-dev/ppooll/releases/latest)
