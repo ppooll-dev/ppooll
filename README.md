@@ -14,7 +14,7 @@ contains additional code by adrian freed (CNMAT), Bertrand Fraysse, bill orcutt,
 
 ## requirements
 1. Max >=8.5 (https://cycling74.com/products/max)
-2. additional Max Packages (download via Max Package Manager):
+2. additional Max Packages (download via [Max Package Manager](https://docs.cycling74.com/max8/vignettes/package_manager)):
     - cv.jit
     - karma 
     - link 
