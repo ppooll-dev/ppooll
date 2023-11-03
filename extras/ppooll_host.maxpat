@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 484.0, 153.0, 130.0, 125.0 ],
+		"rect" : [ 475.0, 121.0, 130.0, 125.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 11.595186999999999,
@@ -514,7 +514,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 70.0, 106.0, 58.0, 20.0 ],
-					"text" : "17:41:48",
+					"text" : "18:49:27",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "time"
 				}
@@ -698,7 +698,7 @@
 					"fontsize" : 12.0,
 					"hint" : "act menu (open acts from here)",
 					"id" : "obj-50",
-					"items" : [ "(__acts__)", ",", "_act_overview", ",", "amxd@", ",", "arpanner", ",", "autocount@", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "envMM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "frack", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "link@", ",", "matriarch@", ",", "matrix@", ",", "mixer@", ",", "modul.ator", ",", "munger@", ",", "noize@", ",", "notepad@", ",", "op@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "pHARM4@", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "signaltocontrol", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "timeline@", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "oer_prcs", ",", "oer_prcss", ",", "polyrhythmus", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "ar.bitglitter@", ",", "dd.rainer", ",", "djrone@", ",", "djrone_buff@", ",", "fcbControl", ",", "feedbliss", ",", "gigaverb@", ",", "granu.ll.ator", ",", "INa", ",", "miClouds", ",", "miVerb", ",", "mlooch@", ",", "mmods@", ",", "moog.ladder@", ",", "MubuConcat", ",", "MubuGrain", ",", "ola.granular", ",", "pitchchainer", ",", "polyrhythmus", ",", "pr.spectdelay", ",", "rc.loop@", ",", "rings", ",", "sc.gendy3@", ",", "sidechainer", ",", "slur@", ",", "tuner", ",", "uclid", ",", "vp.sourcefilter" ],
+					"items" : [ "(__acts__)", ",", "_act_overview", ",", "amxd@", ",", "arpanner", ",", "autocount@", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "envMM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "frack", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "link@", ",", "matriarch@", ",", "matrix@", ",", "mixer@", ",", "modul.ator", ",", "munger@", ",", "noize@", ",", "notepad@", ",", "op@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "pHARM4@", ",", "pr.spectfreeze", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "signaltocontrol", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "timeline@", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "oer_prcs", ",", "oer_prcss", ",", "polyrhythmus", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "ar.bitglitter@", ",", "dd.rainer", ",", "djrone@", ",", "djrone_buff@", ",", "fcbControl", ",", "feedbliss", ",", "gigaverb@", ",", "granu.ll.ator", ",", "INa", ",", "keyfreq", ",", "miClouds", ",", "miVerb", ",", "mlooch@", ",", "mmods@", ",", "modul.ators", ",", "modul.dupe", ",", "moog.ladder@", ",", "MubuConcat", ",", "MubuGrain", ",", "music_mouse@", ",", "ola.granular", ",", "pitchchainer", ",", "polyrhythmus", ",", "pr.spectdelay", ",", "rc.loop@", ",", "rings", ",", "sc.gendy3@", ",", "sidechainer", ",", "slur@", ",", "tuner", ",", "uclid", ",", "vp.cross", ",", "vp.sourcefilter" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -754,7 +754,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 265.0, 236.0, 377.0, 615.0 ],
+						"rect" : [ 804.0, 217.0, 377.0, 615.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -6405,7 +6405,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-25",
-													"items" : [ "(__acts__)", ",", "_act_overview", ",", "amxd@", ",", "arpanner", ",", "autocount@", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "envMM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "frack", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "link@", ",", "matriarch@", ",", "matrix@", ",", "mixer@", ",", "modul.ator", ",", "munger@", ",", "noize@", ",", "notepad@", ",", "op@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "pHARM4@", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "signaltocontrol", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "timeline@", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "oer_prcs", ",", "oer_prcss", ",", "polyrhythmus", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "ar.bitglitter@", ",", "dd.rainer", ",", "djrone@", ",", "djrone_buff@", ",", "fcbControl", ",", "feedbliss", ",", "gigaverb@", ",", "granu.ll.ator", ",", "INa", ",", "miClouds", ",", "miVerb", ",", "mlooch@", ",", "mmods@", ",", "moog.ladder@", ",", "MubuConcat", ",", "MubuGrain", ",", "ola.granular", ",", "pitchchainer", ",", "polyrhythmus", ",", "pr.spectdelay", ",", "rc.loop@", ",", "rings", ",", "sc.gendy3@", ",", "sidechainer", ",", "slur@", ",", "tuner", ",", "uclid", ",", "vp.sourcefilter" ],
+													"items" : [ "(__acts__)", ",", "_act_overview", ",", "amxd@", ",", "arpanner", ",", "autocount@", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "envMM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "frack", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "link@", ",", "matriarch@", ",", "matrix@", ",", "mixer@", ",", "modul.ator", ",", "munger@", ",", "noize@", ",", "notepad@", ",", "op@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "pHARM4@", ",", "pr.spectfreeze", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "signaltocontrol", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "timeline@", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "oer_prcs", ",", "oer_prcss", ",", "polyrhythmus", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "ar.bitglitter@", ",", "dd.rainer", ",", "djrone@", ",", "djrone_buff@", ",", "fcbControl", ",", "feedbliss", ",", "gigaverb@", ",", "granu.ll.ator", ",", "INa", ",", "keyfreq", ",", "miClouds", ",", "miVerb", ",", "mlooch@", ",", "mmods@", ",", "modul.ators", ",", "modul.dupe", ",", "moog.ladder@", ",", "MubuConcat", ",", "MubuGrain", ",", "music_mouse@", ",", "ola.granular", ",", "pitchchainer", ",", "polyrhythmus", ",", "pr.spectdelay", ",", "rc.loop@", ",", "rings", ",", "sc.gendy3@", ",", "sidechainer", ",", "slur@", ",", "tuner", ",", "uclid", ",", "vp.cross", ",", "vp.sourcefilter" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -12730,7 +12730,7 @@
 													"bgfillcolor_proportion" : 0.39,
 													"bgfillcolor_type" : "color",
 													"id" : "obj-38",
-													"items" : [ "no", ",", "ho_st1" ],
+													"items" : [ "no", ",", "ho_st1", ",", "polyrhythmus1", ",", "sinus1" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -12805,7 +12805,7 @@
 													"allowdrag" : 0,
 													"fontsize" : 11.595186999999999,
 													"id" : "obj-22",
-													"items" : [ "Off", ",", 1, "Front Left", ",", 2, "Front Right" ],
+													"items" : [ "Off", ",", 1, "Output 1", ",", 2, "Output 2" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -13290,6 +13290,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 314.0, 52.5, 29.0, 35.0 ],
+													"text" : "",
 													"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 												}
 
@@ -13750,7 +13751,7 @@
 													"allowdrag" : 0,
 													"fontsize" : 13.0,
 													"id" : "obj-17",
-													"items" : [ "no", ",", "ho_st1" ],
+													"items" : [ "no", ",", "ho_st1", ",", "polyrhythmus1", ",", "sinus1" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -17391,7 +17392,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-10",
-																	"items" : [ "_HARDCORE", ",", "adv-handholding-2", ",", "advanced-handholding", ",", "bedtime", ",", "bg-track4", ",", "commencement", ",", "ear-smoke", ",", "elastic-walls", ",", "first-percs", ",", "funfuntimes", ",", "gg_test", ",", "groanchant", ",", "groov-buff", ",", "hands-interconnected", ",", "henry-230303-bufs", ",", "henry-bbufs-230302", ",", "henry-full-set", ",", "henry-grant", ",", "hg-22-11-21", ",", "hg-221201", ",", "hg-230301", ",", "hg-232202", ",", "just-groovin", ",", "kylon", ",", "lastlaugh", ",", "many-vst", ",", "mmods-gran", ",", "mmods-test", ",", "morff-test", ",", "ola-tester", ",", "perc-expanded", ",", "rcloop-20sec", ",", "source-filter-beauty", ",", "squiggles", ",", "swamp-rising", ",", "talkingfunny2", ",", "test-gg", ",", "test-vst-mod-au", ",", "testvintageverb", ",", "vst-test", ",", "washy-well", ",", "wetdry", ",", "wetdryuniverse", ",", "wf-test", ",", "wipply" ],
+																	"items" : "good-pattern.json",
 																	"maxclass" : "umenu",
 																	"numinlets" : 1,
 																	"numoutlets" : 3,
@@ -18138,7 +18139,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 39.0, 112.0, 114.0, 22.0 ],
-													"text" : "ho_st 1"
+													"text" : "sinus 1"
 												}
 
 											}
@@ -18251,7 +18252,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 241.0, 14.0, 263.0, 35.0 ],
-																	"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 8/Library/ppooll_presets/ho_stT\""
+																	"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 8/Library/ppooll_presets/sinusT\""
 																}
 
 															}
@@ -21453,7 +21454,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 548.0, 346.0, 101.0, 22.0 ],
-																					"text" : "18"
+																					"text" : "12"
 																				}
 
 																			}
@@ -21953,7 +21954,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 405.0, 455.0, 75.0, 22.0 ],
-																					"text" : "ho_st"
+																					"text" : "sinus"
 																				}
 
 																			}
@@ -23309,7 +23310,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 300.0, 88.0, 101.0, 22.0 ],
-																					"text" : "6. 3."
+																					"text" : "6. 2."
 																				}
 
 																			}
@@ -23774,7 +23775,7 @@
 																									"numoutlets" : 1,
 																									"outlettype" : [ "" ],
 																									"patching_rect" : [ 198.0, 381.0, 154.0, 22.0 ],
-																									"text" : "6. 3."
+																									"text" : "6. 2."
 																								}
 
 																							}
@@ -24076,7 +24077,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 63.333333333333314, 89.0, 90.0, 22.0 ],
-																					"text" : "ho_st1"
+																					"text" : "sinus1"
 																				}
 
 																			}
@@ -25173,13 +25174,12 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-49",
-																					"linecount" : 2,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 259.5, 367.0, 37.0, 35.0 ],
-																					"text" : "ho_st"
+																					"text" : "sinus"
 																				}
 
 																			}
@@ -26159,7 +26159,7 @@
 																					"numoutlets" : 4,
 																					"outlettype" : [ "list", "", "", "" ],
 																					"patching_rect" : [ 13.0, 70.0, 477.0, 389.0 ],
-																					"rows" : 3,
+																					"rows" : 2,
 																					"selmode" : 5,
 																					"vscroll" : 0
 																				}
@@ -26225,7 +26225,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 13.0, 2.0, 87.0, 22.0 ],
-																					"text" : "ho_st1"
+																					"text" : "sinus1"
 																				}
 
 																			}
@@ -26690,7 +26690,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 92.25, 304.0, 169.0, 22.0 ],
-																	"text" : "send ::ho_st1::pat"
+																	"text" : "send ::sinus1::pat"
 																}
 
 															}
@@ -27159,7 +27159,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 264.0, 102.0, 159.0, 22.0 ],
-													"text" : "ho_st1 _"
+													"text" : "sinus1 _"
 												}
 
 											}
@@ -33510,7 +33510,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-7",
-																	"items" : [ ".git", ",", "amxd@P", ",", "amxd@T", ",", "ar.bitglitter@T", ",", "autocount@T", ",", "bangerP", ",", "beastP", ",", "buffer_hostP", ",", "buffubT", ",", "chucker@T", ",", "control@P", ",", "environmentsP", ",", "ho_stP", ",", "matriarch@P", ",", "mmods@P", ",", "modul.atorT", ",", "polyrhythmusP", ",", "rec_eventsSeq", ",", "rombT", ",", "sinusT", ",", "snap@P", ",", "vst@P", ",", "w_filterT", ",", "xgroove@T" ],
+																	"items" : [ ".git", ",", "amxd@P", ",", "amxd@T", ",", "ar.bitglitter@T", ",", "autocount@T", ",", "bangerP", ",", "beastP", ",", "buffer_hostP", ",", "buffubT", ",", "chucker@T", ",", "control@P", ",", "environmentsP", ",", "ho_stP", ",", "matriarch@P", ",", "mmods@P", ",", "modul.atorT", ",", "polyrhythmusP", ",", "rec_eventsSeq", ",", "rombT", ",", "sinusT", ",", "snap@P", ",", "vst@P", ",", "w_filterT", ",", "waveletsP", ",", "xgroove@T" ],
 																	"maxclass" : "umenu",
 																	"numinlets" : 1,
 																	"numoutlets" : 3,
@@ -42884,12 +42884,13 @@
 																"box" : 																{
 																	"fontsize" : 12.0,
 																	"id" : "obj-38",
+																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 563.0, 825.0, 152.0, 76.0 ],
-																	"text" : "ho_st1"
+																	"text" : "sinus1 polyrhythmus1 ho_st1"
 																}
 
 															}
@@ -53447,7 +53448,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 717.0, 96.0, 795.0, 785.0 ],
+										"rect" : [ 505.0, 94.0, 795.0, 785.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 10.0,
@@ -53575,8 +53576,8 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 283.0, 37.0, 104.0, 22.0 ],
-													"text" : "direkt link:"
+													"patching_rect" : [ 283.0, 37.0, 76.0, 22.0 ],
+													"text" : "download:"
 												}
 
 											}
@@ -53588,8 +53589,8 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 283.0, 13.0, 104.0, 22.0 ],
-													"text" : "download here:"
+													"patching_rect" : [ 304.5, 13.0, 54.0, 22.0 ],
+													"text" : "github:"
 												}
 
 											}
@@ -53606,7 +53607,7 @@
 													"bgfillcolor_type" : "color",
 													"fontsize" : 12.0,
 													"id" : "obj-25",
-													"items" : "https://github.com/ppooll-dev/ppooll/archive/refs/heads/main.zip",
+													"items" : "https://github.com/ppooll-dev/ppooll/releases/latest",
 													"labelclick" : 1,
 													"maxclass" : "umenu",
 													"menumode" : 2,
@@ -53614,7 +53615,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "int", "", "" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 349.0, 37.0, 374.5, 22.0 ],
+													"patching_rect" : [ 347.0, 37.0, 281.5, 22.0 ],
 													"textcolor" : [ 0.054902, 0.0, 0.972549, 1.0 ]
 												}
 
@@ -53640,7 +53641,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "int", "", "" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 389.0, 13.0, 255.5, 22.0 ],
+													"patching_rect" : [ 347.0, 13.0, 202.5, 22.0 ],
 													"textcolor" : [ 0.054902, 0.0, 0.972549, 1.0 ]
 												}
 
@@ -55053,6 +55054,14 @@
 													"destination" : [ "obj-30", 0 ],
 													"hidden" : 1,
 													"source" : [ "obj-21", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-30", 0 ],
+													"hidden" : 1,
+													"source" : [ "obj-25", 1 ]
 												}
 
 											}
@@ -60679,7 +60688,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 234.0, 531.0, 212.0, 20.0 ],
-													"text" : "load _act_overview.maxpat"
+													"text" : "load sinus.maxpat"
 												}
 
 											}
@@ -61396,7 +61405,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 153.0, 372.0, 50.0, 22.0 ],
-																	"text" : "0"
+																	"text" : "1"
 																}
 
 															}
@@ -64105,10 +64114,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 644.0, 103.0, 92.0, 21.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 313, 472, 906, 1006 ],
+						"client_rect" : [ 842, 164, 1920, 407 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 200, 200, 800, 500 ]
+						"storage_rect" : [ 0, 0, 640, 240 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -64164,7 +64173,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 493.0, 168.0, 107.0, 21.0 ],
 					"restore" : 					{
-						"act_menu" : [ "(__acts__)" ],
+						"act_menu" : [ "sinus" ],
 						"audioON/OFF" : [ 0 ],
 						"chans" : [ 16 ],
 						"def" : [ -1 ],
