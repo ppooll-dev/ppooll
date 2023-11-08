@@ -1525,7 +1525,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 154.0, 65.248046875, 187.0, 22.0 ],
-																	"text" : "in(3)"
+																	"text" : "freq(2)"
 																}
 
 															}
@@ -2427,7 +2427,7 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-35",
-									"items" : [ "no", ",", "blue.output.section.info1", ",", "ho_st1" ],
+									"items" : [ "no", ",", "blue.output.section.info1", ",", "distort@1", ",", "ho_st1" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -3852,7 +3852,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 294.0, 113.0, 154.0, 33.0 ],
+									"patching_rect" : [ 247.0, 100.0, 154.0, 33.0 ],
 									"text" : "also make sure ho_st is set\nto 16 channels"
 								}
 
@@ -3877,7 +3877,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 294.0, 124.0, 97.0, 35.0 ],
+									"patching_rect" : [ 247.0, 111.0, 97.0, 35.0 ],
 									"text" : ";\rho_st1 chans 16"
 								}
 
@@ -3930,7 +3930,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 101.0, 420.0, 496.0, 47.0 ],
-									"text" : "if we send our 2-channel-signal to out.3 of ho_st:\nthe meters shifted to the right again, if you have 4 speakers connected, you would here\npur sinewaves now at speakers 3+4."
+									"text" : "if we send our 2-channel-signal to out.3 of ho_st:\nthe meters shifted to the right again, if you have 4 speakers connected, you would here\nour sinewaves now at speakers 3+4."
 								}
 
 							}
@@ -4018,21 +4018,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 140.0, 113.0, 150.0, 33.0 ],
+									"patching_rect" : [ 93.0, 100.0, 150.0, 33.0 ],
 									"text" : "make sure audio is turned \non in ho_st  (click..)"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-6",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 19.0, 91.0, 496.0, 20.0 ],
-									"text" : "to explain the way it goes, lets send our 2 channels to ho_st with the dark-blue menues."
 								}
 
 							}
@@ -4056,7 +4043,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 140.0, 124.0, 133.0, 35.0 ],
+									"patching_rect" : [ 93.0, 111.0, 133.0, 35.0 ],
 									"text" : ";\rho_st1 audioON/OFF 1"
 								}
 
@@ -4698,7 +4685,7 @@
 									"bgfillcolor_type" : "color",
 									"fontsize" : 11.595186999999999,
 									"id" : "obj-14",
-									"items" : [ "no", ",", "blue.output.section.info1", ",", "ho_st1" ],
+									"items" : [ "no", ",", "blue.output.section.info1", ",", "distort@1", ",", "ho_st1" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -4967,10 +4954,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 842, 164, 1920, 407 ],
+						"client_rect" : [ 313, 472, 906, 1006 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 0, 0, 640, 240 ]
+						"storage_rect" : [ 200, 200, 800, 500 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -5026,7 +5013,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 1264.0, 209.0, 107.0, 22.0 ],
 					"restore" : 					{
-						"freq" : [ 268.777804436285805, 349.94616220629905 ],
+						"freq" : [ 268.777804436285805, 335.332736323645804 ],
 						"master" : [ 0 ],
 						"pres_menu" : [ "_" ],
 						"tetris_menu" : [ "" ],
@@ -5233,6 +5220,26 @@
 ,
 					"text" : "pattr inputs~",
 					"varname" : "inputs~[1]"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"hidden" : 1,
+					"id" : "obj-9",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 1277.0, 101.0, 100.0, 22.0 ],
+					"restore" : [ "freq(2)" ],
+					"saved_object_attributes" : 					{
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
+					}
+,
+					"text" : "pattr inputs~",
+					"varname" : "inputs~"
 				}
 
 			}
