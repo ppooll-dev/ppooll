@@ -1,5 +1,5 @@
 {
-	"window" : [ 48, 24, 1068, 121 ],
+	"window" : [ 48, 25, 1068, 122 ],
 	"def" : 	{
 		"patching_rect" : [ 867, 0, 60, 20 ],
 		"hidden" : 0,
@@ -89,7 +89,7 @@
 		"fontsize" : 11
 	}
 ,
-	"vol_max" : 	{
+	"vel2vol" : 	{
 		"patching_rect" : [ 734, 0, 70, 17 ],
 		"hidden" : 0,
 		"fontsize" : 11
