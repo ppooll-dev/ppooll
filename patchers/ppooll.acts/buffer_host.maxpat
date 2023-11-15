@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 447.0, 339.0, 119.0, 186.0 ],
+		"rect" : [ 561.0, 195.0, 119.0, 186.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -224,6 +224,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 0.0, 33.0, 118.0, 21.0 ],
 					"pattrmode" : 1,
+					"prefix" : "<empty>",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "file_menu"
 				}
@@ -401,7 +402,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 625.0, 409.0, 656.0, 413.0 ],
+						"rect" : [ 113.0, 506.0, 656.0, 413.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -431,12 +432,47 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-14",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 436.0, 237.0, 178.0, 20.0 ],
+									"text" : "init file_menu (on save?)"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-11",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 436.0, 259.0, 120.0, 22.0 ],
+									"text" : "clear, prefix <empty>"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 436.0, 294.0, 83.0, 22.0 ],
+									"text" : "ll.pf file_menu"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-2",
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 5,
 									"outlettype" : [ "clear", "int", "float", "", "int" ],
-									"patching_rect" : [ 248.0, 238.0, 84.0, 22.0 ],
+									"patching_rect" : [ 130.0, 210.0, 84.0, 22.0 ],
 									"text" : "ll.buffer_menu"
 								}
 
@@ -3282,7 +3318,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 58.0, 310.0, 79.0, 22.0 ],
+									"patching_rect" : [ 130.0, 166.0, 79.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -6282,6 +6318,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-5", 1 ],
 									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-11", 0 ]
 								}
 
 							}
