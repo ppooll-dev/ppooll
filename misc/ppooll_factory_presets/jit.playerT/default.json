@@ -1,0 +1,167 @@
+{
+	"window" : [ 614, 94, 860, 308 ],
+	"playback_rate" : 	{
+		"patching_rect" : [ 0, 91, 70, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"vol-ramp-com" : 	{
+		"patching_rect" : [ 512, 328, 89, 17 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"vol-ramp" : 	{
+		"patching_rect" : [ 512, 343, 35, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"loop_mode" : 	{
+		"patching_rect" : [ 445, 21, 30, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"folder_menu" : 	{
+		"patching_rect" : [ 0, 16, 70, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"file_menu" : 	{
+		"patching_rect" : [ 0, 32, 70, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"local_display" : 	{
+		"patching_rect" : [ 71, 1, 174, 105 ],
+		"hidden" : 0
+	}
+,
+	"dropfile" : 	{
+		"patching_rect" : [ 72, 0, 174, 108 ],
+		"hidden" : 0
+	}
+,
+	"play_toggle" : 	{
+		"patching_rect" : [ 402, 31, 23, 15 ],
+		"hidden" : 1,
+		"fontsize" : 8
+	}
+,
+	"restart" : 	{
+		"patching_rect" : [ 222, 128, 24, 14 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"autostart" : 	{
+		"patching_rect" : [ 1, 74, 48, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"shuffle" : 	{
+		"patching_rect" : [ 409, 61, 32, 15 ],
+		"hidden" : 1,
+		"fontsize" : 8
+	}
+,
+	"open!" : 	{
+		"patching_rect" : [ 1, 62, 28, 12 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"file_menu_out" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 290, 67, 104, 22 ],
+		"hidden" : 1
+	}
+,
+	"loadram" : 	{
+		"patching_rect" : [ 441, 61, 16, 15 ],
+		"hidden" : 1,
+		"fontsize" : 8
+	}
+,
+	"full_loop" : 	{
+		"patching_rect" : [ 0, 142, 23, 17 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 161, 161, 38, 28 ],
+		"hidden" : 0,
+		"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "sinsE1" ]
+	}
+,
+	"playbar" : 	{
+		"patching_rect" : [ 0, 108, 246, 21 ],
+		"hidden" : 0
+	}
+,
+	"jitmovie" : 	{
+		"patching_rect" : [ 285, 200, 60, 22 ],
+		"hidden" : 1
+	}
+,
+	"time" : 	{
+		"patching_rect" : [ 26, 128, 195, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"time/frame" : 	{
+		"patching_rect" : [ 0, 128, 24, 14 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"loop_points" : 	{
+		"patching_rect" : [ 26, 142, 195, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"dim" : 	{
+		"patching_rect" : [ 35, 52, 32, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 161, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"matrix/texture" : 	{
+		"patching_rect" : [ 161, 197, 47, 17 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"link" : 	{
+		"patching_rect" : [ 222, 142, 24, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"local_disp_on" : 	{
+		"patching_rect" : [ 51, 74, 19, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"next_file" : 	{
+		"patching_rect" : [ 1, 49, 28, 12 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+
+}
