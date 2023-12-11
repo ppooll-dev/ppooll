@@ -1,13 +1,13 @@
 {
-	"window" : [ 183, 116, 342, 260 ],
+	"window" : [ 662, 90, 985, 191 ],
 	"preset-ramp" : 	{
-		"patching_rect" : [ 110, 0, 49, 17 ],
+		"patching_rect" : [ 243, 0, 80, 17 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"presets" : 	{
-		"patching_rect" : [ 62, 0, 49, 17 ],
+		"patching_rect" : [ 65, 0, 176, 17 ],
 		"hidden" : 0,
 		"jsarguments" : [ 15, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "noize@1" ]
 	}
@@ -24,12 +24,6 @@
 		"fontsize" : 10
 	}
 ,
-	"noise_freq" : 	{
-		"patching_rect" : [ 0, 16, 159, 19 ],
-		"hidden" : 0,
-		"fontsize" : 14
-	}
-,
 	"freq" : 	{
 		"patching_rect" : [ 0, 53, 159, 19 ],
 		"hidden" : 0,
@@ -44,12 +38,48 @@
 ,
 	"ll.blues" : 	{
 		"patcher" : "bang",
-		"patching_rect" : [ 0, 91, 159, 53 ],
+		"patching_rect" : [ 0, 74, 323, 27 ],
 		"hidden" : 0
 	}
 ,
-	"ramp" : 	{
-		"patching_rect" : [ 0, 72, 159, 19 ],
+	"noise_freq_mcspread" : 	{
+		"patching_rect" : [ 161, 16, 80, 19 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"res_mcspread" : 	{
+		"patching_rect" : [ 161, 35, 80, 19 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"freq_mcspread" : 	{
+		"patching_rect" : [ 161, 53, 80, 19 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"noise_freq_ramp" : 	{
+		"patching_rect" : [ 243, 16, 80, 19 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"res_ramp" : 	{
+		"patching_rect" : [ 243, 35, 80, 19 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"freq_ramp" : 	{
+		"patching_rect" : [ 243, 53, 80, 19 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"noise_freq" : 	{
+		"patching_rect" : [ 0, 16, 159, 19 ],
 		"hidden" : 0,
 		"fontsize" : 14
 	}
