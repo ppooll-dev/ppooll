@@ -1,5 +1,5 @@
 {
-	"window" : [ 509, 299, 668, 412 ],
+	"window" : [ 505, 122, 664, 225 ],
 	"program_files" : 	{
 		"patching_rect" : [ 44, 33, 43, 19 ],
 		"hidden" : 0,
@@ -30,15 +30,9 @@
 		"fontsize" : 11
 	}
 ,
-	"ll.inputmix" : 	{
-		"patcher" : "bang",
-		"patching_rect" : [ 0, 49, 160, 12 ],
-		"hidden" : 0
-	}
-,
 	"ll.blues" : 	{
 		"patcher" : "bang",
-		"patching_rect" : [ 0, 61, 159, 53 ],
+		"patching_rect" : [ 0, 50, 159, 53 ],
 		"hidden" : 0
 	}
 ,
@@ -56,7 +50,7 @@
 ,
 	"vst_program" : 	{
 		"patching_rect" : [ 85, 34, 16, 16 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 12
 	}
 
