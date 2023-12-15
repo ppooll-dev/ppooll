@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 2,
+			"minor" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 519.0, 48.0, 246.0, 214.0 ],
+		"rect" : [ 614.0, 94.0, 246.0, 214.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,7 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
-		"globalpatchername" : "jit.player3",
+		"globalpatchername" : "jit.player1",
 		"boxes" : [ 			{
 				"box" : 				{
 					"annotation" : "open!",
@@ -268,7 +268,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 26.0, 142.0, 195.0, 19.0 ],
 					"slidercolornofocus" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"slidermax" : 256215.0,
+					"slidermax" : 19797.0,
 					"textcolornofocus" : [ 1.0, 1.0, 1.0, 0.55 ],
 					"varname" : "loop_points"
 				}
@@ -332,7 +332,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 26.0, 128.0, 195.0, 14.0 ],
 					"slidercolornofocus" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"slidermax" : 256215.0,
+					"slidermax" : 19797.0,
 					"textcolornofocus" : [ 1.0, 1.0, 1.0, 0.55 ],
 					"varname" : "time"
 				}
@@ -345,7 +345,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 4,
-					"outlettype" : [ "signal", "signal", "jit_gl_texture", "" ],
+					"outlettype" : [ "signal", "signal", "jit_matrix", "" ],
 					"patching_rect" : [ 285.75, 200.0, 60.0, 22.0 ],
 					"text" : "jit.movie~",
 					"varname" : "jitmovie"
@@ -673,14 +673,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 743.0, 164.0, 629.0, 374.0 ],
+						"rect" : [ 883.0, 210.0, 629.0, 374.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -710,6 +710,18 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 6,
+									"outlettype" : [ "signal", "bang", "int", "float", "", "list" ],
+									"patching_rect" : [ 225.0, 72.0, 71.5, 22.0 ],
+									"text" : "typeroute~"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-1",
 									"maxclass" : "newobj",
 									"numinlets" : 0,
@@ -718,8 +730,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -782,8 +794,8 @@
 													"id" : "obj-35",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 8.5, 208.0, 69.0, 22.0 ],
 													"text" : "ll.r next_file"
 												}
@@ -793,7 +805,7 @@
 												"box" : 												{
 													"id" : "obj-25",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 3,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 8.5, 325.0, 83.0, 22.0 ],
@@ -875,8 +887,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -939,8 +951,8 @@
 													"id" : "obj-28",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 214.5, 100.0, 97.0, 22.0 ],
 													"text" : "ll.r matrix/texture"
 												}
@@ -1014,7 +1026,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 95.5, 250.0, 111.0, 22.0 ],
-													"text" : "jp1_jit.player3"
+													"text" : "jp1_jit.player1"
 												}
 
 											}
@@ -1023,8 +1035,8 @@
 													"id" : "obj-4",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
-													"numoutlets" : 3,
-													"outlettype" : [ "", "clear", "" ],
+													"numoutlets" : 4,
+													"outlettype" : [ "", "clear", "", "" ],
 													"patching_rect" : [ 68.5, 218.0, 138.0, 22.0 ],
 													"text" : "ll.pp_world_textures jp 1"
 												}
@@ -1196,21 +1208,21 @@
 								"box" : 								{
 									"id" : "obj-18",
 									"maxclass" : "newobj",
-									"numinlets" : 0,
+									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 110.0, 540.0, 640.0, 480.0 ],
+										"rect" : [ 100.0, 368.0, 640.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -1240,6 +1252,19 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"comment" : "",
+													"id" : "obj-2",
+													"index" : 1,
+													"maxclass" : "inlet",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "bang" ],
+													"patching_rect" : [ 324.0, 103.0, 30.0, 30.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-41",
@@ -1248,7 +1273,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 291.0, 262.0, 81.0, 22.0 ],
-													"text" : "jit.player3jit?"
+													"text" : "jit.player1jit?"
 												}
 
 											}
@@ -1315,7 +1340,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 395.0, 242.0, 81.0, 22.0 ],
-													"text" : "jit.player3"
+													"text" : "jit.player1"
 												}
 
 											}
@@ -1327,7 +1352,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
-													"outlettype" : [ "", "bang" ],
+													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 367.0, 210.0, 65.0, 22.0 ],
 													"text" : "ll.actname"
 												}
@@ -1374,6 +1399,13 @@
 											}
  ],
 										"lines" : [ 											{
+												"patchline" : 												{
+													"destination" : [ "obj-39", 0 ],
+													"source" : [ "obj-2", 0 ]
+												}
+
+											}
+, 											{
 												"patchline" : 												{
 													"destination" : [ "obj-35", 0 ],
 													"order" : 2,
@@ -1453,7 +1485,7 @@
 								"box" : 								{
 									"id" : "obj-17",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"patching_rect" : [ 292.0, 186.0, 71.0, 22.0 ],
@@ -1486,8 +1518,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1617,8 +1649,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
-															"revision" : 2,
+															"minor" : 5,
+															"revision" : 6,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1685,7 +1717,6 @@
 																	"fontname" : "Verdana",
 																	"fontsize" : 9.0,
 																	"id" : "obj-1",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
@@ -1753,7 +1784,7 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 9.0,
 																	"id" : "obj-8",
-																	"linecount" : 3,
+																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
@@ -1770,8 +1801,8 @@
 																	"id" : "obj-10",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "" ],
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "bang" ],
 																	"patching_rect" : [ 30.0, 48.0, 78.0, 17.0 ],
 																	"text" : "ll.r name_display",
 																	"varname" : "neu"
@@ -1887,13 +1918,13 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-11",
-													"linecount" : 3,
+													"linecount" : 7,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 18.0, 58.0, 214.0, 49.0 ],
-													"text" : "\"Macintosh HD:/Users/klaus/Documents/_projekte/maru_film/klaus/femine2.mp4\""
+													"text" : "\"Macintosh HD:/Users/josephsteccato/Movies/_SOURCE/MT PLEASANT ARCHIVES/GATE OF HEAVEN CEMETERY  HAWTHORNE NY RECEIVING TOMB OCTOBER 2022-JsB7-k_DSck.mp4\""
 												}
 
 											}
@@ -1902,13 +1933,13 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-10",
-													"linecount" : 2,
+													"linecount" : 3,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 306.0, 187.5, 310.0, 35.0 ],
-													"text" : "\"Macintosh HD:/Users/klaus/Documents/_projekte/maru_film/klaus/\""
+													"text" : "\"Macintosh HD:/Users/josephsteccato/Movies/_SOURCE/MT PLEASANT ARCHIVES/\""
 												}
 
 											}
@@ -2067,14 +2098,14 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 611.0, 298.0, 1026.0, 526.0 ],
+										"rect" : [ 452.0, 298.0, 1026.0, 526.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -2112,8 +2143,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
-															"revision" : 2,
+															"minor" : 5,
+															"revision" : 6,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2212,8 +2243,8 @@
 																	"id" : "obj-60",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "" ],
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "bang" ],
 																	"patching_rect" : [ 133.0, 63.0, 98.0, 22.0 ],
 																	"text" : "ll.r local_disp_on"
 																}
@@ -2236,8 +2267,8 @@
 																	"id" : "obj-58",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "" ],
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "bang" ],
 																	"patching_rect" : [ 146.0, 223.0, 97.0, 22.0 ],
 																	"text" : "ll.r matrix/texture"
 																}
@@ -2500,7 +2531,7 @@
 																"box" : 																{
 																	"id" : "obj-29",
 																	"maxclass" : "newobj",
-																	"numinlets" : 2,
+																	"numinlets" : 3,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "bang" ],
 																	"patching_rect" : [ 220.0, 624.0, 99.0, 22.0 ],
@@ -2511,7 +2542,6 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-17",
-																	"linecount" : 3,
 																	"maxclass" : "newobj",
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
@@ -2833,8 +2863,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
-															"revision" : 2,
+															"minor" : 5,
+															"revision" : 6,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3033,8 +3063,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 2,
-															"revision" : 2,
+															"minor" : 5,
+															"revision" : 6,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3144,7 +3174,7 @@
 																"box" : 																{
 																	"id" : "obj-42",
 																	"maxclass" : "newobj",
-																	"numinlets" : 2,
+																	"numinlets" : 3,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "bang" ],
 																	"patching_rect" : [ 281.0, 504.0, 53.0, 22.0 ],
@@ -3159,8 +3189,8 @@
 																	"id" : "obj-2",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "" ],
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "bang" ],
 																	"patching_rect" : [ 327.0, 375.5, 48.0, 19.0 ],
 																	"text" : "ll.r restart"
 																}
@@ -3187,7 +3217,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 722.0, 234.5, 50.0, 35.0 ],
-																	"text" : "0 782701"
+																	"text" : "0 34857"
 																}
 
 															}
@@ -3195,7 +3225,7 @@
 																"box" : 																{
 																	"id" : "obj-1",
 																	"maxclass" : "newobj",
-																	"numinlets" : 2,
+																	"numinlets" : 3,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "bang" ],
 																	"patching_rect" : [ 629.0, 197.5, 89.0, 22.0 ],
@@ -3210,8 +3240,8 @@
 																	"id" : "obj-37",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "" ],
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "bang" ],
 																	"patching_rect" : [ 755.0, 78.5, 56.0, 19.0 ],
 																	"text" : "ll.r full_loop",
 																	"varname" : "neu"
@@ -3258,8 +3288,8 @@
 																	"id" : "obj-23",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "" ],
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "bang" ],
 																	"patching_rect" : [ 549.0, 182.5, 65.0, 19.0 ],
 																	"text" : "ll.r loop_mode"
 																}
@@ -3295,7 +3325,7 @@
 																"box" : 																{
 																	"id" : "obj-33",
 																	"maxclass" : "newobj",
-																	"numinlets" : 2,
+																	"numinlets" : 3,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "bang" ],
 																	"patching_rect" : [ 17.0, 348.0, 92.0, 22.0 ],
@@ -3307,7 +3337,7 @@
 																"box" : 																{
 																	"id" : "obj-32",
 																	"maxclass" : "newobj",
-																	"numinlets" : 2,
+																	"numinlets" : 3,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "bang" ],
 																	"patching_rect" : [ 517.0, 470.0, 71.0, 22.0 ],
@@ -3348,8 +3378,8 @@
 																	"id" : "obj-13",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "" ],
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "bang" ],
 																	"patching_rect" : [ 523.0, 82.0, 46.0, 19.0 ],
 																	"text" : "ll.r frame"
 																}
@@ -3376,8 +3406,8 @@
 																	"id" : "obj-28",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "" ],
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "bang" ],
 																	"patching_rect" : [ 540.0, 314.0, 39.0, 19.0 ],
 																	"text" : "ll.r time"
 																}
@@ -3465,7 +3495,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 180.5, 187.0, 50.0, 22.0 ],
-																	"text" : "7430"
+																	"text" : "1168"
 																}
 
 															}
@@ -3546,8 +3576,8 @@
 																	"id" : "obj-9",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "" ],
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "bang" ],
 																	"patching_rect" : [ 337.0, 12.0, 81.0, 22.0 ],
 																	"text" : "ll.r time/frame"
 																}
@@ -3569,7 +3599,7 @@
 																"box" : 																{
 																	"id" : "obj-6",
 																	"maxclass" : "newobj",
-																	"numinlets" : 2,
+																	"numinlets" : 3,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "bang" ],
 																	"patching_rect" : [ 116.0, 344.0, 53.0, 22.0 ],
@@ -3585,7 +3615,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 261.0, 153.0, 65.0, 22.0 ],
-																	"text" : "29.97"
+																	"text" : "59.94"
 																}
 
 															}
@@ -3597,7 +3627,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 707.5, 129.0, 50.0, 22.0 ],
-																	"text" : "256215"
+																	"text" : "19797"
 																}
 
 															}
@@ -4065,8 +4095,8 @@
 													"id" : "obj-40",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 849.0, 133.0, 43.0, 22.0 ],
 													"text" : "ll.r link"
 												}
@@ -4088,7 +4118,7 @@
 												"box" : 												{
 													"id" : "obj-39",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 3,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 671.0, 78.0, 47.0, 22.0 ],
@@ -4100,7 +4130,7 @@
 												"box" : 												{
 													"id" : "obj-33",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 3,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 849.0, 225.0, 92.0, 22.0 ],
@@ -4151,13 +4181,13 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-34",
-													"linecount" : 2,
+													"linecount" : 7,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 369.0, 51.0, 99.0, 35.0 ],
-													"text" : "read femine2.mp4 1"
+													"patching_rect" : [ 369.0, 51.0, 127.0, 102.0 ],
+													"text" : "read \"GATE OF HEAVEN CEMETERY  HAWTHORNE NY RECEIVING TOMB OCTOBER 2022-JsB7-k_DSck.mp4\" 1"
 												}
 
 											}
@@ -4166,8 +4196,8 @@
 													"id" : "obj-19",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 537.0, 9.5, 89.0, 22.0 ],
 													"text" : "ll.r jitmovie_out"
 												}
@@ -4244,7 +4274,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 188.0, 34.0, 95.0, 22.0 ],
-													"text" : "pos 0.381137"
+													"text" : "pos 0.071059"
 												}
 
 											}
@@ -4252,7 +4282,7 @@
 												"box" : 												{
 													"id" : "obj-11",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 3,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 86.5, 110.0, 90.0, 22.0 ],
@@ -4265,8 +4295,8 @@
 													"id" : "obj-13",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 86.5, 34.0, 87.0, 22.0 ],
 													"text" : "ll.r playbar_out"
 												}
@@ -4305,8 +4335,8 @@
 													"id" : "obj-22",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 60.0, 434.0, 55.0, 19.0 ],
 													"text" : "ll.r loadram"
 												}
@@ -4333,8 +4363,8 @@
 													"id" : "obj-5",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 231.0, 113.0, 58.0, 19.0 ],
 													"text" : "ll.r autostart"
 												}
@@ -4360,7 +4390,7 @@
 													"fontsize" : 9.0,
 													"id" : "obj-3",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 3,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 137.0, 197.199999690055847, 69.0, 19.0 ],
@@ -4431,8 +4461,8 @@
 													"id" : "obj-2",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 33.0, 322.0, 101.0, 22.0 ],
 													"text" : "ll.r playback_rate"
 												}
@@ -4735,8 +4765,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4775,8 +4805,8 @@
 													"id" : "obj-23",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 308.0, 23.5, 89.0, 22.0 ],
 													"text" : "ll.r jitmovie_out"
 												}
@@ -4834,7 +4864,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 334.0, 339.0, 50.0, 22.0 ],
-													"text" : "3"
+													"text" : "10"
 												}
 
 											}
@@ -4883,8 +4913,8 @@
 													"id" : "obj-2",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 112.0, 206.0, 49.0, 19.0 ],
 													"text" : "ll.r shuffle"
 												}
@@ -4897,8 +4927,8 @@
 													"id" : "obj-3",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 243.0, 102.0, 39.0, 19.0 ],
 													"text" : "ll.r time",
 													"varname" : "neu"
@@ -4926,8 +4956,8 @@
 													"id" : "obj-5",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 165.0, 102.0, 70.0, 19.0 ],
 													"text" : "ll.r file_menu"
 												}
@@ -4981,7 +5011,7 @@
 													"fontsize" : 9.0,
 													"id" : "obj-9",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 3,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 112.0, 387.0, 75.0, 19.0 ],
@@ -5010,8 +5040,8 @@
 													"id" : "obj-11",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 171.0, 269.0, 61.0, 19.0 ],
 													"text" : "ll.r ubuval1"
 												}
@@ -5409,6 +5439,15 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
+									"order" : 0,
+									"source" : [ "obj-48", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"order" : 1,
 									"source" : [ "obj-48", 0 ]
 								}
 
@@ -5424,6 +5463,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-47", 0 ],
 									"source" : [ "obj-59", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-18", 0 ],
+									"source" : [ "obj-6", 1 ]
 								}
 
 							}
@@ -5477,7 +5523,7 @@
 					"fontname" : "Andale Mono",
 					"fontsize" : 9.0,
 					"id" : "obj-47",
-					"items" : [ "femine.mp4", ",", "femine2.mp4", ",", "steinbruch.mp4" ],
+					"items" : [ "1949 ca - O'Connell Plot - Gate Of Heaven Cemetery - Hawthorne NY-n2seAf-TEjg.mp4", ",", "Drive Thru Kensico Dam Winter Wonderland Christmas Lights Westchester New York-pQOCAlblOvQ.mkv", ",", "Foggy morning in Mt. Pleasant, NY-hS2lVfZ9KCY.mp4", ",", "GATE OF HEAVEN CEMETERY  HAWTHORNE NY RECEIVING TOMB OCTOBER 2022-JsB7-k_DSck.mp4", ",", "Hawthorne Funeral Home   Hawthorne, NY-DgDSesJH3O8.mp4", ",", "Kensico Dam Fireworks 4th of July 2017-cWtgq_WxRww.mp4", ",", "Kensico Dam-ozzdVKDQULQ.mkv", ",", "Pleasantville, New York to Hawthorne, New York-lkz_GVsox1Y.mkv", ",", "The Lost Village of Kensico and Building the Kensico Dam-peVEPPO-5NM.mkv", ",", "Valhalla Kensico Dam Tour (1996).mp4" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -5485,7 +5531,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 0.0, 32.0, 70.0, 19.0 ],
 					"pattrmode" : 1,
-					"prefix" : "~/Documents/_projekte/maru_film/klaus/",
+					"prefix" : "~/Movies/_SOURCE/MT PLEASANT ARCHIVES/",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "file_menu"
 				}
@@ -5504,7 +5550,7 @@
 					"fontname" : "Andale Mono",
 					"fontsize" : 9.0,
 					"id" : "obj-48",
-					"items" : [ "seijiro/", ",", "jl/", ",", "klaus/", ",", "jitter/", ",", "-", ",", "clear_selected", ",", "clear_all", ",", "add_folder" ],
+					"items" : [ "MT PLEASANT ARCHIVES/", ",", "Movies/", ",", "-", ",", "clear_selected", ",", "clear_all", ",", "add_folder" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -5613,6 +5659,7 @@
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
 						"master" : 0,
+						"act::active_store" : 0,
 						"ll.blues" : 0,
 						"ll.blues::levels" : 0,
 						"ll.blues::outputs" : 0,
@@ -5698,28 +5745,28 @@
 					"restore" : 					{
 						"autostart" : [ 1 ],
 						"dim" : [ 1920, 1080 ],
-						"file_menu" : [ "femine2.mp4" ],
-						"folder_menu" : [ "klaus/" ],
+						"file_menu" : [ "GATE OF HEAVEN CEMETERY  HAWTHORNE NY RECEIVING TOMB OCTOBER 2022-JsB7-k_DSck.mp4" ],
+						"folder_menu" : [ "MT PLEASANT ARCHIVES/" ],
 						"full_loop" : [ -1 ],
 						"link" : [ 0 ],
 						"loadram" : [ -1 ],
 						"local_disp_on" : [ 1 ],
 						"loop_mode" : [ 1 ],
-						"loop_points" : [ 0, 782701 ],
-						"master" : [ 0, 2 ],
-						"matrix/texture" : [ 1 ],
+						"loop_points" : [ 0, 34857 ],
+						"master" : [ 0, 0 ],
+						"matrix/texture" : [ 0 ],
 						"next_file" : [ -1 ],
 						"open!" : [ 0 ],
 						"play_toggle" : [ 1 ],
 						"playback_rate" : [ 1.0 ],
-						"pres_menu" : [ "" ],
-						"presets" : [ 1 ],
+						"pres_menu" : [ "_" ],
+						"presets" : [ 0 ],
 						"restart" : [ -1 ],
 						"shuffle" : [ 0 ],
 						"tetris_menu" : [ "" ],
-						"time" : [ -2000 ],
+						"time" : [ 0.0 ],
 						"time/frame" : [ 0 ],
-						"title_menu" : [ "clientwindow" ],
+						"title_menu" : [ "subpatch" ],
 						"vol-ramp" : [ 0 ]
 					}
 ,
@@ -5765,7 +5812,7 @@
 					"fontsize" : 12.0,
 					"id" : "obj-110",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "write", ",", "clear!", ",", "TEXT" ],
+					"items" : [ "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -5790,7 +5837,7 @@
 					"fontsize" : 12.0,
 					"id" : "obj-112",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "-", ",", "ƒ", "default" ],
+					"items" : [ "-", ",", "-", ",", "ƒ", "default.json" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -5850,6 +5897,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
 					"patching_rect" : [ 285.75, 142.0, 150.0, 22.0 ]
 				}
 
@@ -5863,6 +5911,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
 					"patching_rect" : [ 250.0, 360.0, 150.0, 22.0 ]
 				}
 
@@ -5983,17 +6032,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "jit.movie~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "jit.player3.json",
-				"bootpath" : "~/Documents/Max 8/Library/ppooll_presets/snap@P/spread2_folder",
-				"patcherrelativepath" : "../../../../Library/ppooll_presets/snap@P/spread2_folder",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ll.actmenu.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
@@ -6008,14 +6046,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.actnamehelper.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.an.js",
+				"name" : "ll.an2.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
@@ -6026,13 +6057,6 @@
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.createact8.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -6050,10 +6074,24 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.makeact.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.movewindow.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.og.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -6085,14 +6123,14 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.ppoollpaths.maxpat",
+				"name" : "ll.psto.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.psto.maxpat",
+				"name" : "ll.psto1.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
@@ -6172,13 +6210,6 @@
 , 			{
 				"name" : "pattrexists.mxo",
 				"type" : "iLaX"
-			}
-, 			{
-				"name" : "ppooll_preferences",
-				"bootpath" : "~/Documents/Max 8/Library/ppooll_presets",
-				"patcherrelativepath" : "../../../../Library/ppooll_presets",
-				"type" : "TEXT",
-				"implicit" : 1
 			}
 , 			{
 				"name" : "tetrishelp.js",
