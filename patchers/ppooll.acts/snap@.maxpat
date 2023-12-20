@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 458.0, 330.0, 225.0, 73.0 ],
+		"rect" : [ 514.0, 399.0, 225.0, 73.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -50,7 +50,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 404.0, 313.0, 94.0, 20.0 ],
-					"restore" : [ "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
+					"restore" : [ "sel_acts", "modul.ator1", "prdelay@1", "fffb@1", "modul.ator2", "overdrive@1" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -80,7 +80,7 @@
 					"annotation" : "presets grid. click on ppooll in the ho_st to find info about it",
 					"filename" : "ll.pattr_ui.js",
 					"id" : "obj-17",
-					"jsarguments" : [ 27 ],
+					"jsarguments" : [ 13 ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -489,13 +489,12 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-5",
-																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 273.333333333333371, 200.0, 322.0, 35.0 ],
-																	"text" : "ho_st1 modul.ator2 fffb@1 notepad@1 kaos@1 overdrive@1 random@1 modul.ator1 prdelay@1"
+																	"text" : "ho_st1 tetris@1"
 																}
 
 															}
@@ -646,13 +645,12 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-2",
-																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 298.333333333333371, 73.797607421875, 321.0, 35.0 ],
-																	"text" : "modul.ator2 fffb@1 notepad@1 kaos@1 overdrive@1 random@1 modul.ator1 ho_st1 prdelay@1 snap@1"
+																	"text" : "snap@1 ho_st1"
 																}
 
 															}
@@ -823,13 +821,13 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-31",
-													"linecount" : 6,
+													"linecount" : 7,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 622.0, 109.0, 72.0, 89.0 ],
-													"text" : "modul.ator1 prdelay@1 fffb@1 modul.ator2 overdrive@1"
+													"text" : "sel_acts modul.ator1 prdelay@1 fffb@1 modul.ator2 overdrive@1"
 												}
 
 											}
@@ -867,12 +865,13 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-29",
+													"linecount" : 3,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 5.0, 218.0, 75.0, 22.0 ],
-													"text" : "arpanner1"
+													"text" : "sel_acts ho_st1 tetris@1"
 												}
 
 											}
@@ -2999,17 +2998,6 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
-													"id" : "obj-31",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 979.0, 201.0, 41.0, 20.0 ],
-													"text" : "n sel_a"
-												}
-
-											}
-, 											{
-												"box" : 												{
 													"id" : "obj-14",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
@@ -3718,7 +3706,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 552.0, 372.0, 50.0, 20.0 ],
-													"text" : "\"ƒ ducks\""
+													"text" : "_"
 												}
 
 											}
@@ -4708,7 +4696,7 @@
 												"patchline" : 												{
 													"destination" : [ "obj-23", 1 ],
 													"midpoints" : [ 937.5, 256.5, 452.5, 256.5 ],
-													"order" : 2,
+													"order" : 1,
 													"source" : [ "obj-36", 0 ]
 												}
 
@@ -4717,14 +4705,6 @@
 												"patchline" : 												{
 													"destination" : [ "obj-30", 1 ],
 													"midpoints" : [ 937.5, 257.0, 881.5, 257.0 ],
-													"order" : 1,
-													"source" : [ "obj-36", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-31", 0 ],
 													"order" : 0,
 													"source" : [ "obj-36", 0 ]
 												}
@@ -4734,7 +4714,7 @@
 												"patchline" : 												{
 													"destination" : [ "obj-57", 1 ],
 													"midpoints" : [ 937.5, 190.0, 66.5, 190.0 ],
-													"order" : 3,
+													"order" : 2,
 													"source" : [ "obj-36", 0 ]
 												}
 
@@ -5773,6 +5753,7 @@
 						"title_menu" : 0,
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
+						"master" : 0,
 						"act" : 0,
 						"act::active_store" : 0
 					}
@@ -5798,10 +5779,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 158, 588, 1283, 1263 ],
+						"client_rect" : [ 545, 133, 1800, 849 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 0, 0, 640, 240 ]
+						"storage_rect" : [ 583, 68, 1034, 196 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -5859,12 +5840,12 @@
 					"restore" : 					{
 						"master" : [ 0 ],
 						"next" : [ -1 ],
-						"pres_menu" : [ "ƒ ducks" ],
+						"pres_menu" : [ "_" ],
 						"preset-ramp" : [ 0 ],
-						"presets" : [ 4 ],
+						"presets" : [ 0 ],
 						"select_acts" : [ 0 ],
-						"tetris_menu" : [ "ƒ ducks.json" ],
-						"title_menu" : [ "clientwindow" ]
+						"tetris_menu" : [ "" ],
+						"title_menu" : [ "subpatch" ]
 					}
 ,
 					"text" : "autopattr autopattr",
@@ -5994,7 +5975,7 @@
 					"elementcolor" : [ 0.376471, 0.384314, 0.4, 1.0 ],
 					"fontsize" : 10.0,
 					"id" : "obj-13",
-					"items" : [ "sel_acts", ",", "ho_st1", ",", "modul.ator2", ",", "fffb@1", ",", "notepad@1", ",", "kaos@1", ",", "overdrive@1", ",", "random@1", ",", "modul.ator1", ",", "prdelay@1" ],
+					"items" : [ "sel_acts", ",", "ho_st1", ",", "tetris@1" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -6036,13 +6017,6 @@
 				"name" : "actmaker.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ducks.json",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/misc/ppooll_factory_presets/snap@P",
-				"patcherrelativepath" : "../../misc/ppooll_factory_presets/snap@P",
 				"type" : "JSON",
 				"implicit" : 1
 			}
