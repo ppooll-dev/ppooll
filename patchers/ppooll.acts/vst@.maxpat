@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 6,
+			"revision" : 7,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 505.0, 122.0, 159.0, 103.0 ],
+		"rect" : [ 773.0, 235.0, 159.0, 103.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -166,7 +166,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 421.0, 123.0, 79.0, 22.0 ],
-					"restore" : [ -1080, 117 ],
+					"restore" : [ 200, 200 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -338,7 +338,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-6",
-					"items" : [ "def_folders", ",", "all", ",", "auto", ",", "-" ],
+					"items" : [ "def_folders", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Audio Damage/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/PSPaudioware/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Sonic Charge/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/VST/Soundtoys/", ",", "∆í", "Macintosh HD:/Library/Audio/Plug-Ins/Components/", ",", "all", ",", "auto", ",", "-" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -365,7 +365,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 6,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -460,7 +460,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 6,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -552,7 +552,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 6,
+															"revision" : 7,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1085,7 +1085,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 6,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1685,7 +1685,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 6,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1816,7 +1816,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 6,
+															"revision" : 7,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1874,7 +1874,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 6,
+																			"revision" : 7,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -3556,7 +3556,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 6,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3708,7 +3708,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 6,
+															"revision" : 7,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4024,7 +4024,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 6,
+															"revision" : 7,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4082,7 +4082,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 6,
+																			"revision" : 7,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4264,7 +4264,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 6,
+																			"revision" : 7,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4469,7 +4469,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 6,
+																			"revision" : 7,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4903,7 +4903,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 6,
+																			"revision" : 7,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -5299,7 +5299,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 6,
+																			"revision" : 7,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -5741,7 +5741,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 6,
+																			"revision" : 7,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -6371,7 +6371,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 6,
+																			"revision" : 7,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -6703,7 +6703,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 6,
+																			"revision" : 7,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -6784,7 +6784,7 @@
 																						"appversion" : 																						{
 																							"major" : 8,
 																							"minor" : 5,
-																							"revision" : 6,
+																							"revision" : 7,
 																							"architecture" : "x64",
 																							"modernui" : 1
 																						}
@@ -7373,7 +7373,7 @@
 																						"appversion" : 																						{
 																							"major" : 8,
 																							"minor" : 5,
-																							"revision" : 6,
+																							"revision" : 7,
 																							"architecture" : "x64",
 																							"modernui" : 1
 																						}
@@ -9018,7 +9018,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 6,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9076,7 +9076,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 6,
+															"revision" : 7,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -9252,7 +9252,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 6,
+															"revision" : 7,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -9665,7 +9665,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 6,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9724,7 +9724,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 6,
+															"revision" : 7,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -10346,7 +10346,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 6,
+															"revision" : 7,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -10513,7 +10513,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 6,
+															"revision" : 7,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -11193,7 +11193,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 6,
+															"revision" : 7,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -11290,7 +11290,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 6,
+																			"revision" : 7,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -11572,7 +11572,7 @@
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "" ],
 																					"patching_rect" : [ 472.75, 387.0, 103.0, 22.0 ],
-																					"restore" : [ "sinus" ],
+																					"restore" : [ "vst@" ],
 																					"saved_object_attributes" : 																					{
 																						"parameter_enable" : 0,
 																						"parameter_mappable" : 0
@@ -12758,7 +12758,7 @@
 											"version" : 1,
 											"isbank" : 0,
 											"isbase64" : 1,
-											"blob" : "487.hAGaoMGcv.i0AHv.DTfAGfPBJr.CWYWYxMWZu4FWsEla0YVXiQWcxUlbTQVXzEFUtEVakQEc4AWYWMWchQWdvUlD.zPA.HQSkwFYOEQ.Lgm1sEYytILLPP367TXs4ZIXme.iTLHABNApnRUuaHlDKVrircpn8ouhDPppza1y9syNZ2h4WufjOUNu1ZD.KlBDk4nsTapDPa3zPNLe1fhsKsWZbJu257pPPap7jHAv.RjLDjGOK.JPhpjZi.FljAjnyFkxq+V0WA0lyGqkFiB88J11PSa32c3jAss2TmBUR+8dcW7nxTEp6+FpcJesEKE.Mlx.h7RCpCskp6FPAxRqI3rHpb9UF4ATU1IupTGrt8cohQ4zW37TfTKwS84fBjMus+laAUGFS.i44wYSlPSYbZxeqmHfzz737jjoi4robfrUdcy5WWf1im6mSZBP1gsUZy6VKdP5VZQT13uEogLf7wikOOOMIiCyJpbxl5YE6rZSfrFkU9EBfkkBidVjBjqO1Cec+w+fw5v5Y5.F0OjAEid9z5mM3GPVyNplWQTYlEVcrQmDgUWalIQSAUVL.f..U.PG.nB.u..M.jC.AAfQ.rT.aFvnAfJ.......f.A.........PC..................P.sB"
+											"blob" : "486.hAGaoMGcv.i0AHv.DTfAGfPBJr.CWYWYxMWZu4FWsEla0YVXiQWcxUlbTQVXzEFUtEVakQEc4AWYWMWchQWdvUlD.zPA.HQSkwFYOEQ.Kgm1sEYPuILLLT367qHx85njzRgfTCHABNAZnwztGZCsQXRpRRmX6W+DsfzzX2Rd9yO+jc9hqWPxmJmWaMBfESAhxTXK0lJAzFNMjCKlOHe2J6kFmx6sNuJDzlJOIR.LfDICAYwYAPARTkTaDvvjw.I5rQo75uU8UPs4bQszXTnuWw1FZZC+tCmLns8l5TnR5u2q6hGUlpPc+2PsS4qsXo.nwTFPjWZPcnsTc2.JPVYMAmEQkyu1HOhpxN40k5f0cnKULJm9BmmBjZIdpOGTfr8sC2bKn5vXBXBOKd7zozTFml725IBHMMKNKIY1DNaFGH6jW2t40kns3b+bRS.xdrsRad2ZwiR2JKhxF+sHw.xGO187rzjwbXddkS1TOOeuUaBjMnrxuT.rwovnmEo.45i0vW2e7OXrNrdlNfQ8CYP9nmur94C9AbbJi11UDUlYgUGazIQX00lYRzTPkEC.H.PE.zA.p.vK.PC.4.PP.XD.KEflAHZ.mB.......HP..........z...................D.q"
 										}
 ,
 										"snapshotlist" : 										{
@@ -12780,7 +12780,7 @@
 														"version" : 1,
 														"isbank" : 0,
 														"isbase64" : 1,
-														"blob" : "487.hAGaoMGcv.i0AHv.DTfAGfPBJr.CWYWYxMWZu4FWsEla0YVXiQWcxUlbTQVXzEFUtEVakQEc4AWYWMWchQWdvUlD.zPA.HQSkwFYOEQ.Lgm1sEYytILLPP367TXs4ZIXme.iTLHABNApnRUuaHlDKVrircpn8ouhDPppza1y9syNZ2h4WufjOUNu1ZD.KlBDk4nsTapDPa3zPNLe1fhsKsWZbJu257pPPap7jHAv.RjLDjGOK.JPhpjZi.FljAjnyFkxq+V0WA0lyGqkFiB88J11PSa32c3jAss2TmBUR+8dcW7nxTEp6+FpcJesEKE.Mlx.h7RCpCskp6FPAxRqI3rHpb9UF4ATU1IupTGrt8cohQ4zW37TfTKwS84fBjMus+laAUGFS.i44wYSlPSYbZxeqmHfzz737jjoi4robfrUdcy5WWf1im6mSZBP1gsUZy6VKdP5VZQT13uEogLf7wikOOOMIiCyJpbxl5YE6rZSfrFkU9EBfkkBidVjBjqO1Cec+w+fw5v5Y5.F0OjAEid9z5mM3GPVyNplWQTYlEVcrQmDgUWalIQSAUVL.f..U.PG.nB.u..M.jC.AAfQ.rT.aFvnAfJ.......f.A.........PC..................P.sB"
+														"blob" : "486.hAGaoMGcv.i0AHv.DTfAGfPBJr.CWYWYxMWZu4FWsEla0YVXiQWcxUlbTQVXzEFUtEVakQEc4AWYWMWchQWdvUlD.zPA.HQSkwFYOEQ.Kgm1sEYPuILLLT367qHx85njzRgfTCHABNAZnwztGZCsQXRpRRmX6W+DsfzzX2Rd9yO+jc9hqWPxmJmWaMBfESAhxTXK0lJAzFNMjCKlOHe2J6kFmx6sNuJDzlJOIR.LfDICAYwYAPARTkTaDvvjw.I5rQo75uU8UPs4bQszXTnuWw1FZZC+tCmLns8l5TnR5u2q6hGUlpPc+2PsS4qsXo.nwTFPjWZPcnsTc2.JPVYMAmEQkyu1HOhpxN40k5f0cnKULJm9BmmBjZIdpOGTfr8sC2bKn5vXBXBOKd7zozTFml725IBHMMKNKIY1DNaFGH6jW2t40kns3b+bRS.xdrsRad2ZwiR2JKhxF+sHw.xGO187rzjwbXddkS1TOOeuUaBjMnrxuT.rwovnmEo.45i0vW2e7OXrNrdlNfQ8CYP9nmur94C9AbbJi11UDUlYgUGazIQX00lYRzTPkEC.H.PE.zA.p.vK.PC.4.PP.XD.KEflAHZ.mB.......HP..........z...................D.q"
 													}
 ,
 													"fileref" : 													{
@@ -13028,60 +13028,11 @@
 						"title_menu" : 2010,
 						"pres_menu" : 2011,
 						"tetris_menu" : 2012,
-						"master" : 2013,
-						"Process" : 100,
-						"DryStatus" : 101,
-						"AutoRelease" : 103,
-						"Attack" : 102,
-						"Release" : 103,
-						"S.C.HPF" : 106,
-						"ThreshTrim" : 107,
-						"Ratio" : 106,
-						"MakeUp" : 109,
-						"DryLevel" : 110,
-						"CompLevel" : 111,
-						"Power" : 100,
-						"FAT" : 101,
-						"Soft" : 102,
-						"RMS" : 103,
-						"Limiter" : 104,
-						"Threshold" : 105,
-						"AutoAttck" : 108,
-						"AutoRel" : 110,
-						"Makeup" : 111,
-						"AutoMakeup" : 112,
-						"HighSCF" : 113,
-						"High" : 114,
-						"LowSCF" : 115,
-						"Low" : 116,
-						"LnkHighCut" : 117,
-						"LnkLowCut" : 118,
-						"Link" : 119,
-						"Tilt" : 120,
-						"Mix" : 121,
-						"Output" : 122,
-						"Meters" : 123,
-						"Classic" : 124,
-						"S.C.Ext" : 125,
-						"Smooth" : 126,
-						"Gain" : 100,
-						"Output gain" : 101,
-						"RMS length" : 104,
-						"Knee mode" : 107,
-						"Knee size" : 108,
-						"Link channels" : 109,
-						"Maximize to 0dB" : 110,
-						"Custom shape" : 111,
-						"Param 1" : 112,
-						"Param 2" : 113,
-						"Param 3" : 114,
-						"Param 4" : 115,
-						"Preset trigger - previous" : 116,
-						"Preset trigger - next" : 117
+						"master" : 2013
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 842, 164, 1920, 407 ],
+						"client_rect" : [ 499, 162, 1139, 402 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 0, 0, 640, 240 ]
@@ -13149,7 +13100,7 @@
 						"presets" : [ 0 ],
 						"program_files" : [ "writepgm" ],
 						"tetris_menu" : [ "" ],
-						"title_menu" : [ "subpatch" ],
+						"title_menu" : [ "clientwindow" ],
 						"vst-folder" : [ "def_folders" ],
 						"vst_program" : [ 1 ]
 					}
