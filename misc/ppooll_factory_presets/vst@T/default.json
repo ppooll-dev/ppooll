@@ -1,33 +1,33 @@
 {
-	"window" : [ 505, 122, 664, 225 ],
+	"window" : [ 753, 202, 912, 305 ],
 	"program_files" : 	{
 		"patching_rect" : [ 44, 33, 43, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"preset-ramp" : 	{
 		"patching_rect" : [ 0, 33, 45, 16 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"midi-port" : 	{
 		"patching_rect" : [ 100, 33, 44, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"vst-folder" : 	{
 		"patching_rect" : [ 50, 0, 75, 21 ],
 		"hidden" : 0,
-		"fontsize" : 11
+		"fontsize" : 11.0
 	}
 ,
 	"open!" : 	{
 		"patching_rect" : [ 124, 0, 35, 16 ],
 		"hidden" : 0,
-		"fontsize" : 11
+		"fontsize" : 11.0
 	}
 ,
 	"ll.blues" : 	{
@@ -45,13 +45,13 @@
 	"midi-channel" : 	{
 		"patching_rect" : [ 143, 33, 16, 16 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"vst_program" : 	{
 		"patching_rect" : [ 85, 34, 16, 16 ],
 		"hidden" : 1,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 
 }
