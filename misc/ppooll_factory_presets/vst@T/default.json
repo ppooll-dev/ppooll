@@ -1,5 +1,5 @@
 {
-	"window" : [ 753, 202, 912, 305 ],
+	"window" : [ 713, 233, 872, 350 ],
 	"program_files" : 	{
 		"patching_rect" : [ 44, 33, 43, 19 ],
 		"hidden" : 0,
@@ -32,7 +32,7 @@
 ,
 	"ll.blues" : 	{
 		"patcher" : "bang",
-		"patching_rect" : [ 0, 50, 159, 53 ],
+		"patching_rect" : [ 0, 64, 159, 53 ],
 		"hidden" : 0
 	}
 ,
@@ -43,7 +43,7 @@
 	}
 ,
 	"midi-channel" : 	{
-		"patching_rect" : [ 143, 33, 16, 16 ],
+		"patching_rect" : [ 143, 33, 16, 19 ],
 		"hidden" : 0,
 		"fontsize" : 12.0
 	}
@@ -52,6 +52,12 @@
 		"patching_rect" : [ 85, 34, 16, 16 ],
 		"hidden" : 1,
 		"fontsize" : 12.0
+	}
+,
+	"ll.inputmix" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 51, 158, 13 ],
+		"hidden" : 0
 	}
 
 }

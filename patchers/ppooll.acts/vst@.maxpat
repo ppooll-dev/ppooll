@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 753.0, 202.0, 159.0, 103.0 ],
+		"rect" : [ 713.0, 233.0, 159.0, 117.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,29 @@
 		"assistshowspatchername" : 0,
 		"globalpatchername" : "vst@1",
 		"boxes" : [ 			{
+				"box" : 				{
+					"args" : [ "@default", 4 ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-14",
+					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "ll.inputmix.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "multichannelsignal", "multichannelsignal" ],
+					"patching_rect" : [ 0.0, 51.0, 158.0, 13.0 ],
+					"varname" : "ll.inputmix",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"hidden" : 1,
 					"id" : "obj-6405",
@@ -88,7 +111,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 143.0, 33.0, 16.0, 16.0 ],
+					"patching_rect" : [ 143.0, 33.0, 16.0, 19.0 ],
 					"slidercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 					"slidermax" : 16.0,
 					"sliderstyle" : 2,
@@ -217,7 +240,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@in_mix", 1, "@state", 2, 1, 0, 0, 4, 0 ],
+					"args" : [ "@state", 2, 1, 0, 0, 2, 0 ],
 					"bgmode" : 0,
 					"border" : 1,
 					"clickthrough" : 0,
@@ -231,7 +254,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 50.0, 159.0, 53.0 ],
+					"patching_rect" : [ 0.0, 64.0, 159.0, 53.0 ],
 					"varname" : "ll.blues",
 					"viewvisibility" : 1
 				}
@@ -358,7 +381,7 @@
 					"hidden" : 1,
 					"id" : "obj-18",
 					"maxclass" : "newobj",
-					"numinlets" : 0,
+					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patcher" : 					{
 						"fileversion" : 1,
@@ -371,7 +394,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 789.0, 100.0, 688.0, 787.0 ],
+						"rect" : [ 163.0, 494.0, 700.0, 353.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -400,6 +423,20 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-21",
+									"index" : 1,
+									"maxclass" : "inlet",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "multichannelsignal" ],
+									"patching_rect" : [ 118.0, 67.0, 30.0, 30.0 ],
+									"varname" : "in"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-15",
 									"maxclass" : "message",
@@ -431,19 +468,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 0.0, 2.0, 653.0, 20.0 ],
 									"text" : "note for developers: when saving this act .maxpat file, remember to click the 2 reset buttons here to initialize act state"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-13",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 66.0, 67.0, 66.0, 22.0 ],
-									"text" : "ll.r in_mix~",
-									"varname" : "in"
 								}
 
 							}
@@ -531,6 +555,18 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-2",
+													"maxclass" : "newobj",
+													"numinlets" : 3,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
+													"patching_rect" : [ 7.0, 8.0, 119.0, 22.0 ],
+													"text" : "ll.p ll.inputmix::chans"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-15",
 													"maxclass" : "comment",
 													"numinlets" : 1,
@@ -565,18 +601,6 @@
 											}
 , 											{
 												"box" : 												{
-													"id" : "obj-8",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 2,
-													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 7.0, 44.5, 47.0, 22.0 ],
-													"text" : "zl.nth 5"
-												}
-
-											}
-, 											{
-												"box" : 												{
 													"id" : "obj-27",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
@@ -593,7 +617,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 59.0, 119.0, 640.0, 480.0 ],
+														"rect" : [ 74.0, 317.0, 640.0, 480.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 12.0,
@@ -916,7 +940,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 7.0, 12.0, 105.0, 22.0 ],
+													"patching_rect" : [ 144.5, 8.0, 105.0, 22.0 ],
 													"text" : "ll.r ll.blues::state 1"
 												}
 
@@ -1002,6 +1026,13 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-10", 0 ],
+													"source" : [ "obj-2", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-5", 0 ],
 													"source" : [ "obj-20", 0 ]
 												}
@@ -1010,15 +1041,6 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-20", 0 ],
-													"order" : 0,
-													"source" : [ "obj-21", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-8", 0 ],
-													"order" : 1,
 													"source" : [ "obj-21", 0 ]
 												}
 
@@ -1055,13 +1077,6 @@
 												"patchline" : 												{
 													"destination" : [ "obj-4", 0 ],
 													"source" : [ "obj-7", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-10", 0 ],
-													"source" : [ "obj-8", 0 ]
 												}
 
 											}
@@ -8823,7 +8838,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 204.833313000000004, 126.0, 344.0, 22.0 ],
-													"text" : "MCompressor.component"
+													"text" : "\"PSP MasterComp.component\""
 												}
 
 											}
@@ -11615,7 +11630,7 @@
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "" ],
 																					"patching_rect" : [ 472.75, 387.0, 103.0, 22.0 ],
-																					"restore" : [ "amxd@" ],
+																					"restore" : [ "(__acts__)" ],
 																					"saved_object_attributes" : 																					{
 																						"parameter_enable" : 0,
 																						"parameter_mappable" : 0
@@ -11706,7 +11721,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 688.0, 233.0, 144.0, 35.0 ],
-																					"text" : "ho_st1 amxd@1 vst@1"
+																					"text" : "vst@1 ho_st1"
 																				}
 
 																			}
@@ -12759,7 +12774,7 @@
 									"clickthrough" : 0,
 									"enablehscroll" : 0,
 									"enablevscroll" : 0,
-									"id" : "obj-3",
+									"id" : "obj-13",
 									"lockeddragscroll" : 0,
 									"lockedsize" : 0,
 									"maxclass" : "newobj",
@@ -12782,62 +12797,6 @@
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 1,
 										"parameter_mappable" : 0
-									}
-,
-									"snapshot" : 									{
-										"filetype" : "C74Snapshot",
-										"version" : 2,
-										"minorversion" : 0,
-										"name" : "snapshotlist",
-										"origin" : "mcs.vst~",
-										"type" : "list",
-										"subtype" : "Undefined",
-										"embed" : 1,
-										"snapshot" : 										{
-											"pluginname" : "MCompressor.component",
-											"plugindisplayname" : "MCompressor",
-											"pluginsavedname" : "/Library/Audio/Plug-Ins/Components/MCompressor.component",
-											"pluginsaveduniqueid" : 0,
-											"version" : 1,
-											"isbank" : 0,
-											"isbase64" : 1,
-											"blob" : "486.hAGaoMGcv.i0AHv.DTfAGfPBJr.CT4VXsUFWsEla0YVXiQWcxUlbTQVXzEFUzkGbkc0b0IFc4AWYWYWYxMWZu41UDUlYgUGazIQSkwFYOEQ.Kgm1sEYPuILLLT367qHx85njzRgfTCHABNAZnwztGZCsQXRpRRmX6W+DsfzzX2Rd9yO+jc9hqWPxmJmWaMBfESAhxTXK0lJAzFNMjCKlOHe2J6kFmx6sNuJDzlJOIR.LfDICAYwYAPARTkTaDvvjw.I5rQo75uU8UPs4bQszXTnuWw1FZZC+tCmLns8l5TnR5u2q6hGUlpPc+2PsS4qsXo.nwTFPjWZPcnsTc2.JPVYMAmEQkyu1HOhpxN40k5f0cnKULJm9BmmBjZIdpOGTfr8sC2bKn5vXBXBOKd7zozTFml725IBHMMKNKIY1DNaFGH6jW2t40kns3b+bRS.xdrsRad2ZwiR2JKhxF+sHw.xGO187rzjwbXddkS1TOOeuUaBjMnrxuT.rwovnmEo.45i0vW2e7OXrNrdlNfQ8CYP9nmur94C9AbbJi1lDgUWalIQSAUVLR.PCE...H.PE.nA.m..K.DC.4.PP.jD.NEPmAHZ.mB.......HP..........z...................D.q"
-										}
-,
-										"snapshotlist" : 										{
-											"current_snapshot" : 0,
-											"entries" : [ 												{
-													"filetype" : "C74Snapshot",
-													"version" : 2,
-													"minorversion" : 0,
-													"name" : "MCompressor",
-													"origin" : "MCompressor.component",
-													"type" : "AudioUnit",
-													"subtype" : "MidiEffect",
-													"embed" : 0,
-													"snapshot" : 													{
-														"pluginname" : "MCompressor.component",
-														"plugindisplayname" : "MCompressor",
-														"pluginsavedname" : "/Library/Audio/Plug-Ins/Components/MCompressor.component",
-														"pluginsaveduniqueid" : 0,
-														"version" : 1,
-														"isbank" : 0,
-														"isbase64" : 1,
-														"blob" : "486.hAGaoMGcv.i0AHv.DTfAGfPBJr.CT4VXsUFWsEla0YVXiQWcxUlbTQVXzEFUzkGbkc0b0IFc4AWYWYWYxMWZu41UDUlYgUGazIQSkwFYOEQ.Kgm1sEYPuILLLT367qHx85njzRgfTCHABNAZnwztGZCsQXRpRRmX6W+DsfzzX2Rd9yO+jc9hqWPxmJmWaMBfESAhxTXK0lJAzFNMjCKlOHe2J6kFmx6sNuJDzlJOIR.LfDICAYwYAPARTkTaDvvjw.I5rQo75uU8UPs4bQszXTnuWw1FZZC+tCmLns8l5TnR5u2q6hGUlpPc+2PsS4qsXo.nwTFPjWZPcnsTc2.JPVYMAmEQkyu1HOhpxN40k5f0cnKULJm9BmmBjZIdpOGTfr8sC2bKn5vXBXBOKd7zozTFml725IBHMMKNKIY1DNaFGH6jW2t40kns3b+bRS.xdrsRad2ZwiR2JKhxF+sHw.xGO187rzjwbXddkS1TOOeuUaBjMnrxuT.rwovnmEo.45i0vW2e7OXrNrdlNfQ8CYP9nmur94C9AbbJi1lDgUWalIQSAUVLR.PCE...H.PE.nA.m..K.DC.4.PP.jD.NEPmAHZ.mB.......HP..........z...................D.q"
-													}
-,
-													"fileref" : 													{
-														"name" : "MCompressor",
-														"filename" : "MCompressor.maxsnap",
-														"filepath" : "~/Documents/Max 8/Snapshots",
-														"filepos" : -1,
-														"snapshotfileid" : "e40733a75c776c3a8d41184a503acbbf"
-													}
-
-												}
- ]
-										}
-
 									}
 ,
 									"text" : "mcs.vst~ 4 2",
@@ -12863,21 +12822,56 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
+									"destination" : [ "obj-13", 0 ],
 									"source" : [ "obj-12", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
+									"destination" : [ "obj-10", 0 ],
 									"source" : [ "obj-13", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
+									"destination" : [ "obj-17", 0 ],
+									"source" : [ "obj-13", 6 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-26", 1 ],
+									"source" : [ "obj-13", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-26", 0 ],
+									"source" : [ "obj-13", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-13", 4 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-54", 0 ],
+									"source" : [ "obj-13", 5 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-13", 0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -12898,43 +12892,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-10", 0 ],
-									"source" : [ "obj-3", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"source" : [ "obj-3", 6 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-26", 1 ],
-									"source" : [ "obj-3", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-26", 0 ],
-									"source" : [ "obj-3", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"source" : [ "obj-3", 4 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-54", 0 ],
-									"source" : [ "obj-3", 5 ]
+									"destination" : [ "obj-13", 0 ],
+									"source" : [ "obj-21", 0 ]
 								}
 
 							}
@@ -13085,32 +13044,14 @@
 						"title_menu" : 2010,
 						"pres_menu" : 2011,
 						"tetris_menu" : 2012,
-						"master" : 2013,
-						"Gain" : 100,
-						"Output gain" : 101,
-						"Attack" : 102,
-						"Release" : 103,
-						"RMS length" : 104,
-						"Threshold" : 105,
-						"Ratio" : 106,
-						"Knee mode" : 107,
-						"Knee size" : 108,
-						"Link channels" : 109,
-						"Maximize to 0dB" : 110,
-						"Custom shape" : 111,
-						"Param 1" : 112,
-						"Param 2" : 113,
-						"Param 3" : 114,
-						"Param 4" : 115,
-						"Preset trigger - previous" : 116,
-						"Preset trigger - next" : 117
+						"master" : 2013
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 499, 162, 1139, 402 ],
+						"client_rect" : [ 545, 133, 1800, 849 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 0, 0, 640, 240 ]
+						"storage_rect" : [ 583, 68, 1034, 196 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -13348,6 +13289,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-18", 0 ],
+					"source" : [ "obj-14", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"source" : [ "obj-14", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-2", 0 ]
@@ -13380,7 +13335,7 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-18::obj-3" : [ "vst", "vst", 0 ],
+			"obj-18::obj-13" : [ "vst", "vst", 0 ],
 			"parameterbanks" : 			{
 
 			}
@@ -13389,13 +13344,6 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "MCompressor.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../../../../Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "actmaker.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
@@ -13438,7 +13386,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.in_mix.maxpat",
+				"name" : "ll.inputmix.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
@@ -13449,13 +13397,6 @@
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.mc.stereo_pan.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../abstractions/ll.blues",
-				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -13643,6 +13584,13 @@
 			}
 , 			{
 				"name" : "nblue.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ninput.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
