@@ -1,9 +1,9 @@
 {
-	"window" : [ 2, 433, 849, 738 ],
+	"window" : [ -2, 150, 1013, 455 ],
 	"1st_freq_env" : 	{
 		"patching_rect" : [ 205, 98, 26, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"env12" : 	{
@@ -54,19 +54,19 @@
 	"midi_note" : 	{
 		"patching_rect" : [ 690, 93, 32, 20 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"1st2all2" : 	{
 		"patching_rect" : [ 722, 93, 39, 20 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"preset-ramp" : 	{
 		"patching_rect" : [ 674, 51, 54, 15 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"presets" : 	{
@@ -93,13 +93,13 @@
 	"zero_ext" : 	{
 		"patching_rect" : [ 326, 98, 25, 15 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"zero_vols" : 	{
 		"patching_rect" : [ 351, 98, 40, 15 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"env_LCD" : 	{
@@ -116,235 +116,235 @@
 	"wave-calc" : 	{
 		"patching_rect" : [ 497, -1, 34, 22 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"all" : 	{
 		"patching_rect" : [ 497, 48, 34, 15 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"trigger" : 	{
 		"patching_rect" : [ 241, 98, 19, 20 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"sTb" : 	{
 		"patching_rect" : [ 537, 40, 19, 15 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"recalc" : 	{
 		"patching_rect" : [ 537, -1, 19, 15 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"smooth" : 	{
 		"patching_rect" : [ 537, 13, 19, 15 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"endsmooth" : 	{
 		"patching_rect" : [ 537, 27, 19, 15 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"def" : 	{
 		"patching_rect" : [ -1, 16, 50, 15 ],
 		"hidden" : 0,
-		"fontsize" : 11
+		"fontsize" : 11.0
 	}
 ,
 	"sin_amt" : 	{
 		"patching_rect" : [ 0, 32, 27, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"size!" : 	{
 		"patching_rect" : [ 25, 32, 25, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"1st_freq" : 	{
 		"patching_rect" : [ 797, 95, 50, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"freq_ramp" : 	{
 		"patching_rect" : [ 389, 98, 93, 15 ],
 		"hidden" : 0,
-		"fontsize" : 14
+		"fontsize" : 14.0
 	}
 ,
 	"vols" : 	{
 		"patching_rect" : [ 327, 113, 173, 192 ],
 		"hidden" : 0,
-		"fontsize" : 18
+		"fontsize" : 18.0
 	}
 ,
 	"freqs" : 	{
 		"patching_rect" : [ 500, 113, 347, 192 ],
 		"hidden" : 0,
-		"fontsize" : 18
+		"fontsize" : 18.0
 	}
 ,
 	"envfreqs" : 	{
 		"patching_rect" : [ 0, 113, 207, 192 ],
 		"hidden" : 0,
-		"fontsize" : 18
+		"fontsize" : 18.0
 	}
 ,
 	"env_ramp" : 	{
 		"patching_rect" : [ -1, 99, 207, 15 ],
 		"hidden" : 0,
-		"fontsize" : 14
+		"fontsize" : 14.0
 	}
 ,
 	"multibuttons" : 	{
 		"patching_rect" : [ 256, 97, 71, 208 ],
 		"hidden" : 0,
-		"fontsize" : 14
+		"fontsize" : 14.0
 	}
 ,
 	"vol_ramp" : 	{
 		"patching_rect" : [ 509, 87, 159, 26 ],
 		"hidden" : 0,
-		"fontsize" : 13
+		"fontsize" : 13.0
 	}
 ,
 	"clear_button" : 	{
 		"patching_rect" : [ 497, 18, 34, 15 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"full_button" : 	{
 		"patching_rect" : [ 497, 33, 34, 15 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"waveform" : 	{
 		"patching_rect" : [ 48, -1, 446, 99 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"envfreqX" : 	{
 		"patching_rect" : [ 495, 67, 195, 20 ],
 		"hidden" : 0,
-		"fontsize" : 16
+		"fontsize" : 16.0
 	}
 ,
 	"select_2D" : 	{
 		"patching_rect" : [ 1, 66, 34, 17 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"function" : 	{
 		"patching_rect" : [ 557, 1, 172, 50 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"f_reset" : 	{
 		"patching_rect" : [ 580, 51, 40, 15 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"selected" : 	{
 		"patching_rect" : [ 466, -1, 32, 26 ],
 		"hidden" : 0,
-		"fontsize" : 16
+		"fontsize" : 16.0
 	}
 ,
 	"env_offset" : 	{
 		"patching_rect" : [ 534, 53, 44, 14 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"link_ramp" : 	{
 		"patching_rect" : [ 667, 87, 22, 26 ],
 		"hidden" : 0,
-		"fontsize" : 11
+		"fontsize" : 11.0
 	}
 ,
 	"one_freq_ramp" : 	{
 		"patching_rect" : [ 482, 98, 26, 15 ],
 		"hidden" : 0,
-		"fontsize" : 11
+		"fontsize" : 11.0
 	}
 ,
 	"octdivider" : 	{
 		"patching_rect" : [ 926, 194, 36, 18 ],
 		"hidden" : 1,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"numerator" : 	{
 		"patching_rect" : [ 856, 178, 24, 14 ],
 		"hidden" : 1,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"denominator" : 	{
 		"patching_rect" : [ 880, 178, 28, 14 ],
 		"hidden" : 1,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"just" : 	{
 		"patching_rect" : [ 912, 178, 26, 15 ],
 		"hidden" : 1,
-		"fontsize" : 11
+		"fontsize" : 11.0
 	}
 ,
 	"sel_j" : 	{
 		"patching_rect" : [ 938, 178, 28, 15 ],
 		"hidden" : 1,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"recent_index" : 	{
 		"patching_rect" : [ 688, 67, 168, 20 ],
 		"hidden" : 0,
-		"fontsize" : 11
+		"fontsize" : 11.0
 	}
 ,
 	"c_recents" : 	{
 		"patching_rect" : [ 799, 71, 46, 18 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"def_outputs" : 	{
 		"patcher" : "bang",
 		"patching_rect" : [ 848, 0, 162, 221 ],
-		"hidden" : 1
+		"hidden" : 0
 	}
 ,
 	"v_trig" : 	{
 		"patching_rect" : [ 1, 84, 37, 14 ],
 		"hidden" : 0,
-		"fontsize" : 11
+		"fontsize" : 11.0
 	}
 ,
 	"width" : 	{
 		"patching_rect" : [ 0, 51, 30, 14 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 
 }
