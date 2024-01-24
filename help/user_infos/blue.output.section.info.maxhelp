@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 20.0, 54.0, 586.0, 353.0 ],
+		"rect" : [ 320.0, 287.0, 586.0, 353.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -5013,7 +5013,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 1264.0, 209.0, 107.0, 22.0 ],
 					"restore" : 					{
-						"freq" : [ 268.777804436285805, 335.332736323645804 ],
+						"freq" : [ 294.151221134452499, 365.026431619888172 ],
 						"master" : [ 0 ],
 						"pres_menu" : [ "_" ],
 						"tetris_menu" : [ "" ],
@@ -5293,13 +5293,6 @@
 				"name" : "ll.blues.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../../patchers/abstractions/ll.blues",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.create_inputs~.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
