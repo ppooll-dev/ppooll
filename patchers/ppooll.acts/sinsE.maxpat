@@ -3,19 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-<<<<<<< Updated upstream
 			"minor" : 5,
 			"revision" : 3,
-=======
-			"minor" : 6,
-			"revision" : 0,
->>>>>>> Stashed changes
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ -2.0, 150.0, 1015.0, 305.0 ],
+		"rect" : [ 2.0, 433.0, 847.0, 305.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -46,29 +41,6 @@
 		"globalpatchername" : "sinsE1",
 		"boxes" : [ 			{
 				"box" : 				{
-<<<<<<< Updated upstream
-=======
-					"hidden" : 1,
-					"id" : "obj-21",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 756.0, 93.0, 89.0, 20.0 ],
-					"restore" : [ 0 ],
-					"saved_object_attributes" : 					{
-						"parameter_enable" : 0,
-						"parameter_mappable" : 0
-					}
-,
-					"text" : "pattr recent_index",
-					"varname" : "recent_index"
-				}
-
-			}
-, 			{
-				"box" : 				{
->>>>>>> Stashed changes
 					"annotation" : "width",
 					"fontface" : 0,
 					"fontsize" : 10.0,
@@ -125,11 +97,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 856.0, 241.0, 75.0, 20.0 ],
-<<<<<<< Updated upstream
 					"restore" : [ -2.0 ],
-=======
-					"restore" : [ 6.0 ],
->>>>>>> Stashed changes
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -147,6 +115,7 @@
 					"clickthrough" : 0,
 					"enablehscroll" : 0,
 					"enablevscroll" : 0,
+					"hidden" : 1,
 					"id" : "obj-3",
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
@@ -272,13 +241,8 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "", "int", "", "" ],
 					"parameter_enable" : 0,
-<<<<<<< Updated upstream
 					"patching_rect" : [ 688.5, 67.0, 168.0, 20.0 ],
 					"varname" : "recent_index"
-=======
-					"patching_rect" : [ 688.0, 67.0, 168.0, 20.0 ],
-					"varname" : "recent_index_display"
->>>>>>> Stashed changes
 				}
 
 			}
@@ -567,10 +531,9 @@
 			}
 , 			{
 				"box" : 				{
-					"addpoints" : [ 0.0, 0.0, 0, 512.0, 0.0, 0 ],
+					"addpoints" : [ 0.0, 0.0, 0, 6.4, 0.921052631578947, 0, 57.600000000000001, 0.315789473684211, 0, 512.0, 0.0, 0 ],
 					"annotation" : "function",
 					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"classic_curve" : 1,
 					"domain" : 512.0,
 					"fontsize" : 10.0,
 					"gridcolor" : [ 0.5, 0.5, 0.5, 0.5 ],
@@ -1420,7 +1383,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 377.0, 527.0, 66.0, 19.0 ],
-					"restore" : [ "ho_st1~out.1", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_" ],
+					"restore" : [ "mcpanner1~in.1", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1482,13 +1445,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-<<<<<<< Updated upstream
 							"minor" : 5,
 							"revision" : 3,
-=======
-							"minor" : 6,
-							"revision" : 0,
->>>>>>> Stashed changes
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1522,7 +1480,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-18",
@@ -1557,13 +1514,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-<<<<<<< Updated upstream
 											"minor" : 5,
 											"revision" : 3,
-=======
-											"minor" : 6,
-											"revision" : 0,
->>>>>>> Stashed changes
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1669,11 +1621,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 390.0, 82.0, 50.0, 22.0 ],
-<<<<<<< Updated upstream
 													"text" : "4"
-=======
-													"text" : "6"
->>>>>>> Stashed changes
 												}
 
 											}
@@ -1935,13 +1883,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-<<<<<<< Updated upstream
 											"minor" : 5,
 											"revision" : 3,
-=======
-											"minor" : 6,
-											"revision" : 0,
->>>>>>> Stashed changes
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2152,13 +2095,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2775,13 +2713,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-<<<<<<< Updated upstream
 											"minor" : 5,
 											"revision" : 3,
-=======
-											"minor" : 6,
-											"revision" : 0,
->>>>>>> Stashed changes
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2899,11 +2832,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 430.0, 504.0, 229.0, 22.0 ],
-<<<<<<< Updated upstream
 													"text" : "3"
-=======
-													"text" : "0"
->>>>>>> Stashed changes
 												}
 
 											}
@@ -2963,11 +2892,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 411.0, 454.0, 229.0, 22.0 ],
-<<<<<<< Updated upstream
 													"text" : "3"
-=======
-													"text" : "0"
->>>>>>> Stashed changes
 												}
 
 											}
@@ -3505,13 +3430,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-<<<<<<< Updated upstream
 											"minor" : 5,
 											"revision" : 3,
-=======
-											"minor" : 6,
-											"revision" : 0,
->>>>>>> Stashed changes
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3685,7 +3605,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 342.75, 49.0, 50.0, 20.0 ],
-													"text" : "0.001"
+													"text" : "0.01"
 												}
 
 											}
@@ -3700,13 +3620,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3940,11 +3855,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 54.0, 50.91650390625, 68.0, 22.0 ],
-<<<<<<< Updated upstream
 																	"text" : "-2."
-=======
-																	"text" : "6."
->>>>>>> Stashed changes
 																}
 
 															}
@@ -4179,11 +4090,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 228.25, 49.0, 50.0, 20.0 ],
-<<<<<<< Updated upstream
 													"text" : "0"
-=======
-													"text" : "1"
->>>>>>> Stashed changes
 												}
 
 											}
@@ -4195,7 +4102,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 288.75, 49.0, 50.0, 20.0 ],
-													"text" : "2"
+													"text" : "1"
 												}
 
 											}
@@ -4234,13 +4141,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4318,11 +4220,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 177.0, 148.63623046875, 29.5, 22.0 ],
-<<<<<<< Updated upstream
 																	"text" : "3"
-=======
-																	"text" : "8"
->>>>>>> Stashed changes
 																}
 
 															}
@@ -4346,11 +4244,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 256.63623046875, 59.0, 22.0 ],
-<<<<<<< Updated upstream
 																	"text" : "0.037653"
-=======
-																	"text" : "0.052164"
->>>>>>> Stashed changes
 																}
 
 															}
@@ -4564,13 +4458,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4890,13 +4779,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4965,13 +4849,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-<<<<<<< Updated upstream
 																			"minor" : 5,
 																			"revision" : 3,
-=======
-																			"minor" : 6,
-																			"revision" : 0,
->>>>>>> Stashed changes
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -5248,11 +5127,7 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-<<<<<<< Updated upstream
 																	"patching_rect" : [ 377.5, 517.0, 53.0, 22.0 ]
-=======
-																	"patching_rect" : [ 377.5, 563.0, 53.0, 22.0 ]
->>>>>>> Stashed changes
 																}
 
 															}
@@ -5275,11 +5150,7 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-<<<<<<< Updated upstream
 																	"patching_rect" : [ 164.5, 679.0, 53.0, 22.0 ],
-=======
-																	"patching_rect" : [ 164.5, 725.0, 53.0, 22.0 ],
->>>>>>> Stashed changes
 																	"text" : "-1"
 																}
 
@@ -5315,13 +5186,8 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-<<<<<<< Updated upstream
 																	"patching_rect" : [ 249.0, 658.0, 53.0, 22.0 ],
 																	"text" : "3"
-=======
-																	"patching_rect" : [ 249.0, 704.0, 53.0, 22.0 ],
-																	"text" : "0"
->>>>>>> Stashed changes
 																}
 
 															}
@@ -5404,11 +5270,7 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-<<<<<<< Updated upstream
 																	"patching_rect" : [ 124.0, 401.0, 53.0, 22.0 ]
-=======
-																	"patching_rect" : [ 124.0, 401.0, 78.0, 22.0 ]
->>>>>>> Stashed changes
 																}
 
 															}
@@ -5490,11 +5352,7 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-<<<<<<< Updated upstream
 																	"patching_rect" : [ 189.0, 45.0, 311.0, 22.0 ],
-=======
-																	"patching_rect" : [ 189.0, 45.0, 163.0, 35.0 ],
->>>>>>> Stashed changes
 																	"text" : "0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0."
 																}
 
@@ -5904,11 +5762,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 196.25, 503.0, 70.0, 20.0 ],
-<<<<<<< Updated upstream
 													"text" : "4 0.037276"
-=======
-													"text" : "9 194.674071"
->>>>>>> Stashed changes
 												}
 
 											}
@@ -5992,11 +5846,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 421.0, 105.0, 109.0, 20.0 ],
-<<<<<<< Updated upstream
 													"text" : "3"
-=======
-													"text" : "0"
->>>>>>> Stashed changes
 												}
 
 											}
@@ -6444,13 +6294,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-<<<<<<< Updated upstream
 											"minor" : 5,
 											"revision" : 3,
-=======
-											"minor" : 6,
-											"revision" : 0,
->>>>>>> Stashed changes
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6484,7 +6329,6 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
-										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-25",
@@ -6546,13 +6390,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -6610,13 +6449,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-<<<<<<< Updated upstream
 																			"minor" : 5,
 																			"revision" : 3,
-=======
-																			"minor" : 6,
-																			"revision" : 0,
->>>>>>> Stashed changes
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -6880,13 +6714,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-<<<<<<< Updated upstream
 																			"minor" : 5,
 																			"revision" : 3,
-=======
-																			"minor" : 6,
-																			"revision" : 0,
->>>>>>> Stashed changes
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -7192,7 +7021,6 @@
 , 																			{
 																				"box" : 																				{
 																					"embed_buffers" : 																					{
-<<<<<<< Updated upstream
 																						"3500sins.1" : 																						{
 																							"duration" : 10.666666666666666,
 																							"channels" : 1
@@ -7570,385 +7398,6 @@
 ,
 																						"3500sins.76" : 																						{
 																							"duration" : 10.666666666666666,
-=======
-																						"1418sins.1" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.2" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.3" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.4" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.5" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.6" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.7" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.8" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.9" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.10" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.11" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.12" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.13" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.14" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.15" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.16" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.17" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.18" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.19" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.20" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.21" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.22" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.23" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.24" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.25" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.26" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.27" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.28" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.29" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.30" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.31" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.32" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.33" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.34" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.35" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.36" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.37" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.38" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.39" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.40" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.41" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.42" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.43" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.44" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.45" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.46" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.47" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.48" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.49" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.50" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.51" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.52" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.53" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.54" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.55" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.56" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.57" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.58" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.59" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.60" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.61" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.62" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.63" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.64" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.65" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.66" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.67" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.68" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.69" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.70" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.71" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.72" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.73" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.74" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.75" : 																						{
-																							"duration" : 10.657596371882086,
-																							"channels" : 1
-																						}
-,
-																						"1418sins.76" : 																						{
-																							"duration" : 10.657596371882086,
->>>>>>> Stashed changes
 																							"channels" : 1
 																						}
 
@@ -8215,13 +7664,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-<<<<<<< Updated upstream
 																			"minor" : 5,
 																			"revision" : 3,
-=======
-																			"minor" : 6,
-																			"revision" : 0,
->>>>>>> Stashed changes
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -9002,13 +8446,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -9420,13 +8859,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -9475,17 +8909,13 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-4",
-																	"linecount" : 3,
+																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 140.0, 15.5, 385.0, 49.0 ],
-<<<<<<< Updated upstream
 																	"text" : "396. 469.064417 493.80344 361.130102 418. 286. 603.4023 679.117386 788.268822 784.227944 423.241969 404.109248"
-=======
-																	"text" : "1697.153118 309.231436 353.838308 340.628453 536.760309 779.090667 1223.347344 1595.45169 2269.571374 2721.298306 3564.754773 4591.00521"
->>>>>>> Stashed changes
 																}
 
 															}
@@ -9583,11 +9013,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 306.0, 191.0, 97.0, 35.0 ],
-<<<<<<< Updated upstream
 																	"text" : "setvalue 12 404.109248 0"
-=======
-																	"text" : "setvalue 12 4591.00521 0"
->>>>>>> Stashed changes
 																}
 
 															}
@@ -9963,19 +9389,14 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 1005.0, 116.0, 615.0, 588.0 ],
+														"rect" : [ 1108.0, 146.0, 817.0, 800.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 10.0,
@@ -10003,442 +9424,15 @@
 														"style" : "",
 														"subpatcher_template" : "",
 														"assistshowspatchername" : 0,
-														"visible" : 1,
 														"boxes" : [ 															{
 																"box" : 																{
-																	"format" : 6,
-																	"id" : "obj-45",
-																	"maxclass" : "flonum",
-																	"numinlets" : 1,
+																	"id" : "obj-10",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
 																	"numoutlets" : 2,
-																	"outlettype" : [ "", "bang" ],
-																	"parameter_enable" : 0,
-																	"patching_rect" : [ 515.0, 192.0, 50.0, 20.0 ]
-																}
-
-															}
-, 															{
-																"box" : 																{
-																	"id" : "obj-43",
-																	"maxclass" : "newobj",
-																	"numinlets" : 2,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "float" ],
-																	"patching_rect" : [ 398.0, 307.0, 29.5, 20.0 ],
-																	"text" : "* 0.4"
-																}
-
-															}
-, 															{
-																"box" : 																{
-																	"id" : "obj-40",
-																	"maxclass" : "newobj",
-																	"numinlets" : 1,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 397.0, 265.0, 105.0, 20.0 ],
-																	"text" : "if $f1<0 then 1 else -1"
-																}
-
-															}
-, 															{
-																"box" : 																{
-																	"id" : "obj-23",
-																	"maxclass" : "newobj",
-																	"numinlets" : 1,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "" ],
-																	"patcher" : 																	{
-																		"fileversion" : 1,
-																		"appversion" : 																		{
-																			"major" : 8,
-<<<<<<< Updated upstream
-																			"minor" : 5,
-																			"revision" : 3,
-=======
-																			"minor" : 6,
-																			"revision" : 0,
->>>>>>> Stashed changes
-																			"architecture" : "x64",
-																			"modernui" : 1
-																		}
-,
-																		"classnamespace" : "box",
-																		"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
-																		"bglocked" : 0,
-																		"openinpresentation" : 0,
-																		"default_fontsize" : 12.0,
-																		"default_fontface" : 0,
-																		"default_fontname" : "Arial",
-																		"gridonopen" : 1,
-																		"gridsize" : [ 15.0, 15.0 ],
-																		"gridsnaponopen" : 1,
-																		"objectsnaponopen" : 1,
-																		"statusbarvisible" : 2,
-																		"toolbarvisible" : 1,
-																		"lefttoolbarpinned" : 0,
-																		"toptoolbarpinned" : 0,
-																		"righttoolbarpinned" : 0,
-																		"bottomtoolbarpinned" : 0,
-																		"toolbars_unpinned_last_save" : 0,
-																		"tallnewobj" : 0,
-																		"boxanimatetime" : 200,
-																		"enablehscroll" : 1,
-																		"enablevscroll" : 1,
-																		"devicewidth" : 0.0,
-																		"description" : "",
-																		"digest" : "",
-																		"tags" : "",
-																		"style" : "",
-																		"subpatcher_template" : "",
-																		"assistshowspatchername" : 0,
-																		"boxes" : [ 																			{
-																				"box" : 																				{
-																					"id" : "obj-9",
-																					"linecount" : 2,
-																					"maxclass" : "newobj",
-																					"numinlets" : 1,
-																					"numoutlets" : 1,
-																					"outlettype" : [ "bang" ],
-																					"patching_rect" : [ 395.5, 100.0, 50.0, 20.0 ],
-																					"text" : "loadbang"
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"id" : "obj-4",
-																					"linecount" : 2,
-																					"maxclass" : "message",
-																					"numinlets" : 2,
-																					"numoutlets" : 1,
-																					"outlettype" : [ "" ],
-<<<<<<< Updated upstream
-																					"patching_rect" : [ 117.0, 260.0, 367.0, 22.0 ],
-																					"text" : "0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0."
-=======
-																					"patching_rect" : [ 395.5, 133.0, 139.0, 20.0 ],
-																					"text" : "0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0."
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"fontsize" : 12.0,
-																					"id" : "obj-35",
-																					"maxclass" : "newobj",
-																					"numinlets" : 2,
-																					"numoutlets" : 2,
-																					"outlettype" : [ "", "" ],
-																					"patching_rect" : [ 98.5, 408.0, 80.0, 22.0 ],
-																					"text" : "zl lace"
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"fontsize" : 12.0,
-																					"id" : "obj-34",
-																					"maxclass" : "newobj",
-																					"numinlets" : 2,
-																					"numoutlets" : 2,
-																					"outlettype" : [ "", "" ],
-																					"patching_rect" : [ 159.5, 372.0, 43.0, 22.0 ],
-																					"text" : "zl lace"
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"fontsize" : 12.0,
-																					"id" : "obj-33",
-																					"maxclass" : "newobj",
-																					"numinlets" : 1,
-																					"numoutlets" : 2,
-																					"outlettype" : [ "", "" ],
-																					"patching_rect" : [ 99.5, 216.0, 92.0, 22.0 ],
-																					"text" : "t l l"
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"fontsize" : 12.0,
-																					"id" : "obj-32",
-																					"maxclass" : "newobj",
-																					"numinlets" : 2,
-																					"numoutlets" : 2,
-																					"outlettype" : [ "", "" ],
-																					"patching_rect" : [ 98.5, 372.0, 43.0, 22.0 ],
-																					"text" : "zl lace"
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"fontsize" : 12.0,
-																					"id" : "obj-30",
-																					"maxclass" : "newobj",
-																					"numinlets" : 2,
-																					"numoutlets" : 1,
-																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 159.5, 333.0, 79.0, 22.0 ],
-																					"text" : "vexpr $f2-$f1"
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"fontsize" : 12.0,
-																					"id" : "obj-28",
-																					"maxclass" : "newobj",
-																					"numinlets" : 2,
-																					"numoutlets" : 2,
-																					"outlettype" : [ "", "" ],
-																					"patching_rect" : [ 219.5, 270.0, 56.0, 22.0 ],
-																					"text" : "zl lookup"
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"fontsize" : 12.0,
-																					"id" : "obj-24",
-																					"maxclass" : "newobj",
-																					"numinlets" : 2,
-																					"numoutlets" : 2,
-																					"outlettype" : [ "", "" ],
-																					"patching_rect" : [ 99.5, 270.0, 56.0, 22.0 ],
-																					"text" : "zl lookup"
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"fontsize" : 12.0,
-																					"id" : "obj-19",
-																					"maxclass" : "newobj",
-																					"numinlets" : 1,
-																					"numoutlets" : 3,
-																					"outlettype" : [ "", "", "" ],
-																					"patching_rect" : [ 50.0, 126.0, 105.5, 22.0 ],
-																					"text" : "t l l l"
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"fontsize" : 12.0,
-																					"id" : "obj-1",
-																					"maxclass" : "newobj",
-																					"numinlets" : 2,
-																					"numoutlets" : 2,
-																					"outlettype" : [ "", "" ],
-																					"patching_rect" : [ 51.5, 180.0, 67.0, 22.0 ],
-																					"text" : "zl compare"
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"comment" : "",
-																					"id" : "obj-10",
-																					"index" : 1,
-																					"maxclass" : "inlet",
-																					"numinlets" : 0,
-																					"numoutlets" : 1,
-																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"comment" : "",
-																					"id" : "obj-21",
-																					"index" : 1,
-																					"maxclass" : "outlet",
-																					"numinlets" : 1,
-																					"numoutlets" : 0,
-																					"patching_rect" : [ 98.5, 490.0, 30.0, 30.0 ]
-																				}
-
-																			}
- ],
-																		"lines" : [ 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-33", 0 ],
-																					"source" : [ "obj-1", 1 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-19", 0 ],
-																					"source" : [ "obj-10", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-1", 0 ],
-																					"source" : [ "obj-19", 1 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-1", 1 ],
-																					"order" : 1,
-																					"source" : [ "obj-19", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-24", 1 ],
-																					"source" : [ "obj-19", 2 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-28", 1 ],
-																					"order" : 0,
-																					"source" : [ "obj-19", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-30", 0 ],
-																					"order" : 0,
-																					"source" : [ "obj-24", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-32", 0 ],
-																					"order" : 1,
-																					"source" : [ "obj-24", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-30", 1 ],
-																					"source" : [ "obj-28", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-34", 0 ],
-																					"source" : [ "obj-30", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-35", 0 ],
-																					"source" : [ "obj-32", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-24", 0 ],
-																					"order" : 1,
-																					"source" : [ "obj-33", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-28", 0 ],
-																					"order" : 0,
-																					"source" : [ "obj-33", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-32", 1 ],
-																					"order" : 1,
-																					"source" : [ "obj-33", 1 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-34", 1 ],
-																					"order" : 0,
-																					"source" : [ "obj-33", 1 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-35", 1 ],
-																					"source" : [ "obj-34", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-21", 0 ],
-																					"source" : [ "obj-35", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-1", 1 ],
-																					"order" : 1,
-																					"source" : [ "obj-4", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-28", 1 ],
-																					"order" : 0,
-																					"source" : [ "obj-4", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-4", 0 ],
-																					"source" : [ "obj-9", 0 ]
-																				}
-
-																			}
- ]
-																	}
-,
-																	"patching_rect" : [ 190.0, 113.0, 50.0, 20.0 ],
-																	"saved_object_attributes" : 																	{
-																		"description" : "",
-																		"digest" : "",
-																		"globalpatchername" : "",
-																		"tags" : ""
-																	}
-,
-																	"text" : "p change"
-																}
-
-															}
-, 															{
-																"box" : 																{
-																	"id" : "obj-29",
-																	"maxclass" : "message",
-																	"numinlets" : 2,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 50.0, 158.0, 119.0, 20.0 ],
-																	"text" : "0. 0.046544 0 0"
+																	"outlettype" : [ "", "" ],
+																	"patching_rect" : [ 116.0, 71.0, 45.0, 20.0 ],
+																	"text" : "gate 2 1"
 																}
 
 															}
@@ -10453,14 +9447,14 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 6,
-																			"revision" : 0,
+																			"minor" : 5,
+																			"revision" : 3,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
 ,
 																		"classnamespace" : "box",
-																		"rect" : [ 761.0, 284.0, 767.0, 422.0 ],
+																		"rect" : [ 970.0, 429.0, 640.0, 480.0 ],
 																		"bglocked" : 0,
 																		"openinpresentation" : 0,
 																		"default_fontsize" : 12.0,
@@ -10490,196 +9484,13 @@
 																		"assistshowspatchername" : 0,
 																		"boxes" : [ 																			{
 																				"box" : 																				{
-																					"id" : "obj-34",
-																					"maxclass" : "newobj",
-																					"numinlets" : 1,
-																					"numoutlets" : 1,
-																					"outlettype" : [ "bang" ],
-																					"patching_rect" : [ 521.0, 6.0, 58.0, 22.0 ],
-																					"text" : "loadbang"
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"id" : "obj-33",
-																					"maxclass" : "comment",
-																					"numinlets" : 1,
-																					"numoutlets" : 0,
-																					"patching_rect" : [ 540.0, 360.0, 19.0, 20.0 ],
-																					"text" : "0."
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"id" : "obj-31",
-																					"maxclass" : "comment",
-																					"numinlets" : 1,
-																					"numoutlets" : 0,
-																					"patching_rect" : [ 540.0, 232.0, 19.0, 20.0 ],
-																					"text" : "1."
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"id" : "obj-29",
-																					"maxclass" : "comment",
-																					"numinlets" : 1,
-																					"numoutlets" : 0,
-																					"patching_rect" : [ 535.0, 285.0, 24.0, 20.0 ],
-																					"text" : "vol"
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"id" : "obj-27",
-																					"maxclass" : "comment",
-																					"numinlets" : 1,
-																					"numoutlets" : 0,
-																					"patching_rect" : [ 561.0, 379.0, 150.0, 20.0 ],
-																					"text" : "hz: 20....16000"
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"format" : 6,
-																					"id" : "obj-25",
-																					"maxclass" : "flonum",
-																					"numinlets" : 1,
-																					"numoutlets" : 2,
-																					"outlettype" : [ "", "bang" ],
-																					"parameter_enable" : 0,
-																					"patching_rect" : [ 608.0, 32.5, 50.0, 22.0 ]
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"format" : 6,
-																					"id" : "obj-24",
-																					"maxclass" : "flonum",
-																					"numinlets" : 1,
-																					"numoutlets" : 2,
-																					"outlettype" : [ "", "bang" ],
-																					"parameter_enable" : 0,
-																					"patching_rect" : [ 674.0, 56.0, 50.0, 22.0 ]
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"id" : "obj-22",
-																					"maxclass" : "button",
-																					"numinlets" : 1,
-																					"numoutlets" : 1,
-																					"outlettype" : [ "bang" ],
-																					"parameter_enable" : 0,
-																					"patching_rect" : [ 521.0, 39.0, 24.0, 24.0 ]
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"id" : "obj-20",
-																					"maxclass" : "newobj",
-																					"numinlets" : 1,
-																					"numoutlets" : 2,
-																					"outlettype" : [ "int", "int" ],
-																					"patching_rect" : [ 559.0, 100.0, 53.0, 22.0 ],
-																					"text" : "t i i"
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"id" : "obj-19",
-																					"maxclass" : "newobj",
+																					"id" : "obj-13",
+																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 559.0, 199.0, 34.0, 22.0 ],
-																					"text" : "pack"
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"id" : "obj-18",
-																					"maxclass" : "itable",
-																					"name" : "",
-																					"numinlets" : 2,
-																					"numoutlets" : 2,
-																					"outlettype" : [ "int", "bang" ],
-																					"parameter_enable" : 0,
-																					"patching_rect" : [ 559.0, 232.0, 160.0, 145.0 ],
-																					"range" : 100,
-																					"size" : 100,
-																					"table_data" : [ 0, 100, 90, 86, 83, 80, 78, 77, 75, 74, 73, 72, 71, 70, 69, 69, 68, 67, 67, 66, 66, 65, 65, 64, 64, 64, 63, 63, 62, 62, 62, 61, 61, 61, 60, 60, 60, 60, 59, 59, 59, 59, 58, 58, 58, 58, 57, 57, 57, 57, 57, 56, 56, 56, 56, 56, 55, 55, 55, 55, 55, 55, 54, 54, 54, 54, 54, 54, 53, 53, 53, 53, 53, 53, 53, 52, 52, 52, 52, 52, 52, 52, 52, 51, 51, 51, 51, 51, 51, 51, 51, 51, 50, 50, 50, 50, 50, 50, 50, 50, 50 ]
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"id" : "obj-17",
-																					"maxclass" : "newobj",
-																					"numinlets" : 2,
-																					"numoutlets" : 1,
-																					"outlettype" : [ "float" ],
-																					"patching_rect" : [ 593.0, 161.0, 40.0, 22.0 ],
-																					"text" : "* 100."
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"id" : "obj-16",
-																					"maxclass" : "newobj",
-																					"numinlets" : 2,
-																					"numoutlets" : 3,
-																					"outlettype" : [ "bang", "bang", "int" ],
-																					"patching_rect" : [ 521.0, 73.0, 57.0, 22.0 ],
-																					"text" : "uzi 101 0"
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"id" : "obj-15",
-																					"maxclass" : "newobj",
-																					"numinlets" : 6,
-																					"numoutlets" : 1,
-																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 593.0, 130.0, 107.0, 22.0 ],
-																					"text" : "ll.!og 1 0.5 0 100 5"
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"id" : "obj-14",
-																					"linecount" : 3,
-																					"maxclass" : "comment",
-																					"numinlets" : 1,
-																					"numoutlets" : 0,
-																					"patching_rect" : [ 297.0, 20.0, 150.0, 47.0 ],
-																					"text" : "high frequencies get less volume, according to this scaling."
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
-																					"id" : "obj-9",
-																					"maxclass" : "newobj",
-																					"numinlets" : 1,
-																					"numoutlets" : 2,
-																					"outlettype" : [ "bang", "" ],
-																					"patching_rect" : [ 180.0, 50.0, 29.5, 22.0 ],
-																					"text" : "t b l"
->>>>>>> Stashed changes
+																					"patching_rect" : [ 117.0, 260.0, 367.0, 22.0 ],
+																					"text" : "0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0."
 																				}
 
 																			}
@@ -10710,6 +9521,18 @@
 																			}
 , 																			{
 																				"box" : 																				{
+																					"id" : "obj-10",
+																					"maxclass" : "button",
+																					"numinlets" : 1,
+																					"numoutlets" : 1,
+																					"outlettype" : [ "bang" ],
+																					"parameter_enable" : 0,
+																					"patching_rect" : [ 228.0, 41.0, 24.0, 24.0 ]
+																				}
+
+																			}
+, 																			{
+																				"box" : 																				{
 																					"comment" : "",
 																					"id" : "obj-7",
 																					"index" : 1,
@@ -10722,7 +9545,6 @@
 																			}
 , 																			{
 																				"box" : 																				{
-<<<<<<< Updated upstream
 																					"format" : 6,
 																					"id" : "obj-6",
 																					"maxclass" : "flonum",
@@ -10749,14 +9571,12 @@
 																			}
 , 																			{
 																				"box" : 																				{
-=======
->>>>>>> Stashed changes
 																					"id" : "obj-2",
 																					"maxclass" : "newobj",
 																					"numinlets" : 6,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 190.5, 87.0, 136.0, 22.0 ],
+																					"patching_rect" : [ 319.0, 76.0, 136.0, 22.0 ],
 																					"text" : "ll.!vlog 1 0.5 20 16000 5"
 																				}
 
@@ -10768,7 +9588,7 @@
 																					"numinlets" : 1,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "bang" ],
-																					"patching_rect" : [ 180.0, 21.0, 51.0, 22.0 ],
+																					"patching_rect" : [ 319.0, 35.0, 51.0, 22.0 ],
 																					"text" : "ll.r freqs"
 																				}
 
@@ -10776,8 +9596,24 @@
  ],
 																		"lines" : [ 																			{
 																				"patchline" : 																				{
-																					"destination" : [ "obj-9", 0 ],
+																					"destination" : [ "obj-2", 0 ],
 																					"source" : [ "obj-1", 0 ]
+																				}
+
+																			}
+, 																			{
+																				"patchline" : 																				{
+																					"destination" : [ "obj-12", 0 ],
+																					"order" : 1,
+																					"source" : [ "obj-10", 0 ]
+																				}
+
+																			}
+, 																			{
+																				"patchline" : 																				{
+																					"destination" : [ "obj-2", 0 ],
+																					"order" : 0,
+																					"source" : [ "obj-10", 0 ]
 																				}
 
 																			}
@@ -10790,124 +9626,56 @@
 																			}
 , 																			{
 																				"patchline" : 																				{
-																					"destination" : [ "obj-7", 0 ],
+																					"destination" : [ "obj-13", 1 ],
+																					"order" : 0,
 																					"source" : [ "obj-12", 0 ]
 																				}
 
 																			}
 , 																			{
 																				"patchline" : 																				{
-																					"destination" : [ "obj-17", 0 ],
-																					"source" : [ "obj-15", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-20", 0 ],
-																					"source" : [ "obj-16", 2 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-19", 1 ],
-																					"source" : [ "obj-17", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-18", 0 ],
-																					"source" : [ "obj-19", 0 ]
+																					"destination" : [ "obj-7", 0 ],
+																					"order" : 1,
+																					"source" : [ "obj-12", 0 ]
 																				}
 
 																			}
 , 																			{
 																				"patchline" : 																				{
 																					"destination" : [ "obj-12", 1 ],
+																					"order" : 1,
 																					"source" : [ "obj-2", 0 ]
 																				}
 
 																			}
 , 																			{
 																				"patchline" : 																				{
-																					"destination" : [ "obj-15", 0 ],
-																					"source" : [ "obj-20", 1 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-19", 0 ],
-																					"source" : [ "obj-20", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-16", 0 ],
-																					"source" : [ "obj-22", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-15", 5 ],
+																					"destination" : [ "obj-4", 1 ],
 																					"order" : 0,
-																					"source" : [ "obj-24", 0 ]
+																					"source" : [ "obj-2", 0 ]
 																				}
 
 																			}
 , 																			{
 																				"patchline" : 																				{
-																					"destination" : [ "obj-22", 0 ],
+																					"destination" : [ "obj-10", 0 ],
 																					"order" : 1,
-																					"source" : [ "obj-24", 0 ]
+																					"source" : [ "obj-6", 0 ]
 																				}
 
 																			}
 , 																			{
 																				"patchline" : 																				{
-																					"destination" : [ "obj-15", 2 ],
+																					"destination" : [ "obj-2", 5 ],
 																					"order" : 0,
-																					"source" : [ "obj-25", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-22", 0 ],
-																					"order" : 1,
-																					"source" : [ "obj-25", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-22", 0 ],
-																					"source" : [ "obj-34", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-12", 0 ],
-																					"source" : [ "obj-9", 0 ]
-																				}
-
-																			}
-, 																			{
-																				"patchline" : 																				{
-																					"destination" : [ "obj-2", 0 ],
-																					"source" : [ "obj-9", 1 ]
+																					"source" : [ "obj-6", 0 ]
 																				}
 
 																			}
  ]
 																	}
 ,
-																	"patching_rect" : [ 190.0, 57.0, 131.0, 20.0 ],
+																	"patching_rect" : [ 206.0, 102.0, 55.0, 20.0 ],
 																	"saved_object_attributes" : 																	{
 																		"description" : "",
 																		"digest" : "",
@@ -10915,7 +9683,31 @@
 																		"tags" : ""
 																	}
 ,
-																	"text" : "p vol_relative_to_frequency"
+																	"text" : "p vol_map"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-9",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "bang" ],
+																	"patching_rect" : [ 534.0, 133.0, 50.0, 20.0 ],
+																	"text" : "loadbang"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-4",
+																	"maxclass" : "message",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 534.0, 166.0, 139.0, 20.0 ],
+																	"text" : "0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0."
 																}
 
 															}
@@ -10926,11 +9718,7 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-<<<<<<< Updated upstream
 																	"patching_rect" : [ 257.5, 29.0, 207.0, 20.0 ],
-=======
-																	"patching_rect" : [ 326.0, 18.5, 137.0, 31.0 ],
->>>>>>> Stashed changes
 																	"text" : "0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0."
 																}
 
@@ -10943,7 +9731,7 @@
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "bang" ],
 																	"parameter_enable" : 0,
-																	"patching_rect" : [ 40.0, 301.0, 50.0, 20.0 ]
+																	"patching_rect" : [ 87.0, 599.0, 50.0, 20.0 ]
 																}
 
 															}
@@ -10954,7 +9742,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "bang" ],
-																	"patching_rect" : [ 40.0, 274.0, 67.0, 20.0 ],
+																	"patching_rect" : [ 87.0, 572.0, 67.0, 20.0 ],
 																	"text" : "ll.r sin_amt"
 																}
 
@@ -10967,7 +9755,7 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 40.0, 323.0, 57.0, 22.0 ],
+																	"patching_rect" : [ 87.0, 621.0, 57.0, 22.0 ],
 																	"text" : "chans $1"
 																}
 
@@ -10979,7 +9767,7 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "int" ],
-																	"patching_rect" : [ 448.0, 307.0, 29.5, 20.0 ],
+																	"patching_rect" : [ 494.5, 605.0, 29.5, 20.0 ],
 																	"text" : "+ 1"
 																}
 
@@ -10992,7 +9780,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "bang" ],
-																	"patching_rect" : [ 302.0, 275.0, 74.0, 22.0 ],
+																	"patching_rect" : [ 405.0, 590.0, 74.0, 22.0 ],
 																	"text" : "ll.r vol_ramp"
 																}
 
@@ -11005,7 +9793,7 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "" ],
-																	"patching_rect" : [ 262.0, 306.0, 59.0, 22.0 ],
+																	"patching_rect" : [ 365.0, 620.5, 59.0, 22.0 ],
 																	"text" : "zl lookup"
 																}
 
@@ -11018,8 +9806,22 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "int" ],
-																	"patching_rect" : [ 262.0, 275.0, 29.5, 22.0 ],
+																	"patching_rect" : [ 366.5, 561.5, 29.5, 22.0 ],
 																	"text" : "> 0."
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"fontname" : "Arial",
+																	"fontsize" : 12.0,
+																	"id" : "obj-18",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "float" ],
+																	"patching_rect" : [ 405.5, 561.5, 40.0, 22.0 ],
+																	"text" : "* 0.7"
 																}
 
 															}
@@ -11031,7 +9833,7 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "setvalue", "int" ],
-																	"patching_rect" : [ 190.0, 384.0, 276.5, 22.0 ],
+																	"patching_rect" : [ 237.0, 682.0, 276.5, 22.0 ],
 																	"text" : "mc.target"
 																}
 
@@ -11044,7 +9846,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 3,
 																	"outlettype" : [ "float", "float", "int" ],
-																	"patching_rect" : [ 190.0, 225.0, 278.0, 22.0 ],
+																	"patching_rect" : [ 237.0, 523.0, 278.0, 22.0 ],
 																	"text" : "unpack 0. 0. 0"
 																}
 
@@ -11057,7 +9859,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "bang" ],
-																	"patching_rect" : [ 190.0, 23.0, 46.0, 22.0 ],
+																	"patching_rect" : [ 206.25, 29.0, 46.0, 22.0 ],
 																	"text" : "ll.r vols"
 																}
 
@@ -11070,8 +9872,86 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "" ],
-																	"patching_rect" : [ 190.0, 157.0, 47.0, 22.0 ],
+																	"patching_rect" : [ 237.0, 479.0, 47.0, 22.0 ],
 																	"text" : "zl iter 4"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"fontsize" : 12.0,
+																	"id" : "obj-35",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "" ],
+																	"patching_rect" : [ 237.0, 441.0, 80.0, 22.0 ],
+																	"text" : "zl lace"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"fontsize" : 12.0,
+																	"id" : "obj-34",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "" ],
+																	"patching_rect" : [ 298.0, 405.0, 43.0, 22.0 ],
+																	"text" : "zl lace"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"fontsize" : 12.0,
+																	"id" : "obj-33",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "" ],
+																	"patching_rect" : [ 238.0, 249.0, 92.0, 22.0 ],
+																	"text" : "t l l"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"fontsize" : 12.0,
+																	"id" : "obj-32",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "" ],
+																	"patching_rect" : [ 237.0, 405.0, 43.0, 22.0 ],
+																	"text" : "zl lace"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"fontsize" : 12.0,
+																	"id" : "obj-30",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 298.0, 366.0, 79.0, 22.0 ],
+																	"text" : "vexpr $f2-$f1"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"fontsize" : 12.0,
+																	"id" : "obj-28",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "" ],
+																	"patching_rect" : [ 358.0, 303.0, 56.0, 22.0 ],
+																	"text" : "zl lookup"
 																}
 
 															}
@@ -11082,8 +9962,86 @@
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 209.0, 200.0, 176.0, 20.0 ],
-																	"text" : "new_vol diff idx"
+																	"patching_rect" : [ 345.0, 501.0, 176.0, 20.0 ],
+																	"text" : "new diff idx"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"fontsize" : 12.0,
+																	"id" : "obj-24",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "" ],
+																	"patching_rect" : [ 238.0, 303.0, 56.0, 22.0 ],
+																	"text" : "zl lookup"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"fontsize" : 12.0,
+																	"id" : "obj-23",
+																	"maxclass" : "message",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 467.5, 123.0, 35.0, 22.0 ],
+																	"text" : "1 4 3"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"fontsize" : 12.0,
+																	"id" : "obj-19",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 3,
+																	"outlettype" : [ "", "", "" ],
+																	"patching_rect" : [ 188.5, 159.0, 105.5, 22.0 ],
+																	"text" : "t l l l"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"fontsize" : 12.0,
+																	"id" : "obj-7",
+																	"maxclass" : "message",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 429.5, 123.0, 35.0, 22.0 ],
+																	"text" : "0 2 3"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"fontsize" : 12.0,
+																	"id" : "obj-6",
+																	"maxclass" : "message",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 390.5, 123.0, 35.0, 22.0 ],
+																	"text" : "1 2 3"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"fontsize" : 12.0,
+																	"id" : "obj-1",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "" ],
+																	"patching_rect" : [ 190.0, 213.0, 67.0, 22.0 ],
+																	"text" : "zl compare"
 																}
 
 															}
@@ -11097,7 +10055,7 @@
 																	"numinlets" : 3,
 																	"numoutlets" : 3,
 																	"outlettype" : [ "multichannelsignal", "", "" ],
-																	"patching_rect" : [ 190.0, 421.0, 98.0, 22.0 ],
+																	"patching_rect" : [ 237.0, 719.0, 98.0, 22.0 ],
 																	"text" : "mc.curve~ 0 -0.6"
 																}
 
@@ -11111,7 +10069,7 @@
 																	"numinlets" : 3,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 190.0, 355.0, 226.0, 22.0 ],
+																	"patching_rect" : [ 237.0, 653.0, 226.0, 22.0 ],
 																	"text" : "0. 0 -0.6"
 																}
 
@@ -11124,12 +10082,33 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 190.0, 456.0, 30.0, 30.0 ]
+																	"patching_rect" : [ 237.0, 754.0, 30.0, 30.0 ]
 																}
 
 															}
  ],
 														"lines" : [ 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-33", 0 ],
+																	"source" : [ "obj-1", 1 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-19", 0 ],
+																	"source" : [ "obj-10", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-2", 0 ],
+																	"source" : [ "obj-10", 1 ]
+																}
+
+															}
+, 															{
 																"patchline" : 																{
 																	"destination" : [ "obj-14", 0 ],
 																	"source" : [ "obj-11", 0 ]
@@ -11138,16 +10117,16 @@
 															}
 , 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-26", 0 ],
-																	"order" : 1,
+																	"destination" : [ "obj-18", 0 ],
+																	"order" : 0,
 																	"source" : [ "obj-11", 1 ]
 																}
 
 															}
 , 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-40", 0 ],
-																	"order" : 0,
+																	"destination" : [ "obj-26", 0 ],
+																	"order" : 1,
 																	"source" : [ "obj-11", 1 ]
 																}
 
@@ -11196,16 +10175,44 @@
 															}
 , 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-23", 0 ],
-																	"order" : 1,
-																	"source" : [ "obj-2", 0 ]
+																	"destination" : [ "obj-14", 2 ],
+																	"source" : [ "obj-18", 0 ]
 																}
 
 															}
 , 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-3", 1 ],
+																	"destination" : [ "obj-1", 0 ],
+																	"source" : [ "obj-19", 1 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-1", 1 ],
+																	"order" : 1,
+																	"source" : [ "obj-19", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-24", 1 ],
+																	"source" : [ "obj-19", 2 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-28", 1 ],
 																	"order" : 0,
+																	"source" : [ "obj-19", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-19", 0 ],
 																	"source" : [ "obj-2", 0 ]
 																}
 
@@ -11226,17 +10233,24 @@
 															}
 , 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-29", 1 ],
-																	"order" : 1,
+																	"destination" : [ "obj-19", 0 ],
 																	"source" : [ "obj-23", 0 ]
 																}
 
 															}
 , 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-37", 0 ],
+																	"destination" : [ "obj-30", 0 ],
 																	"order" : 0,
-																	"source" : [ "obj-23", 0 ]
+																	"source" : [ "obj-24", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-32", 0 ],
+																	"order" : 1,
+																	"source" : [ "obj-24", 0 ]
 																}
 
 															}
@@ -11256,6 +10270,73 @@
 															}
 , 															{
 																"patchline" : 																{
+																	"destination" : [ "obj-30", 1 ],
+																	"source" : [ "obj-28", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-34", 0 ],
+																	"source" : [ "obj-30", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-35", 0 ],
+																	"source" : [ "obj-32", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-24", 0 ],
+																	"order" : 1,
+																	"source" : [ "obj-33", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-28", 0 ],
+																	"order" : 0,
+																	"source" : [ "obj-33", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-32", 1 ],
+																	"order" : 1,
+																	"source" : [ "obj-33", 1 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-34", 1 ],
+																	"order" : 0,
+																	"source" : [ "obj-33", 1 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-35", 1 ],
+																	"source" : [ "obj-34", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-37", 0 ],
+																	"source" : [ "obj-35", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
 																	"destination" : [ "obj-11", 0 ],
 																	"source" : [ "obj-37", 0 ]
 																}
@@ -11263,22 +10344,17 @@
 															}
 , 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-43", 0 ],
-																	"source" : [ "obj-40", 0 ]
+																	"destination" : [ "obj-1", 1 ],
+																	"order" : 1,
+																	"source" : [ "obj-4", 0 ]
 																}
 
 															}
 , 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-14", 2 ],
-																	"source" : [ "obj-43", 0 ]
-																}
-
-															}
-, 															{
-																"patchline" : 																{
-																	"destination" : [ "obj-43", 1 ],
-																	"source" : [ "obj-45", 0 ]
+																	"destination" : [ "obj-28", 1 ],
+																	"order" : 0,
+																	"source" : [ "obj-4", 0 ]
 																}
 
 															}
@@ -11291,8 +10367,38 @@
 															}
 , 															{
 																"patchline" : 																{
+																	"destination" : [ "obj-19", 0 ],
+																	"source" : [ "obj-6", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-19", 0 ],
+																	"source" : [ "obj-7", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
 																	"destination" : [ "obj-2", 0 ],
+																	"order" : 1,
 																	"source" : [ "obj-8", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-3", 1 ],
+																	"order" : 0,
+																	"source" : [ "obj-8", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-4", 0 ],
+																	"source" : [ "obj-9", 0 ]
 																}
 
 															}
@@ -11486,19 +10592,14 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-<<<<<<< Updated upstream
 											"minor" : 5,
 											"revision" : 3,
-=======
-											"minor" : 6,
-											"revision" : 0,
->>>>>>> Stashed changes
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 1084.0, 397.0, 798.0, 649.0 ],
+										"rect" : [ 1084.0, 428.0, 798.0, 649.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -11957,13 +11058,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -12414,11 +11510,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 750.5, 118.0, 50.0, 35.0 ],
-<<<<<<< Updated upstream
 																	"text" : "396."
-=======
-																	"text" : "1697.153118"
->>>>>>> Stashed changes
 																}
 
 															}
@@ -13138,13 +12230,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-<<<<<<< Updated upstream
 											"minor" : 5,
 											"revision" : 3,
-=======
-											"minor" : 6,
-											"revision" : 0,
->>>>>>> Stashed changes
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -13198,11 +12285,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 292.0, 127.0, 50.0, 22.0 ],
-<<<<<<< Updated upstream
 													"text" : "1527"
-=======
-													"text" : "7030"
->>>>>>> Stashed changes
 												}
 
 											}
@@ -13438,13 +12521,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-<<<<<<< Updated upstream
 											"minor" : 5,
 											"revision" : 3,
-=======
-											"minor" : 6,
-											"revision" : 0,
->>>>>>> Stashed changes
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -14360,13 +13438,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-<<<<<<< Updated upstream
 											"minor" : 5,
 											"revision" : 3,
-=======
-											"minor" : 6,
-											"revision" : 0,
->>>>>>> Stashed changes
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -14967,13 +14040,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-<<<<<<< Updated upstream
 											"minor" : 5,
 											"revision" : 3,
-=======
-											"minor" : 6,
-											"revision" : 0,
->>>>>>> Stashed changes
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -15275,13 +14343,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-<<<<<<< Updated upstream
 											"minor" : 5,
 											"revision" : 3,
-=======
-											"minor" : 6,
-											"revision" : 0,
->>>>>>> Stashed changes
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -15502,13 +14565,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-<<<<<<< Updated upstream
 											"minor" : 5,
 											"revision" : 3,
-=======
-											"minor" : 6,
-											"revision" : 0,
->>>>>>> Stashed changes
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -16443,13 +15501,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-<<<<<<< Updated upstream
 											"minor" : 5,
 											"revision" : 3,
-=======
-											"minor" : 6,
-											"revision" : 0,
->>>>>>> Stashed changes
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -16520,13 +15573,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -17209,13 +16257,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -17855,13 +16898,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-<<<<<<< Updated upstream
 											"minor" : 5,
 											"revision" : 3,
-=======
-											"minor" : 6,
-											"revision" : 0,
->>>>>>> Stashed changes
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -17953,11 +16991,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 193.0, 762.0, 290.0, 22.0 ],
-<<<<<<< Updated upstream
 													"text" : "set 3500sins.12"
-=======
-													"text" : "set 1418sins.12"
->>>>>>> Stashed changes
 												}
 
 											}
@@ -18020,13 +17054,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -18352,13 +17381,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -18779,13 +17803,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -19297,13 +18316,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -19472,13 +18486,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -19924,13 +18933,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -20777,13 +19781,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -21098,13 +20097,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -21420,13 +20414,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -21527,13 +20516,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-<<<<<<< Updated upstream
 																			"minor" : 5,
 																			"revision" : 3,
-=======
-																			"minor" : 6,
-																			"revision" : 0,
->>>>>>> Stashed changes
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -21627,7 +20611,7 @@
 																					"maxclass" : "newobj",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
-																					"outlettype" : [ "" ],
+																					"outlettype" : [ "int" ],
 																					"patching_rect" : [ 186.0, 194.0, 55.0, 19.0 ],
 																					"text" : "random 30"
 																				}
@@ -21810,18 +20794,13 @@
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 1,
-																	"outlettype" : [ "" ],
+																	"outlettype" : [ "int" ],
 																	"patcher" : 																	{
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-<<<<<<< Updated upstream
 																			"minor" : 5,
 																			"revision" : 3,
-=======
-																			"minor" : 6,
-																			"revision" : 0,
->>>>>>> Stashed changes
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -21902,7 +20881,7 @@
 																					"maxclass" : "newobj",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
-																					"outlettype" : [ "" ],
+																					"outlettype" : [ "int" ],
 																					"patching_rect" : [ 62.0, 135.0, 51.0, 19.0 ],
 																					"text" : "random 2"
 																				}
@@ -21973,13 +20952,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-<<<<<<< Updated upstream
 																			"minor" : 5,
 																			"revision" : 3,
-=======
-																			"minor" : 6,
-																			"revision" : 0,
->>>>>>> Stashed changes
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -22186,13 +21160,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-<<<<<<< Updated upstream
 																			"minor" : 5,
 																			"revision" : 3,
-=======
-																			"minor" : 6,
-																			"revision" : 0,
->>>>>>> Stashed changes
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -22399,13 +21368,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-<<<<<<< Updated upstream
 																			"minor" : 5,
 																			"revision" : 3,
-=======
-																			"minor" : 6,
-																			"revision" : 0,
->>>>>>> Stashed changes
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -22629,13 +21593,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-<<<<<<< Updated upstream
 																			"minor" : 5,
 																			"revision" : 3,
-=======
-																			"minor" : 6,
-																			"revision" : 0,
->>>>>>> Stashed changes
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -22962,7 +21921,7 @@
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
-																	"outlettype" : [ "" ],
+																	"outlettype" : [ "int" ],
 																	"patching_rect" : [ 315.0, 578.0, 75.0, 19.0 ],
 																	"text" : "random 10000"
 																}
@@ -24002,13 +22961,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-<<<<<<< Updated upstream
 											"minor" : 5,
 											"revision" : 3,
-=======
-											"minor" : 6,
-											"revision" : 0,
->>>>>>> Stashed changes
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -24378,13 +23332,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-<<<<<<< Updated upstream
 											"minor" : 5,
 											"revision" : 3,
-=======
-											"minor" : 6,
-											"revision" : 0,
->>>>>>> Stashed changes
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -24744,13 +23693,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-<<<<<<< Updated upstream
 											"minor" : 5,
 											"revision" : 3,
-=======
-											"minor" : 6,
-											"revision" : 0,
->>>>>>> Stashed changes
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -25156,13 +24100,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-<<<<<<< Updated upstream
 											"minor" : 5,
 											"revision" : 3,
-=======
-											"minor" : 6,
-											"revision" : 0,
->>>>>>> Stashed changes
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -25367,13 +24306,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-<<<<<<< Updated upstream
 															"minor" : 5,
 															"revision" : 3,
-=======
-															"minor" : 6,
-															"revision" : 0,
->>>>>>> Stashed changes
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -26952,6 +25886,7 @@
 						"midi_note" : 0,
 						"numerator" : 0,
 						"octdivider" : 0,
+						"recent_index" : 0,
 						"sel_j" : 0,
 						"v_trig" : 0,
 						"envfreqs" : 0,
@@ -27136,10 +26071,9 @@
 						"1st_freq_env" : [ 0 ],
 						"all" : [ -1 ],
 						"clear_button" : [ -1 ],
-						"def" : [ 1 ],
+						"def" : [ 0 ],
 						"denominator" : [ 11 ],
 						"endsmooth" : [ 0 ],
-<<<<<<< Updated upstream
 						"env1" : [ 0.934342980384827, 0.893939018249512, 0.893939018249512, 0.893939018249512, 0.893939018249512, 0.893939018249512, 0.893939018249512, 0.893939018249512, 0.893939018249512, 0.898989975452423, 0.904039978981018, 0.904039978981018, 0.904039978981018, 0.904039978981018, 0.904039978981018, 0.906566023826599, 0.909090995788574, 0.911616027355194, 0.914140999317169, 0.914140999317169, 0.914140999317169, 0.919192016124725, 0.92424201965332, 0.92424201965332, 0.92424201965332, 0.92424201965332, 0.927609026432037, 0.93097597360611, 0.934342980384827, 0.934342980384827, 0.934342980384827, 0.937709987163544, 0.941076993942261, 0.944444000720978, 0.949495017528534, 0.954545021057129, 0.954545021057129, 0.954545021057129, 0.957071006298065, 0.95959597826004, 0.96212100982666, 0.964645981788635, 0.969696998596191, 0.974747002124786, 0.974747002124786, 0.974747002124786, 0.978114008903503, 0.98148101568222, 0.984848022460938, 0.984848022460938, 0.984848022460938, 0.984848022460938, 0.984848022460938, 0.984848022460938, 0.984848022460938, 0.984848022460938, 0.984848022460938, 0.984848022460938, 0.984848022460938, 0.964645981788635, 0.954545021057129, 0.934342980384827, 0.929292976856232, 0.92424201965332, 0.914140999317169, 0.904039978981018, 0.883837997913361, 0.863636016845703, 0.860269010066986, 0.856902003288269, 0.853534996509552, 0.825253009796143, 0.817171990871429, 0.809090971946716, 0.801010012626648, 0.534343004226685, 0.530303001403809, 0.528138995170593, 0.525973975658417, 0.523809015750885, 0.52164500951767, 0.519481003284454, 0.517315983772278, 0.515151977539062, 0.512987017631531, 0.510821998119354, 0.508657991886139, 0.297980010509491, 0.504329025745392, 0.502164006233215, 0.5, 0.49855700135231, 0.49711400270462, 0.495671004056931, 0.494228005409241, 0.492785006761551, 0.491342008113861, 0.489899009466171, 0.488456010818481, 0.487013012170792, 0.485570013523102, 0.484127014875412, 0.4826839864254, 0.48124098777771, 0.47979798913002, 0.477632999420166, 0.475468993186951, 0.473304003477097, 0.471139997243881, 0.468975007534027, 0.466811001300812, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.439393997192383, 0.437373995780945, 0.435353994369507, 0.43333300948143, 0.431313008069992, 0.429293006658554, 0.427047997713089, 0.424804002046585, 0.42255899310112, 0.420314013957977, 0.732322990894318, 0.737374007701874, 0.742424011230469, 0.749158024787903, 0.755891978740692, 0.762625992298126, 0.764310002326965, 0.765992999076843, 0.767677009105682, 0.76936000585556, 0.771044015884399, 0.772727012634277, 0.773989975452423, 0.775252997875214, 0.776515007019043, 0.777778029441833, 0.779039978981018, 0.780303001403809, 0.781566023826599, 0.782827973365784, 0.784511983394623, 0.786194980144501, 0.78787899017334, 0.789561986923218, 0.791245996952057, 0.792928993701935, 0.794192016124725, 0.795454978942871, 0.7967169880867, 0.797980010509491, 0.79924201965332, 0.800504982471466, 0.801768004894257, 0.803030014038086, 0.804040014743805, 0.805050015449524, 0.806061029434204, 0.807070970535278, 0.808080971240997, 0.809090971946716, 0.810100972652435, 0.811110973358154, 0.812120974063873, 0.813130974769592, 0.814253985881805, 0.815375983715057, 0.816497981548309, 0.817620992660522, 0.818742990493774, 0.819864988327026, 0.82098799943924, 0.822109997272491, 0.823231995105743, 0.823231995105743, 0.823231995105743, 0.823231995105743, 0.823231995105743, 0.823231995105743, 0.823231995105743, 0.823231995105743, 0.823231995105743, 0.25, 0.520201981067657, 0.510101020336151, 0.510101020336151, 0.5, 0.5, 0.5, 0.489899009466171, 0.489899009466171, 0.489899009466171, 0.489899009466171, 0.489899009466171, 0.489899009466171, 0.489899009466171, 0.489899009466171, 0.489899009466171, 0.489899009466171, 0.5, 0.5, 0.510101020336151, 0.510101020336151, 0.520201981067657, 0.520201981067657, 0.520201981067657, 0.520201981067657, 0.54040402173996, 0.54040402173996, 0.550504982471466, 0.550504982471466, 0.570707023143768, 0.57575798034668, 0.580807983875275, 0.580807983875275, 0.590909004211426, 0.601010024547577, 0.611110985279083, 0.621212005615234, 0.631313025951385, 0.636363983154297, 0.641413986682892, 0.651515007019043, 0.651515007019043, 0.661616027355194, 0.681818008422852, 0.691919028759003, 0.702019989490509, 0.707071006298065, 0.71212100982666, 0.732322990894318, 0.737374007701874, 0.742424011230469, 0.752524971961975, 0.772727012634277, 0.782827973365784, 0.78787899017334, 0.792928993701935, 0.797980010509491, 0.803030014038086, 0.823231995105743, 0.833333015441895, 0.833333015441895, 0.843433976173401, 0.843433976173401, 0.853534996509552, 0.863636016845703, 0.863636016845703, 0.863636016845703, 0.863636016845703, 0.863636016845703, 0.863636016845703, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.794372022151947, 0.795814990997314, 0.797258019447327, 0.798700988292694, 0.800144016742706, 0.801586985588074, 0.803030014038086, 0.804472982883453, 0.805916011333466, 0.807358980178833, 0.808802008628845, 0.732322990894318, 0.722221970558167, 0.722221970558167, 0.71212100982666, 0.71212100982666, 0.71212100982666, 0.71212100982666, 0.702019989490509, 0.698652982711792, 0.695285975933075, 0.691919028759003, 0.691919028759003, 0.691919028759003, 0.691919028759003, 0.691919028759003, 0.691919028759003, 0.691919028759003, 0.691919028759003, 0.691919028759003, 0.691919028759003, 0.691919028759003, 0.691919028759003, 0.691919028759003, 0.691919028759003, 0.691919028759003, 0.691919028759003, 0.691919028759003, 0.740404009819031, 0.744444012641907, 0.748485028743744, 0.752524971961975, 0.762625992298126, 0.772727012634277, 0.782827973365784, 0.784847974777222, 0.786868989467621, 0.788888990879059, 0.790908992290497, 0.792928993701935, 0.803030014038086, 0.805050015449524, 0.807070970535278, 0.809090971946716, 0.811110973358154, 0.813130974769592, 0.813130974769592, 0.813130974769592, 0.813130974769592, 0.813130974769592, 0.813130974769592, 0.813130974769592, 0.813130974769592, 0.813130974769592, 0.813130974769592, 0.813130974769592, 0.813130974769592, 0.813130974769592, 0.813130974769592, 0.813130974769592, 0.813130974769592, 0.813130974769592, 0.813130974769592, 0.813130974769592, 0.813130974769592, 0.813130974769592, 0.808080971240997, 0.803030014038086, 0.800504982471466, 0.797980010509491, 0.795454978942871, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.782827973365784, 0.777778029441833, 0.772727012634277, 0.762625992298126, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.792928993701935, 0.895959973335266, 0.897979974746704, 0.899999976158142, 0.90201997756958, 0.904039978981018, 0.904039978981018, 0.907406985759735, 0.910773992538452, 0.914140999317169, 0.914140999317169, 0.914140999317169, 0.914140999317169, 0.914140999317169, 0.914140999317169, 0.914140999317169, 0.914140999317169, 0.914140999317169, 0.92424201965332, 0.92424201965332, 0.92424201965332, 0.92424201965332, 0.92424201965332, 0.92424201965332, 0.92424201965332, 0.934342980384827, 0.934342980384827, 0.934342980384827, 0.934342980384827, 0.934342980384827, 0.934342980384827, 0.934342980384827, 0.934342980384827, 0.934342980384827, 0.934342980384827, 0.934342980384827, 0.934342980384827, 0.934342980384827, 0.934342980384827, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0 ],
 						"env10" : [ 0.520202040672302, 0.498877674341202, 0.497755318880081, 0.496632993221283, 0.495510667562485, 0.494388341903687, 0.493265986442566, 0.492143660783768, 0.491021335124969, 0.489898979663849, 0.488776654005051, 0.487654328346252, 0.486531972885132, 0.485409647226334, 0.484287321567535, 0.483164995908737, 0.482042640447617, 0.480920314788818, 0.47979798913002, 0.4786756336689, 0.477553308010101, 0.476430982351303, 0.475308626890182, 0.474186301231384, 0.473063975572586, 0.471941649913788, 0.470819294452667, 0.469696968793869, 0.469237834215164, 0.468778699636459, 0.468319565057755, 0.46786043047905, 0.467401295900345, 0.466942131519318, 0.466482996940613, 0.466023862361908, 0.465564727783203, 0.465105593204498, 0.464646458625793, 0.464187324047089, 0.463728189468384, 0.463269054889679, 0.462809920310974, 0.462350785732269, 0.461891621351242, 0.461432486772537, 0.460973352193832, 0.460514217615128, 0.460055083036423, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.908529758453369, 0.913019061088562, 0.9175084233284, 0.921997725963593, 0.92648708820343, 0.930976390838623, 0.935465753078461, 0.939955055713654, 0.944444417953491, 0.948773443698883, 0.95310240983963, 0.957431435585022, 0.961760461330414, 0.966089487075806, 0.970418453216553, 0.974747478961945, 0.977553308010101, 0.980359137058258, 0.983164966106415, 0.985970795154572, 0.988776683807373, 0.99158251285553, 0.994388341903687, 0.997194170951843, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.621212124824524, 0.621212124824524, 0.621212124824524, 0.621212124824524, 0.621212124824524, 0.624098122119904, 0.626984119415283, 0.629870116710663, 0.632756173610687, 0.635642170906067, 0.638528168201447, 0.641414165496826, 0.643939435482025, 0.646464645862579, 0.648989915847778, 0.651515126228333, 0.654040396213531, 0.65656566619873, 0.659090876579285, 0.661616146564484, 0.664141416549683, 0.666666626930237, 0.669191896915436, 0.671717166900635, 0.674242436885834, 0.676767706871033, 0.679292917251587, 0.681818187236786, 0.682940542697906, 0.684062838554382, 0.685185194015503, 0.686307549476624, 0.687429845333099, 0.68855220079422, 0.689674556255341, 0.690796852111816, 0.691919207572937, 0.692929327487946, 0.693939387798309, 0.694949507713318, 0.695959627628326, 0.696969747543335, 0.697979807853699, 0.698989927768707, 0.700000047683716, 0.70101010799408, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.699494957923889, 0.696969747543335, 0.694444477558136, 0.691919207572937, 0.689393937587738, 0.686868667602539, 0.684343457221985, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.955988466739655, 0.957431435585022, 0.958874464035034, 0.960317432880402, 0.961760461330414, 0.963203430175781, 0.964646458625793, 0.967171728610992, 0.969696998596191, 0.972222208976746, 0.974747478961945, 0.976767659187317, 0.978787899017334, 0.980808079242706, 0.982828319072723, 0.984848499298096, 0.986531972885132, 0.988215506076813, 0.989899039268494, 0.99158251285553, 0.993265986442566, 0.994949519634247, 0.994949519634247, 0.994949519634247, 0.994949519634247, 0.994949519634247, 0.994949519634247, 0.994949519634247, 0.994949519634247, 0.995454549789429, 0.995959639549255, 0.996464669704437, 0.996969699859619, 0.997474789619446, 0.997979819774628, 0.99848484992981, 0.998989880084991, 0.999494969844818, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.439393937587738, 0.439393937587738, 0.439393937587738, 0.439393937587738, 0.439393937587738, 0.441077440977097, 0.442760944366455, 0.444444447755814, 0.446127951145172, 0.447811454534531, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.448372632265091, 0.44725027680397, 0.446127951145172, 0.445005625486374, 0.443883270025253, 0.442760944366455, 0.441638618707657, 0.440516263246536, 0.439393937587738, 0.429292917251587 ],
 						"env11" : [ 0.873737394809723, 0.871212124824524, 0.86868691444397, 0.866161644458771, 0.863636374473572, 0.861952900886536, 0.860269367694855, 0.858585834503174, 0.856902360916138, 0.855218887329102, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.852092325687408, 0.850649356842041, 0.849206328392029, 0.847763359546661, 0.846320331096649, 0.844877362251282, 0.84343433380127, 0.842424213886261, 0.841414153575897, 0.840404033660889, 0.83939391374588, 0.838383793830872, 0.837373733520508, 0.836363613605499, 0.835353493690491, 0.834343433380127, 0.833333313465118, 0.830303013324738, 0.827272713184357, 0.824242413043976, 0.821212112903595, 0.818181812763214, 0.815151512622833, 0.812121212482452, 0.809090912342072, 0.806060612201691, 0.80303031206131, 0.801010131835938, 0.79898989200592, 0.796969711780548, 0.794949471950531, 0.792929291725159, 0.791245818138123, 0.789562284946442, 0.787878751754761, 0.786195278167725, 0.784511804580688, 0.782828271389008, 0.781144738197327, 0.779461264610291, 0.777777791023254, 0.776094257831573, 0.774410724639893, 0.772727251052856, 0.770707070827484, 0.768686830997467, 0.766666650772095, 0.764646470546722, 0.76262629032135, 0.760606050491333, 0.758585870265961, 0.756565690040588, 0.754545450210571, 0.752525269985199, 0.749158263206482, 0.745791256427765, 0.742424249649048, 0.739057242870331, 0.735690236091614, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.318181812763214, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.742424249649048, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.318181812763214, 0.328282833099365, 0.338383823633194, 0.348484843969345, 0.348484843969345, 0.358585864305496, 0.368686854839325, 0.368686854839325, 0.388888895511627, 0.398989886045456, 0.409090906381607, 0.419191926717758, 0.419191926717758, 0.429292917251587, 0.432659924030304, 0.436026930809021, 0.510101020336151, 0.510101020336151, 0.510101020336151, 0.510101020336151, 0.510101020336151, 0.510101020336151, 0.510101020336151, 0.510101020336151, 0.508657991886139, 0.507215023040771, 0.505771994590759, 0.504329025745392, 0.50288599729538, 0.501443028450012, 0.5, 0.498737365007401, 0.497474730014801, 0.496212124824524, 0.494949489831924, 0.493686854839325, 0.492424249649048, 0.491161614656448, 0.489898979663849, 0.488776654005051, 0.487654328346252, 0.486531972885132, 0.485409647226334, 0.484287321567535, 0.483164995908737, 0.482042640447617, 0.480920314788818, 0.47979798913002, 0.478675663471222, 0.477553308010101, 0.476430982351303, 0.475308656692505, 0.474186301231384, 0.473063975572586, 0.471941649913788, 0.470819294452667, 0.469696968793869, 0.46801346540451, 0.466329962015152, 0.464646458625793, 0.462962955236435, 0.461279451847076, 0.459595948457718, 0.45847362279892, 0.457351297140121, 0.456228941679001, 0.455106616020203, 0.453984290361404, 0.452861964702606, 0.451739609241486, 0.450617283582687, 0.449494957923889, 0.448372632265091, 0.44725027680397, 0.446127951145172, 0.445005625486374, 0.443883270025253, 0.442760944366455, 0.441638618707657, 0.440516263246536, 0.439393937587738, 0.436026930809021, 0.860750377178192, 0.857864379882812, 0.854978382587433, 0.852092325687408, 0.849206328392029, 0.846320331096649, 0.84343433380127, 0.835858583450317, 0.828282833099365, 0.820707082748413, 0.813131332397461, 0.806397318840027, 0.799663305282593, 0.792929291725159, 0.786195278167725, 0.779461264610291, 0.772727251052856, 0.767288267612457, 0.761849224567413, 0.756410241127014, 0.750971257686615, 0.745532214641571, 0.740093231201172, 0.734654247760773, 0.729215264320374, 0.72377622127533, 0.71833723783493, 0.712898254394531, 0.707459211349487, 0.702020227909088, 0.696078479290009, 0.690136671066284, 0.684194922447205, 0.67825311422348, 0.672311365604401, 0.666369616985321, 0.660427808761597, 0.654486060142517, 0.648544251918793, 0.642602503299713, 0.636660695075989, 0.630718946456909, 0.62477719783783, 0.618835389614105, 0.612893640995026, 0.606951832771301, 0.601010084152222, 0.594696938991547, 0.588383793830872, 0.582070708274841, 0.575757563114166, 0.569444417953491, 0.563131332397461, 0.556818187236786, 0.550505042076111, 0.544191896915436, 0.537878751754761, 0.53156566619873, 0.525252521038055, 0.51893937587738, 0.51262629032135, 0.506313145160675, 0.5, 0.493686854839325, 0.487373739480972, 0.48106062412262, 0.474747478961945, 0.46843433380127, 0.462121218442917, 0.455808103084564, 0.449494957923889, 0.442760944366455, 0.436026930809021, 0.429292947053909, 0.422558933496475, 0.415824919939041, 0.409090906381607, 0.402356922626495, 0.395622909069061, 0.388888895511627, 0.382154881954193, 0.375420868396759, 0.368686884641647, 0.361952871084213, 0.355218857526779, 0.348484843969345, 0.341750860214233, 0.335016846656799, 0.328282833099365, 0.319735825061798, 0.311188817024231, 0.302641808986664, 0.294094800949097, 0.28554779291153, 0.277000784873962, 0.268453776836395, 0.259906768798828, 0.251359760761261, 0.242812737822533, 0.234265729784966, 0.225718721747398, 0.217171713709831, 0.212121203541756, 0.207070708274841, 0.202020198106766, 0.19696968793869, 0.191919192671776, 0.1868686825037, 0.177890002727509, 0.168911337852478, 0.159932658076286, 0.150953978300095, 0.141975313425064, 0.132996633648872, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.520202040672302, 0.601010084152222, 0.590909123420715, 0.580808103084564, 0.565656542778015, 0.550505042076111, 0.542929291725159, 0.535353541374207, 0.527777791023254, 0.520202040672302, 0.513888895511627, 0.507575750350952, 0.501262664794922, 0.494949519634247, 0.488636374473572, 0.482323229312897, 0.476010113954544, 0.469696968793869, 0.459595948457718, 0.449494957923889, 0.439393937587738, 0.429292917251587, 0.419191926717758, 0.409090906381607, 0.398989915847778, 0.388888895511627, 0.378787875175476, 0.368686884641647, 0.358585864305496, 0.348484873771667, 0.338383853435516, 0.328282833099365, 0.318181842565536, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758, 0.419191926717758 ],
@@ -27152,54 +26086,27 @@
 						"env7" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.570707082748413, 0.57407408952713, 0.577441096305847, 0.580808103084564, 0.580808103084564, 0.580808103084564, 0.580808103084564, 0.590909063816071, 0.590909063816071, 0.594276070594788, 0.597643077373505, 0.601010084152222, 0.601010084152222, 0.601010084152222, 0.60606062412262, 0.611111104488373, 0.611111104488373, 0.611111104488373, 0.611111104488373, 0.616161584854126, 0.621212124824524, 0.621212124824524, 0.621212124824524, 0.621212124824524, 0.621212124824524, 0.626262664794922, 0.631313145160675, 0.631313145160675, 0.631313145160675, 0.631313145160675, 0.631313145160675, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.641414165496826, 0.651515126228333, 0.651515126228333, 0.651515126228333, 0.651515126228333, 0.651515126228333, 0.651515126228333, 0.651515126228333, 0.651515126228333, 0.651515126228333, 0.651515126228333, 0.651515126228333, 0.651515126228333, 0.651515126228333, 0.651515126228333, 0.661616146564484, 0.661616146564484, 0.661616146564484, 0.661616146564484, 0.661616146564484, 0.661616146564484, 0.661616146564484, 0.661616146564484, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.813131332397461, 0.813131332397461, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.833333313465118, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.846801340579987, 0.850168347358704, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.856902360916138, 0.860269367694855, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.419191926717758, 0.424242436885834, 0.429292917251587, 0.429292917251587, 0.429292917251587, 0.429292917251587, 0.429292917251587, 0.429292917251587, 0.429292917251587, 0.429292917251587, 0.429292917251587, 0.429292917251587, 0.432659924030304, 0.436026930809021, 0.439393937587738, 0.439393937587738, 0.439393937587738, 0.439393937587738, 0.439393937587738, 0.439393937587738, 0.441919207572937, 0.444444447755814, 0.44696968793869, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.449494957923889, 0.452861964702606, 0.456228941679001, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.459595948457718, 0.631313145160675, 0.638047158718109, 0.644781112670898, 0.651515126228333, 0.654040396213531, 0.65656566619873, 0.659090876579285, 0.661616146564484, 0.666666626930237, 0.671717166900635, 0.676767706871033, 0.681818187236786, 0.685858607292175, 0.689899027347565, 0.693939387798309, 0.697979807853699, 0.702020227909088, 0.70808082818985, 0.714141428470612, 0.720202028751373, 0.726262629032135 ],
 						"env8" : [ 0.772727251052856, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.755050539970398, 0.757575750350952, 0.760101020336151, 0.76262629032135, 0.76666671037674, 0.770707070827484, 0.774747490882874, 0.778787851333618, 0.782828271389008, 0.78427129983902, 0.785714268684387, 0.787157297134399, 0.788600265979767, 0.790043294429779, 0.791486263275146, 0.792929291725159, 0.796969711780548, 0.801010131835938, 0.805050492286682, 0.809090912342072, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.814814805984497, 0.816498339176178, 0.818181872367859, 0.819865345954895, 0.821548819541931, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.823232352733612, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.752524971961975, 0.742424011230469, 0.737374007701874, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.796296298503876, 0.799663305282593, 0.80303031206131, 0.806397318840027, 0.809764325618744, 0.813131332397461, 0.81565660238266, 0.818181872367859, 0.820707082748413, 0.823232352733612, 0.827272772789001, 0.831313133239746, 0.835353553295135, 0.83939391374588, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.84343433380127, 0.844211339950562, 0.844988346099854, 0.845765352249146, 0.846542358398438, 0.847319364547729, 0.848096370697021, 0.848873317241669, 0.849650323390961, 0.850427329540253, 0.851204335689545, 0.851981341838837, 0.852758347988129, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.853535354137421, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.863636374473572, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.762625992298126, 0.762625992298126, 0.794612765312195, 0.796296298503876, 0.797979831695557, 0.799663305282593, 0.801346778869629, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80415266752243, 0.805274963378906, 0.806397318840027, 0.807519674301147, 0.808641970157623, 0.809764325618744, 0.810886681079865, 0.81200897693634, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461, 0.813131332397461 ],
 						"env9" : [ 0.782828271389008, 0.802641808986664, 0.802253305912018, 0.801864802837372, 0.801476299762726, 0.80108779668808, 0.800699293613434, 0.800310790538788, 0.799922287464142, 0.799533784389496, 0.79914528131485, 0.798756778240204, 0.798368275165558, 0.797979831695557, 0.797591328620911, 0.797202825546265, 0.796814322471619, 0.796425819396973, 0.796037316322327, 0.795648813247681, 0.795260310173035, 0.794871807098389, 0.794483304023743, 0.794094800949097, 0.793706297874451, 0.793317794799805, 0.792929291725159, 0.792207777500153, 0.791486263275146, 0.790764808654785, 0.790043294429779, 0.789321780204773, 0.788600265979767, 0.787878751754761, 0.787157297134399, 0.786435782909393, 0.785714268684387, 0.784992754459381, 0.78427129983902, 0.783549785614014, 0.782828271389008, 0.782467544078827, 0.782106757164001, 0.781746029853821, 0.781385242938995, 0.781024515628815, 0.780663788318634, 0.780303001403809, 0.779942274093628, 0.779581487178802, 0.779220759868622, 0.778860032558441, 0.778499245643616, 0.778138518333435, 0.777777791023254, 0.777417004108429, 0.777056276798248, 0.776695489883423, 0.776334762573242, 0.775974035263062, 0.775613248348236, 0.775252521038055, 0.77489173412323, 0.774531006813049, 0.774170279502869, 0.773809492588043, 0.773448765277863, 0.773087978363037, 0.772727251052856, 0.771682322025299, 0.770637392997742, 0.769592463970184, 0.768547534942627, 0.76750260591507, 0.766457676887512, 0.765412747859955, 0.764367818832397, 0.76332288980484, 0.762277960777283, 0.761233031749725, 0.760188102722168, 0.759143173694611, 0.758098244667053, 0.757053256034851, 0.756008327007294, 0.754963397979736, 0.753918468952179, 0.752873539924622, 0.751828610897064, 0.750783681869507, 0.749738752841949, 0.748693823814392, 0.747648894786835, 0.746603965759277, 0.74555903673172, 0.744514107704163, 0.743469178676605, 0.742424249649048, 0.741616189479828, 0.740808069705963, 0.740000009536743, 0.739191949367523, 0.738383829593658, 0.737575769424438, 0.736767649650574, 0.735959589481354, 0.735151529312134, 0.734343409538269, 0.733535349369049, 0.732727289199829, 0.731919169425964, 0.731111109256744, 0.730303049087524, 0.72949492931366, 0.72868686914444, 0.72787880897522, 0.727070689201355, 0.726262629032135, 0.72545450925827, 0.72464644908905, 0.72383838891983, 0.723030269145966, 0.722222208976746, 0.721801340579987, 0.721380472183228, 0.720959603786469, 0.957912445068359, 0.971380472183228, 0.984848499298096, 0.988636374473572, 0.992424249649048, 0.996212124824524, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.652958154678345, 0.654401123523712, 0.655844151973724, 0.657287120819092, 0.658730149269104, 0.660173118114471, 0.661616146564484, 0.664983153343201, 0.668350160121918, 0.671717166900635, 0.676767706871033, 0.681818187236786, 0.684343457221985, 0.686868667602539, 0.689393937587738, 0.691919207572937, 0.693939387798309, 0.695959627628326, 0.697979807853699, 0.700000047683716, 0.702020227909088, 0.703463196754456, 0.704906225204468, 0.706349194049835, 0.707792222499847, 0.709235191345215, 0.710678219795227, 0.712121188640594, 0.713804721832275, 0.715488195419312, 0.717171669006348, 0.718855202198029, 0.720538735389709, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.944444417953491, 0.944444417953491, 0.944444417953491, 0.944444417953491, 0.944444417953491, 0.946127891540527, 0.947811424732208, 0.949494957923889, 0.951178431510925, 0.952861905097961, 0.954545438289642, 0.959595918655396, 0.964646458625793, 0.969696998596191, 0.974747478961945, 0.977272748947144, 0.979797959327698, 0.982323229312897, 0.984848499298096, 0.987373769283295, 0.989899039268494, 0.992424249649048, 0.994949519634247, 0.995671033859253, 0.996392488479614, 0.99711400270462, 0.997835516929626, 0.998557031154633, 0.999278485774994, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.530303001403809, 0.530303001403809, 0.530303001403809, 0.530303001403809, 0.530303001403809, 0.530303001403809, 0.530303001403809, 0.535353541374207, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.54040402173996, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.936868667602539, 0.939393937587738, 0.941919207572937, 0.944444417953491, 0.944444417953491, 0.944444417953491, 0.944444417953491, 0.949494957923889, 0.954545438289642, 0.956565618515015, 0.958585858345032, 0.960606038570404, 0.962626278400421, 0.964646458625793, 0.96801346540451, 0.971380472183228, 0.974747478961945, 0.978114485740662, 0.981481492519379, 0.984848499298096, 0.984848499298096, 0.984848499298096, 0.984848499298096, 0.984848499298096, 0.984848499298096, 0.984848499298096, 0.984848499298096, 0.984848499298096, 0.984848499298096, 0.984848499298096, 0.989899039268494, 0.994949519634247, 0.994949519634247, 0.994949519634247, 0.994949519634247, 0.764069259166718, 0.76551228761673, 0.766955256462097, 0.768398284912109, 0.769841253757477, 0.771284282207489, 0.772727251052856, 0.772727251052856, 0.772727251052856, 0.772727251052856, 0.782828271389008, 0.782828271389008, 0.782828271389008, 0.782828271389008, 0.782828271389008, 0.78484845161438, 0.786868691444397, 0.788888871669769, 0.790909111499786, 0.792929291725159, 0.795454561710358, 0.797979831695557, 0.800505042076111, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.80303031206131 ],
-=======
-						"env1" : [ 0.0, 0.153508771929824, 0.307017543859649, 0.460526315789474, 0.614035087719298, 0.767543859649122, 0.921052631578947, 0.90844298245614, 0.895833333333333, 0.883223684210526, 0.870614035087719, 0.858004385964912, 0.845394736842105, 0.832785087719298, 0.820175438596491, 0.807565789473684, 0.794956140350877, 0.78234649122807, 0.769736842105263, 0.757127192982456, 0.744517543859649, 0.731907894736842, 0.719298245614035, 0.706688596491228, 0.694078947368421, 0.681469298245614, 0.668859649122807, 0.65625, 0.643640350877193, 0.631030701754386, 0.618421052631579, 0.605811403508772, 0.593201754385965, 0.580592105263158, 0.567982456140351, 0.555372807017544, 0.542763157894737, 0.53015350877193, 0.517543859649123, 0.504934210526316, 0.492324561403509, 0.479714912280702, 0.467105263157895, 0.454495614035088, 0.441885964912281, 0.429276315789474, 0.416666666666667, 0.40405701754386, 0.391447368421053, 0.378837719298246, 0.366228070175439, 0.353618421052632, 0.341008771929825, 0.328399122807018, 0.315789473684211, 0.315099977016778, 0.314410480349345, 0.313720983681913, 0.31303148701448, 0.312341990347047, 0.311652493679614, 0.310962997012182, 0.310273500344749, 0.309584003677316, 0.308894507009883, 0.30820501034245, 0.307515513675018, 0.306826017007585, 0.306136520340152, 0.305447023672719, 0.304757527005287, 0.304068030337854, 0.303378533670421, 0.302689037002988, 0.301999540335555, 0.301310043668123, 0.30062054700069, 0.299931050333257, 0.299241553665824, 0.298552056998392, 0.297862560330959, 0.297173063663526, 0.296483566996093, 0.295794070328661, 0.295104573661228, 0.294415076993795, 0.293725580326362, 0.293036083658929, 0.292346586991497, 0.291657090324064, 0.290967593656631, 0.290278096989198, 0.289588600321766, 0.288899103654333, 0.2882096069869, 0.287520110319467, 0.286830613652034, 0.286141116984602, 0.285451620317169, 0.284762123649736, 0.284072626982303, 0.283383130314871, 0.282693633647438, 0.282004136980005, 0.281314640312572, 0.280625143645139, 0.279935646977707, 0.279246150310274, 0.278556653642841, 0.277867156975408, 0.277177660307976, 0.276488163640543, 0.27579866697311, 0.275109170305677, 0.274419673638244, 0.273730176970812, 0.273040680303379, 0.272351183635946, 0.271661686968513, 0.270972190301081, 0.270282693633648, 0.269593196966215, 0.268903700298782, 0.26821420363135, 0.267524706963917, 0.266835210296484, 0.266145713629051, 0.265456216961618, 0.264766720294186, 0.264077223626753, 0.26338772695932, 0.262698230291887, 0.262008733624455, 0.261319236957022, 0.260629740289589, 0.259940243622156, 0.259250746954723, 0.258561250287291, 0.257871753619858, 0.257182256952425, 0.256492760284992, 0.25580326361756, 0.255113766950127, 0.254424270282694, 0.253734773615261, 0.253045276947828, 0.252355780280396, 0.251666283612963, 0.25097678694553, 0.250287290278097, 0.249597793610665, 0.248908296943232, 0.248218800275799, 0.247529303608366, 0.246839806940933, 0.246150310273501, 0.245460813606068, 0.244771316938635, 0.244081820271202, 0.24339232360377, 0.242702826936337, 0.242013330268904, 0.241323833601471, 0.240634336934039, 0.239944840266606, 0.239255343599173, 0.23856584693174, 0.237876350264307, 0.237186853596875, 0.236497356929442, 0.235807860262009, 0.235118363594576, 0.234428866927144, 0.233739370259711, 0.233049873592278, 0.232360376924845, 0.231670880257412, 0.23098138358998, 0.230291886922547, 0.229602390255114, 0.228912893587681, 0.228223396920249, 0.227533900252816, 0.226844403585383, 0.22615490691795, 0.225465410250517, 0.224775913583085, 0.224086416915652, 0.223396920248219, 0.222707423580786, 0.222017926913354, 0.221328430245921, 0.220638933578488, 0.219949436911055, 0.219259940243622, 0.21857044357619, 0.217880946908757, 0.217191450241324, 0.216501953573891, 0.215812456906459, 0.215122960239026, 0.214433463571593, 0.21374396690416, 0.213054470236728, 0.212364973569295, 0.211675476901862, 0.210985980234429, 0.210296483566996, 0.209606986899564, 0.208917490232131, 0.208227993564698, 0.207538496897265, 0.206849000229833, 0.2061595035624, 0.205470006894967, 0.204780510227534, 0.204091013560101, 0.203401516892669, 0.202712020225236, 0.202022523557803, 0.20133302689037, 0.200643530222938, 0.199954033555505, 0.199264536888072, 0.198575040220639, 0.197885543553206, 0.197196046885774, 0.196506550218341, 0.195817053550908, 0.195127556883475, 0.194438060216043, 0.19374856354861, 0.193059066881177, 0.192369570213744, 0.191680073546312, 0.190990576878879, 0.190301080211446, 0.189611583544013, 0.18892208687658, 0.188232590209148, 0.187543093541715, 0.186853596874282, 0.186164100206849, 0.185474603539417, 0.184785106871984, 0.184095610204551, 0.183406113537118, 0.182716616869685, 0.182027120202253, 0.18133762353482, 0.180648126867387, 0.179958630199954, 0.179269133532522, 0.178579636865089, 0.177890140197656, 0.177200643530223, 0.17651114686279, 0.175821650195358, 0.175132153527925, 0.174442656860492, 0.173753160193059, 0.173063663525627, 0.172374166858194, 0.171684670190761, 0.170995173523328, 0.170305676855895, 0.169616180188463, 0.16892668352103, 0.168237186853597, 0.167547690186164, 0.166858193518732, 0.166168696851299, 0.165479200183866, 0.164789703516433, 0.164100206849001, 0.163410710181568, 0.162721213514135, 0.162031716846702, 0.161342220179269, 0.160652723511837, 0.159963226844404, 0.159273730176971, 0.158584233509538, 0.157894736842106, 0.157205240174673, 0.15651574350724, 0.155826246839807, 0.155136750172374, 0.154447253504942, 0.153757756837509, 0.153068260170076, 0.152378763502643, 0.151689266835211, 0.150999770167778, 0.150310273500345, 0.149620776832912, 0.148931280165479, 0.148241783498047, 0.147552286830614, 0.146862790163181, 0.146173293495748, 0.145483796828316, 0.144794300160883, 0.14410480349345, 0.143415306826017, 0.142725810158584, 0.142036313491152, 0.141346816823719, 0.140657320156286, 0.139967823488853, 0.139278326821421, 0.138588830153988, 0.137899333486555, 0.137209836819122, 0.136520340151689, 0.135830843484257, 0.135141346816824, 0.134451850149391, 0.133762353481958, 0.133072856814526, 0.132383360147093, 0.13169386347966, 0.131004366812227, 0.130314870144795, 0.129625373477362, 0.128935876809929, 0.128246380142496, 0.127556883475063, 0.126867386807631, 0.126177890140198, 0.125488393472765, 0.124798896805332, 0.1241094001379, 0.123419903470467, 0.122730406803034, 0.122040910135601, 0.121351413468168, 0.120661916800736, 0.119972420133303, 0.11928292346587, 0.118593426798437, 0.117903930131005, 0.117214433463572, 0.116524936796139, 0.115835440128706, 0.115145943461273, 0.114456446793841, 0.113766950126408, 0.113077453458975, 0.112387956791542, 0.11169846012411, 0.111008963456677, 0.110319466789244, 0.109629970121811, 0.108940473454378, 0.108250976786946, 0.107561480119513, 0.10687198345208, 0.106182486784647, 0.105492990117215, 0.104803493449782, 0.104113996782349, 0.103424500114916, 0.102735003447484, 0.102045506780051, 0.101356010112618, 0.100666513445185, 0.099977016777752, 0.09928752011032, 0.098598023442887, 0.097908526775454, 0.097219030108021, 0.096529533440589, 0.095840036773156, 0.095150540105723, 0.09446104343829, 0.093771546770857, 0.093082050103425, 0.092392553435992, 0.091703056768559, 0.091013560101126, 0.090324063433694, 0.089634566766261, 0.088945070098828, 0.088255573431395, 0.087566076763962, 0.08687658009653, 0.086187083429097, 0.085497586761664, 0.084808090094231, 0.084118593426799, 0.083429096759366, 0.082739600091933, 0.0820501034245, 0.081360606757067, 0.080671110089635, 0.079981613422202, 0.079292116754769, 0.078602620087336, 0.077913123419904, 0.077223626752471, 0.076534130085038, 0.075844633417605, 0.075155136750173, 0.07446564008274, 0.073776143415307, 0.073086646747874, 0.072397150080441, 0.071707653413009, 0.071018156745576, 0.070328660078143, 0.06963916341071, 0.068949666743278, 0.068260170075845, 0.067570673408412, 0.066881176740979, 0.066191680073546, 0.065502183406114, 0.064812686738681, 0.064123190071248, 0.063433693403815, 0.062744196736383, 0.06205470006895, 0.061365203401517, 0.060675706734084, 0.059986210066651, 0.059296713399219, 0.058607216731786, 0.057917720064353, 0.05722822339692, 0.056538726729488, 0.055849230062055, 0.055159733394622, 0.054470236727189, 0.053780740059756, 0.053091243392324, 0.052401746724891, 0.051712250057458, 0.051022753390025, 0.050333256722593, 0.04964376005516, 0.048954263387727, 0.048264766720294, 0.047575270052861, 0.046885773385429, 0.046196276717996, 0.045506780050563, 0.04481728338313, 0.044127786715698, 0.043438290048265, 0.042748793380832, 0.042059296713399, 0.041369800045967, 0.040680303378534, 0.039990806711101, 0.039301310043668, 0.038611813376235, 0.037922316708803, 0.03723282004137, 0.036543323373937, 0.035853826706504, 0.035164330039072, 0.034474833371639, 0.033785336704206, 0.033095840036773, 0.03240634336934, 0.031716846701908, 0.031027350034475, 0.030337853367042, 0.029648356699609, 0.028958860032177, 0.028269363364744, 0.027579866697311, 0.026890370029878, 0.026200873362445, 0.025511376695013, 0.02482188002758, 0.024132383360147, 0.023442886692714, 0.022753390025282, 0.022063893357849, 0.021374396690416, 0.020684900022983, 0.019995403355551, 0.019305906688118, 0.018616410020685, 0.017926913353252, 0.017237416685819, 0.016547920018387, 0.015858423350954, 0.015168926683521, 0.014479430016088, 0.013789933348656, 0.013100436681223, 0.01241094001379, 0.011721443346357, 0.011031946678924, 0.010342450011492, 0.009652953344059, 0.008963456676626, 0.008273960009193, 0.007584463341761, 0.006894966674328, 0.006205470006895, 0.005515973339462, 0.004826476672029, 0.004136980004597, 0.003447483337164, 0.002757986669731, 0.002068490002298, 0.001378993334866, 0.000689496667433 ],
-						"env10" : [ 0.0, 0.153509005904198, 0.307018011808395, 0.460525989532471, 0.61403501033783, 0.767543971538544, 0.921052992343903, 0.909184992313385, 0.897316992282867, 0.88544899225235, 0.873580992221832, 0.861712992191315, 0.849844992160797, 0.83797699213028, 0.826108992099762, 0.814240992069244, 0.802374005317688, 0.79050600528717, 0.778638005256653, 0.766770005226135, 0.754902005195618, 0.7430340051651, 0.731166005134583, 0.719298005104065, 0.707430005073547, 0.69556200504303, 0.683695018291473, 0.671827018260956, 0.659959018230438, 0.648091018199921, 0.636223018169403, 0.624355018138885, 0.612487018108368, 0.60061901807785, 0.588751018047333, 0.576883018016815, 0.565015017986298, 0.553147971630096, 0.541279971599579, 0.529411971569061, 0.517543971538544, 0.505675971508026, 0.493808001279831, 0.481940001249313, 0.470072001218796, 0.458204001188278, 0.446336001157761, 0.434469014406204, 0.422601014375687, 0.410733014345169, 0.398865014314651, 0.386997014284134, 0.375129014253616, 0.363261014223099, 0.351393014192581, 0.339525014162064, 0.327657014131546, 0.315789014101028, 0.315095007419586, 0.314401000738144, 0.313706994056702, 0.313012987375259, 0.31231901049614, 0.311625003814697, 0.310930997133255, 0.310236990451813, 0.309543013572693, 0.308849006891251, 0.308155000209808, 0.307460993528366, 0.306766986846924, 0.306073009967804, 0.305379003286362, 0.304684996604919, 0.303990989923477, 0.303297013044357, 0.302603006362915, 0.301908999681473, 0.301214993000031, 0.300520986318588, 0.299825996160507, 0.299131989479065, 0.298438012599945, 0.297744005918503, 0.661616146564484, 0.651515126228333, 0.641414165496826, 0.621212124824524, 0.590909063816071, 0.570707082748413, 0.550505042076111, 0.5, 0.439393937587738, 0.434343427419662, 0.409090906381607, 0.378787875175476, 0.348484843969345, 0.328282833099365, 0.287333995103836, 0.286639988422394, 0.285946011543274, 0.285252004861832, 0.284557998180389, 0.283863991498947, 0.283169001340866, 0.282474994659424, 0.281780987977982, 0.281087011098862, 0.280393004417419, 0.279698997735977, 0.279004991054535, 0.278311014175415, 0.277617007493973, 0.276923000812531, 0.276228994131088, 0.275534987449646, 0.274841010570526, 0.274147003889084, 0.273452997207642, 0.272758990526199, 0.76262629032135, 0.752525269985199, 0.752525269985199, 0.752525269985199, 0.742424249649048, 0.732323229312897, 0.722222208976746, 0.712121188640594, 0.691919207572937, 0.681818187236786, 0.671717166900635, 0.664983153343201, 0.658249139785767, 0.651515126228333, 0.641414165496826, 0.631313145160675, 0.621212124824524, 0.601010084152222, 0.597643077373505, 0.594276070594788, 0.590909063816071, 0.580808103084564, 0.570707082748413, 0.560606062412262, 0.550505042076111, 0.54040402173996, 0.530303001403809, 0.525252521038055, 0.520202040672302, 0.5, 0.47979798913002, 0.469696968793869, 0.449494957923889, 0.429292917251587, 0.409090906381607, 0.404040396213531, 0.398989886045456, 0.388888895511627, 0.368686854839325, 0.358585864305496, 0.348484843969345, 0.338383823633194, 0.33164981007576, 0.324915826320648, 0.318181812763214, 0.308080792427063, 0.297979801893234, 0.287878781557083, 0.267676770687103, 0.264309763908386, 0.260942757129669, 0.247474744915962, 0.237373739480972, 0.237373739480972, 0.237373739480972, 0.237373739480972, 0.237373739480972, 0.237373739480972, 0.237373739480972, 0.237373739480972, 0.237373739480972, 0.237373739480972, 0.237373739480972, 0.237373739480972, 0.237373739480972, 0.237373739480972, 0.237373739480972, 0.237373739480972, 0.237373739480972, 0.237373739480972, 0.237373739480972, 0.237373739480972, 0.222093999385834, 0.221399992704391, 0.22070600092411, 0.220011994242668, 0.219318002462387, 0.218622997403145, 0.217929005622864, 0.217234998941422, 0.21654100716114, 0.215847000479698, 0.215152993798256, 0.214459002017975, 0.213764995336533, 0.213071003556252, 0.212376996874809, 0.211683005094528, 0.210988998413086, 0.210295006632805, 0.209600999951363, 0.20890699326992, 0.208213001489639, 0.207518994808197, 0.206825003027916, 0.206130996346474, 0.205437004566193, 0.20474299788475, 0.204049006104469, 0.203354999423027, 0.202659994363785, 0.201966002583504, 0.201271995902061, 0.20057800412178, 0.199883997440338, 0.199190005660057, 0.198495998978615, 0.197802007198334, 0.197108000516891, 0.196413993835449, 0.195720002055168, 0.195025995373726, 0.194332003593445, 0.193637996912003, 0.192944005131721, 0.192249998450279, 0.191556006669998, 0.190861999988556, 0.190167993307114, 0.189474001526833, 0.18877999484539, 0.188086003065109, 0.187391996383667, 0.186698004603386, 0.186002999544144, 0.185308992862701, 0.18461500108242, 0.183920994400978, 0.183227002620697, 0.182532995939255, 0.181839004158974, 0.181144997477531, 0.18045100569725, 0.179756999015808, 0.179063007235527, 0.178369000554085, 0.177674993872643, 0.176981002092361, 0.176286995410919, 0.175593003630638, 0.174898996949196, 0.174205005168915, 0.173510998487473, 0.172817006707191, 0.172123000025749, 0.171428993344307, 0.170735001564026, 0.170039996504784, 0.169346004724503, 0.16865199804306, 0.167958006262779, 0.167263999581337, 0.166569992899895, 0.165876001119614, 0.165181994438171, 0.16448800265789, 0.163793995976448, 0.163100004196167, 0.162405997514725, 0.161712005734444, 0.161017999053001, 0.16032400727272, 0.159630000591278, 0.158935993909836, 0.158242002129555, 0.157547995448112, 0.156854003667831, 0.156159996986389, 0.155466005206108, 0.154771998524666, 0.154078006744385, 0.153383001685143, 0.1526889950037, 0.151995003223419, 0.151300996541977, 0.150607004761696, 0.149912998080254, 0.149219006299973, 0.14852499961853, 0.147830992937088, 0.147137001156807, 0.146442994475365, 0.145749002695084, 0.145054996013641, 0.14436100423336, 0.143666997551918, 0.142973005771637, 0.142278999090195, 0.141585007309914, 0.140891000628471, 0.140196993947029, 0.139503002166748, 0.138808995485306, 0.138115003705025, 0.137419998645782, 0.136726006865501, 0.136032000184059, 0.135337993502617, 0.134644001722336, 0.133949995040894, 0.133256003260612, 0.13256199657917, 0.131868004798889, 0.131173998117447, 0.130480006337166, 0.129785999655724, 0.129091992974281, 0.128398001194, 0.127703994512558, 0.127010002732277, 0.126315996050835, 0.125622004270554, 0.124927997589111, 0.12423399835825, 0.123539999127388, 0.122845999896526, 0.122152000665665, 0.121457003057003, 0.120762996375561, 0.120068997144699, 0.119374997913837, 0.118680998682976, 0.117986999452114, 0.117293000221252, 0.116599000990391, 0.115905001759529, 0.115211002528667, 0.114517003297806, 0.113822996616364, 0.113128997385502, 0.11243499815464, 0.111740998923779, 0.111046999692917, 0.110353000462055, 0.109659001231194, 0.108965002000332, 0.10827100276947, 0.107577003538609, 0.106882996857166, 0.106188997626305, 0.105494998395443, 0.104800000786781, 0.10410600155592, 0.103412002325058, 0.102718003094196, 0.102023996412754, 0.101329997181892, 0.100635997951031, 0.099941998720169, 0.099247999489307, 0.098554000258446, 0.097860001027584, 0.097166001796722, 0.096472002565861, 0.095778003334999, 0.095083996653557, 0.094389997422695, 0.093695998191833, 0.093001998960972, 0.09230799973011, 0.091614000499249, 0.090920001268387, 0.090226002037525, 0.089532002806664, 0.088836997747421, 0.08814299851656, 0.087448999285698, 0.086755000054836, 0.086061000823975, 0.085367001593113, 0.084673002362251, 0.08397900313139, 0.083284996449947, 0.082590997219086, 0.081896997988224, 0.081202998757362, 0.080508999526501, 0.079815000295639, 0.079121001064777, 0.078427001833916, 0.077733002603054, 0.077039003372192, 0.07634499669075, 0.075650997459888, 0.074956998229027, 0.074262998998165, 0.073568999767303, 0.072874002158642, 0.07218000292778, 0.071486003696918, 0.070791997015476, 0.070097997784615, 0.069403998553753, 0.068709999322891, 0.06801600009203, 0.067322000861168, 0.066628001630306, 0.065934002399445, 0.065240003168583, 0.064545996487141, 0.063851997256279, 0.063157998025417, 0.062463998794556, 0.061769999563694, 0.061076000332832, 0.060382001101971, 0.059687998145819, 0.058993998914957, 0.058299999684095, 0.057606000453234, 0.056912001222372, 0.05621699988842, 0.055523000657558, 0.054829001426697, 0.054134998470545, 0.053440999239683, 0.052747000008821, 0.05205300077796, 0.051359001547098, 0.050664998590946, 0.049970999360085, 0.049277000129223, 0.048583000898361, 0.0478890016675, 0.047194998711348, 0.046500999480486, 0.045807000249624, 0.045113001018763, 0.044419001787901, 0.043724998831749, 0.043030999600887, 0.042337000370026, 0.041643001139164, 0.040948998183012, 0.04025400057435, 0.039560001343489, 0.038865998387337, 0.038171999156475, 0.037477999925613, 0.036784000694752, 0.03609000146389, 0.035395998507738, 0.034701999276876, 0.034008000046015, 0.033314000815153, 0.032620001584291, 0.031925998628139, 0.031231999397278, 0.030538000166416, 0.029843999072909, 0.029149999842048, 0.028456000611186, 0.027761999517679, 0.027068000286818, 0.026373999193311, 0.025679999962449, 0.024986000731587, 0.024290999397635, 0.023597000166774, 0.022902999073267, 0.022208999842405, 0.021515000611544, 0.020820999518037, 0.020127000287175, 0.019432999193668, 0.018738999962807, 0.018045000731945, 0.017350999638438, 0.016657000407577, 0.01596299931407, 0.015269000083208, 0.014574999921024, 0.01388099975884, 0.013186999596655, 0.012493000365794, 0.011799000203609, 0.011105000041425, 0.010410999879241, 0.009716999717057, 0.009022999554873, 0.008329000324011, 0.007633999921381, 0.006940000224859, 0.006246000062674, 0.00555199990049, 0.004858000203967, 0.004164000041783, 0.003470000112429, 0.002775999950245, 0.002082000020891, 0.001387999975123, 0.000693999987561 ],
-						"env11" : [ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.661616146564484, 0.661616146564484, 0.661616146564484, 0.661616146564484, 0.661616146564484, 0.661616146564484, 0.661616146564484, 0.671717166900635, 0.671717166900635, 0.671717166900635, 0.671717166900635, 0.671717166900635, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.686868667602539, 0.691919207572937, 0.691919207572937, 0.691919207572937, 0.691919207572937, 0.693939387798309, 0.695959627628326, 0.697979807853699, 0.700000047683716, 1.0, 1.0, 0.732323229312897, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.717171728610992, 0.712121248245239, 0.707070708274841, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.722222208976746, 0.725589215755463, 0.72895622253418, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.732323229312897, 0.725589215755463, 0.718855202198029, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.671717166900635, 0.661616146564484, 0.651515126228333, 0.651515126228333, 0.651515126228333, 0.651515126228333, 0.651515126228333, 0.651515126228333, 0.651515126228333, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.580808103084564, 0.570707082748413, 0.550505042076111, 0.550505042076111, 0.550505042076111, 0.550505042076111, 0.550505042076111, 0.550505042076111, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.53636360168457, 0.532323241233826, 0.528282821178436, 0.524242460727692, 0.520202040672302, 0.510101020336151, 0.510101020336151, 0.510101020336151, 0.510101020336151, 0.510101020336151, 0.510101020336151, 0.510101020336151, 0.510101020336151, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.76262629032135, 0.752525269985199, 0.742424249649048, 0.742424249649048, 0.742424249649048, 0.742424249649048, 0.742424249649048, 0.742424249649048, 0.742424249649048, 0.742424249649048, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.550505042076111, 0.550505042076111, 0.550505042076111, 0.550505042076111, 0.550505042076111, 0.550505042076111, 0.550505042076111, 0.550505042076111, 0.550505042076111, 0.550505042076111, 0.550505042076111, 0.550505042076111, 0.764646470546722, 0.76262629032135, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.609090924263, 0.607070684432983, 0.605050504207611, 0.603030264377594, 0.601010084152222, 0.601010084152222, 0.601010084152222, 0.765993297100067, 0.779461264610291, 0.792929291725159, 0.792929291725159, 0.792929291725159, 0.80303031206131, 0.80303031206131, 0.80303031206131, 0.813131332397461, 0.813131332397461, 0.80303031206131, 0.80303031206131, 1.0, 1.0, 0.651515126228333, 0.651515126228333, 0.651515126228333, 0.651515126228333, 0.651515126228333, 0.661616146564484, 0.661616146564484, 0.661616146564484, 0.661616146564484, 0.661616146564484, 0.661616146564484, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.755050539970398, 0.757575750350952, 0.760101020336151, 0.76262629032135, 0.76262629032135, 0.76262629032135, 0.76262629032135, 0.752525269985199, 0.603535354137421, 0.60606062412262, 0.608585834503174, 0.611111104488373, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.772727251052856, 0.772727251052856, 0.772727251052856, 0.772727251052856, 0.772727251052856, 0.772727251052856, 0.772727251052856, 0.772727251052856, 0.777777791023254, 0.782828271389008, 0.782828271389008, 0.782828271389008, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 0.681818187236786, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.717171669006348, 0.712121188640594, 0.712121188640594, 0.712121188640594, 0.712121188640594, 0.712121188640594, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 0.702020227909088, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ],
-						"env12" : [ 0.0, 0.153508771929824, 0.307017543859649, 0.460526315789474, 0.614035087719298, 0.767543859649122, 0.921052631578947, 0.909184726522188, 0.897316821465428, 0.885448916408668, 0.873581011351909, 0.861713106295149, 0.84984520123839, 0.83797729618163, 0.826109391124871, 0.814241486068111, 0.802373581011352, 0.790505675954592, 0.778637770897833, 0.766769865841073, 0.754901960784314, 0.743034055727554, 0.731166150670794, 0.719298245614035, 0.707430340557275, 0.695562435500516, 0.683694530443756, 0.671826625386997, 0.659958720330237, 0.648090815273478, 0.636222910216718, 0.624355005159959, 0.612487100103199, 0.60061919504644, 0.58875128998968, 0.576883384932921, 0.565015479876161, 0.553147574819402, 0.541279669762642, 0.529411764705882, 0.517543859649123, 0.505675954592363, 0.493808049535604, 0.481940144478844, 0.470072239422085, 0.458204334365325, 0.446336429308566, 0.434468524251806, 0.422600619195047, 0.410732714138287, 0.398864809081528, 0.386996904024768, 0.375128998968009, 0.363261093911249, 0.35139318885449, 0.33952528379773, 0.327657378740971, 0.315789473684211, 0.315095430884905, 0.314401388085599, 0.313707345286293, 0.313013302486987, 0.312319259687681, 0.311625216888375, 0.310931174089069, 0.310237131289763, 0.309543088490457, 0.308849045691151, 0.308155002891845, 0.30746096009254, 0.306766917293234, 0.306072874493928, 0.305378831694622, 0.304684788895316, 0.30399074609601, 0.303296703296704, 0.302602660497398, 0.301908617698092, 0.301214574898786, 0.30052053209948, 0.299826489300174, 0.299132446500868, 0.298438403701562, 0.297744360902256, 0.29705031810295, 0.296356275303644, 0.295662232504338, 0.294968189705032, 0.294274146905726, 0.29358010410642, 0.292886061307114, 0.292192018507808, 0.291497975708502, 0.290803932909196, 0.290109890109891, 0.289415847310585, 0.288721804511279, 0.288027761711973, 0.287333718912667, 0.286639676113361, 0.285945633314055, 0.285251590514749, 0.284557547715443, 0.283863504916137, 0.283169462116831, 0.282475419317525, 0.281781376518219, 0.281087333718913, 0.280393290919607, 0.279699248120301, 0.279005205320995, 0.278311162521689, 0.277617119722383, 0.276923076923077, 0.276229034123771, 0.275534991324465, 0.274840948525159, 0.274146905725854, 0.273452862926548, 0.272758820127242, 0.272064777327936, 0.27137073452863, 0.270676691729324, 0.269982648930018, 0.269288606130712, 0.268594563331406, 0.2679005205321, 0.267206477732794, 0.266512434933488, 0.265818392134182, 0.265124349334876, 0.26443030653557, 0.263736263736264, 0.263042220936958, 0.262348178137652, 0.261654135338346, 0.26096009253904, 0.260266049739734, 0.259572006940428, 0.258877964141122, 0.258183921341816, 0.25748987854251, 0.256795835743205, 0.256101792943899, 0.255407750144593, 0.254713707345287, 0.254019664545981, 0.253325621746675, 0.252631578947369, 0.251937536148063, 0.251243493348757, 0.250549450549451, 0.249855407750145, 0.249161364950839, 0.248467322151533, 0.247773279352227, 0.247079236552921, 0.246385193753615, 0.245691150954309, 0.244997108155003, 0.244303065355697, 0.243609022556391, 0.242914979757085, 0.242220936957779, 0.241526894158473, 0.240832851359168, 0.240138808559862, 0.239444765760556, 0.23875072296125, 0.238056680161944, 0.237362637362638, 0.236668594563332, 0.235974551764026, 0.23528050896472, 0.234586466165414, 0.233892423366108, 0.233198380566802, 0.232504337767496, 0.23181029496819, 0.231116252168884, 0.230422209369578, 0.229728166570272, 0.229034123770966, 0.22834008097166, 0.227646038172354, 0.226951995373048, 0.226257952573742, 0.225563909774436, 0.22486986697513, 0.224175824175825, 0.223481781376519, 0.222787738577213, 0.222093695777907, 0.221399652978601, 0.220705610179295, 0.220011567379989, 0.219317524580683, 0.218623481781377, 0.217929438982071, 0.217235396182765, 0.216541353383459, 0.215847310584153, 0.215153267784847, 0.214459224985541, 0.213765182186235, 0.213071139386929, 0.212377096587623, 0.211683053788317, 0.210989010989011, 0.210294968189705, 0.209600925390399, 0.208906882591093, 0.208212839791787, 0.207518796992482, 0.206824754193176, 0.20613071139387, 0.205436668594564, 0.204742625795258, 0.204048582995952, 0.203354540196646, 0.20266049739734, 0.201966454598034, 0.201272411798728, 0.200578368999422, 0.199884326200116, 0.19919028340081, 0.198496240601504, 0.197802197802198, 0.197108155002892, 0.196414112203586, 0.19572006940428, 0.195026026604974, 0.194331983805668, 0.193637941006362, 0.192943898207056, 0.19224985540775, 0.191555812608444, 0.190861769809139, 0.190167727009833, 0.189473684210527, 0.188779641411221, 0.188085598611915, 0.187391555812609, 0.186697513013303, 0.186003470213997, 0.185309427414691, 0.184615384615385, 0.183921341816079, 0.183227299016773, 0.182533256217467, 0.181839213418161, 0.181145170618855, 0.180451127819549, 0.179757085020243, 0.179063042220937, 0.178368999421631, 0.177674956622325, 0.176980913823019, 0.176286871023713, 0.175592828224407, 0.174898785425101, 0.174204742625796, 0.17351069982649, 0.172816657027184, 0.172122614227878, 0.171428571428572, 0.170734528629266, 0.17004048582996, 0.169346443030654, 0.168652400231348, 0.167958357432042, 0.167264314632736, 0.16657027183343, 0.165876229034124, 0.165182186234818, 0.164488143435512, 0.163794100636206, 0.1631000578369, 0.162406015037594, 0.161711972238288, 0.161017929438982, 0.160323886639676, 0.15962984384037, 0.158935801041064, 0.158241758241758, 0.157547715442453, 0.156853672643147, 0.156159629843841, 0.155465587044535, 0.154771544245229, 0.154077501445923, 0.153383458646617, 0.152689415847311, 0.151995373048005, 0.151301330248699, 0.150607287449393, 0.149913244650087, 0.149219201850781, 0.148525159051475, 0.147831116252169, 0.147137073452863, 0.146443030653557, 0.145748987854251, 0.145054945054945, 0.144360902255639, 0.143666859456333, 0.142972816657027, 0.142278773857721, 0.141584731058415, 0.14089068825911, 0.140196645459804, 0.139502602660498, 0.138808559861192, 0.138114517061886, 0.13742047426258, 0.136726431463274, 0.136032388663968, 0.135338345864662, 0.134644303065356, 0.13395026026605, 0.133256217466744, 0.132562174667438, 0.131868131868132, 0.131174089068826, 0.13048004626952, 0.129786003470214, 0.129091960670908, 0.128397917871602, 0.127703875072296, 0.12700983227299, 0.126315789473684, 0.125621746674378, 0.124927703875072, 0.124233661075767, 0.123539618276461, 0.122845575477155, 0.122151532677849, 0.121457489878543, 0.120763447079237, 0.120069404279931, 0.119375361480625, 0.118681318681319, 0.117987275882013, 0.117293233082707, 0.116599190283401, 0.115905147484095, 0.115211104684789, 0.114517061885483, 0.113823019086177, 0.113128976286871, 0.112434933487565, 0.111740890688259, 0.111046847888953, 0.110352805089647, 0.109658762290341, 0.108964719491035, 0.108270676691729, 0.107576633892424, 0.106882591093118, 0.106188548293812, 0.105494505494506, 0.1048004626952, 0.104106419895894, 0.103412377096588, 0.102718334297282, 0.102024291497976, 0.10133024869867, 0.100636205899364, 0.099942163100058, 0.099248120300752, 0.098554077501446, 0.09786003470214, 0.097165991902834, 0.096471949103528, 0.095777906304222, 0.095083863504916, 0.09438982070561, 0.093695777906304, 0.093001735106998, 0.092307692307692, 0.091613649508386, 0.090919606709081, 0.090225563909775, 0.089531521110469, 0.088837478311163, 0.088143435511857, 0.087449392712551, 0.086755349913245, 0.086061307113939, 0.085367264314633, 0.084673221515327, 0.083979178716021, 0.083285135916715, 0.082591093117409, 0.081897050318103, 0.081203007518797, 0.080508964719491, 0.079814921920185, 0.079120879120879, 0.078426836321573, 0.077732793522267, 0.077038750722961, 0.076344707923655, 0.075650665124349, 0.074956622325043, 0.074262579525738, 0.073568536726432, 0.072874493927126, 0.07218045112782, 0.071486408328514, 0.070792365529208, 0.070098322729902, 0.069404279930596, 0.06871023713129, 0.068016194331984, 0.067322151532678, 0.066628108733372, 0.065934065934066, 0.06524002313476, 0.064545980335454, 0.063851937536148, 0.063157894736842, 0.062463851937536, 0.06176980913823, 0.061075766338924, 0.060381723539618, 0.059687680740312, 0.058993637941006, 0.058299595141701, 0.057605552342395, 0.056911509543089, 0.056217466743783, 0.055523423944477, 0.054829381145171, 0.054135338345865, 0.053441295546559, 0.052747252747253, 0.052053209947947, 0.051359167148641, 0.050665124349335, 0.049971081550029, 0.049277038750723, 0.048582995951417, 0.047888953152111, 0.047194910352805, 0.046500867553499, 0.045806824754193, 0.045112781954887, 0.044418739155581, 0.043724696356275, 0.043030653556969, 0.042336610757663, 0.041642567958357, 0.040948525159052, 0.040254482359746, 0.03956043956044, 0.038866396761134, 0.038172353961828, 0.037478311162522, 0.036784268363216, 0.03609022556391, 0.035396182764604, 0.034702139965298, 0.034008097165992, 0.033314054366686, 0.03262001156738, 0.031925968768074, 0.031231925968768, 0.030537883169462, 0.029843840370156, 0.02914979757085, 0.028455754771544, 0.027761711972238, 0.027067669172932, 0.026373626373626, 0.02567958357432, 0.024985540775015, 0.024291497975709, 0.023597455176403, 0.022903412377097, 0.022209369577791, 0.021515326778485, 0.020821283979179, 0.020127241179873, 0.019433198380567, 0.018739155581261, 0.018045112781955, 0.017351069982649, 0.016657027183343, 0.015962984384037, 0.015268941584731, 0.014574898785425, 0.013880855986119, 0.013186813186813, 0.012492770387507, 0.011798727588201, 0.011104684788895, 0.010410641989589, 0.009716599190283, 0.009022556390977, 0.008328513591672, 0.007634470792366, 0.00694042799306, 0.006246385193754, 0.005552342394448, 0.004858299595142, 0.004164256795836, 0.00347021399653, 0.002776171197224, 0.002082128397918, 0.001388085598612, 0.000694042799306 ],
-						"env2" : [ 0.0, 0.153508771929824, 0.307017543859649, 0.460526315789474, 0.614035087719298, 0.767543859649122, 0.921052631578947, 0.90844298245614, 0.895833333333333, 0.883223684210526, 0.870614035087719, 0.858004385964912, 0.845394736842105, 0.832785087719298, 0.820175438596491, 0.807565789473684, 0.794956140350877, 0.78234649122807, 0.769736842105263, 0.757127192982456, 0.744517543859649, 0.731907894736842, 0.719298245614035, 0.706688596491228, 0.694078947368421, 0.681469298245614, 0.668859649122807, 0.65625, 0.643640350877193, 0.631030701754386, 0.618421052631579, 0.605811403508772, 0.593201754385965, 0.580592105263158, 0.567982456140351, 0.555372807017544, 0.542763157894737, 0.53015350877193, 0.517543859649123, 0.504934210526316, 0.492324561403509, 0.479714912280702, 0.467105263157895, 0.454495614035088, 0.441885964912281, 0.429276315789474, 0.416666666666667, 0.40405701754386, 0.391447368421053, 0.378837719298246, 0.366228070175439, 0.353618421052632, 0.341008771929825, 0.328399122807018, 0.315789473684211, 0.315099977016778, 0.314410480349345, 0.313720983681913, 0.31303148701448, 0.312341990347047, 0.311652493679614, 0.310962997012182, 0.310273500344749, 0.309584003677316, 0.308894507009883, 0.30820501034245, 0.307515513675018, 0.306826017007585, 0.306136520340152, 0.305447023672719, 0.304757527005287, 0.304068030337854, 0.303378533670421, 0.302689037002988, 0.301999540335555, 0.301310043668123, 0.30062054700069, 0.299931050333257, 0.299241553665824, 0.298552056998392, 0.297862560330959, 0.297173063663526, 0.296483566996093, 0.295794070328661, 0.295104573661228, 0.294415076993795, 0.293725580326362, 0.293036083658929, 0.292346586991497, 0.291657090324064, 0.290967593656631, 0.290278096989198, 0.289588600321766, 0.288899103654333, 0.2882096069869, 0.287520110319467, 0.286830613652034, 0.286141116984602, 0.285451620317169, 0.284762123649736, 0.284072626982303, 0.283383130314871, 0.282693633647438, 0.282004136980005, 0.281314640312572, 0.280625143645139, 0.279935646977707, 0.279246150310274, 0.278556653642841, 0.277867156975408, 0.277177660307976, 0.276488163640543, 0.27579866697311, 0.275109170305677, 0.274419673638244, 0.273730176970812, 0.273040680303379, 0.272351183635946, 0.271661686968513, 0.270972190301081, 0.270282693633648, 0.269593196966215, 0.268903700298782, 0.26821420363135, 0.267524706963917, 0.266835210296484, 0.266145713629051, 0.265456216961618, 0.264766720294186, 0.264077223626753, 0.26338772695932, 0.262698230291887, 0.262008733624455, 0.261319236957022, 0.260629740289589, 0.259940243622156, 0.259250746954723, 0.258561250287291, 0.257871753619858, 0.257182256952425, 0.256492760284992, 0.25580326361756, 0.255113766950127, 0.254424270282694, 0.253734773615261, 0.253045276947828, 0.252355780280396, 0.251666283612963, 0.25097678694553, 0.250287290278097, 0.249597793610665, 0.248908296943232, 0.248218800275799, 0.247529303608366, 0.246839806940933, 0.246150310273501, 0.245460813606068, 0.244771316938635, 0.244081820271202, 0.24339232360377, 0.242702826936337, 0.242013330268904, 0.241323833601471, 0.240634336934039, 0.239944840266606, 0.239255343599173, 0.23856584693174, 0.237876350264307, 0.237186853596875, 0.236497356929442, 0.235807860262009, 0.235118363594576, 0.234428866927144, 0.233739370259711, 0.233049873592278, 0.232360376924845, 0.231670880257412, 0.23098138358998, 0.230291886922547, 0.229602390255114, 0.228912893587681, 0.228223396920249, 0.227533900252816, 0.226844403585383, 0.22615490691795, 0.225465410250517, 0.224775913583085, 0.224086416915652, 0.223396920248219, 0.222707423580786, 0.222017926913354, 0.221328430245921, 0.220638933578488, 0.219949436911055, 0.219259940243622, 0.21857044357619, 0.217880946908757, 0.217191450241324, 0.216501953573891, 0.215812456906459, 0.215122960239026, 0.214433463571593, 0.21374396690416, 0.213054470236728, 0.212364973569295, 0.211675476901862, 0.210985980234429, 0.210296483566996, 0.209606986899564, 0.208917490232131, 0.208227993564698, 0.207538496897265, 0.206849000229833, 0.2061595035624, 0.205470006894967, 0.204780510227534, 0.204091013560101, 0.203401516892669, 0.202712020225236, 0.202022523557803, 0.20133302689037, 0.200643530222938, 0.199954033555505, 0.199264536888072, 0.198575040220639, 0.197885543553206, 0.197196046885774, 0.196506550218341, 0.195817053550908, 0.195127556883475, 0.194438060216043, 0.19374856354861, 0.193059066881177, 0.192369570213744, 0.191680073546312, 0.190990576878879, 0.190301080211446, 0.189611583544013, 0.18892208687658, 0.188232590209148, 0.187543093541715, 0.186853596874282, 0.186164100206849, 0.185474603539417, 0.184785106871984, 0.184095610204551, 0.183406113537118, 0.182716616869685, 0.182027120202253, 0.18133762353482, 0.180648126867387, 0.179958630199954, 0.179269133532522, 0.178579636865089, 0.177890140197656, 0.177200643530223, 0.17651114686279, 0.175821650195358, 0.175132153527925, 0.174442656860492, 0.173753160193059, 0.173063663525627, 0.172374166858194, 0.171684670190761, 0.170995173523328, 0.170305676855895, 0.169616180188463, 0.16892668352103, 0.168237186853597, 0.167547690186164, 0.166858193518732, 0.166168696851299, 0.165479200183866, 0.164789703516433, 0.164100206849001, 0.163410710181568, 0.162721213514135, 0.162031716846702, 0.161342220179269, 0.160652723511837, 0.159963226844404, 0.159273730176971, 0.158584233509538, 0.157894736842106, 0.157205240174673, 0.15651574350724, 0.155826246839807, 0.155136750172374, 0.154447253504942, 0.153757756837509, 0.153068260170076, 0.152378763502643, 0.151689266835211, 0.150999770167778, 0.150310273500345, 0.149620776832912, 0.148931280165479, 0.148241783498047, 0.147552286830614, 0.146862790163181, 0.146173293495748, 0.145483796828316, 0.144794300160883, 0.14410480349345, 0.143415306826017, 0.142725810158584, 0.142036313491152, 0.141346816823719, 0.140657320156286, 0.139967823488853, 0.139278326821421, 0.138588830153988, 0.137899333486555, 0.137209836819122, 0.136520340151689, 0.135830843484257, 0.135141346816824, 0.134451850149391, 0.133762353481958, 0.133072856814526, 0.132383360147093, 0.13169386347966, 0.131004366812227, 0.130314870144795, 0.129625373477362, 0.128935876809929, 0.128246380142496, 0.127556883475063, 0.126867386807631, 0.126177890140198, 0.125488393472765, 0.124798896805332, 0.1241094001379, 0.123419903470467, 0.122730406803034, 0.122040910135601, 0.121351413468168, 0.120661916800736, 0.119972420133303, 0.11928292346587, 0.118593426798437, 0.117903930131005, 0.117214433463572, 0.116524936796139, 0.115835440128706, 0.115145943461273, 0.114456446793841, 0.113766950126408, 0.113077453458975, 0.112387956791542, 0.11169846012411, 0.111008963456677, 0.110319466789244, 0.109629970121811, 0.108940473454378, 0.108250976786946, 0.107561480119513, 0.10687198345208, 0.106182486784647, 0.105492990117215, 0.104803493449782, 0.104113996782349, 0.103424500114916, 0.102735003447484, 0.102045506780051, 0.101356010112618, 0.100666513445185, 0.099977016777752, 0.09928752011032, 0.098598023442887, 0.097908526775454, 0.097219030108021, 0.096529533440589, 0.095840036773156, 0.095150540105723, 0.09446104343829, 0.093771546770857, 0.093082050103425, 0.092392553435992, 0.091703056768559, 0.091013560101126, 0.090324063433694, 0.089634566766261, 0.088945070098828, 0.088255573431395, 0.087566076763962, 0.08687658009653, 0.086187083429097, 0.085497586761664, 0.084808090094231, 0.084118593426799, 0.083429096759366, 0.082739600091933, 0.0820501034245, 0.081360606757067, 0.080671110089635, 0.079981613422202, 0.079292116754769, 0.078602620087336, 0.077913123419904, 0.077223626752471, 0.076534130085038, 0.075844633417605, 0.075155136750173, 0.07446564008274, 0.073776143415307, 0.073086646747874, 0.072397150080441, 0.071707653413009, 0.071018156745576, 0.070328660078143, 0.06963916341071, 0.068949666743278, 0.068260170075845, 0.067570673408412, 0.066881176740979, 0.066191680073546, 0.065502183406114, 0.064812686738681, 0.064123190071248, 0.063433693403815, 0.062744196736383, 0.06205470006895, 0.061365203401517, 0.060675706734084, 0.059986210066651, 0.059296713399219, 0.058607216731786, 0.057917720064353, 0.05722822339692, 0.056538726729488, 0.055849230062055, 0.055159733394622, 0.054470236727189, 0.053780740059756, 0.053091243392324, 0.052401746724891, 0.051712250057458, 0.051022753390025, 0.050333256722593, 0.04964376005516, 0.048954263387727, 0.048264766720294, 0.047575270052861, 0.046885773385429, 0.046196276717996, 0.045506780050563, 0.04481728338313, 0.044127786715698, 0.043438290048265, 0.042748793380832, 0.042059296713399, 0.041369800045967, 0.040680303378534, 0.039990806711101, 0.039301310043668, 0.038611813376235, 0.037922316708803, 0.03723282004137, 0.036543323373937, 0.035853826706504, 0.035164330039072, 0.034474833371639, 0.033785336704206, 0.033095840036773, 0.03240634336934, 0.031716846701908, 0.031027350034475, 0.030337853367042, 0.029648356699609, 0.028958860032177, 0.028269363364744, 0.027579866697311, 0.026890370029878, 0.026200873362445, 0.025511376695013, 0.02482188002758, 0.024132383360147, 0.023442886692714, 0.022753390025282, 0.022063893357849, 0.021374396690416, 0.020684900022983, 0.019995403355551, 0.019305906688118, 0.018616410020685, 0.017926913353252, 0.017237416685819, 0.016547920018387, 0.015858423350954, 0.015168926683521, 0.014479430016088, 0.013789933348656, 0.013100436681223, 0.01241094001379, 0.011721443346357, 0.011031946678924, 0.010342450011492, 0.009652953344059, 0.008963456676626, 0.008273960009193, 0.007584463341761, 0.006894966674328, 0.006205470006895, 0.005515973339462, 0.004826476672029, 0.004136980004597, 0.003447483337164, 0.002757986669731, 0.002068490002298, 0.001378993334866, 0.000689496667433 ],
-						"env3" : [ 0.0, 0.153508771929824, 0.307017543859649, 0.460526315789474, 0.614035087719298, 0.767543859649122, 0.921052631578947, 0.90844298245614, 0.895833333333333, 0.883223684210526, 0.870614035087719, 0.858004385964912, 0.845394736842105, 0.832785087719298, 0.820175438596491, 0.807565789473684, 0.794956140350877, 0.78234649122807, 0.769736842105263, 0.757127192982456, 0.744517543859649, 0.731907894736842, 0.719298245614035, 0.706688596491228, 0.694078947368421, 0.681469298245614, 0.668859649122807, 0.65625, 0.643640350877193, 0.631030701754386, 0.618421052631579, 0.605811403508772, 0.593201754385965, 0.580592105263158, 0.567982456140351, 0.555372807017544, 0.542763157894737, 0.53015350877193, 0.517543859649123, 0.504934210526316, 0.492324561403509, 0.479714912280702, 0.467105263157895, 0.454495614035088, 0.441885964912281, 0.429276315789474, 0.416666666666667, 0.40405701754386, 0.391447368421053, 0.378837719298246, 0.366228070175439, 0.353618421052632, 0.341008771929825, 0.328399122807018, 0.315789473684211, 0.315099977016778, 0.314410480349345, 0.313720983681913, 0.31303148701448, 0.312341990347047, 0.311652493679614, 0.310962997012182, 0.310273500344749, 0.309584003677316, 0.308894507009883, 0.30820501034245, 0.307515513675018, 0.306826017007585, 0.306136520340152, 0.305447023672719, 0.304757527005287, 0.304068030337854, 0.303378533670421, 0.302689037002988, 0.301999540335555, 0.301310043668123, 0.30062054700069, 0.299931050333257, 0.299241553665824, 0.298552056998392, 0.297862560330959, 0.297173063663526, 0.296483566996093, 0.295794070328661, 0.295104573661228, 0.294415076993795, 0.293725580326362, 0.293036083658929, 0.292346586991497, 0.291657090324064, 0.290967593656631, 0.290278096989198, 0.289588600321766, 0.288899103654333, 0.2882096069869, 0.287520110319467, 0.286830613652034, 0.286141116984602, 0.285451620317169, 0.284762123649736, 0.284072626982303, 0.283383130314871, 0.282693633647438, 0.282004136980005, 0.281314640312572, 0.280625143645139, 0.279935646977707, 0.279246150310274, 0.278556653642841, 0.277867156975408, 0.277177660307976, 0.276488163640543, 0.27579866697311, 0.275109170305677, 0.274419673638244, 0.273730176970812, 0.273040680303379, 0.272351183635946, 0.271661686968513, 0.270972190301081, 0.270282693633648, 0.269593196966215, 0.268903700298782, 0.26821420363135, 0.267524706963917, 0.266835210296484, 0.266145713629051, 0.265456216961618, 0.264766720294186, 0.264077223626753, 0.26338772695932, 0.262698230291887, 0.262008733624455, 0.261319236957022, 0.260629740289589, 0.259940243622156, 0.259250746954723, 0.258561250287291, 0.257871753619858, 0.257182256952425, 0.256492760284992, 0.25580326361756, 0.255113766950127, 0.254424270282694, 0.253734773615261, 0.253045276947828, 0.252355780280396, 0.251666283612963, 0.25097678694553, 0.250287290278097, 0.249597793610665, 0.248908296943232, 0.248218800275799, 0.247529303608366, 0.246839806940933, 0.246150310273501, 0.245460813606068, 0.244771316938635, 0.244081820271202, 0.24339232360377, 0.242702826936337, 0.242013330268904, 0.241323833601471, 0.240634336934039, 0.239944840266606, 0.239255343599173, 0.23856584693174, 0.237876350264307, 0.237186853596875, 0.236497356929442, 0.235807860262009, 0.235118363594576, 0.234428866927144, 0.233739370259711, 0.233049873592278, 0.232360376924845, 0.231670880257412, 0.23098138358998, 0.230291886922547, 0.229602390255114, 0.228912893587681, 0.228223396920249, 0.227533900252816, 0.226844403585383, 0.22615490691795, 0.225465410250517, 0.224775913583085, 0.224086416915652, 0.223396920248219, 0.222707423580786, 0.222017926913354, 0.221328430245921, 0.220638933578488, 0.219949436911055, 0.219259940243622, 0.21857044357619, 0.217880946908757, 0.217191450241324, 0.216501953573891, 0.215812456906459, 0.215122960239026, 0.214433463571593, 0.21374396690416, 0.213054470236728, 0.212364973569295, 0.211675476901862, 0.210985980234429, 0.210296483566996, 0.209606986899564, 0.208917490232131, 0.208227993564698, 0.207538496897265, 0.206849000229833, 0.2061595035624, 0.205470006894967, 0.204780510227534, 0.204091013560101, 0.203401516892669, 0.202712020225236, 0.202022523557803, 0.20133302689037, 0.200643530222938, 0.199954033555505, 0.199264536888072, 0.198575040220639, 0.197885543553206, 0.197196046885774, 0.196506550218341, 0.195817053550908, 0.195127556883475, 0.194438060216043, 0.19374856354861, 0.193059066881177, 0.192369570213744, 0.191680073546312, 0.190990576878879, 0.190301080211446, 0.189611583544013, 0.18892208687658, 0.188232590209148, 0.187543093541715, 0.186853596874282, 0.186164100206849, 0.185474603539417, 0.184785106871984, 0.184095610204551, 0.183406113537118, 0.182716616869685, 0.182027120202253, 0.18133762353482, 0.180648126867387, 0.179958630199954, 0.179269133532522, 0.178579636865089, 0.177890140197656, 0.177200643530223, 0.17651114686279, 0.175821650195358, 0.175132153527925, 0.174442656860492, 0.173753160193059, 0.173063663525627, 0.172374166858194, 0.171684670190761, 0.170995173523328, 0.170305676855895, 0.169616180188463, 0.16892668352103, 0.168237186853597, 0.167547690186164, 0.166858193518732, 0.166168696851299, 0.165479200183866, 0.164789703516433, 0.164100206849001, 0.163410710181568, 0.162721213514135, 0.162031716846702, 0.161342220179269, 0.160652723511837, 0.159963226844404, 0.159273730176971, 0.158584233509538, 0.157894736842106, 0.157205240174673, 0.15651574350724, 0.155826246839807, 0.155136750172374, 0.154447253504942, 0.153757756837509, 0.153068260170076, 0.152378763502643, 0.151689266835211, 0.150999770167778, 0.150310273500345, 0.149620776832912, 0.148931280165479, 0.148241783498047, 0.147552286830614, 0.146862790163181, 0.146173293495748, 0.145483796828316, 0.144794300160883, 0.14410480349345, 0.143415306826017, 0.142725810158584, 0.142036313491152, 0.141346816823719, 0.140657320156286, 0.139967823488853, 0.139278326821421, 0.138588830153988, 0.137899333486555, 0.137209836819122, 0.136520340151689, 0.135830843484257, 0.135141346816824, 0.134451850149391, 0.133762353481958, 0.133072856814526, 0.132383360147093, 0.13169386347966, 0.131004366812227, 0.130314870144795, 0.129625373477362, 0.128935876809929, 0.128246380142496, 0.127556883475063, 0.126867386807631, 0.126177890140198, 0.125488393472765, 0.124798896805332, 0.1241094001379, 0.123419903470467, 0.122730406803034, 0.122040910135601, 0.121351413468168, 0.120661916800736, 0.119972420133303, 0.11928292346587, 0.118593426798437, 0.117903930131005, 0.117214433463572, 0.116524936796139, 0.115835440128706, 0.115145943461273, 0.114456446793841, 0.113766950126408, 0.113077453458975, 0.112387956791542, 0.11169846012411, 0.111008963456677, 0.110319466789244, 0.109629970121811, 0.108940473454378, 0.108250976786946, 0.107561480119513, 0.10687198345208, 0.106182486784647, 0.105492990117215, 0.104803493449782, 0.104113996782349, 0.103424500114916, 0.102735003447484, 0.102045506780051, 0.101356010112618, 0.100666513445185, 0.099977016777752, 0.09928752011032, 0.098598023442887, 0.097908526775454, 0.097219030108021, 0.096529533440589, 0.095840036773156, 0.095150540105723, 0.09446104343829, 0.093771546770857, 0.093082050103425, 0.092392553435992, 0.091703056768559, 0.091013560101126, 0.090324063433694, 0.089634566766261, 0.088945070098828, 0.088255573431395, 0.087566076763962, 0.08687658009653, 0.086187083429097, 0.085497586761664, 0.084808090094231, 0.084118593426799, 0.083429096759366, 0.082739600091933, 0.0820501034245, 0.081360606757067, 0.080671110089635, 0.079981613422202, 0.079292116754769, 0.078602620087336, 0.077913123419904, 0.077223626752471, 0.076534130085038, 0.075844633417605, 0.075155136750173, 0.07446564008274, 0.073776143415307, 0.073086646747874, 0.072397150080441, 0.071707653413009, 0.071018156745576, 0.070328660078143, 0.06963916341071, 0.068949666743278, 0.068260170075845, 0.067570673408412, 0.066881176740979, 0.066191680073546, 0.065502183406114, 0.064812686738681, 0.064123190071248, 0.063433693403815, 0.062744196736383, 0.06205470006895, 0.061365203401517, 0.060675706734084, 0.059986210066651, 0.059296713399219, 0.058607216731786, 0.057917720064353, 0.05722822339692, 0.056538726729488, 0.055849230062055, 0.055159733394622, 0.054470236727189, 0.053780740059756, 0.053091243392324, 0.052401746724891, 0.051712250057458, 0.051022753390025, 0.050333256722593, 0.04964376005516, 0.048954263387727, 0.048264766720294, 0.047575270052861, 0.046885773385429, 0.046196276717996, 0.045506780050563, 0.04481728338313, 0.044127786715698, 0.043438290048265, 0.042748793380832, 0.042059296713399, 0.041369800045967, 0.040680303378534, 0.039990806711101, 0.039301310043668, 0.038611813376235, 0.037922316708803, 0.03723282004137, 0.036543323373937, 0.035853826706504, 0.035164330039072, 0.034474833371639, 0.033785336704206, 0.033095840036773, 0.03240634336934, 0.031716846701908, 0.031027350034475, 0.030337853367042, 0.029648356699609, 0.028958860032177, 0.028269363364744, 0.027579866697311, 0.026890370029878, 0.026200873362445, 0.025511376695013, 0.02482188002758, 0.024132383360147, 0.023442886692714, 0.022753390025282, 0.022063893357849, 0.021374396690416, 0.020684900022983, 0.019995403355551, 0.019305906688118, 0.018616410020685, 0.017926913353252, 0.017237416685819, 0.016547920018387, 0.015858423350954, 0.015168926683521, 0.014479430016088, 0.013789933348656, 0.013100436681223, 0.01241094001379, 0.011721443346357, 0.011031946678924, 0.010342450011492, 0.009652953344059, 0.008963456676626, 0.008273960009193, 0.007584463341761, 0.006894966674328, 0.006205470006895, 0.005515973339462, 0.004826476672029, 0.004136980004597, 0.003447483337164, 0.002757986669731, 0.002068490002298, 0.001378993334866, 0.000689496667433 ],
-						"env4" : [ 0.0, 0.153508771929824, 0.307017543859649, 0.460526315789474, 0.614035087719298, 0.767543859649122, 0.921052631578947, 0.90844298245614, 0.895833333333333, 0.883223684210526, 0.870614035087719, 0.858004385964912, 0.845394736842105, 0.832785087719298, 0.820175438596491, 0.807565789473684, 0.794956140350877, 0.78234649122807, 0.769736842105263, 0.757127192982456, 0.744517543859649, 0.731907894736842, 0.719298245614035, 0.706688596491228, 0.694078947368421, 0.681469298245614, 0.668859649122807, 0.65625, 0.643640350877193, 0.631030701754386, 0.618421052631579, 0.605811403508772, 0.593201754385965, 0.580592105263158, 0.567982456140351, 0.555372807017544, 0.542763157894737, 0.53015350877193, 0.517543859649123, 0.504934210526316, 0.492324561403509, 0.479714912280702, 0.467105263157895, 0.454495614035088, 0.441885964912281, 0.429276315789474, 0.416666666666667, 0.40405701754386, 0.391447368421053, 0.378837719298246, 0.366228070175439, 0.353618421052632, 0.341008771929825, 0.328399122807018, 0.315789473684211, 0.315099977016778, 0.314410480349345, 0.313720983681913, 0.31303148701448, 0.312341990347047, 0.311652493679614, 0.310962997012182, 0.310273500344749, 0.309584003677316, 0.308894507009883, 0.30820501034245, 0.307515513675018, 0.306826017007585, 0.306136520340152, 0.305447023672719, 0.304757527005287, 0.304068030337854, 0.303378533670421, 0.302689037002988, 0.301999540335555, 0.301310043668123, 0.30062054700069, 0.299931050333257, 0.299241553665824, 0.298552056998392, 0.297862560330959, 0.297173063663526, 0.296483566996093, 0.295794070328661, 0.295104573661228, 0.294415076993795, 0.293725580326362, 0.293036083658929, 0.292346586991497, 0.291657090324064, 0.290967593656631, 0.290278096989198, 0.289588600321766, 0.288899103654333, 0.2882096069869, 0.287520110319467, 0.286830613652034, 0.286141116984602, 0.285451620317169, 0.284762123649736, 0.284072626982303, 0.283383130314871, 0.282693633647438, 0.282004136980005, 0.281314640312572, 0.280625143645139, 0.279935646977707, 0.279246150310274, 0.278556653642841, 0.277867156975408, 0.277177660307976, 0.276488163640543, 0.27579866697311, 0.275109170305677, 0.274419673638244, 0.273730176970812, 0.273040680303379, 0.272351183635946, 0.271661686968513, 0.270972190301081, 0.270282693633648, 0.269593196966215, 0.268903700298782, 0.26821420363135, 0.267524706963917, 0.266835210296484, 0.266145713629051, 0.265456216961618, 0.264766720294186, 0.264077223626753, 0.26338772695932, 0.262698230291887, 0.262008733624455, 0.261319236957022, 0.260629740289589, 0.259940243622156, 0.259250746954723, 0.258561250287291, 0.257871753619858, 0.257182256952425, 0.256492760284992, 0.25580326361756, 0.255113766950127, 0.254424270282694, 0.253734773615261, 0.253045276947828, 0.252355780280396, 0.251666283612963, 0.25097678694553, 0.250287290278097, 0.249597793610665, 0.248908296943232, 0.248218800275799, 0.247529303608366, 0.246839806940933, 0.246150310273501, 0.245460813606068, 0.244771316938635, 0.244081820271202, 0.24339232360377, 0.242702826936337, 0.242013330268904, 0.241323833601471, 0.240634336934039, 0.239944840266606, 0.239255343599173, 0.23856584693174, 0.237876350264307, 0.237186853596875, 0.236497356929442, 0.235807860262009, 0.235118363594576, 0.234428866927144, 0.233739370259711, 0.233049873592278, 0.232360376924845, 0.231670880257412, 0.23098138358998, 0.230291886922547, 0.229602390255114, 0.228912893587681, 0.228223396920249, 0.227533900252816, 0.226844403585383, 0.22615490691795, 0.225465410250517, 0.224775913583085, 0.224086416915652, 0.223396920248219, 0.222707423580786, 0.222017926913354, 0.221328430245921, 0.220638933578488, 0.219949436911055, 0.219259940243622, 0.21857044357619, 0.217880946908757, 0.217191450241324, 0.216501953573891, 0.215812456906459, 0.215122960239026, 0.214433463571593, 0.21374396690416, 0.213054470236728, 0.212364973569295, 0.211675476901862, 0.210985980234429, 0.210296483566996, 0.209606986899564, 0.208917490232131, 0.208227993564698, 0.207538496897265, 0.206849000229833, 0.2061595035624, 0.205470006894967, 0.204780510227534, 0.204091013560101, 0.203401516892669, 0.202712020225236, 0.202022523557803, 0.20133302689037, 0.200643530222938, 0.199954033555505, 0.199264536888072, 0.198575040220639, 0.197885543553206, 0.197196046885774, 0.196506550218341, 0.195817053550908, 0.195127556883475, 0.194438060216043, 0.19374856354861, 0.193059066881177, 0.192369570213744, 0.191680073546312, 0.190990576878879, 0.190301080211446, 0.189611583544013, 0.18892208687658, 0.188232590209148, 0.187543093541715, 0.186853596874282, 0.186164100206849, 0.185474603539417, 0.184785106871984, 0.184095610204551, 0.183406113537118, 0.182716616869685, 0.182027120202253, 0.18133762353482, 0.180648126867387, 0.179958630199954, 0.179269133532522, 0.178579636865089, 0.177890140197656, 0.177200643530223, 0.17651114686279, 0.175821650195358, 0.175132153527925, 0.174442656860492, 0.173753160193059, 0.173063663525627, 0.172374166858194, 0.171684670190761, 0.170995173523328, 0.170305676855895, 0.169616180188463, 0.16892668352103, 0.168237186853597, 0.167547690186164, 0.166858193518732, 0.166168696851299, 0.165479200183866, 0.164789703516433, 0.164100206849001, 0.163410710181568, 0.162721213514135, 0.162031716846702, 0.161342220179269, 0.160652723511837, 0.159963226844404, 0.159273730176971, 0.158584233509538, 0.157894736842106, 0.157205240174673, 0.15651574350724, 0.155826246839807, 0.155136750172374, 0.154447253504942, 0.153757756837509, 0.153068260170076, 0.152378763502643, 0.151689266835211, 0.150999770167778, 0.150310273500345, 0.149620776832912, 0.148931280165479, 0.148241783498047, 0.147552286830614, 0.146862790163181, 0.146173293495748, 0.145483796828316, 0.144794300160883, 0.14410480349345, 0.143415306826017, 0.142725810158584, 0.142036313491152, 0.141346816823719, 0.140657320156286, 0.139967823488853, 0.139278326821421, 0.138588830153988, 0.137899333486555, 0.137209836819122, 0.136520340151689, 0.135830843484257, 0.135141346816824, 0.134451850149391, 0.133762353481958, 0.133072856814526, 0.132383360147093, 0.13169386347966, 0.131004366812227, 0.130314870144795, 0.129625373477362, 0.128935876809929, 0.128246380142496, 0.127556883475063, 0.126867386807631, 0.126177890140198, 0.125488393472765, 0.124798896805332, 0.1241094001379, 0.123419903470467, 0.122730406803034, 0.122040910135601, 0.121351413468168, 0.120661916800736, 0.119972420133303, 0.11928292346587, 0.118593426798437, 0.117903930131005, 0.117214433463572, 0.116524936796139, 0.115835440128706, 0.115145943461273, 0.114456446793841, 0.113766950126408, 0.113077453458975, 0.112387956791542, 0.11169846012411, 0.111008963456677, 0.110319466789244, 0.109629970121811, 0.108940473454378, 0.108250976786946, 0.107561480119513, 0.10687198345208, 0.106182486784647, 0.105492990117215, 0.104803493449782, 0.104113996782349, 0.103424500114916, 0.102735003447484, 0.102045506780051, 0.101356010112618, 0.100666513445185, 0.099977016777752, 0.09928752011032, 0.098598023442887, 0.097908526775454, 0.097219030108021, 0.096529533440589, 0.095840036773156, 0.095150540105723, 0.09446104343829, 0.093771546770857, 0.093082050103425, 0.092392553435992, 0.091703056768559, 0.091013560101126, 0.090324063433694, 0.089634566766261, 0.088945070098828, 0.088255573431395, 0.087566076763962, 0.08687658009653, 0.086187083429097, 0.085497586761664, 0.084808090094231, 0.084118593426799, 0.083429096759366, 0.082739600091933, 0.0820501034245, 0.081360606757067, 0.080671110089635, 0.079981613422202, 0.079292116754769, 0.078602620087336, 0.077913123419904, 0.077223626752471, 0.076534130085038, 0.075844633417605, 0.075155136750173, 0.07446564008274, 0.073776143415307, 0.073086646747874, 0.072397150080441, 0.071707653413009, 0.071018156745576, 0.070328660078143, 0.06963916341071, 0.068949666743278, 0.068260170075845, 0.067570673408412, 0.066881176740979, 0.066191680073546, 0.065502183406114, 0.064812686738681, 0.064123190071248, 0.063433693403815, 0.062744196736383, 0.06205470006895, 0.061365203401517, 0.060675706734084, 0.059986210066651, 0.059296713399219, 0.058607216731786, 0.057917720064353, 0.05722822339692, 0.056538726729488, 0.055849230062055, 0.055159733394622, 0.054470236727189, 0.053780740059756, 0.053091243392324, 0.052401746724891, 0.051712250057458, 0.051022753390025, 0.050333256722593, 0.04964376005516, 0.048954263387727, 0.048264766720294, 0.047575270052861, 0.046885773385429, 0.046196276717996, 0.045506780050563, 0.04481728338313, 0.044127786715698, 0.043438290048265, 0.042748793380832, 0.042059296713399, 0.041369800045967, 0.040680303378534, 0.039990806711101, 0.039301310043668, 0.038611813376235, 0.037922316708803, 0.03723282004137, 0.036543323373937, 0.035853826706504, 0.035164330039072, 0.034474833371639, 0.033785336704206, 0.033095840036773, 0.03240634336934, 0.031716846701908, 0.031027350034475, 0.030337853367042, 0.029648356699609, 0.028958860032177, 0.028269363364744, 0.027579866697311, 0.026890370029878, 0.026200873362445, 0.025511376695013, 0.02482188002758, 0.024132383360147, 0.023442886692714, 0.022753390025282, 0.022063893357849, 0.021374396690416, 0.020684900022983, 0.019995403355551, 0.019305906688118, 0.018616410020685, 0.017926913353252, 0.017237416685819, 0.016547920018387, 0.015858423350954, 0.015168926683521, 0.014479430016088, 0.013789933348656, 0.013100436681223, 0.01241094001379, 0.011721443346357, 0.011031946678924, 0.010342450011492, 0.009652953344059, 0.008963456676626, 0.008273960009193, 0.007584463341761, 0.006894966674328, 0.006205470006895, 0.005515973339462, 0.004826476672029, 0.004136980004597, 0.003447483337164, 0.002757986669731, 0.002068490002298, 0.001378993334866, 0.000689496667433 ],
-						"env5" : [ 0.0, 0.153508771929824, 0.307017543859649, 0.460526315789474, 0.614035087719298, 0.767543859649122, 0.921052631578947, 0.90844298245614, 0.895833333333333, 0.883223684210526, 0.870614035087719, 0.858004385964912, 0.845394736842105, 0.832785087719298, 0.820175438596491, 0.807565789473684, 0.794956140350877, 0.78234649122807, 0.769736842105263, 0.757127192982456, 0.744517543859649, 0.731907894736842, 0.719298245614035, 0.706688596491228, 0.694078947368421, 0.681469298245614, 0.668859649122807, 0.65625, 0.643640350877193, 0.631030701754386, 0.618421052631579, 0.605811403508772, 0.593201754385965, 0.580592105263158, 0.567982456140351, 0.555372807017544, 0.542763157894737, 0.53015350877193, 0.517543859649123, 0.504934210526316, 0.492324561403509, 0.479714912280702, 0.467105263157895, 0.454495614035088, 0.441885964912281, 0.429276315789474, 0.416666666666667, 0.40405701754386, 0.391447368421053, 0.378837719298246, 0.366228070175439, 0.353618421052632, 0.341008771929825, 0.328399122807018, 0.315789473684211, 0.315099977016778, 0.314410480349345, 0.313720983681913, 0.31303148701448, 0.312341990347047, 0.311652493679614, 0.310962997012182, 0.310273500344749, 0.309584003677316, 0.308894507009883, 0.30820501034245, 0.307515513675018, 0.306826017007585, 0.306136520340152, 0.305447023672719, 0.304757527005287, 0.304068030337854, 0.303378533670421, 0.302689037002988, 0.301999540335555, 0.301310043668123, 0.30062054700069, 0.299931050333257, 0.299241553665824, 0.298552056998392, 0.297862560330959, 0.297173063663526, 0.296483566996093, 0.295794070328661, 0.295104573661228, 0.294415076993795, 0.293725580326362, 0.293036083658929, 0.292346586991497, 0.291657090324064, 0.290967593656631, 0.290278096989198, 0.289588600321766, 0.288899103654333, 0.2882096069869, 0.287520110319467, 0.286830613652034, 0.286141116984602, 0.285451620317169, 0.284762123649736, 0.284072626982303, 0.283383130314871, 0.282693633647438, 0.282004136980005, 0.281314640312572, 0.280625143645139, 0.279935646977707, 0.279246150310274, 0.278556653642841, 0.277867156975408, 0.277177660307976, 0.276488163640543, 0.27579866697311, 0.275109170305677, 0.274419673638244, 0.273730176970812, 0.273040680303379, 0.272351183635946, 0.271661686968513, 0.270972190301081, 0.270282693633648, 0.269593196966215, 0.268903700298782, 0.26821420363135, 0.267524706963917, 0.266835210296484, 0.266145713629051, 0.265456216961618, 0.264766720294186, 0.264077223626753, 0.26338772695932, 0.262698230291887, 0.262008733624455, 0.261319236957022, 0.260629740289589, 0.259940243622156, 0.259250746954723, 0.258561250287291, 0.257871753619858, 0.257182256952425, 0.256492760284992, 0.25580326361756, 0.255113766950127, 0.254424270282694, 0.253734773615261, 0.253045276947828, 0.252355780280396, 0.251666283612963, 0.25097678694553, 0.250287290278097, 0.249597793610665, 0.248908296943232, 0.248218800275799, 0.247529303608366, 0.246839806940933, 0.246150310273501, 0.245460813606068, 0.244771316938635, 0.244081820271202, 0.24339232360377, 0.242702826936337, 0.242013330268904, 0.241323833601471, 0.240634336934039, 0.239944840266606, 0.239255343599173, 0.23856584693174, 0.237876350264307, 0.237186853596875, 0.236497356929442, 0.235807860262009, 0.235118363594576, 0.234428866927144, 0.233739370259711, 0.233049873592278, 0.232360376924845, 0.231670880257412, 0.23098138358998, 0.230291886922547, 0.229602390255114, 0.228912893587681, 0.228223396920249, 0.227533900252816, 0.226844403585383, 0.22615490691795, 0.225465410250517, 0.224775913583085, 0.224086416915652, 0.223396920248219, 0.222707423580786, 0.222017926913354, 0.221328430245921, 0.220638933578488, 0.219949436911055, 0.219259940243622, 0.21857044357619, 0.217880946908757, 0.217191450241324, 0.216501953573891, 0.215812456906459, 0.215122960239026, 0.214433463571593, 0.21374396690416, 0.213054470236728, 0.212364973569295, 0.211675476901862, 0.210985980234429, 0.210296483566996, 0.209606986899564, 0.208917490232131, 0.208227993564698, 0.207538496897265, 0.206849000229833, 0.2061595035624, 0.205470006894967, 0.204780510227534, 0.204091013560101, 0.203401516892669, 0.202712020225236, 0.202022523557803, 0.20133302689037, 0.200643530222938, 0.199954033555505, 0.199264536888072, 0.198575040220639, 0.197885543553206, 0.197196046885774, 0.196506550218341, 0.195817053550908, 0.195127556883475, 0.194438060216043, 0.19374856354861, 0.193059066881177, 0.192369570213744, 0.191680073546312, 0.190990576878879, 0.190301080211446, 0.189611583544013, 0.18892208687658, 0.188232590209148, 0.187543093541715, 0.186853596874282, 0.186164100206849, 0.185474603539417, 0.184785106871984, 0.184095610204551, 0.183406113537118, 0.182716616869685, 0.182027120202253, 0.18133762353482, 0.180648126867387, 0.179958630199954, 0.179269133532522, 0.178579636865089, 0.177890140197656, 0.177200643530223, 0.17651114686279, 0.175821650195358, 0.175132153527925, 0.174442656860492, 0.173753160193059, 0.173063663525627, 0.172374166858194, 0.171684670190761, 0.170995173523328, 0.170305676855895, 0.169616180188463, 0.16892668352103, 0.168237186853597, 0.167547690186164, 0.166858193518732, 0.166168696851299, 0.165479200183866, 0.164789703516433, 0.164100206849001, 0.163410710181568, 0.162721213514135, 0.162031716846702, 0.161342220179269, 0.160652723511837, 0.159963226844404, 0.159273730176971, 0.158584233509538, 0.157894736842106, 0.157205240174673, 0.15651574350724, 0.155826246839807, 0.155136750172374, 0.154447253504942, 0.153757756837509, 0.153068260170076, 0.152378763502643, 0.151689266835211, 0.150999770167778, 0.150310273500345, 0.149620776832912, 0.148931280165479, 0.148241783498047, 0.147552286830614, 0.146862790163181, 0.146173293495748, 0.145483796828316, 0.144794300160883, 0.14410480349345, 0.143415306826017, 0.142725810158584, 0.142036313491152, 0.141346816823719, 0.140657320156286, 0.139967823488853, 0.139278326821421, 0.138588830153988, 0.137899333486555, 0.137209836819122, 0.136520340151689, 0.135830843484257, 0.135141346816824, 0.134451850149391, 0.133762353481958, 0.133072856814526, 0.132383360147093, 0.13169386347966, 0.131004366812227, 0.130314870144795, 0.129625373477362, 0.128935876809929, 0.128246380142496, 0.127556883475063, 0.126867386807631, 0.126177890140198, 0.125488393472765, 0.124798896805332, 0.1241094001379, 0.123419903470467, 0.122730406803034, 0.122040910135601, 0.121351413468168, 0.120661916800736, 0.119972420133303, 0.11928292346587, 0.118593426798437, 0.117903930131005, 0.117214433463572, 0.116524936796139, 0.115835440128706, 0.115145943461273, 0.114456446793841, 0.113766950126408, 0.113077453458975, 0.112387956791542, 0.11169846012411, 0.111008963456677, 0.110319466789244, 0.109629970121811, 0.108940473454378, 0.108250976786946, 0.107561480119513, 0.10687198345208, 0.106182486784647, 0.105492990117215, 0.104803493449782, 0.104113996782349, 0.103424500114916, 0.102735003447484, 0.102045506780051, 0.101356010112618, 0.100666513445185, 0.099977016777752, 0.09928752011032, 0.098598023442887, 0.097908526775454, 0.097219030108021, 0.096529533440589, 0.095840036773156, 0.095150540105723, 0.09446104343829, 0.093771546770857, 0.093082050103425, 0.092392553435992, 0.091703056768559, 0.091013560101126, 0.090324063433694, 0.089634566766261, 0.088945070098828, 0.088255573431395, 0.087566076763962, 0.08687658009653, 0.086187083429097, 0.085497586761664, 0.084808090094231, 0.084118593426799, 0.083429096759366, 0.082739600091933, 0.0820501034245, 0.081360606757067, 0.080671110089635, 0.079981613422202, 0.079292116754769, 0.078602620087336, 0.077913123419904, 0.077223626752471, 0.076534130085038, 0.075844633417605, 0.075155136750173, 0.07446564008274, 0.073776143415307, 0.073086646747874, 0.072397150080441, 0.071707653413009, 0.071018156745576, 0.070328660078143, 0.06963916341071, 0.068949666743278, 0.068260170075845, 0.067570673408412, 0.066881176740979, 0.066191680073546, 0.065502183406114, 0.064812686738681, 0.064123190071248, 0.063433693403815, 0.062744196736383, 0.06205470006895, 0.061365203401517, 0.060675706734084, 0.059986210066651, 0.059296713399219, 0.058607216731786, 0.057917720064353, 0.05722822339692, 0.056538726729488, 0.055849230062055, 0.055159733394622, 0.054470236727189, 0.053780740059756, 0.053091243392324, 0.052401746724891, 0.051712250057458, 0.051022753390025, 0.050333256722593, 0.04964376005516, 0.048954263387727, 0.048264766720294, 0.047575270052861, 0.046885773385429, 0.046196276717996, 0.045506780050563, 0.04481728338313, 0.044127786715698, 0.043438290048265, 0.042748793380832, 0.042059296713399, 0.041369800045967, 0.040680303378534, 0.039990806711101, 0.039301310043668, 0.038611813376235, 0.037922316708803, 0.03723282004137, 0.036543323373937, 0.035853826706504, 0.035164330039072, 0.034474833371639, 0.033785336704206, 0.033095840036773, 0.03240634336934, 0.031716846701908, 0.031027350034475, 0.030337853367042, 0.029648356699609, 0.028958860032177, 0.028269363364744, 0.027579866697311, 0.026890370029878, 0.026200873362445, 0.025511376695013, 0.02482188002758, 0.024132383360147, 0.023442886692714, 0.022753390025282, 0.022063893357849, 0.021374396690416, 0.020684900022983, 0.019995403355551, 0.019305906688118, 0.018616410020685, 0.017926913353252, 0.017237416685819, 0.016547920018387, 0.015858423350954, 0.015168926683521, 0.014479430016088, 0.013789933348656, 0.013100436681223, 0.01241094001379, 0.011721443346357, 0.011031946678924, 0.010342450011492, 0.009652953344059, 0.008963456676626, 0.008273960009193, 0.007584463341761, 0.006894966674328, 0.006205470006895, 0.005515973339462, 0.004826476672029, 0.004136980004597, 0.003447483337164, 0.002757986669731, 0.002068490002298, 0.001378993334866, 0.000689496667433 ],
-						"env6" : [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
-						"env7" : [ 0.0, 0.153508771929824, 0.307017543859649, 0.460526315789474, 0.614035087719298, 0.767543859649122, 0.921052631578947, 0.90844298245614, 0.895833333333333, 0.883223684210526, 0.870614035087719, 0.858004385964912, 0.845394736842105, 0.832785087719298, 0.820175438596491, 0.807565789473684, 0.794956140350877, 0.78234649122807, 0.769736842105263, 0.757127192982456, 0.744517543859649, 0.731907894736842, 0.719298245614035, 0.706688596491228, 0.694078947368421, 0.681469298245614, 0.668859649122807, 0.65625, 0.643640350877193, 0.631030701754386, 0.618421052631579, 0.605811403508772, 0.593201754385965, 0.580592105263158, 0.567982456140351, 0.555372807017544, 0.542763157894737, 0.53015350877193, 0.517543859649123, 0.504934210526316, 0.492324561403509, 0.479714912280702, 0.467105263157895, 0.454495614035088, 0.441885964912281, 0.429276315789474, 0.416666666666667, 0.40405701754386, 0.391447368421053, 0.378837719298246, 0.366228070175439, 0.353618421052632, 0.341008771929825, 0.328399122807018, 0.315789473684211, 0.315099977016778, 0.314410480349345, 0.313720983681913, 0.31303148701448, 0.312341990347047, 0.311652493679614, 0.310962997012182, 0.310273500344749, 0.309584003677316, 0.308894507009883, 0.30820501034245, 0.307515513675018, 0.306826017007585, 0.306136520340152, 0.305447023672719, 0.304757527005287, 0.304068030337854, 0.303378533670421, 0.302689037002988, 0.301999540335555, 0.301310043668123, 0.30062054700069, 0.299931050333257, 0.299241553665824, 0.298552056998392, 0.297862560330959, 0.297173063663526, 0.296483566996093, 0.295794070328661, 0.295104573661228, 0.294415076993795, 0.293725580326362, 0.293036083658929, 0.292346586991497, 0.291657090324064, 0.290967593656631, 0.290278096989198, 0.289588600321766, 0.288899103654333, 0.2882096069869, 0.287520110319467, 0.286830613652034, 0.286141116984602, 0.285451620317169, 0.284762123649736, 0.284072626982303, 0.283383130314871, 0.282693633647438, 0.282004136980005, 0.281314640312572, 0.280625143645139, 0.279935646977707, 0.279246150310274, 0.278556653642841, 0.277867156975408, 0.277177660307976, 0.276488163640543, 0.27579866697311, 0.275109170305677, 0.274419673638244, 0.273730176970812, 0.273040680303379, 0.272351183635946, 0.271661686968513, 0.270972190301081, 0.270282693633648, 0.269593196966215, 0.268903700298782, 0.26821420363135, 0.267524706963917, 0.266835210296484, 0.266145713629051, 0.265456216961618, 0.264766720294186, 0.264077223626753, 0.26338772695932, 0.262698230291887, 0.262008733624455, 0.261319236957022, 0.260629740289589, 0.259940243622156, 0.259250746954723, 0.258561250287291, 0.257871753619858, 0.257182256952425, 0.256492760284992, 0.25580326361756, 0.255113766950127, 0.254424270282694, 0.253734773615261, 0.253045276947828, 0.252355780280396, 0.251666283612963, 0.25097678694553, 0.250287290278097, 0.249597793610665, 0.248908296943232, 0.248218800275799, 0.247529303608366, 0.246839806940933, 0.246150310273501, 0.245460813606068, 0.244771316938635, 0.244081820271202, 0.24339232360377, 0.242702826936337, 0.242013330268904, 0.241323833601471, 0.240634336934039, 0.239944840266606, 0.239255343599173, 0.23856584693174, 0.237876350264307, 0.237186853596875, 0.236497356929442, 0.235807860262009, 0.235118363594576, 0.234428866927144, 0.233739370259711, 0.233049873592278, 0.232360376924845, 0.231670880257412, 0.23098138358998, 0.230291886922547, 0.229602390255114, 0.228912893587681, 0.228223396920249, 0.227533900252816, 0.226844403585383, 0.22615490691795, 0.225465410250517, 0.224775913583085, 0.224086416915652, 0.223396920248219, 0.222707423580786, 0.222017926913354, 0.221328430245921, 0.220638933578488, 0.219949436911055, 0.219259940243622, 0.21857044357619, 0.217880946908757, 0.217191450241324, 0.216501953573891, 0.215812456906459, 0.215122960239026, 0.214433463571593, 0.21374396690416, 0.213054470236728, 0.212364973569295, 0.211675476901862, 0.210985980234429, 0.210296483566996, 0.209606986899564, 0.208917490232131, 0.208227993564698, 0.207538496897265, 0.206849000229833, 0.2061595035624, 0.205470006894967, 0.204780510227534, 0.204091013560101, 0.203401516892669, 0.202712020225236, 0.202022523557803, 0.20133302689037, 0.200643530222938, 0.199954033555505, 0.199264536888072, 0.198575040220639, 0.197885543553206, 0.197196046885774, 0.196506550218341, 0.195817053550908, 0.195127556883475, 0.194438060216043, 0.19374856354861, 0.193059066881177, 0.192369570213744, 0.191680073546312, 0.190990576878879, 0.190301080211446, 0.189611583544013, 0.18892208687658, 0.188232590209148, 0.187543093541715, 0.186853596874282, 0.186164100206849, 0.185474603539417, 0.184785106871984, 0.184095610204551, 0.183406113537118, 0.182716616869685, 0.182027120202253, 0.18133762353482, 0.180648126867387, 0.179958630199954, 0.179269133532522, 0.178579636865089, 0.177890140197656, 0.177200643530223, 0.17651114686279, 0.175821650195358, 0.175132153527925, 0.174442656860492, 0.173753160193059, 0.173063663525627, 0.172374166858194, 0.171684670190761, 0.170995173523328, 0.170305676855895, 0.169616180188463, 0.16892668352103, 0.168237186853597, 0.167547690186164, 0.166858193518732, 0.166168696851299, 0.165479200183866, 0.164789703516433, 0.164100206849001, 0.163410710181568, 0.162721213514135, 0.162031716846702, 0.161342220179269, 0.160652723511837, 0.159963226844404, 0.159273730176971, 0.158584233509538, 0.157894736842106, 0.157205240174673, 0.15651574350724, 0.155826246839807, 0.155136750172374, 0.154447253504942, 0.153757756837509, 0.153068260170076, 0.152378763502643, 0.151689266835211, 0.150999770167778, 0.150310273500345, 0.149620776832912, 0.148931280165479, 0.148241783498047, 0.147552286830614, 0.146862790163181, 0.146173293495748, 0.145483796828316, 0.144794300160883, 0.14410480349345, 0.143415306826017, 0.142725810158584, 0.142036313491152, 0.141346816823719, 0.140657320156286, 0.139967823488853, 0.139278326821421, 0.138588830153988, 0.137899333486555, 0.137209836819122, 0.136520340151689, 0.135830843484257, 0.135141346816824, 0.134451850149391, 0.133762353481958, 0.133072856814526, 0.132383360147093, 0.13169386347966, 0.131004366812227, 0.130314870144795, 0.129625373477362, 0.128935876809929, 0.128246380142496, 0.127556883475063, 0.126867386807631, 0.126177890140198, 0.125488393472765, 0.124798896805332, 0.1241094001379, 0.123419903470467, 0.122730406803034, 0.122040910135601, 0.121351413468168, 0.120661916800736, 0.119972420133303, 0.11928292346587, 0.118593426798437, 0.117903930131005, 0.117214433463572, 0.116524936796139, 0.115835440128706, 0.115145943461273, 0.114456446793841, 0.113766950126408, 0.113077453458975, 0.112387956791542, 0.11169846012411, 0.111008963456677, 0.110319466789244, 0.109629970121811, 0.108940473454378, 0.108250976786946, 0.107561480119513, 0.10687198345208, 0.106182486784647, 0.105492990117215, 0.104803493449782, 0.104113996782349, 0.103424500114916, 0.102735003447484, 0.102045506780051, 0.101356010112618, 0.100666513445185, 0.099977016777752, 0.09928752011032, 0.098598023442887, 0.097908526775454, 0.097219030108021, 0.096529533440589, 0.095840036773156, 0.095150540105723, 0.09446104343829, 0.093771546770857, 0.093082050103425, 0.092392553435992, 0.091703056768559, 0.091013560101126, 0.090324063433694, 0.089634566766261, 0.088945070098828, 0.088255573431395, 0.087566076763962, 0.08687658009653, 0.086187083429097, 0.085497586761664, 0.084808090094231, 0.084118593426799, 0.083429096759366, 0.082739600091933, 0.0820501034245, 0.081360606757067, 0.080671110089635, 0.079981613422202, 0.079292116754769, 0.078602620087336, 0.077913123419904, 0.077223626752471, 0.076534130085038, 0.075844633417605, 0.075155136750173, 0.07446564008274, 0.073776143415307, 0.073086646747874, 0.072397150080441, 0.071707653413009, 0.071018156745576, 0.070328660078143, 0.06963916341071, 0.068949666743278, 0.068260170075845, 0.067570673408412, 0.066881176740979, 0.066191680073546, 0.065502183406114, 0.064812686738681, 0.064123190071248, 0.063433693403815, 0.062744196736383, 0.06205470006895, 0.061365203401517, 0.060675706734084, 0.059986210066651, 0.059296713399219, 0.058607216731786, 0.057917720064353, 0.05722822339692, 0.056538726729488, 0.055849230062055, 0.055159733394622, 0.054470236727189, 0.053780740059756, 0.053091243392324, 0.052401746724891, 0.051712250057458, 0.051022753390025, 0.050333256722593, 0.04964376005516, 0.048954263387727, 0.048264766720294, 0.047575270052861, 0.046885773385429, 0.046196276717996, 0.045506780050563, 0.04481728338313, 0.044127786715698, 0.043438290048265, 0.042748793380832, 0.042059296713399, 0.041369800045967, 0.040680303378534, 0.039990806711101, 0.039301310043668, 0.038611813376235, 0.037922316708803, 0.03723282004137, 0.036543323373937, 0.035853826706504, 0.035164330039072, 0.034474833371639, 0.033785336704206, 0.033095840036773, 0.03240634336934, 0.031716846701908, 0.031027350034475, 0.030337853367042, 0.029648356699609, 0.028958860032177, 0.028269363364744, 0.027579866697311, 0.026890370029878, 0.026200873362445, 0.025511376695013, 0.02482188002758, 0.024132383360147, 0.023442886692714, 0.022753390025282, 0.022063893357849, 0.021374396690416, 0.020684900022983, 0.019995403355551, 0.019305906688118, 0.018616410020685, 0.017926913353252, 0.017237416685819, 0.016547920018387, 0.015858423350954, 0.015168926683521, 0.014479430016088, 0.013789933348656, 0.013100436681223, 0.01241094001379, 0.011721443346357, 0.011031946678924, 0.010342450011492, 0.009652953344059, 0.008963456676626, 0.008273960009193, 0.007584463341761, 0.006894966674328, 0.006205470006895, 0.005515973339462, 0.004826476672029, 0.004136980004597, 0.003447483337164, 0.002757986669731, 0.002068490002298, 0.001378993334866, 0.000689496667433 ],
-						"env8" : [ 0.0, 0.153508771929824, 0.307017543859649, 0.460526315789474, 0.614035087719298, 0.767543859649122, 0.921052631578947, 0.90844298245614, 0.895833333333333, 0.883223684210526, 0.870614035087719, 0.858004385964912, 0.845394736842105, 0.832785087719298, 0.820175438596491, 0.807565789473684, 0.794956140350877, 0.78234649122807, 0.769736842105263, 0.757127192982456, 0.744517543859649, 0.731907894736842, 0.719298245614035, 0.706688596491228, 0.694078947368421, 0.681469298245614, 0.668859649122807, 0.65625, 0.643640350877193, 0.631030701754386, 0.618421052631579, 0.605811403508772, 0.593201754385965, 0.580592105263158, 0.567982456140351, 0.555372807017544, 0.542763157894737, 0.53015350877193, 0.517543859649123, 0.504934210526316, 0.492324561403509, 0.479714912280702, 0.467105263157895, 0.454495614035088, 0.441885964912281, 0.429276315789474, 0.416666666666667, 0.40405701754386, 0.391447368421053, 0.378837719298246, 0.366228070175439, 0.353618421052632, 0.341008771929825, 0.328399122807018, 0.315789473684211, 0.315099977016778, 0.314410480349345, 0.313720983681913, 0.31303148701448, 0.312341990347047, 0.311652493679614, 0.310962997012182, 0.310273500344749, 0.309584003677316, 0.308894507009883, 0.30820501034245, 0.307515513675018, 0.306826017007585, 0.306136520340152, 0.305447023672719, 0.304757527005287, 0.304068030337854, 0.303378533670421, 0.302689037002988, 0.301999540335555, 0.301310043668123, 0.30062054700069, 0.299931050333257, 0.299241553665824, 0.298552056998392, 0.297862560330959, 0.297173063663526, 0.296483566996093, 0.295794070328661, 0.295104573661228, 0.294415076993795, 0.293725580326362, 0.293036083658929, 0.292346586991497, 0.291657090324064, 0.290967593656631, 0.290278096989198, 0.289588600321766, 0.288899103654333, 0.2882096069869, 0.287520110319467, 0.286830613652034, 0.286141116984602, 0.285451620317169, 0.284762123649736, 0.284072626982303, 0.283383130314871, 0.282693633647438, 0.282004136980005, 0.281314640312572, 0.280625143645139, 0.279935646977707, 0.279246150310274, 0.278556653642841, 0.277867156975408, 0.277177660307976, 0.276488163640543, 0.27579866697311, 0.275109170305677, 0.274419673638244, 0.273730176970812, 0.273040680303379, 0.272351183635946, 0.271661686968513, 0.270972190301081, 0.270282693633648, 0.269593196966215, 0.268903700298782, 0.26821420363135, 0.267524706963917, 0.266835210296484, 0.266145713629051, 0.265456216961618, 0.264766720294186, 0.264077223626753, 0.26338772695932, 0.262698230291887, 0.262008733624455, 0.261319236957022, 0.260629740289589, 0.259940243622156, 0.259250746954723, 0.258561250287291, 0.257871753619858, 0.257182256952425, 0.256492760284992, 0.25580326361756, 0.255113766950127, 0.254424270282694, 0.253734773615261, 0.253045276947828, 0.252355780280396, 0.251666283612963, 0.25097678694553, 0.250287290278097, 0.249597793610665, 0.248908296943232, 0.248218800275799, 0.247529303608366, 0.246839806940933, 0.246150310273501, 0.245460813606068, 0.244771316938635, 0.244081820271202, 0.24339232360377, 0.242702826936337, 0.242013330268904, 0.241323833601471, 0.240634336934039, 0.239944840266606, 0.239255343599173, 0.23856584693174, 0.237876350264307, 0.237186853596875, 0.236497356929442, 0.235807860262009, 0.235118363594576, 0.234428866927144, 0.233739370259711, 0.233049873592278, 0.232360376924845, 0.231670880257412, 0.23098138358998, 0.230291886922547, 0.229602390255114, 0.228912893587681, 0.228223396920249, 0.227533900252816, 0.226844403585383, 0.22615490691795, 0.225465410250517, 0.224775913583085, 0.224086416915652, 0.223396920248219, 0.222707423580786, 0.222017926913354, 0.221328430245921, 0.220638933578488, 0.219949436911055, 0.219259940243622, 0.21857044357619, 0.217880946908757, 0.217191450241324, 0.216501953573891, 0.215812456906459, 0.215122960239026, 0.214433463571593, 0.21374396690416, 0.213054470236728, 0.212364973569295, 0.211675476901862, 0.210985980234429, 0.210296483566996, 0.209606986899564, 0.208917490232131, 0.208227993564698, 0.207538496897265, 0.206849000229833, 0.2061595035624, 0.205470006894967, 0.204780510227534, 0.204091013560101, 0.203401516892669, 0.202712020225236, 0.202022523557803, 0.20133302689037, 0.200643530222938, 0.199954033555505, 0.199264536888072, 0.198575040220639, 0.197885543553206, 0.197196046885774, 0.196506550218341, 0.195817053550908, 0.195127556883475, 0.194438060216043, 0.19374856354861, 0.193059066881177, 0.192369570213744, 0.191680073546312, 0.190990576878879, 0.190301080211446, 0.189611583544013, 0.18892208687658, 0.188232590209148, 0.187543093541715, 0.186853596874282, 0.186164100206849, 0.185474603539417, 0.184785106871984, 0.184095610204551, 0.183406113537118, 0.182716616869685, 0.182027120202253, 0.18133762353482, 0.180648126867387, 0.179958630199954, 0.179269133532522, 0.178579636865089, 0.177890140197656, 0.177200643530223, 0.17651114686279, 0.175821650195358, 0.175132153527925, 0.174442656860492, 0.173753160193059, 0.173063663525627, 0.172374166858194, 0.171684670190761, 0.170995173523328, 0.170305676855895, 0.169616180188463, 0.16892668352103, 0.168237186853597, 0.167547690186164, 0.166858193518732, 0.166168696851299, 0.165479200183866, 0.164789703516433, 0.164100206849001, 0.163410710181568, 0.162721213514135, 0.162031716846702, 0.161342220179269, 0.160652723511837, 0.159963226844404, 0.159273730176971, 0.158584233509538, 0.157894736842106, 0.157205240174673, 0.15651574350724, 0.155826246839807, 0.155136750172374, 0.154447253504942, 0.153757756837509, 0.153068260170076, 0.152378763502643, 0.151689266835211, 0.150999770167778, 0.150310273500345, 0.149620776832912, 0.148931280165479, 0.148241783498047, 0.147552286830614, 0.146862790163181, 0.146173293495748, 0.145483796828316, 0.144794300160883, 0.14410480349345, 0.143415306826017, 0.142725810158584, 0.142036313491152, 0.141346816823719, 0.140657320156286, 0.139967823488853, 0.139278326821421, 0.138588830153988, 0.137899333486555, 0.137209836819122, 0.136520340151689, 0.135830843484257, 0.135141346816824, 0.134451850149391, 0.133762353481958, 0.133072856814526, 0.132383360147093, 0.13169386347966, 0.131004366812227, 0.130314870144795, 0.129625373477362, 0.128935876809929, 0.128246380142496, 0.127556883475063, 0.126867386807631, 0.126177890140198, 0.125488393472765, 0.124798896805332, 0.1241094001379, 0.123419903470467, 0.122730406803034, 0.122040910135601, 0.121351413468168, 0.120661916800736, 0.119972420133303, 0.11928292346587, 0.118593426798437, 0.117903930131005, 0.117214433463572, 0.116524936796139, 0.115835440128706, 0.115145943461273, 0.114456446793841, 0.113766950126408, 0.113077453458975, 0.112387956791542, 0.11169846012411, 0.111008963456677, 0.110319466789244, 0.109629970121811, 0.108940473454378, 0.108250976786946, 0.107561480119513, 0.10687198345208, 0.106182486784647, 0.105492990117215, 0.104803493449782, 0.104113996782349, 0.103424500114916, 0.102735003447484, 0.102045506780051, 0.101356010112618, 0.100666513445185, 0.099977016777752, 0.09928752011032, 0.098598023442887, 0.097908526775454, 0.097219030108021, 0.096529533440589, 0.095840036773156, 0.095150540105723, 0.09446104343829, 0.093771546770857, 0.093082050103425, 0.092392553435992, 0.091703056768559, 0.091013560101126, 0.090324063433694, 0.089634566766261, 0.088945070098828, 0.088255573431395, 0.087566076763962, 0.08687658009653, 0.086187083429097, 0.085497586761664, 0.084808090094231, 0.084118593426799, 0.083429096759366, 0.082739600091933, 0.0820501034245, 0.081360606757067, 0.080671110089635, 0.079981613422202, 0.079292116754769, 0.078602620087336, 0.077913123419904, 0.077223626752471, 0.076534130085038, 0.075844633417605, 0.075155136750173, 0.07446564008274, 0.073776143415307, 0.073086646747874, 0.072397150080441, 0.071707653413009, 0.071018156745576, 0.070328660078143, 0.06963916341071, 0.068949666743278, 0.068260170075845, 0.067570673408412, 0.066881176740979, 0.066191680073546, 0.065502183406114, 0.064812686738681, 0.064123190071248, 0.063433693403815, 0.062744196736383, 0.06205470006895, 0.061365203401517, 0.060675706734084, 0.059986210066651, 0.059296713399219, 0.058607216731786, 0.057917720064353, 0.05722822339692, 0.056538726729488, 0.055849230062055, 0.055159733394622, 0.054470236727189, 0.053780740059756, 0.053091243392324, 0.052401746724891, 0.051712250057458, 0.051022753390025, 0.050333256722593, 0.04964376005516, 0.048954263387727, 0.048264766720294, 0.047575270052861, 0.046885773385429, 0.046196276717996, 0.045506780050563, 0.04481728338313, 0.044127786715698, 0.043438290048265, 0.042748793380832, 0.042059296713399, 0.041369800045967, 0.040680303378534, 0.039990806711101, 0.039301310043668, 0.038611813376235, 0.037922316708803, 0.03723282004137, 0.036543323373937, 0.035853826706504, 0.035164330039072, 0.034474833371639, 0.033785336704206, 0.033095840036773, 0.03240634336934, 0.031716846701908, 0.031027350034475, 0.030337853367042, 0.029648356699609, 0.028958860032177, 0.028269363364744, 0.027579866697311, 0.026890370029878, 0.026200873362445, 0.025511376695013, 0.02482188002758, 0.024132383360147, 0.023442886692714, 0.022753390025282, 0.022063893357849, 0.021374396690416, 0.020684900022983, 0.019995403355551, 0.019305906688118, 0.018616410020685, 0.017926913353252, 0.017237416685819, 0.016547920018387, 0.015858423350954, 0.015168926683521, 0.014479430016088, 0.013789933348656, 0.013100436681223, 0.01241094001379, 0.011721443346357, 0.011031946678924, 0.010342450011492, 0.009652953344059, 0.008963456676626, 0.008273960009193, 0.007584463341761, 0.006894966674328, 0.006205470006895, 0.005515973339462, 0.004826476672029, 0.004136980004597, 0.003447483337164, 0.002757986669731, 0.002068490002298, 0.001378993334866, 0.000689496667433 ],
-						"env9" : [ 0.0, 0.153508771929824, 0.307017543859649, 0.460526315789474, 0.614035087719298, 0.767543859649122, 0.921052631578947, 0.90844298245614, 0.895833333333333, 0.883223684210526, 0.870614035087719, 0.858004385964912, 0.845394736842105, 0.832785087719298, 0.820175438596491, 0.807565789473684, 0.794956140350877, 0.78234649122807, 0.769736842105263, 0.757127192982456, 0.744517543859649, 0.731907894736842, 0.719298245614035, 0.706688596491228, 0.694078947368421, 0.681469298245614, 0.668859649122807, 0.65625, 0.643640350877193, 0.631030701754386, 0.618421052631579, 0.605811403508772, 0.593201754385965, 0.580592105263158, 0.567982456140351, 0.555372807017544, 0.542763157894737, 0.53015350877193, 0.517543859649123, 0.504934210526316, 0.492324561403509, 0.479714912280702, 0.467105263157895, 0.454495614035088, 0.441885964912281, 0.429276315789474, 0.416666666666667, 0.40405701754386, 0.391447368421053, 0.378837719298246, 0.366228070175439, 0.353618421052632, 0.341008771929825, 0.328399122807018, 0.315789473684211, 0.315099977016778, 0.314410480349345, 0.313720983681913, 0.31303148701448, 0.312341990347047, 0.311652493679614, 0.310962997012182, 0.310273500344749, 0.309584003677316, 0.308894507009883, 0.30820501034245, 0.307515513675018, 0.306826017007585, 0.306136520340152, 0.305447023672719, 0.304757527005287, 0.304068030337854, 0.303378533670421, 0.302689037002988, 0.301999540335555, 0.301310043668123, 0.30062054700069, 0.299931050333257, 0.299241553665824, 0.298552056998392, 0.297862560330959, 0.297173063663526, 0.296483566996093, 0.295794070328661, 0.295104573661228, 0.294415076993795, 0.293725580326362, 0.293036083658929, 0.292346586991497, 0.291657090324064, 0.290967593656631, 0.290278096989198, 0.289588600321766, 0.288899103654333, 0.2882096069869, 0.287520110319467, 0.286830613652034, 0.286141116984602, 0.285451620317169, 0.284762123649736, 0.284072626982303, 0.283383130314871, 0.282693633647438, 0.282004136980005, 0.281314640312572, 0.280625143645139, 0.279935646977707, 0.279246150310274, 0.278556653642841, 0.277867156975408, 0.277177660307976, 0.276488163640543, 0.27579866697311, 0.275109170305677, 0.274419673638244, 0.273730176970812, 0.273040680303379, 0.272351183635946, 0.271661686968513, 0.270972190301081, 0.270282693633648, 0.269593196966215, 0.268903700298782, 0.26821420363135, 0.267524706963917, 0.266835210296484, 0.266145713629051, 0.265456216961618, 0.264766720294186, 0.264077223626753, 0.26338772695932, 0.262698230291887, 0.262008733624455, 0.261319236957022, 0.260629740289589, 0.259940243622156, 0.259250746954723, 0.258561250287291, 0.257871753619858, 0.257182256952425, 0.256492760284992, 0.25580326361756, 0.255113766950127, 0.254424270282694, 0.253734773615261, 0.253045276947828, 0.252355780280396, 0.251666283612963, 0.25097678694553, 0.250287290278097, 0.249597793610665, 0.248908296943232, 0.248218800275799, 0.247529303608366, 0.246839806940933, 0.246150310273501, 0.245460813606068, 0.244771316938635, 0.244081820271202, 0.24339232360377, 0.242702826936337, 0.242013330268904, 0.241323833601471, 0.240634336934039, 0.239944840266606, 0.239255343599173, 0.23856584693174, 0.237876350264307, 0.237186853596875, 0.236497356929442, 0.235807860262009, 0.235118363594576, 0.234428866927144, 0.233739370259711, 0.233049873592278, 0.232360376924845, 0.231670880257412, 0.23098138358998, 0.230291886922547, 0.229602390255114, 0.228912893587681, 0.228223396920249, 0.227533900252816, 0.226844403585383, 0.22615490691795, 0.225465410250517, 0.224775913583085, 0.224086416915652, 0.223396920248219, 0.222707423580786, 0.222017926913354, 0.221328430245921, 0.220638933578488, 0.219949436911055, 0.219259940243622, 0.21857044357619, 0.217880946908757, 0.217191450241324, 0.216501953573891, 0.215812456906459, 0.215122960239026, 0.214433463571593, 0.21374396690416, 0.213054470236728, 0.212364973569295, 0.211675476901862, 0.210985980234429, 0.210296483566996, 0.209606986899564, 0.208917490232131, 0.208227993564698, 0.207538496897265, 0.206849000229833, 0.2061595035624, 0.205470006894967, 0.204780510227534, 0.204091013560101, 0.203401516892669, 0.202712020225236, 0.202022523557803, 0.20133302689037, 0.200643530222938, 0.199954033555505, 0.199264536888072, 0.198575040220639, 0.197885543553206, 0.197196046885774, 0.196506550218341, 0.195817053550908, 0.195127556883475, 0.194438060216043, 0.19374856354861, 0.193059066881177, 0.192369570213744, 0.191680073546312, 0.190990576878879, 0.190301080211446, 0.189611583544013, 0.18892208687658, 0.188232590209148, 0.187543093541715, 0.186853596874282, 0.186164100206849, 0.185474603539417, 0.184785106871984, 0.184095610204551, 0.183406113537118, 0.182716616869685, 0.182027120202253, 0.18133762353482, 0.180648126867387, 0.179958630199954, 0.179269133532522, 0.178579636865089, 0.177890140197656, 0.177200643530223, 0.17651114686279, 0.175821650195358, 0.175132153527925, 0.174442656860492, 0.173753160193059, 0.173063663525627, 0.172374166858194, 0.171684670190761, 0.170995173523328, 0.170305676855895, 0.169616180188463, 0.16892668352103, 0.168237186853597, 0.167547690186164, 0.166858193518732, 0.166168696851299, 0.165479200183866, 0.164789703516433, 0.164100206849001, 0.163410710181568, 0.162721213514135, 0.162031716846702, 0.161342220179269, 0.160652723511837, 0.159963226844404, 0.159273730176971, 0.158584233509538, 0.157894736842106, 0.157205240174673, 0.15651574350724, 0.155826246839807, 0.155136750172374, 0.154447253504942, 0.153757756837509, 0.153068260170076, 0.152378763502643, 0.151689266835211, 0.150999770167778, 0.150310273500345, 0.149620776832912, 0.148931280165479, 0.148241783498047, 0.147552286830614, 0.146862790163181, 0.146173293495748, 0.145483796828316, 0.144794300160883, 0.14410480349345, 0.143415306826017, 0.142725810158584, 0.142036313491152, 0.141346816823719, 0.140657320156286, 0.139967823488853, 0.139278326821421, 0.138588830153988, 0.137899333486555, 0.137209836819122, 0.136520340151689, 0.135830843484257, 0.135141346816824, 0.134451850149391, 0.133762353481958, 0.133072856814526, 0.132383360147093, 0.13169386347966, 0.131004366812227, 0.130314870144795, 0.129625373477362, 0.128935876809929, 0.128246380142496, 0.127556883475063, 0.126867386807631, 0.126177890140198, 0.125488393472765, 0.124798896805332, 0.1241094001379, 0.123419903470467, 0.122730406803034, 0.122040910135601, 0.121351413468168, 0.120661916800736, 0.119972420133303, 0.11928292346587, 0.118593426798437, 0.117903930131005, 0.117214433463572, 0.116524936796139, 0.115835440128706, 0.115145943461273, 0.114456446793841, 0.113766950126408, 0.113077453458975, 0.112387956791542, 0.11169846012411, 0.111008963456677, 0.110319466789244, 0.109629970121811, 0.108940473454378, 0.108250976786946, 0.107561480119513, 0.10687198345208, 0.106182486784647, 0.105492990117215, 0.104803493449782, 0.104113996782349, 0.103424500114916, 0.102735003447484, 0.102045506780051, 0.101356010112618, 0.100666513445185, 0.099977016777752, 0.09928752011032, 0.098598023442887, 0.097908526775454, 0.097219030108021, 0.096529533440589, 0.095840036773156, 0.095150540105723, 0.09446104343829, 0.093771546770857, 0.093082050103425, 0.092392553435992, 0.091703056768559, 0.091013560101126, 0.090324063433694, 0.089634566766261, 0.088945070098828, 0.088255573431395, 0.087566076763962, 0.08687658009653, 0.086187083429097, 0.085497586761664, 0.084808090094231, 0.084118593426799, 0.083429096759366, 0.082739600091933, 0.0820501034245, 0.081360606757067, 0.080671110089635, 0.079981613422202, 0.079292116754769, 0.078602620087336, 0.077913123419904, 0.077223626752471, 0.076534130085038, 0.075844633417605, 0.075155136750173, 0.07446564008274, 0.073776143415307, 0.073086646747874, 0.072397150080441, 0.071707653413009, 0.071018156745576, 0.070328660078143, 0.06963916341071, 0.068949666743278, 0.068260170075845, 0.067570673408412, 0.066881176740979, 0.066191680073546, 0.065502183406114, 0.064812686738681, 0.064123190071248, 0.063433693403815, 0.062744196736383, 0.06205470006895, 0.061365203401517, 0.060675706734084, 0.059986210066651, 0.059296713399219, 0.058607216731786, 0.057917720064353, 0.05722822339692, 0.056538726729488, 0.055849230062055, 0.055159733394622, 0.054470236727189, 0.053780740059756, 0.053091243392324, 0.052401746724891, 0.051712250057458, 0.051022753390025, 0.050333256722593, 0.04964376005516, 0.048954263387727, 0.048264766720294, 0.047575270052861, 0.046885773385429, 0.046196276717996, 0.045506780050563, 0.04481728338313, 0.044127786715698, 0.043438290048265, 0.042748793380832, 0.042059296713399, 0.041369800045967, 0.040680303378534, 0.039990806711101, 0.039301310043668, 0.038611813376235, 0.037922316708803, 0.03723282004137, 0.036543323373937, 0.035853826706504, 0.035164330039072, 0.034474833371639, 0.033785336704206, 0.033095840036773, 0.03240634336934, 0.031716846701908, 0.031027350034475, 0.030337853367042, 0.029648356699609, 0.028958860032177, 0.028269363364744, 0.027579866697311, 0.026890370029878, 0.026200873362445, 0.025511376695013, 0.02482188002758, 0.024132383360147, 0.023442886692714, 0.022753390025282, 0.022063893357849, 0.021374396690416, 0.020684900022983, 0.019995403355551, 0.019305906688118, 0.018616410020685, 0.017926913353252, 0.017237416685819, 0.016547920018387, 0.015858423350954, 0.015168926683521, 0.014479430016088, 0.013789933348656, 0.013100436681223, 0.01241094001379, 0.011721443346357, 0.011031946678924, 0.010342450011492, 0.009652953344059, 0.008963456676626, 0.008273960009193, 0.007584463341761, 0.006894966674328, 0.006205470006895, 0.005515973339462, 0.004826476672029, 0.004136980004597, 0.003447483337164, 0.002757986669731, 0.002068490002298, 0.001378993334866, 0.000689496667433 ],
->>>>>>> Stashed changes
 						"env_offset" : [ 0.0 ],
 						"env_ramp" : [ 0 ],
 						"envfreqX" : [ 0.066107175899219 ],
 						"envfreqs" : [ 0.103982106813704, 0.066107175899219, 0.073471156231761, 0.096542165119672, 0.707144593927509, 0.109757845578969, 0.069974169418174, 0.103982106813704, 0.730058235702272, 0.0, 0.103792452961471, 0.063402892542797 ],
 						"f_reset" : [ -1 ],
 						"freq_ramp" : [ 0.0 ],
-<<<<<<< Updated upstream
 						"freqs" : [ 396.00000086912587, 469.064416605988299, 493.803439635445102, 361.130102386294311, 418.000001272637746, 285.999999800385922, 603.402300375249979, 679.117386241037821, 788.268821701380148, 784.227943594465614, 423.241969290409543, 404.109248359676712 ],
-=======
-						"freqs" : [ 1697.153118419490056, 309.231436179972661, 353.838307647749389, 340.628453053717749, 536.760309215977031, 779.090667151693197, 1223.347343713850933, 1595.451689728801284, 2269.571374197139448, 2721.298305503507436, 3564.754772780321218, 4591.005210114035435 ],
->>>>>>> Stashed changes
 						"full_button" : [ -1 ],
-						"function" : [ 512.0, 0.0, 1.0, 0.0, 0.0, 0, 512.0, 0.0, 0, "linear" ],
+						"function" : [ 512.0, 0.0, 1.0, 0.0, 0.0, 0, 6.4, 0.921052631578947, 0, 57.600000000000001, 0.315789473684211, 0, 512.0, 0.0, 0, "linear" ],
 						"just" : [ 0 ],
 						"link_ramp" : [ 0 ],
 						"master" : [ 0, 1 ],
 						"midi_note" : [ 39 ],
 						"numerator" : [ 0.0 ],
 						"octdivider" : [ 12.0 ],
-<<<<<<< Updated upstream
 						"one_freq_ramp" : [ 0 ],
 						"pres_menu" : [ "sinsE23" ],
-=======
-						"one_freq_ramp" : [ 1 ],
-						"pres_menu" : [ "_" ],
->>>>>>> Stashed changes
 						"preset-ramp" : [ 0 ],
 						"presets" : [ 18 ],
 						"recalc" : [ -1 ],
-<<<<<<< Updated upstream
 						"recent_index" : [ "" ],
-=======
-						"recent_index_display" : [ "" ],
->>>>>>> Stashed changes
 						"sTb" : [ -1 ],
 						"sel_j" : [ -1 ],
 						"select_2D" : [ 1 ],
@@ -27207,21 +26114,13 @@
 						"sin_amt" : [ 12 ],
 						"size!" : [ 18 ],
 						"smooth" : [ -1 ],
-						"tetris_menu" : [ "" ],
+						"tetris_menu" : [ "ƒ default.json" ],
 						"title_menu" : [ "subpatch" ],
-<<<<<<< Updated upstream
 						"trigger" : [ 4 ],
 						"v_trig" : [ 0 ],
 						"vol_ramp" : [ 1527.524451220166156, 1288.483933972189334 ],
 						"vols" : [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 						"wave-calc" : [ 17 ],
-=======
-						"trigger" : [ 6 ],
-						"v_trig" : [ 0 ],
-						"vol_ramp" : [ 7030, 7030 ],
-						"vols" : [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
-						"wave-calc" : [ 15 ],
->>>>>>> Stashed changes
 						"width" : [ 347 ],
 						"zero_ext" : [ -1 ],
 						"zero_vols" : [ -1 ]
@@ -27807,13 +26706,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.!og.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ll.!vlog.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
@@ -28090,6 +26982,13 @@
 , 			{
 				"name" : "pattrexists.mxo",
 				"type" : "iLaX"
+			}
+, 			{
+				"name" : "sinsE23.json",
+				"bootpath" : "~/Documents/Max 8/Library/ppooll_presets/sinsEP",
+				"patcherrelativepath" : "../../../../Library/ppooll_presets/sinsEP",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
 				"name" : "tetrishelp.js",
