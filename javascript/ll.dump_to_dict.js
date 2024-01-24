@@ -1,3 +1,10 @@
+/* 	
+	ll.dump_to_dict.js
+	by joe steccato
+	
+	write all act properties and parameter values to [dict environment]
+*/
+
 autowatch = 1;
 
 var enviDict = new Dict("environment"); 
