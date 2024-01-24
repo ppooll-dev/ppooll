@@ -1,50 +1,44 @@
 {
-	"window" : [ 807, 481, 1037, 558 ],
-	"function" : 	{
-		"patching_rect" : [ 205, 59, 31, 20 ],
-		"hidden" : 0,
-		"fontsize" : 10
-	}
-,
+	"window" : [ 851, 558, 977, 621 ],
 	"preset-ramp" : 	{
 		"patching_rect" : [ 154, 0, 50, 14 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 12
 	}
 ,
 	"presets" : 	{
 		"patching_rect" : [ 76, 0, 79, 14 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "2Dsliders1" ]
 	}
 ,
 	"grid" : 	{
 		"patching_rect" : [ 102, 31, 28, 15 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 11
 	}
 ,
 	"ally0" : 	{
 		"patching_rect" : [ 132, 46, 34, 15 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 12
 	}
 ,
 	"def_colors" : 	{
 		"patching_rect" : [ 63, 31, 40, 15 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 12
 	}
 ,
 	"def_grid" : 	{
 		"patching_rect" : [ 128, 31, 52, 15 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 12
 	}
 ,
 	"show_window" : 	{
 		"patching_rect" : [ 125, 16, 48, 15 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 11
 	}
 ,
@@ -73,85 +67,85 @@
 	}
 ,
 	"w_titlebar" : 	{
-		"patching_rect" : [ 174, 16, 48, 15 ],
-		"hidden" : 0,
+		"patching_rect" : [ 173, 16, 48, 15 ],
+		"hidden" : 1,
 		"fontsize" : 12
 	}
 ,
 	"amount" : 	{
 		"patching_rect" : [ 0, 31, 32, 15 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 9.5
 	}
 ,
 	"scale" : 	{
 		"patching_rect" : [ 31, 31, 32, 15 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 9.5
 	}
 ,
 	"selected" : 	{
 		"patching_rect" : [ 0, 46, 32, 15 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 9.5
 	}
 ,
 	"current_x" : 	{
 		"patching_rect" : [ 31, 46, 32, 15 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 9.5
 	}
 ,
 	"current_y" : 	{
 		"patching_rect" : [ 62, 46, 32, 15 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 9.5
 	}
 ,
 	"spread" : 	{
 		"patching_rect" : [ 165, 46, 44, 15 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 11
 	}
 ,
 	"set_current" : 	{
 		"patching_rect" : [ 94, 46, 39, 15 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 12
 	}
 ,
 	"auto" : 	{
-		"patching_rect" : [ 0, 61, 31, 15 ],
+		"patching_rect" : [ 0, 31, 31, 15 ],
 		"hidden" : 0,
 		"fontsize" : 11
 	}
 ,
 	"alt_grid" : 	{
 		"patching_rect" : [ 178, 31, 52, 15 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"fontsize" : 12
 	}
 ,
 	"ctrl-time" : 	{
-		"patching_rect" : [ 102, 61, 58, 15 ],
+		"patching_rect" : [ 0, 47, 101, 15 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"auto_time" : 	{
-		"patching_rect" : [ 28, 61, 75, 15 ],
+		"patching_rect" : [ 31, 31, 93, 15 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"zoomreset" : 	{
-		"patching_rect" : [ 161, 61, 46, 15 ],
+		"patching_rect" : [ 67, 0, 46, 15 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
 ,
 	"ZH" : 	{
-		"patching_rect" : [ 205, 46, 15, 15 ],
+		"patching_rect" : [ 205, 0, 15, 15 ],
 		"hidden" : 0,
 		"fontsize" : 12
 	}
@@ -162,8 +156,14 @@
 		"hidden" : 1
 	}
 ,
+	"function" : 	{
+		"patching_rect" : [ 180, 59, 46, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
 	"alt" : 	{
-		"patching_rect" : [ 205, 0, 21, 18 ],
+		"patching_rect" : [ 102, 46, 21, 18 ],
 		"hidden" : 0,
 		"fontsize" : 11
 	}

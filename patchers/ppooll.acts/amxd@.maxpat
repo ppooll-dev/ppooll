@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 7,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -227,7 +227,6 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@in_mix", 1 ],
 					"bgmode" : 0,
 					"border" : 1,
 					"clickthrough" : 0,
@@ -243,6 +242,29 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 0.0, 61.0, 159.0, 53.0 ],
 					"varname" : "ll.blues",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"args" : [ "var", "@default", 4 ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-16",
+					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "ll.inputmix.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "multichannelsignal", "multichannelsignal" ],
+					"patching_rect" : [ 0.0, 49.0, 160.0, 12.0 ],
+					"varname" : "ll.inputmix",
 					"viewvisibility" : 1
 				}
 
@@ -349,7 +371,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-6",
-					"items" : [ "def_folders", ",", "∆í", "", ",", "all", ",", "-" ],
+					"items" : [ "def_folders", ",", "all", ",", "-" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -370,13 +392,14 @@
 					"id" : "obj-18",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "multichannelsignal" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 7,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -412,19 +435,6 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-5",
-									"maxclass" : "newobj",
-									"numinlets" : 3,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 44.071426000000002, 160.0, 68.0, 22.0 ],
-									"text" : "ll.pf ll.blues",
-									"varname" : "pf"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-4",
 									"maxclass" : "button",
 									"numinlets" : 1,
@@ -447,7 +457,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 7,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -543,7 +553,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 7,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -986,6 +996,18 @@
 							}
 , 							{
 								"box" : 								{
+									"comment" : "",
+									"id" : "obj-11",
+									"index" : 1,
+									"maxclass" : "outlet",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 44.071426000000002, 171.5, 30.0, 30.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-3",
 									"maxclass" : "newobj",
 									"numinlets" : 3,
@@ -996,13 +1018,13 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 7,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 852.0, 220.0, 588.0, 170.0 ],
+										"rect" : [ 852.0, 220.0, 233.0, 170.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -1096,7 +1118,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 7,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1227,7 +1249,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 7,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1379,7 +1401,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 7,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1798,7 +1820,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 7,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1939,7 +1961,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 7,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -2008,7 +2030,7 @@
 																						"appversion" : 																						{
 																							"major" : 8,
 																							"minor" : 5,
-																							"revision" : 7,
+																							"revision" : 5,
 																							"architecture" : "x64",
 																							"modernui" : 1
 																						}
@@ -2473,7 +2495,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 7,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3093,7 +3115,7 @@
 													"clickthrough" : 0,
 													"enablehscroll" : 0,
 													"enablevscroll" : 0,
-													"id" : "obj-14",
+													"id" : "obj-2",
 													"lockeddragscroll" : 0,
 													"lockedsize" : 0,
 													"maxclass" : "newobj",
@@ -3101,7 +3123,7 @@
 													"numoutlets" : 3,
 													"offset" : [ 0.0, 0.0 ],
 													"outlettype" : [ "multichannelsignal", "", "" ],
-													"patching_rect" : [ 0.0, 0.0, 296.0, 22.0 ],
+													"patching_rect" : [ 0.0, 0.0, 588.0, 170.0 ],
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
 															"parameter_invisible" : 1,
@@ -3114,10 +3136,270 @@
 ,
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 1,
-														"patchername" : "",
-														"patchername_fallback" : "/Volumes/<none>/",
+														"patchername" : "Chiral.amxd",
+														"patchername_fallback" : "~/Desktop/amxd/Chiral.amxd",
 														"realtime_params" : 1,
 														"showheader" : 0
+													}
+,
+													"snapshot" : 													{
+														"filetype" : "C74Snapshot",
+														"version" : 2,
+														"minorversion" : 0,
+														"name" : "snapshotlist",
+														"origin" : "max~",
+														"type" : "list",
+														"subtype" : "Undefined",
+														"embed" : 1,
+														"snapshot" : 														{
+															"name" : "Chiral.amxd",
+															"origname" : "~/Desktop/amxd/Chiral.amxd",
+															"valuedictionary" : 															{
+																"parameter_values" : 																{
+																	"AM Depth" : 0.0,
+																	"AM Feedback" : 0.0,
+																	"AM Frequency" : 0.0,
+																	"Amp Attack" : 0.0,
+																	"Amp Decay" : 0.0,
+																	"Amp Release" : 0.0,
+																	"Amp Sustain" : 0.0,
+																	"Dirt" : 0.0,
+																	"Jitter Speed" : 0.1,
+																	"Jitter Type" : 0.0,
+																	"Jitter to Bend" : 0.0,
+																	"Jitter to Fold" : 0.0,
+																	"Jitter to Noise" : 0.0,
+																	"Jitter to Sync" : 0.0,
+																	"Osc Bend" : 0.0,
+																	"Osc Fold" : 0.0,
+																	"Osc Noise" : 0.0,
+																	"Osc Sync" : 0.0,
+																	"Slope Angle" : 0.0,
+																	"Slope Mode" : 0.0,
+																	"Slope Output" : 0.0,
+																	"Slope Rate" : 0.0,
+																	"Slope Shape" : 0.0,
+																	"Space Dry/Wet" : 0.0,
+																	"Space Gravity" : 0.0,
+																	"Space Trail" : 0.0,
+																	"Sync Window Size" : 1.0,
+																	"Synth Volume" : 0.0,
+																	"Tone Amount" : 0.0,
+																	"blob" : 																	{
+																		"EDO" : [ 12 ],
+																		"MPE" : [ 1 ],
+																		"Octave" : [ 4.0 ],
+																		"Reference Pitch" : [ 440 ],
+																		"Voices" : [ 7 ],
+																		"live.numbox[100]" : [ 0.0 ],
+																		"live.numbox[101]" : [ 0.0 ],
+																		"live.numbox[102]" : [ 0.0 ],
+																		"live.numbox[103]" : [ 0.0 ],
+																		"live.numbox[105]" : [ 0.0 ],
+																		"live.numbox[106]" : [ 0.0 ],
+																		"live.numbox[107]" : [ 0.0 ],
+																		"live.numbox[108]" : [ 0.0 ],
+																		"live.numbox[109]" : [ 0.0 ],
+																		"live.numbox[110]" : [ 0.0 ],
+																		"live.numbox[111]" : [ 0.0 ],
+																		"live.numbox[112]" : [ 0.0 ],
+																		"live.numbox[113]" : [ 0.0 ],
+																		"live.numbox[114]" : [ 0.0 ],
+																		"live.numbox[115]" : [ 0.0 ],
+																		"live.numbox[12]" : [ 0.0 ],
+																		"live.numbox[13]" : [ 0.0 ],
+																		"live.numbox[15]" : [ 0.0 ],
+																		"live.numbox[17]" : [ 0.0 ],
+																		"live.numbox[18]" : [ 0.0 ],
+																		"live.numbox[19]" : [ 0.0 ],
+																		"live.numbox[26]" : [ 0.0 ],
+																		"live.numbox[27]" : [ 0.0 ],
+																		"live.numbox[28]" : [ 0.0 ],
+																		"live.numbox[29]" : [ 0.0 ],
+																		"live.numbox[30]" : [ 0.0 ],
+																		"live.numbox[37]" : [ 0.0 ],
+																		"live.numbox[39]" : [ 0.0 ],
+																		"live.numbox[40]" : [ 0.0 ],
+																		"live.numbox[41]" : [ 0.0 ],
+																		"live.numbox[42]" : [ 0.0 ],
+																		"live.numbox[45]" : [ 0.0 ],
+																		"live.numbox[46]" : [ 0.0 ],
+																		"live.numbox[47]" : [ 0.0 ],
+																		"live.numbox[48]" : [ 0.0 ],
+																		"live.numbox[49]" : [ 0.0 ],
+																		"live.numbox[50]" : [ 0.0 ],
+																		"live.numbox[51]" : [ 0.0 ],
+																		"live.numbox[52]" : [ 0.0 ],
+																		"live.numbox[53]" : [ 0.0 ],
+																		"live.numbox[54]" : [ 0.0 ],
+																		"live.numbox[55]" : [ 0.0 ],
+																		"live.numbox[56]" : [ 0.0 ],
+																		"live.numbox[57]" : [ 0.0 ],
+																		"live.numbox[58]" : [ 0.0 ],
+																		"live.numbox[59]" : [ 0.0 ],
+																		"live.numbox[60]" : [ 0.0 ],
+																		"live.numbox[61]" : [ 0.0 ],
+																		"live.numbox[62]" : [ 0.0 ],
+																		"live.numbox[63]" : [ 0.0 ],
+																		"live.numbox[64]" : [ 0.0 ],
+																		"live.numbox[79]" : [ 0.0 ],
+																		"live.numbox[80]" : [ 0.0 ],
+																		"live.numbox[81]" : [ 0.0 ],
+																		"live.numbox[83]" : [ 0.0 ],
+																		"live.numbox[84]" : [ 0.0 ],
+																		"live.numbox[87]" : [ 0.0 ],
+																		"live.numbox[92]" : [ 0.0 ],
+																		"live.numbox[93]" : [ 0.0 ],
+																		"live.numbox[94]" : [ 0.0 ],
+																		"live.numbox[95]" : [ 0.0 ],
+																		"live.numbox[96]" : [ 0.0 ],
+																		"live.numbox[97]" : [ 0.0 ],
+																		"live.numbox[98]" : [ 0.0 ],
+																		"live.numbox[99]" : [ 0.0 ]
+																	}
+
+																}
+
+															}
+
+														}
+,
+														"snapshotlist" : 														{
+															"current_snapshot" : 0,
+															"entries" : [ 																{
+																	"filetype" : "C74Snapshot",
+																	"version" : 2,
+																	"minorversion" : 0,
+																	"name" : "Chiral.amxd",
+																	"origin" : "Chiral.amxd",
+																	"type" : "amxd",
+																	"subtype" : "Undefined",
+																	"embed" : 0,
+																	"snapshot" : 																	{
+																		"name" : "Chiral.amxd",
+																		"origname" : "~/Desktop/amxd/Chiral.amxd",
+																		"valuedictionary" : 																		{
+																			"parameter_values" : 																			{
+																				"AM Depth" : 0.0,
+																				"AM Feedback" : 0.0,
+																				"AM Frequency" : 0.0,
+																				"Amp Attack" : 0.0,
+																				"Amp Decay" : 0.0,
+																				"Amp Release" : 0.0,
+																				"Amp Sustain" : 0.0,
+																				"Dirt" : 0.0,
+																				"Jitter Speed" : 0.1,
+																				"Jitter Type" : 0.0,
+																				"Jitter to Bend" : 0.0,
+																				"Jitter to Fold" : 0.0,
+																				"Jitter to Noise" : 0.0,
+																				"Jitter to Sync" : 0.0,
+																				"Osc Bend" : 0.0,
+																				"Osc Fold" : 0.0,
+																				"Osc Noise" : 0.0,
+																				"Osc Sync" : 0.0,
+																				"Slope Angle" : 0.0,
+																				"Slope Mode" : 0.0,
+																				"Slope Output" : 0.0,
+																				"Slope Rate" : 0.0,
+																				"Slope Shape" : 0.0,
+																				"Space Dry/Wet" : 0.0,
+																				"Space Gravity" : 0.0,
+																				"Space Trail" : 0.0,
+																				"Sync Window Size" : 1.0,
+																				"Synth Volume" : 0.0,
+																				"Tone Amount" : 0.0,
+																				"blob" : 																				{
+																					"EDO" : [ 12 ],
+																					"MPE" : [ 1 ],
+																					"Octave" : [ 4.0 ],
+																					"Reference Pitch" : [ 440 ],
+																					"Voices" : [ 7 ],
+																					"live.numbox[100]" : [ 0.0 ],
+																					"live.numbox[101]" : [ 0.0 ],
+																					"live.numbox[102]" : [ 0.0 ],
+																					"live.numbox[103]" : [ 0.0 ],
+																					"live.numbox[105]" : [ 0.0 ],
+																					"live.numbox[106]" : [ 0.0 ],
+																					"live.numbox[107]" : [ 0.0 ],
+																					"live.numbox[108]" : [ 0.0 ],
+																					"live.numbox[109]" : [ 0.0 ],
+																					"live.numbox[110]" : [ 0.0 ],
+																					"live.numbox[111]" : [ 0.0 ],
+																					"live.numbox[112]" : [ 0.0 ],
+																					"live.numbox[113]" : [ 0.0 ],
+																					"live.numbox[114]" : [ 0.0 ],
+																					"live.numbox[115]" : [ 0.0 ],
+																					"live.numbox[12]" : [ 0.0 ],
+																					"live.numbox[13]" : [ 0.0 ],
+																					"live.numbox[15]" : [ 0.0 ],
+																					"live.numbox[17]" : [ 0.0 ],
+																					"live.numbox[18]" : [ 0.0 ],
+																					"live.numbox[19]" : [ 0.0 ],
+																					"live.numbox[26]" : [ 0.0 ],
+																					"live.numbox[27]" : [ 0.0 ],
+																					"live.numbox[28]" : [ 0.0 ],
+																					"live.numbox[29]" : [ 0.0 ],
+																					"live.numbox[30]" : [ 0.0 ],
+																					"live.numbox[37]" : [ 0.0 ],
+																					"live.numbox[39]" : [ 0.0 ],
+																					"live.numbox[40]" : [ 0.0 ],
+																					"live.numbox[41]" : [ 0.0 ],
+																					"live.numbox[42]" : [ 0.0 ],
+																					"live.numbox[45]" : [ 0.0 ],
+																					"live.numbox[46]" : [ 0.0 ],
+																					"live.numbox[47]" : [ 0.0 ],
+																					"live.numbox[48]" : [ 0.0 ],
+																					"live.numbox[49]" : [ 0.0 ],
+																					"live.numbox[50]" : [ 0.0 ],
+																					"live.numbox[51]" : [ 0.0 ],
+																					"live.numbox[52]" : [ 0.0 ],
+																					"live.numbox[53]" : [ 0.0 ],
+																					"live.numbox[54]" : [ 0.0 ],
+																					"live.numbox[55]" : [ 0.0 ],
+																					"live.numbox[56]" : [ 0.0 ],
+																					"live.numbox[57]" : [ 0.0 ],
+																					"live.numbox[58]" : [ 0.0 ],
+																					"live.numbox[59]" : [ 0.0 ],
+																					"live.numbox[60]" : [ 0.0 ],
+																					"live.numbox[61]" : [ 0.0 ],
+																					"live.numbox[62]" : [ 0.0 ],
+																					"live.numbox[63]" : [ 0.0 ],
+																					"live.numbox[64]" : [ 0.0 ],
+																					"live.numbox[79]" : [ 0.0 ],
+																					"live.numbox[80]" : [ 0.0 ],
+																					"live.numbox[81]" : [ 0.0 ],
+																					"live.numbox[83]" : [ 0.0 ],
+																					"live.numbox[84]" : [ 0.0 ],
+																					"live.numbox[87]" : [ 0.0 ],
+																					"live.numbox[92]" : [ 0.0 ],
+																					"live.numbox[93]" : [ 0.0 ],
+																					"live.numbox[94]" : [ 0.0 ],
+																					"live.numbox[95]" : [ 0.0 ],
+																					"live.numbox[96]" : [ 0.0 ],
+																					"live.numbox[97]" : [ 0.0 ],
+																					"live.numbox[98]" : [ 0.0 ],
+																					"live.numbox[99]" : [ 0.0 ]
+																				}
+
+																			}
+
+																		}
+
+																	}
+,
+																	"fileref" : 																	{
+																		"name" : "Chiral.amxd",
+																		"filename" : "Chiral.amxd.maxsnap",
+																		"filepath" : "~/Documents/Max 8/Snapshots",
+																		"filepos" : -1,
+																		"snapshotfileid" : "52357b4c0dbaebe4cd51ffe95a18e44a"
+																	}
+
+																}
+ ]
+														}
+
 													}
 ,
 													"text" : "mcs.amxd~ 4 2 @realtime_params 1 @showheader 0",
@@ -3161,10 +3443,18 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-85", 0 ],
+													"hidden" : 1,
+													"source" : [ "obj-17", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-35", 0 ],
 													"hidden" : 1,
 													"order" : 1,
-													"source" : [ "obj-14", 2 ]
+													"source" : [ "obj-2", 2 ]
 												}
 
 											}
@@ -3172,7 +3462,7 @@
 												"patchline" : 												{
 													"destination" : [ "obj-5", 0 ],
 													"hidden" : 1,
-													"source" : [ "obj-14", 0 ]
+													"source" : [ "obj-2", 0 ]
 												}
 
 											}
@@ -3180,7 +3470,7 @@
 												"patchline" : 												{
 													"destination" : [ "obj-6", 0 ],
 													"hidden" : 1,
-													"source" : [ "obj-14", 1 ]
+													"source" : [ "obj-2", 1 ]
 												}
 
 											}
@@ -3189,15 +3479,7 @@
 													"destination" : [ "obj-7", 0 ],
 													"hidden" : 1,
 													"order" : 0,
-													"source" : [ "obj-14", 2 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-85", 0 ],
-													"hidden" : 1,
-													"source" : [ "obj-17", 0 ]
+													"source" : [ "obj-2", 2 ]
 												}
 
 											}
@@ -3219,7 +3501,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-14", 0 ],
+													"destination" : [ "obj-2", 0 ],
 													"hidden" : 1,
 													"source" : [ "obj-3", 0 ]
 												}
@@ -3243,7 +3525,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-14", 1 ],
+													"destination" : [ "obj-2", 1 ],
 													"hidden" : 1,
 													"source" : [ "obj-4", 0 ]
 												}
@@ -3331,7 +3613,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 7,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3670,7 +3952,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 7,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3757,7 +4039,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 7,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4073,7 +4355,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 7,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4131,7 +4413,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 7,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4313,7 +4595,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 7,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4518,7 +4800,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 7,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4952,7 +5234,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 7,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -5348,7 +5630,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 7,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -5747,7 +6029,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 7,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -6377,7 +6659,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 7,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -6709,7 +6991,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 7,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -6790,7 +7072,7 @@
 																						"appversion" : 																						{
 																							"major" : 8,
 																							"minor" : 5,
-																							"revision" : 7,
+																							"revision" : 5,
 																							"architecture" : "x64",
 																							"modernui" : 1
 																						}
@@ -7379,7 +7661,7 @@
 																						"appversion" : 																						{
 																							"major" : 8,
 																							"minor" : 5,
-																							"revision" : 7,
+																							"revision" : 5,
 																							"architecture" : "x64",
 																							"modernui" : 1
 																						}
@@ -8934,7 +9216,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 7,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -8979,7 +9261,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 7,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -9210,7 +9492,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 7,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -9411,7 +9693,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 7,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -9456,7 +9738,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 7,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -9810,7 +10092,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 7,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -9977,7 +10259,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 7,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -10525,7 +10807,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 5,
-															"revision" : 7,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -10633,7 +10915,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 5,
-																			"revision" : 7,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -12048,15 +12330,15 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-20", 0 ],
-									"source" : [ "obj-3", 2 ]
+									"destination" : [ "obj-11", 0 ],
+									"source" : [ "obj-3", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
-									"source" : [ "obj-3", 0 ]
+									"destination" : [ "obj-20", 0 ],
+									"source" : [ "obj-3", 2 ]
 								}
 
 							}
@@ -12132,7 +12414,7 @@
 					"arrow" : 0,
 					"fontsize" : 9.0,
 					"id" : "obj-80",
-					"items" : [ "-no-", ",", "ll.midi", ",", "IAC Driver Bus 1", ",", "to Max 1", ",", "to Max 2" ],
+					"items" : [ "-no-", ",", "ll.midi", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "TouchOSC Bridge", ",", "to Max 1", ",", "to Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12192,6 +12474,13 @@
 					"patching_rect" : [ 413.0, 289.0, 100.0, 22.0 ],
 					"priority" : 					{
 						"vst-folder" : 3,
+						"open!" : 910,
+						"presets" : 1016,
+						"preset-ramp" : 1017,
+						"title_menu" : 2010,
+						"pres_menu" : 2011,
+						"tetris_menu" : 2012,
+						"master" : 2013,
 						"AM Depth" : 100,
 						"AM Feedback" : 101,
 						"AM Frequency" : 102,
@@ -12220,14 +12509,7 @@
 						"Space Trail" : 125,
 						"Sync Window Size" : 126,
 						"Synth Volume" : 127,
-						"Tone Amount" : 128,
-						"open!" : 910,
-						"presets" : 1016,
-						"preset-ramp" : 1017,
-						"title_menu" : 2010,
-						"pres_menu" : 2011,
-						"tetris_menu" : 2012,
-						"master" : 2013
+						"Tone Amount" : 128
 					}
 ,
 					"saved_object_attributes" : 					{
@@ -12376,7 +12658,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-13",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
+					"items" : [ "chiral-patches", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12401,7 +12683,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-15",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "-", ",", "ƒ", "default.json" ],
+					"items" : [ "-", ",", "default.json", ",", "-", ",", "ƒ", "default.json" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12438,7 +12720,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 413.0, 265.0, 100.0, 22.0 ],
-					"restore" : [ "0(1)", "in(1)" ],
+					"restore" : [ "0(1)", "in(4)" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -12456,7 +12738,7 @@
 					"arrow" : 0,
 					"fontsize" : 9.0,
 					"id" : "obj-81",
-					"items" : [ "-no-", ",", "ll.midi", ",", "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "from Max 1", ",", "from Max 2" ],
+					"items" : [ "-no-", ",", "ll.midi", ",", "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "TouchOSC Bridge", ",", "from Max 1", ",", "from Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12885,6 +13167,14 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-18", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-2", 0 ]
@@ -12917,7 +13207,7 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-18::obj-3::obj-14" : [ "amxd", "amxd", 0 ],
+			"obj-18::obj-3::obj-2" : [ "amxd", "amxd", 0 ],
 			"parameterbanks" : 			{
 
 			}
@@ -12926,10 +13216,39 @@
 		}
 ,
 		"dependency_cache" : [ 			{
+				"name" : "Chiral.amxd",
+				"bootpath" : "~/Desktop/amxd",
+				"patcherrelativepath" : "../../../../../../Desktop/amxd",
+				"type" : "amxd",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Chiral.amxd.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../../Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "actmaker.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "adsr.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "checkbox.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "credits.js",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -12975,7 +13294,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.in_mix.maxpat",
+				"name" : "ll.inputmix.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
@@ -12986,13 +13305,6 @@
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.mc.stereo_pan.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../abstractions/ll.blues",
-				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -13172,6 +13484,31 @@
 				"type" : "iLaX"
 			}
 , 			{
+				"name" : "mini_knob_lcd.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mini_levl_lcd.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "mini_sin_lcd.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "modbox.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "movewin.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "n.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
@@ -13186,13 +13523,45 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ninput.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "pattrexists.mxo",
 				"type" : "iLaX"
+			}
+, 			{
+				"name" : "popup.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "randgen.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "slope.js",
+				"type" : "TEXT",
+				"implicit" : 1
 			}
 , 			{
 				"name" : "tetrishelp.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "tinydial.js",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "wave_display.js",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

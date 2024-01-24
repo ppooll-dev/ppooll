@@ -1,5 +1,5 @@
 {
-	"window" : [ 486, 267, 737, 549 ],
+	"window" : [ 502, 330, 753, 612 ],
 	"envelope_display" : 	{
 		"patching_rect" : [ -6, 98, 262, 94 ],
 		"hidden" : 0,
@@ -151,7 +151,7 @@
 	}
 ,
 	"clear_env" : 	{
-		"patching_rect" : [ 186, 194, 36, 18 ],
+		"patching_rect" : [ 186, 194, 38, 18 ],
 		"hidden" : 0,
 		"fontsize" : 10
 	}
@@ -166,12 +166,6 @@
 		"patching_rect" : [ 91, 0, 58, 15 ],
 		"hidden" : 0,
 		"fontsize" : 12
-	}
-,
-	"line-curve-toggle" : 	{
-		"patching_rect" : [ 221, 194, 30, 18 ],
-		"hidden" : 0,
-		"fontsize" : 9
 	}
 
 }

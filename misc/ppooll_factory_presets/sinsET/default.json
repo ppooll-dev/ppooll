@@ -317,7 +317,7 @@
 		"fontsize" : 12.0
 	}
 ,
-	"recent_index_display" : 	{
+	"recent_index" : 	{
 		"patching_rect" : [ 688, 67, 168, 20 ],
 		"hidden" : 0,
 		"fontsize" : 11.0
