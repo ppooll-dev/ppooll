@@ -499,7 +499,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 302.0, 462.0, 66.0, 22.0 ],
-					"restore" : [ 0 ],
+					"restore" : [ 1 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -575,7 +575,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 445.0, 370.0, 63.0, 22.0 ],
-					"restore" : [ 210.0 ],
+					"restore" : [ 2.0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -742,7 +742,7 @@
 						"master" : [ 0 ],
 						"my_control@" : [ -1 ],
 						"performance_mode" : [ 0 ],
-						"pres_menu" : [ "ƒ testing" ],
+						"pres_menu" : [ "_" ],
 						"preset-ramp" : [ 0 ],
 						"presets" : [ 5 ],
 						"rows" : [ 1 ],
@@ -1933,8 +1933,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 64.0, 127.0, 439.0, 22.0 ],
-													"text" : "freqs 1, function 0, loop 1, ring_in 0, on/off 1, rate-mode 0, out_low -1, out_high 1"
+													"patching_rect" : [ 64.0, 127.0, 449.0, 22.0 ],
+													"text" : "freqs 0.5, function 0, loop 1, ring_in 0, on/off 1, rate-mode 0, out_low -1, out_high 1"
 												}
 
 											}
@@ -2231,7 +2231,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 303.0, 191.0, 50.0, 22.0 ],
-																	"text" : "3"
+																	"text" : "1"
 																}
 
 															}
@@ -2291,7 +2291,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 394.0, 95.0, 103.0, 22.0 ],
-																	"text" : "count 4"
+																	"text" : "count 1"
 																}
 
 															}
@@ -5503,7 +5503,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 439.0, 283.0, 50.0, 22.0 ],
-																	"text" : "(.+)"
+																	"text" : "256"
 																}
 
 															}
@@ -5563,7 +5563,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 199.0, 425.0, 130.0, 22.0 ],
-																	"text" : "set 18812mmods.1"
+																	"text" : "set 20432mmods.1"
 																}
 
 															}
@@ -6472,6 +6472,29 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-2",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 0,
+													"patching_rect" : [ 281.0, 187.0, 73.0, 22.0 ],
+													"text" : "ll.s progress"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-1",
+													"maxclass" : "newobj",
+													"numinlets" : 3,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 277.0, 140.0, 55.0, 22.0 ],
+													"text" : "ll.mc2list"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-9",
 													"maxclass" : "newobj",
@@ -7616,7 +7639,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 292.0, 126.0, 50.0, 49.0 ],
-																	"text" : "4 set 19362get"
+																	"text" : "1 set 20572get"
 																}
 
 															}
@@ -9605,7 +9628,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 121.0, 31.0, 125.0, 22.0 ],
-																	"text" : "210."
+																	"text" : "2."
 																}
 
 															}
@@ -10317,6 +10340,13 @@
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
+													"destination" : [ "obj-2", 0 ],
+													"source" : [ "obj-1", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-24", 1 ],
 													"source" : [ "obj-10", 0 ]
 												}
@@ -10354,8 +10384,16 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-1", 0 ],
+													"order" : 0,
+													"source" : [ "obj-24", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-17", 1 ],
-													"order" : 1,
+													"order" : 2,
 													"source" : [ "obj-24", 0 ]
 												}
 
@@ -10363,7 +10401,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-33", 0 ],
-													"order" : 0,
+													"order" : 1,
 													"source" : [ "obj-24", 0 ]
 												}
 
@@ -10985,13 +11023,6 @@
 , 			{
 				"name" : "pattrexists.mxo",
 				"type" : "iLaX"
-			}
-, 			{
-				"name" : "testing.json",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/misc/ppooll_factory_presets/mc_modP",
-				"patcherrelativepath" : "../../misc/ppooll_factory_presets/mc_modP",
-				"type" : "JSON",
-				"implicit" : 1
 			}
 , 			{
 				"name" : "tetrishelp.js",

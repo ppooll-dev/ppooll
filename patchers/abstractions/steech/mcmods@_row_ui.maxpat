@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 383.0, 103.0, 1444.0, 787.0 ],
+		"rect" : [ 634.0, 104.0, 1444.0, 787.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -4945,11 +4945,11 @@
 				"box" : 				{
 					"id" : "obj-9",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
+					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
-					"patching_rect" : [ 234.0, 9.0, 56.0, 22.0 ],
-					"text" : "ll.p value"
+					"patching_rect" : [ 234.0, 9.0, 53.0, 22.0 ],
+					"text" : "ll.r value"
 				}
 
 			}
