@@ -54,7 +54,7 @@
 					"outlettype" : [ "", "", "int" ],
 					"outputmode" : 0,
 					"parameter_enable" : 0,
-					"patching_rect" : [ 118.0, 747.0, 29.0, 22.0 ],
+					"patching_rect" : [ 116.0, 717.0, 29.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 288.799999952316284, 0.0, 25.25, 19.0 ],
 					"rounded" : 1.0,
@@ -64,8 +64,7 @@
 					"textoncolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"textovercolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"usebgoncolor" : 1,
-					"usetextovercolor" : 1,
-					"varname" : "on/off[1]"
+					"usetextovercolor" : 1
 				}
 
 			}
@@ -6071,7 +6070,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 112.5, 88.0, 50.0, 22.0 ],
-													"text" : "0.5"
+													"text" : "0.65"
 												}
 
 											}
@@ -6872,7 +6871,8 @@
 					"presentation_rect" : [ 90.5, 0.0, 63.5, 19.0 ],
 					"selectcolor" : [ 0.45098, 0.670588, 1.0, 0.647059 ],
 					"slidercolornofocus" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"slidermax" : 200.0,
+					"sliderlog" : 12.0,
+					"slidermax" : 1000.0,
 					"textcolornofocus" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "rate"
 				}
