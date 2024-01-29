@@ -1,5 +1,11 @@
 {
-	"window" : [ 110, 179, 835, 744 ],
+	"window" : [ 72, 294, 797, 859 ],
+	"syncto" : 	{
+		"patching_rect" : [ 260, 0, 80, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9.0
+	}
+,
 	"rows" : 	{
 		"patching_rect" : [ 220, 0, 40, 18 ],
 		"hidden" : 0,
@@ -14,7 +20,7 @@
 ,
 	"row_1" : 	{
 		"patcher" : "bang",
-		"patching_rect" : [ 0, 30, 406, 21 ],
+		"patching_rect" : [ 0, 28, 406, 21 ],
 		"hidden" : 0
 	}
 ,
