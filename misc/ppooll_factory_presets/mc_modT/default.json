@@ -1,69 +1,63 @@
 {
-	"window" : [ 72, 294, 797, 859 ],
+	"window" : [ 161, 377, 567, 427 ],
 	"syncto" : 	{
-		"patching_rect" : [ 260, 0, 80, 19 ],
-		"hidden" : 0,
-		"fontsize" : 9.0
-	}
-,
-	"rows" : 	{
-		"patching_rect" : [ 220, 0, 40, 18 ],
+		"patching_rect" : [ 260, -1, 80, 19 ],
 		"hidden" : 0,
 		"fontsize" : 9.0
 	}
 ,
 	"presets" : 	{
-		"patching_rect" : [ 0, 15, 361, 13 ],
+		"patching_rect" : [ 0, 14, 361, 13 ],
 		"hidden" : 0,
 		"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "fmrm1" ]
 	}
 ,
 	"row_1" : 	{
 		"patcher" : "bang",
-		"patching_rect" : [ 0, 28, 406, 21 ],
+		"patching_rect" : [ 0, 27, 406, 21 ],
 		"hidden" : 0
 	}
 ,
-	"trigger" : 	{
-		"patching_rect" : [ 280, 181, 50, 22 ],
-		"hidden" : 0,
-		"fontsize" : 12.0
-	}
-,
 	"preset-ramp" : 	{
-		"patching_rect" : [ 361, 15, 45, 13 ],
+		"patching_rect" : [ 361, 14, 45, 13 ],
 		"hidden" : 0,
 		"fontsize" : 10.0
 	}
 ,
 	"trigger_all" : 	{
-		"patching_rect" : [ 137, 0, 18, 15 ],
+		"patching_rect" : [ 137, -1, 18, 15 ],
 		"hidden" : 0,
 		"fontsize" : 12.0
 	}
 ,
 	"performance_mode" : 	{
-		"patching_rect" : [ 155, 0, 17, 15 ],
+		"patching_rect" : [ 155, -1, 17, 15 ],
 		"hidden" : 0,
 		"fontsize" : 12.0
 	}
 ,
 	"my_control@" : 	{
-		"patching_rect" : [ 70, 0, 67, 16 ],
+		"patching_rect" : [ 70, -1, 67, 16 ],
 		"hidden" : 0,
 		"fontsize" : 10.0
 	}
 ,
 	"def" : 	{
-		"patching_rect" : [ 356, 0, 50, 15 ],
+		"patching_rect" : [ 356, -1, 50, 15 ],
 		"hidden" : 0,
 		"fontsize" : 11.0
 	}
 ,
 	"def_outputs" : 	{
 		"patcher" : "bang",
-		"patching_rect" : [ 408, 15, 262, 50 ],
-		"hidden" : 0
+		"patching_rect" : [ 408, 14, 262, 50 ],
+		"hidden" : 1
+	}
+,
+	"rows" : 	{
+		"patching_rect" : [ 186, -1, 49, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
 	}
 
 }
