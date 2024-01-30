@@ -1,5 +1,5 @@
 {
-	"window" : [ 161, 377, 567, 427 ],
+	"window" : [ 263, 312, 669, 362 ],
 	"syncto" : 	{
 		"patching_rect" : [ 260, -1, 80, 19 ],
 		"hidden" : 0,
@@ -14,7 +14,7 @@
 ,
 	"row_1" : 	{
 		"patcher" : "bang",
-		"patching_rect" : [ 0, 27, 406, 21 ],
+		"patching_rect" : [ 0, 28, 406, 22 ],
 		"hidden" : 0
 	}
 ,
