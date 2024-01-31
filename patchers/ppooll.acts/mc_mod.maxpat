@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 223.0, 310.0, 406.0, 53.0 ],
+		"rect" : [ 237.0, 300.0, 406.0, 53.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -371,10 +371,10 @@
 						"preset-ramp" : 0,
 						"presets" : 0,
 						"rows" : 0,
-						"syncto" : 0,
 						"tetris_menu" : 0,
 						"title_menu" : 0,
 						"trigger_all" : 0,
+						"syncto" : 0,
 						"act::active_store" : 0
 					}
 ,
@@ -1380,13 +1380,12 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-52",
-																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 455.5, 97.0, 35.0 ],
-																	"text" : "mc_mod1 signal~"
+																	"text" : "mc_mod1 s"
 																}
 
 															}
@@ -7085,13 +7084,14 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 199.0, 425.0, 130.0, 22.0 ],
-																	"text" : "set 5626mmods.1"
+																	"text" : "set 11989mmods.1"
 																}
 
 															}
 , 															{
 																"box" : 																{
 																	"id" : "obj-9",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 1,
@@ -9834,7 +9834,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 292.0, 126.0, 50.0, 49.0 ],
-																	"text" : "1 set 5786get"
+																	"text" : "1 set 12149get"
 																}
 
 															}
@@ -12085,6 +12085,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-12",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
