@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 263.0, 312.0, 406.0, 50.0 ],
+		"rect" : [ 223.0, 310.0, 406.0, 53.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -41,6 +41,39 @@
 		"globalpatchername" : "mc_mod1",
 		"boxes" : [ 			{
 				"box" : 				{
+					"annotation" : "ramp time between presets. click on ppooll in the ho_st to find info about it",
+					"fontface" : 0,
+					"format" : [ 10000, 1000, ":", 100, 10, 1 ],
+					"id" : "obj-230",
+					"maxclass" : "ll_number",
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 354.0, 14.0, 52.0, 18.0 ],
+					"varname" : "preset-ramp"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "presets grid. click on ppooll in the ho_st to find info about it",
+					"filename" : "ll.pattr_ui.js",
+					"id" : "obj-14",
+					"jsarguments" : [ 16, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "vst@1" ],
+					"maxclass" : "jsui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 0.0, 14.0, 358.0, 18.0 ],
+					"varname" : "presets"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-10",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -60,29 +93,6 @@
 			}
 , 			{
 				"box" : 				{
-					"border" : 3,
-					"bordercolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"fontface" : 0,
-					"format" : [ 1 ],
-					"id" : "obj-53",
-					"label" : [ "rows" ],
-					"max" : 16.0,
-					"maxclass" : "ll_number",
-					"min" : 1.0,
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 186.0, -1.0, 49.0, 14.0 ],
-					"slidermax" : 16.0,
-					"slidermin" : 1.0,
-					"sliderstyle" : 2,
-					"varname" : "rows"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"hidden" : 1,
 					"id" : "obj-52",
 					"maxclass" : "newobj",
@@ -90,7 +100,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 441.0, 192.0, 70.0, 22.0 ],
-					"restore" : [ 1 ],
+					"restore" : [ 2 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -206,33 +216,6 @@
 			}
 , 			{
 				"box" : 				{
-					"annotation" : "def",
-					"bgcolor" : [ 0.698039, 0.698039, 0.698039, 1.0 ],
-					"bgoncolor" : [ 1.0, 0.039216, 0.392157, 1.0 ],
-					"fontsize" : 11.0,
-					"id" : "obj-359",
-					"legacytextcolor" : 1,
-					"maxclass" : "textbutton",
-					"mode" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 356.0, -1.0, 50.0, 15.0 ],
-					"prototypename" : "M4L.toggle",
-					"text" : "def_outs",
-					"textcolor" : [ 0.941176, 0.098039, 0.098039, 1.0 ],
-					"texton" : "def_outs",
-					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"textovercolor" : [ 1.0, 0.039216, 0.392157, 1.0 ],
-					"usebgoncolor" : 1,
-					"usetextovercolor" : 1,
-					"varname" : "def"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"hidden" : 1,
 					"id" : "obj-33",
 					"maxclass" : "newobj",
@@ -248,94 +231,6 @@
 ,
 					"text" : "pattr out_low",
 					"varname" : "out_low"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"annotation" : "my_control@",
-					"bgcolor" : [ 0.317647, 0.317647, 0.317647, 1.0 ],
-					"bgoncolor" : [ 0.55, 0.55, 0.55, 1.0 ],
-					"fontsize" : 10.0,
-					"id" : "obj-46",
-					"legacytextcolor" : 1,
-					"maxclass" : "textbutton",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"outputmode" : 0,
-					"parameter_enable" : 0,
-					"patching_rect" : [ 70.0, -1.0, 67.0, 16.0 ],
-					"prototypename" : "button_16",
-					"text" : "my_control@",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"texton" : "routing",
-					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"textovercolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"usebgoncolor" : 1,
-					"usetextovercolor" : 1,
-					"varname" : "my_control@"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgcolor" : [ 0.666666666666667, 0.666666666666667, 0.666666666666667, 1.0 ],
-					"bgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
-					"hint" : "performance_mode (turn on to save cpu)",
-					"id" : "obj-179",
-					"maxclass" : "textbutton",
-					"mode" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 155.0, -1.0, 17.0, 15.0 ],
-					"text" : "P",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"texton" : "P",
-					"textoncolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"usebgoncolor" : 1,
-					"varname" : "performance_mode"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgcolor" : [ 0.666666666666667, 0.666666666666667, 0.666666666666667, 1.0 ],
-					"bgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
-					"hint" : "",
-					"id" : "obj-180",
-					"maxclass" : "textbutton",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 137.0, -1.0, 18.5, 15.0 ],
-					"text" : "T",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"texton" : "T",
-					"textoncolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"usebgoncolor" : 1,
-					"varname" : "trigger_all"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"annotation" : "ramp time between presets. click on ppooll in the ho_st to find info about it",
-					"fontface" : 0,
-					"fontsize" : 10.0,
-					"format" : [ 10000, 1000, ":", 100, 10, 1 ],
-					"id" : "obj-37",
-					"maxclass" : "ll_number",
-					"mousefocus" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 361.0, 14.0, 45.0, 13.0 ],
-					"varname" : "preset-ramp"
 				}
 
 			}
@@ -470,11 +365,16 @@
 				"box" : 				{
 					"active" : 					{
 						"master" : 0,
+						"my_control@" : 0,
+						"performance_mode" : 0,
 						"pres_menu" : 0,
 						"preset-ramp" : 0,
 						"presets" : 0,
+						"rows" : 0,
+						"syncto" : 0,
 						"tetris_menu" : 0,
 						"title_menu" : 0,
+						"trigger_all" : 0,
 						"act::active_store" : 0
 					}
 ,
@@ -486,8 +386,26 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 634.0, 217.0, 100.0, 22.0 ],
+					"priority" : 					{
+						"syncto" : 3,
+						"row_1::fn-wf" : 101,
+						"row_1::fn-size" : 102,
+						"row_1::fn-wind" : 103,
+						"row_1::fn-color" : 104,
+						"rate-mode" : 1,
+						"rate" : 2,
+						"mult" : 3,
+						"function" : 4,
+						"loop" : 4,
+						"ring_in" : 4,
+						"on/off" : 4,
+						"interpolate" : 4,
+						"trigger" : 4,
+						"sync" : 4
+					}
+,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 434, 164, 1512, 407 ],
+						"client_rect" : [ 756, 100, 1512, 887 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 0, 0, 640, 240 ]
@@ -545,12 +463,12 @@
 						"my_control@" : [ -1 ],
 						"performance_mode" : [ 0 ],
 						"pres_menu" : [ "_" ],
-						"preset-ramp" : [ 0 ],
+						"preset-ramp" : [ 0.0 ],
 						"presets" : [ 0 ],
 						"rows" : [ 1 ],
 						"syncto" : [ "sync-off" ],
 						"tetris_menu" : [ "" ],
-						"title_menu" : [ "subpatch" ],
+						"title_menu" : [ "clientwindow" ],
 						"trigger_all" : [ -1 ]
 					}
 ,
@@ -661,7 +579,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 941.0, 403.0, 537.0, 484.0 ],
+						"rect" : [ 74.0, 382.0, 688.0, 345.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1462,12 +1380,13 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-52",
+																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 455.5, 97.0, 35.0 ],
-																	"text" : "mc_mod1 s"
+																	"text" : "mc_mod1 signal~"
 																}
 
 															}
@@ -2587,7 +2506,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 34.0, 100.0, 688.0, 787.0 ],
+										"rect" : [ 34.0, 438.0, 688.0, 345.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -2646,7 +2565,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 590.0, 120.0, 77.0, 22.0 ],
-													"text" : "loadmess 20"
+													"text" : "loadmess 21"
 												}
 
 											}
@@ -2667,7 +2586,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 880.0, 438.0, 640.0, 480.0 ],
+														"rect" : [ 838.0, 407.0, 640.0, 480.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 12.0,
@@ -2740,7 +2659,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 100.0, 114.0, 22.0 ],
-																	"text" : "expr 30 + ($i2 * $i1)"
+																	"text" : "expr 32 + ($i2 * $i1)"
 																}
 
 															}
@@ -3054,8 +2973,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
-													"patching_rect" : [ 344.0, 389.0, 29.5, 22.0 ],
-													"text" : "+ 8"
+													"patching_rect" : [ 344.0, 389.0, 31.0, 22.0 ],
+													"text" : "+ 11"
 												}
 
 											}
@@ -3069,7 +2988,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
 													"patching_rect" : [ 344.0, 363.0, 30.0, 22.0 ],
-													"text" : "* 20"
+													"text" : "* 21"
 												}
 
 											}
@@ -7166,7 +7085,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 199.0, 425.0, 130.0, 22.0 ],
-																	"text" : "set 1549mmods.1"
+																	"text" : "set 5626mmods.1"
 																}
 
 															}
@@ -9915,7 +9834,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 292.0, 126.0, 50.0, 49.0 ],
-																	"text" : "1 set 1709get"
+																	"text" : "1 set 5786get"
 																}
 
 															}
@@ -12864,7 +12783,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 28.0, 406.0, 22.0 ],
+					"patching_rect" : [ 0.0, 32.0, 406.0, 22.0 ],
 					"varname" : "row_1",
 					"viewvisibility" : 1
 				}
@@ -12892,17 +12811,121 @@
 			}
 , 			{
 				"box" : 				{
-					"annotation" : "presets grid. click on ppooll in the ho_st to find info about it",
-					"filename" : "ll.pattr_ui.js",
-					"id" : "obj-39",
-					"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "fmrm1" ],
-					"maxclass" : "jsui",
+					"border" : 3,
+					"bordercolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"fontface" : 0,
+					"format" : [ 1 ],
+					"id" : "obj-53",
+					"label" : [ "rows" ],
+					"max" : 16.0,
+					"maxclass" : "ll_number",
+					"min" : 1.0,
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 14.0, 361.0, 13.0 ],
-					"varname" : "presets"
+					"patching_rect" : [ 72.0, -2.5, 51.0, 17.0 ],
+					"slidermax" : 16.0,
+					"slidermin" : 1.0,
+					"sliderstyle" : 2,
+					"varname" : "rows"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "def",
+					"bgcolor" : [ 0.698039, 0.698039, 0.698039, 1.0 ],
+					"bgoncolor" : [ 1.0, 0.039216, 0.392157, 1.0 ],
+					"fontsize" : 11.0,
+					"id" : "obj-359",
+					"legacytextcolor" : 1,
+					"maxclass" : "textbutton",
+					"mode" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 345.0, -2.5, 61.0, 17.0 ],
+					"prototypename" : "M4L.toggle",
+					"text" : "def_outs",
+					"textcolor" : [ 0.941176, 0.098039, 0.098039, 1.0 ],
+					"texton" : "def_outs",
+					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"textovercolor" : [ 1.0, 0.039216, 0.392157, 1.0 ],
+					"usebgoncolor" : 1,
+					"usetextovercolor" : 1,
+					"varname" : "def"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "my_control@",
+					"bgcolor" : [ 0.317647, 0.317647, 0.317647, 1.0 ],
+					"bgoncolor" : [ 0.55, 0.55, 0.55, 1.0 ],
+					"fontsize" : 10.0,
+					"id" : "obj-46",
+					"legacytextcolor" : 1,
+					"maxclass" : "textbutton",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
+					"outputmode" : 0,
+					"parameter_enable" : 0,
+					"patching_rect" : [ 248.0, -2.5, 74.0, 17.0 ],
+					"prototypename" : "button_16",
+					"text" : "my_control@",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"texton" : "routing",
+					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"textovercolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"usebgoncolor" : 1,
+					"usetextovercolor" : 1,
+					"varname" : "my_control@"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.666666666666667, 0.666666666666667, 0.666666666666667, 1.0 ],
+					"bgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"hint" : "performance_mode (turn on to save cpu)",
+					"id" : "obj-179",
+					"maxclass" : "textbutton",
+					"mode" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 147.0, -2.5, 21.0, 17.0 ],
+					"text" : "P",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"texton" : "P",
+					"textoncolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"usebgoncolor" : 1,
+					"varname" : "performance_mode"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.666666666666667, 0.666666666666667, 0.666666666666667, 1.0 ],
+					"bgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"hint" : "",
+					"id" : "obj-180",
+					"maxclass" : "textbutton",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 124.0, -2.5, 23.0, 17.0 ],
+					"text" : "T",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"texton" : "T",
+					"textoncolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"usebgoncolor" : 1,
+					"varname" : "trigger_all"
 				}
 
 			}
@@ -12917,7 +12940,7 @@
 					"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "color",
-					"fontsize" : 9.0,
+					"fontsize" : 8.0,
 					"id" : "obj-29",
 					"items" : [ "sync-off", ",", "sync_in" ],
 					"maxclass" : "umenu",
@@ -12925,7 +12948,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 260.0, -1.0, 80.0, 19.0 ],
+					"patching_rect" : [ 168.0, -2.5, 80.0, 17.0 ],
 					"pattrmode" : 1,
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "syncto"
