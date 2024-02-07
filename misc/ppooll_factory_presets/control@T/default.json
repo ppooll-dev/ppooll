@@ -1,3 +1,134 @@
 {
-	"window" : [ 152, 76, 1108, 636 ]
+	"window" : [ 805, 282, 996, 335 ],
+	"on/off" : 	{
+		"patching_rect" : [ 124, 0, 23, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"input_menu" : 	{
+		"patching_rect" : [ 74, 0, 51, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"baud_rate" : 	{
+		"patching_rect" : [ 90, 16, 32, 17 ],
+		"hidden" : 1,
+		"fontsize" : 8
+	}
+,
+	"wacom_menu" : 	{
+		"patching_rect" : [ 24, 16, 130, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"sendbackIPW" : 	{
+		"patching_rect" : [ 73, 18, 65, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"serial_open-close" : 	{
+		"patching_rect" : [ 122, 16, 32, 17 ],
+		"hidden" : 1,
+		"fontsize" : 8
+	}
+,
+	"hi_menu" : 	{
+		"patching_rect" : [ 24, 16, 130, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"act_suggested" : 	{
+		"patching_rect" : [ 103, 16, 51, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"midi_channels" : 	{
+		"patching_rect" : [ 82, 16, 36, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"serial_port" : 	{
+		"patching_rect" : [ 24, 16, 68, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"osc_receive_port" : 	{
+		"patching_rect" : [ 28, 16, 33, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"midi_receive_port" : 	{
+		"patching_rect" : [ 24, 16, 58, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"act_menu" : 	{
+		"patching_rect" : [ 24, 16, 81, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"note_mode" : 	{
+		"patching_rect" : [ 119, 16, 34, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 154, 16, 37, 37 ],
+		"hidden" : 0,
+		"jsarguments" : [ 11, "155 255 255", "50 50 50", "255 0 0", "0 255 0", "control@1" ]
+	}
+,
+	"led" : 	{
+		"patching_rect" : [ 136, 35, 17, 17 ],
+		"hidden" : 0
+	}
+,
+	"throttle" : 	{
+		"patching_rect" : [ 30, 35, 30, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"output_menu" : 	{
+		"patching_rect" : [ 55, 35, 28, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"send_back" : 	{
+		"patching_rect" : [ 83, 35, 17, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"routingW" : 	{
+		"patching_rect" : [ 145, 0, 47, 16 ],
+		"hidden" : 0,
+		"fontsize" : 13
+	}
+,
+	"send_back_light" : 	{
+		"patching_rect" : [ 99, 35, 17, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"chans" : 	{
+		"patching_rect" : [ 73, 18, 55, 14 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+
 }
