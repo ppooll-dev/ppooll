@@ -14,6 +14,16 @@ function parent()
 	//post (tpp);
 }
 
+function priority(i)
+{
+	if (tpp.getnamed("pat")){
+		p = tpp.getnamed("pat");
+		p.message("priority", vbox.varname, i);
+
+	} 
+	post(vbox.varname);
+}
+
 
 function newdefault()
 {
@@ -28,6 +38,7 @@ function newdefault()
 		a[i+2] = arguments[i];
 	
 	vbox = tpp.newdefault(a);
+	post(a)
 }
 
 function remove()
@@ -76,7 +87,7 @@ function sizebox(width,height)
 	}
 }
 
-function hidebox(hidden)
+function hide(hidden)
 {
 	if (vbox) {
 		vbox.hidden = hidden;
