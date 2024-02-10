@@ -684,7 +684,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 156.0, 683.0, 287.0, 22.0 ],
-									"text" : "mslist 0. 3478.45805 0. 0."
+									"text" : "mslist 221.961701 3256.496349 0. 0."
 								}
 
 							}
@@ -1614,7 +1614,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 567.0, 229.0, 33.0, 22.0 ],
+									"patching_rect" : [ 609.5, 164.0, 33.0, 22.0 ],
 									"text" : "read"
 								}
 
@@ -1630,8 +1630,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 639.0, 87.0, 127.0, 52.0 ],
-									"text" : "using \"file\" will also output info for sfplay~"
+									"patching_rect" : [ 614.5, 80.5, 242.0, 52.0 ],
+									"text" : "using \"read\" will also output info for sfplay~\n(see [route sf] object below)"
 								}
 
 							}
@@ -1656,7 +1656,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 482.5, 515.0, 243.0, 62.0 ],
-									"text" : "\"Macintosh HD:/Applications/Max.app/Contents/Resources/C74/media/msp/cherokee.aif\" 1 44100 2851.227273"
+									"text" : "\"Macintosh HD:/Applications/Max.app/Contents/Resources/C74/media/msp/senita-8ch.wav\" 8 44100 7015.909091"
 								}
 
 							}
@@ -1667,8 +1667,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 619.0, 164.0, 41.0, 22.0 ],
-									"text" : "file $1"
+									"patching_rect" : [ 647.5, 164.0, 49.0, 22.0 ],
+									"text" : "read $1"
 								}
 
 							}
@@ -1679,7 +1679,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 726.0, 133.0, 64.0, 22.0 ],
+									"patching_rect" : [ 754.5, 133.0, 64.0, 22.0 ],
 									"text" : "senita-8ch"
 								}
 
@@ -1691,7 +1691,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 683.0, 133.0, 39.0, 22.0 ],
+									"patching_rect" : [ 711.5, 133.0, 39.0, 22.0 ],
 									"text" : "anton"
 								}
 
@@ -1703,7 +1703,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 619.0, 133.0, 58.0, 22.0 ],
+									"patching_rect" : [ 647.5, 133.0, 58.0, 22.0 ],
 									"text" : "cherokee"
 								}
 
@@ -1976,7 +1976,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 708.0, 224.0, 50.0, 22.0 ],
-													"text" : "1"
+													"text" : "8"
 												}
 
 											}
@@ -2455,14 +2455,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-21",
-									"lastchannelcount" : 2,
+									"lastchannelcount" : 8,
 									"maxclass" : "mc.live.gain~",
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"orientation" : 1,
 									"outlettype" : [ "multichannelsignal", "", "float", "list" ],
 									"parameter_enable" : 1,
-									"patching_rect" : [ 238.666666666666686, 541.0, 138.0, 47.0 ],
+									"patching_rect" : [ 238.666666666666686, 541.0, 138.0, 83.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "mc.live.gain~",
@@ -2621,10 +2621,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-15",
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 287.0, 195.0, 604.0, 20.0 ],
+									"patching_rect" : [ 32.0, 108.0, 231.0, 47.0 ],
 									"text" : "ll_mcwaveform~ needs channels, samplerate and length information with the message \"sf\" to display a soundfile"
 								}
 
