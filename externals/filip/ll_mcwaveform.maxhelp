@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 528.0, 90.0, 967.0, 833.0 ],
+		"rect" : [ 236.0, 84.0, 967.0, 833.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -473,7 +473,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 528.0, 116.0, 967.0, 807.0 ],
+						"rect" : [ 0.0, 26.0, 967.0, 807.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -520,7 +520,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 476.0, 324.0, 189.0, 20.0 ],
-									"presentation_linecount" : 5,
 									"text" : "select the entire displayed "
 								}
 
@@ -533,7 +532,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 417.5, 324.0, 53.0, 22.0 ],
-									"presentation_linecount" : 3,
 									"text" : "sel_disp"
 								}
 
@@ -1580,7 +1578,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 967.0, 807.0 ],
+						"rect" : [ 236.0, 110.0, 967.0, 807.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1611,6 +1609,18 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-16",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 567.0, 229.0, 33.0, 22.0 ],
+									"text" : "read"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"bubble" : 1,
 									"bubbleside" : 2,
 									"fontname" : "Arial",
@@ -1621,7 +1631,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 639.0, 87.0, 127.0, 52.0 ],
-									"presentation_linecount" : 2,
 									"text" : "using \"file\" will also output info for sfplay~"
 								}
 
@@ -3632,6 +3641,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-13", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-16", 0 ]
 								}
 
 							}
