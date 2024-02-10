@@ -39,6 +39,7 @@
         {"name": "ll.shut", "desc": "resetable pass only one message"},
         {"name": "ll.sp", "desc": "send and prepend"},
         {"name": "ll.strip#", "desc": "strip a number at the end of a symbol"},
+        {"name": "ll.syncs", "desc": "synchronize tempo-ramps across ppooll"},
         {"name": "n", "desc": "shortcut for print"}
     ],
     "ppooll_advanced": [

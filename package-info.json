@@ -19,7 +19,7 @@
   "extends": "",
   "extensible": 1,
   "homepatcher": "ppooll_host.maxpat",
-  "max_version_max": "none",
+  "max_version_max": "8.5.7",
   "max_version_min": "8",
   "name": "ppooll",
   "os": {
