@@ -1,0 +1,127 @@
+{
+	"window" : [ 623, 124, 1027, 182 ],
+	"on/off" : 	{
+		"patching_rect" : [ 0, 35, 25, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"trigger" : 	{
+		"patching_rect" : [ 49, 35, 16, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"loop" : 	{
+		"patching_rect" : [ 25, 35, 24, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"rate" : 	{
+		"patching_rect" : [ 91, 35, 63, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"rate-mode" : 	{
+		"patching_rect" : [ 154, 35, 28, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"syncto" : 	{
+		"patching_rect" : [ 91, 35, 64, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"scope" : 	{
+		"patching_rect" : [ 312, 35, 58, 19 ],
+		"hidden" : 0
+	}
+,
+	"ring_in" : 	{
+		"patching_rect" : [ 65, 35, 26, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"mult" : 	{
+		"patching_rect" : [ 183, 35, 50, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"interp" : 	{
+		"patching_rect" : [ 283, 35, 30, 19 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"wf" : 	{
+		"patching_rect" : [ 0, 78, 405, 140 ],
+		"hidden" : 0
+	}
+,
+	"function" : 	{
+		"patching_rect" : [ 233, 35, 52, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"show-wf" : 	{
+		"patching_rect" : [ 180, 0, 30, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"size" : 	{
+		"patching_rect" : [ 0, 60, 48, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"out_lo" : 	{
+		"patching_rect" : [ 210, 0, 96, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"out_hi" : 	{
+		"patching_rect" : [ 306, 0, 100, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 0, 16, 358, 18 ],
+		"hidden" : 0,
+		"jsarguments" : [ 16, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "vst@1" ]
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 354, 16, 52, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"color-picker" : 	{
+		"patching_rect" : [ 49, 60, 35, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"acts" : 	{
+		"patching_rect" : [ 62, 0, 59, 17 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"~par" : 	{
+		"patching_rect" : [ 117, 0, 62, 17 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+
+}

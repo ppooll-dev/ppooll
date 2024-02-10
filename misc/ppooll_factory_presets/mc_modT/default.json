@@ -1,0 +1,63 @@
+{
+	"window" : [ 143, 292, 549, 343 ],
+	"syncto" : 	{
+		"patching_rect" : [ 168, -2, 80, 16 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"trigger_all" : 	{
+		"patching_rect" : [ 124, -2, 23, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"performance_mode" : 	{
+		"patching_rect" : [ 147, -2, 21, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"my_control@" : 	{
+		"patching_rect" : [ 248, -2, 74, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"def" : 	{
+		"patching_rect" : [ 345, -2, 61, 16 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"rows" : 	{
+		"patching_rect" : [ 72, -2, 51, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"row_1" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 32, 406, 22 ],
+		"hidden" : 0
+	}
+,
+	"def_outputs" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 408, 14, 262, 50 ],
+		"hidden" : 1
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 0, 14, 358, 18 ],
+		"hidden" : 0,
+		"jsarguments" : [ 16, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "vst@1" ]
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 354, 14, 52, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}
