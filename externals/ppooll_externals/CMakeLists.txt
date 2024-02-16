@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
 project(ppooll_externals)
 
-IF( NOT CMAKE_BUILD_TYPE )
-   SET( CMAKE_BUILD_TYPE Release ... FORCE )
-ENDIF()
+if(NOT CMAKE_BUILD_TYPE)
+   set(CMAKE_BUILD_TYPE Release CACHE STRING "Set the default build type to Release" FORCE)
+endif()
 message(STATUS "Current build type is: ${CMAKE_BUILD_TYPE}")
 
 # Set a default value for MAX_SDK_BASE_PATH and allow it to be overridden by the user
