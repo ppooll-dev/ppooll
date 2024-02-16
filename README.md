@@ -1,5 +1,8 @@
 # ppooll
 
+note -- ppooll is not yet supported on Max 8.6.0, please use 8.5.7  
+https://cycling74.com/releases/max/8.5.7
+
 ## about
 ppooll is a audio and visual networking system created from Max/MSP and Jitter patches.  
 ppooll itself is an architecturally refined version of the earlier software lloopp. 
@@ -13,7 +16,7 @@ authors: klaus filip, c. hausch, noid, taku unami, joe steccato, elin, paulo rap
 contains additional code by adrian freed (CNMAT), Bertrand Fraysse, bill orcutt, CRFMW, Cycling'74, Ernest Meyer, jasch, Jean-François Charles, jhno, miller puckette, nicolaj kirisits, nathan wolek, olaf matthes, PeRColate, peter elsea, RTC, thomas grill, ted appel, tristan jehan, uhito kiyosue, ville pulkki, volker böhm
 
 ## requirements
-1. Max >=8.5 (https://cycling74.com/products/max)
+1. Max >= 8.5.7 (https://cycling74.com/products/max)
 2. additional Max Packages (download via [Max Package Manager](https://docs.cycling74.com/max8/vignettes/package_manager)):
 
 | package            | act(s)                                                                 |
