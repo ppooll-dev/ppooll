@@ -1,39 +1,38 @@
 {
-	"window" : [ 486, 267, 737, 549 ],
+	"window" : [ 391, 361, 642, 643 ],
 	"envelope_display" : 	{
 		"patching_rect" : [ -6, 98, 262, 94 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"wf" : 	{
-		"patcher" : "bang",
-		"patching_rect" : [ -1, 101, 252, 94 ],
+		"patching_rect" : [ -1, 100, 251, 94 ],
 		"hidden" : 0
 	}
 ,
 	"interp" : 	{
 		"patching_rect" : [ 151, 62, 35, 21 ],
 		"hidden" : 0,
-		"fontsize" : 11
+		"fontsize" : 11.0
 	}
 ,
 	"xfade_mode" : 	{
 		"patching_rect" : [ -1, 212, 56, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"xzone" : 	{
 		"patching_rect" : [ 56, 212, 87, 19 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"xshape" : 	{
 		"patching_rect" : [ 145, 212, 29, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"ll.blues" : 	{
@@ -45,7 +44,7 @@
 	"preset-ramp" : 	{
 		"patching_rect" : [ 157, 264, 94, 19 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"presets" : 	{
@@ -57,121 +56,121 @@
 	"full_select" : 	{
 		"patching_rect" : [ 206, 0, 45, 15 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"keep_length" : 	{
 		"patching_rect" : [ 148, 0, 58, 15 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"buffer" : 	{
 		"patching_rect" : [ 0, 62, 152, 21 ],
 		"hidden" : 0,
-		"fontsize" : 11
+		"fontsize" : 11.0
 	}
 ,
 	"loop_mode" : 	{
 		"patching_rect" : [ 186, 62, 65, 21 ],
 		"hidden" : 0,
-		"fontsize" : 11
+		"fontsize" : 11.0
 	}
 ,
 	"start" : 	{
 		"patching_rect" : [ 0, 15, 251, 16 ],
 		"hidden" : 0,
-		"fontsize" : 16
+		"fontsize" : 16.0
 	}
 ,
 	"end" : 	{
 		"patching_rect" : [ 0, 46, 251, 16 ],
 		"hidden" : 0,
-		"fontsize" : 16
+		"fontsize" : 16.0
 	}
 ,
 	"length" : 	{
 		"patching_rect" : [ 0, 30, 251, 16 ],
 		"hidden" : 0,
-		"fontsize" : 16
+		"fontsize" : 16.0
 	}
 ,
 	"play/stop" : 	{
 		"patching_rect" : [ -1, 81, 31, 19 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"speed" : 	{
 		"patching_rect" : [ 77, 83, 174, 17 ],
 		"hidden" : 0,
-		"fontsize" : 14
+		"fontsize" : 14.0
 	}
 ,
 	"autotrigger" : 	{
 		"patching_rect" : [ 51, 81, 28, 19 ],
 		"hidden" : 1,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"vzoom" : 	{
 		"patching_rect" : [ 175, 212, 76, 18 ],
 		"hidden" : 0,
-		"fontsize" : 13
+		"fontsize" : 13.0
 	}
 ,
 	"full_display" : 	{
 		"patching_rect" : [ -1, 194, 52, 18 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"display_selected" : 	{
 		"patching_rect" : [ 51, 194, 50, 18 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"trigger" : 	{
 		"patching_rect" : [ 29, 81, 22, 19 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"show_envelope" : 	{
 		"patching_rect" : [ 151, 194, 35, 18 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"toggle_env" : 	{
 		"patching_rect" : [ 99, 194, 53, 18 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"clear_env" : 	{
 		"patching_rect" : [ 186, 194, 36, 18 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"full_env" : 	{
 		"patching_rect" : [ 223, 194, 28, 18 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"ms_format" : 	{
 		"patching_rect" : [ 91, 0, 58, 15 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"line-curve-toggle" : 	{
 		"patching_rect" : [ 221, 194, 30, 18 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 
 }
