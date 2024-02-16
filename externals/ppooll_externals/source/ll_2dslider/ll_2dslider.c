@@ -60,6 +60,7 @@ typedef struct _ll_2dslider
     t_jrgba		ll_altcolor;
     t_jrgba		ll_shiftcolor;
     t_jrgba		ll_calccolor;
+    t_jrgba     ll_extratextcolor;
     int         ll_indicolors[384];
     bool        ll_indicolors_on;
     char        ll_cmdctrl[128];
@@ -87,6 +88,8 @@ typedef struct _ll_2dslider
     void				*x_qelem;							// for message passing between threads
     int                 x_sleeptime;						// how many milliseconds to sleep
     int                 ll_ramptime;
+    t_atom      ll_extratext[16];
+    long        ll_extrasize;
 } t_ll_2dslider;
 
 void *ll_2dslider_new(t_symbol *s, short argc, t_atom *argv);
@@ -247,6 +250,9 @@ void ext_main(void *r){
     CLASS_ATTR_FILTER_MIN(c,		"baseline", 0);
     CLASS_ATTR_FILTER_MAX(c,		"baseline", 3);
     
+    CLASS_ATTR_ATOM_VARSIZE(c,        "extratext", ATTR_FLAGS_NONE, t_ll_2dslider, ll_extratext, ll_extrasize,32) ;
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"extratext",0,"_");
+    
     
     CLASS_STICKY_ATTR_CLEAR(c,		"category");
     
@@ -270,6 +276,10 @@ void ext_main(void *r){
     CLASS_ATTR_RGBA_LEGACY(c,			"textcolor","rgb5", 0, t_ll_2dslider, ll_textcolor);
     CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"textcolor",0,"1. 1. 1. 1.");
     CLASS_ATTR_STYLE_LABEL(c,			"textcolor",0,"rgba","Number Color");
+    
+    CLASS_ATTR_RGBA_LEGACY(c,            "extratextcolor","rgb5", 0, t_ll_2dslider, ll_extratextcolor);
+    CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"extratextcolor",0,"0. 0. 0. 1.");
+    CLASS_ATTR_STYLE_LABEL(c,            "extratextcolor",0,"rgba","extratext Color");
     
     CLASS_ATTR_RGBA_LEGACY(c,			"slidercolor","frgb", 0, t_ll_2dslider, ll_frgba);
     CLASS_ATTR_ALIAS(c,					"slidercolor", "frgba");
@@ -295,6 +305,7 @@ void ext_main(void *r){
     CLASS_ATTR_RGBA_LEGACY(c,			"moverectcolor","rgb4", 0, t_ll_2dslider, ll_moverectcolor);
     CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"moverectcolor",0,"0.18 0.68 0.18 0.35");
     CLASS_ATTR_STYLE_LABEL(c,			"moverectcolor",0,"rgba","rectcolor with ctrlshift");
+
     
     CLASS_STICKY_ATTR_CLEAR(c, "category");
     
@@ -581,6 +592,7 @@ void ll_2dslider_paint(t_ll_2dslider *x, t_object *view){
     t_jtextlayout *jtl;
     short i;
     char num[5];
+    char s[64];
     //post("paint %d", x->ll_calcbg);
     g = (t_jgraphics*) patcherview_get_jgraphics(view);
     jbox_get_rect_for_view((t_object *)x, view, &rect);
@@ -616,6 +628,19 @@ void ll_2dslider_paint(t_ll_2dslider *x, t_object *view){
     jtextlayout_set(jtl, num, jf, x->ll_rects[i].x, py, x->ll_rectsize, x->ll_rectsize, JGRAPHICS_TEXT_JUSTIFICATION_CENTERED, JGRAPHICS_TEXTLAYOUT_NOWRAP);
     jtextlayout_settextcolor(jtl, &x->ll_textcolor);
     jtextlayout_draw(jtl, g);
+    //extratext?
+    if (atom_gettype(&x->ll_extratext[i]) == A_SYM)
+        sprintf(s,"%s",atom_getsym(&x->ll_extratext[i])->s_name);
+    else {
+        if (atom_gettype(&x->ll_extratext[i]) == A_LONG) sprintf(s,"%ld",atom_getlong(&x->ll_extratext[i]));
+        else s[0]=95;//sprintf(s, "%d",i+1);
+        }
+    if (s[0]!=95) {
+        jtextlayout_set(jtl, s, jf, x->ll_rects[i].x, py, x->ll_rectsize, x->ll_rectsize, JGRAPHICS_TEXT_JUSTIFICATION_LEFT, JGRAPHICS_TEXTLAYOUT_NOWRAP);
+        jtextlayout_settextcolor(jtl, &x->ll_extratextcolor);
+        jtextlayout_draw(jtl, g);
+    }
+    //extratext
     jfont_destroy(jf);
     if(x->ll_shiftrectdraw){
         jgraphics_set_source_jrgba(g, &x->ll_shiftrectcolor);
@@ -631,6 +656,7 @@ void ll_2dslider_paint_statics(t_ll_2dslider *x, t_object *view, t_rect *rect){
     short i;
     double py;
     char num[5];
+    char s[64];
     t_jfont *jf;
     t_jtextlayout *jtl;
     if (x->ll_calcbg > 0) jbox_invalidate_layer((t_object *)x, NULL, gensym("static_layer"));
@@ -662,6 +688,20 @@ void ll_2dslider_paint_statics(t_ll_2dslider *x, t_object *view, t_rect *rect){
                 jtextlayout_set(jtl, num, jf, x->ll_rects[i].x, py, x->ll_rectsize, x->ll_rectsize, JGRAPHICS_TEXT_JUSTIFICATION_CENTERED, JGRAPHICS_TEXTLAYOUT_NOWRAP);
                 jtextlayout_settextcolor(jtl, &x->ll_textcolor);
                 jtextlayout_draw(jtl, g);
+                //extratext?
+                if (atom_gettype(&x->ll_extratext[i]) == A_SYM)
+                    sprintf(s,"%s",atom_getsym(&x->ll_extratext[i])->s_name);
+                else {
+                    if (atom_gettype(&x->ll_extratext[i]) == A_LONG) sprintf(s,"%ld",atom_getlong(&x->ll_extratext[i]));
+                    else s[0]=95;//sprintf(s, "%d",i+1);
+                    }
+                //post ("so %d", s[0]);
+                if (s[0]!=95) {
+                    jtextlayout_set(jtl, s, jf, x->ll_rects[i].x, py, x->ll_rectsize, x->ll_rectsize, JGRAPHICS_TEXT_JUSTIFICATION_LEFT, JGRAPHICS_TEXTLAYOUT_NOWRAP);
+                    jtextlayout_settextcolor(jtl, &x->ll_extratextcolor);
+                    jtextlayout_draw(jtl, g);
+                }
+                //extratext
                 jfont_destroy(jf);
             }
         }
@@ -939,13 +979,14 @@ bool ll_2dslider_basecheck(t_ll_2dslider *x, short m){
             return false;
     }
 }
+
 void ll_2dslider_oldestmove(t_ll_2dslider *x, short m){
     short i;
     bool fo = false; //found in oldestmove
     short fb = -1; //found in oldestbase
-    for (i=x->ll_amount-1;i>=0; i--){
+    for (i=x->ll_amount-1; i>=0; i--){
         if (x->ll_oldestmove[i]==m) fo = true;
-        if(fo) x->ll_oldestmove[i]=x->ll_oldestmove[i-1];
+        if(fo) x->ll_oldestmove[i] = x->ll_oldestmove[i-1];
     }
     x->ll_oldestmove[0] = m;
     
@@ -1061,7 +1102,7 @@ void ll_2dslider_mousedown(t_ll_2dslider *x, t_object *patcherview, t_pt pt, lon
             ll_2dslider_redraw(x);
   
     }
-    else {
+    else { // outside point
         t_atom cum[2];
         switch(modifiers){
             case 148: //ctrl
@@ -1081,6 +1122,7 @@ void ll_2dslider_mousedown(t_ll_2dslider *x, t_object *patcherview, t_pt pt, lon
                 }
                 break;
             case 24: //alt
+                //post("basecount %d", x->ll_basecount);
                 if(x->ll_basecount>0) i = x->ll_oldestbase[x->ll_basecount-1];
                 else i = x->ll_oldestmove[x->ll_amount-1];
                 x->ll_rects[i].x = pt.x;
@@ -1579,6 +1621,7 @@ void ll_2dslider_moverect(t_ll_2dslider *x, t_symbol *s, short ac, t_atom *av){
     x->ll_calcbg = 0;
     jbox_redraw((t_jbox *)x);
 }
+
 void ll_2dslider_automove(t_ll_2dslider *x, t_symbol *s, short ac, t_atom *av){
     if (ac == 1){
         if (atom_getfloat(av) > 0){
@@ -1592,6 +1635,7 @@ void ll_2dslider_automove(t_ll_2dslider *x, t_symbol *s, short ac, t_atom *av){
     }
     
 }
+
 void ll_2dslider_clearramps(t_ll_2dslider *x, t_symbol *s, short ac, t_atom *av){
     short i;
     for(i=0;i<x->ll_amount;i++){
