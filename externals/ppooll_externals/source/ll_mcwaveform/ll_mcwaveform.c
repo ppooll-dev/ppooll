@@ -194,6 +194,7 @@ void ll_mcwaveform_start(t_ll_mcwaveform *x, double f);
 void ll_mcwaveform_length(t_ll_mcwaveform *x, double f);
 void ll_mcwaveform_selstart(t_ll_mcwaveform *x, double f);
 void ll_mcwaveform_selend(t_ll_mcwaveform *x, double f);
+void ll_mcwaveform_setlength(t_ll_mcwaveform *x, double f);
 
 // Resize/position messages
 void ll_mcwaveform_full(t_ll_mcwaveform *x);
@@ -247,6 +248,8 @@ void ext_main(void *r){
     class_addmethod(c, (method)ll_mcwaveform_length,        "length",     A_FLOAT, 0);
     class_addmethod(c, (method)ll_mcwaveform_selstart,      "selstart",   A_FLOAT, 0);
     class_addmethod(c, (method)ll_mcwaveform_selend,        "selend",     A_FLOAT, 0);
+    class_addmethod(c, (method)ll_mcwaveform_setlength,     "setlength",   A_FLOAT, 0);
+
 
     class_addmethod(c, (method)ll_mcwaveform_zoom2sel,      "zoom2sel",   0);
     class_addmethod(c, (method)ll_mcwaveform_sel_all,       "sel_all",    0);
@@ -1059,6 +1062,17 @@ void ll_mcwaveform_selend(t_ll_mcwaveform *x, double f){
     x->ms_list.sel_end = f;
     ll_mcwaveform_updatebounds(x, !x->set_only_mode);
 }
+
+/*
+    setlength [Max Message]
+        Set the length, adjust the sel_start and sel_end.
+*/
+void ll_mcwaveform_setlength(t_ll_mcwaveform *x, double f){
+    double length = f > 0. ? f : 0.;
+    x->ms_list.sel_end = x->ms_list.sel_start + length;
+    ll_mcwaveform_updatebounds(x, !x->set_only_mode);
+}
+
 
 /*
     zoom2sel [Max Message]
