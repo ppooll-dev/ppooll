@@ -1,3 +1,2 @@
-
 .DS_Store
-/externals/**/build*
+externals/ppooll_externals/build*

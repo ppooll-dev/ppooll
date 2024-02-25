@@ -1,99 +1,99 @@
 {
-	"window" : [ 499, 188, 689, 360 ],
+	"window" : [ 461, 110, 651, 282 ],
 	"loop3" : 	{
 		"patching_rect" : [ 38, 87, 15, 17 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"vol3" : 	{
 		"patching_rect" : [ 0, 87, 38, 17 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"go/stop3" : 	{
 		"patching_rect" : [ 53, 87, 15, 17 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"loop4" : 	{
 		"patching_rect" : [ 38, 122, 15, 17 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"vol4" : 	{
 		"patching_rect" : [ 0, 122, 38, 17 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"go/stop4" : 	{
 		"patching_rect" : [ 53, 122, 15, 17 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"loop2" : 	{
 		"patching_rect" : [ 38, 52, 15, 17 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"vol2" : 	{
 		"patching_rect" : [ 0, 52, 38, 17 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"go/stop2" : 	{
 		"patching_rect" : [ 53, 52, 15, 17 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"start2" : 	{
 		"patching_rect" : [ 100, 52, 45, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"start3" : 	{
 		"patching_rect" : [ 100, 87, 45, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"start4" : 	{
 		"patching_rect" : [ 100, 122, 45, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"speed2" : 	{
 		"patching_rect" : [ 68, 52, 32, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"speed3" : 	{
 		"patching_rect" : [ 68, 87, 32, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"speed4" : 	{
 		"patching_rect" : [ 68, 122, 32, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"preset-ramp" : 	{
 		"patching_rect" : [ 120, 156, 70, 16 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"presets" : 	{
@@ -105,205 +105,205 @@
 	"act_menu3" : 	{
 		"patching_rect" : [ 69, 104, 41, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"act_menu2" : 	{
 		"patching_rect" : [ 69, 69, 41, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"speed1" : 	{
 		"patching_rect" : [ 68, 16, 32, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"buffer1" : 	{
 		"patching_rect" : [ 0, 33, 53, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"buffer2" : 	{
 		"patching_rect" : [ 0, 69, 53, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"buffer3" : 	{
 		"patching_rect" : [ 0, 104, 53, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"buffer4" : 	{
 		"patching_rect" : [ 0, 139, 53, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"start1" : 	{
 		"patching_rect" : [ 100, 16, 45, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"end1" : 	{
 		"patching_rect" : [ 145, 16, 45, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"end2" : 	{
 		"patching_rect" : [ 145, 52, 45, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"end3" : 	{
 		"patching_rect" : [ 145, 87, 45, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"end4" : 	{
 		"patching_rect" : [ 145, 122, 45, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"act_menu1" : 	{
 		"patching_rect" : [ 69, 33, 41, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"par_menu_L1" : 	{
 		"patching_rect" : [ 109, 33, 41, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"par_menu_R1" : 	{
 		"patching_rect" : [ 149, 33, 41, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"par_menu_L2" : 	{
 		"patching_rect" : [ 109, 69, 41, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"par_menu_R2" : 	{
 		"patching_rect" : [ 149, 69, 41, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"par_menu_L3" : 	{
 		"patching_rect" : [ 109, 104, 41, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"par_menu_R3" : 	{
 		"patching_rect" : [ 149, 104, 41, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"act_menu4" : 	{
 		"patching_rect" : [ 69, 139, 41, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"par_menu_L4" : 	{
 		"patching_rect" : [ 109, 139, 41, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"par_menu_R4" : 	{
 		"patching_rect" : [ 149, 139, 41, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"note1" : 	{
 		"patching_rect" : [ 134, 196, 35, 19 ],
 		"hidden" : 1,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"note2" : 	{
 		"patching_rect" : [ 134, 212, 35, 19 ],
 		"hidden" : 1,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"note3" : 	{
 		"patching_rect" : [ 134, 228, 35, 19 ],
 		"hidden" : 1,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"note4" : 	{
 		"patching_rect" : [ 134, 245, 35, 19 ],
 		"hidden" : 1,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"loop1" : 	{
 		"patching_rect" : [ 38, 16, 15, 17 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"update-end" : 	{
 		"patching_rect" : [ 159, 0, 31, 16 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"toplug1" : 	{
 		"patching_rect" : [ 51, 33, 18, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"vol1" : 	{
 		"patching_rect" : [ 0, 16, 38, 17 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"go/stop1" : 	{
 		"patching_rect" : [ 53, 16, 15, 17 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"toplug2" : 	{
 		"patching_rect" : [ 51, 69, 18, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"toplug3" : 	{
 		"patching_rect" : [ 51, 104, 18, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"toplug4" : 	{
 		"patching_rect" : [ 51, 139, 18, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 
 }
