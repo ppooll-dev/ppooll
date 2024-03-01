@@ -1,33 +1,33 @@
 {
-	"window" : [ 383, 52, 701, 324 ],
+	"window" : [ 112, 93, 430, 365 ],
 	"start" : 	{
 		"patching_rect" : [ 28, 218, 45, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"gain" : 	{
 		"patching_rect" : [ 286, 125, 31, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"controlmode" : 	{
 		"patching_rect" : [ 270, 108, 47, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"pitchquantize" : 	{
 		"patching_rect" : [ 96, 252, 34, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"pitchrandomness" : 	{
 		"patching_rect" : [ 35, 252, 34, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"autosliders" : 	{
@@ -38,67 +38,67 @@
 	"autochangeinterval" : 	{
 		"patching_rect" : [ 194, 124, 43, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"autochangemenu" : 	{
 		"patching_rect" : [ 194, 108, 43, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"wf" : 	{
 		"patching_rect" : [ 0, 141, 299, 63 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"length" : 	{
 		"patching_rect" : [ 96, 218, 45, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"length_rel" : 	{
 		"patching_rect" : [ 119, 362, 45, 22 ],
 		"hidden" : 1,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"start_rel" : 	{
 		"patching_rect" : [ 118, 336, 42, 22 ],
 		"hidden" : 1,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"fix_lang" : 	{
 		"patching_rect" : [ 143, 219, 17, 15 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"playbackspeed_ramp_stop" : 	{
 		"patching_rect" : [ 290, 32, 27, 15 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"pitch_ramp_stop" : 	{
 		"patching_rect" : [ 290, 62, 27, 15 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"grain_ramp_stop" : 	{
 		"patching_rect" : [ 290, 93, 27, 15 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"preset-ramp" : 	{
 		"patching_rect" : [ 254, 0, 62, 16 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"presets" : 	{
@@ -116,73 +116,73 @@
 	"playbackspeed" : 	{
 		"patching_rect" : [ 0, 17, 317, 16 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"pitch" : 	{
 		"patching_rect" : [ 0, 46, 317, 16 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"grainlength" : 	{
 		"patching_rect" : [ 0, 77, 317, 16 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"random" : 	{
 		"patching_rect" : [ 0, 205, 299, 13 ],
 		"hidden" : 0,
-		"fontsize" : 11
+		"fontsize" : 11.0
 	}
 ,
 	"density" : 	{
 		"patching_rect" : [ 0, 237, 160, 15 ],
 		"hidden" : 0,
-		"fontsize" : 11
+		"fontsize" : 11.0
 	}
 ,
 	"pitch_ramp" : 	{
 		"patching_rect" : [ 180, 61, 109, 15 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"grain_ramp" : 	{
 		"patching_rect" : [ 180, 92, 109, 15 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"playbackspeed_ramp" : 	{
 		"patching_rect" : [ 180, 32, 109, 15 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"trigger" : 	{
 		"patching_rect" : [ 0, 93, 36, 14 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"env-view" : 	{
 		"patching_rect" : [ 0, 108, 100, 15 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"fontsize" : 10.0
 	}
 ,
 	"grainenvelope" : 	{
 		"patching_rect" : [ 96, 108, 40, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 ,
 	"buffermenu" : 	{
 		"patching_rect" : [ 0, 124, 136, 19 ],
 		"hidden" : 0,
-		"fontsize" : 9
+		"fontsize" : 9.0
 	}
 
 }
