@@ -18,7 +18,7 @@ var empty_prf_DEFAULT = {
     flop_disable_cursor: 0,
   },
   file_paths: {
-    quickrecord_path: "",
+    quickrecord_path: 0,
     unshared_acts: "",
     sdif_folder: "",
     sound_folders: "",
@@ -39,6 +39,12 @@ var empty_prf_DEFAULT = {
 
 function newPref() {
   var ppooll_prf = new Dict("ppooll-preferences");
+
+  // to-do: make ppooll_presets folder here and properly initialize rest of ho_st?
+  
+  // var maxLibraryFolder = new Folder("Usermax:Library");
+  // post(maxLibraryFolder.pathname)
+
   ppooll_prf.parse(JSON.stringify(empty_prf_DEFAULT));
   outlet(0, "check_old");
 }
