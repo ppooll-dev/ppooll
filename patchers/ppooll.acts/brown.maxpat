@@ -181,6 +181,7 @@
 					"max" : 44100.0,
 					"maxclass" : "ll_number",
 					"min" : 0.0001,
+					"mousefocus" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
@@ -375,15 +376,15 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 469.0, 145.0, 107.0, 22.0 ],
 					"restore" : 					{
-						"DC_block" : [ 0 ],
-						"freq" : [ 0.001000000047497 ],
+						"DC_block" : [ 1 ],
+						"freq" : [ 44100.0 ],
 						"freq_mcspread" : [ 0.036774729825993 ],
 						"freq_ramp" : [ 0 ],
 						"master" : [ 0 ],
 						"pres_menu" : [ "_" ],
 						"preset-ramp" : [ 0.0 ],
 						"presets" : [ 0 ],
-						"step" : [ 0.000129720013281 ],
+						"step" : [ 0.001020453870576 ],
 						"step_mcspread" : [ 0.000390518872355 ],
 						"step_ramp" : [ 0 ],
 						"tetris_menu" : [ "" ],
@@ -426,7 +427,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-9",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
+					"items" : [ "fast_nix", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -449,7 +450,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-11",
 					"ignoreclick" : 1,
-					"items" : "-",
+					"items" : [ "-", ",", "-", ",", "ƒ", "default.json" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -573,7 +574,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "multichannelsignal", "float", "int" ],
 									"patching_rect" : [ 102.0, 153.0, 56.0, 34.0 ],
-									"sig" : [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
+									"sig" : 0.0
 								}
 
 							}
@@ -780,11 +781,11 @@
 													"box" : 													{
 														"maxclass" : "newobj",
 														"text" : "in 2",
-														"patching_rect" : [ 620.0, 42.0, 28.0, 22.0 ],
 														"numoutlets" : 1,
 														"outlettype" : [ "" ],
-														"id" : "obj-2",
-														"numinlets" : 0
+														"patching_rect" : [ 620.0, 42.0, 28.0, 22.0 ],
+														"numinlets" : 0,
+														"id" : "obj-2"
 													}
 
 												}
@@ -792,25 +793,25 @@
 													"box" : 													{
 														"maxclass" : "newobj",
 														"text" : "in 1",
-														"patching_rect" : [ 84.0, 36.0, 28.0, 22.0 ],
 														"numoutlets" : 1,
 														"outlettype" : [ "" ],
-														"id" : "obj-1",
-														"numinlets" : 0
+														"patching_rect" : [ 84.0, 36.0, 28.0, 22.0 ],
+														"numinlets" : 0,
+														"id" : "obj-1"
 													}
 
 												}
 , 												{
 													"box" : 													{
 														"maxclass" : "codebox",
-														"fontname" : "<Monospaced>",
-														"patching_rect" : [ 84.0, 83.5, 555.0, 381.0 ],
+														"fontsize" : 12.0,
 														"numoutlets" : 1,
 														"outlettype" : [ "" ],
+														"fontname" : "<Monospaced>",
+														"patching_rect" : [ 84.0, 83.5, 555.0, 381.0 ],
 														"fontface" : 0,
-														"id" : "obj-3",
-														"fontsize" : 12.0,
 														"numinlets" : 2,
+														"id" : "obj-3",
 														"code" : "\r\n\r\n\r\nHistory z(1);\r\n\r\nstep = in1;\r\nfreq = fold(in2, 0.00001, samplerate);\r\nz3 = 0;\n\r\nz1 = z + step * noise();\r\nz1 = fold(z1, -1, 1);\r\n\r\nif(freq<samplerate){\r\nsah_trig = delta(phasor(freq, 0)) < 0;\nz2 = latch(z1, sah_trig);\r\nz3 = fixdenorm(z2);\r\n}\r\nelse{\r\nz3 = z1;\r\n}\r\n\r\n\r\nout1 = z3;\r\nz = z3;"
 													}
 
@@ -819,20 +820,20 @@
 													"box" : 													{
 														"maxclass" : "newobj",
 														"text" : "out 1",
+														"fontsize" : 12.0,
+														"numoutlets" : 0,
 														"fontname" : "Arial",
 														"patching_rect" : [ 84.0, 523.0, 38.0, 22.0 ],
-														"numoutlets" : 0,
-														"id" : "obj-4",
-														"fontsize" : 12.0,
-														"numinlets" : 1
+														"numinlets" : 1,
+														"id" : "obj-4"
 													}
 
 												}
  ],
 											"lines" : [ 												{
 													"patchline" : 													{
-														"source" : [ "obj-3", 0 ],
-														"destination" : [ "obj-4", 0 ]
+														"source" : [ "obj-2", 0 ],
+														"destination" : [ "obj-3", 1 ]
 													}
 
 												}
@@ -845,8 +846,8 @@
 												}
 , 												{
 													"patchline" : 													{
-														"source" : [ "obj-2", 0 ],
-														"destination" : [ "obj-3", 1 ]
+														"source" : [ "obj-3", 0 ],
+														"destination" : [ "obj-4", 0 ]
 													}
 
 												}
@@ -862,9 +863,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 163.0, 228.0, 191.0, 23.0 ],
-									"text" : "mc.gen~ @step 0.01 @chans 1",
-									"wrapper_uniquekey" : "u276006520"
+									"patching_rect" : [ 163.0, 228.0, 121.0, 23.0 ],
+									"text" : "mc.gen~ @chans 1",
+									"wrapper_uniquekey" : "u715004187"
 								}
 
 							}
@@ -1049,7 +1050,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 482.0, 37.0, 100.0, 22.0 ],
-					"restore" : [ "0(1)", "in(1)", "step(8)", "freq(8)" ],
+					"restore" : [ "0(1)", "in(1)", "step(1)", "freq(1)" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1154,6 +1155,13 @@
 				"name" : "ll.mc.r.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../Packages/ppooll/patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.mc.stereo_pan.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
+				"patcherrelativepath" : "../../Packages/ppooll/patchers/abstractions/ll.blues",
 				"type" : "JSON",
 				"implicit" : 1
 			}
