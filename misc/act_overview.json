@@ -126,7 +126,7 @@
 		"beast" : 		{
 			"description" : "non-trivial buffer machine",
 			"authors" : 2,
-			"tags" : [ 1, 3, 11 ]
+			"tags" : [ 1, 3, 11, 15 ]
 		}
 ,
 		"beauty" : 		{
@@ -147,6 +147,12 @@
 			"tags" : [ 7, 9 ]
 		}
 ,
+		"brown" : 		{
+			"description" : "brownian noise generator",
+			"authors" : 2,
+			"tags" : [ 1, 11, 15 ]
+		}
+		,
 		"buffub" : 		{
 			"description" : "records into buffers",
 			"authors" : [ 1, 3 ],
