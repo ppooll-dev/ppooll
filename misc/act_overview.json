@@ -758,6 +758,12 @@
 			"tags" : ""
 		}
 ,
+		"threekomp" : 		{
+			"description" : "ppooll port of 3komp from the max demo patches",
+			"authors" : [ 3, 16 ],
+			"tags" : [ 2, 9, 15 ]
+		}
+,
 		"timeline@" : 		{
 			"description" : "graphical timeline sequencer for parameters",
 			"authors" : 1,
