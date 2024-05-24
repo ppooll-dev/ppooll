@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 390.0, 502.0, 305.0, 284.0 ],
+		"rect" : [ 297.0, 427.0, 305.0, 284.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -165,12 +165,14 @@
 					"mark" : 0.0,
 					"maxclass" : "ll_number",
 					"min" : 0.0,
+					"mousefocus" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 204.0, 18.0, 100.0, 19.171875 ],
 					"slidercolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"slidercolornofocus" : [ 1.0, 0.0, 0.0, 0.5 ],
 					"sliderstyle" : 0,
 					"textcolornofocus" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "ramp"
@@ -514,6 +516,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 204.0, 108.0, 100.0, 14.0 ],
 					"slidercolor" : [ 1.0, 0.07843137254902, 0.235294117647059, 1.0 ],
+					"slidercolornofocus" : [ 1.0, 0.0, 0.0, 0.5 ],
 					"slidermax" : 0.0,
 					"slidermin" : -48.0,
 					"sliderstyle" : 0,
@@ -539,6 +542,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 204.0, 157.0, 100.0, 14.0 ],
 					"slidercolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"slidercolornofocus" : [ 1.0, 0.0, 0.0, 0.5 ],
 					"slidermax" : 48.0,
 					"slidermin" : -48.0,
 					"sliderstyle" : 0,
@@ -673,6 +677,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 102.0, 108.0, 100.0, 14.0 ],
 					"slidercolor" : [ 1.0, 0.07843137254902, 0.235294117647059, 1.0 ],
+					"slidercolornofocus" : [ 1.0, 0.0, 0.0, 0.5 ],
 					"slidermax" : 0.0,
 					"slidermin" : -48.0,
 					"sliderstyle" : 0,
@@ -698,6 +703,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 102.0, 157.0, 100.0, 14.0 ],
 					"slidercolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"slidercolornofocus" : [ 1.0, 0.0, 0.0, 0.5 ],
 					"slidermax" : 48.0,
 					"slidermin" : -48.0,
 					"sliderstyle" : 0,
@@ -870,6 +876,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 0.0, 108.0, 100.0, 14.0 ],
 					"slidercolor" : [ 1.0, 0.07843137254902, 0.235294117647059, 1.0 ],
+					"slidercolornofocus" : [ 1.0, 0.0, 0.0, 0.5 ],
 					"slidermax" : 0.0,
 					"slidermin" : -48.0,
 					"sliderstyle" : 0,
@@ -895,6 +902,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 0.0, 157.0, 100.0, 14.0 ],
 					"slidercolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"slidercolornofocus" : [ 1.0, 0.0, 0.0, 0.5 ],
 					"slidermax" : 48.0,
 					"slidermin" : -48.0,
 					"sliderstyle" : 0,
@@ -1054,10 +1062,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 498.0, 213.0, 100.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 100, 87, 860, 1046 ],
+						"client_rect" : [ 1176, 213, 1791, 873 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 430, 270, 1276, 999 ]
+						"storage_rect" : [ 200, 200, 800, 500 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -1137,15 +1145,15 @@
 						"3release" : [ 150.0 ],
 						"3sidechain" : [ 0 ],
 						"3threshold" : [ 0.0 ],
-						"cross1" : [ 200 ],
+						"cross1" : [ 150 ],
 						"cross2" : [ 2000 ],
 						"master" : [ 0 ],
 						"pres_menu" : [ "_" ],
 						"preset-ramp" : [ 0.0 ],
 						"presets" : [ 0 ],
-						"ramp" : [ 500.0 ],
+						"ramp" : [ 800.0 ],
 						"tetris_menu" : [ "" ],
-						"title_menu" : [ "info" ]
+						"title_menu" : [ "subpatch" ]
 					}
 ,
 					"text" : "autopattr autopattr",
@@ -1284,16 +1292,6 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-4",
-									"maxclass" : "scope~",
-									"numinlets" : 2,
-									"numoutlets" : 0,
-									"patching_rect" : [ 301.0, 317.0, 130.0, 130.0 ]
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"id" : "obj-3",
 									"maxclass" : "newobj",
@@ -1704,7 +1702,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 238.0, 137.0, 90.0, 22.0 ],
+									"patching_rect" : [ 227.0, 137.0, 90.0, 22.0 ],
 									"text" : "prepend voices"
 								}
 
@@ -1716,7 +1714,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 238.0, 106.0, 47.0, 22.0 ],
+									"patching_rect" : [ 227.0, 106.0, 47.0, 22.0 ],
 									"text" : "zl nth 5"
 								}
 
@@ -1728,7 +1726,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 238.0, 54.0, 97.0, 22.0 ],
+									"patching_rect" : [ 227.0, 54.0, 97.0, 22.0 ],
 									"text" : "ll.p ll.blues::state"
 								}
 
@@ -1815,7 +1813,17 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"midpoints" : [ 236.5, 133.0, 332.5, 133.0, 332.5, 43.0, 351.5, 43.0 ],
+									"order" : 0,
+									"source" : [ "obj-14", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-30", 0 ],
+									"order" : 1,
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -1869,15 +1877,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-12", 1 ],
 									"midpoints" : [ 351.5, 213.0, 505.5, 213.0 ],
-									"order" : 0,
-									"source" : [ "obj-2", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"order" : 1,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -2085,15 +2084,15 @@
 			}
 , 			{
 				"name" : "komp-ballistics_240408.maxpat",
-				"bootpath" : "~/Documents/projects/maxpatches/ppooll_acts/threekomp/240520 renamed to threekomp",
-				"patcherrelativepath" : "../../../projects/maxpatches/ppooll_acts/threekomp/240520 renamed to threekomp",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/hausch",
+				"patcherrelativepath" : "../../Packages/ppooll/patchers/abstractions/hausch",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "komp_edit240520.maxpat",
-				"bootpath" : "~/Documents/projects/maxpatches/ppooll_acts/threekomp/240520 renamed to threekomp",
-				"patcherrelativepath" : "../../../projects/maxpatches/ppooll_acts/threekomp/240520 renamed to threekomp",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/hausch",
+				"patcherrelativepath" : "../../Packages/ppooll/patchers/abstractions/hausch",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -2300,8 +2299,8 @@
 			}
 , 			{
 				"name" : "threekomp_poly_240520.maxpat",
-				"bootpath" : "~/Documents/projects/maxpatches/ppooll_acts/threekomp/240520 renamed to threekomp",
-				"patcherrelativepath" : "../../../projects/maxpatches/ppooll_acts/threekomp/240520 renamed to threekomp",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/hausch",
+				"patcherrelativepath" : "../../Packages/ppooll/patchers/abstractions/hausch",
 				"type" : "JSON",
 				"implicit" : 1
 			}
