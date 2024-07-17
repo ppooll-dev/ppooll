@@ -1,5 +1,9 @@
 {
+<<<<<<< Updated upstream
 	"window" : [ 64, 99, 451, 743 ],
+=======
+	"window" : [ 128, 387, 515, 1031 ],
+>>>>>>> Stashed changes
 	"freq_smooth" : 	{
 		"patching_rect" : [ 159, 587, 212, 18 ],
 		"hidden" : 0,
@@ -120,7 +124,11 @@
 	}
 ,
 	"preset-ramp" : 	{
+<<<<<<< Updated upstream
 		"patching_rect" : [ 305, 54, 66, 14 ],
+=======
+		"patching_rect" : [ 305, 52, 66, 14 ],
+>>>>>>> Stashed changes
 		"hidden" : 0,
 		"fontsize" : 12.0
 	}

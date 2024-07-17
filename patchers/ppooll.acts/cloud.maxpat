@@ -10,7 +10,11 @@
 		}
 ,
 		"classnamespace" : "box",
+<<<<<<< Updated upstream
 		"rect" : [ 64.0, 99.0, 387.0, 644.0 ],
+=======
+		"rect" : [ 128.0, 387.0, 387.0, 644.0 ],
+>>>>>>> Stashed changes
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -62,7 +66,11 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
+<<<<<<< Updated upstream
 					"patching_rect" : [ 305.062500000000455, 54.0, 66.0, 14.0 ],
+=======
+					"patching_rect" : [ 305.062500000000455, 52.0, 66.0, 14.0 ],
+>>>>>>> Stashed changes
 					"slidermax" : 180000.0,
 					"varname" : "preset-ramp"
 				}
@@ -129,7 +137,7 @@
 					"amount" : 2,
 					"fontface" : 0,
 					"id" : "obj-35",
-					"label" : [ "range" ],
+					"label" : [ "range_min", "range_max" ],
 					"max" : 127.0,
 					"maxclass" : "ll_number",
 					"min" : 0.0,
@@ -317,14 +325,14 @@
 					"labelcolor" : [ 0.0, 0.0, 0.0, 0.92 ],
 					"max" : 9999.0,
 					"maxclass" : "ll_number",
-					"min" : 2.0,
+					"min" : 1.0,
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 53.0, 0.0, 102.0, 17.0 ],
 					"slidermax" : 9999.0,
-					"slidermin" : 2.0,
+					"slidermin" : 1.0,
 					"sliderstyle" : 2,
 					"textcolornofocus" : [ 0.16078431372549, 0.16078431372549, 0.16078431372549, 1.0 ],
 					"varname" : "number"
@@ -642,10 +650,17 @@
 					}
 ,
 					"saved_object_attributes" : 					{
+<<<<<<< Updated upstream
 						"client_rect" : [ 1277, 206, 1847, 1060 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 583, 68, 1034, 196 ]
+=======
+						"client_rect" : [ 1280, 132, 2040, 1176 ],
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0,
+						"storage_rect" : [ 430, 270, 1276, 999 ]
+>>>>>>> Stashed changes
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -703,15 +718,24 @@
 					"restore" : 					{
 						"QTkey" : [ -1 ],
 						"amount" : [ 5.0 ],
+<<<<<<< Updated upstream
 						"cloud_points" : [ 0.45, 0.227, 0.003, 0.083, 0.23, 0.278, 0.656, 0.965, 0.449, 0.511 ],
 						"cloud_points_B" : [ 0.73, 0.721, 0.004, 0.938, 0.803, 0.203, 0.581, 0.32, 0.673, 0.646 ],
 						"equal" : [ -1 ],
 						"freq_smooth" : [ 58 ],
 						"mag_smooth" : [ 87 ],
+=======
+						"cloud_points" : [ 0.554, 0.973, 0.856, 0.354, 0.585, 0.196, 0.535, 0.134, 0.396, 0.825 ],
+						"cloud_points_B" : [ 0.725, 0.418, 0.35, 0.985, 0.225, 0.329, 0.409, 0.12, 0.286, 0.204 ],
+						"equal" : [ -1 ],
+						"freq_smooth" : [ 0.0 ],
+						"mag_smooth" : [ 0.0 ],
+>>>>>>> Stashed changes
 						"master" : [ 0 ],
 						"midi-channel" : [ 0.0 ],
 						"midi-port" : [ "KONTROL S61 MK3" ],
 						"midi_hold" : [ 0 ],
+<<<<<<< Updated upstream
 						"number" : [ 500.0 ],
 						"pres_menu" : [ "_" ],
 						"preset-ramp" : [ 0 ],
@@ -725,6 +749,21 @@
 						"thin_rate" : [ 0.0 ],
 						"title_menu" : [ "clientwindow" ],
 						"vertical_rotate" : [ 0.0 ],
+=======
+						"number" : [ 1000.0 ],
+						"pres_menu" : [ "_" ],
+						"preset-ramp" : [ 0.0 ],
+						"presets" : [ 1 ],
+						"ramp_points" : [ 0.0 ],
+						"random_points" : [ 0 ],
+						"range" : [ 66.421000000000006, 82.804000000000002 ],
+						"rotate" : [ 0.0 ],
+						"tetris_menu" : [ "" ],
+						"thin" : [ 0.646840148698885 ],
+						"thin_rate" : [ 0.37546468401487 ],
+						"title_menu" : [ "titlebar" ],
+						"vertical_rotate" : [ 0.694174757281553 ],
+>>>>>>> Stashed changes
 						"visualize" : [ 1 ]
 					}
 ,
@@ -769,7 +808,11 @@
 						}
 ,
 						"classnamespace" : "box",
+<<<<<<< Updated upstream
 						"rect" : [ 633.0, 104.0, 1317.0, 1247.0 ],
+=======
+						"rect" : [ 1040.0, 207.0, 1317.0, 1247.0 ],
+>>>>>>> Stashed changes
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
