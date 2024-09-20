@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 134.0, 100.0, 1012.0, 786.0 ],
+		"rect" : [ 790.0, 100.0, 688.0, 786.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,51 +40,59 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "MIDI Channel (to umenu)",
+					"comment" : "MIDI Channel (to umenu)",
+					"hint" : "MIDI Channel (to umenu)",
 					"id" : "obj-7",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 196.0, 265.707519999999988, 30.0, 30.0 ]
+					"patching_rect" : [ 196.0, 335.0, 30.0, 30.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "MIDI Port (to umenu)",
+					"comment" : "MIDI Port (to umenu)",
+					"hint" : "MIDI Port (to umenu)",
 					"id" : "obj-6",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 77.0, 265.707519999999988, 30.0, 30.0 ]
+					"patching_rect" : [ 77.0, 335.0, 30.0, 30.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "MIDI Channel Number",
+					"comment" : "MIDI Channel Number",
+					"hint" : "MIDI Channel Number",
 					"id" : "obj-5",
-					"index" : 0,
+					"index" : 3,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 330.0, 63.0, 30.0, 30.0 ]
+					"patching_rect" : [ 291.0, 87.0, 30.0, 30.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "MIDI Port Name",
+					"comment" : "MIDI Port Name",
+					"hint" : "MIDI Port Name",
 					"id" : "obj-3",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 121.0, 63.0, 30.0, 30.0 ]
+					"patching_rect" : [ 153.5, 87.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -353,7 +361,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 121.0, 124.0, 159.0, 22.0 ],
+					"patching_rect" : [ 121.0, 193.0, 159.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -761,7 +769,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 29.0, 182.0, 251.0, 22.0 ],
+					"patching_rect" : [ 29.0, 251.0, 251.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1004,7 +1012,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 29.0, 151.0, 111.0, 22.0 ],
+					"patching_rect" : [ 29.0, 220.0, 111.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1023,32 +1031,35 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 61.0, 96.0, 55.0, 33.0 ],
+					"patching_rect" : [ 61.0, 165.0, 55.0, 33.0 ],
 					"text" : "midi stream"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "Raw MIDI Messages",
+					"comment" : "Raw MIDI Messages",
+					"hint" : "Raw MIDI Messages",
 					"id" : "obj-1",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 29.0, 96.0, 30.0, 30.0 ]
+					"patching_rect" : [ 29.0, 165.0, 30.0, 30.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-91",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 4.0, 6.0, 638.0, 20.0 ],
-					"text" : "\"ll.midi_out\" - send a midi stream to a ppooll \"midi-bus\" or external midi device, inspired by ll.actmenu (joe steccato)"
+					"patching_rect" : [ 4.0, 6.0, 638.0, 33.0 ],
+					"text" : "\"ll.midi_out\"\nsend a midi stream to a ppooll \"midi-bus\" or external midi device, inspired by ll.actmenu (joe steccato)"
 				}
 
 			}
@@ -1410,7 +1421,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 29.0, 233.0, 99.0, 22.0 ],
+					"patching_rect" : [ 29.0, 302.0, 99.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1429,7 +1440,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
-					"patching_rect" : [ 109.0, 265.707519999999988, 119.0, 22.0 ],
+					"patching_rect" : [ 109.0, 335.0, 119.0, 22.0 ],
 					"text" : "ll.pf #2"
 				}
 
@@ -1441,7 +1452,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
-					"patching_rect" : [ 29.0, 265.707519999999988, 102.0, 22.0 ],
+					"patching_rect" : [ 29.0, 335.0, 102.0, 22.0 ],
 					"text" : "ll.pf #1"
 				}
 
@@ -1453,7 +1464,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
-					"patching_rect" : [ 121.0, 90.0, 116.0, 22.0 ],
+					"patching_rect" : [ 121.0, 122.0, 116.0, 22.0 ],
 					"text" : "ll.p #2 "
 				}
 
@@ -1465,7 +1476,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
-					"patching_rect" : [ 261.0, 90.0, 99.0, 22.0 ],
+					"patching_rect" : [ 261.0, 122.0, 99.0, 22.0 ],
 					"text" : "ll.p #1 "
 				}
 
@@ -1476,7 +1487,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 201.0, 17.0, 54.0, 20.0 ],
+					"patching_rect" : [ 272.0, 49.0, 54.0, 20.0 ],
 					"text" : "channel"
 				}
 
@@ -1487,7 +1498,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 121.0, 17.0, 33.0, 20.0 ],
+					"patching_rect" : [ 121.0, 49.0, 33.0, 20.0 ],
 					"text" : "port"
 				}
 
@@ -1498,7 +1509,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 14.0, 39.0, 99.0, 20.0 ],
+					"patching_rect" : [ 14.0, 71.0, 99.0, 20.0 ],
 					"text" : "named umenus: "
 				}
 
@@ -1510,7 +1521,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 206.5, 39.0, 97.0, 22.0 ],
+					"patching_rect" : [ 272.0, 71.0, 97.0, 22.0 ],
 					"text" : "#2"
 				}
 
@@ -1522,7 +1533,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 121.0, 39.0, 80.0, 22.0 ],
+					"patching_rect" : [ 121.0, 71.0, 80.0, 22.0 ],
 					"text" : "#1 "
 				}
 
@@ -1630,41 +1641,7 @@
 				}
 
 			}
- ],
-		"dependency_cache" : [ 			{
-				"name" : "ll.actname.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.an2.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.p.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.pf.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "pattrexists.mxo",
-				"type" : "iLaX"
-			}
- ],
-		"autosave" : 0
+ ]
 	}
 
 }

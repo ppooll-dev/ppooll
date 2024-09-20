@@ -64,7 +64,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "MIDI Channel (to umenu)",
+					"comment" : "MIDI Channel (to umenu)",
+					"hint" : "MIDI Channel (to umenu)",
 					"id" : "obj-24",
 					"index" : 3,
 					"maxclass" : "outlet",
@@ -76,7 +78,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "MIDI Port (to umenu)",
+					"comment" : "MIDI Port (to umenu)",
+					"hint" : "MIDI Port (to umenu)",
 					"id" : "obj-23",
 					"index" : 2,
 					"maxclass" : "outlet",
@@ -88,7 +92,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "MIDI Channel\n",
+					"comment" : "MIDI Channel",
+					"hint" : "MIDI Channel",
 					"id" : "obj-17",
 					"index" : 2,
 					"maxclass" : "inlet",
@@ -101,7 +107,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "MIDI Port Name",
+					"comment" : "MIDI Port Name",
+					"hint" : "MIDI Port Name",
 					"id" : "obj-16",
 					"index" : 1,
 					"maxclass" : "inlet",
@@ -736,7 +744,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "Raw MIDI Messages",
+					"comment" : "Raw MIDI Messages",
+					"hint" : "Raw MIDI Messages",
 					"id" : "obj-80",
 					"index" : 1,
 					"maxclass" : "outlet",
