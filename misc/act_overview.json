@@ -227,7 +227,7 @@
 ,
 		"eq@" : 		{
 			"description" : "crossover-filter based graphic equalizer",
-			"authors" : 3,
+			"authors" : [ 3, 16 ],
 			"tags" : [ 9, 15 ]
 		}
 ,
