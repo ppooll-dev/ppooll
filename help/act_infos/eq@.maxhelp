@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 620.0, 459.0 ],
+		"rect" : [ 100.0, 100.0, 622.0, 459.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,69 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
+					"fontlink" : 1,
+					"id" : "obj-22",
+					"legacytextcolor" : 1,
+					"maxclass" : "textbutton",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
+					"outputmode" : 0,
+					"parameter_enable" : 0,
+					"patching_rect" : [ 41.0, 145.0, 292.8203125, 21.40625 ],
+					"style" : "default",
+					"text" : "https://sengpielaudio.com/calculator-octave.htm#top",
+					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"underline" : 1,
+					"usebgoncolor" : 1,
+					"usetextovercolor" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"hidden" : 1,
+					"id" : "obj-32",
+					"linecount" : 4,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 440.0, 151.0, 165.0, 62.0 ],
+					"style" : "default",
+					"text" : ";\rmax launchbrowser https://sengpielaudio.com/calculator-octave.htm#top"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 12.0,
+					"id" : "obj-21",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 45.0, 403.0, 282.0, 33.0 ],
+					"presentation_linecount" : 2,
+					"text" : "Attention: the highest band is only accessible when running a sample frequency of 48khz and above."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 12.0,
+					"id" : "obj-7",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 45.0, 123.0, 524.0, 20.0 ],
+					"text" : "1/3 octave band frequencies according to Eberhard Sengpiel."
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bubble" : 1,
 					"bubblepoint" : 1.0,
 					"fontsize" : 12.0,
@@ -48,8 +111,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 367.0, 243.0, 148.0, 64.0 ],
-					"presentation_linecount" : 6,
+					"patching_rect" : [ 367.0, 243.0, 151.0, 64.0 ],
 					"text" : "view channel on meter (0 means sum all channels and divide by channel count)"
 				}
 
@@ -66,7 +128,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 282.0, 326.5, 99.0, 52.0 ],
-					"presentation_linecount" : 4,
 					"text" : "maximum slider values (dB)",
 					"textjustification" : 1
 				}
@@ -376,7 +437,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 409.0, 318.0, 106.0, 37.0 ],
+					"patching_rect" : [ 409.0, 318.0, 107.0, 37.0 ],
 					"text" : "reset all bands to 0 dB"
 				}
 
@@ -421,7 +482,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 45.0, 120.0, 524.0, 33.0 ],
+					"patching_rect" : [ 45.0, 89.0, 524.0, 33.0 ],
 					"text" : "based on crossover filters by graham wakefield. quite cpu-hungry, might compile to an external later. gen~ based & mc-aware."
 				}
 
@@ -434,7 +495,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 45.0, 78.0, 190.0, 33.0 ],
+					"patching_rect" : [ 45.0, 55.0, 190.0, 33.0 ],
 					"text" : "graphical eq, v2 241205\nc. hausch / hausch@moozak.org"
 				}
 
@@ -446,7 +507,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 45.0, 38.0, 107.0, 27.0 ],
+					"patching_rect" : [ 45.0, 26.0, 107.0, 27.0 ],
 					"text" : "eq@"
 				}
 
@@ -587,6 +648,14 @@
 					"destination" : [ "obj-14", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-32", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-22", 0 ]
 				}
 
 			}
