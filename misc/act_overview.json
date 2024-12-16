@@ -441,6 +441,12 @@
 			"tags" : [ 9, 15 ]
 		}
 ,
+		"limi" : 		{
+			"description" : "peak limiter",
+			"authors" : [ 3, 16 ],
+			"tags" : [ 9, 15 ]
+		}
+,
 		"link@" : 		{
 			"description" : "ableton link sync interface",
 			"authors" : 3,
@@ -761,7 +767,7 @@
 		"threekomp" : 		{
 			"description" : "ppooll port of 3komp from the max demo patches",
 			"authors" : [ 3, 16 ],
-			"tags" : [ 2, 9, 15 ]
+			"tags" : [ 9, 15 ]
 		}
 ,
 		"timeline@" : 		{
