@@ -12,6 +12,7 @@
 - "update available" popup
 - JSUI sliders to flop
 - threekomp – new multichannel 3-band compressor based on c'74 demo patch
+- limi – simple port of the c'74 lookahead peak limiter external "limi~" to ppooll
 
 ### update
 - externals for both OSX & WIN (eliminate Quarantine warnings)
