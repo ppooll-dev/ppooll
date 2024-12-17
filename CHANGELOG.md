@@ -11,11 +11,16 @@
 - vzoom to ll_mcwaveform
 - "update available" popup
 - JSUI sliders to flop
-- xgroove mc support
+- threekomp – new multichannel 3-band compressor based on c'74 demo patch
+- limi – simple port of the c'74 lookahead peak limiter external "limi~" to ppooll
 
 ### update
 - externals for both OSX & WIN (eliminate Quarantine warnings)
 - noize@
+- beast (new multichannel version)
+- xgroove mc support
+- chebyshev@ (using c'74 formulae instead of soundhack externals) - gen~ based, now supports interpolation   
+- eq@ (written from scratch)
 
 ### fix
 - pr.6groov (thanks KNFLD)

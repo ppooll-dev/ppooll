@@ -227,7 +227,7 @@
 ,
 		"eq@" : 		{
 			"description" : "crossover-filter based graphic equalizer",
-			"authors" : 3,
+			"authors" : [ 3, 16 ],
 			"tags" : [ 9, 15 ]
 		}
 ,
@@ -438,6 +438,12 @@
 		"kompressor" : 		{
 			"description" : "audio compressor",
 			"authors" : 16,
+			"tags" : [ 9, 15 ]
+		}
+,
+		"limi" : 		{
+			"description" : "peak limiter",
+			"authors" : [ 3, 16 ],
 			"tags" : [ 9, 15 ]
 		}
 ,
@@ -761,7 +767,7 @@
 		"threekomp" : 		{
 			"description" : "ppooll port of 3komp from the max demo patches",
 			"authors" : [ 3, 16 ],
-			"tags" : [ 2, 9, 15 ]
+			"tags" : [ 9, 15 ]
 		}
 ,
 		"timeline@" : 		{
