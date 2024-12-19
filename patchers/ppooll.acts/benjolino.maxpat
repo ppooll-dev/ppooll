@@ -1015,6 +1015,30 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-24",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 207.0, 300.0, 66.0, 22.0 ],
+									"text" : "prepend sr"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-16",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 4,
+									"outlettype" : [ "int", "float", "int", "int" ],
+									"patching_rect" : [ 193.0, 266.0, 61.0, 22.0 ],
+									"text" : "dspstate~"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-58",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -3708,7 +3732,7 @@
 										}
 ,
 										"classnamespace" : "dsp.gen",
-										"rect" : [ 34.0, 87.0, 1437.0, 893.0 ],
+										"rect" : [ 259.0, 310.0, 1437.0, 893.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 10.0,
@@ -3827,8 +3851,8 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 320.000121999999976, 35.0, 58.0, 20.0 ],
-													"text" : "samplerate"
+													"patching_rect" : [ 320.000121999999976, 35.0, 123.0, 20.0 ],
+													"text" : "Param sr @default 44100"
 												}
 
 											}
@@ -33199,7 +33223,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-21", 4 ],
-													"order" : 2,
+													"order" : 3,
 													"source" : [ "obj-24", 0 ]
 												}
 
@@ -33207,7 +33231,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-25", 1 ],
-													"order" : 3,
+													"order" : 2,
 													"source" : [ "obj-24", 0 ]
 												}
 
@@ -33859,6 +33883,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"source" : [ "obj-16", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-22", 0 ],
 									"source" : [ "obj-17", 0 ]
 								}
@@ -33910,6 +33941,14 @@
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-23", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"midpoints" : [ 216.5, 336.0, 326.5, 336.0 ],
+									"source" : [ "obj-24", 0 ]
 								}
 
 							}
