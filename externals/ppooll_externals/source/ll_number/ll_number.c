@@ -1,13 +1,15 @@
 /*
- ll_number version 1.5
+ ll_number version 1.6
  by klaus filip
- ll_number is a combination of number and slider with
- formatting options,
- individual digit drag,
- logarithmic slider,
- key-support and
- multislider option.
+ 
  with support from the cycling74 dev forum and noid
+ 
+ ll_number is a combination of number and slider with
+ - formatting options
+ - individual digit drag
+ - logarithmic slider
+ - key-support
+ - multislider option
  */
 
 #ifdef WIN_VERSION
@@ -30,6 +32,7 @@
 #endif
 
 static t_class	*s_ll_number_class = 0;
+
 // mouse tracking stuff
 static t_pt s_ll_number_cum;
 static short s_ll_selold;
@@ -283,7 +286,7 @@ void ext_main(void *r){
     CLASS_ATTR_LABEL(c,				"vertical", 0, "Vertical Font Offset");
     
     CLASS_STICKY_ATTR(c, "category", 0, "Appearance");
-
+    
     CLASS_ATTR_LONG(c,				"border", 0, t_ll_number, ll_border);
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"border",0,"1");
     CLASS_ATTR_LABEL(c,				"border", 0, "Border Size");
@@ -330,7 +333,7 @@ void ext_main(void *r){
     
     CLASS_STICKY_ATTR_CLEAR(c, "category");
     
-
+    
     CLASS_ATTR_ORDER(c, "bgcolor",			0, "2");
     CLASS_ATTR_ORDER(c, "bordercolor",		0, "3");
     CLASS_ATTR_ORDER(c, "textcolor",		0, "4");
@@ -343,17 +346,14 @@ void ext_main(void *r){
     CLASS_ATTR_INVISIBLE(c, "color", 0);
     CLASS_ATTR_ATTR_PARSE(c, "color","save", USESYM(long), 0, "0");
     
-    
-    
     class_register(CLASS_BOX, c);
     s_ll_number_class = c;
-    
-    
 }
+
 void *ll_number_new(t_symbol *s, short argc, t_atom *argv){
     t_ll_number* x;
     long flags;
-    t_dictionary *d=NULL;
+    t_dictionary *d = NULL;
     
     if (!(d=object_dictionaryarg(argc,argv)))
         return NULL;
@@ -389,40 +389,34 @@ void *ll_number_new(t_symbol *s, short argc, t_atom *argv){
     x->ll_box.b_firstin = (t_object*) x;
     outlet_new((t_object *)x,NULL);
     
-    
-    
     attr_dictionary_process(x,d); // handle attribute args
-    
     ll_number_floatformgen(x);
-    
     jbox_ready(&x->ll_box);
-    
     return x;
 }
+
 void ll_number_assist(t_ll_number *x, void *b, long m, long a, char *s){
-    if (m==ASSIST_INLET) {
+    if (m==ASSIST_INLET)
         sprintf(s,"Displays Value Received");
-    }
-    else {
+    else
         sprintf(s,"Outputs Value When Slider is Changed");
-    }
 }
+
 void ll_number_free(t_ll_number *x){
     jbox_free(&x->ll_box);
 }
 
 void ll_number_floatformgen(t_ll_number *x){
-    //post("ffg");
     x->ll_floatform = (atom_getfloat(&x->ll_tform[0])) ;
-    
     x->ll_floatformpost = (int)round(fmod(x->ll_floatform,1)*10);
+    
+    int quot = (int)(div(x->ll_floatform,1).quot);
+    
     if(x->ll_floatformpost){
-        x->ll_floatpointpos = (int)(div(x->ll_floatform,1).quot);
+        x->ll_floatpointpos = quot;
         x->ll_floatformpre = x->ll_floatpointpos + x->ll_floatformpost + 1;
-    }
-    else {
-        
-        x->ll_floatformpre = (int)(div(x->ll_floatform,1).quot);
+    } else {
+        x->ll_floatformpre = quot;
         x->ll_floatpointpos = x->ll_floatformpre;
     }
 }
@@ -433,7 +427,6 @@ void ll_number_printf(t_ll_number *x, double f){
     char str[16];
     //double rem;
     memset(&x->ll_pval, 0, 32);
-    
     
     if(x->ll_form_length > 1) {
         
@@ -527,7 +520,7 @@ void ll_number_paint(t_ll_number *x, t_object *view){
     jgraphics_rectangle(g, 0, 0, rect.width, rect.height);
     jgraphics_set_line_width(g, x->ll_border);
     jgraphics_stroke(g);
-  
+    
     
     h = (rect.height-b) / x->ll_ac;
     //post("h_b_r %f %f %f", h, b,rect.height);
@@ -538,30 +531,30 @@ void ll_number_paint(t_ll_number *x, t_object *view){
         up = i*h+b/2;
         pos = ll_number_valtopos(x, atom_getfloat(&x->ll_vala[i]));         //############ slider ###### post("pos %f",pos);
         if(x->ll_mousefocus) jgraphics_set_source_jrgba(g, &x->ll_frgba);
-                        else jgraphics_set_source_jrgba(g, &x->ll_slicolornof);
+        else jgraphics_set_source_jrgba(g, &x->ll_slicolornof);
         switch(x->ll_bar_line){
             case 1: jgraphics_rectangle(g, pos, up, 2, h); break;
             case 0: jgraphics_rectangle(g, x->ll_inset, up, pos - x->ll_inset, h);  break;
         }
         jgraphics_fill(g);
-    
+        
         if(atom_getsym(&x->ll_mark) != gensym("<none>")) {       //###################### mark ##############    post("mark");
             jgraphics_set_source_jrgba(g, &x->ll_labelcolor);
             jgraphics_rectangle(g, ll_number_valtopos(x, atom_getfloat(&x->ll_mark)), up+2, 1, h-4);
             jgraphics_fill(g);
         }
-                
+        
         if(i>0) {                                       //############## multinumber lines
             jgraphics_set_source_jrgba(g, &x->ll_frgba2);
             jgraphics_rectangle(g, 0, up, rect.width, 1);
             jgraphics_fill(g);
         }
-                
+        
         if (x->ll_typing && i == x->ll_selitem)        //############### def_string
             ll_number_printf(x,atof(x->ll_buffer));
         else
             ll_number_printf(x,atom_getfloat(&x->ll_vala[i]));
-                                                        // ############## number
+        // ############## number
         jf = jfont_create(jbox_get_fontname((t_object *)x)->s_name, 0, 0, jbox_get_fontsize((t_object *)x));
         jtl = jtextlayout_create();
         jtextlayout_set(jtl, x->ll_pval, jf, x->ll_inset, up, x->ll_width - (1 - x->ll_bar_line*2) - 1, h, JGRAPHICS_TEXT_JUSTIFICATION_RIGHT, JGRAPHICS_TEXTLAYOUT_NOWRAP);//*0.08 + x->ll_vert_offset
@@ -583,7 +576,7 @@ void ll_number_paint(t_ll_number *x, t_object *view){
         
         if (atom_gettype(&x->ll_label[0]) == A_SYM) {       //############# label ######
             if (atom_gettype(&x->ll_label[i]) == A_SYM) sprintf(s,"%s",atom_getsym(&x->ll_label[i])->s_name);
-                                                    else sprintf(s, "%d",i+1);
+            else sprintf(s, "%d",i+1);
             jf = jfont_create(jbox_get_fontname((t_object *)x)->s_name, 0, 0, jbox_get_fontsize((t_object *)x));
             jtl = jtextlayout_create();
             jtextlayout_set(jtl,s , jf, x->ll_inset + 2, up, x->ll_width, h-2, JGRAPHICS_TEXT_JUSTIFICATION_VCENTERED, JGRAPHICS_TEXTLAYOUT_NOWRAP);
@@ -700,7 +693,7 @@ void ll_number_set(t_ll_number *x, t_symbol *s, short ac, t_atom *av){
 }
 
 t_max_err ll_number_setvalueof(t_ll_number *x, long ac, t_atom *av){
-   x->ll_ac = ac;
+    x->ll_ac = ac;
     if (ac && av) {
         atom_setatom_array(x->ll_ac,x->ll_vala, ac, av);
     }
@@ -736,7 +729,7 @@ void ll_number_pos(t_ll_number *x, double pos){
                 val = (exp(((pos-splitpos)/(1-splitpos) - 1)* x->ll_slider_log)-1)/(exp(-x->ll_slider_log)-1)*(0 - x->ll_slider_max)+x->ll_slider_max;
             else
                 val = (exp((pos/splitpos - 1)* -x->ll_slider_log)-1)/(exp(x->ll_slider_log)-1)*x->ll_slider_min;
-                }
+        }
     //post("pos@drag %f val %f", pos,val);
     ll_number_assign(x, val, true);
 }
@@ -745,7 +738,7 @@ double ll_number_valtopos(t_ll_number *x, double val){
     double pos;
     if (x->ll_slider_log == 0){
         pos =(val - x->ll_slider_min)/(x->ll_slider_max - x->ll_slider_min);
-        }
+    }
     else
         if (x->ll_zerosplitslog == 0)
             pos = (((log((val - x->ll_slider_max)*(exp(- x->ll_slider_log)-1)/(x->ll_slider_min - x->ll_slider_max)+1))/x->ll_slider_log)+1);
@@ -792,31 +785,31 @@ void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
             jbox_redraw((t_jbox *)x);
         }
     }
-        
-    #ifdef MAC_VERSION
-        if (modifiers == 17){
-            x->ll_mousefocus = 0;
+    
+#ifdef MAC_VERSION
+    if (modifiers == 17){
+        x->ll_mousefocus = 0;
+        jbox_redraw((t_jbox *)x);
+    }
+    else{
+        if (modifiers == 24 && (x->ll_bar_line!=2)){
+            x->ll_mousefocus = 1;
             jbox_redraw((t_jbox *)x);
         }
-        else{
-            if (modifiers == 24 && (x->ll_bar_line!=2)){
-                x->ll_mousefocus = 1;
-                jbox_redraw((t_jbox *)x);
-            }
-        }
-    #endif
-    #ifdef WIN_VERSION
-        if (modifiers == 24){
-            x->ll_mousefocus = 0;
+    }
+#endif
+#ifdef WIN_VERSION
+    if (modifiers == 24){
+        x->ll_mousefocus = 0;
+        jbox_redraw((t_jbox *)x);
+    }
+    else{
+        if (modifiers == 148 || modifiers == 21 && (x->ll_bar_line!=2)){
+            x->ll_mousefocus = 1;
             jbox_redraw((t_jbox *)x);
         }
-        else{
-            if (modifiers == 148 || modifiers == 21 && (x->ll_bar_line!=2)){
-                x->ll_mousefocus = 1;
-                jbox_redraw((t_jbox *)x);
-            }
-        }
-    #endif
+    }
+#endif
     
     jbox_get_rect_for_view((t_object *)x, patcherview, &rect);
     x->ll_selitem = ll_number_selitem(x, patcherview, pt.y);
@@ -852,7 +845,7 @@ void ll_number_mousedragdelta(t_ll_number *x, t_object *patcherview, t_pt pt, lo
     //post("ptxxxx %f cum: %f", pt.x, s_ll_number_cum.x);
     if (s_ll_number_cum.x < x->ll_inset) s_ll_number_cum.x = x->ll_inset;
     if (s_ll_number_cum.x > x->ll_width + x->ll_inset) s_ll_number_cum.x = x->ll_width + x->ll_inset;
-        //jmouse_setposition_box(patcherview, (t_object*) x,s_ll_number_cum.x, s_ll_number_cum.y);
+    //jmouse_setposition_box(patcherview, (t_object*) x,s_ll_number_cum.x, s_ll_number_cum.y);
     if (x->ll_mousefocus && (x->ll_bar_line!=2)) {
         if (modifiers != 24 && x->ll_ac >1 && x->ll_multidrag) {
             x->ll_selitem = ll_number_selitem(x, patcherview, s_ll_number_cum.y);
@@ -897,9 +890,9 @@ void ll_number_mouseup(t_ll_number *x, t_object *patcherview, t_pt pt, long modi
     jbox_get_rect_for_view((t_object *)x, patcherview, &rect);
     if (x->ll_mousefocus && (x->ll_bar_line!=2)) {
         jmouse_setposition_box(patcherview, (t_object*) x,
-            ll_number_valtopos(x,atom_getfloat(&x->ll_vala[x->ll_selitem])),
-            (x->ll_selitem * (rect.height - x->ll_border) / x->ll_ac) + x->ll_border/2 + 0.5*(rect.height - x->ll_border/2)/x->ll_ac
-        );
+                               ll_number_valtopos(x,atom_getfloat(&x->ll_vala[x->ll_selitem])),
+                               (x->ll_selitem * (rect.height - x->ll_border) / x->ll_ac) + x->ll_border/2 + 0.5*(rect.height - x->ll_border/2)/x->ll_ac
+                               );
     }
 }
 
@@ -954,13 +947,12 @@ long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long mod
             if (modifiers == 2 && x->ll_selitem < x->ll_ac-1) {
                 x->ll_selitem++;
                 jbox_redraw(&x->ll_box);
-            }
-            else
+            } else
                 ll_number_assign(x,atom_getfloat(&x->ll_vala[x->ll_selitem]) - x->ll_formfactor, true);
             break;
         case 29:
             x->ll_selpos--;
-            ll_number_formposition(x,1);
+            ll_number_formposition(x, 1);
             jbox_redraw((t_jbox *)x);
             break;
         case 28:
@@ -981,11 +973,10 @@ long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long mod
             x->ll_typing = 0;
             memset(&x->ll_buffer, 0, 32);
             break;
-            
     }
-    
     return 0;	// returns 1 if you want to filter it from the key object
 }
+
 void ll_number_endtyping(t_ll_number *x){
     if(x->ll_typing) {
         x->ll_typing = 0;
@@ -993,45 +984,41 @@ void ll_number_endtyping(t_ll_number *x){
         memset(&x->ll_buffer, 0, 32);
     }
 }
+
 void ll_number_formposition(t_ll_number *x, long pm){
     long pos, pch;
-    
-    //post("length %d selpos %d", x->ll_string_length, x->ll_selpos);
-    
-    if (x->ll_selpos > x->ll_string_length) x->ll_selpos = x->ll_string_length;
-    if (x->ll_selpos < 1) x->ll_selpos = 1;
+
+    if (x->ll_selpos > x->ll_string_length) 
+        x->ll_selpos = x->ll_string_length;
+    if (x->ll_selpos < 1) 
+        x->ll_selpos = 1;
     
     jtextlayout_getchar(x->ll_jtl, x->ll_string_length - x->ll_selpos, &pch);
     
     while(!(pch > 47 && pch < 58)){
-        //post("pch %d", pch);
         x->ll_selpos = x->ll_selpos - pm;
-        if (x->ll_selpos < 1 || x->ll_string_length - x->ll_selpos <0) {
+        if (x->ll_selpos < 1 || x->ll_string_length - x->ll_selpos < 0) {
             pm = -pm;
-        }
-        else {
-            
+        } else {
             jtextlayout_getchar(x->ll_jtl, x->ll_string_length - x->ll_selpos, &pch);
         }
     }
-    
-    
-    
     if (x->ll_form_length == 1) {
-        
         pos = x->ll_selpos - x->ll_floatformpost - 1;
-        if(x->ll_floatpointpos == x->ll_floatformpre) pos++;
-        if (pos >0) pos = pos - 1;
+        if(x->ll_floatpointpos == x->ll_floatformpre) 
+            pos++;
+        if (pos >0)
+            pos = pos - 1;
         x->ll_formfactor = pow(10, pos);
-    }
-    else {
-        if(x->ll_selpos > x->ll_form_length)  x->ll_selpos = x->ll_form_length;
+    } else {
+        if(x->ll_selpos > x->ll_form_length)
+            x->ll_selpos = x->ll_form_length;
         ll_number_formfactor(x);
     }
     
 }
+
 void ll_number_formfactor(t_ll_number *x){
-    //post("ff");
     long formpos;
     formpos = x->ll_form_length - x->ll_selpos;
     switch (atom_gettype(&x->ll_tform[formpos])) {
@@ -1045,12 +1032,11 @@ void ll_number_formfactor(t_ll_number *x){
 }
 
 void ll_number_focusgained(t_ll_number *x, t_object *patcherview){
-    //post("focus");
     x->ll_selected = true;
     jbox_redraw((t_jbox *)x);
 }
+
 void ll_number_focuslost(t_ll_number *x, t_object *patcherview){
-    //post("lost focus");
     x->ll_selected = false;
     ll_number_endtyping(x);
     jbox_redraw((t_jbox *)x);
@@ -1065,16 +1051,15 @@ t_max_err ll_number_setattr_ll_max(t_ll_number *x, void *attr, long ac, t_atom *
             atom_arg_getdouble(&f, 0, ac, av);
             atom_setfloat(&x->ll_max, f);
             x->ll_hasmax = 1;
-        }
-        else {
+        } else {
             atom_setsym(&x->ll_max, gensym("<none>"));
         }
-    } 
-    else {
+    } else {
         atom_setsym(&x->ll_max, gensym("<none>"));
     }
     return MAX_ERR_NONE;
 }
+
 t_max_err ll_number_setattr_ll_min(t_ll_number *x, void *attr, long ac, t_atom *av){
     double f;
     x->ll_hasmin = 0;
@@ -1084,16 +1069,15 @@ t_max_err ll_number_setattr_ll_min(t_ll_number *x, void *attr, long ac, t_atom *
             atom_arg_getdouble(&f, 0, ac, av);
             atom_setfloat(&x->ll_min, f);
             x->ll_hasmin = 1;
-        }
-        else {
+        } else {
             atom_setsym(&x->ll_min, gensym("<none>"));
         }
-    } 
-    else {
+    } else {
         atom_setsym(&x->ll_min, gensym("<none>"));
     }
     return MAX_ERR_NONE;
 }
+
 t_max_err ll_number_setattr_ll_mark(t_ll_number *x, void *attr, long ac, t_atom *av){
     double f;
     
@@ -1101,17 +1085,15 @@ t_max_err ll_number_setattr_ll_mark(t_ll_number *x, void *attr, long ac, t_atom 
         if (atom_gettype(av) == A_LONG || atom_gettype(av) == A_FLOAT){
             atom_arg_getdouble(&f, 0, ac, av);
             atom_setfloat(&x->ll_mark, f);
-       
-        }
-        else {
+        } else {
             atom_setsym(&x->ll_mark, gensym("<none>"));
         }
-    }
-    else {
+    } else {
         atom_setsym(&x->ll_mark, gensym("<none>"));
     }
     return MAX_ERR_NONE;
 }
+
 t_max_err ll_number_setattr_ll_amount(t_ll_number *x, void *attr, long ac, t_atom *av){
     short i;
     t_atom_long am;
@@ -1122,13 +1104,9 @@ t_max_err ll_number_setattr_ll_amount(t_ll_number *x, void *attr, long ac, t_ato
         if(x->ll_amount > x->ll_ac) {
             for(i= x->ll_ac; i < x->ll_amount; i++){
                 atom_setfloat(&x->ll_vala[i], 0.);
-                //x->ll_val[i] = 0.;
             }
-            
         }
-        x->ll_ac = x->ll_amount;	
-        
-        //post("amount %d", x->ll_amount);
+        x->ll_ac = x->ll_amount;
         ll_number_redraw(x);
     }
     return MAX_ERR_NONE;
@@ -1137,15 +1115,16 @@ t_max_err ll_number_setattr_ll_amount(t_ll_number *x, void *attr, long ac, t_ato
 void ll_number_select(t_ll_number *x){
     defer(x, (method)ll_number_doselect, 0, 0, 0);
 }
+
 void ll_number_doselect(t_ll_number *x){
-    t_object *p = NULL; 
+    t_object *p = NULL;
     object_obex_lookup(x,gensym("#P"), &p);
     if (p) {
-        t_atom rv; 
-        long ac = 1; 
-        t_atom av[1]; 
-        atom_setobj(av, x); 
-        object_method_typed(p, gensym("selectbox"), ac, av, &rv); 
+        t_atom rv;
+        long ac = 1;
+        t_atom av[1];
+        atom_setobj(av, x);
+        object_method_typed(p, gensym("selectbox"), ac, av, &rv);
         post("sofar");
     }
 }
@@ -1167,83 +1146,3 @@ void ll_number_rand(t_ll_number *x, long it){
         ll_number_pos(x, ran);
     }
 }
-
-
-
-
-
-
-/*
- t_max_err ll_number_setattr_ll_label(t_ll_number *x, void *attr, long ac, t_atom *av)
- {
- double f;
- t_atom_long i;
- char s[16];
- x->ll_haslabel = 0;
- //postatom(av);
- if (ac && av) {
- switch (atom_gettype(av)) {
- case A_LONG :
- atom_arg_getlong(&i, 0, ac, av);
- sprintf(s, "%lld",i);
- x->ll_label = gensym(s);
- x->ll_haslabel = 1;
- break;
- case A_FLOAT :
- atom_arg_getdouble(&f, 0, ac, av);
- sprintf(s, "%f",f);
- //postatom(av);
- x->ll_label = gensym(s);
- x->ll_haslabel = 1;
- break;
- case A_SYM :
- atom_arg_getsym(&x->ll_label, 0, ac, av);
- if(!(x->ll_label == gensym("<none>"))) x->ll_haslabel = 1;
- break;
- default:
- x->ll_label = gensym("<none>");
- x->ll_haslabel = 0;
- break;
- }
- }
- else {
- x->ll_label = gensym("<none>");
- x->ll_haslabel = 0;
- }
- return MAX_ERR_NONE;
- }
- */
-
-
-/*
- double ll_number_postoval(t_ll_number *x, double pos, t_rect *r)
- {
- double val;
- 
- pos = pos / x->ll_width; //r->width;
- 
- if (pos > 1.)
- pos = 1.;
- if (pos < 0.)
- pos = 0.;
- 
- if (x->ll_slider_log == 0)
- val = pos*(x->ll_slider_max - x->ll_slider_min)+ x->ll_slider_min;
- else
- val = (exp((pos - 1)* x->ll_slider_log)-1)/(exp(-x->ll_slider_log)-1)*(x->ll_slider_min - x->ll_slider_max)+x->ll_slider_max;
- 
- return ll_number_constrain(x,val);
- }
- */
-
-/*
-if (pos > 1.)
-    
-    s_ll_number_cum.x = rect.width; // - x->ll_inset/2;
-if (pos <= 0.){
-    s_ll_number_cum.x = x->ll_inset;
-    post("cum: %f", s_ll_number_cum.x);
-    jmouse_setposition_box(patcherview, (t_object*) x,s_ll_number_cum.x, s_ll_number_cum.y);
-}
-post("pos %f cum: %f", pos, s_ll_number_cum.x);
- */
