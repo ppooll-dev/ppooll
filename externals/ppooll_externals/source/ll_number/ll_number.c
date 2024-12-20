@@ -611,13 +611,25 @@ void ll_number_float(t_ll_number *x, double f){  //post("float %f", f);
     ll_number_redraw(x);
 }
 
-void ll_number_list(t_ll_number *x, t_symbol *s, short ac, t_atom *av){
-    if(ac > 256) post("ll_number: list exceeds maximum of 256 items");
-    else{
+void ll_number_list(t_ll_number *x, t_symbol *s, short ac, t_atom *av) {
+    if (ac > 256) {
+        post("ll_number: list exceeds maximum of 256 items");
+    } else {
         if (ac && av) {
             x->ll_ac = ac;
-            memset(&x->ll_vala, 0, ac);
-            atom_setatom_array(x->ll_ac, x->ll_vala, ac, av);
+
+            // Clear the current array
+            memset(&x->ll_vala, &x->ll_slider_min, sizeof(x->ll_vala));
+
+            // Iterate over the incoming list and constrain each value
+            for (int i = 0; i < ac; i++) {
+                double value = atom_getfloat(&av[i]);  // Get the current value
+                value = ll_number_constrain(x, value);  // Apply constraints
+
+                // Store the constrained value back
+                atom_setfloat(&x->ll_vala[i], value);
+            }
+
             x->ll_amount = ac;
             ll_number_redraw(x);
         }
