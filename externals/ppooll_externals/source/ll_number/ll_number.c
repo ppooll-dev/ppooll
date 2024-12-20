@@ -382,9 +382,7 @@ void *ll_number_new(t_symbol *s, short argc, t_atom *argv){
     attr_dictionary_process(x, d); // handle attribute args
     
     // Set all values in array to ll_slider_min
-    for (int i = 0; i < 256; i++) {
-        atom_setfloat(&x->ll_vala[i], x->ll_slider_min);
-    }
+    memset(&x->ll_vala, &x->ll_slider_min, sizeof(x->ll_vala));
     
     ll_number_floatformgen(x);
     jbox_ready(&x->ll_box);
@@ -1059,17 +1057,24 @@ void ll_number_focuslost(t_ll_number *x, t_object *patcherview){
     jbox_redraw((t_jbox *)x);
 }
 
-t_max_err ll_number_setattr_ll_min(t_ll_number *x, void *attr, long ac, t_atom *av){
+t_max_err ll_number_setattr_ll_min(t_ll_number *x, void *attr, long ac, t_atom *av) {
     double f;
     x->ll_hasmin = 0;
     post("setattr ll_min");
     
     if (ac && av) {
-        if (atom_gettype(av) == A_LONG || atom_gettype(av) == A_FLOAT){
+        if (atom_gettype(av) == A_LONG || atom_gettype(av) == A_FLOAT) {
             atom_arg_getdouble(&f, 0, ac, av);
             atom_setfloat(&x->ll_min, f);
             x->ll_hasmin = 1;
             
+            // Constrain all values in the array
+            for (int i = 0; i < x->ll_ac; i++) {
+                double value = atom_getfloat(&x->ll_vala[i]);
+                value = ll_number_constrain(x, value);
+                atom_setfloat(&x->ll_vala[i], value);
+            }
+            ll_number_redraw(x);
         } else {
             atom_setsym(&x->ll_min, gensym("<none>"));
         }
@@ -1079,15 +1084,24 @@ t_max_err ll_number_setattr_ll_min(t_ll_number *x, void *attr, long ac, t_atom *
     return MAX_ERR_NONE;
 }
 
-t_max_err ll_number_setattr_ll_max(t_ll_number *x, void *attr, long ac, t_atom *av){
+t_max_err ll_number_setattr_ll_max(t_ll_number *x, void *attr, long ac, t_atom *av) {
     double f;
     x->ll_hasmax = 0;
+    post("setattr ll_max");
     
     if (ac && av) {
-        if (atom_gettype(av) == A_LONG || atom_gettype(av) == A_FLOAT){
+        if (atom_gettype(av) == A_LONG || atom_gettype(av) == A_FLOAT) {
             atom_arg_getdouble(&f, 0, ac, av);
             atom_setfloat(&x->ll_max, f);
             x->ll_hasmax = 1;
+            
+            // Constrain all values in the array
+            for (int i = 0; i < x->ll_ac; i++) {
+                double value = atom_getfloat(&x->ll_vala[i]);
+                value = ll_number_constrain(x, value);
+                atom_setfloat(&x->ll_vala[i], value);
+            }
+            ll_number_redraw(x);
         } else {
             atom_setsym(&x->ll_max, gensym("<none>"));
         }
