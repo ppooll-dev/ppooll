@@ -166,15 +166,15 @@ void ext_main(void *r){
     class_addmethod(c, (method)ll_number_set,			"set", A_GIMME, 0);
     class_addmethod(c, (method)ll_number_getdrawparams, "getdrawparams", A_CANT, 0);
     class_addmethod(c, (method)ll_number_mousedown,		"mousedown", A_CANT, 0);
-    class_addmethod(c, (method)ll_number_mousedragdelta, "mousedragdelta", A_CANT, 0);
+    class_addmethod(c, (method)ll_number_mousedragdelta,"mousedragdelta", A_CANT, 0);
     class_addmethod(c, (method)ll_number_mouseup,		"mouseup", A_CANT, 0);
     class_addmethod(c, (method)ll_number_getvalueof,	"getvalueof", A_CANT, 0);
     class_addmethod(c, (method)ll_number_setvalueof,	"setvalueof", A_CANT, 0);
     class_addmethod(c, (method)ll_number_assist,		"assist", A_CANT, 0);
     class_addmethod(c, (method)ll_number_notify,		"notify", A_CANT, 0);
-    class_addmethod(c, (method) ll_number_key,			"key", A_CANT, 0);
-    class_addmethod(c, (method) ll_number_focusgained,	"focusgained", A_CANT, 0);
-    class_addmethod(c, (method) ll_number_focuslost,	"focuslost", A_CANT, 0);
+    class_addmethod(c, (method)ll_number_key,			"key", A_CANT, 0);
+    class_addmethod(c, (method)ll_number_focusgained,	"focusgained", A_CANT, 0);
+    class_addmethod(c, (method)ll_number_focuslost,	    "focuslost", A_CANT, 0);
     class_addmethod(c, (method)ll_number_select,		"select",		0);
     class_addmethod(c, (method)ll_number_rand,			"rand", A_LONG, 0);
     
@@ -182,7 +182,7 @@ void ext_main(void *r){
     
     //########### ll_number
     
-    CLASS_STICKY_ATTR(c,"category",0,"llnumber");
+    CLASS_STICKY_ATTR(c, "category", 0, "llnumber");
     
     CLASS_ATTR_ATOM(c,				"min", 0, t_ll_number, ll_min);
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"min", 0 ,"<none>");
@@ -234,7 +234,7 @@ void ext_main(void *r){
     CLASS_ATTR_ENUMINDEX(c,			"sliderstyle", 0, "Bar Thin_Line Off");
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"sliderstyle", 0, "1");
     
-    CLASS_ATTR_ATOM_VARSIZE(c,		"label", ATTR_FLAGS_NONE, t_ll_number, ll_label, ll_labelcount,32) ;
+    CLASS_ATTR_ATOM_VARSIZE(c,		"label", ATTR_FLAGS_NONE, t_ll_number, ll_label, ll_labelcount, 32) ;
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c, "label", 0, "");
     
     
@@ -368,7 +368,6 @@ void *ll_number_new(t_symbol *s, short argc, t_atom *argv){
     //		| JBOX_TEXTFIELD
     ;
     
-    atom_setfloat(&x->ll_vala[0], 0.);
     x->ll_hasmax = 0;
     x->ll_hasmin = 0;
     x->ll_haslabel = 0;
@@ -381,13 +380,19 @@ void *ll_number_new(t_symbol *s, short argc, t_atom *argv){
     outlet_new((t_object *)x, NULL);
     
     attr_dictionary_process(x, d); // handle attribute args
+    
+    // Set all values in array to ll_slider_min
+    for (int i = 0; i < 256; i++) {
+        atom_setfloat(&x->ll_vala[i], x->ll_slider_min);
+    }
+    
     ll_number_floatformgen(x);
     jbox_ready(&x->ll_box);
     return x;
 }
 
 void ll_number_assist(t_ll_number *x, void *b, long m, long a, char *s){
-    if (m==ASSIST_INLET)
+    if (m == ASSIST_INLET)
         sprintf(s,"Displays Value Received");
     else
         sprintf(s,"Outputs Value When Slider is Changed");
@@ -446,17 +451,17 @@ void ll_number_printf(t_ll_number *x, double f){
                     if (i==0) {
                         post("invalid format (leading symbol), reverting to default 3.2");
                         memset(&x->ll_tform, 0, 32);
-                        atom_setfloat(&x->ll_tform[0],3.2);
+                        atom_setfloat(&x->ll_tform[0], 3.2);
                         tform = &x->ll_tform[0];
                         memset(&x->ll_pval, 0, 32);
                         i = x->ll_form_length;
                         x->ll_form_length = 1;
-                        x->ll_floatform =1.1;
+                        x->ll_floatform = 1.1;
                     }
                     //post("str %s strlen %d int %d", str, strlen(str), x->ll_isint);
                     break;
                 default:
-                    post("%ld: unknown atom type (%ld)", i+1, atom_gettype(tform));
+                    post("%ld: unknown atom type (%ld)", (i + 1), atom_gettype(tform));
                     break;
             }
             strcat(x->ll_pval, str);
@@ -474,7 +479,7 @@ void ll_number_printf(t_ll_number *x, double f){
                 break;
             default:
                 post("invalid format, reverting to default 3.2");
-                atom_setfloat(&x->ll_tform[0],3.2);
+                atom_setfloat(&x->ll_tform[0], 3.2);
                 tform = &x->ll_tform[0];
                 x->ll_isint = false;
                 break;
@@ -661,12 +666,18 @@ void ll_number_assign(t_ll_number *x, double f, long notify){
 }
 
 double ll_number_constrain(t_ll_number *x, double f){
-    int m = pow(10,x->ll_floatformpost);
-    //if (f != f) f = 0.;	// rbs -- f != f tests for infinities and nans
-    if(x->ll_hasmax && (f > atom_getfloat(&x->ll_max))) f = atom_getfloat(&x->ll_max);
-    if(x->ll_hasmin && (f < atom_getfloat(&x->ll_min))) f = atom_getfloat(&x->ll_min);
-    //post("%d %d %f", x->ll_floatformpost, m, f);
-    if (x->ll_mousefocus==0) f = roundf(f * m) / m;
+    int m = pow(10, x->ll_floatformpost);
+    
+    if(x->ll_hasmax && (f > atom_getfloat(&x->ll_max))) 
+        f = atom_getfloat(&x->ll_max);
+    
+    if(x->ll_hasmin && (f < atom_getfloat(&x->ll_min)))
+        f = atom_getfloat(&x->ll_min);
+    
+//    post("%d %d %f", x->ll_floatformpost, m, f);
+    
+    if (x->ll_mousefocus==0)
+        f = roundf(f * m) / m;
     return f;
 }
 
@@ -1036,6 +1047,26 @@ void ll_number_focuslost(t_ll_number *x, t_object *patcherview){
     jbox_redraw((t_jbox *)x);
 }
 
+t_max_err ll_number_setattr_ll_min(t_ll_number *x, void *attr, long ac, t_atom *av){
+    double f;
+    x->ll_hasmin = 0;
+    post("setattr ll_min");
+    
+    if (ac && av) {
+        if (atom_gettype(av) == A_LONG || atom_gettype(av) == A_FLOAT){
+            atom_arg_getdouble(&f, 0, ac, av);
+            atom_setfloat(&x->ll_min, f);
+            x->ll_hasmin = 1;
+            
+        } else {
+            atom_setsym(&x->ll_min, gensym("<none>"));
+        }
+    } else {
+        atom_setsym(&x->ll_min, gensym("<none>"));
+    }
+    return MAX_ERR_NONE;
+}
+
 t_max_err ll_number_setattr_ll_max(t_ll_number *x, void *attr, long ac, t_atom *av){
     double f;
     x->ll_hasmax = 0;
@@ -1050,24 +1081,6 @@ t_max_err ll_number_setattr_ll_max(t_ll_number *x, void *attr, long ac, t_atom *
         }
     } else {
         atom_setsym(&x->ll_max, gensym("<none>"));
-    }
-    return MAX_ERR_NONE;
-}
-
-t_max_err ll_number_setattr_ll_min(t_ll_number *x, void *attr, long ac, t_atom *av){
-    double f;
-    x->ll_hasmin = 0;
-    
-    if (ac && av) {
-        if (atom_gettype(av) == A_LONG || atom_gettype(av) == A_FLOAT){
-            atom_arg_getdouble(&f, 0, ac, av);
-            atom_setfloat(&x->ll_min, f);
-            x->ll_hasmin = 1;
-        } else {
-            atom_setsym(&x->ll_min, gensym("<none>"));
-        }
-    } else {
-        atom_setsym(&x->ll_min, gensym("<none>"));
     }
     return MAX_ERR_NONE;
 }
@@ -1097,7 +1110,7 @@ t_max_err ll_number_setattr_ll_amount(t_ll_number *x, void *attr, long ac, t_ato
         x->ll_amount = am;
         if(x->ll_amount > x->ll_ac) {
             for(i= x->ll_ac; i < x->ll_amount; i++){
-                atom_setfloat(&x->ll_vala[i], 0.);
+                atom_setfloat(&x->ll_vala[i], x->ll_slider_min);
             }
         }
         x->ll_ac = x->ll_amount;
