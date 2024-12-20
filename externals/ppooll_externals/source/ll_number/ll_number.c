@@ -65,8 +65,7 @@ typedef struct _ll_number
     char		ll_zerosplitslog;
     
     char		ll_selected;
-    char		ll_hasmax;
-    char		ll_hasmin;
+    char		ll_hasmin, ll_hasmax;
     char		ll_typing;
     char		ll_right_mouse;
     
@@ -331,12 +330,12 @@ void ext_main(void *r){
     CLASS_ATTR_ORDER(c, "textcolor",		0, "4");
     CLASS_ATTR_ORDER(c, "textcolornofocus",	0, "5");
     CLASS_ATTR_ORDER(c, "slidercolor",		0, "6");
-    CLASS_ATTR_ORDER(c, "slidercolornofocus",0, "7");
+    CLASS_ATTR_ORDER(c, "slidercolornofocus", 0, "7");
     
     // hide the color attribute from the inspector
     // it's still posisble to set color via the color message or the "Color..." item menu
     CLASS_ATTR_INVISIBLE(c, "color", 0);
-    CLASS_ATTR_ATTR_PARSE(c, "color","save", USESYM(long), 0, "0");
+    CLASS_ATTR_ATTR_PARSE(c, "color", "save", USESYM(long), 0, "0");
     
     class_register(CLASS_BOX, c);
     s_ll_number_class = c;
@@ -347,7 +346,7 @@ void *ll_number_new(t_symbol *s, short argc, t_atom *argv){
     long flags;
     t_dictionary *d = NULL;
     
-    if (!(d=object_dictionaryarg(argc,argv)))
+    if ( !(d = object_dictionaryarg(argc, argv)) )
         return NULL;
     
     x = (t_ll_number *) object_alloc(s_ll_number_class);
@@ -379,9 +378,9 @@ void *ll_number_new(t_symbol *s, short argc, t_atom *argv){
     
     jbox_new(&x->ll_box, flags, argc, argv);
     x->ll_box.b_firstin = (t_object*) x;
-    outlet_new((t_object *)x,NULL);
+    outlet_new((t_object *)x, NULL);
     
-    attr_dictionary_process(x,d); // handle attribute args
+    attr_dictionary_process(x, d); // handle attribute args
     ll_number_floatformgen(x);
     jbox_ready(&x->ll_box);
     return x;
@@ -399,10 +398,10 @@ void ll_number_free(t_ll_number *x){
 }
 
 void ll_number_floatformgen(t_ll_number *x){
-    x->ll_floatform = (atom_getfloat(&x->ll_tform[0])) ;
-    x->ll_floatformpost = (int)round(fmod(x->ll_floatform,1)*10);
+    x->ll_floatform = atom_getfloat( &x->ll_tform[0] );
+    x->ll_floatformpost = (int)round( fmod(x->ll_floatform, 1) * 10);
     
-    int quot = (int)(div(x->ll_floatform,1).quot);
+    int quot = (int)( div(x->ll_floatform, 1).quot );
     
     if(x->ll_floatformpost){
         x->ll_floatpointpos = quot;
@@ -412,6 +411,7 @@ void ll_number_floatformgen(t_ll_number *x){
         x->ll_floatpointpos = x->ll_floatformpre;
     }
 }
+
 void ll_number_printf(t_ll_number *x, double f){
     long i;
     t_atom *tform;
@@ -486,6 +486,7 @@ void ll_number_printf(t_ll_number *x, double f){
         //post("hey %f %s", f, x->ll_pval);
     }
 }
+
 void ll_number_paint(t_ll_number *x, t_object *view){
     t_rect rect;
     t_rect crect;
@@ -512,7 +513,6 @@ void ll_number_paint(t_ll_number *x, t_object *view){
     jgraphics_rectangle(g, 0, 0, rect.width, rect.height);
     jgraphics_set_line_width(g, x->ll_border);
     jgraphics_stroke(g);
-    
     
     h = (rect.height-b) / x->ll_ac;
     //post("h_b_r %f %f %f", h, b,rect.height);
@@ -597,6 +597,7 @@ void ll_number_bang(t_ll_number *x){
 void ll_number_int(t_ll_number *x, long n){ //post("int %d", n);
     ll_number_float(x, (double)n);
 }
+
 void ll_number_float(t_ll_number *x, double f){  //post("float %f", f);
     x->ll_ac = 1;
     x->ll_amount = 1;
@@ -686,23 +687,22 @@ void ll_number_set(t_ll_number *x, t_symbol *s, short ac, t_atom *av){
 
 t_max_err ll_number_setvalueof(t_ll_number *x, long ac, t_atom *av){
     x->ll_ac = ac;
-    if (ac && av) {
+    if (ac && av)
         atom_setatom_array(x->ll_ac,x->ll_vala, ac, av);
-    }
+    
     jbox_redraw(&x->ll_box);
     ll_number_bang(x);
     return MAX_ERR_NONE;
 }
+
 t_max_err ll_number_getvalueof(t_ll_number *x, long *ac, t_atom **av){
-    
     if (ac && av) {
         char alloc;
-        if (atom_alloc_array(x->ll_ac, ac, av, &alloc)) {
+        if (atom_alloc_array(x->ll_ac, ac, av, &alloc))
             return MAX_ERR_OUT_OF_MEM;
-        }
+        
         atom_setatom_array(*ac, *av, x->ll_ac, x->ll_vala);
     }
-    
     return MAX_ERR_NONE;
 }
 
@@ -893,6 +893,7 @@ void ll_number_getdrawparams(t_ll_number *x, t_object *patcherview, t_jboxdrawpa
     params->d_bordercolor = x->ll_frgba2;
     params->d_boxfillcolor = x->ll_brgba;
 }
+
 t_max_err ll_number_notify(t_ll_number *x, t_symbol *s, t_symbol *msg, void *sender, void *data){
     long argc = 0;
     t_atom *argv = NULL;
@@ -910,6 +911,7 @@ t_max_err ll_number_notify(t_ll_number *x, t_symbol *s, t_symbol *msg, void *sen
     }
     return jbox_notify((t_jbox *)x, s, msg, sender, data);
 }
+
 long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long modifiers, long textcharacter){
     char txt[16]= "";
     //post("txtchar %d keycode %d mod %d", textcharacter, keycode, modifiers);
