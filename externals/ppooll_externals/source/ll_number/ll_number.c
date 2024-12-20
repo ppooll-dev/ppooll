@@ -28,7 +28,7 @@
 //#include "common/commonsyms.c"
 
 #ifdef WIN_VERSION
-#include <float.h>
+    #include <float.h>
 #endif
 
 static t_class	*s_ll_number_class = 0;
@@ -46,10 +46,8 @@ typedef struct _ll_number
     short		ll_selitem;
     long        ll_amount;
     
-    t_atom		ll_max;
-    t_atom		ll_min;
-    double		ll_slider_max;
-    double		ll_slider_min;
+    t_atom		ll_min, ll_max;
+    double		ll_slider_min, ll_slider_max;
     double		ll_slider_log;
     char		ll_bar_line;
     t_atom		ll_mark;
@@ -130,10 +128,10 @@ void ll_number_endtyping(t_ll_number *x);
 void ll_number_floatformgen(t_ll_number *x);
 void ll_number_rand(t_ll_number *x, long it);
 double ll_number_constrain(t_ll_number *x, double f);
-//double ll_number_postoval(t_ll_number *x, double pos, t_rect *r);
 double ll_number_valtopos(t_ll_number *x, double val);
 short ll_number_selitem(t_ll_number *x, t_object *patcherview, double val);
 long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long modifiers, long textcharacter);
+
 t_max_err ll_number_notify(t_ll_number *x, t_symbol *s, t_symbol *msg, void *sender, void *data);
 t_max_err ll_number_setattr_size(t_ll_number *x, t_object *attr, long ac, t_atom *av);
 t_max_err ll_number_setvalueof(t_ll_number *x, long ac, t_atom *av);
@@ -141,7 +139,6 @@ t_max_err ll_number_getvalueof(t_ll_number *x, long *ac, t_atom **av);
 t_max_err ll_number_setattr_ll_max(t_ll_number *x, void *attr, long ac, t_atom *av);
 t_max_err ll_number_setattr_ll_min(t_ll_number *x, void *attr, long ac, t_atom *av);
 t_max_err ll_number_setattr_ll_mark(t_ll_number *x, void *attr, long ac, t_atom *av);
-//t_max_err ll_number_setattr_ll_label(t_ll_number *x, void *attr, long ac, t_atom *av);
 t_max_err ll_number_setattr_ll_amount(t_ll_number *x, void *attr, long ac, t_atom *av);
 
 void ext_main(void *r){
@@ -182,79 +179,75 @@ void ext_main(void *r){
     class_addmethod(c, (method)ll_number_select,		"select",		0);
     class_addmethod(c, (method)ll_number_rand,			"rand", A_LONG, 0);
     
-    
-    
-    
     CLASS_ATTR_DEFAULT(c,"patching_rect",0, "0. 0. 70. 14.");
     
-    //###########ll_number
+    //########### ll_number
     
     CLASS_STICKY_ATTR(c,"category",0,"llnumber");
     
     CLASS_ATTR_ATOM(c,				"min", 0, t_ll_number, ll_min);
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"min",0,"<none>");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"min", 0 ,"<none>");
     CLASS_ATTR_ACCESSORS(c,			"min", (method)NULL, (method)ll_number_setattr_ll_min);
     CLASS_ATTR_LABEL(c,				"min", 0, "minimum");
     
     CLASS_ATTR_ATOM(c,				"max", 0, t_ll_number, ll_max);
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"max",0,"<none>");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"max", 0 ,"<none>");
     CLASS_ATTR_ACCESSORS(c,			"max", (method)NULL, (method)ll_number_setattr_ll_max);
     CLASS_ATTR_LABEL(c,				"max", 0, "maximum");
     
     CLASS_ATTR_ATOM(c,				"mark", 0, t_ll_number, ll_mark);
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"mark",0,"<none>");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"mark", 0 ,"<none>");
     CLASS_ATTR_ACCESSORS(c,			"mark", (method)NULL, (method)ll_number_setattr_ll_mark);
     CLASS_ATTR_LABEL(c,				"mark", 0, "mark position");
     
     CLASS_ATTR_DOUBLE(c,			"slidermin", 0, t_ll_number, ll_slider_min);
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"slidermin",0,"0");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"slidermin", 0 ,"0");
     CLASS_ATTR_LABEL(c,				"slidermin", 0, "slider minimum");
     
     CLASS_ATTR_DOUBLE(c,			"slidermax", 0, t_ll_number, ll_slider_max);
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"slidermax",0,"2000");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"slidermax", 0 ,"2000");
     CLASS_ATTR_LABEL(c,				"slidermax", 0, "slider maximum");
     
     CLASS_ATTR_DOUBLE(c,			"sliderlog", 0, t_ll_number, ll_slider_log);
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"sliderlog",0,"0");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"sliderlog", 0 ,"0");
     CLASS_ATTR_LABEL(c,				"sliderlog", 0, "slider logarithmic scaling");
     
-    
     CLASS_ATTR_ATOM_VARSIZE(c,		"format", ATTR_FLAGS_NONE, t_ll_number, ll_tform, ll_form_length, 32) ;
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"format",0,"3.2");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"format", 0 , "3.2");
     
     CLASS_ATTR_CHAR(c,				"mousefocus", 0, t_ll_number, ll_mousefocus);
     CLASS_ATTR_STYLE_LABEL(c,		"mousefocus", 0, "enum", "mousefocus");
     CLASS_ATTR_ENUMINDEX(c,			"mousefocus", 0, "Number Slider");
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"mousefocus",0,"0");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"mousefocus", 0, "0");
     
     CLASS_ATTR_CHAR(c,				"multidrag", 0, t_ll_number, ll_multidrag);
     CLASS_ATTR_STYLE_LABEL(c,		"multidrag", 0, "enum", "multidrag");
     CLASS_ATTR_ENUMINDEX(c,			"multidrag", 0, "off on");
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"multidrag",0,"1");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"multidrag", 0, "1");
     
     CLASS_ATTR_CHAR(c,				"zerosplitslog", 0, t_ll_number, ll_zerosplitslog);
     CLASS_ATTR_STYLE_LABEL(c,		"zerosplitslog", 0, "enum", "zerosplitslog");
     CLASS_ATTR_ENUMINDEX(c,			"zerosplitslog", 0, "off on");
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"zerosplitslog",0,"0");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"zerosplitslog", 0, "0");
     
     CLASS_ATTR_CHAR(c,				"sliderstyle", 0, t_ll_number, ll_bar_line);
     CLASS_ATTR_STYLE_LABEL(c,		"sliderstyle", 0, "enum", "Slider Style");
     CLASS_ATTR_ENUMINDEX(c,			"sliderstyle", 0, "Bar Thin_Line Off");
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"sliderstyle",0,"1");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"sliderstyle", 0, "1");
     
     CLASS_ATTR_ATOM_VARSIZE(c,		"label", ATTR_FLAGS_NONE, t_ll_number, ll_label, ll_labelcount,32) ;
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"label",0,"");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c, "label", 0, "");
     
     
     CLASS_ATTR_LONG(c,				"amount", 0, t_ll_number, ll_amount);
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"amount",0,"1");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"amount", 0, "1");
     CLASS_ATTR_LABEL(c,				"amount", 0, "amount of sliders");
     CLASS_ATTR_FILTER_MIN(c,		"amount", 1);
     CLASS_ATTR_FILTER_MAX(c,		"amount", 256);
     CLASS_ATTR_ACCESSORS(c,			"amount", (method)NULL, (method)ll_number_setattr_ll_amount);
     
     CLASS_ATTR_LONG(c,				"first2all", 0, t_ll_number, ll_first2all);
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"first2all",0,"0");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"first2all", 0, "0");
     CLASS_ATTR_LABEL(c,				"first2all", 0, "first item to all");
     CLASS_ATTR_ENUMINDEX(c,			"first2all", 0, "No Copy Proportional Linear");
     CLASS_ATTR_FILTER_MIN(c,		"first2all", 0);
@@ -276,63 +269,62 @@ void ext_main(void *r){
     
     CLASS_STICKY_ATTR_CLEAR(c,		"category");
     
-    //#############fonts
-    CLASS_STICKY_ATTR(c,"category",0,"Font");
+    //############# fonts
+    CLASS_STICKY_ATTR(c,"category", 0, "Font");
     
-    CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"fontname",0,"Arial");
-    CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"fontsize",0,"12");
+    CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c, "fontname", 0, "Arial");
+    CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c, "fontsize", 0, "12");
     CLASS_ATTR_DOUBLE(c,			"vertical", 0, t_ll_number, ll_vert_offset);
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"vertical",0,"0");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"vertical", 0, "0");
     CLASS_ATTR_LABEL(c,				"vertical", 0, "Vertical Font Offset");
     
     CLASS_STICKY_ATTR(c, "category", 0, "Appearance");
     
     CLASS_ATTR_LONG(c,				"border", 0, t_ll_number, ll_border);
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"border",0,"1");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c, "border", 0, "1");
     CLASS_ATTR_LABEL(c,				"border", 0, "Border Size");
     
     CLASS_STICKY_ATTR_CLEAR(c,		"category");
     
-    //##########colors
+    //########## colors
     CLASS_STICKY_ATTR(c, "category", 0, "Color");
     
     CLASS_ATTR_RGBA_LEGACY(c,			"bgcolor", "brgb", 0, t_ll_number, ll_brgba);
     CLASS_ATTR_ALIAS(c,					"bgcolor", "brgba");
-    CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"bgcolor",0,"1. 1. 1. 1.");
+    CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"bgcolor", 0, "1. 1. 1. 1.");
     CLASS_ATTR_STYLE_LABEL(c,			"bgcolor", 0, "rgba", "Background Color");
     
     CLASS_ATTR_RGBA_LEGACY(c,			"bordercolor", "rgb2",0, t_ll_number, ll_frgba2);
     CLASS_ATTR_ALIAS(c,					"bordercolor", "rgba2");
-    CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"bordercolor",0,"0.5 0.5 0.5 1.");
-    CLASS_ATTR_STYLE_LABEL(c,			"bordercolor",0,"rgba","Border Color");
+    CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"bordercolor", 0, "0.5 0.5 0.5 1.");
+    CLASS_ATTR_STYLE_LABEL(c,			"bordercolor", 0, "rgba","Border Color");
     
-    CLASS_ATTR_RGBA_LEGACY(c,			"textcolor","rgb5", 0, t_ll_number, ll_textcolor);
-    CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"textcolor",0,"0. 0. 0. 1.");
-    CLASS_ATTR_STYLE_LABEL(c,			"textcolor",0,"rgba","Number Color");
+    CLASS_ATTR_RGBA_LEGACY(c,			"textcolor", "rgb5", 0, t_ll_number, ll_textcolor);
+    CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"textcolor", 0, "0. 0. 0. 1.");
+    CLASS_ATTR_STYLE_LABEL(c,			"textcolor", 0, "rgba","Number Color");
     
-    CLASS_ATTR_RGBA_LEGACY(c,			"textcolornofocus","rgb6", 0, t_ll_number, ll_textcolornofocus);
-    CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"textcolornofocus",0,"0.48 0.48 0.48 0.79");
-    CLASS_ATTR_STYLE_LABEL(c,			"textcolornofocus",0,"rgba","Number Color nofocus");
+    CLASS_ATTR_RGBA_LEGACY(c,			"textcolornofocus", "rgb6", 0, t_ll_number, ll_textcolornofocus);
+    CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"textcolornofocus", 0, "0.48 0.48 0.48 0.79");
+    CLASS_ATTR_STYLE_LABEL(c,			"textcolornofocus", 0, "rgba","Number Color nofocus");
     
-    CLASS_ATTR_RGBA_LEGACY(c,			"slidercolor","frgb", 0, t_ll_number, ll_frgba);
+    CLASS_ATTR_RGBA_LEGACY(c,			"slidercolor", "frgb", 0, t_ll_number, ll_frgba);
     CLASS_ATTR_ALIAS(c,					"slidercolor", "frgba");
-    CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"slidercolor",0,"0. 0. 0. 1.");
-    CLASS_ATTR_STYLE_LABEL(c,			"slidercolor",0,"rgba","Slider Color");
+    CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"slidercolor", 0, "0. 0. 0. 1.");
+    CLASS_ATTR_STYLE_LABEL(c,			"slidercolor", 0, "rgba","Slider Color");
     
-    CLASS_ATTR_RGBA_LEGACY(c,			"slidercolornofocus","rgb4", 0, t_ll_number, ll_slicolornof);
-    CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"slidercolornofocus",0,"0.48 0.48 0.48 0.55");
-    CLASS_ATTR_STYLE_LABEL(c,			"slidercolornofocus",0,"rgba","Slider Color nofocus");
+    CLASS_ATTR_RGBA_LEGACY(c,			"slidercolornofocus", "rgb4", 0, t_ll_number, ll_slicolornof);
+    CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"slidercolornofocus", 0, "0.48 0.48 0.48 0.55");
+    CLASS_ATTR_STYLE_LABEL(c,			"slidercolornofocus", 0, "rgba","Slider Color nofocus");
     
-    CLASS_ATTR_RGBA_LEGACY(c,			"selectcolor", "rgb3",0, t_ll_number, ll_selectcolor);
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,	"selectcolor",0,"0.45 0.67 1. 0.47");
-    CLASS_ATTR_STYLE_LABEL(c,			"selectcolor",0,"rgba","Select Color");
+    CLASS_ATTR_RGBA_LEGACY(c,			"selectcolor", "rgb3", 0, t_ll_number, ll_selectcolor);
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,	"selectcolor", 0, "0.45 0.67 1. 0.47");
+    CLASS_ATTR_STYLE_LABEL(c,			"selectcolor", 0, "rgba", "Select Color");
     
-    CLASS_ATTR_RGBA_LEGACY(c,			"labelcolor", "rgb7",0, t_ll_number, ll_labelcolor);
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,	"labelcolor",0,"0. 0. 0. 1.");
-    CLASS_ATTR_STYLE_LABEL(c,			"labelcolor",0,"rgba","Label Color");
+    CLASS_ATTR_RGBA_LEGACY(c,			"labelcolor", "rgb7", 0, t_ll_number, ll_labelcolor);
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,	"labelcolor", 0, "0. 0. 0. 1.");
+    CLASS_ATTR_STYLE_LABEL(c,			"labelcolor", 0, "rgba","Label Color");
     
     CLASS_STICKY_ATTR_CLEAR(c, "category");
-    
     
     CLASS_ATTR_ORDER(c, "bgcolor",			0, "2");
     CLASS_ATTR_ORDER(c, "bordercolor",		0, "3");
