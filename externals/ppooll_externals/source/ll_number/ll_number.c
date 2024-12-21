@@ -31,11 +31,12 @@
 
 static t_class	*s_ll_number_class = 0;
 
-// mouse tracking stuff
+// mouse tracking
 static t_pt s_ll_number_cum;
 static short s_ll_selold;
 
 const short int MAX_NUM_VALUES = 256;
+const short int MAX_TEXT_LENGTH = 32;
 
 const long TEXTCHAR_UP_ARROW = 30;
 const long TEXTCHAR_DOWN_ARROW = 31;
@@ -89,12 +90,12 @@ typedef struct _ll_number
     char		ll_right_mouse;
     
     t_atom		ll_format;
-    t_atom		ll_tform[32];
+    t_atom		ll_tform[MAX_TEXT_LENGTH];
     double		ll_formfactor;
     long		ll_selpos;
     
-    char		ll_pval[32];
-    char		ll_buffer[32];
+    char		ll_pval[MAX_TEXT_LENGTH];
+    char		ll_buffer[MAX_TEXT_LENGTH];
     double		ll_floatform;
     char		ll_floatpointpos;
     int			ll_floatformpre;
@@ -236,7 +237,7 @@ void ext_main(void *r){
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"sliderlog", 0 ,"0");
     CLASS_ATTR_LABEL(c,				"sliderlog", 0, "slider logarithmic scaling");
     
-    CLASS_ATTR_ATOM_VARSIZE(c,		"format", ATTR_FLAGS_NONE, t_ll_number, ll_tform, ll_form_length, 32) ;
+    CLASS_ATTR_ATOM_VARSIZE(c,		"format", ATTR_FLAGS_NONE, t_ll_number, ll_tform, ll_form_length, MAX_TEXT_LENGTH) ;
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"format", 0 , "3.2");
     
     CLASS_ATTR_CHAR(c,				"mousefocus", 0, t_ll_number, ll_mousefocus);
@@ -259,7 +260,7 @@ void ext_main(void *r){
     CLASS_ATTR_ENUMINDEX(c,			"sliderstyle", 0, "Bar Thin_Line Off");
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"sliderstyle", 0, "1");
     
-    CLASS_ATTR_ATOM_VARSIZE(c,		"label", ATTR_FLAGS_NONE, t_ll_number, ll_label, ll_labelcount, 32) ;
+    CLASS_ATTR_ATOM_VARSIZE(c,		"label", ATTR_FLAGS_NONE, t_ll_number, ll_label, ll_labelcount, MAX_TEXT_LENGTH) ;
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c, "label", 0, "");
     
     
@@ -358,7 +359,7 @@ void ext_main(void *r){
     CLASS_ATTR_ORDER(c, "slidercolornofocus", 0, "7");
     
     // hide the color attribute from the inspector
-    // it's still posisble to set color via the color message or the "Color..." item menu
+    // it's still possible to set color via the color message or the "Color..." item menu
     CLASS_ATTR_INVISIBLE(c, "color", 0);
     CLASS_ATTR_ATTR_PARSE(c, "color", "save", USESYM(long), 0, "0");
     
@@ -414,10 +415,8 @@ void *ll_number_new(t_symbol *s, short argc, t_atom *argv){
 }
 
 void ll_number_assist(t_ll_number *x, void *b, long m, long a, char *s){
-    if (m == ASSIST_INLET)
-        sprintf(s, "Displays Value Received");
-    else
-        sprintf(s, "Outputs Value When Slider is Changed");
+    if (m == ASSIST_INLET)  sprintf(s, "Displays Value Received");
+    else                    sprintf(s, "Outputs Value When Slider is Changed");
 }
 
 void ll_number_free(t_ll_number *x){
@@ -449,81 +448,60 @@ void ll_number_floatformgen(t_ll_number *x){
     }
 }
 
-void ll_number_printf(t_ll_number *x, double f){
-    long i;
-    t_atom *tform;
-    tform = &x->ll_tform[0];
+// Format value for display
+void ll_number_printf(t_ll_number *x, double f) {
     char str[16];
-    //double rem;
-    memset(&x->ll_pval, 0, 32);
-    
-    if(x->ll_form_length > 1) {
-        
-        if(f < 0.) x->ll_pval[0] = '-';
-        f = fabs(f)+0.0000001;
+    t_atom *tform = &x->ll_tform[0];
+    memset(&x->ll_pval, 0, sizeof(x->ll_pval));
+
+    if (x->ll_form_length > 1) {
+        if (f < 0.0) x->ll_pval[0] = '-';
+        f = fabs(f) + 0.0000001;
         x->ll_isint = true;
-        //post("rem100000 %f", rem*100000);
-        for(i=0;i<x->ll_form_length;i++, tform++){
-            //post("rem %d %f",i, rem);
+
+        for (long i = 0; i < x->ll_form_length; i++, tform++) {
             switch (atom_gettype(tform)) {
                 case A_LONG:
-                    sprintf(str,"%d", (int)(f / atom_getlong(tform)));
-                    f = fmod(f, atom_getlong(tform));
-                    
+                case A_FLOAT: {
+                    double divisor = (atom_gettype(tform) == A_LONG) ? atom_getlong(tform) : atom_getfloat(tform);
+                    sprintf(str, "%d", (int)(f / divisor));
+                    f = fmod(f, divisor);
+                    if (atom_gettype(tform) == A_FLOAT) x->ll_isint = false;
                     break;
-                case A_FLOAT:
-                    sprintf(str,"%d", (int)(f / atom_getfloat(tform)));
-                    
-                    f = fmod(f, atom_getfloat(tform));
-                    //post("str %s f %f", str, f);
-                    x->ll_isint = false;
-                    break;
+                }
                 case A_SYM:
-                    sprintf(str,"%s",atom_getsym(tform)->s_name);
-                    if (i==0) {
-                        post("invalid format (leading symbol), reverting to default 3.2");
-                        memset(&x->ll_tform, 0, 32);
+                    sprintf(str, "%s", atom_getsym(tform)->s_name);
+                    if (i == 0) {
+                        post("Invalid format (leading symbol), reverting to default 3.2");
                         atom_setfloat(&x->ll_tform[0], 3.2);
-                        tform = &x->ll_tform[0];
-                        memset(&x->ll_pval, 0, 32);
-                        i = x->ll_form_length;
                         x->ll_form_length = 1;
                         x->ll_floatform = 1.1;
+                        memset(&x->ll_pval, 0, sizeof(x->ll_pval));
+                        tform = &x->ll_tform[0];
+                        i = x->ll_form_length;
                     }
-                    //post("str %s strlen %d int %d", str, strlen(str), x->ll_isint);
                     break;
                 default:
-                    post("%ld: unknown atom type (%ld)", (i + 1), atom_gettype(tform));
-                    break;
+                    post("Unknown atom type at position %ld: %ld", (i + 1), atom_gettype(tform));
+                    continue;
             }
             strcat(x->ll_pval, str);
         }
-        //post("int %d", x->ll_isint);
-    }
-    
-    if(x->ll_form_length == 1){
+    } else if (x->ll_form_length == 1) {
         switch (atom_gettype(tform)) {
-            case A_LONG:
-                x->ll_isint = true;
-                break;
-            case A_FLOAT:
-                x->ll_isint = false;
-                break;
+            case A_LONG: x->ll_isint = true; break;
+            case A_FLOAT: x->ll_isint = false; break;
             default:
-                post("invalid format, reverting to default 3.2");
+                post("Invalid format, reverting to default 3.2");
                 atom_setfloat(&x->ll_tform[0], 3.2);
-                tform = &x->ll_tform[0];
                 x->ll_isint = false;
                 break;
         }
-        
-        if(atom_getfloat(tform) != x->ll_floatform) 
-            ll_number_floatformgen(x);
-        if(f < 0.) 
-            sprintf(x->ll_pval, "%0*.*f", x->ll_floatformpre+1, x->ll_floatformpost, f);
-        else
-            sprintf(x->ll_pval, "%0*.*f", x->ll_floatformpre, x->ll_floatformpost, f);
-        //post("hey %f %s", f, x->ll_pval);
+
+        if (atom_getfloat(tform) != x->ll_floatform) ll_number_floatformgen(x);
+
+        int width = (f < 0.0) ? x->ll_floatformpre + 1 : x->ll_floatformpre;
+        sprintf(x->ll_pval, "%0*.*f", width, x->ll_floatformpost, f);
     }
 }
 
@@ -601,7 +579,7 @@ void ll_number_paint(t_ll_number *x, t_object *view) {
             }
         } else if (atom_gettype(&x->ll_label[0]) == A_SYM && i != 0) {
             // If this list item does not have a specific label but the first item does, draw the value of i+1
-            char label_text[32];  // Fixed-size buffer for simple numeric label
+            char label_text[MAX_TEXT_LENGTH];  // Fixed-size buffer for simple numeric label
             snprintf(label_text, sizeof(label_text), "%i", i + 1);  // Convert index to string
             ll_number_draw_label(x, g, label_text, up, h);
         }
@@ -655,13 +633,11 @@ void ll_number_draw_label(t_ll_number *x, t_jgraphics *g, const char *label, dou
     jfont_destroy(jf);
 }
 
-
 // Handle bang
 void ll_number_bang(t_ll_number *x){
     if(x->ll_amount == 1){
         // If single slider mode, need outlet_float for single atom
-        double value;
-        atom_arg_getdouble(&value, 0, 0, x->ll_vala);
+        double value = ll_number_get_value(x, 0);
         outlet_float(x->ll_box.b_ob.o_outlet, value);
     }else{
         outlet_list(x->ll_box.b_ob.o_outlet, NULL, x->ll_amount, x->ll_vala);
@@ -713,7 +689,6 @@ void ll_number_redraw(t_ll_number *x){
 // Assign the currently selected value (updates & outputs values from object)
 void ll_number_assign(t_ll_number *x, double f, long notify) {
     double new_value = ll_number_constrain(x, f);
-    
     double values[x->ll_amount];
     atom_getdouble_array(x->ll_amount, x->ll_vala, x->ll_amount, values);
 
@@ -837,26 +812,30 @@ t_max_err ll_number_getvalueof(t_ll_number *x, long *ac, t_atom **av){
 
 //  Set value from position
 void ll_number_pos(t_ll_number *x, double pos) {
-    double slider_diff = x->ll_slider_max - x->ll_slider_min;
-    double split_pos = -x->ll_slider_min / slider_diff;
+    double min = x->ll_slider_min;
+    double max = x->ll_slider_max;
+    double slider_log = x->ll_slider_log;
+    
+    double slider_diff = max - min;
+    double split_pos = -min / slider_diff;
 
     // Clamp pos to [0, 1]
     if (pos > 1.0) pos = 1.0;
     if (pos < 0.0) pos = 0.0;
 
     double val;
-    if (x->ll_slider_log == 0) {
-        val = pos * slider_diff + x->ll_slider_min;
+    if (slider_log == 0) {
+        val = pos * slider_diff + min;
     } else if (x->ll_zerosplitslog == 0) {
-        double exp_neg_log = exp(-x->ll_slider_log);
-        val = (exp((pos - 1.0) * x->ll_slider_log) - 1) / (exp_neg_log - 1) * (x->ll_slider_min - x->ll_slider_max) + x->ll_slider_max;
+        double exp_neg_log = exp(-slider_log);
+        val = (exp((pos - 1.0) * slider_log) - 1) / (exp_neg_log - 1) * (min - max) + max;
     } else {
         if (pos >= split_pos) {
-            double exp_neg_log = exp(-x->ll_slider_log);
-            val = (exp(((pos - split_pos) / (1 - split_pos) - 1) * x->ll_slider_log) - 1) / (exp_neg_log - 1) * -x->ll_slider_max + x->ll_slider_max;
+            double exp_neg_log = exp(-slider_log);
+            val = (exp(((pos - split_pos) / (1 - split_pos) - 1) * slider_log) - 1) / (exp_neg_log - 1) * -max + max;
         } else {
-            double exp_pos_log = exp(x->ll_slider_log);
-            val = (exp((pos / split_pos - 1) * -x->ll_slider_log) - 1) / (exp_pos_log - 1) * x->ll_slider_min;
+            double exp_pos_log = exp(slider_log);
+            val = (exp((pos / split_pos - 1) * -slider_log) - 1) / (exp_pos_log - 1) * min;
         }
     }
     ll_number_assign(x, val, true);
@@ -864,22 +843,26 @@ void ll_number_pos(t_ll_number *x, double pos) {
 
 //  Set position from value
 double ll_number_valtopos(t_ll_number *x, double val) {
-    double slider_diff = x->ll_slider_max - x->ll_slider_min;
-    double split_pos = -x->ll_slider_min / slider_diff;
+    double min = x->ll_slider_min;
+    double max = x->ll_slider_max;
+    double slider_log = x->ll_slider_log;
+    
+    double slider_diff = max - min;
+    double split_pos = -min / slider_diff;
     
     double pos;
-    if (x->ll_slider_log == 0) {
-        pos = (val - x->ll_slider_min) / slider_diff;
+    if (slider_log == 0) {
+        pos = (val - min) / slider_diff;
     } else if (x->ll_zerosplitslog == 0) {
-        double exp_neg_log = exp(-x->ll_slider_log);
-        pos = (log((val - x->ll_slider_max) * (exp_neg_log - 1) / (x->ll_slider_min - x->ll_slider_max) + 1) / x->ll_slider_log) + 1;
+        double exp_neg_log = exp(-slider_log);
+        pos = (log((val - max) * (exp_neg_log - 1) / (min - max) + 1) / slider_log) + 1;
     } else {
         if (val >= 0.0) {
-            double exp_neg_log = exp(-x->ll_slider_log);
-            pos = ((log((val - x->ll_slider_max) * (exp_neg_log - 1) / -x->ll_slider_max + 1) / x->ll_slider_log) + 1) * (1 - split_pos) + split_pos;
+            double exp_neg_log = exp(-slider_log);
+            pos = ((log((val - max) * (exp_neg_log - 1) / -max + 1) / slider_log) + 1) * (1 - split_pos) + split_pos;
         } else {
-            double exp_pos_log = exp(x->ll_slider_log);
-            pos = ((log(val * (exp_pos_log - 1) / x->ll_slider_min + 1) / -x->ll_slider_log) + 1) * split_pos;
+            double exp_pos_log = exp(slider_log);
+            pos = ((log(val * (exp_pos_log - 1) / min + 1) / -slider_log) + 1) * split_pos;
         }
     }
     pos = pos * x->ll_width + x->ll_inset;
@@ -1117,7 +1100,7 @@ void ll_number_endtyping(t_ll_number *x){
     if(x->ll_is_typing) {
         x->ll_is_typing = false;
         ll_number_assign(x,atof(x->ll_buffer), true);
-        memset(&x->ll_buffer, 0, 32);
+        memset(&x->ll_buffer, 0, MAX_TEXT_LENGTH);
     }
 }
 
