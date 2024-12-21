@@ -587,7 +587,6 @@ void ll_number_paint(t_ll_number *x, t_object *view) {
         if (atom_gettype(&x->ll_label[0]) == A_NOTHING) {
             // TODO: Clear label
             ll_number_draw_label(x, g, "", up, h);
-            post("clear label??");
         } else if (atom_gettype(&x->ll_label[i]) == A_SYM) {
             // If this list item has a label, draw it
             char *label_text = NULL;
@@ -659,7 +658,14 @@ void ll_number_draw_label(t_ll_number *x, t_jgraphics *g, const char *label, dou
 
 // Handle bang
 void ll_number_bang(t_ll_number *x){
-    outlet_list(x->ll_box.b_ob.o_outlet, NULL, x->ll_amount, x->ll_vala);
+    if(x->ll_amount == 1){
+        // If single slider mode, need outlet_float for single atom
+        double value;
+        atom_arg_getdouble(&value, 0, 0, x->ll_vala);
+        outlet_float(x->ll_box.b_ob.o_outlet, value);
+    }else{
+        outlet_list(x->ll_box.b_ob.o_outlet, NULL, x->ll_amount, x->ll_vala);
+    }
 }
 
 // Handle integer number
