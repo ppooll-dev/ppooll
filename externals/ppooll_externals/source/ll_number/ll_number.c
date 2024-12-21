@@ -65,7 +65,6 @@ typedef struct _ll_number
     char		ll_zerosplitslog;
     
     char		ll_selected;
-    char		ll_hasmin, ll_hasmax;
     char		ll_typing;
     char		ll_right_mouse;
     
@@ -127,9 +126,12 @@ void ll_number_endtyping(t_ll_number *x);
 void ll_number_floatformgen(t_ll_number *x);
 void ll_number_rand(t_ll_number *x, long it);
 double ll_number_constrain(t_ll_number *x, double f);
+void ll_number_constrain_all(t_ll_number *x);
 double ll_number_valtopos(t_ll_number *x, double val);
 short ll_number_selitem(t_ll_number *x, t_object *patcherview, double val);
 long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long modifiers, long textcharacter);
+
+bool ll_number_is_atom_a_number(long ac, t_atom *av);
 
 t_max_err ll_number_notify(t_ll_number *x, t_symbol *s, t_symbol *msg, void *sender, void *data);
 t_max_err ll_number_setattr_size(t_ll_number *x, t_object *attr, long ac, t_atom *av);
@@ -368,8 +370,6 @@ void *ll_number_new(t_symbol *s, short argc, t_atom *argv){
     //		| JBOX_TEXTFIELD
     ;
     
-    x->ll_hasmax = 0;
-    x->ll_hasmin = 0;
     x->ll_haslabel = 0;
     //x->ll_form_length = 0;
     x->ll_selpos = 1;
@@ -399,6 +399,10 @@ void ll_number_assist(t_ll_number *x, void *b, long m, long a, char *s){
 
 void ll_number_free(t_ll_number *x){
     jbox_free(&x->ll_box);
+}
+
+bool ll_number_is_atom_a_number(long ac, t_atom *av){
+    return ac == 1 && av && (atom_gettype(av) == A_LONG || atom_gettype(av) == A_FLOAT);
 }
 
 void ll_number_floatformgen(t_ll_number *x){
@@ -591,19 +595,15 @@ void ll_number_bang(t_ll_number *x){
     outlet_list(x->ll_box.b_ob.o_outlet, NULL, x->ll_amount, x->ll_vala);
 }
 
-void ll_number_int(t_ll_number *x, long n){ //post("int %d", n);
+void ll_number_int(t_ll_number *x, long n){
     ll_number_float(x, (double)n);
 }
 
-void ll_number_float(t_ll_number *x, double f){  //post("float %f", f);
+void ll_number_float(t_ll_number *x, double f){
     x->ll_amount = 1;
-    f=ll_number_constrain(x,f);
-    
-    // currently...
-    atom_setfloat(&x->ll_vala[0], f);
-    
-    // instead, let's just use the array of actual doubles
-    double vals[1] = { f }; // Array containing one value
+    f = ll_number_constrain(x,f);
+
+    double vals[1] = { f };
     atom_setdouble_array(1, x->ll_vala, 1, vals);
     
     ll_number_redraw(x);
@@ -679,14 +679,17 @@ double ll_number_constrain(t_ll_number *x, double f) {
     for (int i = 0; i < x->ll_floatformpost; i++) {
         m *= 10; // Calculate 10^ll_floatformpost without pow()
     }
+    
+    bool has_min = ll_number_is_atom_a_number(1, &x->ll_min);
+    bool has_max = ll_number_is_atom_a_number(1, &x->ll_max);
 
     // Constrain to minimum value
-    if (x->ll_hasmin && (f < atom_getfloat(&x->ll_min))) {
+    if (has_min && (f < atom_getfloat(&x->ll_min))) {
         f = atom_getfloat(&x->ll_min);
     }
 
     // Constrain to maximum value
-    if (x->ll_hasmax && (f > atom_getfloat(&x->ll_max))) {
+    if (has_max && (f > atom_getfloat(&x->ll_max))) {
         f = atom_getfloat(&x->ll_max);
     }
 
@@ -696,6 +699,14 @@ double ll_number_constrain(t_ll_number *x, double f) {
     }
 
     return f;
+}
+
+void ll_number_constrain_all(t_ll_number *x){
+    for (int i = 0; i < x->ll_amount; i++) {
+        double constrained_value = ll_number_constrain(x, atom_getfloat(&x->ll_vala[i]));
+        atom_setfloat(&x->ll_vala[i], constrained_value);
+    }
+    ll_number_redraw(x);
 }
  
 void ll_number_set(t_ll_number *x, t_symbol *s, short ac, t_atom *av){
@@ -1067,6 +1078,7 @@ void ll_number_formfactor(t_ll_number *x){
     }
 }
 
+// Object Focus
 void ll_number_focusgained(t_ll_number *x, t_object *patcherview){
     x->ll_selected = true;
     jbox_redraw((t_jbox *)x);
@@ -1078,53 +1090,40 @@ void ll_number_focuslost(t_ll_number *x, t_object *patcherview){
     jbox_redraw((t_jbox *)x);
 }
 
-t_max_err ll_number_setattr_helper(t_ll_number *x, long ac, t_atom *av, int *has_attr, t_atom *attr_val) {
-    if (ac == 0 || !av || (atom_gettype(av) != A_LONG && atom_gettype(av) != A_FLOAT)) {
-        *has_attr = 0; // Dereference the pointer to set the value
+// Helper for setting number attributes with an option for symbol "<none>"
+t_max_err ll_number_setattr_helper(t_ll_number *x, long ac, t_atom *av, t_atom *attr_val) {
+    if (!ll_number_is_atom_a_number(ac, av)) {
         atom_setsym(attr_val, gensym("<none>"));
         return MAX_ERR_NONE;
     }
 
     double value = atom_getfloat(av);
     atom_setfloat(attr_val, value); // Set the float value in the atom
-    *has_attr = 1; // Indicate the attribute has been set
-
-    // Constrain all values in the array
-    for (int i = 0; i < x->ll_amount; i++) {
-        double constrained_value = atom_getfloat(&x->ll_vala[i]);
-        constrained_value = ll_number_constrain(x, constrained_value);
-        atom_setfloat(&x->ll_vala[i], constrained_value);
-    }
-
-    ll_number_redraw(x);
     return MAX_ERR_NONE;
 }
 
+// Set Attribute - min
 t_max_err ll_number_setattr_ll_min(t_ll_number *x, void *attr, long ac, t_atom *av) {
-    return ll_number_setattr_helper(x, ac, av, &x->ll_hasmin, &x->ll_min);
-}
-
-t_max_err ll_number_setattr_ll_max(t_ll_number *x, void *attr, long ac, t_atom *av) {
-    return ll_number_setattr_helper(x, ac, av, &x->ll_hasmax, &x->ll_max);
-}
-
-
-t_max_err ll_number_setattr_ll_mark(t_ll_number *x, void *attr, long ac, t_atom *av){
-    double f;
-    
-    if (ac && av) {
-        if (atom_gettype(av) == A_LONG || atom_gettype(av) == A_FLOAT){
-            atom_arg_getdouble(&f, 0, ac, av);
-            atom_setfloat(&x->ll_mark, f);
-        } else {
-            atom_setsym(&x->ll_mark, gensym("<none>"));
-        }
-    } else {
-        atom_setsym(&x->ll_mark, gensym("<none>"));
+    if(!ll_number_setattr_helper(x, ac, av, &x->ll_min)){
+        ll_number_constrain_all(x);
     }
     return MAX_ERR_NONE;
 }
 
+// Set Attribute - max
+t_max_err ll_number_setattr_ll_max(t_ll_number *x, void *attr, long ac, t_atom *av) {
+    if(!ll_number_setattr_helper(x, ac, av, &x->ll_max)){
+        ll_number_constrain_all(x);
+    }
+    return MAX_ERR_NONE;
+}
+
+// Set Attribute - mark
+t_max_err ll_number_setattr_ll_mark(t_ll_number *x, void *attr, long ac, t_atom *av){
+    return ll_number_setattr_helper(x, ac, av, &x->ll_mark);
+}
+
+// Set Attribute - amount
 t_max_err ll_number_setattr_ll_amount(t_ll_number *x, void *attr, long ac, t_atom *av){
     if (!ac || !av || atom_gettype(av) != A_LONG){
         error("amount atribute must be an int");
@@ -1159,6 +1158,7 @@ void ll_number_doselect(t_ll_number *x){
     }
 }
 
+// "rand" - Randomize slider values
 void ll_number_rand(t_ll_number *x, long it){
     double ran;
     short i;
