@@ -113,8 +113,7 @@ typedef struct _ll_number
     long		ll_width;
     long		ll_first2all;
     
-    //t_symbol	*ll_label;
-    t_atom      ll_label[32];
+    t_atom      ll_label[MAX_NUM_VALUES];
     long        ll_labelcount;
     char		ll_haslabel;
     bool        ll_isint;
@@ -153,8 +152,13 @@ double ll_number_valtopos(t_ll_number *x, double val);
 short ll_number_get_selitem_from_y(t_ll_number *x, t_object *patcherview, double val);
 long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long modifiers, long textcharacter);
 
+// Helpers
 bool ll_number_is_atom_a_number(long ac, t_atom *av);
 double ll_number_get_value(t_ll_number *x, short index);
+
+// Paint helpers
+void ll_number_draw_text(t_ll_number *x, t_jgraphics *g, short i, double up, double h);
+void ll_number_draw_label(t_ll_number *x, t_jgraphics *g, const char *label, double up, double h);
 
 t_max_err ll_number_notify(t_ll_number *x, t_symbol *s, t_symbol *msg, void *sender, void *data);
 t_max_err ll_number_setattr_size(t_ll_number *x, t_object *attr, long ac, t_atom *av);
@@ -527,98 +531,135 @@ void ll_number_printf(t_ll_number *x, double f){
     }
 }
 
-void ll_number_paint(t_ll_number *x, t_object *view){
-    t_rect rect;
-    t_rect crect;
-    t_jgraphics *g;
-    double pos;
-    t_jfont *jf;
-    t_jtextlayout *jtl;
-    short i;
-    double h;
-    double up;
-    long curr_strlen;
-    t_jrgba c;
-    double b = x->ll_border;
-    char s[64];
-    
-    g = (t_jgraphics*) patcherview_get_jgraphics(view);
+// Object paint method
+void ll_number_paint(t_ll_number *x, t_object *view) {
+    t_rect rect, crect;
+    t_jgraphics *g = (t_jgraphics *)patcherview_get_jgraphics(view);
+    t_jrgba bg_color, slider_color;
+    double h, up, pos;
+    char label[64];
+
     jbox_get_rect_for_view((t_object *)x, view, &rect);
-    object_attr_getjrgba((t_object *)x, _sym_bgcolor, &c);
-    
-    jgraphics_set_source_jrgba(g, &c);
-    jgraphics_rectangle_fill_fast(g, 0 , 0, rect.width, rect.height); // bg
-    
-    jgraphics_set_source_jrgba(g, &x->ll_frgba2);                   //border
+    object_attr_getjrgba((t_object *)x, _sym_bgcolor, &bg_color);
+
+    // Background
+    jgraphics_set_source_jrgba(g, &bg_color);
+    jgraphics_rectangle_fill_fast(g, 0, 0, rect.width, rect.height);
+
+    // Border
+    jgraphics_set_source_jrgba(g, &x->ll_frgba2);
     jgraphics_rectangle(g, 0, 0, rect.width, rect.height);
     jgraphics_set_line_width(g, x->ll_border);
     jgraphics_stroke(g);
-    
-    h = (rect.height-b) / x->ll_amount;
-    //post("h_b_r %f %f %f", h, b,rect.height);
-    x->ll_inset = x->ll_border/2;
-    x->ll_width = rect.width - x->ll_border - x->ll_bar_line*2 + 1; //use for pos
-    
-    for (i=0; i < x->ll_amount; i++) {
-        up = i*h+b/2;
-        pos = ll_number_valtopos(x, atom_getfloat(&x->ll_vala[i]));         //############ slider ###### post("pos %f",pos);
-        if(x->ll_mousefocus) jgraphics_set_source_jrgba(g, &x->ll_frgba);
-        else jgraphics_set_source_jrgba(g, &x->ll_slicolornof);
-        switch(x->ll_bar_line){
-            case 1: jgraphics_rectangle(g, pos, up, 2, h); break;
-            case 0: jgraphics_rectangle(g, x->ll_inset, up, pos - x->ll_inset, h);  break;
+
+    h = (rect.height - x->ll_border) / x->ll_amount;
+    x->ll_inset = x->ll_border / 2;
+    x->ll_width = rect.width - x->ll_border - x->ll_bar_line * 2 + 1;
+
+    for (short i = 0; i < x->ll_amount; i++) {
+        up = i * h + x->ll_border / 2;
+        pos = ll_number_valtopos(x, atom_getfloat(&x->ll_vala[i]));
+
+        // Slider
+        slider_color = x->ll_mousefocus ? x->ll_frgba : x->ll_slicolornof;
+        jgraphics_set_source_jrgba(g, &slider_color);
+        if (x->ll_bar_line) {
+            jgraphics_rectangle(g, pos, up, 2, h);
+        } else {
+            jgraphics_rectangle(g, x->ll_inset, up, pos - x->ll_inset, h);
         }
         jgraphics_fill(g);
-        
-        if(atom_getsym(&x->ll_mark) != gensym("<none>")) {       //###################### mark ##############    post("mark");
+
+        // Mark (if applicable)
+        if (atom_getsym(&x->ll_mark) != gensym("<none>")) {
             jgraphics_set_source_jrgba(g, &x->ll_labelcolor);
-            jgraphics_rectangle(g, ll_number_valtopos(x, atom_getfloat(&x->ll_mark)), up+2, 1, h-4);
+            jgraphics_rectangle(g, ll_number_valtopos(x, atom_getfloat(&x->ll_mark)), up + 2, 1, h - 4);
             jgraphics_fill(g);
         }
-        
-        if(i>0) {                                       //############## multinumber lines
+
+        // Multi-number lines
+        if (i > 0) {
             jgraphics_set_source_jrgba(g, &x->ll_frgba2);
             jgraphics_rectangle(g, 0, up, rect.width, 1);
             jgraphics_fill(g);
         }
+
+        // Draw the value text
+        ll_number_draw_text(x, g, i, up, h);
         
-        if (x->ll_is_typing && i == x->ll_selitem)        //############### def_string
-            ll_number_printf(x,atof(x->ll_buffer));
-        else
-            ll_number_printf(x,atom_getfloat(&x->ll_vala[i]));
-        // ############## number
-        jf = jfont_create(jbox_get_fontname((t_object *)x)->s_name, 0, 0, jbox_get_fontsize((t_object *)x));
-        jtl = jtextlayout_create();
-        jtextlayout_set(jtl, x->ll_pval, jf, x->ll_inset, up, x->ll_width - (1 - x->ll_bar_line*2) - 1, h, JGRAPHICS_TEXT_JUSTIFICATION_RIGHT, JGRAPHICS_TEXTLAYOUT_NOWRAP);//*0.08 + x->ll_vert_offset
-        curr_strlen = jtextlayout_getnumchars(jtl);
-        if(i == x->ll_selitem) {
-            x->ll_string_length = curr_strlen;
-            x->ll_jtl = jtl;
-        }
-        if (x->ll_selected && i == x->ll_selitem && (x->ll_string_length - x->ll_selpos)>-1) { // draw pos-rect
-            jtextlayout_getcharbox(jtl, x->ll_string_length - x->ll_selpos, &crect);
-            jgraphics_rectangle(g, crect.x, crect.y, crect.width, crect.height);
-            jgraphics_set_source_jrgba(g, &x->ll_selectcolor);
-            jgraphics_fill(g);
-        }
-        if(x->ll_mousefocus) jtextlayout_settextcolor(jtl, &x->ll_textcolornofocus);        // draw number
-        else jtextlayout_settextcolor(jtl, &x->ll_textcolor);
-        jtextlayout_draw(jtl, g);
-        jfont_destroy(jf);
-        
-        if (atom_gettype(&x->ll_label[0]) == A_SYM) {       //############# label ######
-            if (atom_gettype(&x->ll_label[i]) == A_SYM) sprintf(s,"%s",atom_getsym(&x->ll_label[i])->s_name);
-            else sprintf(s, "%d",i+1);
-            jf = jfont_create(jbox_get_fontname((t_object *)x)->s_name, 0, 0, jbox_get_fontsize((t_object *)x));
-            jtl = jtextlayout_create();
-            jtextlayout_set(jtl,s , jf, x->ll_inset + 2, up, x->ll_width, h-2, JGRAPHICS_TEXT_JUSTIFICATION_VCENTERED, JGRAPHICS_TEXTLAYOUT_NOWRAP);
-            jtextlayout_settextcolor(jtl, &x->ll_labelcolor);
-            jtextlayout_draw(jtl, g);
-            jtextlayout_destroy(jtl);
-            jfont_destroy(jf);
+        // Label
+        if (atom_gettype(&x->ll_label[0]) == A_NOTHING) {
+            // TODO: Clear label
+            ll_number_draw_label(x, g, "", up, h);
+            post("clear label??");
+        } else if (atom_gettype(&x->ll_label[i]) == A_SYM) {
+            // If this list item has a label, draw it
+            char *label_text = NULL;
+            long textsize = 0;
+
+            // Convert the atom to a C-string
+            if (atom_gettext(1, &x->ll_label[i], &textsize, &label_text, OBEX_UTIL_ATOM_GETTEXT_DEFAULT) == MAX_ERR_NONE) {
+                ll_number_draw_label(x, g, label_text, up, h);  // Use the converted label text
+                sysmem_freeptr(label_text);  // Free memory allocated by atom_gettext
+            } else {
+                post("Error: Could not convert atom to text.");
+            }
+        } else if (atom_gettype(&x->ll_label[0]) == A_SYM && i != 0) {
+            // If this list item does not have a specific label but the first item does, draw the value of i+1
+            char label_text[32];  // Fixed-size buffer for simple numeric label
+            snprintf(label_text, sizeof(label_text), "%i", i + 1);  // Convert index to string
+            ll_number_draw_label(x, g, label_text, up, h);
         }
     }
 }
+
+// Draw value (as text)
+void ll_number_draw_text(t_ll_number *x, t_jgraphics *g, short i, double up, double h) {
+    t_jfont *jf = jfont_create(jbox_get_fontname((t_object *)x)->s_name, 0, 0, jbox_get_fontsize((t_object *)x));
+    t_jtextlayout *jtl = jtextlayout_create();
+    double value = x->ll_is_typing && i == x->ll_selitem ? atof(x->ll_buffer) : atom_getfloat(&x->ll_vala[i]);
+
+    ll_number_printf(x, value);  // Prepare value text for drawing
+    jtextlayout_set(jtl, x->ll_pval, jf, x->ll_inset, up,
+                    x->ll_width - (1 - x->ll_bar_line * 2) - 1, h,
+                    JGRAPHICS_TEXT_JUSTIFICATION_RIGHT, JGRAPHICS_TEXTLAYOUT_NOWRAP);
+
+    // Store jtl reference for selected item
+    if (i == x->ll_selitem) {
+        x->ll_string_length = jtextlayout_getnumchars(jtl);
+        x->ll_jtl = jtl;
+    }
+
+    // Selection rectangle (for editing position)
+    if (x->ll_selected && i == x->ll_selitem && (x->ll_string_length - x->ll_selpos) >= 0) {
+        t_rect crect;
+        jtextlayout_getcharbox(jtl, x->ll_string_length - x->ll_selpos, &crect);
+        jgraphics_set_source_jrgba(g, &x->ll_selectcolor);
+        jgraphics_rectangle(g, crect.x, crect.y, crect.width, crect.height);
+        jgraphics_fill(g);
+    }
+
+    // Draw the value
+    jtextlayout_settextcolor(jtl, x->ll_mousefocus ? &x->ll_textcolornofocus : &x->ll_textcolor);
+    jtextlayout_draw(jtl, g);
+
+    jfont_destroy(jf);
+}
+
+// Draw label
+void ll_number_draw_label(t_ll_number *x, t_jgraphics *g, const char *label, double up, double h) {
+    t_jfont *jf = jfont_create(jbox_get_fontname((t_object *)x)->s_name, 0, 0, jbox_get_fontsize((t_object *)x));
+    t_jtextlayout *jtl = jtextlayout_create();
+
+    jtextlayout_set(jtl, label, jf, x->ll_inset + 2, up, x->ll_width, h - 2,
+                    JGRAPHICS_TEXT_JUSTIFICATION_VCENTERED, JGRAPHICS_TEXTLAYOUT_NOWRAP);
+    jtextlayout_settextcolor(jtl, &x->ll_labelcolor);
+    jtextlayout_draw(jtl, g);
+
+    jtextlayout_destroy(jtl);
+    jfont_destroy(jf);
+}
+
 
 // Handle bang
 void ll_number_bang(t_ll_number *x){
