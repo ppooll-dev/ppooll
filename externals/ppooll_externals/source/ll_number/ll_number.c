@@ -13,19 +13,17 @@
  */
 
 #ifdef WIN_VERSION
-#define _CRT_SECURE_NO_DEPRECATE
+    #define _CRT_SECURE_NO_DEPRECATE
 #endif
 
 #include "ext.h"
 #include "ext_obex.h"
 #include "ext_common.h"
 #include "ext_expr.h"
-#include "ext_obex.h" //for atom routines
+#include "ext_obex.h"
 #include "jpatcher_api.h"
 #include "jgraphics.h"
 #include "ext_parameter.h"
-// #include "ext_boxstyle.h"
-//#include "common/commonsyms.c"
 
 #ifdef WIN_VERSION
     #include <float.h>
@@ -115,7 +113,6 @@ typedef struct _ll_number
     
     t_atom      ll_label[MAX_NUM_VALUES];
     long        ll_labelcount;
-    char		ll_haslabel;
     bool        ll_isint;
     
 } t_ll_number;
@@ -210,7 +207,6 @@ void ext_main(void *r){
     CLASS_ATTR_DEFAULT(c,"patching_rect", 0, "0. 0. 70. 14.");
     
     //########### ll_number
-    
     CLASS_STICKY_ATTR(c, "category", 0, "llnumber");
     
     CLASS_ATTR_DOUBLE(c,            "slidermin", 0, t_ll_number, ll_slider_min);
@@ -397,8 +393,6 @@ void *ll_number_new(t_symbol *s, short argc, t_atom *argv){
     //		| JBOX_TEXTFIELD
     ;
     
-    x->ll_haslabel = 0;
-    //x->ll_form_length = 0;
     x->ll_selpos = 1;
     x->ll_selitem = 0;
     
@@ -406,12 +400,14 @@ void *ll_number_new(t_symbol *s, short argc, t_atom *argv){
     x->ll_box.b_firstin = (t_object*) x;
     outlet_new((t_object *)x, NULL);
     
-    attr_dictionary_process(x, d); // handle attribute args
+    attr_dictionary_process(x, d);
     
-    // Set all values in array to ll_slider_min
+    double init_values[MAX_NUM_VALUES];
     for (int i = 0; i < MAX_NUM_VALUES; i++) {
-        atom_setfloat(&x->ll_vala[i], x->ll_slider_min);
+        init_values[i] = x->ll_slider_min;
     }
+    atom_setdouble_array(MAX_NUM_VALUES, x->ll_vala, MAX_NUM_VALUES, init_values);
+    
     ll_number_floatformgen(x);
     jbox_ready(&x->ll_box);
     return x;
