@@ -673,41 +673,50 @@ void ll_number_assign(t_ll_number *x, double f, long notify){
     }
 }
 
-double ll_number_constrain(t_ll_number *x, double f){
-    int m = pow(10, x->ll_floatformpost);
-    
-    if(x->ll_hasmax && (f > atom_getfloat(&x->ll_max))) 
-        f = atom_getfloat(&x->ll_max);
-    
-    if(x->ll_hasmin && (f < atom_getfloat(&x->ll_min)))
+double ll_number_constrain(t_ll_number *x, double f) {
+    // Use integer math for precision
+    int m = 1;
+    for (int i = 0; i < x->ll_floatformpost; i++) {
+        m *= 10; // Calculate 10^ll_floatformpost without pow()
+    }
+
+    // Constrain to minimum value
+    if (x->ll_hasmin && (f < atom_getfloat(&x->ll_min))) {
         f = atom_getfloat(&x->ll_min);
-    
-//    post("%d %d %f", x->ll_floatformpost, m, f);
-    
-    if (x->ll_mousefocus==0)
-        f = roundf(f * m) / m;
+    }
+
+    // Constrain to maximum value
+    if (x->ll_hasmax && (f > atom_getfloat(&x->ll_max))) {
+        f = atom_getfloat(&x->ll_max);
+    }
+
+    // Apply rounding if not focused
+    if (x->ll_mousefocus == 0) {
+        f = round(f * m) / m; // Use `round` for `double` instead of `roundf`
+    }
+
     return f;
 }
-
+ 
 void ll_number_set(t_ll_number *x, t_symbol *s, short ac, t_atom *av){
-    if (ac && (av->a_type == A_FLOAT || av->a_type == A_LONG))
-        ll_number_assign(x, atom_getfloat(av), false);
-    if(ac > 1) {
-        if (ac && av) {
-            x->ll_amount = ac;
-            atom_setatom_array(ac, x->ll_vala, ac, av);
-            object_notify(x, _sym_modified, NULL);
-            jbox_redraw(&x->ll_box);
-        }
-    }
+    if(!ac || !av)
+        return;
+    
+    atom_setatom_array(ac, x->ll_vala, ac, av);
+    x->ll_amount = ac;
+    jbox_redraw(&x->ll_box);
+    
+    object_notify(x, _sym_modified, NULL);
 }
 
 t_max_err ll_number_setvalueof(t_ll_number *x, long ac, t_atom *av){
-    if (ac && av)
-        atom_setatom_array(ac ,x->ll_vala, ac, av);
-    
+    if(!ac || !av)
+        return;
+        
+    atom_setatom_array(ac ,x->ll_vala, ac, av);
     x->ll_amount = ac;
     jbox_redraw(&x->ll_box);
+    
     ll_number_bang(x);
     return MAX_ERR_NONE;
 }
@@ -1069,57 +1078,36 @@ void ll_number_focuslost(t_ll_number *x, t_object *patcherview){
     jbox_redraw((t_jbox *)x);
 }
 
-t_max_err ll_number_setattr_ll_min(t_ll_number *x, void *attr, long ac, t_atom *av) {
-    double f;
-    x->ll_hasmin = 0;
-    
-    if (ac && av) {
-        if (atom_gettype(av) == A_LONG || atom_gettype(av) == A_FLOAT) {
-            atom_arg_getdouble(&f, 0, ac, av);
-            atom_setfloat(&x->ll_min, f);
-            x->ll_hasmin = 1;
-            
-            // Constrain all values in the array
-            for (int i = 0; i < x->ll_amount; i++) {
-                double value = atom_getfloat(&x->ll_vala[i]);
-                value = ll_number_constrain(x, value);
-                atom_setfloat(&x->ll_vala[i], value);
-            }
-            ll_number_redraw(x);
-        } else {
-            atom_setsym(&x->ll_min, gensym("<none>"));
-        }
-    } else {
-        atom_setsym(&x->ll_min, gensym("<none>"));
+t_max_err ll_number_setattr_helper(t_ll_number *x, long ac, t_atom *av, int *has_attr, t_atom *attr_val) {
+    if (ac == 0 || !av || (atom_gettype(av) != A_LONG && atom_gettype(av) != A_FLOAT)) {
+        *has_attr = 0; // Dereference the pointer to set the value
+        atom_setsym(attr_val, gensym("<none>"));
+        return MAX_ERR_NONE;
     }
+
+    double value = atom_getfloat(av);
+    atom_setfloat(attr_val, value); // Set the float value in the atom
+    *has_attr = 1; // Indicate the attribute has been set
+
+    // Constrain all values in the array
+    for (int i = 0; i < x->ll_amount; i++) {
+        double constrained_value = atom_getfloat(&x->ll_vala[i]);
+        constrained_value = ll_number_constrain(x, constrained_value);
+        atom_setfloat(&x->ll_vala[i], constrained_value);
+    }
+
+    ll_number_redraw(x);
     return MAX_ERR_NONE;
+}
+
+t_max_err ll_number_setattr_ll_min(t_ll_number *x, void *attr, long ac, t_atom *av) {
+    return ll_number_setattr_helper(x, ac, av, &x->ll_hasmin, &x->ll_min);
 }
 
 t_max_err ll_number_setattr_ll_max(t_ll_number *x, void *attr, long ac, t_atom *av) {
-    double f;
-    x->ll_hasmax = 0;
-
-    if (ac && av) {
-        if (atom_gettype(av) == A_LONG || atom_gettype(av) == A_FLOAT) {
-            atom_arg_getdouble(&f, 0, ac, av);
-            atom_setfloat(&x->ll_max, f);
-            x->ll_hasmax = 1;
-            
-            // Constrain all values in the array
-            for (int i = 0; i < x->ll_amount; i++) {
-                double value = atom_getfloat(&x->ll_vala[i]);
-                value = ll_number_constrain(x, value);
-                atom_setfloat(&x->ll_vala[i], value);
-            }
-            ll_number_redraw(x);
-        } else {
-            atom_setsym(&x->ll_max, gensym("<none>"));
-        }
-    } else {
-        atom_setsym(&x->ll_max, gensym("<none>"));
-    }
-    return MAX_ERR_NONE;
+    return ll_number_setattr_helper(x, ac, av, &x->ll_hasmax, &x->ll_max);
 }
+
 
 t_max_err ll_number_setattr_ll_mark(t_ll_number *x, void *attr, long ac, t_atom *av){
     double f;
