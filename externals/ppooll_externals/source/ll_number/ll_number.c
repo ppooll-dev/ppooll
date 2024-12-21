@@ -37,12 +37,12 @@ static t_class	*s_ll_number_class = 0;
 static t_pt s_ll_number_cum;
 static short s_ll_selold;
 
+const short int MAX_NUM_VALUES = 256;
 
 typedef struct _ll_number
 {
     t_jbox		ll_box;
-    t_atom		ll_vala[256];
-    short		ll_ac;
+    t_atom		ll_vala[MAX_NUM_VALUES];
     short		ll_selitem;
     long        ll_amount;
     
@@ -178,7 +178,7 @@ void ext_main(void *r){
     class_addmethod(c, (method)ll_number_select,		"select",		0);
     class_addmethod(c, (method)ll_number_rand,			"rand", A_LONG, 0);
     
-    CLASS_ATTR_DEFAULT(c,"patching_rect",0, "0. 0. 70. 14.");
+    CLASS_ATTR_DEFAULT(c,"patching_rect", 0, "0. 0. 70. 14.");
     
     //########### ll_number
     
@@ -242,7 +242,7 @@ void ext_main(void *r){
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"amount", 0, "1");
     CLASS_ATTR_LABEL(c,				"amount", 0, "amount of sliders");
     CLASS_ATTR_FILTER_MIN(c,		"amount", 1);
-    CLASS_ATTR_FILTER_MAX(c,		"amount", 256);
+    CLASS_ATTR_FILTER_MAX(c,		"amount", MAX_NUM_VALUES);
     CLASS_ATTR_ACCESSORS(c,			"amount", (method)NULL, (method)ll_number_setattr_ll_amount);
     
     CLASS_ATTR_LONG(c,				"first2all", 0, t_ll_number, ll_first2all);
@@ -382,7 +382,7 @@ void *ll_number_new(t_symbol *s, short argc, t_atom *argv){
     attr_dictionary_process(x, d); // handle attribute args
     
     // Set all values in array to ll_slider_min
-    for (int i = 0; i < 256; i++) {
+    for (int i = 0; i < MAX_NUM_VALUES; i++) {
         atom_setfloat(&x->ll_vala[i], x->ll_slider_min);
     }
     ll_number_floatformgen(x);
@@ -392,9 +392,9 @@ void *ll_number_new(t_symbol *s, short argc, t_atom *argv){
 
 void ll_number_assist(t_ll_number *x, void *b, long m, long a, char *s){
     if (m == ASSIST_INLET)
-        sprintf(s,"Displays Value Received");
+        sprintf(s, "Displays Value Received");
     else
-        sprintf(s,"Outputs Value When Slider is Changed");
+        sprintf(s, "Outputs Value When Slider is Changed");
 }
 
 void ll_number_free(t_ll_number *x){
@@ -521,12 +521,12 @@ void ll_number_paint(t_ll_number *x, t_object *view){
     jgraphics_set_line_width(g, x->ll_border);
     jgraphics_stroke(g);
     
-    h = (rect.height-b) / x->ll_ac;
+    h = (rect.height-b) / x->ll_amount;
     //post("h_b_r %f %f %f", h, b,rect.height);
     x->ll_inset = x->ll_border/2;
     x->ll_width = rect.width - x->ll_border - x->ll_bar_line*2 + 1; //use for pos
     
-    for (i=0; i < x->ll_ac; i++) {
+    for (i=0; i < x->ll_amount; i++) {
         up = i*h+b/2;
         pos = ll_number_valtopos(x, atom_getfloat(&x->ll_vala[i]));         //############ slider ###### post("pos %f",pos);
         if(x->ll_mousefocus) jgraphics_set_source_jrgba(g, &x->ll_frgba);
@@ -588,17 +588,7 @@ void ll_number_paint(t_ll_number *x, t_object *view){
 }
 
 void ll_number_bang(t_ll_number *x){
-    if(x->ll_ac == 1){    //post("int %d", x->ll_isint);
-        if (x->ll_isint){
-            long iv;
-            double f;
-            f = atom_getfloat(&x->ll_vala[0]);
-            iv = f + (f >= 0 ? 0.5 : -0.5); // rounding properly negative numbers too
-            outlet_int(x->ll_box.b_ob.o_outlet, iv);
-        }
-        else outlet_float(x->ll_box.b_ob.o_outlet, atom_getfloat(&x->ll_vala[0]));
-    }
-    else outlet_list(x->ll_box.b_ob.o_outlet, NULL, x->ll_ac,x->ll_vala );
+    outlet_list(x->ll_box.b_ob.o_outlet, NULL, x->ll_amount, x->ll_vala);
 }
 
 void ll_number_int(t_ll_number *x, long n){ //post("int %d", n);
@@ -606,19 +596,25 @@ void ll_number_int(t_ll_number *x, long n){ //post("int %d", n);
 }
 
 void ll_number_float(t_ll_number *x, double f){  //post("float %f", f);
-    x->ll_ac = 1;
     x->ll_amount = 1;
     f=ll_number_constrain(x,f);
+    
+    // currently...
     atom_setfloat(&x->ll_vala[0], f);
+    
+    // instead, let's just use the array of actual doubles
+    double vals[1] = { f }; // Array containing one value
+    atom_setdouble_array(1, x->ll_vala, 1, vals);
+    
     ll_number_redraw(x);
 }
 
 void ll_number_list(t_ll_number *x, t_symbol *s, short ac, t_atom *av) {
-    if (ac > 256) {
-        post("ll_number: list exceeds maximum of 256 items");
+    if (ac > MAX_NUM_VALUES) {
+        post("ll_number: list exceeds maximum of %s items", MAX_NUM_VALUES);
     } else {
         if (ac && av) {
-            x->ll_ac = ac;
+            x->ll_amount = ac;
 
             // Clear the current array
             memset(&x->ll_vala, x->ll_slider_min, sizeof(x->ll_vala));
@@ -631,8 +627,6 @@ void ll_number_list(t_ll_number *x, t_symbol *s, short ac, t_atom *av) {
                 // Store the constrained value back
                 atom_setfloat(&x->ll_vala[i], value);
             }
-
-            x->ll_amount = ac;
             ll_number_redraw(x);
         }
     }
@@ -650,7 +644,7 @@ void ll_number_assign(t_ll_number *x, double f, long notify){
     f = ll_number_constrain(x,f); //post("constrained: %f",f);
     if (x->ll_selitem == 0 && x->ll_amount > 1) { //post("first2all %d", x->ll_first2all);
         if (x->ll_first2all == 1) {
-            for(i= 1; i < x->ll_amount; i++){
+            for(int i = 1; i < x->ll_amount; i++){
                 atom_setfloat(&x->ll_vala[i], f);
             }
         }
@@ -700,10 +694,8 @@ void ll_number_set(t_ll_number *x, t_symbol *s, short ac, t_atom *av){
         ll_number_assign(x, atom_getfloat(av), false);
     if(ac > 1) {
         if (ac && av) {
-            x->ll_ac = ac;
-            memset(&x->ll_vala, x->ll_slider_min, ac);
-            atom_setatom_array(x->ll_ac, x->ll_vala, ac, av);
             x->ll_amount = ac;
+            atom_setatom_array(ac, x->ll_vala, ac, av);
             object_notify(x, _sym_modified, NULL);
             jbox_redraw(&x->ll_box);
         }
@@ -711,10 +703,10 @@ void ll_number_set(t_ll_number *x, t_symbol *s, short ac, t_atom *av){
 }
 
 t_max_err ll_number_setvalueof(t_ll_number *x, long ac, t_atom *av){
-    x->ll_ac = ac;
     if (ac && av)
-        atom_setatom_array(x->ll_ac,x->ll_vala, ac, av);
+        atom_setatom_array(ac ,x->ll_vala, ac, av);
     
+    x->ll_amount = ac;
     jbox_redraw(&x->ll_box);
     ll_number_bang(x);
     return MAX_ERR_NONE;
@@ -723,65 +715,78 @@ t_max_err ll_number_setvalueof(t_ll_number *x, long ac, t_atom *av){
 t_max_err ll_number_getvalueof(t_ll_number *x, long *ac, t_atom **av){
     if (ac && av) {
         char alloc;
-        if (atom_alloc_array(x->ll_ac, ac, av, &alloc))
+        if (atom_alloc_array(x->ll_amount, ac, av, &alloc))
             return MAX_ERR_OUT_OF_MEM;
         
-        atom_setatom_array(*ac, *av, x->ll_ac, x->ll_vala);
+        atom_setatom_array(*ac, *av, x->ll_amount, x->ll_vala);
     }
     return MAX_ERR_NONE;
 }
 
-void ll_number_pos(t_ll_number *x, double pos){
+//  Set value from position
+void ll_number_pos(t_ll_number *x, double pos) {
+    double slider_diff = x->ll_slider_max - x->ll_slider_min;
+    double split_pos = -x->ll_slider_min / slider_diff;
+
+    // Clamp pos to [0, 1]
+    if (pos > 1.0) pos = 1.0;
+    if (pos < 0.0) pos = 0.0;
+
     double val;
-    double splitpos = x->ll_slider_min * -1/(x->ll_slider_max - x->ll_slider_min);
-    if (pos > 1.)  pos = 1.;
-    if (pos < 0.)  pos = 0.;
-    if (x->ll_slider_log == 0)
-        val = pos*(x->ll_slider_max - x->ll_slider_min)+ x->ll_slider_min;
-    else
-        if (x->ll_zerosplitslog == 0)
-            val = (exp((pos - 1)* x->ll_slider_log)-1)/(exp(-x->ll_slider_log)-1)*(x->ll_slider_min - x->ll_slider_max)+x->ll_slider_max;
-        else {
-            if (pos >= splitpos)
-                val = (exp(((pos-splitpos)/(1-splitpos) - 1)* x->ll_slider_log)-1)/(exp(-x->ll_slider_log)-1)*(0 - x->ll_slider_max)+x->ll_slider_max;
-            else
-                val = (exp((pos/splitpos - 1)* -x->ll_slider_log)-1)/(exp(x->ll_slider_log)-1)*x->ll_slider_min;
+    if (x->ll_slider_log == 0) {
+        val = pos * slider_diff + x->ll_slider_min;
+    } else if (x->ll_zerosplitslog == 0) {
+        double exp_neg_log = exp(-x->ll_slider_log);
+        val = (exp((pos - 1.0) * x->ll_slider_log) - 1) / (exp_neg_log - 1) * (x->ll_slider_min - x->ll_slider_max) + x->ll_slider_max;
+    } else {
+        if (pos >= split_pos) {
+            double exp_neg_log = exp(-x->ll_slider_log);
+            val = (exp(((pos - split_pos) / (1 - split_pos) - 1) * x->ll_slider_log) - 1) / (exp_neg_log - 1) * -x->ll_slider_max + x->ll_slider_max;
+        } else {
+            double exp_pos_log = exp(x->ll_slider_log);
+            val = (exp((pos / split_pos - 1) * -x->ll_slider_log) - 1) / (exp_pos_log - 1) * x->ll_slider_min;
         }
-    //post("pos@drag %f val %f", pos,val);
+    }
     ll_number_assign(x, val, true);
 }
 
-double ll_number_valtopos(t_ll_number *x, double val){
+//  Set position from value
+double ll_number_valtopos(t_ll_number *x, double val) {
+    double slider_diff = x->ll_slider_max - x->ll_slider_min;
+    double split_pos = -x->ll_slider_min / slider_diff;
+    
     double pos;
-    if (x->ll_slider_log == 0){
-        pos = (val - x->ll_slider_min) / (x->ll_slider_max - x->ll_slider_min);
-    }
-    else
-        if (x->ll_zerosplitslog == 0)
-            pos = (((log((val - x->ll_slider_max)*(exp(- x->ll_slider_log)-1)/(x->ll_slider_min - x->ll_slider_max)+1))/x->ll_slider_log)+1);
-        else {
-            double splitpos = x->ll_slider_min * -1/(x->ll_slider_max - x->ll_slider_min);
-            if (val >= 0.)
-                pos = (((log((val - x->ll_slider_max)*(exp(- x->ll_slider_log)-1)/(0 - x->ll_slider_max)+1))/x->ll_slider_log)+1)*(1-splitpos)+splitpos;
-            else
-                pos = (((log((val)*(exp(x->ll_slider_log)-1)/(x->ll_slider_min)+1))/- x->ll_slider_log)+1)*splitpos;
+    if (x->ll_slider_log == 0) {
+        pos = (val - x->ll_slider_min) / slider_diff;
+    } else if (x->ll_zerosplitslog == 0) {
+        double exp_neg_log = exp(-x->ll_slider_log);
+        pos = (log((val - x->ll_slider_max) * (exp_neg_log - 1) / (x->ll_slider_min - x->ll_slider_max) + 1) / x->ll_slider_log) + 1;
+    } else {
+        if (val >= 0.0) {
+            double exp_neg_log = exp(-x->ll_slider_log);
+            pos = ((log((val - x->ll_slider_max) * (exp_neg_log - 1) / -x->ll_slider_max + 1) / x->ll_slider_log) + 1) * (1 - split_pos) + split_pos;
+        } else {
+            double exp_pos_log = exp(x->ll_slider_log);
+            pos = ((log(val * (exp_pos_log - 1) / x->ll_slider_min + 1) / -x->ll_slider_log) + 1) * split_pos;
         }
+    }
     pos = pos * x->ll_width + x->ll_inset;
-    
+
     // Check for NaN
-    if(pos != pos)
-        pos = 0;
-    
+    if (pos != pos) {
+        pos = 0.0;
+    }
     return pos;
 }
+
 
 short ll_number_selitem(t_ll_number *x, t_object *patcherview, double val){
     t_rect rect;
     short sel;
     jbox_get_rect_for_view((t_object *)x, patcherview, &rect);
-    sel = (int)(x->ll_ac * (val - (x->ll_border/2)) / (rect.height - x->ll_border) );
-    if (sel < 0) sel =0;
-    if (sel > x->ll_ac-1) sel = x->ll_ac-1;
+    sel = (int)(x->ll_amount * (val - (x->ll_border / 2)) / (rect.height - x->ll_border) );
+    if (sel < 0) sel = 0;
+    if (sel > (x->ll_amount - 1)) sel = x->ll_amount - 1;
     //post("selin_f: %d", sel);
     return sel;
 }
@@ -869,14 +874,14 @@ void ll_number_mousedragdelta(t_ll_number *x, t_object *patcherview, t_pt pt, lo
     if (s_ll_number_cum.x > x->ll_width + x->ll_inset) s_ll_number_cum.x = x->ll_width + x->ll_inset;
     //jmouse_setposition_box(patcherview, (t_object*) x,s_ll_number_cum.x, s_ll_number_cum.y);
     if (x->ll_mousefocus && (x->ll_bar_line!=2)) {
-        if (modifiers != 24 && x->ll_ac >1 && x->ll_multidrag) {
+        if (modifiers != 24 && x->ll_amount >1 && x->ll_multidrag) {
             x->ll_selitem = ll_number_selitem(x, patcherview, s_ll_number_cum.y);
         }
         pos = (s_ll_number_cum.x - x->ll_inset) / x->ll_width;
         ll_number_pos(x, pos);
         
         // interpolate on fast drag
-        if (modifiers != 24 && x->ll_ac >1) {
+        if (modifiers != 24 && x->ll_amount >1) {
             if(abs(x->ll_selitem - s_ll_selold) > 1) {
                 short i, min, max;
                 double offset;
@@ -911,7 +916,7 @@ void ll_number_mouseup(t_ll_number *x, t_object *patcherview, t_pt pt, long modi
         jmouse_setposition_box(patcherview, 
                                (t_object*) x,
                                ll_number_valtopos( x, atom_getfloat( &x->ll_vala[x->ll_selitem] ) ),
-                               (x->ll_selitem * (rect.height - x->ll_border) / x->ll_ac) + x->ll_border/2 + 0.5*(rect.height - x->ll_border/2)/x->ll_ac
+                               (x->ll_selitem * (rect.height - x->ll_border) / x->ll_amount) + x->ll_border/2 + 0.5*(rect.height - x->ll_border/2)/x->ll_amount
                                );
     }
 }
@@ -966,7 +971,7 @@ long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long mod
             
             break;
         case 31:
-            if (modifiers == 2 && x->ll_selitem < x->ll_ac-1) {
+            if (modifiers == 2 && x->ll_selitem < x->ll_amount-1) {
                 x->ll_selitem++;
                 jbox_redraw(&x->ll_box);
             } else
@@ -1067,7 +1072,6 @@ void ll_number_focuslost(t_ll_number *x, t_object *patcherview){
 t_max_err ll_number_setattr_ll_min(t_ll_number *x, void *attr, long ac, t_atom *av) {
     double f;
     x->ll_hasmin = 0;
-    post("setattr ll_min");
     
     if (ac && av) {
         if (atom_gettype(av) == A_LONG || atom_gettype(av) == A_FLOAT) {
@@ -1076,7 +1080,7 @@ t_max_err ll_number_setattr_ll_min(t_ll_number *x, void *attr, long ac, t_atom *
             x->ll_hasmin = 1;
             
             // Constrain all values in the array
-            for (int i = 0; i < x->ll_ac; i++) {
+            for (int i = 0; i < x->ll_amount; i++) {
                 double value = atom_getfloat(&x->ll_vala[i]);
                 value = ll_number_constrain(x, value);
                 atom_setfloat(&x->ll_vala[i], value);
@@ -1102,7 +1106,7 @@ t_max_err ll_number_setattr_ll_max(t_ll_number *x, void *attr, long ac, t_atom *
             x->ll_hasmax = 1;
             
             // Constrain all values in the array
-            for (int i = 0; i < x->ll_ac; i++) {
+            for (int i = 0; i < x->ll_amount; i++) {
                 double value = atom_getfloat(&x->ll_vala[i]);
                 value = ll_number_constrain(x, value);
                 atom_setfloat(&x->ll_vala[i], value);
@@ -1134,20 +1138,19 @@ t_max_err ll_number_setattr_ll_mark(t_ll_number *x, void *attr, long ac, t_atom 
 }
 
 t_max_err ll_number_setattr_ll_amount(t_ll_number *x, void *attr, long ac, t_atom *av){
-    short i;
-    t_atom_long am;
-    
-    if (ac && av) {
-        atom_arg_getlong(&am, 0, ac, av);
-        x->ll_amount = am;
-        if(x->ll_amount > x->ll_ac) {
-            for(i= x->ll_ac; i < x->ll_amount; i++){
-                atom_setfloat(&x->ll_vala[i], x->ll_slider_min);
-            }
-        }
-        x->ll_ac = x->ll_amount;
-        ll_number_redraw(x);
+    if (!ac || !av || atom_gettype(av) != A_LONG){
+        error("amount atribute must be an int");
+        return MAX_ERR_NONE;
     }
+    long new_amount = atom_getlong(av);
+    if(new_amount > x->ll_amount) {
+        // set new slider values
+        for(long i=x->ll_amount; i < new_amount; i++){
+            atom_setfloat(&x->ll_vala[i], x->ll_slider_min);
+        }
+    }
+    x->ll_amount = new_amount;
+    ll_number_redraw(x);
     return MAX_ERR_NONE;
 }
 
