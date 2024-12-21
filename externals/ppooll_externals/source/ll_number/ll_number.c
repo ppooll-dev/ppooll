@@ -39,6 +39,28 @@ static short s_ll_selold;
 
 const short int MAX_NUM_VALUES = 256;
 
+const long TEXTCHAR_UP_ARROW = 30;
+const long TEXTCHAR_DOWN_ARROW = 31;
+const long TEXTCHAR_LEFT_ARROW = 29;
+const long TEXTCHAR_RIGHT_ARROW = 28;
+const long TEXTCHAR_ENTER = 13;
+const long TEXTCHAR_RETURN = 3;
+const long TEXTCHAR_TAB = 9;
+const long TEXTCHAR_ESCAPE = 27;
+
+// Platform-dependent constants for modifier keys
+#ifdef MAC_VERSION
+    const long RIGHT_CLICK = 17;
+    const long LEFT_CLICK_ALT = 24;
+    const long LEFT_CLICK_CTRL = 24;
+#endif
+
+#ifdef WIN_VERSION
+    const long RIGHT_CLICK = 24;
+    const long LEFT_CLICK_ALT = 148;
+    const long LEFT_CLICK_CTRL = 21;
+#endif
+
 typedef struct _ll_number
 {
     t_jbox		ll_box;
@@ -65,7 +87,7 @@ typedef struct _ll_number
     char		ll_zerosplitslog;
     
     char		ll_selected;
-    char		ll_typing;
+    bool		ll_is_typing;
     char		ll_right_mouse;
     
     t_atom		ll_format;
@@ -128,10 +150,11 @@ void ll_number_rand(t_ll_number *x, long it);
 double ll_number_constrain(t_ll_number *x, double f);
 void ll_number_constrain_all(t_ll_number *x);
 double ll_number_valtopos(t_ll_number *x, double val);
-short ll_number_selitem(t_ll_number *x, t_object *patcherview, double val);
+short ll_number_get_selitem_from_y(t_ll_number *x, t_object *patcherview, double val);
 long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long modifiers, long textcharacter);
 
 bool ll_number_is_atom_a_number(long ac, t_atom *av);
+double ll_number_get_value(t_ll_number *x, short index);
 
 t_max_err ll_number_notify(t_ll_number *x, t_symbol *s, t_symbol *msg, void *sender, void *data);
 t_max_err ll_number_setattr_size(t_ll_number *x, t_object *attr, long ac, t_atom *av);
@@ -405,6 +428,12 @@ bool ll_number_is_atom_a_number(long ac, t_atom *av){
     return ac == 1 && av && (atom_gettype(av) == A_LONG || atom_gettype(av) == A_FLOAT);
 }
 
+double ll_number_get_value(t_ll_number *x, short index){
+    double value;
+    atom_arg_getdouble(&value, index, x->ll_amount, x->ll_vala);
+    return value;
+}
+
 void ll_number_floatformgen(t_ll_number *x){
     x->ll_floatform = atom_getfloat( &x->ll_tform[0] );
     x->ll_floatformpost = (int)round( fmod(x->ll_floatform, 1) * 10);
@@ -553,7 +582,7 @@ void ll_number_paint(t_ll_number *x, t_object *view){
             jgraphics_fill(g);
         }
         
-        if (x->ll_typing && i == x->ll_selitem)        //############### def_string
+        if (x->ll_is_typing && i == x->ll_selitem)        //############### def_string
             ll_number_printf(x,atof(x->ll_buffer));
         else
             ll_number_printf(x,atom_getfloat(&x->ll_vala[i]));
@@ -591,14 +620,17 @@ void ll_number_paint(t_ll_number *x, t_object *view){
     }
 }
 
+// Handle bang
 void ll_number_bang(t_ll_number *x){
     outlet_list(x->ll_box.b_ob.o_outlet, NULL, x->ll_amount, x->ll_vala);
 }
 
+// Handle integer number
 void ll_number_int(t_ll_number *x, long n){
     ll_number_float(x, (double)n);
 }
 
+// Handle floating-point number
 void ll_number_float(t_ll_number *x, double f){
     x->ll_amount = 1;
     f = ll_number_constrain(x,f);
@@ -609,70 +641,82 @@ void ll_number_float(t_ll_number *x, double f){
     ll_number_redraw(x);
 }
 
+// List-type message - a list of doubles replaces the the object's value list
 void ll_number_list(t_ll_number *x, t_symbol *s, short ac, t_atom *av) {
     if (ac > MAX_NUM_VALUES) {
         post("ll_number: list exceeds maximum of %s items", MAX_NUM_VALUES);
     } else {
         if (ac && av) {
             x->ll_amount = ac;
-
-            // Clear the current array
-            memset(&x->ll_vala, x->ll_slider_min, sizeof(x->ll_vala));
-
-            // Iterate over the incoming list and constrain each value
+            
+            double values[ac];
+            atom_getdouble_array(ac, av, ac, values);
             for (int i = 0; i < ac; i++) {
-                double value = atom_getfloat(&av[i]);  // Get the current value
-                value = ll_number_constrain(x, value);  // Apply constraints
-
-                // Store the constrained value back
-                atom_setfloat(&x->ll_vala[i], value);
+                values[i] = ll_number_constrain(x, values[i]);
             }
+            atom_setdouble_array(ac, x->ll_vala, ac, values);
             ll_number_redraw(x);
         }
     }
 }
 
+// Redraw the UI
 void ll_number_redraw(t_ll_number *x){
     object_notify(x, _sym_modified, NULL);
     jbox_redraw(&x->ll_box);
     ll_number_bang(x);
 }
 
-void ll_number_assign(t_ll_number *x, double f, long notify){
-    short i;
-    double fcalc;
-    f = ll_number_constrain(x,f); //post("constrained: %f",f);
-    if (x->ll_selitem == 0 && x->ll_amount > 1) { //post("first2all %d", x->ll_first2all);
-        if (x->ll_first2all == 1) {
-            for(int i = 1; i < x->ll_amount; i++){
-                atom_setfloat(&x->ll_vala[i], f);
-            }
-        }
-        if (x->ll_first2all == 2) {
-            if (atom_getfloat(&x->ll_vala[0]) != 0.)
-            {
-                fcalc = f / atom_getfloat(&x->ll_vala[0]);
-                for(i= 1; i < x->ll_amount; i++){
-                    atom_setfloat(&x->ll_vala[i], atom_getfloat(&x->ll_vala[i]) * fcalc);
+// Assign the currently selected value (updates & outputs values from object)
+void ll_number_assign(t_ll_number *x, double f, long notify) {
+    double new_value = ll_number_constrain(x, f);
+    
+    double values[x->ll_amount];
+    atom_getdouble_array(x->ll_amount, x->ll_vala, x->ll_amount, values);
+
+    if (x->ll_selitem == 0 && x->ll_amount > 1) {
+        // Set all slider values
+        double fcalc = 0;
+
+        switch (x->ll_first2all) {
+            case 1:  // Apply f to all
+                for (int i = 1; i < x->ll_amount; i++) {
+                    values[i] = new_value;
                 }
-            }
-        }
-        if (x->ll_first2all == 3) {
-            fcalc = f - atom_getfloat(&x->ll_vala[0]);
-            for(i= 1; i < x->ll_amount; i++){
-                atom_setfloat(&x->ll_vala[i], atom_getfloat(&x->ll_vala[i]) + fcalc);
-            }
+                break;
+
+            case 2:  // Scale others proportionally
+                if (values[0] != 0.0) {
+                    fcalc = new_value / values[0];
+                    for (int i = 1; i < x->ll_amount; i++) {
+                        values[i] = values[i] * fcalc;
+                    }
+                }
+                break;
+
+            case 3:  // Add the difference to others
+                fcalc = new_value - values[0];
+                for (int i = 1; i < x->ll_amount; i++) {
+                    values[i] = values[i] + fcalc;
+                }
+                break;
         }
     }
-    if (x->ll_isint) atom_setlong(&x->ll_vala[x->ll_selitem], f);
-    else atom_setfloat(&x->ll_vala[x->ll_selitem], f);
+    // Set selected slider value
+    values[x->ll_selitem] = new_value;
+    atom_setdouble_array(x->ll_amount, x->ll_vala, x->ll_amount, values);
+
+    // Redraw and notify if required
     jbox_redraw(&x->ll_box);
+
     if (notify) {
         object_notify(x, _sym_modified, NULL);
         ll_number_bang(x);
     }
 }
 
+
+// Constrain a values between min and max if needed
 double ll_number_constrain(t_ll_number *x, double f) {
     // Use integer math for precision
     int m = 1;
@@ -682,7 +726,7 @@ double ll_number_constrain(t_ll_number *x, double f) {
     
     bool has_min = ll_number_is_atom_a_number(1, &x->ll_min);
     bool has_max = ll_number_is_atom_a_number(1, &x->ll_max);
-
+    
     // Constrain to minimum value
     if (has_min && (f < atom_getfloat(&x->ll_min))) {
         f = atom_getfloat(&x->ll_min);
@@ -697,18 +741,21 @@ double ll_number_constrain(t_ll_number *x, double f) {
     if (x->ll_mousefocus == 0) {
         f = round(f * m) / m; // Use `round` for `double` instead of `roundf`
     }
-
     return f;
 }
 
+// Constrain all values & redraw
 void ll_number_constrain_all(t_ll_number *x){
-    for (int i = 0; i < x->ll_amount; i++) {
-        double constrained_value = ll_number_constrain(x, atom_getfloat(&x->ll_vala[i]));
-        atom_setfloat(&x->ll_vala[i], constrained_value);
-    }
+    double values[x->ll_amount];
+    atom_getdouble_array(x->ll_amount, x->ll_vala, x->ll_amount, values);
+    for (int i = 0; i < x->ll_amount; i++)
+        values[i] = ll_number_constrain(x, values[i]);
+    
+    atom_setdouble_array(x->ll_amount, x->ll_vala, x->ll_amount, values);
     ll_number_redraw(x);
 }
- 
+
+// Handle message "set" - overwrite list of values (changes num of values "ll_amount")
 void ll_number_set(t_ll_number *x, t_symbol *s, short ac, t_atom *av){
     if(!ac || !av)
         return;
@@ -720,6 +767,7 @@ void ll_number_set(t_ll_number *x, t_symbol *s, short ac, t_atom *av){
     object_notify(x, _sym_modified, NULL);
 }
 
+// Set value of this ll_number object
 t_max_err ll_number_setvalueof(t_ll_number *x, long ac, t_atom *av){
     if(!ac || !av)
         return;
@@ -732,6 +780,7 @@ t_max_err ll_number_setvalueof(t_ll_number *x, long ac, t_atom *av){
     return MAX_ERR_NONE;
 }
 
+// Get value of this ll_number object
 t_max_err ll_number_getvalueof(t_ll_number *x, long *ac, t_atom **av){
     if (ac && av) {
         char alloc;
@@ -799,109 +848,93 @@ double ll_number_valtopos(t_ll_number *x, double val) {
     return pos;
 }
 
-
-short ll_number_selitem(t_ll_number *x, t_object *patcherview, double val){
+// Calculate selitem from y position
+short ll_number_get_selitem_from_y(t_ll_number *x, t_object *patcherview, double y){
     t_rect rect;
-    short sel;
     jbox_get_rect_for_view((t_object *)x, patcherview, &rect);
-    sel = (int)(x->ll_amount * (val - (x->ll_border / 2)) / (rect.height - x->ll_border) );
-    if (sel < 0) sel = 0;
-    if (sel > (x->ll_amount - 1)) sel = x->ll_amount - 1;
-    //post("selin_f: %d", sel);
-    return sel;
+    short sel = (int)(x->ll_amount * (y - (x->ll_border / 2)) / (rect.height - x->ll_border) );
+    return CLAMP(sel, 0, x->ll_amount - 1);
 }
 
-void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers){
-    t_rect rect;
+// On mouse down
+void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers) {
     t_rect crect;
     double val;
     long pos, i;
-    //post("mod %d", modifiers);
-    s_ll_number_cum = pt;//new
-    
-    if (modifiers & eRightButton){
+
+    s_ll_number_cum = pt;
+
+    // Handle right mouse button
+    if (modifiers & eRightButton) {
         x->ll_right_mouse = 1;
-        if(x->ll_mousefocus){
+        if (x->ll_mousefocus) {
             x->ll_mousefocus = 0;
             jbox_redraw((t_jbox *)x);
         }
+        return; // Right mouse processing done
     }
-    else{
-        if(x->ll_right_mouse && (modifiers & eLeftButton) && !x->ll_mousefocus && (x->ll_bar_line!=2)){
-            x->ll_mousefocus = 1;
-            jbox_redraw((t_jbox *)x);
-        }
-    }
-    
-#ifdef MAC_VERSION
-    if (modifiers == 17){
-        x->ll_mousefocus = 0;
+
+    // Handle left mouse button and mouse focus
+    if (x->ll_right_mouse && (modifiers & eLeftButton) && !x->ll_mousefocus && (x->ll_bar_line != 2)) {
+        x->ll_mousefocus = 1;
         jbox_redraw((t_jbox *)x);
     }
-    else{
-        if (modifiers == 24 && (x->ll_bar_line!=2)){
-            x->ll_mousefocus = 1;
-            jbox_redraw((t_jbox *)x);
-        }
-    }
-#endif
-#ifdef WIN_VERSION
-    if (modifiers == 24){
+    
+    // Hanlde right mouse button
+    if (modifiers == RIGHT_CLICK) {
         x->ll_mousefocus = 0;
         jbox_redraw((t_jbox *)x);
+    } else if ((modifiers == LEFT_CLICK_ALT || modifiers == LEFT_CLICK_CTRL) && (x->ll_bar_line != 2)) {
+        x->ll_mousefocus = 1;
+        jbox_redraw((t_jbox *)x);
     }
-    else{
-        if (modifiers == 148 || modifiers == 21 && (x->ll_bar_line!=2)){
-            x->ll_mousefocus = 1;
-            jbox_redraw((t_jbox *)x);
-        }
-    }
-#endif
-    
-    jbox_get_rect_for_view((t_object *)x, patcherview, &rect);
-    x->ll_selitem = ll_number_selitem(x, patcherview, pt.y);
+
+    // Determine the selected item
+    x->ll_selitem = ll_number_get_selitem_from_y(x, patcherview, pt.y);
     s_ll_selold = x->ll_selitem;
-    //post("selected: %d %f", x->ll_selitem, pt.y);
+
+    // Handle mouse focus and position
     if (!x->ll_mousefocus) {
         pos = -1;
-        for (i=0; i<jtextlayout_getnumchars(x->ll_jtl); i++) {
+        for (i = 0; i < jtextlayout_getnumchars(x->ll_jtl); i++) {
             jtextlayout_getcharbox(x->ll_jtl, i, &crect);
-            if(pt.x>crect.x && pt.x<crect.x+crect.width) pos = i;
+            if (pt.x > crect.x && pt.x < crect.x + crect.width) {
+                pos = i;
+            }
         }
-        if (pos == -1 && (x->ll_bar_line!=2)) x->ll_mousefocus = 1;
-        else {
+        if (pos == -1 && (x->ll_bar_line != 2)) {
+            x->ll_mousefocus = 1;
+        } else {
             x->ll_selpos = jtextlayout_getnumchars(x->ll_jtl) - pos;
-            ll_number_formposition(x,1);
+            ll_number_formposition(x, 1);
         }
         jbox_redraw((t_jbox *)x);
     }
-    if (x->ll_mousefocus && (x->ll_bar_line!=2)) {
-        //val = pt.x / rect.width;
+
+    // Handle value adjustment based on mouse position
+    if (x->ll_mousefocus && (x->ll_bar_line != 2)) {
         val = (pt.x - x->ll_inset) / x->ll_width;
         ll_number_pos(x, val);
     }
-    
 }
 
+// On mouse drag
 void ll_number_mousedragdelta(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers){
-    double val;
-    double pos;
-    //post("modifiers: %d", modifiers);
     s_ll_number_cum.x += pt.x;
     s_ll_number_cum.y += pt.y;
-    //post("ptxxxx %f cum: %f", pt.x, s_ll_number_cum.x);
+
     if (s_ll_number_cum.x < x->ll_inset) s_ll_number_cum.x = x->ll_inset;
     if (s_ll_number_cum.x > x->ll_width + x->ll_inset) s_ll_number_cum.x = x->ll_width + x->ll_inset;
-    //jmouse_setposition_box(patcherview, (t_object*) x,s_ll_number_cum.x, s_ll_number_cum.y);
-    if (x->ll_mousefocus && (x->ll_bar_line!=2)) {
+
+    if (x->ll_mousefocus && (x->ll_bar_line != 2)) {
         if (modifiers != 24 && x->ll_amount >1 && x->ll_multidrag) {
-            x->ll_selitem = ll_number_selitem(x, patcherview, s_ll_number_cum.y);
+            x->ll_selitem = ll_number_get_selitem_from_y(x, patcherview, s_ll_number_cum.y);
         }
-        pos = (s_ll_number_cum.x - x->ll_inset) / x->ll_width;
+        double pos = (s_ll_number_cum.x - x->ll_inset) / x->ll_width;
         ll_number_pos(x, pos);
         
         // interpolate on fast drag
-        if (modifiers != 24 && x->ll_amount >1) {
+        if ((modifiers != (eAltKey + eLeftButton)) && (x->ll_amount > 1)) {
             if(abs(x->ll_selitem - s_ll_selold) > 1) {
                 short i, min, max;
                 double offset;
@@ -913,31 +946,34 @@ void ll_number_mousedragdelta(t_ll_number *x, t_object *patcherview, t_pt pt, lo
                     min = x->ll_selitem;
                     max = s_ll_selold;
                 }
-                offset = (atom_getfloat(&x->ll_vala[max]) - atom_getfloat(&x->ll_vala[min]))/(max-min);
+                double value_min = ll_number_get_value(x, min);
+                double value_max = ll_number_get_value(x, max);
+                
+                offset = (value_max - value_min) / (max - min);
                 for (i=min+1; i<max; i++) {
-                    atom_setfloat(&x->ll_vala[i], atom_getfloat(&x->ll_vala[min])+offset*(i-min));
-                    //x->ll_val[i] = x->ll_val[min]+offset*(i-min);
+                    atom_setfloat(&x->ll_vala[i], value_min + offset * (i - min));
                 }
             }
             s_ll_selold = x->ll_selitem;
         }
     }
     else {
-        val = atom_getfloat(&x->ll_vala[x->ll_selitem]) - pt.y * x->ll_formfactor;
-        ll_number_assign(x,val,true);
+        double value = ll_number_get_value(x, x->ll_selitem);
+        value -= pt.y * x->ll_formfactor;
+        ll_number_assign(x, value, true);
     }
 }
 
+// On mouse up, set cursor position
 void ll_number_mouseup(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers){
     t_rect rect;
 
     jbox_get_rect_for_view((t_object *)x, patcherview, &rect);
-    if (x->ll_mousefocus && (x->ll_bar_line!=2)) {
-        jmouse_setposition_box(patcherview, 
-                               (t_object*) x,
-                               ll_number_valtopos( x, atom_getfloat( &x->ll_vala[x->ll_selitem] ) ),
-                               (x->ll_selitem * (rect.height - x->ll_border) / x->ll_amount) + x->ll_border/2 + 0.5*(rect.height - x->ll_border/2)/x->ll_amount
-                               );
+    if (x->ll_mousefocus && (x->ll_bar_line != 2)) {
+        double value = ll_number_get_value(x, x->ll_selitem);
+        double box_x = ll_number_valtopos(x, value);
+        double box_y = (x->ll_selitem * (rect.height - x->ll_border) / x->ll_amount) + x->ll_border/2 + 0.5 * (rect.height - x->ll_border/2) / x->ll_amount;
+        jmouse_setposition_box(patcherview, (t_object*) x, box_x, box_y);
     }
 }
 
@@ -965,115 +1001,124 @@ t_max_err ll_number_notify(t_ll_number *x, t_symbol *s, t_symbol *msg, void *sen
     return jbox_notify((t_jbox *)x, s, msg, sender, data);
 }
 
-long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long modifiers, long textcharacter){
-    char txt[16]= "";
-    //post("txtchar %d keycode %d mod %d", textcharacter, keycode, modifiers);
-    
-    ll_number_formposition(x,0);
-    //atom_getfloat(&x->ll_vala[x->ll_selitem])
-    
-    if (textcharacter > 44 && textcharacter <58) { //|| textcharacter == 46
+// Keyboard Input -- typing new numbers, positioning cursor
+long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long modifiers, long textcharacter) {
+    char txt[16] = "";
+
+    // Ensure selection position is valid
+    ll_number_formposition(x, 0);
+
+    // Handle numeric and certain character inputs
+    if (textcharacter > 44 && textcharacter < 58) { // Allow numeric input
         txt[0] = textcharacter;
-        strcat(x->ll_buffer,txt);
-        //post("txt %s %f",x->ll_buffer, atof(x->ll_buffer));
-        x->ll_typing = 1;
+        strcat(x->ll_buffer, txt);
+        x->ll_is_typing = true;
         jbox_redraw((t_jbox *)x);
+        return;
     }
-    //post("%d %d", x->ll_ac, x->ll_selitem);
+    
+    double value = ll_number_get_value(x, x->ll_selitem);
+
     switch (textcharacter) {
-        case 30:
-            if (modifiers == 2 && x->ll_selitem > 0) {
+        // Handle navigation keys (up, down, left, right)
+        case TEXTCHAR_UP_ARROW:
+            if (modifiers == eShiftKey && x->ll_selitem > 0) {
                 x->ll_selitem--;
-                jbox_redraw(&x->ll_box);
+            } else {
+                ll_number_assign(x, value + x->ll_formfactor, true);
             }
-            else
-                ll_number_assign(x,atom_getfloat(&x->ll_vala[x->ll_selitem]) + x->ll_formfactor, true);
-            
+            jbox_redraw(&x->ll_box);
             break;
-        case 31:
-            if (modifiers == 2 && x->ll_selitem < x->ll_amount-1) {
+
+        case TEXTCHAR_DOWN_ARROW:
+            if (modifiers == eShiftKey && x->ll_selitem < x->ll_amount - 1) {
                 x->ll_selitem++;
-                jbox_redraw(&x->ll_box);
-            } else
-                ll_number_assign(x,atom_getfloat(&x->ll_vala[x->ll_selitem]) - x->ll_formfactor, true);
+            } else {
+                ll_number_assign(x, value - x->ll_formfactor, true);
+            }
+            jbox_redraw(&x->ll_box);
             break;
-        case 29:
+
+        case TEXTCHAR_LEFT_ARROW:
             x->ll_selpos--;
             ll_number_formposition(x, 1);
             jbox_redraw((t_jbox *)x);
             break;
-        case 28:
+
+        case TEXTCHAR_RIGHT_ARROW:
             x->ll_selpos++;
-            ll_number_formposition(x,-1);
+            ll_number_formposition(x, -1);
             jbox_redraw((t_jbox *)x);
             break;
-        case 13:
+
+        // Handle typing end with Enter, Return, or Tab
+        case TEXTCHAR_ENTER:
+        case TEXTCHAR_RETURN:
+        case TEXTCHAR_TAB:
             ll_number_endtyping(x);
             break;
-        case 3:
-            ll_number_endtyping(x);
+
+        case TEXTCHAR_ESCAPE:
+            x->ll_is_typing = false;
+            memset(&x->ll_buffer, 0, sizeof(x->ll_buffer));
             break;
-        case 9:
-            ll_number_endtyping(x);
-            break;
-        case 27:
-            x->ll_typing = 0;
-            memset(&x->ll_buffer, 0, 32);
+
+        default:
             break;
     }
-    return 0;	// returns 1 if you want to filter it from the key object
+    return 0; // Return 1 to filter key from the key object, 0 otherwise
 }
 
+// On typing end
 void ll_number_endtyping(t_ll_number *x){
-    if(x->ll_typing) {
-        x->ll_typing = 0;
+    if(x->ll_is_typing) {
+        x->ll_is_typing = false;
         ll_number_assign(x,atof(x->ll_buffer), true);
         memset(&x->ll_buffer, 0, 32);
     }
 }
 
-void ll_number_formposition(t_ll_number *x, long pm){
+// Get cursor position for typing number with keyboard
+void ll_number_formposition(t_ll_number *x, long pm) {
     long pos, pch;
 
-    if (x->ll_selpos > x->ll_string_length) 
-        x->ll_selpos = x->ll_string_length;
-    if (x->ll_selpos < 1) 
-        x->ll_selpos = 1;
-    
-    jtextlayout_getchar(x->ll_jtl, x->ll_string_length - x->ll_selpos, &pch);
-    
-    while(!(pch > 47 && pch < 58)){
-        x->ll_selpos = x->ll_selpos - pm;
-        if (x->ll_selpos < 1 || x->ll_string_length - x->ll_selpos < 0) {
-            pm = -pm;
-        } else {
-            jtextlayout_getchar(x->ll_jtl, x->ll_string_length - x->ll_selpos, &pch);
+    // Ensure selection position is within bounds
+    x->ll_selpos = (x->ll_selpos > x->ll_string_length) ? x->ll_string_length : x->ll_selpos;
+    x->ll_selpos = (x->ll_selpos < 1) ? 1 : x->ll_selpos;
+
+    // Find the closest digit character
+    do {
+        jtextlayout_getchar(x->ll_jtl, x->ll_string_length - x->ll_selpos, &pch);
+        if (!(pch >= '0' && pch <= '9')) {
+            x->ll_selpos -= pm;
+            if (x->ll_selpos < 1 || x->ll_string_length - x->ll_selpos < 0) {
+                pm = -pm; // Reverse direction
+            }
         }
-    }
+    } while (!(pch >= '0' && pch <= '9'));
+
+    // Handle formatting logic
     if (x->ll_form_length == 1) {
         pos = x->ll_selpos - x->ll_floatformpost - 1;
-        if(x->ll_floatpointpos == x->ll_floatformpre) 
+        if (x->ll_floatpointpos == x->ll_floatformpre) {
             pos++;
-        if (pos >0)
-            pos = pos - 1;
-        x->ll_formfactor = pow(10, pos);
+        }
+        x->ll_formfactor = (pos > 0) ? pow(10, pos - 1) : pow(10, pos);
     } else {
-        if(x->ll_selpos > x->ll_form_length)
-            x->ll_selpos = x->ll_form_length;
+        // Clamp selection position to form length
+        x->ll_selpos = (x->ll_selpos > x->ll_form_length) ? x->ll_form_length : x->ll_selpos;
         ll_number_formfactor(x);
     }
-    
 }
 
 void ll_number_formfactor(t_ll_number *x){
-    long formpos;
-    formpos = x->ll_form_length - x->ll_selpos;
-    switch (atom_gettype(&x->ll_tform[formpos])) {
+    t_atom atom_tform = x->ll_tform[ x->ll_form_length - x->ll_selpos ];
+    switch (atom_gettype(&atom_tform)) {
         case A_LONG:
-            x->ll_formfactor = atom_getlong(&x->ll_tform[formpos]);
+            x->ll_formfactor = atom_getlong(&atom_tform);
             break;
         case A_FLOAT:
-            x->ll_formfactor = atom_getfloat(&x->ll_tform[formpos]);
+            x->ll_formfactor = atom_getfloat(&atom_tform);
             break;
     }
 }
