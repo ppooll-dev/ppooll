@@ -123,7 +123,8 @@ function objdict(a)
 		d.set(a.varname+"::patching_rect", a.rect[0], a.rect[1], a.rect[2]-a.rect[0], a.rect[3]-a.rect[1]);
 		d.set(a.varname+"::hidden", a.hidden);		
 		attributes = a.getattrnames();	
-		//post(a.varname, a.maxclass, "\n", attributes, "\n");	
+		//post(a.varname, a.maxclass, "\n", attributes, "\n");
+		const pattern = /color/;	
 		for (i=0;i<attributes.length;i++) {
 			if (attributes[i] == "fontsize"){
 				if (a.maxclass != "patcher")
@@ -131,6 +132,11 @@ function objdict(a)
 			}
 			if (attributes[i] == "jsarguments"){
 				d.set(a.varname+"::jsarguments" , a.getattr(attributes[i]));			
+			}
+			if (pattern.test(attributes[i]) && a.maxclass != "patcher"){
+				//post("--------", a.varname, a.maxclass, attributes[i], a.getattr(attributes[i]), "\n");
+				d.set(a.varname+"::"+attributes[i] , a.getattr(attributes[i]));			
+
 			}
 		}
 	}
