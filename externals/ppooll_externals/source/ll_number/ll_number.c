@@ -31,10 +31,6 @@
 
 static t_class	*s_ll_number_class = 0;
 
-// mouse tracking
-static t_pt s_ll_number_cum;
-static short s_ll_selold;
-
 const short int MAX_NUM_VALUES = 256;
 const short int MAX_TEXT_LENGTH = 32;
 
@@ -60,39 +56,62 @@ const long TEXTCHAR_ESCAPE = 27;
     const long LEFT_CLICK_CTRL = 21;
 #endif
 
+typedef enum {
+    MOUSE_FOCUS_NUMBER,
+    MOUSE_FOCUS_SLIDER
+} MouseFocusModes;
+
+typedef enum {
+    DISPLAY_BAR,
+    DISPLAY_LINE,
+    DISPLAY_NONE
+} DisplayModes;
+
+typedef enum {
+    FIRST_ALL_NO,
+    FIRST_ALL_COPY,
+    FIRST_ALL_PROPORTIONAL,
+    FIRST_ALL_LINEAR
+} FirstToAllModes;
+
 typedef struct _ll_number
 {
     t_jbox		ll_box;
     t_atom		ll_vala[MAX_NUM_VALUES];
-    short		ll_selitem;
     long        ll_amount;
     
     t_atom		ll_min, ll_max;
-    double		ll_slider_min, ll_slider_max;
-    double		ll_slider_log;
-    char		ll_bar_line;
+    double		ll_slider_min, ll_slider_max, ll_slider_log;
+    bool        ll_zerosplitslog;
+    
+    short		ll_display_mode;
     t_atom		ll_mark;
     
-    t_jrgba		ll_brgba;
-    t_jrgba		ll_frgba;
-    t_jrgba		ll_frgba2;
-    t_jrgba		ll_slicolornof;
-    t_jrgba		ll_selectcolor;
-    t_jrgba		ll_textcolor;
-    t_jrgba		ll_textcolornofocus;
-    t_jrgba		ll_labelcolor;
-    char		ll_mousefocus;
-    char		ll_multidrag;
-    char		ll_zerosplitslog;
+    t_jrgba		ll_bgcolor,
+                ll_bordercolor,
+                ll_slidercolor,
+                ll_slicolornof,
+                ll_selectcolor,
+                ll_textcolor,
+                ll_textcolornofocus,
+                ll_labelcolor;
+    
+    short		ll_mousefocus;
+    bool        ll_multidrag;
+    long        ll_selpos;
+    short       ll_selitem;
+    short       ll_selold;
+    
+    t_pt        ll_number_cum;
     
     char		ll_selected;
+    
     bool		ll_is_typing;
     char		ll_right_mouse;
     
     t_atom		ll_format;
     t_atom		ll_tform[MAX_TEXT_LENGTH];
     double		ll_formfactor;
-    long		ll_selpos;
     
     char		ll_pval[MAX_TEXT_LENGTH];
     char		ll_buffer[MAX_TEXT_LENGTH];
@@ -110,7 +129,7 @@ typedef struct _ll_number
     long		ll_border;
     long		ll_inset;
     long		ll_width;
-    long		ll_first2all;
+    short		ll_first2all;
     
     t_atom      ll_label[MAX_NUM_VALUES];
     long        ll_labelcount;
@@ -130,25 +149,32 @@ void ll_number_pos(t_ll_number *x, double f);
 void ll_number_set(t_ll_number *x, t_symbol *s, short ac, t_atom *av);
 void ll_number_assign(t_ll_number *x, double f, long notify);
 void ll_number_redraw(t_ll_number *x);
+
 void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers);
 void ll_number_mousedragdelta(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers);
 void ll_number_mouseup(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers);
+long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long modifiers, long textcharacter);
+
 void ll_number_getdrawparams(t_ll_number *x, t_object *patcherview, t_jboxdrawparams *params);
+
 void ll_number_focusgained(t_ll_number *x, t_object *patcherview);
 void ll_number_focuslost(t_ll_number *x, t_object *patcherview);
+
 void ll_number_select(t_ll_number *x);
 void ll_number_doselect(t_ll_number *x);
+
+void ll_number_rand(t_ll_number *x, long it);
+
 void ll_number_printf(t_ll_number *x, double f);
 void ll_number_formposition(t_ll_number *x, long pm);
 void ll_number_formfactor(t_ll_number *x);
 void ll_number_endtyping(t_ll_number *x);
 void ll_number_floatformgen(t_ll_number *x);
-void ll_number_rand(t_ll_number *x, long it);
-double ll_number_constrain(t_ll_number *x, double f);
-void ll_number_constrain_all(t_ll_number *x);
-double ll_number_valtopos(t_ll_number *x, double val);
-short ll_number_get_selitem_from_y(t_ll_number *x, t_object *patcherview, double val);
-long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long modifiers, long textcharacter);
+
+double  ll_number_valtopos(t_ll_number *x, double val);
+double  ll_number_constrain(t_ll_number *x, double f);
+void    ll_number_constrain_all(t_ll_number *x);
+short   ll_number_get_selitem_from_y(t_ll_number *x, t_object *patcherview, double val);
 
 // Helpers
 bool ll_number_is_atom_a_number(long ac, t_atom *av);
@@ -255,7 +281,7 @@ void ext_main(void *r){
     CLASS_ATTR_ENUMINDEX(c,			"zerosplitslog", 0, "off on");
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"zerosplitslog", 0, "0");
     
-    CLASS_ATTR_CHAR(c,				"sliderstyle", 0, t_ll_number, ll_bar_line);
+    CLASS_ATTR_CHAR(c,				"sliderstyle", 0, t_ll_number, ll_display_mode);
     CLASS_ATTR_STYLE_LABEL(c,		"sliderstyle", 0, "enum", "Slider Style");
     CLASS_ATTR_ENUMINDEX(c,			"sliderstyle", 0, "Bar Thin_Line Off");
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"sliderstyle", 0, "1");
@@ -314,12 +340,12 @@ void ext_main(void *r){
     //########## colors
     CLASS_STICKY_ATTR(c, "category", 0, "Color");
     
-    CLASS_ATTR_RGBA_LEGACY(c,			"bgcolor", "brgb", 0, t_ll_number, ll_brgba);
+    CLASS_ATTR_RGBA_LEGACY(c,			"bgcolor", "brgb", 0, t_ll_number, ll_bgcolor);
     CLASS_ATTR_ALIAS(c,					"bgcolor", "brgba");
     CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"bgcolor", 0, "1. 1. 1. 1.");
     CLASS_ATTR_STYLE_LABEL(c,			"bgcolor", 0, "rgba", "Background Color");
     
-    CLASS_ATTR_RGBA_LEGACY(c,			"bordercolor", "rgb2",0, t_ll_number, ll_frgba2);
+    CLASS_ATTR_RGBA_LEGACY(c,			"bordercolor", "rgb2",0, t_ll_number, ll_bordercolor);
     CLASS_ATTR_ALIAS(c,					"bordercolor", "rgba2");
     CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"bordercolor", 0, "0.5 0.5 0.5 1.");
     CLASS_ATTR_STYLE_LABEL(c,			"bordercolor", 0, "rgba","Border Color");
@@ -332,7 +358,7 @@ void ext_main(void *r){
     CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"textcolornofocus", 0, "0.48 0.48 0.48 0.79");
     CLASS_ATTR_STYLE_LABEL(c,			"textcolornofocus", 0, "rgba","Number Color nofocus");
     
-    CLASS_ATTR_RGBA_LEGACY(c,			"slidercolor", "frgb", 0, t_ll_number, ll_frgba);
+    CLASS_ATTR_RGBA_LEGACY(c,			"slidercolor", "frgb", 0, t_ll_number, ll_slidercolor);
     CLASS_ATTR_ALIAS(c,					"slidercolor", "frgba");
     CLASS_ATTR_DEFAULTNAME_SAVE_PAINT(c,"slidercolor", 0, "0. 0. 0. 1.");
     CLASS_ATTR_STYLE_LABEL(c,			"slidercolor", 0, "rgba","Slider Color");
@@ -521,23 +547,23 @@ void ll_number_paint(t_ll_number *x, t_object *view) {
     jgraphics_rectangle_fill_fast(g, 0, 0, rect.width, rect.height);
 
     // Border
-    jgraphics_set_source_jrgba(g, &x->ll_frgba2);
+    jgraphics_set_source_jrgba(g, &x->ll_bordercolor);
     jgraphics_rectangle(g, 0, 0, rect.width, rect.height);
     jgraphics_set_line_width(g, x->ll_border);
     jgraphics_stroke(g);
 
     h = (rect.height - x->ll_border) / x->ll_amount;
     x->ll_inset = x->ll_border / 2;
-    x->ll_width = rect.width - x->ll_border - x->ll_bar_line * 2 + 1;
+    x->ll_width = rect.width - x->ll_border - x->ll_display_mode * 2 + 1;
 
     for (short i = 0; i < x->ll_amount; i++) {
         up = i * h + x->ll_border / 2;
         pos = ll_number_valtopos(x, atom_getfloat(&x->ll_vala[i]));
 
         // Slider
-        slider_color = x->ll_mousefocus ? x->ll_frgba : x->ll_slicolornof;
+        slider_color = (x->ll_mousefocus == MOUSE_FOCUS_SLIDER) ? x->ll_slidercolor : x->ll_slicolornof;
         jgraphics_set_source_jrgba(g, &slider_color);
-        if (x->ll_bar_line) {
+        if (x->ll_display_mode != DISPLAY_BAR) {
             jgraphics_rectangle(g, pos, up, 2, h);
         } else {
             jgraphics_rectangle(g, x->ll_inset, up, pos - x->ll_inset, h);
@@ -550,22 +576,17 @@ void ll_number_paint(t_ll_number *x, t_object *view) {
             jgraphics_rectangle(g, ll_number_valtopos(x, atom_getfloat(&x->ll_mark)), up + 2, 1, h - 4);
             jgraphics_fill(g);
         }
-
         // Multi-number lines
         if (i > 0) {
-            jgraphics_set_source_jrgba(g, &x->ll_frgba2);
+            jgraphics_set_source_jrgba(g, &x->ll_bordercolor);
             jgraphics_rectangle(g, 0, up, rect.width, 1);
             jgraphics_fill(g);
         }
-
         // Draw the value text
         ll_number_draw_text(x, g, i, up, h);
         
         // Label
-        if (atom_gettype(&x->ll_label[0]) == A_NOTHING) {
-            // TODO: Clear label
-            ll_number_draw_label(x, g, "", up, h);
-        } else if (atom_gettype(&x->ll_label[i]) == A_SYM) {
+        if (atom_gettype(&x->ll_label[i]) == A_SYM) {
             // If this list item has a label, draw it
             char *label_text = NULL;
             long textsize = 0;
@@ -594,7 +615,7 @@ void ll_number_draw_text(t_ll_number *x, t_jgraphics *g, short i, double up, dou
 
     ll_number_printf(x, value);  // Prepare value text for drawing
     jtextlayout_set(jtl, x->ll_pval, jf, x->ll_inset, up,
-                    x->ll_width - (1 - x->ll_bar_line * 2) - 1, h,
+                    x->ll_width - (1 - x->ll_display_mode * 2) - 1, h,
                     JGRAPHICS_TEXT_JUSTIFICATION_RIGHT, JGRAPHICS_TEXTLAYOUT_NOWRAP);
 
     // Store jtl reference for selected item
@@ -613,7 +634,7 @@ void ll_number_draw_text(t_ll_number *x, t_jgraphics *g, short i, double up, dou
     }
 
     // Draw the value
-    jtextlayout_settextcolor(jtl, x->ll_mousefocus ? &x->ll_textcolornofocus : &x->ll_textcolor);
+    jtextlayout_settextcolor(jtl, (x->ll_mousefocus == MOUSE_FOCUS_SLIDER) ? &x->ll_textcolornofocus : &x->ll_textcolor);
     jtextlayout_draw(jtl, g);
 
     jfont_destroy(jf);
@@ -697,13 +718,12 @@ void ll_number_assign(t_ll_number *x, double f, long notify) {
         double fcalc = 0;
 
         switch (x->ll_first2all) {
-            case 1:  // Apply f to all
+            case FIRST_ALL_COPY:  // Apply f to all
                 for (int i = 1; i < x->ll_amount; i++) {
                     values[i] = new_value;
                 }
                 break;
-
-            case 2:  // Scale others proportionally
+            case FIRST_ALL_PROPORTIONAL:  // Scale others proportionally
                 if (values[0] != 0.0) {
                     fcalc = new_value / values[0];
                     for (int i = 1; i < x->ll_amount; i++) {
@@ -711,8 +731,7 @@ void ll_number_assign(t_ll_number *x, double f, long notify) {
                     }
                 }
                 break;
-
-            case 3:  // Add the difference to others
+            case FIRST_ALL_LINEAR:  // Add the difference to others
                 fcalc = new_value - values[0];
                 for (int i = 1; i < x->ll_amount; i++) {
                     values[i] = values[i] + fcalc;
@@ -756,7 +775,7 @@ double ll_number_constrain(t_ll_number *x, double f) {
     }
 
     // Apply rounding if not focused
-    if (x->ll_mousefocus == 0) {
+    if (x->ll_mousefocus == MOUSE_FOCUS_NUMBER) {
         f = round(f * m) / m; // Use `round` for `double` instead of `roundf`
     }
     return f;
@@ -826,7 +845,7 @@ void ll_number_pos(t_ll_number *x, double pos) {
     double val;
     if (slider_log == 0) {
         val = pos * slider_diff + min;
-    } else if (x->ll_zerosplitslog == 0) {
+    } else if (!x->ll_zerosplitslog) {
         double exp_neg_log = exp(-slider_log);
         val = (exp((pos - 1.0) * slider_log) - 1) / (exp_neg_log - 1) * (min - max) + max;
     } else {
@@ -853,7 +872,7 @@ double ll_number_valtopos(t_ll_number *x, double val) {
     double pos;
     if (slider_log == 0) {
         pos = (val - min) / slider_diff;
-    } else if (x->ll_zerosplitslog == 0) {
+    } else if (!x->ll_zerosplitslog) {
         double exp_neg_log = exp(-slider_log);
         pos = (log((val - max) * (exp_neg_log - 1) / (min - max) + 1) / slider_log) + 1;
     } else {
@@ -888,39 +907,46 @@ void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
     double val;
     long pos, i;
 
-    s_ll_number_cum = pt;
+    x->ll_number_cum = pt;
 
     // Handle right mouse button
     if (modifiers & eRightButton) {
         x->ll_right_mouse = 1;
-        if (x->ll_mousefocus) {
-            x->ll_mousefocus = 0;
+        if (x->ll_mousefocus == MOUSE_FOCUS_SLIDER) {
+            x->ll_mousefocus = MOUSE_FOCUS_NUMBER;
             jbox_redraw((t_jbox *)x);
         }
         return; // Right mouse processing done
     }
 
     // Handle left mouse button and mouse focus
-    if (x->ll_right_mouse && (modifiers & eLeftButton) && !x->ll_mousefocus && (x->ll_bar_line != 2)) {
-        x->ll_mousefocus = 1;
+    if (
+        x->ll_right_mouse && (modifiers & eLeftButton) &&
+        (x->ll_mousefocus == MOUSE_FOCUS_NUMBER) &&
+        (x->ll_display_mode != DISPLAY_NONE)
+    ){
+        x->ll_mousefocus = MOUSE_FOCUS_SLIDER;
         jbox_redraw((t_jbox *)x);
     }
     
     // Hanlde right mouse button
     if (modifiers == RIGHT_CLICK) {
-        x->ll_mousefocus = 0;
+        x->ll_mousefocus = MOUSE_FOCUS_NUMBER;
         jbox_redraw((t_jbox *)x);
-    } else if ((modifiers == LEFT_CLICK_ALT || modifiers == LEFT_CLICK_CTRL) && (x->ll_bar_line != 2)) {
-        x->ll_mousefocus = 1;
+    } else if (
+               (modifiers == LEFT_CLICK_ALT || modifiers == LEFT_CLICK_CTRL) && 
+               (x->ll_display_mode != DISPLAY_NONE)
+    ) {
+        x->ll_mousefocus = MOUSE_FOCUS_SLIDER;
         jbox_redraw((t_jbox *)x);
     }
 
     // Determine the selected item
     x->ll_selitem = ll_number_get_selitem_from_y(x, patcherview, pt.y);
-    s_ll_selold = x->ll_selitem;
+    x->ll_selold = x->ll_selitem;
 
     // Handle mouse focus and position
-    if (!x->ll_mousefocus) {
+    if (x->ll_mousefocus == MOUSE_FOCUS_NUMBER) {
         pos = -1;
         for (i = 0; i < jtextlayout_getnumchars(x->ll_jtl); i++) {
             jtextlayout_getcharbox(x->ll_jtl, i, &crect);
@@ -928,8 +954,8 @@ void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
                 pos = i;
             }
         }
-        if (pos == -1 && (x->ll_bar_line != 2)) {
-            x->ll_mousefocus = 1;
+        if (pos == -1 && (x->ll_display_mode != DISPLAY_NONE)) {
+            x->ll_mousefocus = MOUSE_FOCUS_SLIDER;
         } else {
             x->ll_selpos = jtextlayout_getnumchars(x->ll_jtl) - pos;
             ll_number_formposition(x, 1);
@@ -938,7 +964,7 @@ void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
     }
 
     // Handle value adjustment based on mouse position
-    if (x->ll_mousefocus && (x->ll_bar_line != 2)) {
+    if ((x->ll_mousefocus == MOUSE_FOCUS_SLIDER) && (x->ll_display_mode != DISPLAY_NONE)) {
         val = (pt.x - x->ll_inset) / x->ll_width;
         ll_number_pos(x, val);
     }
@@ -946,31 +972,31 @@ void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
 
 // On mouse drag
 void ll_number_mousedragdelta(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers){
-    s_ll_number_cum.x += pt.x;
-    s_ll_number_cum.y += pt.y;
+    x->ll_number_cum.x += pt.x;
+    x->ll_number_cum.y += pt.y;
 
-    if (s_ll_number_cum.x < x->ll_inset) s_ll_number_cum.x = x->ll_inset;
-    if (s_ll_number_cum.x > x->ll_width + x->ll_inset) s_ll_number_cum.x = x->ll_width + x->ll_inset;
+    if (x->ll_number_cum.x < x->ll_inset) x->ll_number_cum.x = x->ll_inset;
+    if (x->ll_number_cum.x > x->ll_width + x->ll_inset) x->ll_number_cum.x = x->ll_width + x->ll_inset;
 
-    if (x->ll_mousefocus && (x->ll_bar_line != 2)) {
+    if ((x->ll_mousefocus == MOUSE_FOCUS_SLIDER) && (x->ll_display_mode != DISPLAY_NONE)) {
         if (modifiers != 24 && x->ll_amount >1 && x->ll_multidrag) {
-            x->ll_selitem = ll_number_get_selitem_from_y(x, patcherview, s_ll_number_cum.y);
+            x->ll_selitem = ll_number_get_selitem_from_y(x, patcherview, x->ll_number_cum.y);
         }
-        double pos = (s_ll_number_cum.x - x->ll_inset) / x->ll_width;
+        double pos = (x->ll_number_cum.x - x->ll_inset) / x->ll_width;
         ll_number_pos(x, pos);
         
         // interpolate on fast drag
         if ((modifiers != (eAltKey + eLeftButton)) && (x->ll_amount > 1)) {
-            if(abs(x->ll_selitem - s_ll_selold) > 1) {
+            if(abs(x->ll_selitem - x->ll_selold) > 1) {
                 short i, min, max;
                 double offset;
-                if(x->ll_selitem > s_ll_selold) {
-                    min = s_ll_selold;
+                if(x->ll_selitem > x->ll_selold) {
+                    min = x->ll_selold;
                     max = x->ll_selitem;
                 }
                 else{
                     min = x->ll_selitem;
-                    max = s_ll_selold;
+                    max = x->ll_selold;
                 }
                 double value_min = ll_number_get_value(x, min);
                 double value_max = ll_number_get_value(x, max);
@@ -980,7 +1006,7 @@ void ll_number_mousedragdelta(t_ll_number *x, t_object *patcherview, t_pt pt, lo
                     atom_setfloat(&x->ll_vala[i], value_min + offset * (i - min));
                 }
             }
-            s_ll_selold = x->ll_selitem;
+            x->ll_selold = x->ll_selitem;
         }
     }
     else {
@@ -995,18 +1021,19 @@ void ll_number_mouseup(t_ll_number *x, t_object *patcherview, t_pt pt, long modi
     t_rect rect;
 
     jbox_get_rect_for_view((t_object *)x, patcherview, &rect);
-    if (x->ll_mousefocus && (x->ll_bar_line != 2)) {
+    if ((x->ll_mousefocus == MOUSE_FOCUS_SLIDER) && (x->ll_display_mode != DISPLAY_NONE)) {
         double value = ll_number_get_value(x, x->ll_selitem);
+        double border_half = x->ll_border / 2;
         double box_x = ll_number_valtopos(x, value);
-        double box_y = (x->ll_selitem * (rect.height - x->ll_border) / x->ll_amount) + x->ll_border/2 + 0.5 * (rect.height - x->ll_border/2) / x->ll_amount;
+        double box_y = (x->ll_selitem * (rect.height - x->ll_border) / x->ll_amount) + border_half + 0.5 * (rect.height - border_half) / x->ll_amount;
         jmouse_setposition_box(patcherview, (t_object*) x, box_x, box_y);
     }
 }
 
 void ll_number_getdrawparams(t_ll_number *x, t_object *patcherview, t_jboxdrawparams *params){
     params->d_borderthickness = x->ll_border;
-    params->d_bordercolor = x->ll_frgba2;
-    params->d_boxfillcolor = x->ll_brgba;
+    params->d_bordercolor = x->ll_bordercolor;
+    params->d_boxfillcolor = x->ll_bgcolor;
 }
 
 t_max_err ll_number_notify(t_ll_number *x, t_symbol *s, t_symbol *msg, void *sender, void *data){
