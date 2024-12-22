@@ -807,7 +807,7 @@ void ll_number_set(t_ll_number *x, t_symbol *s, short ac, t_atom *av){
 // Set value of this ll_number object
 t_max_err ll_number_setvalueof(t_ll_number *x, long ac, t_atom *av){
     if(!ac || !av)
-        return;
+        return MAX_ERR_NONE;
         
     atom_setatom_array(ac ,x->ll_vala, ac, av);
     x->ll_amount = ac;
@@ -1067,7 +1067,7 @@ long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long mod
         strcat(x->ll_buffer, txt);
         x->ll_is_typing = true;
         jbox_redraw((t_jbox *)x);
-        return;
+        return 0;
     }
     
     double value = ll_number_get_value(x, x->ll_selitem);
