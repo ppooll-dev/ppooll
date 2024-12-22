@@ -1,5 +1,5 @@
 /*
- ll_number version 1.6
+ ll_number version 1.5.1
  by klaus filip
  
  with support from the cycling74 dev forum and noid
@@ -62,10 +62,10 @@ typedef enum {
 } MouseFocusModes;
 
 typedef enum {
-    DISPLAY_BAR,
-    DISPLAY_LINE,
-    DISPLAY_NONE
-} DisplayModes;
+    SLIDER_STYLE_BAR,
+    SLIDER_STYLE_LINE,
+    SLIDER_STYLE_NONE
+} SliderStyles;
 
 typedef enum {
     FIRST_ALL_NO,
@@ -84,7 +84,7 @@ typedef struct _ll_number
     double		ll_slider_min, ll_slider_max, ll_slider_log;
     bool        ll_zerosplitslog;
     
-    short		ll_display_mode;
+    short		ll_sliderstyle;
     t_atom		ll_mark;
     
     t_jrgba		ll_bgcolor,
@@ -149,6 +149,7 @@ void ll_number_pos(t_ll_number *x, double f);
 void ll_number_set(t_ll_number *x, t_symbol *s, short ac, t_atom *av);
 void ll_number_assign(t_ll_number *x, double f, long notify);
 void ll_number_redraw(t_ll_number *x);
+void ll_number_about(t_ll_number *x);
 
 void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers);
 void ll_number_mousedragdelta(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers);
@@ -231,6 +232,8 @@ void ext_main(void *r){
     class_addmethod(c, (method)ll_number_select,		"select",		0);
     class_addmethod(c, (method)ll_number_rand,			"rand", A_LONG, 0);
     
+    class_addmethod(c, (method)ll_number_about,         "about", 0);
+    
     CLASS_ATTR_DEFAULT(c,"patching_rect", 0, "0. 0. 70. 14.");
     
     //########### ll_number
@@ -281,7 +284,7 @@ void ext_main(void *r){
     CLASS_ATTR_ENUMINDEX(c,			"zerosplitslog", 0, "off on");
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"zerosplitslog", 0, "0");
     
-    CLASS_ATTR_CHAR(c,				"sliderstyle", 0, t_ll_number, ll_display_mode);
+    CLASS_ATTR_CHAR(c,				"sliderstyle", 0, t_ll_number, ll_sliderstyle);
     CLASS_ATTR_STYLE_LABEL(c,		"sliderstyle", 0, "enum", "Slider Style");
     CLASS_ATTR_ENUMINDEX(c,			"sliderstyle", 0, "Bar Thin_Line Off");
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"sliderstyle", 0, "1");
@@ -449,6 +452,10 @@ void ll_number_free(t_ll_number *x){
     jbox_free(&x->ll_box);
 }
 
+void ll_number_about(t_ll_number *x){
+    post("ll_number - v1.5.1");
+}
+
 bool ll_number_is_atom_a_number(long ac, t_atom *av){
     return ac == 1 && av && (atom_gettype(av) == A_LONG || atom_gettype(av) == A_FLOAT);
 }
@@ -554,7 +561,7 @@ void ll_number_paint(t_ll_number *x, t_object *view) {
 
     h = (rect.height - x->ll_border) / x->ll_amount;
     x->ll_inset = x->ll_border / 2;
-    x->ll_width = rect.width - x->ll_border - x->ll_display_mode * 2 + 1;
+    x->ll_width = rect.width - x->ll_border - x->ll_sliderstyle * 2 + 1;
 
     for (short i = 0; i < x->ll_amount; i++) {
         up = i * h + x->ll_border / 2;
@@ -563,12 +570,16 @@ void ll_number_paint(t_ll_number *x, t_object *view) {
         // Slider
         slider_color = (x->ll_mousefocus == MOUSE_FOCUS_SLIDER) ? x->ll_slidercolor : x->ll_slicolornof;
         jgraphics_set_source_jrgba(g, &slider_color);
-        if (x->ll_display_mode != DISPLAY_BAR) {
-            jgraphics_rectangle(g, pos, up, 2, h);
-        } else {
-            jgraphics_rectangle(g, x->ll_inset, up, pos - x->ll_inset, h);
+        switch(x->ll_sliderstyle){
+            case SLIDER_STYLE_BAR:
+                jgraphics_rectangle(g, x->ll_inset, up, pos - x->ll_inset, h + 1);
+                break;
+            case SLIDER_STYLE_LINE:
+                jgraphics_rectangle(g, pos, up, 2, h + 1);
+                break;
         }
-        jgraphics_fill(g);
+        if (x->ll_sliderstyle != SLIDER_STYLE_NONE)
+            jgraphics_fill(g);
 
         // Mark (if applicable)
         if (atom_getsym(&x->ll_mark) != gensym("<none>")) {
@@ -615,7 +626,7 @@ void ll_number_draw_text(t_ll_number *x, t_jgraphics *g, short i, double up, dou
 
     ll_number_printf(x, value);  // Prepare value text for drawing
     jtextlayout_set(jtl, x->ll_pval, jf, x->ll_inset, up,
-                    x->ll_width - (1 - x->ll_display_mode * 2) - 1, h,
+                    x->ll_width - (1 - x->ll_sliderstyle * 2) - 1, h,
                     JGRAPHICS_TEXT_JUSTIFICATION_RIGHT, JGRAPHICS_TEXTLAYOUT_NOWRAP);
 
     // Store jtl reference for selected item
@@ -923,7 +934,7 @@ void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
     if (
         x->ll_right_mouse && (modifiers & eLeftButton) &&
         (x->ll_mousefocus == MOUSE_FOCUS_NUMBER) &&
-        (x->ll_display_mode != DISPLAY_NONE)
+        (x->ll_sliderstyle != SLIDER_STYLE_NONE)
     ){
         x->ll_mousefocus = MOUSE_FOCUS_SLIDER;
         jbox_redraw((t_jbox *)x);
@@ -935,7 +946,7 @@ void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
         jbox_redraw((t_jbox *)x);
     } else if (
                (modifiers == LEFT_CLICK_ALT || modifiers == LEFT_CLICK_CTRL) && 
-               (x->ll_display_mode != DISPLAY_NONE)
+               (x->ll_sliderstyle != SLIDER_STYLE_NONE)
     ) {
         x->ll_mousefocus = MOUSE_FOCUS_SLIDER;
         jbox_redraw((t_jbox *)x);
@@ -954,7 +965,7 @@ void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
                 pos = i;
             }
         }
-        if (pos == -1 && (x->ll_display_mode != DISPLAY_NONE)) {
+        if (pos == -1 && (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
             x->ll_mousefocus = MOUSE_FOCUS_SLIDER;
         } else {
             x->ll_selpos = jtextlayout_getnumchars(x->ll_jtl) - pos;
@@ -964,7 +975,7 @@ void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
     }
 
     // Handle value adjustment based on mouse position
-    if ((x->ll_mousefocus == MOUSE_FOCUS_SLIDER) && (x->ll_display_mode != DISPLAY_NONE)) {
+    if ((x->ll_mousefocus == MOUSE_FOCUS_SLIDER) && (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
         val = (pt.x - x->ll_inset) / x->ll_width;
         ll_number_pos(x, val);
     }
@@ -978,7 +989,7 @@ void ll_number_mousedragdelta(t_ll_number *x, t_object *patcherview, t_pt pt, lo
     if (x->ll_number_cum.x < x->ll_inset) x->ll_number_cum.x = x->ll_inset;
     if (x->ll_number_cum.x > x->ll_width + x->ll_inset) x->ll_number_cum.x = x->ll_width + x->ll_inset;
 
-    if ((x->ll_mousefocus == MOUSE_FOCUS_SLIDER) && (x->ll_display_mode != DISPLAY_NONE)) {
+    if ((x->ll_mousefocus == MOUSE_FOCUS_SLIDER) && (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
         if (modifiers != 24 && x->ll_amount >1 && x->ll_multidrag) {
             x->ll_selitem = ll_number_get_selitem_from_y(x, patcherview, x->ll_number_cum.y);
         }
@@ -1021,7 +1032,7 @@ void ll_number_mouseup(t_ll_number *x, t_object *patcherview, t_pt pt, long modi
     t_rect rect;
 
     jbox_get_rect_for_view((t_object *)x, patcherview, &rect);
-    if ((x->ll_mousefocus == MOUSE_FOCUS_SLIDER) && (x->ll_display_mode != DISPLAY_NONE)) {
+    if ((x->ll_mousefocus == MOUSE_FOCUS_SLIDER) && (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
         double value = ll_number_get_value(x, x->ll_selitem);
         double border_half = x->ll_border / 2;
         double box_x = ll_number_valtopos(x, value);
