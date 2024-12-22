@@ -868,6 +868,10 @@ void ll_number_pos(t_ll_number *x, double pos) {
             val = (exp((pos / split_pos - 1) * -slider_log) - 1) / (exp_pos_log - 1) * min;
         }
     }
+    // Round value according to attribute "format"
+    double scale = pow(10.0, x->ll_floatformpost);
+    val = round(val * scale) / scale;
+    
     ll_number_assign(x, val, true);
 }
 
