@@ -501,7 +501,7 @@ void ll_number_printf(t_ll_number *x, double f) {
 
         for (long i = 0; i < x->ll_format_len; i++) {
             t_atom *tform = &x->ll_format[i];
-            switch (atom_gettype(&x->ll_format[0])) {
+            switch (atom_gettype(&x->ll_format[i])) {
                 case A_LONG: {
                     long divisor = atom_getlong(tform);
                     snprintf(str, sizeof(str), "%ld", (long)(f / divisor));
