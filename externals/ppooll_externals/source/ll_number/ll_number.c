@@ -29,10 +29,12 @@
     #include <float.h>
 #endif
 
-static t_class	*s_ll_number_class = 0;
+enum {
+    MAX_NUM_VALUES = 256,
+    MAX_TEXT_LENGTH = 32
+};
 
-const short int MAX_NUM_VALUES = 256;
-const short int MAX_TEXT_LENGTH = 32;
+static t_class	*s_ll_number_class = 0;
 
 const long TEXTCHAR_UP_ARROW = 30;
 const long TEXTCHAR_DOWN_ARROW = 31;
@@ -116,7 +118,7 @@ typedef struct _ll_number
     int         ll_format_fraction;             // "format" fractional number (right of decimal)
     bool        ll_format_is_int;               // "format" is int
 
-    char        ll_floatpointpos;
+    char        ll_format_point_pos;
     double      ll_formfactor;                  // The decimal location of the selected number ???
     
     char		ll_pval[MAX_TEXT_LENGTH];
@@ -449,7 +451,6 @@ void *ll_number_new(t_symbol *s, short argc, t_atom *argv){
             for (int j = 0; j < i; j++) {
                 free(x->ll_label_list[j]);
             }
-            return MAX_ERR_GENERIC;
         }
         x->ll_label_list[i][0] = '\0'; // Initialize as an empty string
     }
@@ -686,7 +687,6 @@ void ll_number_list(t_ll_number *x, t_symbol *s, short ac, t_atom *av) {
 }
 
 // Redraw the UI
-//      TODO: Do we need this?
 void ll_number_redraw(t_ll_number *x){
     object_notify(x, _sym_modified, NULL);
     jbox_redraw(&x->ll_box);
@@ -1131,7 +1131,7 @@ void ll_number_formposition(t_ll_number *x, long pm) {
     // Handle formatting logic
     if (x->ll_format_len == 1) {
         pos = x->ll_selpos - x->ll_format_fraction - 1;
-        if (x->ll_floatpointpos == x->ll_format_whole) {
+        if (x->ll_format_point_pos == x->ll_format_whole) {
             pos++;
         }
         x->ll_formfactor = (pos > 0) ? pow(10, pos - 1) : pow(10, pos);
@@ -1166,6 +1166,10 @@ void ll_number_focuslost(t_ll_number *x, t_object *patcherview){
     jbox_redraw(&x->ll_box);
 }
 
+// --------------------------
+// OBJECT ATTRIBUTE SETTERS
+// --------------------------
+
 // Helper for setting number attributes with an option for symbol "<none>"
 t_max_err ll_number_setattr_helper(t_ll_number *x, long ac, t_atom *av, t_atom *attr_val) {
     if (!ll_number_is_atom_a_number(ac, av)) {
@@ -1176,10 +1180,6 @@ t_max_err ll_number_setattr_helper(t_ll_number *x, long ac, t_atom *av, t_atom *
     atom_setfloat(attr_val, value); // Set the float value in the atom
     return MAX_ERR_NONE;
 }
-
-// --------------------------
-// OBJECT ATTRIBUTE SETTERS
-// --------------------------
 
 // Set Attribute - "min"
 t_max_err ll_number_setattr_ll_min(t_ll_number *x, void *attr, long ac, t_atom *av) {
@@ -1229,7 +1229,7 @@ void ll_number_reset_format(t_ll_number *x){
     x->ll_format_len = 1;
     x->ll_format_fraction = 2;
     x->ll_format_whole = 3;
-    x->ll_floatpointpos = 3;
+    x->ll_format_point_pos = 3;
     x->ll_format_is_int = false;
 }
 
@@ -1245,8 +1245,8 @@ t_max_err ll_number_setattr_ll_format(t_ll_number *x, void *attr, long ac, t_ato
         ll_number_reset_format(x);
         return MAX_ERR_NONE;
     }
-    if( !ll_number_is_atom_a_number(1, &av[0])){
-        error("Leading symbol in format. Reverting to default 3.2.");
+    if( !ll_number_is_atom_a_number(1, &av[0]) ){
+        error("Leading symbol in format. Reverting to default format 3.2.");
         ll_number_reset_format(x);
         return MAX_ERR_NONE;
     }
@@ -1254,7 +1254,7 @@ t_max_err ll_number_setattr_ll_format(t_ll_number *x, void *attr, long ac, t_ato
     x->ll_format_len = ac;
     x->ll_format_fraction = (int)round(fmod(format_float, 1) * 10);
     x->ll_format_whole = (int)format_float;
-    x->ll_floatpointpos = (int)format_float;
+    x->ll_format_point_pos = (int)format_float;
     x->ll_format_is_int = atom_gettype(&av[0]) == A_LONG;
 
     if (x->ll_format_fraction)
