@@ -96,7 +96,8 @@ typedef struct _ll_number
                 ll_textcolornofocus,
                 ll_labelcolor;
     
-    short		ll_mousefocus;
+    bool        ll_selected;                    // Object is selected / has focused
+    short		ll_mouse_focus_mode;
     bool        ll_multidrag;
     long        ll_selpos;
     short       ll_selitem;
@@ -104,22 +105,22 @@ typedef struct _ll_number
     
     t_pt        ll_number_cum;
     
-    char		ll_selected;
     
     bool		ll_is_typing;
-    char		ll_right_mouse;
+    bool		ll_right_mouse;
     
-    t_atom		ll_format;
-    t_atom		ll_tform[MAX_TEXT_LENGTH];
-    double		ll_formfactor;
+    t_atom		ll_format[MAX_TEXT_LENGTH];     // Set by attribute "format"
+    long        ll_format_len;                  // Set by attribute "format"
+    
+    int         ll_format_whole;                // "format" whole number (left of decimal)
+    int         ll_format_fraction;             // "format" fractional number (right of decimal)
+    bool        ll_format_is_int;               // "format" is int
+
+    char        ll_floatpointpos;
+    double      ll_formfactor;                  // The decimal location of the selected number ???
     
     char		ll_pval[MAX_TEXT_LENGTH];
     char		ll_buffer[MAX_TEXT_LENGTH];
-    double		ll_floatform;
-    char		ll_floatpointpos;
-    int			ll_floatformpre;
-    int			ll_floatformpost;
-    long		ll_form_length;
     double		ll_vert_offset;
     
     long		ll_string_length;
@@ -133,8 +134,6 @@ typedef struct _ll_number
     
     t_atom      ll_label[MAX_NUM_VALUES];
     long        ll_labelcount;
-    bool        ll_isint;
-    
 } t_ll_number;
 
 void *ll_number_new(t_symbol *s, short argc, t_atom *argv);
@@ -145,9 +144,11 @@ void ll_number_bang(t_ll_number *x);
 void ll_number_int(t_ll_number *x, long n);
 void ll_number_float(t_ll_number *x, double f);
 void ll_number_list(t_ll_number *x, t_symbol *s, short ac, t_atom *av);
+t_max_err ll_number_notify(t_ll_number *x, t_symbol *s, t_symbol *msg, void *sender, void *data);
+
 void ll_number_pos(t_ll_number *x, double f);
 void ll_number_set(t_ll_number *x, t_symbol *s, short ac, t_atom *av);
-void ll_number_assign(t_ll_number *x, double f, long notify);
+void ll_number_assign(t_ll_number *x, double f);
 void ll_number_redraw(t_ll_number *x);
 void ll_number_about(t_ll_number *x);
 
@@ -170,7 +171,6 @@ void ll_number_printf(t_ll_number *x, double f);
 void ll_number_formposition(t_ll_number *x, long pm);
 void ll_number_formfactor(t_ll_number *x);
 void ll_number_endtyping(t_ll_number *x);
-void ll_number_floatformgen(t_ll_number *x);
 
 double  ll_number_valtopos(t_ll_number *x, double val);
 double  ll_number_constrain(t_ll_number *x, double f);
@@ -185,14 +185,14 @@ double ll_number_get_value(t_ll_number *x, short index);
 void ll_number_draw_text(t_ll_number *x, t_jgraphics *g, short i, double up, double h);
 void ll_number_draw_label(t_ll_number *x, t_jgraphics *g, const char *label, double up, double h);
 
-t_max_err ll_number_notify(t_ll_number *x, t_symbol *s, t_symbol *msg, void *sender, void *data);
-t_max_err ll_number_setattr_size(t_ll_number *x, t_object *attr, long ac, t_atom *av);
 t_max_err ll_number_setvalueof(t_ll_number *x, long ac, t_atom *av);
 t_max_err ll_number_getvalueof(t_ll_number *x, long *ac, t_atom **av);
+
 t_max_err ll_number_setattr_ll_max(t_ll_number *x, void *attr, long ac, t_atom *av);
 t_max_err ll_number_setattr_ll_min(t_ll_number *x, void *attr, long ac, t_atom *av);
 t_max_err ll_number_setattr_ll_mark(t_ll_number *x, void *attr, long ac, t_atom *av);
 t_max_err ll_number_setattr_ll_amount(t_ll_number *x, void *attr, long ac, t_atom *av);
+t_max_err ll_number_setattr_ll_format(t_ll_number *x, void *attr, long ac, t_atom *av);
 
 void ext_main(void *r){
     t_class *c;
@@ -225,7 +225,6 @@ void ext_main(void *r){
     class_addmethod(c, (method)ll_number_getvalueof,	"getvalueof", A_CANT, 0);
     class_addmethod(c, (method)ll_number_setvalueof,	"setvalueof", A_CANT, 0);
     class_addmethod(c, (method)ll_number_assist,		"assist", A_CANT, 0);
-    class_addmethod(c, (method)ll_number_notify,		"notify", A_CANT, 0);
     class_addmethod(c, (method)ll_number_key,			"key", A_CANT, 0);
     class_addmethod(c, (method)ll_number_focusgained,	"focusgained", A_CANT, 0);
     class_addmethod(c, (method)ll_number_focuslost,	    "focuslost", A_CANT, 0);
@@ -266,10 +265,12 @@ void ext_main(void *r){
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"sliderlog", 0 ,"0");
     CLASS_ATTR_LABEL(c,				"sliderlog", 0, "slider logarithmic scaling");
     
-    CLASS_ATTR_ATOM_VARSIZE(c,		"format", ATTR_FLAGS_NONE, t_ll_number, ll_tform, ll_form_length, MAX_TEXT_LENGTH) ;
+    CLASS_ATTR_ATOM_VARSIZE(c,		"format", ATTR_FLAGS_NONE, t_ll_number, ll_format, ll_format_len, MAX_TEXT_LENGTH) ;
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"format", 0 , "3.2");
+    CLASS_ATTR_ACCESSORS(c,         "format", (method)NULL, (method)ll_number_setattr_ll_format);
+
     
-    CLASS_ATTR_CHAR(c,				"mousefocus", 0, t_ll_number, ll_mousefocus);
+    CLASS_ATTR_CHAR(c,				"mousefocus", 0, t_ll_number, ll_mouse_focus_mode);
     CLASS_ATTR_STYLE_LABEL(c,		"mousefocus", 0, "enum", "mousefocus");
     CLASS_ATTR_ENUMINDEX(c,			"mousefocus", 0, "Number Slider");
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"mousefocus", 0, "0");
@@ -438,7 +439,6 @@ void *ll_number_new(t_symbol *s, short argc, t_atom *argv){
     }
     atom_setdouble_array(MAX_NUM_VALUES, x->ll_vala, MAX_NUM_VALUES, init_values);
     
-    ll_number_floatformgen(x);
     jbox_ready(&x->ll_box);
     return x;
 }
@@ -466,75 +466,75 @@ double ll_number_get_value(t_ll_number *x, short index){
     return value;
 }
 
-void ll_number_floatformgen(t_ll_number *x){
-    x->ll_floatform = atom_getfloat( &x->ll_tform[0] );
-    x->ll_floatformpost = (int)round( fmod(x->ll_floatform, 1) * 10);
-    
-    int quot = (int)( div(x->ll_floatform, 1).quot );
-    
-    if(x->ll_floatformpost){
-        x->ll_floatpointpos = quot;
-        x->ll_floatformpre = x->ll_floatpointpos + x->ll_floatformpost + 1;
-    } else {
-        x->ll_floatformpre = quot;
-        x->ll_floatpointpos = x->ll_floatformpre;
-    }
-}
-
-// Format value for display
+// Format value for slider number display
 void ll_number_printf(t_ll_number *x, double f) {
     char str[16];
-    t_atom *tform = &x->ll_tform[0];
-    memset(&x->ll_pval, 0, sizeof(x->ll_pval));
+    memset(x->ll_pval, 0, sizeof(x->ll_pval));
 
-    if (x->ll_form_length > 1) {
-        if (f < 0.0) x->ll_pval[0] = '-';
-        f = fabs(f) + 0.0000001;
-        x->ll_isint = true;
+    if (x->ll_format_len < 1) {
+        post("Error: No format specified. Defaulting to 3.2.");
+        atom_setfloat(&x->ll_format[0], 3.2);
+        x->ll_format_len = 1;
+    }
 
-        for (long i = 0; i < x->ll_form_length; i++, tform++) {
+    t_atom *tform = &x->ll_format[0];
+
+    if (x->ll_format_len > 1) {
+        if (f < 0.0) {
+            x->ll_pval[0] = '-';
+        }
+
+        f = fabs(f) + 1e-7; // Small epsilon to avoid floating-point issues.
+        x->ll_format_is_int = true;
+
+        for (long i = 0; i < x->ll_format_len; i++, tform++) {
             switch (atom_gettype(tform)) {
-                case A_LONG:
-                case A_FLOAT: {
-                    double divisor = (atom_gettype(tform) == A_LONG) ? atom_getlong(tform) : atom_getfloat(tform);
-                    sprintf(str, "%d", (int)(f / divisor));
+                case A_LONG: {
+                    long divisor = atom_getlong(tform);
+                    snprintf(str, sizeof(str), "%ld", (long)(f / divisor));
                     f = fmod(f, divisor);
-                    if (atom_gettype(tform) == A_FLOAT) x->ll_isint = false;
                     break;
                 }
-                case A_SYM:
-                    sprintf(str, "%s", atom_getsym(tform)->s_name);
+                case A_FLOAT: {
+                    double divisor = atom_getfloat(tform);
+                    snprintf(str, sizeof(str), "%.0f", floor(f / divisor));
+                    f = fmod(f, divisor);
+                    x->ll_format_is_int = false;
+                    break;
+                }
+                case A_SYM: {
+                    const char *sym_name = atom_getsym(tform)->s_name;
+                    snprintf(str, sizeof(str), "%s", sym_name);
                     if (i == 0) {
-                        post("Invalid format (leading symbol), reverting to default 3.2");
-                        atom_setfloat(&x->ll_tform[0], 3.2);
-                        x->ll_form_length = 1;
-                        x->ll_floatform = 1.1;
-                        memset(&x->ll_pval, 0, sizeof(x->ll_pval));
-                        tform = &x->ll_tform[0];
-                        i = x->ll_form_length;
+                        post("Warning: Leading symbol in format. Reverting to default 3.2.");
+                        atom_setfloat(&x->ll_format[0], 3.2);
+                        x->ll_format_len = 1;
+                        ll_number_printf(x, f); // Retry with default.
+                        return;
                     }
                     break;
-                default:
-                    post("Unknown atom type at position %ld: %ld", (i + 1), atom_gettype(tform));
+                }
+                default: {
+                    post("Error: Unknown atom type at position %ld. Skipping.", i + 1);
                     continue;
+                }
             }
-            strcat(x->ll_pval, str);
+            strncat(x->ll_pval, str, sizeof(x->ll_pval) - strlen(x->ll_pval) - 1);
         }
-    } else if (x->ll_form_length == 1) {
+    } else { // Single format case
         switch (atom_gettype(tform)) {
-            case A_LONG: x->ll_isint = true; break;
-            case A_FLOAT: x->ll_isint = false; break;
-            default:
-                post("Invalid format, reverting to default 3.2");
-                atom_setfloat(&x->ll_tform[0], 3.2);
-                x->ll_isint = false;
+            case A_LONG:    x->ll_format_is_int = true;     break;
+            case A_FLOAT:   x->ll_format_is_int = false;    break;
+            default: {
+                post("Error: Invalid single format. Reverting to default 3.2.");
+                atom_setfloat(&x->ll_format[0], 3.2);
+                x->ll_format_is_int = false;
                 break;
+            }
         }
 
-        if (atom_getfloat(tform) != x->ll_floatform) ll_number_floatformgen(x);
-
-        int width = (f < 0.0) ? x->ll_floatformpre + 1 : x->ll_floatformpre;
-        sprintf(x->ll_pval, "%0*.*f", width, x->ll_floatformpost, f);
+        int width = (f < 0.0) ? x->ll_format_whole + 1 : x->ll_format_whole;
+        snprintf(x->ll_pval, sizeof(x->ll_pval), "%0*.*f", width, x->ll_format_fraction, f);
     }
 }
 
@@ -568,7 +568,7 @@ void ll_number_paint(t_ll_number *x, t_object *view) {
         pos = ll_number_valtopos(x, atom_getfloat(&x->ll_vala[i]));
 
         // Slider
-        slider_color = (x->ll_mousefocus == MOUSE_FOCUS_SLIDER) ? x->ll_slidercolor : x->ll_slicolornof;
+        slider_color = (x->ll_mouse_focus_mode == MOUSE_FOCUS_SLIDER) ? x->ll_slidercolor : x->ll_slicolornof;
         jgraphics_set_source_jrgba(g, &slider_color);
         switch(x->ll_sliderstyle){
             case SLIDER_STYLE_BAR:
@@ -645,7 +645,7 @@ void ll_number_draw_text(t_ll_number *x, t_jgraphics *g, short i, double up, dou
     }
 
     // Draw the value
-    jtextlayout_settextcolor(jtl, (x->ll_mousefocus == MOUSE_FOCUS_SLIDER) ? &x->ll_textcolornofocus : &x->ll_textcolor);
+    jtextlayout_settextcolor(jtl, (x->ll_mouse_focus_mode == MOUSE_FOCUS_SLIDER) ? &x->ll_textcolornofocus : &x->ll_textcolor);
     jtextlayout_draw(jtl, g);
 
     jfont_destroy(jf);
@@ -712,6 +712,7 @@ void ll_number_list(t_ll_number *x, t_symbol *s, short ac, t_atom *av) {
 }
 
 // Redraw the UI
+//      TODO: Do we need this?
 void ll_number_redraw(t_ll_number *x){
     object_notify(x, _sym_modified, NULL);
     jbox_redraw(&x->ll_box);
@@ -719,7 +720,7 @@ void ll_number_redraw(t_ll_number *x){
 }
 
 // Assign the currently selected value (updates & outputs values from object)
-void ll_number_assign(t_ll_number *x, double f, long notify) {
+void ll_number_assign(t_ll_number *x, double f) {
     double new_value = ll_number_constrain(x, f);
     double values[x->ll_amount];
     atom_getdouble_array(x->ll_amount, x->ll_vala, x->ll_amount, values);
@@ -754,40 +755,26 @@ void ll_number_assign(t_ll_number *x, double f, long notify) {
     values[x->ll_selitem] = new_value;
     atom_setdouble_array(x->ll_amount, x->ll_vala, x->ll_amount, values);
 
-    // Redraw and notify if required
-    jbox_redraw(&x->ll_box);
-
-    if (notify) {
-        object_notify(x, _sym_modified, NULL);
-        ll_number_bang(x);
-    }
+    ll_number_redraw(x);
 }
-
 
 // Constrain a values between min and max if needed
 double ll_number_constrain(t_ll_number *x, double f) {
-    // Use integer math for precision
     int m = 1;
-    for (int i = 0; i < x->ll_floatformpost; i++) {
-        m *= 10; // Calculate 10^ll_floatformpost without pow()
+    for (int i = 0; i < x->ll_format_fraction; i++) {
+        m *= 10; // Calculate 10^ll_format_fraction without pow()
     }
-    
     bool has_min = ll_number_is_atom_a_number(1, &x->ll_min);
     bool has_max = ll_number_is_atom_a_number(1, &x->ll_max);
     
-    // Constrain to minimum value
     if (has_min && (f < atom_getfloat(&x->ll_min))) {
         f = atom_getfloat(&x->ll_min);
     }
-
-    // Constrain to maximum value
     if (has_max && (f > atom_getfloat(&x->ll_max))) {
         f = atom_getfloat(&x->ll_max);
     }
-
-    // Apply rounding if not focused
-    if (x->ll_mousefocus == MOUSE_FOCUS_NUMBER) {
-        f = round(f * m) / m; // Use `round` for `double` instead of `roundf`
+    if (x->ll_mouse_focus_mode == MOUSE_FOCUS_NUMBER) {
+        f = round(f * m) / m;
     }
     return f;
 }
@@ -810,8 +797,9 @@ void ll_number_set(t_ll_number *x, t_symbol *s, short ac, t_atom *av){
     
     atom_setatom_array(ac, x->ll_vala, ac, av);
     x->ll_amount = ac;
-    jbox_redraw(&x->ll_box);
     
+    // Redraw, notify, but no bang
+    jbox_redraw(&x->ll_box);
     object_notify(x, _sym_modified, NULL);
 }
 
@@ -869,10 +857,10 @@ void ll_number_pos(t_ll_number *x, double pos) {
         }
     }
     // Round value according to attribute "format"
-    double scale = pow(10.0, x->ll_floatformpost);
+    double scale = pow(10.0, x->ll_format_fraction);
     val = round(val * scale) / scale;
     
-    ll_number_assign(x, val, true);
+    ll_number_assign(x, val);
 }
 
 //  Set position from value
@@ -926,34 +914,35 @@ void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
 
     // Handle right mouse button
     if (modifiers & eRightButton) {
-        x->ll_right_mouse = 1;
-        if (x->ll_mousefocus == MOUSE_FOCUS_SLIDER) {
-            x->ll_mousefocus = MOUSE_FOCUS_NUMBER;
-            jbox_redraw((t_jbox *)x);
+        x->ll_right_mouse = true;
+        if (x->ll_mouse_focus_mode == MOUSE_FOCUS_SLIDER) {
+            x->ll_mouse_focus_mode = MOUSE_FOCUS_NUMBER;
+            jbox_redraw(&x->ll_box);
         }
         return; // Right mouse processing done
     }
 
     // Handle left mouse button and mouse focus
     if (
-        x->ll_right_mouse && (modifiers & eLeftButton) &&
-        (x->ll_mousefocus == MOUSE_FOCUS_NUMBER) &&
+        x->ll_right_mouse && 
+        (modifiers & eLeftButton) &&
+        (x->ll_mouse_focus_mode == MOUSE_FOCUS_NUMBER) &&
         (x->ll_sliderstyle != SLIDER_STYLE_NONE)
     ){
-        x->ll_mousefocus = MOUSE_FOCUS_SLIDER;
-        jbox_redraw((t_jbox *)x);
+        x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
+        jbox_redraw(&x->ll_box);
     }
     
     // Hanlde right mouse button
     if (modifiers == RIGHT_CLICK) {
-        x->ll_mousefocus = MOUSE_FOCUS_NUMBER;
-        jbox_redraw((t_jbox *)x);
+        x->ll_mouse_focus_mode = MOUSE_FOCUS_NUMBER;
+        jbox_redraw(&x->ll_box);
     } else if (
                (modifiers == LEFT_CLICK_ALT || modifiers == LEFT_CLICK_CTRL) && 
                (x->ll_sliderstyle != SLIDER_STYLE_NONE)
     ) {
-        x->ll_mousefocus = MOUSE_FOCUS_SLIDER;
-        jbox_redraw((t_jbox *)x);
+        x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
+        jbox_redraw(&x->ll_box);
     }
 
     // Determine the selected item
@@ -961,7 +950,7 @@ void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
     x->ll_selold = x->ll_selitem;
 
     // Handle mouse focus and position
-    if (x->ll_mousefocus == MOUSE_FOCUS_NUMBER) {
+    if (x->ll_mouse_focus_mode == MOUSE_FOCUS_NUMBER) {
         pos = -1;
         for (i = 0; i < jtextlayout_getnumchars(x->ll_jtl); i++) {
             jtextlayout_getcharbox(x->ll_jtl, i, &crect);
@@ -970,16 +959,16 @@ void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
             }
         }
         if (pos == -1 && (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
-            x->ll_mousefocus = MOUSE_FOCUS_SLIDER;
+            x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
         } else {
             x->ll_selpos = jtextlayout_getnumchars(x->ll_jtl) - pos;
             ll_number_formposition(x, 1);
         }
-        jbox_redraw((t_jbox *)x);
+        jbox_redraw(&x->ll_box);
     }
 
     // Handle value adjustment based on mouse position
-    if ((x->ll_mousefocus == MOUSE_FOCUS_SLIDER) && (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
+    if ((x->ll_mouse_focus_mode == MOUSE_FOCUS_SLIDER) && (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
         val = (pt.x - x->ll_inset) / x->ll_width;
         ll_number_pos(x, val);
     }
@@ -993,7 +982,7 @@ void ll_number_mousedragdelta(t_ll_number *x, t_object *patcherview, t_pt pt, lo
     if (x->ll_number_cum.x < x->ll_inset) x->ll_number_cum.x = x->ll_inset;
     if (x->ll_number_cum.x > x->ll_width + x->ll_inset) x->ll_number_cum.x = x->ll_width + x->ll_inset;
 
-    if ((x->ll_mousefocus == MOUSE_FOCUS_SLIDER) && (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
+    if ((x->ll_mouse_focus_mode == MOUSE_FOCUS_SLIDER) && (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
         if (modifiers != 24 && x->ll_amount >1 && x->ll_multidrag) {
             x->ll_selitem = ll_number_get_selitem_from_y(x, patcherview, x->ll_number_cum.y);
         }
@@ -1027,7 +1016,7 @@ void ll_number_mousedragdelta(t_ll_number *x, t_object *patcherview, t_pt pt, lo
     else {
         double value = ll_number_get_value(x, x->ll_selitem);
         value -= pt.y * x->ll_formfactor;
-        ll_number_assign(x, value, true);
+        ll_number_assign(x, value);
     }
 }
 
@@ -1036,7 +1025,7 @@ void ll_number_mouseup(t_ll_number *x, t_object *patcherview, t_pt pt, long modi
     t_rect rect;
 
     jbox_get_rect_for_view((t_object *)x, patcherview, &rect);
-    if ((x->ll_mousefocus == MOUSE_FOCUS_SLIDER) && (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
+    if ((x->ll_mouse_focus_mode == MOUSE_FOCUS_SLIDER) && (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
         double value = ll_number_get_value(x, x->ll_selitem);
         double border_half = x->ll_border / 2;
         double box_x = ll_number_valtopos(x, value);
@@ -1081,7 +1070,7 @@ long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long mod
         txt[0] = textcharacter;
         strcat(x->ll_buffer, txt);
         x->ll_is_typing = true;
-        jbox_redraw((t_jbox *)x);
+        jbox_redraw(&x->ll_box);
         return 0;
     }
     
@@ -1093,7 +1082,7 @@ long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long mod
             if (modifiers == eShiftKey && x->ll_selitem > 0) {
                 x->ll_selitem--;
             } else {
-                ll_number_assign(x, value + x->ll_formfactor, true);
+                ll_number_assign(x, value + x->ll_formfactor);
             }
             jbox_redraw(&x->ll_box);
             break;
@@ -1102,7 +1091,7 @@ long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long mod
             if (modifiers == eShiftKey && x->ll_selitem < x->ll_amount - 1) {
                 x->ll_selitem++;
             } else {
-                ll_number_assign(x, value - x->ll_formfactor, true);
+                ll_number_assign(x, value - x->ll_formfactor);
             }
             jbox_redraw(&x->ll_box);
             break;
@@ -1110,13 +1099,13 @@ long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long mod
         case TEXTCHAR_LEFT_ARROW:
             x->ll_selpos--;
             ll_number_formposition(x, 1);
-            jbox_redraw((t_jbox *)x);
+            jbox_redraw(&x->ll_box);
             break;
 
         case TEXTCHAR_RIGHT_ARROW:
             x->ll_selpos++;
             ll_number_formposition(x, -1);
-            jbox_redraw((t_jbox *)x);
+            jbox_redraw(&x->ll_box);
             break;
 
         // Handle typing end with Enter, Return, or Tab
@@ -1141,7 +1130,7 @@ long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long mod
 void ll_number_endtyping(t_ll_number *x){
     if(x->ll_is_typing) {
         x->ll_is_typing = false;
-        ll_number_assign(x,atof(x->ll_buffer), true);
+        ll_number_assign(x, atof(x->ll_buffer));
         memset(&x->ll_buffer, 0, MAX_TEXT_LENGTH);
     }
 }
@@ -1166,21 +1155,21 @@ void ll_number_formposition(t_ll_number *x, long pm) {
     } while (!(pch >= '0' && pch <= '9'));
 
     // Handle formatting logic
-    if (x->ll_form_length == 1) {
-        pos = x->ll_selpos - x->ll_floatformpost - 1;
-        if (x->ll_floatpointpos == x->ll_floatformpre) {
+    if (x->ll_format_len == 1) {
+        pos = x->ll_selpos - x->ll_format_fraction - 1;
+        if (x->ll_floatpointpos == x->ll_format_whole) {
             pos++;
         }
         x->ll_formfactor = (pos > 0) ? pow(10, pos - 1) : pow(10, pos);
     } else {
         // Clamp selection position to form length
-        x->ll_selpos = (x->ll_selpos > x->ll_form_length) ? x->ll_form_length : x->ll_selpos;
+        x->ll_selpos = (x->ll_selpos > x->ll_format_len) ? x->ll_format_len : x->ll_selpos;
         ll_number_formfactor(x);
     }
 }
 
 void ll_number_formfactor(t_ll_number *x){
-    t_atom atom_tform = x->ll_tform[ x->ll_form_length - x->ll_selpos ];
+    t_atom atom_tform = x->ll_format[ x->ll_format_len - x->ll_selpos ];
     switch (atom_gettype(&atom_tform)) {
         case A_LONG:
             x->ll_formfactor = atom_getlong(&atom_tform);
@@ -1194,13 +1183,13 @@ void ll_number_formfactor(t_ll_number *x){
 // Object Focus
 void ll_number_focusgained(t_ll_number *x, t_object *patcherview){
     x->ll_selected = true;
-    jbox_redraw((t_jbox *)x);
+    jbox_redraw(&x->ll_box);
 }
 
 void ll_number_focuslost(t_ll_number *x, t_object *patcherview){
     x->ll_selected = false;
     ll_number_endtyping(x);
-    jbox_redraw((t_jbox *)x);
+    jbox_redraw(&x->ll_box);
 }
 
 // Helper for setting number attributes with an option for symbol "<none>"
@@ -1245,12 +1234,45 @@ t_max_err ll_number_setattr_ll_amount(t_ll_number *x, void *attr, long ac, t_ato
     long new_amount = atom_getlong(av);
     if(new_amount > x->ll_amount) {
         // set new slider values
+        double values[new_amount];
+        atom_getdouble_array(new_amount, x->ll_vala, new_amount, values);
         for(long i=x->ll_amount; i < new_amount; i++){
-            atom_setfloat(&x->ll_vala[i], x->ll_slider_min);
+            values[i] = x->ll_slider_min;
         }
+        atom_getdouble_array(new_amount, x->ll_vala, new_amount, values);
     }
     x->ll_amount = new_amount;
     ll_number_redraw(x);
+    return MAX_ERR_NONE;
+}
+
+// Set attribute "format"
+t_max_err ll_number_setattr_ll_format(t_ll_number *x, void *attr, long ac, t_atom *av) {
+    if (atom_getatom_array(ac, av, ac, x->ll_format)) {
+        error("Could not parse format.");
+        return MAX_ERR_GENERIC;
+    }
+
+    x->ll_format_len = ac;
+
+    if (ac < 1) {
+        error("No format specified. Reverting to default format 3.2.");
+        atom_setfloat(&x->ll_format[0], 3.2);
+        x->ll_format_len = 1;
+        x->ll_format_fraction = 2;
+        x->ll_format_whole = 3;
+        x->ll_floatpointpos = 3;
+        return MAX_ERR_NONE;
+    }
+    
+    double format_float = atom_getfloat(&av[0]);
+    x->ll_format_fraction = (int)round(fmod(format_float, 1) * 10);
+    x->ll_format_whole = (int)format_float;
+    x->ll_floatpointpos = (int)format_float;
+
+    if (x->ll_format_fraction)
+        x->ll_format_whole += x->ll_format_fraction + 1;
+    
     return MAX_ERR_NONE;
 }
 
@@ -1272,6 +1294,7 @@ void ll_number_doselect(t_ll_number *x){
 }
 
 // "rand" - Randomize slider values
+//      TODO: only generates random int values?
 void ll_number_rand(t_ll_number *x, long it){
     double ran;
     short i;
