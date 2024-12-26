@@ -47,16 +47,16 @@ const long TEXTCHAR_ESCAPE = 27;
 
 // Platform-dependent constants for modifier keys
 #ifdef MAC_VERSION
-    const long RIGHT_CLICK =     eLeftButton | eCommandKey;
-    const long LEFT_CLICK_ALT =  eLeftButton | eAltKey;
-    const long LEFT_CLICK_CTRL = eLeftButton | eAltKey;
+    const long MOD_FOCUS_NUMBER =     eLeftButton | eCommandKey; // select number
+    const long MOD_FOCUS_SLIDER_1 =  eLeftButton | eAltKey;
+    const long MOD_FOCUS_SLIDER_2 = eLeftButton | eAltKey;
     const long KEY_CONTROL =     eCommandKey;
 #endif
 
 #ifdef WIN_VERSION
-    const long RIGHT_CLICK =        eLeftButton | eAltKey;
-    const long LEFT_CLICK_ALT =     eLeftButton | eControlKey | ePopupMenu;
-    const long LEFT_CLICK_CTRL =    eLeftButton | eControlKey | eShiftKey;
+    const long MOD_FOCUS_NUMBER =        eLeftButton | eAltKey;
+    const long MOD_FOCUS_SLIDER_1 =     eLeftButton | eControlKey | ePopupMenu;
+    const long MOD_FOCUS_SLIDER_2 =    eLeftButton | eControlKey | eShiftKey;
     const long KEY_CONTROL =        eControlKey;
 #endif
 
@@ -154,13 +154,10 @@ void ll_number_getdrawparams(t_ll_number *x, t_object *patcherview, t_jboxdrawpa
 void ll_number_pos(t_ll_number *x, double f);
 void ll_number_set(t_ll_number *x, t_symbol *s, short ac, t_atom *av);
 
-void ll_number_assign_value(t_ll_number *x, double f);
-void ll_number_assign_position(t_ll_number *x, double f);
-
 void ll_number_redraw(t_ll_number *x);
 void ll_number_about(t_ll_number *x);
 
-// Mouse & Keyboard
+// Mouse, Keyboard, and Focus
 void ll_number_setmousecursor(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers);
 void ll_number_mouseenter(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers);
 void ll_number_mouseleave(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers);
@@ -170,12 +167,13 @@ void ll_number_mousedragdelta(t_ll_number *x, t_object *patcherview, t_pt pt, lo
 void ll_number_mouseup(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers);
 long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long modifiers, long textcharacter);
 
-
 void ll_number_focusgained(t_ll_number *x, t_object *patcherview);
 void ll_number_focuslost(t_ll_number *x, t_object *patcherview);
 
 void ll_number_select(t_ll_number *x, long slider_index);
+void ll_number_handle_number_focus(t_ll_number *x, t_pt pt);
 
+// Random Values
 double ll_number_get_rand_value(t_ll_number *x);
 void ll_number_rand(t_ll_number *x, long slider_index);
 
@@ -185,12 +183,13 @@ void ll_number_formfactor(t_ll_number *x);
 void ll_number_reset_format(t_ll_number *x);
 void ll_number_endtyping(t_ll_number *x);
 
-double  ll_number_valtopos(t_ll_number *x, double val);
+void    ll_number_assign_value(t_ll_number *x, double f);
+void    ll_number_assign_position(t_ll_number *x, double f);
 double  ll_number_constrain(t_ll_number *x, double f);
 void    ll_number_constrain_all(t_ll_number *x);
-short   ll_number_get_selitem_from_y(t_ll_number *x, t_object *patcherview, double val);
+double  ll_number_valtopos(t_ll_number *x, double val);
 
-void ll_number_handle_number_focus(t_ll_number *x, t_pt pt);
+short   ll_number_get_selitem_from_y(t_ll_number *x, t_object *patcherview, double val);
 
 // Helpers
 bool ll_number_is_atom_a_number(long ac, t_atom *av);
@@ -212,9 +211,7 @@ t_max_err ll_number_setattr_ll_label(t_ll_number *x, void *attr, long ac, t_atom
 
 void ext_main(void *r){
     t_class *c;
-    
     common_symbols_init();
-    
     c = class_new("ll_number",
                   (method)ll_number_new,
                   (method)ll_number_free,
@@ -453,7 +450,7 @@ void *ll_number_new(t_symbol *s, short argc, t_atom *argv){
     x->ll_box.b_firstin = (t_object*) x;
     outlet_new((t_object *)x, NULL);
     
-    // Initialize Labels
+    // Initialize Labels (allocate memory before processing dict)
     for (int i = 0; i < MAX_NUM_VALUES; i++) {
         x->ll_label_list[i] = NULL;
         x->ll_label_list[i] = malloc(MAX_TEXT_LENGTH);
@@ -467,6 +464,7 @@ void *ll_number_new(t_symbol *s, short argc, t_atom *argv){
         x->ll_label_list[i][0] = '\0'; // Initialize as an empty string
     }
     
+    // Process object attribute dictionary
     attr_dictionary_process(x, d);
     
     // Initialize Values
@@ -519,7 +517,7 @@ void ll_number_printf(t_ll_number *x, double f) {
 
         for (long i = 0; i < x->ll_format_len; i++) {
             t_atom *tform = &x->ll_format[i];
-            switch (atom_gettype(&x->ll_format[i])) {
+            switch ( atom_gettype(tform) ) {
                 case A_LONG: {
                     long divisor = atom_getlong(tform);
                     snprintf(str, sizeof(str), "%ld", (long)(f / divisor));
@@ -688,7 +686,7 @@ void ll_number_float(t_ll_number *x, double f){
 // List-type message - a list of doubles replaces the the object's value list
 void ll_number_list(t_ll_number *x, t_symbol *s, short ac, t_atom *av) {
     if (ac > MAX_NUM_VALUES) {
-        post("ll_number: list exceeds maximum of %s items", MAX_NUM_VALUES);
+        error("ll_number: list exceeds maximum of %s items", MAX_NUM_VALUES);
     } else {
         if (ac && av) {
             x->ll_amount = ac;
@@ -919,11 +917,11 @@ short ll_number_get_selchar_from_text(t_ll_number *x, t_pt pt){
 void ll_number_handle_number_focus(t_ll_number *x, t_pt pt){
     short pos = ll_number_get_selchar_from_text(x, pt);
     if (pos == -1 && (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
+        pos = 0;
         x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
-    } else {
-        x->ll_selected_digit = jtextlayout_getnumchars(x->ll_jtl) - pos;
-        ll_number_formposition(x, 1);
     }
+    x->ll_selected_digit = jtextlayout_getnumchars(x->ll_jtl) - pos;
+    ll_number_formposition(x, 1);
     jbox_redraw(&x->ll_box);
 }
 
@@ -934,7 +932,6 @@ void ll_number_handle_number_focus(t_ll_number *x, t_pt pt){
 void ll_number_setmousecursor(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers) {
     t_jmouse_cursortype cursorType = JMOUSE_CURSOR_RESIZE_LEFTRIGHT; // Default to slider cursor
     bool is_over_number = ll_number_get_selchar_from_text(x, pt) != -1;
-    t_rect crect;
 
     // Determine if we should use the i-beam cursor
     if (
@@ -954,7 +951,6 @@ void ll_number_setmousecursor(t_ll_number *x, t_object *patcherview, t_pt pt, lo
     if (x->ll_sliderstyle == SLIDER_STYLE_NONE){
         cursorType = JMOUSE_CURSOR_IBEAM;
     }
-
     // Set the cursor type
     jmouse_setcursor(patcherview, (t_object *)x, cursorType);
 }
@@ -997,30 +993,24 @@ void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
     //           use esc to exit typing without change.
     
     x->ll_number_cum = pt;
+    short pos = ll_number_get_selchar_from_text(x, pt);
+    bool is_over_number = pos > -1;
 
-    // Handle right mouse button
-    if (modifiers & eRightButton) {
-        if (x->ll_mouse_focus_mode == MOUSE_FOCUS_SLIDER) {
-            x->ll_mouse_focus_mode = MOUSE_FOCUS_NUMBER;
-        }
-        ll_number_handle_number_focus(x, pt);
-        jbox_redraw(&x->ll_box);
-        return; // Right mouse processing done
-    }
-
-    // Handle left mouse button and mouse focus
-    if (modifiers & eLeftButton) {
-        if (modifiers == RIGHT_CLICK) {
+    if (modifiers & eRightButton && is_over_number) {
+        x->ll_mouse_focus_mode = MOUSE_FOCUS_NUMBER;
+    } else if (modifiers & eLeftButton) {
+        if (modifiers == MOD_FOCUS_NUMBER && is_over_number) {
             x->ll_mouse_focus_mode = MOUSE_FOCUS_NUMBER;
         } else if (
-            (modifiers == LEFT_CLICK_ALT || modifiers == LEFT_CLICK_CTRL) &&
-            (x->ll_sliderstyle != SLIDER_STYLE_NONE)
+            (
+             modifiers == MOD_FOCUS_SLIDER_1 ||
+             modifiers == MOD_FOCUS_SLIDER_2
+            ) && (x->ll_sliderstyle != SLIDER_STYLE_NONE)
         ) {
             x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
-        } else if (ll_number_get_selchar_from_text(x, pt) == -1) {
+        } else if (!is_over_number) {
             x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
         }
-        jbox_redraw(&x->ll_box);
     }
 
     // Determine selected item
@@ -1028,9 +1018,8 @@ void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
     x->ll_selected_row_prev = x->ll_selected_row;
     
     // If slider style is none, we will always use focus mode "number"
-    if (x->ll_sliderstyle == SLIDER_STYLE_NONE) {
+    if (x->ll_sliderstyle == SLIDER_STYLE_NONE)
         x->ll_mouse_focus_mode = MOUSE_FOCUS_NUMBER;
-    }
 
     // Handle mouse focus and position
     if (x->ll_mouse_focus_mode == MOUSE_FOCUS_NUMBER) {
@@ -1039,6 +1028,7 @@ void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
         double val = (pt.x - x->ll_inset) / x->ll_width;
         ll_number_pos(x, val);
     }
+    jbox_redraw(&x->ll_box);
 }
 
 // On mouse drag
