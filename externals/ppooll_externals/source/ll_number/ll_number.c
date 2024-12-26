@@ -102,8 +102,9 @@ typedef struct _ll_number
     
     short		ll_mouse_focus_mode;
     bool        ll_multidrag;
+    
     bool        ll_is_object_selected;
-    long        ll_selected_digit;
+    short       ll_selected_digit;
     short       ll_selected_row;
     short       ll_selected_row_prev;
     
@@ -900,17 +901,23 @@ short ll_number_get_selitem_from_y(t_ll_number *x, t_object *patcherview, double
     return CLAMP(sel, 0, x->ll_amount - 1);
 }
 
-// Handle mouse click on number
-void ll_number_handle_number_focus(t_ll_number *x, t_pt pt){
-    long pos = -1;
+short ll_number_get_selchar_from_text(t_ll_number *x, t_pt pt){
+    short pos = -1;
+    t_rect crect;
     
     for (int i = 0; i < jtextlayout_getnumchars(x->ll_jtl); i++) {
-        t_rect crect;
         jtextlayout_getcharbox(x->ll_jtl, i, &crect);
         if (pt.x > crect.x && pt.x < crect.x + crect.width) {
             pos = i;
+            break;
         }
     }
+    return pos;
+}
+
+// Handle mouse click on number
+void ll_number_handle_number_focus(t_ll_number *x, t_pt pt){
+    short pos = ll_number_get_selchar_from_text(x, pt);
     if (pos == -1 && (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
         x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
     } else {
@@ -926,17 +933,9 @@ void ll_number_handle_number_focus(t_ll_number *x, t_pt pt){
 
 void ll_number_setmousecursor(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers) {
     t_jmouse_cursortype cursorType = JMOUSE_CURSOR_RESIZE_LEFTRIGHT; // Default to slider cursor
-    bool is_over_number = false;
+    bool is_over_number = ll_number_get_selchar_from_text(x, pt) != -1;
     t_rect crect;
 
-    // Check if the cursor is over a number area
-    for (int i = 0; i < jtextlayout_getnumchars(x->ll_jtl); i++) {
-        jtextlayout_getcharbox(x->ll_jtl, i, &crect);
-        if (pt.x > crect.x && pt.x < crect.x + crect.width) {
-            is_over_number = true;
-            break;
-        }
-    }
     // Determine if we should use the i-beam cursor
     if (
         is_over_number &&
@@ -1018,6 +1017,8 @@ void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
             (x->ll_sliderstyle != SLIDER_STYLE_NONE)
         ) {
             x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
+        } else if (ll_number_get_selchar_from_text(x, pt) == -1) {
+            x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
         }
         jbox_redraw(&x->ll_box);
     }
@@ -1091,7 +1092,10 @@ void ll_number_mouseup(t_ll_number *x, t_object *patcherview, t_pt pt, long modi
     t_rect rect;
 
     jbox_get_rect_for_view((t_object *)x, patcherview, &rect);
-    if ((x->ll_mouse_focus_mode == MOUSE_FOCUS_SLIDER) && (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
+    if (
+        (x->ll_mouse_focus_mode == MOUSE_FOCUS_SLIDER) &&
+        (x->ll_sliderstyle != SLIDER_STYLE_NONE)
+    ) {
         double value = ll_number_get_value(x, x->ll_selected_row);
         double border_half = x->ll_border / 2;
         double box_x = ll_number_valtopos(x, value);
