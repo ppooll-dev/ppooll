@@ -47,15 +47,17 @@ const long TEXTCHAR_ESCAPE = 27;
 
 // Platform-dependent constants for modifier keys
 #ifdef MAC_VERSION
-    const long RIGHT_CLICK = 17;
-    const long LEFT_CLICK_ALT = 24;
-    const long LEFT_CLICK_CTRL = 24;
+    const long RIGHT_CLICK =     eLeftButton | eCommandKey;
+    const long LEFT_CLICK_ALT =  eLeftButton | eAltKey;
+    const long LEFT_CLICK_CTRL = eLeftButton | eAltKey;
+    const long KEY_CONTROL =     eCommandKey;
 #endif
 
 #ifdef WIN_VERSION
-    const long RIGHT_CLICK = 24;
-    const long LEFT_CLICK_ALT = 148;
-    const long LEFT_CLICK_CTRL = 21;
+    const long RIGHT_CLICK =        eLeftButton | eAltKey;
+    const long LEFT_CLICK_ALT =     eLeftButton | eControlKey | ePopupMenu;
+    const long LEFT_CLICK_CTRL =    eLeftButton | eControlKey | eShiftKey;
+    const long KEY_CONTROL =        eControlKey;
 #endif
 
 typedef enum {
@@ -107,9 +109,7 @@ typedef struct _ll_number
     
     t_pt        ll_number_cum;
     
-    
     bool		ll_is_typing;
-    bool		ll_right_mouse;
     
     t_atom		ll_format[MAX_TEXT_LENGTH];     // Set by attribute "format"
     long        ll_format_len;                  // Set by attribute "format"
@@ -155,6 +155,11 @@ void ll_number_assign(t_ll_number *x, double f);
 void ll_number_redraw(t_ll_number *x);
 void ll_number_about(t_ll_number *x);
 
+void ll_number_mouseenter(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers);
+void ll_number_mouseleave(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers);
+void ll_number_mousemove(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers);
+void ll_number_setmousecursor(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers);
+
 void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers);
 void ll_number_mousedragdelta(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers);
 void ll_number_mouseup(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers);
@@ -180,6 +185,8 @@ double  ll_number_valtopos(t_ll_number *x, double val);
 double  ll_number_constrain(t_ll_number *x, double f);
 void    ll_number_constrain_all(t_ll_number *x);
 short   ll_number_get_selitem_from_y(t_ll_number *x, t_object *patcherview, double val);
+
+void ll_number_handle_number_focus(t_ll_number *x, t_pt pt);
 
 // Helpers
 bool ll_number_is_atom_a_number(long ac, t_atom *av);
@@ -225,7 +232,12 @@ void ext_main(void *r){
     class_addmethod(c, (method)ll_number_pos,			"pos", A_FLOAT, 0);
 
     class_addmethod(c, (method)ll_number_getdrawparams, "getdrawparams", A_CANT, 0);
-    class_addmethod(c, (method)ll_number_mousedown,		"mousedown", A_CANT, 0);
+    
+    class_addmethod(c, (method)ll_number_mousedown,		"mousedown",  A_CANT, 0);
+    class_addmethod(c, (method)ll_number_mouseenter,    "mouseenter", A_CANT, 0);
+    class_addmethod(c, (method)ll_number_mousemove,     "mousemove",  A_CANT, 0);
+    class_addmethod(c, (method)ll_number_mouseleave,    "mouseleave", A_CANT, 0);
+
     class_addmethod(c, (method)ll_number_mousedragdelta,"mousedragdelta", A_CANT, 0);
     class_addmethod(c, (method)ll_number_mouseup,		"mouseup", A_CANT, 0);
     class_addmethod(c, (method)ll_number_getvalueof,	"getvalueof", A_CANT, 0);
@@ -437,13 +449,9 @@ void *ll_number_new(t_symbol *s, short argc, t_atom *argv){
     x->ll_box.b_firstin = (t_object*) x;
     outlet_new((t_object *)x, NULL);
     
-    double init_values[MAX_NUM_VALUES];
+    // Initialize Labels
     for (int i = 0; i < MAX_NUM_VALUES; i++) {
-        // Initialize Values
-        init_values[i] = x->ll_slider_min;
-        
-        // Initialize Labels
-        x->ll_label_list[i] = NULL; // Initialize to NULL
+        x->ll_label_list[i] = NULL;
         x->ll_label_list[i] = malloc(MAX_TEXT_LENGTH);
         if (!x->ll_label_list[i]) {
             error("Memory allocation failed during initialization.");
@@ -454,9 +462,15 @@ void *ll_number_new(t_symbol *s, short argc, t_atom *argv){
         }
         x->ll_label_list[i][0] = '\0'; // Initialize as an empty string
     }
-    atom_setdouble_array(MAX_NUM_VALUES, x->ll_vala, MAX_NUM_VALUES, init_values);
     
     attr_dictionary_process(x, d);
+    
+    // Initialize Values
+    double init_values[MAX_NUM_VALUES];
+    for (int i = 0; i < MAX_NUM_VALUES; i++) {
+        init_values[i] = x->ll_slider_min;
+    }
+    atom_setdouble_array(MAX_NUM_VALUES, x->ll_vala, MAX_NUM_VALUES, init_values);
     
     jbox_ready(&x->ll_box);
     return x;
@@ -878,72 +892,142 @@ short ll_number_get_selitem_from_y(t_ll_number *x, t_object *patcherview, double
     return CLAMP(sel, 0, x->ll_amount - 1);
 }
 
+// Handle mouse click on number
+void ll_number_handle_number_focus(t_ll_number *x, t_pt pt){
+    long pos = -1;
+    
+    for (int i = 0; i < jtextlayout_getnumchars(x->ll_jtl); i++) {
+        t_rect crect;
+        jtextlayout_getcharbox(x->ll_jtl, i, &crect);
+        if (pt.x > crect.x && pt.x < crect.x + crect.width) {
+            pos = i;
+        }
+    }
+    if (pos == -1 && (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
+        x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
+    } else {
+        x->ll_selpos = jtextlayout_getnumchars(x->ll_jtl) - pos;
+        ll_number_formposition(x, 1);
+    }
+    jbox_redraw(&x->ll_box);
+}
+
+// --------------------
+//  MOUSE AND KEYBOARD
+// --------------------
+
+void ll_number_setmousecursor(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers) {
+    t_jmouse_cursortype cursorType = JMOUSE_CURSOR_RESIZE_LEFTRIGHT; // Default to slider cursor
+    bool is_over_number = false;
+    t_rect crect;
+
+    // Check if the cursor is over a number area
+    for (int i = 0; i < jtextlayout_getnumchars(x->ll_jtl); i++) {
+        jtextlayout_getcharbox(x->ll_jtl, i, &crect);
+        if (pt.x > crect.x && pt.x < crect.x + crect.width) {
+            is_over_number = true;
+            break;
+        }
+    }
+
+    // Determine if we should use the i-beam cursor
+    if (
+        is_over_number &&
+        (
+            modifiers & KEY_CONTROL ||
+            x->ll_mouse_focus_mode == MOUSE_FOCUS_NUMBER
+         )
+    ) {
+        cursorType = JMOUSE_CURSOR_IBEAM;
+    }
+
+    // Alt key forces leftright cursor
+    if (modifiers & eAltKey) {
+        cursorType = JMOUSE_CURSOR_RESIZE_LEFTRIGHT;
+    }
+    
+    if (x->ll_sliderstyle == SLIDER_STYLE_NONE){
+        cursorType = JMOUSE_CURSOR_IBEAM;
+    }
+
+    // Set the cursor type
+    jmouse_setcursor(patcherview, (t_object *)x, cursorType);
+}
+
+void ll_number_mouseenter(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers){
+    ll_number_setmousecursor(x, patcherview, pt, modifiers);
+}
+
+void ll_number_mouseleave(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers){}
+
+void ll_number_mousemove(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers) {
+    ll_number_setmousecursor(x, patcherview, pt, modifiers);
+}
+
 // On mouse down
 void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers) {
-    t_rect crect;
-    double val;
-    long pos, i;
-
+    //      Click in empty space -> mousefocus == MOUSE_FOCUS_SLIDER
+    //      Cmd+Click in digits  -> mousefocus == MOUSE_FOCUS_NUMBER
+    //         once the mousefocus is on number you don't need to command-click, 
+    //         as long as you click on the digits.
+    //
+    //         the digits become "selected":
+    //          - drag individual digits up & down.
+    //          - use the arrow-keys up-down to change the selected digit,
+    //          - use arrow-keys left-right to change the selected digit.
+    //            (this also works if the mousefocus is on slider)
+    //
+    //         if mousefocus is on number and you want to set the slider somewhere 
+    //         in the range where the digits are displayed, alt-click there (once).
+    //         the mousefocus will be on slider then (like clicking left of the number).
+    //
+    //         windows: right-click on number changes the focus to number,
+    //                  AND sets left-click to always change to focus on slider!
+    //
+    //         typing: you can type in a number with the keyboard if
+    //                 the ll_number is "selected".
+    //
+    //           (if not selected, select by command clicking a digit)
+    //           use enter to finish typing and output the value
+    //           use esc to exit typing without change.
+    
     x->ll_number_cum = pt;
 
     // Handle right mouse button
     if (modifiers & eRightButton) {
-        x->ll_right_mouse = true;
         if (x->ll_mouse_focus_mode == MOUSE_FOCUS_SLIDER) {
             x->ll_mouse_focus_mode = MOUSE_FOCUS_NUMBER;
+            ll_number_handle_number_focus(x, pt);
             jbox_redraw(&x->ll_box);
         }
         return; // Right mouse processing done
     }
 
     // Handle left mouse button and mouse focus
-    if (
-        x->ll_right_mouse && 
-        (modifiers & eLeftButton) &&
-        (x->ll_mouse_focus_mode == MOUSE_FOCUS_NUMBER) &&
-        (x->ll_sliderstyle != SLIDER_STYLE_NONE)
-    ){
-        x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
-        jbox_redraw(&x->ll_box);
-    }
-    
-    // Hanlde right mouse button
-    if (modifiers == RIGHT_CLICK) {
-        x->ll_mouse_focus_mode = MOUSE_FOCUS_NUMBER;
-        jbox_redraw(&x->ll_box);
-    } else if (
-               (modifiers == LEFT_CLICK_ALT || modifiers == LEFT_CLICK_CTRL) && 
-               (x->ll_sliderstyle != SLIDER_STYLE_NONE)
-    ) {
-        x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
+    if (modifiers & eLeftButton) {
+        if (modifiers == RIGHT_CLICK) {
+            x->ll_mouse_focus_mode = MOUSE_FOCUS_NUMBER;
+        } else if ((modifiers == LEFT_CLICK_ALT || modifiers == LEFT_CLICK_CTRL) &&
+                   (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
+            x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
+        }
         jbox_redraw(&x->ll_box);
     }
 
-    // Determine the selected item
+    // Determine selected item
     x->ll_selitem = ll_number_get_selitem_from_y(x, patcherview, pt.y);
     x->ll_selold = x->ll_selitem;
+    
+    // If slider style is none, we will always use focus mode "number"
+    if (x->ll_sliderstyle == SLIDER_STYLE_NONE) {
+        x->ll_mouse_focus_mode = MOUSE_FOCUS_NUMBER;
+    }
 
     // Handle mouse focus and position
     if (x->ll_mouse_focus_mode == MOUSE_FOCUS_NUMBER) {
-        pos = -1;
-        for (i = 0; i < jtextlayout_getnumchars(x->ll_jtl); i++) {
-            jtextlayout_getcharbox(x->ll_jtl, i, &crect);
-            if (pt.x > crect.x && pt.x < crect.x + crect.width) {
-                pos = i;
-            }
-        }
-        if (pos == -1 && (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
-            x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
-        } else {
-            x->ll_selpos = jtextlayout_getnumchars(x->ll_jtl) - pos;
-            ll_number_formposition(x, 1);
-        }
-        jbox_redraw(&x->ll_box);
-    }
-
-    // Handle value adjustment based on mouse position
-    if ((x->ll_mouse_focus_mode == MOUSE_FOCUS_SLIDER) && (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
-        val = (pt.x - x->ll_inset) / x->ll_width;
+        ll_number_handle_number_focus(x, pt);
+    } else if (x->ll_mouse_focus_mode == MOUSE_FOCUS_SLIDER) {
+        double val = (pt.x - x->ll_inset) / x->ll_width;
         ll_number_pos(x, val);
     }
 }
