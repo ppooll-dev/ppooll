@@ -126,7 +126,6 @@ typedef struct _ll_number
     char		ll_buffer[MAX_TEXT_LENGTH];
     double		ll_vert_offset;
     
-    long		ll_string_length;
     t_jtextlayout *ll_jtl;
     
     long		ll_rounded;
@@ -171,7 +170,8 @@ void ll_number_focusgained(t_ll_number *x, t_object *patcherview);
 void ll_number_focuslost(t_ll_number *x, t_object *patcherview);
 
 void ll_number_select(t_ll_number *x, long slider_index);
-void ll_number_handle_number_focus(t_ll_number *x, t_pt pt);
+
+void ll_number_handle_number_focus(t_ll_number *x, short pos);
 
 // Random Values
 double ll_number_get_rand_value(t_ll_number *x);
@@ -325,7 +325,7 @@ void ext_main(void *r){
     CLASS_ATTR_ENUMINDEX(c,			"first2all", 0, "No Copy Proportional Linear");
     CLASS_ATTR_FILTER_MIN(c,		"first2all", 0);
     CLASS_ATTR_FILTER_MAX(c,		"first2all", 3);
-    
+
     CLASS_ATTR_ORDER(c, "min",          0,		"1");
     CLASS_ATTR_ORDER(c, "max",          0,		"2");
     CLASS_ATTR_ORDER(c, "slidermin",    0,		"3");
@@ -623,18 +623,30 @@ void ll_number_draw_text(t_ll_number *x, t_jgraphics *g, short i, double up, dou
                     x->ll_width - (1 - x->ll_sliderstyle * 2) - 1, h,
                     JGRAPHICS_TEXT_JUSTIFICATION_RIGHT, JGRAPHICS_TEXTLAYOUT_NOWRAP);
 
+    long string_length = jtextlayout_getnumchars(jtl);
     // Store jtl reference for selected item
     if (i == x->ll_selected_row) {
-        x->ll_string_length = jtextlayout_getnumchars(jtl);
         x->ll_jtl = jtl;
     }
     // Selection rectangle (for editing position)
-    if (x->ll_is_object_selected && i == x->ll_selected_row && (x->ll_string_length - x->ll_selected_digit) >= 0) {
-        t_rect crect;
-        jtextlayout_getcharbox(jtl, x->ll_string_length - x->ll_selected_digit, &crect);
-        jgraphics_set_source_jrgba(g, &x->ll_selectcolor);
-        jgraphics_rectangle(g, crect.x, crect.y, crect.width, crect.height);
-        jgraphics_fill(g);
+    if (x->ll_is_object_selected && i == x->ll_selected_row) {
+        if ((string_length - x->ll_selected_digit) > -1) {
+            // Check if the selected character is a digit
+            char selected_char = x->ll_pval[string_length - x->ll_selected_digit];
+            while (!isdigit(selected_char) && (string_length - x->ll_selected_digit) > -1) {
+                // Move selection one position to the right
+                x->ll_selected_digit--;
+                selected_char = x->ll_pval[string_length - x->ll_selected_digit];
+            }
+            // Ensure we're within bounds before drawing the rectangle
+            if ((string_length - x->ll_selected_digit) > -1) {
+                t_rect crect;
+                jtextlayout_getcharbox(jtl, string_length - x->ll_selected_digit, &crect);
+                jgraphics_set_source_jrgba(g, &x->ll_selectcolor);
+                jgraphics_rectangle(g, crect.x, crect.y, crect.width, crect.height);
+                jgraphics_fill(g);
+            }
+        }
     }
     // Draw the value
     jtextlayout_settextcolor(jtl, (x->ll_mouse_focus_mode == MOUSE_FOCUS_SLIDER) ? &x->ll_textcolornofocus : &x->ll_textcolor);
@@ -899,6 +911,7 @@ short ll_number_get_selitem_from_y(t_ll_number *x, t_object *patcherview, double
     return CLAMP(sel, 0, x->ll_amount - 1);
 }
 
+// Get the char of text at x position
 short ll_number_get_selchar_from_text(t_ll_number *x, t_pt pt){
     short pos = -1;
     t_rect crect;
@@ -914,8 +927,7 @@ short ll_number_get_selchar_from_text(t_ll_number *x, t_pt pt){
 }
 
 // Handle mouse click on number
-void ll_number_handle_number_focus(t_ll_number *x, t_pt pt){
-    short pos = ll_number_get_selchar_from_text(x, pt);
+void ll_number_handle_number_focus(t_ll_number *x, short pos){
     if (pos == -1 && (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
         pos = 0;
         x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
@@ -965,7 +977,6 @@ void ll_number_mousemove(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
 
 void ll_number_mouseleave(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers){}
 
-// On mouse down
 void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers) {
     //      Click in empty space -> mousefocus == MOUSE_FOCUS_SLIDER
     //      Cmd+Click in digits  -> mousefocus == MOUSE_FOCUS_NUMBER
@@ -995,35 +1006,20 @@ void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
     x->ll_number_cum = pt;
     short pos = ll_number_get_selchar_from_text(x, pt);
     bool is_over_number = pos > -1;
-
-    if (modifiers & eRightButton && is_over_number) {
+    
+    if ( is_over_number && (modifiers & eRightButton || modifiers == MOD_FOCUS_NUMBER || x->ll_sliderstyle == SLIDER_STYLE_NONE) ) {
         x->ll_mouse_focus_mode = MOUSE_FOCUS_NUMBER;
-    } else if (modifiers & eLeftButton) {
-        if (modifiers == MOD_FOCUS_NUMBER && is_over_number) {
-            x->ll_mouse_focus_mode = MOUSE_FOCUS_NUMBER;
-        } else if (
-            (
-             modifiers == MOD_FOCUS_SLIDER_1 ||
-             modifiers == MOD_FOCUS_SLIDER_2
-            ) && (x->ll_sliderstyle != SLIDER_STYLE_NONE)
-        ) {
-            x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
-        } else if (!is_over_number) {
-            x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
-        }
+    } else if (modifiers == MOD_FOCUS_SLIDER_1 || modifiers == MOD_FOCUS_SLIDER_2 || !is_over_number) {
+        x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
     }
 
     // Determine selected item
     x->ll_selected_row = ll_number_get_selitem_from_y(x, patcherview, pt.y);
     x->ll_selected_row_prev = x->ll_selected_row;
     
-    // If slider style is none, we will always use focus mode "number"
-    if (x->ll_sliderstyle == SLIDER_STYLE_NONE)
-        x->ll_mouse_focus_mode = MOUSE_FOCUS_NUMBER;
-
     // Handle mouse focus and position
     if (x->ll_mouse_focus_mode == MOUSE_FOCUS_NUMBER) {
-        ll_number_handle_number_focus(x, pt);
+        ll_number_handle_number_focus(x, pos);
     } else if (x->ll_mouse_focus_mode == MOUSE_FOCUS_SLIDER) {
         double val = (pt.x - x->ll_inset) / x->ll_width;
         ll_number_pos(x, val);
@@ -1121,7 +1117,7 @@ t_max_err ll_number_notify(t_ll_number *x, t_symbol *s, t_symbol *msg, void *sen
 // Keyboard Input -- typing new numbers, positioning cursor
 long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long modifiers, long textcharacter) {
     char txt[16] = "";
-
+    
     // Ensure selection position is valid
     ll_number_formposition(x, 0);
 
@@ -1198,17 +1194,27 @@ void ll_number_endtyping(t_ll_number *x){
 // Get cursor position for typing number with keyboard
 void ll_number_formposition(t_ll_number *x, long pm) {
     long pos, pch;
+    long string_length = jtextlayout_getnumchars(x->ll_jtl);
 
     // Ensure selection position is within bounds
-    x->ll_selected_digit = (x->ll_selected_digit > x->ll_string_length) ? x->ll_string_length : x->ll_selected_digit;
+    x->ll_selected_digit = (x->ll_selected_digit > string_length) ? string_length : x->ll_selected_digit;
     x->ll_selected_digit = (x->ll_selected_digit < 1) ? 1 : x->ll_selected_digit;
 
     // Find the closest digit character
     do {
-        jtextlayout_getchar(x->ll_jtl, x->ll_string_length - x->ll_selected_digit, &pch);
+        jtextlayout_getchar(x->ll_jtl, string_length - x->ll_selected_digit, &pch);
+
+        // Skip negative sign or non-digit characters
         if (!(pch >= '0' && pch <= '9')) {
-            x->ll_selected_digit -= pm;
-            if (x->ll_selected_digit < 1 || x->ll_string_length - x->ll_selected_digit < 0) {
+            if (pch == '-') {
+                // Move the selection past the negative sign
+                x->ll_selected_digit -= pm;
+            } else {
+                x->ll_selected_digit -= pm;
+            }
+
+            // Clamp the selection within valid bounds
+            if (x->ll_selected_digit < 1 || string_length - x->ll_selected_digit < 0) {
                 pm = -pm; // Reverse direction
             }
         }
@@ -1224,19 +1230,17 @@ void ll_number_formposition(t_ll_number *x, long pm) {
     } else {
         // Clamp selection position to form length
         x->ll_selected_digit = (x->ll_selected_digit > x->ll_format_len) ? x->ll_format_len : x->ll_selected_digit;
-        ll_number_formfactor(x);
-    }
-}
-
-void ll_number_formfactor(t_ll_number *x){
-    t_atom atom_tform = x->ll_format[ x->ll_format_len - x->ll_selected_digit ];
-    switch (atom_gettype(&atom_tform)) {
-        case A_LONG:
-            x->ll_formfactor = atom_getlong(&atom_tform);
-            break;
-        case A_FLOAT:
-            x->ll_formfactor = atom_getfloat(&atom_tform);
-            break;
+        
+        // Set format "factor" (decimal place?) of the selected digit
+        t_atom atom_tform = x->ll_format[ x->ll_format_len - x->ll_selected_digit ];
+        switch (atom_gettype(&atom_tform)) {
+            case A_LONG:
+                x->ll_formfactor = atom_getlong(&atom_tform);
+                break;
+            case A_FLOAT:
+                x->ll_formfactor = atom_getfloat(&atom_tform);
+                break;
+        }
     }
 }
 
