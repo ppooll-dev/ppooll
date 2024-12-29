@@ -139,6 +139,7 @@ typedef struct _ll_number
     char        *ll_label_list[MAX_NUM_VALUES];
     
     char        ll_prepend_label;
+    char        ll_hide_on_change;
 } t_ll_number;
 
 void *ll_number_new(t_symbol *s, short argc, t_atom *argv);
@@ -331,6 +332,10 @@ void ext_main(void *r){
     CLASS_ATTR_CHAR(c,              "prependlabel", 0, t_ll_number, ll_prepend_label);
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"prependlabel", 0, "0");
     CLASS_ATTR_STYLE_LABEL(c,       "prependlabel", 0, "onoff", "Prepend with label values");
+    
+    CLASS_ATTR_CHAR(c,              "hideonchange", 0, t_ll_number, ll_hide_on_change);
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"hideonchange", 0, "0");
+    CLASS_ATTR_STYLE_LABEL(c,       "hideonchange", 0, "onoff", "Hide object after user interaction");
 
     CLASS_ATTR_ORDER(c, "min",          0,		"1");
     CLASS_ATTR_ORDER(c, "max",          0,		"2");
@@ -978,6 +983,30 @@ void ll_number_handle_number_focus(t_ll_number *x, short pos){
     jbox_redraw(&x->ll_box);
 }
 
+void ll_number_getdrawparams(t_ll_number *x, t_object *patcherview, t_jboxdrawparams *params){
+    params->d_borderthickness = x->ll_border;
+    params->d_bordercolor = x->ll_bordercolor;
+    params->d_boxfillcolor = x->ll_bgcolor;
+}
+
+t_max_err ll_number_notify(t_ll_number *x, t_symbol *s, t_symbol *msg, void *sender, void *data){
+    long argc = 0;
+    t_atom *argv = NULL;
+    t_symbol *name;
+    
+    if (msg == _sym_attr_modified) {
+        name = (t_symbol *)object_method((t_object *)data,_sym_getname);
+        if (name == _sym_color) {
+            object_attr_getvalueof(x, _sym_color, &argc, &argv);
+            if (argc && argv) {
+                object_attr_setvalueof(x, _sym_bgcolor, argc, argv);
+                sysmem_freeptr(argv);
+            }
+        }
+    }
+    return jbox_notify((t_jbox *)x, s, msg, sender, data);
+}
+
 // --------------------
 //  MOUSE AND KEYBOARD
 // --------------------
@@ -1117,7 +1146,7 @@ void ll_number_mousedragdelta(t_ll_number *x, t_object *patcherview, t_pt pt, lo
 // On mouse up, set cursor position
 void ll_number_mouseup(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers){
     t_rect rect;
-
+    
     jbox_get_rect_for_view((t_object *)x, patcherview, &rect);
     if (
         (x->ll_mouse_focus_mode == MOUSE_FOCUS_SLIDER) &&
@@ -1129,30 +1158,6 @@ void ll_number_mouseup(t_ll_number *x, t_object *patcherview, t_pt pt, long modi
         double box_y = (x->ll_selected_row * (rect.height - x->ll_border) / x->ll_amount) + border_half + 0.5 * (rect.height - border_half) / x->ll_amount;
         jmouse_setposition_box(patcherview, (t_object*) x, box_x, box_y);
     }
-}
-
-void ll_number_getdrawparams(t_ll_number *x, t_object *patcherview, t_jboxdrawparams *params){
-    params->d_borderthickness = x->ll_border;
-    params->d_bordercolor = x->ll_bordercolor;
-    params->d_boxfillcolor = x->ll_bgcolor;
-}
-
-t_max_err ll_number_notify(t_ll_number *x, t_symbol *s, t_symbol *msg, void *sender, void *data){
-    long argc = 0;
-    t_atom *argv = NULL;
-    t_symbol *name;
-    
-    if (msg == _sym_attr_modified) {
-        name = (t_symbol *)object_method((t_object *)data,_sym_getname);
-        if (name == _sym_color) {
-            object_attr_getvalueof(x, _sym_color, &argc, &argv);
-            if (argc && argv) {
-                object_attr_setvalueof(x, _sym_bgcolor, argc, argv);
-                sysmem_freeptr(argv);
-            }
-        }
-    }
-    return jbox_notify((t_jbox *)x, s, msg, sender, data);
 }
 
 // Keyboard Input -- typing new numbers, positioning cursor
@@ -1208,6 +1213,11 @@ long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long mod
         // Handle typing end with Enter, Return, or Tab
         case TEXTCHAR_ENTER:
         case TEXTCHAR_RETURN:
+            ll_number_endtyping(x);
+            if(x->ll_hide_on_change)
+                jbox_set_hidden((t_object *)x, 1);
+            break;
+            
         case TEXTCHAR_TAB:
             ll_number_endtyping(x);
             break;
