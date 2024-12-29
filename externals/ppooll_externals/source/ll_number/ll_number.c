@@ -137,9 +137,12 @@ typedef struct _ll_number
     t_atom      ll_label[MAX_NUM_VALUES];
     long        ll_label_len;
     char        *ll_label_list[MAX_NUM_VALUES];
+    
+    char        ll_prepend_label;
 } t_ll_number;
 
 void *ll_number_new(t_symbol *s, short argc, t_atom *argv);
+void ll_number_anything(t_ll_number *x, t_symbol *s, long ac, t_atom *av);
 void ll_number_assist(t_ll_number *x, void *b, long m, long a, char *s);
 void ll_number_free(t_ll_number *x);
 void ll_number_paint(t_ll_number *x, t_object *view);
@@ -224,6 +227,7 @@ void ext_main(void *r){
     
     jbox_initclass(c, JBOX_TEXTFIELD | JBOX_FIXWIDTH | JBOX_COLOR | JBOX_FONTATTR);
     
+    class_addmethod(c, (method)ll_number_anything,      "anything", A_GIMME, 0);
     class_addmethod(c, (method)ll_number_paint,			"paint", A_CANT, 0);
     class_addmethod(c, (method)ll_number_int,			"int", A_LONG, 0);
     class_addmethod(c, (method)ll_number_float,			"float", A_FLOAT, 0);
@@ -294,13 +298,11 @@ void ext_main(void *r){
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"mousefocus", 0, "0");
     
     CLASS_ATTR_CHAR(c,				"multidrag", 0, t_ll_number, ll_multidrag);
-    CLASS_ATTR_STYLE_LABEL(c,		"multidrag", 0, "enum", "multidrag");
-    CLASS_ATTR_ENUMINDEX(c,			"multidrag", 0, "off on");
+    CLASS_ATTR_STYLE_LABEL(c,		"multidrag", 0, "onoff", "multidrag");
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"multidrag", 0, "1");
     
     CLASS_ATTR_CHAR(c,				"zerosplitslog", 0, t_ll_number, ll_zerosplitslog);
-    CLASS_ATTR_STYLE_LABEL(c,		"zerosplitslog", 0, "enum", "zerosplitslog");
-    CLASS_ATTR_ENUMINDEX(c,			"zerosplitslog", 0, "off on");
+    CLASS_ATTR_STYLE_LABEL(c,		"zerosplitslog", 0, "onoff", "zerosplitslog");
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"zerosplitslog", 0, "0");
     
     CLASS_ATTR_CHAR(c,				"sliderstyle", 0, t_ll_number, ll_sliderstyle);
@@ -325,6 +327,10 @@ void ext_main(void *r){
     CLASS_ATTR_ENUMINDEX(c,			"first2all", 0, "No Copy Proportional Linear");
     CLASS_ATTR_FILTER_MIN(c,		"first2all", 0);
     CLASS_ATTR_FILTER_MAX(c,		"first2all", 3);
+    
+    CLASS_ATTR_CHAR(c,              "prependlabel", 0, t_ll_number, ll_prepend_label);
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"prependlabel", 0, "0");
+    CLASS_ATTR_STYLE_LABEL(c,       "prependlabel", 0, "onoff", "Prepend with label values");
 
     CLASS_ATTR_ORDER(c, "min",          0,		"1");
     CLASS_ATTR_ORDER(c, "max",          0,		"2");
@@ -670,6 +676,19 @@ void ll_number_draw_label(t_ll_number *x, t_jgraphics *g, const char *label, dou
 
 // Handle bang
 void ll_number_bang(t_ll_number *x){
+    if(x->ll_prepend_label){
+        for (int i = 0; i < x->ll_amount; i++) {
+            t_atom output[2];
+            if (atom_gettype(&x->ll_label[i]) == A_SYM) {
+                atom_setsym(&output[0], atom_getsym(&x->ll_label[i]));
+            } else {
+                atom_setlong(&output[0], i + 1);
+            }
+            atom_setfloat(&output[1], atom_getfloat(&x->ll_vala[i]));
+            outlet_list(x->ll_box.b_ob.o_outlet, NULL, 2, output);
+        }
+        return;
+    }
     if(x->ll_amount == 1){
         // If single slider mode, need outlet_float for single atom
         double value = ll_number_get_value(x, 0);
@@ -687,7 +706,7 @@ void ll_number_int(t_ll_number *x, long n){
 // Handle floating-point number
 void ll_number_float(t_ll_number *x, double f){
     x->ll_amount = 1;
-    f = ll_number_constrain(x,f);
+    f = ll_number_constrain(x, f);
 
     double vals[1] = { f };
     atom_setdouble_array(1, x->ll_vala, 1, vals);
@@ -719,6 +738,28 @@ void ll_number_redraw(t_ll_number *x){
     object_notify(x, _sym_modified, NULL);
     jbox_redraw(&x->ll_box);
     ll_number_bang(x);
+}
+
+// Match first atom "symbol" to a label and set the value
+void ll_number_anything(t_ll_number *x, t_symbol *s, long ac, t_atom *av){
+    if(ac == 1) {
+        double value = atom_getfloat(&av[0]);
+        for(int i = 0; i < x->ll_amount; i++) {
+            t_symbol *current_label = atom_getsym(&x->ll_label[i]);
+            if(current_label) {
+                if(s == current_label) {
+                    x->ll_selected_row = i;
+                    ll_number_assign_value(x, value);
+                    return;
+                }
+            } else {
+                error("Invalid label at index %d", i);
+            }
+        }
+        error("No matching label found: %s", s->s_name);
+    } else {
+        post("Invalid input. Expected 2 arguments: a symbol and a float.");
+    }
 }
 
 // Assign the currently selected value (updates & outputs values from object)
