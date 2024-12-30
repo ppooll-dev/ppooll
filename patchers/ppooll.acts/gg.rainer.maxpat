@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 1,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 112.0, 93.0, 318.0, 272.0 ],
+		"rect" : [ 125.0, 137.0, 318.0, 272.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -46,7 +46,7 @@
 					"arrow" : 0,
 					"fontsize" : 9.0,
 					"id" : "obj-49",
-					"items" : "sb0_20000_2",
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -230,7 +230,7 @@
 					"id" : "obj-4",
 					"label" : [ "random" ],
 					"labelcolor" : [ 0.423529411764706, 0.419607843137255, 0.419607843137255, 1.0 ],
-					"max" : 155970.0,
+					"max" : 109505.0,
 					"maxclass" : "ll_number",
 					"min" : 0.0,
 					"mousefocus" : 1,
@@ -240,7 +240,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 0.0, 205.0, 299.0, 13.0 ],
 					"sliderlog" : 7.0,
-					"slidermax" : 155970.0,
+					"slidermax" : 109505.0,
 					"varname" : "random"
 				}
 
@@ -252,7 +252,7 @@
 					"format" : [ 1.3 ],
 					"id" : "obj-17",
 					"label" : [ "grainlength" ],
-					"max" : 155970.0,
+					"max" : 109505.0,
 					"maxclass" : "ll_number",
 					"min" : 0.03,
 					"mousefocus" : 1,
@@ -382,7 +382,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 1,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -452,7 +452,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -598,7 +598,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-22",
-													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -613,7 +612,7 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-21",
-													"linecount" : 3,
+													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
@@ -1359,13 +1358,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 1,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 331.0, 384.0, 1042.0, 735.0 ],
+						"rect" : [ 331.0, 152.0, 1042.0, 735.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1405,7 +1404,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1633,7 +1632,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2000,7 +1999,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2114,7 +2113,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 1,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3162,7 +3161,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 1,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4924,7 +4923,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5200,7 +5199,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6315,7 +6314,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6763,8 +6762,8 @@
 									"numinlets" : 3,
 									"numoutlets" : 5,
 									"outlettype" : [ "clear", "int", "float", "", "int" ],
-									"patching_rect" : [ 581.0, 10.0, 161.0, 22.0 ],
-									"text" : "ll.buffer_menu buffermenu 1"
+									"patching_rect" : [ 581.0, 10.0, 148.0, 22.0 ],
+									"text" : "ll.buffer_menu buffermenu"
 								}
 
 							}
@@ -6823,7 +6822,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -8450,7 +8449,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -8559,7 +8558,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 1,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -9212,7 +9211,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9395,7 +9394,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 1,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -10726,7 +10725,7 @@
 					"htricolor" : [ 0.87, 0.82, 0.24, 1.0 ],
 					"id" : "obj-68",
 					"maxclass" : "flonum",
-					"maximum" : 311940.045351473905612,
+					"maximum" : 219010.612244999996619,
 					"minimum" : 0.0,
 					"numinlets" : 1,
 					"numoutlets" : 2,
@@ -10970,7 +10969,7 @@
 						"autochangeinterval" : [ 100 ],
 						"autochangemenu" : [ 0 ],
 						"autosliders" : [ 0.764705882352941, 0.764705882352941, 0.823529411764706, 0.588235294117647, 0.588235294117647, 0.647058823529412, 0.529411764705882, 0.558823529411765 ],
-						"buffermenu" : [ "sb0_20000_2" ],
+						"buffermenu" : [ "" ],
 						"controlmode" : [ 0 ],
 						"density" : [ 100.0 ],
 						"fix_lang" : [ 0 ],
@@ -10979,7 +10978,7 @@
 						"grain_ramp_stop" : [ -1 ],
 						"grainenvelope" : [ 0 ],
 						"grainlength" : [ 265.0 ],
-						"length" : [ 1.0 ],
+						"length" : [ 10.0 ],
 						"length_rel" : [ 1.0 ],
 						"master" : [ 0 ],
 						"pitch" : [ 1.0 ],
