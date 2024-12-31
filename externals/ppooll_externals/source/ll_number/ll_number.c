@@ -333,9 +333,9 @@ void ext_main(void *r){
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"prependlabel", 0, "0");
     CLASS_ATTR_STYLE_LABEL(c,       "prependlabel", 0, "onoff", "Prepend with label values");
     
-    CLASS_ATTR_CHAR(c,              "hideonchange", 0, t_ll_number, ll_hide_on_change);
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"hideonchange", 0, "0");
-    CLASS_ATTR_STYLE_LABEL(c,       "hideonchange", 0, "onoff", "Hide object after user interaction");
+    CLASS_ATTR_CHAR(c,              "hideonenter", 0, t_ll_number, ll_hide_on_change);
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"hideonenter", 0, "0");
+    CLASS_ATTR_STYLE_LABEL(c,       "hideonenter", 0, "onoff", "Hide object after user interaction");
 
     CLASS_ATTR_ORDER(c, "min",          0,		"1");
     CLASS_ATTR_ORDER(c, "max",          0,		"2");

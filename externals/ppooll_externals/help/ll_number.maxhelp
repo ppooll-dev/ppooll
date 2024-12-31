@@ -128,7 +128,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "hideonchange",
+									"attr" : "hideonenter",
 									"id" : "obj-19",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -142,7 +142,7 @@
 , 							{
 								"box" : 								{
 									"fontface" : 0,
-									"hideonchange" : 1,
+									"hideonenter" : 1,
 									"id" : "obj-18",
 									"maxclass" : "ll_number",
 									"mousefocus" : 1,
