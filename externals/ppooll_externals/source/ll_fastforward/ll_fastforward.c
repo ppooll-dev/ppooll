@@ -24,6 +24,10 @@ void ll_fastforward_assist(t_ll_fastforward *x, void *b, long m, long a, char *s
 void ll_fastforward_anything(t_ll_fastforward *x, t_symbol *s, long ac, t_atom *av);
 void ll_fastforward_prepend(t_ll_fastforward *x, t_symbol *s);
 
+void ll_fastforward_int(t_ll_fastforward *x, long n);
+void ll_fastforward_float(t_ll_fastforward *x, double f);
+void ll_fastforward_list(t_ll_fastforward *x, t_symbol *s, long ac, t_atom *av);
+
 void *ll_fastforward_class;
 
 void ext_main(void *r) {
@@ -38,6 +42,10 @@ void ext_main(void *r) {
     class_addmethod(c, (method)ll_fastforward_assist, "assist", A_CANT, 0);
     class_addmethod(c, (method)ll_fastforward_anything, "anything", A_GIMME, 0);
     class_addmethod(c, (method)ll_fastforward_prepend, "prepend", A_DEFSYM, 0);
+
+    class_addmethod(c, (method)ll_fastforward_float, "float", A_FLOAT, 0);
+    class_addmethod(c, (method)ll_fastforward_int, "int", A_LONG, 0);
+    class_addmethod(c, (method)ll_fastforward_list, "list", A_GIMME, 0);
 
     class_register(CLASS_BOX, c);
     ll_fastforward_class = c;
@@ -58,6 +66,57 @@ void ll_fastforward_free(t_ll_fastforward *x) {}
 
 void ll_fastforward_assist(t_ll_fastforward *x, void *b, long m, long a, char *s) {
     snprintf(s, 128, (m == ASSIST_INLET) ? "Input Messages" : "Output Messages");
+}
+
+void ll_fastforward_int(t_ll_fastforward *x, long n){
+    // object_method_long(gensym("er")->s_thing, x->sym_int, n, NULL);
+}
+
+void ll_fastforward_float(t_ll_fastforward *x, double f){
+    // object_method_float(gensym("er")->s_thing, x->sym_float, f, NULL);
+}
+
+void ll_fastforward_list(t_ll_fastforward *x, t_symbol *s, long ac, t_atom *av) {
+    // TODO: this parses number lists directly (1 20) => "1" is the receiver
+    //      Below we take the first argument from av to use as the child receiver
+    //      Should this allow messages with "prepend" ie. "r 1234" in Max works?
+    //      What about float numbers?  Maybe int/long only...
+    //      Better yet- only symbols!
+    
+    t_symbol *receiver = NULL;
+    char temp_str[128];
+    if (ac < 1 || av == NULL) {
+        error("list is empty or invalid");
+        return;
+    }
+    // Determine the type of the first atom
+    switch (atom_gettype(&av[0])) {
+        case A_SYM:
+            receiver = atom_getsym(&av[0]); // Extract the symbol directly
+            break;
+        case A_LONG:
+            snprintf(temp_str, sizeof(temp_str), "%ld", atom_getlong(&av[0]));
+            receiver = gensym(temp_str); // Convert long to symbol
+            break;
+        case A_FLOAT:
+            // Need to ensure float formats match Max "2." format
+            snprintf(temp_str, sizeof(temp_str), "%.15g", atom_getfloat(&av[0]));
+            // Check if there's already a '.' or 'e' in the string
+            if (strchr(temp_str, '.') == NULL && strchr(temp_str, 'e') == NULL) {
+                // Append a '.' if the number is an integer
+                size_t len = strlen(temp_str);
+                if (len < sizeof(temp_str) - 1) {
+                    temp_str[len] = '.';
+                    temp_str[len + 1] = '\0';
+                }
+            }
+            receiver = gensym(temp_str); // Convert float to symbol
+            break;
+        default:
+            error("Unsupported atom type: %d", atom_gettype(&av[0]));
+            return;
+    }
+    ll_fastforward_anything(x, receiver, ac - 1, av + 1);
 }
 
 void ll_fastforward_anything(t_ll_fastforward *x, t_symbol *receiver, long ac, t_atom *av) {
