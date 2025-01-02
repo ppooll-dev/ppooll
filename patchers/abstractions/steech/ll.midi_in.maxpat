@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 5,
+			"minor" : 6,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 100.0, 1012.0, 851.0 ],
+		"rect" : [ 34.0, 100.0, 1012.0, 786.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -64,7 +64,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "MIDI Channel (to umenu)",
+					"comment" : "MIDI Channel (to umenu)",
+					"hint" : "MIDI Channel (to umenu)",
 					"id" : "obj-24",
 					"index" : 3,
 					"maxclass" : "outlet",
@@ -76,7 +78,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "MIDI Port (to umenu)",
+					"comment" : "MIDI Port (to umenu)",
+					"hint" : "MIDI Port (to umenu)",
 					"id" : "obj-23",
 					"index" : 2,
 					"maxclass" : "outlet",
@@ -88,7 +92,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "MIDI Channel\n",
+					"comment" : "MIDI Channel",
+					"hint" : "MIDI Channel",
 					"id" : "obj-17",
 					"index" : 2,
 					"maxclass" : "inlet",
@@ -101,7 +107,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "MIDI Port Name",
+					"comment" : "MIDI Port Name",
+					"hint" : "MIDI Port Name",
 					"id" : "obj-16",
 					"index" : 1,
 					"maxclass" : "inlet",
@@ -123,14 +131,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ -1046.0, 224.0, 1012.0, 851.0 ],
+						"rect" : [ 134.0, 100.0, 1012.0, 786.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -412,8 +420,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -581,12 +589,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-59",
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 23.0, 138.0, 186.0, 22.0 ],
-									"text" : "clear, append -no-, append ll.midi"
+									"patching_rect" : [ 23.0, 138.0, 210.0, 35.0 ],
+									"text" : "clear, append -no-, append ~refresh~, append ll.midi"
 								}
 
 							}
@@ -735,7 +744,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "Raw MIDI Messages",
+					"comment" : "Raw MIDI Messages",
+					"hint" : "Raw MIDI Messages",
 					"id" : "obj-80",
 					"index" : 1,
 					"maxclass" : "outlet",
@@ -756,8 +767,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1156,8 +1167,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1302,11 +1313,11 @@
 								"box" : 								{
 									"id" : "obj-65",
 									"maxclass" : "newobj",
-									"numinlets" : 3,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "bang", "" ],
-									"patching_rect" : [ 49.291655999999989, 44.0, 227.708344000000011, 22.0 ],
-									"text" : "sel -no- ll.midi"
+									"numinlets" : 4,
+									"numoutlets" : 4,
+									"outlettype" : [ "bang", "bang", "bang", "" ],
+									"patching_rect" : [ 49.291655999999989, 44.0, 174.354172000000005, 22.0 ],
+									"text" : "sel -no- ~refresh~ ll.midi"
 								}
 
 							}
@@ -1505,7 +1516,14 @@
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
 									"order" : 0,
-									"source" : [ "obj-65", 2 ]
+									"source" : [ "obj-65", 3 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-65", 1 ]
 								}
 
 							}
@@ -1521,7 +1539,7 @@
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
 									"order" : 1,
-									"source" : [ "obj-65", 2 ]
+									"source" : [ "obj-65", 3 ]
 								}
 
 							}
@@ -1529,7 +1547,7 @@
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
 									"order" : 1,
-									"source" : [ "obj-65", 1 ]
+									"source" : [ "obj-65", 2 ]
 								}
 
 							}
@@ -1537,7 +1555,7 @@
 								"patchline" : 								{
 									"destination" : [ "obj-66", 0 ],
 									"order" : 0,
-									"source" : [ "obj-65", 1 ]
+									"source" : [ "obj-65", 2 ]
 								}
 
 							}

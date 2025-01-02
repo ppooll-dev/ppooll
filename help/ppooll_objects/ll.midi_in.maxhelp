@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 5,
+			"minor" : 6,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 67.0, 100.0, 382.0, 360.0 ],
+		"rect" : [ 756.0, 488.0, 434.0, 431.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,60 @@
 		"assistshowspatchername" : 0,
 		"globalpatchername" : "ll.midi_in1",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-20",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 224.0, 362.0, 186.0, 33.0 ],
+					"text" : "named umenus\n(must use Pattr Stores Symbol)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"items" : [ "all", ",", 1, ",", 2, ",", 3, ",", 4, ",", 5, ",", 6, ",", 7, ",", 8, ",", 9, ",", 10, ",", 11, ",", 12, ",", 13, ",", 14, ",", 15, ",", 16 ],
+					"maxclass" : "umenu",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 118.0, 373.0, 100.0, 22.0 ],
+					"pattrmode" : 1,
+					"varname" : "midi_in_chan"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-16",
+					"items" : [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "to Max 1", ",", "to Max 2" ],
+					"maxclass" : "umenu",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 13.0, 373.0, 100.0, 22.0 ],
+					"pattrmode" : 1,
+					"varname" : "midi_in_port"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-17",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
+					"patching_rect" : [ 13.0, 401.0, 198.0, 22.0 ],
+					"text" : "ll.midi_in midi_in_port midi_in_chan"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-15",
 					"maxclass" : "comment",
@@ -85,7 +139,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 230.0, 111.0, 97.0, 22.0 ],
+					"patching_rect" : [ 244.0, 108.0, 97.0, 22.0 ],
 					"prefix_mode" : 2,
 					"showdotfiles" : 1
 				}
@@ -99,7 +153,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 230.0, 93.0, 55.0, 20.0 ],
+					"patching_rect" : [ 244.0, 91.0, 55.0, 20.0 ],
 					"text" : "see also"
 				}
 
@@ -113,7 +167,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 233.5, 105.0, 65.0, 22.0 ],
+					"patching_rect" : [ 276.0, 108.0, 65.0, 22.0 ],
 					"text" : "ll.autohelp"
 				}
 
@@ -197,7 +251,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-2",
-					"items" : [ "-no-", ",", "ll.midi", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "TouchOSC Bridge", ",", "to Max 1", ",", "to Max 2", ",", "Chiral.amxd" ],
+					"items" : [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "to Max 1", ",", "to Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -286,6 +340,11 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 408.0, 199.0, 107.0, 22.0 ],
+					"restore" : 					{
+						"midi_in_chan" : [ "all" ],
+						"midi_in_port" : [ "-no-" ]
+					}
+,
 					"text" : "autopattr autopattr",
 					"varname" : "autopattr"
 				}
