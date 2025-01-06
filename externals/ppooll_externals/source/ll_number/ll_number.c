@@ -1023,7 +1023,7 @@ void ll_number_setmousecursor(t_ll_number *x, t_object *patcherview, t_pt pt, lo
             x->ll_mouse_focus_mode == MOUSE_FOCUS_NUMBER
          )
     ) {
-        cursorType = JMOUSE_CURSOR_IBEAM;
+        cursorType = JMOUSE_CURSOR_ARROW;
     }
     // Alt key forces leftright cursor
     if (modifiers & eAltKey) {
@@ -1031,7 +1031,7 @@ void ll_number_setmousecursor(t_ll_number *x, t_object *patcherview, t_pt pt, lo
     }
     // If Slider Style in "none", only show ibeam cursor
     if (x->ll_sliderstyle == SLIDER_STYLE_NONE){
-        cursorType = JMOUSE_CURSOR_IBEAM;
+        cursorType = JMOUSE_CURSOR_ARROW;
     }
     // Set the cursor type
     jmouse_setcursor(patcherview, (t_object *)x, cursorType);
