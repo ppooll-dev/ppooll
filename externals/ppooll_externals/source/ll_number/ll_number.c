@@ -683,14 +683,14 @@ void ll_number_draw_label(t_ll_number *x, t_jgraphics *g, const char *label, dou
 void ll_number_bang(t_ll_number *x){
     if(x->ll_prepend_label){
         for (int i = 0; i < x->ll_amount; i++) {
-            t_atom output[2];
             if (atom_gettype(&x->ll_label[i]) == A_SYM) {
-                atom_setsym(&output[0], atom_getsym(&x->ll_label[i]));
+                outlet_anything(x->ll_box.b_ob.o_outlet, atom_getsym(&x->ll_label[i]), 1, &x->ll_vala[i]);
             } else {
+                t_atom output[2];
                 atom_setlong(&output[0], i + 1);
+                atom_setfloat(&output[1], atom_getfloat(&x->ll_vala[i]));
+                outlet_list(x->ll_box.b_ob.o_outlet, NULL, 2, output);
             }
-            atom_setfloat(&output[1], atom_getfloat(&x->ll_vala[i]));
-            outlet_list(x->ll_box.b_ob.o_outlet, NULL, 2, output);
         }
         return;
     }
