@@ -89,9 +89,14 @@ void ll_fastforward_list(t_ll_fastforward *x, t_symbol *s, long ac, t_atom *av) 
         error("list is empty or invalid");
         return;
     }
+    if(!x->prepend){
+        error("numbers as receivers require 'prepend' attribute");
+        return;
+    }
     // Determine the type of the first atom
     switch (atom_gettype(&av[0])) {
         case A_SYM:
+            // TODO: does this ever happen?  If the header is a list, I think the first atom is always a number
             receiver = atom_getsym(&av[0]); // Extract the symbol directly
             break;
         case A_LONG:
