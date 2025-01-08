@@ -1376,22 +1376,17 @@ void ll_number_reset_format(t_ll_number *x){
 
 // Set Attribute - "format"
 t_max_err ll_number_setattr_ll_format(t_ll_number *x, void *attr, long ac, t_atom *av) {
-    if (atom_getatom_array(ac, av, ac, x->ll_format)) {
+    double format_float = 3.2;
+
+    if (atom_getatom_array(ac, av, ac, x->ll_format))
         error("Could not parse format. Reverting to default format 3.2.");
-        ll_number_reset_format(x);
-        return MAX_ERR_GENERIC;
-    }
-    if (ac < 1) {
+    else if (ac < 1)
         error("No format specified. Reverting to default format 3.2.");
-        ll_number_reset_format(x);
-        return MAX_ERR_NONE;
-    }
-    if( !ll_number_is_atom_a_number(1, &av[0]) ){
+    else if( !ll_number_is_atom_a_number(1, &av[0]) )
         error("Leading symbol in format. Reverting to default format 3.2.");
-        ll_number_reset_format(x);
-        return MAX_ERR_NONE;
-    }
-    double format_float = atom_getfloat(&av[0]);
+    else
+        format_float = atom_getfloat(&av[0]);
+    
     x->ll_format_len = ac;
     x->ll_format_fraction = (int)round(fmod(format_float, 1) * 10);
     x->ll_format_whole = (int)format_float;

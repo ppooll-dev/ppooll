@@ -89,7 +89,7 @@ void ll_fastforward_list(t_ll_fastforward *x, t_symbol *s, long ac, t_atom *av) 
         error("list is empty or invalid");
         return;
     }
-    if(!x->prepend){
+    if(x->prepend[0] == '\0'){
         error("numbers as receivers require 'prepend' attribute");
         return;
     }
