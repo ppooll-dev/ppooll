@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 925.0, 693.0 ],
+		"rect" : [ 254.0, 66.0, 925.0, 693.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -45,7 +45,7 @@
 					"color" : [ 0.294118, 1.0, 0.294118, 1.0 ],
 					"fontname" : "Arial",
 					"fontsize" : 16.0,
-					"id" : "obj-16",
+					"id" : "obj-4",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
@@ -54,7 +54,222 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 5,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"classnamespace" : "box",
+						"rect" : [ 254.0, 92.0, 925.0, 667.0 ],
+						"bglocked" : 0,
+						"openinpresentation" : 0,
+						"default_fontsize" : 12.0,
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"gridonopen" : 1,
+						"gridsize" : [ 15.0, 15.0 ],
+						"gridsnaponopen" : 1,
+						"objectsnaponopen" : 1,
+						"statusbarvisible" : 2,
+						"toolbarvisible" : 1,
+						"lefttoolbarpinned" : 0,
+						"toptoolbarpinned" : 0,
+						"righttoolbarpinned" : 0,
+						"bottomtoolbarpinned" : 0,
+						"toolbars_unpinned_last_save" : 0,
+						"tallnewobj" : 0,
+						"boxanimatetime" : 200,
+						"enablehscroll" : 1,
+						"enablevscroll" : 1,
+						"devicewidth" : 0.0,
+						"description" : "",
+						"digest" : "",
+						"tags" : "",
+						"style" : "",
+						"subpatcher_template" : "",
+						"showontab" : 1,
+						"assistshowspatchername" : 0,
+						"boxes" : [ 							{
+								"box" : 								{
+									"hidden" : 1,
+									"id" : "obj-23",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 36.0, 74.0, 58.0, 22.0 ],
+									"text" : "loadbang"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-22",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 232.0, 176.0, 209.0, 47.0 ],
+									"text" : "when this attribute is enabled, the object will be made \"hidden\" on pressing return/enter"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-20",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 36.0, 107.0, 55.0, 22.0 ],
+									"text" : "hidden 0"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "hideonenter",
+									"id" : "obj-19",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 170.0, 107.0, 150.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontface" : 0,
+									"hideonenter" : 1,
+									"id" : "obj-18",
+									"maxclass" : "ll_number",
+									"mousefocus" : 1,
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 36.0, 152.0, 172.0, 34.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 14.0,
+									"id" : "obj-29",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 232.0, 152.0, 209.0, 22.0 ],
+									"text" : "hide on change"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontsize" : 30.0,
+									"id" : "obj-32",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 18.0, 10.0, 140.0, 40.0 ],
+									"text" : "ll_number"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 4,
+									"outlettype" : [ "", "", "", "" ],
+									"patching_rect" : [ 552.0, 61.0, 59.5, 22.0 ],
+									"text" : "autopattr",
+									"varname" : "u172000573"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-2",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 544.0, 38.0, 75.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"client_rect" : [ 100, 87, 860, 1046 ],
+										"parameter_enable" : 0,
+										"parameter_mappable" : 0,
+										"storage_rect" : [ 430, 270, 1276, 999 ]
+									}
+,
+									"text" : "pattrstorage",
+									"varname" : "u400000519"
+								}
+
+							}
+ ],
+						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-18", 0 ],
+									"source" : [ "obj-19", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-18", 0 ],
+									"source" : [ "obj-20", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-20", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-23", 0 ]
+								}
+
+							}
+ ]
+					}
+,
+					"patching_rect" : [ 658.0, 216.0, 65.0, 26.0 ],
+					"saved_object_attributes" : 					{
+						"description" : "",
+						"digest" : "",
+						"globalpatchername" : "",
+						"tags" : ""
+					}
+,
+					"text" : "p hiding",
+					"varname" : "multinumber!!![2]"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"color" : [ 0.294118, 1.0, 0.294118, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 16.0,
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 8,
+							"minor" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -91,6 +306,629 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"hidden" : 1,
+									"id" : "obj-11",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 256.0, 108.0, 58.0, 22.0 ],
+									"text" : "loadbang"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-10",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 108.0, 280.0, 111.0, 22.0 ],
+									"text" : "3 1500."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-13",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 221.0, 274.5, 102.0, 33.0 ],
+									"text" : "unlabeled <index> <value>"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-9",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 165.0, 108.0, 89.0, 22.0 ],
+									"text" : "500 1000 1500"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 14.0,
+									"id" : "obj-3",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 234.0, 227.0, 172.0, 38.0 ],
+									"text" : "prepend output with label \n<label> <value>"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 14.0,
+									"id" : "obj-29",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 159.0, 76.0, 209.0, 22.0 ],
+									"text" : "set specific sliders using labels"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "prependlabel",
+									"id" : "obj-17",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 234.0, 202.0, 150.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-16",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 117.0, 231.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-14",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 34.0, 231.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-12",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "" ],
+									"patching_rect" : [ 34.0, 202.0, 185.0, 22.0 ],
+									"text" : "route attack decay"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-7",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 104.0, 76.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-8",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 104.0, 108.0, 57.0, 22.0 ],
+									"text" : "decay $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-5",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 34.0, 76.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 34.0, 108.0, 57.0, 22.0 ],
+									"text" : "attack $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"amount" : 3,
+									"fontface" : 0,
+									"id" : "obj-4",
+									"label" : [ "attack", "decay" ],
+									"maxclass" : "ll_number",
+									"mousefocus" : 1,
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 34.0, 139.0, 200.0, 53.0 ],
+									"prependlabel" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontsize" : 30.0,
+									"id" : "obj-32",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 18.0, 10.0, 140.0, 40.0 ],
+									"text" : "ll_number"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 4,
+									"outlettype" : [ "", "", "", "" ],
+									"patching_rect" : [ 552.0, 61.0, 59.5, 22.0 ],
+									"text" : "autopattr",
+									"varname" : "u172000573"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-2",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 544.0, 38.0, 75.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"client_rect" : [ 100, 87, 860, 1046 ],
+										"parameter_enable" : 0,
+										"parameter_mappable" : 0,
+										"storage_rect" : [ 430, 270, 1276, 999 ]
+									}
+,
+									"text" : "pattrstorage",
+									"varname" : "u400000519"
+								}
+
+							}
+ ],
+						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-9", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-10", 1 ],
+									"source" : [ "obj-12", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-14", 0 ],
+									"source" : [ "obj-12", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-16", 0 ],
+									"source" : [ "obj-12", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-12", 0 ],
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"source" : [ "obj-7", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-8", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-9", 0 ]
+								}
+
+							}
+ ]
+					}
+,
+					"patching_rect" : [ 553.0, 216.0, 81.0, 26.0 ],
+					"saved_object_attributes" : 					{
+						"description" : "",
+						"digest" : "",
+						"globalpatchername" : "",
+						"tags" : ""
+					}
+,
+					"text" : "p prepend",
+					"varname" : "multinumber!!![1]"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"color" : [ 0.294118, 1.0, 0.294118, 1.0 ],
+					"fontname" : "Arial",
+					"fontsize" : 16.0,
+					"id" : "obj-16",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 8,
+							"minor" : 6,
+							"revision" : 5,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"classnamespace" : "box",
+						"rect" : [ 0.0, 26.0, 925.0, 667.0 ],
+						"bglocked" : 0,
+						"openinpresentation" : 0,
+						"default_fontsize" : 12.0,
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"gridonopen" : 1,
+						"gridsize" : [ 15.0, 15.0 ],
+						"gridsnaponopen" : 1,
+						"objectsnaponopen" : 1,
+						"statusbarvisible" : 2,
+						"toolbarvisible" : 1,
+						"lefttoolbarpinned" : 0,
+						"toptoolbarpinned" : 0,
+						"righttoolbarpinned" : 0,
+						"bottomtoolbarpinned" : 0,
+						"toolbars_unpinned_last_save" : 0,
+						"tallnewobj" : 0,
+						"boxanimatetime" : 200,
+						"enablehscroll" : 1,
+						"enablevscroll" : 1,
+						"devicewidth" : 0.0,
+						"description" : "",
+						"digest" : "",
+						"tags" : "",
+						"style" : "",
+						"subpatcher_template" : "",
+						"showontab" : 1,
+						"assistshowspatchername" : 0,
+						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-14",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "float" ],
+									"patcher" : 									{
+										"fileversion" : 1,
+										"appversion" : 										{
+											"major" : 8,
+											"minor" : 6,
+											"revision" : 5,
+											"architecture" : "x64",
+											"modernui" : 1
+										}
+,
+										"classnamespace" : "box",
+										"rect" : [ 73.0, 402.0, 640.0, 480.0 ],
+										"bglocked" : 0,
+										"openinpresentation" : 0,
+										"default_fontsize" : 12.0,
+										"default_fontface" : 0,
+										"default_fontname" : "Arial",
+										"gridonopen" : 1,
+										"gridsize" : [ 15.0, 15.0 ],
+										"gridsnaponopen" : 1,
+										"objectsnaponopen" : 1,
+										"statusbarvisible" : 2,
+										"toolbarvisible" : 1,
+										"lefttoolbarpinned" : 0,
+										"toptoolbarpinned" : 0,
+										"righttoolbarpinned" : 0,
+										"bottomtoolbarpinned" : 0,
+										"toolbars_unpinned_last_save" : 0,
+										"tallnewobj" : 0,
+										"boxanimatetime" : 200,
+										"enablehscroll" : 1,
+										"enablevscroll" : 1,
+										"devicewidth" : 0.0,
+										"description" : "",
+										"digest" : "",
+										"tags" : "",
+										"style" : "",
+										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
+										"boxes" : [ 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-10",
+													"index" : 1,
+													"maxclass" : "outlet",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 155.0, 241.0, 30.0, 30.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-8",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 182.0, 143.0, 71.0, 22.0 ],
+													"text" : "fromsymbol"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-7",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 182.0, 115.0, 61.0, 22.0 ],
+													"text" : "sprintf .%i"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-6",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 103.0, 241.0, 50.0, 22.0 ],
+													"text" : "1.13"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-4",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 134.0, 175.0, 55.0, 22.0 ],
+													"text" : "pak 0. 0."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-3",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "float" ],
+													"patching_rect" : [ 134.0, 206.0, 29.5, 22.0 ],
+													"text" : "+ 0."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-2",
+													"index" : 2,
+													"maxclass" : "inlet",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 182.0, 79.0, 30.0, 30.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-1",
+													"index" : 1,
+													"maxclass" : "inlet",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 134.0, 79.0, 30.0, 30.0 ]
+												}
+
+											}
+ ],
+										"lines" : [ 											{
+												"patchline" : 												{
+													"destination" : [ "obj-4", 0 ],
+													"source" : [ "obj-1", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-7", 0 ],
+													"source" : [ "obj-2", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-10", 0 ],
+													"order" : 0,
+													"source" : [ "obj-3", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-6", 1 ],
+													"order" : 1,
+													"source" : [ "obj-3", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-3", 0 ],
+													"source" : [ "obj-4", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-8", 0 ],
+													"source" : [ "obj-7", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-4", 1 ],
+													"source" : [ "obj-8", 0 ]
+												}
+
+											}
+ ]
+									}
+,
+									"patching_rect" : [ 433.0, 188.0, 57.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"description" : "",
+										"digest" : "",
+										"globalpatchername" : "",
+										"tags" : ""
+									}
+,
+									"text" : "p"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-13",
+									"maxclass" : "number",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 471.0, 159.0, 41.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-12",
+									"maxclass" : "number",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 433.0, 159.0, 33.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-64",
@@ -123,7 +961,7 @@
 									"allowdrag" : 0,
 									"fontsize" : 11.595186999999999,
 									"id" : "obj-68",
-									"items" : [ "Ableton Sans Bold", ",", "Ableton Sans Light", ",", "Ableton Sans Medium", ",", "Academy Engraved LET Plain", ",", "Adobe Arabic", ",", "Adobe Arabic Italic", ",", "Adobe Arabic Bold", ",", "Adobe Arabic Bold Italic", ",", "Adobe Caslon Pro", ",", "Adobe Caslon Pro Italic", ",", "Adobe Caslon Pro Semibold", ",", "Adobe Caslon Pro Semibold Italic", ",", "Adobe Caslon Pro Bold", ",", "Adobe Caslon Pro Bold Italic", ",", "Adobe Devanagari", ",", "Adobe Devanagari Italic", ",", "Adobe Devanagari Bold", ",", "Adobe Devanagari Bold Italic", ",", "Adobe Fan Heiti Std B", ",", "Adobe Fangsong Std R", ",", "Adobe Garamond Pro", ",", "Adobe Garamond Pro Italic", ",", "Adobe Garamond Pro Bold", ",", "Adobe Garamond Pro Bold Italic", ",", "Adobe Gothic Std B", ",", "Adobe Gurmukhi", ",", "Adobe Gurmukhi Bold", ",", "Adobe Hebrew", ",", "Adobe Hebrew Italic", ",", "Adobe Hebrew Bold", ",", "Adobe Hebrew Bold Italic", ",", "Adobe Heiti Std R", ",", "Adobe Kaiti Std R", ",", "Adobe Ming Std L", ",", "Adobe Myungjo Std M", ",", "Adobe Naskh Medium", ",", "Adobe Song Std L", ",", "AG Book Rounded", ",", "AG Book Rounded", ",", "AG Book Rounded Medium", ",", "Al Bayan Plain", ",", "Al Bayan Bold", ",", "Al Nile", ",", "Al Nile Bold", ",", "Al Tarikh", ",", "Alte Haas Grotesk", ",", "Alte Haas Grotesk Bold", ",", "American Typewriter", ",", "American Typewriter Light", ",", "American Typewriter Semibold", ",", "American Typewriter Bold", ",", "American Typewriter Condensed", ",", "American Typewriter Condensed Light", ",", "American Typewriter Condensed Bold", ",", "Andale Mono", ",", "Apple Braille Outline 6 Dot", ",", "Apple Braille Outline 8 Dot", ",", "Apple Braille Pinpoint 6 Dot", ",", "Apple Braille Pinpoint 8 Dot", ",", "Apple Braille", ",", "Apple Chancery Chancery", ",", "Apple Color Emoji", ",", "Apple SD Gothic Neo", ",", "Apple SD Gothic Neo Thin", ",", "Apple SD Gothic Neo UltraLight", ",", "Apple SD Gothic Neo Light", ",", "Apple SD Gothic Neo Medium", ",", "Apple SD Gothic Neo SemiBold", ",", "Apple SD Gothic Neo Bold", ",", "Apple SD Gothic Neo ExtraBold", ",", "Apple SD Gothic Neo Heavy", ",", "Apple Symbols", ",", "AppleGothic", ",", "AppleMyungjo", ",", "Arial", ",", "Arial Italic", ",", "Arial Bold", ",", "Arial Bold Italic", ",", "Arial Black", ",", "Arial Hebrew", ",", "Arial Hebrew Light", ",", "Arial Hebrew Bold", ",", "Arial Hebrew Scholar", ",", "Arial Hebrew Scholar Light", ",", "Arial Hebrew Scholar Bold", ",", "Arial Narrow", ",", "Arial Narrow Italic", ",", "Arial Narrow Bold", ",", "Arial Narrow Bold Italic", ",", "Arial Rounded MT Bold", ",", "Arial Unicode MS", ",", "Avenir Book", ",", "Avenir Roman", ",", "Avenir Book Oblique", ",", "Avenir Oblique", ",", "Avenir Light", ",", "Avenir Light Oblique", ",", "Avenir Medium", ",", "Avenir Medium Oblique", ",", "Avenir Heavy", ",", "Avenir Heavy Oblique", ",", "Avenir Black", ",", "Avenir Black Oblique", ",", "Avenir Next", ",", "Avenir Next Italic", ",", "Avenir Next Ultra Light", ",", "Avenir Next Ultra Light Italic", ",", "Avenir Next Medium", ",", "Avenir Next Medium Italic", ",", "Avenir Next Demi Bold", ",", "Avenir Next Demi Bold Italic", ",", "Avenir Next Bold", ",", "Avenir Next Bold Italic", ",", "Avenir Next Heavy", ",", "Avenir Next Heavy Italic", ",", "Avenir Next Condensed", ",", "Avenir Next Condensed Italic", ",", "Avenir Next Condensed Ultra Light", ",", "Avenir Next Condensed Ultra Light Italic", ",", "Avenir Next Condensed Medium", ",", "Avenir Next Condensed Medium Italic", ",", "Avenir Next Condensed Demi Bold", ",", "Avenir Next Condensed Demi Bold Italic", ",", "Avenir Next Condensed Bold", ",", "Avenir Next Condensed Bold Italic", ",", "Avenir Next Condensed Heavy", ",", "Avenir Next Condensed Heavy Italic", ",", "Ayuthaya", ",", "Baghdad", ",", "Bangla MN", ",", "Bangla MN Bold", ",", "Bangla Sangam MN", ",", "Bangla Sangam MN Bold", ",", "Baskerville", ",", "Baskerville Italic", ",", "Baskerville SemiBold", ",", "Baskerville SemiBold Italic", ",", "Baskerville Bold", ",", "Baskerville Bold Italic", ",", "Beirut", ",", "Big Caslon Medium", ",", "Birch Std", ",", "Blackoak Std", ",", "Bodoni 72 Book", ",", "Bodoni 72 Book Italic", ",", "Bodoni 72 Bold", ",", "Bodoni 72 Oldstyle Book", ",", "Bodoni 72 Oldstyle Book Italic", ",", "Bodoni 72 Oldstyle Bold", ",", "Bodoni 72 Smallcaps Book", ",", "Bodoni Ornaments", ",", "Bradley Hand Bold", ",", "BradloSans", ",", "BradloSans Bold", ",", "BradloSansCE", ",", "BradloSansCE Bold", ",", "BradloSlab", ",", "BradloSlab Bold", ",", "BradloSlabCE", ",", "BradloSlabCE Bold", ",", "Brush Script MT Italic", ",", "Brush Script Std Medium", ",", "Chalkboard", ",", "Chalkboard Bold", ",", "Chalkboard SE", ",", "Chalkboard SE Light", ",", "Chalkboard SE Bold", ",", "Chalkduster", ",", "Chaparral Pro", ",", "Chaparral Pro Italic", ",", "Chaparral Pro Light Italic", ",", "Chaparral Pro Bold", ",", "Chaparral Pro Bold Italic", ",", "Charis SIL", ",", "Charis SIL Italic", ",", "Charis SIL Bold", ",", "Charis SIL Bold Italic", ",", "Charlemagne Std Bold", ",", "Charter Roman", ",", "Charter Italic", ",", "Charter Bold", ",", "Charter Bold Italic", ",", "Charter Black", ",", "Charter Black Italic", ",", "Cochin", ",", "Cochin Italic", ",", "Cochin Bold", ",", "Cochin Bold Italic", ",", "Comic Sans MS", ",", "Comic Sans MS Bold", ",", "Copperplate", ",", "Copperplate Light", ",", "Copperplate Bold", ",", "Corsiva Hebrew", ",", "Corsiva Hebrew Bold", ",", "Courier New", ",", "Courier New Italic", ",", "Courier New Bold", ",", "Courier New Bold Italic", ",", "Damascus", ",", "Damascus Light", ",", "Damascus Medium", ",", "Damascus Semi Bold", ",", "Damascus Bold", ",", "DecoType Naskh", ",", "Devanagari MT", ",", "Devanagari MT Bold", ",", "Devanagari Sangam MN", ",", "Devanagari Sangam MN Bold", ",", "Didot", ",", "Didot Italic", ",", "Didot Bold", ",", "DIN Alternate Bold", ",", "DIN Condensed Bold", ",", "Diwan Kufi", ",", "Diwan Thuluth", ",", "Doulos SIL", ",", "Euphemia UCAS", ",", "Euphemia UCAS Italic", ",", "Euphemia UCAS Bold", ",", "Farah", ",", "Farisi", ",", "Futura Medium", ",", "Futura Medium Italic", ",", "Futura Bold", ",", "Futura Condensed Medium", ",", "Futura Condensed ExtraBold", ",", "Galvji", ",", "Galvji Oblique", ",", "Galvji Bold", ",", "Galvji Bold Oblique", ",", "GB18030 Bitmap", ",", "Geeza Pro", ",", "Geeza Pro Bold", ",", "Geneva", ",", "Georgia", ",", "Georgia Italic", ",", "Georgia Bold", ",", "Georgia Bold Italic", ",", "Gill Sans", ",", "Gill Sans Italic", ",", "Gill Sans Light", ",", "Gill Sans Light Italic", ",", "Gill Sans SemiBold", ",", "Gill Sans SemiBold Italic", ",", "Gill Sans Bold", ",", "Gill Sans Bold Italic", ",", "Gill Sans UltraBold", ",", "Grantha Sangam MN", ",", "Grantha Sangam MN Bold", ",", "Gujarati MT", ",", "Gujarati MT Bold", ",", "Gujarati Sangam MN", ",", "Gujarati Sangam MN Bold", ",", "Gurmukhi MN", ",", "Gurmukhi MN Bold", ",", "Gurmukhi MT", ",", "Gurmukhi Sangam MN", ",", "Gurmukhi Sangam MN Bold", ",", "Heiti SC Light", ",", "Heiti SC Medium", ",", "Heiti TC Light", ",", "Heiti TC Medium", ",", "Helvetica", ",", "Helvetica Oblique", ",", "Helvetica Light", ",", "Helvetica Light Oblique", ",", "Helvetica Bold", ",", "Helvetica Bold Oblique", ",", "Helvetica Neue", ",", "Helvetica Neue Italic", ",", "Helvetica Neue UltraLight", ",", "Helvetica Neue UltraLight Italic", ",", "Helvetica Neue Thin", ",", "Helvetica Neue Thin Italic", ",", "Helvetica Neue Light", ",", "Helvetica Neue Light Italic", ",", "Helvetica Neue Medium", ",", "Helvetica Neue Medium Italic", ",", "Helvetica Neue Bold", ",", "Helvetica Neue Bold Italic", ",", "Helvetica Neue Helvetica 43 Light Extended", ",", "Helvetica Neue Helvetica 43 Light Extended Oblique", ",", "Helvetica Neue Helvetica 63 Medium Extended", ",", "Helvetica Neue Helvetica 63 Medium Extended Oblique", ",", "Helvetica Neue Helvetica 83 Heavy Extended", ",", "Helvetica Neue Condensed Bold", ",", "Helvetica Neue Condensed Black", ",", "HelveticaNeue 18 pt. Helvetica* 25 Ultra Light  79472", ",", "HelveticaNeue 18 pt Helvetica* 26 Ultra Light Italic  99472", ",", "HelveticaNeue 18 pt. Helvetica* 35 Thin  55472", ",", "HelveticaNeue 18 pt. Helvetica* 36 Thin Italic  56472", ",", "HelveticaNeue 12 pt. Helvetica* 45 Light   02472", ",", "HelveticaNeue 12 pt. Helvetica* 46 Light Italic   11472", ",", "HelveticaNeue 12 pt Helvetica* 55 Roman   05472", ",", "HelveticaNeue 12 pt. Helvetica* 56 Italic   13472", ",", "HelveticaNeue 12 pt. Helvetica* 65 Medium   06472", ",", "HelveticaNeue 12 pt. Helvetica* 66 Medium Italic   33472", ",", "HelveticaNeue 12 pt. Helvetica* 75 Bold   07472", ",", "HelveticaNeue 12 pt. Helvetica* 76 Bold Italic   14472", ",", "HelveticaNeue 12 pt. Helvetica* 85 Heavy   08472", ",", "HelveticaNeue 12 pt. Helvetica* 86 Heavy Italic   15472", ",", "HelveticaNeue 12 pt. Helvetica* 95 Black   09472", ",", "HelveticaNeue 12 pt. Helvetica* 96 Black Italic   16472", ",", "Herculanum", ",", "Hiragino Maru Gothic ProN W4", ",", "Hiragino Mincho ProN W3", ",", "Hiragino Mincho ProN W6", ",", "Hiragino Sans W0", ",", "Hiragino Sans W1", ",", "Hiragino Sans W2", ",", "Hiragino Sans W3", ",", "Hiragino Sans W4", ",", "Hiragino Sans W5", ",", "Hiragino Sans W6", ",", "Hiragino Sans W7", ",", "Hiragino Sans W8", ",", "Hiragino Sans W9", ",", "Hiragino Sans GB W3", ",", "Hiragino Sans GB W6", ",", "Hobo Std Medium", ",", "Hoefler Text", ",", "Hoefler Text Ornaments", ",", "Hoefler Text Italic", ",", "Hoefler Text Black", ",", "Hoefler Text Black Italic", ",", "Impact", ",", "InaiMathi", ",", "InaiMathi Bold", ",", "Interstate", ",", "Interstate RegularCompressed", ",", "Interstate Light", ",", "Interstate LightCompressed", ",", "Interstate Bold", ",", "Interstate BoldCompressed", ",", "Interstate Black", ",", "Interstate BlackCompressed", ",", "Interstate RegularCondensed", ",", "Interstate LightCondensed", ",", "Interstate BoldCondensed", ",", "Interstate BlackCondensed", ",", "ITC Lubalin Graph Book", ",", "ITC Lubalin Graph Book Oblique", ",", "ITC Lubalin Graph Demi", ",", "ITC Lubalin Graph ITC LubalinGraph Demi Oblique", ",", "ITF Devanagari Book", ",", "ITF Devanagari Light", ",", "ITF Devanagari Medium", ",", "ITF Devanagari Demi", ",", "ITF Devanagari Bold", ",", "ITF Devanagari Marathi Book", ",", "ITF Devanagari Marathi Light", ",", "ITF Devanagari Marathi Medium", ",", "ITF Devanagari Marathi Demi", ",", "ITF Devanagari Marathi Bold", ",", "Kailasa", ",", "Kailasa Bold", ",", "Kannada MN", ",", "Kannada MN Bold", ",", "Kannada Sangam MN", ",", "Kannada Sangam MN Bold", ",", "Karbid Normal", ",", "Karbid NormalCaps", ",", "Karbid NormalExpert", ",", "Karbid NormalFigures", ",", "Karbid Bold", ",", "Karbid BoldCaps", ",", "Karbid BoldExpert", ",", "Karbid BoldFigures", ",", "Karbid ExtraBold", ",", "Karbid ExtraBoldCaps", ",", "Karbid ExtraBoldExpert", ",", "Karbid ExtraBoldFigures", ",", "KarbidDisplay Bold", ",", "KarbidDisplay BoldExpert", ",", "KarbidDisplay BoldFigures", ",", "KarbidDisplay ExtraBold", ",", "KarbidDisplay ExtraBoldExpert", ",", "KarbidDisplay ExtraBoldFigs", ",", "Kefa", ",", "Kefa Bold", ",", "Khmer MN", ",", "Khmer MN Bold", ",", "Khmer Sangam MN", ",", "Kohinoor Bangla", ",", "Kohinoor Bangla Light", ",", "Kohinoor Bangla Medium", ",", "Kohinoor Bangla Semibold", ",", "Kohinoor Bangla Bold", ",", "Kohinoor Devanagari", ",", "Kohinoor Devanagari Light", ",", "Kohinoor Devanagari Medium", ",", "Kohinoor Devanagari Semibold", ",", "Kohinoor Devanagari Bold", ",", "Kohinoor Gujarati", ",", "Kohinoor Gujarati Light", ",", "Kohinoor Gujarati Medium", ",", "Kohinoor Gujarati Semibold", ",", "Kohinoor Gujarati Bold", ",", "Kohinoor Telugu", ",", "Kohinoor Telugu Light", ",", "Kohinoor Telugu Medium", ",", "Kohinoor Telugu Semibold", ",", "Kohinoor Telugu Bold", ",", "Kokonor", ",", "Kozuka Gothic Pr6N R", ",", "Kozuka Gothic Pr6N EL", ",", "Kozuka Gothic Pr6N L", ",", "Kozuka Gothic Pr6N M", ",", "Kozuka Gothic Pr6N B", ",", "Kozuka Gothic Pr6N H", ",", "Kozuka Gothic Pro R", ",", "Kozuka Gothic Pro EL", ",", "Kozuka Gothic Pro L", ",", "Kozuka Gothic Pro M", ",", "Kozuka Gothic Pro B", ",", "Kozuka Gothic Pro H", ",", "Kozuka Mincho Pr6N R", ",", "Kozuka Mincho Pr6N EL", ",", "Kozuka Mincho Pr6N L", ",", "Kozuka Mincho Pr6N M", ",", "Kozuka Mincho Pr6N B", ",", "Kozuka Mincho Pr6N H", ",", "Kozuka Mincho Pro R", ",", "Kozuka Mincho Pro EL", ",", "Kozuka Mincho Pro L", ",", "Kozuka Mincho Pro M", ",", "Kozuka Mincho Pro B", ",", "Kozuka Mincho Pro H", ",", "Krungthep", ",", "KufiStandardGK", ",", "Lao MN", ",", "Lao MN Bold", ",", "Lao Sangam MN", ",", "Lato", ",", "Lato Italic", ",", "Lato Hairline", ",", "Lato Hairline Italic", ",", "Lato Thin", ",", "Lato Thin Italic", ",", "Lato Light", ",", "Lato Light Italic", ",", "Lato Medium", ",", "Lato Medium Italic", ",", "Lato Semibold", ",", "Lato Semibold Italic", ",", "Lato Bold", ",", "Lato Bold Italic", ",", "Lato Heavy", ",", "Lato Heavy Italic", ",", "Lato Black", ",", "Lato Black Italic", ",", "Letter Gothic Std Medium", ",", "Letter Gothic Std Slanted", ",", "Letter Gothic Std Bold", ",", "Letter Gothic Std Bold Slanted", ",", "Lithos Pro", ",", "Lithos Pro Black", ",", "Lucida Grande", ",", "Lucida Grande Bold", ",", "Luminari", ",", "Malayalam MN", ",", "Malayalam MN Bold", ",", "Malayalam Sangam MN", ",", "Malayalam Sangam MN Bold", ",", "Marker Felt Thin", ",", "Marker Felt Wide", ",", "Menlo", ",", "Menlo Italic", ",", "Menlo Bold", ",", "Menlo Bold Italic", ",", "Microsoft Sans Serif", ",", "Milo OT", ",", "Milo OT Regular Italic", ",", "Milo OT Thin", ",", "Milo OT Thin Italic", ",", "Milo OT Extlight", ",", "Milo OT Extlight Italic", ",", "Milo OT Light", ",", "Milo OT Light Italic", ",", "Milo OT Text", ",", "Milo OT Text Italic", ",", "Milo OT Medium", ",", "Milo OT Medium Italic", ",", "Milo OT Bold", ",", "Milo OT Bold Italic", ",", "Milo OT Extrabold", ",", "Milo OT Extrabold Italic", ",", "Milo OT Black", ",", "Milo OT Black Italic", ",", "Milo Serif OT", ",", "Milo Serif OT Regular Italic", ",", "Milo Serif OT Text", ",", "Milo Serif OT Text Italic", ",", "Milo Serif OT Medium", ",", "Milo Serif OT Medium Italic", ",", "Milo Serif OT Bold", ",", "Milo Serif OT Bold Italic", ",", "Milo Serif OT Extrabold", ",", "Milo Serif OT Extrabold Italic", ",", "Milo Serif OT Black", ",", "Milo Serif OT Black Italic", ",", "Milo-Text", ",", "MiloLF-Text", ",", "MiloTF-Text", ",", "Minion Pro", ",", "Minion Pro Italic", ",", "Minion Pro Medium", ",", "Minion Pro Medium Italic", ",", "Minion Pro Semibold", ",", "Minion Pro Semibold Italic", ",", "Minion Pro Bold", ",", "Minion Pro Bold Italic", ",", "Minion Pro Bold Cond", ",", "Minion Pro Bold Cond Italic", ",", "Mishafi", ",", "Mishafi Gold", ",", "Monaco", ",", "Monument", ",", "Mshtakan", ",", "Mshtakan Oblique", ",", "Mshtakan Bold", ",", "Mshtakan BoldOblique", ",", "Mukta Mahee", ",", "Mukta Mahee ExtraLight", ",", "Mukta Mahee Light", ",", "Mukta Mahee Medium", ",", "Mukta Mahee SemiBold", ",", "Mukta Mahee Bold", ",", "Mukta Mahee ExtraBold", ",", "Muna", ",", "Muna Bold", ",", "Muna Black", ",", "Museo 100", ",", "Museo 300", ",", "Museo 500", ",", "Museo 700", ",", "Museo 900", ",", "Museo Sans 100", ",", "Museo Sans 100 Italic", ",", "Museo Sans 300", ",", "Museo Sans 300 Italic", ",", "Museo Sans 500", ",", "Museo Sans 500 Italic", ",", "Museo Sans 700", ",", "Museo Sans 700 Italic", ",", "Museo Sans 900", ",", "Museo Sans 900 Italic", ",", "Museo Slab 100", ",", "Museo Slab 1000", ",", "Museo Slab 300", ",", "Museo Slab 500", ",", "Museo Slab 700", ",", "Museo Slab 900", ",", "Museo Slab 100 Italic", ",", "Museo Slab 1000 Italic", ",", "Museo Slab 300 Italic", ",", "Museo Slab 500 Italic", ",", "Museo Slab 700 Italic", ",", "Museo Slab 900 Italic", ",", "Myanmar MN", ",", "Myanmar MN Bold", ",", "Myanmar Sangam MN", ",", "Myanmar Sangam MN Bold", ",", "Myriad Arabic", ",", "Myriad Arabic Italic", ",", "Myriad Arabic Bold", ",", "Myriad Arabic Bold Italic", ",", "Myriad Hebrew", ",", "Myriad Hebrew Italic", ",", "Myriad Hebrew Bold", ",", "Myriad Hebrew Bold Italic", ",", "Myriad Pro", ",", "Myriad Pro Italic", ",", "Myriad Pro Semibold", ",", "Myriad Pro Semibold Italic", ",", "Myriad Pro Bold", ",", "Myriad Pro Bold Italic", ",", "Myriad Pro Condensed", ",", "Myriad Pro Condensed Italic", ",", "Myriad Pro Bold Condensed", ",", "Myriad Pro Bold Condensed Italic", ",", "Nadeem", ",", "New Peninim MT", ",", "New Peninim MT Inclined", ",", "New Peninim MT Bold", ",", "New Peninim MT Bold Inclined", ",", "Noteworthy Light", ",", "Noteworthy Bold", ",", "Noto Nastaliq Urdu", ",", "Noto Nastaliq Urdu Bold", ",", "Noto Sans Kannada", ",", "Noto Sans Kannada ExtraLight", ",", "Noto Sans Kannada Thin", ",", "Noto Sans Kannada Light", ",", "Noto Sans Kannada Medium", ",", "Noto Sans Kannada SemiBold", ",", "Noto Sans Kannada Bold", ",", "Noto Sans Kannada ExtraBold", ",", "Noto Sans Kannada Black", ",", "Noto Sans Myanmar", ",", "Noto Sans Myanmar ExtraLight", ",", "Noto Sans Myanmar Thin", ",", "Noto Sans Myanmar Light", ",", "Noto Sans Myanmar Medium", ",", "Noto Sans Myanmar SemiBold", ",", "Noto Sans Myanmar Bold", ",", "Noto Sans Myanmar ExtraBold", ",", "Noto Sans Myanmar Black", ",", "Noto Sans Oriya", ",", "Noto Sans Oriya Bold", ",", "Noto Serif Myanmar", ",", "Noto Serif Myanmar ExtraLight", ",", "Noto Serif Myanmar Thin", ",", "Noto Serif Myanmar Light", ",", "Noto Serif Myanmar Medium", ",", "Noto Serif Myanmar SemiBold", ",", "Noto Serif Myanmar Bold", ",", "Noto Serif Myanmar ExtraBold", ",", "Noto Serif Myanmar Black", ",", "Nueva Std Italic", ",", "Nueva Std Bold", ",", "Nueva Std Condensed", ",", "Nueva Std Bold Condensed", ",", "OCR A Std", ",", "Optima", ",", "Optima Italic", ",", "Optima Bold", ",", "Optima Bold Italic", ",", "Optima ExtraBlack", ",", "Orator Std Medium", ",", "Oriya MN", ",", "Oriya MN Bold", ",", "Oriya Sangam MN", ",", "Oriya Sangam MN Bold", ",", "Osaka", ",", "Osaka Regular-Mono", ",", "Palatino", ",", "Palatino Italic", ",", "Palatino Bold", ",", "Palatino Bold Italic", ",", "Papyrus", ",", "Papyrus Condensed", ",", "Party LET Plain", ",", "Phosphate Inline", ",", "Phosphate Solid", ",", "PingFang HK", ",", "PingFang HK Ultralight", ",", "PingFang HK Thin", ",", "PingFang HK Light", ",", "PingFang HK Medium", ",", "PingFang HK Semibold", ",", "PingFang SC", ",", "PingFang SC Ultralight", ",", "PingFang SC Thin", ",", "PingFang SC Light", ",", "PingFang SC Medium", ",", "PingFang SC Semibold", ",", "PingFang TC", ",", "PingFang TC Ultralight", ",", "PingFang TC Thin", ",", "PingFang TC Light", ",", "PingFang TC Medium", ",", "PingFang TC Semibold", ",", "PJ Katakana Normal", ",", "Plantagenet Cherokee", ",", "Poplar Std Black", ",", "Prestige Elite Std Bold", ",", "PT Mono", ",", "PT Mono Bold", ",", "PT Sans", ",", "PT Sans Italic", ",", "PT Sans Bold", ",", "PT Sans Bold Italic", ",", "PT Sans Caption", ",", "PT Sans Caption Bold", ",", "PT Sans Narrow", ",", "PT Sans Narrow Bold", ",", "PT Serif", ",", "PT Serif Italic", ",", "PT Serif Bold", ",", "PT Serif Bold Italic", ",", "PT Serif Caption", ",", "PT Serif Caption Italic", ",", "Raanana", ",", "Raanana Bold", ",", "Rockwell", ",", "Rockwell Italic", ",", "Rockwell Bold", ",", "Rockwell Bold Italic", ",", "Sana", ",", "Sathu", ",", "Savoye LET Plain", ",", "Shree Devanagari 714", ",", "Shree Devanagari 714 Italic", ",", "Shree Devanagari 714 Bold", ",", "Shree Devanagari 714 Bold Italic", ",", "SignPainter HouseScript", ",", "SignPainter HouseScript Semibold", ",", "Silom", ",", "Sinhala MN", ",", "Sinhala MN Bold", ",", "Sinhala Sangam MN", ",", "Sinhala Sangam MN Bold", ",", "Skia", ",", "Skia Light", ",", "Skia Bold", ",", "Skia Black", ",", "Skia Extended", ",", "Skia Light Extended", ",", "Skia Black Extended", ",", "Skia Condensed", ",", "Skia Light Condensed", ",", "Skia Black Condensed", ",", "Snell Roundhand", ",", "Snell Roundhand Bold", ",", "Snell Roundhand Black", ",", "Songti SC", ",", "Songti SC Light", ",", "Songti SC Bold", ",", "Songti SC Black", ",", "Songti TC", ",", "Songti TC Light", ",", "Songti TC Bold", ",", "Source Sans Pro", ",", "Source Sans Pro Italic", ",", "Source Sans Pro ExtraLight", ",", "Source Sans Pro ExtraLight Italic", ",", "Source Sans Pro Light", ",", "Source Sans Pro Light Italic", ",", "Source Sans Pro Semibold", ",", "Source Sans Pro Semibold Italic", ",", "Source Sans Pro Bold", ",", "Source Sans Pro Bold Italic", ",", "Source Sans Pro Black", ",", "Source Sans Pro Black Italic", ",", "STIX Two Math", ",", "STIX Two Text", ",", "STIX Two Text Italic", ",", "STIX Two Text Medium", ",", "STIX Two Text Medium Italic", ",", "STIX Two Text SemiBold", ",", "STIX Two Text SemiBold Italic", ",", "STIX Two Text Bold", ",", "STIX Two Text Bold Italic", ",", "STSong", ",", "Sukhumvit Set Text", ",", "Sukhumvit Set Light", ",", "Sukhumvit Set Medium", ",", "Sukhumvit Set Semi Bold", ",", "Sukhumvit Set Bold", ",", "Sukhumvit Set Thin", ",", "Symbol", ",", "Tahoma", ",", "Tahoma Bold", ",", "Tamil MN", ",", "Tamil MN Bold", ",", "Tamil Sangam MN", ",", "Tamil Sangam MN Bold", ",", "Tekton Pro Bold", ",", "Tekton Pro Bold Oblique", ",", "Tekton Pro Bold Extended", ",", "Tekton Pro Bold Condensed", ",", "Telugu MN", ",", "Telugu MN Bold", ",", "Telugu Sangam MN", ",", "Telugu Sangam MN Bold", ",", "Thonburi", ",", "Thonburi Light", ",", "Thonburi Bold", ",", "Times New Roman", ",", "Times New Roman Italic", ",", "Times New Roman Bold", ",", "Times New Roman Bold Italic", ",", "Tobago Poster", ",", "Tobago Poster Alternate", ",", "Tobago Poster Shadow", ",", "Trajan Pro 3", ",", "Trajan Pro 3 Bold", ",", "Trattatello", ",", "Trebuchet MS", ",", "Trebuchet MS Italic", ",", "Trebuchet MS Bold", ",", "Trebuchet MS Bold Italic", ",", "Unit OT", ",", "Unit OT Regular Italic", ",", "Unit OT Thin", ",", "Unit OT Thin Italic", ",", "Unit OT Light", ",", "Unit OT Light Italic", ",", "Unit OT Medium", ",", "Unit OT Medium Italic", ",", "Unit OT Bold", ",", "Unit OT Bold Italic", ",", "Unit OT Black", ",", "Unit OT Black Italic", ",", "Unit OT Ultra", ",", "Unit OT Ultra Italic", ",", "Unit Slab OT", ",", "Unit Slab OT Regular Italic", ",", "Unit Slab OT Thin", ",", "Unit Slab OT Thin Italic", ",", "Unit Slab OT Light", ",", "Unit Slab OT Light Italic", ",", "Unit Slab OT Medium", ",", "Unit Slab OT Medium Italic", ",", "Unit Slab OT Bold", ",", "Unit Slab OT Bold Italic", ",", "Unit Slab OT Black", ",", "Unit Slab OT Black Italic", ",", "Unit Slab OT Ultra", ",", "Unit Slab OT Ultra Italic", ",", "Univers 45 Light", ",", "Univers 45 Light Oblique", ",", "Univers 55", ",", "Univers 55 Oblique", ",", "Univers 65 Bold", ",", "Univers 65 Bold Oblique", ",", "Univers 85 Extra Black", ",", "Univers 85 Extra Black Oblique", ",", "Univers 75 Black", ",", "Univers 75 Black Oblique", ",", "Univers 53 Extended", ",", "Univers 53 Extended Oblique", ",", "Univers 63 Bold Extended", ",", "Univers 63 Bold Extended Oblique", ",", "Univers 93 Extra Black Extended", ",", "Univers 93 Extra Black Extended Oblique", ",", "Univers 73 Black Extended", ",", "Univers 73 Black Extended Oblique", ",", "Univers 39 Thin Ultra Condensed", ",", "Univers 47 Condensed Light", ",", "Univers 49 Light Ultra Condensed", ",", "Univers 47 Condensed Light Oblique", ",", "Univers 57 Condensed", ",", "Univers 59 Ultra Condensed", ",", "Univers 57 Condensed Oblique", ",", "Univers 67 Condensed Bold", ",", "Univers 67 Condensed Bold Oblique", ",", "Utopia Expert Regular", ",", "Utopia Ornaments", ",", "Utopia", ",", "Utopia Titling Capitals", ",", "Utopia Expert Italic", ",", "Utopia Italic", ",", "Utopia Expert Semibold", ",", "Utopia Semibold", ",", "Utopia Expert Semibold Italic", ",", "Utopia Semibold Italic", ",", "Utopia Bold", ",", "Utopia Expert Bold", ",", "Utopia Bold Italic", ",", "Utopia Expert Bold Italic", ",", "Utopia Black", ",", "Utopia Expert Black", ",", "Verdana", ",", "Verdana Italic", ",", "Verdana Bold", ",", "Verdana Bold Italic", ",", "Waseem", ",", "Waseem Light", ",", "Webdings", ",", "Wingdings", ",", "Wingdings 2", ",", "Wingdings 3", ",", "Zapf Dingbats", ",", "Zapfino" ],
+									"items" : [ "Ableton Sans Bold", ",", "Ableton Sans Light", ",", "Ableton Sans Medium", ",", "Abril Fatface", ",", "Academy Engraved LET Plain", ",", "Adelle Sans Devanagari", ",", "Adelle Sans Devanagari Thin", ",", "Adelle Sans Devanagari Light", ",", "Adelle Sans Devanagari Semibold", ",", "Adelle Sans Devanagari Bold", ",", "Adelle Sans Devanagari Extrabold", ",", "Adelle Sans Devanagari Heavy", ",", "AkayaKanadaka", ",", "AkayaTelivigala", ",", "Al Bayan Plain", ",", "Al Bayan Bold", ",", "Al Nile", ",", "Al Nile Bold", ",", "Al Tarikh", ",", "American Typewriter", ",", "American Typewriter Light", ",", "American Typewriter Semibold", ",", "American Typewriter Bold", ",", "American Typewriter Condensed", ",", "American Typewriter Condensed Light", ",", "American Typewriter Condensed Bold", ",", "Amity Jack", ",", "Andale Mono", ",", "Annai MN", ",", "Apple Braille Outline 6 Dot", ",", "Apple Braille Outline 8 Dot", ",", "Apple Braille Pinpoint 6 Dot", ",", "Apple Braille Pinpoint 8 Dot", ",", "Apple Braille", ",", "Apple Chancery Chancery", ",", "Apple Color Emoji", ",", "Apple LiGothic Medium", ",", "Apple LiSung Light", ",", "Apple SD Gothic Neo", ",", "Apple SD Gothic Neo Thin", ",", "Apple SD Gothic Neo UltraLight", ",", "Apple SD Gothic Neo Light", ",", "Apple SD Gothic Neo Medium", ",", "Apple SD Gothic Neo SemiBold", ",", "Apple SD Gothic Neo Bold", ",", "Apple SD Gothic Neo ExtraBold", ",", "Apple SD Gothic Neo Heavy", ",", "Apple Symbols", ",", "AppleGothic", ",", "AppleMyungjo", ",", "Arial", ",", "Arial Italic", ",", "Arial Bold", ",", "Arial Bold Italic", ",", "Arial Black", ",", "Arial Hebrew", ",", "Arial Hebrew Light", ",", "Arial Hebrew Bold", ",", "Arial Hebrew Scholar", ",", "Arial Hebrew Scholar Light", ",", "Arial Hebrew Scholar Bold", ",", "Arial Narrow", ",", "Arial Narrow Italic", ",", "Arial Narrow Bold", ",", "Arial Narrow Bold Italic", ",", "Arial Rounded MT Bold", ",", "Arial Unicode MS", ",", "Arial Unicode MS", ",", "Arima Koshi", ",", "Arima Koshi Thin", ",", "Arima Koshi ExtraLight", ",", "Arima Koshi Light", ",", "Arima Koshi Medium", ",", "Arima Koshi Bold", ",", "Arima Koshi ExtraBold", ",", "Arima Koshi Black", ",", "Arima Madurai", ",", "Arima Madurai Thin", ",", "Arima Madurai ExtraLight", ",", "Arima Madurai Light", ",", "Arima Madurai Medium", ",", "Arima Madurai Semi Bold", ",", "Arima Madurai Bold", ",", "Arima Madurai Black", ",", "Avenir Book", ",", "Avenir Roman", ",", "Avenir Book Oblique", ",", "Avenir Oblique", ",", "Avenir Light", ",", "Avenir Light Oblique", ",", "Avenir Medium", ",", "Avenir Medium Oblique", ",", "Avenir Heavy", ",", "Avenir Heavy Oblique", ",", "Avenir Black", ",", "Avenir Black Oblique", ",", "Avenir Next", ",", "Avenir Next Italic", ",", "Avenir Next Ultra Light", ",", "Avenir Next Ultra Light Italic", ",", "Avenir Next Medium", ",", "Avenir Next Medium Italic", ",", "Avenir Next Demi Bold", ",", "Avenir Next Demi Bold Italic", ",", "Avenir Next Bold", ",", "Avenir Next Bold Italic", ",", "Avenir Next Heavy", ",", "Avenir Next Heavy Italic", ",", "Avenir Next Condensed", ",", "Avenir Next Condensed Italic", ",", "Avenir Next Condensed Ultra Light", ",", "Avenir Next Condensed Ultra Light Italic", ",", "Avenir Next Condensed Medium", ",", "Avenir Next Condensed Medium Italic", ",", "Avenir Next Condensed Demi Bold", ",", "Avenir Next Condensed Demi Bold Italic", ",", "Avenir Next Condensed Bold", ",", "Avenir Next Condensed Bold Italic", ",", "Avenir Next Condensed Heavy", ",", "Avenir Next Condensed Heavy Italic", ",", "AvidOmnes Light", ",", "AvidOmnes Medium", ",", "Ayuthaya", ",", "Baghdad", ",", "Bai Jamjuree", ",", "Bai Jamjuree Italic", ",", "Bai Jamjuree ExtraLight", ",", "Bai Jamjuree ExtraLight Italic", ",", "Bai Jamjuree Light", ",", "Bai Jamjuree Light Italic", ",", "Bai Jamjuree Medium", ",", "Bai Jamjuree Medium Italic", ",", "Bai Jamjuree SemiBold", ",", "Bai Jamjuree SemiBold Italic", ",", "Bai Jamjuree Bold", ",", "Bai Jamjuree Bold Italic", ",", "Baloo", ",", "Baloo 2", ",", "Baloo 2 Medium", ",", "Baloo 2 SemiBold", ",", "Baloo 2 Bold", ",", "Baloo 2 ExtraBold", ",", "Baloo Bhai 2", ",", "Baloo Bhai 2 Medium", ",", "Baloo Bhai 2 SemiBold", ",", "Baloo Bhai 2 Bold", ",", "Baloo Bhai 2 ExtraBold", ",", "Baloo Bhaijaan", ",", "Baloo Bhaina 2", ",", "Baloo Bhaina 2 Medium", ",", "Baloo Bhaina 2 SemiBold", ",", "Baloo Bhaina 2 Bold", ",", "Baloo Bhaina 2 ExtraBold", ",", "Baloo Chettan 2", ",", "Baloo Chettan 2 Medium", ",", "Baloo Chettan 2 SemiBold", ",", "Baloo Chettan 2 Bold", ",", "Baloo Chettan 2 ExtraBold", ",", "Baloo Da 2", ",", "Baloo Da 2 Medium", ",", "Baloo Da 2 SemiBold", ",", "Baloo Da 2 Bold", ",", "Baloo Da 2 ExtraBold", ",", "Baloo Paaji 2", ",", "Baloo Paaji 2 Medium", ",", "Baloo Paaji 2 SemiBold", ",", "Baloo Paaji 2 Bold", ",", "Baloo Paaji 2 ExtraBold", ",", "Baloo Tamma 2", ",", "Baloo Tamma 2 Medium", ",", "Baloo Tamma 2 SemiBold", ",", "Baloo Tamma 2 Bold", ",", "Baloo Tamma 2 ExtraBold", ",", "Baloo Tammudu 2", ",", "Baloo Tammudu 2 Medium", ",", "Baloo Tammudu 2 SemiBold", ",", "Baloo Tammudu 2 Bold", ",", "Baloo Tammudu 2 ExtraBold", ",", "Baloo Thambi 2", ",", "Baloo Thambi 2 Medium", ",", "Baloo Thambi 2 SemiBold", ",", "Baloo Thambi 2 Bold", ",", "Baloo Thambi 2 ExtraBold", ",", "Bangla MN", ",", "Bangla MN Bold", ",", "Bangla Sangam MN", ",", "Bangla Sangam MN Bold", ",", "Baoli SC", ",", "Baoli TC", ",", "Baskerville", ",", "Baskerville Italic", ",", "Baskerville SemiBold", ",", "Baskerville SemiBold Italic", ",", "Baskerville Bold", ",", "Baskerville Bold Italic", ",", "Bebas Neue", ",", "Bebas Neue Book", ",", "Bebas Neue", ",", "Bebas Neue Thin", ",", "Bebas Neue Light", ",", "Bebas Neue Bold", ",", "Beirut", ",", "BiauKaiHK", ",", "BiauKaiTC", ",", "Big Caslon Medium", ",", "BM Dohyeon", ",", "BM Hanna 11yrs Old", ",", "BM Hanna Air", ",", "BM Hanna Pro", ",", "BM Jua", ",", "BM Kirang Haerang", ",", "BM Yeonsung", ",", "Bodoni 72 Book", ",", "Bodoni 72 Book Italic", ",", "Bodoni 72 Bold", ",", "Bodoni 72 Oldstyle Book", ",", "Bodoni 72 Oldstyle Book Italic", ",", "Bodoni 72 Oldstyle Bold", ",", "Bodoni 72 Smallcaps Book", ",", "Bodoni Ornaments", ",", "Bradley Hand Bold", ",", "Brush Script MT Italic", ",", "Bungee Inline", ",", "Cambay Devanagari", ",", "Cambay Devanagari Oblique", ",", "Cambay Devanagari Bold", ",", "Cambay Devanagari Bold Oblique", ",", "Caveat", ",", "Caveat Bold", ",", "Chakra Petch", ",", "Chakra Petch Italic", ",", "Chakra Petch ExtraLight", ",", "Chakra Petch ExtraLight Italic", ",", "Chakra Petch Light", ",", "Chakra Petch Light Italic", ",", "Chakra Petch Medium", ",", "Chakra Petch Medium Italic", ",", "Chakra Petch SemiBold", ",", "Chakra Petch SemiBold Italic", ",", "Chakra Petch Bold", ",", "Chakra Petch Bold Italic", ",", "Chalkboard", ",", "Chalkboard Bold", ",", "Chalkboard SE", ",", "Chalkboard SE Light", ",", "Chalkboard SE Bold", ",", "Chalkduster", ",", "Charm", ",", "Charm Bold", ",", "Charmonman", ",", "Charmonman Bold", ",", "Charter Roman", ",", "Charter Italic", ",", "Charter Bold", ",", "Charter Bold Italic", ",", "Charter Black", ",", "Charter Black Italic", ",", "Chocolate Dealer Bold", ",", "Cinzel", ",", "Cochin", ",", "Cochin Italic", ",", "Cochin Bold", ",", "Cochin Bold Italic", ",", "Comic Sans MS", ",", "Comic Sans MS Bold", ",", "Copperplate", ",", "Copperplate Light", ",", "Copperplate Bold", ",", "Corsiva Hebrew", ",", "Corsiva Hebrew Bold", ",", "Courier New", ",", "Courier New Italic", ",", "Courier New Bold", ",", "Courier New Bold Italic", ",", "Damascus", ",", "Damascus Light", ",", "Damascus Medium", ",", "Damascus Semi Bold", ",", "Damascus Bold", ",", "DecoType Naskh", ",", "Devanagari MT", ",", "Devanagari MT Bold", ",", "Devanagari Sangam MN", ",", "Devanagari Sangam MN Bold", ",", "Didot", ",", "Didot Italic", ",", "Didot Bold", ",", "DIN Bold", ",", "DIN", ",", "DIN Alternate Bold", ",", "DIN Black", ",", "DIN Condensed Bold", ",", "DIN Medium", ",", "Diwan Kufi", ",", "Diwan Thuluth", ",", "Euphemia UCAS", ",", "Euphemia UCAS Italic", ",", "Euphemia UCAS Bold", ",", "Exo", ",", "Exo Italic", ",", "Exo Thin", ",", "Exo ExtraLight", ",", "Exo Light", ",", "Exo Medium", ",", "Exo DemiBold", ",", "Exo Bold", ",", "Exo ExtraBold", ",", "Exo Black", ",", "Fahkwang", ",", "Fahkwang Italic", ",", "Fahkwang ExtraLight", ",", "Fahkwang ExtraLight Italic", ",", "Fahkwang Light", ",", "Fahkwang Light Italic", ",", "Fahkwang Medium", ",", "Fahkwang Medium Italic", ",", "Fahkwang SemiBold", ",", "Fahkwang SemiBold Italic", ",", "Fahkwang Bold", ",", "Fahkwang Bold Italic", ",", "Farah", ",", "Farisi", ",", "Futura Medium", ",", "Futura Medium Italic", ",", "Futura Bold", ",", "Futura Condensed Medium", ",", "Futura Condensed ExtraBold", ",", "Galvji", ",", "Galvji Oblique", ",", "Galvji Bold", ",", "Galvji Bold Oblique", ",", "GB18030 Bitmap", ",", "Geeza Pro", ",", "Geeza Pro Bold", ",", "Geneva", ",", "Georgia", ",", "Georgia Italic", ",", "Georgia Bold", ",", "Georgia Bold Italic", ",", "Gill Sans", ",", "Gill Sans Italic", ",", "Gill Sans Light", ",", "Gill Sans Light Italic", ",", "Gill Sans SemiBold", ",", "Gill Sans SemiBold Italic", ",", "Gill Sans Bold", ",", "Gill Sans Bold Italic", ",", "Gill Sans UltraBold", ",", "Gotham Bold Italic", ",", "Gotham Light", ",", "Gotham Light Italic", ",", "Gotham Book", ",", "Gotham Book Italic", ",", "Gotham Medium", ",", "Gotham Medium Italic", ",", "Gotham Black", ",", "Gotham Bold", ",", "Gotham Black Black", ",", "Gotham Black", ",", "Gotham Black Italic", ",", "Gotham Bold Bold Italic", ",", "Gotham Bold", ",", "Gotham Bold Italic", ",", "Gotham Book", ",", "Gotham Book Italic", ",", "Gotham Book Book", ",", "Gotham Book Book Italic", ",", "Gotham ExtraLight", ",", "Gotham ExtraLight Italic", ",", "Gotham Light Light", ",", "Gotham Light", ",", "Gotham Light Light Italic", ",", "Gotham Light Italic", ",", "Gotham Medium Medium", ",", "Gotham Medium Medium Italic", ",", "Gotham Medium", ",", "Gotham Medium Italic", ",", "Gotham Thin", ",", "Gotham Thin Italic", ",", "Gotham Ultra", ",", "Gotham Ultra Italic", ",", "Gotu", ",", "Grantha Sangam MN", ",", "Grantha Sangam MN Light", ",", "Grantha Sangam MN Medium", ",", "Grantha Sangam MN DemiBold", ",", "Grantha Sangam MN Bold", ",", "Grantha Sangam MN Black", ",", "Gujarati MT", ",", "Gujarati MT Bold", ",", "Gujarati Sangam MN", ",", "Gujarati Sangam MN Bold", ",", "GungSeo", ",", "Gurmukhi MN", ",", "Gurmukhi MN Bold", ",", "Gurmukhi MT", ",", "Gurmukhi Sangam MN", ",", "Gurmukhi Sangam MN Bold", ",", "Hannotate SC", ",", "Hannotate SC Bold", ",", "Hannotate TC", ",", "Hannotate TC Bold", ",", "HanziPen SC", ",", "HanziPen SC Bold", ",", "HanziPen TC", ",", "HanziPen TC Bold", ",", "HeadLineA", ",", "Hei", ",", "Heiti SC Light", ",", "Heiti SC Medium", ",", "Heiti TC Light", ",", "Heiti TC Medium", ",", "Helsinki Metronome Std", ",", "Helsinki Special Std", ",", "Helsinki Std", ",", "Helsinki Text Std", ",", "Helvetica", ",", "Helvetica Oblique", ",", "Helvetica Light", ",", "Helvetica Light Oblique", ",", "Helvetica Bold", ",", "Helvetica Bold Oblique", ",", "Helvetica Neue", ",", "Helvetica Neue Italic", ",", "Helvetica Neue UltraLight", ",", "Helvetica Neue UltraLight Italic", ",", "Helvetica Neue Thin", ",", "Helvetica Neue Thin Italic", ",", "Helvetica Neue Light", ",", "Helvetica Neue Light Italic", ",", "Helvetica Neue Medium", ",", "Helvetica Neue Medium Italic", ",", "Helvetica Neue Bold", ",", "Helvetica Neue Bold Italic", ",", "Helvetica Neue Condensed Bold", ",", "Helvetica Neue Condensed Black", ",", "Herculanum", ",", "Hiragino Maru Gothic ProN W4", ",", "Hiragino Mincho ProN W3", ",", "Hiragino Mincho ProN W6", ",", "Hiragino Sans W0", ",", "Hiragino Sans W1", ",", "Hiragino Sans W2", ",", "Hiragino Sans W3", ",", "Hiragino Sans W4", ",", "Hiragino Sans W5", ",", "Hiragino Sans W6", ",", "Hiragino Sans W7", ",", "Hiragino Sans W8", ",", "Hiragino Sans W9", ",", "Hiragino Sans CNS W3", ",", "Hiragino Sans CNS W6", ",", "Hiragino Sans GB W3", ",", "Hiragino Sans GB W6", ",", "Hoefler Text", ",", "Hoefler Text Ornaments", ",", "Hoefler Text Italic", ",", "Hoefler Text Black", ",", "Hoefler Text Black Italic", ",", "Hubballi", ",", "IM FELL DW Pica", ",", "IM FELL DW Pica Italic", ",", "Impact", ",", "InaiMathi", ",", "InaiMathi Bold", ",", "Inkpen2 Chords Std", ",", "Inkpen2 Metronome Std", ",", "Inkpen2 Script Std", ",", "Inkpen2 Special Std", ",", "Inkpen2 Std", ",", "Inkpen2 Text Std", ",", "ITF Devanagari Book", ",", "ITF Devanagari Light", ",", "ITF Devanagari Medium", ",", "ITF Devanagari Demi", ",", "ITF Devanagari Bold", ",", "ITF Devanagari Marathi Book", ",", "ITF Devanagari Marathi Light", ",", "ITF Devanagari Marathi Medium", ",", "ITF Devanagari Marathi Demi", ",", "ITF Devanagari Marathi Bold", ",", "Jaini", ",", "Jaini Purva", ",", "K2D", ",", "K2D Italic", ",", "K2D ExtraLight", ",", "K2D ExtraLight Italic", ",", "K2D Thin", ",", "K2D Thin Italic", ",", "K2D Light", ",", "K2D Light Italic", ",", "K2D Medium", ",", "K2D Medium Italic", ",", "K2D SemiBold", ",", "K2D SemiBold Italic", ",", "K2D Bold", ",", "K2D Bold Italic", ",", "K2D ExtraBold", ",", "K2D ExtraBold Italic", ",", "Kai", ",", "Kailasa", ",", "Kailasa Bold", ",", "Kaiti SC", ",", "Kaiti SC Bold", ",", "Kaiti SC Black", ",", "Kaiti TC", ",", "Kaiti TC Bold", ",", "Kaiti TC Black", ",", "Kannada MN", ",", "Kannada MN Bold", ",", "Kannada Sangam MN", ",", "Kannada Sangam MN Bold", ",", "Katari", ",", "Katari Italic", ",", "Katari Medium", ",", "Katari Medium Italic", ",", "Katari Bold", ",", "Katari Bold Italic", ",", "Katari Black", ",", "Katari Black Italic", ",", "Kavivanar", ",", "Kefa", ",", "Kefa Bold", ",", "Khmer MN", ",", "Khmer MN Bold", ",", "Khmer Sangam MN", ",", "Klee Medium", ",", "Klee Demibold", ",", "Knewave", ",", "Kodchasan", ",", "Kodchasan Italic", ",", "Kodchasan ExtraLight", ",", "Kodchasan ExtraLight Italic", ",", "Kodchasan Light", ",", "Kodchasan Light Italic", ",", "Kodchasan Medium", ",", "Kodchasan Medium Italic", ",", "Kodchasan SemiBold", ",", "Kodchasan SemiBold Italic", ",", "Kodchasan Bold", ",", "Kodchasan Bold Italic", ",", "Kohinoor Bangla", ",", "Kohinoor Bangla Light", ",", "Kohinoor Bangla Medium", ",", "Kohinoor Bangla Semibold", ",", "Kohinoor Bangla Bold", ",", "Kohinoor Devanagari", ",", "Kohinoor Devanagari Light", ",", "Kohinoor Devanagari Medium", ",", "Kohinoor Devanagari Semibold", ",", "Kohinoor Devanagari Bold", ",", "Kohinoor Gujarati", ",", "Kohinoor Gujarati Light", ",", "Kohinoor Gujarati Medium", ",", "Kohinoor Gujarati Semibold", ",", "Kohinoor Gujarati Bold", ",", "Kohinoor Telugu", ",", "Kohinoor Telugu Light", ",", "Kohinoor Telugu Medium", ",", "Kohinoor Telugu Semibold", ",", "Kohinoor Telugu Bold", ",", "KoHo", ",", "KoHo Italic", ",", "KoHo ExtraLight", ",", "KoHo ExtraLight Italic", ",", "KoHo Light", ",", "KoHo Light Italic", ",", "KoHo Medium", ",", "KoHo Medium Italic", ",", "KoHo SemiBold", ",", "KoHo SemiBold Italic", ",", "KoHo Bold", ",", "KoHo Bold Italic", ",", "Kokonor", ",", "Krub", ",", "Krub Italic", ",", "Krub ExtraLight", ",", "Krub ExtraLight Italic", ",", "Krub Light", ",", "Krub Light Italic", ",", "Krub Medium", ",", "Krub Medium Italic", ",", "Krub SemiBold", ",", "Krub SemiBold Italic", ",", "Krub Bold", ",", "Krub Bold Italic", ",", "Krungthep", ",", "KufiStandardGK", ",", "Kumar One", ",", "Lahore Gurmukhi", ",", "Lahore Gurmukhi Light", ",", "Lahore Gurmukhi Medium", ",", "Lahore Gurmukhi SemiBold", ",", "Lahore Gurmukhi Bold", ",", "Lantinghei SC Extralight", ",", "Lantinghei SC Demibold", ",", "Lantinghei SC Heavy", ",", "Lantinghei TC Extralight", ",", "Lantinghei TC Demibold", ",", "Lantinghei TC Heavy", ",", "Lao MN", ",", "Lao MN Bold", ",", "Lao Sangam MN", ",", "Lato", ",", "Lato Italic", ",", "Lato Hairline", ",", "Lato Hairline Italic", ",", "Lato Thin", ",", "Lato Thin Italic", ",", "Lato Light", ",", "Lato Light Italic", ",", "Lato Medium", ",", "Lato Medium Italic", ",", "Lato Semibold", ",", "Lato Semibold Italic", ",", "Lato Bold", ",", "Lato Bold Italic", ",", "Lato Heavy", ",", "Lato Heavy Italic", ",", "Lato Black", ",", "Lato Black Italic", ",", "Lava Devanagari", ",", "Lava Devanagari Medium", ",", "Lava Devanagari Bold", ",", "Lava Devanagari Heavy", ",", "Lava Kannada", ",", "Lava Kannada Medium", ",", "Lava Kannada Bold", ",", "Lava Kannada Heavy", ",", "Lava Telugu", ",", "Lava Telugu Medium", ",", "Lava Telugu Bold", ",", "Lava Telugu Heavy", ",", "Leckerli One", ",", "Libian SC", ",", "Libian TC", ",", "LiHei Pro Medium", ",", "LingWai SC Medium", ",", "LingWai TC Medium", ",", "LiSong Pro Light", ",", "Lucida Grande", ",", "Lucida Grande Bold", ",", "Luminari", ",", "Maku", ",", "Maku Bold", ",", "Malayalam MN", ",", "Malayalam MN Bold", ",", "Malayalam Sangam MN", ",", "Malayalam Sangam MN Bold", ",", "Mali", ",", "Mali Italic", ",", "Mali ExtraLight", ",", "Mali ExtraLight Italic", ",", "Mali Light", ",", "Mali Light Italic", ",", "Mali Medium", ",", "Mali Medium Italic", ",", "Mali SemiBold", ",", "Mali SemiBold Italic", ",", "Mali Bold", ",", "Mali Bold Italic", ",", "Marker Felt Thin", ",", "Marker Felt Wide", ",", "Menlo", ",", "Menlo Italic", ",", "Menlo Bold", ",", "Menlo Bold Italic", ",", "Microsoft Sans Serif", ",", "Mishafi", ",", "Mishafi Gold", ",", "Modak", ",", "Monaco", ",", "Mshtakan", ",", "Mshtakan Oblique", ",", "Mshtakan Bold", ",", "Mshtakan BoldOblique", ",", "Mukta", ",", "Mukta ExtraLight", ",", "Mukta Light", ",", "Mukta Medium", ",", "Mukta SemiBold", ",", "Mukta Bold", ",", "Mukta Extrabold", ",", "Mukta Mahee", ",", "Mukta Mahee ExtraLight", ",", "Mukta Mahee Light", ",", "Mukta Mahee Medium", ",", "Mukta Mahee SemiBold", ",", "Mukta Mahee Bold", ",", "Mukta Mahee ExtraBold", ",", "Mukta Malar", ",", "Mukta Malar ExtraLight", ",", "Mukta Malar Light", ",", "Mukta Malar Medium", ",", "Mukta Malar SemiBold", ",", "Mukta Malar Bold", ",", "Mukta Malar ExtraBold", ",", "Mukta Vaani", ",", "Mukta Vaani ExtraLight", ",", "Mukta Vaani Light", ",", "Mukta Vaani Medium", ",", "Mukta Vaani SemiBold", ",", "Mukta Vaani Bold", ",", "Mukta Vaani ExtraBold", ",", "Muna", ",", "Muna Bold", ",", "Muna Black", ",", "Myanmar MN", ",", "Myanmar MN Bold", ",", "Myanmar Sangam MN", ",", "Myanmar Sangam MN Bold", ",", "Nadeem", ",", "Nanum Brush Script", ",", "Nanum Gothic", ",", "Nanum Gothic Bold", ",", "Nanum Gothic ExtraBold", ",", "Nanum Myeongjo", ",", "Nanum Myeongjo Bold", ",", "Nanum Myeongjo ExtraBold", ",", "Nanum Pen Script", ",", "New Peninim MT", ",", "New Peninim MT Inclined", ",", "New Peninim MT Bold", ",", "New Peninim MT Bold Inclined", ",", "Niramit", ",", "Niramit Italic", ",", "Niramit ExtraLight", ",", "Niramit ExtraLight Italic", ",", "Niramit Light", ",", "Niramit Light Italic", ",", "Niramit Medium", ",", "Niramit Medium Italic", ",", "Niramit SemiBold", ",", "Niramit SemiBold Italic", ",", "Niramit Bold", ",", "Niramit Bold Italic", ",", "Noteworthy Light", ",", "Noteworthy Bold", ",", "Noto Nastaliq Urdu", ",", "Noto Nastaliq Urdu Bold", ",", "Noto Sans", ",", "Noto Sans Italic", ",", "Noto Sans Bold", ",", "Noto Sans Bold Italic", ",", "Noto Sans Batak", ",", "Noto Sans Kannada", ",", "Noto Sans Kannada ExtraLight", ",", "Noto Sans Kannada Thin", ",", "Noto Sans Kannada Light", ",", "Noto Sans Kannada Medium", ",", "Noto Sans Kannada SemiBold", ",", "Noto Sans Kannada Bold", ",", "Noto Sans Kannada ExtraBold", ",", "Noto Sans Kannada Black", ",", "Noto Sans Myanmar", ",", "Noto Sans Myanmar ExtraLight", ",", "Noto Sans Myanmar Thin", ",", "Noto Sans Myanmar Light", ",", "Noto Sans Myanmar Medium", ",", "Noto Sans Myanmar SemiBold", ",", "Noto Sans Myanmar Bold", ",", "Noto Sans Myanmar ExtraBold", ",", "Noto Sans Myanmar Black", ",", "Noto Sans NKo", ",", "Noto Sans Oriya", ",", "Noto Sans Oriya Bold", ",", "Noto Sans Tagalog", ",", "Noto Serif", ",", "Noto Serif Italic", ",", "Noto Serif Bold", ",", "Noto Serif Bold Italic", ",", "Noto Serif Kannada", ",", "Noto Serif Kannada ExtraLight", ",", "Noto Serif Kannada Thin", ",", "Noto Serif Kannada Light", ",", "Noto Serif Kannada Medium", ",", "Noto Serif Kannada SemiBold", ",", "Noto Serif Kannada Bold", ",", "Noto Serif Kannada ExtraBold", ",", "Noto Serif Kannada Black", ",", "Noto Serif Myanmar", ",", "Noto Serif Myanmar ExtraLight", ",", "Noto Serif Myanmar Thin", ",", "Noto Serif Myanmar Light", ",", "Noto Serif Myanmar Medium", ",", "Noto Serif Myanmar SemiBold", ",", "Noto Serif Myanmar Bold", ",", "Noto Serif Myanmar ExtraBold", ",", "Noto Serif Myanmar Black", ",", "October Compressed Devanagari", ",", "October Compressed Devanagari Hairline", ",", "October Compressed Devanagari Thin", ",", "October Compressed Devanagari ExtraLight", ",", "October Compressed Devanagari Light", ",", "October Compressed Devanagari Medium", ",", "October Compressed Devanagari Bold", ",", "October Compressed Devanagari Heavy", ",", "October Compressed Devanagari Black", ",", "October Compressed Tamil", ",", "October Compressed Tamil Hairline", ",", "October Compressed Tamil Thin", ",", "October Compressed Tamil ExtraLight", ",", "October Compressed Tamil Light", ",", "October Compressed Tamil Medium", ",", "October Compressed Tamil Bold", ",", "October Compressed Tamil Heavy", ",", "October Compressed Tamil Black", ",", "October Condensed Devanagari", ",", "October Condensed Devanagari Hairline", ",", "October Condensed Devanagari Thin", ",", "October Condensed Devanagari ExtraLight", ",", "October Condensed Devanagari Light", ",", "October Condensed Devanagari Medium", ",", "October Condensed Devanagari Bold", ",", "October Condensed Devanagari Heavy", ",", "October Condensed Devanagari Black", ",", "October Condensed Tamil", ",", "October Condensed Tamil Hairline", ",", "October Condensed Tamil Thin", ",", "October Condensed Tamil ExtraLight", ",", "October Condensed Tamil Light", ",", "October Condensed Tamil Medium", ",", "October Condensed Tamil Bold", ",", "October Condensed Tamil Heavy", ",", "October Condensed Tamil Black", ",", "October Devanagari", ",", "October Devanagari Hairline", ",", "October Devanagari Thin", ",", "October Devanagari ExtraLight", ",", "October Devanagari Light", ",", "October Devanagari Medium", ",", "October Devanagari Bold", ",", "October Devanagari Heavy", ",", "October Devanagari Black", ",", "October Tamil", ",", "October Tamil Hairline", ",", "October Tamil Thin", ",", "October Tamil ExtraLight", ",", "October Tamil Light", ",", "October Tamil Medium", ",", "October Tamil Bold", ",", "October Tamil Heavy", ",", "October Tamil Black", ",", "Open Sans", ",", "Open Sans Italic", ",", "Open Sans Light", ",", "Open Sans Light Italic", ",", "Open Sans Semibold", ",", "Open Sans Semibold Italic", ",", "Open Sans Bold", ",", "Open Sans Bold Italic", ",", "Open Sans Extrabold", ",", "Open Sans Extrabold Italic", ",", "Optima", ",", "Optima Italic", ",", "Optima Bold", ",", "Optima Bold Italic", ",", "Optima ExtraBlack", ",", "Opus Big Time Std", ",", "Opus Chords Sans Condensed Std", ",", "Opus Chords Sans Std", ",", "Opus Chords Std", ",", "Opus Figured Bass Extras Std", ",", "Opus Figured Bass Std", ",", "Opus Function Symbols Std", ",", "Opus Metronome Std", ",", "Opus Note Names Std", ",", "Opus Ornaments Std", ",", "Opus Percussion Std", ",", "Opus PlainChords Std", ",", "Opus Roman Chords Std", ",", "Opus Special Extra Std", ",", "Opus Special Std", ",", "Opus Std", ",", "Opus Text Std", ",", "Orbitron", ",", "Oriya MN", ",", "Oriya MN Bold", ",", "Oriya Sangam MN", ",", "Oriya Sangam MN Bold", ",", "Osaka", ",", "Osaka Regular-Mono", ",", "Pacifico", ",", "Padyakke Expanded One", ",", "Palatino", ",", "Palatino Italic", ",", "Palatino Bold", ",", "Palatino Bold Italic", ",", "Papyrus", ",", "Papyrus Condensed", ",", "Party LET Plain", ",", "Patua One", ",", "PCMyungjo", ",", "Petit Formal Script", ",", "Phosphate Inline", ",", "Phosphate Solid", ",", "PilGi", ",", "PingFang HK", ",", "PingFang HK Ultralight", ",", "PingFang HK Thin", ",", "PingFang HK Light", ",", "PingFang HK Medium", ",", "PingFang HK Semibold", ",", "PingFang SC", ",", "PingFang SC Ultralight", ",", "PingFang SC Thin", ",", "PingFang SC Light", ",", "PingFang SC Medium", ",", "PingFang SC Semibold", ",", "PingFang TC", ",", "PingFang TC Ultralight", ",", "PingFang TC Thin", ",", "PingFang TC Light", ",", "PingFang TC Medium", ",", "PingFang TC Semibold", ",", "Plantagenet Cherokee", ",", "Plantin MT Std", ",", "Plantin MT Std Italic", ",", "Plantin MT Std Bold", ",", "Plantin MT Std Bold Italic", ",", "Press Start 2P", ",", "PSL Ornanong Pro", ",", "PSL Ornanong Pro Italic", ",", "PSL Ornanong Pro Light", ",", "PSL Ornanong Pro Light Italic", ",", "PSL Ornanong Pro Demibold", ",", "PSL Ornanong Pro Demibold Italic", ",", "PSL Ornanong Pro Bold", ",", "PSL Ornanong Pro Bold Italic", ",", "PT Mono", ",", "PT Mono Bold", ",", "PT Sans", ",", "PT Sans Italic", ",", "PT Sans Bold", ",", "PT Sans Bold Italic", ",", "PT Sans Caption", ",", "PT Sans Caption Bold", ",", "PT Sans Narrow", ",", "PT Sans Narrow Bold", ",", "PT Serif", ",", "PT Serif Italic", ",", "PT Serif Bold", ",", "PT Serif Bold Italic", ",", "PT Serif Caption", ",", "PT Serif Caption Italic", ",", "Quicksand", ",", "Quicksand Italic", ",", "Quicksand Light", ",", "Quicksand Light Italic", ",", "Quicksand Bold", ",", "Quicksand Bold Italic", ",", "Raanana", ",", "Raanana Bold", ",", "Raleway", ",", "Raleway Italic", ",", "Raleway Thin", ",", "Raleway ExtraLight", ",", "Raleway ExtraLight Italic", ",", "Raleway Light", ",", "Raleway Light Italic", ",", "Raleway Medium", ",", "Raleway Medium Italic", ",", "Raleway SemiBold", ",", "Raleway SemiBold Italic", ",", "Raleway Bold", ",", "Raleway Bold Italic", ",", "Raleway ExtraBold", ",", "Raleway ExtraBold Italic", ",", "Raleway Black", ",", "Raleway Black Italic", ",", "Reprise Big Time Std", ",", "Reprise Chords Std", ",", "Reprise Metronome Std", ",", "Reprise Rehearsal Std", ",", "Reprise Script Std", ",", "Reprise Special Std", ",", "Reprise Stamp Std", ",", "Reprise Std", ",", "Reprise Text Std", ",", "Reprise Title Std", ",", "Roboto", ",", "Roboto Italic", ",", "Roboto Thin", ",", "Roboto Thin Italic", ",", "Roboto Light", ",", "Roboto Light Italic", ",", "Roboto Medium", ",", "Roboto Medium Italic", ",", "Roboto Bold", ",", "Roboto Bold Italic", ",", "Roboto Black", ",", "Roboto Black Italic", ",", "Roboto Slab", ",", "Roboto Slab Thin", ",", "Roboto Slab Light", ",", "Roboto Slab Bold", ",", "Rockwell", ",", "Rockwell Italic", ",", "Rockwell Bold", ",", "Rockwell Bold Italic", ",", "Rogue Hero 3D", ",", "Russo One", ",", "Sacramento", ",", "Sama Devanagari Book", ",", "Sama Devanagari", ",", "Sama Devanagari Medium", ",", "Sama Devanagari SemiBold", ",", "Sama Devanagari Bold", ",", "Sama Devanagari ExtraBold", ",", "Sama Gujarati Book", ",", "Sama Gujarati", ",", "Sama Gujarati Medium", ",", "Sama Gujarati SemiBold", ",", "Sama Gujarati Bold", ",", "Sama Gujarati ExtraBold", ",", "Sama Gurmukhi Book", ",", "Sama Gurmukhi", ",", "Sama Gurmukhi Medium", ",", "Sama Gurmukhi SemiBold", ",", "Sama Gurmukhi Bold", ",", "Sama Gurmukhi ExtraBold", ",", "Sama Kannada Book", ",", "Sama Kannada", ",", "Sama Kannada Medium", ",", "Sama Kannada SemiBold", ",", "Sama Kannada Bold", ",", "Sama Kannada ExtraBold", ",", "Sama Malayalam Book", ",", "Sama Malayalam", ",", "Sama Malayalam Medium", ",", "Sama Malayalam SemiBold", ",", "Sama Malayalam Bold", ",", "Sama Malayalam Extrabold", ",", "Sama Tamil Book", ",", "Sama Tamil", ",", "Sama Tamil Medium", ",", "Sama Tamil SemiBold", ",", "Sama Tamil Bold", ",", "Sama Tamil ExtraBold", ",", "Sana", ",", "Sarabun", ",", "Sarabun Italic", ",", "Sarabun ExtraLight", ",", "Sarabun ExtraLight Italic", ",", "Sarabun Thin", ",", "Sarabun Thin Italic", ",", "Sarabun Light", ",", "Sarabun Light Italic", ",", "Sarabun Medium", ",", "Sarabun Medium Italic", ",", "Sarabun SemiBold", ",", "Sarabun SemiBold Italic", ",", "Sarabun Bold", ",", "Sarabun Bold Italic", ",", "Sarabun ExtraBold", ",", "Sarabun ExtraBold Italic", ",", "Sathu", ",", "Savoye LET Plain", ",", "Shobhika", ",", "Shobhika Bold", ",", "Shree Devanagari 714", ",", "Shree Devanagari 714 Italic", ",", "Shree Devanagari 714 Bold", ",", "Shree Devanagari 714 Bold Italic", ",", "SignPainter HouseScript", ",", "SignPainter HouseScript Semibold", ",", "Silom", ",", "Simpsonfont", ",", "SimSong", ",", "SimSong Bold", ",", "Sinhala MN", ",", "Sinhala MN Bold", ",", "Sinhala Sangam MN", ",", "Sinhala Sangam MN Bold", ",", "Skia", ",", "Skia Light", ",", "Skia Bold", ",", "Skia Black", ",", "Skia Extended", ",", "Skia Light Extended", ",", "Skia Black Extended", ",", "Skia Condensed", ",", "Skia Light Condensed", ",", "Skia Black Condensed", ",", "Snell Roundhand", ",", "Snell Roundhand Bold", ",", "Snell Roundhand Black", ",", "Songti SC", ",", "Songti SC Light", ",", "Songti SC Bold", ",", "Songti SC Black", ",", "Songti TC", ",", "Songti TC Light", ",", "Songti TC Bold", ",", "Source Sans Pro", ",", "Source Sans Pro", ",", "Source Sans Pro Semibold", ",", "Source Sans Pro Bold", ",", "Srisakdi", ",", "Srisakdi Bold", ",", "STFangsong", ",", "STHeiti Light", ",", "STHeiti", ",", "STIX Two Math", ",", "STIX Two Text", ",", "STIX Two Text Italic", ",", "STIX Two Text Medium", ",", "STIX Two Text Medium Italic", ",", "STIX Two Text SemiBold", ",", "STIX Two Text SemiBold Italic", ",", "STIX Two Text Bold", ",", "STIX Two Text Bold Italic", ",", "STKaiti", ",", "STSong", ",", "Sukhumvit Set Text", ",", "Sukhumvit Set Light", ",", "Sukhumvit Set Medium", ",", "Sukhumvit Set Semi Bold", ",", "Sukhumvit Set Bold", ",", "Sukhumvit Set Thin", ",", "Symbol", ",", "Tahoma", ",", "Tahoma Bold", ",", "Tamil MN", ",", "Tamil MN Bold", ",", "Tamil Sangam MN Medium", ",", "Tamil Sangam MN", ",", "Tamil Sangam MN Light", ",", "Tamil Sangam MN Demibold", ",", "Tamil Sangam MN Bold", ",", "Tamil Sangam MN Black", ",", "TeamViewer13 Medium", ",", "Telugu MN", ",", "Telugu MN Bold", ",", "Telugu Sangam MN", ",", "Telugu Sangam MN Bold", ",", "Thonburi", ",", "Thonburi Light", ",", "Thonburi Bold", ",", "Times New Roman", ",", "Times New Roman Italic", ",", "Times New Roman Bold", ",", "Times New Roman Bold Italic", ",", "Tiro Bangla", ",", "Tiro Bangla Italic", ",", "Tiro Devanagari Hindi", ",", "Tiro Devanagari Hindi Italic", ",", "Tiro Devanagari Marathi", ",", "Tiro Devanagari Marathi Italic", ",", "Tiro Devanagari Sanskrit", ",", "Tiro Devanagari Sanskrit Italic", ",", "Tiro Gurmukhi", ",", "Tiro Gurmukhi Italic", ",", "Tiro Kannada", ",", "Tiro Kannada Italic", ",", "Tiro Tamil", ",", "Tiro Tamil Italic", ",", "Tiro Telugu", ",", "Tiro Telugu Italic", ",", "Toppan Bunkyu Gothic", ",", "Toppan Bunkyu Gothic Demibold", ",", "Toppan Bunkyu Midashi Gothic Extrabold", ",", "Toppan Bunkyu Midashi Mincho Extrabold", ",", "Toppan Bunkyu Mincho", ",", "Trattatello", ",", "Trebuchet MS", ",", "Trebuchet MS Italic", ",", "Trebuchet MS Bold", ",", "Trebuchet MS Bold Italic", ",", "Tsukushi A Round Gothic", ",", "Tsukushi A Round Gothic Bold", ",", "Tsukushi B Round Gothic", ",", "Tsukushi B Round Gothic Bold", ",", "Ultra", ",", "Vampiro One", ",", "Vast Shadow", ",", "Verdana", ",", "Verdana Italic", ",", "Verdana Bold", ",", "Verdana Bold Italic", ",", "Waseem", ",", "Waseem Light", ",", "Wawati SC", ",", "Wawati TC", ",", "Webdings", ",", "WickedSeventies", ",", "Wingdings", ",", "Wingdings 2", ",", "Wingdings 3", ",", "Xingkai SC Light", ",", "Xingkai SC Bold", ",", "Xingkai TC Light", ",", "Xingkai TC Bold", ",", "Yamaha EBM10 Bold Bold", ",", "Yamaha EBM15 Condensed Condensed Regular", ",", "Yamaha EBM7 Bold Bold", ",", "Yamaha EBM7 Regular", ",", "Yamaha EBM8 Expanded Expanded Regular", ",", "Yamaha EBM8 Regular", ",", "Yellowtail", ",", "Yuanti SC", ",", "Yuanti SC Light", ",", "Yuanti SC Bold", ",", "Yuanti TC", ",", "Yuanti TC Light", ",", "Yuanti TC Bold", ",", "YuGothic Medium", ",", "YuGothic Bold", ",", "YuKyokasho Medium", ",", "YuKyokasho Bold", ",", "YuKyokasho Yoko Medium", ",", "YuKyokasho Yoko Bold", ",", "YuMincho Medium", ",", "YuMincho Demibold", ",", "YuMincho Extrabold", ",", "YuMincho +36p Kana Medium", ",", "YuMincho +36p Kana Demibold", ",", "YuMincho +36p Kana Extrabold", ",", "Yuppy SC", ",", "Yuppy TC", ",", "Zapf Dingbats", ",", "Zapfino" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -211,7 +1049,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 269.0, 145.0, 211.0, 22.0 ],
+									"patching_rect" : [ 269.0, 99.0, 211.0, 22.0 ],
 									"text" : "format: pre-comma.post-comma"
 								}
 
@@ -407,13 +1245,13 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 0,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 134.0, 159.0, 502.0, 733.0 ],
+										"rect" : [ 134.0, 149.0, 502.0, 733.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -1109,7 +1947,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 373.0, 173.0, 50.0, 22.0 ]
+									"patching_rect" : [ 372.0, 159.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -1122,7 +1960,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 373.0, 200.0, 61.0, 22.0 ],
+									"patching_rect" : [ 372.0, 215.0, 61.0, 22.0 ],
 									"text" : "format $1"
 								}
 
@@ -1147,7 +1985,7 @@
 									"bgcolor" : [ 0.741176, 1.0, 0.831373, 1.0 ],
 									"fontface" : 0,
 									"fontsize" : 23.0,
-									"format" : [ 1.2 ],
+									"format" : [ 1.13 ],
 									"hint" : "",
 									"id" : "obj-34",
 									"label" : [ "wert" ],
@@ -1201,6 +2039,28 @@
 									"destination" : [ "obj-34", 0 ],
 									"hidden" : 1,
 									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-14", 0 ],
+									"source" : [ "obj-12", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-14", 1 ],
+									"source" : [ "obj-13", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-14", 0 ]
 								}
 
 							}
@@ -1417,7 +2277,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1645,7 +2505,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 371.0, 214.0, 155.0, 22.0 ],
-									"text" : "50.378151",
+									"text" : "123.45",
 									"textcolor" : [ 0.223529411764706, 0.223529411764706, 0.223529411764706, 1.0 ]
 								}
 
@@ -1728,7 +2588,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1765,6 +2625,84 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 14.0,
+									"id" : "obj-36",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 559.0, 265.0, 235.0, 22.0 ],
+									"text" : "select slider for keyboard focus"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-35",
+									"maxclass" : "number",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 500.0, 241.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-34",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 500.0, 265.0, 57.0, 22.0 ],
+									"text" : "select $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-33",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 448.0, 265.0, 40.0, 22.0 ],
+									"text" : "select"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-18",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 665.75, 179.0, 24.5, 20.0 ],
+									"text" : "or"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-4",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 660.0, 196.0, 35.0, 22.0 ],
+									"text" : "label"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"bgcolor2" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"bgfillcolor_angle" : 270.0,
@@ -1782,7 +2720,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 18.0, 511.0, 310.0, 49.0 ],
-									"text" : "480. 966.233766 978.701299 941.298701 735.584416 629.61039 467.532468 436.363636 345.6 810.38961 478.08 224.64",
+									"text" : "487.01 487.01 507.587292 555.597453 1136.36 802.535523 864.267399 919.1437 1008.319008 1152.36 1241.524799 336.102815",
 									"textcolor" : [ 0.223529411764706, 0.223529411764706, 0.223529411764706, 1.0 ]
 								}
 
@@ -1896,15 +2834,13 @@
 							}
 , 							{
 								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
 									"id" : "obj-25",
-									"maxclass" : "number",
+									"maxclass" : "toggle",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 449.0, 502.0, 50.0, 22.0 ],
+									"patching_rect" : [ 449.0, 502.0, 24.0, 24.0 ],
 									"varname" : "multidrag"
 								}
 
@@ -1999,7 +2935,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 520.0, 285.0, 339.0, 38.0 ],
+									"patching_rect" : [ 519.0, 308.0, 339.0, 38.0 ],
 									"text" : "when editing the first value(slider) you may affect all other sliders in 3 different ways..."
 								}
 
@@ -2014,7 +2950,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 449.0, 307.0, 50.0, 22.0 ]
+									"patching_rect" : [ 448.0, 330.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -2038,7 +2974,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "int", "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 449.0, 282.0, 68.0, 21.0 ],
+									"patching_rect" : [ 448.0, 305.0, 68.0, 21.0 ],
 									"prefix" : "1st",
 									"prefix_mode" : 1,
 									"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
@@ -2056,7 +2992,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 449.0, 331.0, 63.0, 22.0 ],
+									"patching_rect" : [ 448.0, 354.0, 63.0, 22.0 ],
 									"text" : "first2all $1"
 								}
 
@@ -2073,8 +3009,8 @@
 									"patching_rect" : [ 552.0, 61.0, 59.5, 22.0 ],
 									"restore" : 									{
 										"first2all" : [ 2 ],
-										"multi" : [ 480.0, 966.233766233765891, 978.701298701298469, 941.298701298700848, 735.584415584415069, 629.61038961038912, 467.532467532467024, 436.36363636363626, 345.599999999999795, 810.389610389610084, 478.079999999999586, 224.639999999999816 ],
-										"multidrag" : [ 1 ]
+										"multi" : [ 487.009999999999991, 487.010000000001128, 507.587292208919393, 555.597452932501824, 1136.3599999999999, 802.535522731217156, 864.267399357973886, 919.143699678987673, 1008.319008112097322, 1152.360053574529957, 1241.524798715948691, 336.102814940135659 ],
+										"multidrag" : [ 0 ]
 									}
 ,
 									"text" : "autopattr",
@@ -2228,6 +3164,8 @@
 									"label" : [ "multi" ],
 									"labelcolor" : [ 0.772549, 0.509804, 0.882353, 1.0 ],
 									"maxclass" : "ll_number",
+									"mousefocus" : 1,
+									"multidrag" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
@@ -2354,6 +3292,37 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-33", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-34", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-34", 0 ],
+									"source" : [ "obj-35", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-5", 0 ]
 								}
@@ -2423,13 +3392,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 925.0, 667.0 ],
+						"rect" : [ 0.0, 26.0, 925.0, 667.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2460,6 +3429,19 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"attr" : "zerosplitslog",
+									"id" : "obj-24",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 657.0, 429.5, 150.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 14.0,
 									"id" : "obj-25",
@@ -2467,7 +3449,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 624.0, 82.0, 146.0, 22.0 ],
-									"presentation_linecount" : 3,
 									"text" : "position of slider (0..1)"
 								}
 
@@ -2528,7 +3509,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 0,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3000,7 +3981,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 0,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3043,7 +4024,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 54.0, 405.0, 362.0, 22.0 ],
-													"presentation_linecount" : 2,
 													"text" : "move the slider of ll_number to see what comes out."
 												}
 
@@ -3169,7 +4149,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 0,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4114,6 +5094,13 @@
 									"destination" : [ "obj-50", 0 ],
 									"hidden" : 1,
 									"source" : [ "obj-22", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-23", 0 ],
+									"source" : [ "obj-24", 0 ]
 								}
 
 							}
