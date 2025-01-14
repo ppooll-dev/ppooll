@@ -2,15 +2,15 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
-			"minor" : 3,
-			"revision" : 5,
+			"major" : 8,
+			"minor" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 100.0, 100.0, 641.0, 398.0 ],
-		"bgcolor" : [ 0.015686, 0.286275, 0.490196, 1.0 ],
+		"classnamespace" : "box",
+		"rect" : [ 100.0, 100.0, 634.0, 280.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontface" : 1,
@@ -47,33 +48,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.0, 93.0, 592.0, 33.0 ],
-					"style" : "",
 					"text" : "works in conjunction with spat.amimonitor@ and spat.ambiencode@. spat.ambidecode@ automatically fetches the coordinates for the speakers from spat.ambimonitor@!"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-13",
-					"linecount" : 7,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 221.5, 279.0, 398.0, 100.0 ],
-					"style" : "",
-					"text" : "values of the weight presets chosen above. the 4 number boxes represent different ambisonics orders. box 1 = order 0 (channel W - the mono sound pressure component of the ambisonics sound field), box 2 is oder 1 (channels XYZ, representing the 4 main axis of the sound field), box 3 = order 2 (channels RSTUV, which represent further sperical harmonics), box 4 = oder 4 (channels KLMNOPQ, adding even more spatial detail)."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-12",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 143.0, 257.0, 474.0, 20.0 ],
-					"style" : "",
-					"text" : "weight presets for ambisonics orders 0-3. "
 				}
 
 			}
@@ -84,7 +59,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 121.0, 235.0, 496.0, 20.0 ],
-					"style" : "",
 					"text" : "gain for decoded stream."
 				}
 
@@ -96,7 +70,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 72.5, 213.0, 544.5, 20.0 ],
-					"style" : "",
 					"text" : "define output channels."
 				}
 
@@ -104,13 +77,11 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-9",
-					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 69.5, 178.0, 548.5, 33.0 ],
-					"style" : "",
-					"text" : "amount of speakers. coordinates are fetched automatically from an spat.amimonitor@ act.\ncurrently limited to 16, can be infinite theoretically."
+					"patching_rect" : [ 69.5, 178.0, 548.5, 20.0 ],
+					"text" : "amount of speakers. coordinates are fetched automatically from an spat.amimonitor@ act."
 				}
 
 			}
@@ -121,8 +92,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 112.5, 156.0, 505.5, 20.0 ],
-					"style" : "",
-					"text" : "ambisonics encoding type. if in doubt use furse-malham."
+					"text" : "ambisonics encoding type. quasi-standard nowadays: sn3d, as found in ambix."
 				}
 
 			}
@@ -133,8 +103,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 69.5, 134.0, 548.5, 20.0 ],
-					"style" : "",
-					"text" : "ambisonics soundfield order (should be equal to order used when encoding."
+					"text" : "ambisonics soundfield order (should be equal to order used when encoding. max: 11"
 				}
 
 			}
@@ -187,87 +156,6 @@
 , 			{
 				"box" : 				{
 					"fontsize" : 10.0,
-					"format" : 6,
-					"id" : "obj-29",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 171.5, 279.0, 48.0, 20.0 ],
-					"style" : "",
-					"varname" : "order3Wght"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontsize" : 10.0,
-					"format" : 6,
-					"id" : "obj-25",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 121.5, 279.0, 48.0, 20.0 ],
-					"style" : "",
-					"varname" : "order2Wght"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontsize" : 10.0,
-					"format" : 6,
-					"id" : "obj-23",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 71.5, 279.0, 48.0, 20.0 ],
-					"style" : "",
-					"varname" : "order1Wght"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontsize" : 10.0,
-					"format" : 6,
-					"id" : "obj-22",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 21.0, 279.0, 48.0, 20.0 ],
-					"style" : "",
-					"varname" : "order0Wght"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontsize" : 10.0,
-					"id" : "obj-21",
-					"items" : [ "DefaultFurseMalham", ",", "BasicFurseMalham", ",", "InPhase" ],
-					"maxclass" : "umenu",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "int", "", "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 21.0, 257.0, 120.0, 20.0 ],
-					"pattrmode" : 1,
-					"style" : "",
-					"varname" : "orderWghts"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontsize" : 10.0,
 					"id" : "obj-33",
 					"items" : [ "Furse-Malham", ",", "N3D", ",", "SN3D" ],
 					"maxclass" : "umenu",
@@ -276,7 +164,6 @@
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 21.0, 156.0, 92.0, 20.0 ],
-					"style" : "",
 					"varname" : "type"
 				}
 
@@ -295,7 +182,6 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 21.0, 213.0, 50.0, 20.0 ],
 					"prototypename" : "M4L.toggle",
-					"style" : "",
 					"text" : "def_outs",
 					"textcolor" : [ 0.941176, 0.098039, 0.098039, 1.0 ],
 					"texton" : "pile",
@@ -343,7 +229,6 @@
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 544.0, 51.0, 77.0, 19.0 ],
-					"style" : "",
 					"text" : "www.icst.net",
 					"textcolor" : [ 0.0, 0.145098, 0.717647, 1.0 ],
 					"textoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
@@ -361,8 +246,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.0, 40.0, 266.0, 20.0 ],
-					"style" : "",
-					"text" : "v1.0 / 11.1.2019 / clemens.hausch@moozak.org"
+					"text" : "v1.3 / 230919 / hausch@moozak.org"
 				}
 
 			}
@@ -373,7 +257,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.0, 62.0, 266.0, 20.0 ],
-					"style" : "",
 					"text" : "ppooll port of the ICST ambisonics encoder"
 				}
 
@@ -386,7 +269,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.0, 14.0, 197.0, 24.0 ],
-					"style" : "",
 					"text" : "spat.ambidecode@"
 				}
 
@@ -401,7 +283,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 480.0, 40.0, 138.0, 17.0 ],
-					"style" : "",
 					"text" : "Zurich University of the Arts",
 					"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
 				}
@@ -417,8 +298,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 415.0, 14.0, 203.0, 17.0 ],
-					"style" : "",
-					"text" : "Copyright © 2003 - 2015 by Jan Schacher",
+					"text" : "Copyright © 2003 - 2021 by Jan Schacher",
 					"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
 				}
 
@@ -433,7 +313,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 347.0, 27.0, 270.0, 17.0 ],
-					"style" : "",
 					"text" : "ICST Institute for Computer Music and Sound Technology",
 					"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
 				}
@@ -447,7 +326,8 @@
 			}
  ],
 		"autosave" : 0,
-		"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+		"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+		"bgcolor" : [ 0.015686, 0.286275, 0.490196, 1.0 ]
 	}
 
 }

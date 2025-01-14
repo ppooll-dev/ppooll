@@ -1,0 +1,63 @@
+{
+	"window" : [ 713, 233, 872, 350 ],
+	"program_files" : 	{
+		"patching_rect" : [ 44, 33, 43, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9.0
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 0, 33, 45, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"midi-port" : 	{
+		"patching_rect" : [ 100, 33, 44, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9.0
+	}
+,
+	"vst-folder" : 	{
+		"patching_rect" : [ 50, 0, 75, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11.0
+	}
+,
+	"open!" : 	{
+		"patching_rect" : [ 124, 0, 35, 16 ],
+		"hidden" : 0,
+		"fontsize" : 11.0
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 64, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 2, 16, 154, 18 ],
+		"hidden" : 0,
+		"jsarguments" : [ 16, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "vst@1" ]
+	}
+,
+	"midi-channel" : 	{
+		"patching_rect" : [ 143, 33, 16, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"vst_program" : 	{
+		"patching_rect" : [ 85, 34, 16, 16 ],
+		"hidden" : 1,
+		"fontsize" : 12.0
+	}
+,
+	"ll.inputmix" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 51, 158, 13 ],
+		"hidden" : 0
+	}
+
+}

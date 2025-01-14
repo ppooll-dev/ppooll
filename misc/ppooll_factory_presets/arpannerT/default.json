@@ -1,0 +1,88 @@
+{
+	"window" : [ 307, 466, 467, 610 ],
+	"preset-ramp" : 	{
+		"fontsize" : 12.0,
+		"patching_rect" : [ 104, 80, 55, 14 ],
+		"hidden" : 0
+	}
+,
+	"presets" : 	{
+		"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "arpanner1" ],
+		"patching_rect" : [ 0, 80, 105, 14 ],
+		"hidden" : 0
+	}
+,
+	"frequency" : 	{
+		"fontsize" : 8.0,
+		"patching_rect" : [ 117, 1, 42, 17 ],
+		"hidden" : 0
+	}
+,
+	"mainswitch" : 	{
+		"fontsize" : 9.0,
+		"patching_rect" : [ 74, 0, 27, 19 ],
+		"hidden" : 0
+	}
+,
+	"Hz_comment" : 	{
+		"fontsize" : 12.0,
+		"patching_rect" : [ 99, 0, 21, 18 ],
+		"hidden" : 0
+	}
+,
+	"dev_comment" : 	{
+		"fontsize" : 10.0,
+		"patching_rect" : [ 134, 25, 26, 16 ],
+		"hidden" : 0
+	}
+,
+	"Phase_comment" : 	{
+		"fontsize" : 10.0,
+		"patching_rect" : [ 99, 25, 37, 16 ],
+		"hidden" : 0
+	}
+,
+	"clip_comment" : 	{
+		"fontsize" : 10.0,
+		"patching_rect" : [ 100, 50, 28, 16 ],
+		"hidden" : 0
+	}
+,
+	"clip" : 	{
+		"fontsize" : 8.0,
+		"patching_rect" : [ 99, 62, 34, 17 ],
+		"hidden" : 0
+	}
+,
+	"phase" : 	{
+		"fontsize" : 8.0,
+		"patching_rect" : [ 99, 37, 34, 17 ],
+		"hidden" : 0
+	}
+,
+	"lcd" : 	{
+		"patching_rect" : [ 0, 28, 100, 52 ],
+		"hidden" : 0
+	}
+,
+	"randomizer" : 	{
+		"patching_rect" : [ 146, 16, 13, 13 ],
+		"hidden" : 0
+	}
+,
+	"gain" : 	{
+		"patching_rect" : [ 0, 16, 147, 13 ],
+		"hidden" : 0
+	}
+,
+	"deviation" : 	{
+		"patching_rect" : [ 132, 41, 28, 28 ],
+		"hidden" : 0
+	}
+,
+	"ll.blues" : 	{
+		"patching_rect" : [ -1, 94, 160, 53 ],
+		"hidden" : 0
+	}
+
+}

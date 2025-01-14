@@ -1,0 +1,61 @@
+{
+	"window" : [ 647, 307, 947, 464 ],
+	"band_meter" : 	{
+		"patching_rect" : [ 0, 18, 300, 95 ],
+		"hidden" : 0
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 239, 0, 60, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 50, 0, 166, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "PEQ@1" ]
+	}
+,
+	"multislider" : 	{
+		"patching_rect" : [ 0, 18, 300, 95 ],
+		"hidden" : 0
+	}
+,
+	"interp" : 	{
+		"patching_rect" : [ 0, 115, 79, 14 ],
+		"hidden" : 0,
+		"fontsize" : 10.0
+	}
+,
+	"zero" : 	{
+		"patching_rect" : [ 263, 114, 37, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10.0
+	}
+,
+	"view_band" : 	{
+		"patching_rect" : [ 216, 114, 45, 14 ],
+		"hidden" : 0,
+		"fontsize" : 10.0
+	}
+,
+	"max" : 	{
+		"patching_rect" : [ 148, 115, 66, 14 ],
+		"hidden" : 0,
+		"fontsize" : 10.0
+	}
+,
+	"min" : 	{
+		"patching_rect" : [ 81, 115, 65, 14 ],
+		"hidden" : 0,
+		"fontsize" : 10.0
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 131, 301, 27 ],
+		"hidden" : 0
+	}
+
+}

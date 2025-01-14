@@ -1,0 +1,84 @@
+{
+	"window" : 	{
+		"patching_rect" : [ 0, 60, 270, 111 ],
+		"hidden" : 0
+	}
+,
+	"play" : 	{
+		"patching_rect" : [ 0, 46, 270, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"blur" : 	{
+		"patching_rect" : [ 170, 32, 100, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"denoise" : 	{
+		"patching_rect" : [ 170, 16, 100, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 214, 0, 57, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 94, 0, 121, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "pr.spectplay1" ]
+	}
+,
+	"record" : 	{
+		"patching_rect" : [ 59, 16, 98, 30 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"filtergraph" : 	{
+		"patching_rect" : [ 1, 60, 269, 111 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"low" : 	{
+		"patching_rect" : [ 1, 173, 44, 39 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"mid" : 	{
+		"patching_rect" : [ 34, 173, 44, 39 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"high" : 	{
+		"patching_rect" : [ 67, 173, 44, 39 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"loop" : 	{
+		"patching_rect" : [ 157, 16, 12, 30 ],
+		"hidden" : 0
+	}
+,
+	"mute" : 	{
+		"patching_rect" : [ 0, 16, 58, 30 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 110, 171, 160, 53 ],
+		"hidden" : 0
+	}
+
+}

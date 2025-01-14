@@ -1,0 +1,116 @@
+{
+	"window" : [ 280, 146, 490, 238 ],
+	"preset-ramp" : 	{
+		"patching_rect" : [ 39, 16, 53, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 93, 0, 117, 36 ],
+		"hidden" : 0,
+		"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "autocount@1" ]
+	}
+,
+	"steps_comm" : 	{
+		"patching_rect" : [ 133, 37, 30, 17 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"step" : 	{
+		"patching_rect" : [ 133, 50, 30, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"rate" : 	{
+		"patching_rect" : [ 165, 50, 41, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"wave" : 	{
+		"patching_rect" : [ 0, 54, 61, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"act_menu" : 	{
+		"patching_rect" : [ 0, 73, 53, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"par_menu" : 	{
+		"patching_rect" : [ 53, 73, 53, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"min_comm" : 	{
+		"patching_rect" : [ 62, 36, 30, 17 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"max_comm" : 	{
+		"patching_rect" : [ 62, 55, 30, 17 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"rate_comm" : 	{
+		"patching_rect" : [ 169, 37, 30, 17 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"line" : 	{
+		"patching_rect" : [ 165, 69, 41, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"Lgate_on/off" : 	{
+		"patching_rect" : [ 150, 69, 18, 18 ],
+		"hidden" : 0
+	}
+,
+	"on/offramp_comm" : 	{
+		"patching_rect" : [ 123, 71, 30, 17 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"min_value" : 	{
+		"patching_rect" : [ 87, 37, 46, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"max_value" : 	{
+		"patching_rect" : [ 87, 54, 46, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"list_item" : 	{
+		"patching_rect" : [ 105, 73, 21, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"auto_ON/OFF" : 	{
+		"patching_rect" : [ 0, 16, 43, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"trigger" : 	{
+		"patching_rect" : [ 0, 36, 61, 17 ],
+		"hidden" : 0,
+		"fontsize" : 13
+	}
+
+}

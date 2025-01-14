@@ -1,0 +1,72 @@
+{
+	"window" : [ 510, 392, 676, 602 ],
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 155, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"freezeA" : 	{
+		"patching_rect" : [ 0, 15, 54, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"morph" : 	{
+		"patching_rect" : [ 137, 15, 21, 139 ],
+		"hidden" : 0
+	}
+,
+	"clearB" : 	{
+		"patching_rect" : [ 56, 136, 35, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"clearA" : 	{
+		"patching_rect" : [ 56, 15, 35, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"auto" : 	{
+		"patching_rect" : [ 106, 0, 56, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"freezeB" : 	{
+		"patching_rect" : [ 0, 136, 54, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"sourceB" : 	{
+		"patching_rect" : [ 93, 136, 44, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"waveA" : 	{
+		"patching_rect" : [ 0, 34, 137, 39 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"waveB" : 	{
+		"patching_rect" : [ 0, 96, 137, 39 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"faderA" : 	{
+		"patching_rect" : [ 12, 74, 108, 10 ],
+		"hidden" : 0
+	}
+,
+	"faderB" : 	{
+		"patching_rect" : [ 12, 85, 108, 10 ],
+		"hidden" : 0
+	}
+
+}

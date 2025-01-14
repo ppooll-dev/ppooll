@@ -1,0 +1,128 @@
+{
+	"window" : [ 100, 125, 487, 769 ],
+	"freq_smooth" : 	{
+		"patching_rect" : [ 159, 587, 212, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"mag_smooth" : 	{
+		"patching_rect" : [ 160, 605, 211, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"cloud_points" : 	{
+		"patching_rect" : [ 0, 78, 279, 216 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"cloud_points_B" : 	{
+		"patching_rect" : [ 0, 313, 279, 216 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"rotate" : 	{
+		"patching_rect" : [ 0, 295, 279, 17 ],
+		"hidden" : 0
+	}
+,
+	"thin" : 	{
+		"patching_rect" : [ 0, 530, 279, 17 ],
+		"hidden" : 0
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 570, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"equal" : 	{
+		"patching_rect" : [ 302, 335, 38, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"vertical_rotate" : 	{
+		"patching_rect" : [ 282, 314, 17, 216 ],
+		"hidden" : 0
+	}
+,
+	"number" : 	{
+		"patching_rect" : [ 53, 0, 102, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"amount" : 	{
+		"patching_rect" : [ 208, 0, 70, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"random_points" : 	{
+		"patching_rect" : [ 159, 570, 49, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"ramp_points" : 	{
+		"patching_rect" : [ 207, 569, 164, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"midi-port" : 	{
+		"patching_rect" : [ 279, 148, 44, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9.0
+	}
+,
+	"midi-channel" : 	{
+		"patching_rect" : [ 326, 148, 16, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"QTkey" : 	{
+		"patching_rect" : [ 280, 191, 91, 57 ],
+		"hidden" : 0
+	}
+,
+	"midi_hold" : 	{
+		"patching_rect" : [ 280, 171, 18, 18 ],
+		"hidden" : 0
+	}
+,
+	"range" : 	{
+		"patching_rect" : [ 0, 18, 278, 58 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 279, 0, 92, 50 ],
+		"hidden" : 0,
+		"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "fmrm1" ]
+	}
+,
+	"thin_rate" : 	{
+		"patching_rect" : [ 0, 549, 279, 17 ],
+		"hidden" : 0
+	}
+,
+	"visualize" : 	{
+		"patching_rect" : [ 316, 506, 24, 24 ],
+		"hidden" : 0
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 305, 54, 66, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+
+}

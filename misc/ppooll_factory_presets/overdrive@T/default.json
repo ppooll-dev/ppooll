@@ -1,0 +1,33 @@
+{
+	"window" : [ 331, 384, 490, 480 ],
+	"preset-ramp" : 	{
+		"patching_rect" : [ 123, 1, 36, 13 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 86, 1, 37, 13 ],
+		"hidden" : 0,
+		"jsarguments" : [ 11, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "overdrive@1" ]
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 43, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"drive" : 	{
+		"patching_rect" : [ 15, 16, 144, 27 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"link" : 	{
+		"patching_rect" : [ 0, 16, 14, 27 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

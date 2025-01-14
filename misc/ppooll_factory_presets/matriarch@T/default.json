@@ -1,0 +1,41 @@
+{
+	"window" : [ 480, 154, 736, 320 ],
+	"out_meter" : 	{
+		"patching_rect" : [ 70, 41, 745, 126 ],
+		"hidden" : 0
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 81, 0, 45, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 126, 0, 689, 15 ],
+		"hidden" : 0,
+		"jsarguments" : [ 13, "255 255 255", "50 50 50", "255 0 0", "0 255 0" ]
+	}
+,
+	"toggleVolPan" : 	{
+		"patching_rect" : [ 2, 46, 70, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"patcher" : "bang",
+	"patching_rect" : [ 0, 430, 806, 31 ],
+	"hidden" : 0,
+	"num_inputs" : 	{
+		"patching_rect" : [ 3, 25, 33, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"num_outputs" : 	{
+		"patching_rect" : [ 38, 25, 33, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

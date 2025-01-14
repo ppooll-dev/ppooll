@@ -1,0 +1,122 @@
+{
+	"window" : [ 551, 326, 776, 441 ],
+	"cellblock" : 	{
+		"patching_rect" : [ 0, 34, 165, 80 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"lcd_p" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 348, 407, 63, 20 ],
+		"hidden" : 1
+	}
+,
+	"alloff" : 	{
+		"patching_rect" : [ 98, 15, 28, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"outputs" : 	{
+		"patching_rect" : [ 74, 33, 29, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"inputs" : 	{
+		"patching_rect" : [ 42, 33, 29, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"input_label" : 	{
+		"patching_rect" : [ 36, 33, 21, 19 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"output_label" : 	{
+		"patching_rect" : [ 64, 33, 21, 19 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"jit_on" : 	{
+		"patching_rect" : [ 0, 15, 21, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"local_disp_on" : 	{
+		"patching_rect" : [ 372, 161, 13, 15 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"jit_menu" : 	{
+		"patching_rect" : [ 53, 15, 45, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"mono/stereo" : 	{
+		"patching_rect" : [ 335, 41, 39, 16 ],
+		"hidden" : 1,
+		"fontsize" : 11
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 158, 0, 50, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 66, 0, 91, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0" ]
+	}
+,
+	"out_ramp" : 	{
+		"patching_rect" : [ 126, 15, 70, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"jit_ms" : 	{
+		"patching_rect" : [ 21, 15, 18, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"invert" : 	{
+		"patching_rect" : [ 38, 15, 15, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"meter" : 	{
+		"patching_rect" : [ 1, 55, 105, 60 ],
+		"hidden" : 0
+	}
+,
+	"config_menu" : 	{
+		"patching_rect" : [ 0, 33, 39, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"def_outputs" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 165, 34, 162, 68 ],
+		"hidden" : 1
+	}
+,
+	"def" : 	{
+		"patching_rect" : [ 197, 15, 28, 19 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+
+}

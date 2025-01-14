@@ -1,0 +1,97 @@
+{
+	"window" : [ 725, 313, 858, 513 ],
+	"f-rel>trigger" : 	{
+		"patching_rect" : [ 68, 64, 19, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"length" : 	{
+		"patching_rect" : [ 86, 63, 46, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"oct.div" : 	{
+		"patching_rect" : [ 33, 44, 30, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"base-freq" : 	{
+		"patching_rect" : [ 63, 44, 44, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"envelope" : 	{
+		"patching_rect" : [ 0, 82, 118, 65 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"length-slider" : 	{
+		"patching_rect" : [ 117, 82, 15, 66 ],
+		"hidden" : 0
+	}
+,
+	"freq-relative" : 	{
+		"patching_rect" : [ 0, 44, 37, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"use-env" : 	{
+		"patching_rect" : [ 0, 63, 24, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"bang-env" : 	{
+		"patching_rect" : [ 23, 63, 19, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"loop-env" : 	{
+		"patching_rect" : [ 41, 63, 28, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"takeover" : 	{
+		"patching_rect" : [ 105, 44, 17, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"freqNOramp" : 	{
+		"patching_rect" : [ 120, 44, 13, 13 ],
+		"hidden" : 0
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ -2, 16, 53, 12 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 53, 0, 79, 27 ],
+		"hidden" : 0,
+		"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "fmrm1" ]
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 147, 132, 53 ],
+		"hidden" : 0
+	}
+,
+	"freq" : 	{
+		"patching_rect" : [ 0, 28, 132, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

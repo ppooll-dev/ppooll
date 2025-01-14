@@ -1,0 +1,38 @@
+{
+	"window" : [ 194, 369, 494, 762 ],
+	"kocyu_lcd" : 	{
+		"patching_rect" : [ 0, 16, 300, 300 ],
+		"hidden" : 0
+	}
+,
+	"stem" : 	{
+		"patching_rect" : [ 1, 318, 75, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"branch" : 	{
+		"patching_rect" : [ 76, 318, 75, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"flower" : 	{
+		"patching_rect" : [ 151, 318, 75, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"reset" : 	{
+		"patching_rect" : [ 225, 318, 75, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 340, 157, 53 ],
+		"hidden" : 0
+	}
+
+}

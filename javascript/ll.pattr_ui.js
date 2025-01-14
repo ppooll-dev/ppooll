@@ -74,14 +74,10 @@ if (jsarguments.length>5){
 	vrgb3[1] = splits[1]/255.;
 	vrgb3[2] = splits[2]/255.;
 	}
-//if (jsarguments.length>6){
-//	actname(jsarguments[6]);
-//	}	
 
 
 refresh();
 draw();
-//post(this.patcher);
 getactname();
 
 function getactname() {
@@ -89,8 +85,6 @@ function getactname() {
 	if (this.patcher) {
 		anstr = this.patcher.name;
 		if (anstr.charCodeAt(anstr.length-1) > 47 && anstr.charCodeAt(anstr.length-1) < 58) {
-			//post("getactname", anstr.charCodeAt(anstr.length-1), "\n");
-			// pattrUI was created in existing act, we need the actname now:
 			actname(this.patcher.name);
 		}
 	}
@@ -101,18 +95,13 @@ function splitarg(a) {
 }
 
 function actname(a) {
-
 	act_name = a;
-	//post(a);
 	out_name = "::"+a+"::preset_gui";
 	pat_name = "::"+a+"::pat";
 	pat = this.patcher.getnamed("pat");
-	//post(pat);
 	if (pat) pat.message("getslotlist");
 	refresh();
 	draw();
-	//post(a,out_name, pat);post();
-	
 }
 
 function ramp(a) {
@@ -124,11 +113,7 @@ function recall() {
 		outlet(0, current);
 	}
 }
-// pass whatever we don't need through, but prevent loops.
-var loopers = ["write"];
-function anything() { 
-	
-} 
+
 function write() {
 
 }
@@ -139,21 +124,6 @@ function clear() {
 	slots = [];
 	refresh();
 	draw();
-    //outlet(0, "clear");
-}
-function msg_float(a) {
-	//post("msg", a);
-	myval = a;
-	notifyclients();
-	var former = current;
-	if (parseInt(a) != current) set_current(parseInt(a));
-	if (slots[parseInt(a)]) {
-		pat.message(a);
-		}
-	else {
-		if (a > 0.) store(parseInt(a));
-		}
-	//outlet(0,a);
 }
 
 function fontsize(v)
@@ -232,27 +202,15 @@ function draw()
 function coord_to_square( coords ) {
 	x = coords[0];
 	y = coords[1];
-
-	/*
-	var xsquare = Math.round(  (x + Math.abs(left_edge) - margin*2)  /  (square*2 + inner_marg)  );
-	var ysquare = Math.round(  (y + Math.abs(bottom_edge) - margin*2) / (square*2 + inner_marg)  ) ;
-	xsquare = parseInt(xsquare); // Math.round doesn't seem to always work...
-	ysquare = num_squares[1] - parseInt(ysquare) - 1;
-	post ("xy", xsquare,ysquare, "\n");
-	*/
-	//post("wiiii", grid_edge[0] - left_edge, "pos", x - left_edge, "rel",(x - left_edge) / (grid_edge[0] - left_edge) );
 	var xsquare = parseInt(num_squares[0] * (x - left_edge) / (grid_edge[0] - left_edge))  ;
 	var ysquare = parseInt(num_squares[1] * (y - 1) / (grid_edge[1] - 1))  ;
-	//post("XXX", xsquare, ysquare);
-	
+	//post("XXX", xsquare, ysquare);	
 	if (xsquare < num_squares[0] && xsquare >= 0 && ysquare < num_squares[1] && ysquare >= 0) {
 		return xsquare + ysquare * num_squares[0] + 1;
 	} else {
 		return 0;
 	}
 }
-
-
 function slotlist() {
 	//post("sl");
 	slots = [];
@@ -278,10 +236,8 @@ function bang()
 
 function q_size(v)
 {
-	//post(act_name,"\n");
 	mybox = this.patcher.getnamed("presets");
 	mybox.message("jsarguments", v, jsarguments[2], jsarguments[3], jsarguments[4], jsarguments[5], jsarguments[6]);
-	//post(act_name,"\n");
 }
 
 function fsaa(v)
@@ -313,7 +269,6 @@ function brgb(r,g,b)
 	mybox.message("jsarguments",jsarguments[1],jsarguments[2], jsarguments[3], jsarguments[4], r+" "+g+" "+b, jsarguments[6]);
 }
 
-
 function array_key_search(needle,haystack) {
 	for (var i in haystack) {
 		if (i == needle)
@@ -334,39 +289,13 @@ function store( slot ) {
 	pat.message("store", slot);
 
 }
-
-/*
-function onidle(x,y)
-{
-	var w = sketch.screentoworld(x,y);
-	if (current_idle_slot!=coord_to_square(w)){
-		current_idle_slot = coord_to_square(w);
-		post(current_idle_slot);
-		pat.message("getslotname", current_idle_slot);
-	}
-	
-}
-*/
-
 function onclick(x,y,but,mod1,shift,capslock,option,mod2)
 {
-	//mod1: mac: cmd key, win: control key
-	//mod2: mac: ctrl-key, win right mouse button
-	// cache mouse position for tracking delta movements
-	//post (mod2);
 	var w = sketch.screentoworld(x,y);
 	last_click = x;
-	//post(w);
 	click = coord_to_square(w);	
 	//post ("click", click, "\n");
 	if (click != 0) {
-		/*
-		if (mod2) {
-			messnamed(act_name, "rampstop");
-			}
-		else {
-			*/
-
 			if (!slots[click]|shift) {
 				outlet(0,"store", click);
 				messnamed(act_name, "active_set", "store", click);
@@ -387,32 +316,34 @@ function onclick(x,y,but,mod1,shift,capslock,option,mod2)
 						outlet(0,"ctrl", click);
 					}
 					else {
-				outlet(0,"recall", click);
-				messnamed(act_name, "active_set", "recall", click);
-				set_current(click);
-				if (ramp_) {
-					//messnamed(out_name, click);
-					//messnamed(active_check, click);
-					
-					myval = click;
-					notifyclients();
-					//setvalueof(click);
-					//post("ramp", click);
+						//post ("recall", click);
+						outlet(0,"recall", click);
+						messnamed(act_name, "active_set", "recall", click);
+						set_current(click);
+						if (ramp_) {
+							myval = click;
+							notifyclients();
+
+						}
+						else {
+							myval = click;
+							notifyclients();
+						}
 					}
-				else {
-					//outlet(0,"recall", click);
-					//pat.message("recall", "active_", click);
-					//messnamed(active_check, click);
-					myval = click;
-					notifyclients();
-					}
-				}
-				//outlet(0,click);
 				}
 			}	
-		//}
 	}
 	drag_start = current;
+}
+function msg_float(a) {
+	//post("msg", a);
+	if (parseInt(a) != current) set_current(parseInt(a));
+	messnamed(act_name, "active_set", "recall", parseInt(a));
+	myval = a;
+	notifyclients();	
+	if (!slots[parseInt(a)]) {
+		if (a > 0.) store(parseInt(a));
+		}
 }
 
 function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
@@ -445,13 +376,7 @@ function scrubRate( n ) {
 }
 onclick.local = 1; //private. could be left public to permit "synthetic" events
 
-/*
-function ondblclick(x,y,but,cmd,shift,capslock,option,ctrl)
-{
-	outlet(0,"storagewindow");
-}
-ondblclick.local = 1; //private. could be left public to permit "synthetic" events
-*/
+
 
 function onresize(w,h)
 {
@@ -463,13 +388,9 @@ onresize.local = 1; //private
 function setvalueof(v)
 {
 	msg_float(v);
-	//post("svo", v);
-	//myval = v;
-	//notifyclients();
 }
 
 function getvalueof()
 {
-	//post("gvo", myval);
 	return myval;
 }

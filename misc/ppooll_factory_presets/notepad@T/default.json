@@ -1,0 +1,39 @@
+{
+	"window" : [ 415, 175, 645, 275 ],
+	"textfield" : 	{
+		"patching_rect" : [ 0, 36, 230, 64 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 80, 0, 121, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "beast1" ]
+	}
+,
+	"fontsize" : 	{
+		"patching_rect" : [ 187, 0, 43, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"fontlist" : 	{
+		"patching_rect" : [ 0, 16, 137, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10.0
+	}
+,
+	"width" : 	{
+		"patching_rect" : [ 139, 16, 44, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"height" : 	{
+		"patching_rect" : [ 187, 16, 44, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+
+}

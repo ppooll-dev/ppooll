@@ -1,0 +1,93 @@
+{
+	"window" : [ 262, 280, 528, 496 ],
+	"preset-ramp" : 	{
+		"patching_rect" : [ 0, 14, 84, 12 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 83, 0, 183, 26 ],
+		"hidden" : 0,
+		"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "forbiddenP1" ]
+	}
+,
+	"spectFun" : 	{
+		"patching_rect" : [ -1, 26, 254, 127 ],
+		"hidden" : 0
+	}
+,
+	"boost-slider" : 	{
+		"patching_rect" : [ 252, 26, 14, 127 ],
+		"hidden" : 0
+	}
+,
+	"source" : 	{
+		"patching_rect" : [ 159, 171, 78, 16 ],
+		"hidden" : 0
+	}
+,
+	"noise-level" : 	{
+		"patching_rect" : [ 236, 168, 30, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"redraw/fade" : 	{
+		"patching_rect" : [ 236, 152, 30, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"patching_rect" : [ 669, 341, 89, 17 ],
+	"hidden" : 1,
+	"fontsize" : 9,
+	"boost" : 	{
+		"patching_rect" : [ 676, 360, 35, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"peak-on/off" : 	{
+		"patching_rect" : [ 157, 153, 32, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"peakreset" : 	{
+		"patching_rect" : [ 187, 153, 23, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"fade-on/off" : 	{
+		"patching_rect" : [ 207, 153, 30, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"mode!" : 	{
+		"patching_rect" : [ 157, 199, 40, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"flip" : 	{
+		"patching_rect" : [ 195, 199, 27, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 163, 160, 53 ],
+		"hidden" : 0
+	}
+,
+	"shift" : 	{
+		"patching_rect" : [ 236, 199, 30, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+
+}

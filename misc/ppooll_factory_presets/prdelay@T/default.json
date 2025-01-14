@@ -1,0 +1,49 @@
+{
+	"window" : [ 368, 202, 528, 331 ],
+	"link!" : 	{
+		"patching_rect" : [ 145, 38, 14, 14 ],
+		"hidden" : 0
+	}
+,
+	"straight/cross" : 	{
+		"patching_rect" : [ 144, 61, 15, 15 ],
+		"hidden" : 0
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 76, 0, 79, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 0, 16, 155, 14 ],
+		"hidden" : 0,
+		"jsarguments" : [ 13, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "distort@1" ]
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 76, 160, 53 ],
+		"hidden" : 0
+	}
+,
+	"delayL" : 	{
+		"patching_rect" : [ 0, 29, 145, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"delayR" : 	{
+		"patching_rect" : [ 0, 45, 145, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"feedback" : 	{
+		"patching_rect" : [ 0, 61, 145, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

@@ -1,0 +1,195 @@
+{
+	"window" : [ 33, 248, 398, 319 ],
+	"waves" : 	{
+		"patching_rect" : [ 307, 0, 30, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"buffer-menu" : 	{
+		"patching_rect" : [ 335, 0, 33, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"syncto" : 	{
+		"patching_rect" : [ 50, 29, 34, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"hz-ms-switch" : 	{
+		"patching_rect" : [ 263, 0, 22, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"link-lo-hi" : 	{
+		"patching_rect" : [ 175, 14, 15, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"act_menu" : 	{
+		"patching_rect" : [ 144, 44, 36, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"par_menu" : 	{
+		"patching_rect" : [ 178, 44, 37, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"list_param_item" : 	{
+		"patching_rect" : [ 214, 44, 22, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"wf1" : 	{
+		"patching_rect" : [ 17, 15, 347, 54 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"freq" : 	{
+		"patching_rect" : [ 86, 0, 204, 15 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"ring_in" : 	{
+		"patching_rect" : [ 84, 30, 20, 16 ],
+		"hidden" : 1,
+		"fontsize" : 8
+	}
+,
+	"settriggermode" : 	{
+		"patching_rect" : [ 0, 59, 16, 11 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"low" : 	{
+		"patching_rect" : [ 130, 15, 48, 17 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"mes/sig" : 	{
+		"patching_rect" : [ 130, 44, 15, 15 ],
+		"hidden" : 1,
+		"fontsize" : 11
+	}
+,
+	"endsmooth" : 	{
+		"patching_rect" : [ 269, 30, 15, 15 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"speedlim" : 	{
+		"patching_rect" : [ 162, 29, 29, 17 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"log" : 	{
+		"patching_rect" : [ 190, 29, 31, 17 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 0, 46, 50, 14 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 0, 15, 51, 31 ],
+		"hidden" : 1,
+		"jsarguments" : [ 9, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "distort@1" ]
+	}
+,
+	"rate" : 	{
+		"patching_rect" : [ 85, 0, 21, 15 ],
+		"hidden" : 1,
+		"fontsize" : 10
+	}
+,
+	"smooth_amt" : 	{
+		"patching_rect" : [ 311, -1, 17, 17 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"smooth" : 	{
+		"patching_rect" : [ 326, 0, 12, 14 ],
+		"hidden" : 1,
+		"fontsize" : 10
+	}
+,
+	"get!" : 	{
+		"patching_rect" : [ 138, 30, 21, 15 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"rand_table" : 	{
+		"patching_rect" : [ 123, 29, 17, 17 ],
+		"hidden" : 1,
+		"fontsize" : 8
+	}
+,
+	"ramp" : 	{
+		"patching_rect" : [ 288, 0, 49, 15 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"size" : 	{
+		"patching_rect" : [ 243, 15, 41, 17 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"high" : 	{
+		"patching_rect" : [ 187, 15, 48, 17 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"interpolate" : 	{
+		"patching_rect" : [ 0, 25, 16, 12 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"loop" : 	{
+		"patching_rect" : [ 0, 36, 16, 13 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"on/off" : 	{
+		"patching_rect" : [ 0, 14, 17, 12 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"trigger" : 	{
+		"patching_rect" : [ 0, 49, 16, 10 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"wave-calc" : 	{
+		"patching_rect" : [ 337, -2, 30, 13 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+
+}

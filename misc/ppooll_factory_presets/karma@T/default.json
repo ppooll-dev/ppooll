@@ -1,0 +1,152 @@
+{
+	"window" : 	{
+		"patching_rect" : [ 97, 32, 97, 16 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"auto" : 	{
+		"patching_rect" : [ 260, 47, 33, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"loop_mode" : 	{
+		"patching_rect" : [ 157, 16, 55, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"buffer" : 	{
+		"patching_rect" : [ 159, 199, 133, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"position" : 	{
+		"patching_rect" : [ 0, 32, 97, 16 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 199, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"play" : 	{
+		"patching_rect" : [ 43, 16, 31, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"stop" : 	{
+		"patching_rect" : [ 74, 16, 31, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"record" : 	{
+		"patching_rect" : [ 0, 16, 43, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"speed" : 	{
+		"patching_rect" : [ 0, 48, 97, 16 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"half" : 	{
+		"patching_rect" : [ 114, 48, 28, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"reverse" : 	{
+		"patching_rect" : [ 175, 48, 26, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"double" : 	{
+		"patching_rect" : [ 142, 48, 33, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"overdub" : 	{
+		"patching_rect" : [ 213, 16, 79, 16 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"jump" : 	{
+		"patching_rect" : [ 195, 32, 97, 16 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"append" : 	{
+		"patching_rect" : [ 106, 16, 49, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"ramp" : 	{
+		"patching_rect" : [ 202, 48, 61, 17 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 204, 0, 51, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 69, 0, 136, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "envMM1" ]
+	}
+,
+	"crazy" : 	{
+		"patching_rect" : [ 161, 226, 56, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"wf" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 63, 291, 85 ],
+		"hidden" : 0
+	}
+,
+	"start" : 	{
+		"patching_rect" : [ 0, 147, 292, 17 ],
+		"hidden" : 0,
+		"fontsize" : 16
+	}
+,
+	"end" : 	{
+		"patching_rect" : [ 0, 164, 292, 17 ],
+		"hidden" : 0,
+		"fontsize" : 16
+	}
+,
+	"length" : 	{
+		"patching_rect" : [ 0, 181, 292, 17 ],
+		"hidden" : 0,
+		"fontsize" : 16
+	}
+,
+	"keep_length" : 	{
+		"patching_rect" : [ 214, 226, 78, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 1,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 992.0, 425.0, 153.0, 165.0 ],
+		"rect" : [ 981.0, 432.0, 153.0, 165.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -73,14 +73,16 @@
 					"id" : "obj-10",
 					"label" : [ "" ],
 					"maxclass" : "ll_number",
-					"min" : 0.0,
+					"min" : 4.0,
 					"mousefocus" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 42.5, 16.0, 65.0, 17.0 ],
-					"sliderlog" : 3.0,
+					"sliderlog" : 4.0,
+					"slidermax" : 6000.0,
+					"slidermin" : 60.0,
 					"varname" : "time"
 				}
 
@@ -127,7 +129,8 @@
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 78.0, 0.0, 70.0, 15.0 ],
-					"sliderlog" : 3.0,
+					"sliderlog" : 4.0,
+					"slidermax" : 6000.0,
 					"varname" : "slide"
 				}
 
@@ -223,13 +226,15 @@
 , 			{
 				"box" : 				{
 					"active" : 					{
+						"master" : 0,
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
 						"title_menu" : 0,
 						"act::active_store" : 1,
-						"ll.blues::levels" : 1,
-						"ll.blues::outputs" : 1,
-						"ll.blues::state" : 1
+						"ll.blues" : 0,
+						"ll.blues::levels" : 0,
+						"ll.blues::outputs" : 0,
+						"ll.blues::state" : 0
 					}
 ,
 					"color" : [ 0.4, 0.4, 0.8, 1.0 ],
@@ -241,10 +246,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 373.0, 40.0, 100.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 1006, 202, 1838, 741 ],
+						"client_rect" : [ 876, 62, 1636, 870 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 365, 44, 816, 172 ]
+						"storage_rect" : [ 430, 270, 1276, 999 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -297,11 +302,11 @@
 						"center" : [ -1 ],
 						"master" : [ 0 ],
 						"metro" : [ 0 ],
-						"pans" : [ 0.5, 0.366013071895425, 0.444444444444444, 0.516339869281046, 0.568627450980392, 0.620915032679739, 0.666666666666667, 0.725490196078431, 0.751633986928105, 0.777777777777778, 0.803921568627451, 0.856209150326797 ],
+						"pans" : [ 0.080521738672163, 0.641274028704724, 0.42798918681508, 0.497064399712049, 0.656550862414496, 0.099510385282021, 0.515994194764827, 0.892459417053995, 0.316863173914635, 0.035295424202179, 0.368303009851327, 0.821294021882013 ],
 						"pres_menu" : [ "_" ],
-						"slide" : [ 1594 ],
+						"slide" : [ 504 ],
 						"tetris_menu" : [ "" ],
-						"time" : [ 1307 ],
+						"time" : [ 1110 ],
 						"title_menu" : [ "subpatch" ]
 					}
 ,
@@ -364,7 +369,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-13",
 					"ignoreclick" : 1,
-					"items" : [ "-", ",", "-", ",", "ƒ", "default" ],
+					"items" : [ "-", ",", "-", ",", "ƒ", "default.json" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -406,13 +411,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 5,
-							"revision" : 1,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 232.0, 436.0, 592.0, 439.0 ],
+						"rect" : [ 1133.0, 328.0, 592.0, 439.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -442,6 +447,18 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "signal", "bang" ],
+									"patching_rect" : [ 356.0, 79.0, 34.0, 22.0 ],
+									"text" : "line~"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-14",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -457,8 +474,8 @@
 									"id" : "obj-13",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
 									"patching_rect" : [ 452.0, 145.5, 49.0, 22.0 ],
 									"text" : "ll.r slide"
 								}
@@ -502,7 +519,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 5,
-											"revision" : 1,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -565,8 +582,8 @@
 													"id" : "obj-2",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 458.0, 39.0, 58.0, 22.0 ],
 													"text" : "ll.r center"
 												}
@@ -577,8 +594,8 @@
 													"id" : "obj-26",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 364.0, 89.0, 47.0, 22.0 ],
 													"text" : "ll.r time"
 												}
@@ -637,8 +654,8 @@
 													"id" : "obj-21",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
 													"patching_rect" : [ 303.0, 50.0, 55.0, 22.0 ],
 													"text" : "ll.r metro"
 												}
@@ -647,13 +664,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-20",
-													"linecount" : 23,
+													"linecount" : 24,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 219.0, 266.0, 50.0, 317.0 ],
-													"text" : "0.5 0.366013 0.444444 0.51634 0.568627 0.620915 0.666667 0.72549 0.751634 0.777778 0.803922 0.856209"
+													"patching_rect" : [ 219.0, 266.0, 50.0, 330.0 ],
+													"text" : "0.080522 0.641274 0.427989 0.497064 0.656551 0.09951 0.515994 0.892459 0.316863 0.035295 0.368303 0.821294"
 												}
 
 											}
@@ -1043,8 +1060,8 @@
 									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 296.0, 262.0, 203.0, 22.0 ],
-									"text" : "mc.slide~ 44100. 44100."
+									"patching_rect" : [ 296.0, 262.0, 182.0, 22.0 ],
+									"text" : "mc.rampsmooth~ 44100. 44100."
 								}
 
 							}
@@ -1269,14 +1286,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.actnamehelper.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.an.js",
+				"name" : "ll.an2.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
@@ -1290,7 +1300,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.createact8.js",
+				"name" : "ll.makeact.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
@@ -1301,6 +1311,13 @@
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.og.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -1402,11 +1419,8 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll_fastforward.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/externals/filip",
-				"patcherrelativepath" : "../../externals/filip",
-				"type" : "JSON",
-				"implicit" : 1
+				"name" : "ll_fastforward.mxo",
+				"type" : "iLaX"
 			}
 , 			{
 				"name" : "ll_number.mxo",

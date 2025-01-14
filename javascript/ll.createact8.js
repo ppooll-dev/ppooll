@@ -1,3 +1,6 @@
+//create act AND manage actname-sending when an act is loaded 
+
+
 outlets = 1;
 autowatch = 1;
 var tpp, obj;
@@ -7,7 +10,6 @@ function make(n,s,i,x,y,z,h)
 {
 	name = n;
 	size = s;
-	
 	instance = i;
 	r=x;g=y;b=z;
 	hash=h;
@@ -29,6 +31,7 @@ function make(n,s,i,x,y,z,h)
 
 	first_dump();
 	
+	outlet(0, [name, instance])
 }
 
 function givename()
@@ -38,6 +41,7 @@ function givename()
 	obj = tpp.getnamed("thispatcher");
 	obj.message("patcher", cname);
 	messnamed("actname", cname);
+	//post("actname", cname);
 	messnamed(hash+"actname",cname);
 	messnamed("::actname", "::"+cname+"::");
 	messnamed(hash+"::actname","::"+cname+"::");
@@ -124,6 +128,7 @@ function first_dump()
 	obj.message("dump");
 	messnamed("acting",name,instance,1);
 	messnamed("act_ready", cname);
+	//post("act_ready", cname);
 }
 
 function create_rest()

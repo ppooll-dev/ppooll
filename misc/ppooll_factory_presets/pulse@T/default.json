@@ -1,0 +1,122 @@
+{
+	"window" : [ 329, 592, 872, 662 ],
+	"period" : 	{
+		"patching_rect" : [ 0, 18, 142, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"syncto" : 	{
+		"patching_rect" : [ 322, 18, 76, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 380, 0, 162, 16 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 58, 0, 322, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 16, "255 255 255", "50 50 50", "255 0 0", "0 255 0" ]
+	}
+,
+	"act_pulse" : 	{
+		"patching_rect" : [ 400, 18, 50, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"par_pulse" : 	{
+		"patching_rect" : [ 452, 18, 50, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"timingVarNeg" : 	{
+		"patching_rect" : [ 232, 40, 50, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"timingVarPos" : 	{
+		"patching_rect" : [ 232, 56, 50, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"level" : 	{
+		"patching_rect" : [ 424, 56, 117, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"levelMod" : 	{
+		"patching_rect" : [ 424, 40, 117, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"att" : 	{
+		"patching_rect" : [ 354, 40, 68, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"dec" : 	{
+		"patching_rect" : [ 354, 56, 68, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"phase" : 	{
+		"patching_rect" : [ 0, 40, 230, 30 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"duty" : 	{
+		"patching_rect" : [ 284, 40, 68, 30 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"multiply" : 	{
+		"patching_rect" : [ 214, 18, 106, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"more_button" : 	{
+		"patching_rect" : [ 504, 18, 38, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"more" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 452, 332, 48, 22 ],
+		"hidden" : 1
+	}
+,
+	"multinumerator" : 	{
+		"patching_rect" : [ 146, 18, 25, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"multidenominator" : 	{
+		"patching_rect" : [ 185, 18, 25, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"periodcover" : 	{
+		"patching_rect" : [ 0, 18, 142, 20 ],
+		"hidden" : 1
+	}
+
+}

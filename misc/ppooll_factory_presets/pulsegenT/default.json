@@ -1,0 +1,51 @@
+{
+	"window" : [ 441, 458, 663, 565 ],
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ -2, 54, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"period" : 	{
+		"patching_rect" : [ -1, 16, 110, 13 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"formant" : 	{
+		"patching_rect" : [ -1, 29, 110, 13 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"smooth" : 	{
+		"patching_rect" : [ 111, 30, 111, 13 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"t60" : 	{
+		"patching_rect" : [ 111, 16, 111, 13 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"trig" : 	{
+		"patching_rect" : [ 157, 43, 65, 63 ],
+		"hidden" : 0,
+		"fontsize" : 64
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 72, 0, 71, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 13, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "pulsegen1" ]
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 143, 0, 79, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

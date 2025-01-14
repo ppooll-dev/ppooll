@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 2,
+			"minor" : 5,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 424.0, 112.0, 489.0, 583.0 ],
+		"rect" : [ 361.0, 110.0, 489.0, 583.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -62,14 +62,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 63.0, 556.0, 391.0, 563.0 ],
+						"rect" : [ 70.0, 383.0, 391.0, 563.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -182,7 +182,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "int", "int" ],
+									"outlettype" : [ "", "act_menu", "int" ],
 									"patching_rect" : [ 96.666666666666657, 144.0, 103.0, 22.0 ],
 									"text" : "t s #1 #2"
 								}
@@ -468,7 +468,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 298.5, 115.0, 183.0, 22.0 ],
-					"text" : "::control@2::act_menu"
+					"text" : "::ho_st1::act_menu"
 				}
 
 			}

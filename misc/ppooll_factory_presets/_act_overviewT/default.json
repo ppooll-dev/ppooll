@@ -1,0 +1,31 @@
+{
+	"window" : [ 98, 116, 675, 854 ],
+	"cellblock" : 	{
+		"patching_rect" : [ 2, 141, 573, 595 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"jitwin" : 	{
+		"patching_rect" : [ 331, 0, 227, 140 ],
+		"hidden" : 0
+	}
+,
+	"tag_select" : 	{
+		"patching_rect" : [ 268, 2, 61, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"commentbox" : 	{
+		"patching_rect" : [ 72, 31, 204, 94 ],
+		"hidden" : 0
+	}
+,
+	"comment_desc" : 	{
+		"patching_rect" : [ 122, 121, 208, 19 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+
+}

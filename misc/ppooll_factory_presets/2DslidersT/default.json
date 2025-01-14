@@ -1,0 +1,171 @@
+{
+	"window" : [ 851, 558, 1098, 647 ],
+	"function" : 	{
+		"patching_rect" : [ 180, 59, 46, 20 ],
+		"hidden" : 1,
+		"fontsize" : 10.0
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 154, 0, 50, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 76, 0, 79, 14 ],
+		"hidden" : 0,
+		"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "2Dsliders1" ]
+	}
+,
+	"grid" : 	{
+		"patching_rect" : [ 219, 0, 28, 15 ],
+		"hidden" : 0,
+		"fontsize" : 11.0
+	}
+,
+	"ally0" : 	{
+		"patching_rect" : [ 132, 46, 34, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"def_colors" : 	{
+		"patching_rect" : [ 92, 62, 40, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"def_grid" : 	{
+		"patching_rect" : [ 133, 62, 52, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"show_window" : 	{
+		"patching_rect" : [ 125, 16, 48, 15 ],
+		"hidden" : 0,
+		"fontsize" : 11.0
+	}
+,
+	"pos_x" : 	{
+		"patching_rect" : [ 0, 16, 32, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"pos_y" : 	{
+		"patching_rect" : [ 31, 16, 32, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"size_x" : 	{
+		"patching_rect" : [ 62, 16, 32, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"size_y" : 	{
+		"patching_rect" : [ 93, 16, 32, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"w_titlebar" : 	{
+		"patching_rect" : [ 173, 16, 48, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"amount" : 	{
+		"patching_rect" : [ 0, 31, 32, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"scale" : 	{
+		"patching_rect" : [ 31, 31, 32, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"selected" : 	{
+		"patching_rect" : [ 0, 46, 32, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"current_x" : 	{
+		"patching_rect" : [ 31, 46, 32, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"current_y" : 	{
+		"patching_rect" : [ 62, 46, 32, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"spread" : 	{
+		"patching_rect" : [ 165, 46, 44, 15 ],
+		"hidden" : 0,
+		"fontsize" : 11.0
+	}
+,
+	"set_current" : 	{
+		"patching_rect" : [ 94, 46, 39, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"auto" : 	{
+		"patching_rect" : [ 63, 31, 31, 15 ],
+		"hidden" : 0,
+		"fontsize" : 11.0
+	}
+,
+	"alt_grid" : 	{
+		"patching_rect" : [ 178, 31, 52, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"ctrl-time" : 	{
+		"patching_rect" : [ 0, 61, 90, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"auto_time" : 	{
+		"patching_rect" : [ 93, 31, 84, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"zoomreset" : 	{
+		"patching_rect" : [ 186, 63, 46, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"ZH" : 	{
+		"patching_rect" : [ 205, 0, 15, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"act2d" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 180, 151, 50, 22 ],
+		"hidden" : 1
+	}
+,
+	"alt" : 	{
+		"patching_rect" : [ 210, 46, 21, 18 ],
+		"hidden" : 0,
+		"fontsize" : 11.0
+	}
+
+}

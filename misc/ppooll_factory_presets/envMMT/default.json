@@ -1,0 +1,165 @@
+{
+	"window" : [ 556, 229, 1056, 689 ],
+	"preset-ramp" : 	{
+		"patching_rect" : [ 149, 16, 50, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 63, 0, 136, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "envMM1" ]
+	}
+,
+	"lcd" : 	{
+		"patching_rect" : [ 0, 60, 500, 400 ],
+		"hidden" : 0
+	}
+,
+	"metro_min" : 	{
+		"patching_rect" : [ 125, 30, 39, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"dump_funnel" : 	{
+		"patching_rect" : [ 735, 531, 135, 19 ],
+		"hidden" : 1
+	}
+,
+	"metro_max" : 	{
+		"patching_rect" : [ 162, 30, 39, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"bang_funnel" : 	{
+		"patching_rect" : [ 735, 453, 135, 19 ],
+		"hidden" : 1
+	}
+,
+	"metro-on" : 	{
+		"patching_rect" : [ 90, 30, 36, 15 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"trigger" : 	{
+		"patching_rect" : [ 1, 30, 15, 15 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"tile" : 	{
+		"patching_rect" : [ 39, 45, 20, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"size_y" : 	{
+		"patching_rect" : [ 81, 45, 26, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"amount" : 	{
+		"patching_rect" : [ 1, 45, 20, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"select_env" : 	{
+		"patching_rect" : [ 21, 45, 20, 15 ],
+		"hidden" : 1,
+		"fontsize" : 9.5
+	}
+,
+	"def" : 	{
+		"patching_rect" : [ 172, 46, 27, 15 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"selection" : 	{
+		"patching_rect" : [ 79, 16, 70, 15 ],
+		"hidden" : 0
+	}
+,
+	"trigger_sel" : 	{
+		"patching_rect" : [ 17, 30, 38, 15 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"trigger_nr" : 	{
+		"patching_rect" : [ 65, 29, 26, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"bang_nr" : 	{
+		"patching_rect" : [ 53, 30, 14, 14 ],
+		"hidden" : 0
+	}
+,
+	"loop" : 	{
+		"patching_rect" : [ 107, 46, 64, 13 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"env-length" : 	{
+		"patching_rect" : [ 0, 15, 80, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"preset_trigger" : 	{
+		"patching_rect" : [ 199, 15, 38, 15 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"size_x" : 	{
+		"patching_rect" : [ 58, 45, 26, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"function1" : 	{
+		"patching_rect" : [ 0, 60, 500, 100 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"function2" : 	{
+		"patching_rect" : [ 0, 160, 500, 100 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"function3" : 	{
+		"patching_rect" : [ 0, 260, 500, 100 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"function4" : 	{
+		"patching_rect" : [ 0, 360, 500, 100 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"dumpout_funnel" : 	{
+		"patching_rect" : [ 735, 325, 135, 19 ],
+		"hidden" : 1
+	}
+,
+	"output@edit" : 	{
+		"patching_rect" : [ 200, 34, 81, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+
+}

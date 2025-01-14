@@ -1,0 +1,83 @@
+{
+	"window" : [ 476, 339, 677, 517 ],
+	"preset-ramp" : 	{
+		"patching_rect" : [ 100, 16, 100, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 87, 0, 113, 15 ],
+		"hidden" : 0,
+		"jsarguments" : [ 13, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "kompressor1" ]
+	}
+,
+	"source" : 	{
+		"patching_rect" : [ 43, 95, 68, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"gainReduction" : 	{
+		"patching_rect" : [ 1, 115, 201, 8 ],
+		"hidden" : 0
+	}
+,
+	"SCpar" : 	{
+		"patching_rect" : [ 150, 74, 52, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"SCact" : 	{
+		"patching_rect" : [ 100, 74, 52, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 1, 125, 199, 53 ],
+		"hidden" : 0
+	}
+,
+	"thresh" : 	{
+		"patching_rect" : [ 0, 16, 100, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"ratio" : 	{
+		"patching_rect" : [ 0, 36, 75, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"attack" : 	{
+		"patching_rect" : [ 0, 55, 100, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"release" : 	{
+		"patching_rect" : [ 0, 75, 100, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"patching_rect" : [ 100, 35, 100, 20 ],
+	"hidden" : 0,
+	"fontsize" : 12,
+	"makeup" : 	{
+		"patching_rect" : [ 100, 54, 100, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"source_chan" : 	{
+		"patching_rect" : [ 113, 94, 87, 20 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+
+}

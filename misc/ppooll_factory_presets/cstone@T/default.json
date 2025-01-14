@@ -1,0 +1,99 @@
+{
+	"window" : [ 406, 360, 566, 618 ],
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 205, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"mainrate" : 	{
+		"patching_rect" : [ 0, 19, 160, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"phase1" : 	{
+		"patching_rect" : [ 0, 68, 80, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"row1" : 	{
+		"patching_rect" : [ 80, 68, 80, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"rate1" : 	{
+		"patching_rect" : [ 0, 35, 160, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"rate2" : 	{
+		"patching_rect" : [ 0, 51, 160, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"phase2" : 	{
+		"patching_rect" : [ 0, 84, 80, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"row2" : 	{
+		"patching_rect" : [ 80, 84, 80, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"default" : 	{
+		"patching_rect" : [ 70, 0, 47, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"syncz" : 	{
+		"patching_rect" : [ 115, 0, 45, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"left" : 	{
+		"patching_rect" : [ 0, 125, 160, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"right" : 	{
+		"patching_rect" : [ 0, 141, 160, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"outz" : 	{
+		"patching_rect" : [ 0, 157, 160, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 84, 189, 75, 16 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 0, 174, 155, 15 ],
+		"hidden" : 0,
+		"jsarguments" : [ 13, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "delayloops1" ]
+	}
+,
+	"input" : 	{
+		"patching_rect" : [ 0, 103, 160, 23 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

@@ -1,0 +1,322 @@
+{
+	"window" : [ 344, 480, 1096, 701 ],
+	"menu6" : 	{
+		"patching_rect" : [ 642, 197, 111, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"wf6" : 	{
+		"patching_rect" : [ 375, 194, 270, 25 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"menu5" : 	{
+		"patching_rect" : [ 642, 173, 111, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"wf5" : 	{
+		"patching_rect" : [ 375, 170, 270, 25 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"menu4" : 	{
+		"patching_rect" : [ 642, 149, 111, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"wf4" : 	{
+		"patching_rect" : [ 375, 146, 270, 25 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"menu3" : 	{
+		"patching_rect" : [ 642, 125, 111, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"wf3" : 	{
+		"patching_rect" : [ 375, 122, 270, 25 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"menu2" : 	{
+		"patching_rect" : [ 642, 101, 111, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"wf2" : 	{
+		"patching_rect" : [ 375, 98, 270, 25 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"menu1" : 	{
+		"patching_rect" : [ 642, 77, 111, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"wf1" : 	{
+		"patching_rect" : [ 375, 74, 270, 25 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"vcrmax" : 	{
+		"patching_rect" : [ 107, 20, 56, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10.5
+	}
+,
+	"rand_groovs" : 	{
+		"patching_rect" : [ 335, 15, 20, 18 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"all-tutti" : 	{
+		"patching_rect" : [ 376, 60, 43, 17 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"pitchmult" : 	{
+		"patching_rect" : [ 258, 21, 77, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"pitchms" : 	{
+		"patching_rect" : [ 194, 74, 142, 145 ],
+		"hidden" : 0
+	}
+,
+	"panms" : 	{
+		"patching_rect" : [ 95, 74, 100, 145 ],
+		"hidden" : 0
+	}
+,
+	"pitchreset" : 	{
+		"patching_rect" : [ 295, 47, 40, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"pitchramp" : 	{
+		"patching_rect" : [ 194, 47, 103, 15 ],
+		"hidden" : 0
+	}
+,
+	"pan-rand" : 	{
+		"patching_rect" : [ 115, 60, 80, 15 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"panramp" : 	{
+		"patching_rect" : [ 96, 47, 70, 15 ],
+		"hidden" : 0
+	}
+,
+	"panreset" : 	{
+		"patching_rect" : [ 165, 47, 30, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"volms" : 	{
+		"patching_rect" : [ 1, 74, 100, 145 ],
+		"hidden" : 0
+	}
+,
+	"vol-rand" : 	{
+		"patching_rect" : [ 17, 60, 80, 15 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"volreset" : 	{
+		"patching_rect" : [ 67, 47, 30, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"pitch-range-min" : 	{
+		"patching_rect" : [ 258, 7, 39, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"pitch-range-max" : 	{
+		"patching_rect" : [ 296, 7, 39, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"buff-auto" : 	{
+		"patching_rect" : [ 521, 60, 124, 15 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"changerate" : 	{
+		"patching_rect" : [ 159, 6, 68, 31 ],
+		"hidden" : 0,
+		"fontsize" : 23.200001
+	}
+,
+	"trigger-all" : 	{
+		"patching_rect" : [ 1, 18, 40, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"auto-all" : 	{
+		"patching_rect" : [ 40, 18, 47, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"pitchbang" : 	{
+		"patching_rect" : [ 194, 60, 18, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"panbang" : 	{
+		"patching_rect" : [ 97, 60, 18, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"volbang" : 	{
+		"patching_rect" : [ 1, 60, 18, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"buffbang" : 	{
+		"patching_rect" : [ 504, 60, 18, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"one-slice" : 	{
+		"patching_rect" : [ 355, 31, 20, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"rand_groovs_bang" : 	{
+		"patching_rect" : [ 335, 33, 20, 17 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"vcrmin" : 	{
+		"patching_rect" : [ 107, 6, 53, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"loop" : 	{
+		"patching_rect" : [ 419, 60, 55, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"volramp" : 	{
+		"patching_rect" : [ 1, 47, 70, 15 ],
+		"hidden" : 0
+	}
+,
+	"buffbang-link" : 	{
+		"patching_rect" : [ 688, 60, 14, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"buff-min" : 	{
+		"patching_rect" : [ 644, 60, 46, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"buff-max" : 	{
+		"patching_rect" : [ 702, 60, 48, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9.5
+	}
+,
+	"master-ramp" : 	{
+		"patching_rect" : [ 1, 35, 334, 14 ],
+		"hidden" : 0
+	}
+,
+	"pitch-rand" : 	{
+		"patching_rect" : [ 210, 60, 125, 15 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"patching_rect" : [ 749, 254, 68, 18 ],
+	"hidden" : 1,
+	"fontsize" : 9.5,
+	"buttons" : 	{
+		"patching_rect" : [ 335, 50, 41, 169 ],
+		"hidden" : 0,
+		"fontsize" : 19.200000000000003
+	}
+,
+	"amount" : 	{
+		"patching_rect" : [ 377, 4, 37, 25 ],
+		"hidden" : 0,
+		"fontsize" : 18
+	}
+,
+	"start_funnel" : 	{
+		"patching_rect" : [ 749, 230, 275, 18 ],
+		"hidden" : 1
+	}
+,
+	"patcher" : "bang",
+	"end_funnel" : 	{
+		"patching_rect" : [ 749, 305, 275, 18 ],
+		"hidden" : 1
+	}
+,
+	"ll.sub" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 749, 329, 62, 18 ],
+		"hidden" : 1
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 575, 41, 168, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 575, 4, 169, 37 ],
+		"hidden" : 0,
+		"jsarguments" : [ 11, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "fmrm1" ]
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 415, 3, 160, 53 ],
+		"hidden" : 0
+	}
+
+}

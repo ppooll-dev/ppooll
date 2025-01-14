@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 11,
+			"minor" : 6,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 84.0, 398.0, 598.0, 645.0 ],
+		"rect" : [ 387.0, 203.0, 549.0, 716.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -46,7 +46,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 17.0, 42.0, 341.0, 20.0 ],
-					"presentation_linecount" : 2,
 					"text" : "ll.syncs sends its incoming audio-signal to other syncable acts."
 				}
 
@@ -69,7 +68,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 254.5, 326.0, 150.0, 33.0 ],
+					"patching_rect" : [ 255.0, 392.0, 150.0, 33.0 ],
 					"text" : "(outlet2 does not pass incoming signal) "
 				}
 
@@ -77,12 +76,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-30",
-					"linecount" : 4,
+					"linecount" : 8,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 21.0, 170.0, 417.5, 60.0 ],
-					"text" : "- sync_off turns off syncing for this patch. any signal into ll.syncs will be passed to the left outlet.\n- sync_in outputs a signal provided from other acts, if they select \"this\" act in their sycto-menu."
+					"patching_rect" : [ 21.0, 170.0, 417.5, 114.0 ],
+					"text" : "- sync_off turns off syncing for this patch. any signal into ll.syncs will be passed to the left outlet.\n- sync_in outputs a signal provided from other acts, if they select \"this\" act in their sycto-menu.\n- the additional @ext_midi 1 attribute adds an external midi clock sync entry into the menu (ext_mid). to access the available devices a second menu with the scripting mane syncto_extmidi is needed. this in turn enables midi start/stop&tick codes via the fourth outlet."
 				}
 
 			}
@@ -92,7 +91,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 258.0, 369.0, 67.0, 20.0 ],
+					"patching_rect" : [ 258.0, 435.0, 67.0, 20.0 ],
 					"text" : "sync==ON"
 				}
 
@@ -106,7 +105,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 157.028899999999993, 549.0, 178.0, 23.0 ],
+					"patching_rect" : [ 157.0, 615.0, 178.0, 23.0 ],
 					"text" : "buffer~ helpwave anton.aif"
 				}
 
@@ -120,7 +119,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 43.0, 549.0, 106.528899999999993, 23.0 ],
+					"patching_rect" : [ 43.0, 615.0, 106.528899999999993, 23.0 ],
 					"text" : "wave~ helpwave"
 				}
 
@@ -132,7 +131,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 41.5289, 580.0, 42.0, 22.0 ],
+					"patching_rect" : [ 42.0, 646.0, 42.0, 22.0 ],
 					"text" : "*~ 0.1"
 				}
 
@@ -143,7 +142,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 41.5289, 617.0, 37.0, 22.0 ],
+					"patching_rect" : [ 42.0, 683.0, 37.0, 22.0 ],
 					"text" : "dac~"
 				}
 
@@ -155,7 +154,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 216.0, 403.0, 227.0, 47.0 ],
+					"patching_rect" : [ 216.0, 469.0, 227.0, 47.0 ],
 					"text" : "receives from other acts providing sync-signals. (eg. modul.ator, pulse@)\nselected in the syncto menu."
 				}
 
@@ -166,7 +165,7 @@
 					"maxclass" : "scope~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 199.0, 452.0, 82.0, 82.0 ]
+					"patching_rect" : [ 199.0, 518.0, 82.0, 82.0 ]
 				}
 
 			}
@@ -177,7 +176,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 199.0, 260.0, 149.0, 60.0 ],
+					"patching_rect" : [ 199.0, 326.0, 149.0, 60.0 ],
 					"text" : "sends incoming signal to \nsend~ \"actname.sync\"\nand passes it to the outlet at sync-off"
 				}
 
@@ -190,7 +189,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 230.0, 369.0, 24.0, 24.0 ]
+					"patching_rect" : [ 230.0, 435.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -203,7 +202,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 43.0, 246.0, 50.0, 22.0 ]
+					"patching_rect" : [ 43.0, 312.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -213,7 +212,7 @@
 					"maxclass" : "scope~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 43.0, 319.0, 82.0, 82.0 ]
+					"patching_rect" : [ 43.0, 385.0, 82.0, 82.0 ]
 				}
 
 			}
@@ -224,7 +223,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 43.0, 284.0, 68.0, 22.0 ],
+					"patching_rect" : [ 43.0, 350.0, 68.0, 22.0 ],
 					"text" : "phasor~ 1."
 				}
 
@@ -277,7 +276,7 @@
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "color",
 					"id" : "obj-10",
-					"items" : [ "sync-off", ",", "sync_in", ",", "link@1", ",", "link@2" ],
+					"items" : [ "sync-off", ",", "sync_in", ",", "subseq1.@ext_midi", ",", "ext_midi", ",", "ext_midi" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -295,15 +294,19 @@
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "signal", "signal", "int" ],
-					"patching_rect" : [ 199.0, 326.0, 50.0, 22.0 ],
+					"numoutlets" : 4,
+					"outlettype" : [ "signal", "signal", "int", "int" ],
+					"patching_rect" : [ 199.0, 392.0, 50.0, 22.0 ],
 					"text" : "ll.syncs"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"active" : 					{
+						"act::active_store" : 0
+					}
+,
 					"hidden" : 1,
 					"id" : "obj-5",
 					"maxclass" : "newobj",
@@ -362,7 +365,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 540.0, 258.0, 107.0, 22.0 ],
 					"restore" : 					{
-						"syncto" : [ "link@1" ]
+						"syncto" : [ "ext_midi" ]
 					}
 ,
 					"text" : "autopattr autopattr",
@@ -379,7 +382,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 553.0, 150.0, 100.0, 22.0 ],
-					"restore" : [ "sync_in(1)" ],
+					"restore" : [ "0(1)", "in(1)", "sync_in(1)" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -470,7 +473,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "ll.syncs.maxpat",
+				"name" : "actmaker.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
@@ -484,14 +487,14 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.actnamehelper.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../patchers/abstractions/filip",
-				"type" : "JSON",
+				"name" : "ll.an2.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.an.js",
+				"name" : "ll.makeact.js",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
@@ -499,6 +502,20 @@
 			}
 , 			{
 				"name" : "ll.pf.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.psto.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.psto1.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
@@ -519,52 +536,10 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.create_inputs~.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../patchers/abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "actmaker.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../patchers/abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "tetrishelp.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "n.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../patchers/abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.psto.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../patchers/abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ll.shut.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.wsendback.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -575,10 +550,17 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.createact8.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
+				"name" : "ll.sub_inputs.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.syncs.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -589,12 +571,33 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "pattrexists.mxo",
-				"type" : "iLaX"
+				"name" : "ll.wsendback.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
 			}
 , 			{
 				"name" : "ll_fastforward.mxo",
 				"type" : "iLaX"
+			}
+, 			{
+				"name" : "n.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "pattrexists.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "tetrishelp.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
 			}
  ],
 		"autosave" : 0

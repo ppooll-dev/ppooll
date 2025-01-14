@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 2,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 735.0, 338.0, 640.0, 480.0 ],
+		"rect" : [ 100.0, 100.0, 640.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -843,12 +843,12 @@
 				"box" : 				{
 					"fontsize" : 12.0,
 					"id" : "obj-2",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 50.0, 70.0, 256.0, 33.0 ],
-					"text" : "original patch by romain macagni\nmc-port by c. hausch / hausch@moozak.org"
+					"patching_rect" : [ 50.0, 70.0, 256.0, 47.0 ],
+					"text" : "original patch by romain macagni\nppooll port by noid\nmc-port by c. hausch / hausch@moozak.org"
 				}
 
 			}

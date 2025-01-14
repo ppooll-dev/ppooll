@@ -1,0 +1,68 @@
+{
+	"pattrstorage" : 	{
+		"name" : "pat",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"data" : 				{
+					"fontsize" : [ 12 ],
+					"presets" : [ 1 ],
+					"textfield" : [ "thats an environment to introduce snap@\n\nclick or scroll in the grid..\npresets from all acts will be recalled.\n\nmove the ramp-slider on top of snap@1\nto get a smooth transition between the presets.\n\n\nclick on the second preset here in notepad@1" ],
+					"title_menu" : [ "clientwindow" ],
+					"pres_menu" : [ "test" ],
+					"tetris_menu" : [ "ƒ bigger.json" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ " " ]
+				}
+
+			}
+,
+			"2" : 			{
+				"id" : 2,
+				"data" : 				{
+					"fontsize" : [ 12 ],
+					"presets" : [ 2 ],
+					"textfield" : [ "kaos@ can random click in a defined area (frame)\n\nthe frame in kaos@1 is set to snap@1's preset-field.\n\nif you activate the \"random mouse click\" this will take control over your mouse !\n\nuse the space-key (blank) to stop it !!\n\nanother note here..." ],
+					"title_menu" : [ "clientwindow" ],
+					"pres_menu" : [ "write" ],
+					"tetris_menu" : [ "ƒ bigger.json" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ " " ]
+				}
+
+			}
+,
+			"3" : 			{
+				"id" : 3,
+				"data" : 				{
+					"fontsize" : [ 12 ],
+					"presets" : [ 2 ],
+					"textfield" : [ "using random@ instead of kaos@ is more convenient.\n\nit keeps the mouse under your control.\n\nclick on \"1\" in the buttom line of random@1 to activate randomizing snap@1 presets.\n" ],
+					"title_menu" : [ "clientwindow" ],
+					"pres_menu" : [ "test" ],
+					"tetris_menu" : [ "ƒ bigger.json" ],
+					"master" : [ 0 ],
+					"act::active_store" : [ " " ]
+				}
+
+			}
+
+		}
+,
+		"clientstate" : 		{
+			"active" : 			{
+				"fontsize" : 0,
+				"presets" : 0,
+				"title_menu" : 0,
+				"pres_menu" : 0,
+				"tetris_menu" : 0,
+				"master" : 0,
+				"act" : 0,
+				"act::active_store" : 0
+			}
+
+		}
+
+	}
+
+}

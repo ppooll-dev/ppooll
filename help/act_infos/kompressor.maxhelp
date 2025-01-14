@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 2,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 665.0, 534.0, 664.0, 404.0 ],
+		"rect" : [ 263.0, 348.0, 620.0, 372.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,21 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"bgcolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"id" : "obj-3",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 374.5, 37.0, 202.0, 33.0 ],
+					"presentation_linecount" : 2,
+					"text" : "you can sidechain audio by sending audio to input~ \"sidechain.1\"",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bubble" : 1,
 					"bubblepoint" : 0.2,
 					"id" : "obj-17",
@@ -47,8 +62,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 450.5, 307.0, 165.0, 51.0 ],
-					"presentation_linecount" : 3,
+					"patching_rect" : [ 427.5, 285.0, 165.0, 51.0 ],
 					"text" : "source channel selection – only applies in select channel mode"
 				}
 
@@ -63,8 +77,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 46.5, 315.0, 219.0, 37.0 ],
-					"presentation_linecount" : 4,
+					"patching_rect" : [ 23.5, 293.0, 219.0, 37.0 ],
 					"text" : "level detection source (sum, single channel or sidechain input)"
 				}
 
@@ -78,7 +91,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 243.0, 198.0, 92.0, 39.0 ],
+					"patching_rect" : [ 220.0, 176.0, 92.0, 39.0 ],
 					"text" : "threshold (dB)"
 				}
 
@@ -91,8 +104,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 142.5, 287.0, 123.0, 24.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 119.5, 265.0, 123.0, 24.0 ],
 					"text" : "release time (ms)"
 				}
 
@@ -105,7 +117,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 148.0, 263.0, 116.0, 24.0 ],
+					"patching_rect" : [ 125.0, 241.0, 116.0, 24.0 ],
 					"text" : "attack time (ms)"
 				}
 
@@ -120,8 +132,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 34.0, 219.5, 230.0, 37.0 ],
-					"presentation_linecount" : 4,
+					"patching_rect" : [ 11.0, 197.5, 230.0, 37.0 ],
 					"text" : "compressor ratio (acts as limiter above 20)"
 				}
 
@@ -134,7 +145,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 450.5, 275.0, 165.0, 24.0 ],
+					"patching_rect" : [ 427.5, 253.0, 165.0, 24.0 ],
 					"text" : "makeup gain (dB)"
 				}
 
@@ -146,8 +157,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 450.5, 247.0, 165.0, 24.0 ],
-					"presentation_linecount" : 3,
+					"patching_rect" : [ 427.5, 225.0, 165.0, 24.0 ],
 					"text" : "lookahead time (samples)"
 				}
 
@@ -160,7 +170,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 458.5, 213.0, 90.0, 24.0 ],
+					"patching_rect" : [ 435.5, 191.0, 90.0, 24.0 ],
 					"text" : "preset ramp"
 				}
 
@@ -185,8 +195,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 34.0, 117.0, 337.0, 45.0 ],
-					"presentation_linecount" : 4,
+					"patching_rect" : [ 11.0, 95.0, 337.0, 45.0 ],
 					"text" : ";\rmax launchbrowser https://en.wikipedia.org/wiki/Dynamic_range_compression",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
@@ -208,7 +217,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 369.5, 306.0, 87.0, 20.0 ],
+					"patching_rect" : [ 346.5, 284.0, 87.0, 20.0 ],
 					"slidercolor" : [ 1.0, 0.0, 0.0, 0.8 ],
 					"slidermax" : 20.0,
 					"sliderstyle" : 2,
@@ -233,7 +242,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 356.5, 266.0, 100.0, 20.0 ],
+					"patching_rect" : [ 333.5, 244.0, 100.0, 20.0 ],
 					"slidercolor" : [ 1.0, 0.0, 0.0, 0.8 ],
 					"sliderlog" : 4.0,
 					"slidermax" : 48.0,
@@ -259,7 +268,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 356.5, 247.0, 100.0, 20.0 ],
+					"patching_rect" : [ 333.5, 225.0, 100.0, 20.0 ],
 					"slidercolor" : [ 1.0, 0.0, 0.0, 0.8 ],
 					"slidermax" : 0.0,
 					"slidermin" : -60.0,
@@ -285,7 +294,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 256.5, 287.0, 100.0, 20.0 ],
+					"patching_rect" : [ 233.5, 265.0, 100.0, 20.0 ],
 					"slidercolor" : [ 1.0, 0.0, 0.0, 0.8 ],
 					"sliderlog" : 4.0,
 					"slidermax" : 1000.0,
@@ -311,7 +320,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 256.5, 267.0, 100.0, 20.0 ],
+					"patching_rect" : [ 233.5, 245.0, 100.0, 20.0 ],
 					"slidercolor" : [ 1.0, 0.0, 0.0, 0.8 ],
 					"sliderlog" : 4.0,
 					"slidermax" : 250.0,
@@ -328,7 +337,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 333.5, 248.0, 25.0, 20.0 ],
+					"patching_rect" : [ 310.5, 226.0, 25.0, 20.0 ],
 					"text" : ": 1",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
@@ -350,7 +359,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 256.5, 248.0, 75.0, 20.0 ],
+					"patching_rect" : [ 233.5, 226.0, 75.0, 20.0 ],
 					"slidercolor" : [ 1.0, 0.0, 0.0, 0.8 ],
 					"slidermax" : 20.0,
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
@@ -382,7 +391,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 356.5, 286.0, 52.0, 21.0 ],
+					"patching_rect" : [ 333.5, 264.0, 52.0, 21.0 ],
 					"pattrmode" : 1,
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "SCact"
@@ -412,7 +421,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 406.5, 286.0, 52.0, 21.0 ],
+					"patching_rect" : [ 383.5, 264.0, 52.0, 21.0 ],
 					"pattrmode" : 1,
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "SCpar"
@@ -427,7 +436,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 256.5, 308.0, 45.0, 20.0 ],
+					"patching_rect" : [ 233.5, 286.0, 45.0, 20.0 ],
 					"text" : "source",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
@@ -456,7 +465,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 300.0, 307.0, 67.5, 22.0 ],
+					"patching_rect" : [ 277.0, 285.0, 67.5, 22.0 ],
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "source"
 				}
@@ -474,7 +483,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 356.5, 228.0, 100.0, 20.0 ],
+					"patching_rect" : [ 333.5, 206.0, 100.0, 20.0 ],
 					"varname" : "preset-ramp"
 				}
 
@@ -487,8 +496,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 34.0, 70.0, 292.0, 33.0 ],
-					"presentation_linecount" : 4,
+					"patching_rect" : [ 11.0, 37.0, 292.0, 33.0 ],
 					"text" : "original author ?\nmc conversion by c. hausch / hausch@moozak.org",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
@@ -502,7 +510,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 34.0, 30.0, 218.0, 27.0 ],
+					"patching_rect" : [ 11.0, 8.0, 218.0, 27.0 ],
 					"text" : "kompressor",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
@@ -524,7 +532,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 256.5, 228.0, 100.0, 20.0 ],
+					"patching_rect" : [ 233.5, 206.0, 100.0, 20.0 ],
 					"slidercolor" : [ 1.0, 0.0, 0.0, 0.8 ],
 					"slidermax" : 0.0,
 					"slidermin" : -60.0,
@@ -543,7 +551,6 @@
  ],
 		"autosave" : 0,
 		"default_bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-		"clearcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 		"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 		"editing_bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 	}

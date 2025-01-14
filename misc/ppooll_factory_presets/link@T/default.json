@@ -1,0 +1,74 @@
+{
+	"window" : [ 41, 780, 145, 929 ],
+	"preset-ramp" : 	{
+		"patching_rect" : [ 49, 0, 53, 16 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 0, 16, 103, 18 ],
+		"hidden" : 0,
+		"jsarguments" : [ 16, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "link@1" ]
+	}
+,
+	"freq" : 	{
+		"patching_rect" : [ 0, 36, 63, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"quantum" : 	{
+		"patching_rect" : [ 0, 60, 39, 21 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"act_link" : 	{
+		"patching_rect" : [ 0, 103, 50, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"par_link" : 	{
+		"patching_rect" : [ 52, 103, 50, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"hz-ms-switch" : 	{
+		"patching_rect" : [ 65, 36, 37, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"midiclock_out" : 	{
+		"patching_rect" : [ 0, 126, 78, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"midi_refresh" : 	{
+		"patching_rect" : [ 80, 126, 22, 22 ],
+		"hidden" : 0,
+		"fontsize" : 20
+	}
+,
+	"estbpm" : 	{
+		"patching_rect" : [ 0, 83, 102, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"link_status" : 	{
+		"patching_rect" : [ 67, 60, 35, 21 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"beatled" : 	{
+		"patching_rect" : [ 41, 60, 24, 21 ],
+		"hidden" : 0
+	}
+
+}

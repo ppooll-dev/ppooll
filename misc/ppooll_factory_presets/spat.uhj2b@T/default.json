@@ -1,0 +1,27 @@
+{
+	"window" : [ 291, 408, 385, 493 ],
+	"out1label" : 	{
+		"patching_rect" : [ 0, 19, 27, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"out2label" : 	{
+		"patching_rect" : [ 0, 42, 27, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"out3label" : 	{
+		"patching_rect" : [ 0, 65, 27, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"def" : 	{
+		"patching_rect" : [ 37, 35, 55, 27 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

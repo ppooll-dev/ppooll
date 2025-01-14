@@ -1,0 +1,57 @@
+{
+	"window" : [ 614, 197, 944, 459 ],
+	"function" : 	{
+		"patching_rect" : [ 0, 57, 330, 205 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"chans" : 	{
+		"patching_rect" : [ 0, 17, 55, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"def" : 	{
+		"patching_rect" : [ 233, 16, 39, 20 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"env-length" : 	{
+		"patching_rect" : [ 55, 17, 80, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 50, 0, 136, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "envMM1" ]
+	}
+,
+	"cellblock" : 	{
+		"patching_rect" : [ 0, 37, 330, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"trigger" : 	{
+		"patching_rect" : [ 136, 16, 55, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"def_outputs" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 332, 37, 322, 85 ],
+		"hidden" : 1
+	}
+,
+	"loop" : 	{
+		"patching_rect" : [ 192, 16, 39, 20 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+
+}

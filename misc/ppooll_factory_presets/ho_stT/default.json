@@ -1,0 +1,127 @@
+{
+	"window" : [ 1145, 297, 1275, 422 ],
+	"meter" : 	{
+		"patching_rect" : [ 73, 0, 52, 78 ],
+		"hidden" : 0
+	}
+,
+	"cpu" : 	{
+		"patching_rect" : [ 0, 14, 25, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"act_menu" : 	{
+		"patching_rect" : [ -1, 51, 76, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"favorites" : 	{
+		"patching_rect" : [ -1, 69, 76, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"vol_slider" : 	{
+		"patching_rect" : [ 73, 2, 52, 74 ],
+		"hidden" : 0
+	}
+,
+	"envi_menu" : 	{
+		"patching_rect" : [ -1, 87, 76, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"jit.on" : 	{
+		"patching_rect" : [ 1, 108, 16, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"time" : 	{
+		"patching_rect" : [ 70, 106, 58, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"menubar" : 	{
+		"patching_rect" : [ 16, 108, 16, 14 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"ppooll" : 	{
+		"patching_rect" : [ 0, 33, 53, 19 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"screen" : 	{
+		"patching_rect" : [ 30, 108, 16, 14 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"rec" : 	{
+		"patching_rect" : [ 52, 36, 23, 16 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"def" : 	{
+		"patching_rect" : [ 52, 0, 23, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"audioON/OFF" : 	{
+		"patching_rect" : [ 52, 14, 23, 23 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"watch_menu" : 	{
+		"patching_rect" : [ 70, 105, 59, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"vol_ramp" : 	{
+		"patching_rect" : [ 73, 92, 37, 13 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"vol" : 	{
+		"patching_rect" : [ 73, 77, 28, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"chans" : 	{
+		"patching_rect" : [ 109, 77, 16, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"write_envi" : 	{
+		"patching_rect" : [ 46, 108, 17, 14 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"stereo" : 	{
+		"patching_rect" : [ 109, 91, 19, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"%cpu" : 	{
+		"patching_rect" : [ 16, 14, 41, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

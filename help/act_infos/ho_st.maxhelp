@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 2,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 107.0, 81.0, 652.0, 983.0 ],
+		"rect" : [ 100.0, 81.0, 652.0, 983.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 10.0,
@@ -448,7 +448,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 25.0, 1550.0, 336.0, 34.0 ],
+					"patching_rect" : [ 25.0, 1609.0, 336.0, 34.0 ],
 					"text" : "load any ppooll modules (==acts) from this menu.\n"
 				}
 
@@ -462,7 +462,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 25.0, 1526.0, 153.0, 22.0 ],
+					"patching_rect" : [ 25.0, 1585.0, 153.0, 22.0 ],
 					"text" : "act menu:"
 				}
 
@@ -475,7 +475,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 25.0, 1504.0, 336.0, 20.0 ],
+					"patching_rect" : [ 25.0, 1563.0, 336.0, 20.0 ],
 					"text" : "this menu can be cusomised to hold your favorite ppooll acts."
 				}
 
@@ -489,7 +489,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 25.0, 1480.0, 222.0, 22.0 ],
+					"patching_rect" : [ 25.0, 1539.0, 222.0, 22.0 ],
 					"text" : "favorites menu:"
 				}
 
@@ -785,12 +785,12 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-83",
-					"linecount" : 2,
+					"linecount" : 6,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 25.0, 1445.0, 512.0, 33.0 ],
-					"text" : "once you've loaded some acts, you may choose \"write\" from the envi-menu to save this setup (environment) to disc. all current parameter-settings and window positions will be stored"
+					"patching_rect" : [ 25.0, 1445.0, 626.0, 87.0 ],
+					"text" : "once you've loaded some acts, you may choose \"write\" from the envi-menu (or use \"w\") to save this setup (environment) to disc. all current parameter-settings and window positions will be stored.\nif you did presets in an act you have to write this preset in that act before writing the environment.\nonly then, the environment can load this preset again.\n(the environment stores the state of the acts, one of this is the current state of the pres_menu.)\nif you use the buffer_host, its the same here: first save the \"preset\" in buffer_host, then the environment."
 				}
 
 			}

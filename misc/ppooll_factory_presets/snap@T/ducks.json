@@ -1,0 +1,27 @@
+{
+	"next" : 	{
+		"fontsize" : 11,
+		"patching_rect" : [ 195, 0, 30, 16 ],
+		"hidden" : 0
+	}
+,
+	"preset-ramp" : 	{
+		"fontsize" : 12,
+		"patching_rect" : [ 117, -1, 78, 17 ],
+		"hidden" : 0
+	}
+,
+	"presets" : 	{
+		"jsarguments" : 27,
+		"patching_rect" : [ 0, 16, 225, 56 ],
+		"hidden" : 0
+	}
+,
+	"select_acts" : 	{
+		"fontsize" : 10,
+		"patching_rect" : [ 60, -1, 57, 20 ],
+		"hidden" : 0
+	}
+,
+	"window" : [ 481, 574, 706, 647 ]
+}

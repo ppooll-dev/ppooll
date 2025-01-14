@@ -1,0 +1,116 @@
+{
+	"window" : [ 88, 375, 521, 455 ],
+	"multinumerator" : 	{
+		"patching_rect" : [ 102, 18, 25, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"multidenominator" : 	{
+		"patching_rect" : [ 141, 18, 25, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"steps" : 	{
+		"patching_rect" : [ 51, 40, 54, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"playMode" : 	{
+		"patching_rect" : [ 26, 40, 23, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"def" : 	{
+		"patching_rect" : [ 191, 40, 21, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"playpause" : 	{
+		"patching_rect" : [ 0, 40, 24, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"timingVarNeg" : 	{
+		"patching_rect" : [ 240, 40, 64, 10 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"timingVarPos" : 	{
+		"patching_rect" : [ 240, 50, 64, 10 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"phase" : 	{
+		"patching_rect" : [ 105, 40, 85, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"period" : 	{
+		"patching_rect" : [ 0, 18, 100, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"multiply" : 	{
+		"patching_rect" : [ 158, 18, 105, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"syncto" : 	{
+		"patching_rect" : [ 265, 18, 76, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"stepmatrix" : 	{
+		"patching_rect" : [ 0, 61, 432, 18 ],
+		"hidden" : 0
+	}
+,
+	"cv_params" : 	{
+		"patching_rect" : [ 214, 40, 24, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"groovemode" : 	{
+		"patching_rect" : [ 344, 18, 88, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 344, 0, 88, 16 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 58, 0, 289, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 16, "255 255 255", "50 50 50", "255 0 0", "0 255 0" ]
+	}
+,
+	"trig-act" : 	{
+		"patching_rect" : [ 306, 40, 62, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"trig-par" : 	{
+		"patching_rect" : [ 370, 40, 62, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+
+}

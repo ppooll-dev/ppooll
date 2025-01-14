@@ -1,0 +1,221 @@
+{
+	"window" : [ 273, 516, 559, 757 ],
+	"scrub" : 	{
+		"patching_rect" : [ 88, 49, 43, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"speedMenu" : 	{
+		"patching_rect" : [ 259, 15, 25, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"startout" : 	{
+		"patching_rect" : [ 0, 49, 46, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"endout" : 	{
+		"patching_rect" : [ 44, 49, 46, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"spectralDisplay" : 	{
+		"patching_rect" : [ -1, 65, 285, 83 ],
+		"hidden" : 0
+	}
+,
+	"end_rel" : 	{
+		"patching_rect" : [ 618, 399, 35, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"start_rel" : 	{
+		"patching_rect" : [ 618, 343, 35, 19 ],
+		"hidden" : 1,
+		"fontsize" : 9
+	}
+,
+	"loopMode" : 	{
+		"patching_rect" : [ 130, 49, 40, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"buffer_menu" : 	{
+		"patching_rect" : [ 167, 0, 72, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"restartOnLoad" : 	{
+		"patching_rect" : [ 154, 0, 15, 15 ],
+		"hidden" : 0
+	}
+,
+	"sendAmount" : 	{
+		"patching_rect" : [ 254, 162, 31, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"progress" : 	{
+		"patching_rect" : [ -1, 32, 280, 16 ],
+		"hidden" : 0
+	}
+,
+	"stream_ID" : 	{
+		"patching_rect" : [ 265, 0, 18, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"start/stop" : 	{
+		"patching_rect" : [ 65, 0, 28, 17 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"overdrive" : 	{
+		"patching_rect" : [ 125, 0, 30, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"loop" : 	{
+		"patching_rect" : [ 92, 0, 17, 16 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"pause" : 	{
+		"patching_rect" : [ 108, 0, 17, 16 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"bend_on" : 	{
+		"patching_rect" : [ 208, 152, 48, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"setstart" : 	{
+		"patching_rect" : [ 222, 49, 18, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"zero" : 	{
+		"patching_rect" : [ 205, 49, 18, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"reset" : 	{
+		"patching_rect" : [ 188, 49, 18, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"sendTripples" : 	{
+		"patching_rect" : [ 256, 148, 29, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"bend_default" : 	{
+		"patching_rect" : [ 208, 167, 48, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"resetRange" : 	{
+		"patching_rect" : [ 170, 49, 18, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"sdif_folder" : 	{
+		"patching_rect" : [ 237, 0, 30, 16 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"range" : 	{
+		"patching_rect" : [ 0, 31, 280, 18 ],
+		"hidden" : 0
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 159, 184, 48, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 159, 147, 49, 37 ],
+		"hidden" : 0,
+		"jsarguments" : [ 11, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "fmrm1" ]
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 147, 160, 53 ],
+		"hidden" : 0
+	}
+,
+	"speed" : 	{
+		"patching_rect" : [ 0, 15, 260, 16 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"sinsAmount" : 	{
+		"patching_rect" : [ 208, 183, 75, 16 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"freq_min" : 	{
+		"patching_rect" : [ 0, 199, 158, 14 ],
+		"hidden" : 0,
+		"fontsize" : 13
+	}
+,
+	"freq_max" : 	{
+		"patching_rect" : [ 0, 212, 158, 14 ],
+		"hidden" : 0,
+		"fontsize" : 13
+	}
+,
+	"freq_log" : 	{
+		"patching_rect" : [ 0, 225, 158, 14 ],
+		"hidden" : 0,
+		"fontsize" : 13
+	}
+,
+	"vol_thresh" : 	{
+		"patching_rect" : [ 158, 199, 125, 14 ],
+		"hidden" : 0,
+		"fontsize" : 13
+	}
+,
+	"vol_log" : 	{
+		"patching_rect" : [ 158, 212, 125, 14 ],
+		"hidden" : 0,
+		"fontsize" : 13
+	}
+,
+	"straightness" : 	{
+		"patching_rect" : [ 158, 225, 125, 14 ],
+		"hidden" : 0,
+		"fontsize" : 13
+	}
+
+}

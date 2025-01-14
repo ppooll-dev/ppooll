@@ -1,0 +1,163 @@
+{
+	"ho_st1" : 	{
+		"_actwindow" : [ "ho_st", 457, 196, 587, 321 ],
+		"act" : 		{
+			"active_store" : "_"
+		}
+,
+		"inputs~" : [ "out(16)", "res(1)", "freq(1)", "noise_freq(1)" ],
+		"params_only" : 0,
+		"pfl_par_menu" : "-no-",
+		"pfl_act_menu" : "no",
+		"ll.dims" : 0,
+		"osc_port" : 7400,
+		"write_envi" : -1,
+		"watch_menu" : "time",
+		"vol_slider" : 1.0,
+		"vol_ramp" : 10,
+		"vol" : 1.0,
+		"title_menu" : "info",
+		"tetris_menu" : "",
+		"stereo" : 0,
+		"screen" : 1,
+		"rec" : 0,
+		"pres_menu" : "_",
+		"ppooll" : -1,
+		"menubar" : 1,
+		"master" : "we",
+		"jit.on" : 0,
+		"favorites" : "(favorites)",
+		"envi_menu" : "buffertest.json",
+		"def" : -1,
+		"chans" : 16,
+		"audioON/OFF" : 1,
+		"act_menu" : "(__acts__)"
+	}
+,
+	"buffer_host1" : 	{
+		"_actwindow" : [ "buffer_host", 456, 333, 575, 519 ],
+		"act" : 		{
+			"active_store" : "_"
+		}
+,
+		"file_menu_out" : "Macintosh HD:/Users/klaus/Documents/Max 8/Packages/ppooll/media/ll.samples/3dem.aif",
+		"size-box" : 2867.301514000000225,
+		"open!" : -1,
+		"normalize" : -1,
+		"folder_menu" : "ll.samples/",
+		"file_menu" : "3dem.aif",
+		"ff" : -1,
+		"f" : -1,
+		"channels" : 1,
+		"action_menu" : "clearall",
+		"title_menu" : "subpatch",
+		"pres_menu" : "ƒ factorybank",
+		"tetris_menu" : "",
+		"master" : 0
+	}
+,
+	"flop1" : 	{
+		"_actwindow" : [ "flop", 614, 193, 796, 471 ],
+		"act" : 		{
+			"active_store" : "_"
+		}
+,
+		"ll.blues" : 		{
+			"state" : [ 2, 1, 0, 0, 2, 0 ],
+			"outputs" : [ "ho_st1~out.1", "no~-no-" ],
+			"levels" : [ 0.346591922589714, 0.346591922589714, 0.0, 0.0, 10.0, 0.0, 0.5 ]
+		}
+,
+		"ubumenu" : "start",
+		"keep-time" : 0,
+		"full_select" : -1,
+		"end" : 1800.449951171875,
+		"current_start" : 1100.280029296875,
+		"current_end" : 700.16998291015625,
+		"inputs~" : [ "vol(2)", "start(2)", "length(2)", "pitch(2)" ],
+		"buffer" : "3dem.aif",
+		"start" : 1100.280029296875,
+		"length" : 700.16998291015625,
+		"pitch" : 0.0,
+		"on/off" : 1,
+		"oneshot" : 0,
+		"oneshot_trigger" : -1,
+		"ext~vol" : 0,
+		"lookup" : 1,
+		"start_rel" : 0.383733633845134,
+		"length_rel" : 0.244191264675681,
+		"s-ramp" : 0.0,
+		"s-ramp-mode" : 1,
+		"start-ramp-stop" : -1,
+		"l-ramp" : 0.0,
+		"l-ramp-mode" : 1,
+		"length-ramp-stop" : -1,
+		"length/end" : 0,
+		"env-scale" : 40.243243243243242,
+		"pitchmenu" : 0,
+		"play-mode" : 0,
+		"ramp2pitch" : 0,
+		"pitch-ramp-stop" : -1,
+		"pitchslider" : 70,
+		"zero" : -1,
+		"preset-ramp" : 0.0,
+		"presets" : 0,
+		"title_menu" : "clientwindow",
+		"pres_menu" : "_",
+		"tetris_menu" : "",
+		"master" : 0
+	}
+,
+	"flop2" : 	{
+		"_actwindow" : [ "flop", 808, 196, 1586, 371 ],
+		"act" : 		{
+			"active_store" : "_"
+		}
+,
+		"ll.blues" : 		{
+			"state" : [ 2, 1, 0, 0, 2, 0 ],
+			"outputs" : [ "ho_st1~out.1", "no~-no-" ],
+			"levels" : [ 1.0, 1.0, 0.0, 0.0, 10.0, 0.0, 0.5 ]
+		}
+,
+		"ubumenu" : "start",
+		"keep-time" : 0,
+		"full_select" : -1,
+		"end" : 2948.800048828125,
+		"current_start" : 1151.199951171875,
+		"current_end" : 1797.5999755859375,
+		"inputs~" : [ "vol(2)", "start(2)", "length(2)", "pitch(2)" ],
+		"buffer" : "bass-harmonics.aif",
+		"start" : 1151.199951171875,
+		"length" : 1797.5999755859375,
+		"pitch" : 0.0,
+		"on/off" : 1,
+		"oneshot" : 0,
+		"oneshot_trigger" : -1,
+		"ext~vol" : 0,
+		"lookup" : 1,
+		"start_rel" : 0.20587236241717,
+		"length_rel" : 0.321469917782921,
+		"s-ramp" : 0.0,
+		"s-ramp-mode" : 1,
+		"start-ramp-stop" : -1,
+		"l-ramp" : 0.0,
+		"l-ramp-mode" : 1,
+		"length-ramp-stop" : -1,
+		"length/end" : 0,
+		"env-scale" : 23.297297297297298,
+		"pitchmenu" : 0,
+		"play-mode" : 6,
+		"ramp2pitch" : 0,
+		"pitch-ramp-stop" : -1,
+		"pitchslider" : 70,
+		"zero" : -1,
+		"preset-ramp" : 0.0,
+		"presets" : 0,
+		"title_menu" : "clientwindow",
+		"pres_menu" : "_",
+		"tetris_menu" : "ƒ quer.json",
+		"master" : 0
+	}
+
+}

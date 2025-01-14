@@ -1,0 +1,27 @@
+{
+	"window" : [ 837, 476, 996, 591 ],
+	"preset-ramp" : 	{
+		"patching_rect" : [ 0, 16, 66, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 68, 0, 91, 31 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "gverb@1" ]
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 63, 159, 53 ],
+		"hidden" : 0
+	}
+,
+	"decay" : 	{
+		"patching_rect" : [ 0, 31, 159, 32 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+
+}

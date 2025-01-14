@@ -1,0 +1,249 @@
+{
+	"window" : [ 253, 479, 553, 586 ],
+	"result" : 	{
+		"patching_rect" : [ 23, 85, 53, 21 ],
+		"hidden" : 1,
+		"fontsize" : 11
+	}
+,
+	"act_menu" : 	{
+		"patching_rect" : [ 75, 85, 50, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"par_menu" : 	{
+		"patching_rect" : [ 127, 85, 50, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 198, 0, 65, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 47, 0, 150, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "op@1" ]
+	}
+,
+	"left" : 	{
+		"patching_rect" : [ 23, 16, 73, 21 ],
+		"hidden" : 1,
+		"fontsize" : 11
+	}
+,
+	"left~ui" : 	{
+		"patching_rect" : [ 6, 16, 69, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"leftMode" : 	{
+		"patching_rect" : [ 0, 16, 21, 21 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"act_menu2" : 	{
+		"patching_rect" : [ 75, 85, 50, 21 ],
+		"hidden" : 1,
+		"fontsize" : 11
+	}
+,
+	"par_menu2" : 	{
+		"patching_rect" : [ 127, 85, 50, 21 ],
+		"hidden" : 1,
+		"fontsize" : 11
+	}
+,
+	"result~ui" : 	{
+		"patching_rect" : [ 6, 85, 69, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"right" : 	{
+		"patching_rect" : [ 208, 16, 73, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"right~ui" : 	{
+		"patching_rect" : [ 191, 16, 69, 21 ],
+		"hidden" : 1,
+		"fontsize" : 11
+	}
+,
+	"rightMode" : 	{
+		"patching_rect" : [ 185, 16, 21, 21 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"op" : 	{
+		"patching_rect" : [ 114, 16, 46, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"outMode" : 	{
+		"patching_rect" : [ 0, 85, 21, 21 ],
+		"hidden" : 0,
+		"fontsize" : 14
+	}
+,
+	"clipMode" : 	{
+		"patching_rect" : [ 23, 62, 37, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"dcBlockPostOp" : 	{
+		"patching_rect" : [ 0, 39, 21, 21 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"dcBlockPreA" : 	{
+		"patching_rect" : [ 75, 16, 21, 21 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"dcBlockPreB" : 	{
+		"patching_rect" : [ 260, 16, 21, 21 ],
+		"hidden" : 1,
+		"fontsize" : 8
+	}
+,
+	"switchOps" : 	{
+		"patching_rect" : [ 162, 16, 21, 21 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"scaleMode" : 	{
+		"patching_rect" : [ 23, 39, 33, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"smoothMode" : 	{
+		"patching_rect" : [ 161, 62, 42, 21 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"scaleSym" : 	{
+		"patching_rect" : [ 233, 39, 31, 21 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"numOutInterval" : 	{
+		"patching_rect" : [ 179, 85, 46, 21 ],
+		"hidden" : 1,
+		"fontsize" : 11
+	}
+,
+	"lAbsMinus" : 	{
+		"patching_rect" : [ 98, 27, 15, 10 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"lAbsPlus" : 	{
+		"patching_rect" : [ 98, 16, 15, 10 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"rAbsMinus" : 	{
+		"patching_rect" : [ 283, 27, 15, 10 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"rAbsPlus" : 	{
+		"patching_rect" : [ 283, 16, 15, 10 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"dcBlockPostScale" : 	{
+		"patching_rect" : [ 0, 62, 21, 21 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"scaleInMin" : 	{
+		"patching_rect" : [ 57, 39, 42, 21 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"scaleInMax" : 	{
+		"patching_rect" : [ 101, 39, 42, 21 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"scaleOutMin" : 	{
+		"patching_rect" : [ 145, 39, 42, 21 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"scaleOutMax" : 	{
+		"patching_rect" : [ 189, 39, 42, 21 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"scaleExpVal" : 	{
+		"patching_rect" : [ 266, 39, 31, 21 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"clipMin" : 	{
+		"patching_rect" : [ 62, 62, 47, 21 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"clipMax" : 	{
+		"patching_rect" : [ 111, 62, 47, 21 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"smoothUp" : 	{
+		"patching_rect" : [ 206, 62, 45, 21 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"smoothDown" : 	{
+		"patching_rect" : [ 252, 62, 45, 21 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"pRampMs" : 	{
+		"patching_rect" : [ 224, 85, 73, 21 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"voices" : 	{
+		"patching_rect" : [ 264, 0, 35, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

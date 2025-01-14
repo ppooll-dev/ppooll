@@ -1,39 +1,64 @@
 {
-	"authors" : ["klaus filip", "c. hausch", "noid", "paulo raposo","léo dupleix", "oliver stotz","boris hauf","gilles aubry","david michael","bill d","luc gross","AntonioDellaMarina","nicolaj kirisits" ],
-	"description" : "a collection and system of interacting max patches designed to create an individual setup for live improvisation or installations. open to use with own patches and equipped with useful GUIs. ppooll comes as a basic package and is extensible.",
-	"displayname" : "",
-	"extends" : "",
-	"extensible" : 1,
-	"homepatcher" : "ppooll_host.maxpat",
-	"max_version_max" : "none",
-	"max_version_min" : "8",
-	"name" : "ppooll",
-	"os" : 	{
-		"macintosh" : 		{
-			"platform" : [ "x64", "aarch64" ],
-			"min_version" : "none"
-		}
-,
-		"windows" : 		{
-			"platform" : [ "x64" ],
-			"min_version" : "none"
-		}
-
-	}
-,
-	"package_extra" : 	{
-
-	}
-,
-	"tags" : [ "audio", "instrument", "versatile" ],
-	"version" : "8.5",
-	"website" : "http://ppooll.klingt.org",
-	"filelist" : 	{
-		"externals" : [ "ll_number","ll_fastforward", "ll_2dslider", "shell", "pattrexists", "xsample", "vbap"],
-		"patchers" : [ ],
-		"help" : [ ],
-		"misc" : [ ],
-		"extras" : [ "ppooll_host.maxpat" ]
-	}
-
+  "authors": [
+    "klaus filip",
+    "c. hausch",
+    "noid",
+    "paulo raposo",
+    "léo dupleix",
+    "oliver stotz",
+    "boris hauf",
+    "gilles aubry",
+    "david michael",
+    "bill d",
+    "luc gross",
+    "AntonioDellaMarina",
+    "nicolaj kirisits"
+  ],
+  "description": "a collection and system of interacting max patches designed to create an individual setup for live improvisation or installations. open to use with own patches and equipped with useful GUIs. ppooll comes as a basic package and is extensible.",
+  "displayname": "",
+  "extends": "",
+  "extensible": 1,
+  "homepatcher": "ppooll_host.maxpat",
+  "max_version_min": "8",
+  "name": "ppooll",
+  "os": {
+    "macintosh": {
+      "platform": [
+        "x64",
+        "aarch64"
+      ],
+      "min_version": "none"
+    },
+    "windows": {
+      "platform": [
+        "x64"
+      ],
+      "min_version": "none"
+    }
+  },
+  "package_extra": {},
+  "tags": [
+    "audio",
+    "instrument",
+    "versatile"
+  ],
+  "base_version": "8.6.0",
+  "version": "8.6.0.240609.1",
+  "website": "http://ppooll.klingt.org",
+  "filelist": {
+    "externals": [
+      "ll_number",
+      "ll_fastforward",
+      "ll_2dslider",
+      "shell",
+      "pattrexists",
+      "vbap"
+    ],
+    "patchers": [],
+    "help": [],
+    "misc": [],
+    "extras": [
+      "ppooll_host.maxpat"
+    ]
+  }
 }

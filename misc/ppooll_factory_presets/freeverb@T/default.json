@@ -1,0 +1,71 @@
+{
+	"window" : [ 527, 268, 686, 401 ],
+	"preset-ramp" : 	{
+		"patching_rect" : [ 41, 16, 41, 15 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 82, 0, 76, 31 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "freeverb@1" ]
+	}
+,
+	"room_size" : 	{
+		"patching_rect" : [ 0, 31, 159, 13 ],
+		"hidden" : 0
+	}
+,
+	"damping" : 	{
+		"patching_rect" : [ 0, 43, 159, 13 ],
+		"hidden" : 0
+	}
+,
+	"width" : 	{
+		"patching_rect" : [ 0, 55, 159, 13 ],
+		"hidden" : 0
+	}
+,
+	"gainslider" : 	{
+		"patching_rect" : [ 0, 67, 159, 14 ],
+		"hidden" : 0
+	}
+,
+	"size_com" : 	{
+		"patching_rect" : [ 0, 31, 26, 17 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"damp_com" : 	{
+		"patching_rect" : [ 0, 43, 32, 17 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"width_com" : 	{
+		"patching_rect" : [ 0, 55, 34, 17 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"on/off" : 	{
+		"patching_rect" : [ 0, 15, 19, 16 ],
+		"hidden" : 0,
+		"fontsize" : 8
+	}
+,
+	"freeze" : 	{
+		"patching_rect" : [ 19, 16, 23, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 80, 159, 53 ],
+		"hidden" : 0
+	}
+
+}

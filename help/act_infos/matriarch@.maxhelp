@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 3,
+			"minor" : 5,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 430.0, 378.0, 640.0, 480.0 ],
+		"rect" : [ 100.0, 100.0, 640.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -46,7 +46,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.0, 11.0, 412.0, 301.0 ],
-					"text" : "matriarch@\n\nby steech\n\nan act for mixing and panning stereo pairs of audio\n\nreceive audio by selecting an input \"row\"\n\nsend audio using the purple drop downs at the top of \"columns\"\n\nthere are two \"view\" modes\n\nVolume & Panning\n\nyou can toggle between Vol/Pan using the orange/blue button labeled volume or pan\n\nor toggle between modes on the fly by clicking the act (so that is the active window) and press&hold \"t\"\n\ncontrol vol/pan using list values (by \"row\" number)\n"
+					"text" : "matriarch@\n\nby steech (joe steccato) 2022\n\nan act for mixing and panning stereo pairs of audio\n\nreceive audio by selecting an input \"row\"\n\nsend audio using the purple drop downs at the top of \"columns\"\n\nthere are two \"view\" modes\n\nVolume & Panning\n\nyou can toggle between Vol/Pan using the orange/blue button labeled volume or pan\n\nor toggle between modes on the fly by clicking the act (so that is the active window) and press&hold \"t\"\n\ncontrol vol/pan using list values (by \"row\" number)\n"
 				}
 
 			}

@@ -1,0 +1,33 @@
+{
+	"window" : [ 381, 384, 621, 494 ],
+	"number_of_channels" : 	{
+		"patching_rect" : [ 192, 0, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"value" : 	{
+		"patching_rect" : [ 0, 24, 120, 80 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"threshold" : 	{
+		"patching_rect" : [ 122, 24, 120, 80 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"x_threshold" : 	{
+		"patching_rect" : [ 108, 0, 25, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"update_ms" : 	{
+		"patching_rect" : [ 140, 0, 50, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+
+}

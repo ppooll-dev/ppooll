@@ -1,0 +1,144 @@
+{
+	"window" : [ 509, 337, 668, 569 ],
+	"filtergraph" : 	{
+		"patching_rect" : [ 0, 79, 158, 84 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"preset-ramp" : 	{
+		"patching_rect" : [ 104, 162, 55, 15 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 0, 162, 105, 14 ],
+		"hidden" : 0,
+		"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "wrapfilter1" ]
+	}
+,
+	"filt1_freq" : 	{
+		"patching_rect" : [ 46, 17, 44, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"filt1_gain" : 	{
+		"patching_rect" : [ 89, 17, 35, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"filt1_Q" : 	{
+		"patching_rect" : [ 123, 17, 35, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"filt2_freq" : 	{
+		"patching_rect" : [ 46, 32, 44, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"filt2_gain" : 	{
+		"patching_rect" : [ 89, 32, 35, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"filt2_Q" : 	{
+		"patching_rect" : [ 123, 32, 35, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"filt3_freq" : 	{
+		"patching_rect" : [ 46, 47, 44, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"filt3_gain" : 	{
+		"patching_rect" : [ 89, 47, 35, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"filt3_Q" : 	{
+		"patching_rect" : [ 123, 47, 35, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"active_filters" : 	{
+		"patching_rect" : [ 78, 0, 35, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"filt4_freq" : 	{
+		"patching_rect" : [ 46, 62, 44, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"filt4_gain" : 	{
+		"patching_rect" : [ 89, 62, 35, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"filt4_Q" : 	{
+		"patching_rect" : [ 123, 62, 35, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"filt1_type" : 	{
+		"patching_rect" : [ 0, 17, 47, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"filt2_type" : 	{
+		"patching_rect" : [ 0, 32, 47, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"filt3_type" : 	{
+		"patching_rect" : [ 0, 47, 47, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"filt4_type" : 	{
+		"patching_rect" : [ 0, 62, 47, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"s.filtergraph" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 108, 346, 89, 22 ],
+		"hidden" : 1
+	}
+,
+	"patcher" : "bang",
+	"patching_rect" : [ 188, 459, 82, 22 ],
+	"hidden" : 1,
+	"flavour" : 	{
+		"patching_rect" : [ 121, 0, 36, 16 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 177, 159, 53 ],
+		"hidden" : 0
+	}
+
+}

@@ -1,0 +1,156 @@
+{
+	"window" : [ 529, 418, 738, 673 ],
+	"buffer" : 	{
+		"patching_rect" : [ 118, 81, 89, 22 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"mix-level" : 	{
+		"patching_rect" : [ 71, 17, 14, 84 ],
+		"hidden" : 0
+	}
+,
+	"pos_act" : 	{
+		"patching_rect" : [ 157, 0, 52, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"pos_par" : 	{
+		"patching_rect" : [ 157, 15, 52, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"ps_act" : 	{
+		"patching_rect" : [ 173, 34, 35, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"ps_par" : 	{
+		"patching_rect" : [ 173, 49, 35, 19 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"mix-switch" : 	{
+		"patching_rect" : [ 87, 85, 29, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"rec-switch" : 	{
+		"patching_rect" : [ 118, 50, 26, 28 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"<>key-switch" : 	{
+		"patching_rect" : [ 87, 67, 29, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"loop-switch" : 	{
+		"patching_rect" : [ 87, 50, 29, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"append-switch" : 	{
+		"patching_rect" : [ 87, 33, 43, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"link-switch" : 	{
+		"patching_rect" : [ 87, 17, 29, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+,
+	"pos_send_now" : 	{
+		"patching_rect" : [ 146, 34, 28, 14 ],
+		"hidden" : 0,
+		"fontsize" : 9
+	}
+,
+	"full_select" : 	{
+		"patching_rect" : [ 167, 182, 18, 18 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"start" : 	{
+		"patching_rect" : [ 0, 181, 75, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"length" : 	{
+		"patching_rect" : [ 91, 182, 75, 18 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"end" : 	{
+		"patching_rect" : [ 429, 16, 54, 18 ],
+		"hidden" : 1,
+		"fontsize" : 12
+	}
+,
+	"wf" : 	{
+		"patching_rect" : [ 0, 103, 185, 76 ],
+		"hidden" : 0
+	}
+,
+	"tools" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 187, 103, 20, 59 ],
+		"hidden" : 0
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 201, 207, 53 ],
+		"hidden" : 0
+	}
+,
+	"zoom_out" : 	{
+		"patching_rect" : [ 188, 183, 18, 16 ],
+		"hidden" : 0,
+		"fontsize" : 11
+	}
+,
+	"zoom_in" : 	{
+		"patching_rect" : [ 188, 164, 18, 16 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"gain" : 	{
+		"patching_rect" : [ 0, 17, 69, 84 ],
+		"hidden" : 0
+	}
+,
+	"position" : 	{
+		"patching_rect" : [ 0, 162, 185, 17 ],
+		"hidden" : 0,
+		"fontsize" : 12
+	}
+,
+	"my_INmulti" : 	{
+		"patching_rect" : [ 56, 0, 78, 16 ],
+		"hidden" : 1,
+		"fontsize" : 11
+	}
+,
+	"vzoom" : 	{
+		"patching_rect" : [ 146, 67, 62, 15 ],
+		"hidden" : 0,
+		"fontsize" : 10
+	}
+
+}
