@@ -1173,7 +1173,7 @@ long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long mod
         strcat(x->ll_buffer, txt);
         x->ll_is_typing = true;
         jbox_redraw(&x->ll_box);
-        return 0;
+        return 1;
     }
     
     double value = ll_number_get_value(x, x->ll_selected_row);
@@ -1230,7 +1230,7 @@ long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long mod
         default:
             break;
     }
-    return 0; // Return 1 to filter key from the key object, 0 otherwise
+    return 1;
 }
 
 // On typing end
