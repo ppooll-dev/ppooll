@@ -1114,10 +1114,8 @@ void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
     
     // Handle mouse focus and position
     if (new_focus_mode == MOUSE_FOCUS_NUMBER) {
-        post("set digits");
         ll_number_handle_number_focus(x, pos);
     } else if (new_focus_mode == MOUSE_FOCUS_SLIDER) {
-        post("set slider");
         double val = (pt.x - x->ll_inset) / x->ll_width;
         ll_number_pos(x, val);
     }
