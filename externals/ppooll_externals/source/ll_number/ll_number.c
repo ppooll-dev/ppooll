@@ -1434,7 +1434,10 @@ t_max_err ll_number_setattr_ll_label(t_ll_number *x, void *attr, long ac, t_atom
         error("Could not parse label.");
         return MAX_ERR_GENERIC;
     }
-    if (ac < 1) { // No label
+    
+    char has_label = !(ac == 0 || ( atom_gettype(&av[0]) == A_LONG && atom_getlong(&av[0]) == 0));
+    
+    if ( !has_label ) { // No label
         for (int i = 0; i < MAX_NUM_VALUES; i++) {
             if (x->ll_label_list[i]) {
                 free(x->ll_label_list[i]);
@@ -1458,8 +1461,10 @@ t_max_err ll_number_setattr_ll_label(t_ll_number *x, void *attr, long ac, t_atom
                 continue;
             }
         } else {
-            // Clear or assign a default label if needed
-            x->ll_label_list[i] = strdup(""); // Empty string if no label
+            // Assign default label as "i+1"
+            char default_label[16]; // Buffer to hold the string representation of i+1
+            snprintf(default_label, sizeof(default_label), "%d", i + 1);
+            x->ll_label_list[i] = strdup(default_label); // Allocate and copy the default label
             if (!x->ll_label_list[i]) {
                 error("Memory allocation failed for default label.");
                 continue;
