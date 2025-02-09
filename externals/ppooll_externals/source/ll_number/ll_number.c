@@ -47,18 +47,21 @@ const long TEXTCHAR_ESCAPE = 27;
 
 // Platform-dependent constants for modifier keys
 #ifdef MAC_VERSION
-    const long MOD_FOCUS_NUMBER =     eLeftButton | eCommandKey; // select number
-    const long MOD_FOCUS_SLIDER_1 =  eLeftButton | eAltKey;
+    const long MOD_FOCUS_NUMBER =   eLeftButton | eCommandKey; // select number
+    const long MOD_FOCUS_SLIDER_1 = eLeftButton | eAltKey;
     const long MOD_FOCUS_SLIDER_2 = eLeftButton | eAltKey;
-    const long KEY_CONTROL =     eCommandKey;
+    const long KEY_CONTROL =        eCommandKey;
 #endif
 
 #ifdef WIN_VERSION
-    const long MOD_FOCUS_NUMBER =        eLeftButton | eAltKey;
-    const long MOD_FOCUS_SLIDER_1 =     eLeftButton | eControlKey | ePopupMenu;
-    const long MOD_FOCUS_SLIDER_2 =    eLeftButton | eControlKey | eShiftKey;
+    const long MOD_FOCUS_NUMBER =   eLeftButton | eAltKey;
+    const long MOD_FOCUS_SLIDER_1 = eLeftButton | eControlKey | ePopupMenu;
+    const long MOD_FOCUS_SLIDER_2 = eLeftButton | eControlKey | eShiftKey;
     const long KEY_CONTROL =        eControlKey;
 #endif
+
+const long CURSOR_SLIDER = JMOUSE_CURSOR_RESIZE_LEFTRIGHT;
+const long CURSOR_NUMBER = JMOUSE_CURSOR_ARROW;
 
 typedef enum {
     MOUSE_FOCUS_NUMBER,
@@ -213,6 +216,9 @@ t_max_err ll_number_setattr_ll_amount(t_ll_number *x, void *attr, long ac, t_ato
 t_max_err ll_number_setattr_ll_format(t_ll_number *x, void *attr, long ac, t_atom *av);
 t_max_err ll_number_setattr_ll_label(t_ll_number *x, void *attr, long ac, t_atom *av);
 
+t_max_err ll_number_setattr_ll_sliderstyle(t_ll_number *x, void *attr, long ac, t_atom *av);
+
+
 void ext_main(void *r){
     t_class *c;
     common_symbols_init();
@@ -310,6 +316,8 @@ void ext_main(void *r){
     CLASS_ATTR_STYLE_LABEL(c,		"sliderstyle", 0, "enum", "Slider Style");
     CLASS_ATTR_ENUMINDEX(c,			"sliderstyle", 0, "Bar Thin_Line Off");
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"sliderstyle", 0, "1");
+    CLASS_ATTR_ACCESSORS(c,          "sliderstyle", (method)NULL, (method)ll_number_setattr_ll_sliderstyle);
+
     
     CLASS_ATTR_ATOM_VARSIZE(c,		 "label", ATTR_FLAGS_NONE, t_ll_number, ll_label, ll_label_len, MAX_TEXT_LENGTH) ;
     CLASS_ATTR_DEFAULT_SAVE_PAINT(c, "label", 0, "");
@@ -961,10 +969,20 @@ short ll_number_get_selitem_from_y(t_ll_number *x, t_object *patcherview, double
 short ll_number_get_selchar_from_text(t_ll_number *x, t_pt pt){
     short pos = -1;
     t_rect crect;
+    long numchars = jtextlayout_getnumchars(x->ll_jtl);
     
-    for (int i = 0; i < jtextlayout_getnumchars(x->ll_jtl); i++) {
+    jtextlayout_getcharbox(x->ll_jtl, 0, &crect);
+    if (pt.x < crect.x){
+        return -1;
+    }
+    jtextlayout_getcharbox(x->ll_jtl, numchars-1, &crect);
+    if (pt.x >= (crect.x + crect.width)){
+        return numchars-1;
+    }
+    for (int i = 0; i < numchars; i++) {
         jtextlayout_getcharbox(x->ll_jtl, i, &crect);
-        if (pt.x > crect.x && pt.x < crect.x + crect.width) {
+        double cright = crect.x + crect.width;
+        if ( pt.x > crect.x && pt.x < cright) {
             pos = i;
             break;
         }
@@ -974,9 +992,8 @@ short ll_number_get_selchar_from_text(t_ll_number *x, t_pt pt){
 
 // Handle mouse click on number
 void ll_number_handle_number_focus(t_ll_number *x, short pos){
-    if (pos == -1 && (x->ll_sliderstyle != SLIDER_STYLE_NONE)) {
+    if (pos == -1) {
         pos = 0;
-        x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
     }
     x->ll_selected_digit = jtextlayout_getnumchars(x->ll_jtl) - pos;
     ll_number_formposition(x, 1);
@@ -1012,9 +1029,9 @@ t_max_err ll_number_notify(t_ll_number *x, t_symbol *s, t_symbol *msg, void *sen
 // --------------------
 
 void ll_number_setmousecursor(t_ll_number *x, t_object *patcherview, t_pt pt, long modifiers) {
-    t_jmouse_cursortype cursorType = JMOUSE_CURSOR_RESIZE_LEFTRIGHT; // Default to slider cursor
-    bool is_over_number = ll_number_get_selchar_from_text(x, pt) != -1;
-
+    t_jmouse_cursortype cursorType = CURSOR_SLIDER; // Default to slider cursor
+    long pos = ll_number_get_selchar_from_text(x, pt);
+    bool is_over_number = pos > -1;
     // Determine if we should use the i-beam cursor
     if (
         is_over_number &&
@@ -1023,15 +1040,15 @@ void ll_number_setmousecursor(t_ll_number *x, t_object *patcherview, t_pt pt, lo
             x->ll_mouse_focus_mode == MOUSE_FOCUS_NUMBER
          )
     ) {
-        cursorType = JMOUSE_CURSOR_ARROW;
+        cursorType = CURSOR_NUMBER;
     }
     // Alt key forces leftright cursor
     if (modifiers & eAltKey) {
-        cursorType = JMOUSE_CURSOR_RESIZE_LEFTRIGHT;
+        cursorType = CURSOR_SLIDER;
     }
     // If Slider Style in "none", only show ibeam cursor
     if (x->ll_sliderstyle == SLIDER_STYLE_NONE){
-        cursorType = JMOUSE_CURSOR_ARROW;
+        cursorType = CURSOR_NUMBER;
     }
     // Set the cursor type
     jmouse_setcursor(patcherview, (t_object *)x, cursorType);
@@ -1077,20 +1094,28 @@ void ll_number_mousedown(t_ll_number *x, t_object *patcherview, t_pt pt, long mo
     short pos = ll_number_get_selchar_from_text(x, pt);
     bool is_over_number = pos > -1;
     
-    if ( is_over_number && (modifiers & eRightButton || modifiers == MOD_FOCUS_NUMBER || x->ll_sliderstyle == SLIDER_STYLE_NONE) ) {
-        x->ll_mouse_focus_mode = MOUSE_FOCUS_NUMBER;
-    } else if (modifiers == MOD_FOCUS_SLIDER_1 || modifiers == MOD_FOCUS_SLIDER_2 || !is_over_number) {
-        x->ll_mouse_focus_mode = MOUSE_FOCUS_SLIDER;
+    short new_focus_mode = x->ll_mouse_focus_mode;
+    if( !is_over_number || modifiers == MOD_FOCUS_SLIDER_1 || modifiers == MOD_FOCUS_SLIDER_2 ){
+        new_focus_mode = MOUSE_FOCUS_SLIDER;
+    }else if( is_over_number && (modifiers & eRightButton || modifiers == MOD_FOCUS_NUMBER || new_focus_mode == MOUSE_FOCUS_NUMBER) ){
+        new_focus_mode = MOUSE_FOCUS_NUMBER;
     }
+    
+    if(x->ll_sliderstyle == SLIDER_STYLE_NONE)
+        new_focus_mode = MOUSE_FOCUS_NUMBER;
+    
+    // Update the attribute using object_attr_set
+    object_attr_setchar((t_object *)x, gensym("mousefocus"), new_focus_mode);
+    object_notify((t_object *)x, gensym("mousefocus"), NULL);
 
     // Determine selected item
     x->ll_selected_row = ll_number_get_selitem_from_y(x, patcherview, pt.y);
     x->ll_selected_row_prev = x->ll_selected_row;
     
     // Handle mouse focus and position
-    if (x->ll_mouse_focus_mode == MOUSE_FOCUS_NUMBER) {
+    if (new_focus_mode == MOUSE_FOCUS_NUMBER) {
         ll_number_handle_number_focus(x, pos);
-    } else if (x->ll_mouse_focus_mode == MOUSE_FOCUS_SLIDER) {
+    } else if (new_focus_mode == MOUSE_FOCUS_SLIDER) {
         double val = (pt.x - x->ll_inset) / x->ll_width;
         ll_number_pos(x, val);
     }
@@ -1173,7 +1198,7 @@ long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long mod
         strcat(x->ll_buffer, txt);
         x->ll_is_typing = true;
         jbox_redraw(&x->ll_box);
-        return 0;
+        return 1;
     }
     
     double value = ll_number_get_value(x, x->ll_selected_row);
@@ -1230,7 +1255,7 @@ long ll_number_key(t_ll_number *x, t_object *patcherview, long keycode, long mod
         default:
             break;
     }
-    return 0; // Return 1 to filter key from the key object, 0 otherwise
+    return 1;
 }
 
 // On typing end
@@ -1407,7 +1432,10 @@ t_max_err ll_number_setattr_ll_label(t_ll_number *x, void *attr, long ac, t_atom
         error("Could not parse label.");
         return MAX_ERR_GENERIC;
     }
-    if (ac < 1) { // No label
+    
+    char has_label = !(ac == 0 || ( atom_gettype(&av[0]) == A_LONG && atom_getlong(&av[0]) == 0));
+    
+    if ( !has_label ) { // No label
         for (int i = 0; i < MAX_NUM_VALUES; i++) {
             if (x->ll_label_list[i]) {
                 free(x->ll_label_list[i]);
@@ -1431,12 +1459,32 @@ t_max_err ll_number_setattr_ll_label(t_ll_number *x, void *attr, long ac, t_atom
                 continue;
             }
         } else {
-            // Clear or assign a default label if needed
-            x->ll_label_list[i] = strdup(""); // Empty string if no label
+            // Assign default label as "i+1"
+            char default_label[16]; // Buffer to hold the string representation of i+1
+            snprintf(default_label, sizeof(default_label), "%d", i + 1);
+            x->ll_label_list[i] = strdup(default_label); // Allocate and copy the default label
             if (!x->ll_label_list[i]) {
                 error("Memory allocation failed for default label.");
                 continue;
             }
+        }
+    }
+    return MAX_ERR_NONE;
+}
+
+// Set Attribute - "sliderstyle"
+t_max_err ll_number_setattr_ll_sliderstyle(t_ll_number *x, void *attr, long ac, t_atom *av) {
+    if (ac && av) {
+        long new_sliderstyle = atom_getlong(av); // Get the new value of sliderstyle
+
+        // Update the sliderstyle attribute
+        x->ll_sliderstyle = new_sliderstyle;
+
+        // Check if the new sliderstyle is "none" (value 2 in your enum)
+        if (new_sliderstyle == SLIDER_STYLE_NONE) { // Assuming 2 corresponds to "none"
+            // Update the ll_mouse_focus_mode to MOUSE_FOCUS_NUMBER
+            object_attr_setchar((t_object *)x, gensym("mousefocus"), MOUSE_FOCUS_NUMBER);
+            object_notify((t_object *)x, gensym("mousefocus"), NULL);
         }
     }
     return MAX_ERR_NONE;
