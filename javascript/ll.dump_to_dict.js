@@ -58,11 +58,7 @@ function addParam() {
     var paramKey = currentAct + "::" + paramName;
 
     // Update the dictionary
-    if (Array.isArray(paramValue)) {
-        enviDict.replace(paramKey, paramValue);
-    } else {
-        enviDict.set(paramKey, paramValue);
-    }
+    enviDict.replace(paramKey, paramValue);
 
     // Optional: Output the updated dictionary for verification
     // post("Updated parameter '", paramKey, "' with value: ", paramValue, "\n");
