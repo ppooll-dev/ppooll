@@ -1,9 +1,9 @@
 {
-	"window" : [ 532, 266, 785, 475 ],
+	"window" : [ 586, 262, 839, 471 ],
 	"preset-ramp" : 	{
 		"patching_rect" : [ 195, 0, 57, 17 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"presets" : 	{
@@ -15,7 +15,7 @@
 	"rezdisplay" : 	{
 		"patching_rect" : [ 0, 16, 240, 110 ],
 		"hidden" : 0,
-		"jsarguments" : [ "displayrange", 20, 20000 ]
+		"jsarguments" : [ "displayrange", 20.0, 20000.0 ]
 	}
 ,
 	"transformslider" : 	{
@@ -32,31 +32,31 @@
 	"randnumber" : 	{
 		"patching_rect" : [ 223, 191, 29, 22 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"partialsbutton" : 	{
 		"patching_rect" : [ 159, 176, 69, 16 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"resetbutton" : 	{
 		"patching_rect" : [ 190, 160, 34, 16 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"readbutton" : 	{
 		"patching_rect" : [ 159, 160, 32, 16 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"clearbutton" : 	{
 		"patching_rect" : [ 218, 145, 34, 16 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"ll.blues" : 	{
@@ -68,7 +68,7 @@
 	"randomize" : 	{
 		"patching_rect" : [ 159, 191, 69, 16 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 
 }
