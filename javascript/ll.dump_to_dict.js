@@ -41,7 +41,7 @@ function addAct(){
 
 function addParam() {
     var args = arrayfromargs(arguments);
-    // post("Received args: ", args, "\n");
+    //post("Received args: ", args, "\n");
 
     if (currentAct === null) {
         post("error ll.dump_to_dict.js: No current act set. Cannot add parameter.\n");
@@ -58,11 +58,8 @@ function addParam() {
     var paramKey = currentAct + "::" + paramName;
 
     // Update the dictionary
-    if (Array.isArray(paramValue)) {
-        enviDict.replace(paramKey, paramValue);
-    } else {
-        enviDict.set(paramKey, paramValue);
-    }
+    enviDict.replace(paramKey, paramValue);
+
 
     // Optional: Output the updated dictionary for verification
     // post("Updated parameter '", paramKey, "' with value: ", paramValue, "\n");
