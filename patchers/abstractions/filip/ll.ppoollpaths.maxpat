@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 2,
+			"minor" : 6,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -40,26 +40,26 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-10",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 240.0, 221.0, 323.0, 20.0 ],
-					"presentation_linecount" : 6,
-					"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 8/Packages/ppooll\""
+					"comment" : "notfound",
+					"id" : "obj-8",
+					"index" : 2,
+					"maxclass" : "outlet",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 214.0, 298.0, 30.0, 30.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-9",
+					"id" : "obj-10",
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 246.0, 37.0, 80.0, 20.0 ],
-					"text" : "Package:/ppooll"
+					"patching_rect" : [ 240.0, 221.0, 323.0, 31.0 ],
+					"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 8/Library/ppooll_presets\""
 				}
 
 			}
@@ -69,7 +69,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 57.0, 233.0, 109.0, 20.0 ],
+					"patching_rect" : [ 250.0, 298.0, 109.0, 20.0 ],
 					"text" : "print \"folder not found\""
 				}
 
@@ -109,8 +109,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 376.0, 121.0, 54.0, 19.0 ],
-					"text" : "ppooll.acts"
+					"patching_rect" : [ 357.0, 158.5, 155.0, 19.0 ],
+					"text" : "Package:/ppooll/patchers/ppooll.acts"
 				}
 
 			}
@@ -123,8 +123,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 268.0, 120.0, 101.0, 19.0 ],
-					"text" : "ppooll_factory_presets"
+					"patching_rect" : [ 266.0, 138.0, 187.0, 19.0 ],
+					"text" : "Package:/ppooll/misc/ppooll_factory_presets"
 				}
 
 			}
@@ -204,8 +204,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 175.0, 116.0, 69.0, 19.0 ],
-					"text" : "ppooll_presets"
+					"patching_rect" : [ 175.0, 117.0, 138.0, 19.0 ],
+					"text" : "Usermax:/Library/ppooll_presets"
 				}
 
 			}
@@ -350,15 +350,16 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
-					"order" : 1,
+					"order" : 2,
 					"source" : [ "obj-5", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-17", 0 ],
-					"source" : [ "obj-9", 0 ]
+					"destination" : [ "obj-8", 0 ],
+					"order" : 1,
+					"source" : [ "obj-5", 0 ]
 				}
 
 			}

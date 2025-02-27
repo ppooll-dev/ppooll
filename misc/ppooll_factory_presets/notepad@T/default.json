@@ -1,9 +1,9 @@
 {
-	"window" : [ 671, 192, 902, 339 ],
+	"window" : [ 415, 175, 645, 275 ],
 	"textfield" : 	{
-		"patching_rect" : [ 0, 16, 232, 131 ],
+		"patching_rect" : [ 0, 36, 230, 64 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
 	}
 ,
 	"presets" : 	{
@@ -13,9 +13,27 @@
 	}
 ,
 	"fontsize" : 	{
-		"patching_rect" : [ 204, 0, 26, 16 ],
+		"patching_rect" : [ 187, 0, 43, 16 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"fontsize" : 12.0
+	}
+,
+	"fontlist" : 	{
+		"patching_rect" : [ 0, 16, 137, 20 ],
+		"hidden" : 0,
+		"fontsize" : 10.0
+	}
+,
+	"width" : 	{
+		"patching_rect" : [ 139, 16, 44, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"height" : 	{
+		"patching_rect" : [ 187, 16, 44, 20 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
 	}
 
 }
