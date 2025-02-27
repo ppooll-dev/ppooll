@@ -835,7 +835,7 @@ double ll_number_constrain(t_ll_number *x, double f) {
     return f;
 }
 
-// Constrain all values & redraw
+// Constrain all values & redraw (without output or notifying clients)
 void ll_number_constrain_all(t_ll_number *x){
     double values[x->ll_amount];
     atom_getdouble_array(x->ll_amount, x->ll_vala, x->ll_amount, values);
@@ -843,7 +843,6 @@ void ll_number_constrain_all(t_ll_number *x){
         values[i] = ll_number_constrain(x, values[i]);
     
     atom_setdouble_array(x->ll_amount, x->ll_vala, x->ll_amount, values);
-    object_notify(x, _sym_modified, NULL);
     jbox_redraw(&x->ll_box);
 }
 
