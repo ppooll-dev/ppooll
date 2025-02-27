@@ -843,7 +843,8 @@ void ll_number_constrain_all(t_ll_number *x){
         values[i] = ll_number_constrain(x, values[i]);
     
     atom_setdouble_array(x->ll_amount, x->ll_vala, x->ll_amount, values);
-    ll_number_redraw(x);
+    object_notify(x, _sym_modified, NULL);
+    jbox_redraw(&x->ll_box);
 }
 
 // Handle message "set" - overwrite list of values (changes num of values "ll_amount")
