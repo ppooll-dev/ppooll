@@ -40,18 +40,6 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-17",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 109.0, 452.0, 50.0, 22.0 ],
-					"text" : "6800."
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-16",
 					"linecount" : 4,
 					"maxclass" : "comment",
@@ -70,7 +58,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 365.0, 56.0, 208.0, 60.0 ],
-					"presentation_linecount" : 4,
 					"text" : "\"setonly\" inlet mode makes the slider inlet cold,\nsetting the value of the slider without output.  "
 				}
 
@@ -108,7 +95,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 128.0, 227.0, 341.0, 100.0 ],
-					"presentation_linecount" : 4,
 					"text" : "ll_slishi is a slider that contains 3 levels of adjustment, from left to right:\n- coarse adjustment: inc/dec numbers by 100\n- medium adjustment: inc/dec numbers by 1\n- fine adjustment: inc/dec numbers by 0.01\n"
 				}
 
@@ -196,7 +182,6 @@
 					"max" : 10000.0,
 					"maxclass" : "ll_number",
 					"min" : 0.0,
-					"mousefocus" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
@@ -221,16 +206,7 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-17", 1 ],
-					"order" : 0,
-					"source" : [ "obj-1", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
-					"order" : 1,
 					"source" : [ "obj-1", 0 ]
 				}
 

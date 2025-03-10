@@ -23,6 +23,7 @@ typedef struct _ll_slishi {
     t_pt cum_position;
 } t_ll_slishi;
 
+
 void *ll_slishi_new(t_symbol *s, long argc, t_atom *argv);
 void ll_slishi_free(t_ll_slishi *x);
 void ll_slishi_paint(t_ll_slishi *x, t_object *view);
@@ -38,10 +39,9 @@ void ll_slishi_mousedragdelta(t_ll_slishi *x, t_object *patcherview, t_pt pt, lo
 
 void ll_slishi_set_sliders(t_ll_slishi *x, double position);
 double ll_slishi_valtopos(t_ll_slishi *x, double val);
-void ll_slishi_constrain(t_ll_slishi *x);
+void ll_slishi_constain(t_ll_slishi *x);
 
-void ll_slishi_bang(t_ll_slishi *x);
-
+    
 void ext_main(void *r) {
     t_class *c;
     common_symbols_init();
@@ -64,6 +64,7 @@ void ext_main(void *r) {
     class_addmethod(c, (method)ll_slishi_float,             "float", A_FLOAT, 0);
     class_addmethod(c, (method)ll_slishi_int,               "int", A_LONG, 0);
     class_addmethod(c, (method)ll_slishi_set,               "set", A_GIMME, 0);
+
 
     CLASS_ATTR_DEFAULT(c, "patching_rect", 0, "0. 0. 62. 116.");
     
@@ -148,8 +149,7 @@ void ll_slishi_bang(t_ll_slishi *x) {
 // Handle float message
 void ll_slishi_float(t_ll_slishi *x, double f){
     x->value = f;
-    ll_slishi_constrain(x);
-    
+    ll_slishi_constain(x);
     if(x->setonly)
         jbox_redraw(&x->j_box);
     else
@@ -166,7 +166,8 @@ void ll_slishi_set(t_ll_slishi *x, t_symbol *s, short ac, t_atom *av){
     if(!ac || !av)
         return;
     x->value = atom_getfloat(&av[0]);
-    ll_slishi_constrain(x);
+    ll_slishi_constain(x);
+
     jbox_redraw(&x->j_box);
 }
 
@@ -234,9 +235,6 @@ double ll_slishi_valtopos(t_ll_slishi *x, double val) {
 
 // Handle notifications
 t_max_err ll_slishi_notify(t_ll_slishi *x, t_symbol *s, t_symbol *msg, void *sender, void *data){
-    long argc = 0;
-    t_atom *argv = NULL;
-    t_symbol *name;
     return jbox_notify((t_jbox *)x, s, msg, sender, data);
 }
 
@@ -326,10 +324,9 @@ void ll_slishi_set_sliders(t_ll_slishi *x, double position)
     ll_slishi_bang(x);
 }
 
-void ll_slishi_constrain(t_ll_slishi *x)
-{
-    if(x->value > x->min)
+void ll_slishi_constain(t_ll_slishi *x){
+    if(x->value < x->min)
         x->value = x->min;
-    else if(x->value < x->max)
+    else if(x->value > x->max)
         x->value = x->max;
 }
