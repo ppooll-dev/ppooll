@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 0,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 713.0, 233.0, 159.0, 117.0 ],
+		"rect" : [ 359.0, 90.0, 159.0, 117.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -189,7 +189,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 421.0, 123.0, 79.0, 22.0 ],
-					"restore" : [ 200, 200 ],
+					"restore" : [ 100, 600 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -388,7 +388,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 0,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -519,7 +519,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 0,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -611,7 +611,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 0,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1135,7 +1135,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 0,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1735,7 +1735,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 0,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1866,7 +1866,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 0,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1924,7 +1924,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 6,
-																			"revision" : 0,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -2361,8 +2361,8 @@
 																	"id" : "obj-72",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "" ],
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "" ],
 																	"patching_rect" : [ 171.5, 7.388550000000002, 91.0, 22.0 ],
 																	"text" : "ll.ppoollpaths 2"
 																}
@@ -3047,8 +3047,8 @@
 													"id" : "obj-22",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 8.0, 414.0, 91.0, 22.0 ],
 													"text" : "ll.ppoollpaths 2"
 												}
@@ -3606,7 +3606,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 0,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3758,7 +3758,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 0,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4074,7 +4074,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 0,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4132,7 +4132,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 6,
-																			"revision" : 0,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4315,7 +4315,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 6,
-																			"revision" : 0,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4521,7 +4521,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 6,
-																			"revision" : 0,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4955,7 +4955,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 6,
-																			"revision" : 0,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -5351,7 +5351,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 6,
-																			"revision" : 0,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -5793,7 +5793,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 6,
-																			"revision" : 0,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -6423,7 +6423,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 6,
-																			"revision" : 0,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -6756,7 +6756,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 6,
-																			"revision" : 0,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -6837,7 +6837,7 @@
 																						"appversion" : 																						{
 																							"major" : 8,
 																							"minor" : 6,
-																							"revision" : 0,
+																							"revision" : 5,
 																							"architecture" : "x64",
 																							"modernui" : 1
 																						}
@@ -7431,7 +7431,7 @@
 																						"appversion" : 																						{
 																							"major" : 8,
 																							"minor" : 6,
-																							"revision" : 0,
+																							"revision" : 5,
 																							"architecture" : "x64",
 																							"modernui" : 1
 																						}
@@ -8838,7 +8838,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 204.833313000000004, 126.0, 344.0, 22.0 ],
-													"text" : "\"PSP MasterComp.component\""
+													"text" : "ValhallaPlate.component"
 												}
 
 											}
@@ -9076,7 +9076,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 0,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9134,7 +9134,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 0,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -9310,7 +9310,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 0,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -9723,7 +9723,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 6,
-											"revision" : 0,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9782,7 +9782,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 0,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -9838,7 +9838,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 84.0, 241.0, 109.0, 22.0 ],
-																	"text" : "open 100 600"
+																	"text" : "open 200 200"
 																}
 
 															}
@@ -9847,13 +9847,12 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-33",
-																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 537.0, 313.0, 54.0, 22.0 ],
-																	"text" : "-1080 117"
+																	"text" : "100 600"
 																}
 
 															}
@@ -10012,7 +10011,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 564.5, 119.0, 201.0, 22.0 ],
-																	"text" : "-1080. 117. 0 1000"
+																	"text" : "0. 0. 500 200"
 																}
 
 															}
@@ -10404,7 +10403,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 0,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -10571,7 +10570,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 0,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -10816,13 +10815,12 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-45",
-													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 48.25, 230.0, 50.0, 35.0 ],
-													"text" : "delete 1"
+													"text" : "recall 1"
 												}
 
 											}
@@ -11251,7 +11249,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 6,
-															"revision" : 0,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -11348,7 +11346,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 6,
-																			"revision" : 0,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -11716,12 +11714,13 @@
 																					"fontname" : "Arial",
 																					"fontsize" : 12.0,
 																					"id" : "obj-5",
+																					"linecount" : 3,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 688.0, 233.0, 144.0, 35.0 ],
-																					"text" : "vst@1 ho_st1"
+																					"text" : "music-mouse@1 vst@1 vst@2 modul.ator1 ho_st1"
 																				}
 
 																			}
@@ -12788,6 +12787,7 @@
 										"valueof" : 										{
 											"parameter_invisible" : 1,
 											"parameter_longname" : "vst",
+											"parameter_modmode" : 0,
 											"parameter_shortname" : "vst",
 											"parameter_type" : 3
 										}
@@ -12797,6 +12797,62 @@
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 1,
 										"parameter_mappable" : 0
+									}
+,
+									"snapshot" : 									{
+										"filetype" : "C74Snapshot",
+										"version" : 2,
+										"minorversion" : 0,
+										"name" : "snapshotlist",
+										"origin" : "mcs.vst~",
+										"type" : "list",
+										"subtype" : "Undefined",
+										"embed" : 1,
+										"snapshot" : 										{
+											"pluginname" : "ValhallaPlate.component",
+											"plugindisplayname" : "ValhallaPlate",
+											"pluginsavedname" : "/Library/Audio/Plug-Ins/Components/ValhallaPlate.component",
+											"pluginsaveduniqueid" : 0,
+											"version" : 1,
+											"isbank" : 0,
+											"isbase64" : 1,
+											"blob" : "665.hAGaoMGcv.C1AHv.DTfAGfPBJrvDTTgEWvUag4VclE1XzUmbkIGUjEFcgwUYrUVak4Fcs3VXsU1UyUmXzkGbkckckI2bo8laTQWdvU1WP7fZ0MVYPwVcmklaSQWXzUFUtEVakIwaDklaOAAa...............C....v7Cf......PL.........HyO........y7C........M+........TiO65Pb....1.........vM9Hqj+A...fyO........47C......XvG+.......F.ROpn5pRyPCNDQTwDkLQ+.DQASUI4Fb0QWzOHgUOUGcvUGcR.GagQGD.HQX0YFdOEQ.5X0PxDRLA...77CdswFH1Ulbyk1at0iHw3BLh.RYtM1ajklam0iHUQkQsfiH+3CH7XUXrgVXrwVXPwVXzUFHvwVcmklaVUlbyk1at0iHw3hMtTiHf.mbkMWYz4TXsUVOhPTYlEVcrQmHfzTZ30iHv3BLh.BTxUFQkwVX40iHv3BLh.BQkMVX40iHv3BLh.xTooWY8HBLt.iHfbUZjQGZ8HBLt.iHfzzajIUXzUVOh.iKvHBHM8FYDUFbzgVOh.iKvHBHL81cEEkQxUVb8HBLt.iHfvza2UTTGEVZt0iHv3BLh.BRocFZEEkQxUVb8HBLt.iHffTZmgVQQcTXo4VOh.iKvHBHTkGbk0iHv3BLh.RaogGSuM1Z8HBLh.RcocUZjQGZ8HBNxTiHfTWZHUVZmgFc8HBMyTiHu3C.XUkazkFcrUFY.f..Y.fI.rB.3..P.fD.MAvW.PF.oA.1.zM.eCP3.PN.lC.6.7N.1Cv9.ze.BH.P........BD..........X...................BjD"
+										}
+,
+										"snapshotlist" : 										{
+											"current_snapshot" : 0,
+											"entries" : [ 												{
+													"filetype" : "C74Snapshot",
+													"version" : 2,
+													"minorversion" : 0,
+													"name" : "ValhallaPlate",
+													"origin" : "ValhallaPlate.component",
+													"type" : "AudioUnit",
+													"subtype" : "AudioEffect",
+													"embed" : 0,
+													"snapshot" : 													{
+														"pluginname" : "ValhallaPlate.component",
+														"plugindisplayname" : "ValhallaPlate",
+														"pluginsavedname" : "/Library/Audio/Plug-Ins/Components/ValhallaPlate.component",
+														"pluginsaveduniqueid" : 0,
+														"version" : 1,
+														"isbank" : 0,
+														"isbase64" : 1,
+														"blob" : "665.hAGaoMGcv.C1AHv.DTfAGfPBJrvDTTgEWvUag4VclE1XzUmbkIGUjEFcgwUYrUVak4Fcs3VXsU1UyUmXzkGbkckckI2bo8laTQWdvU1WP7fZ0MVYPwVcmklaSQWXzUFUtEVakIwaDklaOAAa...............C....v7Cf......PL.........HyO........y7C........M+........TiO65Pb....1.........vM9Hqj+A...fyO........47C......XvG+.......F.ROpn5pRyPCNDQTwDkLQ+.DQASUI4Fb0QWzOHgUOUGcvUGcR.GagQGD.HQX0YFdOEQ.5X0PxDRLA...77CdswFH1Ulbyk1at0iHw3BLh.RYtM1ajklam0iHUQkQsfiH+3CH7XUXrgVXrwVXPwVXzUFHvwVcmklaVUlbyk1at0iHw3hMtTiHf.mbkMWYz4TXsUVOhPTYlEVcrQmHfzTZ30iHv3BLh.BTxUFQkwVX40iHv3BLh.BQkMVX40iHv3BLh.xTooWY8HBLt.iHfbUZjQGZ8HBLt.iHfzzajIUXzUVOh.iKvHBHM8FYDUFbzgVOh.iKvHBHL81cEEkQxUVb8HBLt.iHfvza2UTTGEVZt0iHv3BLh.BRocFZEEkQxUVb8HBLt.iHffTZmgVQQcTXo4VOh.iKvHBHTkGbk0iHv3BLh.RaogGSuM1Z8HBLh.RcocUZjQGZ8HBNxTiHfTWZHUVZmgFc8HBMyTiHu3C.XUkazkFcrUFY.f..Y.fI.rB.3..P.fD.MAvW.PF.oA.1.zM.eCP3.PN.lC.6.7N.1Cv9.ze.BH.P........BD..........X...................BjD"
+													}
+,
+													"fileref" : 													{
+														"name" : "ValhallaPlate",
+														"filename" : "ValhallaPlate_20250312.maxsnap",
+														"filepath" : "~/Documents/Max 8/Snapshots",
+														"filepos" : -1,
+														"snapshotfileid" : "2208a1e8e6ab9bceae1b395b69395423"
+													}
+
+												}
+ ]
+										}
+
 									}
 ,
 									"text" : "mcs.vst~ 4 2",
@@ -12976,7 +13032,7 @@
 					"arrow" : 0,
 					"fontsize" : 9.0,
 					"id" : "obj-80",
-					"items" : [ "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "Scarlett 18i20 USB", ",", "TouchOSC Bridge", ",", "to Max 1", ",", "to Max 2" ],
+					"items" : [ "Network Session 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "to Max 1", ",", "to Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -13008,18 +13064,26 @@
 , 			{
 				"box" : 				{
 					"active" : 					{
+						"vst-folder" : 0,
+						"program_files" : 0,
+						"vst_program" : 0,
+						"open!" : 0,
 						"presets" : 0,
 						"preset-ramp" : 0,
 						"title_menu" : 0,
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
 						"master" : 0,
+						"position" : 0,
+						"program_file" : 0,
 						"act" : 0,
 						"act::active_store" : 0,
 						"ll.blues" : 0,
 						"ll.blues::levels" : 0,
 						"ll.blues::outputs" : 0,
-						"ll.blues::state" : 0
+						"ll.blues::state" : 0,
+						"def_folder" : 0,
+						"def_shell" : 0
 					}
 ,
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -13036,6 +13100,18 @@
 						"vst-folder" : 3,
 						"program_files" : 5,
 						"vst_program" : 6,
+						"Mix" : 100,
+						"PreDelay" : 101,
+						"Decay" : 102,
+						"Size" : 103,
+						"Width" : 104,
+						"ModRate" : 105,
+						"ModDepth" : 106,
+						"LowEQFreq" : 107,
+						"LowEQGain" : 108,
+						"HighEQFreq" : 109,
+						"HighEQGain" : 110,
+						"Type" : 111,
 						"midi-channel" : 900,
 						"midi-port" : 901,
 						"open!" : 910,
@@ -13044,14 +13120,20 @@
 						"title_menu" : 2010,
 						"pres_menu" : 2011,
 						"tetris_menu" : 2012,
-						"master" : 2013
+						"master" : 2013,
+						"position" : 2000,
+						"program_file" : 10,
+						"ll.blues::outputs" : 1000,
+						"ll.blues::state" : 1000,
+						"def_folder" : 1,
+						"def_shell" : 2
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 545, 133, 1800, 849 ],
+						"client_rect" : [ 173, 115, 746, 869 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 583, 68, 1034, 196 ]
+						"storage_rect" : [ 200, 200, 800, 500 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -13109,14 +13191,14 @@
 					"restore" : 					{
 						"master" : [ 0 ],
 						"midi-channel" : [ 1 ],
-						"midi-port" : [ "IAC Driver Bus 1" ],
+						"midi-port" : [ "Network Session 1" ],
 						"open!" : [ 0 ],
-						"pres_menu" : [ "_" ],
+						"pres_menu" : [ "" ],
 						"preset-ramp" : [ 0.0 ],
 						"presets" : [ 0 ],
 						"program_files" : [ "writepgm" ],
 						"tetris_menu" : [ "" ],
-						"title_menu" : [ "subpatch" ],
+						"title_menu" : [ "clientwindow" ],
 						"vst-folder" : [ "def_folders" ],
 						"vst_program" : [ 1 ]
 					}
@@ -13163,7 +13245,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-13",
 					"ignoreclick" : 1,
-					"items" : [ "echoboy", ",", "vintage-verb", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
+					"items" : [ "echoboy", ",", "serum-jps", ",", "valhalla-delay", ",", "vintage-verb", ",", "vst-test", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -13344,6 +13426,13 @@
 		}
 ,
 		"dependency_cache" : [ 			{
+				"name" : "ValhallaPlate_20250312.maxsnap",
+				"bootpath" : "~/Documents/Max 8/Snapshots",
+				"patcherrelativepath" : "../../../../Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "actmaker.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
@@ -13605,6 +13694,13 @@
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "vst-test.json",
+				"bootpath" : "~/Documents/Max 8/Library/ppooll_presets/vst@P",
+				"patcherrelativepath" : "../../../../Library/ppooll_presets/vst@P",
+				"type" : "JSON",
 				"implicit" : 1
 			}
  ],
