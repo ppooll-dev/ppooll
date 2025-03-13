@@ -85,19 +85,23 @@ void ext_main(void *r) {
     // CLASS_STICKY_ATTR(c,                    "category", 0, "Appearance");
 
     // OBJECT
-    CLASS_STICKY_ATTR(c,            "category",  0, "ll_slishi");
+    CLASS_STICKY_ATTR(c,                "category",  0, "ll_slishi");
 
-    CLASS_ATTR_DOUBLE(c,            "min", 0, t_ll_slishi, min);
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"min", 0 ,"0");
-    CLASS_ATTR_LABEL(c,             "min", 0, "minimum");
+    CLASS_ATTR_DOUBLE(c,                "min", 0, t_ll_slishi, min);
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,    "min", 0 ,"0");
+    CLASS_ATTR_LABEL(c,                 "min", 0, "minimum");
+        
+    CLASS_ATTR_DOUBLE(c,                "max", 0, t_ll_slishi, max);
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,    "max", 0 ,"10000");
+    CLASS_ATTR_LABEL(c,                 "max", 0, "maximum");
     
-    CLASS_ATTR_DOUBLE(c,            "max", 0, t_ll_slishi, max);
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,"max", 0 ,"10000");
-    CLASS_ATTR_LABEL(c,             "max", 0, "maximum");
+    CLASS_ATTR_CHAR(c,                  "setonly", 0, t_ll_slishi, setonly);
+    CLASS_ATTR_STYLE_LABEL(c,           "setonly", 0, "onoff", "setonly");
+    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,    "setonly", 0, "0");
     
-    CLASS_ATTR_CHAR(c,                "setonly", 0, t_ll_slishi, setonly);
-    CLASS_ATTR_STYLE_LABEL(c,         "setonly", 0, "onoff", "setonly");
-    CLASS_ATTR_DEFAULT_SAVE_PAINT(c,  "setonly", 0, "0");
+    CLASS_ATTR_ORDER(c, "min",     0, "1");
+    CLASS_ATTR_ORDER(c, "max",     0, "2");
+    CLASS_ATTR_ORDER(c, "setonly", 0, "3");
     
     class_register(CLASS_BOX, c);
     s_ll_slishi_class = c;
@@ -184,7 +188,7 @@ void ll_slishi_paint(t_ll_slishi *x, t_object *view) {
     jgraphics_set_source_jrgba(g, &bg_color);
     jgraphics_rectangle_fill_fast(g, 0, 0, rect.width, rect.height + 1);
     
-    double width_line = 5;
+    double width_line = 3;
     
     double vfine = fmod(x->value, 1.);
     double vmedium = fmod(x->value, 100.);
@@ -195,17 +199,32 @@ void ll_slishi_paint(t_ll_slishi *x, t_object *view) {
     // Coarse Slider
     double coarse = ll_slishi_valtopos(x, vcoarse);
     jgraphics_set_source_jrgba(g, &x->slidercolor);
-    jgraphics_rectangle(g, 0, coarse - (width_line / 2), rect.width / 2, width_line);
+    jgraphics_rectangle(g, 
+                        0,
+                        coarse - (width_line / 2),
+                        rect.width / 2,
+                        width_line
+                        );
     jgraphics_fill(g);
     
     // Medium Slider
     jgraphics_set_source_jrgba(g, &x->slidercolor);
-    jgraphics_rectangle(g, rect.width / 2, rect.height - (vmedium / 100 * rect.height) - (width_line / 2), rect.width / 4 + 2, width_line);
+    jgraphics_rectangle(g,
+                        rect.width / 2,
+                        rect.height - (vmedium / 100 * rect.height) - (width_line / 2),
+                        rect.width / 4,
+                        width_line
+                        );
     jgraphics_fill(g);
     
     // Fine Slider
     jgraphics_set_source_jrgba(g, &x->slidercolor);
-    jgraphics_rectangle(g, (rect.width / 2) + (rect.width / 4), rect.height - (vfine * rect.height) - (width_line / 2), rect.width / 4, width_line);
+    jgraphics_rectangle(g, 
+                        (rect.width / 2) + (rect.width / 4),
+                        rect.height - (vfine * rect.height) - (width_line / 2),
+                        rect.width / 4,
+                        width_line
+                        );
     jgraphics_fill(g);
     
     jgraphics_set_source_jrgba(g, &x->slidercolor);
@@ -324,6 +343,7 @@ void ll_slishi_set_sliders(t_ll_slishi *x, double position)
     ll_slishi_bang(x);
 }
 
+// Constrain value between min/max
 void ll_slishi_constain(t_ll_slishi *x){
     if(x->value < x->min)
         x->value = x->min;
