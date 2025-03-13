@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 299.0, 380.0, 157.0, 117.0 ],
+		"rect" : [ 385.0, 401.0, 157.0, 117.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -12238,7 +12238,7 @@
 					"arrow" : 0,
 					"fontsize" : 9.0,
 					"id" : "obj-80",
-					"items" : [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "Network Session 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "Scarlett 18i20 USB", ",", "MIDISPORT 1x1 Port A", ",", "FastLane USB #12 Port A", ",", "FastLane USB #12 Port B", ",", "to Max 1", ",", "to Max 2", ",", "Chiral.amxd" ],
+					"items" : [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "Network Session 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "to Max 1", ",", "to Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -12270,6 +12270,7 @@
 , 			{
 				"box" : 				{
 					"active" : 					{
+						"vst-folder" : 0,
 						"open!" : 0,
 						"presets" : 0,
 						"preset-ramp" : 0,
@@ -12277,6 +12278,9 @@
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
 						"master" : 0,
+						"def_folder" : 0,
+						"position" : 0,
+						"amxd_size" : 0,
 						"act" : 0,
 						"act::active_store" : 0,
 						"ll.blues" : 0,
@@ -12296,6 +12300,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 413.0, 289.0, 100.0, 22.0 ],
 					"priority" : 					{
+						"midi-channel-in" : 900,
+						"midi-channel-out" : 901,
+						"midi-port-in" : 902,
+						"midi-port-out" : 903,
 						"vst-folder" : 3,
 						"open!" : 910,
 						"presets" : 1016,
@@ -12303,11 +12311,16 @@
 						"title_menu" : 2010,
 						"pres_menu" : 2011,
 						"tetris_menu" : 2012,
-						"master" : 2013
+						"master" : 2013,
+						"def_folder" : 1,
+						"position" : 2000,
+						"amxd_size" : 2001,
+						"ll.blues::outputs" : 1000,
+						"ll.blues::state" : 1000
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 499, 162, 1139, 402 ],
+						"client_rect" : [ 0, 100, 406, 880 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 0, 0, 640, 240 ]
@@ -12502,7 +12515,7 @@
 					"arrow" : 0,
 					"fontsize" : 9.0,
 					"id" : "obj-81",
-					"items" : [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "AU DLS Synth 1", ",", "Network Session 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "Scarlett 18i20 USB", ",", "MIDISPORT 1x1 Port A", ",", "FastLane USB #12 Port A", ",", "FastLane USB #12 Port B", ",", "from Max 1", ",", "from Max 2", ",", "Chiral.amxd" ],
+					"items" : [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "AU DLS Synth 1", ",", "Network Session 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "from Max 1", ",", "from Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
