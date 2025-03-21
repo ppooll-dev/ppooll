@@ -73,7 +73,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 413.0, 342.0, 93.0, 22.0 ],
-					"restore" : [ 588.0, 170.0 ],
+					"restore" : [ 217.275547862052917, 170.0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -184,7 +184,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 413.0, 367.0, 79.0, 22.0 ],
-					"restore" : [ 454, 478 ],
+					"restore" : [ 194, 558 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1077,7 +1077,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 454.0, 478.0, 588.0, 170.0 ],
+										"rect" : [ 194.0, 558.0, 217.0, 170.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -2050,6 +2050,18 @@
 																		"assistshowspatchername" : 0,
 																		"boxes" : [ 																			{
 																				"box" : 																				{
+																					"id" : "obj-2",
+																					"maxclass" : "newobj",
+																					"numinlets" : 1,
+																					"numoutlets" : 3,
+																					"outlettype" : [ "", "int", "int" ],
+																					"patching_rect" : [ 7.0, 41.0, 58.0, 22.0 ],
+																					"text" : "change 4"
+																				}
+
+																			}
+, 																			{
+																				"box" : 																				{
 																					"id" : "obj-9",
 																					"linecount" : 4,
 																					"maxclass" : "comment",
@@ -2277,8 +2289,8 @@
 																					"numinlets" : 3,
 																					"numoutlets" : 2,
 																					"outlettype" : [ "", "bang" ],
-																					"patching_rect" : [ 7.0, 12.0, 119.0, 22.0 ],
-																					"text" : "ll.p ll.inputmix::chans"
+																					"patching_rect" : [ 7.0, 12.0, 129.0, 22.0 ],
+																					"text" : "ll.p ll.inputmix::chans 1"
 																				}
 
 																			}
@@ -2349,6 +2361,13 @@
 																			}
 , 																			{
 																				"patchline" : 																				{
+																					"destination" : [ "obj-19", 0 ],
+																					"source" : [ "obj-2", 0 ]
+																				}
+
+																			}
+, 																			{
+																				"patchline" : 																				{
 																					"destination" : [ "obj-5", 0 ],
 																					"source" : [ "obj-20", 0 ]
 																				}
@@ -2363,7 +2382,7 @@
 																			}
 , 																			{
 																				"patchline" : 																				{
-																					"destination" : [ "obj-19", 0 ],
+																					"destination" : [ "obj-2", 0 ],
 																					"source" : [ "obj-22", 0 ]
 																				}
 
@@ -3168,7 +3187,7 @@
 													"clickthrough" : 0,
 													"enablehscroll" : 0,
 													"enablevscroll" : 0,
-													"id" : "obj-14",
+													"id" : "obj-15",
 													"lockeddragscroll" : 0,
 													"lockedsize" : 0,
 													"maxclass" : "newobj",
@@ -3240,7 +3259,7 @@
 													"destination" : [ "obj-35", 0 ],
 													"hidden" : 1,
 													"order" : 1,
-													"source" : [ "obj-14", 2 ]
+													"source" : [ "obj-15", 2 ]
 												}
 
 											}
@@ -3248,7 +3267,7 @@
 												"patchline" : 												{
 													"destination" : [ "obj-5", 0 ],
 													"hidden" : 1,
-													"source" : [ "obj-14", 0 ]
+													"source" : [ "obj-15", 0 ]
 												}
 
 											}
@@ -3256,7 +3275,7 @@
 												"patchline" : 												{
 													"destination" : [ "obj-6", 0 ],
 													"hidden" : 1,
-													"source" : [ "obj-14", 1 ]
+													"source" : [ "obj-15", 1 ]
 												}
 
 											}
@@ -3265,7 +3284,7 @@
 													"destination" : [ "obj-7", 0 ],
 													"hidden" : 1,
 													"order" : 0,
-													"source" : [ "obj-14", 2 ]
+													"source" : [ "obj-15", 2 ]
 												}
 
 											}
@@ -3295,7 +3314,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-14", 0 ],
+													"destination" : [ "obj-15", 0 ],
 													"hidden" : 1,
 													"source" : [ "obj-3", 0 ]
 												}
@@ -3319,7 +3338,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-14", 1 ],
+													"destination" : [ "obj-15", 1 ],
 													"hidden" : 1,
 													"source" : [ "obj-4", 0 ]
 												}
@@ -3413,7 +3432,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 73.0, 445.0, 640.0, 480.0 ],
+										"rect" : [ 73.0, 400.0, 640.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -3753,7 +3772,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 34.0, 100.0, 688.0, 786.0 ],
+										"rect" : [ 34.0, 100.0, 688.0, 780.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -8863,7 +8882,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 315.833312999999976, 119.0, 344.0, 22.0 ],
-													"text" : "Chiral.amxd"
+													"text" : "\"Audio Morph.amxd\""
 												}
 
 											}
@@ -9025,7 +9044,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 34.0, 100.0, 1444.0, 787.0 ],
+										"rect" : [ 34.0, 100.0, 1444.0, 780.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -10312,7 +10331,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 39.25, 211.0, 67.0, 22.0 ],
-													"text" : "delete 7"
+													"text" : "recall 2"
 												}
 
 											}
@@ -11000,7 +11019,7 @@
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "" ],
 																					"patching_rect" : [ 472.75, 387.0, 103.0, 22.0 ],
-																					"restore" : [ "music-mouse@" ],
+																					"restore" : [ "amxd@" ],
 																					"saved_object_attributes" : 																					{
 																						"parameter_enable" : 0,
 																						"parameter_mappable" : 0
@@ -11091,7 +11110,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 688.0, 233.0, 144.0, 49.0 ],
-																					"text" : "ho_st1 amxd@1"
+																					"text" : "vst@1 ho_st1 amxd@1"
 																				}
 
 																			}
@@ -12278,15 +12297,15 @@
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
 						"master" : 0,
-						"def_folder" : 0,
-						"position" : 0,
-						"amxd_size" : 0,
 						"act" : 0,
 						"act::active_store" : 0,
 						"ll.blues" : 0,
 						"ll.blues::levels" : 0,
 						"ll.blues::outputs" : 0,
-						"ll.blues::state" : 0
+						"ll.blues::state" : 0,
+						"def_folder" : 0,
+						"position" : 0,
+						"amxd_size" : 0
 					}
 ,
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -12300,11 +12319,13 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 413.0, 289.0, 100.0, 22.0 ],
 					"priority" : 					{
+						"vst-folder" : 3,
+						"live.menu[1]" : 100,
+						"multislider" : 101,
 						"midi-channel-in" : 900,
 						"midi-channel-out" : 901,
 						"midi-port-in" : 902,
 						"midi-port-out" : 903,
-						"vst-folder" : 3,
 						"open!" : 910,
 						"presets" : 1016,
 						"preset-ramp" : 1017,
@@ -12312,11 +12333,11 @@
 						"pres_menu" : 2011,
 						"tetris_menu" : 2012,
 						"master" : 2013,
+						"ll.blues::outputs" : 1000,
+						"ll.blues::state" : 1000,
 						"def_folder" : 1,
 						"position" : 2000,
-						"amxd_size" : 2001,
-						"ll.blues::outputs" : 1000,
-						"ll.blues::state" : 1000
+						"amxd_size" : 2001
 					}
 ,
 					"saved_object_attributes" : 					{
@@ -12385,7 +12406,7 @@
 						"midi-port-in" : [ "-no-" ],
 						"midi-port-out" : [ "-no-" ],
 						"open!" : [ 0 ],
-						"pres_menu" : [ "_" ],
+						"pres_menu" : [ "" ],
 						"preset-ramp" : [ 0 ],
 						"presets" : [ 0 ],
 						"tetris_menu" : [ "" ],
@@ -12586,7 +12607,7 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-18::obj-3::obj-14" : [ "amxd", "amxd", 0 ],
+			"obj-18::obj-3::obj-15" : [ "amxd", "amxd", 0 ],
 			"parameterbanks" : 			{
 
 			}
