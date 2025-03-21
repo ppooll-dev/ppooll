@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 359.0, 90.0, 159.0, 117.0 ],
+		"rect" : [ 424.0, 138.0, 159.0, 117.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -394,7 +394,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 163.0, 494.0, 700.0, 353.0 ],
+						"rect" : [ 673.0, 134.0, 700.0, 353.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -423,6 +423,31 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-22",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 407.5, 89.0, 67.0, 22.0 ],
+									"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+									"text" : "thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-16",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "wclose", "bang" ],
+									"patching_rect" : [ 407.5, 58.0, 97.0, 22.0 ],
+									"text" : "t wclose b"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"comment" : "",
 									"id" : "obj-21",
@@ -490,20 +515,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 407.5, 89.0, 120.0, 22.0 ],
+									"patching_rect" : [ 485.5, 89.0, 120.0, 22.0 ],
 									"text" : "ll.s vst_custom_clear"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-5",
-									"maxclass" : "button",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 407.5, 56.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -525,7 +538,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ -692.0, 90.0, 405.0, 786.0 ],
+										"rect" : [ 774.0, 100.0, 405.0, 780.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -560,8 +573,8 @@
 													"numinlets" : 3,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 7.0, 8.0, 119.0, 22.0 ],
-													"text" : "ll.p ll.inputmix::chans"
+													"patching_rect" : [ 7.0, 8.0, 129.0, 22.0 ],
+													"text" : "ll.p ll.inputmix::chans 1"
 												}
 
 											}
@@ -8838,7 +8851,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 204.833313000000004, 126.0, 344.0, 22.0 ],
-													"text" : "ValhallaPlate.component"
+													"text" : "ValhallaDelay.component"
 												}
 
 											}
@@ -9729,7 +9742,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 34.0, 100.0, 1444.0, 787.0 ],
+										"rect" : [ 1546.0, -228.0, 1012.0, 780.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -9758,6 +9771,236 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-25",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patcher" : 													{
+														"fileversion" : 1,
+														"appversion" : 														{
+															"major" : 8,
+															"minor" : 6,
+															"revision" : 5,
+															"architecture" : "x64",
+															"modernui" : 1
+														}
+,
+														"classnamespace" : "box",
+														"rect" : [ 1698.0, 519.0, 640.0, 480.0 ],
+														"bglocked" : 0,
+														"openinpresentation" : 0,
+														"default_fontsize" : 12.0,
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"gridonopen" : 1,
+														"gridsize" : [ 15.0, 15.0 ],
+														"gridsnaponopen" : 1,
+														"objectsnaponopen" : 1,
+														"statusbarvisible" : 2,
+														"toolbarvisible" : 1,
+														"lefttoolbarpinned" : 0,
+														"toptoolbarpinned" : 0,
+														"righttoolbarpinned" : 0,
+														"bottomtoolbarpinned" : 0,
+														"toolbars_unpinned_last_save" : 0,
+														"tallnewobj" : 0,
+														"boxanimatetime" : 200,
+														"enablehscroll" : 1,
+														"enablevscroll" : 1,
+														"devicewidth" : 0.0,
+														"description" : "",
+														"digest" : "",
+														"tags" : "",
+														"style" : "",
+														"subpatcher_template" : "",
+														"assistshowspatchername" : 0,
+														"boxes" : [ 															{
+																"box" : 																{
+																	"id" : "obj-13",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 228.0, 70.0, 79.0, 22.0 ],
+																	"text" : "prepend filter"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-12",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 103.0, 102.0, 139.0, 22.0 ],
+																	"saved_object_attributes" : 																	{
+																		"filename" : "ll.filter_empty_string.js",
+																		"parameter_enable" : 0
+																	}
+,
+																	"text" : "js ll.filter_empty_string.js"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-3",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 27.0, 171.0, 94.0, 22.0 ],
+																	"text" : "prepend symbol"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-2",
+																	"maxclass" : "newobj",
+																	"numinlets" : 3,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "bang" ],
+																	"patching_rect" : [ 27.0, 204.0, 91.0, 22.0 ],
+																	"text" : "ll.pf pres_menu"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"comment" : "",
+																	"id" : "obj-1",
+																	"index" : 1,
+																	"maxclass" : "inlet",
+																	"numinlets" : 0,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 27.0, 15.0, 30.0, 30.0 ]
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-23",
+																	"maxclass" : "message",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 27.0, 131.0, 95.0, 22.0 ]
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-14",
+																	"maxclass" : "newobj",
+																	"numinlets" : 5,
+																	"numoutlets" : 5,
+																	"outlettype" : [ "", "", "", "", "" ],
+																	"patching_rect" : [ 103.0, 44.0, 144.0, 22.0 ],
+																	"text" : "route _ clear! TEXT write"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-16",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 0,
+																	"patching_rect" : [ 129.0, 171.0, 139.0, 22.0 ],
+																	"text" : "print vst@_preset_menu"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-21",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "bang" ],
+																	"patching_rect" : [ 103.0, 15.0, 85.0, 22.0 ],
+																	"text" : "ll.r pres_menu"
+																}
+
+															}
+ ],
+														"lines" : [ 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-23", 0 ],
+																	"source" : [ "obj-1", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-23", 1 ],
+																	"source" : [ "obj-12", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-12", 0 ],
+																	"source" : [ "obj-13", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-13", 0 ],
+																	"source" : [ "obj-14", 4 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-14", 0 ],
+																	"source" : [ "obj-21", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-16", 0 ],
+																	"disabled" : 1,
+																	"source" : [ "obj-23", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-3", 0 ],
+																	"source" : [ "obj-23", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-2", 0 ],
+																	"source" : [ "obj-3", 0 ]
+																}
+
+															}
+ ]
+													}
+,
+													"patching_rect" : [ 32.0, 143.0, 108.0, 22.0 ],
+													"saved_object_attributes" : 													{
+														"description" : "",
+														"digest" : "",
+														"globalpatchername" : "",
+														"tags" : ""
+													}
+,
+													"text" : "p refresh_pres_file"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-8",
 													"maxclass" : "newobj",
@@ -9838,7 +10081,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 84.0, 241.0, 109.0, 22.0 ],
-																	"text" : "open 200 200"
+																	"text" : "open 100 600"
 																}
 
 															}
@@ -10011,7 +10254,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 564.5, 119.0, 201.0, 22.0 ],
-																	"text" : "0. 0. 500 200"
+																	"text" : "100. 600. 1045 1035"
 																}
 
 															}
@@ -10819,7 +11062,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 48.25, 230.0, 50.0, 35.0 ],
+													"patching_rect" : [ 48.25, 230.0, 50.0, 22.0 ],
 													"text" : "recall 1"
 												}
 
@@ -11628,7 +11871,7 @@
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "" ],
 																					"patching_rect" : [ 472.75, 387.0, 103.0, 22.0 ],
-																					"restore" : [ "(__acts__)" ],
+																					"restore" : [ "vst@" ],
 																					"saved_object_attributes" : 																					{
 																						"parameter_enable" : 0,
 																						"parameter_mappable" : 0
@@ -11714,13 +11957,12 @@
 																					"fontname" : "Arial",
 																					"fontsize" : 12.0,
 																					"id" : "obj-5",
-																					"linecount" : 3,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 688.0, 233.0, 144.0, 35.0 ],
-																					"text" : "music-mouse@1 vst@1 vst@2 modul.ator1 ho_st1"
+																					"text" : "ho_st1 vst@1"
 																				}
 
 																			}
@@ -12030,7 +12272,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 4,
 																	"outlettype" : [ "", "", "", "" ],
-																	"patching_rect" : [ 392.5, 269.0, 124.0, 22.0 ],
+																	"patching_rect" : [ 392.5, 269.0, 124.0, 35.0 ],
 																	"saved_object_attributes" : 																	{
 																		"embed" : 0,
 																		"precision" : 6
@@ -12581,7 +12823,16 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-25", 0 ],
+													"order" : 1,
+													"source" : [ "obj-39", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-34", 0 ],
+													"order" : 0,
 													"source" : [ "obj-39", 0 ]
 												}
 
@@ -12781,7 +13032,7 @@
 									"numoutlets" : 7,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "multichannelsignal", "", "list", "int", "", "", "" ],
-									"patching_rect" : [ 118.0, 145.0, 279.0, 22.0 ],
+									"patching_rect" : [ 118.0, 145.0, 279.000000000000114, 22.0 ],
 									"save" : [ "#N", "mcs.vst~", "loaduniqueid", 0, 4, 2, ";" ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
@@ -12797,62 +13048,6 @@
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 1,
 										"parameter_mappable" : 0
-									}
-,
-									"snapshot" : 									{
-										"filetype" : "C74Snapshot",
-										"version" : 2,
-										"minorversion" : 0,
-										"name" : "snapshotlist",
-										"origin" : "mcs.vst~",
-										"type" : "list",
-										"subtype" : "Undefined",
-										"embed" : 1,
-										"snapshot" : 										{
-											"pluginname" : "ValhallaPlate.component",
-											"plugindisplayname" : "ValhallaPlate",
-											"pluginsavedname" : "/Library/Audio/Plug-Ins/Components/ValhallaPlate.component",
-											"pluginsaveduniqueid" : 0,
-											"version" : 1,
-											"isbank" : 0,
-											"isbase64" : 1,
-											"blob" : "665.hAGaoMGcv.C1AHv.DTfAGfPBJrvDTTgEWvUag4VclE1XzUmbkIGUjEFcgwUYrUVak4Fcs3VXsU1UyUmXzkGbkckckI2bo8laTQWdvU1WP7fZ0MVYPwVcmklaSQWXzUFUtEVakIwaDklaOAAa...............C....v7Cf......PL.........HyO........y7C........M+........TiO65Pb....1.........vM9Hqj+A...fyO........47C......XvG+.......F.ROpn5pRyPCNDQTwDkLQ+.DQASUI4Fb0QWzOHgUOUGcvUGcR.GagQGD.HQX0YFdOEQ.5X0PxDRLA...77CdswFH1Ulbyk1at0iHw3BLh.RYtM1ajklam0iHUQkQsfiH+3CH7XUXrgVXrwVXPwVXzUFHvwVcmklaVUlbyk1at0iHw3hMtTiHf.mbkMWYz4TXsUVOhPTYlEVcrQmHfzTZ30iHv3BLh.BTxUFQkwVX40iHv3BLh.BQkMVX40iHv3BLh.xTooWY8HBLt.iHfbUZjQGZ8HBLt.iHfzzajIUXzUVOh.iKvHBHM8FYDUFbzgVOh.iKvHBHL81cEEkQxUVb8HBLt.iHfvza2UTTGEVZt0iHv3BLh.BRocFZEEkQxUVb8HBLt.iHffTZmgVQQcTXo4VOh.iKvHBHTkGbk0iHv3BLh.RaogGSuM1Z8HBLh.RcocUZjQGZ8HBNxTiHfTWZHUVZmgFc8HBMyTiHu3C.XUkazkFcrUFY.f..Y.fI.rB.3..P.fD.MAvW.PF.oA.1.zM.eCP3.PN.lC.6.7N.1Cv9.ze.BH.P........BD..........X...................BjD"
-										}
-,
-										"snapshotlist" : 										{
-											"current_snapshot" : 0,
-											"entries" : [ 												{
-													"filetype" : "C74Snapshot",
-													"version" : 2,
-													"minorversion" : 0,
-													"name" : "ValhallaPlate",
-													"origin" : "ValhallaPlate.component",
-													"type" : "AudioUnit",
-													"subtype" : "AudioEffect",
-													"embed" : 0,
-													"snapshot" : 													{
-														"pluginname" : "ValhallaPlate.component",
-														"plugindisplayname" : "ValhallaPlate",
-														"pluginsavedname" : "/Library/Audio/Plug-Ins/Components/ValhallaPlate.component",
-														"pluginsaveduniqueid" : 0,
-														"version" : 1,
-														"isbank" : 0,
-														"isbase64" : 1,
-														"blob" : "665.hAGaoMGcv.C1AHv.DTfAGfPBJrvDTTgEWvUag4VclE1XzUmbkIGUjEFcgwUYrUVak4Fcs3VXsU1UyUmXzkGbkckckI2bo8laTQWdvU1WP7fZ0MVYPwVcmklaSQWXzUFUtEVakIwaDklaOAAa...............C....v7Cf......PL.........HyO........y7C........M+........TiO65Pb....1.........vM9Hqj+A...fyO........47C......XvG+.......F.ROpn5pRyPCNDQTwDkLQ+.DQASUI4Fb0QWzOHgUOUGcvUGcR.GagQGD.HQX0YFdOEQ.5X0PxDRLA...77CdswFH1Ulbyk1at0iHw3BLh.RYtM1ajklam0iHUQkQsfiH+3CH7XUXrgVXrwVXPwVXzUFHvwVcmklaVUlbyk1at0iHw3hMtTiHf.mbkMWYz4TXsUVOhPTYlEVcrQmHfzTZ30iHv3BLh.BTxUFQkwVX40iHv3BLh.BQkMVX40iHv3BLh.xTooWY8HBLt.iHfbUZjQGZ8HBLt.iHfzzajIUXzUVOh.iKvHBHM8FYDUFbzgVOh.iKvHBHL81cEEkQxUVb8HBLt.iHfvza2UTTGEVZt0iHv3BLh.BRocFZEEkQxUVb8HBLt.iHffTZmgVQQcTXo4VOh.iKvHBHTkGbk0iHv3BLh.RaogGSuM1Z8HBLh.RcocUZjQGZ8HBNxTiHfTWZHUVZmgFc8HBMyTiHu3C.XUkazkFcrUFY.f..Y.fI.rB.3..P.fD.MAvW.PF.oA.1.zM.eCP3.PN.lC.6.7N.1Cv9.ze.BH.P........BD..........X...................BjD"
-													}
-,
-													"fileref" : 													{
-														"name" : "ValhallaPlate",
-														"filename" : "ValhallaPlate_20250312.maxsnap",
-														"filepath" : "~/Documents/Max 8/Snapshots",
-														"filepos" : -1,
-														"snapshotfileid" : "2208a1e8e6ab9bceae1b395b69395423"
-													}
-
-												}
- ]
-										}
-
 									}
 ,
 									"text" : "mcs.vst~ 4 2",
@@ -12934,8 +13129,22 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
+									"destination" : [ "obj-16", 0 ],
 									"source" : [ "obj-15", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-22", 0 ],
+									"source" : [ "obj-16", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"source" : [ "obj-16", 1 ]
 								}
 
 							}
@@ -12950,13 +13159,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
 									"source" : [ "obj-21", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-8", 0 ],
-									"source" : [ "obj-5", 0 ]
 								}
 
 							}
@@ -13032,7 +13234,7 @@
 					"arrow" : 0,
 					"fontsize" : 9.0,
 					"id" : "obj-80",
-					"items" : [ "Network Session 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "to Max 1", ",", "to Max 2" ],
+					"items" : [ "Network Session 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "Scarlett 18i20 USB", ",", "FastLane USB #14 Port A", ",", "FastLane USB #14 Port B", ",", "to Max 1", ",", "to Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -13074,8 +13276,6 @@
 						"pres_menu" : 0,
 						"tetris_menu" : 0,
 						"master" : 0,
-						"position" : 0,
-						"program_file" : 0,
 						"act" : 0,
 						"act::active_store" : 0,
 						"ll.blues" : 0,
@@ -13083,7 +13283,9 @@
 						"ll.blues::outputs" : 0,
 						"ll.blues::state" : 0,
 						"def_folder" : 0,
-						"def_shell" : 0
+						"def_shell" : 0,
+						"program_file" : 0,
+						"position" : 0
 					}
 ,
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -13100,18 +13302,6 @@
 						"vst-folder" : 3,
 						"program_files" : 5,
 						"vst_program" : 6,
-						"Mix" : 100,
-						"PreDelay" : 101,
-						"Decay" : 102,
-						"Size" : 103,
-						"Width" : 104,
-						"ModRate" : 105,
-						"ModDepth" : 106,
-						"LowEQFreq" : 107,
-						"LowEQGain" : 108,
-						"HighEQFreq" : 109,
-						"HighEQGain" : 110,
-						"Type" : 111,
 						"midi-channel" : 900,
 						"midi-port" : 901,
 						"open!" : 910,
@@ -13121,19 +13311,19 @@
 						"pres_menu" : 2011,
 						"tetris_menu" : 2012,
 						"master" : 2013,
-						"position" : 2000,
-						"program_file" : 10,
 						"ll.blues::outputs" : 1000,
 						"ll.blues::state" : 1000,
 						"def_folder" : 1,
-						"def_shell" : 2
+						"def_shell" : 2,
+						"program_file" : 10,
+						"position" : 2000
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 173, 115, 746, 869 ],
+						"client_rect" : [ 769, 100, 1512, 880 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 200, 200, 800, 500 ]
+						"storage_rect" : [ 686, 177, 1286, 477 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -13193,12 +13383,12 @@
 						"midi-channel" : [ 1 ],
 						"midi-port" : [ "Network Session 1" ],
 						"open!" : [ 0 ],
-						"pres_menu" : [ "" ],
+						"pres_menu" : [ "_" ],
 						"preset-ramp" : [ 0.0 ],
 						"presets" : [ 0 ],
 						"program_files" : [ "writepgm" ],
 						"tetris_menu" : [ "" ],
-						"title_menu" : [ "clientwindow" ],
+						"title_menu" : [ "subpatch" ],
 						"vst-folder" : [ "def_folders" ],
 						"vst_program" : [ 1 ]
 					}
@@ -13245,7 +13435,7 @@
 					"bgfillcolor_type" : "color",
 					"id" : "obj-13",
 					"ignoreclick" : 1,
-					"items" : [ "echoboy", ",", "serum-jps", ",", "valhalla-delay", ",", "vintage-verb", ",", "vst-test", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
+					"items" : [ "________test", ",", "_______presets", ",", "_____test", ",", "_test_vst_preset", ",", "echoboy", ",", "serum-jps", ",", "test-vst-presets", ",", "test-vst-test", ",", "valhalla-delay", ",", "vintage-verb", ",", "vst-test", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -13426,13 +13616,6 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "ValhallaPlate_20250312.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../../../../Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "actmaker.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
@@ -13465,6 +13648,13 @@
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.filter_empty_string.js",
+				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -13694,13 +13884,6 @@
 				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "vst-test.json",
-				"bootpath" : "~/Documents/Max 8/Library/ppooll_presets/vst@P",
-				"patcherrelativepath" : "../../../../Library/ppooll_presets/vst@P",
-				"type" : "JSON",
 				"implicit" : 1
 			}
  ],
