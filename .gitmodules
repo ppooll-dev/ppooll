@@ -1,3 +1,3 @@
-[submodule "externals/ppooll_externals/source/max-sdk-base"]
-	path = externals/ppooll_externals/source/max-sdk-base
-	url = https://github.com/Cycling74/max-sdk-base
+[submodule "externals/ll_externals"]
+	path = externals/ll_externals
+	url = git@github.com:ppooll-dev/ll_externals.git
