@@ -11,6 +11,7 @@ jobs:
         uses: actions/checkout@v2
         with:
             token: ${{ secrets.MACHINE_USER_PAT }}
+            submodules: 'shallow'   # shallow clone of first-level submodules only
 
       - name: Install jq tool
         run: |
