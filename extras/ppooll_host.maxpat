@@ -1703,7 +1703,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 86.0, 179.0, 461.0, 35.0 ],
-																					"text" : ";\rmax launch_browser https://github.com/ppooll-dev/ppooll/archive/refs/heads/main.zip"
+																					"text" : ";\rmax launch_browser https://github.com/ppooll-dev/ppooll/releases/latest/download/ppooll.zip"
 																				}
 
 																			}
@@ -3045,7 +3045,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 121.0, 99.0, 390.0, 22.0 ],
-																					"text" : "append https://github.com/ppooll-dev/ppooll/archive/refs/heads/main.zip"
+																					"text" : "append https://github.com/ppooll-dev/ppooll/releases/latest/download/ppooll.zip"
 																				}
 
 																			}
@@ -3099,7 +3099,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 154.0, 225.0, 449.0, 35.0 ],
-																					"text" : "curl -L -o \"/Users/josephsteccato/Documents/Max 8/Packages/ppooll.zip\" https://github.com/ppooll-dev/ppooll/archive/refs/heads/main.zip"
+																					"text" : "curl -L -o \"/Users/josephsteccato/Documents/Max 8/Packages/ppooll.zip\" https://github.com/ppooll-dev/ppooll/releases/latest/download/ppooll.zip"
 																				}
 
 																			}
