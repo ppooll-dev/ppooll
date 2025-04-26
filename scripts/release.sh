@@ -2,30 +2,29 @@
 
 # =========================
 # release.sh
-# Bump Version, Commit, and Tag
+# Commit, Tag, and Push Release
 # =========================
 
 set -e
 
-# ===== Check input =====
-if [ $# -ne 1 ]; then
-    echo "Usage: $0 <new-version>"
-    exit 1
-fi
-
-NEW_VERSION=$1
-
-# ===== Check package-info.json exists =====
+# ===== Check for package-info.json =====
 if [ ! -f "package-info.json" ]; then
-    echo "Error: package-info.json not found in current directory."
+    echo "Error: package-info.json not found."
     exit 1
 fi
 
-# ===== Update version =====
-echo "Updating package-info.json version to $NEW_VERSION..."
-sed -i '' "s/\"version\": \".*\"/\"version\": \"$NEW_VERSION\"/" package-info.json
+# ===== Extract version from package-info.json =====
+NEW_VERSION=$(grep '"version"' package-info.json | sed -E 's/.*"version"[[:space:]]*:[[:space:]]*"([^"]+)".*/\1/')
+
+if [ -z "$NEW_VERSION" ]; then
+    echo "Error: Could not extract version from package-info.json."
+    exit 1
+fi
+
+echo "Detected version: $NEW_VERSION"
 
 # ===== Commit and tag =====
+echo "Committing package-info.json and tagging release..."
 git add package-info.json
 git commit -m "Release v$NEW_VERSION"
 git tag "v$NEW_VERSION"

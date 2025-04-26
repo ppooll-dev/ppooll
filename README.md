@@ -48,7 +48,19 @@ cp .env.template .env
 
 ---
 
-# 🛠 building and signing a new release
+# 💁 bumping version
+
+Update the `package-info.json` with a new version number:
+
+```bash
+./scripts/bump_version.sh 1.0.0
+```
+
+This **only updates** `package-info.json` (it does not commit yet).
+
+---
+
+# 🛠️ building and signing a new release
 
 ```bash
 ./scripts/build_package.sh
@@ -63,21 +75,28 @@ This will:
 
 ---
 
-# 💁 bumping version
+# 🍿 releasing
 
-To update `package-info.json` and create a Git tag automatically:
+After bumping the version:
 
 ```bash
-./scripts/release.sh 1.0.0
+./scripts/release.sh
+```
+
+This will:
+- Commit the version bump
+- Tag the release with the version from `package-info.json`
+
+Then push manually:
+
+```bash
 git push
 git push --tags
 ```
 
 ---
 
-# 🏷 publishing a release
-
-After building:
+# 🏷 publishing a GitHub release
 
 1. Go to [Releases page](https://github.com/ppooll-dev/ppooll/releases)
 2. Click **Draft a new release**
