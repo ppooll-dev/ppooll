@@ -75,8 +75,4 @@ cd "$REPO_ROOT"
 # =========================
 echo "Submitting $ZIP_NAME for notarization..."
 xcrun notarytool submit "$ZIP_NAME" --keychain-profile "$PPOOLL_NOTARIZATION_PROFILE" --wait --output-format json
-
-echo "Stapling notarization ticket onto $ZIP_NAME..."
-xcrun stapler staple "$ZIP_NAME"
-
 echo "✅ Build and notarization complete: $ZIP_NAME is ready!"
