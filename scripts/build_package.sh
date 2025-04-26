@@ -20,20 +20,17 @@ if [ -z "$PPOOLL_DEVELOPER_ID" ] || [ -z "$PPOOLL_NOTARIZATION_PROFILE" ]; then
     exit 1
 fi
 
-# =========================
-# Path Setup
-# =========================
+# ===== Path Setup =====
 REPO_ROOT="$(pwd)"
-PACKAGE_DIR="$REPO_ROOT/package/ppooll"
+PACKAGE_ROOT="$REPO_ROOT/package"
+PACKAGE_DIR="$PACKAGE_ROOT/ppooll"
 ZIP_NAME="ppooll.zip"
 
-# Clean old builds
+# ===== Clean old builds =====
 echo "Cleaning old package..."
-rm -rf "$REPO_ROOT/package" "$REPO_ROOT/$ZIP_NAME"
+rm -rf "$PACKAGE_ROOT" "$REPO_ROOT/$ZIP_NAME" "$REPO_ROOT/ll_externals.zip" "$REPO_ROOT/tmp-ll"
 
-# =========================
-# Build Package
-# =========================
+# ===== Create package structure =====
 echo "Creating package directory..."
 mkdir -p "$PACKAGE_DIR"
 
@@ -53,26 +50,39 @@ cp LICENSE.md "$PACKAGE_DIR/"
 cp CHANGELOG.md "$PACKAGE_DIR/"
 cp icon.png "$PACKAGE_DIR/" 2>/dev/null || true
 
-# =========================
-# Sign all .mxo files
-# =========================
-echo "Signing macOS externals..."
+# ===== Remove local dev version of ll_externals =====
+echo "Removing local ll_externals development folder..."
+rm -rf "$PACKAGE_DIR/externals/ll_externals"
+
+# ===== Download latest ll_externals release =====
+echo "Downloading latest ll_externals.zip release..."
+curl -L "https://github.com/ppooll-dev/ll_externals/releases/latest/download/ll_externals.zip" -o "$REPO_ROOT/ll_externals.zip"
+
+echo "Unzipping ll_externals.zip..."
+unzip -q "$REPO_ROOT/ll_externals.zip" -d "$REPO_ROOT/tmp-ll"
+
+echo "Moving ll_externals package into externals/ll_externals..."
+mkdir -p "$PACKAGE_DIR/externals"
+mv "$REPO_ROOT/tmp-ll/ll_externals" "$PACKAGE_DIR/externals/ll_externals"
+
+# Clean up temp files
+rm -rf "$REPO_ROOT/tmp-ll" "$REPO_ROOT/ll_externals.zip"
+
+# ===== Sign all .mxo files =====
+echo "Signing macOS externals (.mxo files)..."
 find "$PACKAGE_DIR/externals" -name "*.mxo" | while read mxo; do
     echo "Signing $mxo"
     codesign --force --deep --timestamp --sign "$PPOOLL_DEVELOPER_ID" "$mxo"
 done
 
-# =========================
-# Create Zip
-# =========================
+# ===== Create final zip =====
 echo "Creating $ZIP_NAME..."
-cd "$REPO_ROOT/package"
-zip -r "../$ZIP_NAME" ppooll/
+cd "$PACKAGE_ROOT"
+zip -r "$REPO_ROOT/$ZIP_NAME" ppooll/
 cd "$REPO_ROOT"
 
-# =========================
-# Notarize Zip
-# =========================
+# ===== Notarize the zip =====
 echo "Submitting $ZIP_NAME for notarization..."
 xcrun notarytool submit "$ZIP_NAME" --keychain-profile "$PPOOLL_NOTARIZATION_PROFILE" --wait --output-format json
-echo "✅ Build and notarization complete: $ZIP_NAME is ready!"
+
+echo "\n✅ Build, signing, and notarization complete: $ZIP_NAME is ready!"
