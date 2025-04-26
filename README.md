@@ -63,6 +63,18 @@ This will:
 
 ---
 
+# 💁 bumping version
+
+To update `package-info.json` and create a Git tag automatically:
+
+```bash
+./scripts/release.sh 1.0.0
+git push
+git push --tags
+```
+
+---
+
 # 🏷 publishing a release
 
 After building:
@@ -74,18 +86,6 @@ After building:
    - Release title: `ppooll v1.0.0`
 4. Upload `ppooll.zip` as a release asset
 5. Publish
-
----
-
-# 💁 bumping version
-
-To update `package-info.json` and create a Git tag automatically:
-
-```bash
-./scripts/release.sh 1.0.0
-git push
-git push --tags
-```
 
 ---
 
