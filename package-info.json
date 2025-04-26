@@ -42,8 +42,7 @@
     "instrument",
     "versatile"
   ],
-  "base_version": "8.6.0",
-  "version": "8.6.0.240609.1",
+  "version": "8.6.1",
   "website": "http://ppooll.klingt.org",
   "filelist": {
     "externals": [
