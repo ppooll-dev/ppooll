@@ -16,17 +16,17 @@ contains additional code by adrian freed (CNMAT), Bertrand Fraysse, bill orcutt,
 1. Max >= 8.6.1 (https://cycling74.com/products/max)
 2. additional Max Packages (download via [Max Package Manager](https://docs.cycling74.com/max8/vignettes/package_manager)):
 
-| package            | act(s)                                                                                      |
-|--------------------|---------------------------------------------------------------------------------------------|
-| jasch objects      | all                                                                                         |
-| cv.jit             | jit.blobs                                                                                   |
-| karma              | karma@                                                                                      |
-| link               | link@                                                                                       |
-| LowkeyNW           | gverb@                                                                                      |
-| PeRColate          | munger@                                                                                     |
-| CNMAT Externals    | PEQ@, pr.spectplay, rez@, SDIFter                                                           |
-| ICST Ambisonics    | spat.ambicontrol@, spat.ambidecode@, spat.ambiencode@, spat.ambimonitor@, spat.ambipanning@ |
-| MuBu For Max       | mubugrain                                                                                   |
+| package            | act(s)                                                                                       |
+|--------------------|----------------------------------------------------------------------------------------------|
+| [jasch objects](c74max://packagemanager/jasch%20objects)      | all                                               |
+| [cv.jit](c74max://packagemanager/cv.jit)                      | jit.blobs                                         |
+| [karma](c74max://packagemanager/karma)                        | karma@                                            |
+| [link](c74max://packagemanager/link)                          | link@                                             |
+| [LowkeyNW](c74max://packagemanager/LowkeyNW)                  | gverb@                                            |
+| [PeRColate](c74max://packagemanager/PeRColate)                | munger@                                           |
+| [CNMAT Externals](c74max://packagemanager/CNMAT%20Externals)  | PEQ@, pr.spectplay, rez@, SDIFter                 |
+| [ICST Ambisonics](c74max://packagemanager/ICST%20Ambisonics)  | spat.ambicontrol@, spat.ambidecode@, spat.ambiencode@, spat.ambimonitor@, spat.ambipanning@ |
+| [MuBu For Max](c74max://packagemanager/MuBu%20For%20Max)      | mubugrain                                         |
 
 ## install
 1. download [ppooll.zip](https://github.com/ppooll-dev/ppooll/releases/latest)
