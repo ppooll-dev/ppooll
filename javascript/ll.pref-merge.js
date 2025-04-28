@@ -16,6 +16,7 @@ var empty_prf_DEFAULT = {
     autoload: "none",
     check_for_updates: 0,
     flop_disable_cursor: 0,
+    default_number_output_channels: 2,
   },
   file_paths: {
     quickrecord_path: 0,

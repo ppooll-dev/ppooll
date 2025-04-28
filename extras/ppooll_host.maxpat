@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 239.0, 212.0, 130.0, 125.0 ],
+		"rect" : [ 290.0, 225.0, 130.0, 125.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 11.595186999999999,
@@ -182,7 +182,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 346.0, 292.0, 73.0, 21.0 ],
-					"restore" : [ "out(16)" ],
+					"restore" : [ "out(2)" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -514,7 +514,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 70.0, 106.0, 58.0, 20.0 ],
-					"text" : "21:18:29",
+					"text" : "20:39:23",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "time"
 				}
@@ -615,7 +615,7 @@
 					"fontsize" : 12.0,
 					"hint" : "environment menu",
 					"id" : "obj-22",
-					"items" : [ "(environments)", ",", "write", ",", "clear!", ",", "opentext", ",", "merge...", ",", "params_only", ",", "-", ",", "buffertest.json", ",", "ducks.json", ",", "envM_test.json" ],
+					"items" : [ "(environments)", ",", ".json", ",", "2401009-something-moody.json", ",", "240109-something-moody.json", ",", "240217-snowday.json", ",", "240226-snowday.json", ",", "240525-nate-joe.json", ",", "241215.json", ",", "241217-goose.json", ",", "241217.json", ",", "241218-goose.json", ",", "241218-goose2.json", ",", "241227-goose-boom.json", ",", "250204_theo-jam.json", ",", "250325-guitar processing.json", ",", "250326-guitar processing.json", ",", "250331-guitar processing.json", ",", "250401-guitar processing.json", ",", "_______gg-reload.json", ",", "_______mega_u.json", ",", "_______vst3.json", ",", "______environment.json", ",", "__amxd.json", ",", "__vst-test.json", ",", "_HARDCORE.json", ",", "_test-inmulti.json", ",", "_test-valhalla.json", ",", "_test-vst-presets.json", ",", "_test-vst.json", ",", "_test_amxd.json", ",", "_test_joegroove.json", ",", "_test_vst_mm.json", ",", "_test_vst_plate.json", ",", "_test_vst_preset.json", ",", "_uclid.json", ",", "adv-handholding-2.json", ",", "adv-handholding-3.json", ",", "adv-handholding-dlgran.json", ",", "advanced-handholding.json", ",", "airfx-test.json", ",", "alex-strings.json", ",", "amplitude-test.json", ",", "amxd-test.json", ",", "amxd-test2.json", ",", "amxd-test3.json", ",", "amxd-vs-vst.json", ",", "amxd-vs-vst2.json", ",", "amxd-window.json", ",", "atlast.json", ",", "axmd-save.json", ",", "bang-offer.json", ",", "banger-midi.json", ",", "bb-vp-jamjam.json", ",", "bblower-test.json", ",", "bedtime.json", ",", "buffer_boy.json", ",", "bufftest.json", ",", "calm-sinus.json", ",", "chiral-mouse.json", ",", "chiral-test.json", ",", "chriral-rcloop.json", ",", "comatic-high.json", ",", "comatic.json", ",", "comatic2.json", ",", "comatic3.json", ",", "comatic4.json", ",", "commencement.json", ",", "commencement2.json", ",", "component-test.json", ",", "cone-o-shame.json", ",", "cone-o-shame2.json", ",", "cone-o-shame3.json", ",", "cone-o-shame4.json", ",", "cone-o-shame5.json", ",", "dangerous-buzz.json", ",", "demo-dlgran.json", ",", "dlgran-tester.json", ",", "drankit.json", ",", "dueling-sinus.json", ",", "dumpydumpdump.json", ",", "ear-smoke.json", ",", "echoboy.json", ",", "elastic-walls.json", ",", "endless-wavs.json", ",", "fireworks.json", ",", "first-percs.json", ",", "flappy.json", ",", "funfuntimes.json", ",", "fuzzy-dreams.json", ",", "geetar-jam.json", ",", "gg.test.json", ",", "gg.trigger.json", ",", "gg.trigger2.json", ",", "gg_test.json", ",", "gizmo-channel-demo.json", ",", "groanchant.json", ",", "hands-interconnected.json", ",", "henry-drums-jam.json", ",", "henry-movers.json", ",", "henry-track-1.json", ",", "henry-track-2.json", ",", "henry-track-3.json", ",", "henry-will-ham.json", ",", "hg-230303-envi-romb.json", ",", "hg-230303-envi.json", ",", "hg-230405-fullsample.json", ",", "hg-230601.json", ",", "hg-230624-2.json", ",", "hg-230624.json", ",", "hg-230728.json", ",", "hg-231130.json", ",", "hg-231202.json", ",", "hg-231203.json", ",", "hg-240228.json", ",", "hg-240307.json", ",", "hg-240326.json", ",", "hg-othernames.json", ",", "inmulti-save-values.json", ",", "inmulti-test.json", ",", "jitter-test.json", ",", "kylon.json", ",", "lastlaugh.json", ",", "many-mmods.json", ",", "many-vst.json", ",", "mc-mods-test.json", ",", "mc_beast.json", ",", "mc_wavelets.json", ",", "mm-dm12-jam.json", ",", "mm-in-ppooll-zfilter.json", ",", "mm-in-ppooll.json", ",", "mm-midi-out-test.json", ",", "mm_osc.json", ",", "mmods-color.json", ",", "mmods-env-test.json", ",", "mmods-gran.json", ",", "mmods-please.json", ",", "mmods-test.json", ",", "mod-native-test.json", ",", "mod-test.json", ",", "morff-test.json", ",", "mouse-chiral-test.json", ",", "mubutest.json", ",", "mulch-jam.json", ",", "musichackspace.json", ",", "nate-joe-240509.json", ",", "nithe-bells-zfilltered.json", ",", "nithe-bells.json", ",", "ola-tester.json", ",", "osc-label-test.json", ",", "osc-wavjam.json", ",", "perc-expanded.json", ",", "pg-8x.json", ",", "plugin-playground.json", ",", "plugin-playground2.json", ",", "plugin-playground3.json", ",", "ppooll-presets.sublime-project", ",", "ppooll-presets.sublime-workspace", ",", "pseudo-echo.json", ",", "random-bang-interval.json", ",", "really-nice-guitar.json", ",", "ripstick.json", ",", "ripstick2.json", ",", "ripstick3.json", ",", "ripstick4.json", ",", "saggy.json", ",", "sinus-mh.json", ",", "sinus-uclid.json", ",", "slur_test.json", ",", "something mooody.json", ",", "something-moody.json", ",", "something-moody2.json", ",", "source-filter-beauty.json", ",", "squiggles.json", ",", "swamp-rising-snapd.json", ",", "swamp-rising.json", ",", "talking-funny.json", ",", "talking-funny2.json", ",", "talking-funny3.json", ",", "taming-wavelets.json", ",", "taming-wavelets2.json", ",", "taming-wavelets3.json", ",", "taming-wavelets4.json", ",", "teast-mtron.json", ",", "test-amxd.json", ",", "test-dlgran.json", ",", "test-echobode.json", ",", "test-echoboy.json", ",", "test-env-write.json", ",", "test-in_mix-sidechain.json", ",", "test-ina-save-inputs.json", ",", "test-mmods.json", ",", "test-munger.json", ",", "test-panman-spazpong.json", ",", "test-pitchtracker.json", ",", "test-rcloop.json", ",", "test-recall-vst.json", ",", "test-sogs.json", ",", "test-test.json", ",", "test-uclid.json", ",", "test-uhmi.json", ",", "test-unmod.json", ",", "test-vintage.json", ",", "test-vst-changes.json", ",", "test-vst-echobode.json", ",", "test-vst-mod-au.json", ",", "test-vst-mod.json", ",", "test-vst-odc.json", ",", "test-vst-params.json", ",", "test-vst-sinus.json", ",", "test-vst-tal.json", ",", "test-vst-vitnage.json", ",", "test-vst.json", ",", "test-xgroove.json", ",", "test-xy.json", ",", "test.json", ",", "test3.json", ",", "test4.json", ",", "test?.json", ",", "testnewdump.json", ",", "testtwo.json", ",", "testvintageverb.json", ",", "too-fuzzy.json", ",", "train-of-wavelets.json", ",", "uclid-mouse.json", ",", "uclid-test.json", ",", "vox-mogwai.json", ",", "vox-vid.json", ",", "vox.json", ",", "vst-save-test.json", ",", "vst-test-2.json", ",", "vst-test.json", ",", "wacky-wings.json", ",", "warp-classic-event.json", ",", "washy-well.json", ",", "wavelets-sync.json", ",", "wetdry-essense.json", ",", "wetdry.json", ",", "wetdryuniverse.json", ",", "wind-up-syncs.json", ",", "wipply.json", ",", "wishing well.json", ",", "work-grain.json", ",", "-", ",", "write", ",", "clear!", ",", "opentext", ",", "merge...", ",", "params_only", ",", "-", ",", "buffertest.json", ",", "ducks.json", ",", "envM_test.json" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -670,7 +670,7 @@
 					"fontsize" : 12.0,
 					"hint" : "favorites menu",
 					"id" : "obj-48",
-					"items" : [ "(favorites)", ",", "-", ",", "add_favorit", ",", "del_favorit" ],
+					"items" : [ "(favorites)", ",", "INa", ",", "amxd@", ",", "banger", ",", "beauty", ",", "buffub", ",", "control@", ",", "matriarch@", ",", "mmods@", ",", "modul.ator", ",", "xgroove@", ",", "(favorites)", ",", "-", ",", "add_favorit", ",", "del_favorit" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -698,7 +698,7 @@
 					"fontsize" : 12.0,
 					"hint" : "act menu (open acts from here)",
 					"id" : "obj-50",
-					"items" : [ "(__acts__)", ",", "_act_overview", ",", "2Dsliders", ",", "amxd@", ",", "arpanner", ",", "autocount@", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "brown", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "envMM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "frack", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.copyprot.act", ",", "jit.grab@", ",", "jit.player", ",", "jit.videoplanes", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "limi", ",", "link@", ",", "matriarch@", ",", "matrix@", ",", "mc.random@", ",", "mixer@", ",", "modul.ator", ",", "munger@", ",", "noize@", ",", "notepad@", ",", "op@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "pHARM4@", ",", "pr.spectfreeze", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "threekomp", ",", "timeline@", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "oer_prcs", ",", "oer_prcss", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "airfx@", ",", "ar.bitglitter@", ",", "bb.rainer@", ",", "beast_old", ",", "bounce@", ",", "buresyn@", ",", "clock.in@", ",", "clock.src@", ",", "convolver@", ",", "cross-dog@", ",", "dd.rainer", ",", "deskdust", ",", "djrone@", ",", "djrone_buff@", ",", "dlgranulator@", ",", "duplicator@", ",", "env.follower@", ",", "fcbControl", ",", "feedbliss", ",", "feedbliss_v2", ",", "fft.filter@", ",", "gamepad@", ",", "gigaverb@", ",", "granu.ll.ator", ",", "INa", ",", "joe.groove@", ",", "keyfreq", ",", "keyspeed", ",", "lkforest@", ",", "lkstretch", ",", "miClouds", ",", "miVerb", ",", "mlooch@", ",", "mmarbless", ",", "mmods@", ",", "modul.dupe", ",", "moog.ladder@", ",", "mubu.grain@", ",", "MubuConcat", ",", "MubuGrain", ",", "munger_old@", ",", "music-mouse@", ",", "notepad2@", ",", "ola.granular", ",", "pitchchainer", ",", "pitchtracker@", ",", "polyrhythmusTwo", ",", "pp.rainer@", ",", "pr.spectdelay", ",", "rc.loop@", ",", "rings", ",", "sc.gendy3@", ",", "sh.bubbler", ",", "sidechainer", ",", "slur@", ",", "sogs@", ",", "sp.lpg", ",", "sync_out", ",", "tintinn@", ",", "transport@", ",", "tuner", ",", "uclid", ",", "vp.cross", ",", "vp.sourcefilter", ",", "wavegrain", ",", "z.filter@" ],
+					"items" : [ "(__acts__)", ",", "_act_overview", ",", "2Dsliders", ",", "amxd@", ",", "arpanner", ",", "autocount@", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "brown", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "envMM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "frack", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.copyprot.act", ",", "jit.grab@", ",", "jit.player", ",", "jit.videoplanes", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "limi", ",", "link@", ",", "matriarch@", ",", "matrix@", ",", "mc.random@", ",", "mixer@", ",", "modul.ator", ",", "munger@", ",", "noize@", ",", "notepad@", ",", "op@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "pHARM4@", ",", "pr.spectfreeze", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "threekomp", ",", "timeline@", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "oer_prcs", ",", "oer_prcss", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "airfx@", ",", "ar.bitglitter@", ",", "bb.rainer@", ",", "bounce@", ",", "buresyn@", ",", "clock.in@", ",", "clock.src@", ",", "convolver@", ",", "cross-dog@", ",", "dd.rainer", ",", "deskdust", ",", "djrone@", ",", "djrone_buff@", ",", "dlgranulator@", ",", "duplicator@", ",", "env.follower@", ",", "fcbControl", ",", "feedbliss", ",", "feedbliss_v2", ",", "fft.filter@", ",", "gamepad@", ",", "gigaverb@", ",", "granu.ll.ator", ",", "INa", ",", "joe.groove@", ",", "keyfreq", ",", "keyspeed", ",", "lkforest@", ",", "lkstretch", ",", "miClouds", ",", "miVerb", ",", "mlooch@", ",", "mmarbless", ",", "mmods@", ",", "modul.dupe", ",", "moog.ladder@", ",", "mubu.grain@", ",", "MubuConcat", ",", "MubuGrain", ",", "munger_old@", ",", "music-mouse@", ",", "notepad2@", ",", "ola.granular", ",", "pitchchainer", ",", "pitchtracker@", ",", "polyrhythmusTwo", ",", "pp.rainer@", ",", "pr.spectdelay", ",", "rc.loop@", ",", "rings", ",", "sc.gendy3@", ",", "sh.bubbler", ",", "sidechainer", ",", "slur@", ",", "sogs@", ",", "sp.lpg", ",", "sync_out", ",", "tintinn@", ",", "transport@", ",", "tuner", ",", "uclid", ",", "vp.sourcefilter", ",", "wavegrain", ",", "z.filter@" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -1697,7 +1697,7 @@
 																				"box" : 																				{
 																					"hidden" : 1,
 																					"id" : "obj-12",
-																					"linecount" : 2,
+																					"linecount" : 3,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
@@ -3040,6 +3040,7 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-11",
+																					"linecount" : 2,
 																					"maxclass" : "newobj",
 																					"numinlets" : 1,
 																					"numoutlets" : 1,
@@ -6410,7 +6411,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-25",
-													"items" : [ "(__acts__)", ",", "_act_overview", ",", "2Dsliders", ",", "amxd@", ",", "arpanner", ",", "autocount@", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "brown", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "envMM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "frack", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.copyprot.act", ",", "jit.grab@", ",", "jit.player", ",", "jit.videoplanes", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "limi", ",", "link@", ",", "matriarch@", ",", "matrix@", ",", "mc.random@", ",", "mixer@", ",", "modul.ator", ",", "munger@", ",", "noize@", ",", "notepad@", ",", "op@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "pHARM4@", ",", "pr.spectfreeze", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "threekomp", ",", "timeline@", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "oer_prcs", ",", "oer_prcss", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "airfx@", ",", "ar.bitglitter@", ",", "bb.rainer@", ",", "beast_old", ",", "bounce@", ",", "buresyn@", ",", "clock.in@", ",", "clock.src@", ",", "convolver@", ",", "cross-dog@", ",", "dd.rainer", ",", "deskdust", ",", "djrone@", ",", "djrone_buff@", ",", "dlgranulator@", ",", "duplicator@", ",", "env.follower@", ",", "fcbControl", ",", "feedbliss", ",", "feedbliss_v2", ",", "fft.filter@", ",", "gamepad@", ",", "gigaverb@", ",", "granu.ll.ator", ",", "INa", ",", "joe.groove@", ",", "keyfreq", ",", "keyspeed", ",", "lkforest@", ",", "lkstretch", ",", "miClouds", ",", "miVerb", ",", "mlooch@", ",", "mmarbless", ",", "mmods@", ",", "modul.dupe", ",", "moog.ladder@", ",", "mubu.grain@", ",", "MubuConcat", ",", "MubuGrain", ",", "munger_old@", ",", "music-mouse@", ",", "notepad2@", ",", "ola.granular", ",", "pitchchainer", ",", "pitchtracker@", ",", "polyrhythmusTwo", ",", "pp.rainer@", ",", "pr.spectdelay", ",", "rc.loop@", ",", "rings", ",", "sc.gendy3@", ",", "sh.bubbler", ",", "sidechainer", ",", "slur@", ",", "sogs@", ",", "sp.lpg", ",", "sync_out", ",", "tintinn@", ",", "transport@", ",", "tuner", ",", "uclid", ",", "vp.cross", ",", "vp.sourcefilter", ",", "wavegrain", ",", "z.filter@" ],
+													"items" : [ "(__acts__)", ",", "_act_overview", ",", "2Dsliders", ",", "amxd@", ",", "arpanner", ",", "autocount@", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "brown", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "envMM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "frack", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.copyprot.act", ",", "jit.grab@", ",", "jit.player", ",", "jit.videoplanes", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "limi", ",", "link@", ",", "matriarch@", ",", "matrix@", ",", "mc.random@", ",", "mixer@", ",", "modul.ator", ",", "munger@", ",", "noize@", ",", "notepad@", ",", "op@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "pHARM4@", ",", "pr.spectfreeze", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "threekomp", ",", "timeline@", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "oer_prcs", ",", "oer_prcss", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "airfx@", ",", "ar.bitglitter@", ",", "bb.rainer@", ",", "bounce@", ",", "buresyn@", ",", "clock.in@", ",", "clock.src@", ",", "convolver@", ",", "cross-dog@", ",", "dd.rainer", ",", "deskdust", ",", "djrone@", ",", "djrone_buff@", ",", "dlgranulator@", ",", "duplicator@", ",", "env.follower@", ",", "fcbControl", ",", "feedbliss", ",", "feedbliss_v2", ",", "fft.filter@", ",", "gamepad@", ",", "gigaverb@", ",", "granu.ll.ator", ",", "INa", ",", "joe.groove@", ",", "keyfreq", ",", "keyspeed", ",", "lkforest@", ",", "lkstretch", ",", "miClouds", ",", "miVerb", ",", "mlooch@", ",", "mmarbless", ",", "mmods@", ",", "modul.dupe", ",", "moog.ladder@", ",", "mubu.grain@", ",", "MubuConcat", ",", "MubuGrain", ",", "munger_old@", ",", "music-mouse@", ",", "notepad2@", ",", "ola.granular", ",", "pitchchainer", ",", "pitchtracker@", ",", "polyrhythmusTwo", ",", "pp.rainer@", ",", "pr.spectdelay", ",", "rc.loop@", ",", "rings", ",", "sc.gendy3@", ",", "sh.bubbler", ",", "sidechainer", ",", "slur@", ",", "sogs@", ",", "sp.lpg", ",", "sync_out", ",", "tintinn@", ",", "transport@", ",", "tuner", ",", "uclid", ",", "vp.sourcefilter", ",", "wavegrain", ",", "z.filter@" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -6660,6 +6661,21 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-21",
+													"maxclass" : "number",
+													"maximum" : 2000,
+													"minimum" : 1,
+													"mousefilter" : 1,
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 13.0, 470.0, 50.0, 22.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"fontname" : "Arial",
 													"fontsize" : 9.0,
 													"id" : "obj-16",
@@ -6676,27 +6692,11 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-12",
-													"linecount" : 2,
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 102.0, 471.0, 297.0, 33.0 ],
-													"text" : "disable flop show/hide cursor \n(if your mouse is disappearing on Win, select \"yes\")"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"allowdrag" : 0,
-													"fontsize" : 11.595186999999999,
-													"id" : "obj-11",
-													"items" : [ "no", ",", "yes" ],
-													"maxclass" : "umenu",
-													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "int", "", "" ],
-													"parameter_enable" : 0,
-													"patching_rect" : [ 13.0, 471.0, 89.0, 21.0 ]
+													"patching_rect" : [ 102.0, 471.0, 297.0, 20.0 ],
+													"text" : "default number of ho_st output channels"
 												}
 
 											}
@@ -6771,7 +6771,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 34.0, 381.0, 1444.0, 345.0 ],
+														"rect" : [ 34.0, 512.0, 1444.0, 345.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 12.0,
@@ -6831,7 +6831,7 @@
 																	"maxclass" : "inlet",
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
-																	"outlettype" : [ "int" ],
+																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 943.5, 44.0, 30.0, 30.0 ]
 																}
 
@@ -6841,7 +6841,6 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-30",
-																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 1,
@@ -6887,6 +6886,18 @@
 																		"assistshowspatchername" : 0,
 																		"boxes" : [ 																			{
 																				"box" : 																				{
+																					"id" : "obj-3",
+																					"maxclass" : "newobj",
+																					"numinlets" : 3,
+																					"numoutlets" : 2,
+																					"outlettype" : [ "", "bang" ],
+																					"patching_rect" : [ 35.0, 332.0, 63.0, 22.0 ],
+																					"text" : "ll.pf chans"
+																				}
+
+																			}
+, 																			{
+																				"box" : 																				{
 																					"id" : "obj-4",
 																					"maxclass" : "newobj",
 																					"numinlets" : 2,
@@ -6906,7 +6917,7 @@
 																					"numinlets" : 0,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 399.0, 92.0, 121.0, 22.0 ],
+																					"patching_rect" : [ 524.0, 93.0, 121.0, 22.0 ],
 																					"text" : "r ll_presetpath_ready"
 																				}
 
@@ -6941,12 +6952,13 @@
 																					"fontname" : "Arial",
 																					"fontsize" : 12.0,
 																					"id" : "obj-18",
+																					"linecount" : 3,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 195.0, 126.0, 195.0, 22.0 ],
-																					"text" : "set general::flop_disable_cursor $1"
+																					"patching_rect" : [ 195.0, 100.0, 180.0, 49.0 ],
+																					"text" : "set general::default_number_output_channels $1"
 																				}
 
 																			}
@@ -6985,19 +6997,6 @@
 																			}
 , 																			{
 																				"box" : 																				{
-																					"id" : "obj-8",
-																					"linecount" : 2,
-																					"maxclass" : "message",
-																					"numinlets" : 2,
-																					"numoutlets" : 1,
-																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 35.0, 330.0, 165.0, 35.0 ],
-																					"text" : ";\rppooll flop_disable_cursor $1"
-																				}
-
-																			}
-, 																			{
-																				"box" : 																				{
 																					"comment" : "",
 																					"id" : "obj-7",
 																					"index" : 1,
@@ -7017,8 +7016,8 @@
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
-																					"patching_rect" : [ 399.0, 126.0, 179.0, 22.0 ],
-																					"text" : "get general::flop_disable_cursor"
+																					"patching_rect" : [ 524.0, 127.0, 253.0, 22.0 ],
+																					"text" : "get general::default_number_output_channels"
 																				}
 
 																			}
@@ -7030,7 +7029,7 @@
 																					"maxclass" : "inlet",
 																					"numinlets" : 0,
 																					"numoutlets" : 1,
-																					"outlettype" : [ "int" ],
+																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 35.0, 16.0, 25.0, 25.0 ]
 																				}
 
@@ -7046,7 +7045,7 @@
 																			}
 , 																			{
 																				"patchline" : 																				{
-																					"destination" : [ "obj-8", 0 ],
+																					"destination" : [ "obj-3", 0 ],
 																					"order" : 1,
 																					"source" : [ "obj-1", 0 ]
 																				}
@@ -7105,7 +7104,7 @@
 																			}
 , 																			{
 																				"patchline" : 																				{
-																					"destination" : [ "obj-8", 0 ],
+																					"destination" : [ "obj-3", 0 ],
 																					"source" : [ "obj-4", 0 ]
 																				}
 
@@ -7120,7 +7119,7 @@
  ]
 																	}
 ,
-																	"patching_rect" : [ 943.5, 114.0, 120.0, 35.0 ],
+																	"patching_rect" : [ 943.5, 114.0, 197.0, 22.0 ],
 																	"saved_object_attributes" : 																	{
 																		"description" : "",
 																		"digest" : "",
@@ -7128,7 +7127,7 @@
 																		"tags" : ""
 																	}
 ,
-																	"text" : "p disable_flop_cursor"
+																	"text" : "p default_number_output_channels"
 																}
 
 															}
@@ -7930,7 +7929,7 @@
 																		}
 ,
 																		"classnamespace" : "box",
-																		"rect" : [ 34.0, 100.0, 688.0, 779.0 ],
+																		"rect" : [ 34.0, 100.0, 688.0, 777.0 ],
 																		"bglocked" : 0,
 																		"openinpresentation" : 0,
 																		"default_fontsize" : 12.0,
@@ -13335,11 +13334,13 @@
 													"fontsize" : 24.0,
 													"gradient" : 0,
 													"id" : "obj-3",
+													"linecount" : 3,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 314.0, 52.5, 29.0, 35.0 ],
+													"patching_rect" : [ 314.0, 52.5, 29.0, 89.0 ],
+													"text" : "\"2\"",
 													"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 												}
 
@@ -13389,14 +13390,6 @@
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
-													"destination" : [ "obj-35", 12 ],
-													"hidden" : 1,
-													"source" : [ "obj-11", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-15", 0 ],
 													"hidden" : 1,
 													"source" : [ "obj-14", 0 ]
@@ -13432,6 +13425,14 @@
 													"destination" : [ "obj-38", 0 ],
 													"hidden" : 1,
 													"source" : [ "obj-18", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-35", 12 ],
+													"hidden" : 1,
+													"source" : [ "obj-21", 0 ]
 												}
 
 											}
@@ -13493,17 +13494,17 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-11", 0 ],
+													"destination" : [ "obj-16", 0 ],
 													"hidden" : 1,
-													"source" : [ "obj-35", 8 ]
+													"source" : [ "obj-35", 4 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-16", 0 ],
+													"destination" : [ "obj-21", 0 ],
 													"hidden" : 1,
-													"source" : [ "obj-35", 4 ]
+													"source" : [ "obj-35", 8 ]
 												}
 
 											}
@@ -41779,7 +41780,7 @@
 
 															}
  ],
-														"bgcolor" : [ 0.075627036392689, 0.130162209272385, 0.243607580661774, 1.0 ]
+														"bgcolor" : [ 0.211940556764603, 0.300947368144989, 0.112818203866482, 1.0 ]
 													}
 ,
 													"patching_rect" : [ 427.0, 270.0, 64.0, 24.0 ],
@@ -41788,7 +41789,7 @@
 														"digest" : "",
 														"fontsize" : 10.0,
 														"globalpatchername" : "",
-														"locked_bgcolor" : [ 0.075627036392689, 0.130162209272385, 0.243607580661774, 1.0 ],
+														"locked_bgcolor" : [ 0.211940556764603, 0.300947368144989, 0.112818203866482, 1.0 ],
 														"tags" : ""
 													}
 ,
@@ -53957,7 +53958,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 186.5, 48.0, 95.0, 20.0 ],
-													"text" : "8.6.0.240609.1",
+													"text" : "8.6.4",
 													"textjustification" : 2
 												}
 
@@ -62408,13 +62409,13 @@
 																				"box" : 																				{
 																					"fontname" : "Geneva",
 																					"fontsize" : 9.0,
-																					"id" : "obj-2",
+																					"id" : "obj-15",
 																					"maxclass" : "newobj",
 																					"numinlets" : 1,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "signal" ],
 																					"patching_rect" : [ 50.0, 100.0, 190.0, 0.0 ],
-																					"text" : "mc.sfrecord~ 16",
+																					"text" : "mc.sfrecord~ 2",
 																					"varname" : "sfr"
 																				}
 
@@ -62422,7 +62423,7 @@
  ],
 																		"lines" : [ 																			{
 																				"patchline" : 																				{
-																					"destination" : [ "obj-2", 0 ],
+																					"destination" : [ "obj-15", 0 ],
 																					"source" : [ "obj-14", 0 ]
 																				}
 
@@ -64619,10 +64620,10 @@
 					"patching_rect" : [ 493.0, 168.0, 107.0, 21.0 ],
 					"restore" : 					{
 						"act_menu" : [ "(__acts__)" ],
-						"audioON/OFF" : [ 0 ],
-						"chans" : [ 16 ],
+						"audioON/OFF" : [ 1 ],
+						"chans" : [ 2.0 ],
 						"def" : [ -1 ],
-						"envi_menu" : [ "(environments)" ],
+						"envi_menu" : [ "" ],
 						"favorites" : [ "(favorites)" ],
 						"jit.on" : [ 0 ],
 						"master" : [ "we" ],
@@ -64633,7 +64634,7 @@
 						"screen" : [ 0 ],
 						"stereo" : [ 0 ],
 						"tetris_menu" : [ "" ],
-						"title_menu" : [ "subpatch" ],
+						"title_menu" : [ "info" ],
 						"vol" : [ 1.0 ],
 						"vol_ramp" : [ 0 ],
 						"vol_slider" : [ 1.0 ],
