@@ -43,6 +43,15 @@ contains additional code by adrian freed (CNMAT), Bertrand Fraysse, bill orcutt,
 git clone --recurse-submodules https://github.com/ppooll-dev/ppooll.git
 ```
 
+## updating if you've previously cloned without submodules
+
+if you cloned the repository before submodules were added, you need to initialize and update them.
+
+```bash
+git submodule sync
+git submodule update --init --recursive
+```
+
 ---
 
 # license
