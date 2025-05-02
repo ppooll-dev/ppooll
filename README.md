@@ -8,7 +8,7 @@ a collection and system of interacting max patches designed to create an individ
 
 ## credits
 created by klaus filip.  
-currently maintained by klaus filip & c. hausch.  
+currently maintained by klaus filip, c. hausch & joe steccato.  
 authors: klaus filip, c. hausch, noid, taku unami, joe steccato, elin, paulo raposo, léo dupleix, oliver stotz, boris hauf, gustavo n., bill d, AntonioDellaMarina.  
 contains additional code by adrian freed (CNMAT), Bertrand Fraysse, bill orcutt, CRFMW, Cycling'74, Ernest Meyer, Graham Wakefield, jasch, Jean-François Charles, jhno, Joshua Kit Clayton, Les Stuck, miller puckette, nicolaj kirisits, nathan wolek, olaf matthes, PeRColate, peter elsea, RTC, thomas grill, ted appel, tristan jehan, uhito kiyosue, ville pulkki, volker böhm.
 
