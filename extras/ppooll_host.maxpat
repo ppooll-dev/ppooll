@@ -1703,7 +1703,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 86.0, 179.0, 461.0, 35.0 ],
-																					"text" : ";\rmax launch_browser https://github.com/ppooll-dev/ppooll/releases/latest/download/ppooll.zip"
+																					"text" : ";\rmax launch_browser https://github.com/ppooll-dev/ppooll/releases/latest"
 																				}
 
 																			}
