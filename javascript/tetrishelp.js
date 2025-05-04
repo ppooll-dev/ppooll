@@ -117,11 +117,10 @@ function objdict(a)
     if (a.varname){	
 	if (class_excludes.indexOf(" " + a.maxclass + " ") == -1){
 	if (name_excludes.indexOf(" " + a.varname + " ") == -1){
-		//post(a.varname);
 		d.setparse(a.varname, "so");
 		if (a.maxclass == "patcher") d.set(a.varname+"::patcher", "bang");
-		d.set(a.varname+"::patching_rect", a.rect[0], a.rect[1], a.rect[2]-a.rect[0], a.rect[3]-a.rect[1]);
-		d.set(a.varname+"::hidden", a.hidden);		
+		d.replace(a.varname+"::patching_rect", a.rect[0], a.rect[1], a.rect[2]-a.rect[0], a.rect[3]-a.rect[1]);
+		d.replace(a.varname+"::hidden", a.hidden);		
 		attributes = a.getattrnames();	
 		//post(a.varname, a.maxclass, "\n", attributes, "\n");
 		const pattern = /color/;	
