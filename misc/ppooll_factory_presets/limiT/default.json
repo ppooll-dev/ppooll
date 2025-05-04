@@ -1,0 +1,75 @@
+{
+	"window" : [ 405, 304, 605, 471 ],
+	"preset-ramp" : 	{
+		"patching_rect" : [ 130, 0, 69, 16 ],
+		"hidden" : 0,
+		"fontsize" : 14.0
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 39, 0, 91, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "limi2" ]
+	}
+,
+	"lookahead" : 	{
+		"patching_rect" : [ 0, 34, 200, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"preamp" : 	{
+		"patching_rect" : [ 0, 50, 200, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"postamp" : 	{
+		"patching_rect" : [ 0, 98, 200, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"threshold" : 	{
+		"patching_rect" : [ 0, 66, 200, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"release" : 	{
+		"patching_rect" : [ 0, 82, 200, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"dcblockmode" : 	{
+		"patching_rect" : [ 52, 18, 50, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"bypass" : 	{
+		"patching_rect" : [ 0, 18, 50, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"mode" : 	{
+		"patching_rect" : [ 104, 18, 44, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 114, 200, 53 ],
+		"hidden" : 0
+	}
+,
+	"reset" : 	{
+		"patching_rect" : [ 155, 18, 44, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+
+}
