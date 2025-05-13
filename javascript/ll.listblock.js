@@ -1,5 +1,5 @@
 autowatch = 1;
-outlets = 1;
+outlets = 2;
 mgraphics.init();
 mgraphics.relative_coords = 0;
 mgraphics.autofill = 0;
@@ -112,6 +112,7 @@ function calc_cols(){
 		let cw = 0;
 		for (j=0;j<amount;j++) {cw = boxw*cwcalc[j]/csum; col_pos.push(col_pos[j]+cw);}
 	}
+	//post(col_pos,"\n");
 }
 function setparams(){
     a = arrayfromargs(arguments);
@@ -235,19 +236,54 @@ function settop_patcher(a){
 }
 // ###################################### __________ post attributes
 function getattributes(){
-	post("colors:","\n","c1",c1,"\n","c2",c2,"\n","c3",c3,"\n", "c4",c4,"\n", "c5",c5,"\n", "c6",c6,"\n", "c7",c7,"\n", "c8",c8,"\n", "c9",c9,"\n", "c10",c10,"\n", "c11",c11,"\n", "c12",c12,"\n");
-	post("bgcolors",bgcolors,"\n","oncolors",oncolors,"\n");
+	outlet(1,"params",params);
 	post("params",params,"\n");
+	outlet(1,"modes",modes);
 	post("modes",modes,"\n");
+	outlet(1,"rows",rows);
 	post("rows",rows,"\n");
+	outlet(1,"width_abs",width_abs);
+	post("width_abs",width_abs,"\n");
+	outlet(1,"colwidths",colwidths);	
 	post("colwidths",colwidths,"\n");
-	post("param_offset",param_offset,"\n");
+	outlet(1,"header",header);
 	post("header",header,"\n");
-	post("top_patcher",top_patcher,"\n");
+	outlet(1,"header_text",header_text);
 	post("header_text",header_text,"\n");
+	outlet(1,"ignore_headerclick",ignore_headerclick);
+	post("ignore_headerclick",ignore_headerclick,"\n");
+	outlet(1,"fontsize",fontsize);
 	post("fontsize",fontsize,"\n");
+	outlet(1,"param_offset",param_offset);
+	post("param_offset",param_offset,"\n");
+	outlet(1,"enum_offset",enum_offset);
 	post("enum_offset",enum_offset,"\n");
-	post("size_lists",size_lists,"\n");	
+	outlet(1,"size_lists",size_lists);
+	post("size_lists",size_lists,"\n");
+	outlet(1,"top_patcher",top_patcher);
+	post("top_patcher",top_patcher,"\n");
+	outlet(1,"c1",c1);
+	outlet(1,"c2",c2);
+	outlet(1,"c3",c3);
+	outlet(1,"c4",c4);
+	outlet(1,"c5",c5);
+	outlet(1,"c6",c6);
+	outlet(1,"c7",c7);
+	outlet(1,"c8",c8);
+	outlet(1,"c9",c9);
+	outlet(1,"c10",c10);
+	outlet(1,"c11",c11);
+	outlet(1,"c12",c12);	
+	post("colors:","\n","c1",c1,"\n","c2",c2,"\n","c3",c3,"\n", "c4",c4,"\n", "c5",c5,"\n", "c6",c6,"\n", "c7",c7,"\n", "c8",c8,"\n", "c9",c9,"\n", "c10",c10,"\n", "c11",c11,"\n", "c12",c12,"\n");
+	outlet(1,"bgcolors",bgcolors);
+	post("bgcolors",bgcolors,"\n","oncolors",oncolors,"\n");
+	outlet(1,"oncolors",oncolors);
+	post("oncolors",oncolors,"\n");
+	outlet(1,"headercolors",headercolors);
+	post("headercolors",headercolors,"\n");
+	outlet(1,"gridcolor",gridcolor);
+	post("gridcolor",gridcolor,"\n");
+
 }
 // ################################### _________________UI-inits		
 function menu_init(){
@@ -308,6 +344,7 @@ onresize.local = 1; //private
 		
 // ################################################################   _________  draw		
 function bang(){
+	//post("bg",bang_gate,"\n");
 	if (bang_gate) mgraphics.redraw();
 }
 
@@ -349,7 +386,7 @@ function paint()
 
 		for (i=0;i<rows+header;i++){  //________________rows
 			mgraphics.set_source_rgba(gridcolor);
-			mgraphics.rectangle(col_pos[j],i*row_height, col_pos[j+1], row_height);
+			mgraphics.rectangle(col_pos[j],i*row_height, cw, row_height);
 			mgraphics.stroke_preserve();
 			let headr = header && i==0;
 			let cval = (value[i-header+param_offset]);
