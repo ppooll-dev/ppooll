@@ -1,5 +1,5 @@
 {
-	"window" : [ 2, 434, 809, 920 ],
+	"window" : [ 2, 414, 809, 708 ],
 	"1st_freq" : 	{
 		"patching_rect" : [ 761, 88, 50, 19 ],
 		"hidden" : 0,
@@ -18,7 +18,7 @@
 	}
 ,
 	"freqs" : 	{
-		"patching_rect" : [ 510, 102, 301, 384 ],
+		"patching_rect" : [ 510, 102, 301, 192 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.537254901960784, 0.270588235294118, 0.317647058823529, 1.0 ],
 		"bordercolor" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -32,7 +32,7 @@
 	}
 ,
 	"multib" : 	{
-		"patching_rect" : [ 257, 86, 70, 400 ],
+		"patching_rect" : [ 257, 86, 70, 208 ],
 		"hidden" : 0,
 		"bgcolors" : 1,
 		"fontsize" : 14,
@@ -164,7 +164,7 @@
 	}
 ,
 	"vols" : 	{
-		"patching_rect" : [ 327, 102, 183, 384 ],
+		"patching_rect" : [ 327, 102, 183, 192 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.227450980392157, 0.227450980392157, 0.482352941176471, 1.0 ],
 		"bordercolor" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -178,7 +178,7 @@
 	}
 ,
 	"envfreqs" : 	{
-		"patching_rect" : [ 0, 102, 207, 384 ],
+		"patching_rect" : [ 0, 102, 207, 192 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.741176470588235, 0.572549019607843, 0.6, 1.0 ],
 		"bordercolor" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -444,7 +444,7 @@
 	}
 ,
 	"env_disp" : 	{
-		"patching_rect" : [ 205, 102, 50, 384 ],
+		"patching_rect" : [ 205, 102, 50, 192 ],
 		"hidden" : 0,
 		"jsarguments" : ""
 	}
@@ -520,7 +520,7 @@
 	}
 ,
 	"ll.mc.output" : 	{
-		"patching_rect" : [ 568, 0, 126, 16 ],
+		"patching_rect" : [ 567, 0, 126, 16 ],
 		"hidden" : 0
 	}
 
