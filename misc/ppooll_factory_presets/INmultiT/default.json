@@ -1,5 +1,5 @@
 {
-	"window" : [ 258, 54, 433, 126 ],
+	"window" : [ 126, 132, 301, 204 ],
 	"presets" : 	{
 		"patching_rect" : [ 116, 0, 57, 15 ],
 		"hidden" : 0,
@@ -89,7 +89,7 @@
 	}
 ,
 	"ll.mc.output" : 	{
-		"patching_rect" : [ 52, 18, 126, 16 ],
+		"patching_rect" : [ 51, 19, 125, 16 ],
 		"hidden" : 0
 	}
 
