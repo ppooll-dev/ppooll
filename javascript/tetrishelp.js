@@ -113,12 +113,16 @@ function applydict(dn)
 
 function objdict(a)
 {
+	//post("objdict",a,"\n");
 	var d = new Dict(dict_name);
     if (a.varname){	
 	if (class_excludes.indexOf(" " + a.maxclass + " ") == -1){
 	if (name_excludes.indexOf(" " + a.varname + " ") == -1){
+		
 		d.setparse(a.varname, "so");
-		if (a.maxclass == "patcher") d.set(a.varname+"::patcher", "bang");
+		//post("iii","\n");
+		if (a.maxclass == "patcher") post(a.varname," a.maxclass is patcher, so ??","\n");//d.set(a.varname+"::patcher", "bang");
+		
 		d.replace(a.varname+"::patching_rect", a.rect[0], a.rect[1], a.rect[2]-a.rect[0], a.rect[3]-a.rect[1]);
 		d.replace(a.varname+"::hidden", a.hidden);		
 		attributes = a.getattrnames();	

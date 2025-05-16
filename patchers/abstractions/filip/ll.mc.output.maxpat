@@ -10,10 +10,34 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 728.0, 150.0, 647.0, 486.0 ],
+		"rect" : [ 426.0, 197.0, 741.0, 460.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
-		"globalpatchername" : "4903n",
+		"globalpatchername" : "6347n",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-18",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 458.0, 310.0, 46.0, 22.0 ],
+					"text" : "route 0"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-16",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 458.0, 253.0, 225.0, 22.0 ],
+					"text" : "bindto parent::ll.mc.output::patching_rect"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-7",
 					"maxclass" : "newobj",
@@ -44,7 +68,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 95.0, 310.0, 29.5, 22.0 ],
+					"patching_rect" : [ 402.0, 249.0, 29.5, 22.0 ],
 					"text" : "init"
 				}
 
@@ -56,7 +80,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 95.0, 281.0, 58.0, 22.0 ],
+					"patching_rect" : [ 402.0, 204.0, 58.0, 22.0 ],
 					"text" : "loadbang"
 				}
 
@@ -92,7 +116,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 207.0, 339.0, 91.0, 22.0 ],
+					"patching_rect" : [ 485.0, 341.0, 91.0, 22.0 ],
 					"text" : "prepend bpsize"
 				}
 
@@ -104,15 +128,15 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 207.0, 310.0, 265.0, 22.0 ],
-					"restore" : [ 568.0, 0.0, 126.0, 16.0 ],
+					"patching_rect" : [ 458.0, 281.0, 101.0, 22.0 ],
+					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "pattr @bindto parent::ll.mc.output::patching_rect",
-					"varname" : "u223000618"
+					"text" : "pattr @invisible 1",
+					"varname" : "u278013588"
 				}
 
 			}
@@ -240,7 +264,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 527.0, 275.0, 96.0, 22.0 ],
+									"patching_rect" : [ 527.0, 297.0, 96.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0
 									}
@@ -273,35 +297,11 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-83",
+									"id" : "obj-3",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 120.0, 120.0, 70.0, 22.0 ],
-									"text" : "mc.send~",
-									"varname" : "send1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-84",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 200.0, 120.0, 70.0, 22.0 ],
-									"text" : "mc.send~",
-									"varname" : "send2"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-9",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 40.0, 120.0, 70.0, 22.0 ],
+									"patching_rect" : [ 40.0, 125.0, 70.0, 22.0 ],
 									"text" : "mc.send~",
 									"varname" : "send0"
 								}
@@ -310,7 +310,7 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-9", 0 ],
+									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -358,7 +358,7 @@
 
 							}
  ],
-						"originid" : "pat-13595"
+						"originid" : "pat-15661"
 					}
 ,
 					"patching_rect" : [ 482.0, 81.0, 57.0, 22.0 ],
@@ -433,7 +433,7 @@
 ,
 					"text" : "v8",
 					"textfile" : 					{
-						"text" : "var actr = new Global(\"act_rep\");\r\n\n\nvar tpp, bpatcher, outputs,lb, keep, pm;\nvar size_state = 0;\nvar size_gate = 0;\nvar def_out_mode = 0;\n\nfunction init(){\n\ttpp = this.patcher; //.parentpatcher;\n\tbpatcher = tpp.box;\n\toutputs = tpp.parentpatcher.getnamed(\"outputs~\");\n\tlb = tpp.getnamed(\"defout\");\n\tkeep = tpp.getnamed(\"keep\");\n\tpm = tpp.getnamed(\"pm\");\n}\n\nfunction bpsize(x,y,w,h){\n\t//post(bpsize,x,y,w,h,\"\\n\");\n\tif (size_gate) {\n\t\tlet lbr = lb.rect;\n\t\tlbr[2] = w;\n\t\tlb.rect = lbr;\n\t}\n}\n\nfunction bang(){\n\t//bpatcher = this.patcher.parentpatcher.getnamed(\"defout\");\n\tpost(\"r\", this.patcher.rect,this.patcher.getnamed(\"defout\"));\n}\n\nfunction listblock(){ //ll.listblock output\n\ta = arrayfromargs(arguments);\n\tlet as = a.join(\" \");\n\tlet br = bpatcher.rect;\n\t//post(a,a.join(\" \"),\"\\n\");\n\toutputs = this.patcher.parentpatcher.getnamed(\"outputs~\");\n\tlet v = outputs.getvalueof();\n\t\n\tif (as == \"enum 0 -1\"){\n\t\tsize_gate = 0;\n\t\tsize_state = 1 - size_state;\n\t\tif (size_state == 0){ //folded\n\t\t\tbpatcher.rect = [br[0], br[1], br[2], br[1]+16];\n\t\t\tif (v.slice(1).join(\" \").replaceAll(\"_\",\"\").replaceAll(\" \",\"\") == \"\") tild = \"~\" \n\t\t\telse tild = \"≈\";\n\t\t\tlb.message(\"header_text\", tild, v[0].split(\"~\")[0], v[0].split(\"~\")[1]);\n\t\t\tlb.message(\"headercolors\", 2,1,1);\n\t\t}\n\t\telse{ //open\n\t\t\tbpatcher.rect = [br[0], br[1], br[2], br[1]+lb.rect[3]-lb.rect[1]]; //+16+16*12];\n\t\t\tlb.message(\"header_text\", \"-\", \"[i] act\", \"keep\");\n\t\t\tlb.message(\"headercolors\", 2,1,3+def_out_mode);\n\t\t\t}\n\t\tsize_gate = 1;\n\t}\n\telse if (as == \"menu 2 -1\" & size_state == 1){\n\t\tdef_out_mode = 1 - def_out_mode;\n\t\tlb.message(\"def_out_mode\", def_out_mode);\n\t\tlb.message(\"headercolors\", 2,1,3+def_out_mode);\n\t}\n\tif (a[0] == \"menu\" && a[2]>=0){\n\t\tif (a[1] == 1) pm.message(\"getmarkerlist\");\n\t\tif (a[1] == 2) {\n\t\t\tlet vc = v[a[2]];\n\t\t\tlet act;\n\t\t\tif (vc != \"_\") act = vc.split(\"~\")[0];\n\t\t\t//post(\"the_act\",act, \"vc\", vc);\n\t\t\tmessnamed(act,\"v8\", \"getnamed\", \"inputs~\");\n\t\t\tlet ov = actr.object.getvalueof();\n\t\t\tinputs(ov);\n\t\t}\n\t}\n}\nfunction markerlist(){\n\ta = arrayfromargs(arguments);\n\t//post(a,\"\\n\");\n\tlb.message(\"fill_menu\", a);\n}\n\nfunction inputs(){\n\ta = arrayfromargs(arguments);\n\tlet fill = [];\n\tfor (o of a){\n\t\tlet osp = o.split(\"(\");\n\t\tlet amt = Number(osp[1].split(\")\")[0]);\n\t\t//post(o,osp[0],osp[1].split(\")\"),amt,\"\\n\");\n\t\tfor (i=0;i<amt+1;i++){\t\t\t\n\t\t\tfill.push(osp[0]+\".\"+i);\n\t\t\t//post(fill,osp[0]+\".\"+i,\"\\n\");\n\t\t}\n\t}\t\n\tlb.message(\"fill_menu\", fill);\n}",
+						"text" : "//var actr = new Global(\"act_rep\");\r\n\n\nvar tpp, bpatcher, outputs,lb, keep, pm;\nvar size_state = 0;\nvar size_gate = 0;\nvar def_out_mode = 0;\nvar init_done = 0;\n\nfunction init(){\n\ttpp = this.patcher; //.parentpatcher;\n\tbpatcher = tpp.box;\n\toutputs = tpp.parentpatcher.getnamed(\"outputs~\");\n\tlb = tpp.getnamed(\"defout\");\n\tkeep = tpp.getnamed(\"keep\");\n\tpm = tpp.getnamed(\"pm\");\n\tinit_done = 1;\n}\n\nfunction bpsize(x,y,w,h){ //size the listblock according to the bpatcher\n\tpost(\"bpsize\",x,y,w,h,\"\\n\");\n\tif (size_gate) {\n\t\tlet lbr = lb.rect;\n\t\tlbr[2] = w;\n\t\tlb.rect = lbr;\n\t}\n}\n\nfunction bang(){\n\t//bpatcher = this.patcher.parentpatcher.getnamed(\"defout\");\n\tpost(\"r\", this.patcher.rect,this.patcher.getnamed(\"defout\"));\n}\n\nfunction listblock(){ //ll.listblock output when clicked\n\tif (!init_done) init();\n\ta = arrayfromargs(arguments);\n\tlet as = a.join(\" \");\n\tlet br = bpatcher.rect;\n\tpost(\"bprect\",br,\"\\n\");\n\t//post(a,a.join(\" \"),\"\\n\");\n\toutputs = this.patcher.parentpatcher.getnamed(\"outputs~\");\n\tlet v = outputs.getvalueof();\n\t\n\tif (as == \"enum 0 -1\"){ //clicked on leftmost title\n\t\tsize_gate = 0;\n\t\tsize_state = 1 - size_state;\n\t\tif (size_state == 0){ //folded\n\t\t\tbpatcher.rect = [br[0], br[1], br[2], br[1]+16];\n\t\t\tif (v.slice(1).join(\" \").replaceAll(\"_\",\"\").replaceAll(\" \",\"\") == \"\") tild = \"~\" \n\t\t\telse tild = \"≈\";\n\t\t\tlb.message(\"header_text\", tild, v[0].split(\"~\")[0], v[0].split(\"~\")[1]);\n\t\t\tlb.message(\"headercolors\", 2,1,1);\n\t\t}\n\t\telse{ //open\n\t\t\tbpatcher.rect = [br[0], br[1], br[2], br[1]+lb.rect[3]-lb.rect[1]]; //+16+16*12];\n\t\t\tlb.message(\"header_text\", \"-\", \"[i] act\", \"keep\");\n\t\t\tlb.message(\"headercolors\", 2,1,3+def_out_mode);\n\t\t\t}\n\t\tsize_gate = 1;\n\t}\n\telse if (as == \"menu 2 -1\" & size_state == 1){\n\t\tdef_out_mode = 1 - def_out_mode;\n\t\tlb.message(\"def_out_mode\", def_out_mode);\n\t\tlb.message(\"headercolors\", 2,1,3+def_out_mode);\n\t}\n\tif (a[0] == \"menu\" && a[2]>=0){\n\t\tif (a[1] == 1) pm.message(\"getmarkerlist\");\n\t\tif (a[1] == 2) {\n\t\t\tlet vc = v[a[2]];\n\t\t\tlet act;\n\t\t\tif (vc != \"_\") act = vc.split(\"~\")[0];\n\t\t\t//post(\"the_act\",act, \"vc\", vc);\n\t\t\tmessnamed(act,\"v8\", \"getnamed\", \"inputs~\");\n\t\t\tlet ov = actr.object.getvalueof();\n\t\t\tinputs(ov);\n\t\t}\n\t}\n}\nfunction markerlist(){\n\ta = arrayfromargs(arguments);\n\t//post(a,\"\\n\");\n\tlb.message(\"fill_menu\", a);\n}\n\nfunction inputs(){\n\ta = arrayfromargs(arguments);\n\tlet fill = [];\n\tfor (o of a){\n\t\tlet osp = o.split(\"(\");\n\t\tlet amt = Number(osp[1].split(\")\")[0]);\n\t\t//post(o,osp[0],osp[1].split(\")\"),amt,\"\\n\");\n\t\tfor (i=0;i<amt+1;i++){\t\t\t\n\t\t\tfill.push(osp[0]+\".\"+i);\n\t\t\t//post(fill,osp[0]+\".\"+i,\"\\n\");\n\t\t}\n\t}\t\n\tlb.message(\"fill_menu\", fill);\n}",
 						"filename" : "none",
 						"flags" : 0,
 						"embed" : 1,
@@ -469,8 +469,8 @@
 					"jsarguments" : [ "@params", "none", "outputs~", "outputs~", "@modes", "enum", "menu_splitL_~", "menu_splitR_~", "@rows", 5, "@header", 1, "@header_text", "i", "act", "chan", "@colwidths", 1, 5, 5, "@bgcolors", 0.84, 0.4, 0.18, 1, "@enum_offset", 1 ],
 					"maxclass" : "v8ui",
 					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 0.0, 0.0, 126.0, 208.0 ],
 					"textfile" : 					{
@@ -546,8 +546,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"source" : [ "obj-16", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
 					"source" : [ "obj-17", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"source" : [ "obj-18", 1 ]
 				}
 
 			}
@@ -613,7 +627,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
+					"destination" : [ "obj-18", 0 ],
 					"source" : [ "obj-5", 0 ]
 				}
 
@@ -628,7 +642,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-16", 0 ],
+					"order" : 0,
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
+					"order" : 1,
 					"source" : [ "obj-6", 0 ]
 				}
 
@@ -649,7 +672,7 @@
 
 			}
  ],
-		"originid" : "pat-13593"
+		"originid" : "pat-15649"
 	}
 
 }
