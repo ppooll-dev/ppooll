@@ -90,9 +90,9 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 868.0, 355.0, 830.0, 430.0 ],
+						"rect" : [ 736.0, 355.0, 830.0, 430.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
-						"globalpatchername" : "2754n",
+						"globalpatchername" : "4961n",
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-21",
@@ -152,8 +152,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 62.0, 140.0, 120.0, 22.0 ],
-									"text" : "def_outputs.maxhelp"
+									"patching_rect" : [ 62.0, 140.0, 141.0, 22.0 ],
+									"text" : "ll.mc.output.info.maxhelp"
 								}
 
 							}
@@ -358,7 +358,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 299.0, 145.0, 101.0, 22.0 ],
-									"restore" : [ 114.5, 82.0, 125.0, 80.0 ],
+									"restore" : [ 114.5, 82.0, 125.0, 16.0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
@@ -579,7 +579,7 @@
 ,
 					"patching_rect" : [ 328.0, 231.0, 91.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"globalpatchername" : "2754n"
+						"globalpatchername" : "4961n"
 					}
 ,
 					"text" : "p sub"
@@ -605,7 +605,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 328.0, 254.0, 713.0, 370.0 ],
+						"rect" : [ 614.0, 87.0, 713.0, 370.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -708,7 +708,7 @@
 ,
 									"text" : "v8",
 									"textfile" : 									{
-										"text" : "// script the mc-signal routing in the parentpatcher.\n\nvar tpp = this.patcher;\nvar sep;\nvar dest_count = 1;\nvar d_offsets;\nvar dests;\n\nfunction outputs(){\n\tlet a = arrayfromargs(arguments);\n\tlet v = [];\n\tlet isA = Array.isArray(a);\n\tif (isA) v = a \n\telse v[0] = a; \n\t//post(\"value\",v,\"\\n\")\n\tdests = [];\n\td_offsets = [];\n\tlet chans = [];\n\tlet cmem = 0;\n\tfor (i=0;i<v.length;i++){\n\t\t//post(\"v: \",i,v[i],\"\\n\");\n\t\tif (v[i] != \"_\"){ \t\t\n\t\t\tlet result = v[i].match(/(.+)\\.(\\d+)/);\n\t\t\t//post(\"result: \",result,\"\\n\");\n\t\t\tif (result){\n\t\t\t\tdests.push(result[1]);\n\t\t\t\td_offsets.push(result[2]);\n\t\t\t\tif (i>0){\n\t\t\t\t\tchans.push(i-cmem);\n\t\t\t\t\tcmem = i;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\tchans.push(v.length-cmem);\n\tscriptit(chans);\n}\n\nfunction scriptit(a){\n\tlet al = a.length;\n\ttpp.remove(tpp.getnamed(\"sep\"));\n\tfor (i=0;i<dest_count;i++) tpp.remove(tpp.getnamed(\"send\"+i));\n\tif (al == 1){\n\t\tnewsend(0);\t\n \t\ttpp.connect(tpp.getnamed(\"in\"),0,tpp.getnamed(\"send0\"),0);\n\t}\n\tif (al > 1){\n\t\tsep = tpp.newdefault(40,80,\"mc.separate~\",a);\n\t\tsep.varname = \"sep\";\n\t\tsep.rect = [40, 80, 400, 102];\n\t\ttpp.connect(tpp.getnamed(\"in\"),0,sep,0);\n\t\tfor (i=0;i<al;i++){\n\t\t\tnewsend(i);\t\n\t\t\ttpp.connect(sep,i,tpp.getnamed(\"send\"+i),0);\n\t\t}\n\t}\n\tdest_count = al;\n}\n\nfunction newsend(i){\n\tlet s;\n\tif (d_offsets[i] == 1){\n \t\ts = tpp.newdefault(100,100,\"mc.send~\");\n\t\ts.message(\"set\", dests[i]);\n\t}\n\telse {\n\t\ts = tpp.newdefault(100,100,\"ll.mc.s~\", d_offsets[i]);\n\t\tlet sub = s.subpatcher(0).getnamed(\"send\")\n\t\tsub.message(\"set\", dests[i]);\n\t}\n\ts.varname = \"send\"+i;\n\ts.rect = [40+80*i, 120, 40+80*i+70, 132];\n}\n",
+										"text" : "// script the mc-signal routing in the parentpatcher.\n\nvar tpp = this.patcher;\nvar sep;\nvar dest_count = 1;\nvar d_offsets;\nvar dests;\n\nfunction outputs(){\n\tlet a = arrayfromargs(arguments);\n\tlet v = [];\n\tlet isA = Array.isArray(a);\n\tif (isA) v = a \n\telse v[0] = a; \n\t//post(\"value\",v,\"\\n\")\n\tdests = [];\n\td_offsets = [];\n\tlet chans = [];\n\tlet cmem = 0;\n\tfor (i=0;i<v.length;i++){\n\t\t//post(\"v: \",i,v[i],\"\\n\");\n\t\tif (v[i] != \"_\"){ \t\t\n\t\t\tlet result = v[i].match(/(.+)\\.(\\d+)/);\n\t\t\t//post(\"result: \",result,\"\\n\");\n\t\t\tif (result){\n\t\t\t\tdests.push(result[1]);\n\t\t\t\td_offsets.push(result[2]);\n\t\t\t\tif (i>0){\n\t\t\t\t\tchans.push(i-cmem);\n\t\t\t\t\tcmem = i;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\tchans.push(v.length-cmem);\n\tscriptit(chans);\n}\n\nfunction scriptit(a){\n\t//post(\"chans\",a,\"dest_count\",dest_count,\"d_offsets\",d_offsets,\"dests\",dests,\"\\n\");\n\tlet al = a.length;\n\ttpp.remove(tpp.getnamed(\"sep\"));\n\tfor (i=0;i<30;i++) tpp.remove(tpp.getnamed(\"send\"+i));\n\tif (al == 1){\n\t\tnewsend(0);\t\n \t\ttpp.connect(tpp.getnamed(\"in\"),0,tpp.getnamed(\"send0\"),0);\n\t}\n\tif (al > 1){\n\t\tsep = tpp.newdefault(40,80,\"mc.separate~\",a);\n\t\tsep.varname = \"sep\";\n\t\tsep.rect = [40, 80, 400, 102];\n\t\ttpp.connect(tpp.getnamed(\"in\"),0,sep,0);\n\t\tfor (i=0;i<al;i++){\n\t\t\tnewsend(i);\t\n\t\t\ttpp.connect(sep,i,tpp.getnamed(\"send\"+i),0);\n\t\t}\n\t}\n\tdest_count = al;\n}\n\nfunction newsend(i){\n\tlet s;\n\tif (d_offsets[i] == 1){\n \t\ts = tpp.newdefault(100,100,\"mc.send~\",dests[i]);\n\t\t//s.message(\"set\", dests[i]);\n\t}\n\telse {\n\t\ts = tpp.newdefault(100,100,\"ll.mc.s~\", d_offsets[i]-1,dests[i]);\n\t\t//let sub = s.subpatcher(0).getnamed(\"send\")\n\t\t//sub.message(\"set\", dests[i]);\n\t}\n\ts.varname = \"send\"+i;\n\ts.rect = [40+80*i, 120, 40+80*i+70, 132];\n}\n",
 										"filename" : "none",
 										"flags" : 0,
 										"embed" : 1,
@@ -734,36 +734,13 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-474",
+									"id" : "obj-3",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 120.0, 120.0, 70.0, 22.0 ],
-									"text" : "mc.send~",
-									"varname" : "send1[1]"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-539",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 120.0, 120.0, 70.0, 22.0 ],
-									"text" : "mc.send~",
-									"varname" : "send1[2]"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-32",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 40.0, 120.0, 70.0, 22.0 ],
-									"text" : "mc.send~",
+									"patching_rect" : [ 40.0, 120.0, 70.0, 12.0 ],
+									"text" : "mc.send~ ho_st1~out",
 									"varname" : "send0"
 								}
 
@@ -771,7 +748,7 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-32", 0 ],
+									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -857,7 +834,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 71.428571428571431, 16.0, 52.571428571428569, 22.0 ],
+					"patching_rect" : [ 71.428571428571431, 48.0, 52.571428571428569, 22.0 ],
 					"prefix" : "menu",
 					"prefix_mode" : 1,
 					"varname" : "lllbmenu"
@@ -866,7 +843,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolors", 1 ], [ "c1", 0.227023795247078, 0.375513195991516, 0.802831828594208, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.022897183895111, 0, 0.501064121723175, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0.453551530838013, 0, 0.812493920326233, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 1, 3, 3 ], [ "enum_offset", 1 ], [ "fontsize", 12 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 1 ], [ "header_text", "-", "[i] act", "keep" ], [ "headercolors", 2, 1, 3 ], [ "ignore_headerclick", 1 ], [ "modes", "enum", "menu_split_~L", "menu_split_~R" ], [ "oncolors", 1 ], [ "param_offset", 0 ], [ "params", "none", "outputs~", "outputs~" ], [ "rowheight_fixed", 1 ], [ "rows", 4 ], [ "size_lists", 1 ], [ "top_patcher", 1 ], [ "width_abs", 0 ] ],
+					"embedstate" : [ [ "bgcolors", 1 ], [ "c1", 0.227023795247078, 0.375513195991516, 0.802831828594208, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.022897183895111, 0, 0.501064121723175, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0.453551530838013, 0, 0.812493920326233, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 1, 3, 3 ], [ "enum_offset", 1 ], [ "fontsize", 12 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 1 ], [ "header_text", "~", "ho_st1", "out.1" ], [ "headercolors", 2, 1, 1 ], [ "ignore_headerclick", 1 ], [ "modes", "enum", "menu_split_~L", "menu_split_~R" ], [ "oncolors", 1 ], [ "param_offset", 0 ], [ "params", "none", "outputs~", "outputs~" ], [ "rowheight_fixed", 1 ], [ "rows", 4 ], [ "size_lists", 1 ], [ "top_patcher", 1 ], [ "width_abs", 0 ] ],
 					"filename" : "ll.listblock.js",
 					"id" : "obj-51",
 					"jsarguments" : [ "@params", "none", "outputs~", "outputs~", "@modes", "enum", "menu_splitL_~", "menu_splitR_~", "@rows", 5, "@header", 1, "@header_text", "i", "act", "chan", "@colwidths", 1, 5, 5, "@bgcolors", 0.84, 0.4, 0.18, 1, "@enum_offset", 1 ],
