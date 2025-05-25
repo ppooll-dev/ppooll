@@ -8,9 +8,10 @@ mgraphics.autofill = 0;
 var tpp = this.patcher;
 var boxw = box.rect[2] - box.rect[0];
 var boxh = box.rect[3] - box.rect[1];
+//post("boxinit",boxh,"\n");
 
 var amount;
-var row_height, header_click;
+var header_click;
 var ccx, ccy, ccm,ccm1,ccm2; // current_clicks (modes)
 var par, pval, drag_val;
 var lllbnum, lllbmenu, lllbtext;
@@ -43,10 +44,12 @@ var params = [];
 declareattribute("params", { setter : "setparams", embed: 1, paint: 1 });
 var modes = ["tog"];
 declareattribute("modes", { setter : "setmodes", embed: 1, paint: 1 });
-var rows = 3;
-declareattribute("rows", { setter : "setrows", embed: 1 ,type: "long", min: 0, paint: 1});
 var colwidths = [1];
 declareattribute("colwidths", { setter : "setcolwidths", embed: 1, paint: 1});
+var rowheight;
+declareattribute("rowheight", { setter : "setrowheight", min: 1, paint: 1});
+var rowheight_fixed = 0;
+declareattribute("rowheight_fixed", { embed: 1,type: "long", style: "onoff"});
 var bgcolors = [1];
 declareattribute("bgcolors", {setter : "setbgcolors", embed: 1, min: 1, max: 12, paint: 1 });
 var oncolors = [2];
@@ -73,6 +76,8 @@ var size_lists = "_";
 declareattribute("size_lists", {embed: 1,style: "onoff"});
 var width_abs = 0;
 declareattribute("width_abs", {embed: 1 ,style: "onoff"});
+var rows = 3;
+declareattribute("rows", { setter : "setrows", embed: 1 ,type: "long", min: 1, paint: 1});
 // ###################################### ____________ attribute setter
 function calc_cols(){
 	mod = [];
@@ -120,10 +125,11 @@ function setparams(){
 	params = [];
 	paramsObj = [];
 	for (let c of a){
-		//post(!tpp.getnamed(c));
+		//post(c,tpp.getnamed(c));
 		if (!tpp.getnamed(c)) { params.push("none"); paramsObj.push("none")}
 		else {params.push(c); paramsObj.push(tpp.getnamed(c))}
 	}
+	//post(params,"\n");
 	calc_cols();
 }
 function setmodes(){
@@ -183,26 +189,34 @@ function setheadercolors(){
 }
 function setheader(a){
 	header = Number(a);
-	row_height = boxh/(rows+header);
+	if (rowheight_fixed) setrowheight(rowheight)
+	else rowheight = boxh/(rows+header);
 }
-
-function rowheight(a){
-	row_height = a
+function setrowheight(a){
+	//post("boxsetrowh__",boxh,a,rows,"\n");
+	rowheight = a
 	boxh = a * (rows+header);
 	let br = box.rect;
 	br[3] = br[1] + boxh;
 	box.rect = br;
+	//post("boxsetrowh",boxh,"\n");
 }
 function setrows(a){
+	//post("rows",a,boxh,"\n");
 	rows = Number(a);
-	row_height = boxh/(rows+header);
+	if (rowheight_fixed) setrowheight(rowheight) //boxh = rowheight*(rows+header)
+	else rowheight = boxh/(rows+header);
 	if (size_lists) size_list();
 }
 function size_list(){
 	for (k=0;k<amount;k++){	
 		if (paramsObj[k] != "none" && mod[k] != "enum" && mod[k] != "button"){ 
 			let p = paramsObj[k];
-			let v = p.getvalueof();
+			let v =[];
+			let vg = p.getvalueof();
+			let isA = Array.isArray(vg);
+			if (isA) v = vg
+			else v[0] = vg; 
 			let pl = v.length;
 			let rowspo = rows + param_offset;
 			if (pl>rowspo) v = v.slice(0,rowspo)
@@ -336,7 +350,7 @@ function onresize(w,h)
 	//post("wh",w,h,"\n");
 	boxh = h;
 	boxw = w;
-	row_height = h/(rows+header);
+	if (!rowheight_fixed) rowheight = h/(rows+header);
 	calc_cols();
 
 }
@@ -359,20 +373,25 @@ function brightness(color){
 }
 function paint()
 {
-	let s = row_height;
+	let s = rowheight;
 	let cw = 0;
 	let cm, cm1, cm2;
 	let curr_on = 0;
 	let c_test;
 	let txt_color = [1,1,1,1];
 	let oncolor, bgcolor, hdcolor;
-	let value = 0;
+	let value = [];
 	//post("rt",amount, "rr",mgraphics.size);
 	
 	for (j=0;j<amount;j++){ //__________________________cols
 		
- 		if (paramsObj[j] == "none") value = "none"
-		else value = paramsObj[j].getvalueof();
+ 		if (paramsObj[j] == "none") value = ["none"]
+		else {
+			let v = paramsObj[j].getvalueof();
+			let isA = Array.isArray(v);
+			if (isA) value = v
+			else value[0] = v; 
+		}
 		cm = mod[j][0];
 		cm1 = mod[j][1];
 		cm2 = mod[j][2];
@@ -386,10 +405,11 @@ function paint()
 
 		for (i=0;i<rows+header;i++){  //________________rows
 			mgraphics.set_source_rgba(gridcolor);
-			mgraphics.rectangle(col_pos[j],i*row_height, cw, row_height);
+			mgraphics.rectangle(col_pos[j],i*rowheight, cw, rowheight);
 			mgraphics.stroke_preserve();
 			let headr = header && i==0;
 			let cval = (value[i-header+param_offset]);
+			//post("row",i,"cval",cval,"\n");
 			if    (cm == "tog" && cval == 1     //when it is ON
 				|| cm == "button" && button_on == j && value == i-header + enum_offset
 				|| cm == "button" && button_on == -2){
@@ -437,14 +457,14 @@ function paint()
 			
 			//post("txt",txt,mgraphics.text_measure(txt),"\n");
 			let cp = col_pos[j];
-			let rp = (i+1)*row_height-3; //row_position
+			let rp = (i+1)*rowheight-3; //row_position
 			let th = mgraphics.text_measure(txt)[1];
 			let tw = mgraphics.text_measure(txt)[0];
 			if (tw>cw){
 				txt = txt.slice(0,4)+"..";
 				tw = mgraphics.text_measure(txt)[0];
 			}
-			mgraphics.move_to(cp+(cw-tw)/2, rp-(row_height-th)/2);
+			mgraphics.move_to(cp+(cw-tw)/2, rp-(rowheight-th)/2);
 			mgraphics.text_path(txt)
 			mgraphics.fill();
 		}
@@ -481,7 +501,7 @@ function onclick(x,y,but,mod1,shift,capslock,option,mod2)
 	}
 	x = ccx;
 
-	y = parseInt(y/row_height)-header;
+	y = parseInt(y/rowheight)-header;
 	if (y >= rows) y = rows-1;
 	ccy = y;
 	header_click = (y == -1);
@@ -512,7 +532,7 @@ onclick.local = 1; //private
 function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 {
 	x = ccx;
-	y = parseInt(y/row_height)-header;
+	y = parseInt(y/rowheight)-header;
 	if (y >= rows) y = rows-1;
 	if (y != ccy) {
 		//post ("new_y", y);
@@ -638,7 +658,8 @@ function menu(a)
 			if (ccm1 == "split"){
 				let sep = ccm2[0];
 				let spos = Number(ccm2[1] == "R");
-				let S = pval[cy_po].split(sep)[1-spos];
+				let S = "no";
+				if (pval[cy_po].indexOf(sep)>=0) S = pval[cy_po].split(sep)[1-spos];
 				if (spos == 0) pval[cy_po] = a+sep+S
 				else{
  					pval[cy_po] = S+sep+a;
@@ -664,6 +685,7 @@ function fill_menu(){
 	if (lllbmenu){
 		lllbmenu.message("clear");
 		let items = arrayfromargs(arguments);
+		//post(items,"\n");
 		for (i=0;i<items.length;i++){
 			lllbmenu.message("append",items[i]);
 		}
@@ -673,9 +695,9 @@ function nrect(x,y){
 	let bx = box.rect[0];
 	let by = box.rect[1];
 	let nrect = [col_pos[x]+bx,
-                 y*row_height+header*row_height+by,
+                 y*rowheight+header*rowheight+by,
                  col_pos[x+1]+bx-1,
-                 (y+1)*row_height+header*row_height+by-1];
+                 (y+1)*rowheight+header*rowheight+by-1];
 	return nrect;
 }
 function par_mess(){
@@ -747,7 +769,7 @@ function par_listener()
 
 function p1Callback(data)
 {
-	post("p1 " + data.value,"\n");
+	//post("p1 " + data.value,"\n");
 	//pval[ccy] = data.value;
 	//par.message(pval);
 	mgraphics.redraw();
