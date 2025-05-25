@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 70.0, 131.0, 704.0, 513.0 ],
+		"rect" : [ 70.0, 100.0, 704.0, 513.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"boxes" : [ 			{
@@ -79,7 +79,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 635.0, 444.0, 55.0, 20.0 ],
-					"presentation_linecount" : 3,
 					"text" : "bpatcher"
 				}
 
@@ -430,7 +429,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 58.0, 393.0, 263.0, 22.0 ],
-					"text" : "ho_st1~out.1 _ _"
+					"text" : "ho_st1~out.1 _ _ _"
 				}
 
 			}
@@ -442,7 +441,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 43.0, 358.0, 82.0, 22.0 ],
-					"restore" : [ "ho_st1~out.1", "_", "_" ],
+					"restore" : [ "ho_st1~out.1", "_", "_", "_" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -469,7 +468,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 114.5, 82.0, 125.0, 48.0 ],
+					"patching_rect" : [ 114.5, 82.0, 125.0, 80.0 ],
 					"varname" : "ll.mc.output",
 					"viewvisibility" : 1
 				}
