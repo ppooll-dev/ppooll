@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 291.0, 93.0, 704.0, 513.0 ],
+		"rect" : [ 95.0, 192.0, 704.0, 513.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"boxes" : [ 			{
@@ -129,8 +129,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 435.0, 229.0, 89.0, 22.0 ],
-					"text" : "loadmess set 2"
+					"patching_rect" : [ 435.0, 229.0, 70.0, 22.0 ],
+					"text" : "loadmess 2"
 				}
 
 			}
@@ -416,8 +416,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 43.0, 298.0, 98.0, 22.0 ],
-					"text" : "ho_st1~out.1 _ _"
+					"patching_rect" : [ 43.0, 298.0, 88.0, 22.0 ],
+					"text" : "ho_st1~out.1 _"
 				}
 
 			}
@@ -429,7 +429,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 58.0, 393.0, 263.0, 22.0 ],
-					"text" : "ho_st1~out.1 _ _"
+					"text" : "ho_st1~out.1 _"
 				}
 
 			}
@@ -441,7 +441,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 43.0, 358.0, 82.0, 22.0 ],
-					"restore" : [ "ho_st1~out.1", "_", "_" ],
+					"restore" : [ "ho_st1~out.1", "_" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -468,7 +468,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 114.5, 82.0, 125.0, 48.0 ],
+					"patching_rect" : [ 114.5, 82.0, 125.0, 16.0 ],
 					"varname" : "ll.mc.output",
 					"viewvisibility" : 1
 				}
