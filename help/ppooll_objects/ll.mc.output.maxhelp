@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 70.0, 100.0, 704.0, 513.0 ],
+		"rect" : [ 291.0, 93.0, 704.0, 513.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"boxes" : [ 			{
@@ -42,20 +42,20 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 262.0, 122.0, 168.0, 60.0 ],
-					"text" : "header if unfolded:\n\"[i] act\" to open the info patch.\n\"keep\" a toggle explained in the info patch."
+					"patching_rect" : [ 262.0, 128.5, 168.0, 60.0 ],
+					"text" : "if unfolded:\n\"[i] act\" to open the info patch.\n\"keep\" a toggle explained in the info patch."
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-38",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 247.0, 73.5, 182.0, 33.0 ],
-					"text" : "if folded, it shows the destination\nof the first channel"
+					"patching_rect" : [ 262.0, 79.5, 182.0, 47.0 ],
+					"text" : "header:\nif folded, it shows the destination\nof the first channel"
 				}
 
 			}
@@ -429,7 +429,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 58.0, 393.0, 263.0, 22.0 ],
-					"text" : "ho_st1~out.1 _ _ _"
+					"text" : "ho_st1~out.1 _ _"
 				}
 
 			}
@@ -441,7 +441,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 43.0, 358.0, 82.0, 22.0 ],
-					"restore" : [ "ho_st1~out.1", "_", "_", "_" ],
+					"restore" : [ "ho_st1~out.1", "_", "_" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -468,7 +468,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 114.5, 82.0, 125.0, 80.0 ],
+					"patching_rect" : [ 114.5, 82.0, 125.0, 48.0 ],
 					"varname" : "ll.mc.output",
 					"viewvisibility" : 1
 				}

@@ -640,7 +640,7 @@ function text(data)
 }
 function menu(a)
 {
-	//post("menu_listen",menu_listen,ccy,a,"\n");
+	//post("menu_listen",a,"\n");
 	if (ui_inside(lllbmenu.rect) && lllbmenu.hidden == 0){
 		if (header_click){
 			for (i=param_offset;i<rows;i++){
@@ -668,6 +668,7 @@ function menu(a)
 			}
 			else pval[cy_po] = a;
 		}
+		//post("ppp",pval[cy_po]);
 		lllbmenu.hidden = 1;
 		par_mess();
 	}
