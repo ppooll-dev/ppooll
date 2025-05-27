@@ -17,6 +17,8 @@ var par, pval, drag_val;
 var lllbnum, lllbmenu, lllbtext;
 var val = "n"; //notifyclients
 
+var selected_item = [-1,-1];
+
 var button_on = -1;
 var bang_gate = 1;
 var def_out = 0;
@@ -429,7 +431,11 @@ function paint()
 					else txt = String(ht);
 				}
 				else {
-					mgraphics.set_source_rgba(bgcolor);
+					if(cm == "menu" && selected_item[1]+1 == i && selected_item[0] == j)
+						mgraphics.set_source_rgba([1., 0., 0., 1.]);
+					else{
+						mgraphics.set_source_rgba(bgcolor);
+					}
 					txt_color = brightness(bgcolor);
 					if (cm=="enum" || (cm == "button" && cm1 == "enum")) txt = String(i-header+enum_offset);
 					else if (cm == "tog" || cm == "button")
@@ -513,6 +519,7 @@ function onclick(x,y,but,mod1,shift,capslock,option,mod2)
 	val = [ccm,x,y]; //pattr & outlet
 	notifyclients();
 	outlet(0,ccm,x,y);
+	selected_item = [x,y]
 	if (!(ignore_headerclick && header_click)){
 	if(paramsObj[x] != "none"){
 		par = paramsObj[x];
@@ -602,6 +609,10 @@ function m_menu(x,y,drag){
 		if (ccm1 == "split" && y >= 0) setv = String(cpval).split(ccm2[0])[Number(ccm2[1])];
 		lllbmenu.message("set",setv);
 		lllbmenu.hidden = 0;
+		lllbmenu.bgfillcolor = [0,0,0,0];
+		lllbmenu.textcolor = [0,0,0,0];
+		mgraphics.redraw()
+		outlet(1, "leftclick")
 }
 function m_text(x,y,drag){
 		lllbtext.rect = nrect(x,y);
@@ -696,7 +707,7 @@ function nrect(x,y){
 	let bx = box.rect[0];
 	let by = box.rect[1];
 	let nrect = [col_pos[x]+bx,
-                 y*rowheight+header*rowheight+by,
+                 (y*rowheight+header*rowheight+by) - 6,
                  col_pos[x+1]+bx-1,
                  (y+1)*rowheight+header*rowheight+by-1];
 	return nrect;
