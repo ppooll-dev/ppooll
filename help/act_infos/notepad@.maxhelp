@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 2,
+			"minor" : 6,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 517.0, 543.0, 308.0, 264.0 ],
+		"rect" : [ 638.0, 157.0, 308.0, 264.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,12 +40,23 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 22.0, 109.0, 202.0, 20.0 ],
+					"text" : "some tweaks by joe steccato"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-6",
 					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 22.0, 120.0, 185.0, 47.0 ],
+					"patching_rect" : [ 22.0, 154.0, 185.0, 47.0 ],
 					"text" : "nifty tool to save some information together with an environment."
 				}
 

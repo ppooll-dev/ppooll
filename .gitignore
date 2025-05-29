@@ -1,2 +1,12 @@
+# macOS system files
 .DS_Store
-externals/ppooll_externals/build*
+
+# Build artifacts
+package/
+ppooll.zip
+
+# Notarization temp files
+notarize_mac.zip
+
+# Scripts env files
+.env
