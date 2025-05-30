@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 125.0, 204.0, 704.0, 513.0 ],
+		"rect" : [ 95.0, 313.0, 704.0, 513.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"boxes" : [ 			{
@@ -399,7 +399,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 58.0, 393.0, 263.0, 22.0 ],
-					"text" : "ho_st1~out.1 _"
+					"text" : "ho_st1~out.3 _"
 				}
 
 			}
@@ -411,7 +411,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 43.0, 358.0, 82.0, 22.0 ],
-					"restore" : [ "ho_st1~out.1", "_" ],
+					"restore" : [ "ho_st1~out.3", "_" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -606,6 +606,13 @@
 			}
 , 			{
 				"name" : "ll.mc.output.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../../patchers/abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.mc.s~.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
