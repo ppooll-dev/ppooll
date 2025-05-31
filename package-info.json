@@ -19,7 +19,7 @@
   "extends": "",
   "extensible": 1,
   "homepatcher": "ppooll_host.maxpat",
-  "max_version_min": "8",
+  "max_version_min": "9",
   "name": "ppooll",
   "os": {
     "macintosh": {
