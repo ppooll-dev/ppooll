@@ -1,0 +1,229 @@
+{
+	"window" : [ 297, 427, 602, 711 ],
+	"preset-ramp" : 	{
+		"patching_rect" : [ 244, 1, 60, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"presets" : 	{
+		"patching_rect" : [ 92, 0, 151, 16 ],
+		"hidden" : 0,
+		"jsarguments" : [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "3komp1" ]
+	}
+,
+	"ll.blues" : 	{
+		"patcher" : "bang",
+		"patching_rect" : [ 0, 257, 304, 27 ],
+		"hidden" : 0
+	}
+,
+	"1lookahead" : 	{
+		"patching_rect" : [ 0, 60, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"1ratio" : 	{
+		"patching_rect" : [ 0, 76, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"1makeup" : 	{
+		"patching_rect" : [ 0, 157, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"1threshold" : 	{
+		"patching_rect" : [ 0, 108, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"1release" : 	{
+		"patching_rect" : [ 0, 141, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"cross1" : 	{
+		"patching_rect" : [ 2, 18, 98, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"cross2" : 	{
+		"patching_rect" : [ 102, 18, 100, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"1attack" : 	{
+		"patching_rect" : [ 0, 124, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"1knee" : 	{
+		"patching_rect" : [ 0, 92, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"2lookahead" : 	{
+		"patching_rect" : [ 102, 60, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"2ratio" : 	{
+		"patching_rect" : [ 102, 76, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"2makeup" : 	{
+		"patching_rect" : [ 102, 157, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"2threshold" : 	{
+		"patching_rect" : [ 102, 108, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"2release" : 	{
+		"patching_rect" : [ 102, 141, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"2attack" : 	{
+		"patching_rect" : [ 102, 124, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"2knee" : 	{
+		"patching_rect" : [ 102, 92, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"3lookahead" : 	{
+		"patching_rect" : [ 204, 60, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"3ratio" : 	{
+		"patching_rect" : [ 204, 76, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"3makeup" : 	{
+		"patching_rect" : [ 204, 157, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"3threshold" : 	{
+		"patching_rect" : [ 204, 108, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"3release" : 	{
+		"patching_rect" : [ 204, 141, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"3attack" : 	{
+		"patching_rect" : [ 204, 124, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"3knee" : 	{
+		"patching_rect" : [ 204, 92, 100, 14 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"1bypass" : 	{
+		"patching_rect" : [ 0, 39, 22, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10.0
+	}
+,
+	"2bypass" : 	{
+		"patching_rect" : [ 102, 39, 22, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10.0
+	}
+,
+	"3bypass" : 	{
+		"patching_rect" : [ 204, 39, 22, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10.0
+	}
+,
+	"1mute" : 	{
+		"patching_rect" : [ 25, 39, 24, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10.0
+	}
+,
+	"2mute" : 	{
+		"patching_rect" : [ 127, 39, 24, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10.0
+	}
+,
+	"3mute" : 	{
+		"patching_rect" : [ 229, 39, 24, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10.0
+	}
+,
+	"dry" : 	{
+		"patching_rect" : [ 0, 173, 304, 83 ],
+		"hidden" : 0
+	}
+,
+	"wet" : 	{
+		"patching_rect" : [ 0, 173, 304, 83 ],
+		"hidden" : 0
+	}
+,
+	"ramp" : 	{
+		"patching_rect" : [ 204, 18, 100, 19 ],
+		"hidden" : 0,
+		"fontsize" : 12.0
+	}
+,
+	"1sidechain" : 	{
+		"patching_rect" : [ 51, 39, 29, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10.0
+	}
+,
+	"2sidechain" : 	{
+		"patching_rect" : [ 153, 39, 29, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10.0
+	}
+,
+	"3sidechain" : 	{
+		"patching_rect" : [ 255, 39, 29, 19 ],
+		"hidden" : 0,
+		"fontsize" : 10.0
+	}
+
+}

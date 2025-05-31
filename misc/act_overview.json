@@ -126,7 +126,7 @@
 		"beast" : 		{
 			"description" : "non-trivial buffer machine",
 			"authors" : 2,
-			"tags" : [ 1, 3, 11 ]
+			"tags" : [ 1, 3, 11, 15 ]
 		}
 ,
 		"beauty" : 		{
@@ -147,6 +147,12 @@
 			"tags" : [ 7, 9 ]
 		}
 ,
+		"brown" : 		{
+			"description" : "brownian noise generator",
+			"authors" : 2,
+			"tags" : [ 1, 11, 15 ]
+		}
+		,
 		"buffub" : 		{
 			"description" : "records into buffers",
 			"authors" : [ 1, 3 ],
@@ -221,7 +227,7 @@
 ,
 		"eq@" : 		{
 			"description" : "crossover-filter based graphic equalizer",
-			"authors" : 3,
+			"authors" : [ 3, 16 ],
 			"tags" : [ 9, 15 ]
 		}
 ,
@@ -432,6 +438,12 @@
 		"kompressor" : 		{
 			"description" : "audio compressor",
 			"authors" : 16,
+			"tags" : [ 9, 15 ]
+		}
+,
+		"limi" : 		{
+			"description" : "peak limiter",
+			"authors" : [ 3, 16 ],
 			"tags" : [ 9, 15 ]
 		}
 ,
@@ -750,6 +762,12 @@
 			"description" : "customize your act layout (and act-building)",
 			"authors" : 1,
 			"tags" : ""
+		}
+,
+		"threekomp" : 		{
+			"description" : "ppooll port of 3komp from the max demo patches",
+			"authors" : [ 3, 16 ],
+			"tags" : [ 9, 15 ]
 		}
 ,
 		"timeline@" : 		{
