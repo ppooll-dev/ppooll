@@ -211,12 +211,12 @@ function setrows(a){
 }
 function size_list(){
 	for (k=0;k<amount;k++){	
-		if (paramsObj[k] != "none" && mod[k] != "enum" && mod[k] != "button"){ 
+		//post("m",mod[k][0],"\n");
+		if (paramsObj[k] != "none" && mod[k][0] != "enum" && mod[k][0] != "button"){ 
 			let p = paramsObj[k];
 			let v =[];
 			let vg = p.getvalueof();
-			let isA = Array.isArray(vg);
-			if (isA) v = vg
+			if (Array.isArray(vg)) v = vg
 			else v[0] = vg; 
 			let pl = v.length;
 			let rowspo = rows + param_offset;

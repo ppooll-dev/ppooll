@@ -121,7 +121,7 @@ function objdict(a)
 		
 		d.setparse(a.varname, "so");
 		//post("iii","\n");
-		if (a.maxclass == "patcher") post(a.varname," a.maxclass is patcher, so ??","\n");//d.set(a.varname+"::patcher", "bang");
+		//if (a.maxclass == "patcher") post(a.varname," a.maxclass is patcher, so ??","\n");//d.set(a.varname+"::patcher", "bang");
 		
 		d.replace(a.varname+"::patching_rect", a.rect[0], a.rect[1], a.rect[2]-a.rect[0], a.rect[3]-a.rect[1]);
 		d.replace(a.varname+"::hidden", a.hidden);		

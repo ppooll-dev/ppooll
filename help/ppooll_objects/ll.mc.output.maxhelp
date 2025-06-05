@@ -10,23 +10,10 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 25.0, 284.0, 704.0, 513.0 ],
+		"rect" : [ 32.0, 161.0, 704.0, 513.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"boxes" : [ 			{
-				"box" : 				{
-					"id" : "obj-39",
-					"linecount" : 2,
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 252.0, 459.0, 272.0, 35.0 ],
-					"text" : ";\rmax openfile namehandle filename"
-				}
-
-			}
-, 			{
 				"box" : 				{
 					"id" : "obj-37",
 					"linecount" : 2,
@@ -34,7 +21,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 234.0, 319.0, 77.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "chans will be\noverwritten."
 				}
 
@@ -611,7 +597,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 58.0, 393.0, 263.0, 22.0 ],
-					"text" : "ho_st1~out.1"
+					"text" : "ho_st1~out.1 _"
 				}
 
 			}
@@ -623,7 +609,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 43.0, 358.0, 82.0, 22.0 ],
-					"restore" : [ "ho_st1~out.1" ],
+					"restore" : [ "ho_st1~out.1", "_" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -650,7 +636,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 127.0, 106.0, 125.0, 32.0 ],
+					"patching_rect" : [ 127.0, 106.0, 125.0, 48.0 ],
 					"varname" : "ll.mc.output",
 					"viewvisibility" : 1
 				}
