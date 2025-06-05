@@ -13,9 +13,10 @@ var boxh = box.rect[3] - box.rect[1];
 var amount;
 var header_click;
 var ccx, ccy, ccm,ccm1,ccm2; // current_clicks (modes)
+var cy_po; //current y + parameter offset
 var par, pval, drag_val;
 var lllbnum, lllbmenu, lllbtext;
-var val = "n"; //notifyclients
+var val = "n"; //notifyclients about clicked mode and position
 
 var button_on = -1;
 var bang_gate = 1;
@@ -193,7 +194,7 @@ function setheader(a){
 	else rowheight = boxh/(rows+header);
 }
 function setrowheight(a){
-	//post("boxsetrowh__",boxh,a,rows,"\n");
+	//post("setrowh__boxh,h,rows",boxh,a,rows,"\n");
 	rowheight = a
 	boxh = a * (rows+header);
 	let br = box.rect;
@@ -202,7 +203,7 @@ function setrowheight(a){
 	//post("boxsetrowh",boxh,"\n");
 }
 function setrows(a){
-	//post("rows",a,boxh,"\n");
+	//post("rows_boxh",a,boxh,"\n");
 	rows = Number(a);
 	if (rowheight_fixed) setrowheight(rowheight) //boxh = rowheight*(rows+header)
 	else rowheight = boxh/(rows+header);
@@ -516,15 +517,18 @@ function onclick(x,y,but,mod1,shift,capslock,option,mod2)
 	if (!(ignore_headerclick && header_click)){
 	if(paramsObj[x] != "none"){
 		par = paramsObj[x];
-		pval = par.getvalueof();			
-		cpval = pval[y+param_offset];
+		let v = par.getvalueof();
+		if (Array.isArray(v)) pval = v
+		else pval[0] = v;			
+		cpval = pval[cy_po];
+		//post("click..val",pval,cpval,"\n");
 		if (ccm == "menu") m_menu(x,y,0);
 		else if (ccm == "num") m_num(x,y,0);
 		else if (ccm == "tog") m_tog(x,y,0,option,mod2);
 		else if (ccm == "button" || ccm == "button_enum") m_button(x,y,0);
 		else if (ccm == "text") m_text(x,y,0);
 		else if (ccm == "none") ;
-		else post("unknown mode","\n");
+		else post("unknown mode",ccm,"\n");
 	}}
 }
 onclick.local = 1; //private
@@ -647,9 +651,9 @@ function menu(a)
 			for (i=param_offset;i<rows;i++){
 				if (ccm1 == "split"){
 					let sep = ccm2[0];
-					let spos = Number(ccm2[1] == "R");
-					let S = pval[i].split(sep)[1-spos];
-					if (spos == 0) pval[i] = a+sep+S
+					let splitpos = Number(ccm2[1] == "R");
+					let S = pval[i].split(sep)[1-splitpos];
+					if (splitpos == 0) pval[i] = a+sep+S
 					else pval[i] = S+sep+a
 				}
 				else pval[i] = a;
@@ -658,10 +662,11 @@ function menu(a)
 		else {
 			if (ccm1 == "split"){
 				let sep = ccm2[0];
-				let spos = Number(ccm2[1] == "R");
+				let splitpos = Number(ccm2[1] == "R");
 				let S = "no";
-				if (pval[cy_po].indexOf(sep)>=0) S = pval[cy_po].split(sep)[1-spos];
-				if (spos == 0) pval[cy_po] = a+sep+S
+				//post("split", sep, splitpos,"currypo",cy_po,"val",pval[cy_po],"\n");
+				if (pval[cy_po].indexOf(sep)>=0) S = pval[cy_po].split(sep)[1-splitpos];
+				if (splitpos == 0) pval[cy_po] = a+sep+S
 				else{
  					pval[cy_po] = S+sep+a;
 					if (def_out) defout();
@@ -735,49 +740,8 @@ function setvalueof(v)
 	//post("setvalueof",v,"\n");
 }
 
-
-
-
 function list(){
 	//post("zu", arrayfromargs(arguments),"\n")
 	let a = arrayfromargs(arguments);
 	if (a[0] == "num") num(a[1]);
 }
-
-
-
-
-function listener()
-{
-	// Run garbage collection to clear out any old object listeners
-	// before registering new ones.
-	gc();	
-	//var obj;
-	//new MaxobjListener(lllbnum, numCaccllback);
-}
-
-function par_listener()
-{
-	// Run garbage collection to clear out any old object listeners
-	// before registering new ones.
-	gc();	
-	var obj;
-	// Assign listeners to all of the numboxes
-	obj = paramsObj[0];
-	new MaxobjListener(obj, p1Callback);
-	//new ParameterListener("a", p1Callback);
-}
-
-
-function p1Callback(data)
-{
-	//post("p1 " + data.value,"\n");
-	//pval[ccy] = data.value;
-	//par.message(pval);
-	mgraphics.redraw();
-}
-p1Callback.local = 1;
-
-
-
-
