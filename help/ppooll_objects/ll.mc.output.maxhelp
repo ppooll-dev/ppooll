@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 32.0, 161.0, 704.0, 513.0 ],
+		"rect" : [ 32.0, 161.0, 704.0, 585.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"boxes" : [ 			{
@@ -20,7 +20,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 234.0, 319.0, 77.0, 33.0 ],
+					"patching_rect" : [ 226.0, 381.0, 77.0, 33.0 ],
 					"text" : "chans will be\noverwritten."
 				}
 
@@ -32,7 +32,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 124.0, 325.0, 108.0, 22.0 ],
+					"patching_rect" : [ 116.0, 387.0, 108.0, 22.0 ],
 					"text" : "ho_st1~out.1 _ _ _"
 				}
 
@@ -46,8 +46,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 573.0, 459.0, 29.5, 23.0 ],
-					"text" : "init"
+					"patching_rect" : [ 573.0, 459.0, 37.0, 23.0 ],
+					"text" : "bang"
 				}
 
 			}
@@ -308,7 +308,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 43.5, 234.0, 150.0, 33.0 ],
+					"patching_rect" : [ 35.0, 296.0, 150.0, 33.0 ],
 					"text" : "these are some examples for outputs~ values"
 				}
 
@@ -319,7 +319,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 42.5, 217.0, 180.0, 20.0 ],
+					"patching_rect" : [ 34.0, 279.0, 180.0, 20.0 ],
 					"text" : "assuming at least ho_st is open,"
 				}
 
@@ -354,7 +354,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 209.0, 427.0, 80.0, 20.0 ],
+					"patching_rect" : [ 201.0, 489.0, 80.0, 20.0 ],
 					"text" : "tiny actmaker"
 				}
 
@@ -524,7 +524,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 149.0, 422.0, 58.0, 22.0 ],
+					"patching_rect" : [ 141.0, 484.0, 58.0, 22.0 ],
 					"text" : "loadbang"
 				}
 
@@ -535,7 +535,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 43.0, 455.0, 100.0, 22.0 ],
+					"patching_rect" : [ 35.0, 517.0, 100.0, 22.0 ],
 					"text" : "s ::help::outputs~"
 				}
 
@@ -548,7 +548,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 149.0, 449.0, 81.0, 35.0 ],
+					"patching_rect" : [ 141.0, 511.0, 81.0, 35.0 ],
 					"text" : ";\ractname help"
 				}
 
@@ -560,7 +560,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 43.0, 273.0, 151.0, 22.0 ],
+					"patching_rect" : [ 35.0, 335.0, 151.0, 22.0 ],
 					"text" : "ho_st1~out.2 ho_st1~out.1"
 				}
 
@@ -572,7 +572,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 43.0, 325.0, 78.0, 22.0 ],
+					"patching_rect" : [ 35.0, 387.0, 78.0, 22.0 ],
 					"text" : "ho_st1~out.1"
 				}
 
@@ -584,7 +584,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 43.0, 298.0, 88.0, 22.0 ],
+					"patching_rect" : [ 35.0, 360.0, 88.0, 22.0 ],
 					"text" : "ho_st1~out.1 _"
 				}
 
@@ -596,7 +596,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 58.0, 393.0, 263.0, 22.0 ],
+					"patching_rect" : [ 50.0, 455.0, 263.0, 22.0 ],
 					"text" : "ho_st1~out.1 _"
 				}
 
@@ -608,7 +608,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 43.0, 358.0, 82.0, 22.0 ],
+					"patching_rect" : [ 35.0, 420.0, 82.0, 22.0 ],
 					"restore" : [ "ho_st1~out.1", "_" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
@@ -636,7 +636,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 127.0, 106.0, 125.0, 48.0 ],
+					"patching_rect" : [ 127.0, 106.0, 127.0, 16.0 ],
 					"varname" : "ll.mc.output",
 					"viewvisibility" : 1
 				}

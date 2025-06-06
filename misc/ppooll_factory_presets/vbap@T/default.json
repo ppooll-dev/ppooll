@@ -1,5 +1,5 @@
 {
-	"window" : [ 810, 560, 1110, 907 ],
+	"window" : [ 818, 563, 1118, 908 ],
 	"2D<>3D" : 	{
 		"patching_rect" : [ 72, 31, 21, 20 ],
 		"hidden" : 0,
@@ -330,7 +330,7 @@
 	}
 ,
 	"ll.mc.output" : 	{
-		"patching_rect" : [ 120, 0, 179, 16 ],
+		"patching_rect" : [ 120, 0, 142, 16 ],
 		"hidden" : 0
 	}
 ,
