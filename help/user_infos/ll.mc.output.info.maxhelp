@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 98.0, 125.0, 635.0, 786.0 ],
+		"rect" : [ 98.0, 100.0, 635.0, 786.0 ],
 		"default_fontsize" : 10.0,
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
@@ -36,7 +36,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 33.5, 666.0, 550.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "as example start with             from above and edit the first channel\nwith keep on and off"
 				}
 
@@ -50,7 +49,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 14.5, 604.0, 550.0, 60.0 ],
-					"presentation_linecount" : 4,
 					"text" : "keep (separate): \n- if keep is not activated all channels below the one you edit will be set to \"_\".\nany separation will be gone.\n- if keep is activated the seperations will be kept."
 				}
 
@@ -357,8 +355,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 155.0, 234.0, 403.0, 20.0 ],
-					"presentation_linecount" : 5,
-					"text" : "ll.mc.output.info1~-no- _ _ _ ho_st1~out.1 ll.mc.output.info1~no _ _"
+					"text" : "ho_st1~out.1 _ _ _ _ _ _ _"
 				}
 
 			}
@@ -1082,7 +1079,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 531.0, 726.0, 82.0, 20.0 ],
-					"restore" : [ "ll.mc.output.info1~-no-", "_", "_", "_", "ho_st1~out.1", "ll.mc.output.info1~no", "_", "_" ],
+					"restore" : [ "ho_st1~out.1", "_", "_", "_", "_", "_", "_", "_" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
