@@ -10,18 +10,55 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 219.0, 275.0, 300.0, 200.0 ],
+		"rect" : [ 300.0, 300.0, 400.0, 400.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 79.0, 164.0, 95.0, 22.0 ],
+					"presentation_linecount" : 2,
+					"text" : "color 0.2 0.3 0.4"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 87.0, 125.0, 75.0, 22.0 ],
+					"text" : "color 0. 1. 0."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 91.0, 97.0, 75.0, 22.0 ],
+					"text" : "color 1. 0. 0."
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-8",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 110.0, 245.0, 135.0, 22.0 ],
-					"text" : "actname sosoheyhey12"
+					"patching_rect" : [ 202.0, 106.0, 139.0, 22.0 ],
+					"text" : "actname sosoheyhey 88"
 				}
 
 			}
@@ -32,8 +69,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 185.0, 130.0, 107.0, 22.0 ],
-					"text" : "actname gverb@1"
+					"patching_rect" : [ 185.0, 130.0, 110.0, 22.0 ],
+					"text" : "actname gverb@ 1"
 				}
 
 			}
@@ -63,7 +100,7 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 865, 273, 1458, 807 ],
+						"client_rect" : [ 1051, 332, 1644, 866 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 200, 200, 800, 500 ]
@@ -282,7 +319,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ -1.0, 0.0, 116.0, 107.0 ],
+					"patching_rect" : [ 0.0, 0.0, 63.318359375, 16.0 ],
 					"varname" : "_act",
 					"viewvisibility" : 1
 				}
@@ -290,6 +327,20 @@
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-41", 0 ],
 					"source" : [ "obj-31", 0 ]
@@ -332,19 +383,19 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
  ],
 		"dependency_cache" : [ 			{
 				"name" : "ll.actui.maxpat",
-				"bootpath" : "~/Documents/Max 9/Library",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/help",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.movewindow.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../Packages/ppooll/javascript",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{

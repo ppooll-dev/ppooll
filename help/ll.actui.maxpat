@@ -14,12 +14,25 @@
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 136.0, 40.0, 24.0, 24.0 ],
+					"varname" : "master"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-16",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 104.0, 195.0, 48.0, 22.0 ],
+					"patching_rect" : [ 27.0, 123.0, 48.0, 22.0 ],
 					"text" : "del 100"
 				}
 
@@ -32,19 +45,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 104.0, 223.0, 24.0, 24.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-10",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 255.0, 224.0, 66.0, 22.0 ],
-					"text" : "route open"
+					"patching_rect" : [ 27.0, 151.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -57,7 +58,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 255.0, 187.0, 30.0, 30.0 ]
+					"patching_rect" : [ 98.0, 73.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -68,7 +69,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 229.0, 141.0, 101.0, 22.0 ],
+					"patching_rect" : [ 165.0, 41.0, 101.0, 22.0 ],
 					"restore" : [ 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
@@ -87,7 +88,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 271.0, 24.0, 56.0, 22.0 ],
+					"patching_rect" : [ 136.0, 12.0, 56.0, 22.0 ],
 					"restore" : 					{
 						"master" : [ 0 ],
 						"pres_menu" : [ "" ],
@@ -107,7 +108,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 180.0, 160.0, 35.0, 22.0 ],
+					"patching_rect" : [ 98.5, 116.0, 35.0, 22.0 ],
 					"text" : "open"
 				}
 
@@ -121,79 +122,15 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 0.0, 59.0, 16.0 ],
+					"patching_rect" : [ 0.0, 0.0, 63.318359375, 16.0 ],
 					"textfile" : 					{
-						"text" : "\n//autowatch = 1;\noutlets = 1;\nmgraphics.init();\nmgraphics.relative_coords = 0;\nmgraphics.autofill = 0;\n\nvar xclick, yclick, xmove, ymove;\nvar r = new Array();\nvar w =this.patcher.parentpatcher.wind;\nvar uib = this.box;\nvar bpatcher = this.patcher.box;\nvar drag_gate = 1;\nw.location = [0,0,300,200];\n//windpos(100,100);\n\nfunction bang()\n{\t\n\t//bpatcher = this.patcher.parentpatcher.box;\n\t//post(w,\"ui_box\",uib.rect,\"bpatcher\",bpatcher.rect,\"\\n\");\n\tuib.ignoreclick = 0;\n\tdrag_gate = 1;\n\t//myval = \"test\";\t\n\t//notifyclients();\n}\n\nfunction onclick(x,y,but,cmd,shift,capslock,option,ctrl)\n{\n\tlet uibr = uib.rect;\n\tif (x > uibr[2]/2) {\n\t\tpost(\"right\");\n\t\tdrag_gate = 0;\n\t\tuib.ignoreclick = 1;\n\t\toutlet(0,\"bang\"); //bangs a max [del 100] to function bang (ignoreclick = 0) !!\n\t\tmessnamed(\"llto11clicks\",\"leftclick\", 0);\n\t\tmessnamed(\"llto11clicks\", \"leftclick\", 1);\n\t\t//uib.ignoreclick = 0;\n\t\t//messnamed(\"llto11clicks\",\"del\",100, \"leftclick\");\n\t}\n\telse xclick = x;\n\tyclick = y;\t\n}\nfunction ondrag(x,y,but,cmd,shift,capslock,option,ctrl)\n{\n\tif (drag_gate){\n\t\t//post(\"drag\");\n\t\txmove = x-xclick;\n\t\tymove = y-yclick;\t\n\t\twindpos(xmove,ymove);\t\n\t}\n}\nfunction windpos(x,y)\n{\t\t\n\t\t//w=this.patcher.wind;\t\t\n\t\tr[0] = x+w.location[0];\n\t\tr[1] = y+w.location[1];\n\t\tr[2] = x+w.location[2];\n\t\tr[3] = y+w.location[3];\n\t\tw.location = r;\t\t\n}\n\nfunction actname(a)\n{\n\tpaint();\n}\nfunction paint()\n{\n\tmgraphics.move_to(0,12);\n\tmgraphics.text_path(\"txt\")\n\tmgraphics.fill();\n}",
+						"text" : "\n//autowatch = 1;\noutlets = 1;\nmgraphics.init();\nmgraphics.relative_coords = 0;\nmgraphics.autofill = 0;\n\nvar xclick, yclick, xmove, ymove;\nvar r = new Array();\nvar w =this.patcher.parentpatcher.wind;\nvar uib = this.box;\nvar bpatcher = this.patcher.box;\nvar title_menu = this.patcher.getnamed(\"title_menu\");\nvar pres_menu = this.patcher.getnamed(\"pres_menu\");\nvar tetris_menu = this.patcher.getnamed(\"tetris_menu\");\nvar drag_gate = 1;\nvar txt = \"txtxtxt1\";\nvar txt88 = \"txtxtxt88\"\ntxt_color = [1,1,1,1];\nbgcolor = [0,0,0,1];\nw.location = [300,300,700,700];\n//windpos(100,100);\n\nfunction bang()\n{\t\n\t//bpatcher = this.patcher.parentpatcher.box;\n\t//post(w,\"ui_box\",uib.rect,\"bpatcher\",bpatcher.rect,\"\\n\");\n\tuib.ignoreclick = 0;\n\tdrag_gate = 1;\n\t//myval = \"test\";\t\n\t//notifyclients();\n}\n\nfunction onclick(x,y,but,cmd,shift,capslock,option,ctrl)\n{\n\tlet uibr = uib.rect;\n\tif (x > uibr[2]/2) {\n\t\tlet mod = shift | option | ctrl;\n\t\t//post(\"right\",mod,\"\\n\");\n\t\ttitle_menu.ignoreclick = 1;\n\t\tpres_menu.ignoreclick = 1;\n\t\ttetris_menu.ignoreclick = 1;\n\t\tif (mod == 0) title_menu.ignoreclick = 0\n\t\telse if (mod == 2) tetris_menu.ignoreclick = 0\n\t\telse pres_menu.ignoreclick = 0;\n\t\tdrag_gate = 0;\n\t\tuib.ignoreclick = 1;\n\t\toutlet(0,\"bang\"); //bangs a max [del 100] to function bang (ignoreclick = 0) !!\n\t\tmessnamed(\"llto11clicks\",\"leftclick\", 0);\n\t\tmessnamed(\"llto11clicks\", \"leftclick\", 1);\n\t\t//uib.ignoreclick = 0;\n\t\t//messnamed(\"llto11clicks\",\"del\",100, \"leftclick\");\n\t}\n\telse xclick = x;\n\tyclick = y;\t\n}\nfunction ondrag(x,y,but,cmd,shift,capslock,option,ctrl)\n{\n\tif (drag_gate){\n\t\t//post(\"drag\");\n\t\txmove = x-xclick;\n\t\tymove = y-yclick;\t\n\t\twindpos(xmove,ymove);\t\n\t}\n}\nfunction windpos(x,y)\n{\t\t\n\t\t//w=this.patcher.wind;\t\t\n\t\tr[0] = x+w.location[0];\n\t\tr[1] = y+w.location[1];\n\t\tr[2] = x+w.location[2];\n\t\tr[3] = y+w.location[3];\n\t\tw.location = r;\t\t\n}\n\nfunction actname(a,n)\n{\n\ttxt88 = a+88;\n\ttxt = a+n;\n\t//post(txt88,txt);\n\tmgraphics.redraw();\n}\nfunction color(r,g,b)\n{\n\tbgcolor = [r,g,b,1];\n\tmgraphics.redraw();\n}\nfunction brightness(color){\n\tlet r = color[0];\n\tlet g = color[1];\n\tlet b = color[2];;\n  \tlet hsp = Math.sqrt( 0.299 * (r * r) + 0.587 * (g * g) + 0.114 * (b * b));\n\tlet c = 1;\n\tif (hsp > 0.5) c = 0;\n\treturn [c, c, c, 1];\n}\nfunction paint()\n{\n\tmgraphics.set_font_size(12);\n\tlet tw = mgraphics.text_measure(txt88)[0]+5;\n\tlet brect = [0,0,tw,16];\n\tlet mrect = [tw/2,0,tw,16];\n\tuib.rect = brect;\n\tbpatcher.rect = brect;\n\ttitle_menu.rect = mrect;\n\tpres_menu.rect = mrect;\n\ttetris_menu.rect = mrect;\n\tmgraphics.set_source_rgba(bgcolor);\n\tmgraphics.rectangle(brect);\n\tmgraphics.fill();\n\ttxt_color = brightness(bgcolor);\n\tmgraphics.set_source_rgba(txt_color);\n\tmgraphics.move_to(4,12);\n\tmgraphics.text_path(txt)\n\tmgraphics.fill();\n}",
 						"filename" : "none",
 						"flags" : 0,
 						"embed" : 1,
 						"autowatch" : 1
 					}
 
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-6",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 14.0, 124.0, 35.0, 22.0 ],
-					"text" : "open"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-4",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 181.0, 72.0, 67.0, 22.0 ],
-					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
-					"text" : "thispatcher"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-3",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 126.0, 96.0, 229.0, 22.0 ],
-					"text" : "script ignoreclick tetris_menu"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-2",
-					"maxclass" : "newobj",
-					"numinlets" : 0,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 181.0, 24.0, 49.0, 22.0 ],
-					"text" : "r ll_TPs"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-88",
-					"ignoreclick" : 1,
-					"maxclass" : "lcd",
-					"numinlets" : 1,
-					"numoutlets" : 4,
-					"outlettype" : [ "list", "list", "int", "" ],
-					"patching_rect" : [ 5.0, 84.0, 63.0, 16.0 ],
-					"varname" : "title_LCD"
 				}
 
 			}
@@ -215,7 +152,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 36.0, -3.0, 47.0, 22.0 ],
+					"patching_rect" : [ 31.6591796875, 0.0, 31.6591796875, 22.0 ],
 					"pattrmode" : 1,
 					"textcolor" : [ 0.149, 0.149, 0.149, 1.0 ],
 					"varname" : "title_menu"
@@ -240,7 +177,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 36.0, 60.0, 31.5, 22.0 ],
+					"patching_rect" : [ 31.6591796875, 0.0, 31.6591796875, 22.0 ],
 					"pattrmode" : 1,
 					"textcolor" : [ 0.149, 0.149, 0.149, 1.0 ],
 					"varname" : "pres_menu"
@@ -265,25 +202,10 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 36.0, 47.0, 31.5, 22.0 ],
+					"patching_rect" : [ 31.6591796875, 0.0, 31.6591796875, 22.0 ],
 					"pattrmode" : 1,
 					"textcolor" : [ 0.149, 0.149, 0.149, 1.0 ],
 					"varname" : "tetris_menu"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"annotation" : "drag here to move the window",
-					"filename" : "ll.movewindow.js",
-					"id" : "obj-86",
-					"maxclass" : "jsui",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 56.0, 164.0, 31.5, 14.0 ],
-					"varname" : "master"
 				}
 
 			}
@@ -305,29 +227,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-3", 1 ],
-					"order" : 0,
-					"source" : [ "obj-2", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
-					"order" : 1,
-					"source" : [ "obj-2", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-86", 0 ],
-					"source" : [ "obj-6", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-7", 0 ]
@@ -336,17 +235,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-10", 0 ],
-					"order" : 0,
-					"source" : [ "obj-8", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
 					"hidden" : 1,
-					"order" : 1,
 					"source" : [ "obj-8", 0 ]
 				}
 
