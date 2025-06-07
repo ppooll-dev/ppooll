@@ -17,7 +17,7 @@ var cy_po; //current y + parameter offset
 var par, pval, drag_val;
 var lllbnum, lllbmenu, lllbtext;
 var val = "n"; //notifyclients about clicked mode and position
-
+var selected_box = [null, null];
 var button_on = -1;
 var bang_gate = 1;
 var keep_ = 0;
@@ -78,7 +78,7 @@ declareattribute("size_lists", {embed: 1,style: "onoff"});
 var width_abs = 0;
 declareattribute("width_abs", {embed: 1 ,style: "onoff"});
 var rows = 3;
-declareattribute("rows", { setter : "setrows", embed: 1 ,type: "long", min: 1, paint: 1});
+declareattribute("rows", { setter : "setrows", embed: 1 ,type: "long", min: 0, paint: 1});
 // ###################################### ____________ attribute setter
 function calc_cols(){
 	mod = [];
@@ -195,7 +195,7 @@ function setheader(a){
 }
 function setrowheight(a){
 	//post("setrowh__boxh,h,rows",boxh,a,rows,"\n");
-	rowheight = a
+	rowheight = a <= 0 ? 10 : a;
 	boxh = a * (rows+header);
 	let br = box.rect;
 	br[3] = br[1] + boxh;
@@ -204,7 +204,7 @@ function setrowheight(a){
 }
 function setrows(a){
 	//post("rows_boxh",a,boxh,"\n");
-	rows = Number(a);
+	rows = Math.max(0, Number(a));
 	if (rowheight_fixed) setrowheight(rowheight) //boxh = rowheight*(rows+header)
 	else rowheight = boxh/(rows+header);
 	if (size_lists) size_list();
@@ -305,10 +305,14 @@ function menu_init(){
 		if (!this.patcher.getnamed("lllbmenu")){
 			lllbmenu = this.patcher.newdefault(100,100,"umenu");
 			lllbmenu.varname = "lllbmenu";		
+			lllbmenu.bgfillcolor = [0,0,0,0]
+			lllbmenu.textcolor = [0,0,0,0]
 			this.patcher.bringtofront(lllbmenu);			
 			lllbmenu.message("prefix_mode",1);
 			lllbmenu.message("prefix","menu");
 			lllbmenu.message("arrow",0);
+			lllbmenu.message("bgfillcolor", ...[0,0,0,0])
+			lllbmenu.message("textcolor", ...[0,0,0,0])
 			this.patcher.hiddenconnect(lllbmenu,1,box,0);
 		}
 		else lllbmenu = this.patcher.getnamed("lllbmenu");
@@ -383,7 +387,20 @@ function paint()
 	let oncolor, bgcolor, hdcolor;
 	let value = [];
 	//post("rt",amount, "rr",mgraphics.size);
-	
+
+	// Draw "no rows"
+	if (rows === 0) {
+		mgraphics.set_source_rgba(0.7, 0.7, 0.7, 1); // grey text
+		mgraphics.set_font_size(fontsize);
+		const txt = "no rows";
+		const tw = mgraphics.text_measure(txt)[0];
+		const th = mgraphics.text_measure(txt)[1];
+		mgraphics.move_to((boxw - tw) / 2, (boxh + th) / 2 - 2);
+		mgraphics.text_path(txt);
+		mgraphics.fill();
+		return;
+	}
+
 	for (j=0;j<amount;j++){ //__________________________cols
 		
  		if (paramsObj[j] == "none") value = ["none"]
@@ -408,6 +425,19 @@ function paint()
 			mgraphics.set_source_rgba(gridcolor);
 			mgraphics.rectangle(col_pos[j],i*rowheight, cw, rowheight);
 			mgraphics.stroke_preserve();
+
+			let isSelected = selected_box &&
+                 selected_box[0] === j &&
+                 selected_box[1] === (i - header);
+
+			let is_selected_menu = false;
+			if (isSelected && i >= header) {
+				mgraphics.set_source_rgba(.23,.23,.23, 1); // translucent yellow
+				mgraphics.rectangle(col_pos[j], i * rowheight, cw, rowheight);
+				mgraphics.fill();
+				is_selected_menu = true;
+			}
+
 			let headr = header && i==0;
 			let cval = (value[i-header+param_offset]);
 			//post("row",i,"cval",cval,"\n");
@@ -431,7 +461,7 @@ function paint()
 				}
 				else {
 					mgraphics.set_source_rgba(bgcolor);
-					txt_color = brightness(bgcolor);
+					txt_color = is_selected_menu ? [1,1,1,1] : brightness(bgcolor);
 					if (cm=="enum" || (cm == "button" && cm1 == "enum")) txt = String(i-header+enum_offset);
 					else if (cm == "tog" || cm == "button")
 						if (cm1 != "none") txt = cm1
@@ -494,6 +524,9 @@ function setTimeout(task, timeout){
 // ####################################################################   _________  interaction
 function onclick(x,y,but,mod1,shift,capslock,option,mod2)
 {
+	if(rows === 0)
+		return;
+
 	if(lllbnum) lllbnum.message("hidden",1);
 	if(lllbmenu) lllbmenu.message("hidden",1);
 	if(lllbtext) lllbtext.message("hidden",1);
@@ -505,6 +538,7 @@ function onclick(x,y,but,mod1,shift,capslock,option,mod2)
 	y = parseInt(y/rowheight)-header;
 	if (y >= rows) y = rows-1;
 	ccy = y;
+	selected_box = [ccx, ccy];
 	header_click = (y == -1);
 	//post(header_click);
 	cy_po = y+param_offset;
@@ -535,6 +569,8 @@ onclick.local = 1; //private
 
 function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 {
+	if(rows === 0) return;
+
 	x = ccx;
 	y = parseInt(y/rowheight)-header;
 	if (y >= rows) y = rows-1;
@@ -542,6 +578,7 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 		//post ("new_y", y);
 		cy_po = y+param_offset;
 		ccy = y;
+		selected_box = [ccx, ccy];
 		if (ccm == "tog") m_tog(x,y,1);
 		else if (ccm == "button") m_button(x,y,1);
 	}
@@ -601,7 +638,18 @@ function m_num(x,y,drag){
 }
 function m_menu(x,y,drag){
 		//let t = String(cpval).split(ccm2[0])[Number(ccm2[1])];
-		lllbmenu.rect = nrect(x,y);
+		 const menuHeight = lllbmenu.rect[3] - lllbmenu.rect[1]; // current height of the menu
+
+		// Calculate the bottom Y of the row
+		const bx = box.rect[0];
+		const by = box.rect[1];
+		const rowBottom = (y + 1) * rowheight + header * rowheight + by - 1;
+
+		// Compute the top Y of the menu so it aligns its bottom with the row bottom
+		const adjustedY = (rowBottom - menuHeight - header * rowheight - by + 1) / rowheight;
+
+		// Now use nrect with adjusted y so bottom aligns correctly
+		lllbmenu.rect = nrect(x, adjustedY);
 		let setv = pval[y+param_offset];
 		if (ccm1 == "split" && y >= 0) {
 			// post("cpval: ", String(cpval).split(ccm2[0]), "\n")
@@ -620,6 +668,8 @@ function m_menu(x,y,drag){
 		lllbmenu.message("setsymbol","(_)");
 		lllbmenu.message("setsymbol",setv);
 
+		lllbmenu.message("bgfillcolor", ...[0,0,0,0])
+		lllbmenu.message("textcolor", ...[0,0,0,0])
 		lllbmenu.hidden = 0;
 		//messnamed("llto11clicks","del",100, "leftclick");
 		messnamed("llto11clicks","leftclick", 0);
@@ -712,15 +762,24 @@ function fill_menu(){
 		}
 	}
 }
-function nrect(x,y){
+function nrect(x, y) {
 	let bx = box.rect[0];
 	let by = box.rect[1];
-	let nrect = [col_pos[x]+bx,
-                 y*rowheight+header*rowheight+by,
-                 col_pos[x+1]+bx-1,
-                 (y+1)*rowheight+header*rowheight+by-1];
+
+	let rowBottom = (y + 1) * rowheight + header * rowheight + by - 1;
+	let objectHeight = rowheight; // or a smaller value like 12 if needed
+
+	let nrect = [
+		col_pos[x] + bx,
+		rowBottom - objectHeight + 1,
+		col_pos[x + 1] + bx - 1,
+		rowBottom
+	];
+
 	return nrect;
 }
+
+
 function par_mess(){
 	bang_gate = 0;
 	par.message(pval);
