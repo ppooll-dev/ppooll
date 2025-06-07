@@ -603,8 +603,23 @@ function m_menu(x,y,drag){
 		//let t = String(cpval).split(ccm2[0])[Number(ccm2[1])];
 		lllbmenu.rect = nrect(x,y);
 		let setv = pval[y+param_offset];
-		if (ccm1 == "split" && y >= 0) setv = String(cpval).split(ccm2[0])[Number(ccm2[1])];
-		lllbmenu.message("set",setv);
+		if (ccm1 == "split" && y >= 0) {
+			// post("cpval: ", String(cpval).split(ccm2[0]), "\n")
+			// post("ccm2[1]: ", ccm2[1], "\n")
+			let menu_index = ccm2[1];
+			if(ccm2[1] === "L")
+				menu_index = 0;
+			else if(ccm2[1] === "R")
+				menu_index = 1;
+			else
+				menu_index = parseInt(ccm2[1]);
+			
+			setv = String(cpval).split(ccm2[0])[menu_index];
+			// post("setv", setv, "\n")
+		}
+		lllbmenu.message("setsymbol","(_)");
+		lllbmenu.message("setsymbol",setv);
+
 		lllbmenu.hidden = 0;
 		//messnamed("llto11clicks","del",100, "leftclick");
 		messnamed("llto11clicks","leftclick", 0);
@@ -690,6 +705,8 @@ function fill_menu(){
 		lllbmenu.message("clear");
 		let items = arrayfromargs(arguments);
 		//post(items,"\n");
+					lllbmenu.message("append","(_)");
+
 		for (i=0;i<items.length;i++){
 			lllbmenu.message("append",items[i]);
 		}
