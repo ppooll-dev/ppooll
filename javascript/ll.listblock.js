@@ -20,7 +20,7 @@ var val = "n"; //notifyclients about clicked mode and position
 
 var button_on = -1;
 var bang_gate = 1;
-var def_out = 0;
+var keep_ = 0;
 
 var mod,cwcalc,col_pos, oncolo,bgcolo,hdcolo,paramsObj;
 
@@ -606,7 +606,9 @@ function m_menu(x,y,drag){
 		if (ccm1 == "split" && y >= 0) setv = String(cpval).split(ccm2[0])[Number(ccm2[1])];
 		lllbmenu.message("set",setv);
 		lllbmenu.hidden = 0;
-		messnamed("llto11clicks","del",100, "leftclick");
+		//messnamed("llto11clicks","del",100, "leftclick");
+		messnamed("llto11clicks","leftclick", 0);
+		messnamed("llto11clicks","leftclick", 1);
 }
 function m_text(x,y,drag){
 		lllbtext.rect = nrect(x,y);
@@ -669,7 +671,7 @@ function menu(a)
 				if (splitpos == 0) pval[cy_po] = a+sep+S
 				else{
  					pval[cy_po] = S+sep+a;
-					if (def_out) defout();
+					if (!keep_) for (i=ccy+1;i<rows;i++) pval[i] = "_" ;
 				}
 			}
 			else pval[cy_po] = a;
@@ -679,14 +681,9 @@ function menu(a)
 		par_mess();
 	}
 }
-function defout(){
-	//post("defout",ccy,"\n");
-	for (i=ccy+1;i<rows;i++){
-		pval[i] = "_";
-	}
-}
-function def_out_mode(a){
-	def_out = 1-a;
+
+function keep(a){
+	keep_ = a;
 }
 function fill_menu(){
 	if (lllbmenu){

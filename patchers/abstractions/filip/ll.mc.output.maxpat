@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 398.0, 302.0, 414.0, 206.0 ],
+		"rect" : [ 619.0, 215.0, 515.0, 281.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -20,7 +20,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 211.0, 73.5, 24.0, 24.0 ]
+					"patching_rect" : [ 220.0, 83.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -31,7 +31,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 265.0, 73.0, 72.0, 22.0 ],
+					"patching_rect" : [ 274.0, 82.0, 72.0, 22.0 ],
 					"text" : "patcherargs"
 				}
 
@@ -56,7 +56,7 @@
 						"classnamespace" : "box",
 						"rect" : [ 381.0, 361.0, 753.0, 502.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
-						"globalpatchername" : "18318n",
+						"globalpatchername" : "1536n",
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-20",
@@ -275,7 +275,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 50.0, 182.0, 101.0, 22.0 ],
-													"restore" : [ 127.0, 106.0, 129.0, 16.0 ],
+													"restore" : [ 127.0, 106.0, 133.0, 48.0 ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -386,13 +386,6 @@
 												"patchline" : 												{
 													"destination" : [ "obj-2", 0 ],
 													"source" : [ "obj-6", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-31", 0 ],
-													"source" : [ "obj-7", 0 ]
 												}
 
 											}
@@ -728,7 +721,7 @@
 ,
 									"text" : "v8",
 									"textfile" : 									{
-										"text" : "var actr = new Global(\"act_rep\");\r\n\n\nvar tpp, bpatcher, outputs,lb, keep, pm;\nvar size_state = 0;\nvar size_gate = 1;\nvar def_out_mode = 0;\nvar init_done = 0;\nvar row_height = 16;\n\nfunction rowheight(a){\n\trow_height = a;\n\thead_n_size();\n}\n\nfunction makearray(a){\n\tlet v = [];\n\tlet isA = Array.isArray(a);\n\tif (isA) v = a \n\telse v[0] = a; \n\treturn v;\n}\n\nfunction init(){\n\ttpp = this.patcher.parentpatcher; //.parentpatcher;\n\tbpatcher = tpp.box;\n\tlb = tpp.getnamed(\"defout\"); //listblock\n\t//post(bpatcher.rect,\"\\n\");\n\t//bpsize(bpatcher.rect);\n\toutputs = tpp.parentpatcher.getnamed(\"outputs~\");\n\t\n\tlet v = outputs.getvalueof();\n\t//post(\"outputs\",outputs,v,\"\\n\");\n\tkeep = tpp.getnamed(\"keep\");\n\tpm = this.patcher.getnamed(\"pm\"); //pattrmarker\n\tinit_done = 1; \n}\n\nfunction bpsize(){ //size the listblock according to the bpatcher\n\ts = arrayfromargs(arguments);\n\tif (size_gate) {\n\t\t//post(\"bpsize\",s,s[1],\"\\n\");\n\t\tlet lbr = lb.rect;\n\t\tlbr[2] = s[2];\n\t\tlb.rect = lbr;\n\t\tlet bpr = bpatcher.rect;\n\t\tbpr[3] = bpr[1] + row_height;\n\t\tbpatcher.rect = bpr;\n\t\tsize_state = 0;\n\t\thead_n_size();\n\t}\n}\n\nfunction bang(){\n\thead_n_size();\n}\n\nfunction head_n_size(){\n\tlet vg = outputs.getvalueof();\n\t//post(\"hns\",vg,\"\\n\");\n\tlet v = [];\n\tif (Array.isArray(vg)) v = vg\n\telse v[0] = vg;\n\tlet vs = v.toString();\n\tlet br = bpatcher.rect;\n\tlet tild = \"~\";\n\t//post(v.length,\"iii\",vs,vs.indexOf(\",\"),\"\\n\");\n\tif (vs.indexOf(\",\")>=0){\t\n\t\tif (v.slice(1).join(\" \").replaceAll(\"_\",\"\").replaceAll(\" \",\"\") == \"\") tild = \"~\" \n\t\telse tild = \"≈\";\n\t\t}\n\tif (size_state == 0){ //folded\n\t\tbpatcher.rect = [br[0], br[1], br[2], br[1]+row_height];\n\t\t\t//post(v.slice(1),\"ww\",vs,vs.length,vs.indexOf(\",\"),\"\\n\");\n\t\tif(vg) lb.message(\"header_text\", tild, v[0].split(\"~\")[0], v[0].split(\"~\")[1]);\n\t\tlb.message(\"headercolors\", 2,1,1);\n\t\t}\n\telse{ //un-folded\n\t\tbpatcher.rect = [br[0], br[1], br[2], br[1]+lb.rect[3]-lb.rect[1]];\n\t\tlb.message(\"header_text\", tild, \"[i] act\", \"keep\");\n\t\tlb.message(\"headercolors\", 2,1,3+def_out_mode);\n\t\t}\n}\n\nfunction listblock(){ //ll.listblock output when clicked\n\tif (!init_done) init();\n\tlet a = arrayfromargs(arguments);\n\tlet as = a.join(\" \");\n\tlet v = outputs.getvalueof();\n\tlet vs = v.toString();\n\t\n\tif (as == \"enum 0 -1\"){ //clicked on leftmost title\n\t\tsize_gate = 0;\n\t\tsize_state = 1 - size_state;\n\t\thead_n_size();\n\t\tsize_gate = 1;\n\t}\n\telse if (as == \"menu 2 -1\" & size_state == 1){ //keep\n\t\tdef_out_mode = 1 - def_out_mode;\n\t\tlb.message(\"def_out_mode\", def_out_mode);\n\t\tlb.message(\"headercolors\", 2,1,3+def_out_mode);\n\t}\n\telse if (as == \"menu 1 -1\" & size_state == 1){ //info\n\t\toutlet(0,\"bang\");\n\t\t//messnamed(\"max\",\"openfile\",\"ha\",\"ll.mc.output.info.maxhelp\");\n\t}\n\tif (a[0] == \"menu\" && a[2]>=0){\n\t\tif (a[1] == 1) pm.message(\"getmarkerlist\"); //act\n\t\tif (a[1] == 2) {                            //inputs\n\t\t\tlet vc = v[a[2]];\n\t\t\tlet act;\n\t\t\tlet inputs_value;\n\t\t\tif (vc != \"_\") act = vc.split(\"~\")[0];\n\t\t\t//post(\"the_act\",act, \"vc\", vc);\n\t\t\tmessnamed(act,\"v8\", \"getnamed\", \"inputs~\");\n\t\t\tif (actr.object == 0) post(\"global\",actr.object,\"\\n\");\n\t\t\tif (actr.object){\n \t\t\t\tinputs_value = actr.object.getvalueof();\n\t\t\t\tinputs(inputs_value);\n\t\t\t}\n\t\t\telse lb.message(\"fill_menu\", \"-no-\");\n\t\t}\n\t}\n}\nfunction markerlist(){\n\ta = arrayfromargs(arguments);\n\t//post(a,\"\\n\");\n\tlb.message(\"fill_menu\", a);\n}\n\nfunction inputs(ina){\n\tlet a = [0];\n\tif (Array.isArray(ina)) a = ina\n\telse a[0] = ina;\n\t//post(\"inputs\",a,a.length,a[0],\"\\n\");\n\tlet fill = [];\n\tfor (o of a){\n\t\tlet osp = o.split(\"(\");\n\t\tlet amt = Number(osp[1].split(\")\")[0]);\n\t\t//post(o,osp[0],osp[1].split(\")\"),amt,\"\\n\");\n\t\tfor (i=0;i<amt+1;i++){\t\t\t\n\t\t\tfill.push(osp[0]+\".\"+i);\n\t\t\t//post(fill,osp[0]+\".\"+i,\"\\n\");\n\t\t}\n\t}\t\n\tlb.message(\"fill_menu\", fill);\n}",
+										"text" : "var actr = new Global(\"act_rep\");\r\n\n\nvar tpp, bpatcher, outputs,lb, pm;\nvar size_state = 0;\nvar size_gate = 0;\nvar init_done = 0;\nvar row_height = 16;\nvar keep = 0;\n\nfunction rowheight(a){\n\trow_height = a;\n\thead_n_size();\n}\n\nfunction makearray(a){\n\tlet v = [];\n\tlet isA = Array.isArray(a);\n\tif (isA) v = a \n\telse v[0] = a; \n\treturn v;\n}\n\nfunction init(){\n\ttpp = this.patcher.parentpatcher; //.parentpatcher;\n\tbpatcher = tpp.box;\n\tlb = tpp.getnamed(\"defout\"); //listblock\n\toutputs = tpp.parentpatcher.getnamed(\"outputs~\");\n\t//let v = outputs.getvalueof();\n\t//post(\"outputs\",outputs,v,\"\\n\");\n\tkeep = 0;\n\t//post(keep);\n\tpm = this.patcher.getnamed(\"pm\"); //pattrmarker\n\tbpsize(bpatcher.rect);\n\tinit_done = 1; \n}\n\nfunction bpsize(s){ //size the listblock according to the bpatcher\n\t//post(\"bpsize\",s,s[1],\"\\n\");\n\tlet lbr = lb.rect;\n\tlbr[2] = s[2]-s[0];\n\tlb.rect = lbr;\n\tlet bpr = bpatcher.rect;\n\tbpr[3] = bpr[1] + row_height;\n\tbpatcher.rect = bpr;\n\tsize_state = 0;\n\thead_n_size();\n}\n\nfunction bang(){\n\thead_n_size();\n}\n\nfunction head_n_size(){\n\tlet vg = outputs.getvalueof();\n\t//post(\"hns\",vg,\"\\n\");\n\tlet v = [];\n\tif (Array.isArray(vg)) v = vg\n\telse v[0] = vg;\n\tlet vs = v.toString();\n\tlet br = bpatcher.rect;\n\tlet tild = \"~\";\n\t//post(v.length,\"iii\",vs,vs.indexOf(\",\"),\"\\n\");\n\tif (vs.indexOf(\",\")>=0){\t\n\t\tif (v.slice(1).join(\" \").replaceAll(\"_\",\"\").replaceAll(\" \",\"\") == \"\") tild = \"~\" \n\t\telse tild = \"≈\";\n\t\t}\n\tif (size_state == 0){ //folded\n\t\tbpatcher.rect = [br[0], br[1], br[2], br[1]+row_height];\n\t\t\t//post(v.slice(1),\"ww\",vs,vs.length,vs.indexOf(\",\"),\"\\n\");\n\t\tif(vg) lb.message(\"header_text\", tild, v[0].split(\"~\")[0], v[0].split(\"~\")[1]);\n\t\tlb.message(\"headercolors\", 2,1,1);\n\t\t}\n\telse{ //un-folded\n\t\tbpatcher.rect = [br[0], br[1], br[2], br[1]+lb.rect[3]-lb.rect[1]];\n\t\tlb.message(\"header_text\", tild, \"[i] act\", \"keep\");\n\t\tlb.message(\"headercolors\", 2,1,3+keep);\n\t\t}\n}\n\nfunction listblock(){ //ll.listblock output when clicked\n\tif (!init_done) init();\n\tlet a = arrayfromargs(arguments);\n\tlet as = a.join(\" \");\n\tlet v = outputs.getvalueof();\n\tlet vs = v.toString();\n\t\n\tif (as == \"enum 0 -1\"){ //clicked on leftmost title\n\t\tsize_gate = 0;\n\t\tsize_state = 1 - size_state;\n\t\thead_n_size();\n\t\tsize_gate = 1;\n\t}\n\telse if (as == \"menu 2 -1\" & size_state == 1){ //keep\n\t\tkeep = 1 - keep;\n\t\tlb.message(\"keep\", keep);\n\t\tlb.message(\"headercolors\", 2,1,3+keep);\n\t}\n\telse if (as == \"menu 1 -1\" & size_state == 1){ //info\n\t\toutlet(0,\"bang\");\n\t\t//messnamed(\"max\",\"openfile\",\"ha\",\"ll.mc.output.info.maxhelp\");\n\t}\n\tif (a[0] == \"menu\" && a[2]>=0){\n\t\tif (a[1] == 1) pm.message(\"getmarkerlist\"); //act\n\t\tif (a[1] == 2) {                            //inputs\n\t\t\tlet vc = v[a[2]];\n\t\t\tlet act;\n\t\t\tlet inputs_value;\n\t\t\tif (vc != \"_\") act = vc.split(\"~\")[0];\n\t\t\t//post(\"the_act\",act, \"vc\", vc);\n\t\t\tmessnamed(act,\"v8\", \"getnamed\", \"inputs~\");\n\t\t\tif (actr.object == 0) post(\"global\",actr.object,\"\\n\");\n\t\t\tif (actr.object){\n \t\t\t\tinputs_value = actr.object.getvalueof();\n\t\t\t\tinputs(inputs_value);\n\t\t\t}\n\t\t\telse lb.message(\"fill_menu\", \"-no-\");\n\t\t}\n\t}\n}\nfunction markerlist(){\n\ta = arrayfromargs(arguments);\n\t//post(a,\"\\n\");\n\tlb.message(\"fill_menu\", a);\n}\n\nfunction inputs(ina){\n\tlet a = [0];\n\tif (Array.isArray(ina)) a = ina\n\telse a[0] = ina;\n\t//post(\"inputs\",a,a.length,a[0],\"\\n\");\n\tlet fill = [];\n\tfor (o of a){\n\t\tlet osp = o.split(\"(\");\n\t\tlet amt = Number(osp[1].split(\")\")[0]);\n\t\t//post(o,osp[0],osp[1].split(\")\"),amt,\"\\n\");\n\t\tfor (i=0;i<amt+1;i++){\t\t\t\n\t\t\tfill.push(osp[0]+\".\"+i);\n\t\t\t//post(fill,osp[0]+\".\"+i,\"\\n\");\n\t\t}\n\t}\t\n\tlb.message(\"fill_menu\", fill);\n}",
 										"filename" : "none",
 										"flags" : 0,
 										"embed" : 1,
@@ -990,9 +983,9 @@
  ]
 					}
 ,
-					"patching_rect" : [ 157.0, 107.0, 180.0, 22.0 ],
+					"patching_rect" : [ 166.0, 116.0, 180.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"globalpatchername" : "18318n"
+						"globalpatchername" : "1536n"
 					}
 ,
 					"text" : "p sub",
@@ -1076,7 +1069,7 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-3",
+									"id" : "obj-44",
 									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -1090,7 +1083,7 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
+									"destination" : [ "obj-44", 0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -1105,7 +1098,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 238.0, 138.0, 99.0, 24.0 ],
+					"patching_rect" : [ 247.0, 147.0, 99.0, 24.0 ],
 					"text" : "p signal~"
 				}
 
@@ -1119,7 +1112,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 237.0, 73.0, 25.0, 25.0 ]
+					"patching_rect" : [ 246.0, 82.0, 25.0, 25.0 ]
 				}
 
 			}
@@ -1128,13 +1121,13 @@
 					"arrow" : 0,
 					"hidden" : 1,
 					"id" : "obj-2",
-					"items" : [ "out.0", ",", "out.1", ",", "out.2", ",", "out.3", ",", "out.4", ",", "out.5", ",", "out.6", ",", "out.7", ",", "out.8", ",", "out.9", ",", "out.10", ",", "out.11", ",", "out.12" ],
+					"items" : [ "out.0", ",", "out.1", ",", "out.2", ",", "out.3", ",", "out.4", ",", "out.5", ",", "out.6", ",", "out.7", ",", "out.8", ",", "out.9", ",", "out.10", ",", "out.11", ",", "out.12", ",", "out.13", ",", "out.14", ",", "out.15", ",", "out.16" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 70.285714285714292, 32.0, 51.714285714285708, 22.0 ],
+					"patching_rect" : [ 76.0, 16.0, 56.0, 22.0 ],
 					"prefix" : "menu",
 					"prefix_mode" : 1,
 					"varname" : "lllbmenu"
@@ -1143,7 +1136,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "bgcolors", 1 ], [ "c1", 0.227023795247078, 0.375513195991516, 0.802831828594208, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.022897183895111, 0, 0.501064121723175, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0.453551530838013, 0, 0.812493920326233, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 1, 3, 3 ], [ "enum_offset", 1 ], [ "fontsize", 12 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 1 ], [ "header_text", "~", "ho_st1", "out.1" ], [ "headercolors", 2, 1, 1 ], [ "ignore_headerclick", 1 ], [ "modes", "enum", "menu_split_~L", "menu_split_~R" ], [ "oncolors", 1 ], [ "param_offset", 0 ], [ "params", "none", "outputs~", "outputs~" ], [ "rowheight_fixed", 1 ], [ "rows", 2 ], [ "size_lists", 1 ], [ "top_patcher", 1 ], [ "width_abs", 0 ] ],
+					"embedstate" : [ [ "bgcolors", 1 ], [ "c1", 0.227023795247078, 0.375513195991516, 0.802831828594208, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.022897183895111, 0, 0.501064121723175, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0.453551530838013, 0, 0.812493920326233, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 1, 3, 3 ], [ "enum_offset", 1 ], [ "fontsize", 12 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 1 ], [ "header_text", "~", "[i] act", "keep" ], [ "headercolors", 2, 1, 3 ], [ "ignore_headerclick", 1 ], [ "modes", "enum", "menu_split_~L", "menu_split_~R" ], [ "oncolors", 1 ], [ "param_offset", 0 ], [ "params", "none", "outputs~", "outputs~" ], [ "rowheight_fixed", 1 ], [ "rows", 2 ], [ "size_lists", 1 ], [ "top_patcher", 1 ], [ "width_abs", 0 ] ],
 					"filename" : "ll.listblock.js",
 					"id" : "obj-51",
 					"jsarguments" : [ "@params", "none", "outputs~", "outputs~", "@modes", "enum", "menu_splitL_~", "menu_splitR_~", "@rows", 5, "@header", 1, "@header_text", "i", "act", "chan", "@colwidths", 1, 5, 5, "@bgcolors", 0.84, 0.4, 0.18, 1, "@enum_offset", 1 ],
@@ -1152,7 +1145,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 0.0, 129.0, 48.0 ],
+					"patching_rect" : [ 0.0, 0.0, 133.0, 48.0 ],
 					"textfile" : 					{
 						"filename" : "ll.listblock.js",
 						"flags" : 0,
@@ -1173,7 +1166,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 143.5, 3.0, 207.0, 22.0 ]
+					"patching_rect" : [ 151.0, 0.0, 207.0, 22.0 ]
 				}
 
 			}

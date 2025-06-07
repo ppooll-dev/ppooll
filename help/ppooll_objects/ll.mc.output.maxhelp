@@ -10,10 +10,35 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 32.0, 161.0, 704.0, 585.0 ],
+		"rect" : [ 110.0, 284.0, 704.0, 585.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-39",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 233.0, 312.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-26",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 229.0, 277.0, 121.0, 33.0 ],
+					"presentation_linecount" : 2,
+					"text" : "bang the object after changing the size."
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-37",
 					"linecount" : 2,
@@ -34,20 +59,6 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 116.0, 387.0, 108.0, 22.0 ],
 					"text" : "ho_st1~out.1 _ _ _"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 13.0,
-					"id" : "obj-17",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 573.0, 459.0, 37.0, 23.0 ],
-					"text" : "bang"
 				}
 
 			}
@@ -243,12 +254,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-40",
-					"linecount" : 4,
+					"linecount" : 5,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 262.0, 143.0, 168.0, 60.0 ],
-					"text" : "if unfolded:\n\"[i] act\" to open the info patch.\n\"keep\" a toggle explained in the info patch."
+					"patching_rect" : [ 262.0, 155.5, 168.0, 74.0 ],
+					"text" : "if unfolded:\n\"[i] act\" to open the info patch.\n\"keep\" a toggle for keeping separations, explained in the info patch."
 				}
 
 			}
@@ -259,7 +270,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 262.0, 94.0, 182.0, 47.0 ],
+					"patching_rect" : [ 262.0, 106.5, 182.0, 47.0 ],
 					"text" : "header:\nif folded, it shows the destination\nof the first channel"
 				}
 
@@ -636,7 +647,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 127.0, 106.0, 127.0, 16.0 ],
+					"patching_rect" : [ 127.0, 106.0, 121.0, 16.0 ],
 					"varname" : "ll.mc.output",
 					"viewvisibility" : 1
 				}
@@ -688,14 +699,6 @@
 					"destination" : [ "obj-24", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-16", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-24", 0 ],
-					"hidden" : 1,
-					"source" : [ "obj-17", 0 ]
 				}
 
 			}
@@ -762,6 +765,13 @@
 					"destination" : [ "obj-24", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-33", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-24", 0 ],
+					"source" : [ "obj-39", 0 ]
 				}
 
 			}
