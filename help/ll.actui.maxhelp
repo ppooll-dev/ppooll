@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 400.0, 300.0 ],
+		"rect" : [ 219.0, 275.0, 300.0, 200.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"boxes" : [ 			{
@@ -21,7 +21,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 110.0, 245.0, 135.0, 22.0 ],
-					"presentation_linecount" : 2,
 					"text" : "actname sosoheyhey12"
 				}
 
@@ -60,8 +59,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 262.0, 71.0, 73.0, 22.0 ],
 					"priority" : 					{
-						"_act" : 5000,
-						"_act::master" : 10
+						"_act" : 5000
 					}
 ,
 					"saved_object_attributes" : 					{
@@ -347,13 +345,6 @@
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../Packages/ppooll/javascript",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "n.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../Packages/ppooll/patchers/abstractions/filip",
-				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
