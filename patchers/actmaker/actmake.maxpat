@@ -14,6 +14,63 @@
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-16",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 195.0, 11.0, 71.0, 20.0 ],
+					"text" : "named inlet"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 228.0, 26.0, 38.0, 22.0 ],
+					"text" : "zl reg",
+					"varname" : "inlet"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 372.0, 22.0, 70.0, 22.0 ],
+					"text" : "loadmess _"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-24",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 372.0, 48.0, 200.0, 22.0 ],
+					"restore" : [ "_" ],
+					"saved_object_attributes" : 					{
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
+					}
+,
+					"text" : "pattr active_store @default_active 0",
+					"varname" : "active_store"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"comment" : "",
 					"id" : "obj-4",
 					"index" : 2,
@@ -21,7 +78,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 339.0, 26.0, 30.0, 30.0 ]
+					"patching_rect" : [ 323.0, 26.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -42,10 +99,10 @@
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
+					"numinlets" : 3,
 					"numoutlets" : 0,
-					"patching_rect" : [ 274.0, 74.0, 84.0, 22.0 ],
-					"text" : "actmaker_sub",
+					"patching_rect" : [ 274.0, 74.0, 117.0, 22.0 ],
+					"text" : "actmaker_sub #1 #2",
 					"varname" : "actmaker_sub"
 				}
 
@@ -69,8 +126,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 57.0, 95.0, 45.0, 22.0 ],
-					"text" : "bpatch"
+					"patching_rect" : [ 57.0, 95.0, 78.0, 22.0 ],
+					"text" : "bpatch #1 #2"
 				}
 
 			}
@@ -112,7 +169,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "var act,tpp;\r\n\r\nfunction basics(){\r\n\tthis.patcher.box.varname = \"act\";\r\n}\r\n\r\nfunction bpatch(){\r\n\ttpp = this.patcher.parentpatcher;\r\n\tact = tpp.newdefault(40,80,\"bpatcher\",\"@name\", \"actmakeB.maxpat\" );\r\n\ttpp.remove(tpp.getnamed(\"act\"));\r\n\tact.varname = \"act\"\r\n}",
+					"code" : "var act,tpp;\r\n\r\nfunction basics(){\r\n\tthis.patcher.box.varname = \"act\";\r\n}\r\n\r\nfunction bpatch(a,b){\r\n\ttpp = this.patcher.parentpatcher;\r\n\tact = tpp.newdefault(40,80,\"bpatcher\",\"@name\", \"actmakeB.maxpat\", \"@args\", a, b);\r\n\ttpp.remove(tpp.getnamed(\"act\"));\r\n\tact.varname = \"act\"\r\n}",
 					"filename" : "none",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
@@ -147,6 +204,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-2", 2 ],
+					"source" : [ "obj-24", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-3", 0 ]
 				}
@@ -156,6 +220,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-2", 1 ],
 					"source" : [ "obj-4", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-24", 0 ],
+					"source" : [ "obj-5", 0 ]
 				}
 
 			}
@@ -184,6 +255,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
 					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-9", 0 ]
 				}
 
 			}

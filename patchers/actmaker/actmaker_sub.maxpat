@@ -15,18 +15,6 @@
 		"toolbarvisible" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-1",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 360.0, 77.0, 70.0, 22.0 ],
-					"text" : "loadmess _"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"bgcolor" : [ 0.592156862745098, 0.105882352941176, 0.454901960784314, 1.0 ],
 					"color" : [ 0.223529411764706, 0.525490196078431, 0.772549019607843, 1.0 ],
 					"fontsize" : 14.0,
@@ -47,7 +35,33 @@
 						"classnamespace" : "box",
 						"rect" : [ 884.0, 542.0, 339.0, 273.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"filename" : "none",
+									"id" : "obj-7",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 46.0, 201.0, 21.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"parameter_enable" : 0
+									}
+,
+									"text" : "v8",
+									"textfile" : 									{
+										"text" : "\n/*\n  ppooll specific\n\n  create act AND manage actname-sending when an act is loaded \n  by klaus filip\n  merged with\n  ll.live.initialize_bpatcher.js\n  for running ppooll in live\n  by steech\n\n\n\tthis script must sit in a subpatcher of the [actmaker] external of ppooll.\n\t\n\t1) if actmaker created in a plain patch, this script will create all other essential externals\n\t\tdepending on given arguments\n\t\n\t2) if the patch is loaded with everything there already \n\t\tgive its unique name and write the title\n\t\t\n\t3) check, if we are in plain max or in the ableton live-wrapper of ppooll.\n\t\tif in live, change properties for the patcher to work as bpatcher.\n\t\tset bpatcher object size based on the individual act.maxpat file\n        set 'movewind' jsui object at top-level of act to draggable jsui\n\t\t\n\t4) perform the first dump of stored parameters\n\t\n\t5) close with announcing this new act:\n\t\tsend to \"acting\":  name instance 1\n          \n*/\n\n\noutlets = 1;\nautowatch = 1;\nvar tpp, obj;\nvar am, name, cname, size,s,fg, m, pat, instance, hash;\nvar r, g, b; // color\n\nfunction make(n,s,i,x,y,z,h) // main function called by actmaker\n{\n\tname=n; size=s; instance=i; r=x; g=y; b=z; hash=h;\n\tcname = name+instance;\t//eg sinus1 = sinus + 1 \n\t//post(\"cname\", cname, hash, size);\n\ttpp = this.patcher.parentpatcher.parentpatcher.parentpatcher;\n\tam = this.patcher.parentpatcher.parentpatcher.box;\t\n\tam.hidden = 1;\n\tif (am.varname != \"act\") am.varname = \"act\";\n\t\n\tif (!tpp.getnamed(\"pattrmarker\")) createbasics();\n\t\n\t//if (r>-1 & !tpp.getnamed(\"title_LCD\")) create_rest();\n\n\tgivename();\n\t\n\tcheck_live();\n\n\tfirst_dump();\n\t\n\t//everything done !!!\n\tmessnamed(\"acting\",name,instance,1);\n\tmessnamed(\"act_ready\", cname);\n\t//post(\"act_ready\", cname);\n\t//outlet(0, [name, instance])\n}\n\nfunction check_live(){\n\t//post(\"check################\");\n\tvar a = Global(\"ll.max_live_envi\")\n\n\tif (tpp.parentpatcher){ // the act was loaded as bpatcher in another patcher\n\t\ta.envi = \"live\";\n\t}\n\telse a.envi = \"max\"\n\t\n\tif (a.envi == \"live\") make_live();\n}\n\nfunction givename()\n{\t\n\tobj = tpp.getnamed(\"pattrmarker\");\n\tobj.message(\"name\", cname);\n\tobj = tpp.getnamed(\"thispatcher\");\n\tobj.message(\"patcher\", cname);\n\tmessnamed(\"actname\", cname);\n\t//post(\"actname\", cname);\n\tmessnamed(hash+\"actname\",cname);\n\tmessnamed(\"::actname\", \"::\"+cname+\"::\");\n\tmessnamed(hash+\"::actname\",\"::\"+cname+\"::\");\n\tif (tpp.getnamed(\"title_LCD\")){\n\t\tif ((r+g+b)/3 < 100) {fg = 255;} else {fg = 0;}\n\t\tobj = tpp.getnamed(\"title_LCD\");\n\t\tobj.message (\"brgb\", r, g, b);\n\t\tobj.message (\"frgb\", fg,fg,fg);\n\t\tobj.message (\"clear\");\n\t\tobj.message (\"font\", \"Geneva\", 12);\n\t\tobj.message (\"moveto\", 4, 12);\n\t\tobj.message (\"write\", cname);\n\t\t}\n\tif (r>-1){\n\t\tobj = tpp.getnamed(\"thispatcher\");\n\t\tobj.message (\"brgb\", r, g, b);\n\t\t}\t\n}\n\nfunction createbasics()\n{\n\ttpp.script(\"sendbox\",\"act\",\"color\", 12);\n\tif (!tpp.getnamed(\"pat\"))\n\t\t{\n\t\tobj = tpp.newdefault(am.rect[0]+13,am.rect[1]-21,\"pattrstorage\",\"pat\");\n\t\tobj.hidden = 1;\n\t\ttpp.hiddenconnect(obj,0,am,1);\n\t\tobj.varname = \"pat\";\n\t\ttpp.script(\"sendbox\",\"pat\", \"color\", 12);\n\t\t}\n\tif (!tpp.getnamed(\"thispatcher\"))\n\t\t{\n\t\tobj = tpp.newdefault(am.rect[0],am.rect[1]+21,\"thispatcher\");\n\t\tobj.rect = [obj.rect[0], obj.rect[1], obj.rect[0]+107, obj.rect[3]];\n\t\tobj.varname = \"thispatcher\";\n\t\tobj.hidden = 1;\n\t\tobj.message(\"toolbarvisible\", 0);\n\t\ttpp.script(\"sendbox\",\"thispatcher\", \"color\", 12);\n\t\t}\n\tif (!tpp.getnamed(\"pattrmarker\"))\n\t\t{\n\t\tobj = tpp.newdefault(am.rect[0],am.rect[1]+42,\"pattrmarker\",\"no\");\n\t\tobj.rect = [obj.rect[0], obj.rect[1], obj.rect[0]+107, obj.rect[3]];\n\t\tobj.varname = \"pattrmarker\";\n\t\tobj.hidden = 1;\n\t\ttpp.script(\"sendbox\",\"pattrmarker\", \"color\", 12);\n\t\t}\n\tif (!tpp.getnamed(\"autopattr\"))\n\t\t{\n\t\tobj = tpp.newdefault(am.rect[0],am.rect[1]+63,\"autopattr\", \"autopattr\");\n\t\tobj.rect = [obj.rect[0], obj.rect[1], obj.rect[0]+107, obj.rect[3]];\n\t\tobj.hidden = 1;\n\t\tobj.varname = \"autopattr\";\n\t\ttpp.script(\"sendbox\",\"autopattr\", \"color\", 12);\n\t\t}\n\tif (tpp.getnamed(\"pat\")) \n\t\t{\n\t\tobj = tpp.getnamed(\"pat\");\n\t\tobj.message(\"savemode\", 0);\n\t\tobj.message(\"changemode\", 1);\n\t\tobj.message(\"notifymode\", 1);\n\t\tobj.message(\"autorestore\", 0);\n\t\tobj.message(\"activewritemode\", 1);\n\t\tobj.message(\"outputmode\", 1);\n\t\t}\n\tlet sname = hash+\"pattrforwards\"\n\tmessnamed(sname,\"bang\");\t\n}\n\nfunction first_dump()\n{\n\tobj = tpp.getnamed(\"pat\");\n\tobj.message(\"active\",\"preset-ramp\", 0);\n\tobj.message(\"active\",\"presets\", 0);\t\n\tobj.message(\"active\",\"title_menu\", 0);\n\tobj.message(\"active\",\"pres_menu\", 0);\n\tobj.message(\"active\",\"tetris_menu\", 0);\t\n\tobj.message(\"active\",\"ll.blues\", 0);\n\tobj.message(\"active\",\"master\", 0);\t\t\t\t\n\tobj.message(\"savemode\", 0);\n\tobj.message(\"changemode\", 1);\n\tobj.message(\"notifymode\", 1);\n\tobj.message(\"autorestore\", 0);\n\tobj.message(\"activewritemode\", 1);\n\tobj.message(\"outputmode\", 1);\n\tobj.message(\"dump\");\n}\n\nfunction create_rest()\n{\n\tpat = tpp.getnamed(\"pat\");\n\tif (!tpp.getnamed(\"title_menu\"))\n\t\t{\n\t\tobj = tpp.newdefault(0,0,\"umenu\");\n\t\tobj.varname = \"title_menu\";\n\t\tobj.message (\"clear\");\n\t\tobj.message (\"append\", \"info\");\n\t\tobj.message (\"append\", \"clientwindow\");\n\t\tobj.message (\"append\", \"storagewindow\");\n\t\tobj.message (\"append\", \"-\");\n\t\tobj.message (\"append\", \"titlebar\");\n\t\tobj.message (\"append\", \"close\");\n\t\tobj.message (\"append\", \"back\");\n\t\tobj.message (\"append\", \"grow\");\n\t\tobj.message (\"append\", \"master\");\n\t\tobj.message (\"append\", \"active_store\");\n\t\tobj.message (\"append\", \"-\");\n\t\tobj.message (\"append\", \"subpatch\");\n\t\tobj.message (\"append\", \"actmaker\");\n\t\tobj.message (\"framecolor\", 1.,1.,1.,0. );\n\t\tobj.message (\"bgcolor\", 1.,1.,1.,0. );\n\t\tobj.message (\"pattrmode\", 1);\n\t\tobj.message (\"presentation\", 1);\n\t\tobj.message (\"presentation_rect\", s/2,0,s/2,14);\n\t\ttpp.sendtoback(obj);\n\t\t}\n\tif (!tpp.getnamed(\"pres_menu\"))\n\t\t{\n\t\tobj = tpp.newdefault(0,0,\"umenu\");\n\t\tobj.varname = \"pres_menu\";\n\t\tobj.message (\"clear\");\n\t\tobj.message (\"append\", \"-\");\n\t\tobj.message (\"append\", \"write\");\n\t\tobj.message (\"append\", \"clear!\");\n\t\tobj.message (\"pattrmode\", 1);\n\t\tobj.message (\"framecolor\", 1.,1.,1.,0. );\n\t\tobj.message (\"bgcolor\", 1.,1.,1.,0. );\n\t\tobj.message (\"presentation\", 1);\n\t\tobj.message (\"presentation_rect\", s/2,0,s/2,14);\n\t\ttpp.sendtoback(obj);\n\t\t}\n\tif (!tpp.getnamed(\"tetris_menu\"))\n\t\t{\n\t\tobj = tpp.newdefault(0,0,\"umenu\");\n\t\tobj.varname = \"tetris_menu\";\n\t\tobj.message (\"clear\");\n\t\tobj.message (\"append\", \"-\");\n\t\tobj.message (\"append\", \"tetris\");\n\t\tobj.message (\"pattrmode\", 1);\n\t\tobj.message (\"framecolor\", 1.,1.,1.,0. );\n\t\tobj.message (\"bgcolor\", 1.,1.,1.,0. );\n\t\tobj.message (\"presentation\", 1);\n\t\tobj.message (\"presentation_rect\", size/2,0,size/2,14);\n\t\ttpp.sendtoback(obj);\n\t\t}\n\n\tif (!tpp.getnamed(\"master\"))\n\t\t{\n\t\tobj = tpp.newdefault(0,0,\"jsui\", \"ll.movewindow.js\");\n\t\tobj.varname = \"master\";\n\t\tobj.message (\"filename\", \"ll.movewindow.js\"); \n\t\tobj.message (\"presentation\", 1);\n\t\tobj.message (\"presentation_rect\", 0,0,size/2,14);\n\t\ttpp.sendtoback(obj);\n\t\t}\n\tif (!tpp.getnamed(\"title_LCD\"))\n\t\t{\n\t\ttpp.script(\"newdefault\", \"title_LCD\", 0, 0, \"lcd\");\n\t\tobj = tpp.getnamed(\"title_LCD\");\n\t\ttpp.bringtofront(obj);\n\t\tobj.ignoreclick = 1;\n\t\t}\n\tif (!tpp.getnamed(\"sub\"))\n\t\t{\n\t\tobj = tpp.newdefault(am.rect[0],am.rect[1]+150,\"p\", name+\"_sub\");\n\t\tobj.varname = \"sub\";\n\t\tobj.hidden = 1;\n\t\tsubp = obj.subpatcher();\n\t\tsubp.wind.location = [200,100,700,500];\n\t\tobj = subp.newdefault(10,20,\"thispatcher\");\n\t\tobj.varname = \"subTP\";\n\t\tsubp.locked = 1;\n\t\t//obj.message(\"patcher\", cname+\"_sub\");\n\t\t//obj.message(\"wclose\");\n\t\t}\n\tmessnamed(\"ll_p_reset\", \"bang\");\n\tsize_title();\n}\n\nfunction size_title()\n{\t\t\n\tobj = tpp.getnamed(\"title_menu\");\n\tobj.rect = [size/2,0,size,14];\n\tobj = tpp.getnamed(\"pres_menu\");\n\tobj.rect = [size/2,0,size,14];\n\t\n\tobj = tpp.getnamed(\"tetris_menu\");\n\tobj.rect = [size/2,0,size,14];\n\tif(tpp.getnamed(\"master\")){\n\tobj = tpp.getnamed(\"master\");\n\tobj.rect = [0,0,size/2,14];\n\t} else  post(\"patch needs scriptingname master for movewind\");\t\n\tobj = tpp.getnamed(\"title_LCD\");\n\tobj.rect = [0,0,size,16];\n\t\n}\n\n// ########################### LIVE #########################################################\n\n\n\nfunction make_live() {\n  // var name = arguments[0]            // ie 'sinus'\n  // var instance = arguments[1]        // ie '1'\n  // cname is ie 'sinus1'\n\tvar lpe = tpp.parentpatcher; //live ppooll environment patcher\n  var TO_HIDE = ['audioON/OFF']\n  var IGNORE_ACTS_LIST = []\n\tvar coords = [0, 0, 200,200];\n\t// ignore acts that are meant to be hidden and will always load in environment\n\tif(IGNORE_ACTS_LIST.indexOf(name) > -1){\n    \treturn\n  \t}\n  \t//set box varname to nameInstance\n\ttpp.box.varname = cname\t\n\tcoords = getcoords(tpp.filepath);\n\n  // set patching rect of act's bpatcher & bring to front\n  lpe.message(\"script\",\"sendbox\",cname,\"patching_rect\",coords)\n  lpe.message(\"script\",\"bringtofront\",cname)\n  messnamed(cname, \"TP\", \"front\")\n\n\t// if this is the ho_st hide defined objects\n\tif(name === 'ho_st'){\n    post('create ho_st1')\n\t\tfor(var i=0; i<TO_HIDE.length; i++){\n\t\t\tif(tpp.getnamed(TO_HIDE[i])){\n\t\t\t\ttpp.message(\"script\",\"hide\",TO_HIDE[i])\n      }\n\t\t}\n  }\n}\n\n\nfunction getcoords(a){\n\tvar f = new File(a);\n\tvar i, rect_pos, end_pos, coords;\n\n\tif (f.isopen) {\n\t\ti=0;\n\t\twhile (((a = f.readline()) != null) && i<200) { // returns a string\n\t\t\trect_pos = a.search('\\\"rect\\\"');\n\t\t\tif(rect_pos > -1){\n\t\t\t\tend_pos = a.lastIndexOf(\"]\");\n\t\t\t\ta = a.slice(rect_pos+11,end_pos-1);\n\t\t\t\tcoords = a.split(',');\n\t\t\t\tbreak;\n\t\t\t}\n\t\t\ti++;\n\t\t}\n\t\tf.close();\n\t\tif (i>199) post(\"could not find rect in \" + a + \"\\n\")\n\t} else {\n\t\tpost(\"could not open file: \" + s + \"\\n\");\n\t}\n\t//post(\"get\",coords, \"\\n\");\n\treturn coords;\n}\n\n\n",
+										"filename" : "none",
+										"flags" : 0,
+										"embed" : 1,
+										"autowatch" : 1
+									}
+
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-6",
 									"maxclass" : "newobj",
@@ -123,7 +137,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 50.0, 192.0, 50.0, 22.0 ],
-													"text" : "35"
+													"text" : "29"
 												}
 
 											}
@@ -266,7 +280,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 711.0, 141.0, 641.0, 851.0 ],
+										"rect" : [ 711.0, 87.0, 641.0, 779.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"globalpatchername" : "1068n[1][3][2][1][1][1][6][1][1][1][2][2][2][1][1][3][2][1][3][3][1][2][2]",
 										"boxes" : [ 											{
@@ -287,7 +301,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 253.0, 802.0, 77.0, 22.0 ],
+													"patching_rect" : [ 253.0, 802.0, 91.0, 22.0 ],
 													"text" : "s #0actname"
 												}
 
@@ -327,7 +341,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 270.0, 57.0, 59.0, 35.0 ],
+													"patching_rect" : [ 270.0, 57.0, 59.0, 62.0 ],
 													"text" : "markerlist ho_st1 control@1"
 												}
 
@@ -634,7 +648,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"outlettype" : [ "bang" ],
 													"patching_rect" : [ 52.0, 40.0, 25.0, 25.0 ]
 												}
 
@@ -929,30 +943,13 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-1",
+									"id" : "obj-12",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 46.0, 196.0, 87.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"filename" : "ll.makeact.js",
-										"parameter_enable" : 0
-									}
-,
-									"text" : "js ll.makeact.js"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-12",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 46.0, 15.0, 38.0, 22.0 ],
-									"text" : "zl reg"
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 46.0, 15.0, 58.0, 22.0 ],
+									"text" : "loadbang"
 								}
 
 							}
@@ -976,7 +973,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 445.0, 268.0, 306.0, 403.0 ],
+										"rect" : [ 445.0, 268.0, 461.0, 481.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"boxes" : [ 											{
 												"box" : 												{
@@ -1038,7 +1035,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"outlettype" : [ "bang" ],
 													"patching_rect" : [ 33.0, -3.0, 25.0, 25.0 ]
 												}
 
@@ -1921,7 +1918,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
+									"destination" : [ "obj-7", 0 ],
 									"source" : [ "obj-22", 0 ]
 								}
 
@@ -1985,21 +1982,14 @@
 			}
 , 			{
 				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
+					"comment" : "",
 					"id" : "obj-24",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 360.0, 117.0, 200.0, 22.0 ],
-					"restore" : [ "_" ],
-					"saved_object_attributes" : 					{
-						"parameter_enable" : 0,
-						"parameter_mappable" : 0
-					}
-,
-					"text" : "pattr active_store @default_active 0",
+					"index" : 3,
+					"maxclass" : "inlet",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 360.0, 95.0, 30.0, 30.0 ],
 					"varname" : "active_store"
 				}
 
@@ -3426,7 +3416,7 @@
 														"classnamespace" : "box",
 														"rect" : [ 186.0, 95.0, 866.0, 648.0 ],
 														"gridsize" : [ 15.0, 15.0 ],
-														"globalpatchername" : "#0n",
+														"globalpatchername" : "3090n",
 														"boxes" : [ 															{
 																"box" : 																{
 																	"fontname" : "Arial",
@@ -3654,6 +3644,7 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-12",
+																	"linecount" : 3,
 																	"maxclass" : "newobj",
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
@@ -3875,6 +3866,7 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 11.595186999999999,
 																	"id" : "obj-1",
+																	"linecount" : 2,
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 1,
@@ -4207,7 +4199,7 @@
 ,
 													"patching_rect" : [ 179.0, 68.0, 55.0, 20.0 ],
 													"saved_object_attributes" : 													{
-														"globalpatchername" : "#0n"
+														"globalpatchername" : "3090n"
 													}
 ,
 													"text" : "p allacts",
@@ -5046,13 +5038,61 @@
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-7",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 273.0, 52.0, 50.0, 22.0 ],
+									"text" : "bang"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-9",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 175.0, 14.0, 113.0, 22.0 ],
+									"text" : "r #0pattrforwards"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-8",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 316.0, 165.0, 177.0, 22.0 ],
+									"text" : "send parent::parent::parent::pat"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 231.0, 116.0, 219.0, 22.0 ],
+									"text" : "send parent::parent::parent::thispatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-4",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 178.0, 9.0, 58.0, 22.0 ],
-									"text" : "loadbang"
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "bang" ],
+									"patching_rect" : [ 175.0, 46.0, 32.0, 22.0 ],
+									"text" : "t b b"
 								}
 
 							}
@@ -5065,7 +5105,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 178.0, 43.0, 261.0, 21.0 ],
+									"patching_rect" : [ 175.0, 80.0, 261.0, 21.0 ],
 									"text" : "window constrain 10 10 8000 8000, window exec"
 								}
 
@@ -5079,8 +5119,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 303.0, 111.0, 176.0, 22.0 ],
-									"text" : "pattrforward parent::parent::pat"
+									"patching_rect" : [ 175.0, 217.0, 73.0, 22.0 ],
+									"text" : "pattrforward"
 								}
 
 							}
@@ -5093,7 +5133,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 303.0, 79.0, 79.0, 22.0 ],
+									"patching_rect" : [ 175.0, 185.0, 79.0, 22.0 ],
 									"text" : "r #0pat"
 								}
 
@@ -5107,8 +5147,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 78.0, 110.0, 218.0, 22.0 ],
-									"text" : "pattrforward parent::parent::thispatcher"
+									"patching_rect" : [ 75.0, 147.0, 73.0, 22.0 ],
+									"text" : "pattrforward"
 								}
 
 							}
@@ -5121,7 +5161,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 35.0, 28.0, 71.0, 22.0 ],
+									"patching_rect" : [ 32.0, 65.0, 71.0, 22.0 ],
 									"text" : "r #0TP"
 								}
 
@@ -5135,7 +5175,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 78.0, 54.0, 51.0, 22.0 ],
+									"patching_rect" : [ 75.0, 91.0, 51.0, 22.0 ],
 									"text" : "r ll_TPs"
 								}
 
@@ -5171,8 +5211,54 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"order" : 1,
+									"source" : [ "obj-4", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"order" : 0,
+									"source" : [ "obj-4", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-55", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-8", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"order" : 1,
+									"source" : [ "obj-9", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 1 ],
+									"order" : 0,
+									"source" : [ "obj-9", 0 ]
 								}
 
 							}
@@ -5445,7 +5531,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-31",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -5751,6 +5837,7 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-43",
+													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 0,
@@ -6193,7 +6280,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "int" ],
 									"patching_rect" : [ 483.0, 46.0, 77.0, 22.0 ],
 									"text" : "t #2"
 								}
@@ -7257,7 +7344,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 265.0, 35.0, 136.0, 22.0 ],
-									"text" : "control@1"
+									"text" : "ui1"
 								}
 
 							}
@@ -9335,7 +9422,7 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-11",
-													"linecount" : 2,
+													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -10474,7 +10561,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-28",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -10485,13 +10572,6 @@
 			}
  ],
 		"lines" : [ 			{
-				"patchline" : 				{
-					"destination" : [ "obj-24", 0 ],
-					"source" : [ "obj-1", 0 ]
-				}
-
-			}
-, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
 					"midpoints" : [ 98.5, 141.5, 229.5, 141.5 ],
@@ -10536,108 +10616,7 @@
 				}
 
 			}
- ],
-		"dependency_cache" : [ 			{
-				"name" : "ll.actname.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.an2.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.makeact.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.pf.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.psto.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.psto1.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.r.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.shut.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.strip#.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.textsize.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.wsendback.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll_fastforward.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "n.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "pattrexists.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "tetrishelp.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0
+ ]
 	}
 
 }
