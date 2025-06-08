@@ -1088,7 +1088,7 @@
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js ll.makeact.js"
+									"text" : "v8 ll.makeact.js"
 								}
 
 							}
