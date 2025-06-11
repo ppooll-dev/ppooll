@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 4,
+			"revision" : 7,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -39,7 +39,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -95,7 +95,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -215,15 +215,10 @@
 												}
 
 											}
- ],
-										"originid" : "pat-10"
+ ]
 									}
 ,
 									"patching_rect" : [ 46.0, 80.0, 61.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"globalpatchername" : ""
-									}
-,
 									"text" : "p textsize"
 								}
 
@@ -265,7 +260,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -920,8 +915,7 @@
 												}
 
 											}
- ],
-										"originid" : "pat-12"
+ ]
 									}
 ,
 									"patching_rect" : [ 146.0, 113.0, 73.0, 22.0 ],
@@ -935,18 +929,26 @@
 							}
 , 							{
 								"box" : 								{
+									"filename" : "ll.makeact.js",
 									"id" : "obj-1",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 46.0, 196.0, 87.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "ll.makeact.js",
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "v8 ll.makeact.js"
+									"text" : "v8 ll.makeact.js",
+									"textfile" : 									{
+										"filename" : "ll.makeact.js",
+										"flags" : 0,
+										"embed" : 0,
+										"autowatch" : 1
+									}
+
 								}
 
 							}
@@ -976,7 +978,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1103,7 +1105,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 4,
+															"revision" : 7,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1755,15 +1757,10 @@
 																}
 
 															}
- ],
-														"originid" : "pat-18"
+ ]
 													}
 ,
 													"patching_rect" : [ 221.0, 304.0, 64.0, 22.0 ],
-													"saved_object_attributes" : 													{
-														"globalpatchername" : ""
-													}
-,
 													"text" : "p hex2rgb"
 												}
 
@@ -1895,15 +1892,10 @@
 												}
 
 											}
- ],
-										"originid" : "pat-16"
+ ]
 									}
 ,
 									"patching_rect" : [ 224.333333333333343, 113.0, 47.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"globalpatchername" : ""
-									}
-,
 									"text" : "p color"
 								}
 
@@ -1991,15 +1983,10 @@
 								}
 
 							}
- ],
-						"originid" : "pat-8"
+ ]
 					}
 ,
 					"patching_rect" : [ 245.0, 8.0, 59.0, 24.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p maker"
 				}
 
@@ -2038,7 +2025,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2072,7 +2059,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2187,7 +2174,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 4,
+															"revision" : 7,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2312,15 +2299,10 @@
 																}
 
 															}
- ],
-														"originid" : "pat-30"
+ ]
 													}
 ,
 													"patching_rect" : [ 450.5, 387.0, 61.0, 22.0 ],
-													"saved_object_attributes" : 													{
-														"globalpatchername" : ""
-													}
-,
 													"text" : "p clientlist"
 												}
 
@@ -2337,7 +2319,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 4,
+															"revision" : 7,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2507,15 +2489,10 @@
 																}
 
 															}
- ],
-														"originid" : "pat-38"
+ ]
 													}
 ,
 													"patching_rect" : [ 198.0, 220.0, 61.0, 22.0 ],
-													"saved_object_attributes" : 													{
-														"globalpatchername" : ""
-													}
-,
 													"text" : "p clientlist"
 												}
 
@@ -2532,7 +2509,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 4,
+															"revision" : 7,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2744,15 +2721,10 @@
 																}
 
 															}
- ],
-														"originid" : "pat-46"
+ ]
 													}
 ,
 													"patching_rect" : [ 370.5, 380.517578000000015, 43.0, 22.0 ],
-													"saved_object_attributes" : 													{
-														"globalpatchername" : ""
-													}
-,
 													"text" : "p set?"
 												}
 
@@ -2930,8 +2902,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 127.0, 40.0, 20.0, 20.0 ],
-													"svg" : ""
+													"patching_rect" : [ 127.0, 40.0, 20.0, 20.0 ]
 												}
 
 											}
@@ -3398,15 +3369,10 @@
 												}
 
 											}
- ],
-										"originid" : "pat-22"
+ ]
 									}
 ,
 									"patching_rect" : [ 507.5, 198.0, 99.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"globalpatchername" : ""
-									}
-,
 									"text" : "p active_storage",
 									"varname" : "patcher"
 								}
@@ -3425,7 +3391,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3460,7 +3426,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 4,
+															"revision" : 7,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4244,8 +4210,7 @@
 																}
 
 															}
- ],
-														"originid" : "pat-58"
+ ]
 													}
 ,
 													"patching_rect" : [ 179.0, 68.0, 55.0, 20.0 ],
@@ -4406,8 +4371,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 124.0, 231.0, 20.0, 20.0 ],
-													"svg" : ""
+													"patching_rect" : [ 124.0, 231.0, 20.0, 20.0 ]
 												}
 
 											}
@@ -4528,15 +4492,10 @@
 												}
 
 											}
- ],
-										"originid" : "pat-56"
+ ]
 									}
 ,
 									"patching_rect" : [ 375.0, 204.0, 57.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"globalpatchername" : ""
-									}
-,
 									"text" : "p master",
 									"varname" : "master"
 								}
@@ -4550,8 +4509,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 148.625, 170.0, 20.0, 20.0 ],
-									"svg" : ""
+									"patching_rect" : [ 148.625, 170.0, 20.0, 20.0 ]
 								}
 
 							}
@@ -4569,7 +4527,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4639,8 +4597,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 148.0, 195.0, 20.0, 20.0 ],
-													"svg" : ""
+													"patching_rect" : [ 148.0, 195.0, 20.0, 20.0 ]
 												}
 
 											}
@@ -4692,8 +4649,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 50.0, 195.0, 20.0, 20.0 ],
-													"svg" : ""
+													"patching_rect" : [ 50.0, 195.0, 20.0, 20.0 ]
 												}
 
 											}
@@ -4938,15 +4894,10 @@
 												}
 
 											}
- ],
-										"originid" : "pat-64"
+ ]
 									}
 ,
 									"patching_rect" : [ 60.5, 134.0, 195.25, 22.0 ],
-									"saved_object_attributes" : 									{
-										"globalpatchername" : ""
-									}
-,
 									"text" : "p master?"
 								}
 
@@ -5058,15 +5009,10 @@
 								}
 
 							}
- ],
-						"originid" : "pat-20"
+ ]
 					}
 ,
 					"patching_rect" : [ 220.0, 145.0, 159.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p masteract&active_storage",
 					"varname" : "masteract"
 				}
@@ -5098,7 +5044,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -5238,15 +5184,10 @@
 								}
 
 							}
- ],
-						"originid" : "pat-66"
+ ]
 					}
 ,
 					"patching_rect" : [ 17.0, 208.0, 36.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p TP"
 				}
 
@@ -5279,7 +5220,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -5500,15 +5441,10 @@
 								}
 
 							}
- ],
-						"originid" : "pat-68"
+ ]
 					}
 ,
 					"patching_rect" : [ 89.0, 145.0, 117.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p send_parameters"
 				}
 
@@ -5539,7 +5475,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -5715,15 +5651,10 @@
 								}
 
 							}
- ],
-						"originid" : "pat-74"
+ ]
 					}
 ,
 					"patching_rect" : [ 58.0, 208.0, 68.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p freebang"
 				}
 
@@ -5741,7 +5672,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -5815,7 +5746,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6046,15 +5977,10 @@
 												}
 
 											}
- ],
-										"originid" : "pat-78"
+ ]
 									}
 ,
 									"patching_rect" : [ 810.0, 287.0, 103.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"globalpatchername" : ""
-									}
-,
 									"text" : "p actmakerhelper"
 								}
 
@@ -6345,8 +6271,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 500.0, 478.0, 15.0, 15.0 ],
-									"svg" : ""
+									"patching_rect" : [ 500.0, 478.0, 15.0, 15.0 ]
 								}
 
 							}
@@ -6499,8 +6424,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 333.0, 445.0, 15.0, 15.0 ],
-									"svg" : ""
+									"patching_rect" : [ 333.0, 445.0, 15.0, 15.0 ]
 								}
 
 							}
@@ -6997,15 +6921,10 @@
 								}
 
 							}
- ],
-						"originid" : "pat-76"
+ ]
 					}
 ,
 					"patching_rect" : [ 17.0, 184.0, 76.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p title_menu"
 				}
 
@@ -7024,7 +6943,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -7047,7 +6966,7 @@
 ,
 									"text" : "v8",
 									"textfile" : 									{
-										"text" : "var tpp = this.patcher.parentpatcher.parentpatcher;\n\nvar actr = new Global(\"act_rep\");\n\nfunction getnamed(a)\n{\n\tactr.object = tpp.getnamed(a)\n}",
+										"text" : "var tpp = this.patcher.parentpatcher.parentpatcher;\n\nvar actr = new Global(\"act_rep\");\n\nfunction getnamed(a)\n{\n\tactr.object = tpp.getnamed(a)\n}\nfunction Getpatcher(){\n\tactr.patcher = tpp;\n}",
 										"filename" : "none",
 										"flags" : 0,
 										"embed" : 1,
@@ -7070,7 +6989,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -7330,15 +7249,10 @@
 												}
 
 											}
- ],
-										"originid" : "pat-86"
+ ]
 									}
 ,
 									"patching_rect" : [ 25.0, 141.0, 97.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"globalpatchername" : ""
-									}
-,
 									"text" : "p name_request"
 								}
 
@@ -7438,7 +7352,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -8035,7 +7949,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 4,
+															"revision" : 7,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -8908,14 +8822,12 @@
 																}
 
 															}
- ],
-														"originid" : "pat-90"
+ ]
 													}
 ,
 													"patching_rect" : [ 248.0, 536.0, 153.0, 19.0 ],
 													"saved_object_attributes" : 													{
-														"fontsize" : 10.0,
-														"globalpatchername" : ""
+														"fontsize" : 10.0
 													}
 ,
 													"text" : "p recall"
@@ -9314,15 +9226,10 @@
 												}
 
 											}
- ],
-										"originid" : "pat-88"
+ ]
 									}
 ,
 									"patching_rect" : [ 256.0, 320.0, 87.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"globalpatchername" : ""
-									}
-,
 									"text" : "p presets"
 								}
 
@@ -9341,7 +9248,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9552,15 +9459,10 @@
 												}
 
 											}
- ],
-										"originid" : "pat-122"
+ ]
 									}
 ,
 									"patching_rect" : [ 189.0, 320.0, 45.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"globalpatchername" : ""
-									}
-,
 									"text" : "p read"
 								}
 
@@ -9591,7 +9493,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -9696,15 +9598,10 @@
 												}
 
 											}
- ],
-										"originid" : "pat-124"
+ ]
 									}
 ,
 									"patching_rect" : [ 121.0, 319.0, 66.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"globalpatchername" : ""
-									}
-,
 									"text" : "p clentadd"
 								}
 
@@ -9801,7 +9698,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -10184,15 +10081,10 @@
 												}
 
 											}
- ],
-										"originid" : "pat-126"
+ ]
 									}
 ,
 									"patching_rect" : [ 121.0, 260.0, 208.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"globalpatchername" : ""
-									}
-,
 									"text" : "p sendto"
 								}
 
@@ -10577,15 +10469,10 @@
 								}
 
 							}
- ],
-						"originid" : "pat-82"
+ ]
 					}
 ,
 					"patching_rect" : [ 89.0, 112.0, 64.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"globalpatchername" : ""
-					}
-,
 					"text" : "p specials",
 					"varname" : "specials"
 				}
@@ -10658,7 +10545,6 @@
 
 			}
  ],
-		"originid" : "pat-6",
 		"dependency_cache" : [ 			{
 				"name" : "ll.actname.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",

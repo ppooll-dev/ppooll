@@ -10,9 +10,8 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 923.0, 404.0, 603.0, 382.0 ],
+		"rect" : [ 746.0, 299.0, 603.0, 382.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
-		"globalpatchername" : "2262m",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-6",
@@ -34,21 +33,6 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 101.0, 55.0, 199.0, 22.0 ],
 					"text" : "make #1 #2 #0"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 11.595186999999999,
-					"id" : "obj-1",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 128.0, 88.0, 172.0, 21.0 ],
-					"text" : "pattrmarker #0m @invisible 1",
-					"varname" : "pattrmarker"
 				}
 
 			}
@@ -91,7 +75,7 @@
 ,
 					"text" : "v8",
 					"textfile" : 					{
-						"text" : "\n/*\n  ppooll specific\n\n  create act AND manage actname-sending when an act is loaded \n  by klaus filip\n  merged with\n  ll.live.initialize_bpatcher.js\n  for running ppooll in live\n  by steech\n\n\n\tthis script must sit in a subpatcher of the [actmaker] external of ppooll.\n\t\n\t1) if actmaker created in a plain patch, this script will create all other essential externals\n\t\tdepending on given arguments\n\t\n\t2) if the patch is loaded with everything there already \n\t\tgive its unique name and write the title\n\t\t\n\t3) check, if we are in plain max or in the ableton live-wrapper of ppooll.\n\t\tif in live, change properties for the patcher to work as bpatcher.\n\t\tset bpatcher object size based on the individual act.maxpat file\n        set 'movewind' jsui object at top-level of act to draggable jsui\n\t\t\n\t4) perform the first dump of stored parameters\n\t\n\t5) close with announcing this new act:\n\t\tsend to \"acting\":  name instance 1\n          \n*/\n\n\n\n\noutlets = 1;\nautowatch = 1;\nvar tpp, obj;\nvar am, name, cname, size,s,fg, m, pat, instance, hash,actui,ar,pf,color;\n\nfunction make(a,b,c) // main function called by actmaker\n{\n\tname=a; \n\tmakecolor(b);\n\thash=c;\n\tgetinstance();\n\n\tcname = name+instance;\t//eg sinus1 = sinus + 1 \n\t//post(\"cname\", cname, hash, size);\n\ttpp = this.patcher.parentpatcher.parentpatcher; //the act patcher\n\tam = this.patcher.parentpatcher.box;\t\n\tam.hidden = 1;\n\tif (am.varname != \"act\") am.varname = \"act\";\n\tactui = this.patcher.parentpatcher.getnamed(\"actui\");\n\t\n\tif (!tpp.getnamed(\"pattrmarker\")) createbasics();\n\t\n\t\n\tif (actui) {\n\t\t//post(\"bpatch\"); \n\t\tam.hidden = 0;\n\t\tlet actui = this.patcher.parentpatcher.getnamed(\"actui\");\n\t\tactui.message(\"actname\", name,instance);\n\t\tactui.message(\"color\", color);\n\t\tcreate_rest();\n\t}\n\n\tgivename();\n\t\n\tcheck_live();\n\n\tfirst_dump();\n\t\n\t//everything done !!!\n\tmessnamed(\"acting\",name,instance,1);\n\tmessnamed(\"act_ready\", cname);\n\tmessnamed(hash+\"instance\",instance);\n\t//post(\"act_ready\", cname);\n\t//outlet(0, [name, instance])\n\n}\nfunction makecolor(c){\n\tc = c.toString();\n\tif (c==0) color = -1;\n\telse if (c == 1) color = [1,1,1,1];\n\telse if (c.includes(\" \")){\n\t\tlet cs = c.split(\" \");\n\t\tcolor = [cs[0]/255.,cs[1]/255.,cs[2]/255.,1];\n \t\t//post(\"array\",color);\n\t}\n\telse {\n\t\tlet result = /^#?([a-f\\d]{2})([a-f\\d]{2})([a-f\\d]{2})$/i.exec(c);\n\t\tcolor = [parseInt(result[1], 16)/255.,parseInt(result[2], 16)/255.,parseInt(result[3], 16)/255.,1];\n\t\t//post(\"zzz\",c,color,\"\\n\");\n\t}\n\tpost(\"color\",color,\"\\n\");\n}\n\n\nfunction getinstance(){\n\tlet pml = this.patcher.getnamed(\"pattrmarker\");\n\tpml.message(\"getmarkerlist\");\n}\nfunction markerlist(){\n\tlet result = 0;\n\tlet m = arrayfromargs(arguments);\n\tlet foundi = []\n\tfor (let a of m){\n\t\tif (!isNaN(a.slice(-1)[0])){\n\t\t\t//post(\"aaa\",a,\"fi\",a[0],\"\\n\");\n\t\t\tlet mstrip = a.match(/(.*?)(\\d+$)/);\n\t\t\tif (mstrip[1] == name) foundi.push(mstrip[2]);\n\t\t\t//post(\"aaa\",mstrip,\"fi\",foundi,\"\\n\");\n\t\t}\n\t}\n\tif (foundi.length > 0){\n\t\tfoundi.sort(function(a, b){return a - b});\n\t\t\tfor (i=0;i<foundi.length;i++){\n\t\t\t\tif (i+1 != foundi[i]) {result = i+1; break;}\n\t\t\t\tresult = i+2;\n\t\t\t}\n\t}\n\telse result = 1;\n\tpost(\"zzz\",foundi,\"len\",foundi.length,\"result\",result,\"\\n\");\n\tinstance = result;\n}\n\nfunction check_live(){\n\t//post(\"check################\");\n\tvar a = new Global(\"ll.max_live_envi\");\n\n\tif (tpp.parentpatcher){ // the act was loaded as bpatcher in another patcher\n\t\ta.envi = \"live\";\n\t}\n\telse a.envi = \"max\"\n\t\n\tif (a.envi == \"live\") make_live();\n}\n\nfunction givename()\n{\t\n\tobj = tpp.getnamed(\"pattrmarker\");\n\tobj.message(\"name\", cname);\n\tobj = tpp.getnamed(\"thispatcher\");\n\tobj.message(\"patcher\", cname);\n\tmessnamed(\"actname\", cname);\n\t//post(\"actname\", cname);\n\tmessnamed(hash+\"actname\",cname);\n\tmessnamed(\"::actname\", \"::\"+cname+\"::\");\n\tmessnamed(hash+\"::actname\",\"::\"+cname+\"::\");\n\n\tif (color != -1){\n\t\tobj = tpp.getnamed(\"thispatcher\");\n\t\tobj.message (\"brgb\", color[0]*255,color[1]*255,color[2]*255);\n\t\t}\t\n}\n\nfunction createbasics()\n{\n\tpost(\"basics\");\n\tar = am.rect;\n\tif (actui) ar = [400,400]\n\telse tpp.script(\"sendbox\",\"act\",\"color\", 12);\n\t\n\tif (!tpp.getnamed(\"pat\"))\n\t\t{\n\t\tobj = tpp.newdefault(ar[0],ar[1]-21,\"pattrstorage\",\"pat\");\n\t\tobj.hidden = 1;\n\t\tif (!actui) tpp.hiddenconnect(obj,0,am,1);\n\t\tobj.varname = \"pat\";\n\t\ttpp.script(\"sendbox\",\"pat\", \"color\", 12);\n\t\t}\n\tif (!tpp.getnamed(\"thispatcher\"))\n\t\t{\n\t\tobj = tpp.newdefault(ar[0],ar[1]+21,\"thispatcher\");\n\t\tobj.rect = [obj.rect[0], obj.rect[1], obj.rect[0]+107, obj.rect[3]];\n\t\tobj.varname = \"thispatcher\";\n\t\tobj.hidden = 1;\n\t\tobj.message(\"toolbarvisible\", 0);\n\t\ttpp.script(\"sendbox\",\"thispatcher\", \"color\", 12);\n\t\t}\n\tif (!tpp.getnamed(\"pattrmarker\"))\n\t\t{\n\t\tobj = tpp.newdefault(ar[0],ar[1]+42,\"pattrmarker\",\"no\");\n\t\tobj.rect = [obj.rect[0], obj.rect[1], obj.rect[0]+107, obj.rect[3]];\n\t\tobj.varname = \"pattrmarker\";\n\t\tobj.hidden = 1;\n\t\ttpp.script(\"sendbox\",\"pattrmarker\", \"color\", 12);\n\t\t}\n\tif (!tpp.getnamed(\"autopattr\"))\n\t\t{\n\t\tobj = tpp.newdefault(ar[0],ar[1]+63,\"autopattr\", \"autopattr\");\n\t\tobj.rect = [obj.rect[0], obj.rect[1], obj.rect[0]+107, obj.rect[3]];\n\t\tobj.hidden = 1;\n\t\tobj.varname = \"autopattr\";\n\t\ttpp.script(\"sendbox\",\"autopattr\", \"color\", 12);\n\t\t}\n\tif (tpp.getnamed(\"pat\")) \n\t\t{\n\t\tobj = tpp.getnamed(\"pat\");\n\t\tobj.message(\"savemode\", 0);\n\t\tobj.message(\"changemode\", 1);\n\t\tobj.message(\"notifymode\", 1);\n\t\tobj.message(\"autorestore\", 0);\n\t\tobj.message(\"activewritemode\", 1);\n\t\tobj.message(\"outputmode\", 1);\n\t\t}\n\tlet sname = hash+\"pattrforwards\"\n\tmessnamed(sname,\"bang\");\t\n}\n\nfunction first_dump()\n{\n\tobj = tpp.getnamed(\"pat\");\n\tobj.message(\"active\",\"preset-ramp\", 0);\n\tobj.message(\"active\",\"presets\", 0);\t\n\tobj.message(\"active\",\"title_menu\", 0);\n\tobj.message(\"active\",\"pres_menu\", 0);\n\tobj.message(\"active\",\"tetris_menu\", 0);\t\n\tobj.message(\"active\",\"ll.blues\", 0);\n\tobj.message(\"active\",\"master\", 0);\t\t\t\t\n\tobj.message(\"savemode\", 0);\n\tobj.message(\"changemode\", 1);\n\tobj.message(\"notifymode\", 1);\n\tobj.message(\"autorestore\", 0);\n\tobj.message(\"activewritemode\", 1);\n\tobj.message(\"outputmode\", 1);\n\tobj.message(\"dump\");\n}\n\nfunction create_rest()\n{\n\tpat = tpp.getnamed(\"pat\");\n\n\tif (!tpp.getnamed(\"pf\")){\n\t\tpf = tpp.newdefault(ar[0],ar[1],\"pattrforward\",\"act::in2\");\n\t\tpf.varname = \"pf\";\n\t\tpf.hidden = 1;\n\t\ttpp.hiddenconnect(pat,0,pf,0);\t\t\n\t}\n\n\tif (!tpp.getnamed(\"sub\"))\n\t\t{\n\t\tobj = tpp.newdefault(ar[0],ar[1]+150,\"p\", name+\"_sub\");\n\t\tobj.varname = \"sub\";\n\t\tobj.hidden = 1;\n\t\tsubp = obj.subpatcher();\n\t\tsubp.wind.location = [200,100,700,500];\n\t\tobj = subp.newdefault(10,20,\"thispatcher\");\n\t\tobj.varname = \"subTP\";\n\t\tsubp.locked = 1;\n\t\t//obj.message(\"patcher\", cname+\"_sub\");\n\t\t//obj.message(\"wclose\");\n\t\t}\n\tmessnamed(\"ll_p_reset\", \"bang\");\n\t//size_title();\n}\n\n\n// ########################### LIVE #########################################################\n\n\n\nfunction make_live() {\n  // var name = arguments[0]            // ie 'sinus'\n  // var instance = arguments[1]        // ie '1'\n  // cname is ie 'sinus1'\n\tvar lpe = tpp.parentpatcher; //live ppooll environment patcher\n  var TO_HIDE = ['audioON/OFF']\n  var IGNORE_ACTS_LIST = []\n\tvar coords = [0, 0, 200,200];\n\t// ignore acts that are meant to be hidden and will always load in environment\n\tif(IGNORE_ACTS_LIST.indexOf(name) > -1){\n    \treturn\n  \t}\n  \t//set box varname to nameInstance\n\ttpp.box.varname = cname\t\n\tcoords = getcoords(tpp.filepath);\n\n  // set patching rect of act's bpatcher & bring to front\n  lpe.message(\"script\",\"sendbox\",cname,\"patching_rect\",coords)\n  lpe.message(\"script\",\"bringtofront\",cname)\n  messnamed(cname, \"TP\", \"front\")\n\n\t// if this is the ho_st hide defined objects\n\tif(name === 'ho_st'){\n    post('create ho_st1')\n\t\tfor(var i=0; i<TO_HIDE.length; i++){\n\t\t\tif(tpp.getnamed(TO_HIDE[i])){\n\t\t\t\ttpp.message(\"script\",\"hide\",TO_HIDE[i])\n      }\n\t\t}\n  }\n}\n\n\nfunction getcoords(a){\n\tvar f = new File(a);\n\tvar i, rect_pos, end_pos, coords;\n\n\tif (f.isopen) {\n\t\ti=0;\n\t\twhile (((a = f.readline()) != null) && i<200) { // returns a string\n\t\t\trect_pos = a.search('\\\"rect\\\"');\n\t\t\tif(rect_pos > -1){\n\t\t\t\tend_pos = a.lastIndexOf(\"]\");\n\t\t\t\ta = a.slice(rect_pos+11,end_pos-1);\n\t\t\t\tcoords = a.split(',');\n\t\t\t\tbreak;\n\t\t\t}\n\t\t\ti++;\n\t\t}\n\t\tf.close();\n\t\tif (i>199) post(\"could not find rect in \" + a + \"\\n\")\n\t} else {\n\t\tpost(\"could not open file: \" + s + \"\\n\");\n\t}\n\t//post(\"get\",coords, \"\\n\");\n\treturn coords;\n}\n\n\n",
+						"text" : "\n/*\n  ppooll specific\n\n  create act AND manage actname-sending when an act is loaded \n  by klaus filip\n  merged with\n  ll.live.initialize_bpatcher.js\n  for running ppooll in live\n  by steech\n\n\n\tthis script must sit in a subpatcher of the [actmaker] external of ppooll.\n\t\n\t1) if actmaker created in a plain patch, this script will create all other essential externals\n\t\tdepending on given arguments\n\t\n\t2) if the patch is loaded with everything there already \n\t\tgive its unique name and write the title\n\t\t\n\t3) check, if we are in plain max or in the ableton live-wrapper of ppooll.\n\t\tif in live, change properties for the patcher to work as bpatcher.\n\t\tset bpatcher object size based on the individual act.maxpat file\n        set 'movewind' jsui object at top-level of act to draggable jsui\n\t\t\n\t4) perform the first dump of stored parameters\n\t\n\t5) close with announcing this new act:\n\t\tsend to \"acting\":  name instance 1\n          \n*/\n\n\n\n\noutlets = 1;\nautowatch = 1;\nvar tpp, obj;\nvar am, name, cname, size,s,fg, m, pat, instance, hash,actui,ar,pf,color;\n\nfunction make(a,b,c) // main function called by actmaker\n{\n\tname=a; \n\tmakecolor(b);\n\thash=c;\n\tgetinstance();\n\tcname = name+instance;\t//eg sinus1 = sinus + 1 \n\t\n\ttpp = this.patcher.parentpatcher.parentpatcher; //the act patcher\n\tam = this.patcher.parentpatcher.box;\t\n\tam.hidden = 1;\n\tam.varname = \"act\";\n\tactui = this.patcher.parentpatcher.getnamed(\"actui\");\n\tar = am.rect;\n\tif (actui) ar = [400,400]\n\telse tpp.script(\"sendbox\",\"act\",\"color\", 12);\n\t\n\tcreatebasics();\n\tcreate_rest();\n\tgivename();\n\t\n\tcheck_live();\n\n\tfirst_dump();\n\t\n\t//everything done !!!\n\tmessnamed(\"acting\",name,instance,1);\n\tmessnamed(\"act_ready\", cname);\n\tmessnamed(hash+\"instance\",instance);\n}\n\nfunction makecolor(c){\n\tc = c.toString();\n\tif (c==0) color = -1;\n\telse if (c == 1) color = [1,1,1,1];\n\telse if (c.includes(\" \")){\n\t\tlet cs = c.split(\" \");\n\t\tcolor = [cs[0]/255.,cs[1]/255.,cs[2]/255.,1];\n\t}\n\telse {\n\t\tlet result = /^#?([a-f\\d]{2})([a-f\\d]{2})([a-f\\d]{2})$/i.exec(c);\n\t\tcolor = [parseInt(result[1], 16)/255.,parseInt(result[2], 16)/255.,parseInt(result[3], 16)/255.,1];\n\t}\n\t//post(\"color\",color,\"\\n\");\n}\n\nfunction getinstance(){\n\tvar m = new Global(\"all_acts\");\n\tm = m.acts;\n\tlet result = 0;\n\tlet foundi = []\n\tfor (let a of m){\n\t\tif (!isNaN(a.slice(-1)[0])){\n\t\t\tlet mstrip = a.match(/(.*?)(\\d+$)/);\n\t\t\tif (mstrip[1] == name) foundi.push(mstrip[2]);\n\t\t}\n\t}\n\tif (foundi.length > 0){\n\t\tfoundi.sort(function(a, b){return a - b});\n\t\t\tfor (i=0;i<foundi.length;i++){\n\t\t\t\tif (i+1 != foundi[i]) {result = i+1; break;}\n\t\t\t\tresult = i+2;\n\t\t\t}\n\t}\n\telse result = 1;\n\t//post(\"zzz\",foundi,\"len\",foundi.length,\"result\",result,\"\\n\");\n\tinstance = result;\n}\n\n\nfunction check_live(){\n\t//post(\"check################\");\n\tvar a = new Global(\"ll.max_live_envi\");\n\n\tif (tpp.parentpatcher){ // the act was loaded as bpatcher in another patcher\n\t\ta.envi = \"live\";\n\t}\n\telse a.envi = \"max\"\n\t\n\tif (a.envi == \"live\") make_live();\n}\n\nfunction givename()\n{\t\n\tobj = tpp.getnamed(\"pattrmarker\");\n\tobj.message(\"name\", cname);\n\tobj = tpp.getnamed(\"thispatcher\");\n\tobj.message(\"patcher\", cname);\n\tmessnamed(\"actname\", cname);\n\t//post(\"actname\", cname);\n\tmessnamed(hash+\"actname\",cname);\n\tmessnamed(\"::actname\", \"::\"+cname+\"::\");\n\tmessnamed(hash+\"::actname\",\"::\"+cname+\"::\");\n\n\tif (color != -1){\n\t\tobj = tpp.getnamed(\"thispatcher\");\n\t\tobj.message (\"brgb\", color[0]*255,color[1]*255,color[2]*255);\n\t\t}\t\n}\n\nfunction createbasics()\n{\nif (!tpp.getnamed(\"pattrmarker\")){\n\n\t\n\tif (!tpp.getnamed(\"pat\"))\n\t\t{\n\t\tobj = tpp.newdefault(ar[0],ar[1]-21,\"pattrstorage\",\"pat\");\n\t\tobj.hidden = 1;\n\t\tif (!actui) tpp.hiddenconnect(obj,0,am,1);\n\t\tobj.varname = \"pat\";\n\t\ttpp.script(\"sendbox\",\"pat\", \"color\", 12);\n\t\t}\n\tif (!tpp.getnamed(\"thispatcher\"))\n\t\t{\n\t\tobj = tpp.newdefault(ar[0],ar[1]+21,\"thispatcher\");\n\t\tobj.rect = [obj.rect[0], obj.rect[1], obj.rect[0]+107, obj.rect[3]];\n\t\tobj.varname = \"thispatcher\";\n\t\tobj.hidden = 1;\n\t\tobj.message(\"toolbarvisible\", 0);\n\t\ttpp.script(\"sendbox\",\"thispatcher\", \"color\", 12);\n\t\t}\n\tif (!tpp.getnamed(\"pattrmarker\"))\n\t\t{\n\t\tobj = tpp.newdefault(ar[0],ar[1]+42,\"pattrmarker\",\"no\");\n\t\tobj.rect = [obj.rect[0], obj.rect[1], obj.rect[0]+107, obj.rect[3]];\n\t\tobj.varname = \"pattrmarker\";\n\t\tobj.hidden = 1;\n\t\ttpp.script(\"sendbox\",\"pattrmarker\", \"color\", 12);\n\t\t}\n\tif (!tpp.getnamed(\"autopattr\"))\n\t\t{\n\t\tobj = tpp.newdefault(ar[0],ar[1]+63,\"autopattr\", \"autopattr\");\n\t\tobj.rect = [obj.rect[0], obj.rect[1], obj.rect[0]+107, obj.rect[3]];\n\t\tobj.hidden = 1;\n\t\tobj.varname = \"autopattr\";\n\t\ttpp.script(\"sendbox\",\"autopattr\", \"color\", 12);\n\t\t}\n\tif (tpp.getnamed(\"pat\")) \n\t\t{\n\t\tobj = tpp.getnamed(\"pat\");\n\t\tobj.message(\"savemode\", 0);\n\t\tobj.message(\"changemode\", 1);\n\t\tobj.message(\"notifymode\", 1);\n\t\tobj.message(\"autorestore\", 0);\n\t\tobj.message(\"activewritemode\", 1);\n\t\tobj.message(\"outputmode\", 1);\n\t\t}\t\n}\nlet sname = hash+\"pattrforwards\"\nmessnamed(sname,\"bang\");\t\n}\n\nfunction create_rest()\n{\nif (actui) {\n\tam.hidden = 0;\n\tactui.message(\"actname\", name,instance);\n\tactui.message(\"color\", color);\n\tpat = tpp.getnamed(\"pat\");\n\tif (!tpp.getnamed(\"pf\")){\n\t\tpf = tpp.newdefault(ar[0],ar[1],\"pattrforward\",\"act::in2\");\n\t\tpf.varname = \"pf\";\n\t\tpf.hidden = 1;\n\t\ttpp.hiddenconnect(pat,0,pf,0);\t\t\n\t}\n\n\tif (!tpp.getnamed(\"sub\"))\n\t\t{\n\t\tobj = tpp.newdefault(ar[0],ar[1]+150,\"p\", name+\"_sub\");\n\t\tobj.varname = \"sub\";\n\t\tobj.hidden = 1;\n\t\tsubp = obj.subpatcher();\n\t\tsubp.wind.location = [200,100,700,500];\n\t\tobj = subp.newdefault(10,20,\"thispatcher\");\n\t\tobj.varname = \"subTP\";\n\t\tsubp.locked = 1;\n\t\t//obj.message(\"patcher\", cname+\"_sub\");\n\t\t//obj.message(\"wclose\");\n\t\t}\n\tmessnamed(\"ll_p_reset\", \"bang\");\n}\n}\n\nfunction first_dump()\n{\n\tobj = tpp.getnamed(\"pat\");\n\tobj.message(\"active\",\"preset-ramp\", 0);\n\tobj.message(\"active\",\"presets\", 0);\t\n\tobj.message(\"active\",\"title_menu\", 0);\n\tobj.message(\"active\",\"pres_menu\", 0);\n\tobj.message(\"active\",\"tetris_menu\", 0);\t\n\tobj.message(\"active\",\"ll.blues\", 0);\n\tobj.message(\"active\",\"master\", 0);\t\t\t\t\n\tobj.message(\"savemode\", 0);\n\tobj.message(\"changemode\", 1);\n\tobj.message(\"notifymode\", 1);\n\tobj.message(\"autorestore\", 0);\n\tobj.message(\"activewritemode\", 1);\n\tobj.message(\"outputmode\", 1);\n\tobj.message(\"dump\");\n}\n\n// ########################### LIVE #########################################################\n\n\n\nfunction make_live() {\n  // var name = arguments[0]            // ie 'sinus'\n  // var instance = arguments[1]        // ie '1'\n  // cname is ie 'sinus1'\n\tvar lpe = tpp.parentpatcher; //live ppooll environment patcher\n  var TO_HIDE = ['audioON/OFF']\n  var IGNORE_ACTS_LIST = []\n\tvar coords = [0, 0, 200,200];\n\t// ignore acts that are meant to be hidden and will always load in environment\n\tif(IGNORE_ACTS_LIST.indexOf(name) > -1){\n    \treturn\n  \t}\n  \t//set box varname to nameInstance\n\ttpp.box.varname = cname\t\n\tcoords = getcoords(tpp.filepath);\n\n  // set patching rect of act's bpatcher & bring to front\n  lpe.message(\"script\",\"sendbox\",cname,\"patching_rect\",coords)\n  lpe.message(\"script\",\"bringtofront\",cname)\n  messnamed(cname, \"TP\", \"front\")\n\n\t// if this is the ho_st hide defined objects\n\tif(name === 'ho_st'){\n    post('create ho_st1')\n\t\tfor(var i=0; i<TO_HIDE.length; i++){\n\t\t\tif(tpp.getnamed(TO_HIDE[i])){\n\t\t\t\ttpp.message(\"script\",\"hide\",TO_HIDE[i])\n      }\n\t\t}\n  }\n}\n\n\nfunction getcoords(a){\n\tvar f = new File(a);\n\tvar i, rect_pos, end_pos, coords;\n\n\tif (f.isopen) {\n\t\ti=0;\n\t\twhile (((a = f.readline()) != null) && i<200) { // returns a string\n\t\t\trect_pos = a.search('\\\"rect\\\"');\n\t\t\tif(rect_pos > -1){\n\t\t\t\tend_pos = a.lastIndexOf(\"]\");\n\t\t\t\ta = a.slice(rect_pos+11,end_pos-1);\n\t\t\t\tcoords = a.split(',');\n\t\t\t\tbreak;\n\t\t\t}\n\t\t\ti++;\n\t\t}\n\t\tf.close();\n\t\tif (i>199) post(\"could not find rect in \" + a + \"\\n\")\n\t} else {\n\t\tpost(\"could not open file: \" + s + \"\\n\");\n\t}\n\t//post(\"get\",coords, \"\\n\");\n\treturn coords;\n}\n\n\n",
 						"filename" : "none",
 						"flags" : 0,
 						"embed" : 1,
@@ -2713,7 +2697,6 @@
 						"classnamespace" : "box",
 						"rect" : [ 165.0, 400.0, 555.0, 273.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-5",
@@ -3404,9 +3387,33 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 726.0, 166.0, 1170.0, 626.0 ],
+						"rect" : [ 396.0, 166.0, 1170.0, 626.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "int", "" ],
+									"patching_rect" : [ 46.0, 129.0, 32.0, 22.0 ],
+									"text" : "t 1 l"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 46.0, 165.0, 32.0, 22.0 ],
+									"text" : "gate"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-42",
 									"maxclass" : "newobj",
@@ -4183,6 +4190,13 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-24", 0 ],
 									"source" : [ "obj-10", 1 ]
 								}
@@ -4377,7 +4391,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-8", 0 ],
+									"destination" : [ "obj-5", 0 ],
 									"source" : [ "obj-42", 0 ]
 								}
 
@@ -4393,6 +4407,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-41", 0 ],
 									"source" : [ "obj-48", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 1 ],
+									"source" : [ "obj-5", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-5", 0 ]
 								}
 
 							}
@@ -4515,9 +4543,56 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 500.0, 383.0, 1008.0, 437.0 ],
+						"rect" : [ 507.0, 416.0, 1008.0, 437.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-24",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 406.0, 186.0, 113.0, 22.0 ],
+									"text" : "prepend getpatcher"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-29",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 229.0, 158.0, 22.0, 20.0 ],
+									"text" : "??"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 406.0, 226.0, 153.0, 22.0 ],
+									"text" : "n oldstyle_js-call_actmaker"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-26",
+									"linecount" : 4,
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 507.0, 45.0, 50.0, 49.0 ],
+									"text" : "applydict tetris@host"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"filename" : "none",
 									"id" : "obj-20",
@@ -4525,14 +4600,14 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 740.0, 166.0, 21.0, 22.0 ],
+									"patching_rect" : [ 594.0, 280.0, 21.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0
 									}
 ,
 									"text" : "v8",
 									"textfile" : 									{
-										"text" : "var tpp = this.patcher.parentpatcher.parentpatcher;\n\nvar actr = new Global(\"act_rep\");\n\nfunction getnamed(a)\n{\n\tactr.object = tpp.getnamed(a)\n}",
+										"text" : "\n\nvar actr = new Global(\"act_rep\");\nvar tpp = this.patcher.parentpatcher.parentpatcher.parentpatcher;\n\nfunction getnamed(a)\n{\n\tactr.object = tpp.getnamed(a);\n}\nfunction Getpatcher(){\n\tactr.patcher = tpp;\n}\n\n\n/*\nfrom tetrishelp.js\n\n*/\n\n\n\nvar console = {\n  log: function(message){\n    post(\"tetrishelp: \" + message)\n    post()\n  }\n}\n\n\n\nvar newstate = new Array();\nvar class_excludes = \" route pv pattr coll pattrmarker autopattr pattrstorage thispatcher send pvar outlet inlet closebang loadmess bgcolor \";\nvar name_excludes = \" route master movewind tetris_menu pres_menu title_menu title_LCD act sub \";\nvar attributes = new Array();\nvar dict_name = \"so\";\n\n/////////////////////////////////////////////////////////////////////////////\n\nfunction bang()\n{\n\nmessnamed (\"tetristhis\", \"there\", tpp);\n\n}\n\nfunction ll_new(a)\n{\n\nmessnamed (\"ll_new\", \"there\", tpp, this.patcher.parentpatcher.box, a);\n\n}\n\nfunction ll_amh(a)\n{\n\nmessnamed (\"ll_amh_receiver\", \"there\", tpp, this.patcher.parentpatcher.box, a);\n\n}\n\nfunction getloc()\n{\n\tmessnamed (\"tetristhis\", tpp.wind.location);\n}\n\nfunction getloc_to(a,o)\n{\n\t\t\n\tif (o) { //objects varname\n\t\tmessnamed (a, tpp.getnamed(o).rect);\n\t\t}\n\t//window\n\telse messnamed (a, tpp.wind.location);\n}\n\nfunction setloc(x,y,o)\n{\n\tif (o) { //an object\n\t\tvar obj = tpp.getnamed(o);\n\t\tobj.rect = [x,y,obj.rect[2]-obj.rect[0]+x,obj.rect[3]-obj.rect[1]+y];\n\t\t//post(o, obj.rect, \"\\n\");\n\t}\n\telse {\n\t\t// console.log('is Max runtime; set patch window location')\n\t\tvar p = tpp;\n\t\tp.wind.location = [x,y,p.wind.location[2]-p.wind.location[0]+x,p.wind.location[3]-p.wind.location[1]+y];\n\t}\n}\n\nfunction setwin(a)\n{\n\trect = arrayfromargs(arguments);\n\t//post (\"SW\", a, rec); \n\tvar p = tpp.wind;\n    p.location = rect;\n}\n\nfunction wsize(width,height)\n{\n\t//post(\"wsize\");\n\tvar w = tpp.wind;\n\tvar r = new Array();\n\n\tr[0] = w.location[0];\n\tr[1] = w.location[1];\n\n\tif (width > 0) \n\t\tr[2] = w.location[0]+width;\n\telse \n\t\tr[2] = w.location[2];\n\t\n\tr[3] = w.location[1]+height;\n\tw.location = r;\n}\n\nfunction applydict(dn)\n{\n\tdict_name = dn;\n\tvar w = tpp.wind;\n\tvar d = new Dict(dict_name);\n\td.set(\"window\", w.location);\n    tpp.apply(objdict);\n}\n\nfunction objdict(a)\n{\n\t//post(\"objdict\",a,\"\\n\");\n\tvar d = new Dict(dict_name);\n    if (a.varname){\t\n\tif (class_excludes.indexOf(\" \" + a.maxclass + \" \") == -1){\n\tif (name_excludes.indexOf(\" \" + a.varname + \" \") == -1){\n\t\t\n\t\td.setparse(a.varname, \"so\");\n\t\t//post(\"iii\",\"\\n\");\n\t\t//if (a.maxclass == \"patcher\") post(a.varname,\" a.maxclass is patcher, so ??\",\"\\n\");//d.set(a.varname+\"::patcher\", \"bang\");\n\t\t\n\t\td.replace(a.varname+\"::patching_rect\", a.rect[0], a.rect[1], a.rect[2]-a.rect[0], a.rect[3]-a.rect[1]);\n\t\td.replace(a.varname+\"::hidden\", a.hidden);\t\t\n\t\tattributes = a.getattrnames();\t\n\t\t//post(a.varname, a.maxclass, \"\\n\", attributes, \"\\n\");\n\t\tconst pattern = /color/;\t\n\t\tfor (i=0;i<attributes.length;i++) {\n\t\t\tif (attributes[i] == \"fontsize\"){\n\t\t\t\tif (a.maxclass != \"patcher\")\n\t\t\t\t\td.set(a.varname+\"::fontsize\" , a.getattr(attributes[i]));\t\t\t\n\t\t\t}\n\t\t\tif (attributes[i] == \"jsarguments\"){\n\t\t\t\td.set(a.varname+\"::jsarguments\" , a.getattr(attributes[i]));\t\t\t\n\t\t\t}\n\t\t\tif (pattern.test(attributes[i]) && a.maxclass != \"patcher\"){\n\t\t\t\t//post(\"--------\", a.varname, a.maxclass, attributes[i], a.getattr(attributes[i]), \"\\n\");\n\t\t\t\td.set(a.varname+\"::\"+attributes[i] , a.getattr(attributes[i]));\t\t\t\n\n\t\t\t}\n\t\t}\n\t}\n\t}\n\t}\n    return true;\n}\n\n\nfunction apply()\n{\n    tpp.apply(printobj);\n}\n\nfunction printobj(a)\n{\n\n    if (a.varname){\n        messnamed (\"tetrislist\", a.maxclass, a.varname, a.rect[0], a.rect[1], a.rect[2], a.rect[3], a.hidden);\n\t}\n    return true;\n}\n\nfunction getobj(a)\n{\n\ta = tpp.a;\n    if (a.varname)\n        messnamed (\"tetrislist\", a.maxclass, a.varname, a.rect[0], a.rect[1], a.rect[2], a.rect[3], a.hidden);\n    return true;\n}\n\nfunction applyblue(b)\n{\n\t//post(\"\\n\", \"got: \" + b);\t\n\tnewstate = b.split(' ');\n\tfor (i=1;i<newstate.length;i++) newstate[i] = Number(newstate[i]);\n\t//post (\"new: \" + newstate, \"\\n\");\n    tpp.apply(getblueargs);\n}\n\nfunction getblueargs(a)\n{\n\tif (a.varname == \"ll.blues\"){\n\t\t//post (\"newd: \" + newstate, \"\\n\");\t\n\t\t//post (\"newd: \", a.getattrnames(), \"\\n\");\t\n\t\tvar args;\n\t\tif (a.getboxattr(\"args\")){\n \t\t\targs = a.getboxattr(\"args\");\n\t\t\tvar istate = -10;\n\t\t\tif (newstate[0] == \"@state\"){\n\t\t\tfor (i=0;i<args.length;i++) {\n\t\t\t\tif (args[i] == \"@state\")istate = i;\n\t\t\t\tif (i<istate+7) args[i] = newstate[i-istate];\n\t\t\t\t}\n\t\t\t}\n\t\tif (istate<0) args = args.concat(newstate);\t\n\t\ta.setboxattr(\"args\",args);\n\t\t}\n\t\telse {\n\t\t\ta.setboxattr(\"args\",newstate);\t\t\n\t\t}\n\tmessnamed (\"getargs\", a.getboxattr(\"args\"));\n\t}\n}\n\nfunction getblueargsonly(){\n\ta = tpp.getnamed(\"ll.blues\");\n\tmessnamed (\"getargs\", a.getboxattr(\"args\"));\n}",
 										"filename" : "none",
 										"flags" : 0,
 										"embed" : 1,
@@ -7663,7 +7738,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 233.0, 166.0, 78.0, 22.0 ],
+									"patching_rect" : [ 220.0, 141.0, 78.0, 22.0 ],
 									"text" : "n #0sub"
 								}
 
@@ -7767,25 +7842,6 @@
 							}
 , 							{
 								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-1",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 420.924987999999985, 222.0, 83.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"filename" : "tetrishelp.js",
-										"parameter_enable" : 0
-									}
-,
-									"text" : "js tetrishelp.js"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"comment" : "",
 									"id" : "obj-10",
 									"index" : 2,
@@ -7839,13 +7895,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"source" : [ "obj-14", 6 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
 									"source" : [ "obj-14", 3 ]
 								}
@@ -7882,7 +7931,16 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-20", 0 ],
+									"order" : 0,
 									"source" : [ "obj-14", 11 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-20", 0 ],
+									"order" : 0,
+									"source" : [ "obj-14", 6 ]
 								}
 
 							}
@@ -7902,6 +7960,14 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"order" : 1,
+									"source" : [ "obj-14", 6 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-25", 1 ],
 									"source" : [ "obj-14", 2 ]
 								}
@@ -7911,6 +7977,14 @@
 								"patchline" : 								{
 									"destination" : [ "obj-25", 0 ],
 									"source" : [ "obj-14", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-26", 1 ],
+									"order" : 1,
+									"source" : [ "obj-14", 11 ]
 								}
 
 							}
@@ -7938,6 +8012,15 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
+									"order" : 1,
+									"source" : [ "obj-16", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-20", 0 ],
+									"order" : 0,
 									"source" : [ "obj-16", 0 ]
 								}
 
@@ -7945,6 +8028,15 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
+									"order" : 1,
+									"source" : [ "obj-18", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-20", 0 ],
+									"order" : 0,
 									"source" : [ "obj-18", 0 ]
 								}
 
@@ -7952,6 +8044,15 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
+									"order" : 1,
+									"source" : [ "obj-19", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-20", 0 ],
+									"order" : 0,
 									"source" : [ "obj-19", 0 ]
 								}
 
@@ -7966,7 +8067,23 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
+									"order" : 1,
 									"source" : [ "obj-21", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-20", 0 ],
+									"order" : 0,
+									"source" : [ "obj-21", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-24", 0 ]
 								}
 
 							}
@@ -8059,13 +8176,6 @@
 			}
  ],
 		"lines" : [ 			{
-				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"source" : [ "obj-1", 0 ]
-				}
-
-			}
-, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-5", 0 ],
 					"source" : [ "obj-12", 0 ]

@@ -10,54 +10,36 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 695.0, 231.0, 656.0, 296.0 ],
+		"rect" : [ 695.0, 231.0, 719.0, 390.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-21",
+					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 394.0, 41.0, 75.0, 22.0 ],
-					"restore" : [ 0 ],
-					"saved_object_attributes" : 					{
-						"parameter_enable" : 0,
-						"parameter_mappable" : 0
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 133.5, 36.0, 56.0, 22.0 ],
+					"restore" : 					{
+						"pres_menu" : [ "" ],
+						"tetris_menu" : [ "" ],
+						"title_menu" : [ "actmaker" ]
 					}
 ,
-					"text" : "pattr inputs~",
-					"varname" : "inputs~"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-20",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 307.0, 41.0, 82.0, 22.0 ],
-					"restore" : [ 0 ],
-					"saved_object_attributes" : 					{
-						"parameter_enable" : 0,
-						"parameter_mappable" : 0
-					}
-,
-					"text" : "pattr outputs~",
-					"varname" : "outputs~"
+					"text" : "autopattr",
+					"varname" : "u751015509"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-15",
+					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 307.0, 12.0, 216.0, 22.0 ],
+					"patching_rect" : [ 216.0, 36.0, 122.0, 35.0 ],
 					"restore" : [ 0, 0 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
@@ -75,7 +57,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 323.0, 83.0, 75.0, 20.0 ],
+					"patching_rect" : [ 336.0, 275.0, 75.0, 20.0 ],
 					"text" : "named in2"
 				}
 
@@ -87,7 +69,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 411.0, 76.0, 70.0, 22.0 ],
+					"patching_rect" : [ 424.0, 268.0, 70.0, 22.0 ],
 					"text" : "loadmess _"
 				}
 
@@ -99,7 +81,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 351.0, 105.0, 38.0, 22.0 ],
+					"patching_rect" : [ 364.0, 297.0, 38.0, 22.0 ],
 					"text" : "zl reg",
 					"varname" : "in2"
 				}
@@ -112,7 +94,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 226.0, 12.0, 67.0, 22.0 ],
+					"patching_rect" : [ 133.5, 70.0, 67.0, 22.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 					"text" : "thispatcher",
 					"varname" : "thispatcher"
@@ -125,7 +107,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 213.0, 91.0, 75.0, 20.0 ],
+					"patching_rect" : [ 210.0, 211.0, 75.0, 20.0 ],
 					"text" : "named inlet"
 				}
 
@@ -136,7 +118,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 0,
-					"patching_rect" : [ 290.0, 140.0, 140.0, 22.0 ],
+					"patching_rect" : [ 303.0, 332.0, 180.0, 22.0 ],
 					"text" : "actmaker_sub #1 #2",
 					"varname" : "actmaker_sub"
 				}
@@ -149,7 +131,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 147.0, 91.0, 66.0, 22.0 ],
+					"patching_rect" : [ 144.0, 211.0, 66.0, 22.0 ],
 					"text" : "route open",
 					"varname" : "inlet"
 				}
@@ -162,7 +144,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 147.0, 205.0, 101.0, 22.0 ],
+					"patching_rect" : [ 144.0, 325.0, 101.0, 22.0 ],
 					"text" : "pattrforward actui",
 					"varname" : "pattrforward"
 				}
@@ -175,7 +157,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 173.0, 173.0, 58.0, 22.0 ],
+					"patching_rect" : [ 170.0, 293.0, 58.0, 22.0 ],
 					"text" : "loadbang"
 				}
 
@@ -213,7 +195,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 147.0, 49.0, 30.0, 30.0 ]
+					"patching_rect" : [ 144.0, 169.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -224,8 +206,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 411.0, 105.0, 200.0, 22.0 ],
-					"restore" : [ 0 ],
+					"patching_rect" : [ 424.0, 297.0, 200.0, 22.0 ],
+					"restore" : [ "_" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -238,31 +220,12 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-1",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 152.0, 8.0, 56.0, 22.0 ],
-					"restore" : 					{
-						"pres_menu" : [ "write" ],
-						"tetris_menu" : [ "" ],
-						"title_menu" : [ "active_store" ]
-					}
-,
-					"text" : "autopattr",
-					"varname" : "u224041903"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-9",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 147.0, 130.0, 35.0, 22.0 ],
+					"patching_rect" : [ 144.0, 250.0, 35.0, 22.0 ],
 					"text" : "open"
 				}
 
@@ -276,9 +239,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 0.0, 31.091796875, 16.0 ],
+					"patching_rect" : [ 0.0, 0.0, 50.7734375, 16.0 ],
 					"textfile" : 					{
-						"text" : "\n//autowatch = 1;\noutlets = 1;\nmgraphics.init();\nmgraphics.relative_coords = 0;\nmgraphics.autofill = 0;\n\nvar xclick, yclick, xmove, ymove;\nvar r = new Array();\nvar w =this.patcher.parentpatcher.wind;\nvar uib = this.box;\nvar bpatcher; // = this.patcher.box;\nvar title_menu = this.patcher.getnamed(\"title_menu\");\nvar pres_menu = this.patcher.getnamed(\"pres_menu\");\nvar tetris_menu = this.patcher.getnamed(\"tetris_menu\");\nvar drag_gate = 1;\nvar txt = \"txtxtxt1\";\nvar txt88 = \"txtxtxt88\"\ntxt_color = [1,1,1,1];\nbgcolor = [0,0,0,1];\n//w.location = [300,300,700,700];\n//windpos(100,100);\nbang();\n\nfunction bang()\n{\t\n\tbpatcher = this.patcher.box;\n\ttitle_menu = this.patcher.getnamed(\"title_menu\");\n\tpres_menu = this.patcher.getnamed(\"pres_menu\");\n\ttetris_menu = this.patcher.getnamed(\"tetris_menu\");\n\t//post(\"ui_boxr\",uib.rect,\"bpatcherr\",bpatcher.rect,\"\\n\");\n\t//myval = \"test\";\t\n\t//notifyclients();\n}\nfunction clickreset()\n{\t\n\tuib.ignoreclick = 0;\n\tdrag_gate = 1;\n}\nfunction onclick(x,y,but,cmd,shift,capslock,option,ctrl)\n{\n\tlet uibr = uib.rect;\n\tif (x > uibr[2]/2) {\n\t\tlet mod = shift | option | ctrl;\n\t\t//post(\"right\",mod,\"\\n\");\n\t\ttitle_menu.ignoreclick = 1;\n\t\tpres_menu.ignoreclick = 1;\n\t\ttetris_menu.ignoreclick = 1;\n\t\tif (mod == 0) title_menu.ignoreclick = 0\n\t\telse if (mod == 2) tetris_menu.ignoreclick = 0\n\t\telse pres_menu.ignoreclick = 0;\n\t\tdrag_gate = 0;\n\t\tuib.ignoreclick = 1;\n\t\toutlet(0,\"bang\"); //bangs a max [del 100] to function bang (ignoreclick = 0) !!\n\t\tmessnamed(\"llto11clicks\",\"leftclick\", 0);\n\t\tmessnamed(\"llto11clicks\", \"leftclick\", 1);\n\t\t//uib.ignoreclick = 0;\n\t\t//messnamed(\"llto11clicks\",\"del\",100, \"leftclick\");\n\t}\n\telse xclick = x;\n\tyclick = y;\t\n}\nfunction ondrag(x,y,but,cmd,shift,capslock,option,ctrl)\n{\n\tif (drag_gate){\n\t\t//post(\"drag\");\n\t\txmove = x-xclick;\n\t\tymove = y-yclick;\t\n\t\twindpos(xmove,ymove);\t\n\t}\n}\nfunction windpos(x,y)\n{\t\t\n\t\t//w=this.patcher.wind;\t\t\n\t\tr[0] = x+w.location[0];\n\t\tr[1] = y+w.location[1];\n\t\tr[2] = x+w.location[2];\n\t\tr[3] = y+w.location[3];\n\t\tw.location = r;\t\t\n}\n\nfunction actname(a,n)\n{\n\ttxt88 = a+88;\n\ttxt = a+n;\n\t//post(txt88,txt);\n\tmgraphics.redraw();\n}\nfunction color(r,g,b)\n{\n\tbgcolor = [r,g,b,1];\n\tmgraphics.redraw();\n}\nfunction brightness(color){\n\tlet r = color[0];\n\tlet g = color[1];\n\tlet b = color[2];;\n  \tlet hsp = Math.sqrt( 0.299 * (r * r) + 0.587 * (g * g) + 0.114 * (b * b));\n\tlet c = 1;\n\tif (hsp > 0.5) c = 0;\n\treturn [c, c, c, 1];\n}\nfunction paint()\n{\n\tmgraphics.set_font_size(12);\n\tlet tw = mgraphics.text_measure(txt88)[0]+5;\n\tlet brect = [0,0,tw,16];\n\tlet mrect = [tw/2,0,tw,16];\n\tuib.rect = brect;\n\tbpatcher.rect = brect;\n\ttitle_menu.rect = mrect;\n\tpres_menu.rect = mrect;\n\ttetris_menu.rect = mrect;\n\tmgraphics.set_source_rgba(bgcolor);\n\tmgraphics.rectangle(brect);\n\tmgraphics.fill();\n\ttxt_color = brightness(bgcolor);\n\tmgraphics.set_source_rgba(txt_color);\n\tmgraphics.move_to(4,12);\n\tmgraphics.text_path(txt)\n\tmgraphics.fill();\n}",
+						"text" : "\n//autowatch = 1;\noutlets = 1;\nmgraphics.init();\nmgraphics.relative_coords = 0;\nmgraphics.autofill = 0;\n\nvar xclick, yclick, xmove, ymove;\nvar r = new Array();\nvar w =this.patcher.parentpatcher.wind;\nvar uib = this.box;\nvar bpatcher; // = this.patcher.box;\nvar title_menu;\nvar pres_menu;\nvar tetris_menu;\nvar drag_gate = 1;\nvar txt = \"txtxtxt1\";\nvar txt88 = \"txtxtxt88\"\ntxt_color = [1,1,1,1];\nbgcolor = [0,0,0,1];\n//w.location = [300,300,700,700];\n//windpos(100,100);\nbang();\n\nfunction bang()\n{\t\n\tbpatcher = this.patcher.box;\n\ttitle_menu = this.patcher.getnamed(\"title_menu\");\n\tpres_menu = this.patcher.getnamed(\"pres_menu\");\n\ttetris_menu = this.patcher.getnamed(\"tetris_menu\");\n\t//post(\"ui_boxr\",uib.rect,\"bpatcherr\",bpatcher.rect,\"\\n\");\n\t//myval = \"test\";\t\n\t//notifyclients();\n}\nfunction clickreset()\n{\t\n\tuib.ignoreclick = 0;\n\tdrag_gate = 1;\n}\nfunction onclick(x,y,but,cmd,shift,capslock,option,ctrl)\n{\n\tlet uibr = uib.rect;\n\tif (x > uibr[2]/2) {\n\t\tlet mod = shift | option | ctrl;\n\t\t//post(\"right\",mod,\"\\n\");\n\t\ttitle_menu.ignoreclick = 1;\n\t\tpres_menu.ignoreclick = 1;\n\t\ttetris_menu.ignoreclick = 1;\n\t\tif (mod == 0) title_menu.ignoreclick = 0\n\t\telse if (mod == 2) tetris_menu.ignoreclick = 0\n\t\telse pres_menu.ignoreclick = 0;\n\t\tdrag_gate = 0;\n\t\tuib.ignoreclick = 1;\n\t\toutlet(0,\"bang\"); //bangs a max [del 100] to function bang (ignoreclick = 0) !!\n\t\tmessnamed(\"llto11clicks\",\"leftclick\", 0);\n\t\tmessnamed(\"llto11clicks\", \"leftclick\", 1);\n\t\t//uib.ignoreclick = 0;\n\t\t//messnamed(\"llto11clicks\",\"del\",100, \"leftclick\");\n\t}\n\telse xclick = x;\n\tyclick = y;\t\n}\nfunction ondrag(x,y,but,cmd,shift,capslock,option,ctrl)\n{\n\tif (drag_gate){\n\t\t//post(\"drag\");\n\t\txmove = x-xclick;\n\t\tymove = y-yclick;\t\n\t\twindpos(xmove,ymove);\t\n\t}\n}\nfunction windpos(x,y)\n{\t\t\n\t\t//w=this.patcher.wind;\t\t\n\t\tr[0] = x+w.location[0];\n\t\tr[1] = y+w.location[1];\n\t\tr[2] = x+w.location[2];\n\t\tr[3] = y+w.location[3];\n\t\tw.location = r;\t\t\n}\n\nfunction actname(a,n)\n{\n\ttxt88 = a+88;\n\ttxt = a+n;\n\t//post(txt88,txt);\n\tmgraphics.redraw();\n}\nfunction color(r,g,b)\n{\n\tbgcolor = [r,g,b,1];\n\tmgraphics.redraw();\n}\nfunction brightness(color){\n\tlet r = color[0];\n\tlet g = color[1];\n\tlet b = color[2];;\n  \tlet hsp = Math.sqrt( 0.299 * (r * r) + 0.587 * (g * g) + 0.114 * (b * b));\n\tlet c = 1;\n\tif (hsp > 0.5) c = 0;\n\treturn [c, c, c, 1];\n}\nfunction paint()\n{\n\tmgraphics.set_font_size(12);\n\tlet tw = mgraphics.text_measure(txt88)[0]+5;\n\tlet brect = [0,0,tw,16];\n\tlet mrect = [tw/2,0,tw,16];\n\tuib.rect = brect;\n\tbpatcher.rect = brect;\n\ttitle_menu.rect = mrect;\n\tpres_menu.rect = mrect;\n\ttetris_menu.rect = mrect;\n\tmgraphics.set_source_rgba(bgcolor);\n\tmgraphics.rectangle(brect);\n\tmgraphics.fill();\n\ttxt_color = brightness(bgcolor);\n\tmgraphics.set_source_rgba(txt_color);\n\tmgraphics.move_to(4,12);\n\tmgraphics.text_path(txt)\n\tmgraphics.fill();\n}",
 						"filename" : "none",
 						"flags" : 0,
 						"embed" : 1,
@@ -307,7 +270,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 15.5458984375, 0.0, 15.5458984375, 22.0 ],
+					"patching_rect" : [ 25.38671875, 0.0, 25.38671875, 22.0 ],
 					"pattrmode" : 1,
 					"textcolor" : [ 0.149, 0.149, 0.149, 1.0 ],
 					"varname" : "title_menu"
@@ -332,7 +295,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 15.5458984375, 0.0, 15.5458984375, 22.0 ],
+					"patching_rect" : [ 25.38671875, 0.0, 25.38671875, 22.0 ],
 					"pattrmode" : 1,
 					"textcolor" : [ 0.149, 0.149, 0.149, 1.0 ],
 					"varname" : "pres_menu"
@@ -357,7 +320,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 15.5458984375, 0.0, 15.5458984375, 22.0 ],
+					"patching_rect" : [ 25.38671875, 0.0, 25.38671875, 22.0 ],
 					"pattrmode" : 1,
 					"textcolor" : [ 0.149, 0.149, 0.149, 1.0 ],
 					"varname" : "tetris_menu"
@@ -368,8 +331,7 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
-					"hidden" : 1,
-					"midpoints" : [ 173.833333333333343, 39.23828125, 68.666666666666671, 39.23828125, 68.666666666666671, 42.63671875, 9.5, 42.63671875 ],
+					"midpoints" : [ 155.333333333333343, 62.109375, 82.416666666666671, 62.109375, 82.416666666666671, 33.15625, 9.5, 33.15625 ],
 					"source" : [ "obj-1", 1 ]
 				}
 
