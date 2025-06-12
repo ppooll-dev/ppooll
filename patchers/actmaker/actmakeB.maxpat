@@ -57,7 +57,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 336.0, 275.0, 75.0, 20.0 ],
+					"patching_rect" : [ 321.0, 246.0, 75.0, 20.0 ],
 					"text" : "named in2"
 				}
 
@@ -69,7 +69,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 424.0, 268.0, 70.0, 22.0 ],
+					"patching_rect" : [ 409.0, 239.0, 70.0, 22.0 ],
 					"text" : "loadmess _"
 				}
 
@@ -81,7 +81,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 364.0, 297.0, 38.0, 22.0 ],
+					"patching_rect" : [ 349.0, 268.0, 38.0, 22.0 ],
 					"text" : "zl reg",
 					"varname" : "in2"
 				}
@@ -118,7 +118,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 0,
-					"patching_rect" : [ 303.0, 332.0, 180.0, 22.0 ],
+					"patching_rect" : [ 288.0, 303.0, 180.0, 22.0 ],
 					"text" : "actmaker_sub #1 #2",
 					"varname" : "actmaker_sub"
 				}
@@ -206,7 +206,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 424.0, 297.0, 200.0, 22.0 ],
+					"patching_rect" : [ 409.0, 268.0, 200.0, 22.0 ],
 					"restore" : [ "_" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,

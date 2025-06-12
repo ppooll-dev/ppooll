@@ -5,6 +5,7 @@ var tpp = this.patcher.parentpatcher.parentpatcher.parentpatcher;
 
 function getnamed(a)
 {
+	post("actspecials getnamed",a,"\n");
 	actr.object = tpp.getnamed(a);
 }
 function Getpatcher(){
