@@ -1692,7 +1692,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 110.0, 290.0, 127.0, 22.0 ],
-																	"text" : "sameclass sinus1"
+																	"text" : "sameclass test1"
 																}
 
 															}
@@ -3887,10 +3887,11 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-40",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "52 197 25" ],
+									"outlettype" : [ "100 100 100" ],
 									"patching_rect" : [ 404.0, 87.0, 77.0, 22.0 ],
 									"text" : "t #2"
 								}
@@ -4587,30 +4588,29 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 507.0, 45.0, 50.0, 49.0 ],
+									"patching_rect" : [ 507.0, 45.0, 50.0, 62.0 ],
 									"text" : "applydict tetris@host"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"filename" : "none",
+									"filename" : "actmaker_specials.js",
 									"id" : "obj-20",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 594.0, 280.0, 21.0, 22.0 ],
+									"patching_rect" : [ 594.0, 280.0, 136.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "v8",
+									"text" : "v8 actmaker_specials.js",
 									"textfile" : 									{
-										"text" : "\n\nvar actr = new Global(\"act_rep\");\nvar tpp = this.patcher.parentpatcher.parentpatcher.parentpatcher;\n\nfunction getnamed(a)\n{\n\tactr.object = tpp.getnamed(a);\n}\nfunction Getpatcher(){\n\tactr.patcher = tpp;\n}\n\n\n/*\nfrom tetrishelp.js\n\n*/\n\n\n\nvar console = {\n  log: function(message){\n    post(\"tetrishelp: \" + message)\n    post()\n  }\n}\n\n\n\nvar newstate = new Array();\nvar class_excludes = \" route pv pattr coll pattrmarker autopattr pattrstorage thispatcher send pvar outlet inlet closebang loadmess bgcolor \";\nvar name_excludes = \" route master movewind tetris_menu pres_menu title_menu title_LCD act sub \";\nvar attributes = new Array();\nvar dict_name = \"so\";\n\n/////////////////////////////////////////////////////////////////////////////\n\nfunction bang()\n{\n\nmessnamed (\"tetristhis\", \"there\", tpp);\n\n}\n\nfunction ll_new(a)\n{\n\nmessnamed (\"ll_new\", \"there\", tpp, this.patcher.parentpatcher.box, a);\n\n}\n\nfunction ll_amh(a)\n{\n\nmessnamed (\"ll_amh_receiver\", \"there\", tpp, this.patcher.parentpatcher.box, a);\n\n}\n\nfunction getloc()\n{\n\tmessnamed (\"tetristhis\", tpp.wind.location);\n}\n\nfunction getloc_to(a,o)\n{\n\t\t\n\tif (o) { //objects varname\n\t\tmessnamed (a, tpp.getnamed(o).rect);\n\t\t}\n\t//window\n\telse messnamed (a, tpp.wind.location);\n}\n\nfunction setloc(x,y,o)\n{\n\tif (o) { //an object\n\t\tvar obj = tpp.getnamed(o);\n\t\tobj.rect = [x,y,obj.rect[2]-obj.rect[0]+x,obj.rect[3]-obj.rect[1]+y];\n\t\t//post(o, obj.rect, \"\\n\");\n\t}\n\telse {\n\t\t// console.log('is Max runtime; set patch window location')\n\t\tvar p = tpp;\n\t\tp.wind.location = [x,y,p.wind.location[2]-p.wind.location[0]+x,p.wind.location[3]-p.wind.location[1]+y];\n\t}\n}\n\nfunction setwin(a)\n{\n\trect = arrayfromargs(arguments);\n\t//post (\"SW\", a, rec); \n\tvar p = tpp.wind;\n    p.location = rect;\n}\n\nfunction wsize(width,height)\n{\n\t//post(\"wsize\");\n\tvar w = tpp.wind;\n\tvar r = new Array();\n\n\tr[0] = w.location[0];\n\tr[1] = w.location[1];\n\n\tif (width > 0) \n\t\tr[2] = w.location[0]+width;\n\telse \n\t\tr[2] = w.location[2];\n\t\n\tr[3] = w.location[1]+height;\n\tw.location = r;\n}\n\nfunction applydict(dn)\n{\n\tdict_name = dn;\n\tvar w = tpp.wind;\n\tvar d = new Dict(dict_name);\n\td.set(\"window\", w.location);\n    tpp.apply(objdict);\n}\n\nfunction objdict(a)\n{\n\t//post(\"objdict\",a,\"\\n\");\n\tvar d = new Dict(dict_name);\n    if (a.varname){\t\n\tif (class_excludes.indexOf(\" \" + a.maxclass + \" \") == -1){\n\tif (name_excludes.indexOf(\" \" + a.varname + \" \") == -1){\n\t\t\n\t\td.setparse(a.varname, \"so\");\n\t\t//post(\"iii\",\"\\n\");\n\t\t//if (a.maxclass == \"patcher\") post(a.varname,\" a.maxclass is patcher, so ??\",\"\\n\");//d.set(a.varname+\"::patcher\", \"bang\");\n\t\t\n\t\td.replace(a.varname+\"::patching_rect\", a.rect[0], a.rect[1], a.rect[2]-a.rect[0], a.rect[3]-a.rect[1]);\n\t\td.replace(a.varname+\"::hidden\", a.hidden);\t\t\n\t\tattributes = a.getattrnames();\t\n\t\t//post(a.varname, a.maxclass, \"\\n\", attributes, \"\\n\");\n\t\tconst pattern = /color/;\t\n\t\tfor (i=0;i<attributes.length;i++) {\n\t\t\tif (attributes[i] == \"fontsize\"){\n\t\t\t\tif (a.maxclass != \"patcher\")\n\t\t\t\t\td.set(a.varname+\"::fontsize\" , a.getattr(attributes[i]));\t\t\t\n\t\t\t}\n\t\t\tif (attributes[i] == \"jsarguments\"){\n\t\t\t\td.set(a.varname+\"::jsarguments\" , a.getattr(attributes[i]));\t\t\t\n\t\t\t}\n\t\t\tif (pattern.test(attributes[i]) && a.maxclass != \"patcher\"){\n\t\t\t\t//post(\"--------\", a.varname, a.maxclass, attributes[i], a.getattr(attributes[i]), \"\\n\");\n\t\t\t\td.set(a.varname+\"::\"+attributes[i] , a.getattr(attributes[i]));\t\t\t\n\n\t\t\t}\n\t\t}\n\t}\n\t}\n\t}\n    return true;\n}\n\n\nfunction apply()\n{\n    tpp.apply(printobj);\n}\n\nfunction printobj(a)\n{\n\n    if (a.varname){\n        messnamed (\"tetrislist\", a.maxclass, a.varname, a.rect[0], a.rect[1], a.rect[2], a.rect[3], a.hidden);\n\t}\n    return true;\n}\n\nfunction getobj(a)\n{\n\ta = tpp.a;\n    if (a.varname)\n        messnamed (\"tetrislist\", a.maxclass, a.varname, a.rect[0], a.rect[1], a.rect[2], a.rect[3], a.hidden);\n    return true;\n}\n\nfunction applyblue(b)\n{\n\t//post(\"\\n\", \"got: \" + b);\t\n\tnewstate = b.split(' ');\n\tfor (i=1;i<newstate.length;i++) newstate[i] = Number(newstate[i]);\n\t//post (\"new: \" + newstate, \"\\n\");\n    tpp.apply(getblueargs);\n}\n\nfunction getblueargs(a)\n{\n\tif (a.varname == \"ll.blues\"){\n\t\t//post (\"newd: \" + newstate, \"\\n\");\t\n\t\t//post (\"newd: \", a.getattrnames(), \"\\n\");\t\n\t\tvar args;\n\t\tif (a.getboxattr(\"args\")){\n \t\t\targs = a.getboxattr(\"args\");\n\t\t\tvar istate = -10;\n\t\t\tif (newstate[0] == \"@state\"){\n\t\t\tfor (i=0;i<args.length;i++) {\n\t\t\t\tif (args[i] == \"@state\")istate = i;\n\t\t\t\tif (i<istate+7) args[i] = newstate[i-istate];\n\t\t\t\t}\n\t\t\t}\n\t\tif (istate<0) args = args.concat(newstate);\t\n\t\ta.setboxattr(\"args\",args);\n\t\t}\n\t\telse {\n\t\t\ta.setboxattr(\"args\",newstate);\t\t\n\t\t}\n\tmessnamed (\"getargs\", a.getboxattr(\"args\"));\n\t}\n}\n\nfunction getblueargsonly(){\n\ta = tpp.getnamed(\"ll.blues\");\n\tmessnamed (\"getargs\", a.getboxattr(\"args\"));\n}",
-										"filename" : "none",
+										"filename" : "actmaker_specials.js",
 										"flags" : 0,
-										"embed" : 1,
+										"embed" : 0,
 										"autowatch" : 1
 									}
 
@@ -4906,7 +4906,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 264.0, 0.5, 136.0, 22.0 ],
-									"text" : "sinus1"
+									"text" : "test1"
 								}
 
 							}

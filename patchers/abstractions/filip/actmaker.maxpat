@@ -268,7 +268,7 @@
 										"classnamespace" : "box",
 										"rect" : [ 711.0, 141.0, 641.0, 851.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
-										"globalpatchername" : "1068n[1][3][2][1][1][1][6][1][1][1][2][2][2][1][1][3][2][1][3][3][1][2]",
+										"globalpatchername" : "1068n[1][3][2][1][1][1][6][1][1][1][2][2][2][1][1][3][2][1][3][3][1][2][1]",
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-4",
@@ -322,13 +322,13 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-5",
-													"linecount" : 2,
+													"linecount" : 3,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 270.0, 57.0, 59.0, 35.0 ],
-													"text" : "markerlist"
+													"text" : "markerlist ho_st1 sinus1"
 												}
 
 											}
@@ -920,7 +920,7 @@
 ,
 									"patching_rect" : [ 146.0, 113.0, 73.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"globalpatchername" : "1068n[1][3][2][1][1][1][6][1][1][1][2][2][2][1][1][3][2][1][3][3][1][2]"
+										"globalpatchername" : "1068n[1][3][2][1][1][1][6][1][1][1][2][2][2][1][1][3][2][1][3][3][1][2][1]"
 									}
 ,
 									"text" : "p markerlist"
@@ -6953,23 +6953,22 @@
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
-									"filename" : "none",
+									"filename" : "actmaker_specials.js",
 									"id" : "obj-20",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 740.0, 166.0, 21.0, 22.0 ],
+									"patching_rect" : [ 740.0, 204.0, 136.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "v8",
+									"text" : "v8 actmaker_specials.js",
 									"textfile" : 									{
-										"text" : "var tpp = this.patcher.parentpatcher.parentpatcher;\n\nvar actr = new Global(\"act_rep\");\n\nfunction getnamed(a)\n{\n\tactr.object = tpp.getnamed(a)\n}\nfunction Getpatcher(){\n\tactr.patcher = tpp;\n}",
-										"filename" : "none",
+										"filename" : "actmaker_specials.js",
 										"flags" : 0,
-										"embed" : 1,
+										"embed" : 0,
 										"autowatch" : 1
 									}
 
@@ -10546,6 +10545,13 @@
 			}
  ],
 		"dependency_cache" : [ 			{
+				"name" : "actmaker_specials.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.actname.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : ".",
