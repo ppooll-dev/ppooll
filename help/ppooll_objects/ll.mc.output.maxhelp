@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 110.0, 284.0, 704.0, 585.0 ],
+		"rect" : [ 110.0, 215.0, 704.0, 585.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"boxes" : [ 			{
@@ -33,7 +33,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 229.0, 277.0, 121.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "bang the object after changing the size."
 				}
 
@@ -247,7 +246,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 374.0, 366.5, 150.0, 60.0 ],
-					"text" : "ll.mc.output is the \nvarname of the bpatcher.\n(pattrforward gently takes signals as well)"
+					"text" : "llmcoutput is the \nvarname of the bpatcher.\n(pattrforward gently takes signals as well)"
 				}
 
 			}
@@ -426,8 +425,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 364.0, 343.0, 137.0, 22.0 ],
-					"text" : "pattrforward ll.mc.output"
+					"patching_rect" : [ 364.0, 343.0, 131.0, 22.0 ],
+					"text" : "pattrforward llmcoutput"
 				}
 
 			}
@@ -647,8 +646,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 127.0, 106.0, 121.0, 16.0 ],
-					"varname" : "ll.mc.output",
+					"patching_rect" : [ 127.0, 106.0, 130.0, 16.0 ],
+					"varname" : "llmcoutput",
 					"viewvisibility" : 1
 				}
 
@@ -844,6 +843,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.mc.output.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript/actmaker",
+				"patcherrelativepath" : "../../javascript/actmaker",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.mc.output.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
@@ -855,6 +861,13 @@
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "llmcoutput.signalscripting.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript/actmaker",
+				"patcherrelativepath" : "../../javascript/actmaker",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
  ],
