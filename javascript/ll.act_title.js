@@ -14,6 +14,8 @@ var pres_menu;
 var tetris_menu;
 var drag_gate = 1;
 
+var mod = 0;
+
 let isHoveringLeft,
     isHoveringRight = false;
 
@@ -41,11 +43,12 @@ function bang() {
 function clickreset() {
     uib.ignoreclick = 0;
     drag_gate = 1;
+    // post("clickreset\n");
 }
 function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
     let uibr = uib.rect;
     if (x > uibr[2] / 2) {
-        let mod = shift | option | ctrl;
+        mod = shift | option | ctrl;
         //post("right",mod,"\n");
         title_menu.ignoreclick = 1;
         pres_menu.ignoreclick = 1;
@@ -72,7 +75,10 @@ function ondrag(x, y, but, cmd, shift, capslock, option, ctrl) {
     }
 }
 function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
+    // post("onidle\n");
     // Only update if x is on the left half
+    mod = shift | option | ctrl;
+
     if (x < uib.rect[2] / 2) {
         isHoveringLeft = true;
         isHoveringRight = false;
@@ -86,6 +92,7 @@ function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
 function onidleout() {
     isHoveringLeft = false;
     isHoveringRight = false;
+    mod = 0;
 
     mgraphics.redraw();
 }
@@ -121,7 +128,7 @@ function paint() {
     mgraphics.set_font_size(12);
     let tw = mgraphics.text_measure(txt88)[0] + 5;
     let brect = [0, 0, tw, 16];
-    let mrect = [tw / 2, 0, tw, 16];
+    let mrect = [0, -7, tw, 16];
     uib.rect = brect;
     bpatcher.rect = brect;
     title_menu.rect = mrect;
@@ -133,7 +140,14 @@ function paint() {
     txt_color = brightness(bgcolor);
     mgraphics.set_source_rgba(txt_color);
     mgraphics.move_to(4, 12);
-    mgraphics.text_path(txt);
+
+    let title_txt = txt;
+    // TODO: Could show different text here depending on key mods
+    // if(isHoveringRight && mod != 0){
+    //     title_txt = mod == 2 ? "tetris" : "presets"
+    // }
+
+    mgraphics.text_path(title_txt);
     mgraphics.fill();
 
     if (!showHoverIcons) return;
