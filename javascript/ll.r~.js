@@ -5,14 +5,19 @@ var inputsValue = [];
 var inputsObj;
 var tp = this.patcher;
 var act, path;
-var chanfix, chan;
+var chanfix = -1;
+var chan;
+
+var ready = false; // we can't 'doit' until we have actname
 
 function actname(act, path, c) {
-    chanfix = c;
+    if(chanfix == -1) // only set chans if first actname? 
+        chanfix = c;
+    ready = true;
     doit(act, path);
 }
 function msg_int(a) {
-    chanfix = a;
+        chanfix = a;
     doit(act, path);
 }
 function chan_fix(a) {
@@ -26,6 +31,8 @@ function chan_blue(a) {
 }
 
 function doit(a, p) {
+    if(!ready)
+        return;
     //post(a,p);
     act = a;
     path = p;
@@ -37,7 +44,8 @@ function doit(a, p) {
             let v = inputsObj.getvalueof();
 			inputsObj.message("priority","inputs~",1000);
 
-            // post("inputsObj value: " + v + "\n");
+            post("inputsObj value: " + v + "\n");
+            post("inputsObj value: " + typeof(v) + "\n");
             if (!v) return;
             if (Array.isArray(v)) inputsValue = v;
             else inputsValue[0] = v;

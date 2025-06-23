@@ -69,6 +69,7 @@ function bpsize(){ //size the listblock according to the bpatcher
 
 
 function head_n_size(){
+	if(!outputs)return
 	let vg = outputs.getvalueof();
 	//post("hns",vg,"\n");
 	let v = makearray(vg);
