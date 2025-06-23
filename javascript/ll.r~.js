@@ -1,4 +1,9 @@
 outlets = 1;
+
+if (typeof utils === "undefined") {
+    var utils = require("ll._utilities");
+}
+
 var ar = new Global("act_rep");
 var tpp;
 var inputsValue = [];
@@ -11,13 +16,15 @@ var chan;
 var ready = false; // we can't 'doit' until we have actname
 
 function actname(act, path, c) {
-    if(chanfix == -1) // only set chans if first actname? 
+    if (chanfix == -1){
+        // only set chans if first actname?
         chanfix = c;
+    }
     ready = true;
     doit(act, path);
 }
 function msg_int(a) {
-        chanfix = a;
+    chanfix = a;
     doit(act, path);
 }
 function chan_fix(a) {
@@ -30,35 +37,25 @@ function chan_blue(a) {
     }
 }
 
-function get_top(){
-	tpp = this.patcher;
-	let last_p = "";
-	while (tpp){
-		last_p = tpp;
-		tpp = tpp.parentpatcher;
-	}
-	tpp = last_p;
-	post("got_top",tpp.name,"\n");
-}
-
 function doit(a, p) {
-    if(!ready)
-        return;
-    //post(a,p);
+    if (!ready) return;
+    
     act = a;
     path = p;
-	get_top();
-		post("inputsObj",inputsObj,"\n");
+    const { foundPatcher, foundBox} = utils.findInParentPatchers(
+        "act",
+        this.patcher
+    );
+    tpp = foundPatcher;
+    
     try {
-		
         //tpp = this.patcher.parentpatcher.parentpatcher;
-		inputsObj = tpp.getnamed("inputs~");
+        inputsObj = tpp.getnamed("inputs~");
         if (inputsObj && typeof inputsObj.getvalueof === "function") {
             let v = inputsObj.getvalueof();
-			inputsObj.message("priority","inputs~",1000);
+            inputsObj.message("priority", "inputs~", 1000);
+            // post("inputsObj value: " + v + "\n");
 
-            post("inputsObj value: " + v + "\n");
-            post("inputsObj value: " + typeof(v) + "\n");
             if (!v) return;
             if (Array.isArray(v)) inputsValue = v;
             else inputsValue[0] = v;
