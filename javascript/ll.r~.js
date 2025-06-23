@@ -30,16 +30,29 @@ function chan_blue(a) {
     }
 }
 
+function get_top(){
+	tpp = this.patcher;
+	let last_p = "";
+	while (tpp){
+		last_p = tpp;
+		tpp = tpp.parentpatcher;
+	}
+	tpp = last_p;
+	post("got_top",tpp.name,"\n");
+}
+
 function doit(a, p) {
     if(!ready)
         return;
     //post(a,p);
     act = a;
     path = p;
-
+	get_top();
+		post("inputsObj",inputsObj,"\n");
     try {
-        tpp = this.patcher.parentpatcher.parentpatcher;
-        inputsObj = tpp.getnamed("inputs~");
+		
+        //tpp = this.patcher.parentpatcher.parentpatcher;
+		inputsObj = tpp.getnamed("inputs~");
         if (inputsObj && typeof inputsObj.getvalueof === "function") {
             let v = inputsObj.getvalueof();
 			inputsObj.message("priority","inputs~",1000);
