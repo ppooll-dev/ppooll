@@ -74,6 +74,8 @@ function wind(a){
 		messnamed(w_param[0], w_param[1], 0);
 	}
 	w.visible = a;
+	r = w.location;	
+	check_size();
 	//if (a) w.size = wind_size;
 	
 }

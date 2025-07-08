@@ -350,8 +350,7 @@ function text_init(){
 		lllbtext.hidden = 1;	
 }	
 
-function onresize(w,h)
-{
+function onresize(w,h){
 	//post("wh",w,h,"\n");
 	boxh = h;
 	boxw = w;
@@ -386,7 +385,7 @@ function paint()
 	let txt_color = [1,1,1,1];
 	let oncolor, bgcolor, hdcolor;
 	let value = [];
-	//post("rt",amount, "rr",mgraphics.size);
+	//post("paint amount",amount, "size",mgraphics.size,"\n");
 
 	// Draw "no rows"
 	if (rows === 0) {
@@ -410,6 +409,7 @@ function paint()
 			if (isA) value = v
 			else value[0] = v; 
 		}
+		//post("col",j, "value",value,"\n");
 		cm = mod[j][0];
 		cm1 = mod[j][1];
 		cm2 = mod[j][2];
@@ -431,7 +431,7 @@ function paint()
                  selected_box[1] === (i - header);
 
 			let is_selected_menu = false;
-			if (isSelected && i >= header) {
+			if (isSelected && i >= header && cm == "menu") {
 				mgraphics.set_source_rgba(.23,.23,.23, 1); // translucent yellow
 				mgraphics.rectangle(col_pos[j], i * rowheight, cw, rowheight);
 				mgraphics.fill();
@@ -449,7 +449,7 @@ function paint()
 				if (cm2 == "none") txt = "";
 				else txt = cm2;
 				//txt = txo[j];
-				//post("txt_txo",txt,txo,"\n");	
+				//post("txt_txo",txt,"\n");	
 				}			
 			else {
 				if (headr) {
@@ -478,7 +478,7 @@ function paint()
 					else if (cm == "num" || cm == "text" || cm == "none" || cm == "menu") txt = String(cval)
 					else txt = "xx";
 				}
-			}	
+			}
     		mgraphics.fill();
 			// _______________________________________________________________________text
 

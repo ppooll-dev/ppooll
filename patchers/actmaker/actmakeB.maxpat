@@ -81,8 +81,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 349.0, 268.0, 38.0, 22.0 ],
-					"text" : "zl reg",
+					"patching_rect" : [ 332.5, 268.0, 55.0, 22.0 ],
+					"text" : "route bla",
 					"varname" : "in2"
 				}
 
@@ -239,7 +239,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 0.0, 60.20703125, 16.0 ],
+					"patching_rect" : [ 0.0, 0.0, 49.830078125, 16.0 ],
 					"textfile" : 					{
 						"filename" : "ll.act_title.js",
 						"flags" : 0,
@@ -269,7 +269,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 30.103515625, 0.0, 30.103515625, 22.0 ],
+					"patching_rect" : [ 0.0, -7.0, 49.830078125, 22.0 ],
 					"pattrmode" : 1,
 					"textcolor" : [ 0.149, 0.149, 0.149, 1.0 ],
 					"varname" : "title_menu"
@@ -294,7 +294,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 30.103515625, 0.0, 30.103515625, 22.0 ],
+					"patching_rect" : [ 0.0, -7.0, 49.830078125, 22.0 ],
 					"pattrmode" : 1,
 					"textcolor" : [ 0.149, 0.149, 0.149, 1.0 ],
 					"varname" : "pres_menu"
@@ -319,7 +319,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 30.103515625, 0.0, 30.103515625, 22.0 ],
+					"patching_rect" : [ 0.0, -7.0, 49.830078125, 22.0 ],
 					"pattrmode" : 1,
 					"textcolor" : [ 0.149, 0.149, 0.149, 1.0 ],
 					"varname" : "tetris_menu"
@@ -345,7 +345,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 1 ],
-					"source" : [ "obj-12", 0 ]
+					"source" : [ "obj-12", 1 ]
 				}
 
 			}
