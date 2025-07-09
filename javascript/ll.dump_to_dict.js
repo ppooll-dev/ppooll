@@ -7,21 +7,23 @@
 
 autowatch = 1;
 
+var actr = new Global("act_rep");
+
 var enviDict = new Dict("environment"); 
-var currentAct = null
+var currentAct = null;
 
 function addAct(){
-	// ie 0 ho_st1 ho_st 708 164 838 289
-	var args = arrayfromargs(arguments);
+	// ie ho_st1 ho_st
+	let args = arrayfromargs(arguments);
+    let key = args[0];
+	let stripped = args[1];
+	messnamed (key, "v8", "Getpatcher");
+	let wloc = actr.patcher.wind.location;
+	
 
-	// chop off first list item -- can just be ignored
-	args.shift();
-
-	// The first element in args is now the key for our new dictionary entry
-    var key = args[0];
-
-    // Remaining elements are the value array for our new dictionary entry
-    var value = args.slice(1);
+    // value array for our new dictionary entry
+    let value = [stripped,wloc[0],wloc[1],wloc[2],wloc[3]];
+	//post("key:",key,"value:",value,"\n");
 
     // Create a new dictionary entry
     var newEntry = {};
