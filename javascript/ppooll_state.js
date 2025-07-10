@@ -1,6 +1,6 @@
 outlets = 2;
 var pps = new Global("ppooll_state");
-
+var stateDict = new Dict("ppoollstate"); 
 function init(){ //only in ho_st
 	pps.acts = {};
 }
@@ -56,4 +56,8 @@ function test(){
 	for (let a of m) {
 		post (pps.acts[a]["class"]);
 	}
+}
+
+function todict(){
+	stateDict = {pps};
 }
