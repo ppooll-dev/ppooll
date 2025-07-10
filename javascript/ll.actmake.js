@@ -108,15 +108,21 @@ function makecolor(c) {
 }
 
 function getinstance() {
-    var m = new Global("all_acts");
-    m = m.acts;
+    //var m = new Global("all_acts");
+	var pps = new Global("ppooll_state");
+	let m = Object.keys(pps["acts"]);
+    //m = m.acts;
     let result = 0;
     let foundi = [];
     for (let a of m) {
-        if (!isNaN(a.slice(-1)[0])) {
+		//post("look",a,pps.acts[a]["class"],pps.acts[a]["index"],"\n");
+		if (pps.acts[a]["class"] == name) foundi.push(pps.acts[a]["index"]);
+        /*
+		if (!isNaN(a.slice(-1)[0])) {
             let mstrip = a.match(/(.*?)(\d+$)/);
             if (mstrip[1] == name) foundi.push(mstrip[2]);
         }
+		*/
     }
     if (foundi.length > 0) {
         foundi.sort(function (a, b) {
