@@ -54,7 +54,7 @@ function compare(){
 function test(){
 	let m = Object.keys(pps["acts"]);
 	for (let a of m) {
-		post (pps.acts[a]["class"]);
+		post (a,pps.acts[a]["class"]);
 	}
 }
 
