@@ -168,7 +168,8 @@ mgraphics.init();
 mgraphics.relative_coords = 0;
 mgraphics.autofill = 0;
 				
-function paint(){  // ________________________________  draw 		
+function paint(){  // ________________________________  draw 
+	//post("val",val,"\n");		
 	let oncolor, bgcolor;
 	let txt_color = [1,1,1,1];
 	for (j=0;j<amount;j++){
@@ -250,8 +251,6 @@ function clickdrag(x,y,drag,m){
 		}
 		else if (mod[v] == "b"){
 			val[v] = 1;
-			//callTimeout(v);
-			//def(v);
 		}
 		cclick = [v,val[v]];
 		bang();
@@ -261,57 +260,36 @@ function clickdrag(x,y,drag,m){
 		mgraphics.redraw();
 	}
 }
-function callTimeout(x){
-	post("timeout",x);
-	setTimeout(function(){ 
-		val[x]=0;
-		mgraphics.redraw();
-		}, 150); //blink time
-}
-function setTimeout(task, timeout){
-    this.allowExecution = false;
-    var tsk = new Task(function (){
-        if(this.allowExecution){
-            task();
-            arguments.callee.task.cancel();
-        }
-        this.allowExecution = true;   
-    }, this);
-    tsk.interval = timeout;
-    tsk.repeat(2);
-}
 
-
-function def(x){
-	var testFunction;
-	testFunction = function(){
-	val[x]=0;
-	mgraphics.redraw();
-	//post('eat my shorts',x,"\n");    
-        };
-	var tsk = new Task(testFunction, this);
-	tsk.schedule(200);
-	//post("ww");
-}
-function tsk(x){
-	var tsk = new Task(testFunction, this);
-	tsk.schedule(200);
-}
 
 function msg_int(v)
 {
+	//post("inlet_int",v,"\n");
 	v = Math.max(0,v);
 	if (v>=0 && v< amount){
 		
 		if (modes[v] == "b") {
 			val[v] = 1;
-			callTimeout(v);
+			out_val = "reset";
+			notifyclients();
+			outlet(0,"reset"); //used to reset buttons with max (Task is too unrelieable)
+			//callTimeout(v);
 		}
 		else val[v] = 1-val[v];
 		cclick = [v,val[v]];
 		bang();
+		//if (modes[v] == "b") val[v] = 0;
 	}
 }
+function reset_buttons(){ //draw all buttons to 0
+	for (i in val){
+		if (val[i] == 1 && modes[i] == "b"){
+				val[i] = 0;
+		}
+	}
+	mgraphics.redraw();
+}
+
 function list()
 {
 	let v = arrayfromargs(arguments);
@@ -335,6 +313,7 @@ function list()
 	}
 	else {
 		bang();
+	
 	}
 	mgraphics.redraw()
 }

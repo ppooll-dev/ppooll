@@ -1,5 +1,5 @@
 {
-	"window" : [ 2, 433, 809, 727 ],
+	"window" : [ 120, 347, 932, 665 ],
 	"pf" : 	{
 		"patching_rect" : [ 743, 370, 115, 22 ],
 		"hidden" : 1
@@ -23,11 +23,11 @@
 	}
 ,
 	"freqs" : 	{
-		"patching_rect" : [ 510, 102, 301, 192 ],
+		"patching_rect" : [ 510, 102, 301, 216 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.537254901960784, 0.270588235294118, 0.317647058823529, 1 ],
 		"bordercolor" : [ 0, 0, 0, 1 ],
-		"fontsize" : 16,
+		"fontsize" : 18,
 		"labelcolor" : [ 0, 0, 0, 1 ],
 		"selectcolor" : [ 0.588235294117647, 0.701960784313725, 0.870588235294118, 0.470588235294118 ],
 		"slidercolor" : [ 0, 0, 0, 1 ],
@@ -37,10 +37,10 @@
 	}
 ,
 	"multib" : 	{
-		"patching_rect" : [ 257, 86, 70, 208 ],
+		"patching_rect" : [ 257, 84, 70, 234 ],
 		"hidden" : 0,
 		"bgcolors" : 1,
-		"fontsize" : 14,
+		"fontsize" : 16,
 		"gridcolor" : [ 0.4, 0.4, 0.4, 1 ],
 		"headercolors" : 3,
 		"jsarguments" : [ "@params", "interpolate", "trigger_sel", "trigger", "loop", "ext_vol", "@modes", "tog_i_i", "tog_s_s", "button_t", "tog_l_l", "tog_e_e", "@rows", 12, "@header", 1 ],
@@ -92,7 +92,7 @@
 	}
 ,
 	"preset-ramp" : 	{
-		"patching_rect" : [ 756, 52, 54, 15 ],
+		"patching_rect" : [ 755, 52, 54, 15 ],
 		"hidden" : 0,
 		"bgcolor" : [ 1, 1, 1, 1 ],
 		"bordercolor" : [ 0.5, 0.5, 0.5, 1 ],
@@ -106,7 +106,7 @@
 	}
 ,
 	"presets" : 	{
-		"patching_rect" : [ 695, 1, 116, 51 ],
+		"patching_rect" : [ 694, 1, 116, 51 ],
 		"hidden" : 0,
 		"jsarguments" : [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "sinsE1" ]
 	}
@@ -164,11 +164,11 @@
 	}
 ,
 	"vols" : 	{
-		"patching_rect" : [ 327, 102, 183, 192 ],
+		"patching_rect" : [ 327, 102, 183, 216 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.227450980392157, 0.227450980392157, 0.482352941176471, 1 ],
 		"bordercolor" : [ 0, 0, 0, 1 ],
-		"fontsize" : 16,
+		"fontsize" : 18,
 		"labelcolor" : [ 0, 0, 0, 1 ],
 		"selectcolor" : [ 0.45, 0.67, 1, 0.47 ],
 		"slidercolor" : [ 0, 0, 0, 1 ],
@@ -178,11 +178,11 @@
 	}
 ,
 	"envfreqs" : 	{
-		"patching_rect" : [ 0, 102, 207, 192 ],
+		"patching_rect" : [ 0, 102, 207, 216 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.741176470588235, 0.572549019607843, 0.6, 1 ],
 		"bordercolor" : [ 0, 0, 0, 1 ],
-		"fontsize" : 16,
+		"fontsize" : 18,
 		"labelcolor" : [ 0, 0, 0, 1 ],
 		"selectcolor" : [ 0.45, 0.67, 1, 0.47 ],
 		"slidercolor" : [ 0, 0, 0, 1 ],
@@ -374,7 +374,7 @@
 	}
 ,
 	"env_disp" : 	{
-		"patching_rect" : [ 205, 102, 50, 192 ],
+		"patching_rect" : [ 205, 102, 50, 216 ],
 		"hidden" : 0,
 		"jsarguments" : ""
 	}
@@ -394,16 +394,6 @@
 		"remapsvgcolors" : 0,
 		"textcolor" : [ 0.85, 0.85, 0.85, 1 ],
 		"tricolor" : [ 0.850980392156863, 0.850980392156863, 0.850980392156863, 0 ]
-	}
-,
-	"ll_tab" : 	{
-		"patching_rect" : [ 93, 1, 316, 15 ],
-		"hidden" : 0,
-		"bgcolors" : [ 3, 1, 3, 1, 3, 1, 3, 1, 3 ],
-		"fontsize" : 12,
-		"gridcolor" : [ 0.692269027233124, 0.692269086837769, 0.692269086837769, 1 ],
-		"jsarguments" : "",
-		"oncolors" : 2
 	}
 ,
 	"env" : 	{
@@ -504,6 +494,16 @@
 		"syntax_objectcolor" : [ 0.956590352327427, 0.76614891786161, 0.452834090916593, 1 ],
 		"textcolor" : [ 0.85, 0.85, 0.85, 1 ],
 		"textcolor_inverse" : [ 0.9, 0.9, 0.9, 1 ]
+	}
+,
+	"ll_tab" : 	{
+		"patching_rect" : [ 93, 1, 316, 15 ],
+		"hidden" : 0,
+		"bgcolors" : [ 3, 1, 3, 1, 3, 1, 3, 1, 3 ],
+		"fontsize" : 12,
+		"gridcolor" : [ 0.692269027233124, 0.692269086837769, 0.692269086837769, 1 ],
+		"jsarguments" : "",
+		"oncolors" : 2
 	}
 
 }
