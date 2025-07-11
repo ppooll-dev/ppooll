@@ -12,7 +12,7 @@ var actr = new Global("act_rep");
 var pps = new Global("ppooll_state");
 var enviDict = new Dict("environment"); 
 var currentAct = null;
-var client_list,pat_gate,index;
+var client_list,cl,pat_gate,index;
 
 function bang(){
 	
@@ -78,10 +78,11 @@ function addAct(){
 
 function getdump(a){
 	client_list = [];
-	let cl = [];
+	cl = [];
 	pat_gate = 1;
 	// "envi_write_get_pat" is the receive object connected (calling "get_pat")
 	messnamed(a, "sendto", "envi_write_get_pat", "dump");
+	client_list = cl.slice(0,-1); //cut last message "dump done"
 	cl = [];
 	pat_gate = 2;
 	for (index in client_list) 
@@ -101,7 +102,6 @@ function get_pat(){
 	let args = arrayfromargs(arguments);
 	if (pat_gate == 1){ //the dump eg. vol 0.45
 		cl.push(args);
-		client_list = cl.slice(0,-1); //cut last message "dump done"
 	}
 	if (pat_gate == 2){ //prepend the priorities
 		client_list[index].splice(0, 0, args[2]);
