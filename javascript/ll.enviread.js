@@ -35,7 +35,6 @@ function acts(){
 
 function loadact(){
 	if (toopen.length > 0){
-	post("environment---loading",toopen[0],"\n");
 	outlet(0,toopen[0]);
 	actingON = 1;
 	messnamed("ll_actload", toopen[0]);
@@ -45,21 +44,20 @@ function loadact(){
 	}
 }
 
-function acting(c,i,o){
+function acting(c,i,o){ //response from an act when ready loaded
 	if (actingON == 1 && o==1){
 		actingON = 0;
 		let a = c+i;
 		setloc(a);
 		toopen = toopen.slice(1);
-		//post("toopen2:",toopen,"\n");
 		loadact();
 	}
 }
 
 function setloc(a){
 	let win = d.get(a).get("_actwindow");
-		win = win.slice(1,3);
-		messnamed(a, "v8", "setloc", win);
+	win = win.slice(1,3);
+	messnamed(a, "v8", "setloc", win);
 }
 
 

@@ -12,46 +12,58 @@ var actr = new Global("act_rep");
 var pps = new Global("ppooll_state");
 var enviDict = new Dict("environment"); 
 var currentAct = null;
-var client_list,cl,pat_gate,index;
+var actname_map;
+
+var pat_gate;
+var index;
+var client_list;
+var cl;
+
 
 function bang(){
 	
 	// sort acts
-	let classlist = [];
+	actname_map = {};
 	let pstate = Object.keys(pps["acts"]);
-	pstate.shift(); // remove ho_st1 from list
-	for (a of pstate) classlist.push(pps.acts[a]["class"]);
-	classlist = classlist.sort();
-	
-	// renumber
+	pstate.shift(); // remove ho_st1 from list	
+	pstate = pstate.sort();
+	pstate.splice(0, 0, "ho_st1"); //restore ho_st1
+
+
+	// if an act-index is missing, we need to get rid of the gap.
+	// >> actname_map
 	let compare = "";
 	let counter;
-	let acts_renumbered = [];
-	for (c of classlist){
-		if (c != compare) {
+	for (let a of pstate){
+		let a_class = pps.acts[a]["class"];
+		if (a_class != compare) {
 			counter = 1;
-			compare = c;
+			compare = a_class;
 		}
 		else counter++;
-		acts_renumbered.push(c+counter);		
+		actname_map[a] = a_class+counter;
+		if (a != actname_map[a]) post("renaming",a,"to", actname_map[a],"in this environment\n");	
 	}
-	acts_renumbered.splice(0, 0, "ho_st1"); //restore ho_st1
+
 	
-	//push
-	for (let a of acts_renumbered) {
+	//push	
+	for (let a of pstate) {
 		addAct(a,pps.acts[a]["class"]);
 		//post("-----------------------------------",a,"\n");
 		getdump(a);	
 	}
 }
 
-function addAct(){
+function addAct(a,c){
 	// ie ho_st1 ho_st
-	let args = arrayfromargs(arguments);
-    let key = args[0];
-	let stripped = args[1];
+	//let args = arrayfromargs(arguments);
+    let key = a;
+	let stripped = c;
 	messnamed (key, "v8", "Getpatcher");
 	let wloc = actr.patcher.wind.location;
+	
+	// if there there was a gap in the index, here is the new key
+	key = actname_map[key];
 	
 
     // value array for our new dictionary entry
