@@ -96,13 +96,17 @@ function makecolor(c) {
         let cs = c.split(" ");
         color = [cs[0] / 255, cs[1] / 255, cs[2] / 255, 1];
     } else {
+		if (c[0] == "#") {post("#######"); c.shift;}
         let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(c);
+		if (!result) color = [0,0,0,1]
+		else {
         color = [
             parseInt(result[1], 16) / 255,
             parseInt(result[2], 16) / 255,
             parseInt(result[3], 16) / 255,
             1,
         ];
+		}
     }
     //post("color",color,"\n");
 }

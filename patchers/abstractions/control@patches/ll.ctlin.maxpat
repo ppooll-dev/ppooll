@@ -10,9 +10,71 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 357.0, 130.0, 1012.0, 706.0 ],
+		"rect" : [ 499.0, 132.0, 1012.0, 706.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-18",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 419.0, 181.5, 39.0, 22.0 ],
+					"text" : "dump"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"patching_rect" : [ 419.0, 220.0, 47.0, 22.0 ],
+					"text" : "ll.pf pat"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-17",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 372.0, 125.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-13",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 258.0, 27.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-11",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 111.0, 65.5, 166.0, 22.0 ],
+					"text" : "\"Minilab3 MIDI\""
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontsize" : 10.0,
 					"id" : "obj-10",
@@ -57,7 +119,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 814.0, 88.0, 96.0, 22.0 ],
+					"patching_rect" : [ 425.0, 112.0, 96.0, 22.0 ],
 					"text" : "prepend symbol"
 				}
 
@@ -85,7 +147,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
-					"patching_rect" : [ 873.0, 24.0, 109.0, 22.0 ],
+					"patching_rect" : [ 93.0, 199.0, 109.0, 22.0 ],
 					"text" : "ll.r midi_send_port"
 				}
 
@@ -95,7 +157,7 @@
 					"allowdrag" : 0,
 					"fontsize" : 13.0,
 					"id" : "obj-45",
-					"items" : [ "Network Session 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "Scarlett 18i20 USB", ",", "MIDISPORT 1x1 Port A", ",", "to Max 1", ",", "to Max 2", ",", "Minilab3 MIDI", ",", "Minilab3 DIN THRU", ",", "Minilab3 MCU/HUI", ",", "Minilab3 ALV" ],
+					"items" : [ "IAC Driver Bus 1", ",", "Minilab3 MIDI", ",", "Minilab3 DIN THRU", ",", "Minilab3 MCU/HUI", ",", "Minilab3 ALV", ",", "Komplete Audio 6 MK2", ",", "to Max 1", ",", "to Max 2" ],
 					"labelclick" : 1,
 					"maxclass" : "umenu",
 					"numinlets" : 1,
@@ -115,7 +177,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 495.0, 200.0, 91.0, 22.0 ]
+					"patching_rect" : [ 93.0, 232.0, 91.0, 22.0 ]
 				}
 
 			}
@@ -130,19 +192,6 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 705.0, 144.0, 37.0, 22.0 ],
 					"text" : "clear"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-42",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 701.0, 100.0, 41.0, 22.0 ],
-					"text" : "n nnn"
 				}
 
 			}
@@ -1305,6 +1354,7 @@
 													"fontname" : "Arial",
 													"fontsize" : 9.0,
 													"id" : "obj-1",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -1408,6 +1458,7 @@
 													"fontname" : "Arial",
 													"fontsize" : 9.0,
 													"id" : "obj-8",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -1747,6 +1798,7 @@
 													"fontname" : "Arial",
 													"fontsize" : 9.0,
 													"id" : "obj-32",
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -2570,7 +2622,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 185.0, 489.0, 600.0, 426.0 ],
+						"rect" : [ 185.0, 440.0, 600.0, 426.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -3349,7 +3401,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 448.0, 128.0, 43.0, 19.0 ],
+					"patching_rect" : [ 46.0, 160.0, 43.0, 19.0 ],
 					"text" : "p parse"
 				}
 
@@ -3363,7 +3415,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 448.0, 69.0, 15.0, 15.0 ]
+					"patching_rect" : [ 46.0, 135.0, 15.0, 15.0 ]
 				}
 
 			}
@@ -3375,7 +3427,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 0,
-					"patching_rect" : [ 448.0, 169.0, 40.0, 19.0 ],
+					"patching_rect" : [ 46.0, 201.0, 40.0, 19.0 ],
 					"text" : "ctlout"
 				}
 
@@ -3520,9 +3572,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"patching_rect" : [ 323.0, 41.0, 96.0, 19.0 ],
-					"text" : "ll.p midi_receive_port"
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 298.0, 67.0, 99.0, 19.0 ],
+					"text" : "ll.pp midi_receive_port"
 				}
 
 			}
@@ -3562,6 +3614,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-39", 0 ],
+					"source" : [ "obj-13", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-15", 1 ],
 					"source" : [ "obj-14", 1 ]
 				}
@@ -3578,6 +3644,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-36", 2 ],
 					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"source" : [ "obj-18", 0 ]
 				}
 
 			}
@@ -3685,6 +3758,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-11", 1 ],
+					"order" : 3,
+					"source" : [ "obj-39", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-17", 0 ],
+					"order" : 1,
+					"source" : [ "obj-39", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"order" : 2,
 					"source" : [ "obj-39", 0 ]
@@ -3702,7 +3791,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
-					"order" : 1,
+					"order" : 4,
 					"source" : [ "obj-39", 0 ]
 				}
 
