@@ -4,7 +4,8 @@
 // >> this was loaded in an existing act, so:
 // output the actname and remove [r actname]
 //
-// if none of that was true, (this object is loaded from a saved act)
+// if none of that was true, 
+// (this object was loaded from a saved act, before actmaker knows its name)
 // >> no action! - the actname will be sent to [r actname] soon by actmaker.
 
 
