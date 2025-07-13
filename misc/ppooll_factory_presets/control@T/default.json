@@ -1,10 +1,5 @@
 {
-	"window" : [ 414, 349, 605, 403 ],
-	"pf" : 	{
-		"patching_rect" : [ 981, 82, 115, 22 ],
-		"hidden" : 1
-	}
-,
+	"window" : [ 1, 627, 118, 661 ],
 	"on/off" : 	{
 		"patching_rect" : [ 124, 0, 23, 16 ],
 		"hidden" : 0,
@@ -20,7 +15,7 @@
 	}
 ,
 	"input_menu" : 	{
-		"patching_rect" : [ 74, 0, 51, 20 ],
+		"patching_rect" : [ 84, 0, 40, 20 ],
 		"hidden" : 0,
 		"applycolors" : 0,
 		"bgfillcolor" : 		{
@@ -143,7 +138,7 @@
 ,
 	"midi_channels" : 	{
 		"patching_rect" : [ 82, 16, 36, 19 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"applycolors" : 0,
 		"bgfillcolor" : 		{
 			"type" : "color",
@@ -189,7 +184,7 @@
 	}
 ,
 	"midi_receive_port" : 	{
-		"patching_rect" : [ 24, 16, 58, 19 ],
+		"patching_rect" : [ 0, 16, 58, 19 ],
 		"hidden" : 0,
 		"applycolors" : 0,
 		"bgfillcolor" : 		{
@@ -256,7 +251,7 @@
 ,
 	"coment_port" : 	{
 		"patching_rect" : [ 1, 17, 33, 17 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"bgcolor" : [ 1, 1, 1, 0 ],
 		"bubble_bgcolor" : [ 0.235, 0.235, 0.235, 1 ],
 		"bubble_outlinecolor" : [ 0.85, 0.85, 0.85, 1 ],
@@ -266,7 +261,7 @@
 	}
 ,
 	"led" : 	{
-		"patching_rect" : [ 136, 35, 17, 17 ],
+		"patching_rect" : [ 70, 1, 14, 14 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.35294, 0.35294, 0.35294, 1 ],
 		"offcolor" : [ 0, 0.266667, 0, 1 ],
@@ -329,7 +324,7 @@
 	}
 ,
 	"routingW" : 	{
-		"patching_rect" : [ 145, 0, 47, 16 ],
+		"patching_rect" : [ 84, 18, 33, 16 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.317647, 0.317647, 0.317647, 1 ],
 		"bgoncolor" : [ 0.55, 0.55, 0.55, 1 ],
