@@ -16,12 +16,15 @@ var stateDict = new Dict("ppoollstate");
 
 function bang()
 {
+	//post("an bang\n");
 	tpp = this.patcher;	
 	while (tpp){
+		//post("tpp",tpp.name);
 		tpp = tpp.parentpatcher;
 			if (tpp && tpp.getnamed("act")){
 				an = tpp.name;
 				lookup = stateDict.getkeys();
+				//post("tpp_foundact",tpp.name,"\n");
 				if (lookup && lookup.indexOf(an)>=0) {//js does not know includes()
 					outlet(0,an);
 				}
