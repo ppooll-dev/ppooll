@@ -477,7 +477,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 70.0, 106.0, 58.0, 20.0 ],
-					"text" : "21:17:52",
+					"text" : "22:12:38",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "time"
 				}
@@ -701,7 +701,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1006.0, 61.0, 377.0, 615.0 ],
+						"rect" : [ 791.0, 116.0, 377.0, 615.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"toolbarvisible" : 0,
 						"boxes" : [ 							{
@@ -7871,9 +7871,43 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 50.0, 547.0, 608.0, 285.0 ],
+										"rect" : [ 224.0, 261.0, 702.0, 389.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-10",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "bang" ],
+													"patching_rect" : [ 438.0, 47.0, 58.0, 22.0 ],
+													"text" : "loadbang"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-9",
+													"maxclass" : "dict.view",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 438.0, 147.0, 207.0, 170.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-5",
+													"maxclass" : "button",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 438.0, 74.0, 24.0, 24.0 ]
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-8",
 													"maxclass" : "message",
@@ -7892,31 +7926,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 458.0, 61.0, 35.0, 22.0 ],
+													"patching_rect" : [ 511.0, 68.0, 35.0, 22.0 ],
 													"text" : "clear"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-9",
-													"maxclass" : "comment",
-													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 407.5, 87.0, 150.0, 20.0 ],
-													"text" : "????"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-5",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 387.0, 105.0, 37.0, 22.0 ],
-													"text" : "todict"
 												}
 
 											}
@@ -8156,7 +8167,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 147.0, 186.0, 332.0, 22.0 ],
+													"patching_rect" : [ 147.0, 186.0, 76.0, 22.0 ],
 													"text" : "ho_st1"
 												}
 
@@ -8240,6 +8251,20 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-5", 0 ],
+													"source" : [ "obj-10", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-9", 0 ],
+													"source" : [ "obj-2", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-25", 1 ],
 													"source" : [ "obj-22", 0 ]
 												}
@@ -8268,7 +8293,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-22", 0 ],
+													"destination" : [ "obj-2", 0 ],
 													"source" : [ "obj-5", 0 ]
 												}
 
@@ -20018,7 +20043,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 314.0, 52.5, 29.0, 35.0 ],
-													"text" : "",
+													"text" : "n",
 													"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 												}
 
