@@ -1,5 +1,5 @@
 {
-	"window" : [ 680, 341, 871, 395 ],
+	"window" : [ 414, 349, 605, 403 ],
 	"pf" : 	{
 		"patching_rect" : [ 981, 82, 115, 22 ],
 		"hidden" : 1
@@ -254,6 +254,17 @@
 		"jsarguments" : [ 11, "155 255 255", "50 50 50", "255 0 0", "0 255 0", "control@1" ]
 	}
 ,
+	"coment_port" : 	{
+		"patching_rect" : [ 1, 17, 33, 17 ],
+		"hidden" : 0,
+		"bgcolor" : [ 1, 1, 1, 0 ],
+		"bubble_bgcolor" : [ 0.235, 0.235, 0.235, 1 ],
+		"bubble_outlinecolor" : [ 0.85, 0.85, 0.85, 1 ],
+		"bubbleusescolors" : 0,
+		"fontsize" : 9,
+		"textcolor" : [ 1, 1, 1, 1 ]
+	}
+,
 	"led" : 	{
 		"patching_rect" : [ 136, 35, 17, 17 ],
 		"hidden" : 0,
@@ -271,6 +282,17 @@
 		"htricolor" : [ 0.87, 0.82, 0.24, 1 ],
 		"textcolor" : [ 0.9, 0.9, 0.9, 1 ],
 		"tricolor" : [ 0.75, 0.75, 0.75, 1 ]
+	}
+,
+	"comment_throttle" : 	{
+		"patching_rect" : [ 0, 36, 45, 17 ],
+		"hidden" : 0,
+		"bgcolor" : [ 1, 1, 1, 0 ],
+		"bubble_bgcolor" : [ 0.235, 0.235, 0.235, 1 ],
+		"bubble_outlinecolor" : [ 0.85, 0.85, 0.85, 1 ],
+		"bubbleusescolors" : 0,
+		"fontsize" : 9,
+		"textcolor" : [ 1, 1, 1, 1 ]
 	}
 ,
 	"output_menu" : 	{

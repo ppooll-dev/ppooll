@@ -10,10 +10,10 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 680.0, 341.0, 191.0, 54.0 ],
+		"rect" : [ 414.0, 349.0, 191.0, 54.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
-		"globalpatchername" : "control@3",
+		"globalpatchername" : "control@4",
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontface" : 0,
@@ -219,7 +219,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 325.0, 559.0, 58.0, 19.0 ],
-					"restore" : [ 12 ],
+					"restore" : [ 40 ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -505,7 +505,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 466.0, 512.0, 50.0, 19.0 ],
-					"restore" : [ "_" ],
+					"restore" : [ "-" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -527,7 +527,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 466.0, 491.0, 50.0, 19.0 ],
-					"restore" : [ "_" ],
+					"restore" : [ "-" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -809,7 +809,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 394.0, 275.0, 84.0, 19.0 ],
-					"restore" : [ "freqs", "_" ],
+					"restore" : [ "_" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -844,7 +844,8 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 0.0, 36.0, 45.0, 17.0 ],
 					"text" : "throttle",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"varname" : "comment_throttle"
 				}
 
 			}
@@ -896,7 +897,8 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 1.0, 17.0, 33.0, 17.0 ],
 					"text" : "port:",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"varname" : "coment_port"
 				}
 
 			}
@@ -923,6 +925,30 @@
 						"rect" : [ 1037.0, 471.0, 529.0, 355.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 191.0, 227.0, 35.0, 22.0 ],
+									"text" : "clear"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 178.0, 274.0, 125.0, 22.0 ],
+									"text" : "ll.pf midi_receive_port"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-4",
 									"maxclass" : "newobj",
@@ -1041,7 +1067,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 115.0, 131.0, 80.0, 22.0 ],
-																	"text" : "control@3"
+																	"text" : "control@4"
 																}
 
 															}
@@ -1289,7 +1315,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 251.0, 159.0, 50.0, 22.0 ],
-																	"text" : "scale"
+																	"text" : "valON"
 																}
 
 															}
@@ -10228,7 +10254,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 91.0, 16.0, 50.0, 22.0 ],
-													"text" : "12 1"
+													"text" : "0"
 												}
 
 											}
@@ -12636,7 +12662,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 387.5, 212.0, 206.0, 22.0 ],
-													"text" : "prepend ::control@3::llc"
+													"text" : "prepend ::control@4::llc"
 												}
 
 											}
@@ -12672,7 +12698,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 282.0, 73.5, 70.0, 22.0 ],
-													"text" : "control@3"
+													"text" : "control@4"
 												}
 
 											}
@@ -18298,7 +18324,7 @@
 , 											{
 												"box" : 												{
 													"annotation" : "",
-													"embedstate" : [ [ "fontsize", 12 ], [ "text", "routC3" ], [ "w_param", "control@3", "routingW" ] ],
+													"embedstate" : [ [ "fontsize", 12 ], [ "text", "routC4" ], [ "w_param", "control@4", "routingW" ] ],
 													"filename" : "ll.movewindow3.js",
 													"hint" : "move window | close window",
 													"id" : "obj-4",
@@ -18709,7 +18735,7 @@
 													"fontsize" : 9.0,
 													"hidden" : 1,
 													"id" : "obj-69",
-													"items" : [ "(_)", ",", "2Dsliders1", ",", "control@1", ",", "control@2", ",", "control@3", ",", "ho_st1", ",", "mcpanner1", ",", "midikeys1", ",", "sinsE1" ],
+													"items" : [ "(_)", ",", "2Dsliders1", ",", "control@1", ",", "control@2", ",", "control@3", ",", "control@4", ",", "ho_st1", ",", "mcpanner1", ",", "midikeys1", ",", "sinsE1", ",", "tetris@1" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -18766,7 +18792,7 @@
 											}
 , 											{
 												"box" : 												{
-													"embedstate" : [ [ "bgcolors", 1, 1, 1, 1, 2, 1, 1, 3, 3, 3, 4, 1 ], [ "c1", 1, 1, 1, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.8, 0.8, 0.8, 1 ], [ "c3", 0.2, 0.9, 0.2, 1 ], [ "c4", 0, 0.7, 0.8, 1 ], [ "c5", 0.8, 0.8, 0.8, 1 ], [ "c6", 0.9, 0.1, 0.1, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 35, 35, 106, 50, 20, 38, 38, 60, 60, 25, 40, 45, 45, 45, 45 ], [ "enum_offset", 0 ], [ "fontsize", 9 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 1 ], [ "header_text", "in_lo", "in_hi", "input_name", "name_usr", "ON", "in_min", "in_max", "act", "par", "listit", "mode", "min", "max", "log", "smooth" ], [ "headercolors", 5 ], [ "ignore_headerclick", 0 ], [ "modes", "none", "none", "none", "text", "tog_0_1", "num_1.2", "num_1.2", "menu", "menu", "num", "menu", "num_1.2", "num_1.2", "num_1.2", "num_1.2" ], [ "oncolors", 6 ], [ "param_offset", 1 ], [ "params", "in_lo", "in_hi", "input_name", "name_user", "ON", "in_min", "in_max", "acts", "pars", "list_item", "modes", "opt1", "opt2", "opt3", "opt4" ], [ "rowheight_fixed", 0 ], [ "rows", 0 ], [ "size_lists", 0 ], [ "top_patcher", 1 ], [ "width_abs", 0 ] ],
+													"embedstate" : [ [ "bgcolors", 1, 1, 1, 1, 2, 1, 1, 3, 3, 3, 4, 1 ], [ "c1", 1, 1, 1, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.8, 0.8, 0.8, 1 ], [ "c3", 0.2, 0.9, 0.2, 1 ], [ "c4", 0, 0.7, 0.8, 1 ], [ "c5", 0.8, 0.8, 0.8, 1 ], [ "c6", 0.9, 0.1, 0.1, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 35, 35, 106, 50, 20, 38, 38, 60, 60, 25, 40, 45, 45, 45, 45 ], [ "enum_offset", 0 ], [ "fontsize", 9 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 1 ], [ "header_text", "in_lo", "in_hi", "input_name", "name_usr", "ON", "in_min", "in_max", "act", "par", "listit", "mode", "val", "ON", "ignored", "ignored" ], [ "headercolors", 5 ], [ "ignore_headerclick", 0 ], [ "modes", "none", "none", "none", "text", "tog_0_1", "num_1.2", "num_1.2", "menu", "menu", "num", "menu", "num_1.2", "num_1.2", "num_1.2", "num_1.2" ], [ "oncolors", 6 ], [ "param_offset", 1 ], [ "params", "in_lo", "in_hi", "input_name", "name_user", "ON", "in_min", "in_max", "acts", "pars", "list_item", "modes", "opt1", "opt2", "opt3", "opt4" ], [ "rowheight_fixed", 0 ], [ "rows", 0 ], [ "size_lists", 0 ], [ "top_patcher", 1 ], [ "width_abs", 0 ] ],
 													"filename" : "ll.listblock.js",
 													"id" : "obj-59",
 													"maxclass" : "v8ui",
@@ -18823,10 +18849,10 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 860.0, 3.0, 163.0, 22.0 ],
 													"saved_object_attributes" : 													{
-														"client_rect" : [ 710, 58, 1470, 1102 ],
+														"client_rect" : [ 345, 150, 1600, 866 ],
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0,
-														"storage_rect" : [ 430, 270, 1276, 999 ]
+														"storage_rect" : [ 583, 68, 1034, 196 ]
 													}
 ,
 													"text" : "pattrstorage @outputmode 1",
@@ -18871,7 +18897,7 @@
 													"patching_rect" : [ 860.0, 69.0, 65.0, 19.0 ],
 													"restore" : 													{
 														"listblock" : [ "n" ],
-														"ll_tab" : [ 12, 1 ],
+														"ll_tab" : [ 0 ],
 														"lllbmenu" : [ 0 ],
 														"lllbnum" : [ -204.0 ],
 														"lllbtext" : [ "fader" ]
@@ -18903,7 +18929,7 @@
 													"peakcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"setminmax" : [ 0.0, 1.0 ],
 													"setstyle" : 3,
-													"size" : 2,
+													"size" : 28,
 													"slidercolor" : [ 0.486275, 0.486275, 0.486275, 1.0 ],
 													"varname" : "ms"
 												}
@@ -22054,7 +22080,7 @@
 								"box" : 								{
 									"fontname" : "Geneva",
 									"fontsize" : 9.0,
-									"id" : "obj-2",
+									"id" : "obj-1",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -22068,6 +22094,13 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-38", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-12", 0 ],
 									"source" : [ "obj-18", 0 ]
 								}
@@ -22075,14 +22108,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-38", 0 ],
-									"source" : [ "obj-2", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-2", 0 ],
+									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-21", 0 ]
 								}
 
@@ -22121,6 +22147,13 @@
 									"destination" : [ "obj-7", 0 ],
 									"order" : 0,
 									"source" : [ "obj-38", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-6", 0 ]
 								}
 
 							}
@@ -22165,14 +22198,14 @@
 					"patching_rect" : [ 939.0, 206.0, 107.0, 22.0 ],
 					"restore" : 					{
 						"act_menu" : [ "no" ],
-						"act_suggested" : [ 0 ],
-						"baud_rate" : [ "57600" ],
+						"act_suggested" : [ 1 ],
+						"baud_rate" : [ "9600" ],
 						"chans" : [ 1 ],
 						"hi_menu" : [ "Apple Internal Keyboard / Trackpad" ],
 						"input_menu" : [ "midi" ],
 						"midi_channels" : [ 0 ],
-						"midi_receive_port" : [ "IAC Driver Bus 1" ],
-						"note_mode" : [ "notes_chords" ],
+						"midi_receive_port" : [ "" ],
+						"note_mode" : [ "notes_single" ],
 						"on/off" : [ 1 ],
 						"osc_receive_port" : [ 8001 ],
 						"output_menu" : [ 0 ],
@@ -22247,10 +22280,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 710, 58, 1470, 1102 ],
+						"client_rect" : [ 345, 150, 1600, 866 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 430, 270, 1276, 999 ]
+						"storage_rect" : [ 583, 68, 1034, 196 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -22344,7 +22377,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 9.0,
 					"id" : "obj-22",
-					"items" : [ "IAC Driver Bus 1", ",", "Minilab3 MIDI", ",", "Minilab3 DIN THRU", ",", "Minilab3 MCU/HUI", ",", "Minilab3 ALV", ",", "Komplete Audio 6 MK2", ",", "to Max 1", ",", "to Max 2" ],
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,

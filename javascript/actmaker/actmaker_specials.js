@@ -31,7 +31,7 @@ var console = {
 
 var newstate = new Array();
 var class_excludes = " route pv pattr coll pattrmarker autopattr pattrstorage thispatcher send pvar outlet inlet closebang loadmess bgcolor ";
-var name_excludes = " route master movewind tetris_menu pres_menu title_menu title_LCD act sub ";
+var name_excludes = "pf route master movewind tetris_menu pres_menu title_menu title_LCD act sub ";
 var attributes = new Array();
 var dict_name = "so";
 

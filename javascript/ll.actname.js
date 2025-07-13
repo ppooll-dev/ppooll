@@ -1,59 +1,44 @@
+// looks for varname "act" in any parentpatcher
+// if found look in dict "ppoollstate", if this patcher.name 
+// is already registrated. if so:.
+// >> this was loaded in an existing act, so:
+// output the actname and remove [r actname]
+//
+// if none of that was true, (this object is loaded from a saved act)
+// >> no action! - the actname will be sent to [r actname] soon by actmaker.
+
+
 outlets = 1;
 //autowatch = 1;
-
-var an, tpp, ptop, last;
-var wcount = 0;
+var tpp,pps,an,lookup;
+var stateDict = new Dict("ppoollstate"); 
 
 function bang()
 {
-	pf = "";
-	tpp = this.patcher;
-	
+	tpp = this.patcher;	
 	while (tpp){
-		an = tpp.name;
-		ptop = tpp;
-		//pf = pf + "parent::";
 		tpp = tpp.parentpatcher;
-		//post(tpp,pf, tpp.name, "\n");
+			if (tpp && tpp.getnamed("act")){
+				an = tpp.name;
+				lookup = stateDict.getkeys();
+				if (lookup && lookup.indexOf(an)>=0) {//js does not know includes()
+					outlet(0,an);
+				}
+			}
 		}
-	last = an.slice(-1);
-	if (isNaN(last)) {
-		//post (last, isNaN(last), "waiting");
-		tsk = new Task(repeater_function, this);
-		tsk.interval = 1000; // every second
-		tsk.repeat(4);  // do it 3 times
-		//setTimeout(wait, 1000);
-	}
-	else outlet(0,an);
 }
 
-function wait()
-{
-	wcount++;
-	post (wcount);
-	//if (wcount >= 3);
+function remove(){
+	this.patcher.remove(this.patcher.getnamed("receive_an"));
+}
+
+function script_receive(){
+	var ran = this.patcher.newdefault(100,100, "r", "actname");
+	ran.varname = "receive_an";
+	this.patcher.connect(ran,0,this.patcher.getnamed("reg"),0);
 }
 
 
-      
-function repeater_function()
-{
-  //post(arguments.callee.task.iterations);
-	var ti = arguments.callee.task.iterations;
-	an = ptop.name;
-	//post(an, ti, "\n");
-	if (isNaN(an.slice(-1))) {
-		if  (arguments.callee.task.iterations == 4)
-		post (an, ": not a valid ppooll actname !!");
-	}
-	else {
-		outlet(0,an);
-		arguments.callee.task.cancel();
-	}
-}
 
-function rename(n)
-{
-	var obj = ptop.getnamed("TP");
-	obj.message("patcher", n);
-}
+
+  

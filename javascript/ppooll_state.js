@@ -9,8 +9,14 @@ function acting(a,i,o){
 	let actname = a+i;
 	if (o == 1){		
 		pps.acts[actname] = {"class" : a, "index" : i, "inputs" : []};
+		stateDict.setparse(actname, '{ "class" : "so", "index" : 0, "inputs" : []}');
+		stateDict.set(actname+"::class",a);
+		stateDict.set(actname+"::index",i);
+		//stateDict.parse('{ "parameters" : { "param1" : { "name" : "foo", "value" : 0.1 }, "param2" : { "name" : "bar", "value" : 3.1415 } } }');
+		//stateDict.setparse(actname,	'{"class" : a, "index" : i, "inputs" : []}');
 	} else {
 		delete pps.acts[actname];
+		stateDict.remove(actname);
 	}
 	//post(pps,pps.acts,"\n");	
 }

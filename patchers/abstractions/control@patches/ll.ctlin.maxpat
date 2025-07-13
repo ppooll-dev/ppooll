@@ -70,7 +70,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 111.0, 65.5, 166.0, 22.0 ],
-					"text" : "\"Minilab3 MIDI\""
+					"text" : "\"to Max 1\""
 				}
 
 			}
@@ -1354,7 +1354,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 9.0,
 													"id" : "obj-1",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -1458,7 +1457,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 9.0,
 													"id" : "obj-8",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -1798,7 +1796,6 @@
 													"fontname" : "Arial",
 													"fontsize" : 9.0,
 													"id" : "obj-32",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 4,
@@ -3570,11 +3567,11 @@
 					"fontsize" : 9.0,
 					"id" : "obj-39",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
+					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 298.0, 67.0, 99.0, 19.0 ],
-					"text" : "ll.pp midi_receive_port"
+					"outlettype" : [ "", "bang" ],
+					"patching_rect" : [ 298.0, 67.0, 92.0, 19.0 ],
+					"text" : "ll.r midi_receive_port"
 				}
 
 			}
