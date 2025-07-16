@@ -9,7 +9,8 @@ autowatch = 1;
 outlets = 1;
 
 var actr = new Global("act_rep");
-var pps = new Global("ppooll_state");
+
+var stateDict = new Dict("ppoollstate"); 
 var enviDict = new Dict("environment"); 
 var currentAct = null;
 var actname_map;
@@ -24,7 +25,8 @@ function bang(){
 	
 	// sort acts
 	actname_map = {};
-	let pstate = Object.keys(pps["acts"]);
+	let pstate = stateDict.getkeys(); 
+	//post("pooll_state",pstate,"h",stateDict.get("ho_st1::class"),"\n");
 	pstate.shift(); // remove ho_st1 from list	
 	pstate = pstate.sort();
 	pstate.splice(0, 0, "ho_st1"); //restore ho_st1
@@ -35,7 +37,8 @@ function bang(){
 	let compare = "";
 	let counter;
 	for (let a of pstate){
-		let a_class = pps.acts[a]["class"];
+		let a_class = stateDict.get(a+"::class");
+		//post(a_class);
 		if (a_class != compare) {
 			counter = 1;
 			compare = a_class;
@@ -48,7 +51,7 @@ function bang(){
 	
 	//push	
 	for (let a of pstate) {
-		addAct(a,pps.acts[a]["class"]);
+		addAct(a,stateDict.get(a+"::class"));
 		//post("-----------------------------------",a,"\n");
 		getdump(a);	
 	}

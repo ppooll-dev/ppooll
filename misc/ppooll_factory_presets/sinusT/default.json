@@ -1,5 +1,5 @@
 {
-	"window" : [ 388, 343, 521, 543 ],
+	"window" : [ 353, 297, 486, 497 ],
 	"f-rel>trigger" : 	{
 		"patching_rect" : [ 68, 63, 19, 19 ],
 		"hidden" : 0,
@@ -164,11 +164,6 @@
 		"slidercolornofocus" : [ 1, 1, 1, 1 ],
 		"textcolor" : [ 0, 0, 0, 1 ],
 		"textcolornofocus" : [ 1, 1, 1, 1 ]
-	}
-,
-	"pf" : 	{
-		"patching_rect" : [ 520, 278, 115, 20 ],
-		"hidden" : 1
 	}
 ,
 	"freq-relative" : 	{

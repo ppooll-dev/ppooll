@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 388.0, 343.0, 133.0, 200.0 ],
+		"rect" : [ 353.0, 297.0, 133.0, 200.0 ],
 		"default_fontsize" : 10.0,
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
@@ -426,7 +426,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 185.0, 287.0, 756.0, 465.0 ],
+						"rect" : [ 768.0, 283.0, 756.0, 465.0 ],
 						"default_fontsize" : 10.0,
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
@@ -628,7 +628,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 159.0, 166.0, 84.0, 20.0 ],
+													"patching_rect" : [ 159.0, 166.0, 84.0, 22.0 ],
 													"text" : "prepend set 1"
 												}
 
@@ -654,7 +654,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "int", "float", "int" ],
-													"patching_rect" : [ 143.0, 59.0, 51.0, 20.0 ],
+													"patching_rect" : [ 143.0, 59.0, 51.0, 22.0 ],
 													"text" : "t 1 f 0"
 												}
 
@@ -668,7 +668,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 15.0, 110.0, 61.0, 20.0 ],
+													"patching_rect" : [ 15.0, 110.0, 61.0, 22.0 ],
 													"text" : "gate 1 1"
 												}
 
@@ -682,7 +682,7 @@
 													"numinlets" : 6,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 15.0, 138.0, 116.0, 20.0 ],
+													"patching_rect" : [ 15.0, 138.0, 116.0, 22.0 ],
 													"text" : "ll.og 0 1 20 40000 7"
 												}
 
@@ -696,7 +696,7 @@
 													"numinlets" : 6,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 159.0, 137.0, 119.0, 20.0 ],
+													"patching_rect" : [ 159.0, 137.0, 119.0, 22.0 ],
 													"text" : "ll.!og 0 1 20 40000 7"
 												}
 
@@ -710,7 +710,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 15.0, 58.0, 92.0, 20.0 ],
+													"patching_rect" : [ 15.0, 58.0, 92.0, 22.0 ],
 													"text" : "ll.r length-slider"
 												}
 
@@ -724,7 +724,7 @@
 													"numinlets" : 3,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 159.0, 197.0, 98.0, 20.0 ],
+													"patching_rect" : [ 159.0, 197.0, 98.0, 22.0 ],
 													"text" : "ll.pf length-slider"
 												}
 
@@ -738,7 +738,7 @@
 													"numinlets" : 3,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 15.0, 162.0, 65.0, 20.0 ],
+													"patching_rect" : [ 15.0, 162.0, 65.0, 22.0 ],
 													"text" : "ll.pf length"
 												}
 
@@ -752,7 +752,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 143.0, 21.0, 59.0, 20.0 ],
+													"patching_rect" : [ 143.0, 21.0, 59.0, 22.0 ],
 													"text" : "ll.r length"
 												}
 
@@ -2742,7 +2742,6 @@
 						"act::active_store" : 0,
 						"act::master/activest" : 0,
 						"act::u751015509" : 0,
-						"act::actui" : 0,
 						"act::pres_menu" : 0,
 						"act::tetris_menu" : 0,
 						"act::title_menu" : 0
@@ -2904,6 +2903,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "actmaker_specials.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript/actmaker",
+				"patcherrelativepath" : "../../javascript/actmaker",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "actmaker_sub.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/actmaker",
 				"patcherrelativepath" : "../actmaker",
@@ -2918,6 +2924,27 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll._utilities.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.act_title.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.actmake.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.actmenu.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
@@ -2925,24 +2952,17 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.actname.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.actname.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/actmaker",
+				"patcherrelativepath" : "../actmaker",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.allacts.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.an2.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -3098,8 +3118,9 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "v8ui_default.js",
-				"bootpath" : "C74:/jsui",
+				"name" : "ppooll_state.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

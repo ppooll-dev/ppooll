@@ -1,6 +1,7 @@
 outlets = 2;
 var d = new Dict("environment"); 
-var pps = new Global("ppooll_state");
+var stateDict = new Dict("ppoollstate"); 
+
 var actr = new Global("act_rep");
 var keys;
 var open, toopen;
@@ -18,13 +19,10 @@ function debug_post(a){
 function acts(){
 	outlet(0,"---");
 	keys = d.getkeys();
-	let pstate = Object.keys(pps["acts"]);
+	let pstate = stateDict.getkeys(); 
 	open = [];
 	toopen =[];
 	for (let a of keys) {
-		let pps_act = pps.acts[a];
-		//post ("rrr",a,pps["acts"][a]["class"]);
-		//post ("class",Object.keys(pps.acts[a])); //.acts[a]["class"]); //[acts][a]["class"]);
 		if (pstate.includes(a) == 1) open.push(a)
 		else toopen.push(d.get(a).get("_actwindow")[0]);
 	}
@@ -35,13 +33,11 @@ function acts(){
 
 function loadact(){
 	if (toopen.length > 0){
-	outlet(0,toopen[0]);
-	actingON = 1;
-	messnamed("ll_actload", toopen[0]);
-	}
-	else {
-		outlet(0, "actsdone");
-	}
+		outlet(0,toopen[0]);
+		actingON = 1;
+		messnamed("ll_actload", toopen[0]);
+		}
+		else outlet(0, "actsdone");
 }
 
 function acting(c,i,o){ //response from an act when ready loaded

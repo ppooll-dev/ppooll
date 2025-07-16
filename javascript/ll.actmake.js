@@ -112,36 +112,30 @@ function makecolor(c) {
 }
 
 function getinstance() {
-    //var m = new Global("all_acts");
-	var pps = new Global("ppooll_state");
-	let m = Object.keys(pps["acts"]);
-    //m = m.acts;
-    let result = 0;
-    let foundi = [];
-    for (let a of m) {
-		//post("look",a,pps.acts[a]["class"],pps.acts[a]["index"],"\n");
-		if (pps.acts[a]["class"] == name) foundi.push(pps.acts[a]["index"]);
-        /*
-		if (!isNaN(a.slice(-1)[0])) {
-            let mstrip = a.match(/(.*?)(\d+$)/);
-            if (mstrip[1] == name) foundi.push(mstrip[2]);
-        }
-		*/
-    }
-    if (foundi.length > 0) {
-        foundi.sort(function (a, b) {
-            return a - b;
-        });
-        for (i = 0; i < foundi.length; i++) {
-            if (i + 1 != foundi[i]) {
-                result = i + 1;
-                break;
-            }
-            result = i + 2;
-        }
-    } else result = 1;
-    //post("zzz",foundi,"len",foundi.length,"result",result,"\n");
-    instance = result;
+	var stateDict = new Dict("ppoollstate"); 
+	let m = stateDict.getkeys(); 
+	if (!m) instance = 1
+	else {
+	    let result = 0;
+	    let foundi = [];
+	    for (let a of m) {
+			if (stateDict.get(a+"::class") == name) foundi.push(stateDict.get(a+"::index"));
+	    }
+	    if (foundi.length > 0) {
+	        foundi.sort(function (a, b) {
+	            return a - b;
+	        });
+	        for (i = 0; i < foundi.length; i++) {
+	            if (i + 1 != foundi[i]) {
+	                result = i + 1;
+	                break;
+	            }
+	            result = i + 2;
+	        }
+	    } else result = 1;
+	    //post("zzz",foundi,"len",foundi.length,"result",result,"\n");
+	    instance = result;
+	}
 }
 
 function check_live() {

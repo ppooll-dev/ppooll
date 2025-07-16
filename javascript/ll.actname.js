@@ -11,7 +11,7 @@
 
 outlets = 1;
 //autowatch = 1;
-var tpp,pps,an,lookup;
+var tpp,pat,an,lookup;
 var stateDict = new Dict("ppoollstate"); 
 
 function bang()
@@ -22,12 +22,10 @@ function bang()
 		//post("tpp",tpp.name);
 		tpp = tpp.parentpatcher;
 			if (tpp && tpp.getnamed("act")){
-				an = tpp.name;
+				pat = tpp.getnamed("pattrmarker");
+				if (pat) an = pat.getattr("name");
 				lookup = stateDict.getkeys();
-				//post("tpp_foundact",tpp.name,"\n");
-				if (lookup && lookup.indexOf(an)>=0) {//js does not know includes()
-					outlet(0,an);
-				}
+				if (lookup && lookup.indexOf(an)>=0) outlet(0,an);
 			}
 		}
 }
