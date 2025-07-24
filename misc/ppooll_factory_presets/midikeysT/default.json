@@ -1,5 +1,15 @@
 {
-	"window" : [ 100, 106, 1316, 201 ],
+	"window" : [ 59, 25, 1275, 120 ],
+	"keysplit_UI" : 	{
+		"patching_rect" : [ 844, -1, 82, 18 ],
+		"hidden" : 0,
+		"bgcolors" : [ 1, 1, 1, 1, 3, 3 ],
+		"fontsize" : 8,
+		"gridcolor" : [ 1, 1, 0.836070365646258, 1 ],
+		"jsarguments" : 0,
+		"oncolors" : 2
+	}
+,
 	"to_pp" : 	{
 		"patching_rect" : [ 734, 1, 60.64990234375, 20.2890625 ],
 		"hidden" : 0,
@@ -283,7 +293,7 @@
 		"bgcolor" : [ 1, 1, 1, 0 ],
 		"bordercolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 0 ],
 		"fgcolor" : [ 1, 1, 1, 1 ],
-		"fontsize" : 7,
+		"fontsize" : 9,
 		"gridlinecolor" : [ 0.5, 0.5, 0.5, 1 ],
 		"hcellcolor" : [ 0.819607843137255, 0.819607843137255, 0.901960784313726, 0 ],
 		"headercolor" : [ 0.7, 0.7, 0.7, 1 ],
@@ -340,14 +350,18 @@
 		"hidden" : 0
 	}
 ,
-	"keysplit_UI" : 	{
-		"patching_rect" : [ 839, -1, 82, 18 ],
+	"clear!" : 	{
+		"patching_rect" : [ 928, -0.5, 31, 17 ],
 		"hidden" : 0,
-		"bgcolors" : [ 1, 1, 1, 1, 3, 3 ],
-		"fontsize" : 8,
-		"gridcolor" : [ 1, 1, 0.836070365646258, 1 ],
-		"jsarguments" : 0,
-		"oncolors" : 2
+		"bgcolor" : [ 0.125, 0.125, 0.125, 1 ],
+		"bgoncolor" : [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
+		"fontsize" : 12,
+		"legacytextcolor" : 0,
+		"textcolor" : [ 0.458595350062755, 0.458595237564901, 0.458595266962388, 1 ],
+		"textoncolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ],
+		"textovercolor" : [ 0.922234290352602, 0.71007200526417, 0.329758341965716, 1 ],
+		"usebgoncolor" : 0,
+		"usetextovercolor" : 0
 	}
 
 }

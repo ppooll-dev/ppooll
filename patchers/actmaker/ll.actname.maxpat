@@ -14,13 +14,26 @@
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-17",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 245.0, 246.0, 52.0, 22.0 ],
+					"text" : "gate 1 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 278.0, 160.0, 54.0, 22.0 ],
-					"text" : "deferlow"
+					"text" : "deferlow",
+					"varname" : "deferlow"
 				}
 
 			}
@@ -64,10 +77,10 @@
 					"id" : "obj-22",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"patching_rect" : [ 100.0, 344.0, 31.0, 22.0 ],
-					"text" : "t s b"
+					"numoutlets" : 3,
+					"outlettype" : [ "", "bang", "int" ],
+					"patching_rect" : [ 100.0, 344.0, 41.0, 22.0 ],
+					"text" : "t s b 0"
 				}
 
 			}
@@ -133,7 +146,8 @@
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "js ll.actname.js"
+					"text" : "js ll.actname.js",
+					"varname" : "js"
 				}
 
 			}
@@ -208,7 +222,7 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
+					"destination" : [ "obj-17", 1 ],
 					"source" : [ "obj-1", 0 ]
 				}
 
@@ -230,8 +244,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"source" : [ "obj-17", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-19", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-17", 0 ],
+					"source" : [ "obj-22", 2 ]
 				}
 
 			}
@@ -245,7 +273,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
-					"midpoints" : [ 121.5, 376.0, 526.7578125, 376.0, 526.7578125, 74.0, 474.5, 74.0 ],
+					"midpoints" : [ 120.5, 386.75, 526.7578125, 386.75, 526.7578125, 74.0, 474.5, 74.0 ],
 					"source" : [ "obj-22", 1 ]
 				}
 
