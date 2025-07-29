@@ -2,464 +2,73 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 6,
-			"revision" : 4,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 7,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1060.0, 513.0, 970.0, 796.0 ],
-		"bglocked" : 0,
-		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
+		"rect" : [ 100.0, 100.0, 878.0, 692.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
-		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-26",
+					"id" : "obj-40",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 387.25, 543.0, 150.0, 34.0 ],
-					"text" : "open openGL window for visualization"
+					"patching_rect" : [ 157.0, 230.0, 294.0, 34.0 ],
+					"text" : "Equal\nEnables standard 12-tone equal temperament tuning."
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-39",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 355.25, 517.0, 67.0, 20.0 ],
-					"text" : "visualize"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-21",
-					"maxclass" : "toggle",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 361.25, 543.0, 24.0, 24.0 ],
-					"varname" : "visualize"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-20",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 403.0, 312.0, 150.0, 34.0 ],
-					"presentation_linecount" : 2,
-					"text" : "quantized to 12 tone if no key is selected "
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-19",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 459.0, 181.0, 97.0, 20.0 ],
-					"text" : "Quantize"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-53",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 477.0, 225.0, 65.0, 20.0 ],
-					"text" : "midi hold"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-37",
-					"maxclass" : "toggle",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 462.0, 225.0, 18.0, 18.0 ],
-					"varname" : "midi_hold"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-52",
-					"maxclass" : "kslider",
-					"mode" : 1,
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"offset" : 0,
-					"outlettype" : [ "int", "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 462.0, 245.0, 91.0, 57.0 ],
-					"range" : 12,
-					"varname" : "QTkey"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"annotation" : "midi-channel",
-					"fontface" : 0,
-					"format" : [ 1 ],
-					"id" : "obj-399",
-					"max" : 16.0,
-					"maxclass" : "ll_number",
-					"multidrag" : 0,
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 508.0, 203.0, 16.0, 16.0 ],
-					"slidercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
-					"sliderstyle" : 2,
-					"varname" : "midi-channel"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"allowdrag" : 0,
-					"annotation" : "midi-port",
-					"arrow" : 0,
-					"fontsize" : 9.0,
-					"id" : "obj-80",
-					"items" : [ "KONTROL S61 MK3", ",", "MIDIIN2 (KONTROL S61 MK3)", ",", "MIDIIN3 (KONTROL S61 MK3)" ],
-					"maxclass" : "umenu",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "int", "", "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 461.0, 203.0, 44.0, 19.0 ],
-					"pattrmode" : 1,
-					"varname" : "midi-port"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-15",
-					"linecount" : 15,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 303.0, 359.0, 19.291666666666515, 213.0 ],
-					"presentation_linecount" : 15,
-					"text" : "v\ne\nr\nt\ni\nc\na\nl\n\nr\no\nt\na\nt\ne",
-					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
-					"textjustification" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"floatoutput" : 1,
-					"id" : "obj-18",
-					"knobshape" : 5,
-					"maxclass" : "slider",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"orientation" : 2,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 305.0, 359.0, 17.0, 216.0 ],
-					"size" : 1.0,
-					"varname" : "vertical_rotate"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-4",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 14.125000000000114, 693.0, 93.0, 34.0 ],
-					"text" : "thin rate\n",
-					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 0.5 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"floatoutput" : 1,
-					"id" : "obj-11",
-					"knobshape" : 5,
-					"maxclass" : "slider",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 14.125000000000114, 696.0, 279.0, 17.0 ],
-					"size" : 1.0,
-					"varname" : "thin_rate"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-3",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 303.0, 211.0, 150.0, 20.0 ],
-					"text" : "y : pitch"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-2",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 303.0, 180.0, 150.0, 20.0 ],
-					"text" : "x : amount of quantization"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"amount" : 2,
-					"fontface" : 0,
-					"id" : "obj-1",
-					"label" : [ "range_min", "range_max" ],
-					"max" : 127.0,
-					"maxclass" : "ll_number",
-					"min" : 0.0,
-					"mousefocus" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 14.0, 107.5, 278.0, 58.0 ],
-					"slidermax" : 127.0,
-					"varname" : "range"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 0,
-					"format" : [ 2.0 ],
-					"id" : "obj-27",
-					"label" : [ "points" ],
-					"max" : 20.0,
-					"maxclass" : "ll_number",
-					"min" : 1.0,
-					"mousefocus" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 148.75, 73.0, 70.0, 17.0 ],
-					"slidermax" : 20.0,
-					"slidermin" : 1.0,
-					"sliderstyle" : 2,
-					"textcolornofocus" : [ 0.16078431372549, 0.16078431372549, 0.16078431372549, 0.788235294117647 ],
-					"varname" : "amount"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 0,
-					"format" : [ 4.0 ],
-					"id" : "obj-14",
-					"label" : [ "number" ],
-					"labelcolor" : [ 0.0, 0.0, 0.0, 0.92 ],
-					"max" : 9999.0,
-					"maxclass" : "ll_number",
-					"min" : 2.0,
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 14.791666666666544, 47.5, 102.0, 17.0 ],
-					"slidermax" : 9999.0,
-					"slidermin" : 2.0,
-					"sliderstyle" : 2,
-					"textcolornofocus" : [ 0.16078431372549, 0.16078431372549, 0.16078431372549, 1.0 ],
-					"varname" : "number"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-42",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 297.125000000000114, 670.0, 234.0, 20.0 ],
-					"text" : "reduce number of oscillators"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 9.160197999999999,
 					"id" : "obj-38",
-					"linecount" : 2,
-					"maxclass" : "message",
-					"numinlets" : 2,
+					"maxclass" : "button",
+					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 645.0, 307.0, 255.0, 30.0 ],
-					"text" : ";\r\njitter launch_browser https://github.com/snopeusz/scl_reader"
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 130.0, 231.0, 24.0, 24.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-36",
-					"maxclass" : "comment",
+					"maxclass" : "button",
 					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 645.0, 286.75, 230.0, 20.0 ],
-					"text" : "cloud uses scl_reader... thanks !!!"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 9.160197999999999,
-					"id" : "obj-33",
-					"linecount" : 2,
-					"maxclass" : "message",
-					"numinlets" : 2,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 645.0, 240.0, 261.0, 30.0 ],
-					"text" : ";\r\njitter launch_browser http://huygens-fokker.org/docs/scales.zip"
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 130.0, 181.0, 24.0, 24.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"fontsize" : 15.0,
 					"id" : "obj-32",
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 645.0, 209.0, 254.0, 24.0 ],
-					"text" : "cloud can import scala scale"
+					"patching_rect" : [ 156.0, 181.0, 586.0, 48.0 ],
+					"text" : "Scala\nLoads a tuning system from a .scl Scala file.\nWhen active, pitch values are quantized according to the loaded tuning scale instead of equal temperament."
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 9.160197999999999,
-					"id" : "obj-30",
+					"id" : "obj-21",
 					"linecount" : 2,
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 645.0, 163.0, 223.0, 30.0 ],
-					"text" : ";\r\njitter launch_browser http://huygens-fokker.org/scala/"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontsize" : 15.0,
-					"id" : "obj-31",
-					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 644.0, 97.5, 255.0, 58.0 ],
-					"text" : "Scala\nsoftware for microtonal tuning\nhttp://huygens-fokker.org/scala/"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-29",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 419.0, 399.0, 134.0, 20.0 ],
-					"text" : "read scala scale map"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-28",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 419.0, 424.0, 189.0, 20.0 ],
-					"text" : "set tuning to equal temperament"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-22",
-					"linecount" : 3,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 227.0, 579.0, 71.0, 48.0 ],
-					"text" : "x : pan\n\ny :volume"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-17",
-					"linecount" : 3,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 294.0, 112.5, 254.0, 48.0 ],
-					"text" : "frequencies of each sine waves are distributed\nbetween these values (0-127 midi note)"
+					"patching_rect" : [ 134.0, 145.0, 646.0, 34.0 ],
+					"text" : "Controls how strongly pitch values are snapped toward the nearest integer MIDI note (0–127).\nA value of 0 means no quantization (fully continuous), and 1 means full quantization to discrete notes."
 				}
 
 			}
@@ -469,152 +78,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 220.75, 71.5, 336.0, 20.0 ],
-					"text" : "how many points on 2d sliders (suggested value : 5 ??)"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-12",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 118.687499999999773, 44.5, 431.0, 20.0 ],
-					"text" : "how many sine wave oscillator (suggested value around 1000 ?)"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-10",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 11.687499999999773, 12.0, 295.000000000000227, 20.0 ],
-					"text" : "cloud : oscillator bank with pitch distribution system"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"hint" : "equal temperament",
-					"id" : "obj-69",
-					"maxclass" : "hint",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 360.0, 427.0, 41.124999999999886, 17.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"hint" : "load tuning map ",
-					"id" : "obj-68",
-					"maxclass" : "hint",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 360.0, 402.0, 41.124999999999886, 17.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-57",
-					"maxclass" : "textbutton",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"outputmode" : 0,
-					"parameter_enable" : 0,
-					"patching_rect" : [ 363.0, 399.0, 38.124999999999886, 20.0 ],
-					"text" : "tune",
-					"texton" : "tune",
-					"varname" : "tune"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-5",
-					"maxclass" : "textbutton",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"outputmode" : 0,
-					"parameter_enable" : 0,
-					"patching_rect" : [ 363.0, 424.0, 38.124999999999886, 20.0 ],
-					"text" : "equal",
-					"texton" : "equal",
-					"varname" : "equal"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-23",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 14.125000000000114, 670.0, 93.0, 20.0 ],
-					"text" : "thin",
-					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 0.5 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"floatoutput" : 1,
-					"id" : "obj-25",
-					"knobshape" : 5,
-					"maxclass" : "slider",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 14.125000000000114, 670.0, 278.499999999999773, 19.0 ],
-					"size" : 1.0,
-					"varname" : "thin"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-16",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 14.0, 356.0, 61.583333333333087, 20.0 ],
-					"text" : "rotate",
-					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"floatoutput" : 1,
-					"id" : "obj-6",
-					"knobshape" : 5,
-					"maxclass" : "slider",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 14.0, 359.0, 279.000000000000227, 24.0 ],
-					"size" : 1.0,
-					"varname" : "rotate"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-9",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 14.0, 175.5, 150.0, 20.0 ],
-					"text" : "x : quantize y : pitch",
-					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 0.5 ]
+					"patching_rect" : [ 134.0, 121.0, 346.0, 20.0 ],
+					"text" : "Mutes every Nth oscillator by setting its amplitude to zero."
 				}
 
 			}
@@ -624,9 +89,211 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 14.0, 400.0, 150.0, 20.0 ],
-					"text" : "x : pan y : volume",
-					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 0.5 ]
+					"patching_rect" : [ 134.0, 92.0, 454.0, 20.0 ],
+					"text" : "Swaps A and B for every Nth oscillator, where N is the value of this parameter."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"id" : "obj-2",
+					"label" : [ "quantize" ],
+					"max" : 1.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 6.0, 153.0, 113.0, 22.0 ],
+					"slidermax" : 1.0,
+					"varname" : "quantize"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"format" : [ 2.0 ],
+					"id" : "obj-3",
+					"label" : [ "Thin" ],
+					"max" : 20.0,
+					"maxclass" : "ll_number",
+					"min" : 1.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 6.0, 125.0, 94.0, 23.0 ],
+					"slidermax" : 20.0,
+					"slidermin" : 1.0,
+					"varname" : "thinM"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"format" : [ 2.0 ],
+					"id" : "obj-26",
+					"label" : [ "Swap" ],
+					"max" : 20.0,
+					"maxclass" : "ll_number",
+					"min" : 1.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 6.0, 96.0, 94.0, 23.0 ],
+					"slidermax" : 20.0,
+					"slidermin" : 1.0,
+					"varname" : "swapN"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 234.0, 587.0, 598.0, 20.0 ],
+					"text" : "Shifts the phase of the chaotic pattern, changing how the randomness is distributed across oscillators."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-37",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 234.0, 463.0, 402.0, 34.0 ],
+					"text" : "Applies a linear tilt to the distribution around the center value.\nIf the result goes beyond the A–B range, it is folded back within bounds."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-35",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 234.0, 655.0, 366.0, 20.0 ],
+					"text" : "Shifts the entire distribution cyclically across oscillators"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-28",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 234.0, 632.0, 494.0, 20.0 ],
+					"text" : "Controls how strongly values snap to discrete steps: 0 = smooth, 1 = fully stepped"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-25",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 234.0, 610.0, 366.0, 20.0 ],
+					"text" : "Quantizes the value into a specified number of discrete steps"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-23",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 234.0, 565.0, 598.0, 20.0 ],
+					"text" : "Sets the amount of chaotic deviation applied to each oscillator. Higher values introduce stronger irregularities."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-20",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 234.0, 542.0, 266.0, 20.0 ],
+					"text" : "Shifts the phase of the sine wave modulation"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-15",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 234.0, 520.0, 413.0, 20.0 ],
+					"text" : "Controls the amplitude (depth) of the sinusoidal modulation"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 234.0, 497.0, 464.0, 20.0 ],
+					"text" : "Number of sinewave cycles applied across the distribution range"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 234.0, 447.0, 315.0, 20.0 ],
+					"text" : "Sets the center point of the distribution between A and B"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"format" : [ 8.0 ],
+					"id" : "obj-14",
+					"label" : [ "morphTimeMax(ms)" ],
+					"maxclass" : "ll_number",
+					"min" : 1.0,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 648.0, 255.0, 212.0, 28.0 ],
+					"sliderstyle" : 2,
+					"varname" : "morphmax"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 12.0,
+					"id" : "obj-7",
+					"linecount" : 6,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 6.0, 341.0, 533.0, 89.0 ],
+					"text" : "Define the two endpoints of the distribution for pitch, pan, amplitude, and morphing speed.\nnoteA / noteB: Defines pitch range in MIDI notes (0–127).\npanA / panB: Sets stereo position range, from -1 (left) to 1 (right).\nampA / ampB: Controls amplitude range, from 0 to 1.\nmorphA / morphB: Sets morphing time range in milliseconds. The maximum time is scaled by the morphTimeMax parameter."
 				}
 
 			}
@@ -634,14 +301,40 @@
 				"box" : 				{
 					"amount" : 2,
 					"fontface" : 0,
-					"id" : "obj-7",
-					"maxclass" : "ll_2dslider",
+					"id" : "obj-71",
+					"label" : [ "morphA", "morphB" ],
+					"max" : 100000.0,
+					"maxclass" : "ll_number",
+					"min" : 1.0,
+					"mousefocus" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 14.0, 400.0, 278.75, 173.0 ],
-					"varname" : "cloud_points_B"
+					"patching_rect" : [ 648.0, 294.0, 212.0, 45.0 ],
+					"slidermax" : 100000.0,
+					"slidermin" : 1.0,
+					"varname" : "morphAB"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"amount" : 2,
+					"fontface" : 0,
+					"id" : "obj-59",
+					"label" : [ "ampA", "ampB" ],
+					"max" : 1.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 434.0, 295.0, 212.0, 43.0 ],
+					"slidermax" : 1.0,
+					"varname" : "ampAB"
 				}
 
 			}
@@ -650,23 +343,284 @@
 					"amount" : 2,
 					"fontface" : 0,
 					"id" : "obj-47",
-					"maxclass" : "ll_2dslider",
+					"label" : [ "panA", "panB" ],
+					"max" : 1.0,
+					"maxclass" : "ll_number",
+					"min" : -1.0,
+					"mousefocus" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 14.125000000000114, 175.5, 278.75, 172.0 ],
-					"varname" : "cloud_points"
+					"patching_rect" : [ 220.0, 296.0, 212.0, 40.0 ],
+					"slidermax" : 1.0,
+					"slidermin" : -1.0,
+					"varname" : "panAB"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 12.0,
+					"id" : "obj-4",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 172.0, 59.0, 431.0, 20.0 ],
+					"text" : "Sets the number of sinewave oscillators. Higher values may increase CPU load"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"id" : "obj-17",
+					"label" : [ "Phase" ],
+					"max" : 1.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 10.0, 655.0, 212.0, 20.0 ],
+					"slidermax" : 1.0,
+					"varname" : "noteDistPhase"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"id" : "obj-18",
+					"label" : [ "chaosPhase" ],
+					"max" : 1.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 10.0, 587.0, 212.0, 20.0 ],
+					"slidermax" : 1.0,
+					"varname" : "noteChaosPhase"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"id" : "obj-97",
+					"label" : [ "Snap" ],
+					"max" : 1.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 10.0, 632.0, 212.0, 20.0 ],
+					"slidermax" : 1.0,
+					"varname" : "noteSnap"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"format" : [ 2.0 ],
+					"id" : "obj-83",
+					"label" : [ "Steps" ],
+					"max" : 20.0,
+					"maxclass" : "ll_number",
+					"min" : 1.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 10.0, 610.0, 212.0, 20.0 ],
+					"slidermax" : 20.0,
+					"slidermin" : 1.0,
+					"varname" : "noteSteps"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"id" : "obj-75",
+					"label" : [ "Chaos" ],
+					"max" : 1.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 10.0, 565.0, 212.0, 20.0 ],
+					"slidermax" : 1.0,
+					"varname" : "noteChaosAmt"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"id" : "obj-73",
+					"label" : [ "sinPhase" ],
+					"max" : 1.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 10.0, 542.0, 212.0, 20.0 ],
+					"slidermax" : 1.0,
+					"varname" : "noteSinPhase"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"id" : "obj-68",
+					"label" : [ "SinAmp" ],
+					"max" : 1.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 10.0, 520.0, 212.0, 20.0 ],
+					"slidermax" : 1.0,
+					"varname" : "noteSinAmp"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"id" : "obj-54",
+					"label" : [ "SinFreq" ],
+					"max" : 10.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 10.0, 497.0, 212.0, 20.0 ],
+					"slidermax" : 10.0,
+					"varname" : "noteSinPeriods"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"id" : "obj-34",
+					"label" : [ "center" ],
+					"max" : 1.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 10.0, 447.0, 212.0, 20.0 ],
+					"slidermax" : 1.0,
+					"varname" : "note"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"id" : "obj-27",
+					"label" : [ "slope" ],
+					"max" : 5.0,
+					"maxclass" : "ll_number",
+					"min" : -5.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 10.0, 470.0, 212.0, 20.0 ],
+					"slidermax" : 5.0,
+					"slidermin" : -5.0,
+					"varname" : "noteSlope"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"amount" : 2,
+					"fontface" : 0,
+					"id" : "obj-19",
+					"label" : [ "noteA", "noteB" ],
+					"max" : 127.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 6.0, 296.0, 212.0, 40.0 ],
+					"slidermax" : 127.0,
+					"varname" : "noteAB"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"format" : [ 4 ],
+					"id" : "obj-6",
+					"label" : [ "Number_of_Osc" ],
+					"max" : 128.0,
+					"maxclass" : "ll_number",
+					"min" : 1.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 6.0, 59.0, 159.5, 25.0 ],
+					"slidermax" : 128.0,
+					"slidermin" : 1.0,
+					"varname" : "numOsc"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 16.0,
+					"id" : "obj-10",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 6.0, 7.0, 543.0, 43.0 ],
+					"text" : "cloud : sinewave oscillator bank with a flexible distribution mapping system for pitch, pan, amplitude, and morphing speed"
 				}
 
 			}
  ],
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
-				"name" : "ll_2dslider.mxe64",
-				"type" : "mx64"
-			}
-, 			{
 				"name" : "ll_number.mxe64",
 				"type" : "mx64"
 			}

@@ -1,7 +1,7 @@
 outlets = 1;
 
 var actr = new Global("act_rep");
-var ag = new Global("all_acts");
+var stateDict = new Dict("ppoollstate"); 
 
 
 
@@ -120,7 +120,7 @@ function listblock(){ //ll.listblock output when clicked
 		if (a[1] == 1) {
 			//pm.message("getmarkerlist"); //act
 			//post("getacts",getacts(),"\n");
-			lb.message("fill_menu", getacts());
+			lb.message("fill_menu", stateDict.getkeys()); //getacts());
 			}
 		if (a[1] == 2) {                            //inputs
 			let vc = v[a[2]];
@@ -146,9 +146,7 @@ function markerlist(){
 	//post(a,"\n");
 	lb.message("fill_menu", a);
 }
-function getacts(){
-	if (ag.acts.length > 0) return ag.acts;
-}
+
 function inputs(ina){
 	let a = [0];
 	if (Array.isArray(ina)) a = ina
