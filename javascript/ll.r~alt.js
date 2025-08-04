@@ -41,7 +41,7 @@ function chan_blue(a) {
 
 function doit(a, p) {
     if (!ready) return;
-   
+    
     act = a;
     path = p;
     const { foundPatcher, foundBox} = utils.findInParentPatchers(
@@ -50,17 +50,63 @@ function doit(a, p) {
     );
     tpp = foundPatcher;
     
+	
+	//post("ppst",stateDict.get(act+"::inputs~"),"\n");
+	let vs = stateDict.get(act+"::inputs~");
+	
+    try {
+        //tpp = this.patcher.parentpatcher.parentpatcher;
+        inputsObj = tpp.getnamed("inputs~");
+		
+        if (inputsObj && typeof inputsObj.getvalueof === "function") {
+            let v = inputsObj.getvalueof();
+            inputsObj.message("priority", "inputs~", 1000);
+            // post("inputsObj value: " + v + "\n");
+
+            if (!v) return;
+            if (Array.isArray(v)) inputsValue = v;
+            else inputsValue[0] = v;
+        } else {
+            throw new Error("inputsObj is not valid or lacks getvalueof()");
+        }
+    } catch (e) {
+        // post("Error getting inputs~: " + e.message + "\n");
+        create(); // fallback: create the inputs~ object if not found
+    }
 
     if (chanfix == 0) getBlues();
     else chan = chanfix;
     outlet(0, chan);
 	stateDict.set(act+"::inputs~::"+path,chan);
+    // post("inputsValue", inputsValue, "path", path, "\n");
+    let exists = -1;
+    for (let a of inputsValue) {
+        let mstrip = a.match(/(.+)\(.+/);
+        if (mstrip[1] == path) exists = inputsValue.indexOf(a);
+    }
+    let newv = path + "(" + chan + ")";
+    if (exists > -1) inputsValue[exists] = newv;
+    else inputsValue.push(newv);
+    inputsObj.setvalueof(inputsValue);
 
     /////// script it
     tp.remove(tp.getnamed("re"));
     let re = tp.newdefault(10, 10, "mc.receive~", act + "~" + path, chan);
     re.varname = "re";
     tp.connect(re, 0, tp.getnamed("out"), 0);
+}
+
+function create() {
+    inputsObj = tpp.newdefault(
+        400,
+        400,
+        "pattr",
+        "inputs~",
+        "@default_priority",
+        1000
+    );
+    inputsObj.hidden = 1;
+    // post("created object inputs~ in act ", act);
 }
 
 function getBlues() {
@@ -73,11 +119,6 @@ function getBlues() {
 }
 
 function freebang(){
-	//post("aha",stateDict.getkeys(),"\n");
-	let keys = stateDict.getkeys();
-	if (keys && keys.indexOf(act) > -1){
-		stateDict.remove(act+"::inputs~::"+path);
-	}
-	//post("js removed",act,path,"\n");
-} 
-
+	stateDict.remove(act+"::inputs~::"+path);
+	post("js removed",act,path,"\n");
+}

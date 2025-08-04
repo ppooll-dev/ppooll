@@ -8,7 +8,7 @@ function acting(a,i,o){
 	let actname = a+i;
 	if (o == 1){	
 		//messnamed(actname, "v8", "Getpatcher");	
-		stateDict.setparse(actname, '{ "class" : "so", "index" : 0, "inputs" : []}');
+		stateDict.setparse(actname, '{ "class" : "so", "index" : 0, "inputs~" : {}}');
 		stateDict.set(actname+"::class",a);
 		stateDict.set(actname+"::index",i);
 		//stateDict.set(actname+"::jspatcher",actr.patcher); would have liked to list the jspatcher here
