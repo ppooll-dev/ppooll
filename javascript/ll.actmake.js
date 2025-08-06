@@ -96,7 +96,7 @@ function makecolor(c) {
         let cs = c.split(" ");
         color = [cs[0] / 255, cs[1] / 255, cs[2] / 255, 1];
     } else {
-		if (c[0] == "#") {post("#######"); c.shift;}
+		if (c[0] == "§") c = c.substr(1);
         let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(c);
 		if (!result) color = [0,0,0,1]
 		else {
@@ -225,6 +225,7 @@ function createbasics() {
     }
     let sname = hash + "pattrforwards";
     messnamed(sname, "bang");
+	if (tpp.getnamed("inputs~")) tpp.remove(tpp.getnamed("inputs~"));
 }
 
 function create_rest() {
@@ -233,8 +234,9 @@ function create_rest() {
         actui.message("actname", name, instance);
         actui.message("color", color);
         pat = tpp.getnamed("pat");
+		let pr = pat.rect;
         if (!tpp.getnamed("pf")) {
-            pf = tpp.newdefault(ar[0], ar[1], "pattrforward", "act::in2");
+            pf = tpp.newdefault(pr[0], pr[1]+21, "pattrforward", "act::in2");
             pf.varname = "pf";
             pf.hidden = 1;
             tpp.hiddenconnect(pat, 0, pf, 0);
