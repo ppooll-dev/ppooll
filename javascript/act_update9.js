@@ -23,7 +23,7 @@ function update(){
 		tpp.remove(actObj);
 		let am = tpp.newdefault(40,80,"bpatcher","@name", "actmakeB.maxpat", "@args",btext[1],colorH);
 		am.varname = "act"
-		post ("updated:",btext[1],colorH);
+		post ("updated:",btext[1],colorH,"\n");
 	}
 	else post("no old actmaker !! \n");
 	
@@ -42,6 +42,7 @@ function makecolor(c) {
         color = [cs[0], cs[1], cs[2]];
     } else {
         let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(c);
+		//post("rrr",result);
 		if (!result) color = [0, 0, 0, 1];
 		else {
         color = [
@@ -51,8 +52,8 @@ function makecolor(c) {
         ];
 		}
     }
-	//post("color",color,"\n");
 	colorH = rgbToHex(color[0],color[1],color[2]);
+	//post("color",color,"colorH",colorH,"\n");
 }
 function componentToHex(c) {
   var hex = c.toString(16);
