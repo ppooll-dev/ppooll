@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 533.0, 389.0, 831.0, 434.0 ],
+		"rect" : [ 661.0, 432.0, 831.0, 434.0 ],
 		"default_fontsize" : 11.595186999999999,
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
@@ -687,7 +687,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 243.0, 371.0, 200.0, 22.0 ],
-									"text" : "ho_st1~out"
+									"text" : "fmrm2~harmonicity"
 								}
 
 							}
@@ -735,7 +735,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 601.0, 189.0, 29.5, 22.0 ],
-									"text" : "16"
+									"text" : "1"
 								}
 
 							}
@@ -759,7 +759,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 407.0, 60.0, 342.0, 22.0 ],
-									"text" : "ho_st1~out.1 ho_st1~out out 1 16"
+									"text" : "fmrm2~harmonicity.1 fmrm2~harmonicity harmonicity 1 1"
 								}
 
 							}
@@ -1320,7 +1320,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "multichannelsignal" ],
+									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 92.0, 126.0, 30.0, 30.0 ],
 									"varname" : "in"
 								}
@@ -1623,7 +1623,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "multichannelsignal" ],
+					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 39.0, 311.0, 25.0, 25.0 ]
 				}
 
@@ -1719,26 +1719,19 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.231372549019608, 0.254901960784314, 0.701960784313725, 1.0 ],
-					"filename" : "ll.s~.js",
 					"fontsize" : 14.0,
 					"id" : "obj-31",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 70.0, 135.0, 66.0, 24.0 ],
+					"patching_rect" : [ 70.0, 135.0, 62.0, 24.0 ],
 					"saved_object_attributes" : 					{
+						"filename" : "ll.s~.js",
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "v8 ll.s~.js",
-					"textfile" : 					{
-						"filename" : "ll.s~.js",
-						"flags" : 0,
-						"embed" : 0,
-						"autowatch" : 1
-					}
-
+					"text" : "js ll.s~.js"
 				}
 
 			}
