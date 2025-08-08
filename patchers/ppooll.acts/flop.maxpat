@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 763.0, 193.0, 185.0, 278.0 ],
+		"rect" : [ 303.0, 179.0, 185.0, 278.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "flop1",
@@ -21,9 +21,10 @@
 					"bordercolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"fontface" : 0,
 					"format" : [ 6.2 ],
+					"hidden" : 1,
 					"id" : "obj-31",
 					"maxclass" : "ll_number",
-					"min" : 65515.379999999997381,
+					"min" : 24.678843537414966,
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
@@ -44,7 +45,6 @@
 					"bordercolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"fontface" : 0,
 					"format" : [ 6.2 ],
-					"hidden" : 1,
 					"id" : "obj-12",
 					"maxclass" : "ll_number",
 					"min" : 0.1,
@@ -69,7 +69,6 @@
 					"fontface" : 0,
 					"format" : [ 6.2 ],
 					"id" : "obj-36",
-					"max" : 217428.279999999998836,
 					"maxclass" : "ll_number",
 					"min" : 0.0,
 					"numinlets" : 1,
@@ -89,7 +88,6 @@
 				"box" : 				{
 					"bgcolor" : [ 0.29, 0.69, 0.369, 1.0 ],
 					"id" : "obj-59",
-					"max" : 422492.0,
 					"maxclass" : "ll_slishi",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -103,10 +101,11 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.29, 0.69, 0.369, 1.0 ],
+					"hidden" : 1,
 					"id" : "obj-38",
 					"max" : 422492.0,
 					"maxclass" : "ll_slishi",
-					"min" : 65515.379999999997381,
+					"min" : 24.670000000000002,
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
@@ -120,7 +119,6 @@
 				"box" : 				{
 					"bgcolor" : [ 0.4, 0.4, 0.8, 1.0 ],
 					"id" : "obj-9",
-					"max" : 422492.0,
 					"maxclass" : "ll_slishi",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -3570,7 +3568,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 301.0, 130.0, 96.0, 22.0 ],
-									"text" : "length 151913.1"
+									"text" : "length/end 0"
 								}
 
 							}
@@ -8536,19 +8534,19 @@
 					"patching_rect" : [ 655.0, 136.0, 107.0, 22.0 ],
 					"restore" : 					{
 						"buffer" : [ "" ],
-						"current_end" : [ 217428.380000000004657 ],
-						"current_start" : [ 65515.279999999998836 ],
-						"end" : [ 217428.380000000004657 ],
+						"current_end" : [ 24.68 ],
+						"current_start" : [ 24.57 ],
+						"end" : [ 24.68 ],
 						"env-scale" : [ 24.189189189189189 ],
 						"ext~vol" : [ 0 ],
 						"full_select" : [ -1 ],
 						"keep-time" : [ 0 ],
 						"l-ramp" : [ 0.0 ],
 						"l-ramp-mode" : [ 1 ],
-						"length" : [ 151913.100000000005821 ],
+						"length" : [ 0.11 ],
 						"length-ramp-stop" : [ -1 ],
-						"length/end" : [ 1 ],
-						"length_rel" : [ 0.35956444145688 ],
+						"length/end" : [ 0 ],
+						"length_rel" : [ 0.11 ],
 						"lookup" : [ 1 ],
 						"on/off" : [ 1 ],
 						"oneshot" : [ 0 ],
@@ -8563,9 +8561,9 @@
 						"ramp2pitch" : [ 0 ],
 						"s-ramp" : [ 0.0 ],
 						"s-ramp-mode" : [ 1 ],
-						"start" : [ 65515.279999999998836 ],
+						"start" : [ 24.57 ],
 						"start-ramp-stop" : [ -1 ],
-						"start_rel" : [ 0.155068687691128 ],
+						"start_rel" : [ 24.57 ],
 						"ubumenu" : [ "start" ],
 						"zero" : [ -1 ]
 					}
