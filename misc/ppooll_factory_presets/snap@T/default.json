@@ -3,19 +3,48 @@
 	"select_acts" : 	{
 		"patching_rect" : [ 60, -1, 57, 20 ],
 		"hidden" : 0,
-		"fontsize" : 10
+		"applycolors" : 0,
+		"bgfillcolor" : 		{
+			"type" : "color",
+			"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
+			"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+			"color" : [ 0.376471, 0.866667, 0.176471, 1.0 ],
+			"angle" : 270.0,
+			"proportion" : 0.39
+		}
+,
+		"color" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ],
+		"elementcolor" : [ 0.376471, 0.384314, 0.4, 1 ],
+		"fontsize" : 10,
+		"textcolor" : [ 0.15, 0.15, 0.15, 1 ]
 	}
 ,
 	"next" : 	{
 		"patching_rect" : [ 195, 0, 30, 16 ],
 		"hidden" : 0,
-		"fontsize" : 11
+		"bgcolor" : [ 0.75, 0.75, 0.75, 1 ],
+		"bgoncolor" : [ 0.55, 0.55, 0.55, 1 ],
+		"fontsize" : 11,
+		"legacytextcolor" : 0,
+		"textcolor" : [ 0.15, 0.15, 0.15, 1 ],
+		"textoncolor" : [ 1, 1, 1, 1 ],
+		"textovercolor" : [ 0.1, 0.1, 0.1, 1 ],
+		"usebgoncolor" : 0,
+		"usetextovercolor" : 0
 	}
 ,
 	"preset-ramp" : 	{
 		"patching_rect" : [ 117, -1, 78, 17 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"bgcolor" : [ 1, 1, 1, 1 ],
+		"bordercolor" : [ 0.5, 0.5, 0.5, 1 ],
+		"fontsize" : 12,
+		"labelcolor" : [ 0, 0, 0, 1 ],
+		"selectcolor" : [ 0.45, 0.67, 1, 0.47 ],
+		"slidercolor" : [ 0, 0, 0, 1 ],
+		"slidercolornofocus" : [ 0.48, 0.48, 0.48, 0.55 ],
+		"textcolor" : [ 0, 0, 0, 1 ],
+		"textcolornofocus" : [ 0.48, 0.48, 0.48, 0.79 ]
 	}
 ,
 	"presets" : 	{

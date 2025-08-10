@@ -3,7 +3,10 @@
 	"textfield" : 	{
 		"patching_rect" : [ 0, 36, 230, 64 ],
 		"hidden" : 0,
-		"fontsize" : 12.0
+		"bgcolor" : [ 0, 0, 0, 1 ],
+		"bordercolor" : [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
+		"fontsize" : 12,
+		"textcolor" : [ 0.9, 0.9, 0.9, 1 ]
 	}
 ,
 	"presets" : 	{
@@ -15,25 +18,60 @@
 	"fontsize" : 	{
 		"patching_rect" : [ 187, 0, 43, 16 ],
 		"hidden" : 0,
-		"fontsize" : 12.0
+		"bgcolor" : [ 0, 0, 0, 1 ],
+		"bordercolor" : [ 0, 0, 0, 1 ],
+		"fontsize" : 12,
+		"labelcolor" : [ 1, 1, 1, 0.67 ],
+		"selectcolor" : [ 0.45, 0.67, 1, 0.47 ],
+		"slidercolor" : [ 0, 0, 0, 1 ],
+		"slidercolornofocus" : [ 0.48, 0.48, 0.48, 0.55 ],
+		"textcolor" : [ 1, 1, 1, 1 ],
+		"textcolornofocus" : [ 1, 1, 1, 0.61 ]
 	}
 ,
 	"fontlist" : 	{
 		"patching_rect" : [ 0, 16, 137, 20 ],
 		"hidden" : 0,
-		"fontsize" : 10.0
+		"applycolors" : 0,
+		"bgfillcolor" : 		{
+			"type" : "color",
+			"color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
+			"color2" : [ 0.2, 0.2, 0.2, 1 ],
+			"color" : [ 0, 0, 0, 1 ]
+		}
+,
+		"color" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ],
+		"elementcolor" : [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
+		"fontsize" : 10,
+		"textcolor" : [ 1, 1, 1, 1 ]
 	}
 ,
 	"width" : 	{
 		"patching_rect" : [ 139, 16, 44, 20 ],
 		"hidden" : 0,
-		"fontsize" : 12.0
+		"bgcolor" : [ 0, 0, 0, 1 ],
+		"bordercolor" : [ 0, 0, 0, 1 ],
+		"fontsize" : 12,
+		"labelcolor" : [ 1, 1, 1, 0.67 ],
+		"selectcolor" : [ 0.45, 0.67, 1, 0.47 ],
+		"slidercolor" : [ 0, 0, 0, 1 ],
+		"slidercolornofocus" : [ 0.48, 0.48, 0.48, 0.55 ],
+		"textcolor" : [ 1, 1, 1, 1 ],
+		"textcolornofocus" : [ 1, 1, 1, 0.61 ]
 	}
 ,
 	"height" : 	{
 		"patching_rect" : [ 187, 16, 44, 20 ],
 		"hidden" : 0,
-		"fontsize" : 12.0
+		"bgcolor" : [ 0, 0, 0, 1 ],
+		"bordercolor" : [ 0, 0, 0, 1 ],
+		"fontsize" : 12,
+		"labelcolor" : [ 1, 1, 1, 0.67 ],
+		"selectcolor" : [ 0.45, 0.67, 1, 0.47 ],
+		"slidercolor" : [ 0, 0, 0, 1 ],
+		"slidercolornofocus" : [ 0.48, 0.48, 0.48, 0.55 ],
+		"textcolor" : [ 1, 1, 1, 1 ],
+		"textcolornofocus" : [ 1, 1, 1, 0.61 ]
 	}
 
 }

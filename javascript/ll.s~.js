@@ -77,3 +77,14 @@ function setmenus(ap){
 	outlet(0,"a_menu","symbol",ap.split("~")[0]);
 	outlet(0,"c_menu","symbol",ap.split("~")[1]);
 }
+function setamenu(a){
+	//post("setmenus",ap,ap.split("~"),"\n");
+	outlet(0,"a_menu","symbol",a);
+}
+function setcmenu(a){
+	//post("setmenus",ap,ap.split("~"),"\n");
+	outlet(0,"c_menu","symbol",a);
+}
+function setcmenuI(i){
+	outlet(0,"c_menu",i);
+}
