@@ -3,12 +3,12 @@ outlets = 2;
 mgraphics.init();
 mgraphics.relative_coords = 0;
 mgraphics.autofill = 0;
-
+var stateDict = new Dict("ppoollstate"); 
 
 var tpp = this.patcher;
 var boxw = box.rect[2] - box.rect[0];
 var boxh = box.rect[3] - box.rect[1];
-//post("boxinit",boxh,"\n");
+//post("boxinit",box.rect,"\n");
 
 var amount;
 var header_click;
@@ -21,6 +21,7 @@ var selected_box = [null, null];
 var button_on = -1;
 var bang_gate = 1;
 var keep_ = 0;
+var menu_items = [];
 
 var mod,cwcalc,col_pos, oncolo,bgcolo,hdcolo,paramsObj;
 
@@ -47,9 +48,9 @@ var modes = ["tog"];
 declareattribute("modes", { setter : "setmodes", embed: 1, paint: 1 });
 var colwidths = [1];
 declareattribute("colwidths", { setter : "setcolwidths", embed: 1, paint: 1});
-var rowheight;
+var rowheight =16;
 declareattribute("rowheight", { setter : "setrowheight", min: 1, paint: 1});
-var rowheight_fixed = 0;
+var rowheight_fixed = 1;
 declareattribute("rowheight_fixed", { embed: 1,type: "long", style: "onoff"});
 var bgcolors = [1];
 declareattribute("bgcolors", {setter : "setbgcolors", embed: 1, min: 1, max: 12, paint: 1 });
@@ -59,6 +60,8 @@ var headercolors = [3];
 declareattribute("headercolors", {setter : "setheadercolors", embed: 1, min: 1, max: 12, paint: 1 });
 var gridcolor = [0,0,0,1];
 declareattribute("gridcolor", {embed: 1, style: "rgba", paint: 1 });
+var multinumber = 0;
+declareattribute("multinumber", {embed: 1, style: "onoff"});
 var header_text;
 declareattribute("header_text", {embed: 1, paint: 1});
 var header = 0;
@@ -79,6 +82,7 @@ var width_abs = 0;
 declareattribute("width_abs", {embed: 1 ,style: "onoff"});
 var rows = 3;
 declareattribute("rows", { setter : "setrows", embed: 1 ,type: "long", min: 0, paint: 1});
+//post("declare_done\n")
 // ###################################### ____________ attribute setter
 function calc_cols(){
 	mod = [];
@@ -130,7 +134,7 @@ function setparams(){
 		if (!tpp.getnamed(c)) { params.push("none"); paramsObj.push("none")}
 		else {params.push(c); paramsObj.push(tpp.getnamed(c))}
 	}
-	//post(params,"\n");
+	//post("setparams",params,"\n");
 	calc_cols();
 }
 function setmodes(){
@@ -152,6 +156,7 @@ function setmodes(){
 	if(tstm.includes(" text")) text_init();
 }
 function setcolwidths(){
+	//post("setcolwidth\n")
 	colwidths = [];
 	let a = arrayfromargs(arguments);
 	for (let c of a){
@@ -160,7 +165,6 @@ function setcolwidths(){
 	}
 	calc_cols();	
 }
-
 function setoncolors(){
 	oncolors = [];
 	a = arrayfromargs(arguments);
@@ -188,22 +192,24 @@ function setheadercolors(){
 	}
 	calc_cols();
 }
-function setheader(a){
+function setheader(a){	
+	//post("setheader_rh",rowheight,"rhfixed",rowheight_fixed,"rows",rows,"boxh",boxh,"\n");
 	header = Number(a);
 	if (rowheight_fixed) setrowheight(rowheight)
 	else rowheight = boxh/(rows+header);
+	//post("setheader",header,"rh",rowheight,"\n")
 }
 function setrowheight(a){
-	//post("setrowh__boxh,h,rows",boxh,a,rows,"\n");
+	//post("setrowheight, boxh",boxh,"rh",a,"rows",rows,"rh_fixed",rowheight_fixed,"\n");
 	rowheight = a <= 0 ? 10 : a;
 	boxh = a * (rows+header);
 	let br = box.rect;
 	br[3] = br[1] + boxh;
 	box.rect = br;
-	//post("boxsetrowh",boxh,"\n");
+	//post("boxsetrowh",boxh,"rh_fixed",rowheight_fixed,"\n");
 }
 function setrows(a){
-	//post("rows_boxh",a,boxh,"\n");
+	//post("setrows","rows", a,"boxh", boxh,"rh_fixed",rowheight_fixed,"\n");
 	rows = Math.max(0, Number(a));
 	if (rowheight_fixed) setrowheight(rowheight) //boxh = rowheight*(rows+header)
 	else rowheight = boxh/(rows+header);
@@ -351,7 +357,7 @@ function text_init(){
 }	
 
 function onresize(w,h){
-	//post("wh",w,h,"\n");
+	//post("onresize_wh",w,h,"\n");
 	boxh = h;
 	boxw = w;
 	if (!rowheight_fixed) rowheight = h/(rows+header);
@@ -362,7 +368,7 @@ onresize.local = 1; //private
 		
 // ################################################################   _________  draw		
 function bang(){
-	//post("bg",bang_gate,"\n");
+	//post("bg",bang_gate,"boxr",box.rect,"\n");
 	if (bang_gate) mgraphics.redraw();
 }
 
@@ -375,8 +381,7 @@ function brightness(color){
 	if (hsp > 0.5) c = 0;
 	return [c, c, c, 1];
 }
-function paint()
-{
+function paint() {
 	let s = rowheight;
 	let cw = 0;
 	let cm, cm1, cm2;
@@ -466,11 +471,10 @@ function paint()
 					else if (cm == "tog" || cm == "button")
 						if (cm1 != "none") txt = cm1
 						else txt = "";	
-					else if (cm == "menu" && cm1 == "split"){
-						let c = Number(cm2[1] == "R");
+					else if (cm == "menu" && cm1 == "outputs"){
+						let c = cm2;
 						//let c = Number(cm2[1]);//L=0, R=1
-						let s = cm2[0];
- 						let t = String(cval).split(s)[c];
+ 						let t = String(cval).split("~")[c];
 						//post("tttt",j,i,String(cval),t,"cm2",cm2[0],cm2[1],"zu",typeof c,String(cval).split("~"),"\n");
 						if (typeof t == "undefined") txt = "_"
 						else txt = t;
@@ -522,8 +526,7 @@ function setTimeout(task, timeout){
 }
 
 // ####################################################################   _________  interaction
-function onclick(x,y,but,mod1,shift,capslock,option,mod2)
-{
+function onclick(x,y,but,mod1,shift,capslock,option,mod2) {
 	if(rows === 0)
 		return;
 
@@ -545,30 +548,32 @@ function onclick(x,y,but,mod1,shift,capslock,option,mod2)
 	ccm = mod[x][0];
 	ccm1 = mod[x][1];
 	ccm2 = mod[x][2];
+	if (ccm1 == "outputs" && !header_click) outputs();
+	//else {
 	val = [ccm,x,y]; //pattr & outlet
 	notifyclients();
 	outlet(0,ccm,x,y);
+		//}
 	if (!(ignore_headerclick && header_click)){
-	if(paramsObj[x] != "none"){
-		par = paramsObj[x];
-		let v = par.getvalueof();
-		if (Array.isArray(v)) pval = v
-		else pval[0] = v;			
-		cpval = pval[cy_po];
-		//post("click..val",pval,cpval,"\n");
-		if (ccm == "menu") m_menu(x,y,0);
-		else if (ccm == "num") m_num(x,y,0);
-		else if (ccm == "tog") m_tog(x,y,0,option,mod2);
-		else if (ccm == "button" || ccm == "button_enum") m_button(x,y,0);
-		else if (ccm == "text") m_text(x,y,0);
-		else if (ccm == "none") ;
-		else post("unknown mode",ccm,"\n");
-	}}
+		if(paramsObj[x] != "none"){
+			par = paramsObj[x];
+			let v = par.getvalueof();
+			if (Array.isArray(v)) pval = v
+			else pval[0] = v;			
+			cpval = pval[cy_po];
+			//post("click..val",pval,cpval,"\n");
+			if (ccm == "menu") m_menu(x,y,0);
+			else if (ccm == "num") m_num(x,y,0);
+			else if (ccm == "tog") m_tog(x,y,0,option,mod2);
+			else if (ccm == "button" || ccm == "button_enum") m_button(x,y,0);
+			else if (ccm == "text") m_text(x,y,0);
+			else if (ccm == "none") ;
+			else post("unknown mode",ccm,"\n");
+		}
+	}
 }
 onclick.local = 1; //private
-
-function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
-{
+function ondrag(x,y,but,cmd,shift,capslock,option,ctrl) {
 	if(rows === 0) return;
 
 	x = ccx;
@@ -589,6 +594,49 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl)
 	}
 }
 ondrag.local = 1; //private
+
+function outputs(){
+
+
+	//post("f_outputs",ccm2,"act",act,"cha",cha,"\n")
+	if (ccm2 == 0){ //act_menu
+		let a_menu_state = [];
+		a_menu_state.push("no");
+		let keys = stateDict.getkeys();
+		for (var i in keys) {
+			var inputs = stateDict.get(keys[i]+"::inputs~").getkeys();
+			if (inputs){
+				a_menu_state.push(keys[i]);
+			}
+		}
+		fill_menu(a_menu_state);
+	}
+	else if (ccm2 == 1){	
+		let cpval = pval[ccy+param_offset];
+		let act = cpval.split("~")[0];	
+		fill_menu(get_inputs(act));
+	}
+}   // maintaining outputs~
+function get_inputs(act){
+	let c_menu_state = [];
+	let c_chans = [];
+	c_menu_state.push("-no-");
+	c_chans.push(["-no-",0,0]);
+	if (act != "no"){ //(a != "no")
+		let inputs = stateDict.get(act+"::inputs~");
+		let inpkeys = inputs.getkeys();
+		for (let i in inpkeys){
+			let k = inpkeys[i];
+			let c = inputs.get(k);
+			for (let j = 1;j<=c;j++){
+				let item = k+"."+j;
+				c_menu_state.push(item);
+				c_chans.push([k,j,c]);
+			}
+		}
+	}
+	return c_menu_state;
+}     // maintaining outputs~
 
 function m_tog(x,y,drag,option,mod2){
 	if (header_click){
@@ -630,50 +678,47 @@ function m_button(x,y,drag){
 function m_num(x,y,drag){
 	if (ccm1 != "none") lllbnum.message("format",Number(ccm1))
 	else lllbnum.message("format",1);
-	lllbnum.rect = nrect(x,y);
-	if (typeof cpval == "number") lllbnum.message("set",cpval);
+	//post("multinumber?",multinumber,"\n");
+	if (multinumber){
+		lllbnum.rect = nrect(x,y,1);
+		lllbnum.message("set",pval);
+	}
+	else {
+		lllbnum.rect = nrect(x,y);
+		if (typeof cpval == "number") lllbnum.message("set",cpval);
+	}
 	lllbnum.hidden = 0;
 	lllbnum.message("select");	
 	//listener();	
 }
-function m_menu(x,y,drag){
-		//let t = String(cpval).split(ccm2[0])[Number(ccm2[1])];
-		 const menuHeight = lllbmenu.rect[3] - lllbmenu.rect[1]; // current height of the menu
+function m_menu(x,y,drag){ //called in onclick()
+	//post("m_menu xydrag",x,y,drag,"\n")
+	const menuHeight = lllbmenu.rect[3] - lllbmenu.rect[1]; // current height of the menu
 
-		// Calculate the bottom Y of the row
-		const bx = box.rect[0];
-		const by = box.rect[1];
-		const rowBottom = (y + 1) * rowheight + header * rowheight + by - 1;
+	// Calculate the bottom Y of the row
+	const bx = box.rect[0];
+	const by = box.rect[1];
+	const rowBottom = (y + 1) * rowheight + header * rowheight + by - 1;
+	// Compute the top Y of the menu so it aligns its bottom with the row bottom
+	const adjustedY = (rowBottom - menuHeight - header * rowheight - by + 1) / rowheight;
+	// Now use nrect with adjusted y so bottom aligns correctly
+	lllbmenu.rect = nrect(x, adjustedY);
+	
+	let setv = pval[y+param_offset];
+	if (ccm1 == "outputs" && y >= 0) {
+		setv = String(cpval).split("~")[ccm2];
+	}
+	//post("setv", setv, "menu_items",menu_items,"\n")
+	lllbmenu.message("checkitem", menu_items.indexOf(setv))
 
-		// Compute the top Y of the menu so it aligns its bottom with the row bottom
-		const adjustedY = (rowBottom - menuHeight - header * rowheight - by + 1) / rowheight;
+	lllbmenu.message("bgfillcolor", ...[0,0,0,0])
+	lllbmenu.message("textcolor", ...[0,0,0,0])
+	lllbmenu.hidden = 0;
 
-		// Now use nrect with adjusted y so bottom aligns correctly
-		lllbmenu.rect = nrect(x, adjustedY);
-		let setv = pval[y+param_offset];
-		if (ccm1 == "split" && y >= 0) {
-			// post("cpval: ", String(cpval).split(ccm2[0]), "\n")
-			// post("ccm2[1]: ", ccm2[1], "\n")
-			let menu_index = ccm2[1];
-			if(ccm2[1] === "L")
-				menu_index = 0;
-			else if(ccm2[1] === "R")
-				menu_index = 1;
-			else
-				menu_index = parseInt(ccm2[1]);
-			
-			setv = String(cpval).split(ccm2[0])[menu_index];
-			// post("setv", setv, "\n")
-		}
-		lllbmenu.message("setsymbol","(_)");
-		lllbmenu.message("setsymbol",setv);
+	messnamed("llto11clicks","leftclick", 0);
+	messnamed("llto11clicks","leftclick", 1);
+	messnamed("llto11clicks","leftclick", 0);
 
-		lllbmenu.message("bgfillcolor", ...[0,0,0,0])
-		lllbmenu.message("textcolor", ...[0,0,0,0])
-		lllbmenu.hidden = 0;
-		//messnamed("llto11clicks","del",100, "leftclick");
-		messnamed("llto11clicks","leftclick", 0);
-		messnamed("llto11clicks","leftclick", 1);
 }
 function m_text(x,y,drag){
 		lllbtext.rect = nrect(x,y);
@@ -681,23 +726,29 @@ function m_text(x,y,drag){
 		lllbtext.hidden = 0;
 		lllbtext.message("select");
 }
-function num(data)
-{
-	//post("num " + data,"hid",lllbnum.hidden,"c_y",ccy,"\n");
+
+// ############################ from UIs
+function num() {
+	let a = arrayfromargs(arguments);
+	let isA = a.length > 1;
+
+	
+	//if (isA) data = inp[0];
+	//post("num ", a, a.length,"data", data,"isa",isA,"\n");
 	if (ui_inside(lllbnum.rect) && lllbnum.hidden == 0){
 		if (header_click){
 				for (i=param_offset;i<pval.length;i++){
-					pval[i] = data;
+					pval[i] = Number(a);
 				}
 		}
-		else pval[cy_po] = data;
+		else {
+			if (isA) pval = a
+			else pval[cy_po] = Number(a);
+		}
 		par_mess();
 	}
 }
-//numCallback.local = 1;
-
-function text(data)
-{
+function text(data) {
 	if (ui_inside(lllbtext.rect) && lllbtext.hidden == 0){
 		
 		if (ccy == -1){
@@ -710,34 +761,34 @@ function text(data)
 		par_mess();
 	}
 }
-function menu(a)
-{
-	//post("menu_listen",a,"\n");
-	if (ui_inside(lllbmenu.rect) && lllbmenu.hidden == 0){
+function menu(a) {
+	//post("menu_listen",a,ui_inside(lllbmenu.rect),lllbmenu.hidden,"\n");
+	if (ui_inside(lllbmenu.rect) && lllbmenu.hidden == 0){ 
 		if (header_click){
 			for (i=param_offset;i<rows;i++){
-				if (ccm1 == "split"){
-					let sep = ccm2[0];
-					let splitpos = Number(ccm2[1] == "R");
-					let S = pval[i].split(sep)[1-splitpos];
-					if (splitpos == 0) pval[i] = a+sep+S
-					else pval[i] = S+sep+a
+				if (ccm1 == "outputs"){
+					let S = pval[i].split("~")[1-ccm2];
+					if (ccm2 == 0) pval[i] = a+"~"+S
+					else pval[i] = S+"~"+a
 				}
 				else pval[i] = a;
 			}
 		}
 		else {
-			if (ccm1 == "split"){
-				let sep = ccm2[0];
-				let splitpos = Number(ccm2[1] == "R");
-				let S = "no";
-				//post("split", sep, splitpos,"currypo",cy_po,"val",pval[cy_po],"\n");
-				if (pval[cy_po].indexOf(sep)>=0) S = pval[cy_po].split(sep)[1-splitpos];
-				if (splitpos == 0) pval[cy_po] = a+sep+S
-				else{
- 					pval[cy_po] = S+sep+a;
-					if (!keep_) for (i=ccy+1;i<rows;i++) pval[i] = "_" ;
+			if (ccm1 == "outputs"){
+				let S = "no";		
+				if (pval[cy_po].indexOf("~")>=0) S = pval[cy_po].split("~")[1-ccm2];
+				//post("outputs curr_ypo",cy_po,"val",pval[cy_po],"S",S,"\n");
+				if (ccm2 == 0) {
+					let inputs = get_inputs(a);
+					//post("inputs",inputs.indexOf(S),"\n");
+					if (inputs.indexOf(S) == -1) S = inputs[1];
+					pval[cy_po] = a+"~"+S;
 				}
+				else{
+ 					pval[cy_po] = S+"~"+a;
+				}
+				if (!keep_) for (i=ccy+1;i<rows;i++) pval[i] = "_" ;
 			}
 			else pval[cy_po] = a;
 		}
@@ -750,30 +801,34 @@ function menu(a)
 function keep(a){
 	keep_ = a;
 }
-function fill_menu(){
+function fill_menu(a){
+	//let items = [];
+	if (Array.isArray(a)) menu_items = a
+	else menu_items = arrayfromargs(arguments);
 	if (lllbmenu){
 		lllbmenu.message("clear");
-		let items = arrayfromargs(arguments);
-		//post(items,"\n");
-					lllbmenu.message("append","(_)");
-
-		for (i=0;i<items.length;i++){
-			lllbmenu.message("append",items[i]);
+		//lllbmenu.message("append","(_)"); //????????
+		
+		for (let it of menu_items){
+			lllbmenu.message("append",it);
 		}
+		//post("items",items.indexOf(it),"\n");
 	}
 }
-function nrect(x, y) {
+function nrect(x,y,m) {
+	//post("nrect",m,"\n")
 	let bx = box.rect[0];
 	let by = box.rect[1];
 
 	let rowBottom = (y + 1) * rowheight + header * rowheight + by - 1;
 	let objectHeight = rowheight; // or a smaller value like 12 if needed
+	let topline = box.rect[1] + header * rowheight;
 
 	let nrect = [
 		col_pos[x] + bx,
-		rowBottom - objectHeight + 1,
+		m ? topline : rowBottom - objectHeight + 1,
 		col_pos[x + 1] + bx - 1,
-		rowBottom
+		m ? box.rect[3] : rowBottom
 	];
 
 	return nrect;
@@ -787,6 +842,7 @@ function par_mess(){
 	mgraphics.redraw();	
 }
 function ui_inside(r){
+	//post("uinside",r,"boxr",box.rect)
 	if (r[0]>=box.rect[0] && 
 		r[0]<box.rect[2] && 
 		r[1]>=box.rect[1] && 
@@ -804,12 +860,10 @@ function ui(){
 	if (typeof obj == "object") obj.message(a.slice(1));
 }
 
-function getvalueof()
-{
+function getvalueof(){
 	return val;
 }
-function setvalueof(v)
-{
+function setvalueof(v){
 	//post("setvalueof",v,"\n");
 }
 

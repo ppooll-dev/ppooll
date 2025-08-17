@@ -1,22 +1,23 @@
 outlets = 1;
-
 var actr = new Global("act_rep");
 var stateDict = new Dict("ppoollstate"); 
-
-
-
-
-
-var tpp, bpatcher, outputs,lb, pm;
+var tpp, bpatcher, outputs,lb, pm, bp_width;
 var size_state = 0;
 var size_gate = 0;
 var init_done = 0;
 var row_height = 16;
 var keep = 0;
+const modes_def = ["enum", "menu_outputs_0", "menu_outputs_1"];
+const params_def = ["none", "outputs~", "outputs~"];
+var extra_amt = 0;
+var extra_widths = [];
+var ew;
+var extraparams,extramodes,extraheader;
 
 function bang(){
 	tpp = this.patcher.parentpatcher; //.parentpatcher;
 	bpatcher = tpp.box;
+	bp_width = bpatcher.rect[2]-bpatcher.rect[0];
 	lb = tpp.getnamed("defout"); //listblock
 	outputs = tpp.parentpatcher.getnamed("outputs~");
 	//post("outputs",outputs,"\n");
@@ -34,31 +35,33 @@ function bang(){
 		//lb.message("params", "none", "outputs~", "outputs~");
 		outputs.message("ho_st1~out.1", "_");
 	}
-	//lb.message("params", "none", "outputs~", "outputs~");
+	lb.message("params", "none", "outputs~", "outputs~");
 	lb.message("rowheight", row_height);
 	
 	outlet(0,"lbparams");
 	init_done = 1; 
 	//post("init done ","\n");
-}
-
+} //init
 function rowheight(a){
+	//post("rh");
 	row_height = a;
 	head_n_size();
 }
-
 function makearray(a){
 	let v = [];
 	if (Array.isArray(a)) v = a 
 	else v[0] = a; 
 	return v;
 }
-
 function bpsize(){ //size the listblock according to the bpatcher
 	let s = bpatcher.rect;
-		//post("bpsize",s,s[1],"\n");
+	ew = extra_widths.reduce((a, b) => a + b, 0);
+	//post("bpsize",bp_width,"rh",row_height,"\n");
 	let lbr = lb.rect;
-	lbr[2] = s[2]-s[0];
+	let men_width = (bp_width-row_height)/2;
+	lb.message("width_abs", 1);
+	lb.message("colwidths", row_height, men_width,men_width,extra_widths);
+	lbr[2] = bp_width+ew;
 	lb.rect = lbr;
 	let bpr = bpatcher.rect;
 	bpr[3] = bpr[1] + row_height;
@@ -66,8 +69,6 @@ function bpsize(){ //size the listblock according to the bpatcher
 	size_state = 0;
 	head_n_size();
 }
-
-
 function head_n_size(){
 	if(!outputs)return
 	let vg = outputs.getvalueof();
@@ -77,25 +78,25 @@ function head_n_size(){
 	let br = bpatcher.rect;
 	let tild = "~";
 	//post(v.length,"iii",vs,vs.indexOf(","),"\n");
-	if (vs.indexOf(",")>=0){	
+	if (vs.indexOf(",")>=0){	//detect tild
 		if (v.slice(1).join(" ").replaceAll("_","").replaceAll(" ","") == "") tild = "~" 
 		else tild = "≈";
 		}
 	if (size_state == 0){ //folded
-		bpatcher.rect = [br[0], br[1], br[2], br[1]+row_height];
+		bpatcher.rect = [br[0], br[1], br[0]+bp_width, br[1]+row_height];
 			//post(v.slice(1),"ww",vs,vs.length,vs.indexOf(","),"\n");
 		if(vg) lb.message("header_text", tild, v[0].split("~")[0], v[0].split("~")[1]);
 		lb.message("headercolors", 2,1,1);
 		}
 	else{ //un-folded
-		bpatcher.rect = [br[0], br[1], br[2], br[1]+lb.rect[3]-lb.rect[1]];
-		lb.message("header_text", tild, "[i] act", "keep");
+		bpatcher.rect = [br[0], br[1], br[0]+bp_width+ew, br[1]+lb.rect[3]-lb.rect[1]];
+		//post(bp_width,bpatcher.rect[2],"ew",ew,"r2",br[0]+bp_width+ew,"\n");
+		lb.message("header_text", tild, "[i] act", "keep",extraheader);
 		lb.message("headercolors", 2,1,3+keep);
 		}
-}
-
+} //fold_unfold
 function listblock(){ //ll.listblock output when clicked
-	if (!init_done) init();
+	if (!init_done) bang();
 	let a = arrayfromargs(arguments);
 	let as = a.join(" ");
 	//post("listblock",as,"\n");
@@ -116,51 +117,33 @@ function listblock(){ //ll.listblock output when clicked
 	else if (as == "menu 1 -1" & size_state == 1){ //info
 		outlet(0,"info");
 	}
-	if (a[0] == "menu" && a[2]>=0){
-		if (a[1] == 1) {
-			//pm.message("getmarkerlist"); //act
-			//post("getacts",getacts(),"\n");
-			lb.message("fill_menu", stateDict.getkeys()); //getacts());
+}
+function extra(){
+	let args = arrayfromargs(arguments);
+	let a0 = args.shift(1);
+	//post("extrargs",a0,args,"\n");
+	if (a0 == "params"){
+		extra_amt = 0;
+		extra_widths = [];
+		if (args[0]){
+			extraparams = args;
+			extra_amt = args.length;
+			extramodes = [];
+			for (i in extraparams) {
+				extramodes.push("num");
+				extra_widths.push(30);
 			}
-		if (a[1] == 2) {                            //inputs
-			let vc = v[a[2]];
-			let act;
-			let inputs_value;
-			if (vc != "_") act = vc.split("~")[0];
-			//post("the_act",act, "vc", vc);
-			messnamed(act,"v8", "getnamed", "inputs~");
-			//post("got",actr.object,"\n");
-			//if (actr.object == 0) post("global",actr.object,"\n");
-			if (actr.object){
- 				inputs_value = actr.object.getvalueof();
-				//post("ip",inputs_value,"\n");
-				if (inputs_value == 0) lb.message("fill_menu", "-no-")
-				else inputs(inputs_value);
-			}
-			else lb.message("fill_menu", "-no-");
+			//post("params",extraparams,"len",args.length,"\n");
+			lb.message("params",params_def,extraparams);
+			lb.message("modes",modes_def,extramodes);		
 		}
+		else{
+			lb.message("params",params_def);
+			lb.message("modes",modes_def);
+		}
+		bpsize();
 	}
-}
-function markerlist(){
-	a = arrayfromargs(arguments);
-	//post(a,"\n");
-	lb.message("fill_menu", a);
-}
-
-function inputs(ina){
-	let a = [0];
-	if (Array.isArray(ina)) a = ina
-	else a[0] = ina;
-	//post("inputs",a,a.length,a[0],"\n");
-	let fill = [];
-	for (o of a){
-		let osp = o.split("(");
-		let amt = Number(osp[1].split(")")[0]);
-		//post(o,osp[0],osp[1].split(")"),amt,"\n");
-		for (i=0;i<amt+1;i++){			
-			fill.push(osp[0]+"."+i);
-			//post(fill,osp[0]+"."+i,"\n");
-		}
-	}	
-	lb.message("fill_menu", fill);
+	else if (a0 == "header") extraheader = args;
+	else if (a0 == "modes") lb.message("modes",modes_def,args);
+	else if (a0 == "widths") {extra_widths = args; bpsize();}
 }

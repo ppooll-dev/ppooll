@@ -31,10 +31,23 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 976.0, 591.0 ],
+						"rect" : [ 41.0, 197.0, 976.0, 591.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"hidden" : 1,
+									"id" : "obj-4",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 311.0, 283.0, 58.0, 22.0 ],
+									"text" : "loadbang"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-60",
 									"linecount" : 5,
@@ -42,7 +55,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 129.0, 436.0, 249.0, 74.0 ],
-									"text" : "if rowheight_fixed is 0 (default),\na change of \"rows\" will keep the box-size.\nif rowheight_fixed is 1,\na change of \"rows\" will keep the rowheight\nand resize the box."
+									"text" : "if rowheight_fixed is 0 (default = 1),\na change of \"rows\" will keep the box-size.\nif rowheight_fixed is 1,\na change of \"rows\" will keep the rowheight =\nand resize the box."
 								}
 
 							}
@@ -670,7 +683,7 @@
 							}
 , 							{
 								"box" : 								{
-									"embedstate" : [ [ "bgcolors", 1 ], [ "c1", 0.8, 0.1, 0.2, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.1, 0.7, 0.5, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0, 0, 0, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 1 ], [ "enum_offset", 0 ], [ "fontsize", 12 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 1 ], [ "header_text", "a", "c" ], [ "headercolors", 3 ], [ "ignore_headerclick", 0 ], [ "modes", "tog" ], [ "oncolors", 2 ], [ "param_offset", 0 ], [ "params", "a", "b", "c", "d" ], [ "rowheight_fixed", 0 ], [ "rows", 9 ], [ "size_lists", 1 ], [ "top_patcher", 0 ], [ "width_abs", 0 ] ],
+									"embedstate" : [ [ "bgcolors", 1 ], [ "c1", 0.8, 0.1, 0.2, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.1, 0.7, 0.5, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0, 0, 0, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 1 ], [ "enum_offset", 0 ], [ "fontsize", 12 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 1 ], [ "header_text", "a", "c" ], [ "headercolors", 3 ], [ "ignore_headerclick", 0 ], [ "modes", "tog" ], [ "multinumber", 0 ], [ "oncolors", 2 ], [ "param_offset", 0 ], [ "params", "a", "b", "c", "d" ], [ "rowheight_fixed", 0 ], [ "rows", 9 ], [ "size_lists", 1 ], [ "top_patcher", 0 ], [ "width_abs", 0 ] ],
 									"filename" : "ll.listblock.js",
 									"id" : "obj-18",
 									"jsarguments" : [ "@modes", "tog_0_1", "tog_off_on", "tog", "@rows", 6 ],
@@ -679,7 +692,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 42.0, 48.0, 208.0, 160.0 ],
+									"patching_rect" : [ 42.0, 48.0, 200.0, 200.0 ],
 									"textfile" : 									{
 										"filename" : "ll.listblock.js",
 										"flags" : 0,
@@ -706,7 +719,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "rowheight",
+									"attr" : "rowheight_fixed",
 									"id" : "obj-14",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -897,6 +910,14 @@
 									"destination" : [ "obj-3", 0 ],
 									"hidden" : 1,
 									"source" : [ "obj-39", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-11", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-4", 0 ]
 								}
 
 							}
@@ -1323,7 +1344,7 @@
 							}
 , 							{
 								"box" : 								{
-									"embedstate" : [ [ "bgcolors", 1 ], [ "c1", 0.8, 0.1, 0.2, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.1, 0.7, 0.5, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0, 0, 0, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 1 ], [ "enum_offset", 0 ], [ "fontsize", 12 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 0 ], [ "header_text", 0 ], [ "headercolors", 3 ], [ "ignore_headerclick", 0 ], [ "modes", "tog_i_i", "tog_s_s", "button_t_t", "tog_l_l", "tog_e_e" ], [ "oncolors", 2 ], [ "param_offset", 0 ], [ "params", "interpolate", "trigger_sel", "trigger", "loop", "ext_vol" ], [ "rowheight_fixed", 0 ], [ "rows", 12 ], [ "size_lists", "_" ], [ "top_patcher", 0 ], [ "width_abs", 0 ] ],
+									"embedstate" : [ [ "bgcolors", 1 ], [ "c1", 0.8, 0.1, 0.2, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.1, 0.7, 0.5, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0, 0, 0, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 1 ], [ "enum_offset", 0 ], [ "fontsize", 12 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 0 ], [ "header_text", 0 ], [ "headercolors", 3 ], [ "ignore_headerclick", 0 ], [ "modes", "tog_i_i", "tog_s_s", "button_t_t", "tog_l_l", "tog_e_e" ], [ "multinumber", 0 ], [ "oncolors", 2 ], [ "param_offset", 0 ], [ "params", "interpolate", "trigger_sel", "trigger", "loop", "ext_vol" ], [ "rowheight_fixed", 1 ], [ "rows", 12 ], [ "size_lists", "_" ], [ "top_patcher", 0 ], [ "width_abs", 0 ] ],
 									"filename" : "ll.listblock.js",
 									"id" : "obj-32",
 									"jsarguments" : [ "@params", "interpolate", "trigger_sel", "trigger", "loop", "ext_vol", "@modes", "tog_i_i", "tog_s_s", "button_t", "tog_l_l", "tog_e_e", "@rows", 12, "@header", 1 ],
@@ -1332,7 +1353,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 30.0, 45.0, 89.0, 240.0 ],
+									"patching_rect" : [ 30.0, 45.0, 89.0, 192.0 ],
 									"textfile" : 									{
 										"filename" : "ll.listblock.js",
 										"flags" : 0,
@@ -1389,7 +1410,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "modes",
+									"attr" : "rowheight",
 									"id" : "obj-1",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -1453,6 +1474,43 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-16",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 285.0, 510.0, 68.0, 20.0 ],
+									"text" : "default: 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-15",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 285.0, 487.0, 68.0, 20.0 ],
+									"text" : "default: 16 "
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "rowheight_fixed",
+									"attrfilter" : [ "rowheight_fixed" ],
+									"id" : "obj-13",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 23.0, 509.0, 260.0, 22.0 ],
+									"text_width" : 140.0
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-8",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -1506,20 +1564,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 285.0, 463.0, 467.0, 20.0 ],
 									"text" : "default: 0    if ll.listblock is in a subpatch, tell it to refer to parameters in the top patcher."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"attr" : "top_patcher",
-									"attrfilter" : [ "top_patcher" ],
-									"id" : "obj-60",
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 23.0, 462.0, 260.0, 22.0 ]
 								}
 
 							}
@@ -1996,7 +2040,7 @@
 							}
 , 							{
 								"box" : 								{
-									"embedstate" : [ [ "bgcolors", 1 ], [ "c1", 0.8, 0.1, 0.2, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.1, 0.7, 0.5, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0, 0, 0, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 1 ], [ "enum_offset", 0 ], [ "fontsize", 12 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 0 ], [ "header_text", 0 ], [ "headercolors", 3 ], [ "ignore_headerclick", 0 ], [ "modes", "tog" ], [ "oncolors", 2 ], [ "param_offset", 0 ], [ "params", "a", "b", "c" ], [ "rowheight_fixed", 0 ], [ "rows", 3 ], [ "size_lists", 1 ], [ "top_patcher", 0 ], [ "width_abs", 0 ] ],
+									"embedstate" : [ [ "bgcolors", 1 ], [ "c1", 0.8, 0.1, 0.2, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.1, 0.7, 0.5, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0, 0, 0, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 1 ], [ "enum_offset", 0 ], [ "fontsize", 12 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 0 ], [ "header_text", 0 ], [ "headercolors", 3 ], [ "ignore_headerclick", 0 ], [ "modes", "tog" ], [ "multinumber", 0 ], [ "oncolors", 2 ], [ "param_offset", 0 ], [ "params", "a", "b", "c" ], [ "rowheight_fixed", 1 ], [ "rows", 3 ], [ "size_lists", 1 ], [ "top_patcher", 0 ], [ "width_abs", 0 ] ],
 									"filename" : "ll.listblock.js",
 									"id" : "obj-2",
 									"jsarguments" : [ "@params", "d", "e", "a", "@modes", "enum", "button", "tog_off_on", "@rows", 5 ],
@@ -2005,7 +2049,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 46.0, 82.0, 92.0, 65.0 ],
+									"patching_rect" : [ 46.0, 82.0, 92.0, 48.0 ],
 									"textfile" : 									{
 										"filename" : "ll.listblock.js",
 										"flags" : 0,
@@ -2067,12 +2111,58 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"attr" : "rowheight",
+									"attrfilter" : [ "rowheight" ],
+									"id" : "obj-12",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 23.0, 486.0, 260.0, 22.0 ],
+									"text_width" : 140.0
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "top_patcher",
+									"attrfilter" : [ "top_patcher" ],
+									"background" : 1,
+									"id" : "obj-60",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 23.0, 462.0, 260.0, 22.0 ]
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
 									"hidden" : 1,
 									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-12", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-13", 0 ]
 								}
 
 							}
@@ -2487,7 +2577,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "params",
+									"attr" : "rowheight_fixed",
 									"id" : "obj-43",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -2848,7 +2938,7 @@
 							}
 , 							{
 								"box" : 								{
-									"embedstate" : [ [ "bgcolors", 8, 9, 10, 11 ], [ "c1", 0.8, 0.1, 0.85249255952381, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.1, 0.5, 0.5, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0, 0.376381802721088, 0, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 1 ], [ "enum_offset", 0 ], [ "fontsize", 12 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 0 ], [ "header_text", 0 ], [ "headercolors", 3 ], [ "ignore_headerclick", 0 ], [ "modes", "tog" ], [ "oncolors", 1, 2, 3, 4 ], [ "param_offset", 0 ], [ "params", "a", "b", "c", "d" ], [ "rowheight_fixed", 0 ], [ "rows", 5 ], [ "size_lists", "_" ], [ "top_patcher", 0 ], [ "width_abs", 0 ] ],
+									"embedstate" : [ [ "bgcolors", 8, 9, 10, 11 ], [ "c1", 0.8, 0.1, 0.85249255952381, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.1, 0.5, 0.5, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0, 0.376381802721088, 0, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 1 ], [ "enum_offset", 0 ], [ "fontsize", 12 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 0 ], [ "header_text", 0 ], [ "headercolors", 3 ], [ "ignore_headerclick", 0 ], [ "modes", "tog" ], [ "multinumber", 0 ], [ "oncolors", 1, 2, 3, 4 ], [ "param_offset", 0 ], [ "params", "a", "b", "c", "d" ], [ "rowheight_fixed", 1 ], [ "rows", 5 ], [ "size_lists", "_" ], [ "top_patcher", 0 ], [ "width_abs", 0 ] ],
 									"filename" : "ll.listblock.js",
 									"id" : "obj-18",
 									"jsarguments" : [ "@modes", "tog", "@rows", 6 ],
@@ -2857,7 +2947,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 26.0, 55.0, 148.0, 151.0 ],
+									"patching_rect" : [ 26.0, 55.0, 148.0, 80.0 ],
 									"textfile" : 									{
 										"filename" : "ll.listblock.js",
 										"flags" : 0,
@@ -3928,7 +4018,7 @@
 							}
 , 							{
 								"box" : 								{
-									"embedstate" : [ [ "bgcolors", 1 ], [ "c1", 0.8, 0.1, 0.2, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.1, 0.7, 0.5, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0, 0, 0, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 1 ], [ "enum_offset", 0 ], [ "fontsize", 12 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 0 ], [ "header_text", 0 ], [ "headercolors", 3 ], [ "ignore_headerclick", 0 ], [ "modes", "enum" ], [ "oncolors", 2 ], [ "param_offset", 0 ], [ "params", "none" ], [ "rowheight_fixed", 0 ], [ "rows", 3 ], [ "size_lists", "_" ], [ "top_patcher", 0 ], [ "width_abs", 0 ] ],
+									"embedstate" : [ [ "bgcolors", 1 ], [ "c1", 0.8, 0.1, 0.2, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.1, 0.7, 0.5, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0, 0, 0, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 1 ], [ "enum_offset", 0 ], [ "fontsize", 12 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 0 ], [ "header_text", 0 ], [ "headercolors", 3 ], [ "ignore_headerclick", 0 ], [ "modes", "enum" ], [ "multinumber", 0 ], [ "oncolors", 2 ], [ "param_offset", 0 ], [ "params", "none" ], [ "rowheight_fixed", 1 ], [ "rows", 3 ], [ "size_lists", "_" ], [ "top_patcher", 0 ], [ "width_abs", 0 ] ],
 									"filename" : "ll.listblock.js",
 									"id" : "obj-2",
 									"maxclass" : "v8ui",
@@ -3936,7 +4026,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 403.0, 40.0, 91.0, 78.0 ],
+									"patching_rect" : [ 403.0, 40.0, 91.0, 48.0 ],
 									"textfile" : 									{
 										"filename" : "ll.listblock.js",
 										"flags" : 0,
@@ -3976,7 +4066,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "rows",
+									"attr" : "rowheight",
 									"id" : "obj-10",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -5224,7 +5314,7 @@
 							}
 , 							{
 								"box" : 								{
-									"embedstate" : [ [ "bgcolors", 1 ], [ "c1", 0.8, 0.1, 0.2, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.1, 0.7, 0.5, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0, 0, 0, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 1 ], [ "enum_offset", 0 ], [ "fontsize", 12 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 0 ], [ "header_text", 0 ], [ "headercolors", 3 ], [ "ignore_headerclick", 0 ], [ "modes", "enum", "menu", "menu", "num", "num_1.2", "text" ], [ "oncolors", 2 ], [ "param_offset", 0 ], [ "params", "none", "b", "c", "d", "e", "f" ], [ "rowheight_fixed", 0 ], [ "rows", 5 ], [ "size_lists", "_" ], [ "top_patcher", 0 ], [ "width_abs", 0 ] ],
+									"embedstate" : [ [ "bgcolors", 1 ], [ "c1", 0.8, 0.1, 0.2, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.1, 0.7, 0.5, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0, 0, 0, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 1 ], [ "enum_offset", 0 ], [ "fontsize", 12 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 0 ], [ "header_text", 0 ], [ "headercolors", 3 ], [ "ignore_headerclick", 0 ], [ "modes", "enum", "menu", "menu", "num", "num_1.2", "text" ], [ "multinumber", 0 ], [ "oncolors", 2 ], [ "param_offset", 0 ], [ "params", "none", "b", "c", "d", "e", "f" ], [ "rowheight_fixed", 1 ], [ "rows", 5 ], [ "size_lists", "_" ], [ "top_patcher", 0 ], [ "width_abs", 0 ] ],
 									"filename" : "ll.listblock.js",
 									"id" : "obj-18",
 									"maxclass" : "v8ui",
@@ -5232,7 +5322,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 53.0, 65.0, 245.0, 100.0 ],
+									"patching_rect" : [ 53.0, 65.0, 245.0, 80.0 ],
 									"textfile" : 									{
 										"filename" : "ll.listblock.js",
 										"flags" : 0,
@@ -5659,7 +5749,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "modes",
+									"attr" : "rowheight",
 									"id" : "obj-11",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -5895,7 +5985,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 41.0, 197.0, 976.0, 591.0 ],
+						"rect" : [ 0.0, 26.0, 976.0, 591.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"showontab" : 1,
 						"boxes" : [ 							{
@@ -6275,7 +6365,7 @@
 							}
 , 							{
 								"box" : 								{
-									"embedstate" : [ [ "bgcolors", 1 ], [ "c1", 0.8, 0.1, 0.2, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.1, 0.7, 0.5, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0, 0, 0, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 1 ], [ "enum_offset", 0 ], [ "fontsize", 12 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 0 ], [ "header_text", 0 ], [ "headercolors", 3 ], [ "ignore_headerclick", 0 ], [ "modes", "tog" ], [ "oncolors", 2 ], [ "param_offset", 0 ], [ "params", "a", "b", "c" ], [ "rowheight_fixed", 0 ], [ "rows", 5 ], [ "size_lists", "_" ], [ "top_patcher", 0 ], [ "width_abs", 0 ] ],
+									"embedstate" : [ [ "bgcolors", 1 ], [ "c1", 0.8, 0.1, 0.2, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.1, 0.7, 0.5, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0, 0, 0, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 1 ], [ "enum_offset", 0 ], [ "fontsize", 12 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 0 ], [ "header_text", 0 ], [ "headercolors", 3 ], [ "ignore_headerclick", 0 ], [ "modes", "tog" ], [ "multinumber", 0 ], [ "oncolors", 2 ], [ "param_offset", 0 ], [ "params", "a", "b", "c" ], [ "rowheight_fixed", 1 ], [ "rows", 5 ], [ "size_lists", "_" ], [ "top_patcher", 0 ], [ "width_abs", 0 ] ],
 									"filename" : "ll.listblock.js",
 									"id" : "obj-2",
 									"maxclass" : "v8ui",
@@ -6283,7 +6373,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 50.0, 79.0, 140.0, 108.0 ],
+									"patching_rect" : [ 50.0, 79.0, 140.0, 80.0 ],
 									"textfile" : 									{
 										"filename" : "ll.listblock.js",
 										"flags" : 0,
@@ -6370,7 +6460,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "rows",
+									"attr" : "rowheight",
 									"id" : "obj-17",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
