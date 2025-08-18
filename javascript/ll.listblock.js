@@ -537,7 +537,6 @@ function onclick(x,y,but,mod1,shift,capslock,option,mod2) {
 		if (x>col_pos[i] && x<=col_pos[i+1]) ccx = i;
 	}
 	x = ccx;
-
 	y = parseInt(y/rowheight)-header;
 	if (y >= rows) y = rows-1;
 	ccy = y;
@@ -549,11 +548,10 @@ function onclick(x,y,but,mod1,shift,capslock,option,mod2) {
 	ccm1 = mod[x][1];
 	ccm2 = mod[x][2];
 	
-	//else {
 	val = [ccm,x,y]; //pattr & outlet
 	notifyclients();
 	outlet(0,ccm,x,y);
-		//}
+
 	if (!(ignore_headerclick && header_click)){
 		if(paramsObj[x] != "none"){
 			par = paramsObj[x];
@@ -561,7 +559,9 @@ function onclick(x,y,but,mod1,shift,capslock,option,mod2) {
 			if (Array.isArray(v)) pval = v
 			else pval[0] = v;			
 			cpval = pval[cy_po];
-			if (ccm1 == "outputs" && !header_click) outputs();
+			if (ccm1 == "outputs" && !header_click){
+				 if (outputs()=="exit") return;
+			 }
 			//post("click..val",pval,cpval,"\n");
 			if (ccm == "menu") m_menu(x,y,0);
 			else if (ccm == "num") m_num(x,y,0);
@@ -597,8 +597,6 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl) {
 ondrag.local = 1; //private
 
 function outputs(){
-
-
 	//post("f_outputs",ccm2,"act",act,"cha",cha,"\n")
 	if (ccm2 == 0){ //act_menu
 		let a_menu_state = [];
@@ -615,7 +613,8 @@ function outputs(){
 	else if (ccm2 == 1){	
 		//let cpval = pval[ccy+param_offset];
 		let act = cpval.split("~")[0];	
-		fill_menu(get_inputs(act));
+		if (act == "_") return "exit"
+		else fill_menu(get_inputs(act));
 	}
 }   // maintaining outputs~
 function get_inputs(act){
@@ -781,9 +780,11 @@ function menu(a) {
 				if (pval[cy_po].indexOf("~")>=0) S = pval[cy_po].split("~")[1-ccm2];
 				//post("outputs curr_ypo",cy_po,"val",pval[cy_po],"S",S,"\n");
 				if (ccm2 == 0) {
-					let inputs = get_inputs(a);
-					//post("inputs",inputs.indexOf(S),"\n");
-					if (inputs.indexOf(S) == -1) S = inputs[1];
+					if (a=="no") S = "-no-"
+					else {
+						let inputs = get_inputs(a);
+						if (inputs.indexOf(S) == -1) S = inputs[1];
+					}
 					pval[cy_po] = a+"~"+S;
 				}
 				else{
@@ -793,7 +794,6 @@ function menu(a) {
 			}
 			else pval[cy_po] = a;
 		}
-		//post("ppp",pval[cy_po]);
 		lllbmenu.hidden = 1;
 		par_mess();
 	}

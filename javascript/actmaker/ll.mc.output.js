@@ -1,7 +1,7 @@
 outlets = 1;
 var actr = new Global("act_rep");
 var stateDict = new Dict("ppoollstate"); 
-var tpp, bpatcher, outputs,lb, pm, bp_width;
+var tpp, bpatcher, outputs,lb, bp_width,actpatcher;
 var size_state = 0;
 var size_gate = 0;
 var init_done = 0;
@@ -16,25 +16,19 @@ var extraparams,extramodes,extraheader;
 
 function bang(){
 	tpp = this.patcher.parentpatcher; //.parentpatcher;
+	actpatcher = tpp.parentpatcher;
 	bpatcher = tpp.box;
 	bp_width = bpatcher.rect[2]-bpatcher.rect[0];
 	lb = tpp.getnamed("defout"); //listblock
-	outputs = tpp.parentpatcher.getnamed("outputs~");
+	outputs = actpatcher.getnamed("outputs~");
 	//post("outputs",outputs,"\n");
 	if (!outputs) {
-		outputs = tpp.parentpatcher.newdefault(400,250,"pattr","outputs~","@default_priority", 2001);
+		outputs = actpatcher.newdefault(400,250,"pattr","outputs~","@default_priority", 2001);
 		//lb.message("params", "none", "outputs~", "outputs~");
 	}
 	keep = 0;
-
-	pm = this.patcher.getnamed("pm"); //pattrmarker
 	bpsize();
-	//post("outp_value", outputs.getvalueof(),"\n");
-	if (outputs.getvalueof() == 0) {
-		outputs.message("ho_st1~out.1", "_");
-		//lb.message("params", "none", "outputs~", "outputs~");
-		outputs.message("ho_st1~out.1", "_");
-	}
+	if (outputs.getvalueof() == 0) outputs.message("ho_st1~out.1", "_");
 	lb.message("params", "none", "outputs~", "outputs~");
 	lb.message("rowheight", row_height);
 	
@@ -70,9 +64,8 @@ function bpsize(){ //size the listblock according to the bpatcher
 	head_n_size();
 }
 function head_n_size(){
-	if(!outputs)return
-	let vg = outputs.getvalueof();
-	//post("hns",vg,"\n");
+	if(!outputs) return;
+	let vg = outputs.getvalueof();	
 	let v = makearray(vg);
 	let vs = v.toString();
 	let br = bpatcher.rect;
@@ -92,9 +85,18 @@ function head_n_size(){
 		bpatcher.rect = [br[0], br[1], br[0]+bp_width+ew, br[1]+lb.rect[3]-lb.rect[1]];
 		//post(bp_width,bpatcher.rect[2],"ew",ew,"r2",br[0]+bp_width+ew,"\n");
 		lb.message("header_text", tild, "[i] act", "keep",extraheader);
-		lb.message("headercolors", 2,1,3+keep);
+		lb.message("headercolors", 2,1,3+keep,1);
 		}
+	grow();
 } //fold_unfold
+function grow(){
+	if (actpatcher.rect[3] < bpatcher.rect[3] || actpatcher.rect[2] < bpatcher.rect[2]){
+		let TP = actpatcher.getnamed("thispatcher");		
+		TP.message("window", "flags", "grow");
+		TP.message("window", "exec");
+	}
+	//else TP.message("window", "flags", "nogrow");	
+}
 function listblock(){ //ll.listblock output when clicked
 	if (!init_done) bang();
 	let a = arrayfromargs(arguments);
@@ -112,7 +114,7 @@ function listblock(){ //ll.listblock output when clicked
 	else if (as == "menu 2 -1" & size_state == 1){ //keep
 		keep = 1 - keep;
 		lb.message("keep", keep);
-		lb.message("headercolors", 2,1,3+keep);
+		lb.message("headercolors", 2,1,3+keep,1);
 	}
 	else if (as == "menu 1 -1" & size_state == 1){ //info
 		outlet(0,"info");
