@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 329.0, 592.0, 543.0, 70.0 ],
+		"rect" : [ 265.0, 432.0, 543.0, 70.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"enablehscroll" : 0,
@@ -31,7 +31,7 @@
 					"fontsize" : 10.0,
 					"hidden" : 1,
 					"id" : "obj-23",
-					"items" : [ "None", ",", "All", ",", "IAC Driver Bus 1", ",", "to Max 1", ",", "to Max 2" ],
+					"items" : [ "None", ",", "All", ",", "IAC Driver Bus 1", ",", "to Max 1", ",", "to Max 2", ",", "Komplete Audio 6 MK2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -134,6 +134,7 @@
 						"toolbarvisible" : 0,
 						"enablehscroll" : 0,
 						"enablevscroll" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"hidden" : 1,
@@ -328,7 +329,7 @@
 									"bgfillcolor_type" : "color",
 									"fontsize" : 11.0,
 									"id" : "obj-33",
-									"items" : [ "no", ",", "buffer_host1", ",", "ho_st1", ",", "pulse@1" ],
+									"items" : [ "no", ",", "ho_st1", ",", "pulse@1" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -384,7 +385,7 @@
 									"bgfillcolor_type" : "color",
 									"fontsize" : 11.0,
 									"id" : "obj-35",
-									"items" : [ "no", ",", "buffer_host1", ",", "ho_st1", ",", "pulse@1" ],
+									"items" : [ "no", ",", "ho_st1", ",", "pulse@1" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -440,7 +441,7 @@
 									"bgfillcolor_type" : "color",
 									"fontsize" : 11.0,
 									"id" : "obj-38",
-									"items" : [ "no", ",", "ho_st1" ],
+									"items" : [ "no", ",", "ho_st1", ",", "pulse@1" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -496,7 +497,7 @@
 									"bgfillcolor_type" : "color",
 									"fontsize" : 11.0,
 									"id" : "obj-40",
-									"items" : [ "no", ",", "ho_st1" ],
+									"items" : [ "no", ",", "ho_st1", ",", "pulse@1" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -829,7 +830,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-73",
-					"items" : [ "no", ",", "ho_st1" ],
+					"items" : [ "no", ",", "ho_st1", ",", "pulse@1" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -891,7 +892,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 10.0,
 					"id" : "obj-10",
-					"items" : [ "sync-off", ",", "sync_in", ",", "ext_midi" ],
+					"items" : [ "sync-off", ",", "sync_in", ",", "ext_midi", ",", "ext_midi" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -932,14 +933,8 @@
 					"active" : 					{
 						"preset-ramp" : 0,
 						"presets" : 0,
-						"title_menu" : 0,
-						"pres_menu" : 0,
-						"tetris_menu" : 0,
-						"master" : 0,
 						"act::active_store" : 0,
-						"act::master/activest" : 0,
-						"actmakeB::active_store" : 0,
-						"actmakeB::master/activest" : 0
+						"act::master/activest" : 0
 					}
 ,
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -952,13 +947,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 717.0, 44.0, 100.0, 22.0 ],
-					"priority" : 					{
-						"title_menu" : 2010,
-						"pres_menu" : 2011,
-						"tetris_menu" : 2012,
-						"master" : 2013
-					}
-,
 					"saved_object_attributes" : 					{
 						"client_rect" : [ 499, 162, 1139, 402 ],
 						"parameter_enable" : 0,

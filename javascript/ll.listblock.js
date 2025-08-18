@@ -548,7 +548,7 @@ function onclick(x,y,but,mod1,shift,capslock,option,mod2) {
 	ccm = mod[x][0];
 	ccm1 = mod[x][1];
 	ccm2 = mod[x][2];
-	if (ccm1 == "outputs" && !header_click) outputs();
+	
 	//else {
 	val = [ccm,x,y]; //pattr & outlet
 	notifyclients();
@@ -561,6 +561,7 @@ function onclick(x,y,but,mod1,shift,capslock,option,mod2) {
 			if (Array.isArray(v)) pval = v
 			else pval[0] = v;			
 			cpval = pval[cy_po];
+			if (ccm1 == "outputs" && !header_click) outputs();
 			//post("click..val",pval,cpval,"\n");
 			if (ccm == "menu") m_menu(x,y,0);
 			else if (ccm == "num") m_num(x,y,0);
@@ -612,7 +613,7 @@ function outputs(){
 		fill_menu(a_menu_state);
 	}
 	else if (ccm2 == 1){	
-		let cpval = pval[ccy+param_offset];
+		//let cpval = pval[ccy+param_offset];
 		let act = cpval.split("~")[0];	
 		fill_menu(get_inputs(act));
 	}
