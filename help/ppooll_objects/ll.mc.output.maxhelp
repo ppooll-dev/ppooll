@@ -10,17 +10,18 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 130.0, 88.0, 704.0, 585.0 ],
+		"rect" : [ 243.0, 104.0, 704.0, 585.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "ll.mc.output.maxhelp1",
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-6",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 141.0, 254.0, 265.0, 20.0 ],
+					"patching_rect" : [ 331.0, 247.0, 157.0, 33.0 ],
 					"presentation_linecount" : 4,
 					"text" : "the act_menu only shows acts with audio inputs."
 				}
