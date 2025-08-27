@@ -216,10 +216,11 @@ function setrows(a){
 	if (size_lists) size_list();
 }
 function size_list(){
+	let p = null;
 	for (k=0;k<amount;k++){	
 		//post("m",mod[k][0],"\n");
-		if (paramsObj[k] != "none" && mod[k][0] != "enum" && mod[k][0] != "button"){ 
-			let p = paramsObj[k];
+		if (paramsObj[k] != "none" && paramsObj[k] != p && mod[k][0] != "enum" && mod[k][0] != "button"){ 
+			p = paramsObj[k];
 			let v =[];
 			let vg = p.getvalueof();
 			if (Array.isArray(vg)) v = vg
@@ -371,14 +372,13 @@ function bang(){
 	//post("bg",bang_gate,"boxr",box.rect,"\n");
 	if (bang_gate) mgraphics.redraw();
 }
-
 function brightness(color){
 	let r = color[0];
 	let g = color[1];
 	let b = color[2];;
   	let hsp = Math.sqrt( 0.299 * (r * r) + 0.587 * (g * g) + 0.114 * (b * b));
 	let c = 1;
-	if (hsp > 0.5) c = 0;
+	if (hsp > 0.6) c = 0;
 	return [c, c, c, 1];
 }
 function paint() {
@@ -506,24 +506,6 @@ function paint() {
 	
 	}
 }
-function callTimeout(){
-	setTimeout(function(){ 
-		button_on = -1;	
-		mgraphics.redraw();
-		}, 150); //blink time
-}
-function setTimeout(task, timeout){
-    this.allowExecution = false;
-    var tsk = new Task(function (){
-        if(this.allowExecution){
-            task();
-            arguments.callee.task.cancel();
-        }
-        this.allowExecution = true;   
-    }, this);
-    tsk.interval = timeout;
-    tsk.repeat(2);
-}
 
 // ####################################################################   _________  interaction
 function onclick(x,y,but,mod1,shift,capslock,option,mod2) {
@@ -557,7 +539,7 @@ function onclick(x,y,but,mod1,shift,capslock,option,mod2) {
 			par = paramsObj[x];
 			let v = par.getvalueof();
 			if (Array.isArray(v)) pval = v
-			else pval[0] = v;			
+			else {pval = []; pval[0] = v;}		
 			cpval = pval[cy_po];
 			if (ccm1 == "outputs" && !header_click){
 				 if (outputs()=="exit") return;
@@ -599,6 +581,7 @@ ondrag.local = 1; //private
 function outputs(){
 	//post("f_outputs",ccm2,"act",act,"cha",cha,"\n")
 	if (ccm2 == 0){ //act_menu
+		//post("act");
 		let a_menu_state = [];
 		a_menu_state.push("no");
 		let keys = stateDict.getkeys();
@@ -666,13 +649,11 @@ function m_button(x,y,drag){
 			par.message(pval);		
 		}
 		mgraphics.redraw();
-		//callTimeout();
 	}
 	else {
  		pval = y + enum_offset;
 		button_on = x;
 		par_mess();
-		//callTimeout();
 	}
 }
 function m_num(x,y,drag){
@@ -699,11 +680,12 @@ function m_menu(x,y,drag){ //called in onclick()
 	const bx = box.rect[0];
 	const by = box.rect[1];
 	const rowBottom = (y + 1) * rowheight + header * rowheight + by - 1;
+	//post("by-rB",by,rowBottom,"\n")
 	// Compute the top Y of the menu so it aligns its bottom with the row bottom
 	const adjustedY = (rowBottom - menuHeight - header * rowheight - by + 1) / rowheight;
 	// Now use nrect with adjusted y so bottom aligns correctly
 	lllbmenu.rect = nrect(x, adjustedY);
-	
+	//post("mrect",lllbmenu.rect,"\n")
 	let setv = pval[y+param_offset];
 	if (ccm1 == "outputs" && y >= 0) {
 		setv = String(cpval).split("~")[ccm2];
@@ -763,8 +745,9 @@ function text(data) {
 }
 function menu(a) {
 	//post("menu_listen",a,ui_inside(lllbmenu.rect),lllbmenu.hidden,"\n");
-	if (ui_inside(lllbmenu.rect) && lllbmenu.hidden == 0){ 
+	if (lllbmenu.hidden == 0){ // was: (ui_inside(lllbmenu.rect) && lllbmenu.hidden == 0)
 		if (header_click){
+			//post("head");
 			for (i=param_offset;i<rows;i++){
 				if (ccm1 == "outputs"){
 					let S = pval[i].split("~")[1-ccm2];
@@ -790,11 +773,12 @@ function menu(a) {
 				else{
  					pval[cy_po] = S+"~"+a;
 				}
-				if (!keep_) for (i=ccy+1;i<rows;i++) pval[i] = "_" ;
+				if (!keep_)  for (i=ccy+1;i<rows;i++) pval[i] = "_" ;
 			}
 			else pval[cy_po] = a;
 		}
 		lllbmenu.hidden = 1;
+		selected_box = [null, null];
 		par_mess();
 	}
 }
@@ -843,7 +827,7 @@ function par_mess(){
 	mgraphics.redraw();	
 }
 function ui_inside(r){
-	//post("uinside",r,"boxr",box.rect)
+	post("uinside",r,"boxr",box.rect,"\n")
 	if (r[0]>=box.rect[0] && 
 		r[0]<box.rect[2] && 
 		r[1]>=box.rect[1] && 

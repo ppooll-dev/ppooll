@@ -11,7 +11,7 @@ const modes_def = ["enum", "menu_outputs_0", "menu_outputs_1"];
 const params_def = ["none", "outputs~", "outputs~"];
 var extra_amt = 0;
 var extra_widths = [];
-var ew;
+var extra_width;
 var extraparams,extramodes,extraheader;
 
 function bang(){
@@ -49,13 +49,13 @@ function makearray(a){
 }
 function bpsize(){ //size the listblock according to the bpatcher
 	let s = bpatcher.rect;
-	ew = extra_widths.reduce((a, b) => a + b, 0);
+	extra_width = extra_widths.reduce((a, b) => a + b, 0);
 	//post("bpsize",bp_width,"rh",row_height,"\n");
 	let lbr = lb.rect;
 	let men_width = (bp_width-row_height)/2;
 	lb.message("width_abs", 1);
 	lb.message("colwidths", row_height, men_width,men_width,extra_widths);
-	lbr[2] = bp_width+ew;
+	lbr[2] = bp_width+extra_width;
 	lb.rect = lbr;
 	let bpr = bpatcher.rect;
 	bpr[3] = bpr[1] + row_height;
@@ -82,8 +82,8 @@ function head_n_size(){
 		lb.message("headercolors", 2,1,1);
 		}
 	else{ //un-folded
-		bpatcher.rect = [br[0], br[1], br[0]+bp_width+ew, br[1]+lb.rect[3]-lb.rect[1]];
-		//post(bp_width,bpatcher.rect[2],"ew",ew,"r2",br[0]+bp_width+ew,"\n");
+		bpatcher.rect = [br[0], br[1], br[0]+bp_width+extra_width, br[1]+lb.rect[3]-lb.rect[1]];
+		//post(bp_width,bpatcher.rect[2],"extra_width",extra_width,"r2",br[0]+bp_width+extra_width,"\n");
 		lb.message("header_text", tild, "[i] act", "keep",extraheader);
 		lb.message("headercolors", 2,1,3+keep,1);
 		}
