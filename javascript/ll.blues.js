@@ -7,7 +7,7 @@ var ch_out;
 var ch_in;
 
 var b_width,b_height,vol_width,wo;
-var rowheight = 13; //fixed rowheight
+
 var vol_sel = 0;
 var in_mix_state = 0;
 var tpp, actpatcher, bpatcher;
@@ -43,6 +43,15 @@ var extraparams,extramodes,extraheader;
 var size_state = 0;
 var keep = 0;
 
+var rowheight = 13;
+declareattribute("rowheight", { setter : "setrowheight", min: 1});
+function setrowheight(a){
+	//post("setrowheight, boxh",boxh,"rh",a,"rows",rows,"rh_fixed",rowheight_fixed,"\n");
+	rowheight = a <= 0 ? 13 : a;
+	listblock_o.message("rowheight",rowheight);
+	size_obj();
+}
+
 // #############################################################################################################
 function bang() {
 	//post("####################", "\n");
@@ -60,12 +69,14 @@ function bang() {
 			script_sub();
 		}
 	}
-	let state_idx = args.indexOf("@state");
-	if (state_idx > -1) pattr_state.message(args[state_idx+1],args[state_idx+2],args[state_idx+3],args[state_idx+4],args[state_idx+5],args[state_idx+6])
+	let idx = args.indexOf("@state");
+	if (idx > -1) pattr_state.message(args[idx+1],args[idx+2],args[idx+3],args[idx+4],args[idx+5],args[idx+6])
 	else pattr_state.message(0,1,0,0,1,0,0);
-	let chans_idx = args.indexOf("@chans");
-	if (chans_idx > -1) pattr_chans.message(args[chans_idx+1],args[chans_idx+2])
+	idx = args.indexOf("@chans");
+	if (idx > -1) pattr_chans.message(args[idx+1],args[idx+2])
 	else pattr_chans.message(1,2);
+	idx = args.indexOf("@rowheight");
+	if (idx > -1) setrowheight(args[idx+1])
 	//post("bang chans", pattr_chans.getvalueof(),"\n");
 	//size_obj();
 }
@@ -300,14 +311,15 @@ function lb_sizes(s){ //size the listblock according to the bpatcher
 	//head_n_size();
 }
 function head_n_size(){
-	//if(!outputs) return;
+	if(style<2) return;
 	let vg = pattr_outputs.getvalueof();	
 	let v = makearray(vg);
 	if (!v[0]) return;
 	let vs = v.toString();
 	let br = bpatcher.rect;
 	let tild = "~";
-	post("head_n_size vg",vg,"vlen",v.length,"vs",vs,"vscomma",vs.indexOf(","),"\n");
+	post("head_n_size size_state",size_state,"\n");
+	//post("head_n_size vg",vg,"vlen",v.length,"vs",vs,"vscomma",vs.indexOf(","),"\n");
 	if (vs.indexOf(",")>=0){	//detect tild
 		if (v.slice(1).join(" ").replaceAll("_","").replaceAll(" ","") == "") tild = "~" 
 		else tild = "≈";
@@ -315,18 +327,23 @@ function head_n_size(){
 	if (size_state == 0){ //folded
 		bpatcher.rect = [br[0], br[1], br[2], br[1]+rowheight];
 		if(vg) listblock_o.message("header_text", tild, v[0].split("~")[0], v[0].split("~")[1]);
-		listblock_o.message("headercolors", 2,1,1);
+		listblock_o.message("headercolors", 3,1,1);
 		}
 	else{ //un-folded
 		bpatcher.rect = [br[0], br[1], br[2]+extra_width, br[1]+listblock_o.rect[3]-listblock_o.rect[1]];
 		//post(bp_width,bpatcher.rect[2],"extra_width",extra_width,"r2",br[0]+bp_width+extra_width,"\n");
 		listblock_o.message("header_text", tild, "[i] act", "keep",extraheader);
-		listblock_o.message("headercolors", 2,1,3+keep,1);
+		listblock_o.message("headercolors", 3,1,3+keep,1);
 		}
 	grow();
 } //fold_unfold
 function grow(){
-	if (actpatcher.rect[3] < bpatcher.rect[3] || actpatcher.rect[2] < bpatcher.rect[2]){
+	let a2 = actpatcher.rect[2];
+	let b2 = bpatcher.rect[2]
+	let a3 = actpatcher.rect[3];
+	let b3 = bpatcher.rect[3]
+	post("grow",a2,b2,a3,b3,"wind",actpatcher.wind.hasgrow, actpatcher.wind.hasvertscroll);
+	if (a3 < b3 || a2 < b2){
 		let TP = actpatcher.getnamed("thispatcher");		
 		TP.message("window", "flags", "grow");
 		TP.message("window", "exec");
@@ -509,6 +526,11 @@ function listblock(){ //ll.listblock output when clicked
 	}
 }
 
+function channels(a){ //from outside
+	if (a>0){
+		pattr_chans.message(ch_in, parseInt(a));
+	}
+}
 // ################################################ script audio chain ###############
 function script_sub(){
 	// in_mix_state ----- use_outputsMix
