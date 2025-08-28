@@ -318,7 +318,7 @@ function head_n_size(){
 	let vs = v.toString();
 	let br = bpatcher.rect;
 	let tild = "~";
-	post("head_n_size size_state",size_state,"\n");
+	//post("head_n_size size_state",size_state,"\n");
 	//post("head_n_size vg",vg,"vlen",v.length,"vs",vs,"vscomma",vs.indexOf(","),"\n");
 	if (vs.indexOf(",")>=0){	//detect tild
 		if (v.slice(1).join(" ").replaceAll("_","").replaceAll(" ","") == "") tild = "~" 
@@ -342,10 +342,19 @@ function grow(){
 	let b2 = bpatcher.rect[2]
 	let a3 = actpatcher.rect[3];
 	let b3 = bpatcher.rect[3]
-	post("grow",a2,b2,a3,b3,"wind",actpatcher.wind.hasgrow, actpatcher.wind.hasvertscroll);
-	if (a3 < b3 || a2 < b2){
-		let TP = actpatcher.getnamed("thispatcher");		
-		TP.message("window", "flags", "grow");
+	let TP = actpatcher.getnamed("thispatcher");
+	//actpatcher.wind.hasvertscroll = 1;
+	//post("grow",a2,b2,a3,b3,"wind",actpatcher.wind.hasgrow, actpatcher.wind.hasvertscroll);
+
+	if (a3 < b3 || a2 < b2 && !actpatcher.wind.hasvertscroll){	
+		//if (!actpatcher.wind.hasvertscroll){
+			TP.message("window", "flags", "grow");
+			TP.message("window", "exec");
+			//}
+	}
+	if (a3 > b3 &&  a2 > b2 && actpatcher.wind.hasvertscroll){
+		actpatcher.wind.scrollto(0,0);
+		TP.message("window", "flags", "nogrow");
 		TP.message("window", "exec");
 	}
 	//else TP.message("window", "flags", "nogrow");	

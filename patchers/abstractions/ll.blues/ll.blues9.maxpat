@@ -14,6 +14,27 @@
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
+					"fontface" : 0,
+					"format" : [ 1 ],
+					"hidden" : 1,
+					"hideonenter" : 1,
+					"id" : "obj-10",
+					"label" : [ "num" ],
+					"labelcolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"maxclass" : "ll_number",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 100.0, 100.0, 70.0, 14.0 ],
+					"prependlabel" : 1,
+					"sliderstyle" : 2,
+					"varname" : "lllbnum"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"hidden" : 1,
 					"id" : "obj-52",
 					"maxclass" : "newobj",
@@ -72,7 +93,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 95.333333333333329, 32.0, 10.0, 16.0 ],
+					"patching_rect" : [ 93.5, 32.0, 10.0, 16.0 ],
 					"textfile" : 					{
 						"filename" : "ll.bluebutton.js",
 						"flags" : 0,
@@ -251,7 +272,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 69.333333333333329, 48.0, 17.333333333333329, 16.0 ],
+					"patching_rect" : [ 68.0, 48.0, 17.0, 16.0 ],
 					"sliderstyle" : 2,
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "chans_in"
@@ -275,7 +296,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 86.666666666666657, 48.0, 17.333333333333343, 16.0 ],
+					"patching_rect" : [ 85.0, 48.0, 17.0, 16.0 ],
 					"sliderstyle" : 2,
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "chans_out"
@@ -300,7 +321,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 52.0, 48.0, 17.333333333333329, 16.0 ],
+					"patching_rect" : [ 51.0, 48.0, 17.0, 16.0 ],
 					"prependlabel" : 1,
 					"selectcolor" : [ 0.45098, 0.670588, 1.0, 0.0 ],
 					"slidercolor" : [ 0.024, 0.024, 0.6, 1.0 ],
@@ -332,7 +353,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 48.0, 52.0, 16.0 ],
+					"patching_rect" : [ 0.0, 48.0, 51.0, 16.0 ],
 					"prependlabel" : 1,
 					"slidercolor" : [ 0.024, 0.024, 0.6, 1.0 ],
 					"slidercolornofocus" : [ 0.588235294117647, 0.580392156862745, 0.580392156862745, 0.71 ],
@@ -394,7 +415,6 @@
 						"classnamespace" : "box",
 						"rect" : [ 610.0, 321.0, 956.0, 545.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-13",
@@ -435,7 +455,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 255.0, 59.0, 163.0, 22.0 ],
-													"text" : "extra header azi ele"
+													"text" : "bang"
 												}
 
 											}
@@ -2627,7 +2647,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 417.0, 238.0, 327.0, 208.0 ],
-									"text" : "state_old: \n1: output-channel-count (1-?)\n2: show dark-blue / show light-blue (0,1) mix_adds (2,3)\n3: volume layout (0, 1, 2)\n4: meter (0,1,2)\n5: inputs-channels-count (1-?)\n6: link input-channels/output-channels (0,1)\n\nstate_new: \n1: 0: ll.blues, 1: mc_straight, ...\n2: show outputs~/outputsMix~ (0,1)\n3: volume layout (0, 1, 2)\n4: meter (0,1,2)\n5: mix_adds (0,1)\n6: link input-channels to output-channels (0,1)"
+									"text" : "state_old: \n1: output-channel-count (1-?)\n2: show dark-blue / show light-blue (0,1) mix_adds (2,3)\n3: volume layout (0, 1, 2)\n4: meter (0,1,2)\n5: inputs-channels-count (1-?)\n6: link input-channels/output-channels (0,1)\n\nstate_new: \n1: 0: basic, 1: basic_in_mix, 2: mc.basic, 3: mc+chan_out\n2: show outputs~/outputsMix~ (0,1)\n3: volume layout (0, 1, 2)\n4: meter (0,1,2)\n5: mix_adds (0,1)\n6: link input-channels to output-channels (0,1)"
 								}
 
 							}
@@ -5244,7 +5264,7 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-3",
+									"id" : "obj-14",
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 1,
@@ -5267,6 +5287,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-81", 2 ],
 									"source" : [ "obj-132", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-164", 0 ],
+									"source" : [ "obj-14", 0 ]
 								}
 
 							}
@@ -5301,16 +5328,16 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-236", 0 ],
-									"order" : 1,
+									"destination" : [ "obj-14", 0 ],
+									"order" : 2,
 									"source" : [ "obj-19", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
-									"order" : 2,
+									"destination" : [ "obj-236", 0 ],
+									"order" : 1,
 									"source" : [ "obj-19", 0 ]
 								}
 
@@ -5363,13 +5390,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-81", 0 ],
 									"source" : [ "obj-262", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-164", 0 ],
-									"source" : [ "obj-3", 0 ]
 								}
 
 							}
@@ -5518,7 +5538,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 104.0, 0.0, 10.0, 13.0 ],
+					"patching_rect" : [ 102.0, 0.0, 10.0, 13.0 ],
 					"prependlabel" : 1,
 					"selectcolor" : [ 0.45098, 1.0, 0.698039, 0.0 ],
 					"slidercolor" : [ 0.024, 0.024, 0.6, 1.0 ],
@@ -5549,7 +5569,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 16.0, 95.333333333333329, 16.0 ],
+					"patching_rect" : [ 0.0, 16.0, 93.5, 16.0 ],
 					"prependlabel" : 1,
 					"selectcolor" : [ 0.45098, 0.670588, 1.0, 0.0 ],
 					"slidercolor" : [ 0.024, 0.024, 0.6, 1.0 ],
@@ -5699,7 +5719,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 0.0, 104.0, 13.0 ],
+					"patching_rect" : [ 0.0, 0.0, 102.0, 13.0 ],
 					"prependlabel" : 1,
 					"selectcolor" : [ 0.996078, 1.0, 1.0, 0.447059 ],
 					"slidercolor" : [ 0.024, 0.024, 0.6, 1.0 ],
@@ -5731,7 +5751,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 104.0, 0.0, 10.0, 13.0 ],
+					"patching_rect" : [ 102.0, 0.0, 10.0, 13.0 ],
 					"prependlabel" : 1,
 					"selectcolor" : [ 0.996078, 1.0, 1.0, 0.447059 ],
 					"slidercolor" : [ 0.024, 0.024, 0.6, 1.0 ],
@@ -5847,6 +5867,14 @@
 					"destination" : [ "obj-64", 1 ],
 					"hidden" : 1,
 					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-30", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-10", 0 ]
 				}
 
 			}
