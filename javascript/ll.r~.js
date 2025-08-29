@@ -66,13 +66,10 @@ function doit(a, p) {
 function getBlues() {
     if (tpp.getnamed("ll.blues")) {
         let lb = tpp.getnamed("ll.blues");
-		let p_chans = lb.subpatcher().getnamed("chans");
-		if (p_chans) chan = p_chans.getvalueof()[0]
-		else {
-        	let state = lb.subpatcher().getnamed("state").getvalueof();
-        	chan = state[4];
-		}
-        //post("blue-channels", state[4],"\n");
+		let newblues = lb.subpatcher().getnamed("outputsMix~");
+		if (newblues) chan = lb.subpatcher().getnamed("chans").getvalueof()[0]
+		else chan = lb.subpatcher().getnamed("state").getvalueof()[4];
+        //post("blue-channels", chan,"\n");
     } else chan = 1;
 }
 

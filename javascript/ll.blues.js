@@ -39,7 +39,9 @@ const params_def = ["none", "outputs~", "outputs~"];
 var extra_amt = 0;
 var extra_widths = [];
 var extra_width;
-var extraparams,extramodes,extraheader;
+var extraparams =[];
+var extramodes= [];
+var extraheader =[];
 var size_state = 0;
 var keep = 0;
 
@@ -54,7 +56,7 @@ function setrowheight(a){
 
 // #############################################################################################################
 function bang() {
-	//post("####################", "\n");
+	post("####################", "\n");
 	tpp = this.patcher.parentpatcher;
 	actpatcher = tpp.parentpatcher;
 	bpatcher = tpp.box;
@@ -63,7 +65,7 @@ function bang() {
 	args = [];
 	if (bpatcher.getboxattr("args")){
  		args = bpatcher.getboxattr("args");
-		//post("args: ", args, "in_mix?",String(args).search("in_mix"));		
+		post("args: ", args, "in_mix?",String(args).search("in_mix"));		
 		if (String(args).search("in_mix")!=-1 && (in_mix_state == 0)){
 			in_mix_state = 1;			
 			script_sub();
@@ -71,7 +73,7 @@ function bang() {
 	}
 	let idx = args.indexOf("@state");
 	if (idx > -1) pattr_state.message(args[idx+1],args[idx+2],args[idx+3],args[idx+4],args[idx+5],args[idx+6])
-	else pattr_state.message(0,1,0,0,1,0,0);
+	else pattr_state.message(0,1,0,0,1,0);
 	idx = args.indexOf("@chans");
 	if (idx > -1) pattr_chans.message(args[idx+1],args[idx+2])
 	else pattr_chans.message(1,2);
@@ -286,8 +288,8 @@ function smix(){
 	else {
 		show_mix = 0;
 		listblock_o.message("header",1);
-		listblock_o.message("params","none","outputs~", "outputs~");
-		listblock_o.message("modes","enum", "menu_outputs_0", "menu_outputs_1");
+		listblock_o.message("params",params_def,extraparams);
+		listblock_o.message("modes",modes_def,extramodes);
 		listblock_o.message("rows",ch_out);
 		listblock_o.message("c1",light_blue);
 	}
@@ -296,12 +298,12 @@ function lb_sizes(s){ //size the listblock according to the bpatcher
 	extra_width = extra_widths.reduce((a, b) => a + b, 0);
 	//post("bpsize",bp_width,"rh",row_height,"\n");
 	let lbr = listblock_o.rect;
-	let men_width = (lbr[2] - lbr[0] - rowheight*s)/2;
+	let men_width = (b_width - rowheight*s)/2;
 	listblock_o.message("width_abs", 1);
 	if (s) listblock_o.message("colwidths", rowheight, men_width, men_width, extra_widths)
 	else listblock_o.message("colwidths", men_width, men_width);
-	//lbr[2] = bp_width+extra_width;
-	//listblock_o.rect = lbr;
+	lbr[2] = b_width+extra_width;
+	listblock_o.rect = lbr;
 	/*
 	let bpr = bpatcher.rect;
 	bpr[3] = bpr[1] + row_height;
@@ -325,15 +327,17 @@ function head_n_size(){
 		else tild = "≈";
 		}
 	if (size_state == 0){ //folded
-		bpatcher.rect = [br[0], br[1], br[2], br[1]+rowheight];
+		bpatcher.rect = [br[0], br[1], br[0]+b_width, br[1]+rowheight];
 		if(vg) listblock_o.message("header_text", tild, v[0].split("~")[0], v[0].split("~")[1]);
 		listblock_o.message("headercolors", 3,1,1);
+		ib.hidden = 0;
 		}
 	else{ //un-folded
-		bpatcher.rect = [br[0], br[1], br[2]+extra_width, br[1]+listblock_o.rect[3]-listblock_o.rect[1]];
+		bpatcher.rect = [br[0], br[1], br[0]+b_width+extra_width, br[1]+listblock_o.rect[3]-listblock_o.rect[1]];
 		//post(bp_width,bpatcher.rect[2],"extra_width",extra_width,"r2",br[0]+bp_width+extra_width,"\n");
 		listblock_o.message("header_text", tild, "[i] act", "keep",extraheader);
 		listblock_o.message("headercolors", 3,1,3+keep,1);
+		ib.hidden = 1;
 		}
 	grow();
 } //fold_unfold
@@ -363,7 +367,7 @@ function grow(){
 // #####################################pattrs
 function state(s){
 	stateV = arrayfromargs(arguments);
-	//post("state",stateV,"\n");
+	post("state",stateV,"\n");
 	state_menu_checks();
 	if (stateV[0] != style){	
 		style = stateV[0];
@@ -495,21 +499,25 @@ function state_menu(a){
 	}
 }
 function state_menu_checks(){
-	state_menu_o.message("checkitem",0,0);
-	state_menu_o.message("checkitem",1,0);
-	state_menu_o.message("checkitem",2,0);
+	for (let i=0;i<17;i++) state_menu_o.message("checkitem",i,0);
 	state_menu_o.message("checkitem",stateV[2],1);
-	state_menu_o.message("checkitem",4,0);
-	state_menu_o.message("checkitem",5,0);
-	state_menu_o.message("checkitem",6,0);
 	state_menu_o.message("checkitem",stateV[3]+4,1);
 	state_menu_o.message("checkitem",8,stateV[5]);
 	state_menu_o.message("checkitem",9,stateV[4]);
-	state_menu_o.message("checkitem",13,0);
-	state_menu_o.message("checkitem",14,0);
-	state_menu_o.message("checkitem",15,0);
-	state_menu_o.message("checkitem",16,0);
 	state_menu_o.message("checkitem",stateV[0]+13,1);
+	//enableitem 3 $1
+	if (use_outputsMix){
+		state_menu_o.message("enableitem",0,1);
+		state_menu_o.message("enableitem",1,1);
+		state_menu_o.message("enableitem",2,1);
+		state_menu_o.message("enableitem",9,1);
+	}
+	else {
+		state_menu_o.message("enableitem",0,0);
+		state_menu_o.message("enableitem",1,0);
+		state_menu_o.message("enableitem",2,0);
+		state_menu_o.message("enableitem",9,0);
+	}
 }	
 function x(a){
 	stateV[1] = a;
@@ -531,7 +539,7 @@ function listblock(){ //ll.listblock output when clicked
 	else if (as == "menu 2 -1" & size_state == 1){ //keep
 		keep = 1 - keep;
 		listblock_o.message("keep", keep);
-		listblock_o.message("headercolors", 2,1,3+keep,1);
+		listblock_o.message("headercolors", 3,1,3+keep,1);
 	}
 }
 
@@ -710,26 +718,21 @@ function newsend(i){
 function extra(){
 	let args = arrayfromargs(arguments);
 	let a0 = args.shift(1);
-	//post("extrargs",a0,args,"\n");
+	post("extrargs",a0,args,"\n");
 	if (a0 == "params"){
 		extra_amt = 0;
 		extra_widths = [];
 		if (args[0]){
-			extraparams = args;
+			extraparams = [];
 			extra_amt = args.length;
 			extramodes = [];
-			for (i in extraparams) {
+			for (p of args) {
+				extraparams.push("top_"+p);
 				extramodes.push("num");
 				extra_widths.push(30);
-			}
-			//post("params",extraparams,"len",args.length,"\n");
-			listblock_o.message("params",params_def,extraparams);
-			listblock_o.message("modes",modes_def,extramodes);		
+			}		
 		}
-		else{
-			listblock_o.message("params",params_def);
-			listblock_o.message("modes",modes_def);
-		}
+		smix();
 		lb_sizes(1);
 	}
 	else if (a0 == "header") extraheader = args;

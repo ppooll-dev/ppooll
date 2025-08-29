@@ -126,13 +126,23 @@ function calc_cols(){
 }
 function setparams(){
     a = arrayfromargs(arguments);
+	//post("lb_params",a,"\n");
 	amount = a.length;
 	params = [];
 	paramsObj = [];
 	for (let c of a){
-		//post(c,tpp.getnamed(c));
-		if (!tpp.getnamed(c)) { params.push("none"); paramsObj.push("none")}
-		else {params.push(c); paramsObj.push(tpp.getnamed(c))}
+		let p = tpp;
+		let n = c;
+		//post("lb_par",c,c.search("top_"),"\n");
+		if (c.search("top_")==0) {
+			p = get_actpatcher();
+			n = c.replace("top_","");
+			//post("par",p,n,"\n")
+		}
+		
+		let po = p.getnamed(n);
+		if (!po) { params.push("none"); paramsObj.push("none")}
+		else {params.push(n); paramsObj.push(po)}
 	}
 	//post("setparams",params,"\n");
 	calc_cols();
@@ -255,6 +265,19 @@ function settop_patcher(a){
 		}
 	}
 	else if (a == 0) tpp = this.patcher;
+}
+function get_actpatcher(){
+	//post("an bang\n");
+	let tp = this.patcher;	
+	let found = 0;
+	while (tp){
+		tp = tp.parentpatcher;		
+			if (tp && tp.getnamed("act")){
+				found = tp;
+			}		
+		}
+	//post("find_tpp",found.name,found,found.getnamed("act"),"found", found,"\n");	
+	return found;
 }
 // ###################################### __________ post attributes
 function getattributes(){
@@ -607,7 +630,9 @@ function get_inputs(act){
 	c_chans.push(["-no-",0,0]);
 	if (act != "no"){ //(a != "no")
 		let inputs = stateDict.get(act+"::inputs~");
+		
 		let inpkeys = inputs.getkeys();
+		//post ("getinputs",inpkeys,"\n");
 		for (let i in inpkeys){
 			let k = inpkeys[i];
 			let c = inputs.get(k);
@@ -761,11 +786,13 @@ function menu(a) {
 			if (ccm1 == "outputs"){
 				let S = "no";		
 				if (pval[cy_po].indexOf("~")>=0) S = pval[cy_po].split("~")[1-ccm2];
+				if (S == "-no-") S = "no";
 				//post("outputs curr_ypo",cy_po,"val",pval[cy_po],"S",S,"\n");
 				if (ccm2 == 0) {
 					if (a=="no") S = "-no-"
 					else {
 						let inputs = get_inputs(a);
+						//post("menu_outputs_inputs",inputs,"S",S,"\n");
 						if (inputs.indexOf(S) == -1) S = inputs[1];
 					}
 					pval[cy_po] = a+"~"+S;
