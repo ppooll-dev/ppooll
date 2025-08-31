@@ -4,53 +4,17 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 8,
+			"revision" : 7,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 74.0, 521.0, 220.0, 172.0 ],
+		"rect" : [ 174.0, 311.0, 220.0, 175.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "fmrm1",
 		"boxes" : [ 			{
-				"box" : 				{
-					"id" : "obj-13",
-					"maxclass" : "button",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 419.0, 56.0, 24.0, 24.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-14",
-					"maxclass" : "number",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 306.0, 32.0, 50.0, 22.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-6",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 302.0, 66.0, 55.0, 22.0 ],
-					"text" : "wsize $1"
-				}
-
-			}
-, 			{
 				"box" : 				{
 					"annotation" : "modindex multichannel spread",
 					"bgcolor" : [ 0.2, 0.47451, 0.388235, 1.0 ],
@@ -188,7 +152,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@state", 0, 1, 0, 0, 0, 0 ],
+					"args" : [ "@state", 2, 1, 0, 0, 1, 0 ],
 					"bgmode" : 0,
 					"border" : 1,
 					"clickthrough" : 0,
@@ -198,11 +162,11 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "ll.blues9.maxpat",
+					"name" : "ll.blues.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 122.0, 160.0, 52.0 ],
+					"patching_rect" : [ 0.0, 122.0, 160.0, 53.0 ],
 					"varname" : "ll.blues",
 					"viewvisibility" : 1
 				}
@@ -384,13 +348,13 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 622.0, 130.0, 511.0, 736.0 ],
+						"rect" : [ 622.0, 294.0, 511.0, 736.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -430,7 +394,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 8,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1371,14 +1335,18 @@
 					"active" : 					{
 						"preset-ramp" : 0,
 						"presets" : 0,
+						"title_menu" : 0,
+						"pres_menu" : 0,
+						"tetris_menu" : 0,
+						"master" : 0,
 						"act::active_store" : 0,
 						"act::master/activest" : 0,
 						"ll.blues" : 0,
+						"ll.blues::levels" : 0,
+						"ll.blues::outputs" : 0,
 						"ll.blues::state" : 0,
-						"ll.blues::outputs~" : 0,
-						"ll.blues::outputsMix~" : 0,
-						"ll.blues::chans" : 0,
-						"ll.blues::levels" : 0
+						"actmakeB::master/activest" : 0,
+						"actmakeB::active_store" : 0
 					}
 ,
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -1397,15 +1365,14 @@
 						"harmonicity" : 4,
 						"modindex" : 6,
 						"fm-fmaudio-mix" : 8,
-						"ll.blues::state" : 1,
-						"ll.blues::outputs~" : 2,
-						"ll.blues::outputsMix~" : 3,
-						"ll.blues::chans" : 4,
-						"ll.blues::levels" : 5
+						"title_menu" : 2010,
+						"pres_menu" : 2011,
+						"tetris_menu" : 2012,
+						"master" : 2013
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 1086, 134, 1600, 641 ],
+						"client_rect" : [ 842, 164, 1920, 407 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 0, 0, 640, 240 ]
@@ -1469,7 +1436,7 @@
 						"carrier_freq_mcspread" : [ 0.0 ],
 						"carrier_freq_ramp" : [ 0 ],
 						"fm-fmaudio-mix" : [ 0.0 ],
-						"harmonicity" : [ 0.3 ],
+						"harmonicity" : [ 0.111674762398401 ],
 						"harmonicity_mcspread" : [ 0.0 ],
 						"harmonicity_ramp" : [ 0 ],
 						"modindex" : [ 14.836088364454099 ],
@@ -1519,6 +1486,26 @@
 			}
 , 			{
 				"box" : 				{
+					"hidden" : 1,
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 415.0, 240.0, 100.0, 22.0 ],
+					"restore" : [ "freq(2)", "harmonicity(1)", "modindex(1)", "amplitude(1)", "carrier_freq(1)", "audioin(1)" ],
+					"saved_object_attributes" : 					{
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
+					}
+,
+					"text" : "pattr inputs~",
+					"varname" : "inputs~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"args" : [ "fmrm", "#ffffff" ],
 					"bgmode" : 0,
 					"border" : 0,
@@ -1555,27 +1542,6 @@
 			}
  ],
 		"lines" : [ 			{
-				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"source" : [ "obj-13", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
-					"source" : [ "obj-14", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"source" : [ "obj-6", 0 ]
-				}
-
-			}
-, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-12", 0 ],
 					"hidden" : 1,
@@ -1641,31 +1607,10 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.bluebutton.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.blues.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.blues9.maxpat",
+				"name" : "ll.blues.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.listblock.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -1684,6 +1629,13 @@
 			}
 , 			{
 				"name" : "ll.og.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.p.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
@@ -1753,6 +1705,20 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.s~.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.s~.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.wsendback.js",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
@@ -1772,6 +1738,13 @@
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "nblue.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{

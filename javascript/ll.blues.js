@@ -1,29 +1,23 @@
 outlets = 1;
 //autowatch = 1;
 var bp_rect = [];
-var r = new Array();
-
-var ch_out;
-var ch_in;
-
-var b_width,b_height,vol_width,wo;
-
-var vol_sel = 0;
-var in_mix_state = 0;
+var b_width,b_height,vol_width,lw;
 var tpp, actpatcher, bpatcher;
+const modes_def = ["enum", "menu_outputs_0", "menu_outputs_1"];
+const params_def = ["none", "outputs~", "outputs~"];
 //GUI objects
-var meter_o, mix_o, ramp_o, pfl_o, chans_in_o, chans_out_o, xb, state_menu_o, pan_o, volR_o, volL_o, in_mix_o;
-var listblock_o;
+var meter_o, mix_o, ramp_o, pfl_o, chans_in_o, chans_out_o, xb, ib, state_menu_o, pan_o, volR_o, volL_o, in_mix_o, listblock_o;
 // pattrs
-var pattr_levels, pattr_state, pattr_chans;
-var pattr_outputs, pattr_ouputsMix;
+var pattr_levels, pattr_state, pattr_chans, pattr_outputs, pattr_ouputsMix;
 
 var args;
 var dark_blue = [0.024, 0.024, 0.600, 1.000];
 var light_blue = [0.333, 0.537, 0.961, 1.000];
 var text_color = [1,1,1,1];
-
-
+var ch_out;
+var ch_in;
+var vol_sel = 0;
+var in_mix_state = 0;
 var levelsV = [0,0,0,0,10,0,0.5];
 var stateV = [1,0,0,0,1,0];
 var show_mix;
@@ -33,17 +27,15 @@ var mix_adds = 0;
 var style = 0; // the layout and functionalities of ll.blues
 var use_outputsMix = 1; //0 if only outputs~, 1 if outputs~and outputsMix~
 var wide_patcher;
+var size_state = 0;
+var keep = 0;
 
-const modes_def = ["enum", "menu_outputs_0", "menu_outputs_1"];
-const params_def = ["none", "outputs~", "outputs~"];
 var extra_amt = 0;
 var extra_widths = [];
-var extra_width;
+var extra_width = 0;
 var extraparams =[];
 var extramodes= [];
 var extraheader =[];
-var size_state = 0;
-var keep = 0;
 
 var rowheight = 13;
 declareattribute("rowheight", { setter : "setrowheight", min: 1});
@@ -56,7 +48,7 @@ function setrowheight(a){
 
 // #############################################################################################################
 function bang() {
-	post("####################", "\n");
+	//post("####################", "\n");
 	tpp = this.patcher.parentpatcher;
 	actpatcher = tpp.parentpatcher;
 	bpatcher = tpp.box;
@@ -65,7 +57,7 @@ function bang() {
 	args = [];
 	if (bpatcher.getboxattr("args")){
  		args = bpatcher.getboxattr("args");
-		post("args: ", args, "in_mix?",String(args).search("in_mix"));		
+		//post("args: ", args, "in_mix?",String(args).search("in_mix"));		
 		if (String(args).search("in_mix")!=-1 && (in_mix_state == 0)){
 			in_mix_state = 1;			
 			script_sub();
@@ -80,7 +72,7 @@ function bang() {
 	idx = args.indexOf("@rowheight");
 	if (idx > -1) setrowheight(args[idx+1])
 	//post("bang chans", pattr_chans.getvalueof(),"\n");
-	//size_obj();
+	//size_obj() is called by state()
 }
 function get_objects() {
 	meter_o = tpp.getnamed("meter");
@@ -102,7 +94,9 @@ function get_objects() {
 	pattr_outputs = tpp.getnamed("outputs~");
 	listblock_o = tpp.getnamed("listblock");
 	listblock_o.message("rowheight",rowheight);
+	listblock_o.message("width_abs", 1);
 }
+
 function wsize(x){
 	bp_rect = tpp.box.rect; //a.rect;
 	bp_rect[2] = bp_rect[0]+x;
@@ -125,7 +119,7 @@ function size_obj(){
 	//post("size_obj style",style,"show_mix",show_mix,"\n");
 	setbp_rect();
 	
-	let lw = b_width/12;
+	lw = b_width/12;
 	if (style<2){
 		//use_outputsMix = 1;
 		volL_o.hidden = 0;
@@ -136,98 +130,101 @@ function size_obj(){
 		chans_in_o.hidden = 0;
 		xb.hidden = 0;
 		ib.hidden = 0;
-		vol_sliders();
+		let up;
+		let dn;
+		let up2 = rowheight;
+		let dn2 = rowheight*2+1;
+		let up3 = rowheight*2+1;
+		let dn3 = rowheight*3+1;
+		let up4 = rowheight*3;
+		let dn4 = b_height;
+		
+		vol_sliders();		
 		if(!wide_patcher){	
-			meter_o.rect = [0,0,b_width,14];
-			if (in_mix_state){
-				mix_o.rect = [b_width/2,rowheight,b_width-lw,rowheight*2];	
-				in_mix_o.rect = [0,rowheight,b_width/2,rowheight*2];
-				in_mix_o.hidden = 0;
-				}
-			else {
-				mix_o.rect = [0,rowheight,b_width-lw,rowheight*2];	
-				in_mix_o.hidden = 1;
-				}
-			state_menu_o.rect = [b_width-lw,rowheight,b_width,rowheight*2];
-			ib.rect = [b_width-lw,rowheight,b_width,rowheight*2];
-			listblock_o.rect = [0,rowheight*2,b_width-lw,rowheight*3];
-			xb.rect = [b_width-lw,rowheight*2,b_width,rowheight*3];
+			meter_o.rect = [0,0,b_width,rowheight];
 			
-			ramp_o.rect = [0,rowheight*3,b_width/2,b_height];
-			pfl_o.rect = [b_width/2,rowheight*3,lw*8,b_height];
-			chans_in_o.rect = [lw*8,rowheight*3,lw*10,b_height];
-			chans_out_o.rect = [lw*10,rowheight*3,b_width,b_height];			
-		} 
-		else {	
-			meter.rect = [0,0,b_width/2,14];
 			if (in_mix_state){
-				mix_o.rect = [b_width/4,rowheight,b_width/2,rowheight*2];	
-				in_mix_o.rect = [0,rowheight,b_width/4,rowheight*2];
+				mix_o.rect = [b_width/2, up2, b_width-lw, dn2];	
+				in_mix_o.rect = [0, up2, b_width/2, dn2];
 				in_mix_o.hidden = 0;
 				}
 			else {
-				mix_o.rect = [0,rowheight,b_width/2,rowheight*2];	
+				mix_o.rect = [0, up2, b_width-lw, dn2];	
 				in_mix_o.hidden = 1;
 				}		
+			ib.rect = [b_width-lw, up2, b_width, dn2];
+			state_menu_o.rect = ib.rect;
+			
+			listblock_o.rect = [0, up3, b_width-lw, dn3];
+			xb.rect = [b_width-lw, up3, b_width, dn3];
+			
+			ramp_o.rect = [0, up4, b_width/2, dn4];
+			pfl_o.rect = [b_width/2, up4, lw*8, dn4];
+			chans_in_o.rect = [lw*8, up4, lw*10, dn4];
+			chans_out_o.rect = [lw*10, up4, b_width, dn4];			
+		} 
+		else {	
+			meter.rect = [0,0,b_width/2,rowheight];
+			if (in_mix_state){
+				mix_o.rect = [b_width/4, up2, b_width/2, dn2];	
+				in_mix_o.rect = [0, up2, b_width/4, dn2];
+				in_mix_o.hidden = 0;
+				}
+			else {
+				mix_o.rect = [0, up2, b_width/2, dn2];	
+				in_mix_o.hidden = 1;
+				}
+			xb.rect = [b_width-lw,0,b_width-lw/2,rowheight];
+			ib.rect = [b_width-lw/2-1,0,b_width,rowheight];
+			state_menu_o.rect = [b_width-lw/2,0,b_width,rowheight];	
+			listblock_o.rect = [b_width/2,0,lw*11,rowheight];		
 			ramp_o.rect = [b_width/2,rowheight,lw*9,rowheight*2];
 			pfl_o.rect = [lw*9,rowheight,lw*10,b_height];
 			chans_out_o.rect = [lw*11,rowheight,b_width,rowheight*2];
 			chans_in_o.rect = [lw*10,rowheight,lw*11,rowheight*2];
-			xb.rect = [b_width-lw,0,b_width-lw/2,rowheight];
-			ib.rect = [b_width-lw/2-1,0,b_width,rowheight];
-			state_menu_o.rect = [b_width-lw/2,0,b_width,rowheight];	
-			listblock_o.rect = [b_width/2,0,lw*11,rowheight];
+
 		}
-	lb_sizes(0);
+	let men_width = (listblock_o.rect[2]-listblock_o.rect[0])/2;
+	listblock_o.message("colwidths", men_width, men_width);
+	//post("menw",men_width,"lbr", listblock_o.rect, "\n");
 	}
-	else if (style == 2){
-		//use_outputsMix = 0;
+	else {
 		hideall();
 		ib.rect = [b_width-lw,0,b_width,rowheight];
 		state_menu_o.rect = ib.rect;
-		listblock_o.rect = [0,0,b_width,rowheight];
-		lb_sizes(1);
+		if (style == 2){			
+			listblock_o.rect = [0,0,b_width-lw,rowheight];	
+		}
+		else if (style == 3){
+			chans_out_o.hidden = 0;	
+			chans_out_o.rect = [0,0,lw*2,rowheight];
+			chans_in_o.hidden = 0;	
+			chans_in_o.rect = [0,rowheight,lw*2,rowheight*2];
+			listblock_o.rect = [lw*2,0,b_width-lw,rowheight];
+		}
+
 		size_state = 0;
-		head_n_size();
-	}
-	else if (style == 3){
-		//use_outputsMix = 0;
-		hideall();
-		chans_out_o.hidden = 0;	
-		chans_out_o.rect = [0,0,lw*2,rowheight];
-		chans_in_o.hidden = 0;	
-		chans_in_o.rect = [0,rowheight,lw*2,rowheight*2];
-		ib.rect = [b_width-lw,0,b_width,rowheight];
-		state_menu_o.rect = ib.rect;
-		listblock_o.rect = [lw*2,0,b_width,rowheight];
-		lb_sizes(1);
-		size_state = 0;
-		head_n_size();
+		unfold_fold();
 	}
 	smix();
 }
-
-
 function setbp_rect() {
 	let a = bpatcher;
 	bp_rect = a.rect;
 	b_width = a.rect[2]-a.rect[0];
 	if(b_width<300){
 		wide_patcher = 0;
-		b_height = rowheight*4;
+		b_height = rowheight*4+1;
 		vol_width = b_width;
-		wo = b_width;
 	} else {
 		wide_patcher = 1;
 		b_height = rowheight*2;
 		vol_width = b_width/2;
-		wo = b_width/2;
 		}
 	bp_rect[3] = bp_rect[1] + b_height;	
 	a.rect = bp_rect;  //resize height		
 }
 function vol_sliders(){
-	let rowheight = 13;
 	let volL_rbox;
 	switch (vol_sel){
 		case 0:
@@ -247,9 +244,9 @@ function vol_sliders(){
 			volR_o.hidden = 1;
 		break;
 		}
-	volL_o.rect = [0,0,volL_rbox,rowheight];	
-	volR_o.rect = [volL_rbox,0,vol_width,rowheight];
-	pan_o.rect = [volL_rbox,0,vol_width,rowheight];
+	volL_o.rect = [0,0,volL_rbox,rowheight+1];	
+	volR_o.rect = [volL_rbox,0,vol_width,rowheight+1];
+	pan_o.rect = [volL_rbox,0,vol_width,rowheight+1];
 }	
 function hideall(){
 	volL_o.hidden = 1;
@@ -294,51 +291,47 @@ function smix(){
 		listblock_o.message("c1",light_blue);
 	}
 }
-function lb_sizes(s){ //size the listblock according to the bpatcher
-	extra_width = extra_widths.reduce((a, b) => a + b, 0);
-	//post("bpsize",bp_width,"rh",row_height,"\n");
-	let lbr = listblock_o.rect;
-	let men_width = (b_width - rowheight*s)/2;
-	listblock_o.message("width_abs", 1);
-	if (s) listblock_o.message("colwidths", rowheight, men_width, men_width, extra_widths)
-	else listblock_o.message("colwidths", men_width, men_width);
-	lbr[2] = b_width+extra_width;
-	listblock_o.rect = lbr;
-	/*
-	let bpr = bpatcher.rect;
-	bpr[3] = bpr[1] + row_height;
-	bpatcher.rect = bpr;
-	size_state = 0;
-	*/
-	//head_n_size();
-}
-function head_n_size(){
-	if(style<2) return;
+
+function get_tilde(){
 	let vg = pattr_outputs.getvalueof();	
 	let v = makearray(vg);
 	if (!v[0]) return;
 	let vs = v.toString();
 	let br = bpatcher.rect;
 	let tild = "~";
-	//post("head_n_size size_state",size_state,"\n");
-	//post("head_n_size vg",vg,"vlen",v.length,"vs",vs,"vscomma",vs.indexOf(","),"\n");
 	if (vs.indexOf(",")>=0){	//detect tild
-		if (v.slice(1).join(" ").replaceAll("_","").replaceAll(" ","") == "") tild = "~" 
-		else tild = "≈";
+		if (v.slice(1).join(" ").replaceAll("_","").replaceAll(" ","") == "") 
+			return ["~",v[0].split("~")[0], v[0].split("~")[1]]
+		else return ["≈",v[0].split("~")[0], v[0].split("~")[1]] ;
 		}
-	if (size_state == 0){ //folded
+}
+function unfold_fold(){
+	if(style<2) return;
+	let men_width = 0;	
+	let br = bpatcher.rect;
+	let lbr = listblock_o.rect;
+	//post("unfold_fold size_state",size_state,rowheight,"\n");
+	if (size_state == 0){ //folded			
+		listblock_o.rect = [lbr[0], lbr[1], b_width-lw, lbr[3]];
+		meter_o.rect = [lbr[0], lbr[1], b_width-lw, br[3]];
+		men_width = (listblock_o.rect[2]-listblock_o.rect[0]-rowheight)/2;
 		bpatcher.rect = [br[0], br[1], br[0]+b_width, br[1]+rowheight];
-		if(vg) listblock_o.message("header_text", tild, v[0].split("~")[0], v[0].split("~")[1]);
+		listblock_o.message("header_text", get_tilde());
 		listblock_o.message("headercolors", 3,1,1);
 		ib.hidden = 0;
-		}
+		}	
 	else{ //un-folded
+		
+		listblock_o.rect = [lbr[0], lbr[1], b_width+extra_width, lbr[3]];
+		meter_o.rect = [lbr[0], rowheight, b_width, lbr[3]];
+		men_width = (listblock_o.rect[2]-listblock_o.rect[0]-rowheight-extra_width)/2;
 		bpatcher.rect = [br[0], br[1], br[0]+b_width+extra_width, br[1]+listblock_o.rect[3]-listblock_o.rect[1]];
-		//post(bp_width,bpatcher.rect[2],"extra_width",extra_width,"r2",br[0]+bp_width+extra_width,"\n");
-		listblock_o.message("header_text", tild, "[i] act", "keep",extraheader);
+		//post(b_width,"br",br[0],"extra_width",extra_width,"r2",br[0] + b_width + Number(extra_width),"\n");
+		listblock_o.message("header_text", get_tilde()[0], "act", "keep",extraheader);
 		listblock_o.message("headercolors", 3,1,3+keep,1);
-		ib.hidden = 1;
+		ib.hidden = 1;		
 		}
+	listblock_o.message("colwidths", rowheight, men_width, men_width, extra_widths);
 	grow();
 } //fold_unfold
 function grow(){
@@ -367,8 +360,9 @@ function grow(){
 // #####################################pattrs
 function state(s){
 	stateV = arrayfromargs(arguments);
-	post("state",stateV,"\n");
-	state_menu_checks();
+	//post("state",stateV,"\n");
+	//state_menu_checks();
+	outlet(0,"state_menu_checks");
 	if (stateV[0] != style){	
 		style = stateV[0];
 		script_sub();
@@ -398,26 +392,18 @@ function state(s){
 }
 function chans(a){
 	let c = arrayfromargs(arguments);
-	//post("chans",c,"\n");
+	//post("chans",c,"io",ch_in,ch_out,"\n");
 	if (c[1] != ch_out){
 		ch_out = c[1];
 		smix();
 		chans_out_o.message("set", ch_out);
-		if (link_chans && c[0] != ch_out){
-			chans_in_o.message(ch_out);
-			return;
-		}
 		script_signals(ch_out,ch_in);
-		head_n_size();
+		unfold_fold();
 		}
 	if (c[0] != ch_in){
 		ch_in = c[0];
 		chans_in_o.message("set", ch_in);
 		outlet(0,"chans_in",ch_in);
-		if (link_chans && c[1]!= ch_in){
-			chans_out_o.message(ch_in);
-			return;
-		}
 		script_signals(ch_out,ch_in);
 		}
 }	
@@ -468,10 +454,12 @@ function pan(a){
 	pattr_levels.message(levelsV);
 }
 function chans_out(a){
-	pattr_chans.message(ch_in, a);
+	if (link_chans) pattr_chans.message(a, a)
+	else pattr_chans.message(ch_in, a);
 }
 function chans_in(a){
-	pattr_chans.message(a, ch_out);
+	if (link_chans) pattr_chans.message(a, a)
+	else pattr_chans.message(a, ch_out);
 }
 function state_menu(a){
 	//post("state_menu",a,"\n");
@@ -533,7 +521,7 @@ function listblock(){ //ll.listblock output when clicked
 	if (as == "enum 0 -1"){ //clicked on leftmost title
 		//size_gate = 0;
 		size_state = 1 - size_state;
-		head_n_size();
+		unfold_fold();
 		//size_gate = 1;
 	}
 	else if (as == "menu 2 -1" & size_state == 1){ //keep
@@ -543,6 +531,31 @@ function listblock(){ //ll.listblock output when clicked
 	}
 }
 
+function extra(){
+	let args = arrayfromargs(arguments);
+	let a0 = args.shift(1);
+	
+	if (a0 == "params"){
+		extra_amt = 0;
+		extra_widths = [];
+		if (args[0]){
+			extraparams = [];
+			extra_amt = args.length;
+			extramodes = [];
+			for (p of args) {
+				extraparams.push("top_"+p);
+				extramodes.push("num");
+				extra_widths.push(30);
+			}		
+		}
+		smix();
+	}
+	else if (a0 == "header") extraheader = args;
+	else if (a0 == "modes") listblock_o.message("modes",modes_def,args);
+	else if (a0 == "widths") {extra_widths = args; bpsize();};
+	extra_width = extra_widths.reduce((a, b) => a + b, 0);
+	//post("extrargs",a0,args,"ew",extra_width,"\n");
+}
 function channels(a){ //from outside
 	if (a>0){
 		pattr_chans.message(ch_in, parseInt(a));
@@ -597,7 +610,7 @@ function script_sub(){
 	}
 }
 function script_signals(b,c){	
-	meter_o.rect = [0,0,wo,Math.min(54,13*Math.floor((b-1)/4)+14)];
+	meter_o.rect = [0,0,vol_width,Math.min(54,13*Math.floor((b-1)/4)+14)];
 	//post("chans",b,c);post();
 	let tp = this.patcher;
 	let chchange = tp.getnamed("chchange");
@@ -715,27 +728,4 @@ function newsend(i){
 	s.rect = [40+80*i, 120, 40+80*i+70, 132];
 }
 
-function extra(){
-	let args = arrayfromargs(arguments);
-	let a0 = args.shift(1);
-	post("extrargs",a0,args,"\n");
-	if (a0 == "params"){
-		extra_amt = 0;
-		extra_widths = [];
-		if (args[0]){
-			extraparams = [];
-			extra_amt = args.length;
-			extramodes = [];
-			for (p of args) {
-				extraparams.push("top_"+p);
-				extramodes.push("num");
-				extra_widths.push(30);
-			}		
-		}
-		smix();
-		lb_sizes(1);
-	}
-	else if (a0 == "header") extraheader = args;
-	else if (a0 == "modes") listblock_o.message("modes",modes_def,args);
-	else if (a0 == "widths") {extra_widths = args; bpsize();}
-}
+

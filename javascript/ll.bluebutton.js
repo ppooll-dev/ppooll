@@ -44,10 +44,10 @@ function paint()
 	mgraphics.rectangle(0, 0, width, height);
 	mgraphics.fill();
 	mgraphics.set_source_rgba(0.2,0.2,0.2,1);
-	//mgraphics.rectangle(0, 0, width, height);
-	mgraphics.move_to(0,0);
-	mgraphics.line_to(0,height);
-	mgraphics.line_to(width,height);
+	mgraphics.rectangle(0, 0, width, height);
+	//mgraphics.move_to(0,0);
+	//mgraphics.line_to(0,height);
+	//mgraphics.line_to(width,height);
 	mgraphics.stroke();
 	mgraphics.set_source_rgba(1,1,1,1);
 	mgraphics.set_font_size(fontsize);

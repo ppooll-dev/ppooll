@@ -1,5 +1,5 @@
 {
-	"window" : [ 403, 494, 703, 839 ],
+	"window" : [ 502, 241, 802, 586 ],
 	"2D<>3D" : 	{
 		"patching_rect" : [ 72, 31, 21, 20 ],
 		"hidden" : 0,
@@ -355,7 +355,7 @@
 		"usetextovercolor" : 1
 	}
 ,
-	"blues" : 	{
+	"llblues" : 	{
 		"patching_rect" : [ 58, 0, 102, 16 ],
 		"hidden" : 0,
 		"accentcolor" : [ 0.458595350062755, 0.458595237564901, 0.458595266962388, 1 ],

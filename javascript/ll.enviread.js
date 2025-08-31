@@ -10,6 +10,10 @@ var param_excludes = ["_actwindow", "act::title_menu", "presets"];
 var act_param_excludes = ["ho_st1act_menu","ho_st1envi_menu","ho_st1rec"];
 var debugpost = 0;
 
+var new_blues_oldenvi;
+var new_blues_name;
+var old_outputs;
+
 function debug_post(a){
 	debugpost = a;
 }
@@ -63,10 +67,13 @@ function p2times(){
 	params();
 }
 function params(){
+	new_outputs_o = 0;
 	outlet(0,"parameters");
 	keys = d.getkeys();
+	//post("envi_params_keys",keys,"\n");
 	for (let a of keys) {
 		let par_keys= d.get(a).getkeys();
+		//post("envi_params_keys",par_keys,"\n");
 		if (debugpost > 0) post("------------------",a,"------------------","\n");
 		for (let p of par_keys) {
 			let par = d.get(a).get(p);		
@@ -95,13 +102,96 @@ function params(){
 	}
 }
 
-function setparam(a,p,v){
+function setparam(a,p,v){ //act, param, value
 	if (!param_excludes.includes(p) && !act_param_excludes.includes(a+p)){
 		if (debugpost > 1) post("parameter___",p,"####",v,"\n");
-		if (v[0] == "dictionary") senddict(a,p,v);
-		else messnamed(a,p,v); 
+		if (!import_old_llblues(a,p,v)) {
+			if (v[0] == "dictionary") senddict(a,p,v);
+			else messnamed(a,p,v); 
+		}
 			//post(a,p,v,"\n");
 	}
+}
+
+function import_old_llblues(a,p,v){
+	/*
+state_old: 
+1: output-channel-count (1-?)
+2: show dark-blue / show light-blue (0,1) mix_adds (2,3)
+3: volume layout (0, 1, 2)
+4: meter (0,1,2)
+5: inputs-channels-count (1-?)
+6: link input-channels/output-channels (0,1)
+
+state_new: 
+1: 0: basic, 1: basic_in_mix, 2: mc.basic, 3: mc+chan_out
+2: show outputs~/outputsMix~ (0,1)
+3: volume layout (0, 1, 2)
+4: meter (0,1,2)
+5: mix_adds (0,1)
+6: link input-channels to output-channels (0,1)
+	*/
+	if (p == "ll.blues::outputs") {
+		check_newblues(a);
+		if (new_blues_oldenvi){ 
+			old_outputs = v;
+			post("import old ll.blues, outputs:",v,"\n");
+			return 1;
+		} 
+		else return 0;
+		
+	}
+	else if (p == "ll.blues::state" && new_blues_oldenvi) {
+		
+		let new_state = [0,v[1]%2,v[2],v[3], parseInt(v[1]/2),v[5]];
+		//post("new_state",new_state,"\n");
+		messnamed(a,p,new_state);
+		messnamed(a,"ll.blues::chans",v[4],v[0]);
+		let out = [old_outputs[0]];
+		let outM = [old_outputs[1]];
+		for (i=1;i<v[0];i++) {out.push("_"); outM.push("_");}
+		//post("out",old_outputs[0]+out_,"outMix",old_outputs[1]+out_);
+		messnamed(a,"ll.blues::outputs~",out);
+		messnamed(a,"ll.blues::outputsMix~",outM);
+		return 1;
+	}
+	else if (p == "outputs~") {
+		check_newblues(a);
+		if (new_blues_oldenvi){
+			messnamed(a,"v8","getnamed","outputs~");
+			messnamed(a,"v8","Getpatcher");
+			if (actr.object) {
+				actr.patcher.remove(actr.object);
+				post("removed old outputs~ and set into new ll.blues","\n");
+			}
+			post(new_blues_name+"::outputs~",v,"\n")
+			messnamed(a,new_blues_name+"::outputs~",v);
+		}
+	}
+	else return 0;
+}
+function check_newblues(a){
+	actr.object = 0;
+	let blues_o = 0;
+	messnamed(a,"v8","getnamed","llblues");
+	if (actr.object) {
+		blues_o = actr.object;
+		new_blues_name = "llblues";
+		//post("new_blues_name",new_blues_name);
+	}
+	else {
+		messnamed(a,"v8","getnamed","ll.blues");
+		if (actr.object) {
+			blues_o = actr.object;
+			new_blues_name = "ll.blues";
+			//post("new_blues_name2",new_blues_name);
+		}
+		else {
+			post("no object called ll.blues or llblues \n");
+		}
+	}
+	if (blues_o) new_blues_oldenvi = (blues_o.subpatcher().getnamed("outputs~") != 0);
+	//post("newblues",new_blues_oldenvi,"\n");
 }
 
 function checkdict(p){
