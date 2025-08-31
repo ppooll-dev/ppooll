@@ -456,7 +456,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 70.0, 106.0, 58.0, 33.0 ],
-					"text" : "-16:-51:-15",
+					"text" : "-2:-38:-26",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "time"
 				}
@@ -1167,7 +1167,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 163.0, 100.0, 101.0, 22.0 ],
-																					"text" : "fmrm1"
+																					"text" : "ll.blues.help2"
 																				}
 
 																			}
@@ -1192,7 +1192,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 50.0, 100.0, 96.0, 22.0 ],
-																					"text" : "fmrm1"
+																					"text" : "ll.blues.help2"
 																				}
 
 																			}
@@ -1777,7 +1777,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 19.0, 290.0, 117.0, 22.0 ],
-													"text" : "fmrm"
+													"text" : "ll.blues.help"
 												}
 
 											}
@@ -1812,7 +1812,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 19.0, 47.0, 160.0, 24.0 ],
-													"text" : "fmrm1"
+													"text" : "ll.blues.help2"
 												}
 
 											}
@@ -21157,7 +21157,7 @@
 													"bgfillcolor_proportion" : 0.39,
 													"bgfillcolor_type" : "color",
 													"id" : "obj-38",
-													"items" : [ "no", ",", "ho_st1", ",", "vbap@1", ",", "fmrm1" ],
+													"items" : [ "no", ",", "ho_st1", ",", "fmrm1", ",", "ll.blues.help1" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -22113,7 +22113,7 @@
 													"allowdrag" : 0,
 													"fontsize" : 13.0,
 													"id" : "obj-17",
-													"items" : [ "no", ",", "fmrm1", ",", "ho_st1", ",", "vbap@1" ],
+													"items" : [ "no", ",", "fmrm1", ",", "ho_st1", ",", "ll.blues.help1" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -27335,7 +27335,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 39.0, 112.0, 114.0, 22.0 ],
-													"text" : "fmrm 1"
+													"text" : "ll.blues.help 2"
 												}
 
 											}
@@ -27422,7 +27422,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 241.0, 14.0, 263.0, 35.0 ],
-																	"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Library/ppooll_presets/fmrmT\""
+																	"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Library/ppooll_presets/ll.blues.helpT\""
 																}
 
 															}
@@ -30027,7 +30027,7 @@
 																									"numoutlets" : 1,
 																									"outlettype" : [ "" ],
 																									"patching_rect" : [ 192.0, 25.0, 50.0, 22.0 ],
-																									"text" : "5."
+																									"text" : "8."
 																								}
 
 																							}
@@ -30390,7 +30390,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 548.0, 346.0, 101.0, 22.0 ],
-																					"text" : "15"
+																					"text" : "8"
 																				}
 
 																			}
@@ -30857,7 +30857,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 405.0, 455.0, 75.0, 22.0 ],
-																					"text" : "fmrm"
+																					"text" : "ll.blues.help"
 																				}
 
 																			}
@@ -32152,7 +32152,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 300.0, 88.0, 101.0, 22.0 ],
-																					"text" : "5. 3."
+																					"text" : "8. 1."
 																				}
 
 																			}
@@ -32391,7 +32391,7 @@
 																									"numoutlets" : 1,
 																									"outlettype" : [ "" ],
 																									"patching_rect" : [ 391.0, 354.0, 154.0, 22.0 ],
-																									"text" : "12"
+																									"text" : "1"
 																								}
 
 																							}
@@ -32534,7 +32534,7 @@
 																									"numoutlets" : 1,
 																									"outlettype" : [ "" ],
 																									"patching_rect" : [ 107.0, 264.0, 120.0, 22.0 ],
-																									"text" : "159. 122. 61. 38."
+																									"text" : "0"
 																								}
 
 																							}
@@ -32562,7 +32562,7 @@
 																									"numoutlets" : 3,
 																									"outlettype" : [ "", "", "" ],
 																									"patching_rect" : [ 50.0, 222.0, 103.0, 22.0 ],
-																									"restore" : [ 159.0, 122.0, 61.0, 38.0 ],
+																									"restore" : [ 0 ],
 																									"saved_object_attributes" : 																									{
 																										"parameter_enable" : 0,
 																										"parameter_mappable" : 0
@@ -32593,7 +32593,7 @@
 																									"numoutlets" : 1,
 																									"outlettype" : [ "" ],
 																									"patching_rect" : [ 198.0, 381.0, 154.0, 22.0 ],
-																									"text" : "5. 3."
+																									"text" : "8. 1."
 																								}
 
 																							}
@@ -32636,13 +32636,12 @@
 , 																							{
 																								"box" : 																								{
 																									"id" : "obj-13",
-																									"linecount" : 3,
 																									"maxclass" : "message",
 																									"numinlets" : 2,
 																									"numoutlets" : 1,
 																									"outlettype" : [ "" ],
 																									"patching_rect" : [ 343.0, 259.5, 154.0, 22.0 ],
-																									"text" : "11 \"255 255 255\" \"50 50 50\" \"255 0 0\" \"0 255 0\" fmrm1"
+																									"text" : "0"
 																								}
 
 																							}
@@ -32670,7 +32669,7 @@
 																									"numoutlets" : 3,
 																									"outlettype" : [ "", "", "" ],
 																									"patching_rect" : [ 261.0, 222.0, 103.0, 22.0 ],
-																									"restore" : [ 11, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "fmrm1" ],
+																									"restore" : [ 0 ],
 																									"saved_object_attributes" : 																									{
 																										"parameter_enable" : 0,
 																										"parameter_mappable" : 0
@@ -32889,7 +32888,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 63.333333333333314, 89.0, 90.0, 22.0 ],
-																					"text" : "fmrm1"
+																					"text" : "ll.blues.help2"
 																				}
 
 																			}
@@ -33859,13 +33858,13 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-49",
-																					"linecount" : 2,
+																					"linecount" : 3,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 259.5, 367.0, 35.0, 35.0 ],
-																					"text" : "fmrm"
+																					"text" : "ll.blues.help"
 																				}
 
 																			}
@@ -34772,7 +34771,7 @@
 																			}
 , 																			{
 																				"box" : 																				{
-																					"cols" : 5,
+																					"cols" : 8,
 																					"colwidth" : 20,
 																					"fontface" : 0,
 																					"fontname" : "Arial",
@@ -34784,7 +34783,7 @@
 																					"numoutlets" : 4,
 																					"outlettype" : [ "list", "", "", "" ],
 																					"patching_rect" : [ 13.0, 70.0, 477.0, 389.0 ],
-																					"rows" : 3,
+																					"rows" : 1,
 																					"selmode" : 5,
 																					"vscroll" : 0
 																				}
@@ -34850,7 +34849,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 13.0, 2.0, 87.0, 22.0 ],
-																					"text" : "fmrm1"
+																					"text" : "ll.blues.help2"
 																				}
 
 																			}
@@ -35301,7 +35300,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 92.25, 304.0, 169.0, 76.0 ],
-																	"text" : "send ::fmrm1::pat"
+																	"text" : "send ::ll.blues.help2::pat"
 																}
 
 															}
@@ -35784,7 +35783,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 264.0, 102.0, 159.0, 22.0 ],
-													"text" : "fmrm1 _"
+													"text" : "ll.blues.help2 _"
 												}
 
 											}
@@ -35863,13 +35862,13 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-17",
-																	"linecount" : 4,
+																	"linecount" : 5,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 486.0, 163.0, 50.0, 62.0 ],
-																	"text" : "::fmrm1::act::pres_menu 1"
+																	"text" : "::ll.blues.help2::act::pres_menu 1"
 																}
 
 															}
@@ -42657,7 +42656,7 @@
 																									"numoutlets" : 1,
 																									"outlettype" : [ "" ],
 																									"patching_rect" : [ 333.5, 258.0, 226.0, 62.0 ],
-																									"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets/vbap@T\""
+																									"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets/fmrmT\""
 																								}
 
 																							}
@@ -42859,7 +42858,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 245.0, 294.5, 226.0, 62.0 ],
-																					"text" : "write \"Macintosh HD:/Users/klaus/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets/vbap@T/default.json\""
+																					"text" : "write \"Macintosh HD:/Users/klaus/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets/fmrmT/default.json\""
 																				}
 
 																			}
@@ -43006,7 +43005,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 71.0, 41.0, 197.0, 22.0 ],
-																					"text" : "vbap@1"
+																					"text" : "fmrm1"
 																				}
 
 																			}
@@ -50896,8 +50895,8 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 228.0, 118.0, 192.0, 22.0 ],
-																	"text" : "blue.output.section.info.maxhelp"
+																	"patching_rect" : [ 228.0, 118.0, 117.0, 22.0 ],
+																	"text" : "ll.blues.info.maxhelp"
 																}
 
 															}
@@ -56659,7 +56658,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 234.0, 531.0, 212.0, 20.0 ],
-													"text" : "load fmrm.maxpat"
+													"text" : "load feedbacker.maxpat"
 												}
 
 											}
@@ -57252,7 +57251,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 153.0, 372.0, 50.0, 22.0 ],
-																	"text" : "1"
+																	"text" : "0"
 																}
 
 															}
@@ -59788,10 +59787,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 493.0, 69.0, 92.0, 21.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 975, 106, 2230, 822 ],
+						"client_rect" : [ 141, 1126, 734, 1660 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 583, 68, 1034, 196 ]
+						"storage_rect" : [ 200, 200, 800, 500 ]
 					}
 ,
 					"text" : "pattrstorage pat",

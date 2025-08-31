@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 110.0, 374.0, 220.0, 174.0 ],
+		"rect" : [ 155.0, 493.0, 220.0, 174.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "fmrm1",
@@ -202,9 +202,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 50.0, 0.0, 170.0, 16.0 ],
+					"patching_rect" : [ 52.0, 0.0, 168.0, 16.0 ],
 					"selectcolor" : [ 0.45098, 1.0, 0.533333, 0.470588 ],
-					"slidercolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
+					"slidercolor" : [ 0.541176470588235, 0.541176470588235, 0.541176470588235, 0.73 ],
 					"slidercolornofocus" : [ 0.815686, 0.815686, 0.815686, 1.0 ],
 					"sliderlog" : 1.0,
 					"slidermax" : 1.0,
@@ -215,7 +215,6 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@state", 0, 1, 0, 0, 0, 0 ],
 					"bgmode" : 0,
 					"border" : 1,
 					"clickthrough" : 0,
@@ -419,6 +418,18 @@
 						"rect" : [ 622.0, 130.0, 511.0, 736.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-7",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 177.0, 626.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-2",
 									"maxclass" : "newobj",
@@ -936,7 +947,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 285.5, 233.0, 96.0, 22.0 ],
+									"patching_rect" : [ 342.0, 184.0, 96.0, 22.0 ],
 									"text" : "ll.mc.r modindex"
 								}
 
@@ -1181,7 +1192,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 300.0, 257.0, 107.0, 20.0 ],
+									"patching_rect" : [ 357.0, 208.0, 107.0, 20.0 ],
 									"text" : "Modulation index"
 								}
 
@@ -1337,7 +1348,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-34", 1 ],
-									"midpoints" : [ 295.0, 260.5, 296.5, 260.5 ],
 									"source" : [ "obj-48", 0 ]
 								}
 
@@ -1361,6 +1371,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-40", 0 ],
 									"source" : [ "obj-68", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-7", 0 ]
 								}
 
 							}
@@ -1431,10 +1448,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 545, 133, 1800, 849 ],
+						"client_rect" : [ 345, 87, 1600, 803 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 583, 68, 1034, 196 ]
+						"storage_rect" : [ 200, 200, 800, 500 ]
 					}
 ,
 					"text" : "pattrstorage pat @autorestore 0",
@@ -1491,14 +1508,14 @@
 					"patching_rect" : [ 415.0, 386.0, 107.0, 22.0 ],
 					"restore" : 					{
 						"amplitude" : [ 1.0 ],
-						"carrier_freq" : [ 200.0 ],
+						"carrier_freq" : [ 2664.949999999999818 ],
 						"carrier_freq_mcspread" : [ 0.0 ],
-						"carrier_freq_ramp" : [ 1445.0 ],
+						"carrier_freq_ramp" : [ 0 ],
 						"fm-fmaudio-mix" : [ 0.0 ],
-						"harmonicity" : [ 0.3 ],
+						"harmonicity" : [ 0.18 ],
 						"harmonicity_mcspread" : [ 0.0 ],
 						"harmonicity_ramp" : [ 0 ],
-						"modindex" : [ 14.836088364454099 ],
+						"modindex" : [ 16.620000000000001 ],
 						"modindex_mcspread" : [ 0.0 ],
 						"modindex_ramp" : [ 0 ],
 						"preset-ramp" : [ 0.0 ],

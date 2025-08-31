@@ -67,7 +67,7 @@ function p2times(){
 	params();
 }
 function params(){
-	new_outputs_o = 0;
+	new_blues_oldenvi = 0;
 	outlet(0,"parameters");
 	keys = d.getkeys();
 	//post("envi_params_keys",keys,"\n");
@@ -123,7 +123,7 @@ state_old:
 5: inputs-channels-count (1-?)
 6: link input-channels/output-channels (0,1)
 
-state_new: 
+status_new: 
 1: 0: basic, 1: basic_in_mix, 2: mc.basic, 3: mc+chan_out
 2: show outputs~/outputsMix~ (0,1)
 3: volume layout (0, 1, 2)
@@ -141,18 +141,18 @@ state_new:
 		else return 0;
 		
 	}
-	else if (p == "ll.blues::state" && new_blues_oldenvi) {
+	else if (p == "ll.blues::state") {
 		
-		let new_state = [0,v[1]%2,v[2],v[3], parseInt(v[1]/2),v[5]];
+		let new_status = [0,v[1]%2,v[2],v[3], parseInt(v[1]/2),v[5]];
 		//post("new_state",new_state,"\n");
-		messnamed(a,p,new_state);
-		messnamed(a,"ll.blues::chans",v[4],v[0]);
+		messnamed(a,new_blues_name+"::status",new_status);
+		messnamed(a,new_blues_name+"::chans",v[4],v[0]);
 		let out = [old_outputs[0]];
 		let outM = [old_outputs[1]];
 		for (i=1;i<v[0];i++) {out.push("_"); outM.push("_");}
 		//post("out",old_outputs[0]+out_,"outMix",old_outputs[1]+out_);
-		messnamed(a,"ll.blues::outputs~",out);
-		messnamed(a,"ll.blues::outputsMix~",outM);
+		messnamed(a,new_blues_name+"::outputs~",out);
+		messnamed(a,new_blues_name+"::outputsMix~",outM);
 		return 1;
 	}
 	else if (p == "outputs~") {
@@ -171,6 +171,7 @@ state_new:
 	else return 0;
 }
 function check_newblues(a){
+	new_blues_name = 0;
 	actr.object = 0;
 	let blues_o = 0;
 	messnamed(a,"v8","getnamed","llblues");

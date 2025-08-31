@@ -89,7 +89,7 @@ function get_objects() {
 	volL_o = tpp.getnamed("volL");
 	in_mix_o = tpp.getnamed("in_mix");
 	pattr_levels = tpp.getnamed("levels");
-	pattr_state = tpp.getnamed("state");
+	pattr_state = tpp.getnamed("status");
 	pattr_chans = tpp.getnamed("chans");
 	pattr_outputs = tpp.getnamed("outputs~");
 	listblock_o = tpp.getnamed("listblock");
@@ -104,6 +104,7 @@ function wsize(x){
 	size_obj();
 }
 function getllblueargs(){
+	args = bpatcher.getboxattr("args");
 	if (args) messnamed("getllblueargs", args);
 	else messnamed("getllblueargs", "");
 }
@@ -358,7 +359,7 @@ function grow(){
 } //set patcher grow if bp is bigger
 
 // #####################################pattrs
-function state(s){
+function status(s){
 	stateV = arrayfromargs(arguments);
 	//post("state",stateV,"\n");
 	//state_menu_checks();
