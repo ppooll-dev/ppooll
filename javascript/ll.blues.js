@@ -718,7 +718,7 @@ function script_outpatchers(chans_sep,d_offsets,dests){
 	out_patcher.remove(out_patcher.getnamed("sep"));
 	for (i=0;i<30;i++) out_patcher.remove(out_patcher.getnamed("send"+i));
 	if (al == 1){
-		newsend(0,d_offsets);	
+		newsend(0,d_offsets,dests);	
  		out_patcher.connect(out_patcher.getnamed("in"),0,out_patcher.getnamed("send0"),0);
 	}
 	if (al > 1){
@@ -727,7 +727,7 @@ function script_outpatchers(chans_sep,d_offsets,dests){
 		sep.rect = [40, 80, 400, 102];
 		out_patcher.connect(out_patcher.getnamed("in"),0,sep,0);
 		for (i=0;i<al;i++){
-			newsend(i,d_offsets);	
+			newsend(i,d_offsets,dests);	
 			out_patcher.connect(sep,i,out_patcher.getnamed("send"+i),0);
 		}
 	}
