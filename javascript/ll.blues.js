@@ -8,7 +8,7 @@ const params_def = ["none", "outputs~", "outputs~"];
 //GUI objects
 var meter_o, mix_o, ramp_o, pfl_o, chans_in_o, chans_out_o, xb, ib, state_menu_o, pan_o, volR_o, volL_o, in_mix_o, listblock_o;
 // pattrs
-var pattr_levels, pattr_state, pattr_chans, pattr_outputs, pattr_ouputsMix;
+var pattr_levels, pattr_status, pattr_chans, pattr_outputs, pattr_ouputsMix;
 
 var args;
 var dark_blue = [0.024, 0.024, 0.600, 1.000];
@@ -19,7 +19,7 @@ var ch_in;
 var vol_sel = 0;
 var in_mix_state = 0;
 var levelsV = [0,0,0,0,10,0,0.5];
-var stateV = [1,0,0,0,1,0];
+var stateV = [0,1,0,0,0,0];
 var show_mix;
 var link_chans = 0;
 var meter = 0;
@@ -54,18 +54,28 @@ function bang() {
 	bpatcher = tpp.box;
 	get_objects();
 	style = -1;
-	args = [];
+	args = []; 
+	// ############ for loadbang timing reasons args are processed in subpatch patcherargs
+	/*
 	if (bpatcher.getboxattr("args")){
  		args = bpatcher.getboxattr("args");
 		//post("args: ", args, "in_mix?",String(args).search("in_mix"));		
-		if (String(args).search("in_mix")!=-1 && (in_mix_state == 0)){
-			in_mix_state = 1;			
-			script_sub();
+		if (String(args).search("@in_mix")!=-1 && (in_mix_state == 0)){
+			stateV[0] = 1;
+			//pattr_status.message(stateV);
+			pattr_status.setvalueof(stateV);
+			post("@in_mix",stateV,"ps",pattr_status.getvalueof(),"\n");
 		}
 	}
 	let idx = args.indexOf("@state");
-	if (idx > -1) pattr_state.message(args[idx+1],args[idx+2],args[idx+3],args[idx+4],args[idx+5],args[idx+6])
-	else pattr_state.message(0,1,0,0,1,0);
+	if (idx > -1) { 
+		pattr_status.message( stateV[0],args[idx+2]%2,args[idx+3],args[idx+4],parseInt(args[idx+2]/2),args[idx+6]);
+		pattr_chans.message( args[idx+5],args[idx+1]);
+		//pattr_status.message(args[idx+1],args[idx+2],args[idx+3],args[idx+4],args[idx+5],args[idx+6])
+	}
+	else pattr_status.message(stateV);
+	
+	
 	idx = args.indexOf("@chans");
 	if (idx > -1) pattr_chans.message(args[idx+1],args[idx+2])
 	else pattr_chans.message(1,2);
@@ -73,6 +83,9 @@ function bang() {
 	if (idx > -1) setrowheight(args[idx+1])
 	//post("bang chans", pattr_chans.getvalueof(),"\n");
 	//size_obj() is called by state()
+	*/
+	pattr_status.message(stateV);
+	pattr_chans.message(1,2);
 }
 function get_objects() {
 	meter_o = tpp.getnamed("meter");
@@ -89,14 +102,17 @@ function get_objects() {
 	volL_o = tpp.getnamed("volL");
 	in_mix_o = tpp.getnamed("in_mix");
 	pattr_levels = tpp.getnamed("levels");
-	pattr_state = tpp.getnamed("status");
+	pattr_status = tpp.getnamed("status");
 	pattr_chans = tpp.getnamed("chans");
 	pattr_outputs = tpp.getnamed("outputs~");
 	listblock_o = tpp.getnamed("listblock");
 	listblock_o.message("rowheight",rowheight);
 	listblock_o.message("width_abs", 1);
 }
-
+function post_vars(){
+	post("in_mix",in_mix_state,"sv",stateV,"pv", pattr_status.getvalueof(),"\n");
+	//pattr_status.setvalueof(stateV);
+}
 function wsize(x){
 	bp_rect = tpp.box.rect; //a.rect;
 	bp_rect[2] = bp_rect[0]+x;
@@ -117,6 +133,7 @@ function makearray(a){
 
 
 function size_obj(){
+	//post("size_obj",stateV,"\n");
 	//post("size_obj style",style,"show_mix",show_mix,"\n");
 	setbp_rect();
 	
@@ -359,9 +376,16 @@ function grow(){
 } //set patcher grow if bp is bigger
 
 // #####################################pattrs
+//var pattr_init = 0;
 function status(s){
+	//post("status in",s,"stateV", stateV,"\n");
+	/*if (pattr_init == 0){
+		pattr_status.setvalueof(stateV);
+		pattr_init = 1;
+	}
+	else 
+		*/
 	stateV = arrayfromargs(arguments);
-	//post("state",stateV,"\n");
 	//state_menu_checks();
 	outlet(0,"state_menu_checks");
 	if (stateV[0] != style){	
@@ -463,28 +487,28 @@ function chans_in(a){
 	else pattr_chans.message(a, ch_out);
 }
 function state_menu(a){
-	//post("state_menu",a,"\n");
+	post("state_menu",a,"\n");
 	if (a<=2) {
 		stateV[2]=a;
-		pattr_state.message(stateV);
+		pattr_status.message(stateV);
 	}
 	else if (a<=6){
 		stateV[3]=a-4;
-		pattr_state.message(stateV);
+		pattr_status.message(stateV);
 	}
 	else if (a==8){
 		stateV[5] = 1-stateV[5];
-		pattr_state.message(stateV);
+		pattr_status.message(stateV);
 	}
 	else if (a==9){
 		stateV[4] = 1-stateV[4];
-		pattr_state.message(stateV);
+		pattr_status.message(stateV);
 	}
 	else if (a==11) messnamed("lloadblueinfo","bang")
 	else if (a>=13) {
 		//post("style",a,"\n");
 		stateV[0] = a-13;
-		pattr_state.message(stateV);
+		pattr_status.message(stateV);
 	}
 }
 function state_menu_checks(){
@@ -510,7 +534,7 @@ function state_menu_checks(){
 }	
 function x(a){
 	stateV[1] = a;
-	pattr_state.message(stateV);
+	pattr_status.message(stateV);
 }
 function listblock(){ //ll.listblock output when clicked
 	let a = arrayfromargs(arguments);
@@ -644,7 +668,7 @@ function script_signals(b,c){
 	}
 }
 
-var outp;
+var out_patcher;
 var sep;
 var dest_count = 1;
 var d_offsets;
@@ -652,17 +676,16 @@ var dests;
 
 
 function outputs(){
-	outp = this.patcher.getnamed("outputs").subpatcher();
+	out_patcher = this.patcher.getnamed("outputs").subpatcher();
 	let a = arrayfromargs(arguments);
-	//post("outp",a,"\n");
-	outputs_chans(a);
+	chan_sep(a);
 }
 function outputsMix(){
-	outp = this.patcher.getnamed("outputsMix").subpatcher();
+	out_patcher = this.patcher.getnamed("outputsMix").subpatcher();
 	let a = arrayfromargs(arguments);
-	outputs_chans(a);
+	chan_sep(a);
 }
-function outputs_chans(a){
+function chan_sep(a){ //calculate the channels of each separation
 
 	//let a = arguments;
 	//post("outp_chans",a,"\n");
@@ -674,7 +697,7 @@ function outputs_chans(a){
 	listblock_o.message("rows",v.length);
 	dests = [];
 	d_offsets = [];
-	let chans = [];
+	let chans_sep = [];
 	let cmem = 0;
 	for (i=0;i<v.length;i++){
 		//post("v: ",i,v[i],"\n");
@@ -684,31 +707,31 @@ function outputs_chans(a){
 			dests.push(result[1]);
 			d_offsets.push(result[2]);
 			if (i>0){
-				chans.push(i-cmem);
+				chans_sep.push(i-cmem);
 				cmem = i;
 			}		
 		}
 	}
-	chans.push(v.length-cmem);
-	scriptit(chans);
+	chans_sep.push(v.length-cmem);
+	scriptit(chans_sep);
 }
 function scriptit(a){
 	//post("chans",a,"dest_count",dest_count,"d_offsets",d_offsets,"dests",dests,"\n");
 	let al = a.length;
-	outp.remove(outp.getnamed("sep"));
-	for (i=0;i<30;i++) outp.remove(outp.getnamed("send"+i));
+	out_patcher.remove(out_patcher.getnamed("sep"));
+	for (i=0;i<30;i++) out_patcher.remove(out_patcher.getnamed("send"+i));
 	if (al == 1){
 		newsend(0);	
- 		outp.connect(outp.getnamed("in"),0,outp.getnamed("send0"),0);
+ 		out_patcher.connect(out_patcher.getnamed("in"),0,out_patcher.getnamed("send0"),0);
 	}
 	if (al > 1){
-		sep = outp.newdefault(40,80,"mc.separate~",a);
+		sep = out_patcher.newdefault(40,80,"mc.separate~",a);
 		sep.varname = "sep";
 		sep.rect = [40, 80, 400, 102];
-		outp.connect(outp.getnamed("in"),0,sep,0);
+		out_patcher.connect(out_patcher.getnamed("in"),0,sep,0);
 		for (i=0;i<al;i++){
 			newsend(i);	
-			outp.connect(sep,i,outp.getnamed("send"+i),0);
+			out_patcher.connect(sep,i,out_patcher.getnamed("send"+i),0);
 		}
 	}
 	dest_count = al;
@@ -717,11 +740,11 @@ function newsend(i){
 	//post("do",d_offsets,"i",i,"\n");
 	let s;
 	if (d_offsets[i] == 1){
- 		s = outp.newdefault(100,100,"mc.send~",dests[i]);
+ 		s = out_patcher.newdefault(100,100,"mc.send~",dests[i]);
 		//s.message("set", dests[i]);
 	}
 	else {
-		s = outp.newdefault(100,100,"ll.mc.s~", d_offsets[i]-1,dests[i]);
+		s = out_patcher.newdefault(100,100,"ll.mc.s~", d_offsets[i]-1,dests[i]);
 		//let sub = s.subpatcher(0).getnamed("send")
 		//sub.message("set", dests[i]);
 	}

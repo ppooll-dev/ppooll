@@ -142,8 +142,9 @@ status_new:
 		
 	}
 	else if (p == "ll.blues::state") {
-		
-		let new_status = [0,v[1]%2,v[2],v[3], parseInt(v[1]/2),v[5]];
+		messnamed(a,"v8", "getnamed", new_blues_name);
+		let get_status = (actr.object.subpatcher().getnamed("status").getvalueof())
+		let new_status = [get_status[0],v[1]%2,v[2],v[3], parseInt(v[1]/2),v[5]];
 		//post("new_state",new_state,"\n");
 		messnamed(a,new_blues_name+"::status",new_status);
 		messnamed(a,new_blues_name+"::chans",v[4],v[0]);

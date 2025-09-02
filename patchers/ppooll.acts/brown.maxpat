@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 7,
+			"revision" : 8,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -30,7 +30,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 56.0, 420.0, 27.0 ],
+					"patching_rect" : [ 0.0, 56.0, 420.0, 26.0 ],
 					"varname" : "ll.blues",
 					"viewvisibility" : 1
 				}
@@ -245,20 +245,16 @@
 , 			{
 				"box" : 				{
 					"active" : 					{
-						"master" : 0,
-						"pres_menu" : 0,
-						"tetris_menu" : 0,
-						"title_menu" : 0,
 						"presets" : 0,
 						"preset-ramp" : 0,
 						"act::active_store" : 0,
 						"act::master/activest" : 0,
 						"ll.blues" : 0,
-						"ll.blues::levels" : 0,
-						"ll.blues::outputs" : 0,
-						"ll.blues::state" : 0,
-						"actmakeB::master/activest" : 0,
-						"actmakeB::active_store" : 0
+						"ll.blues::status" : 0,
+						"ll.blues::outputs~" : 0,
+						"ll.blues::outputsMix~" : 0,
+						"ll.blues::chans" : 0,
+						"ll.blues::levels" : 0
 					}
 ,
 					"color" : [ 0.4, 0.4, 0.8, 1.0 ],
@@ -271,11 +267,16 @@
 					"patching_rect" : [ 482.0, 61.0, 100.0, 22.0 ],
 					"priority" : 					{
 						"presets" : 1016,
-						"preset-ramp" : 1017
+						"preset-ramp" : 1017,
+						"ll.blues::status" : 1,
+						"ll.blues::outputs~" : 2,
+						"ll.blues::outputsMix~" : 3,
+						"ll.blues::chans" : 4,
+						"ll.blues::levels" : 5
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 1006, 202, 1838, 741 ],
+						"client_rect" : [ 768, 202, 1600, 741 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 365, 44, 816, 172 ]
@@ -356,13 +357,13 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 7,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1012.0, 467.0, 690.0, 535.0 ],
+						"rect" : [ 876.0, 331.0, 690.0, 535.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -581,7 +582,7 @@
 											"appversion" : 											{
 												"major" : 9,
 												"minor" : 0,
-												"revision" : 7,
+												"revision" : 8,
 												"architecture" : "x64",
 												"modernui" : 1
 											}
@@ -594,8 +595,8 @@
 														"maxclass" : "newobj",
 														"text" : "in 2",
 														"patching_rect" : [ 620.0, 42.0, 28.0, 22.0 ],
-														"numinlets" : 0,
 														"id" : "obj-2",
+														"numinlets" : 0,
 														"numoutlets" : 1,
 														"outlettype" : [ "" ]
 													}
@@ -606,8 +607,8 @@
 														"maxclass" : "newobj",
 														"text" : "in 1",
 														"patching_rect" : [ 84.0, 36.0, 28.0, 22.0 ],
-														"numinlets" : 0,
 														"id" : "obj-1",
+														"numinlets" : 0,
 														"numoutlets" : 1,
 														"outlettype" : [ "" ]
 													}
@@ -617,13 +618,13 @@
 													"box" : 													{
 														"maxclass" : "codebox",
 														"patching_rect" : [ 84.0, 83.5, 555.0, 381.0 ],
-														"fontname" : "<Monospaced>",
-														"fontface" : 0,
-														"numinlets" : 2,
 														"id" : "obj-3",
-														"numoutlets" : 1,
 														"fontsize" : 12.0,
+														"numinlets" : 2,
+														"fontname" : "<Monospaced>",
+														"numoutlets" : 1,
 														"outlettype" : [ "" ],
+														"fontface" : 0,
 														"code" : "\r\n\r\n\r\nHistory z(1);\r\n\r\nstep = in1;\r\nfreq = fold(in2, 0.00001, samplerate);\r\nz3 = 0;\n\r\nz1 = z + step * noise();\r\nz1 = fold(z1, -1, 1);\r\n\r\nif(freq<samplerate){\r\nsah_trig = delta(phasor(freq, 0)) < 0;\nz2 = latch(z1, sah_trig);\r\nz3 = fixdenorm(z2);\r\n}\r\nelse{\r\nz3 = z1;\r\n}\r\n\r\n\r\nout1 = z3;\r\nz = z3;"
 													}
 
@@ -633,19 +634,19 @@
 														"maxclass" : "newobj",
 														"text" : "out 1",
 														"patching_rect" : [ 84.0, 523.0, 38.0, 22.0 ],
-														"fontname" : "Arial",
-														"numinlets" : 1,
 														"id" : "obj-4",
-														"numoutlets" : 0,
-														"fontsize" : 12.0
+														"fontsize" : 12.0,
+														"numinlets" : 1,
+														"fontname" : "Arial",
+														"numoutlets" : 0
 													}
 
 												}
  ],
 											"lines" : [ 												{
 													"patchline" : 													{
-														"source" : [ "obj-3", 0 ],
-														"destination" : [ "obj-4", 0 ]
+														"source" : [ "obj-2", 0 ],
+														"destination" : [ "obj-3", 1 ]
 													}
 
 												}
@@ -658,8 +659,8 @@
 												}
 , 												{
 													"patchline" : 													{
-														"source" : [ "obj-2", 0 ],
-														"destination" : [ "obj-3", 1 ]
+														"source" : [ "obj-3", 0 ],
+														"destination" : [ "obj-4", 0 ]
 													}
 
 												}
@@ -677,7 +678,7 @@
 									"outlettype" : [ "multichannelsignal" ],
 									"patching_rect" : [ 163.0, 228.0, 121.0, 23.0 ],
 									"text" : "mc.gen~ @chans 1",
-									"wrapper_uniquekey" : "u135006571"
+									"wrapper_uniquekey" : "u287009712"
 								}
 
 							}
@@ -848,26 +849,6 @@
 			}
 , 			{
 				"box" : 				{
-					"hidden" : 1,
-					"id" : "obj-8",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 482.0, 37.0, 100.0, 22.0 ],
-					"restore" : [ 0 ],
-					"saved_object_attributes" : 					{
-						"parameter_enable" : 0,
-						"parameter_mappable" : 0
-					}
-,
-					"text" : "pattr inputs~",
-					"varname" : "inputs~[1]"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"args" : [ "brown", "§81562b" ],
 					"bgmode" : 0,
 					"border" : 0,
@@ -983,10 +964,31 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.bluebutton.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.blues.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.blues.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.listblock.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -1081,20 +1083,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.s~.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.s~.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ll.wsendback.js",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
@@ -1114,13 +1102,6 @@
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "nblue.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{

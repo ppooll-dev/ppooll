@@ -10,19 +10,48 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 225.0, 59.0, 598.0, 380.0 ],
+		"rect" : [ 100.0, 59.0, 594.0, 532.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
-		"globalpatchername" : "ll.blues.help1",
+		"globalpatchername" : "ll.blues.info.help1",
 		"boxes" : [ 			{
 				"box" : 				{
+					"fontsize" : 14.0,
+					"id" : "obj-10",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 9,
+							"minor" : 0,
+							"revision" : 8,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"classnamespace" : "box",
+						"rect" : [ 18.0, 338.0, 624.0, 256.0 ],
+						"gridsize" : [ 15.0, 15.0 ],
+						"toolbarvisible" : 0,
+						"boxes" : [  ],
+						"lines" : [  ]
+					}
+,
+					"patching_rect" : [ 105.0, 462.0, 86.0, 24.0 ],
+					"text" : "p mc_basics"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-2",
-					"maxclass" : "button",
+					"maxclass" : "comment",
 					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 545.0, 198.0, 24.0, 24.0 ]
+					"numoutlets" : 0,
+					"patching_rect" : [ 37.0, 379.0, 150.0, 20.0 ],
+					"text" : "under construction...."
 				}
 
 			}
@@ -33,7 +62,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 442.5, 64.0, 45.0, 45.0 ]
+					"patching_rect" : [ 509.0, 31.0, 45.0, 45.0 ]
 				}
 
 			}
@@ -185,7 +214,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 463.0, 122.0, 50.0, 35.0 ],
-									"text" : "chans 1"
+									"text" : "chans 2"
 								}
 
 							}
@@ -203,7 +232,7 @@
 							}
 , 							{
 								"box" : 								{
-									"cols" : 1,
+									"cols" : 2,
 									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
@@ -405,6 +434,7 @@
 			}
 , 			{
 				"box" : 				{
+					"amount" : 2,
 					"annotation" : "freq",
 					"bgcolor" : [ 0.905882352941176, 0.458823529411765, 0.796078431372549, 1.0 ],
 					"border" : 0,
@@ -421,7 +451,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 179.0, 45.0, 160.0, 64.0 ],
+					"patching_rect" : [ 335.0, 11.0, 160.0, 64.0 ],
 					"selectcolor" : [ 0.45098, 1.0, 0.533333, 0.470588 ],
 					"slidercolornofocus" : [ 0.615686, 0.615686, 0.615686, 1.0 ],
 					"sliderlog" : 5.0,
@@ -461,7 +491,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 74.0, 199.0, 470.0, 29.0 ],
+									"patching_rect" : [ 77.0, 194.0, 470.0, 29.0 ],
 									"text" : "the turquoise buttons in this patch are here to guide you through, you always can do the similar action directly in the ll.blues interface."
 								}
 
@@ -772,7 +802,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 18.0, 115.0, 533.0, 47.0 ],
-									"text" : "if you opened this patch with having ho_st open, audio turned ON and volume of ho_st at 1. ,\nand if you did not touch the ll.blues above,\nyou should hear the two sine tones left and right."
+									"text" : "if you opened this patch with having ho_st open, audio turned ON and volume of ho_st at 1. ,\nand if you did not touch nothing,\nyou should hear the two sine tones left and right."
 								}
 
 							}
@@ -823,7 +853,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 431.0, 45.0, 83.0, 20.0 ],
+					"patching_rect" : [ 500.0, 7.0, 83.0, 20.0 ],
 					"text" : "turn audio on"
 				}
 
@@ -2176,7 +2206,7 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-35",
-									"items" : [ "no", ",", "ho_st1", ",", "ll.blues.help1", ",", "distort@1" ],
+									"items" : [ "no", ",", "ho_st1", ",", "ll.blues.info.help1", ",", "distort@1" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -2348,7 +2378,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 25.0, 321.5, 67.0, 24.0 ],
+					"patching_rect" : [ 17.0, 429.0, 67.0, 24.0 ],
 					"text" : "p in_mix"
 				}
 
@@ -2434,7 +2464,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 244.5, 290.5, 158.0, 24.0 ],
+					"patching_rect" : [ 236.0, 398.0, 158.0, 24.0 ],
 					"text" : "p input-output_channels"
 				}
 
@@ -2457,7 +2487,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 309.0, 199.0, 567.0, 551.0 ],
+						"rect" : [ 460.0, 291.0, 567.0, 551.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"toolbarvisible" : 0,
 						"boxes" : [ 							{
@@ -2548,7 +2578,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 8.0, 220.5, 610.0, 234.0 ],
-									"text" : "3 different flavours of volume handling:\nv_vol - one volume slider for all channels.\ns_split_L/R - if 2 output-channels: - two seperate sliders\np_vol/pan  - if 2 output-channels: pan the source-sounds (any amount of channels) with a pan -slider\n-\nmeter post      the signal meter shows post-fade signal  (default).\nmeter pre      the signal meter shows what comes out of the act before the volume slider\nmeter in       if there is an input available (in_mix slider is visible), the meter shows, what comes in\n-\nlink chans   keep input-channels and output-channels be always equal\nmix adds     the mix-slider does not fade-out the light-blue output.\n-\ninfo    opens this info window\n-\nbelow that there are layout-variants of ll.blues\nthese are crucial for act-building. \nppooll \"users\" should not touch it..."
+									"text" : "3 different flavours of volume handling:\nv_vol - one volume slider for all channels.\ns_split_L/R - if 2 output-channels: - two seperate sliders\np_vol/pan  - if 2 output-channels: pan the source-sounds (any amount of channels) with a pan -slider\n-\nmeter post      the signal meter shows post-fade signal  (default).\nmeter pre      the signal meter shows what comes out of the act before the volume slider\nmeter in       if there is an input available (in_mix slider is visible), the meter shows, what comes in\n-\nlink chans   keep input-channels and output-channels be always equal\nmix adds     the mix-slider does not fade-out the light-blue output.\n-\ninfo    opens this info window\n-\nbelow that there are layout-variants of ll.blues\ndefined by the act developers.\nadvanced ppooll \"users\" might handle it - see subpatch [p mc_basic]"
 								}
 
 							}
@@ -2740,7 +2770,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 301.75, 262.0, 93.0, 24.0 ],
+					"patching_rect" : [ 23.0, 319.0, 93.0, 24.0 ],
 					"text" : "p i_ramp_pfl"
 				}
 
@@ -2763,19 +2793,83 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 722.0, 207.0, 613.0, 693.0 ],
+						"rect" : [ 568.0, 95.0, 653.0, 614.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"toolbarvisible" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-5",
+									"hidden" : 1,
+									"id" : "obj-32",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 456.0, 426.0, 96.0, 22.0 ],
+									"text" : "distort@1~in.1 _"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"hidden" : 1,
+									"id" : "obj-31",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 456.0, 458.0, 140.0, 22.0 ],
+									"text" : "ll.pf ll.blues::outputsMix~"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-30",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 149.0, 280.5, 127.0, 20.0 ],
-									"text" : "and some distortion>>"
+									"patching_rect" : [ 516.5, 156.0, 74.0, 20.0 ],
+									"presentation_linecount" : 2,
+									"text" : "outputsMix~"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-29",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 522.5, 103.0, 55.0, 20.0 ],
+									"text" : "outputs~"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"autofit" : 1,
+									"forceaspect" : 1,
+									"id" : "obj-27",
+									"maxclass" : "fpic",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "jit_matrix" ],
+									"patching_rect" : [ 474.0, 147.0, 140.0, 12.962962962962962 ],
+									"pic" : "/var/folders/3s/tc537y5906n9zyv54jr8pf5r0000gn/T/TemporaryItems/NSIRD_screencaptureui_h96aby/Screenshot 2025-09-01 at 15.15.45.png"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"autofit" : 1,
+									"forceaspect" : 1,
+									"id" : "obj-26",
+									"maxclass" : "fpic",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "jit_matrix" ],
+									"patching_rect" : [ 474.0, 95.0, 152.0, 13.299999999999999 ],
+									"pic" : "/Users/klaus/Desktop/Screenshot 2025-09-01 at 15.13.40.png"
 								}
 
 							}
@@ -2783,252 +2877,256 @@
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
+									"id" : "obj-24",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 21.0, 356.0, 379.0, 20.0 ],
+									"presentation_linecount" : 4,
+									"text" : "now move the mix slider again to the right, you will hear the distortion."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
+									"bgcolor2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
+									"bgfillcolor_angle" : 270.0,
+									"bgfillcolor_autogradient" : 0.0,
+									"bgfillcolor_color" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
+									"bgfillcolor_color1" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
+									"bgfillcolor_color2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
+									"bgfillcolor_proportion" : 0.5,
+									"bgfillcolor_type" : "gradient",
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"gradient" : 1,
+									"id" : "obj-22",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 405.0, 293.0, 80.0, 22.0 ],
+									"text" : "distort@ vol&"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
+									"bgcolor2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
+									"bgfillcolor_angle" : 270.0,
+									"bgfillcolor_autogradient" : 0.0,
+									"bgfillcolor_color" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
+									"bgfillcolor_color1" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
+									"bgfillcolor_color2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
+									"bgfillcolor_proportion" : 0.5,
+									"bgfillcolor_type" : "gradient",
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"gradient" : 1,
+									"id" : "obj-21",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 319.0, 270.0, 83.0, 22.0 ],
+									"text" : "open distort@"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-19",
+									"linecount" : 8,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 99.0, 240.0, 521.0, 114.0 ],
+									"presentation_linecount" : 8,
+									"text" : "here is a quick example:\nfirst we need another act, where we can send to.\nopen distort@ in ho_st or just click here:\n\nthen turn on the volume in distort@ and some distortion: \n\nthen choose distord@ with the darkblue menu:\nthe channel is set to the first available channel in the destination act."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-17",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 21.0, 181.0, 581.0, 33.0 ],
+									"presentation_linecount" : 2,
+									"text" : "if you move the mix slider now all the way to the right, you hear nothing until\nyou define a destination with the darkblue menus (aka outputsMix~)."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"hidden" : 1,
+									"id" : "obj-16",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 489.0, 206.0, 93.0, 22.0 ],
+									"text" : "ll.pf ll.blues::mix"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-15",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 219.5, 26.0, 162.0, 33.0 ],
+									"text" : "you can use the button here \nor the one in the main-patch)"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1.0 ],
+									"bordercolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"fontface" : 0,
+									"fontsize" : 11.0,
+									"format" : [ 1.2 ],
+									"id" : "obj-150",
+									"label" : [ "mix" ],
+									"labelcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+									"maxclass" : "ll_number",
+									"min" : 0.0,
+									"mousefocus" : 1,
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 21.166666666666671, 214.0, 146.666666666666657, 14.0 ],
+									"selectcolor" : [ 0.45098, 0.670588, 1.0, 0.0 ],
+									"slidercolor" : [ 0.024, 0.024, 0.6, 1.0 ],
+									"slidercolornofocus" : [ 0.027451, 0.023529, 0.6, 1.0 ],
+									"slidermax" : 1.0,
+									"sliderstyle" : 0,
+									"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+									"textcolornofocus" : [ 0.478431, 0.478431, 0.478431, 0.0 ],
+									"varname" : "mix",
+									"vertical" : -0.5
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-12",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 27.0, 117.0, 581.0, 47.0 ],
+									"presentation_linecount" : 3,
+									"text" : "if it is darkblue, it shows where the signal goes when the mix_slider is to the right .\nthe default state of the  darkblue_menus (aka outputsMix~) is \"no -no-\".\nindicating that there is no destination defined here yet."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"hidden" : 1,
+									"id" : "obj-10",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 484.0, 13.0, 45.0, 22.0 ],
+									"text" : "route x"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"hidden" : 1,
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 484.0, 37.0, 87.0, 22.0 ],
+									"text" : "ll.pf ll.blues::xb"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "ll.bluebutton.js",
+									"id" : "obj-18",
+									"jsarguments" : [ "x", "x" ],
+									"maxclass" : "v8ui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 195.0, 36.0, 13.333333333333343, 13.0 ],
+									"textfile" : 									{
+										"filename" : "ll.bluebutton.js",
+										"flags" : 0,
+										"embed" : 0,
+										"autowatch" : 1
+									}
+,
+									"varname" : "xb"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-2",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 7.0, 7.0, 403.0, 20.0 ],
+									"presentation_linecount" : 2,
+									"text" : "the small button x toggles between lightblue_menus and darkblue_menus."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"hidden" : 1,
 									"id" : "obj-4",
 									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 273.0, 280.5, 119.0, 35.0 ],
-									"presentation_linecount" : 2,
+									"patching_rect" : [ 456.0, 383.0, 119.0, 35.0 ],
 									"text" : ";\rdistort@1 interval 80"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
 									"hidden" : 1,
-									"id" : "obj-3",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 373.0, 492.0, 165.0, 22.0 ],
-									"text" : "outputsMix~ distort@1~in.1 _"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-1",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 15.5, 2.5, 353.0, 20.0 ],
-									"text" : "if you want to send the audio-signal somewhere else than ho_st::"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"hidden" : 1,
-									"id" : "obj-99",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 403.5, 564.5, 109.0, 22.0 ],
-									"text" : "s #0ll.blue_info"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-97",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 49.0, 522.0, 406.0, 33.0 ],
-									"text" : "if the mix-slider is on the left its all light blue, we send to ho_st (by default).\nin rare cases you will want to change this."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontface" : 1,
-									"fontname" : "Arial",
-									"fontsize" : 14.0,
-									"id" : "obj-96",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 6.0, 498.0, 209.0, 22.0 ],
-									"text" : "dark-blue light blue"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-95",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 231.75, 464.0, 270.0, 20.0 ],
-									"text" : "we send to both, to the ho_st and to the plugin."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-93",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 6.0, 464.0, 173.0, 20.0 ],
-									"text" : "if the mix-slider is in the middle"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bgcolor" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgcolor2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_angle" : 270.0,
-									"bgfillcolor_autogradient" : 0.0,
-									"bgfillcolor_color" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_color1" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgfillcolor_color2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_proportion" : 0.5,
-									"bgfillcolor_type" : "gradient",
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"gradient" : 1,
-									"id" : "obj-77",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 182.75, 464.0, 47.0, 22.0 ],
-									"text" : "mix 0.5"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-73",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 252.5, 436.0, 270.0, 20.0 ],
-									"text" : "we send full level to the plugin."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-72",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 6.0, 386.0, 573.0, 33.0 ],
-									"text" : "this will automatically select the first input of distort@\nother inputs are selectable with the right dark blue menu."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-82",
-									"linecount" : 4,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 66.0, 61.5, 423.0, 60.0 ],
-									"text" : "if the mix slider is all the way to the right (it is all dark blue)\nll.blues will send to the address indicated by the dark blue menus (see below).\nif you did not touch anything else so far, you don't hear nothing now,\nbecause the dark-blue output-menus point to nowhere (no -no-)."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontface" : 1,
-									"fontname" : "Arial",
-									"fontsize" : 14.0,
-									"id" : "obj-64",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 9.0, 184.5, 209.0, 22.0 ],
-									"text" : "output menus"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontface" : 1,
-									"fontname" : "Arial",
-									"fontsize" : 14.0,
-									"id" : "obj-61",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 15.5, 37.5, 74.0, 22.0 ],
-									"text" : "mix slider"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
 									"id" : "obj-34",
 									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 273.0, 243.5, 139.0, 35.0 ],
+									"patching_rect" : [ 456.0, 341.0, 139.0, 35.0 ],
 									"text" : ";\rdistort@1 ll.blues::volL 1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-32",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 19.0, 243.5, 250.0, 20.0 ],
-									"text" : "and turn on the volume of distort@1 a bit >>>"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bgcolor" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgcolor2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_angle" : 270.0,
-									"bgfillcolor_autogradient" : 0.0,
-									"bgfillcolor_color" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_color1" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgfillcolor_color2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_proportion" : 0.5,
-									"bgfillcolor_type" : "gradient",
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"gradient" : 1,
-									"id" : "obj-31",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 199.0, 440.0, 49.0, 22.0 ],
-									"text" : "mix 1."
 								}
 
 							}
@@ -3041,150 +3139,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 553.5, 374.0, 33.0 ],
-									"text" : "click on the x (at right of the menus)  to change which output destination you want to see (light blue or dark blue)"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-11",
-									"linecount" : 3,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 71.5, 128.5, 453.5, 47.0 ],
-									"text" : "move the mix slider back to its default state, all the way to the left (it is all light blue)\nll.blues will send audio to ho_st. \n(or actually to the address indicated by the light blue menus, see below)."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-9",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 6.0, 331.0, 573.0, 33.0 ],
-									"text" : "lets prepare(!) sending our two sinewaves into this \"plugin\":\nchoose distort@1 with the left dark blue menu, (currently showing \"no\")."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bgcolor" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgcolor2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_angle" : 270.0,
-									"bgfillcolor_autogradient" : 0.0,
-									"bgfillcolor_color" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_color1" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgfillcolor_color2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_proportion" : 0.5,
-									"bgfillcolor_type" : "gradient",
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"gradient" : 1,
-									"id" : "obj-71",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 399.5, 647.5, 41.0, 22.0 ],
-									"text" : "mix 1."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bgcolor" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgcolor2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_angle" : 270.0,
-									"bgfillcolor_autogradient" : 0.0,
-									"bgfillcolor_color" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_color1" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgfillcolor_color2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_proportion" : 0.5,
-									"bgfillcolor_type" : "gradient",
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"gradient" : 1,
-									"id" : "obj-70",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 6.0, 522.0, 41.0, 22.0 ],
-									"text" : "mix 0."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-69",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 100.5, 642.0, 283.5, 33.0 ],
-									"text" : "thats the destination, of the signal \nif the mix slider is at the right (all dark-blue then)"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bgcolor" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgcolor2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_angle" : 270.0,
-									"bgfillcolor_autogradient" : 0.0,
-									"bgfillcolor_color" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_color1" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgfillcolor_color2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_proportion" : 0.5,
-									"bgfillcolor_type" : "gradient",
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"gradient" : 1,
-									"id" : "obj-67",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 6.5, 642.0, 92.0, 22.0 ],
-									"text" : "show dark-blue"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"hidden" : 1,
-									"id" : "obj-68",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 454.5, 666.0, 95.0, 22.0 ],
-									"text" : "state 0 1 0 0 0 0"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-66",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 617.0, 529.0, 20.0 ],
-									"text" : "in some situations you may want to change this, but normally you just leave it as it is."
+									"patching_rect" : [ 21.5, 403.0, 382.0, 33.0 ],
+									"text" : "you can also change the destination of outputs~ (lightblue menus),\nfor advanced usage..."
 								}
 
 							}
@@ -3193,50 +3149,12 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-65",
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 99.0, 594.0, 406.0, 20.0 ],
-									"text" : "thats where the signal goes by default: ( ho_st out.1 )"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bgcolor" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgcolor2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_angle" : 270.0,
-									"bgfillcolor_autogradient" : 0.0,
-									"bgfillcolor_color" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_color1" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgfillcolor_color2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_proportion" : 0.5,
-									"bgfillcolor_type" : "gradient",
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"gradient" : 1,
-									"id" : "obj-63",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 10.0, 593.0, 91.0, 22.0 ],
-									"text" : "show light-blue"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"hidden" : 1,
-									"id" : "obj-62",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 454.5, 642.0, 95.0, 22.0 ],
-									"text" : "state 0 0 0 0 0 0"
+									"patching_rect" : [ 27.0, 63.0, 581.0, 47.0 ],
+									"text" : "if it is lightblue, it shows where the signal goes when the mix_slider is to the left, which is its deafult state.\nthe default state of the  lightblue_menus (aka outputs~) is \"ho_st out.1\". (act: ho_st1, channel: out_1).\nso thats where the signal goes to, if you just moved the vol slider and nothing else."
 								}
 
 							}
@@ -3259,56 +3177,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 32.0, 366.0, 93.0, 22.0 ],
-									"text" : "act_1 distort@1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bgcolor" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgcolor2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_angle" : 270.0,
-									"bgfillcolor_autogradient" : 0.0,
-									"bgfillcolor_color" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_color1" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgfillcolor_color2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_proportion" : 0.5,
-									"bgfillcolor_type" : "gradient",
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"gradient" : 1,
-									"id" : "obj-33",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 19.0, 128.5, 41.0, 22.0 ],
-									"text" : "mix 0."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bgcolor" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgcolor2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_angle" : 270.0,
-									"bgfillcolor_autogradient" : 0.0,
-									"bgfillcolor_color" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_color1" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgfillcolor_color2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_proportion" : 0.5,
-									"bgfillcolor_type" : "gradient",
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"gradient" : 1,
-									"id" : "obj-13",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 13.5, 62.5, 49.0, 22.0 ],
-									"text" : "mix 1."
+									"patching_rect" : [ 355.0, 317.0, 102.0, 22.0 ],
+									"text" : "choose distort@1"
 								}
 
 							}
@@ -3316,57 +3186,46 @@
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
-									"id" : "obj-51",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 6.0, 423.0, 270.0, 33.0 ],
-									"text" : "to actually send it there we need the mix-slider!\nif the mix-slider is set to the right"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
+									"hidden" : 1,
 									"id" : "obj-52",
 									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 373.0, 207.5, 151.0, 35.0 ],
+									"patching_rect" : [ 460.0, 252.0, 151.0, 35.0 ],
 									"text" : ";\rho_st1 act_menu distort@"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-53",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 9.0, 208.5, 378.0, 33.0 ],
-									"text" : "first lets open another act, to have a destination to send to.\ndistort@ for example:  open distort@ in ho_st or by clicking here>>"
 								}
 
 							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-99", 0 ],
+									"destination" : [ "obj-6", 0 ],
 									"hidden" : 1,
-									"source" : [ "obj-13", 0 ]
+									"source" : [ "obj-10", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
+									"destination" : [ "obj-16", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-150", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"hidden" : 1,
+									"source" : [ "obj-18", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-32", 0 ],
 									"hidden" : 1,
 									"source" : [ "obj-20", 0 ]
 								}
@@ -3374,88 +3233,42 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-99", 0 ],
+									"destination" : [ "obj-52", 0 ],
 									"hidden" : 1,
-									"source" : [ "obj-3", 0 ]
+									"source" : [ "obj-21", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-99", 0 ],
+									"destination" : [ "obj-34", 0 ],
 									"hidden" : 1,
-									"source" : [ "obj-31", 0 ]
+									"order" : 1,
+									"source" : [ "obj-22", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-99", 0 ],
+									"destination" : [ "obj-4", 0 ],
 									"hidden" : 1,
-									"source" : [ "obj-33", 0 ]
+									"order" : 0,
+									"source" : [ "obj-22", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-99", 0 ],
+									"destination" : [ "obj-31", 0 ],
 									"hidden" : 1,
-									"source" : [ "obj-62", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-62", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-63", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-68", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-67", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-99", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-68", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-99", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-70", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-99", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-71", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-99", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-77", 0 ]
+									"source" : [ "obj-32", 0 ]
 								}
 
 							}
  ]
 					}
 ,
-					"patching_rect" : [ 145.75, 262.0, 138.0, 24.0 ],
+					"patching_rect" : [ 23.0, 291.0, 138.0, 24.0 ],
 					"text" : "p output-destinations"
 				}
 
@@ -3479,7 +3292,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 209.0, 261.0, 667.0, 583.0 ],
+						"rect" : [ 577.0, 275.0, 667.0, 583.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"toolbarvisible" : 0,
 						"boxes" : [ 							{
@@ -3737,8 +3550,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 420.0, 219.0, 95.0, 22.0 ],
-									"text" : "state 2 1 0 0 2 0"
+									"patching_rect" : [ 420.0, 219.0, 101.0, 22.0 ],
+									"text" : "status 0 1 0 0 0 0"
 								}
 
 							}
@@ -3945,7 +3758,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 25.0, 290.5, 215.0, 24.0 ],
+					"patching_rect" : [ 17.0, 398.0, 215.0, 24.0 ],
 					"text" : "p more_on_channel_destinations",
 					"varname" : "more:sending_from_other_acts[1]"
 				}
@@ -4066,7 +3879,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 179.0, 115.0, 160.0, 52.0 ],
+					"patching_rect" : [ 179.0, 115.0, 160.0, 53.0 ],
 					"varname" : "ll.blues",
 					"viewvisibility" : 1
 				}
@@ -4292,7 +4105,7 @@
 									"bgfillcolor_type" : "color",
 									"fontsize" : 11.595186999999999,
 									"id" : "obj-14",
-									"items" : [ "no", ",", "distort@1", ",", "ho_st1", ",", "ll.blues.help1" ],
+									"items" : [ "no", ",", "distort@1", ",", "ho_st1", ",", "ll.blues.info.help1" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -4457,7 +4270,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 107.0, 321.0, 217.0, 24.0 ],
+					"patching_rect" : [ 99.0, 429.0, 217.0, 24.0 ],
 					"text" : "p more:sending_from_other_acts",
 					"varname" : "more:sending_from_other_acts"
 				}
@@ -4472,7 +4285,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 179.0, 4.0, 232.0, 38.0 ],
+					"patching_rect" : [ 34.25, 67.5, 232.0, 38.0 ],
 					"text" : "the blue output section for ppooll\ncalled ll.blues"
 				}
 
@@ -4569,7 +4382,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "ll.blues.help", "§3C3C3C" ],
+					"args" : [ "ll.blues.info.help", "§3C3C3C" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -4583,7 +4396,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 0.0, 91.1328125, 16.0 ],
+					"patching_rect" : [ 0.0, 0.0, 117.62890625, 16.0 ],
 					"varname" : "act",
 					"viewvisibility" : 1
 				}
@@ -4595,7 +4408,7 @@
 						"act::active_store" : 0,
 						"act::master/activest" : 0,
 						"ll.blues" : 0,
-						"ll.blues::state" : 0,
+						"ll.blues::status" : 0,
 						"ll.blues::outputs~" : 0,
 						"ll.blues::outputsMix~" : 0,
 						"ll.blues::chans" : 0,
@@ -4611,7 +4424,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 400.0, 379.0, 100.0, 22.0 ],
 					"priority" : 					{
-						"ll.blues::state" : 1,
+						"ll.blues::status" : 1,
 						"ll.blues::outputs~" : 2,
 						"ll.blues::outputsMix~" : 3,
 						"ll.blues::chans" : 4,
@@ -4619,7 +4432,7 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 141, 1126, 734, 1660 ],
+						"client_rect" : [ 313, 472, 906, 1006 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 200, 200, 800, 500 ]
@@ -4672,7 +4485,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 400.0, 463.0, 107.0, 22.0 ],
 					"restore" : 					{
-						"freq" : [ 106.920000000000002 ]
+						"freq" : [ 349.949999999999989, 294.149999999999977 ]
 					}
 ,
 					"text" : "autopattr autopattr",
@@ -4697,13 +4510,6 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"source" : [ "obj-2", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-4", 0 ]
@@ -4712,6 +4518,20 @@
 			}
  ],
 		"dependency_cache" : [ 			{
+				"name" : "Screenshot 2025-09-01 at 15.13.40.png",
+				"bootpath" : "~/Desktop",
+				"patcherrelativepath" : "../../../../../../Desktop",
+				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Screenshot 2025-09-01 at 15.15.45.png",
+				"bootpath" : "/private/var/folders/3s/tc537y5906n9zyv54jr8pf5r0000gn/T/TemporaryItems/NSIRD_screencaptureui_h96aby",
+				"patcherrelativepath" : "../../../../../../../../private/var/folders/3s/tc537y5906n9zyv54jr8pf5r0000gn/T/TemporaryItems/NSIRD_screencaptureui_h96aby",
+				"type" : "PNG",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "actmakeB.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/actmaker",
 				"patcherrelativepath" : "../../patchers/actmaker",
@@ -4806,13 +4626,6 @@
 				"name" : "ll.mc.r.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.mc.stereo_pan.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../../patchers/abstractions/ll.blues",
 				"type" : "JSON",
 				"implicit" : 1
 			}

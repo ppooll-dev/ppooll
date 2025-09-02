@@ -358,7 +358,7 @@
 	}
 ,
 	"gain" : 	{
-		"patching_rect" : [ 0, 17, 69, 84 ],
+		"patching_rect" : [ 3, 17, 69, 84 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.2, 0.2, 0.2, 0 ],
 		"knobcolor" : [ 1, 1, 1, 0.5 ],

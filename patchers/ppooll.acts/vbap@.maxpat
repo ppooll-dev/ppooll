@@ -71,7 +71,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@state", 2, 0, 0, 0, 0, 0, "@rowheight", 16 ],
+					"args" : [ "@status", 2, 0, 0, 0, 0, 0, "@rowheight", 16 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -6898,7 +6898,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 213.0, 525.0, 119.0, 19.0 ],
-													"text" : "drawsprite s1 154 33"
+													"text" : "drawsprite s1 154 34"
 												}
 
 											}
@@ -7652,13 +7652,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-1",
-													"linecount" : 3,
+													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 107.0, 74.0, 62.0, 62.0 ],
-													"text" : "1 3. 81.690141 0."
+													"text" : "client_remove 1"
 												}
 
 											}
@@ -7706,7 +7706,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 158.0, 23.0, 187.0, 22.0 ],
-													"text" : "Paes_1 2.103174 0. 18.254791"
+													"text" : "llblues::outputs~ ho_st1~out.1 _"
 												}
 
 											}
@@ -19838,7 +19838,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 62.0, 76.0, 58.0, 29.0 ],
-																	"text" : "-51.408451 22.535211"
+																	"text" : "71.126761 96.478873"
 																}
 
 															}
@@ -19875,7 +19875,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 163.0, 37.0, 153.0, 20.0 ],
-																					"text" : "-48.183099 22.830986 0."
+																					"text" : "3. 81.690141 0."
 																				}
 
 																			}
@@ -19889,7 +19889,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 238.0, 154.0, 160.0, 20.0 ],
-																					"text" : "-51.408451 22.535211"
+																					"text" : "71.126761 96.478873"
 																				}
 
 																			}
@@ -20028,13 +20028,13 @@
 																									"fontname" : "Arial",
 																									"fontsize" : 12.0,
 																									"id" : "obj-6",
-																									"linecount" : 5,
+																									"linecount" : 4,
 																									"maxclass" : "message",
 																									"numinlets" : 2,
 																									"numoutlets" : 1,
 																									"outlettype" : [ "" ],
 																									"patching_rect" : [ 310.0, 274.0, 59.0, 62.0 ],
-																									"text" : "Pxyz_1 -48.183099 22.830986 0."
+																									"text" : "Pxyz_1 3. 81.690141 0."
 																								}
 
 																							}
@@ -24466,12 +24466,7 @@
 						"act::pres_menu" : 0,
 						"act::tetris_menu" : 0,
 						"act::title_menu" : 0,
-						"blues::state" : 0,
-						"blues::outputs~" : 0,
-						"blues::outputsMix~" : 0,
-						"blues::chans" : 0,
-						"blues::levels" : 0,
-						"llblues::state" : 0,
+						"llblues::status" : 0,
 						"llblues::outputs~" : 0,
 						"llblues::outputsMix~" : 0,
 						"llblues::chans" : 0,
@@ -24515,12 +24510,7 @@
 						"clear_bounce" : 90,
 						"clear_rotate" : 90,
 						"selected" : 3002,
-						"blues::state" : 1,
-						"blues::outputs~" : 2,
-						"blues::outputsMix~" : 3,
-						"blues::chans" : 4,
-						"blues::levels" : 5,
-						"llblues::state" : 1,
+						"llblues::status" : 1,
 						"llblues::outputs~" : 2,
 						"llblues::outputsMix~" : 3,
 						"llblues::chans" : 4,
@@ -24948,6 +24938,13 @@
 				"name" : "ll.lsub.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.mc.stereo_pan.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
+				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
 				"implicit" : 1
 			}

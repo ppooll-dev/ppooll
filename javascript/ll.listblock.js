@@ -854,7 +854,7 @@ function par_mess(){
 	mgraphics.redraw();	
 }
 function ui_inside(r){
-	post("uinside",r,"boxr",box.rect,"\n")
+	//post("uinside",r,"boxr",box.rect,"\n")
 	if (r[0]>=box.rect[0] && 
 		r[0]<box.rect[2] && 
 		r[1]>=box.rect[1] && 

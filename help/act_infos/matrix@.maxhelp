@@ -2,41 +2,18 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 1,
-			"revision" : 1,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 8,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 375.0, 129.0, 713.0, 639.0 ],
-		"bglocked" : 0,
-		"openinpresentation" : 0,
+		"rect" : [ 100.0, 100.0, 713.0, 639.0 ],
 		"default_fontsize" : 10.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
 		"toolbarvisible" : 0,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Arial",
@@ -47,7 +24,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 62.0, 358.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "route some audio into this matrix@ from other acts with the blue output section or the define output lists."
 				}
 
@@ -62,7 +38,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 246.5, 418.0, 457.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "the first line shows the output channels as defined in the outputs window.\ndisable this with the configuration menu and write your own names if you want"
 				}
 
@@ -86,7 +61,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 98.0, 396.0, 170.0, 20.0 ],
-					"presentation_linecount" : 2,
 					"text" : "the amount of output channels"
 				}
 
@@ -125,21 +99,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 20.0, 343.0, 543.0, 33.0 ],
-					"presentation_linecount" : 3,
 					"text" : "configuration menu:\nmono: (default), stereo: all inputs and outputs will be stereo channels"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-30",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 246.5, 308.0, 367.0, 20.0 ],
-					"text" : "define the outputs of the matrix~"
 				}
 
 			}
@@ -153,7 +113,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 216.0, 265.0, 367.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "(in ms) declick with 10ms or slow down the response of the matrix with higher values. "
 				}
 
@@ -196,32 +155,6 @@
 					"patching_rect" : [ 20.0, 421.0, 39.0, 21.0 ],
 					"textcolor" : [ 1.0, 1.0, 0.34902, 1.0 ],
 					"varname" : "config_menu"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"annotation" : "def",
-					"bgcolor" : [ 0.698039, 0.698039, 0.698039, 1.0 ],
-					"bgoncolor" : [ 1.0, 0.039216, 0.392157, 1.0 ],
-					"fontsize" : 11.0,
-					"id" : "obj-359",
-					"legacytextcolor" : 1,
-					"maxclass" : "textbutton",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 216.0, 308.0, 28.5, 19.0 ],
-					"prototypename" : "M4L.toggle",
-					"text" : "outs",
-					"textcolor" : [ 0.941176, 0.098039, 0.098039, 1.0 ],
-					"texton" : "outs",
-					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"textovercolor" : [ 1.0, 0.039216, 0.392157, 1.0 ],
-					"usebgoncolor" : 1,
-					"usetextovercolor" : 1,
-					"varname" : "def"
 				}
 
 			}
@@ -686,7 +619,7 @@
 			}
  ],
 		"autosave" : 0,
-		"bgcolor" : [ 0.572549019607843, 0.596078431372549, 0.772549019607843, 1.0 ]
+		"bgcolor" : [ 0.274509803921569, 0.301960784313725, 0.533333333333333, 1.0 ]
 	}
 
 }

@@ -224,7 +224,7 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "ll.blues9.maxpat",
+					"name" : "ll.blues.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
@@ -1417,7 +1417,7 @@
 						"act::active_store" : 0,
 						"act::master/activest" : 0,
 						"ll.blues" : 0,
-						"ll.blues::state" : 0,
+						"ll.blues::status" : 0,
 						"ll.blues::outputs~" : 0,
 						"ll.blues::outputsMix~" : 0,
 						"ll.blues::chans" : 0,
@@ -1440,7 +1440,7 @@
 						"harmonicity" : 4,
 						"modindex" : 6,
 						"fm-fmaudio-mix" : 8,
-						"ll.blues::state" : 1,
+						"ll.blues::status" : 1,
 						"ll.blues::outputs~" : 2,
 						"ll.blues::outputsMix~" : 3,
 						"ll.blues::chans" : 4,
@@ -1508,7 +1508,7 @@
 					"patching_rect" : [ 415.0, 386.0, 107.0, 22.0 ],
 					"restore" : 					{
 						"amplitude" : [ 1.0 ],
-						"carrier_freq" : [ 2664.949999999999818 ],
+						"carrier_freq" : [ 219.030000000000001 ],
 						"carrier_freq_mcspread" : [ 0.0 ],
 						"carrier_freq_ramp" : [ 0 ],
 						"fm-fmaudio-mix" : [ 0.0 ],
@@ -1716,7 +1716,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.blues9.maxpat",
+				"name" : "ll.blues.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
@@ -1733,13 +1733,6 @@
 				"name" : "ll.mc.r.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.mc.stereo_pan.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
 				"implicit" : 1
 			}

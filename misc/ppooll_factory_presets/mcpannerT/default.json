@@ -1,10 +1,5 @@
 {
 	"window" : [ 644, 371, 797, 537 ],
-	"pf" : 	{
-		"patching_rect" : [ 373, 61.5, 115, 22 ],
-		"hidden" : 1
-	}
-,
 	"ll.blues" : 	{
 		"patching_rect" : [ 0, 113, 153, 53 ],
 		"hidden" : 0,
@@ -104,20 +99,6 @@
 		"textovercolor" : [ 0, 0, 0, 1 ],
 		"usebgoncolor" : 1,
 		"usetextovercolor" : 1
-	}
-,
-	"chans" : 	{
-		"patching_rect" : [ 135, 1, 18, 15 ],
-		"hidden" : 0,
-		"bgcolor" : [ 1, 1, 1, 1 ],
-		"bordercolor" : [ 0.5, 0.5, 0.5, 1 ],
-		"fontsize" : 12,
-		"labelcolor" : [ 0, 0, 0, 1 ],
-		"selectcolor" : [ 0.45, 0.67, 1, 0.47 ],
-		"slidercolor" : [ 0, 0, 0, 1 ],
-		"slidercolornofocus" : [ 0.48, 0.48, 0.48, 0.55 ],
-		"textcolor" : [ 0, 0, 0, 1 ],
-		"textcolornofocus" : [ 0.48, 0.48, 0.48, 0.79 ]
 	}
 
 }
