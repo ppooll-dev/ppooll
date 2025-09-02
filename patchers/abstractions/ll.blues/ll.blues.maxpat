@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 938.0, 276.0, 888.0, 389.0 ],
+		"rect" : [ 678.0, 276.0, 888.0, 389.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
 				"box" : 				{
@@ -270,13 +270,13 @@
 					"fontsize" : 11.0,
 					"hidden" : 1,
 					"id" : "obj-34",
-					"items" : [ "-no-", ",", "out.1", ",", "out.2", ",", "out.3", ",", "out.4" ],
+					"items" : [ "no", ",", "ho_st1", ",", "ll.blues.info.help1" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 73.333333333333329, 19.0, 72.333333333333329, 21.0 ],
+					"patching_rect" : [ 13.0, 5.0, 72.5, 21.0 ],
 					"prefix" : "menu",
 					"prefix_mode" : 1,
 					"textcolor" : [ 0.0, 0.0, 0.0, 0.0 ],
@@ -461,9 +461,20 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 680.0, 321.0, 956.0, 545.0 ],
+						"rect" : [ 933.0, 345.0, 956.0, 545.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-283",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 176.0, 54.0, 85.0, 20.0 ],
+									"text" : "to patcherargs"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-18",
 									"maxclass" : "message",
@@ -483,7 +494,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 117.0, 85.0, 30.0, 30.0 ]
+									"patching_rect" : [ 146.0, 49.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -715,7 +726,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 65.0, 60.0, 71.0, 22.0 ],
+									"patching_rect" : [ 65.0, 53.0, 71.0, 22.0 ],
 									"text" : "p routepass"
 								}
 
@@ -792,7 +803,7 @@
 											}
 , 											{
 												"box" : 												{
-													"id" : "obj-8",
+													"id" : "obj-132",
 													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
@@ -806,7 +817,7 @@
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
-													"destination" : [ "obj-8", 0 ],
+													"destination" : [ "obj-132", 0 ],
 													"source" : [ "obj-1", 0 ]
 												}
 
@@ -855,7 +866,7 @@
 											}
 , 											{
 												"box" : 												{
-													"id" : "obj-2",
+													"id" : "obj-170",
 													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
@@ -869,7 +880,7 @@
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
-													"destination" : [ "obj-2", 0 ],
+													"destination" : [ "obj-170", 0 ],
 													"source" : [ "obj-1", 0 ]
 												}
 
@@ -5652,7 +5663,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 65.0, 25.0, 30.0, 30.0 ]
+									"patching_rect" : [ 65.0, 18.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -5690,6 +5701,19 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 794.0, 278.0, 30.0, 30.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-249",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 1,
+									"outlettype" : [ "multichannelsignal" ],
+									"patching_rect" : [ 99.0, 180.0, 100.0, 22.0 ],
+									"text" : "ll.mc.stereo_pan",
+									"varname" : "chchange"
 								}
 
 							}
@@ -5810,6 +5834,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-21", 0 ],
 									"source" : [ "obj-23", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-164", 0 ],
+									"source" : [ "obj-249", 0 ]
 								}
 
 							}
@@ -6273,7 +6304,7 @@
 , 			{
 				"box" : 				{
 					"border" : 0,
-					"embedstate" : [ [ "bgcolors", 1 ], [ "c1", 0.024, 0.024, 0.6, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.1, 0.7, 0.5, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0.635735544217687, 0.07530824829932, 0.691698554421769, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 73.333333333333329, 73.333333333333329 ], [ "enum_offset", 1 ], [ "fontsize", 11 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 0 ], [ "header_text", "~", "ho_st1", "out.1" ], [ "headercolors", 3, 1, 1 ], [ "ignore_headerclick", 1 ], [ "modes", "menu_outputs_0", "menu_outputs_1" ], [ "multinumber", 0 ], [ "oncolors", 2 ], [ "param_offset", 0 ], [ "params", "outputsMix~", "outputsMix~" ], [ "rowheight_fixed", 1 ], [ "rows", 1 ], [ "size_lists", "_" ], [ "top_patcher", 0 ], [ "width_abs", 1 ] ],
+					"embedstate" : [ [ "bgcolors", 1 ], [ "c1", 0.024, 0.024, 0.6, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.1, 0.7, 0.5, 1 ], [ "c3", 0.2, 0.1, 0.3, 1 ], [ "c4", 0.635735544217687, 0.07530824829932, 0.691698554421769, 1 ], [ "c5", 0, 0, 0, 1 ], [ "c6", 0, 0, 0, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 73.333333333333329, 73.333333333333329 ], [ "enum_offset", 1 ], [ "fontsize", 11 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 0 ], [ "header_text", "~", "act", "keep" ], [ "headercolors", 3, 1, 3, 1 ], [ "ignore_headerclick", 1 ], [ "modes", "menu_outputs_0", "menu_outputs_1" ], [ "multinumber", 0 ], [ "oncolors", 2 ], [ "param_offset", 0 ], [ "params", "outputsMix~", "outputsMix~" ], [ "rowheight_fixed", 1 ], [ "rows", 1 ], [ "size_lists", "_" ], [ "top_patcher", 0 ], [ "width_abs", 1 ] ],
 					"filename" : "ll.listblock.js",
 					"id" : "obj-30",
 					"maxclass" : "v8ui",

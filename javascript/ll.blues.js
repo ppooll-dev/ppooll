@@ -1,3 +1,6 @@
+//standard signal output for ppooll
+//by klaus filip
+
 outlets = 1;
 //autowatch = 1;
 var bp_rect = [];
@@ -33,6 +36,7 @@ var style = 0; // the layout and functionalities of ll.blues
 var use_outputsMix = 1; //0 if only outputs~, 1 if outputs~and outputsMix~
 var size_state = 0;
 var keep = 0;
+var chchange_state = [0,2]; // used in script_sub_chchange()
 
 var extra_amt = 0;
 var extra_widths = [];
@@ -422,19 +426,19 @@ function status(s){
 function chans(a){
 	let c = arrayfromargs(arguments);
 	chansV = c;
-	post("chans",c,"io",ch_in,ch_out,"\n");
+	//post("chans",c,"io",ch_in,ch_out,"\n");
 	if (c[1] != ch_out){
 		ch_out = c[1];
 		smix();
 		chans_out_o.message("set", ch_out);
-		script_signals(ch_out,ch_in);
+		script_sub_chchange(chansV);
 		unfold_fold();
 		}
 	if (c[0] != ch_in){
 		ch_in = c[0];
 		chans_in_o.message("set", ch_in);
 		outlet(0,"chans_in",ch_in);
-		script_signals(ch_out,ch_in);
+		script_sub_chchange(chansV);
 		}
 }	
 function levels(){
@@ -492,7 +496,7 @@ function chans_in(a){
 	else pattr_chans.message(a, ch_out);
 }
 function state_menu(a){
-	post("state_menu",a,"\n");
+	//post("state_menu",a,"\n");
 	if (a<=2) {
 		stateV[2]=a;
 		pattr_status.message(stateV);
@@ -591,6 +595,7 @@ function channels(a){ //from outside
 		pattr_chans.message(ch_in, parseInt(a));
 	}
 }
+
 // ################################################ script audio chain ###############
 function script_sub(){
 	// in_mix_state ----- use_outputsMix
@@ -600,6 +605,7 @@ function script_sub(){
 	let chchange = tp.getnamed("chchange");
 	let outputs = tp.getnamed("outputs");
 	let mat = tp.getnamed("mat");
+	let mal = tp.getnamed("mal");
 	let ims = (style==1);
 	let uoM = (style<2);
 	if (in_mix_state != ims){
@@ -621,16 +627,20 @@ function script_sub(){
 	if (use_outputsMix != uoM){
 		use_outputsMix = uoM;
 		//post("use_outputsMix",uoM,"\n");
-		if (use_outputsMix){
-			tp.connect(bits, 0, chchange, 0);
+		if (use_outputsMix){ //basic
+			//tp.connect(bits, 0, chchange, 0);
 			tp.connect(mat, 0, outputs, 0);
 			tp.connect(mat, 0, pmeter, 2);
 			tp.connect(mat, 1, pmeter, 2);
+			tp.connect(bits, 0, mal, 0);
 			tp.disconnect(bits, 0, outputs, 0);
 			tp.disconnect(bits, 0, pmeter, 2);
+			chchange_state = [-1,-1];
+			script_sub_chchange(chansV)
 		}
-		else {
+		else { //mc.basic
 			tp.disconnect(bits, 0, chchange, 0);
+			tp.disconnect(bits, 0, mal, 0);
 			tp.disconnect(mat, 0, outputs, 0);
 			tp.disconnect(mat, 0, pmeter, 2);
 			tp.disconnect(mat, 1, pmeter, 2);
@@ -639,42 +649,49 @@ function script_sub(){
 		}
 	}
 }
-function script_signals(b,c){	
-	meter_o.rect = [0,0,vol_width,Math.min(54,13*Math.floor((b-1)/4)+14)];
-	//post("chans",b,c);post();
-	let tp = this.patcher;
-	let chchange = tp.getnamed("chchange");
-	let bits = tp.getnamed("bits");
-	let mat = tp.getnamed("mat");
-	let mal = tp.getnamed("mal");
+function script_sub_chchange(c){	
+	let c_in = c[0];
+	let c_out = c[1];
+	meter_o.rect = [0,0,vol_width,Math.min(54,13*Math.floor((c_out-1)/4)+14)];
+	let chchst = 0;
+	if (c_out==c_in) chchst = 0
+	else if (c_out==2) chchst = 1
+	else if (c_in>c_out) chchst = 2
+	else chchst = 3;
+	//post("chchst",chchst,"\n");
+		
+	if (chchst != chchange_state[0] || c_out != chchange_state[1]){
+		chchange_state = [chchst,c_out];
+		//post("chans",b,c);post();
+		let tp = this.patcher;
+		let chchange = tp.getnamed("chchange");
+		let bits = tp.getnamed("bits");
+		let mat = tp.getnamed("mat");
+		let mal = tp.getnamed("mal");
 	
-	tp.remove(chchange);
+		//tp.remove(chchange);
 	
-	if (c==b){
-		tp.connect(bits, 0, mal, 0);
-	} 
-	else { 
-	
-		tp.disconnect(bits, 0, mal, 0);
-				
-		if (b == 2) {
-			chchange = tp.newdefault(99,180,"ll.mc.stereo_pan");
+		if (chchst == 0) { //no channel_change
+			tp.disconnect(bits,0,chchange,0)
+			tp.connect(bits, 0, mal, 0);
+		} 
+		else { 
+			tp.disconnect(bits, 0, mal, 0);	
+			tp.remove(chchange);		
+			if (chchst == 1) { //mc.stereo_pan			
+				chchange = tp.newdefault(99,180,"ll.mc.stereo_pan");
+			}
+			else {
+				if(chchst == 2) chchange = tp.newdefault(99,180,"mc.mixdown~",c_out,"@autogain",1);
+				else chchange = tp.newdefault(99,180,"mc.resize~",c_out,"@replicate",1);
+			}
+			chchange.varname = "chchange";	
+			tp.connect(bits, 0, chchange, 0);
+			tp.connect(chchange, 0, mal, 0);
 		}
-		else {
-		if(c>b) {
-			chchange = tp.newdefault(99,180,"mc.mixdown~",b,"@autogain",1);
-		} else {
-			chchange = tp.newdefault(99,180,"mc.resize~",b,"@replicate",1);
-		}
-		}
-		chchange.varname = "chchange";	
-		tp.connect(bits, 0, chchange, 0);
-		tp.connect(chchange, 0, mal, 0);
 	}
 }
-
-
-
+// outputs subpatchers
 function outputs(){ //called by pattr_outputs (== outputs~)
 	out_patcher = this.patcher.getnamed("outputs").subpatcher();
 	let a = arrayfromargs(arguments);
