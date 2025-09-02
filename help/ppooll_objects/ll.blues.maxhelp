@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 65.0, 453.0, 445.0, 309.0 ],
+		"rect" : [ 111.0, 194.0, 445.0, 309.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"helpsidebarclosed" : 1,
@@ -164,7 +164,12 @@
 						"ll.blues::outputs~" : 0,
 						"ll.blues::outputsMix~" : 0,
 						"ll.blues::chans" : 0,
-						"ll.blues::levels" : 0
+						"ll.blues::levels" : 0,
+						"ll.blues[1]::levels" : 0,
+						"ll.blues[1]::status" : 0,
+						"ll.blues[1]::outputs~" : 0,
+						"ll.blues[1]::outputsMix~" : 0,
+						"ll.blues[1]::chans" : 0
 					}
 ,
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -182,7 +187,12 @@
 						"ll.blues::outputs~" : 2,
 						"ll.blues::outputsMix~" : 3,
 						"ll.blues::chans" : 4,
-						"ll.blues::levels" : 5
+						"ll.blues::levels" : 5,
+						"ll.blues[1]::levels" : 5,
+						"ll.blues[1]::status" : 1,
+						"ll.blues[1]::outputs~" : 2,
+						"ll.blues[1]::outputsMix~" : 3,
+						"ll.blues[1]::chans" : 4
 					}
 ,
 					"saved_object_attributes" : 					{
@@ -269,7 +279,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 546.0, 124.0, 498.0, 316.0 ],
+						"rect" : [ 545.0, 124.0, 498.0, 316.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"toolbarvisible" : 0,
 						"boxes" : [ 							{
@@ -295,6 +305,30 @@
 										"gridsize" : [ 15.0, 15.0 ],
 										"toolbarvisible" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"fontsize" : 14.0,
+													"id" : "obj-4",
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 25.0, 423.5, 303.0, 22.0 ],
+													"text" : "back to default staus:"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-2",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 113.0, 439.0, 65.0, 22.0 ],
+													"text" : "0 1 0 0 0 0"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-19",
 													"maxclass" : "number",
@@ -350,7 +384,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 121.0, 398.0, 65.0, 22.0 ],
+													"patching_rect" : [ 121.0, 367.0, 65.0, 22.0 ],
 													"text" : "3 0 0 0 0 0"
 												}
 
@@ -363,7 +397,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 19.0, 398.0, 303.0, 53.0 ],
+													"patching_rect" : [ 19.0, 367.0, 303.0, 53.0 ],
 													"text" : "mc+chan_out\nis a flavour of this status with chans_out visible.\n(changing outputs~ chans within ll.blues)"
 												}
 
@@ -509,6 +543,14 @@
 												"patchline" : 												{
 													"destination" : [ "obj-17", 0 ],
 													"source" : [ "obj-19", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-11", 0 ],
+													"hidden" : 1,
+													"source" : [ "obj-2", 0 ]
 												}
 
 											}
@@ -864,7 +906,7 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-47",
-													"items" : [ "no", ",", "ho_st1", ",", "fmrm1", ",", "ll.blues.help1" ],
+													"items" : [ "no", ",", "ho_st1", ",", "ll.blues.help1" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -2142,7 +2184,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-9",
-													"items" : [ "no", ",", "buffer_host1", ",", "fmrm1", ",", "ho_st1", ",", "ll.blues.help1" ],
+													"items" : [ "no", ",", "ho_st1", ",", "ll.blues.help1" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,

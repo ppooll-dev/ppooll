@@ -10,11 +10,23 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 59.0, 594.0, 532.0 ],
+		"rect" : [ 231.0, 45.0, 594.0, 532.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "ll.blues.info.help1",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 381.0, 278.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontsize" : 14.0,
 					"id" : "obj-10",
@@ -87,6 +99,201 @@
 						"rect" : [ 764.0, 220.0, 640.0, 480.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"hidden" : 1,
+									"id" : "obj-86",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patcher" : 									{
+										"fileversion" : 1,
+										"appversion" : 										{
+											"major" : 9,
+											"minor" : 0,
+											"revision" : 8,
+											"architecture" : "x64",
+											"modernui" : 1
+										}
+,
+										"classnamespace" : "box",
+										"rect" : [ 913.0, 446.0, 297.0, 420.0 ],
+										"gridsize" : [ 15.0, 15.0 ],
+										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-1",
+													"maxclass" : "newobj",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 109.0, 61.0, 107.0, 22.0 ],
+													"text" : "r #0ll.blue_info"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontname" : "Arial",
+													"fontsize" : 12.0,
+													"id" : "obj-84",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 104.0, 192.0, 84.0, 22.0 ],
+													"text" : "prepend send"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontname" : "Arial",
+													"fontsize" : 12.0,
+													"id" : "obj-83",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 104.0, 164.0, 63.0, 22.0 ],
+													"text" : "ll.actname"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontname" : "Arial",
+													"fontsize" : 12.0,
+													"id" : "obj-82",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 50.0, 225.0, 51.0, 22.0 ],
+													"text" : "forward"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontname" : "Arial",
+													"fontsize" : 12.0,
+													"id" : "obj-81",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 50.0, 148.0, 41.0, 22.0 ],
+													"text" : "zl join"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontname" : "Arial",
+													"fontsize" : 12.0,
+													"id" : "obj-80",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 50.0, 125.0, 107.0, 22.0 ],
+													"text" : "sprintf ll.blues::%s"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontname" : "Arial",
+													"fontsize" : 12.0,
+													"id" : "obj-79",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 50.0, 100.0, 57.0, 22.0 ],
+													"text" : "zl slice 1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-85",
+													"index" : 1,
+													"maxclass" : "inlet",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 50.0, 40.0, 25.0, 25.0 ]
+												}
+
+											}
+ ],
+										"lines" : [ 											{
+												"patchline" : 												{
+													"destination" : [ "obj-79", 0 ],
+													"source" : [ "obj-1", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-80", 0 ],
+													"source" : [ "obj-79", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-81", 1 ],
+													"source" : [ "obj-79", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-81", 0 ],
+													"source" : [ "obj-80", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-82", 0 ],
+													"source" : [ "obj-81", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-84", 0 ],
+													"source" : [ "obj-83", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-82", 0 ],
+													"source" : [ "obj-84", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-79", 0 ],
+													"source" : [ "obj-85", 0 ]
+												}
+
+											}
+ ]
+									}
+,
+									"patching_rect" : [ 35.0, 82.0, 47.0, 22.0 ],
+									"text" : "p send"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-16",
 									"maxclass" : "message",
@@ -479,20 +686,51 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 90.0, 489.0, 566.0, 328.0 ],
+						"rect" : [ 204.0, 473.0, 566.0, 328.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"toolbarvisible" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 10.0,
-									"id" : "obj-50",
-									"linecount" : 2,
-									"maxclass" : "comment",
+									"hidden" : 1,
+									"id" : "obj-16",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 375.0, 145.0, 97.0, 22.0 ],
+									"text" : "ll.pf ll.blues::volL"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 0.333333, 0.537255, 0.960784, 1.0 ],
+									"bordercolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"fontface" : 0,
+									"fontsize" : 11.0,
+									"format" : [ 1.3 ],
+									"id" : "obj-156",
+									"label" : [ "vol" ],
+									"labelcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+									"maxclass" : "ll_number",
+									"min" : 0.0,
+									"mousefocus" : 1,
 									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 77.0, 194.0, 470.0, 29.0 ],
-									"text" : "the turquoise buttons in this patch are here to guide you through, you always can do the similar action directly in the ll.blues interface."
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 37.0, 160.0, 160.0, 14.0 ],
+									"prependlabel" : 1,
+									"selectcolor" : [ 0.996078, 1.0, 1.0, 0.447059 ],
+									"slidercolor" : [ 0.024, 0.024, 0.6, 1.0 ],
+									"slidercolornofocus" : [ 0.027451, 0.023529, 0.6, 1.0 ],
+									"sliderlog" : 6.0,
+									"slidermax" : 1.0,
+									"sliderstyle" : 0,
+									"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+									"textcolornofocus" : [ 1.0, 1.0, 1.0, 0.662745 ],
+									"varname" : "volL"
 								}
 
 							}
@@ -527,282 +765,13 @@
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
-									"id" : "obj-90",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 74.0, 224.0, 234.0, 20.0 ],
-									"text" : "<<< click on this to go back to volume 0.2"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-88",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 74.0, 180.0, 466.0, 20.0 ],
-									"text" : "<<< click on this to make it a bit louder. thats the same as moving the vol-slider above."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bgcolor" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgcolor2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_angle" : 270.0,
-									"bgfillcolor_autogradient" : 0.0,
-									"bgfillcolor_color" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_color1" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgfillcolor_color2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_proportion" : 0.5,
-									"bgfillcolor_type" : "gradient",
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"gradient" : 1,
-									"id" : "obj-87",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 17.0, 182.0, 52.0, 22.0 ],
-									"text" : "volL 0.3"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"hidden" : 1,
-									"id" : "obj-86",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patcher" : 									{
-										"fileversion" : 1,
-										"appversion" : 										{
-											"major" : 9,
-											"minor" : 0,
-											"revision" : 8,
-											"architecture" : "x64",
-											"modernui" : 1
-										}
-,
-										"classnamespace" : "box",
-										"rect" : [ 913.0, 446.0, 297.0, 420.0 ],
-										"gridsize" : [ 15.0, 15.0 ],
-										"boxes" : [ 											{
-												"box" : 												{
-													"id" : "obj-1",
-													"maxclass" : "newobj",
-													"numinlets" : 0,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 109.0, 61.0, 107.0, 22.0 ],
-													"text" : "r #0ll.blue_info"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontname" : "Arial",
-													"fontsize" : 12.0,
-													"id" : "obj-84",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 104.0, 192.0, 84.0, 22.0 ],
-													"text" : "prepend send"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontname" : "Arial",
-													"fontsize" : 12.0,
-													"id" : "obj-83",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 104.0, 164.0, 63.0, 22.0 ],
-													"text" : "ll.actname"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontname" : "Arial",
-													"fontsize" : 12.0,
-													"id" : "obj-82",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 50.0, 225.0, 51.0, 22.0 ],
-													"text" : "forward"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontname" : "Arial",
-													"fontsize" : 12.0,
-													"id" : "obj-81",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 2,
-													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 148.0, 41.0, 22.0 ],
-													"text" : "zl join"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontname" : "Arial",
-													"fontsize" : 12.0,
-													"id" : "obj-80",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 125.0, 107.0, 22.0 ],
-													"text" : "sprintf ll.blues::%s"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontname" : "Arial",
-													"fontsize" : 12.0,
-													"id" : "obj-79",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 2,
-													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 100.0, 57.0, 22.0 ],
-													"text" : "zl slice 1"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"comment" : "",
-													"id" : "obj-85",
-													"index" : 1,
-													"maxclass" : "inlet",
-													"numinlets" : 0,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 40.0, 25.0, 25.0 ]
-												}
-
-											}
- ],
-										"lines" : [ 											{
-												"patchline" : 												{
-													"destination" : [ "obj-79", 0 ],
-													"source" : [ "obj-1", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-80", 0 ],
-													"source" : [ "obj-79", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-81", 1 ],
-													"source" : [ "obj-79", 1 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-81", 0 ],
-													"source" : [ "obj-80", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-82", 0 ],
-													"source" : [ "obj-81", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-84", 0 ],
-													"source" : [ "obj-83", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-82", 0 ],
-													"source" : [ "obj-84", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-79", 0 ],
-													"source" : [ "obj-85", 0 ]
-												}
-
-											}
- ]
-									}
-,
-									"patching_rect" : [ 381.0, 237.0, 47.0, 22.0 ],
-									"text" : "p send"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bgcolor" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgcolor2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_angle" : 270.0,
-									"bgfillcolor_autogradient" : 0.0,
-									"bgfillcolor_color" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_color1" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
-									"bgfillcolor_color2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
-									"bgfillcolor_proportion" : 0.5,
-									"bgfillcolor_type" : "gradient",
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"gradient" : 1,
-									"id" : "obj-78",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 17.0, 222.0, 50.0, 22.0 ],
-									"text" : "volL 0.2"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
 									"id" : "obj-75",
 									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 18.0, 115.0, 533.0, 47.0 ],
-									"text" : "if you opened this patch with having ho_st open, audio turned ON and volume of ho_st at 1. ,\nand if you did not touch nothing,\nyou should hear the two sine tones left and right."
+									"patching_rect" : [ 17.0, 78.0, 533.0, 47.0 ],
+									"text" : "if you opened this patch with having ho_st open, audio turned ON and volume of ho_st at 1. ,\nand if you did not touch nothing, in ll.blues yet\nyou should hear the two sine tones left and right."
 								}
 
 							}
@@ -815,7 +784,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 18.0, 71.0, 533.0, 38.0 ],
+									"patching_rect" : [ 17.0, 38.0, 533.0, 38.0 ],
 									"text" : "in most cases you will only need the volume-slider on top. and leave all other things untouched in its default state."
 								}
 
@@ -823,17 +792,9 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-86", 0 ],
+									"destination" : [ "obj-16", 0 ],
 									"hidden" : 1,
-									"source" : [ "obj-78", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-86", 0 ],
-									"hidden" : 1,
-									"source" : [ "obj-87", 0 ]
+									"source" : [ "obj-156", 0 ]
 								}
 
 							}
@@ -2206,7 +2167,7 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-35",
-									"items" : [ "no", ",", "ho_st1", ",", "ll.blues.info.help1", ",", "distort@1" ],
+									"items" : [ "no", ",", "ho_st1", ",", "ll.blues.info.help1" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -2804,7 +2765,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 456.0, 426.0, 96.0, 22.0 ],
+									"patching_rect" : [ 456.0, 446.0, 96.0, 22.0 ],
 									"text" : "distort@1~in.1 _"
 								}
 
@@ -2817,7 +2778,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 456.0, 458.0, 140.0, 22.0 ],
+									"patching_rect" : [ 456.0, 478.0, 140.0, 22.0 ],
 									"text" : "ll.pf ll.blues::outputsMix~"
 								}
 
@@ -2828,8 +2789,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 516.5, 156.0, 74.0, 20.0 ],
-									"presentation_linecount" : 2,
+									"patching_rect" : [ 517.0, 176.0, 74.0, 20.0 ],
 									"text" : "outputsMix~"
 								}
 
@@ -2840,7 +2800,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 522.5, 103.0, 55.0, 20.0 ],
+									"patching_rect" : [ 523.0, 123.0, 55.0, 20.0 ],
 									"text" : "outputs~"
 								}
 
@@ -2854,7 +2814,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "jit_matrix" ],
-									"patching_rect" : [ 474.0, 147.0, 140.0, 12.962962962962962 ],
+									"patching_rect" : [ 474.0, 167.0, 140.0, 12.962962962962962 ],
 									"pic" : "/var/folders/3s/tc537y5906n9zyv54jr8pf5r0000gn/T/TemporaryItems/NSIRD_screencaptureui_h96aby/Screenshot 2025-09-01 at 15.15.45.png"
 								}
 
@@ -2868,7 +2828,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "jit_matrix" ],
-									"patching_rect" : [ 474.0, 95.0, 152.0, 13.299999999999999 ],
+									"patching_rect" : [ 474.0, 115.0, 152.0, 13.299999999999999 ],
 									"pic" : "/Users/klaus/Desktop/Screenshot 2025-09-01 at 15.13.40.png"
 								}
 
@@ -2881,8 +2841,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 21.0, 356.0, 379.0, 20.0 ],
-									"presentation_linecount" : 4,
+									"patching_rect" : [ 21.0, 376.0, 379.0, 20.0 ],
 									"text" : "now move the mix slider again to the right, you will hear the distortion."
 								}
 
@@ -2906,7 +2865,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 405.0, 293.0, 80.0, 22.0 ],
+									"patching_rect" : [ 405.0, 313.0, 80.0, 22.0 ],
 									"text" : "distort@ vol&"
 								}
 
@@ -2930,7 +2889,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.0, 270.0, 83.0, 22.0 ],
+									"patching_rect" : [ 319.0, 290.0, 83.0, 22.0 ],
 									"text" : "open distort@"
 								}
 
@@ -2944,8 +2903,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 99.0, 240.0, 521.0, 114.0 ],
-									"presentation_linecount" : 8,
+									"patching_rect" : [ 99.0, 260.0, 521.0, 114.0 ],
 									"text" : "here is a quick example:\nfirst we need another act, where we can send to.\nopen distort@ in ho_st or just click here:\n\nthen turn on the volume in distort@ and some distortion: \n\nthen choose distord@ with the darkblue menu:\nthe channel is set to the first available channel in the destination act."
 								}
 
@@ -2959,8 +2917,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 21.0, 181.0, 581.0, 33.0 ],
-									"presentation_linecount" : 2,
+									"patching_rect" : [ 21.0, 201.0, 581.0, 33.0 ],
 									"text" : "if you move the mix slider now all the way to the right, you hear nothing until\nyou define a destination with the darkblue menus (aka outputsMix~)."
 								}
 
@@ -2973,7 +2930,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 489.0, 206.0, 93.0, 22.0 ],
+									"patching_rect" : [ 489.0, 226.0, 93.0, 22.0 ],
 									"text" : "ll.pf ll.blues::mix"
 								}
 
@@ -3007,7 +2964,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 21.166666666666671, 214.0, 146.666666666666657, 14.0 ],
+									"patching_rect" : [ 21.0, 234.0, 146.666666666666657, 14.0 ],
 									"selectcolor" : [ 0.45098, 0.670588, 1.0, 0.0 ],
 									"slidercolor" : [ 0.024, 0.024, 0.6, 1.0 ],
 									"slidercolornofocus" : [ 0.027451, 0.023529, 0.6, 1.0 ],
@@ -3029,8 +2986,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 27.0, 117.0, 581.0, 47.0 ],
-									"presentation_linecount" : 3,
+									"patching_rect" : [ 27.0, 137.0, 581.0, 47.0 ],
 									"text" : "if it is darkblue, it shows where the signal goes when the mix_slider is to the right .\nthe default state of the  darkblue_menus (aka outputsMix~) is \"no -no-\".\nindicating that there is no destination defined here yet."
 								}
 
@@ -3093,8 +3049,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 7.0, 7.0, 403.0, 20.0 ],
-									"presentation_linecount" : 2,
-									"text" : "the small button x toggles between lightblue_menus and darkblue_menus."
+									"text" : "the small button x shows the lightblue_menus or darkblue_menus."
 								}
 
 							}
@@ -3109,7 +3064,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 456.0, 383.0, 119.0, 35.0 ],
+									"patching_rect" : [ 456.0, 403.0, 119.0, 35.0 ],
 									"text" : ";\rdistort@1 interval 80"
 								}
 
@@ -3125,7 +3080,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 456.0, 341.0, 139.0, 35.0 ],
+									"patching_rect" : [ 456.0, 361.0, 139.0, 35.0 ],
 									"text" : ";\rdistort@1 ll.blues::volL 1"
 								}
 
@@ -3139,7 +3094,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 21.5, 403.0, 382.0, 33.0 ],
+									"patching_rect" : [ 22.0, 423.0, 382.0, 33.0 ],
 									"text" : "you can also change the destination of outputs~ (lightblue menus),\nfor advanced usage..."
 								}
 
@@ -3153,8 +3108,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 27.0, 63.0, 581.0, 47.0 ],
-									"text" : "if it is lightblue, it shows where the signal goes when the mix_slider is to the left, which is its deafult state.\nthe default state of the  lightblue_menus (aka outputs~) is \"ho_st out.1\". (act: ho_st1, channel: out_1).\nso thats where the signal goes to, if you just moved the vol slider and nothing else."
+									"patching_rect" : [ 27.0, 83.0, 581.0, 47.0 ],
+									"text" : "if it is lightblue, it shows where the signal goes when the mix_slider is to the left, which is its deafult state.\nthe default state of the  lightblue_menus (aka outputs~) is \"ho_st out.1\". (act: ho_st1, channel: out.1).\nso thats where the signal goes to, if you just moved the vol slider and nothing else."
 								}
 
 							}
@@ -3177,7 +3132,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 355.0, 317.0, 102.0, 22.0 ],
+									"patching_rect" : [ 355.0, 337.0, 102.0, 22.0 ],
 									"text" : "choose distort@1"
 								}
 
@@ -3193,7 +3148,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 460.0, 252.0, 151.0, 35.0 ],
+									"patching_rect" : [ 460.0, 272.0, 151.0, 35.0 ],
 									"text" : ";\rho_st1 act_menu distort@"
 								}
 
@@ -3292,7 +3247,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 577.0, 275.0, 667.0, 583.0 ],
+						"rect" : [ 327.0, 415.0, 667.0, 583.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"toolbarvisible" : 0,
 						"boxes" : [ 							{
@@ -3865,7 +3820,6 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@levels", 0.2, 0.2, 0, 0, 10, 0 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -3875,7 +3829,7 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "ll.blues9.maxpat",
+					"name" : "ll.blues.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
@@ -4105,7 +4059,7 @@
 									"bgfillcolor_type" : "color",
 									"fontsize" : 11.595186999999999,
 									"id" : "obj-14",
-									"items" : [ "no", ",", "distort@1", ",", "ho_st1", ",", "ll.blues.info.help1" ],
+									"items" : [ "no", ",", "ho_st1", ",", "ll.blues.info.help1" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -4432,7 +4386,7 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 313, 472, 906, 1006 ],
+						"client_rect" : [ 838, 100, 1431, 634 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 200, 200, 800, 500 ]
@@ -4485,7 +4439,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 400.0, 463.0, 107.0, 22.0 ],
 					"restore" : 					{
-						"freq" : [ 349.949999999999989, 294.149999999999977 ]
+						"freq" : [ 349.949999999999989, 0.0 ]
 					}
 ,
 					"text" : "autopattr autopattr",
@@ -4509,6 +4463,13 @@
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
 					"hidden" : 1,
@@ -4609,7 +4570,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.blues9.maxpat",
+				"name" : "ll.blues.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../../patchers/abstractions/ll.blues",
 				"type" : "JSON",

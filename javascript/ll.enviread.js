@@ -165,7 +165,7 @@ status_new:
 				actr.patcher.remove(actr.object);
 				post("removed old outputs~ and set into new ll.blues","\n");
 			}
-			post(new_blues_name+"::outputs~",v,"\n")
+			//post(new_blues_name+"::outputs~",v,"\n")
 			messnamed(a,new_blues_name+"::outputs~",v);
 		}
 	}

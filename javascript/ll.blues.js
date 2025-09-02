@@ -1,32 +1,36 @@
 outlets = 1;
 //autowatch = 1;
 var bp_rect = [];
-var b_width,b_height,vol_width,lw;
-var tpp, actpatcher, bpatcher;
+var b_width,b_height,vol_width,lw, wide_patcher;
+var tpp, actpatcher, bpatcher, out_patcher;
+
 const modes_def = ["enum", "menu_outputs_0", "menu_outputs_1"];
 const params_def = ["none", "outputs~", "outputs~"];
-//GUI objects
-var meter_o, mix_o, ramp_o, pfl_o, chans_in_o, chans_out_o, xb, ib, state_menu_o, pan_o, volR_o, volL_o, in_mix_o, listblock_o;
-// pattrs
-var pattr_levels, pattr_status, pattr_chans, pattr_outputs, pattr_ouputsMix;
-
 var args;
 var dark_blue = [0.024, 0.024, 0.600, 1.000];
 var light_blue = [0.333, 0.537, 0.961, 1.000];
 var text_color = [1,1,1,1];
+
+//GUI objects
+var meter_o, mix_o, ramp_o, pfl_o, chans_in_o, chans_out_o, xb, ib, state_menu_o, pan_o, volR_o, volL_o, in_mix_o, listblock_o;
+// pattrs
+var pattr_levels, pattr_status, pattr_chans, pattr_outputs, pattr_ouputsMix;
+var chansV = [2,2];
+var levelsV = [0,0,0,0,10,0,0.5];
+var stateV = [0,1,0,0,0,0];
+
+
+
 var ch_out;
 var ch_in;
 var vol_sel = 0;
 var in_mix_state = 0;
-var levelsV = [0,0,0,0,10,0,0.5];
-var stateV = [0,1,0,0,0,0];
 var show_mix;
 var link_chans = 0;
 var meter = 0;
 var mix_adds = 0;
 var style = 0; // the layout and functionalities of ll.blues
 var use_outputsMix = 1; //0 if only outputs~, 1 if outputs~and outputsMix~
-var wide_patcher;
 var size_state = 0;
 var keep = 0;
 
@@ -85,7 +89,7 @@ function bang() {
 	//size_obj() is called by state()
 	*/
 	pattr_status.message(stateV);
-	pattr_chans.message(1,2);
+	pattr_chans.message(chansV);
 }
 function get_objects() {
 	meter_o = tpp.getnamed("meter");
@@ -417,7 +421,8 @@ function status(s){
 }
 function chans(a){
 	let c = arrayfromargs(arguments);
-	//post("chans",c,"io",ch_in,ch_out,"\n");
+	chansV = c;
+	post("chans",c,"io",ch_in,ch_out,"\n");
 	if (c[1] != ch_out){
 		ch_out = c[1];
 		smix();
@@ -668,35 +673,25 @@ function script_signals(b,c){
 	}
 }
 
-var out_patcher;
-var sep;
-var dest_count = 1;
-var d_offsets;
-var dests;
 
 
-function outputs(){
+function outputs(){ //called by pattr_outputs (== outputs~)
 	out_patcher = this.patcher.getnamed("outputs").subpatcher();
 	let a = arrayfromargs(arguments);
 	chan_sep(a);
 }
-function outputsMix(){
+function outputsMix(){ //called by pattr_outputsMix (== outputsMix~)
 	out_patcher = this.patcher.getnamed("outputsMix").subpatcher();
 	let a = arrayfromargs(arguments);
 	chan_sep(a);
 }
 function chan_sep(a){ //calculate the channels of each separation
-
-	//let a = arguments;
-	//post("outp_chans",a,"\n");
-	let v = [];
-	let isA = Array.isArray(a);
-	if (isA) v = a 
-	else v[0] = a; 
-	//post("value",v,"\n")
+	//a : current outputs[Mix]~;
+	let v = makearray(a);
+	//post("chans_sep",a,"value",v,"\n")
 	listblock_o.message("rows",v.length);
-	dests = [];
-	d_offsets = [];
+	let dests = [];
+	let d_offsets = [];
 	let chans_sep = [];
 	let cmem = 0;
 	for (i=0;i<v.length;i++){
@@ -713,30 +708,32 @@ function chan_sep(a){ //calculate the channels of each separation
 		}
 	}
 	chans_sep.push(v.length-cmem);
-	scriptit(chans_sep);
+	script_outpatchers(chans_sep, d_offsets, dests);
 }
-function scriptit(a){
+function script_outpatchers(chans_sep,d_offsets,dests){
+	//channels arguments for mc.separate
 	//post("chans",a,"dest_count",dest_count,"d_offsets",d_offsets,"dests",dests,"\n");
-	let al = a.length;
+	let sep; //mc.separate
+	let al = chans_sep.length;
 	out_patcher.remove(out_patcher.getnamed("sep"));
 	for (i=0;i<30;i++) out_patcher.remove(out_patcher.getnamed("send"+i));
 	if (al == 1){
-		newsend(0);	
+		newsend(0,d_offsets);	
  		out_patcher.connect(out_patcher.getnamed("in"),0,out_patcher.getnamed("send0"),0);
 	}
 	if (al > 1){
-		sep = out_patcher.newdefault(40,80,"mc.separate~",a);
+		sep = out_patcher.newdefault(40,80,"mc.separate~",chans_sep);
 		sep.varname = "sep";
 		sep.rect = [40, 80, 400, 102];
 		out_patcher.connect(out_patcher.getnamed("in"),0,sep,0);
 		for (i=0;i<al;i++){
-			newsend(i);	
+			newsend(i,d_offsets);	
 			out_patcher.connect(sep,i,out_patcher.getnamed("send"+i),0);
 		}
 	}
-	dest_count = al;
+
 }
-function newsend(i){
+function newsend(i,d_offsets,dests){
 	//post("do",d_offsets,"i",i,"\n");
 	let s;
 	if (d_offsets[i] == 1){
