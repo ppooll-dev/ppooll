@@ -37,6 +37,8 @@ var use_outputsMix = 1; //0 if only outputs~, 1 if outputs~and outputsMix~
 var size_state = 0;
 var keep = 0;
 var chchange_state = [0,2]; // used in script_sub_chchange()
+var outputs_parse_current = [-1,-1,-1];
+var outputsMix_parse_current = [-1,-1,-1];
 
 var extra_amt = 0;
 var extra_widths = [];
@@ -321,15 +323,13 @@ function smix(){
 function get_tilde(){
 	let vg = pattr_outputs.getvalueof();	
 	let v = makearray(vg);
-	if (!v[0]) return;
-	let vs = v.toString();
-	let br = bpatcher.rect;
+	//let asl = v.slice(1);
+	let af = v.slice(1).filter(item => item !== "_");
+	//post("t",af=="","\n");
 	let tild = "~";
-	if (vs.indexOf(",")>=0){	//detect tild
-		if (v.slice(1).join(" ").replaceAll("_","").replaceAll(" ","") == "") 
-			return ["~",v[0].split("~")[0], v[0].split("~")[1]]
-		else return ["≈",v[0].split("~")[0], v[0].split("~")[1]] ;
-		}
+	if (af=="") tild = "~"
+	else tild = "≈";
+	return [tild,v[0].split("~")[0], v[0].split("~")[1]];
 }
 function unfold_fold(){
 	if(style<2) return;
@@ -345,6 +345,7 @@ function unfold_fold(){
 		listblock_o.message("header_text", get_tilde());
 		listblock_o.message("headercolors", 3,1,1);
 		ib.hidden = 0;
+		state_menu_o.hidden = 0;
 		}	
 	else{ //un-folded
 		
@@ -355,7 +356,8 @@ function unfold_fold(){
 		//post(b_width,"br",br[0],"extra_width",extra_width,"r2",br[0] + b_width + Number(extra_width),"\n");
 		listblock_o.message("header_text", get_tilde()[0], "act", "keep",extraheader);
 		listblock_o.message("headercolors", 3,1,3+keep,1);
-		ib.hidden = 1;		
+		ib.hidden = 1;	
+		state_menu_o.hidden = 1;	
 		}
 	listblock_o.message("colwidths", rowheight, men_width, men_width, extra_widths);
 	grow();
@@ -431,14 +433,14 @@ function chans(a){
 		ch_out = c[1];
 		smix();
 		chans_out_o.message("set", ch_out);
-		script_sub_chchange(chansV);
+		//script_sub_chchange(chansV);
 		unfold_fold();
 		}
 	if (c[0] != ch_in){
 		ch_in = c[0];
 		chans_in_o.message("set", ch_in);
 		outlet(0,"chans_in",ch_in);
-		script_sub_chchange(chansV);
+		//script_sub_chchange(chansV);
 		}
 }	
 function levels(){
@@ -627,6 +629,7 @@ function script_sub(){
 	if (use_outputsMix != uoM){
 		use_outputsMix = uoM;
 		//post("use_outputsMix",uoM,"\n");
+		/*
 		if (use_outputsMix){ //basic
 			//tp.connect(bits, 0, chchange, 0);
 			tp.connect(mat, 0, outputs, 0);
@@ -636,7 +639,7 @@ function script_sub(){
 			tp.disconnect(bits, 0, outputs, 0);
 			tp.disconnect(bits, 0, pmeter, 2);
 			chchange_state = [-1,-1];
-			script_sub_chchange(chansV)
+			//script_sub_chchange(chansV)
 		}
 		else { //mc.basic
 			tp.disconnect(bits, 0, chchange, 0);
@@ -647,6 +650,7 @@ function script_sub(){
 			tp.connect(bits, 0, outputs, 0);
 			tp.connect(bits, 0, pmeter, 2);
 		}
+		*/
 	}
 }
 function script_sub_chchange(c){	
@@ -695,7 +699,9 @@ function script_sub_chchange(c){
 function outputs(){ //called by pattr_outputs (== outputs~)
 	out_patcher = this.patcher.getnamed("outputs").subpatcher();
 	let a = arrayfromargs(arguments);
-	chan_sep(a);
+	let out_parse = chan_sep(a);
+	script_outpatchers(out_parse,outputs_parse_current);
+	outputs_parse_current = out_parse;
 }
 function outputsMix(){ //called by pattr_outputsMix (== outputsMix~)
 	out_patcher = this.patcher.getnamed("outputsMix").subpatcher();
@@ -725,45 +731,70 @@ function chan_sep(a){ //calculate the channels of each separation
 		}
 	}
 	chans_sep.push(v.length-cmem);
-	script_outpatchers(chans_sep, d_offsets, dests);
+	return [chans_sep, d_offsets, dests];
+	//script_outpatchers(chans_sep, d_offsets, dests);
 }
-function script_outpatchers(chans_sep,d_offsets,dests){
-	//channels arguments for mc.separate
-	//post("chans",a,"dest_count",dest_count,"d_offsets",d_offsets,"dests",dests,"\n");
-	let sep; //mc.separate
+function script_outpatchers(a,b){
+	let chans_sep = a[0];
+	let d_offsets = a[1];
+	let dests = a[2];
+	let news = [JSON.stringify(a[0])!=JSON.stringify(b[0]),JSON.stringify(a[1])!=JSON.stringify(b[1]),JSON.stringify(a[2])!=JSON.stringify(b[2])];
+	let sep = out_patcher.getnamed("sep"); //mc.separate
 	let al = chans_sep.length;
-	out_patcher.remove(out_patcher.getnamed("sep"));
-	for (i=0;i<30;i++) out_patcher.remove(out_patcher.getnamed("send"+i));
-	if (al == 1){
-		newsend(0,d_offsets,dests);	
- 		out_patcher.connect(out_patcher.getnamed("in"),0,out_patcher.getnamed("send0"),0);
+	let bl = b[0].length;
+	//post("chans_sep",chans_sep,"d_offsets",d_offsets,"dests",dests,"news",news,"al",al,"bl",bl,"\n");	
+	if (news[2]) {  //new dests
+		//post("new_dests",al,"\n")
+		newsends(al,bl,d_offsets,dests);	
 	}
-	if (al > 1){
-		sep = out_patcher.newdefault(40,80,"mc.separate~",chans_sep);
-		sep.varname = "sep";
-		sep.rect = [40, 80, 400, 102];
-		out_patcher.connect(out_patcher.getnamed("in"),0,sep,0);
-		for (i=0;i<al;i++){
-			newsend(i,d_offsets,dests);	
-			out_patcher.connect(sep,i,out_patcher.getnamed("send"+i),0);
-		}
+	if (news[1] && !news[2]) { //new d_offsets if not already done before
+		newsends(al,bl,d_offsets,dests);
 	}
+	if (news[0]) { //new chan_sep
+		out_patcher.remove(out_patcher.getnamed("sep"));
+		if (al > 1) {
+			sep = out_patcher.newdefault(40,80,"mc.separate~",chans_sep);
+			sep.varname = "sep";
+			sep.rect = [40, 80, 400, 102];
+			out_patcher.connect(out_patcher.getnamed("in"),0,sep,0);
+		}		
+	}
+	if (news[0] || news[1] || news[2]){
+		if (al == 1) out_patcher.connect(out_patcher.getnamed("in"),0,out_patcher.getnamed("send0"),0)
+		else 
+			for (i=0;i<al;i++){
+				let dest = out_patcher.getnamed("send"+i);
+				//patchcords(sep);
+				out_patcher.connect(sep,i,dest,0);
+			}
 
+	}
 }
-function newsend(i,d_offsets,dests){
+function patchcords(o){
+	//post("mmm", Object.keys(sep.patchcords),"\n");
+	
+	let pc_out = o.patchcords["outputs"];
+	for (let j of pc_out){ //Object.keys(pc_out[key])
+		post(j["srcobject"].varname,j["srcoutlet"],j["dstobject"].varname,j["dstinlet"],"\n");
+		//post(pc_out[j]["srcobject"].varname,pc_out[j]["srcoutlet"],pc_out[j]["dstobject"].varname,pc_out[j]["dstinlet"],"\n");
+	}
+}
+function newsends(al,bl,d_offsets,dests){
 	//post("do",d_offsets,"i",i,"\n");
 	let s;
-	if (d_offsets[i] == 1){
- 		s = out_patcher.newdefault(100,100,"mc.send~",dests[i]);
-		//s.message("set", dests[i]);
+	for (i=0;i<bl;i++) out_patcher.remove(out_patcher.getnamed("send"+i));
+	for (i=0;i<al;i++) {	
+		if (d_offsets[i] == 1){
+	 		s = out_patcher.newdefault(100,100,"mc.send~",dests[i]);
+		}
+		else {
+			s = out_patcher.newdefault(100,100,"ll.mc.s~", d_offsets[i]-1,dests[i]);
+		}
+		s.varname = "send"+i;
+		s.rect = [40+80*i, 120, 40+80*i+70, 132];
 	}
-	else {
-		s = out_patcher.newdefault(100,100,"ll.mc.s~", d_offsets[i]-1,dests[i]);
-		//let sub = s.subpatcher(0).getnamed("send")
-		//sub.message("set", dests[i]);
-	}
-	s.varname = "send"+i;
-	s.rect = [40+80*i, 120, 40+80*i+70, 132];
 }
+
+
 
 
