@@ -376,7 +376,7 @@ function grow(){
 			TP.message("window", "flags", "grow");
 			TP.message("window", "exec");
 			//actpatcher.wind.scrollto(500,500);
-			outlet(0,"scrolldown");
+			outlet(0,"scrolldown",b3-a3);
 			//}
 	}
 	if (a3 > b3 &&  a2 > b2 && actpatcher.wind.hasvertscroll){
@@ -386,8 +386,8 @@ function grow(){
 	}
 	//else TP.message("window", "flags", "nogrow");	
 } //set patcher grow if bp is bigger
-function scrolldown(){
-	actpatcher.wind.scrollto(500,500);
+function scrolldown(a){
+	actpatcher.wind.scrollto(a,a);
 }
 
 // #####################################pattrs
