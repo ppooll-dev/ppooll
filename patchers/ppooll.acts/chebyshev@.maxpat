@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 7,
+			"revision" : 8,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 494.0, 531.0, 160.0, 240.0 ],
+		"rect" : [ 495.0, 531.0, 160.0, 240.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "chebyshev@1",
@@ -54,6 +54,7 @@
 					"outlettype" : [ "float", "float", "float", "float", "list", "" ],
 					"patching_rect" : [ 0.0, 139.0, 160.0, 48.0 ],
 					"ruler" : 0,
+					"selectioncolor" : [ 0.92156862745098, 0.709803921568627, 0.329411764705882, 0.0 ],
 					"vticks" : 0,
 					"waveformcolor" : [ 0.407843137254902, 0.36078431372549, 0.043137254901961, 1.0 ]
 				}
@@ -87,10 +88,10 @@
 					"annotation" : "Harmonic Partial 1 Amplitude",
 					"bgcolor" : [ 0.835294, 0.858824, 0.541176, 1.0 ],
 					"fontface" : 0,
-					"format" : [ 2.4 ],
+					"format" : [ 1.9 ],
 					"id" : "obj-10",
 					"label" : [ "harmonics" ],
-					"labelcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"labelcolor" : [ 0.572549019607843, 0.63921568627451, 0.647058823529412, 1.0 ],
 					"max" : 1.0,
 					"maxclass" : "ll_number",
 					"min" : 0.0,
@@ -100,8 +101,8 @@
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 0.0, 28.0, 160.0, 97.0 ],
-					"slidercolor" : [ 0.407843, 0.360784, 0.043137, 1.0 ],
-					"sliderlog" : 4.0,
+					"slidercolor" : [ 0.407843137254902, 0.36078431372549, 0.043137254901961, 1.0 ],
+					"sliderlog" : 2.0,
 					"slidermax" : 1.0,
 					"sliderstyle" : 0,
 					"varname" : "harmonics"
@@ -113,18 +114,14 @@
 					"active" : 					{
 						"presets" : 0,
 						"preset-ramp" : 0,
-						"title_menu" : 0,
-						"pres_menu" : 0,
-						"tetris_menu" : 0,
-						"master" : 0,
 						"act::active_store" : 0,
 						"act::master/activest" : 0,
 						"ll.blues" : 0,
-						"ll.blues::levels" : 0,
-						"ll.blues::outputs" : 0,
-						"ll.blues::state" : 0,
-						"actmakeB::master/activest" : 0,
-						"actmakeB::active_store" : 0
+						"ll.blues::status" : 0,
+						"ll.blues::outputs~" : 0,
+						"ll.blues::outputsMix~" : 0,
+						"ll.blues::chans" : 0,
+						"ll.blues::levels" : 0
 					}
 ,
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -140,10 +137,11 @@
 					"priority" : 					{
 						"presets" : 1016,
 						"preset-ramp" : 1017,
-						"title_menu" : 2010,
-						"pres_menu" : 2011,
-						"tetris_menu" : 2012,
-						"master" : 2013
+						"ll.blues::status" : 1,
+						"ll.blues::outputs~" : 2,
+						"ll.blues::outputsMix~" : 3,
+						"ll.blues::chans" : 4,
+						"ll.blues::levels" : 5
 					}
 ,
 					"saved_object_attributes" : 					{
@@ -207,9 +205,9 @@
 					"patching_rect" : [ 402.0, 149.0, 107.0, 22.0 ],
 					"restore" : 					{
 						"harmonics" : [ 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
-						"interpolate" : [ 1000 ],
+						"interpolate" : [ 896.0 ],
 						"preset-ramp" : [ 0.0 ],
-						"presets" : [ 1 ]
+						"presets" : [ 11 ]
 					}
 ,
 					"text" : "autopattr autopattr",
@@ -232,7 +230,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 7,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -248,7 +246,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 240.0, 229.0, 149.0, 22.0 ],
+									"patching_rect" : [ 240.0, 229.0, 147.0, 35.0 ],
 									"text" : "harmonics #0harmonics\n"
 								}
 
@@ -261,7 +259,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 259.0, 200.0, 103.0, 22.0 ],
+									"patching_rect" : [ 259.0, 200.0, 101.0, 35.0 ],
 									"text" : "cheby #0cheby\n"
 								}
 
@@ -300,7 +298,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 304.0, 120.0, 222.0, 24.0 ],
+									"patching_rect" : [ 304.0, 120.0, 220.0, 40.0 ],
 									"text" : "buffer~ #0harmonics 1 8 @samps 1"
 								}
 
@@ -315,7 +313,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 304.0, 66.0, 210.0, 24.0 ],
+									"patching_rect" : [ 304.0, 66.0, 208.0, 40.0 ],
 									"text" : "buffer~ #0cheby 1 @samps 8192"
 								}
 
@@ -332,7 +330,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 8,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -426,7 +424,7 @@
 											"appversion" : 											{
 												"major" : 9,
 												"minor" : 0,
-												"revision" : 7,
+												"revision" : 8,
 												"architecture" : "x64",
 												"modernui" : 1
 											}
@@ -439,10 +437,10 @@
 														"maxclass" : "newobj",
 														"text" : "buffer harmonics",
 														"patching_rect" : [ 111.0, 106.0, 98.0, 22.0 ],
+														"outlettype" : [ "", "" ],
 														"numinlets" : 0,
-														"id" : "obj-4",
 														"numoutlets" : 2,
-														"outlettype" : [ "", "" ]
+														"id" : "obj-4"
 													}
 
 												}
@@ -451,10 +449,10 @@
 														"maxclass" : "newobj",
 														"text" : "in 1",
 														"patching_rect" : [ 35.0, 59.0, 28.0, 22.0 ],
+														"outlettype" : [ "" ],
 														"numinlets" : 0,
-														"id" : "obj-8",
 														"numoutlets" : 1,
-														"outlettype" : [ "" ]
+														"id" : "obj-8"
 													}
 
 												}
@@ -463,10 +461,10 @@
 														"maxclass" : "newobj",
 														"text" : "- 1",
 														"patching_rect" : [ 65.0, 92.0, 23.0, 22.0 ],
+														"outlettype" : [ "" ],
 														"numinlets" : 1,
-														"id" : "obj-6",
 														"numoutlets" : 1,
-														"outlettype" : [ "" ]
+														"id" : "obj-6"
 													}
 
 												}
@@ -476,8 +474,8 @@
 														"text" : "poke harmonics",
 														"patching_rect" : [ 34.333333333333314, 135.0, 93.0, 22.0 ],
 														"numinlets" : 4,
-														"id" : "obj-5",
-														"numoutlets" : 0
+														"numoutlets" : 0,
+														"id" : "obj-5"
 													}
 
 												}
@@ -486,10 +484,10 @@
 														"maxclass" : "newobj",
 														"text" : "0",
 														"patching_rect" : [ 50.333333333333343, 21.0, 19.0, 22.0 ],
+														"outlettype" : [ "" ],
 														"numinlets" : 0,
-														"id" : "obj-1",
 														"numoutlets" : 1,
-														"outlettype" : [ "" ]
+														"id" : "obj-1"
 													}
 
 												}
@@ -498,25 +496,18 @@
 														"maxclass" : "newobj",
 														"text" : "mc_channel",
 														"patching_rect" : [ 65.0, 59.0, 73.0, 22.0 ],
+														"outlettype" : [ "" ],
 														"numinlets" : 0,
-														"id" : "obj-2",
 														"numoutlets" : 1,
-														"outlettype" : [ "" ]
+														"id" : "obj-2"
 													}
 
 												}
  ],
 											"lines" : [ 												{
 													"patchline" : 													{
-														"source" : [ "obj-2", 0 ],
-														"destination" : [ "obj-6", 0 ]
-													}
-
-												}
-, 												{
-													"patchline" : 													{
-														"source" : [ "obj-1", 0 ],
-														"destination" : [ "obj-5", 1 ]
+														"source" : [ "obj-6", 0 ],
+														"destination" : [ "obj-5", 2 ]
 													}
 
 												}
@@ -529,8 +520,15 @@
 												}
 , 												{
 													"patchline" : 													{
-														"source" : [ "obj-6", 0 ],
-														"destination" : [ "obj-5", 2 ]
+														"source" : [ "obj-1", 0 ],
+														"destination" : [ "obj-5", 1 ]
+													}
+
+												}
+, 												{
+													"patchline" : 													{
+														"source" : [ "obj-2", 0 ],
+														"destination" : [ "obj-6", 0 ]
 													}
 
 												}
@@ -546,7 +544,7 @@
 									"outlettype" : [ "multichannelsignal" ],
 									"patching_rect" : [ 85.0, 269.0, 112.0, 22.0 ],
 									"text" : "mc.gen~ @chans 8",
-									"wrapper_uniquekey" : "u055005341"
+									"wrapper_uniquekey" : "u543007993"
 								}
 
 							}
@@ -556,7 +554,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "multichannelsignal" ],
 									"patching_rect" : [ 85.0, 449.0, 76.0, 22.0 ],
 									"text" : "mc.dcblock~"
 								}
@@ -622,7 +620,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 85.0, 392.0, 172.0, 22.0 ],
+									"patching_rect" : [ 85.0, 392.0, 170.0, 35.0 ],
 									"text" : "mc.lookup~ #0cheby 0 8192"
 								}
 
@@ -818,7 +816,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "chebyshev@", "#ffffff" ],
+					"args" : [ "chebyshev@", "#D5DB8A" ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -884,6 +882,10 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "dcblock~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
 				"name" : "ll._utilities.js",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
@@ -919,6 +921,20 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.bluebutton.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.blues.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.blues.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
@@ -930,6 +946,13 @@
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.listblock.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -947,13 +970,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.p.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ll.pattr_ui.js",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
@@ -962,6 +978,13 @@
 			}
 , 			{
 				"name" : "ll.pf.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.pp.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
@@ -1017,20 +1040,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.s~.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.s~.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ll.wsendback.js",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
@@ -1053,13 +1062,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "nblue.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "pattrexists.mxo",
 				"type" : "iLaX"
 			}
@@ -1072,7 +1074,7 @@
 			}
  ],
 		"autosave" : 0,
-		"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+		"bgcolor" : [ 0.835294117647059, 0.858823529411765, 0.541176470588235, 1.0 ]
 	}
 
 }
