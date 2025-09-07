@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 414.0, 349.0, 191.0, 54.0 ],
+		"rect" : [ 284.0, 356.0, 191.0, 54.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "control@1",
@@ -922,17 +922,29 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1037.0, 471.0, 529.0, 355.0 ],
+						"rect" : [ 949.0, 471.0, 529.0, 355.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 183.0, 224.0, 47.0, 20.0 ],
+									"text" : "clean"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-6",
+									"linecount" : 3,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 191.0, 227.0, 35.0, 22.0 ],
-									"text" : "clear"
+									"patching_rect" : [ 183.0, 252.0, 102.0, 49.0 ],
+									"text" : "clear, append -no-, append ~refresh~"
 								}
 
 							}
@@ -943,7 +955,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 178.0, 274.0, 125.0, 22.0 ],
+									"patching_rect" : [ 183.0, 309.0, 125.0, 22.0 ],
 									"text" : "ll.pf midi_receive_port"
 								}
 
@@ -10454,7 +10466,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 300.0, 212.0, 35.0, 20.0 ],
+									"patching_rect" : [ 401.0, 252.0, 35.0, 20.0 ],
 									"text" : "todo:"
 								}
 
@@ -10672,7 +10684,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 331.0, 239.0, 20.0, 20.0 ]
+									"patching_rect" : [ 370.0, 252.0, 20.0, 20.0 ]
 								}
 
 							}
@@ -10684,7 +10696,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 344.0, 269.0, 115.0, 22.0 ],
+									"patching_rect" : [ 370.0, 285.0, 115.0, 22.0 ],
 									"text" : "ll.s send_back_light"
 								}
 
@@ -11844,7 +11856,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 480.0, 242.0, 50.0, 22.0 ],
-																	"text" : "127."
+																	"text" : "127"
 																}
 
 															}
@@ -14983,7 +14995,7 @@
 																	"allowdrag" : 0,
 																	"fontsize" : 9.0,
 																	"id" : "obj-14",
-																	"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "from Max 1", ",", "from Max 2" ],
+																	"items" : [ "AU DLS Synth 1", ",", "Network Session 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "Scarlett 18i20 USB", ",", "MIDISPORT 1x1 Port A", ",", "Minilab3 MIDI", ",", "Minilab3 DIN THRU", ",", "Minilab3 MCU/HUI", ",", "Minilab3 ALV", ",", "from Max 1", ",", "from Max 2" ],
 																	"maxclass" : "umenu",
 																	"numinlets" : 1,
 																	"numoutlets" : 3,
@@ -18251,7 +18263,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 25.0, 72.0, 730.0, 33.0 ],
+										"rect" : [ 287.0, 422.0, 730.0, 33.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"toolbarvisible" : 0,
 										"boxes" : [ 											{
@@ -18735,7 +18747,7 @@
 													"fontsize" : 9.0,
 													"hidden" : 1,
 													"id" : "obj-69",
-													"items" : [ "buffer_host1", ",", "control@1", ",", "ho_st1", ",", "ll.blues.help1" ],
+													"items" : [ "control@1", ",", "ho_st1" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -22085,7 +22097,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 140.0, 100.0, 78.0, 0.0 ],
+									"patching_rect" : [ 140.0, 100.0, 78.0, 20.0 ],
 									"text" : "ll.ctlin",
 									"varname" : "in"
 								}
@@ -22204,8 +22216,8 @@
 						"hi_menu" : [ "Apple Internal Keyboard / Trackpad" ],
 						"input_menu" : [ "midi" ],
 						"midi_channels" : [ 0 ],
-						"midi_receive_port" : [ "IAC Driver Bus 1" ],
-						"note_mode" : [ "notes_single" ],
+						"midi_receive_port" : [ "-no-" ],
+						"note_mode" : [ "no_notes" ],
 						"on/off" : [ 1 ],
 						"osc_receive_port" : [ 8001 ],
 						"output_menu" : [ 0 ],
@@ -22377,7 +22389,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 9.0,
 					"id" : "obj-22",
-					"items" : [ "IAC Driver Bus 1", ",", "to Max 1", ",", "to Max 2" ],
+					"items" : [ "-no-", ",", "~refresh~" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -22811,6 +22823,13 @@
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.midi_in.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/steech",
+				"patcherrelativepath" : "../abstractions/steech",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
