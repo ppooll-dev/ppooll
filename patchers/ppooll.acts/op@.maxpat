@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 548.0, 101.0, 316.0, 106.0 ],
+		"rect" : [ 242.0, 156.0, 316.0, 106.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "op@1",
@@ -47,7 +47,7 @@
 					"format" : [ 1 ],
 					"id" : "obj-26",
 					"label" : [ "chan#" ],
-					"max" : 2.0,
+					"max" : 8.0,
 					"maxclass" : "ll_number",
 					"min" : 0.0,
 					"mousefocus" : 1,
@@ -56,7 +56,7 @@
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 157.5, 39.0, 69.5, 13.0 ],
-					"slidermax" : 2.0,
+					"slidermax" : 8.0,
 					"valuepopup" : 1,
 					"varname" : "disp_rightchan",
 					"vertical" : 5.0
@@ -71,7 +71,7 @@
 					"format" : [ 1 ],
 					"id" : "obj-23",
 					"label" : [ "chan#" ],
-					"max" : 2.0,
+					"max" : 8.0,
 					"maxclass" : "ll_number",
 					"min" : 0.0,
 					"mousefocus" : 1,
@@ -80,7 +80,7 @@
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 25.0, 40.0, 70.0, 12.0 ],
-					"slidermax" : 2.0,
+					"slidermax" : 8.0,
 					"valuepopup" : 1,
 					"varname" : "disp_leftchan",
 					"vertical" : 5.0
@@ -253,7 +253,7 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "ll.blues9.maxpat",
+					"name" : "ll.blues.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
@@ -959,10 +959,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 345, 87, 1600, 803 ],
+						"client_rect" : [ 400, 44, 1676, 800 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 200, 200, 800, 500 ]
+						"storage_rect" : [ 430, 270, 1276, 999 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -3654,7 +3654,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.blues9.maxpat",
+				"name" : "ll.blues.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
@@ -3668,6 +3668,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.mc.bs~.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.mc.r.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
@@ -3675,9 +3682,9 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.mc.stereo_pan.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../abstractions/ll.blues",
+				"name" : "ll.mc.s~.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
