@@ -23,8 +23,8 @@ let isHoveringLeft,
 //		we can have a ppooll preference & global var to disable
 let showHoverIcons = true;
 
-var txt = "txtxtxt1";
-var txt88 = "txtxtxt88";
+var txt = "loading...";
+var txt88 = "loading...";
 txt_color = [1, 1, 1, 1];
 bgcolor = [0, 0, 0, 1];
 //w.location = [300,300,700,700];
