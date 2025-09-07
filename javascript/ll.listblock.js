@@ -18,6 +18,8 @@ var par, pval, drag_val;
 var lllbnum, lllbmenu, lllbtext;
 var val = "n"; //notifyclients about clicked mode and position
 var selected_box = [null, null];
+var is_selected_menu = false;
+var isIdleOut = false;
 var button_on = -1;
 var bang_gate = 1;
 var keep_ = 0;
@@ -458,9 +460,12 @@ function paint() {
                  selected_box[0] === j &&
                  selected_box[1] === (i - header);
 
-			let is_selected_menu = false;
-			if (isSelected && i >= header && cm == "menu") {
-				mgraphics.set_source_rgba(.23,.23,.23, 1); // translucent yellow
+
+			// TODO Draw Dark border around selected row
+
+			is_selected_menu = false;
+			if (isSelected && i >= header && cm == "menu" && isIdleOut) {
+				mgraphics.set_source_rgba(.23,.23,.23, 1); 
 				mgraphics.rectangle(col_pos[j], i * rowheight, cw, rowheight);
 				mgraphics.fill();
 				is_selected_menu = true;
@@ -600,6 +605,22 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl) {
 	}
 }
 ondrag.local = 1; //private
+
+function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
+	if(isIdleOut)
+	{
+		isIdleOut = false;
+		is_selected_menu = false;
+		mgraphics.redraw()
+	}
+}
+function onidleout() {	
+	if(isIdleOut)
+		return
+
+	isIdleOut = true;
+	mgraphics.redraw()
+}
 
 function outputs(){
 	//post("f_outputs",ccm2,"act",act,"cha",cha,"\n")
