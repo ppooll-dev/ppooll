@@ -55,9 +55,14 @@ function acting(c,i,o){ //response from an act when ready loaded
 }
 
 function setloc(a){
-	let win = d.get(a).get("_actwindow");
-	win = win.slice(1,3);
-	messnamed(a, "v8", "setloc", win);
+	try{
+		let win = d.get(a).get("_actwindow");
+		win = win.slice(1,3);
+		messnamed(a, "v8", "setloc", win);
+	}
+	catch(_){
+		post("[ ll.enviread ] setloc failed to get _actwindow", "\n")
+	}
 }
 
 
