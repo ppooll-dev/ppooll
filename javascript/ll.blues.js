@@ -731,10 +731,10 @@ function script_sub() {
         S.inMix = ims;
         if (S.inMix) {
             if (!tp.getnamed("llr")) {
-                let llr = tp.newdefault(90, 90, "ll.in_mix");
+                let llr = tp.newdefault(100, 95, "ll.in_mix");
                 llr.varname = "llr";
-                tp.connect(llr, 0, tp.getnamed("bits"), 0);
-                tp.connect(llr, 1, tp.getnamed("pmeter"), 0);
+                tp.connect(llr, 0, tp.getnamed("volpanmix"), 0);
+                tp.connect(llr, 1, tp.getnamed("volpanmix"), 1);
             }
         } else {
             let llr = tp.getnamed("llr");
