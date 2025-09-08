@@ -35,8 +35,8 @@ const S = {
     stateV: [0, 1, 0, 0, 0, 0,1], // style,show_mix,vol_sel,meter,mix_adds,link_chans, folded
 
     // derived
-    chIn: 2,
-    chOut: 2,
+    chIn: 0,
+    chOut: 0,
     inMix: 0, // style==1
     useOutputsMix: 1, // style<2
     style: 0,
@@ -563,7 +563,7 @@ function status() {
 function chans() {
     const c = arrayfromargs(arguments);
     S.chansV = c;
-
+	post("chans",S.chIn,S.chOut,"\n")
     if (c[1] !== S.chOut) {
         S.chOut = c[1];
         listblockCompose();
