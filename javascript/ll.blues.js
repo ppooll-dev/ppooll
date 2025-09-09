@@ -40,7 +40,7 @@ const S = {
     inMix: 0, // style==1
     useOutputsMix: 1, // style<2
     style: 0,
-    showMix: 1,
+    showMix: 0,
     volSel: 0,
     meter: 0,
     mixAdds: 0,
@@ -59,8 +59,8 @@ const S = {
     keep: 0,
 
     // parsing caches
-    outputsParseCurrent: [2, 1, "ho_st1~out"],
-    outputsMixParseCurrent: [2, 1, "no"],
+    outputsParseCurrent: [[2], [1], ["ho_st1~out"]],
+    outputsMixParseCurrent: [[2], [1], ["no"]],
 
     rowheight: 13,
 };
@@ -561,7 +561,7 @@ function status() {
 function chans() {
     const c = arrayfromargs(arguments);
     S.chansV = c;
-	post("chans",S.chIn,S.chOut,"\n")
+	//post("chans",S.chIn,S.chOut,"\n")
     if (c[1] !== S.chOut) {
         S.chOut = c[1];
         listblockCompose();
@@ -807,6 +807,7 @@ function outputs() {
     out_patcher = this.patcher.getnamed("outputs").subpatcher();
     const a = arrayfromargs(arguments);
     const out_parse = chan_sep(a);
+	//post("outputs",out_parse[0],out_parse[1],out_parse[2],"current", S.outputsParseCurrent,"\n");
     script_outpatchers(out_parse, S.outputsParseCurrent);
     S.outputsParseCurrent = out_parse;
 }
@@ -814,7 +815,9 @@ function outputs() {
 function outputsMix() {
     out_patcher = this.patcher.getnamed("outputsMix").subpatcher();
     const a = arrayfromargs(arguments);
-    chan_sep(a); // (no structural wiring differences in original)
+	const out_parse = chan_sep(a);
+    script_outpatchers(out_parse, S.outputsMixParseCurrent);
+    S.outputsMixParseCurrent = out_parse;
 }
 
 function chan_sep(a) {
@@ -849,13 +852,13 @@ function script_outpatchers(a, b) {
     const old_chans = b[0] || [],
         old_offs = b[1] || [],
         old_dests = b[2] || [];
-
+	//post("changed1",chans_sep,old_chans,"st",JSON.stringify(chans_sep), JSON.stringify(old_chans),"\n");
     const changed = [
         JSON.stringify(chans_sep) !== JSON.stringify(old_chans),
         JSON.stringify(d_offsets) !== JSON.stringify(old_offs),
         JSON.stringify(dests) !== JSON.stringify(old_dests),
     ];
-
+	//post("changed",changed,"\n");
     let sep = out_patcher.getnamed("sep");
     const al = chans_sep.length,
         bl = old_chans.length;
