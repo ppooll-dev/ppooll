@@ -16,6 +16,56 @@
 		"globalpatchername" : "threekomp1",
 		"boxes" : [ 			{
 				"box" : 				{
+					"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
+					"fgcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"gridcolor" : [ 0.349019607843137, 0.349019607843137, 0.349019607843137, 0.0 ],
+					"id" : "obj-9",
+					"maxclass" : "scope~",
+					"numinlets" : 2,
+					"numoutlets" : 0,
+					"patching_rect" : [ 204.0, 173.0, 100.0, 83.0 ],
+					"varname" : "wet3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "scope~",
+					"numinlets" : 2,
+					"numoutlets" : 0,
+					"patching_rect" : [ 204.0, 173.0, 100.0, 83.0 ],
+					"varname" : "dry3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
+					"fgcolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"gridcolor" : [ 0.349019607843137, 0.349019607843137, 0.349019607843137, 0.0 ],
+					"id" : "obj-1",
+					"maxclass" : "scope~",
+					"numinlets" : 2,
+					"numoutlets" : 0,
+					"patching_rect" : [ 102.0, 173.0, 100.0, 83.0 ],
+					"varname" : "wet2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "scope~",
+					"numinlets" : 2,
+					"numoutlets" : 0,
+					"patching_rect" : [ 102.0, 173.0, 100.0, 83.0 ],
+					"varname" : "dry2"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bgcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"bgoncolor" : [ 1.0, 0.07843137254902, 0.235294117647059, 1.0 ],
 					"fontlink" : 1,
@@ -163,8 +213,8 @@
 					"maxclass" : "scope~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 173.0, 304.0, 83.0 ],
-					"varname" : "wet"
+					"patching_rect" : [ 0.0, 173.0, 100.0, 83.0 ],
+					"varname" : "wet1"
 				}
 
 			}
@@ -174,8 +224,8 @@
 					"maxclass" : "scope~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 0.0, 173.0, 304.0, 83.0 ],
-					"varname" : "dry"
+					"patching_rect" : [ 0.0, 173.0, 100.0, 83.0 ],
+					"varname" : "dry1"
 				}
 
 			}
@@ -935,7 +985,7 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@status", 1, 1, 0, 0, 0, 1 ],
+					"args" : [ "@status", 1, 1, 0, 0, 0, 1, 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -1133,6 +1183,54 @@
 						"rect" : [ 1121.0, 335.0, 758.0, 482.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-26",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 330.0, 345.0, 56.0, 22.0 ],
+									"text" : "ll.pf wet3"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-24",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 265.0, 345.0, 56.0, 22.0 ],
+									"text" : "ll.pf wet2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-10",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 330.0, 309.0, 54.0, 22.0 ],
+									"text" : "ll.pf dry3"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 266.0, 309.0, 54.0, 22.0 ],
+									"text" : "ll.pf dry2"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-3",
 									"maxclass" : "newobj",
@@ -1458,10 +1556,10 @@
 									"id" : "obj-12",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "multichannelsignal" ],
+									"numoutlets" : 7,
+									"outlettype" : [ "multichannelsignal", "multichannelsignal", "multichannelsignal", "multichannelsignal", "multichannelsignal", "multichannelsignal", "multichannelsignal" ],
 									"patching_rect" : [ 147.0, 235.0, 368.0, 22.0 ],
-									"text" : "mc.poly~ threekomp_poly_240520.maxpat @parallel 1 @args #0 ",
+									"text" : "mc.poly~ threekomp_poly_250908.maxpat @parallel 1 @args #0 ",
 									"varname" : "poly~"
 								}
 
@@ -1473,8 +1571,8 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 67.0, 331.0, 47.0, 22.0 ],
-									"text" : "ll.pf dry"
+									"patching_rect" : [ 205.166666666666657, 309.0, 54.0, 22.0 ],
+									"text" : "ll.pf dry1"
 								}
 
 							}
@@ -1485,8 +1583,8 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 227.0, 331.0, 49.0, 22.0 ],
-									"text" : "ll.pf wet"
+									"patching_rect" : [ 204.166666666666629, 345.0, 56.0, 22.0 ],
+									"text" : "ll.pf wet1"
 								}
 
 							}
@@ -1558,21 +1656,8 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 147.0, 331.0, 68.0, 22.0 ],
+									"patching_rect" : [ 147.0, 398.0, 68.0, 22.0 ],
 									"text" : "ll.pf ll.blues"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"attr" : "voices",
-									"id" : "obj-8",
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 266.0, 261.0, 150.0, 22.0 ]
 								}
 
 							}
@@ -1605,8 +1690,42 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"source" : [ "obj-12", 3 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-11", 0 ],
+									"source" : [ "obj-12", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"source" : [ "obj-12", 5 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-26", 0 ],
+									"source" : [ "obj-12", 6 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-12", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"order" : 1,
 									"source" : [ "obj-12", 0 ]
 								}
 
@@ -1614,8 +1733,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"order" : 0,
-									"source" : [ "obj-12", 0 ]
+									"source" : [ "obj-12", 4 ]
 								}
 
 							}
@@ -1758,16 +1876,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-11", 0 ],
-									"order" : 1,
-									"source" : [ "obj-6", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-12", 0 ],
-									"order" : 0,
 									"source" : [ "obj-6", 0 ]
 								}
 
@@ -1785,13 +1894,6 @@
 									"destination" : [ "obj-27", 0 ],
 									"order" : 0,
 									"source" : [ "obj-7", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-12", 0 ],
-									"source" : [ "obj-8", 0 ]
 								}
 
 							}
@@ -1998,20 +2100,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.mc.bs~.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.mc.s~.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ll.og.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
@@ -2136,7 +2224,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "threekomp_poly_240520.maxpat",
+				"name" : "threekomp_poly_250908.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/hausch",
 				"patcherrelativepath" : "../abstractions/hausch",
 				"type" : "JSON",
