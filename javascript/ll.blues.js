@@ -366,6 +366,19 @@ function bang() {
     // initialize pattrs
     UI.get("status") && UI.get("status").message(S.stateV);
     UI.get("chans") && UI.get("chans").message(S.chansV);
+	
+	size_obj();
+}
+function wsize(x){
+	let bp_rect = tpp.box.rect; //a.rect;
+	bp_rect[2] = bp_rect[0]+x;
+	tpp.box.rect = bp_rect;
+	size_obj();
+}
+function getllblueargs(){
+	let args = bpatcher.getboxattr("args");
+	if (args) messnamed("getllblueargs", args);
+	else messnamed("getllblueargs", "");
 }
 
 /* ============================== LAYOUT ============================== */
@@ -399,7 +412,7 @@ function size_obj() {
         const dn4 = S.bHeight;
 
         setSliderRects();
-
+		//post("size_O",S.wide,"\n");
         if (!S.wide) {
             UI.rect("meter", [0, 0, S.bWidth, S.rowheight]);
 

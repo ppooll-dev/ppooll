@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 124.0, 46.0, 594.0, 532.0 ],
+		"rect" : [ 48.0, 150.0, 594.0, 532.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "ll.blues.info.help1",
@@ -245,7 +245,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 284.0, 69.0, 118.0, 22.0 ],
-													"presentation_linecount" : 2,
 													"text" : "ho_st1~out.1 _ _ _ _"
 												}
 
@@ -283,7 +282,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 16.5, 4.0, 97.0, 35.0 ],
-													"presentation_linecount" : 3,
 													"text" : ";\rho_st1 chans 16"
 												}
 
@@ -1078,7 +1076,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 391.0, 86.0, 50.0, 35.0 ],
-									"text" : "chans 5"
+									"text" : "chans 2"
 								}
 
 							}
@@ -1287,7 +1285,7 @@
 			}
 , 			{
 				"box" : 				{
-					"amount" : 5,
+					"amount" : 2,
 					"annotation" : "freq",
 					"bgcolor" : [ 0.905882352941176, 0.458823529411765, 0.796078431372549, 1.0 ],
 					"border" : 0,
@@ -2171,7 +2169,7 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-35",
-									"items" : [ "no", ",", "ho_st1", ",", "ll.blues.info.help1", ",", "xgroove@1" ],
+									"items" : [ "no", ",", "ho_st1", ",", "ll.blues.info.help1" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -3745,10 +3743,41 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 24.0, 309.0, 584.0, 591.0 ],
+						"rect" : [ 419.0, 66.0, 584.0, 751.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"toolbarvisible" : 0,
+						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-17",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 19.0, 194.0, 386.0, 47.0 ],
+									"presentation_linecount" : 3,
+									"text" : "chans:   a list of 2 items, input- and output- signal size (==channels)\n1: ch_in \n2: ch_out"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-16",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 170.0, 91.0, 151.0, 33.0 ],
+									"presentation_linecount" : 2,
+									"text" : "move the sliders with open\nclientwindow, for insight."
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
@@ -3770,7 +3799,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 433.0, 113.0, 20.0 ],
+									"patching_rect" : [ 14.0, 503.0, 113.0, 20.0 ],
 									"text" : "and drive the value:"
 								}
 
@@ -3798,8 +3827,8 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 374.0, 79.0, 86.0, 22.0 ],
-									"text" : "ll.pf title_menu"
+									"patching_rect" : [ 374.0, 79.0, 109.0, 22.0 ],
+									"text" : "ll.pf act::title_menu"
 								}
 
 							}
@@ -3812,7 +3841,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 24.0, 511.0, 503.0, 22.0 ],
+									"patching_rect" : [ 28.0, 581.0, 503.0, 22.0 ],
 									"text" : "0.821429 0.535714 0.428571 0.321429 -0.107143 -0.357143 -0.535714 -0.642857"
 								}
 
@@ -3826,7 +3855,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 15.0, 352.0, 533.0, 33.0 ],
+									"patching_rect" : [ 19.0, 422.0, 533.0, 33.0 ],
 									"text" : "to control from other acts like control@ eg. you need to use the additional \"listitem\" to adress a single parameter:"
 								}
 
@@ -3840,7 +3869,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 383.0, 390.5, 188.0, 33.0 ],
+									"patching_rect" : [ 387.0, 460.0, 188.0, 33.0 ],
 									"text" : "1: volL, 2: volR, 3: mix, 4: in_mix, 5: ramp, 6:  pfl, 7: pan"
 								}
 
@@ -3853,7 +3882,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 287.0, 397.0, 85.0, 20.0 ],
+									"patching_rect" : [ 291.0, 467.0, 85.0, 20.0 ],
 									"text" : "ll.blues::levels"
 								}
 
@@ -3866,7 +3895,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 140.0, 397.0, 139.0, 20.0 ],
+									"patching_rect" : [ 144.0, 467.0, 139.0, 20.0 ],
 									"text" : "blue.output.section.info1"
 								}
 
@@ -3879,7 +3908,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 17.0, 397.0, 121.0, 20.0 ],
+									"patching_rect" : [ 21.0, 467.0, 121.0, 20.0 ],
 									"text" : "for instance, choose:"
 								}
 
@@ -3898,7 +3927,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 379.0, 419.0, 53.0, 22.0 ],
+									"patching_rect" : [ 383.0, 489.0, 53.0, 22.0 ],
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"tricolor" : [ 0.75, 0.75, 0.75, 1.0 ]
 								}
@@ -3913,7 +3942,7 @@
 									"numinlets" : 4,
 									"numoutlets" : 6,
 									"outlettype" : [ "", "", "", "", "", "" ],
-									"patching_rect" : [ 17.0, 482.0, 375.5, 22.0 ],
+									"patching_rect" : [ 21.0, 552.0, 375.5, 22.0 ],
 									"text" : "ll.par",
 									"varname" : "ll.par[1]"
 								}
@@ -3930,7 +3959,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 17.0, 455.0, 50.0, 21.0 ]
+									"patching_rect" : [ 21.0, 525.0, 50.0, 21.0 ]
 								}
 
 							}
@@ -3946,13 +3975,13 @@
 									"bgfillcolor_type" : "color",
 									"fontsize" : 11.595186999999999,
 									"id" : "obj-14",
-									"items" : [ "no", ",", "buffer_host1", ",", "ho_st1", ",", "ll.blues.info.help1", ",", "xgroove@1" ],
+									"items" : [ "no", ",", "ho_st1", ",", "ll.blues.info.help1" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "int", "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 140.0, 419.0, 139.0, 21.0 ],
+									"patching_rect" : [ 144.0, 489.0, 139.0, 21.0 ],
 									"pattrmode" : 1,
 									"presentation" : 1,
 									"presentation_rect" : [ 142.0, 184.0, 100.0, 21.0 ],
@@ -3978,7 +4007,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "int", "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 287.0, 419.0, 85.0, 21.0 ],
+									"patching_rect" : [ 291.0, 489.0, 85.0, 21.0 ],
 									"pattrmode" : 1,
 									"presentation" : 1,
 									"presentation_rect" : [ 218.0, 184.0, 100.0, 21.0 ],
@@ -3991,12 +4020,12 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-27",
-									"linecount" : 7,
+									"linecount" : 8,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 19.0, 246.0, 434.0, 100.0 ],
-									"text" : "state: \n1: output-channel-count (1-?)\n2: show dark-blue / show light-blue (0,1)\n3: volume layout (0, 1, 2)\n4: meter (0,1,2)\n5: inputs-channels-count (1-?)\n6: link input-channels/output-channels (0,1)"
+									"patching_rect" : [ 19.0, 246.0, 434.0, 114.0 ],
+									"text" : "status: a list of 7 items\n1: style: (0: basic, 1: basic_in_mix, 2: mc.basic, 3: mc+chan_out)\n2: showMix: (0: show outputs~, 1: show outputsMix~ )\n3: vol_layout (0, 1, 2)\n4: meter (0: meter-out,1: meter-pre,2: meter-in,3: meter-off)\n5: mix_adds (0,1)\n6: link (0,1) //link chans\n7: folded (0,1) (in mc. styles wether the object is folded to one line or unfolded."
 								}
 
 							}
@@ -4009,7 +4038,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 19.0, 190.0, 386.0, 47.0 ],
+									"patching_rect" : [ 21.0, 607.0, 386.0, 47.0 ],
 									"text" : "outputs:   ! this param cannot be changed from outside !\n1: lightblue \n2: darkblue"
 								}
 
@@ -4023,8 +4052,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 19.0, 74.0, 226.0, 114.0 ],
-									"text" : "levels: \n1: volL \n2: volR \n3: mix \n4: in_mix\n5: ramp \n6: pfl \n7: pan"
+									"patching_rect" : [ 19.0, 74.0, 156.0, 114.0 ],
+									"text" : "levels: a list of 7 items\n1: volL \n2: volR \n3: mix \n4: in_mix\n5: ramp \n6: pfl \n7: pan"
 								}
 
 							}
@@ -4183,7 +4212,7 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 838, 100, 1431, 634 ],
+						"client_rect" : [ 1004, 100, 1597, 634 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 200, 200, 800, 500 ]
@@ -4236,7 +4265,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 400.0, 463.0, 107.0, 22.0 ],
 					"restore" : 					{
-						"freq" : [ 200.0, 0.0, 0.0, 0.0, 0.0 ]
+						"freq" : [ 200.0, 0.0 ]
 					}
 ,
 					"text" : "autopattr autopattr",
