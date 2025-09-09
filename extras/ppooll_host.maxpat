@@ -455,7 +455,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 70.0, 106.0, 58.0, 20.0 ],
-					"text" : "12:35:06",
+					"text" : "00:49:27",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "time"
 				}
@@ -683,6 +683,41 @@
 						"gridsize" : [ 15.0, 15.0 ],
 						"toolbarvisible" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-27",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 212.0, 325.0, 58.0, 22.0 ],
+									"text" : "loadbang"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-24",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 212.0, 359.0, 33.0, 22.0 ],
+									"text" : "front"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-22",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 212.0, 386.0, 40.0, 22.0 ],
+									"text" : "ll.logo"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontsize" : 16.0,
 									"id" : "obj-20",
@@ -1166,7 +1201,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 163.0, 100.0, 101.0, 22.0 ],
-																					"text" : "vbap@1"
+																					"text" : "ho_st1"
 																				}
 
 																			}
@@ -1191,7 +1226,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 50.0, 100.0, 96.0, 22.0 ],
-																					"text" : "vbap@1"
+																					"text" : "ho_st1"
 																				}
 
 																			}
@@ -1776,7 +1811,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 19.0, 290.0, 117.0, 22.0 ],
-													"text" : "vbap@"
+													"text" : "ho_st"
 												}
 
 											}
@@ -1811,7 +1846,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 19.0, 47.0, 160.0, 24.0 ],
-													"text" : "vbap@1"
+													"text" : "ho_st1"
 												}
 
 											}
@@ -6839,7 +6874,7 @@
 																					"numinlets" : 1,
 																					"numoutlets" : 0,
 																					"patching_rect" : [ 20.0, 43.0, 139.0, 33.0 ],
-																					"text" : "latest: 8.6.0.240609.1\ncurrent: 8.6.0.240121.1"
+																					"text" : "latest: 8.6.8\ncurrent: 9.0.0"
 																				}
 
 																			}
@@ -17008,7 +17043,7 @@
 													"blanksym" : "",
 													"fontsize" : 11.595186999999999,
 													"id" : "obj-9",
-													"items" : [ "none", ",", "sinsE_minilab_ko25" ],
+													"items" : "none",
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -17475,7 +17510,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 314.0, 52.5, 29.0, 35.0 ],
-													"text" : "",
+													"text" : "n",
 													"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 												}
 
@@ -22414,7 +22449,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-10",
-																	"items" : [ "4_points.json", ",", "plug_test.json" ],
+																	"items" : "ee.json",
 																	"maxclass" : "umenu",
 																	"numinlets" : 1,
 																	"numoutlets" : 3,
@@ -23125,7 +23160,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 39.0, 112.0, 114.0, 22.0 ],
-													"text" : "vbap@ 1"
+													"text" : "ho_st 1"
 												}
 
 											}
@@ -23212,7 +23247,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 241.0, 14.0, 263.0, 35.0 ],
-																	"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Library/ppooll_presets/vbap@T\""
+																	"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Library/ppooll_presets/ho_stT\""
 																}
 
 															}
@@ -25756,7 +25791,7 @@
 																									"numoutlets" : 1,
 																									"outlettype" : [ "" ],
 																									"patching_rect" : [ 20.0, 338.0, 50.0, 22.0 ],
-																									"text" : "8 3 \" \""
+																									"text" : "0 0 \" \""
 																								}
 
 																							}
@@ -26120,7 +26155,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 237.0, 368.0, 41.0, 22.0 ],
-																					"text" : "36 \" \""
+																					"text" : "1 \" \""
 																				}
 
 																			}
@@ -26245,7 +26280,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 157.0, 179.0, 59.0, 22.0 ],
-																					"text" : "\"36\" \" \""
+																					"text" : "\"1\" \" \""
 																				}
 
 																			}
@@ -26647,7 +26682,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 405.0, 455.0, 75.0, 22.0 ],
-																					"text" : "vbap@"
+																					"text" : "ho_st"
 																				}
 
 																			}
@@ -28678,7 +28713,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 63.333333333333314, 89.0, 90.0, 22.0 ],
-																					"text" : "vbap@1"
+																					"text" : "ho_st1"
 																				}
 
 																			}
@@ -29654,7 +29689,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 259.5, 367.0, 35.0, 35.0 ],
-																					"text" : "vbap@"
+																					"text" : "ho_st"
 																				}
 
 																			}
@@ -30639,7 +30674,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 13.0, 2.0, 87.0, 22.0 ],
-																					"text" : "vbap@1"
+																					"text" : "ho_st1"
 																				}
 
 																			}
@@ -31090,7 +31125,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 92.25, 304.0, 169.0, 76.0 ],
-																	"text" : "send ::vbap@1::pat"
+																	"text" : "send ::ho_st1::pat"
 																}
 
 															}
@@ -31573,7 +31608,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 264.0, 102.0, 159.0, 22.0 ],
-													"text" : "vbap@1 _"
+													"text" : "ho_st1 _"
 												}
 
 											}
@@ -31658,7 +31693,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 486.0, 163.0, 50.0, 62.0 ],
-																	"text" : "::vbap@1::act::pres_menu 1"
+																	"text" : "::ho_st1::act::pres_menu 1"
 																}
 
 															}
@@ -45813,7 +45848,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 83.0, 55.0, 90.0, 18.0 ],
-													"text" : "up to date!",
+													"text" : "update available!",
 													"textjustification" : 1
 												}
 
@@ -45827,7 +45862,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 186.5, 48.0, 95.0, 20.0 ],
-													"text" : "8.6.8",
+													"text" : "9.0.0",
 													"textjustification" : 2
 												}
 
@@ -53543,7 +53578,7 @@
 																				"box" : 																				{
 																					"fontname" : "Geneva",
 																					"fontsize" : 9.0,
-																					"id" : "obj-4",
+																					"id" : "obj-2",
 																					"maxclass" : "newobj",
 																					"numinlets" : 1,
 																					"numoutlets" : 1,
@@ -53557,7 +53592,7 @@
  ],
 																		"lines" : [ 																			{
 																				"patchline" : 																				{
-																					"destination" : [ "obj-4", 0 ],
+																					"destination" : [ "obj-2", 0 ],
 																					"source" : [ "obj-14", 0 ]
 																				}
 
@@ -54804,7 +54839,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 442.0, 382.0, 81.0, 20.0 ],
-																	"text" : "0.005009"
+																	"text" : "-0.005009"
 																}
 
 															}
@@ -55518,8 +55553,22 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-22", 0 ],
+									"source" : [ "obj-24", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-31", 0 ],
 									"source" : [ "obj-26", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"source" : [ "obj-27", 0 ]
 								}
 
 							}
@@ -55641,15 +55690,15 @@
 						"audioON/OFF" : [ 0 ],
 						"chans" : [ 2 ],
 						"def" : [ -1 ],
-						"envi_menu" : [ "sinsE_minilab_ko25" ],
+						"envi_menu" : [ "(environments)" ],
 						"favorites" : [ "(favorites)" ],
 						"jit.on" : [ 0 ],
-						"menubar" : [ 1 ],
+						"menubar" : [ 0 ],
 						"ppooll" : [ -1 ],
 						"rec" : [ 0 ],
 						"screen" : [ 1 ],
 						"stereo" : [ 0 ],
-						"vol" : [ 1 ],
+						"vol" : [ 1.0 ],
 						"vol_ramp" : [ 10.000000000000002 ],
 						"vol_slider" : [ 1.0 ],
 						"watch_menu" : [ "stopwatch" ],
@@ -55910,6 +55959,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.logo.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/actmaker",
+				"patcherrelativepath" : "../patchers/actmaker",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.mkdir.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../patchers/abstractions/filip",
@@ -56096,6 +56152,12 @@
 , 			{
 				"name" : "strlen.mxo",
 				"type" : "iLaX"
+			}
+, 			{
+				"name" : "v8ui_default.js",
+				"bootpath" : "C74:/jsui",
+				"type" : "TEXT",
+				"implicit" : 1
 			}
  ],
 		"autosave" : 0,
