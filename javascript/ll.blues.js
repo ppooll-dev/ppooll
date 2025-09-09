@@ -329,6 +329,7 @@ function foldUnfold() {
     );
     grow();
 }
+
 function grow() {
     try {
         const a2 = actpatcher.rect[2],
@@ -349,9 +350,6 @@ function grow() {
             TP.message("window", "exec");
         }
     } catch (_) {}
-}
-function scrolldown(a) { // from outside by max
-    actpatcher.wind.scrollto(a, a);
 }
 
 /* ============================== LIFECYCLE ============================== */
@@ -686,14 +684,6 @@ function listblock() {
         UI.msg("listblock", "headercolors", 3, 1, 3 + S.keep, 1);
     }
 }
-
-function grow() {
-    try {
-        const a2 = actpatcher.rect[2],
-            a3 = actpatcher.rect[3];
-        const b2 = bpatcher.rect[2],
-            b3 = bpatcher.rect[3];
-        const TP = actpatcher.getnamed("thispatcher");
 
 function extra() {
     const args = arrayfromargs(arguments);
