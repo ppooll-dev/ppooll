@@ -197,7 +197,7 @@
 , 			{
 				"box" : 				{
 					"border" : 0,
-					"embedstate" : [ [ "bgcolor", 0.103, 0.805537840136054, 0.014004039115646, 0.682093336092715 ], [ "fgcolor", 0.155, 0.123458758503401, 0.561782525510204, 1 ], [ "offset", 0, 0 ], [ "scale", 0.3 ] ],
+					"embedstate" : [ [ "bgcolor", 0.103, 0.805537840136054, 0.014004039115646, 0 ], [ "fgcolor", 1, 1, 1, 1 ], [ "offset", 0, 0 ], [ "scale", 0.3 ] ],
 					"filename" : "none",
 					"id" : "obj-12",
 					"maxclass" : "v8ui",
@@ -207,7 +207,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 43.0, 20.0, 329.0, 413.0 ],
 					"textfile" : 					{
-						"text" : "\nmgraphics.init();\nmgraphics.autofill = 0;\nmgraphics.relative_coords = 0;\n\n\nvar bgcolor = [0,0,0,1];\ndeclareattribute(\"bgcolor\", {embed: 1, style: \"rgba\", paint: 1 });\nvar fgcolor = [1,1,1,1];\ndeclareattribute(\"fgcolor\", {embed: 1, style: \"rgba\", paint: 1 });\nvar scale = 0.2;\ndeclareattribute(\"scale\", {embed: 1 ,type: \"float\", min: 0, paint: 1});\nvar offset = [0,0];\ndeclareattribute(\"offset\", {embed: 1 , paint: 1});\n\nvar my_svg = new MGraphicsSVG(\"ppooll_logo.svg\");\nvar disabled = true;\n\nfunction paint() {\n\tvar viewsize = mgraphics.size;\n\tvar width = viewsize[0];\n\tvar height = viewsize[1];\n\tmgraphics.set_source_rgba(bgcolor);\n\tmgraphics.rectangle(0, 0, width, height);\n\tmgraphics.fill();\n\n\tmy_svg.mapreset();\n\t\t//my_svg.mapcolor( [1, 1, 1, 1.0], fgcolor);\n\tmy_svg.mapcolor( [0, 0, 0, 1.0], fgcolor);\n\tmgraphics.translate(offset);\n\tmgraphics.scale(scale,scale);\n\tmgraphics.svg_render(my_svg);\n}",
+						"text" : "\nmgraphics.init();\nmgraphics.autofill = 0;\nmgraphics.relative_coords = 0;\n\n\nvar bgcolor = [0,0,0,0];\ndeclareattribute(\"bgcolor\", {embed: 1, style: \"rgba\", paint: 1 });\nvar fgcolor = [1,1,1,1];\ndeclareattribute(\"fgcolor\", {embed: 1, style: \"rgba\", paint: 1 });\nvar scale = 0.2;\ndeclareattribute(\"scale\", {embed: 1 ,type: \"float\", min: 0, paint: 1});\nvar offset = [0,0];\ndeclareattribute(\"offset\", {embed: 1 , paint: 1});\n\nvar my_svg = new MGraphicsSVG(\"ppooll_logo.svg\");\nvar disabled = true;\n\nfunction paint() {\n\tvar viewsize = mgraphics.size;\n\tvar width = viewsize[0];\n\tvar height = viewsize[1];\n\tmgraphics.set_source_rgba(bgcolor);\n\tmgraphics.rectangle(0, 0, width, height);\n\tmgraphics.fill();\n\n\tmy_svg.mapreset();\n\t\t//my_svg.mapcolor( [1, 1, 1, 1.0], fgcolor);\n\tmy_svg.mapcolor( [0, 0, 0, 1.0], fgcolor);\n\tmgraphics.translate(offset);\n\tmgraphics.scale(scale,scale);\n\tmgraphics.svg_render(my_svg);\n}",
 						"filename" : "none",
 						"flags" : 0,
 						"embed" : 1,
