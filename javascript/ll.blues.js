@@ -32,11 +32,11 @@ const S = {
     // pattr & UI values
     chansV: [2, 2], // [in, out]
     levelsV: [0, 0, 0, 0, 10, 0, 0.5], // volL,volR,mix,in_mix,ramp,pfl,pan
-    stateV: [0, 1, 0, 0, 0, 0], // style,show_mix,vol_sel,meter,mix_adds,link_chans
+    stateV: [0, 1, 0, 0, 0, 0,1], // style,show_mix,vol_sel,meter,mix_adds,link_chans, folded
 
     // derived
-    chIn: 2,
-    chOut: 2,
+    chIn: 0,
+    chOut: 0,
     inMix: 0, // style==1
     useOutputsMix: 1, // style<2
     style: 0,
@@ -55,12 +55,12 @@ const S = {
     extraHeader: [],
 
     // fold/unfold
-    sizeState: 0, // 0 folded, 1 unfolded
+    folded: 1, // fold bp in mc.modes
     keep: 0,
 
     // parsing caches
-    outputsParseCurrent: [-1, -1, -1],
-    outputsMixParseCurrent: [-1, -1, -1],
+    outputsParseCurrent: [2, 1, "ho_st1~out"],
+    outputsMixParseCurrent: [2, 1, "no"],
 
     rowheight: 13,
 };
@@ -70,7 +70,6 @@ var tpp, actpatcher, bpatcher, out_patcher;
 /* ============================== ATTRIBUTES ============================== */
 
 declareattribute("rowheight", { setter: "setrowheight", min: 1 });
-
 function setrowheight(a) {
     S.rowheight = a > 0 ? a : 13;
     UI.msg("listblock", "rowheight", S.rowheight);
@@ -256,7 +255,7 @@ function foldUnfold() {
     })();
     let menWidth = 0;
 
-    if (S.sizeState === 0) {
+    if (S.folded === 1) {
         // folded
         UI.rect("listblock", [
             lbRect[0],
@@ -316,6 +315,7 @@ function foldUnfold() {
         );
         UI.msg("listblock", "headercolors", 3, 1, 3 + S.keep, 1);
         UI.hidden("ib", 1);
+		UI.hidden("state_menu", 1);
         UI.hidden("state_menu", 1);
     }
 
@@ -329,7 +329,6 @@ function foldUnfold() {
     );
     grow();
 }
-
 function grow() {
     try {
         const a2 = actpatcher.rect[2],
@@ -351,8 +350,7 @@ function grow() {
         }
     } catch (_) {}
 }
-
-function scrolldown(a) {
+function scrolldown(a) { // from outside by max
     actpatcher.wind.scrollto(a, a);
 }
 
@@ -521,7 +519,7 @@ function size_obj() {
             ]);
         }
 
-        S.sizeState = 0;
+        S.folded = 1;
         foldUnfold();
     }
 
@@ -532,9 +530,9 @@ function size_obj() {
 
 function status() {
     S.stateV = arrayfromargs(arguments);
-    outlet(0, "state_menu_checks");
+    outlet(0, "state_menu_checks"); // needs to be deferred >> sent back from max with del 0
 
-    const [newStyle, newShowMix, newVolSel, newMeter, newMixAdds, newLink] =
+    const [newStyle, newShowMix, newVolSel, newMeter, newMixAdds, newLink, newFolded] =
         S.stateV;
 
     if (newStyle !== S.style) {
@@ -557,12 +555,15 @@ function status() {
     if (newMeter !== S.meter) S.meter = newMeter;
     if (newMixAdds !== S.mixAdds) S.mixAdds = newMixAdds;
     if (newLink !== S.linkChans) S.linkChans = newLink;
+	if (newFolded !== S.folded) {
+		S.folded = newFolded;
+		foldUnfold();
+	}
 }
-
 function chans() {
     const c = arrayfromargs(arguments);
     S.chansV = c;
-
+	post("chans",S.chIn,S.chOut,"\n")
     if (c[1] !== S.chOut) {
         S.chOut = c[1];
         listblockCompose();
@@ -575,7 +576,6 @@ function chans() {
         outlet(0, "chans_in", S.chIn);
     }
 }
-
 function levels() {
     S.levelsV = arrayfromargs(arguments);
     const v = S.levelsV;
@@ -622,53 +622,53 @@ function pan(a) {
     S.levelsV[6] = a;
     UI.msg("levels", S.levelsV);
 }
-
 function chans_out(a) {
     UI.msg("chans", S.linkChans ? a : S.chIn, a);
 }
 function chans_in(a) {
     UI.msg("chans", a, S.linkChans ? a : S.chOut);
 }
-
+function x(a) {
+    S.stateV[1] = a;
+    UI.msg("status", S.stateV);
+}
 function state_menu(a) {
     if (a <= 2) {
         S.stateV[2] = a;
         UI.msg("status", S.stateV);
-    } else if (a <= 6) {
+    } else if (a <= 7) {
         S.stateV[3] = a - 4;
         UI.msg("status", S.stateV);
-    } else if (a === 8) {
+    } else if (a === 9) {
         S.stateV[5] = 1 - S.stateV[5];
         UI.msg("status", S.stateV);
-    } else if (a === 9) {
+    } else if (a === 10) {
         S.stateV[4] = 1 - S.stateV[4];
         UI.msg("status", S.stateV);
-    } else if (a === 11) {
+    } else if (a === 12) {
         messnamed("lloadblueinfo", "bang");
-    } else if (a >= 13) {
-        S.stateV[0] = a - 13;
+    } else if (a >= 14) {
+        S.stateV[0] = a - 14;
         UI.msg("status", S.stateV);
     }
 }
-
 function state_menu_checks() {
-    for (let i = 0; i < 17; i++) UI.msg("state_menu", "checkitem", i, 0);
+    for (let i = 0; i < 18; i++) UI.msg("state_menu", "checkitem", i, 0);
     UI.msg("state_menu", "checkitem", S.stateV[2], 1);
     UI.msg("state_menu", "checkitem", S.stateV[3] + 4, 1);
-    UI.msg("state_menu", "checkitem", 8, S.stateV[5]);
-    UI.msg("state_menu", "checkitem", 9, S.stateV[4]);
-    UI.msg("state_menu", "checkitem", S.stateV[0] + 13, 1);
+    UI.msg("state_menu", "checkitem", 9, S.stateV[5]);
+    UI.msg("state_menu", "checkitem", 10, S.stateV[4]);
+    UI.msg("state_menu", "checkitem", S.stateV[0] + 14, 1);
 
     if (S.useOutputsMix) {
-        [0, 1, 2, 9].forEach((i) => UI.msg("state_menu", "enableitem", i, 1));
+        [0, 1, 2, 10].forEach((i) => UI.msg("state_menu", "enableitem", i, 1));
     } else {
-        [0, 1, 2, 9].forEach((i) => UI.msg("state_menu", "enableitem", i, 0));
+        [0, 1, 2, 9, 10].forEach((i) => UI.msg("state_menu", "enableitem", i, 0));
     }
 }
-
-function x(a) {
-    S.stateV[1] = a;
-    UI.msg("status", S.stateV);
+function fold(a){
+	S.stateV[6] = a;
+	UI.msg("status", S.stateV);
 }
 
 function listblock() {
@@ -677,15 +677,23 @@ function listblock() {
 
     if (as === "enum 0 -1") {
         // fold toggle on title click
-        S.sizeState = 1 - S.sizeState;
-        foldUnfold();
-    } else if (as === "menu 2 -1" && S.sizeState === 1) {
+		S.stateV[6] = 1-S.stateV[6];
+		UI.msg("status", S.stateV);
+    } else if (as === "menu 2 -1" && S.folded === 0) {
         // keep toggle
         S.keep = 1 - S.keep;
         UI.msg("listblock", "keep", S.keep);
         UI.msg("listblock", "headercolors", 3, 1, 3 + S.keep, 1);
     }
 }
+
+function grow() {
+    try {
+        const a2 = actpatcher.rect[2],
+            a3 = actpatcher.rect[3];
+        const b2 = bpatcher.rect[2],
+            b3 = bpatcher.rect[3];
+        const TP = actpatcher.getnamed("thispatcher");
 
 function extra() {
     const args = arrayfromargs(arguments);
@@ -730,10 +738,10 @@ function script_sub() {
         S.inMix = ims;
         if (S.inMix) {
             if (!tp.getnamed("llr")) {
-                let llr = tp.newdefault(90, 90, "ll.in_mix");
+                let llr = tp.newdefault(100, 95, "ll.in_mix");
                 llr.varname = "llr";
-                tp.connect(llr, 0, tp.getnamed("bits"), 0);
-                tp.connect(llr, 1, tp.getnamed("pmeter"), 0);
+                tp.connect(llr, 0, tp.getnamed("volpanmix"), 0);
+                tp.connect(llr, 1, tp.getnamed("volpanmix"), 1);
             }
         } else {
             let llr = tp.getnamed("llr");
