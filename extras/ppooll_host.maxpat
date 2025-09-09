@@ -455,7 +455,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 70.0, 106.0, 58.0, 20.0 ],
-					"text" : "00:49:27",
+					"text" : "00:02:47",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "time"
 				}
@@ -17510,7 +17510,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 314.0, 52.5, 29.0, 35.0 ],
-													"text" : "n",
+													"text" : "#",
 													"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 												}
 
