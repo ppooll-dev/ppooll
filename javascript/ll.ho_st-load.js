@@ -82,7 +82,7 @@ function checkVersion(thisVersion, latestVersion){
 
 	var needsUpdate = cmpVersions(latestVersion, thisVersion)
 
-	if(needsUpdate){
+	if(needsUpdate > 1){
 		var stringOut = "latest: " + latestVersion + "\ncurrent: " + thisVersion
 		OUTPUT.push("--------------------------update-available-"+latestVersion+"------------------------------")
 		outlet(1, stringOut)
