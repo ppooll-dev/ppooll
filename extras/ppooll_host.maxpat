@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 146.0, 92.0, 133.0, 124.0 ],
+		"rect" : [ 168.0, 102.0, 133.0, 124.0 ],
 		"default_fontsize" : 11.595186999999999,
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
@@ -409,33 +409,6 @@
 					"textovercolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"usebgoncolor" : 1,
 					"varname" : "screen"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"annotation" : "ppooll",
-					"bgcolor" : [ 0.317647, 0.317647, 0.317647, 0.0 ],
-					"bgoncolor" : [ 0.55, 0.55, 0.55, 1.0 ],
-					"fontsize" : 14.0,
-					"hint" : "info",
-					"id" : "obj-24",
-					"legacytextcolor" : 1,
-					"maxclass" : "textbutton",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"outputmode" : 0,
-					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 33.0, 53.0, 19.0 ],
-					"prototypename" : "vst_button",
-					"text" : "ppooll",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"textovercolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"usebgoncolor" : 1,
-					"usetextovercolor" : 1,
-					"varname" : "ppooll"
 				}
 
 			}
@@ -55585,7 +55558,7 @@
 						"rec" : [ 0 ],
 						"screen" : [ 0 ],
 						"stereo" : [ 0 ],
-						"time" : [ 39447.0 ],
+						"time" : [ 40962.0 ],
 						"vol" : [ 1.0 ],
 						"vol_ramp" : [ 10.000000000000002 ],
 						"vol_slider" : [ 1.0 ],
@@ -55652,6 +55625,55 @@
 					"patching_rect" : [ 493.0, 96.0, 111.0, 21.0 ],
 					"text" : "pattrforward act::in2",
 					"varname" : "pf"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "ppooll",
+					"bgcolor" : [ 0.317647, 0.317647, 0.317647, 0.0 ],
+					"bgoncolor" : [ 0.55, 0.55, 0.55, 1.0 ],
+					"fontsize" : 14.0,
+					"hint" : "info",
+					"id" : "obj-24",
+					"legacytextcolor" : 1,
+					"maxclass" : "textbutton",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
+					"outputmode" : 0,
+					"parameter_enable" : 0,
+					"patching_rect" : [ 0.0, 33.0, 53.0, 19.0 ],
+					"prototypename" : "vst_button",
+					"text" : "ppooll",
+					"textcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
+					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"textovercolor" : [ 1.0, 1.0, 1.0, 0.0 ],
+					"usebgoncolor" : 1,
+					"varname" : "ppooll"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"border" : 0,
+					"embedstate" : [ [ "bgcolor", 0, 0, 0, 0 ], [ "crop", 0, 0.75, 1, 0.25 ], [ "fgcolor", 1, 1, 1, 1 ], [ "zoom", 1 ] ],
+					"filename" : "ll.logo.js",
+					"id" : "obj-1",
+					"maxclass" : "v8ui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 0.0, 36.0, 57.0, 16.0 ],
+					"textfile" : 					{
+						"filename" : "ll.logo.js",
+						"flags" : 0,
+						"embed" : 0,
+						"autowatch" : 1
+					}
+,
+					"varname" : "logo"
 				}
 
 			}
