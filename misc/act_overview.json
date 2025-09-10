@@ -27,7 +27,7 @@
 	"authors" : 	{
 		"1" : [ "filip", "klaus@klingt.org" ],
 		"2" : [ "noid", "noid@klingt.org" ],
-		"3" : [ "hausch", "hausch@moozak.org" ],
+		"3" : [ "c. hausch", "hausch@moozak.org" ],
 		"4" : [ "Antonio DellaMarina", "antonio.dellamarina@gmail.com" ],
 		"5" : [ "Léo Dupleix", "leodupleix@gmail.com" ],
 		"6" : [ "Paulo Raposo", "sirr@sirr-ecords.com" ],
@@ -451,6 +451,12 @@
 			"description" : "ableton link sync interface",
 			"authors" : 3,
 			"tags" : 1
+		}
+,
+		"mc.mod" : 		{
+			"description" : "multichannel modulation source",
+			"authors" : 3,
+			"tags" : [ 1, 2, 5, 9, 15 ]
 		}
 ,
 		"matriarch@" : 		{
