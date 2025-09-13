@@ -3,7 +3,10 @@ outlets = 2;
 mgraphics.init();
 mgraphics.relative_coords = 0;
 mgraphics.autofill = 0;
-var stateDict = new Dict("ppoollstate"); 
+
+var stateDict = new Dict("ppoollstate");  // define once per script
+
+include("ll.helpers.js"); 
 
 var tpp = this.patcher;
 var boxw = box.rect[2] - box.rect[0];
@@ -623,49 +626,18 @@ function onidleout() {
 }
 
 function outputs(){
-	//post("f_outputs",ccm2,"act",act,"cha",cha,"\n")
-	if (ccm2 == 0){ //act_menu
-		//post("act");
-		let a_menu_state = [];
-		a_menu_state.push("no");
-		let keys = stateDict.getkeys();
-		for (var i in keys) {
-			var inputs = stateDict.get(keys[i]+"::inputs~").getkeys();
-			if (inputs){
-				a_menu_state.push(keys[i]);
-			}
-		}
-		fill_menu(a_menu_state);
-	}
-	else if (ccm2 == 1){	
-		//let cpval = pval[ccy+param_offset];
-		let act = cpval.split("~")[0];	
-		if (act == "_") return "exit"
-		else fill_menu(get_inputs(act));
-	}
-}   // maintaining outputs~
+    if (ccm2 == 0){ // act_menu
+        fill_menu(ll_menus.actsWithInputs());
+    } else if (ccm2 == 1){
+        var act = cpval.split("~")[0];
+        if (act == "_") return "exit";
+        fill_menu(ll_menus.inputsForAct(act).menu);
+    }
+}
+
 function get_inputs(act){
-	let c_menu_state = [];
-	let c_chans = [];
-	c_menu_state.push("-no-");
-	c_chans.push(["-no-",0,0]);
-	if (act != "no"){ //(a != "no")
-		let inputs = stateDict.get(act+"::inputs~");
-		
-		let inpkeys = inputs.getkeys();
-		//post ("getinputs",inpkeys,"\n");
-		for (let i in inpkeys){
-			let k = inpkeys[i];
-			let c = inputs.get(k);
-			for (let j = 1;j<=c;j++){
-				let item = k+"."+j;
-				c_menu_state.push(item);
-				c_chans.push([k,j,c]);
-			}
-		}
-	}
-	return c_menu_state;
-}     // maintaining outputs~
+    return ll_menus.inputsForAct(act).menu;
+}
 
 function m_tog(x,y,drag,option,mod2){
 	if (header_click){
