@@ -1,16 +1,13 @@
 outlets = 1;
-var stateDict = new Dict("ppoollstate"); 
+var stateDict = new Dict("ppoollstate");
 var c_item,a_item;
 var c_menu_state = [];
 var c_chans = [];
 var a_menu_state = [];
-if (typeof utils === "undefined") {
-    var utils = require("ll._utilities");
-}
 
 function actmenu(){
 	//post("actmenu\n");
-	outlet(0,"a_menu","clear");
+    outlet(0, "a_menu", "clear");
 	outlet(0,"a_menu","append","no");
 	a_menu_state = [];
 	a_menu_state.push("no");
@@ -22,22 +19,36 @@ function actmenu(){
 			outlet(0,"a_menu","append",keys[i]);
 			a_menu_state.push(keys[i]);
 		}
-	}
-	outlet(0,"a_menu","symbol",a_item);
+    }
+    outlet(0, "a_menu", "symbol", a_item);
 }
 
 function getinputs(a){
-	let gotinp = utils.getinputs(a,c_item);
-	c_menu_state = gotinp[0];
-	c_chans = gotinp[1];
-	//post("_getinputs",gotinp[0],"chansD",gotinp[1],"\n");
-
-	outlet(0,"c_menu","clear");
-	
-	[...gotinp[0]].forEach((c) => {
-		outlet(0,"c_menu","append",c);
-	});
-	outlet(0,"c_menu","symbol",gotinp[2]);
+	//post("getinputs\n");
+    var item_check = 0;
+    outlet(0, "c_menu", "clear");
+    outlet(0, "c_menu", "append", "-no-");
+	c_menu_state = [];
+	c_chans = [];
+	c_menu_state.push("-no-");
+	c_chans.push(["-no-",0,0]);
+	if (a != "no"){
+		var inputs = stateDict.get(a+"::inputs~");
+		var inpkeys = inputs.getkeys();
+		for (var i in inpkeys){
+			var k = inpkeys[i];
+			var c = inputs.get(k);
+			for (var j = 1;j<=c;j++){
+				var item = k+"."+j;
+				outlet(0,"c_menu","append",item);
+				c_menu_state.push(item);
+				c_chans.push([k,j,c]);
+				if (item == c_item) item_check = 1;
+			}
+		}
+    }
+    if (!item_check) c_item = c_menu_state[1];
+    outlet(0, "c_menu", "symbol", c_item);
 }
 
 function c_menu(c){
@@ -45,8 +56,7 @@ function c_menu(c){
 	var c_cha = c_chans[idx];
 	c_item = c;
 	checkitem(idx,"c_menu");
-	//post(a_item+"~"+c,c_cha);
-	outlet(0,"to_send",a_item+"~"+c_cha[0],c_cha);
+	outlet(0,"to_send",a_item+"~"+c,a_item+"~"+c_cha[0],c_cha);
 }
 function a_menu(a){
 	a_item = a;
