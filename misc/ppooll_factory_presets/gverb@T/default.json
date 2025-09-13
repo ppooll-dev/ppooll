@@ -1,9 +1,17 @@
 {
-	"window" : [ 837, 476, 996, 591 ],
+	"window" : [ 419, 382, 578, 497 ],
 	"preset-ramp" : 	{
 		"patching_rect" : [ 0, 16, 66, 15 ],
 		"hidden" : 0,
-		"fontsize" : 12
+		"bgcolor" : [ 1, 1, 1, 1 ],
+		"bordercolor" : [ 0.5, 0.5, 0.5, 1 ],
+		"fontsize" : 12,
+		"labelcolor" : [ 0, 0, 0, 1 ],
+		"selectcolor" : [ 0.45, 0.67, 1, 0.47 ],
+		"slidercolor" : [ 0, 0, 0, 1 ],
+		"slidercolornofocus" : [ 0.48, 0.48, 0.48, 0.55 ],
+		"textcolor" : [ 0, 0, 0, 1 ],
+		"textcolornofocus" : [ 0.48, 0.48, 0.48, 0.79 ]
 	}
 ,
 	"presets" : 	{
@@ -13,15 +21,48 @@
 	}
 ,
 	"ll.blues" : 	{
-		"patcher" : "bang",
 		"patching_rect" : [ 0, 63, 159, 53 ],
-		"hidden" : 0
+		"hidden" : 0,
+		"accentcolor" : [ 0.501961, 0.501961, 0.501961, 1 ],
+		"bgcolor" : [ 0.2, 0.2, 0.2, 1 ],
+		"bgfillcolor" : 		{
+			"type" : "gradient",
+			"color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
+			"color2" : [ 0.2, 0.2, 0.2, 1 ],
+			"color" : [ 0.2, 0.2, 0.2, 1 ]
+		}
+,
+		"bubble_bgcolor" : [ 1, 1, 1, 1 ],
+		"bubble_outlinecolor" : [ 0.75, 0.75, 0.75, 1 ],
+		"clearcolor" : [ 1, 1, 1, 0 ],
+		"color" : [ 0.807843, 0.898039, 0.909804, 1 ],
+		"editing_bgcolor" : [ 0.898039, 0.898039, 0.898039, 1 ],
+		"elementcolor" : [ 0.34902, 0.34902, 0.34902, 1 ],
+		"fontsize" : 12,
+		"locked_bgcolor" : [ 0.898039, 0.898039, 0.898039, 1 ],
+		"patchlinecolor" : [ 0.701961, 0.701961, 0.701961, 1 ],
+		"selectioncolor" : [ 0.929412, 0.929412, 0.352941, 1 ],
+		"stripecolor" : [ 0.243137, 0.243137, 0.243137, 1 ],
+		"syntax_attrargcolor" : [ 0.957225892867809, 0.783146530584338, 0.743095786922995, 1 ],
+		"syntax_attributecolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ],
+		"syntax_objargcolor" : [ 0.9, 0.9, 0.9, 1 ],
+		"syntax_objectcolor" : [ 0.931948395395052, 0.771744459193783, 0.523883756405412, 1 ],
+		"textcolor" : [ 0.129412, 0.129412, 0.129412, 1 ],
+		"textcolor_inverse" : [ 0.968627, 0.968627, 0.968627, 1 ]
 	}
 ,
 	"decay" : 	{
 		"patching_rect" : [ 0, 31, 159, 32 ],
 		"hidden" : 0,
-		"fontsize" : 14
+		"bgcolor" : [ 0, 0, 0, 1 ],
+		"bordercolor" : [ 0.466667, 0.466667, 0.466667, 1 ],
+		"fontsize" : 14,
+		"labelcolor" : [ 0, 0, 0, 1 ],
+		"selectcolor" : [ 0.45, 0.67, 1, 0.47 ],
+		"slidercolor" : [ 1, 1, 1, 1 ],
+		"slidercolornofocus" : [ 0.478431, 0.478431, 0.478431, 1 ],
+		"textcolor" : [ 1, 1, 1, 1 ],
+		"textcolornofocus" : [ 0.698039, 0.698039, 0.698039, 1 ]
 	}
 
 }
