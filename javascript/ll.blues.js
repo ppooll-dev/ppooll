@@ -7,7 +7,7 @@
 
 outlets = 1;
 //autowatch = 1;
-
+var stateDict = new Dict("ppoollstate"); 
 /* ============================== CONSTANTS ============================== */
 
 const COLORS = {
@@ -59,8 +59,8 @@ const S = {
     keep: 0,
 
     // parsing caches
-    outputsParseCurrent: [[2], [1], ["ho_st1~out"]],
-    outputsMixParseCurrent: [[2], [1], ["no"]],
+    outputsParseCurrent: [[2], [1], ["ho_st1~out"],[2]],
+    outputsMixParseCurrent: [[2], [1], ["no"],[0]],
 
     rowheight: 13,
 };
@@ -820,7 +820,7 @@ function outputs() {
     out_patcher = this.patcher.getnamed("outputs").subpatcher();
     const a = arrayfromargs(arguments);
     const out_parse = chan_sep(a);
-	//post("outputs",out_parse[0],out_parse[1],out_parse[2],"current", S.outputsParseCurrent,"\n");
+	//post("outputs",out_parse[0],out_parse[1],out_parse[2],out_parse[3],"current", S.outputsParseCurrent,"\n");
     script_outpatchers(out_parse, S.outputsParseCurrent);
     S.outputsParseCurrent = out_parse;
 }
@@ -841,11 +841,14 @@ function chan_sep(a) {
     const d_offsets = [];
     const chans_sep = [];
     let cmem = 0;
+	let dest_chs = [];
 
     for (let i = 0; i < v.length; i++) {
         if (v[i] !== "_") {
             let result = (v[i] + "").match(/(.+)\.(\d+)/);
             if (!result) result = ["no1", "no", 1];
+			//post("rrrr",result[1].split("~")[0],result[1].split("~")[1],);
+			dest_chs.push( stateDict.get(result[1].split("~")[0]+"::inputs~::"+result[1].split("~")[1]));	
             dests.push(result[1]);
             d_offsets.push(parseInt(result[2], 10));
             if (i > 0) {
@@ -855,7 +858,7 @@ function chan_sep(a) {
         }
     }
     chans_sep.push(v.length - cmem);
-    return [chans_sep, d_offsets, dests];
+    return [chans_sep, d_offsets, dests, dest_chs];
 }
 
 function script_outpatchers(a, b) {
@@ -876,8 +879,8 @@ function script_outpatchers(a, b) {
     const al = chans_sep.length,
         bl = old_chans.length;
 
-    if (changed[2]) newsends(al, bl, d_offsets, dests);
-    if (changed[1] && !changed[2]) newsends(al, bl, d_offsets, dests);
+    if (changed[2]) newsends(al, bl, d_offsets, dests, a[3]);
+    if (changed[1] && !changed[2]) newsends(al, bl, d_offsets, dests, a[3]);
 
     if (changed[0]) {
         out_patcher.remove(out_patcher.getnamed("sep"));
@@ -908,7 +911,7 @@ function script_outpatchers(a, b) {
     }
 }
 
-function newsends(al, bl, d_offsets, dests) {
+function newsends(al, bl, d_offsets, dests, dest_ch) {
     for (let i = 0; i < bl; i++)
         out_patcher.remove(out_patcher.getnamed("send" + i));
 
@@ -917,13 +920,7 @@ function newsends(al, bl, d_offsets, dests) {
         if (d_offsets[i] === 1)
             s = out_patcher.newdefault(100, 100, "mc.send~", dests[i]);
         else
-            s = out_patcher.newdefault(
-                100,
-                100,
-                "ll.mc.s~",
-                d_offsets[i] - 1,
-                dests[i]
-            );
+            s = out_patcher.newdefault(100, 100, "ll.mc.s~", d_offsets[i] - 1, dests[i], dest_ch[i] );
         s.varname = "send" + i;
         s.rect = [40 + 80 * i, 120, 40 + 80 * i + 70, 132];
     }

@@ -4,6 +4,9 @@ mgraphics.init();
 mgraphics.relative_coords = 0;
 mgraphics.autofill = 0;
 var stateDict = new Dict("ppoollstate"); 
+if (typeof utils === "undefined") {
+    var utils = require("ll._utilities");
+}
 
 var tpp = this.patcher;
 var boxw = box.rect[2] - box.rect[0];
@@ -624,7 +627,7 @@ function onidleout() {
 
 function outputs(){
 	//post("f_outputs",ccm2,"act",act,"cha",cha,"\n")
-    if (ccm2 == 0){ // act_menu
+	if (ccm2 == 0){ //act_menu
 		//post("act");
 		let a_menu_state = [];
 		a_menu_state.push("no");
@@ -634,38 +637,22 @@ function outputs(){
 			if (inputs){
 				a_menu_state.push(keys[i]);
 			}
-    }
+		}
 		fill_menu(a_menu_state);
-}
+	}
 	else if (ccm2 == 1){	
 		//let cpval = pval[ccy+param_offset];
 		let act = cpval.split("~")[0];	
+		let c_item = cpval.split("~")[1];
 		if (act == "_") return "exit"
-		else fill_menu(get_inputs(act));
-	}
-}   // maintaining outputs~
-function get_inputs(act){
-	let c_menu_state = [];
-	let c_chans = [];
-	c_menu_state.push("-no-");
-	c_chans.push(["-no-",0,0]);
-	if (act != "no"){ //(a != "no")
-		let inputs = stateDict.get(act+"::inputs~");
-		
-		let inpkeys = inputs.getkeys();
-		//post ("getinputs",inpkeys,"\n");
-		for (let i in inpkeys){
-			let k = inpkeys[i];
-			let c = inputs.get(k);
-			for (let j = 1;j<=c;j++){
-				let item = k+"."+j;
-				c_menu_state.push(item);
-				c_chans.push([k,j,c]);
-			}
+		else {
+			let gotinp = utils.getinputs(act,c_item);
+			c_menu_state = gotinp[0];
+			c_chans = gotinp[1];
+			fill_menu(c_menu_state);
 		}
 	}
-	return c_menu_state;
-}     // maintaining outputs~
+}   // maintaining outputs~
 
 function m_tog(x,y,drag,option,mod2){
 	if (header_click){
@@ -812,9 +799,10 @@ function menu(a) {
 				if (ccm2 == 0) {
 					if (a=="no") S = "-no-"
 					else {
-						let inputs = get_inputs(a);
+						let gotinp = utils.getinputs(a,S)[0];
+						let inputs = gotinp[0];//get_inputs(a);
 						//post("menu_outputs_inputs",inputs,"S",S,"\n");
-						if (inputs.indexOf(S) == -1) S = inputs[1];
+						S = gotinp[2];
 					}
 					pval[cy_po] = a+"~"+S;
 				}
