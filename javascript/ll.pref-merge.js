@@ -36,6 +36,12 @@ var empty_prf_DEFAULT = {
     channels: 2,
     length: 1000,
   },
+  envi_saving : 	{
+		type: "folder",
+		copy_buffers: 0,
+		write_files: 0,
+		write_sample_buffers: 0
+	}
 };
 
 function newPref() {
