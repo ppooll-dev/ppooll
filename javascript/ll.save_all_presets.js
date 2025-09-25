@@ -1,7 +1,7 @@
 autowatch = 1;
 outlets = 4;
 
-const ignore = ["ho_st1", "buffer_host1"]
+const ignorePresets = ["ho_st1", "buffer_host1"]
 
 const subfolders = ["presets"]
 
@@ -14,35 +14,47 @@ let writeParams = null;
 
 const pb = new PolyBuffer("pp");
 
+let dict = null;
+
 let enviDir = null;
 let enviName = null;
 
 let fileExt = "wav";
 
-// Hacky way to use msg_dictionary for multiple incoming dicts
-let nextDict = null;
-function setNextDict(name){ nextDict = name; }
+function ppost(msg){
+    post("ppooll write environment: ", msg)
+    post()
+}
 
-function msg_dictionary(dict){
-    if(nextDict === "state"){
-        setState(dict);
-    }else if(nextDict === "buffers"){
-        setBuffers(dict)
-    }else if(nextDict === "writeParams"){
-        setWriteParams(dict)
-    }else{
-        post("setNextDict before sending dictionary.  ie: 'setNextDict state'");
+function msg_dictionary(d){
+    if(!d.props.envi_name || d.props.envi_name.trim() === ""){
+        ppost("Error: invalid filename for environment")
+        return
     }
-    nextDict = null;
-}
 
-// Set environmentsP path from 'll.ppoollpaths 2'
-function setEnviDir(path){
-    enviDir = path + "/environmentsP";
-}
+    ppost(`writing '${d.props.envi_name}' (${d.props.type})`);
+    dict = {
+        fileExt,
+        ...d
+    }
+    // Set buffer audio file export file extension
+    fileExt = dict.fileExt;
 
-function setWriteParams(dict){
-    writeParams = dict
+    // Set environment path
+    enviDir = dict.path + "/environmentsP";
+
+    // Set buffers
+    buffers_dict = dict.buffers;
+    buffers = Object.keys(buffers_dict).map(b => ({
+        name: removeExtension(buffers_dict[b][0]),
+        path: buffers_dict[b][3] 
+    }));
+
+    // Get acts from 'dict ppoollstate'
+    acts = Object.keys(dict.state);
+
+    // Set environment write props (name, type "folder" or "json", etc)
+    writeParams = dict.props;
 
     enviName = writeParams.envi_name;
 
@@ -54,27 +66,9 @@ function setWriteParams(dict){
     if(writeParams.type === "folder"){
         outlet(1, `${enviDir}/${enviName}`, ...subfolders);
     }else if(writeParams.type === "json"){
-        outlet(2, `${enviDir}/${enviName}.json`)
+        dict.props.jsonPath = `${enviDir}/${enviName}.json`;
+        outlet(2, dict);
     }
-}
-
-// Get list of acts from ppoollstate
-function setState(dict){
-    acts = Object.keys(dict);
-}
-
-// Get buffer names from dict created from 'coll buffer_bank'
-function setBuffers(dict){
-    buffers_dict = dict;
-    buffers = Object.keys(buffers_dict).map(b => ({
-        name: removeExtension(buffers_dict[b][0]),
-        path: buffers_dict[b][3] 
-    }));
-}
-
-// Set buffer file ext for writing (aif or wav)
-function setFileExt(ext){
-    fileExt = ext;
 }
 
 // Remove file ex from string name
@@ -86,6 +80,7 @@ function removeExtension(filename) {
 function saveToFolder(){
     // Save buffers
     if(writeParams.copy_buffers){
+        ppost("copy buffers...")
         buffers.forEach((b,i) => {
             const hasFile = b.path !== "-";
 
@@ -120,17 +115,6 @@ function saveToFolder(){
         });
     }
 
-    // Save presets
-    acts.forEach(act => {
-        if(ignore.indexOf(act) === -1)
-        {
-            outlet(0, "send", `::${act}::pat`);
-            outlet(0, "write", 
-                `${enviDir}/${enviName}/presets/${act}.json`
-            )
-        }
-    });
-
     if(acts.indexOf("buffer_host1") > -1){
         outlet_dictionary(3, buffers_dict)
         outlet(3, "clear");
@@ -138,5 +122,23 @@ function saveToFolder(){
         outlet(3, "write", `${enviDir}/${enviName}/presets/buffer_host1`);
     }
 
-    outlet(2, `${enviDir}/${enviName}/environment.json`)
+    // Save presets
+    ppost("save act presets...")
+    acts.forEach(act => {
+        if(ignorePresets.indexOf(act) === -1)
+        {
+            // TODO: check if we have preset slots?
+            // outlet(0, "send", `::${act}::pat`);
+            // outlet(0, "getslotlist");
+
+            outlet(0, "send", `::${act}::pat`);
+            outlet(0, "write", 
+                `${enviDir}/${enviName}/presets/${act}.json`
+            )
+        }
+    });
+
+    ppost("save environment state...")
+    dict.props.jsonPath = `${enviDir}/${enviName}/environment.json`;
+    outlet_dictionary(2, dict);
 }

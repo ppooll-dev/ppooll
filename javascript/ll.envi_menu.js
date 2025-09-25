@@ -189,7 +189,7 @@ function read_coll(path) {
     }
 
     f.close();
-    post("loaded " + store.length + " entries\n");
+    // post("loaded " + store.length + " entries\n");
     return store;
 }
 

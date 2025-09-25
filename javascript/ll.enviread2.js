@@ -22,6 +22,8 @@ let isopen, toopen;
 // don't recall presets for envi folders
 const presetsIgnore = ["ho_st1", "buffer_host1"]
 
+const PARAMS_DELAY = 1000;
+
 
 function debug_post(a) {
     debugpost = a;
@@ -48,24 +50,57 @@ function msg_dictionary(d) {
 	}
 }
 
+// Canonical act order: ho_st1, then buffer_host1 (only once), then sorted others
+function canonicalActOrder(allKeys) {
+    const hasHo = allKeys.includes("ho_st1");
+    const hasBuffer = allKeys.includes("buffer_host1");
+
+    const filtered = allKeys
+        .filter(k => k !== "ho_st1" && !/^buffer_host\d+$/.test(k)) // drop all buffer_hostN
+        .sort((a, b) => a.localeCompare(b));
+
+    if (hasHo) filtered.unshift("ho_st1");
+    if (hasBuffer) {
+        // insert buffer_host1 after ho_st1 if present, else at the start
+        filtered.splice(hasHo ? 1 : 0, 0, "buffer_host1");
+    }
+
+    return filtered;
+}
+
 function loadActs() {
-	outlet(0, "acts...")
-    let pstate = stateDict.getkeys();
+    outlet(0, "acts...");
+
+    const allKeys = Object.keys(environment || {});
+    const order = canonicalActOrder(allKeys);
+
+    const pstate = stateDict.getkeys() || [];
+    const openSet = new Set(pstate);
+
     isopen = [];
     toopen = [];
-    Object.keys(environment).forEach((a) => {
-        if (pstate.includes(a) == 1) isopen.push(a);
-        else toopen.push(environment[a]["_actwindow"][0]);
-    });
-    if (debugpost > 1)
+
+    for (const a of order) {
+        const env = environment[a];
+        if (!env) continue;
+
+        if (openSet.has(a)) {
+            isopen.push(a);
+        } else {
+            const win = env._actwindow?.[0];
+            if (win != null) toopen.push(win);
+        }
+    }
+
+    if (debugpost > 1) {
         post(
-            "keys:", keys, "\n",
+            "order:", order, "\n",
             "toopen:", toopen, "\n",
             "open:", isopen, "\n"
         );
+    }
 
-    isopen.forEach((a) => setloc(a));
-
+    for (const a of isopen) setloc(a);
     loadAct();
 }
 
@@ -79,7 +114,8 @@ function loadAct() {
     outlet(0, "actsdone");
 
     var t = new Task(params, this);
-    t.schedule(500); // run once after 1000 ms
+    t.schedule(PARAMS_DELAY); // run once after 1000 ms
+    t.schedule(PARAMS_DELAY * 2); // run once after 2000 ms
 }
 
 function acting(c, i, o) {
@@ -141,18 +177,29 @@ function params() {
         }
     }
 	// load presets files for "folder" environments
-    if(dict.props.type === "folder"){
-		outlet(0, "presets...")
+    if (dict.props.type === "folder") {
+        outlet(0, "presets...");
 
-		for(const i in keys){
+        for (const i in keys) {
+            if (presetsIgnore.indexOf(keys[i]) > -1)
+                continue;
 
-			if(presetsIgnore.indexOf(keys[i]) > -1)
-				continue;
+            const filepath = `${dict.props.path}/presets/${keys[i]}.json`;
+            const f = new File(filepath, "read");
 
-			outlet(1, "send", `::${keys[i]}::pat`)
-			outlet(1, "read", `${dict.props.path}/presets/${keys[i]}.json` )
-		}
-	}
+            if (f.isopen) {
+                // File exists
+                f.close();
+                outlet(1, "send", `::${keys[i]}::pat`);
+                outlet(1, "read", filepath);
+            } 
+            // else {
+            //     // File not found... skip
+            //     post("No file: " + filepath + "\n");
+            // }
+        }
+    }
+    outlet(0, "done!")
 }
 
 function setparam(a, p, v) {
