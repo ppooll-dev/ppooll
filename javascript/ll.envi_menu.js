@@ -114,7 +114,11 @@ function selectEnvironment(name){
     }
 
     const data = { props: selectedEnvi, environment: enviData, ...buffer_bank };
-    outlet_dictionary(1, data);
+    outlet_dictionary(2, data);
+
+    outlet(1, "type", "symbol", selectedEnvi.type);
+    outlet(1, "name", "set", name);
+    outlet(1, "name", "bang");
 }
 
 // Needed to determine which buffer_host preset file to load from "json" environment
@@ -187,4 +191,9 @@ function read_coll(path) {
     f.close();
     post("loaded " + store.length + " entries\n");
     return store;
+}
+
+function loadbang(){
+    outlet(1, "name", "clear");
+    outlet(1, "name", "bang");
 }
