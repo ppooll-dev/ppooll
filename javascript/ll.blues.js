@@ -214,38 +214,41 @@ function listblockCompose() {
             UI.msg(lb, "params", "outputsMix~", "outputsMix~");
             UI.msg(lb, "modes", "menu_outputs_0", "menu_outputs_1");
             UI.msg(lb, "rows", S.chOut);
-            UI.msg(lb, "c1", COLORS.darkBlue);
+			UI.msg(lb, "bgcolors",2);	
         } else {
             UI.msg(lb, "params", "outputsMix~", "outputsMix~");
             UI.msg(lb, "rows", S.chOut);
             UI.msg(lb, "params", "outputs~", "outputs~");
             UI.msg(lb, "modes", "menu_outputs_0", "menu_outputs_1");
             UI.msg(lb, "rows", S.chOut);
-            UI.msg(lb, "c1", COLORS.lightBlue);
+            UI.msg("listblock", "bgcolors",1);	
         }
     } else {
         S.showMix = 0;
         UI.msg(lb, "header", 1);
         UI.msg(lb, "params", PARAMS_DEFAULT, S.extraParams);
-        UI.msg(lb, "modes", MODES_DEFAULT, S.extraModes);
+        UI.msg(lb, "modes", "enum", "menu_outputs_0", "menu_outputs_1", S.extraModes);
         UI.msg(lb, "rows", S.chOut);
-        UI.msg(lb, "c1", COLORS.lightBlue);
+        UI.msg("listblock", "bgcolors",1);	
+		foldUnfold();
     }
 }
 
-function getTildeHeader() {
+function setTildeHeader() {
     const v = UI.get("outputs~") ? UI.get("outputs~").getvalueof() : [];
     const arr = toArray(v);
     const af = arr.slice(1).filter((item) => item !== "_");
     const tild = af.length === 0 ? "~" : "≈";
-    const head = (arr[0] || "outputs~").split("~");
-    return [tild, head[0], head[1]];
+	UI.msg("listblock", "none_text", tild );	
+	UI.msg("listblock", "header_text", tild,"act","keep",S.extraHeader);
+    //const head = (arr[0] || "outputs~").split("~");
+    //return tild; //[tild, head[0], head[1]];
 }
 
 function foldUnfold() {
     if (S.style < 2) return;
 
-    const lbRect = UI.rect("listblock") || [0, 0, S.bWidth, S.rowheight];
+    const lbRect = UI.rect("listblock"); // || [0, 0, S.bWidth, S.rowheight];
     const br = (() => {
         try {
             return bpatcher.rect;
@@ -254,79 +257,41 @@ function foldUnfold() {
         }
     })();
     let menWidth = 0;
-
-    if (S.folded === 1) {
-        // folded
-        UI.rect("listblock", [
-            lbRect[0],
-            lbRect[1],
-            S.bWidth - S.laneWidth,
-            lbRect[3],
-        ]);
-        UI.rect("meter", [lbRect[0], lbRect[1], S.bWidth - S.laneWidth, br[3]]);
-        menWidth =
-            (UI.rect("listblock")[2] - UI.rect("listblock")[0] - S.rowheight) /
-            2;
+	// ################################################### folded
+    if (S.folded === 1) {       
+        UI.rect("listblock", [ lbRect[0], lbRect[1], S.bWidth - S.laneWidth, S.rowheight ]);
+        UI.rect("meter", [lbRect[0], lbRect[1], S.bWidth, S.rowheight]);
+        menWidth = (UI.rect("listblock")[2] - UI.rect("listblock")[0] - S.rowheight) / 2;
 
         try {
-            bpatcher.rect = [
-                br[0],
-                br[1],
-                br[0] + S.bWidth,
-                br[1] + S.rowheight,
-            ];
+            bpatcher.rect = [br[0],br[1], br[0] + S.bWidth, br[1] + S.rowheight,];
         } catch (_) {}
-        UI.msg("listblock", "header_text", getTildeHeader());
-        UI.msg("listblock", "headercolors", 3, 1, 1);
+		UI.msg("listblock", "header", 0);
+		UI.msg("listblock", "modes", "none", "menu_outputs_0", "menu_outputs_1");
+		UI.msg("listblock", "bgcolors", 3,1);	
         UI.hidden("ib", 0);
         UI.hidden("state_menu", 0);
-    } else {
-        // unfolded
-        UI.rect("listblock", [
-            lbRect[0],
-            lbRect[1],
-            S.bWidth + S.extraWidth,
-            lbRect[3],
-        ]);
-        UI.rect("meter", [lbRect[0], S.rowheight, S.bWidth, lbRect[3]]);
-        menWidth =
-            (UI.rect("listblock")[2] -
-                UI.rect("listblock")[0] -
-                S.rowheight -
-                S.extraWidth) /
-            2;
+    } 
+	// #################################################### unfolded
+	else {
+        UI.msg("listblock", "header", 1);
+		let r3 = S.chansV[1]*S.rowheight+S.rowheight;
+        UI.rect("listblock", [ lbRect[0],lbRect[1], S.bWidth + S.extraWidth, r3 ]);
+        UI.rect("meter", [lbRect[0], S.rowheight, S.bWidth, r3]);
+        menWidth = (UI.rect("listblock")[2] - UI.rect("listblock")[0] - S.rowheight - S.extraWidth) / 2;
 
-        try {
-            bpatcher.rect = [
-                br[0],
-                br[1],
-                br[0] + S.bWidth + S.extraWidth,
-                br[1] + UI.rect("listblock")[3] - UI.rect("listblock")[1],
-            ];
+        try { bpatcher.rect = [ br[0], br[1], br[0] + S.bWidth + S.extraWidth,
+								br[1] + UI.rect("listblock")[3] - UI.rect("listblock")[1] ];
         } catch (_) {}
 
-        UI.msg(
-            "listblock",
-            "header_text",
-            getTildeHeader()[0],
-            "act",
-            "keep",
-            S.extraHeader
-        );
         UI.msg("listblock", "headercolors", 3, 1, 3 + S.keep, 1);
+		UI.msg("listblock", "bgcolors",1);	
+		UI.msg("listblock", "modes", "enum", "menu_outputs_0", "menu_outputs_1");
         UI.hidden("ib", 1);
 		UI.hidden("state_menu", 1);
-        UI.hidden("state_menu", 1);
     }
 
-    UI.msg(
-        "listblock",
-        "colwidths",
-        S.rowheight,
-        menWidth,
-        menWidth,
-        S.extraWidths
-    );
+    UI.msg( "listblock", "colwidths", S.rowheight, menWidth, menWidth, S.extraWidths);
     grow();
 }
 
@@ -362,6 +327,10 @@ function bang() {
     // prime listblock basics
     UI.msg("listblock", "rowheight", S.rowheight);
     UI.msg("listblock", "width_abs", 1);
+	UI.msg("listblock", "c1", COLORS.lightBlue);
+	UI.msg("listblock", "c2", COLORS.darkBlue);
+	UI.msg("listblock", "c3", 0.2, 0.1,0.2,1);
+	UI.msg("listblock", "c4", 0.636, 0.075,0.692,1);
 
     // initialize pattrs
     UI.get("status") && UI.get("status").message(S.stateV);
@@ -386,7 +355,7 @@ function getllblueargs(){
 function size_obj() {
     setbp_rect();
     S.laneWidth = S.bWidth / 12;
-
+	//post("size_obj");
     if (S.style < 2) {
         // reveal all body controls
         [
@@ -548,6 +517,7 @@ function status() {
 
     if (newStyle !== S.style) {
         S.style = newStyle;
+		S.useOutputsMix = S.style < 2;
         script_sub();
         size_obj();
     }
@@ -687,10 +657,11 @@ function listblock() {
     const as = a.join(" ");
 
     if (as === "enum 0 -1") {
-        // fold toggle on title click
-		S.stateV[6] = 1-S.stateV[6];
-		UI.msg("status", S.stateV);
-    } else if (as === "menu 2 -1" && S.folded === 0) {
+		fold(1);
+    } else if (as === "none 0 0"){
+		fold(0);
+    }
+	else if (as === "menu 2 -1" && S.folded === 0) {
         // keep toggle
         S.keep = 1 - S.keep;
         UI.msg("listblock", "keep", S.keep);
@@ -719,7 +690,7 @@ function extra() {
     } else if (tag === "header") {
         S.extraHeader = args;
     } else if (tag === "modes") {
-        UI.msg("listblock", "modes", MODES_DEFAULT, args);
+        UI.msg("listblock", "modes", "enum", "menu_outputs_0", "menu_outputs_1", args);
     } else if (tag === "widths") {
         S.extraWidths = args;
     }
@@ -735,7 +706,6 @@ function channels(a) {
 function script_sub() {
     const tp = this.patcher;
     const ims = S.style === 1;
-    const uoM = S.style < 2;
 
     if (S.inMix !== ims) {
         S.inMix = ims;
@@ -752,10 +722,6 @@ function script_sub() {
         }
     }
 
-    if (S.useOutputsMix !== uoM) {
-        S.useOutputsMix = uoM;
-        // (connections toggling left intact; kept as in original + commented block)
-    }
 }
 
 function script_sub_chchange(c) {
@@ -817,6 +783,7 @@ function script_sub_chchange(c) {
 /* ============================== OUTPUTS PARSING ============================== */
 
 function outputs() {
+	setTildeHeader();
     out_patcher = this.patcher.getnamed("outputs").subpatcher();
     const a = arrayfromargs(arguments);
     const out_parse = chan_sep(a);
@@ -833,10 +800,10 @@ function outputsMix() {
     S.outputsMixParseCurrent = out_parse;
 }
 
-function chan_sep(a) {
+function chan_sep(a) { //calculate the channel structure from pattr value
+	//post("chan_sep",a,"\n");
     const v = toArray(a);
     UI.msg("listblock", "rows", v.length);
-
     const dests = [];
     const d_offsets = [];
     const chans_sep = [];
@@ -846,11 +813,16 @@ function chan_sep(a) {
     for (let i = 0; i < v.length; i++) {
         if (v[i] !== "_") {
             let result = (v[i] + "").match(/(.+)\.(\d+)/);
-            if (!result) result = ["no1", "no", 1];
-			//post("rrrr",result[1].split("~")[0],result[1].split("~")[1],);
-			dest_chs.push( stateDict.get(result[1].split("~")[0]+"::inputs~::"+result[1].split("~")[1]));	
+			//post("result",result,"\n");
+            if (!result) result = ["no1", "no~-no-", 1];
+			let r_act = result[1].split("~")[0];
+			let r_obj = result[1].split("~")[1];
+			let r_offset = parseInt(result[2]);
+			//post("act_obj_offs",r_act,r_obj,r_offset,"\n");
+			if (r_act == "no") dest_chs.push(1)
+			else dest_chs.push( stateDict.get(r_act+"::inputs~::"+r_obj));	
             dests.push(result[1]);
-            d_offsets.push(parseInt(result[2], 10));
+            d_offsets.push(r_offset);
             if (i > 0) {
                 chans_sep.push(i - cmem);
                 cmem = i;
@@ -858,6 +830,7 @@ function chan_sep(a) {
         }
     }
     chans_sep.push(v.length - cmem);
+	//post("chans_sep",chans_sep,"dests", dests, "dest_chs", dest_chs,"\n");
     return [chans_sep, d_offsets, dests, dest_chs];
 }
 

@@ -27,6 +27,7 @@ var button_on = -1;
 var bang_gate = 1;
 var keep_ = 0;
 var menu_items = [];
+var non_txt = "x";
 
 var mod,cwcalc,col_pos, oncolo,bgcolo,hdcolo,paramsObj;
 
@@ -498,6 +499,7 @@ function paint() {
 				else {
 					mgraphics.set_source_rgba(bgcolor);
 					txt_color = is_selected_menu ? [1,1,1,1] : brightness(bgcolor);
+					//post("current_mode",cm, "current_mode_1", cm1, "\n");
 					if (cm=="enum" || (cm == "button" && cm1 == "enum")) txt = String(i-header+enum_offset);
 					else if (cm == "tog" || cm == "button")
 						if (cm1 != "none") txt = cm1
@@ -510,8 +512,10 @@ function paint() {
 						if (typeof t == "undefined") txt = "_"
 						else txt = t;
 						}
+					else if (cm == "none" && cm1 == "none") txt = non_txt
 					else if (cm == "num" || cm == "text" || cm == "none" || cm == "menu") txt = String(cval)
 					else txt = "xx";
+					//post(txt,"\n");
 				}
 			}
     		mgraphics.fill();
@@ -750,7 +754,8 @@ function num() {
 	
 	//if (isA) data = inp[0];
 	//post("num ", a, a.length,"data", data,"isa",isA,"\n");
-	if (ui_inside(lllbnum.rect) && lllbnum.hidden == 0){
+	//if (ui_inside(lllbnum.rect) && lllbnum.hidden == 0){
+	if (lllbnum.hidden == 0){
 		if (header_click){
 				for (i=param_offset;i<pval.length;i++){
 					pval[i] = Number(a);
@@ -822,6 +827,10 @@ function menu(a) {
 function keep(a){
 	keep_ = a;
 }
+function none_text(a){
+	non_txt = a;
+	mgraphics.redraw();
+}
 function fill_menu(a){
 	//let items = [];
 	if (Array.isArray(a)) menu_items = a
@@ -857,9 +866,12 @@ function nrect(x,y,m) {
 
 
 function par_mess(){
+
 	bang_gate = 0;
+	//post("par_mess1",pval,"\n")
 	par.message(pval);
 	bang_gate = 1;
+	//post("par_mess",pval,"\n")
 	mgraphics.redraw();	
 }
 function ui_inside(r){
