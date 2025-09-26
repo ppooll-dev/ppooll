@@ -24,6 +24,8 @@ const presetsIgnore = ["ho_st1", "buffer_host1"]
 
 const PARAMS_DELAY = 1000;
 
+let isGettingBuffers = false;
+
 
 function debug_post(a) {
     debugpost = a;
@@ -43,6 +45,7 @@ function msg_dictionary(d) {
 	environment = dict.environment;
 
     if (dict.buffers_path) {
+        isGettingBuffers = true;
 		outlet(0, "buffers...")
         outlet(2, dict.buffers_path);
     }else{
@@ -69,6 +72,10 @@ function canonicalActOrder(allKeys) {
 }
 
 function loadActs() {
+    if(!isGettingBuffers)
+        return;
+
+    isGettingBuffers = false;
     outlet(0, "acts...");
 
     const allKeys = Object.keys(environment || {});
@@ -150,12 +157,12 @@ function params() {
         //post("envi_params_keys",par_keys,"\n");
         if (debugpost > 0)
             post("------------------", a, "------------------", "\n");
-        for (let p of par_keys) {
-            let par = environment[a][p];
-            if (checkdict(par)) {
-                let par2_keys = Object.keys(par);
+        for (let p1 of par_keys) {
+            let par1 = environment[a][p1];
+            if (checkdict(par1)) {
+                let par2_keys = Object.keys(par1);
                 for (let p2 of par2_keys) {
-                    let par2 = par[p2];
+                    let par2 = par1[p2];
                     if (checkdict(par2)) {
                         let par3_keys = Object.keys(par2);
                         for (let p3 of par3_keys) {
@@ -163,17 +170,18 @@ function params() {
                             if (checkdict(par3)) {
                                 let par4_keys = Object.keys(par3);
                                 for (let p4 of par4_keys) {
+                                    let par4 = par3[p4];
                                     setparam(
                                         a,
-                                        p + "::" + p2 + "::" + p3 + "::" + p4,
-                                        par3
+                                        p1 + "::" + p2 + "::" + p3 + "::" + p4,
+                                        par4
                                     );
                                 }
-                            } else setparam(a, p + "::" + p2 + "::" + p3, par3);
+                            } else setparam(a, p1 + "::" + p2 + "::" + p3, par3);
                         }
-                    } else setparam(a, p + "::" + p2, par2);
+                    } else setparam(a, p1 + "::" + p2, par2);
                 }
-            } else setparam(a, p, par);
+            } else setparam(a, p1, par1);
         }
     }
 	// load presets files for "folder" environments
