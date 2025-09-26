@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 8,
+			"revision" : 9,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 48.0, 150.0, 594.0, 532.0 ],
+		"rect" : [ 209.0, 235.0, 594.0, 532.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "ll.blues.info.help1",
@@ -63,16 +63,40 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 726.0, 156.0, 624.0, 535.0 ],
+						"rect" : [ 764.0, 365.0, 624.0, 535.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"toolbarvisible" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"bgcolor" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
+									"bgcolor2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
+									"bgfillcolor_angle" : 270.0,
+									"bgfillcolor_autogradient" : 0.0,
+									"bgfillcolor_color" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
+									"bgfillcolor_color1" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
+									"bgfillcolor_color2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
+									"bgfillcolor_proportion" : 0.5,
+									"bgfillcolor_type" : "gradient",
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"gradient" : 1,
+									"id" : "obj-2",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 145.0, 277.0, 88.0, 22.0 ],
+									"text" : "ho_st1~out.1 _"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"bgcolor" : [ 0.227450980392157, 0.572549019607843, 0.850980392156863, 1.0 ],
 									"bgcolor2" : [ 0.133333333333333, 0.329411764705882, 0.443137254901961, 1.0 ],
@@ -91,7 +115,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 378.0, 364.5, 43.0, 22.0 ],
+									"patching_rect" : [ 378.0, 389.0, 43.0, 22.0 ],
 									"text" : "like so"
 								}
 
@@ -102,7 +126,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 192.0, 365.5, 177.0, 20.0 ],
+									"patching_rect" : [ 192.0, 390.0, 177.0, 20.0 ],
 									"text" : "and move the freq-sliders a bit..",
 									"varname" : "c_basic[1]"
 								}
@@ -128,7 +152,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 78.0, 358.0, 91.0, 35.0 ],
+									"patching_rect" : [ 78.0, 383.0, 91.0, 35.0 ],
 									"text" : ";\rho_st1 stereo 1"
 								}
 
@@ -152,7 +176,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 359.0, 293.0, 49.0, 22.0 ],
+									"patching_rect" : [ 428.0, 318.0, 49.0, 22.0 ],
 									"text" : "like this"
 								}
 
@@ -164,20 +188,20 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 53.0, 293.0, 466.0, 60.0 ],
-									"text" : "in most cases in this mode, you will face a bigger signal.\nnow we send a 8-channel signal to ho_st1~out.1  \n(we still only hear 2 channels unless we let it mix down to stereo by host:\nthere is this little \"st\" in ho_st underneeth the channel count, that should show 16 now)"
+									"patching_rect" : [ 53.0, 318.0, 466.0, 60.0 ],
+									"text" : "in most cases in this mode, you will face a signal with more channels.\nnow we send a 8-channel signal to ho_st1~out.1  \n(we still only hear 2 channels unless we let it mix down to stereo by host:\nthere is this little \"st\" in ho_st underneeth the channel count, that should show 16 now)"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-30",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 56.0, 245.0, 438.0, 33.0 ],
-									"text" : "like so eg.\nour 2-channel signal is split into two mono channels, both going to ho_st1~out.1  "
+									"patching_rect" : [ 56.0, 245.0, 438.0, 47.0 ],
+									"text" : "like so eg.\nour 2-channel signal is split into two mono channels, both going to ho_st1~out.1  \nback to normal,                              a single 2 channel signal to ho_st1~out.1"
 								}
 
 							}
@@ -217,13 +241,13 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 8,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 34.0, 455.0, 719.0, 411.0 ],
+										"rect" : [ 109.0, 987.0, 719.0, 411.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"boxes" : [ 											{
 												"box" : 												{
@@ -863,6 +887,14 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-25", 2 ],
+									"hidden" : 1,
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-25", 1 ],
 									"hidden" : 1,
 									"source" : [ "obj-22", 0 ]
@@ -916,7 +948,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1324,7 +1356,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1488,7 +1520,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1835,7 +1867,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 8,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2358,7 +2390,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2459,7 +2491,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2800,7 +2832,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3293,7 +3325,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3737,7 +3769,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3746,7 +3778,6 @@
 						"rect" : [ 419.0, 66.0, 584.0, 751.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"toolbarvisible" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -3757,7 +3788,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 19.0, 194.0, 386.0, 47.0 ],
-									"presentation_linecount" : 3,
 									"text" : "chans:   a list of 2 items, input- and output- signal size (==channels)\n1: ch_in \n2: ch_out"
 								}
 
@@ -3772,7 +3802,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 170.0, 91.0, 151.0, 33.0 ],
-									"presentation_linecount" : 2,
 									"text" : "move the sliders with open\nclientwindow, for insight."
 								}
 
@@ -4176,7 +4205,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 0.0, 117.62890625, 16.0 ],
+					"patching_rect" : [ 0.0, 0.0, 113.017570495605469, 16.0 ],
 					"varname" : "act",
 					"viewvisibility" : 1
 				}
@@ -4265,7 +4294,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 400.0, 463.0, 107.0, 22.0 ],
 					"restore" : 					{
-						"freq" : [ 200.0, 0.0 ]
+						"freq" : [ 403.480000000000018, 314.129999999999995 ]
 					}
 ,
 					"text" : "autopattr autopattr",
@@ -4335,13 +4364,6 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "Screenshot 2025-09-01 at 15.13.40.png",
-				"bootpath" : "~/Desktop",
-				"patcherrelativepath" : "../../../../../../Desktop",
-				"type" : "PNG",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "actmakeB.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/actmaker",
 				"patcherrelativepath" : "../../patchers/actmaker",
