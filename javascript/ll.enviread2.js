@@ -71,11 +71,15 @@ function canonicalActOrder(allKeys) {
     return filtered;
 }
 
-function loadActs() {
+function onBuffersLoaded(){
     if(!isGettingBuffers)
         return;
 
     isGettingBuffers = false;
+    loadActs()
+}
+
+function loadActs() {
     outlet(0, "acts...");
 
     const allKeys = Object.keys(environment || {});
