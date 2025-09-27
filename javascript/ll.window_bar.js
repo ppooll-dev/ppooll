@@ -5,6 +5,7 @@ mgraphics.init();
 mgraphics.autofill = 0;
 mgraphics.relative_coords = 0;
 
+
 // -------------------- ATTRIBUTES --------------------
 var bgcolor       = [0.15, 0.15, 0.15, 1.0];
 declareattribute("bgcolor",       { embed: 1, style: "rgba", paint: 1 });
@@ -22,8 +23,14 @@ declareattribute("closetextcolor",{ embed: 1, style: "rgba", paint: 1 });
 var title = "Title";
 declareattribute("title", { embed: 1, type: "symbol", paint: 1 });
 
+var w_param = [];
+declareattribute("w_param", { embed: 1 });
+
+var pos_param = [];
+declareattribute("pos_param", { embed: 1 });
+
 // -------------------- LAYOUT --------------------
-var barPadding  = 6;   // left/right padding
+var barPadding  = 2;   // left/right padding
 var borderWidth = 1;
 var minHeight   = 20;
 
@@ -96,7 +103,7 @@ function paint() {
     var shown = fitToWidth(title.toString(), avail);
 
     mgraphics.set_source_rgba(titleCol);
-    mgraphics.move_to(barPadding, Math.floor(height*0.68)); // visually centered
+    mgraphics.move_to(barPadding * 3, Math.floor(height*0.68)); // visually centered
     mgraphics.show_text(shown);
 
     // Close button (right)
@@ -145,6 +152,8 @@ function onclick(x, y, but, cmd, shift, caps, opt, ctrl) {
         // Close window + emit a message
         try { this.patcher.message("wclose"); } catch(e) {}
         outlet(0, "close");
+        if(w_param.length > 0)
+            messnamed(...w_param, 0);
         return;
     }
 
@@ -162,10 +171,19 @@ function ondrag(x, y, but, cmd, shift, caps, opt, ctrl) {
     var dy = y - yclick;
     var loc = win.location; // [l,t,r,b]
     win.location = [loc[0]+dx, loc[1]+dy, loc[2]+dx, loc[3]+dy];
+    if(pos_param.length > 0)
+        messnamed(...pos_param, ...win.location);
 }
 
 function onmouseup() { dragging = false; }
 function onidleout() { dragging = false; }
+
+function set_wind(attr, ...args){
+    win = getWindow();
+    if (win) {
+        win[attr] = args
+    }
+}
 
 // -------------------- LIVE SETTERS (optional) ----
 // These let you send messages if you prefer over @attrs
