@@ -355,10 +355,10 @@ function menu_init(){
 		lllbmenu.hidden = 1;
 }
 function num_init(){
-	if (!this.patcher.getnamed("lllnum")){
+	if (!this.patcher.getnamed("lllbnum")){
  			//post("not");
 			lllnum = this.patcher.newdefault(100,100,"ll_number");
-			lllnum.varname = "lllnum";
+			lllnum.varname = "lllbnum";
 			lllnum.message("format", 1);
 			lllnum.message("sliderstyle", 2);
 			lllnum.message("hideonenter", 1);	
@@ -368,7 +368,7 @@ function num_init(){
 			this.patcher.bringtofront(lllnum);	
 			this.patcher.hiddenconnect(lllnum,0,box,0);
 		}
-		else lllnum = this.patcher.getnamed("lllnum");
+		else lllnum = this.patcher.getnamed("lllbnum");
 		lllnum.hidden = 1;			
 }
 function text_init(){

@@ -527,7 +527,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 466.0, 512.0, 50.0, 19.0 ],
-					"restore" : [ "-" ],
+					"restore" : [ "_" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -549,7 +549,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 466.0, 491.0, 50.0, 19.0 ],
-					"restore" : [ "-" ],
+					"restore" : [ "_" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -1724,7 +1724,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 251.0, 159.0, 50.0, 22.0 ],
-																	"text" : "valON"
+																	"text" : "scale"
 																}
 
 															}
@@ -10690,7 +10690,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 91.0, 16.0, 50.0, 22.0 ],
-													"text" : "0"
+													"text" : "12 1"
 												}
 
 											}
@@ -12266,7 +12266,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 307.0, 311.0, 50.0, 22.0 ],
-																	"text" : "127. 14"
+																	"text" : "0. 3"
 																}
 
 															}
@@ -12280,7 +12280,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 480.0, 242.0, 50.0, 22.0 ],
-																	"text" : "127"
+																	"text" : "-"
 																}
 
 															}
@@ -15419,7 +15419,7 @@
 																	"allowdrag" : 0,
 																	"fontsize" : 9.0,
 																	"id" : "obj-14",
-																	"items" : [ "AU DLS Synth 1", ",", "Network Session 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "from Max 1", ",", "from Max 2" ],
+																	"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "from Max 1", ",", "from Max 2" ],
 																	"maxclass" : "umenu",
 																	"numinlets" : 1,
 																	"numoutlets" : 3,
@@ -19231,7 +19231,6 @@
 													"fontface" : 0,
 													"fontsize" : 9.0,
 													"format" : [ 1.2 ],
-													"hidden" : 1,
 													"hideonenter" : 1,
 													"id" : "obj-62",
 													"label" : [ "num" ],
@@ -19241,8 +19240,8 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 550.0, 212.0, 44.0, 14.0 ],
-													"prependlabel" : 1,
+													"patching_rect" : [ 640.0, 32.0, 44.0, 14.0 ],
+													"prependname" : 1,
 													"sliderstyle" : 2,
 													"varname" : "lllbnum"
 												}
@@ -19250,7 +19249,7 @@
 											}
 , 											{
 												"box" : 												{
-													"embedstate" : [ [ "bgcolors", 1, 1, 1, 1, 2, 1, 1, 3, 3, 3, 4, 1 ], [ "c1", 1, 1, 1, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.8, 0.8, 0.8, 1 ], [ "c3", 0.2, 0.9, 0.2, 1 ], [ "c4", 0, 0.7, 0.8, 1 ], [ "c5", 0.8, 0.8, 0.8, 1 ], [ "c6", 0.9, 0.1, 0.1, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 35, 35, 106, 50, 20, 38, 38, 60, 60, 25, 40, 45, 45, 45, 45 ], [ "enum_offset", 0 ], [ "fontsize", 9 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 1 ], [ "header_text", "in_lo", "in_hi", "input_name", "name_usr", "ON", "in_min", "in_max", "act", "par", "listit", "mode", "val", "ON", "ignored", "ignored" ], [ "headercolors", 5 ], [ "ignore_headerclick", 0 ], [ "modes", "none", "none", "none", "text", "tog_0_1", "num_1.2", "num_1.2", "menu", "menu", "num", "menu", "num_1.2", "num_1.2", "num_1.2", "num_1.2" ], [ "multinumber", 0 ], [ "oncolors", 6 ], [ "param_offset", 1 ], [ "params", "in_lo", "in_hi", "input_name", "name_user", "ON", "in_min", "in_max", "acts", "pars", "list_item", "modes", "opt1", "opt2", "opt3", "opt4" ], [ "rowheight_fixed", 0 ], [ "rows", 0 ], [ "size_lists", 0 ], [ "top_patcher", 1 ], [ "width_abs", 0 ] ],
+													"embedstate" : [ [ "bgcolors", 1, 1, 1, 1, 2, 1, 1, 3, 3, 3, 4, 1 ], [ "c1", 1, 1, 1, 1 ], [ "c10", 0, 0, 0, 1 ], [ "c11", 0, 0, 0, 1 ], [ "c12", 0, 0, 0, 1 ], [ "c2", 0.8, 0.8, 0.8, 1 ], [ "c3", 0.2, 0.9, 0.2, 1 ], [ "c4", 0, 0.7, 0.8, 1 ], [ "c5", 0.8, 0.8, 0.8, 1 ], [ "c6", 0.9, 0.1, 0.1, 1 ], [ "c7", 0, 0, 0, 1 ], [ "c8", 0, 0, 0, 1 ], [ "c9", 0, 0, 0, 1 ], [ "colwidths", 35, 35, 106, 50, 20, 38, 38, 60, 60, 25, 40, 45, 45, 45, 45 ], [ "enum_offset", 0 ], [ "fontsize", 9 ], [ "gridcolor", 0, 0, 0, 1 ], [ "header", 1 ], [ "header_text", "in_lo", "in_hi", "input_name", "name_usr", "ON", "in_min", "in_max", "act", "par", "listit", "mode", "min", "max", "log", "smooth" ], [ "headercolors", 5 ], [ "ignore_headerclick", 0 ], [ "modes", "none", "none", "none", "text", "tog_0_1", "num_1.2", "num_1.2", "menu", "menu", "num", "menu", "num_1.2", "num_1.2", "num_1.2", "num_1.2" ], [ "multinumber", 0 ], [ "oncolors", 6 ], [ "param_offset", 1 ], [ "params", "in_lo", "in_hi", "input_name", "name_user", "ON", "in_min", "in_max", "acts", "pars", "list_item", "modes", "opt1", "opt2", "opt3", "opt4" ], [ "rowheight_fixed", 0 ], [ "rows", 0 ], [ "size_lists", 0 ], [ "top_patcher", 1 ], [ "width_abs", 0 ] ],
 													"filename" : "ll.listblock.js",
 													"id" : "obj-59",
 													"maxclass" : "v8ui",
@@ -19354,10 +19353,10 @@
 													"outlettype" : [ "", "", "", "" ],
 													"patching_rect" : [ 860.0, 69.0, 65.0, 19.0 ],
 													"restore" : 													{
-														"listblock" : [ "n" ],
-														"ll_tab" : [ 0 ],
+														"listblock" : [ "num", 13, 0 ],
+														"ll_tab" : [ 12, 1 ],
 														"lllbmenu" : [ 0 ],
-														"lllbnum" : [ -204.0 ],
+														"lllbnum" : [ 2.0 ],
 														"lllbtext" : [ "fader" ]
 													}
 ,
@@ -19387,7 +19386,7 @@
 													"peakcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"setminmax" : [ 0.0, 1.0 ],
 													"setstyle" : 3,
-													"size" : 5,
+													"size" : 2,
 													"slidercolor" : [ 0.486275, 0.486275, 0.486275, 1.0 ],
 													"varname" : "ms"
 												}
@@ -19666,12 +19665,13 @@
 																					"fontname" : "Arial",
 																					"fontsize" : 12.0,
 																					"id" : "obj-23",
+																					"linecount" : 2,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 158.0, 139.0, 50.0, 35.0 ],
-																					"text" : "midi"
+																					"text" : "keyboard"
 																				}
 
 																			}
@@ -22538,12 +22538,12 @@
 								"box" : 								{
 									"fontname" : "Geneva",
 									"fontsize" : 9.0,
-									"id" : "obj-1",
+									"id" : "obj-9",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 140.0, 100.0, 78.0, 20.0 ],
+									"patching_rect" : [ 140.0, 100.0, 78.0, 0.0 ],
 									"text" : "ll.ctlin",
 									"varname" : "in"
 								}
@@ -22552,13 +22552,6 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-38", 0 ],
-									"source" : [ "obj-1", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-12", 0 ],
 									"source" : [ "obj-18", 0 ]
 								}
@@ -22566,7 +22559,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
+									"destination" : [ "obj-9", 0 ],
 									"source" : [ "obj-21", 0 ]
 								}
 
@@ -22612,6 +22605,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-38", 0 ],
+									"source" : [ "obj-9", 0 ]
 								}
 
 							}
@@ -22734,8 +22734,7 @@
 						"serial_open-close" : 300,
 						"serial_port" : 300,
 						"wacom_menu" : 300,
-						"presets" : 500,
-						"routingPos" : 3
+						"presets" : 500
 					}
 ,
 					"saved_object_attributes" : 					{
@@ -22836,7 +22835,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 9.0,
 					"id" : "obj-22",
-					"items" : [ "-no-", ",", "~refresh~" ],
+					"items" : [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "IAC Driver Bus 1", ",", "to Max 1", ",", "to Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
