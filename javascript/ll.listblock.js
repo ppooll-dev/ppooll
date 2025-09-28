@@ -18,7 +18,7 @@ var header_click;
 var ccx, ccy, ccm,ccm1,ccm2; // current_clicks (modes)
 var cy_po; //current y + parameter offset
 var par, pval, drag_val;
-var lllbnum, lllbmenu, lllbtext;
+var lllnum, lllbmenu, lllbtext;
 var val = "n"; //notifyclients about clicked mode and position
 var selected_box = [null, null];
 var is_selected_menu = false;
@@ -27,7 +27,7 @@ var button_on = -1;
 var bang_gate = 1;
 var keep_ = 0;
 var menu_items = [];
-var non_txt = "x";
+var non_txt = "°§";
 
 var mod,cwcalc,col_pos, oncolo,bgcolo,hdcolo,paramsObj;
 
@@ -257,7 +257,7 @@ function size_list(){
 }
 function setfontsize(a){
 	fontsize = Number(a);
-	if(lllbnum) lllbnum.message("fontsize", a);
+	if(lllnum) lllnum.message("fontsize", a);
 	if(lllbmenu) lllbmenu.message("fontsize", a);
 	if(lllbtext) lllbtext.message("fontsize", a);
 }	
@@ -355,21 +355,21 @@ function menu_init(){
 		lllbmenu.hidden = 1;
 }
 function num_init(){
-	if (!this.patcher.getnamed("lllbnum")){
+	if (!this.patcher.getnamed("lllnum")){
  			//post("not");
-			lllbnum = this.patcher.newdefault(100,100,"ll_number");
-			lllbnum.varname = "lllbnum";
-			lllbnum.message("format", 1);
-			lllbnum.message("sliderstyle", 2);
-			lllbnum.message("hideonenter", 1);	
-			lllbnum.message("label", "num");
-			lllbnum.message("labelcolor", 0.,0.,0.,0.);	
-			lllbnum.message("prependlabel", 1);	
-			this.patcher.bringtofront(lllbnum);	
-			this.patcher.hiddenconnect(lllbnum,0,box,0);
+			lllnum = this.patcher.newdefault(100,100,"ll_number");
+			lllnum.varname = "lllnum";
+			lllnum.message("format", 1);
+			lllnum.message("sliderstyle", 2);
+			lllnum.message("hideonenter", 1);	
+			//lllnum.message("label", "num");
+			//lllnum.message("labelcolor", 0.,0.,0.,0.);	
+			lllnum.message("prependname", 1);	
+			this.patcher.bringtofront(lllnum);	
+			this.patcher.hiddenconnect(lllnum,0,box,0);
 		}
-		else lllbnum = this.patcher.getnamed("lllbnum");
-		lllbnum.hidden = 1;			
+		else lllnum = this.patcher.getnamed("lllnum");
+		lllnum.hidden = 1;			
 }
 function text_init(){
 		if (!this.patcher.getnamed("lllbtext")){
@@ -499,7 +499,7 @@ function paint() {
 				else {
 					mgraphics.set_source_rgba(bgcolor);
 					txt_color = is_selected_menu ? [1,1,1,1] : brightness(bgcolor);
-					//post("current_mode",cm, "current_mode_1", cm1, "\n");
+					//post("current..mode,mode_1,val:",cm, cm1, cval, "\n");
 					if (cm=="enum" || (cm == "button" && cm1 == "enum")) txt = String(i-header+enum_offset);
 					else if (cm == "tog" || cm == "button")
 						if (cm1 != "none") txt = cm1
@@ -512,7 +512,7 @@ function paint() {
 						if (typeof t == "undefined") txt = "_"
 						else txt = t;
 						}
-					else if (cm == "none" && cm1 == "none") txt = non_txt
+					else if (cm == "none" && cm1 == "none") txt = (non_txt == "°§") ? String(cval) : non_txt
 					else if (cm == "num" || cm == "text" || cm == "none" || cm == "menu") txt = String(cval)
 					else txt = "xx";
 					//post(txt,"\n");
@@ -547,7 +547,7 @@ function onclick(x,y,but,mod1,shift,capslock,option,mod2) {
 	if(rows === 0)
 		return;
 
-	if(lllbnum) lllbnum.message("hidden",1);
+	if(lllnum) lllnum.message("hidden",1);
 	if(lllbmenu) lllbmenu.message("hidden",1);
 	if(lllbtext) lllbtext.message("hidden",1);
 	for (i=0;i<col_pos.length;i++){
@@ -694,19 +694,19 @@ function m_button(x,y,drag){
 	}
 }
 function m_num(x,y,drag){
-	if (ccm1 != "none") lllbnum.message("format",Number(ccm1))
-	else lllbnum.message("format",1);
+	if (ccm1 != "none") lllnum.message("format",Number(ccm1))
+	else lllnum.message("format",1);
 	//post("multinumber?",multinumber,"\n");
 	if (multinumber){
-		lllbnum.rect = nrect(x,y,1);
-		lllbnum.message("set",pval);
+		lllnum.rect = nrect(x,y,1);
+		lllnum.message("set",pval);
 	}
 	else {
-		lllbnum.rect = nrect(x,y);
-		if (typeof cpval == "number") lllbnum.message("set",cpval);
+		lllnum.rect = nrect(x,y);
+		if (typeof cpval == "number") lllnum.message("set",cpval);
 	}
-	lllbnum.hidden = 0;
-	lllbnum.message("select");	
+	lllnum.hidden = 0;
+	lllnum.message("select");	
 	//listener();	
 }
 function m_menu(x,y,drag){ //called in onclick()
@@ -747,15 +747,15 @@ function m_text(x,y,drag){
 }
 
 // ############################ from UIs
-function num() {
+function lllbnum() {
 	let a = arrayfromargs(arguments);
 	let isA = a.length > 1;
 
 	
 	//if (isA) data = inp[0];
 	//post("num ", a, a.length,"data", data,"isa",isA,"\n");
-	//if (ui_inside(lllbnum.rect) && lllbnum.hidden == 0){
-	if (lllbnum.hidden == 0){
+	//if (ui_inside(lllnum.rect) && lllnum.hidden == 0){
+	if (lllnum.hidden == 0){
 		if (header_click){
 				for (i=param_offset;i<pval.length;i++){
 					pval[i] = Number(a);
@@ -886,7 +886,7 @@ function ui_inside(r){
 function ui(){
 	let a = arrayfromargs(arguments);
 	let obj;
-	if (a[0] == "num") obj = lllbnum;
+	if (a[0] == "num") obj = lllnum;
 	else if (a[0] == "menu") obj = lllbmenu;
 	else if (a[0] == "text") obj = lllbtext;
 	//post("ui_args",a,"to",a.slice(1),"type",typeof obj,"\n");
