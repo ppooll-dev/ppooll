@@ -77,35 +77,9 @@
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 100.0, 100.0, 70.0, 14.0 ],
-					"prependlabel" : 1,
+					"prependname" : 1,
 					"sliderstyle" : 2,
 					"varname" : "lllbnum"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"hidden" : 1,
-					"id" : "obj-52",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 128.0, 276.0, 111.0, 22.0 ],
-					"text" : "prepend chans_out"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"hidden" : 1,
-					"id" : "obj-51",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 102.0, 234.0, 104.0, 22.0 ],
-					"text" : "prepend chans_in"
 				}
 
 			}
@@ -324,6 +298,7 @@
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 106.666666666666671, 39.0, 26.666666666666671, 14.0 ],
+					"prependname" : 1,
 					"sliderstyle" : 2,
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "chans_in"
@@ -347,6 +322,7 @@
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 133.333333333333343, 39.0, 26.666666666666657, 14.0 ],
+					"prependname" : 1,
 					"sliderstyle" : 2,
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "chans_out"
@@ -8872,7 +8848,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-52", 0 ],
+					"destination" : [ "obj-64", 1 ],
 					"hidden" : 1,
 					"source" : [ "obj-4", 0 ]
 				}
@@ -8899,22 +8875,6 @@
 					"destination" : [ "obj-64", 1 ],
 					"hidden" : 1,
 					"source" : [ "obj-5", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-64", 1 ],
-					"hidden" : 1,
-					"source" : [ "obj-51", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-64", 1 ],
-					"hidden" : 1,
-					"source" : [ "obj-52", 0 ]
 				}
 
 			}
@@ -8960,7 +8920,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-51", 0 ],
+					"destination" : [ "obj-64", 1 ],
 					"hidden" : 1,
 					"source" : [ "obj-9", 0 ]
 				}
