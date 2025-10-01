@@ -46,6 +46,7 @@ function msg_dictionary(d) {
 
     if (dict.buffers_path) {
         isGettingBuffers = true;
+        messnamed("lload", "buffer_host.maxpat")
 		outlet(0, "buffers...")
         outlet(2, dict.buffers_path);
     }else{
@@ -56,17 +57,17 @@ function msg_dictionary(d) {
 // Canonical act order: ho_st1, then buffer_host1 (only once), then sorted others
 function canonicalActOrder(allKeys) {
     const hasHo = allKeys.includes("ho_st1");
-    const hasBuffer = allKeys.includes("buffer_host1");
+    // const hasBuffer = allKeys.includes("buffer_host1");
 
     const filtered = allKeys
         .filter(k => k !== "ho_st1" && !/^buffer_host\d+$/.test(k)) // drop all buffer_hostN
         .sort((a, b) => a.localeCompare(b));
 
     if (hasHo) filtered.unshift("ho_st1");
-    if (hasBuffer) {
-        // insert buffer_host1 after ho_st1 if present, else at the start
-        filtered.splice(hasHo ? 1 : 0, 0, "buffer_host1");
-    }
+    // if (hasBuffer) {
+    //     // insert buffer_host1 after ho_st1 if present, else at the start
+    //     filtered.splice(hasHo ? 1 : 0, 0, "buffer_host1");
+    // }
 
     return filtered;
 }
