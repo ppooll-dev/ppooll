@@ -1,10 +1,10 @@
 {
-	"window" : [ 446, 337, 565, 523 ],
+	"window" : [ 299, 331, 418, 517 ],
 	"buffer_list" : 	{
 		"patching_rect" : [ -1, 51, 120, 93 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.093385, 0.128405, 0.284047, 1 ],
-		"bordercolor" : [ 0.333333, 0.537255, 0.960784, 1 ],
+		"bordercolor" : [ 0.094117647058824, 0.129411764705882, 0.282352941176471, 1 ],
 		"fgcolor" : [ 0.684825, 0.891051, 0.587549, 1 ],
 		"fontsize" : 10,
 		"gridlinecolor" : [ 0, 0, 0, 1 ],
@@ -18,7 +18,7 @@
 ,
 	"size-box" : 	{
 		"patching_rect" : [ 73, 169, 46, 19 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"bgcolor" : [ 0.094118, 0.129412, 0.282353, 0 ],
 		"fontsize" : 9,
 		"htricolor" : [ 0.87, 0.82, 0.24, 1 ],
@@ -47,7 +47,7 @@
 ,
 	"wf1" : 	{
 		"patching_rect" : [ 13, 143, 105, 26 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"bgcolor" : [ 0.094118, 0.129412, 0.286275, 1 ],
 		"fontsize" : 10,
 		"gridcolor" : [ 0.392157, 0.392157, 0.392157, 1 ],
@@ -58,7 +58,7 @@
 ,
 	"channels" : 	{
 		"patching_rect" : [ 58, 169, 19, 19 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"bgcolor" : [ 0.094118, 0.129412, 0.282353, 0 ],
 		"fontsize" : 9,
 		"htricolor" : [ 0.87, 0.82, 0.24, 1 ],
@@ -67,7 +67,7 @@
 	}
 ,
 	"dropfile" : 	{
-		"patching_rect" : [ 2, 51, 99, 90 ],
+		"patching_rect" : [ -0.5, 52.5, 99, 90 ],
 		"hidden" : 0,
 		"bordercolor" : [ 0.5, 0.5, 0.5, 1 ]
 	}
@@ -167,8 +167,8 @@
 	}
 ,
 	"sr-box" : 	{
-		"patching_rect" : [ 35, 170, 27.5, 19 ],
-		"hidden" : 0,
+		"patching_rect" : [ 35, 170, 28, 29 ],
+		"hidden" : 1,
 		"bgfillcolor" : 		{
 			"type" : "gradient",
 			"color1" : [ 0.866667, 0.866667, 0.866667, 0.0 ],
