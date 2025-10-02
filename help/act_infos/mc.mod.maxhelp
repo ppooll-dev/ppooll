@@ -12,6 +12,9 @@
 		"classnamespace" : "box",
 		"rect" : [ 100.0, 100.0, 699.0, 480.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
+		"toolbarvisible" : 0,
+		"enablehscroll" : 0,
+		"enablevscroll" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"bubble" : 1,
