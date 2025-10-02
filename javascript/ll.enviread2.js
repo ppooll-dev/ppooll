@@ -22,7 +22,10 @@ let isopen, toopen;
 // don't recall presets for envi folders
 const presetsIgnore = ["ho_st1", "buffer_host1"]
 
-const PARAMS_DELAY = 1000;
+const PARAMS_DELAY = 1000;      // delay 1000 ms
+const PARAMS_RUN_NUMBER = 2;    // run 2x
+
+let paramsCount = 0;
 
 let isGettingBuffers = false;
 
@@ -44,30 +47,23 @@ function msg_dictionary(d) {
 	enviDict.parse(JSON.stringify(environment));
 	environment = dict.environment;
 
-    if (dict.buffers_path) {
-        isGettingBuffers = true;
-        messnamed("lload", "buffer_host.maxpat")
-		outlet(0, "buffers...")
-        outlet(2, dict.buffers_path);
-    }else{
-		loadActs();
-	}
+    loadActs();
 }
 
 // Canonical act order: ho_st1, then buffer_host1 (only once), then sorted others
 function canonicalActOrder(allKeys) {
     const hasHo = allKeys.includes("ho_st1");
-    // const hasBuffer = allKeys.includes("buffer_host1");
+    const hasBuffer = allKeys.includes("buffer_host1");
 
     const filtered = allKeys
         .filter(k => k !== "ho_st1" && !/^buffer_host\d+$/.test(k)) // drop all buffer_hostN
         .sort((a, b) => a.localeCompare(b));
 
     if (hasHo) filtered.unshift("ho_st1");
-    // if (hasBuffer) {
-    //     // insert buffer_host1 after ho_st1 if present, else at the start
-    //     filtered.splice(hasHo ? 1 : 0, 0, "buffer_host1");
-    // }
+    if (hasBuffer) {
+        // insert buffer_host1 after ho_st1 if present, else at the start
+        filtered.splice(hasHo ? 1 : 0, 0, "buffer_host1");
+    }
 
     return filtered;
 }
@@ -77,7 +73,7 @@ function onBuffersLoaded(){
         return;
 
     isGettingBuffers = false;
-    loadActs()
+    loadParams()
 }
 
 function loadActs() {
@@ -118,16 +114,31 @@ function loadActs() {
 
 function loadAct() {
     if (toopen.length > 0) {
-        outlet(0, toopen[0]);
+        outlet(0, "   " + toopen[0]);
         actingON = 1;
         messnamed("ll_actload", toopen[0]);
         return;
     }
-    outlet(0, "actsdone");
+    loadBuffers()
+}
 
-    var t = new Task(params, this);
-    t.schedule(PARAMS_DELAY); // run once after 1000 ms
-    t.schedule(PARAMS_DELAY * 2); // run once after 2000 ms
+function loadBuffers(){
+    if (dict.buffers_path) {
+        isGettingBuffers = true;
+        // messnamed("lload", "buffer_host.maxpat")
+		outlet(0, "buffers...")
+        outlet(2, dict.buffers_path);
+    }else{
+        outlet(0, "actsdone");
+
+		loadParams();
+	}
+}
+
+function loadParams(){
+    messnamed("llenviread", 1);
+    paramsCount = 0;
+    params();
 }
 
 function acting(c, i, o) {
@@ -153,7 +164,7 @@ function setloc(a) {
 //##################################################################____params
 function params() {
     new_blues_oldenvi = 0;
-    outlet(0, "parameters...")
+    outlet(0, "parameters... (run " + (paramsCount + 1) + ")")
 
     let keys = Object.keys(environment);
     //post("envi_params_keys",keys,"\n");
@@ -189,7 +200,23 @@ function params() {
             } else setparam(a, p1, par1);
         }
     }
-	// load presets files for "folder" environments
+
+    paramsCount += 1;
+    if(paramsCount < PARAMS_RUN_NUMBER){
+        var t = new Task(params, this);
+        t.schedule(PARAMS_DELAY); // run once after 2000 ms
+    }else{
+        loadPresets()
+        messnamed("llenviread", 0)
+        outlet(0, "actsdone");
+        outlet(0, "done!");
+    }
+}
+
+function loadPresets(){
+    let keys = Object.keys(environment);
+
+    // load presets files for "folder" environments
     if (dict.props.type === "folder") {
         outlet(0, "presets...");
 
@@ -212,7 +239,6 @@ function params() {
             // }
         }
     }
-    outlet(0, "done!")
 }
 
 function setparam(a, p, v) {
