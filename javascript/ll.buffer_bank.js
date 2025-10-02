@@ -227,7 +227,7 @@ function update_buffer_list() {
 }
 
 function view() {
-    if (selectedIndex < 0) {
+    if (selectedIndex >= 0 && selectedIndex < pb.count) {
         pb.send(selectedIndex + 1, "open");
     }
 }
@@ -254,6 +254,13 @@ function clearAll() {
     update_buffer_list();
 }
 
+function writeSelected() {
+    if (selectedIndex > -1 && selectedIndex < pb.count) {
+        pb.send(selectedIndex + 1, "write");
+    }
+    update_buffer_list();
+}
+
 function onDrop(path){
     if(path[-1] === "/"){
         // TODO: Check that folder exists?
@@ -262,7 +269,7 @@ function onDrop(path){
         update_buffer_list();
     }else{
         // post("file", path, "\n")
-        loadFilePath(filepath)
+        loadFilePath(path)
     }
 }
 

@@ -30,7 +30,7 @@ function msg_dictionary(dict){
 }
 
 function setSelected(label){
-    if((selected && selected.label === label) || !buffers[label])
+    if(!buffers[label])
         return;
 
     // post("setSelected " + label + " \n")
