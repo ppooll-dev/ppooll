@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 8,
+			"revision" : 9,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 353.0, 297.0, 133.0, 200.0 ],
+		"rect" : [ 567.0, 341.0, 133.0, 200.0 ],
 		"default_fontsize" : 10.0,
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
@@ -158,7 +158,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 0.0, 50.7734375, 16.0 ],
+					"patching_rect" : [ 0.0, 0.0, 49.689453125, 16.0 ],
 					"varname" : "act",
 					"viewvisibility" : 1
 				}
@@ -419,7 +419,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -439,7 +439,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 8,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -610,7 +610,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 8,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -879,7 +879,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 8,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1162,7 +1162,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 8,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1542,8 +1542,8 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "bang" ],
-																	"patching_rect" : [ 187.0, 17.0, 77.0, 22.0 ],
-																	"text" : "ll.r bang-env"
+																	"patching_rect" : [ 187.0, 17.0, 85.0, 22.0 ],
+																	"text" : "ll.r bang-env 1"
 																}
 
 															}
@@ -2459,7 +2459,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 8,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2777,8 +2777,7 @@
 						"ll.blues::outputs~" : 2,
 						"ll.blues::outputsMix~" : 3,
 						"ll.blues::chans" : 4,
-						"ll.blues::levels" : 5,
-						"inputs~" : 1000
+						"ll.blues::levels" : 5
 					}
 ,
 					"saved_object_attributes" : 					{

@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 7,
+			"revision" : 9,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -1463,7 +1463,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 7,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1494,7 +1494,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3539,7 +3539,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3887,7 +3887,7 @@
 											"appversion" : 											{
 												"major" : 9,
 												"minor" : 0,
-												"revision" : 7,
+												"revision" : 9,
 												"architecture" : "x64",
 												"modernui" : 1
 											}
@@ -3900,8 +3900,8 @@
 														"maxclass" : "newobj",
 														"text" : "- 1",
 														"patching_rect" : [ 164.038835883140592, 473.772298991680145, 23.0, 22.0 ],
-														"numinlets" : 1,
 														"id" : "obj-3",
+														"numinlets" : 1,
 														"numoutlets" : 1,
 														"outlettype" : [ "" ]
 													}
@@ -3912,8 +3912,8 @@
 														"maxclass" : "newobj",
 														"text" : "mc_channel",
 														"patching_rect" : [ 164.038835883140592, 438.801425218582153, 73.0, 22.0 ],
-														"numinlets" : 0,
 														"id" : "obj-4",
+														"numinlets" : 0,
 														"numoutlets" : 1,
 														"outlettype" : [ "" ]
 													}
@@ -3924,8 +3924,8 @@
 														"maxclass" : "newobj",
 														"text" : "/",
 														"patching_rect" : [ 459.5, 306.0, 29.5, 22.0 ],
-														"numinlets" : 2,
 														"id" : "obj-1",
+														"numinlets" : 2,
 														"numoutlets" : 1,
 														"outlettype" : [ "" ]
 													}
@@ -3936,8 +3936,8 @@
 														"maxclass" : "newobj",
 														"text" : "buffer gen1210",
 														"patching_rect" : [ 470.0, 35.0, 89.0, 22.0 ],
-														"numinlets" : 0,
 														"id" : "obj-7",
+														"numinlets" : 0,
 														"numoutlets" : 2,
 														"outlettype" : [ "", "" ]
 													}
@@ -3948,8 +3948,8 @@
 														"maxclass" : "newobj",
 														"text" : "out 1",
 														"patching_rect" : [ 459.5, 414.0, 35.0, 22.0 ],
-														"numinlets" : 1,
 														"id" : "obj-18",
+														"numinlets" : 1,
 														"numoutlets" : 0
 													}
 
@@ -3959,8 +3959,8 @@
 														"maxclass" : "newobj",
 														"text" : "mstosamps",
 														"patching_rect" : [ 235.666666666666657, 84.0, 70.0, 22.0 ],
-														"numinlets" : 1,
 														"id" : "obj-12",
+														"numinlets" : 1,
 														"numoutlets" : 1,
 														"outlettype" : [ "" ]
 													}
@@ -3971,8 +3971,8 @@
 														"maxclass" : "newobj",
 														"text" : "poke gen1210 @overdubmode mix",
 														"patching_rect" : [ 78.0, 515.615396499633789, 195.0, 22.0 ],
-														"numinlets" : 4,
 														"id" : "obj-11",
+														"numinlets" : 4,
 														"numoutlets" : 0
 													}
 
@@ -3982,8 +3982,8 @@
 														"maxclass" : "newobj",
 														"text" : "in 3",
 														"patching_rect" : [ 235.666666666666657, 51.0, 28.0, 22.0 ],
-														"numinlets" : 0,
 														"id" : "obj-10",
+														"numinlets" : 0,
 														"numoutlets" : 1,
 														"outlettype" : [ "" ]
 													}
@@ -3994,8 +3994,8 @@
 														"maxclass" : "newobj",
 														"text" : "in 2",
 														"patching_rect" : [ 254.0, 310.0, 28.0, 22.0 ],
-														"numinlets" : 0,
 														"id" : "obj-9",
+														"numinlets" : 0,
 														"numoutlets" : 1,
 														"outlettype" : [ "" ]
 													}
@@ -4006,8 +4006,8 @@
 														"maxclass" : "newobj",
 														"text" : "in 1",
 														"patching_rect" : [ 78.0, 289.0, 28.0, 22.0 ],
-														"numinlets" : 0,
 														"id" : "obj-8",
+														"numinlets" : 0,
 														"numoutlets" : 1,
 														"outlettype" : [ "" ]
 													}
@@ -4018,8 +4018,8 @@
 														"maxclass" : "newobj",
 														"text" : "1",
 														"patching_rect" : [ 136.666666666666657, 129.0, 29.0, 22.0 ],
-														"numinlets" : 0,
 														"id" : "obj-6",
+														"numinlets" : 0,
 														"numoutlets" : 1,
 														"outlettype" : [ "" ]
 													}
@@ -4030,8 +4030,8 @@
 														"maxclass" : "newobj",
 														"text" : "counter",
 														"patching_rect" : [ 136.666666666666657, 174.0, 118.0, 22.0 ],
-														"numinlets" : 3,
 														"id" : "obj-5",
+														"numinlets" : 3,
 														"numoutlets" : 3,
 														"outlettype" : [ "", "", "" ]
 													}
@@ -4129,7 +4129,7 @@
 									"outlettype" : [ "multichannelsignal" ],
 									"patching_rect" : [ 161.0, 700.0, 319.5, 22.0 ],
 									"text" : "mc.gen~",
-									"wrapper_uniquekey" : "u803005476"
+									"wrapper_uniquekey" : "u869008028"
 								}
 
 							}
@@ -4219,7 +4219,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4831,7 +4831,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5321,7 +5321,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5908,7 +5908,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6158,7 +6158,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -6571,7 +6571,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -7419,10 +7419,13 @@
 						"presets" : 0,
 						"act::active_store" : 0,
 						"act::master/activest" : 0,
+						"act::title_menu" : 0,
 						"ll.blues" : 0,
-						"ll.blues::levels" : 0,
-						"ll.blues::outputs" : 0,
-						"ll.blues::state" : 0
+						"ll.blues::status" : 0,
+						"ll.blues::outputs~" : 0,
+						"ll.blues::outputsMix~" : 0,
+						"ll.blues::chans" : 0,
+						"ll.blues::levels" : 0
 					}
 ,
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -7454,7 +7457,12 @@
 						"phas-send_act" : 52,
 						"phas-send_par" : 53,
 						"vib-send_act" : 54,
-						"vib-send_par" : 55
+						"vib-send_par" : 55,
+						"ll.blues::status" : 1,
+						"ll.blues::outputs~" : 2,
+						"ll.blues::outputsMix~" : 3,
+						"ll.blues::chans" : 4,
+						"ll.blues::levels" : 5
 					}
 ,
 					"saved_object_attributes" : 					{
@@ -7745,7 +7753,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 0.0, 51.646484375, 16.0 ],
+					"patching_rect" : [ 0.0, 0.0, 49.6953125, 16.0 ],
 					"varname" : "act",
 					"viewvisibility" : 1
 				}
@@ -7952,7 +7960,8 @@
 				"0" : 				{
 					"index" : 0,
 					"name" : "",
-					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ],
+					"buttons" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
 				}
 
 			}
@@ -8017,6 +8026,20 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.bluebutton.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.blues.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.blues.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
@@ -8045,16 +8068,16 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.mc.r.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
+				"name" : "ll.listblock.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.mc.stereo_pan.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../abstractions/ll.blues",
+				"name" : "ll.mc.r.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
@@ -8081,6 +8104,13 @@
 			}
 , 			{
 				"name" : "ll.pf.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.pp.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
@@ -8180,13 +8210,6 @@
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "nblue.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
