@@ -203,8 +203,9 @@ function params() {
 
     paramsCount += 1;
     if(paramsCount < PARAMS_RUN_NUMBER){
-        var t = new Task(params, this);
-        t.schedule(PARAMS_DELAY); // run once after 2000 ms
+        messnamed("llenviread_getparams", PARAMS_DELAY);
+        // var t = new Task(params, this);
+        // t.schedule(PARAMS_DELAY); // run once after 2000 ms
     }else{
         loadPresets()
         messnamed("llenviread", 0)
