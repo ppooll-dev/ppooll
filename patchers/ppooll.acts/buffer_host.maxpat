@@ -16,6 +16,27 @@
 		"globalpatchername" : "buffer_host1",
 		"boxes" : [ 			{
 				"box" : 				{
+					"hidden" : 1,
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 5,
+					"outlettype" : [ "dictionary", "", "", "", "" ],
+					"patching_rect" : [ 29.0, 101.0, 79.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"embed" : 0,
+						"legacy" : 1,
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
+					}
+,
+					"text" : "dict ll_buffers",
+					"varname" : "ll_buffers"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bgcolor" : [ 0.866667, 0.866667, 0.866667, 0.0 ],
 					"bgfillcolor_angle" : 270.0,
 					"bgfillcolor_autogradient" : 0.79,
@@ -36,7 +57,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 35.0, 170.0, 28.0, 29.0 ],
-					"text" : "44100",
+					"text" : "48000",
 					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "sr-box"
 				}
@@ -103,7 +124,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 227.0, 167.0, 114.0, 22.0 ],
-					"restore" : [ "Macintosh HD:/Users/klaus/Documents/Max 9/Packages/ppooll/media/ll.samples/bowed_floss.aif" ],
+					"restore" : [ "Macintosh HD:/Users/klaus/Documents/Max 9/Packages/ppooll/media/ll.samples/claire_de_la_lune.aif" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -284,7 +305,7 @@
 				"box" : 				{
 					"allowdrag" : 0,
 					"bgcolor" : [ 0.094118, 0.129412, 0.286275, 1.0 ],
-					"buffername" : "pp.3",
+					"buffername" : "pp.1",
 					"grid" : 0.0,
 					"gridcolor" : [ 0.392157, 0.392157, 0.392157, 1.0 ],
 					"hidden" : 1,
@@ -352,9 +373,130 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 790.0, 202.0, 688.0, 788.0 ],
+						"rect" : [ 726.0, 202.0, 1056.0, 788.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-36",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 485.0, 14.0, 111.0, 20.0 ],
+									"text" : "loaded by presets!"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-33",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 629.0, 718.0, 69.0, 20.0 ],
+									"text" : "deprevated"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-61",
+									"maxclass" : "dict.view",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 598.0, 48.0, 244.0, 155.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-60",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 678.0, 13.0, 153.0, 22.0 ],
+									"text" : "obj:dictionary:u430039942"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-58",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 598.0, 13.0, 73.0, 22.0 ],
+									"text" : "ll.r ll_buffers"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-57",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 717.0, 324.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-55",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 817.5, 370.0, 19.0, 22.0 ],
+									"text" : "n"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-53",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 5,
+									"outlettype" : [ "dictionary", "", "", "", "" ],
+									"patching_rect" : [ 705.0, 375.0, 79.0, 22.0 ],
+									"saved_object_attributes" : 									{
+										"embed" : 0,
+										"legacy" : 0,
+										"parameter_enable" : 0,
+										"parameter_mappable" : 0
+									}
+,
+									"text" : "dict ll_buffers"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-49",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 641.0, 235.5, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-44",
+									"maxclass" : "dict.view",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 705.0, 440.0, 244.0, 155.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-43",
 									"maxclass" : "newobj",
@@ -387,8 +529,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 82.0, 672.0, 439.0, 35.0 ],
-									"presentation_linecount" : 9,
-									"text" : "loadFilePath \"Macintosh HD:/Users/klaus/Documents/Max 9/Packages/ppooll/media/ll.samples/bowed_floss.aif\""
+									"text" : "loadFilePath \"Macintosh HD:/Users/klaus/Documents/Max 9/Packages/ppooll/media/ll.samples/claire_de_la_lune.aif\""
 								}
 
 							}
@@ -400,7 +541,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 263.0, 68.0, 142.0, 22.0 ],
-									"text" : "0 3 new"
+									"text" : "0 0 new"
 								}
 
 							}
@@ -432,7 +573,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-32",
-									"items" : [ "3dem.aif", ",", "apollo13.aif", ",", "bowed_floss.aif" ],
+									"items" : "<empty>",
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -741,7 +882,7 @@
 							}
 , 							{
 								"box" : 								{
-									"code" : "1, 3dem.aif 1 pp.1 3dem.aif 2867.301587 44100;\r2, apollo13.aif 1 pp.2 apollo13.aif 28495.782313 44100;\r3, bowed_floss.aif 1 pp.3 bowed_floss.aif 4962.562358 44100;\r",
+									"code" : "",
 									"fontface" : 0,
 									"fontname" : "<Monospaced>",
 									"fontsize" : 12.0,
@@ -2426,7 +2567,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 286.0, 221.5, 244.0, 155.0 ]
+									"patching_rect" : [ 277.0, 221.5, 244.0, 155.0 ]
 								}
 
 							}
@@ -2611,7 +2752,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 495.0, 7.0, 20.0, 20.0 ]
+									"patching_rect" : [ 740.0, 643.0, 20.0, 20.0 ]
 								}
 
 							}
@@ -2624,7 +2765,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 436.0, 100.0, 114.0, 22.0 ],
+									"patching_rect" : [ 681.0, 740.0, 114.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"precision" : 6
@@ -2643,7 +2784,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 436.0, 68.0, 136.0, 22.0 ],
+									"patching_rect" : [ 681.0, 704.0, 136.0, 22.0 ],
 									"text" : "pak store s buffer_bank"
 								}
 
@@ -2657,7 +2798,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 495.0, 38.0, 65.0, 22.0 ],
+									"patching_rect" : [ 740.0, 674.0, 65.0, 22.0 ],
 									"text" : "ll.actname"
 								}
 
@@ -2920,8 +3061,45 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-7", 0 ],
-									"source" : [ "obj-5", 0 ]
+									"destination" : [ "obj-31", 0 ],
+									"source" : [ "obj-49", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-44", 0 ],
+									"source" : [ "obj-53", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-55", 0 ],
+									"source" : [ "obj-53", 4 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-53", 0 ],
+									"source" : [ "obj-57", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-60", 1 ],
+									"order" : 0,
+									"source" : [ "obj-58", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-61", 0 ],
+									"order" : 1,
+									"source" : [ "obj-58", 0 ]
 								}
 
 							}
@@ -3021,7 +3199,7 @@
 					"patching_rect" : [ -1.0, 51.0, 120.0, 93.0 ],
 					"precision" : 4,
 					"rowheight" : 15,
-					"rows" : 4,
+					"rows" : 1,
 					"sccolor" : [ 0.321569, 0.184314, 0.454902, 1.0 ],
 					"sgcolor" : [ 0.082353, 0.25098, 0.431373, 1.0 ],
 					"stcolor" : [ 0.286275, 0.286275, 0.890196, 1.0 ],
@@ -3032,8 +3210,23 @@
 , 			{
 				"box" : 				{
 					"active" : 					{
+						"action_menu" : 0,
+						"channels" : 0,
+						"f" : 0,
+						"ff" : 0,
+						"file_menu" : 0,
+						"folder_menu" : 0,
+						"normalize" : 0,
+						"open!" : 0,
+						"size-box" : 0,
+						"file_menu_out" : 0,
+						"act" : 0,
 						"act::active_store" : 0,
-						"act::master/activest" : 0
+						"act::master/activest" : 0,
+						"act::u751015509" : 0,
+						"act::pres_menu" : 0,
+						"act::tetris_menu" : 0,
+						"act::title_menu" : 0
 					}
 ,
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -3047,7 +3240,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 606.0, 121.0, 95.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 85, 557, 700, 1217 ],
+						"client_rect" : [ 400, 495, 1195, 847 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 200, 200, 800, 500 ]
@@ -3110,8 +3303,30 @@
 						"channels" : [ 1 ],
 						"f" : [ -1 ],
 						"ff" : [ -1 ],
-						"file_menu" : [ "bowed_floss.aif" ],
+						"file_menu" : [ "claire_de_la_lune.aif" ],
 						"folder_menu" : [ "ll.samples/" ],
+						"ll_buffers" : [ 							{
+								"buffers" : [ 									{
+										"index" : 1,
+										"buffer_name" : "pp.1",
+										"file_name" : "3dem.aif",
+										"length" : 2867.30158730158746,
+										"chans" : 1,
+										"srate" : 44100,
+										"label" : "3dem.aif"
+									}
+, 									{
+										"index" : 2,
+										"buffer_name" : "pp.2",
+										"file_name" : "apollo13.aif",
+										"length" : 28495.782312925170118,
+										"chans" : 1,
+										"srate" : 44100,
+										"label" : "apollo13.aif"
+									}
+ ]
+							}
+ ],
 						"normalize" : [ -1 ],
 						"open!" : [ -1 ],
 						"size-box" : [ 4962.562358276643863 ]
@@ -3364,6 +3579,13 @@
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "testbh_dem.json",
+				"bootpath" : "~/Documents/Max 9/Library/ppooll_presets/buffer_hostP",
+				"patcherrelativepath" : "../../../../Library/ppooll_presets/buffer_hostP",
+				"type" : "JSON",
 				"implicit" : 1
 			}
  ],
