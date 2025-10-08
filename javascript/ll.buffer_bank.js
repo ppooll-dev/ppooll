@@ -214,9 +214,12 @@ function update_buffer_list() {
                 b.srate
             );
         });
-
-        ui.buffer_list.message("set", 0, bh.length, "new");
-        ui.buffer_list.message("select", 0, selectedIndex);
+		
+        
+        //ui.buffer_list.message("select", 0, bh.length); //selectedIndex);
+		ui.buffer_list.message("set", 0, bh.length, "new");
+		//post("ln",bh.length,"\n");
+		outlet(0,"buffer_list","select",0,bh.length); //needs to get defered...
     }
 
     // Should update "coll buffer_bankN 1"
