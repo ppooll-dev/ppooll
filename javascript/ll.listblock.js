@@ -165,6 +165,7 @@ function setmodes(){
 			modes.push("none")
 		else modes.push(b);		
 	}
+	//post("modes",modes,"\n")
 	calc_cols();
 	let tstm = " " + modes.join(" ");
 	if(tstm.includes(" menu")) menu_init();
@@ -483,7 +484,9 @@ function paint() {
 				|| cm == "button" && button_on == -2){
 				mgraphics.set_source_rgba(oncolor);
 				txt_color = brightness(oncolor);
-				if (cm2 == "none") txt = "";
+				
+				if (cm1 == "enum") txt = String(i-header+enum_offset);
+				else if (cm2 == "none") txt = "";
 				else txt = cm2;
 				//txt = txo[j];
 				//post("txt_txo",txt,"\n");	
@@ -501,9 +504,12 @@ function paint() {
 					txt_color = is_selected_menu ? [1,1,1,1] : brightness(bgcolor);
 					//post("current..mode,mode_1,val:",cm, cm1, cval, "\n");
 					if (cm=="enum" || (cm == "button" && cm1 == "enum")) txt = String(i-header+enum_offset);
-					else if (cm == "tog" || cm == "button")
-						if (cm1 != "none") txt = cm1
-						else txt = "";	
+					else if (cm == "tog" || cm == "button"){
+						//post("cm1",cm1,"\n");
+						if (cm1 == "none") txt = ""
+						else if (cm1 == "enum") txt = String(i-header+enum_offset)
+						else txt = cm1;
+					}
 					else if (cm == "menu" && cm1 == "outputs"){
 						let c = cm2;
 						//let c = Number(cm2[1]);//L=0, R=1

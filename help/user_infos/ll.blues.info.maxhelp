@@ -10,11 +10,64 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 209.0, 235.0, 594.0, 532.0 ],
+		"rect" : [ 100.0, 100.0, 594.0, 532.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "ll.blues.info.help1",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-20",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 223.0, 428.0, 150.0, 20.0 ],
+					"text" : "for max-programmers"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 236.0, 404.0, 95.0, 22.0 ],
+					"text" : "ll.blues.maxhelp"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"hidden" : 1,
+					"id" : "obj-17",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 170.0, 454.0, 81.0, 22.0 ],
+					"text" : "prepend load"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"hidden" : 1,
+					"id" : "obj-18",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 170.0, 481.0, 53.0, 22.0 ],
+					"text" : "pcontrol"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"hidden" : 1,
 					"id" : "obj-2",
@@ -23,7 +76,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 303.0, 409.0, 89.0, 35.0 ],
+					"patching_rect" : [ 426.0, 336.0, 89.0, 35.0 ],
 					"text" : ";\rllbluessub front"
 				}
 
@@ -1299,7 +1352,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 345.0, 378.0, 38.0, 22.0 ],
+					"patching_rect" : [ 386.0, 348.0, 38.0, 22.0 ],
 					"text" : "p sub",
 					"varname" : "sub"
 				}
@@ -2191,7 +2244,7 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-35",
-									"items" : [ "no", ",", "ho_st1", ",", "ll.blues.info.help1" ],
+									"items" : [ "no", ",", "ho_st1", ",", "flop1", ",", "ll.blues.info.help1" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -3885,7 +3938,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 34.0, 655.0, 503.0, 22.0 ],
-									"text" : "0"
+									"text" : "0.821429 0.535714 0.428571 0.321429 -0.107143 -0.357143 -0.535714 -0.642857"
 								}
 
 							}
@@ -3951,7 +4004,7 @@
 									"htricolor" : [ 0.87, 0.82, 0.24, 1.0 ],
 									"id" : "obj-11",
 									"maxclass" : "number",
-									"maximum" : 7,
+									"maximum" : 8,
 									"minimum" : -1,
 									"numinlets" : 1,
 									"numoutlets" : 2,
@@ -4005,7 +4058,7 @@
 									"bgfillcolor_type" : "color",
 									"fontsize" : 11.595186999999999,
 									"id" : "obj-14",
-									"items" : [ "no", ",", "ho_st1", ",", "ll.blues.info.help1" ],
+									"items" : [ "no", ",", "buffer_host1", ",", "flop1", ",", "ho_st1", ",", "lkforest@1", ",", "ll.blues.info.help1" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -4308,10 +4361,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 1004, 100, 1597, 634 ],
+						"client_rect" : [ 545, 133, 1800, 849 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 200, 200, 800, 500 ]
+						"storage_rect" : [ 583, 68, 1034, 196 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -4361,7 +4414,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 400.0, 463.0, 107.0, 22.0 ],
 					"restore" : 					{
-						"freq" : [ 403.480000000000018, 314.129999999999995 ]
+						"freq" : [ 403.480000000000018, 0.0 ]
 					}
 ,
 					"text" : "autopattr autopattr",
@@ -4415,9 +4468,25 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-17", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-12", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-18", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-17", 0 ]
 				}
 
 			}
