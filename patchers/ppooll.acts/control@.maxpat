@@ -999,7 +999,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 530.0, 100.0, 688.0, 787.0 ],
+										"rect" : [ 1061.0, 151.0, 688.0, 338.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"boxes" : [ 											{
 												"box" : 												{
@@ -3986,6 +3986,54 @@
 														"gridsize" : [ 15.0, 15.0 ],
 														"boxes" : [ 															{
 																"box" : 																{
+																	"id" : "obj-37",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "bang", "" ],
+																	"patching_rect" : [ 117.0, 352.5, 34.0, 22.0 ],
+																	"text" : "sel 1"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-33",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "" ],
+																	"patching_rect" : [ 117.0, 317.0, 37.0, 22.0 ],
+																	"text" : "zl len"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-31",
+																	"maxclass" : "message",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 117.0, 380.0, 40.0, 22.0 ],
+																	"text" : "size 1"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-18",
+																	"maxclass" : "multislider",
+																	"numinlets" : 1,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "" ],
+																	"parameter_enable" : 0,
+																	"patching_rect" : [ 449.0, 310.0, 20.0, 140.0 ]
+																}
+
+															}
+, 															{
+																"box" : 																{
 																	"id" : "obj-12",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
@@ -4092,7 +4140,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 71.0, 313.0, 83.0, 49.0 ],
+																	"patching_rect" : [ 71.0, 412.0, 83.0, 49.0 ],
 																	"text" : "pattrforward parent::parent::routing::ms"
 																}
 
@@ -4425,6 +4473,15 @@
 , 															{
 																"patchline" : 																{
 																	"destination" : [ "obj-28", 0 ],
+																	"order" : 1,
+																	"source" : [ "obj-23", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-33", 0 ],
+																	"order" : 0,
 																	"source" : [ "obj-23", 0 ]
 																}
 
@@ -4482,8 +4539,22 @@
 															}
 , 															{
 																"patchline" : 																{
+																	"destination" : [ "obj-28", 0 ],
+																	"source" : [ "obj-31", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
 																	"destination" : [ "obj-30", 0 ],
 																	"source" : [ "obj-32", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-37", 0 ],
+																	"source" : [ "obj-33", 0 ]
 																}
 
 															}
@@ -4526,6 +4597,13 @@
 																"patchline" : 																{
 																	"destination" : [ "obj-7", 0 ],
 																	"source" : [ "obj-35", 4 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-31", 0 ],
+																	"source" : [ "obj-37", 0 ]
 																}
 
 															}
@@ -5400,7 +5478,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 91.0, 48.0, 50.0, 22.0 ],
-																	"text" : "2 2"
+																	"text" : "2 1"
 																}
 
 															}
@@ -6551,7 +6629,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 122.0, 31.0, 50.0, 22.0 ],
-																	"text" : "1"
+																	"text" : "2"
 																}
 
 															}
@@ -7143,7 +7221,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 158.0, 38.0, 50.0, 22.0 ],
-																	"text" : "1"
+																	"text" : "2"
 																}
 
 															}
@@ -8096,7 +8174,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 360.0, 177.0, 50.0, 22.0 ],
-																	"text" : "1"
+																	"text" : "2"
 																}
 
 															}
@@ -10690,7 +10768,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 91.0, 16.0, 50.0, 22.0 ],
-													"text" : "12 1"
+													"text" : "11 0"
 												}
 
 											}
@@ -11935,7 +12013,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 928.0, 194.0, 485.0, 553.0 ],
+										"rect" : [ 335.0, 516.0, 485.0, 553.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"boxes" : [ 											{
 												"box" : 												{
@@ -15419,7 +15497,7 @@
 																	"allowdrag" : 0,
 																	"fontsize" : 9.0,
 																	"id" : "obj-14",
-																	"items" : [ "AU DLS Synth 1", ",", "IAC Driver Bus 1", ",", "from Max 1", ",", "from Max 2" ],
+																	"items" : [ "AU DLS Synth 1", ",", "Komplete Audio 6 MK2", ",", "from Max 1", ",", "from Max 2" ],
 																	"maxclass" : "umenu",
 																	"numinlets" : 1,
 																	"numoutlets" : 3,
@@ -19231,6 +19309,7 @@
 													"fontface" : 0,
 													"fontsize" : 9.0,
 													"format" : [ 1.2 ],
+													"hidden" : 1,
 													"hideonenter" : 1,
 													"id" : "obj-62",
 													"label" : [ "num" ],
@@ -19278,7 +19357,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 680.0, -1.0, 46.0, 20.0 ],
-													"text" : "sel: 1",
+													"text" : "sel: 2",
 													"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 													"varname" : "c_sel"
 												}
@@ -19353,8 +19432,8 @@
 													"outlettype" : [ "", "", "", "" ],
 													"patching_rect" : [ 860.0, 69.0, 65.0, 19.0 ],
 													"restore" : 													{
-														"listblock" : [ "num", 13, 0 ],
-														"ll_tab" : [ 12, 1 ],
+														"listblock" : [ "none", 2, 1 ],
+														"ll_tab" : [ 11, 0 ],
 														"lllbmenu" : [ 0 ],
 														"lllbnum" : [ 2.0 ],
 														"lllbtext" : [ "fader" ]
@@ -22835,7 +22914,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 9.0,
 					"id" : "obj-22",
-					"items" : [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "IAC Driver Bus 1", ",", "to Max 1", ",", "to Max 2" ],
+					"items" : [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "Komplete Audio 6 MK2", ",", "to Max 1", ",", "to Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
