@@ -66,6 +66,8 @@ var headercolors = [3];
 declareattribute("headercolors", {setter : "setheadercolors", embed: 1, min: 1, max: 12, paint: 1 });
 var gridcolor = [0,0,0,1];
 declareattribute("gridcolor", {embed: 1, style: "rgba", paint: 1 });
+var textcolor = [-1];
+declareattribute("textcolor", {embed: 1, style: "rgba", paint: 1 });
 var multinumber = 0;
 declareattribute("multinumber", {embed: 1, style: "onoff"});
 var header_text;
@@ -420,7 +422,7 @@ function paint() {
 	let txt_color = [1,1,1,1];
 	let oncolor, bgcolor, hdcolor;
 	let value = [];
-	//post("paint amount",amount, "size",mgraphics.size,"\n");
+	//post("paint amount",amount, "size",mgraphics.size,"tc",textcolor,"\n");
 
 	// Draw "no rows"
 	if (rows === 0) {
@@ -501,7 +503,7 @@ function paint() {
 				}
 				else {
 					mgraphics.set_source_rgba(bgcolor);
-					txt_color = is_selected_menu ? [1,1,1,1] : brightness(bgcolor);
+					txt_color = is_selected_menu ? [1,1,1,1] : (textcolor == -1) ? brightness(bgcolor) : textcolor;
 					//post("current..mode,mode_1,val:",cm, cm1, cval, "\n");
 					if (cm=="enum" || (cm == "button" && cm1 == "enum")) txt = String(i-header+enum_offset);
 					else if (cm == "tog" || cm == "button"){

@@ -12,10 +12,17 @@ var myfont = "Arial";
 var myval = 0;
 var fontsize = 12;
 
-
+var bgcoloron = dark_blue;
+declareattribute("bgcoloron", {embed: 1, style: "rgba", paint: 1 });
+var bgcoloroff = light_blue;
+declareattribute("bgcoloroff", {embed: 1, style: "rgba", paint: 1 });
+var bordercolor = [0.2,0.2,0.2,1];
+declareattribute("bordercolor", {embed: 1, style: "rgba", paint: 1 });
+var textcolor = [1,1,1,1];
+declareattribute("textcolor", {embed: 1, style: "rgba", paint: 1 });
 
 txt = jsarguments[1];
-//post("arg",txt,jsarguments,"tt",jsarguments[1]);
+//post("args",txt,jsarguments,"tt",jsarguments[0],jsarguments[1],"\n");
 
 function bang()
 {
@@ -33,23 +40,17 @@ function paint()
 	var viewsize = mgraphics.size;
 	var width = viewsize[0];
 	var height = viewsize[1];
-    
-	var bgcolor = [1,1,1,1];
-    var gridcolor = [0.8,0.8,0.8,1]; 
-    var textcolor = [0,0,0,1];
 	
-	if (myval) mgraphics.set_source_rgba(dark_blue)
-	else mgraphics.set_source_rgba(light_blue);
-	//mgraphics.set_source_rgba(bgcolor);
+	if (myval) mgraphics.set_source_rgba(bgcoloron)
+	else mgraphics.set_source_rgba(bgcoloroff);
 	mgraphics.rectangle(0, 0, width, height);
 	mgraphics.fill();
-	mgraphics.set_source_rgba(0.2,0.2,0.2,1);
+	
+	mgraphics.set_source_rgba(bordercolor);
 	mgraphics.rectangle(0, 0, width, height);
-	//mgraphics.move_to(0,0);
-	//mgraphics.line_to(0,height);
-	//mgraphics.line_to(width,height);
 	mgraphics.stroke();
-	mgraphics.set_source_rgba(1,1,1,1);
+	//post("blbutxtc",textcolor,"\n");
+	mgraphics.set_source_rgba(textcolor);
 	mgraphics.set_font_size(fontsize);
 	let th = mgraphics.text_measure(txt)[1];
 	let tw = mgraphics.text_measure(txt)[0];

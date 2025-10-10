@@ -317,6 +317,29 @@ function grow() {
     } catch (_) {}
 }
 
+function textcolor(){
+	let txtcolor = arrayfromargs(arguments);
+	if (txtcolor.length == 3) txtcolor.push(1.);
+	UI.msg("xb", "textcolor", txtcolor[0], txtcolor[1], txtcolor[2], txtcolor[3]);
+	UI.msg("ib", "textcolor", txtcolor[0], txtcolor[1], txtcolor[2], txtcolor[3]);
+	UI.msg("listblock", "textcolor", txtcolor[0], txtcolor[1], txtcolor[2], txtcolor[3]);
+	//post("blues_textclor",txtcolor[0], textcolor[1],"len",txtcolor.length,"\n")
+}
+function darkcolor(){
+	let color = arrayfromargs(arguments);
+	if (color.length == 3) color.push(1.);
+	UI.msg("xb", "bgcoloron", color[0], color[1], color[2], color[3]);
+	UI.msg("ib", "bgcoloron", color[0], color[1], color[2], color[3]);
+	UI.msg("listblock", "c2", color[0], color[1], color[2], color[3]);
+}
+function lightcolor(){
+	let color = arrayfromargs(arguments);
+	if (color.length == 3) color.push(1.);
+	UI.msg("xb", "bgcoloroff", color[0], color[1], color[2], color[3]);
+	UI.msg("ib", "bgcoloroff", color[0], color[1], color[2], color[3]);
+	UI.msg("listblock", "c1", color[0], color[1], color[2], color[3]);
+}
+
 /* ============================== LIFECYCLE ============================== */
 
 function bang() {
