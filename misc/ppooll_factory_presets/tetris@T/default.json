@@ -225,7 +225,7 @@
 		"usetextovercolor" : 1
 	}
 ,
-	"state_show" : 	{
+	"status_show" : 	{
 		"patching_rect" : [ 135, 444, 78, 22 ],
 		"hidden" : 0,
 		"bgfillcolor" : 		{
