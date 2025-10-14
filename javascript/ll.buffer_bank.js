@@ -41,7 +41,7 @@ function msg_dictionary(dict) {
     //  label
     //  channels
     //  ???
-    //  file_name
+    //  full_path (or null if sample buffer)
     //  length ms
     //  sample rate
 
@@ -57,18 +57,18 @@ function msg_dictionary(dict) {
                 label: row[0],
                 chans: row[1],
                 buffer_name: `${pbName}.${i + 1}`,
-                file_name: row[3] === "-" ? null : row[3],
+                full_path: row[3] === "-" ? null : row[3],
                 length: row[4],
                 srate: row[5],
             };
         })
         .forEach((b, i) => {
             buffers[b.buffer_name] = b;
-            if (b.file_name) {
-                if(fileExists(b.file_name)){
-                    pb.append(b.file_name);
+            if (b.full_path) {
+                if(fileExists(b.full_path)){
+                    pb.append(b.full_path);
                 }else{
-                    error(`ll.fillPolyBuffer: ${b.file_name} not found, adding empty\n`)
+                    error(`ll.buffer_bank: ${b.full_path} not found, adding empty\n`)
                     pb.appendempty(b.length, b.chans);
                 }
             }
@@ -123,10 +123,10 @@ function loadFilePath(filepath) {
 
         if (selectedIndex === bh.length) {
             pb.append(filepath);
-            buffers[`${pbName}.${bh.length + 1}`] = { label: file_name }
+            buffers[`${pbName}.${bh.length + 1}`] = { label: file_name, full_path: filepath }
         } else {
             pb.send(selectedIndex + 1, "replace", filepath);
-            buffers[`${pbName}.${selectedIndex + 1}`] = { label: file_name }
+            buffers[`${pbName}.${selectedIndex + 1}`] = { label: file_name, full_path: filepath }
         }
         update_buffer_list();
     }
@@ -172,6 +172,7 @@ function bhState() {
             return {
                 ...b,
                 label,
+                full_path: buffers[b.buffer_name].full_path
             };
         });
 }
@@ -199,7 +200,7 @@ function update_buffer_list() {
                 b.label, 
                 b.chans, 
                 b.buffer_name, 
-                b.file_name === "(undefined)" ? "-" : b.file_name, 
+                b.full_path === "(undefined)" ? "-" : b.full_path, 
                 b.length, 
                 b.srate
             );
@@ -209,7 +210,7 @@ function update_buffer_list() {
                 b.label, 
                 b.chans, 
                 b.buffer_name, 
-                b.file_name === "(undefined)" ? "-" : b.file_name, 
+                b.full_path === "(undefined)" ? "-" : b.full_path, 
                 b.length, 
                 b.srate
             );
