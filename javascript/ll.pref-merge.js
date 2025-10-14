@@ -9,14 +9,14 @@ var empty_prf_DEFAULT = {
   general: {
     screencolor: [0.0, 0.0, 1.0, 1.0],
     "audioON/OFF": "",
-    quickrecord_samplerate: "int24",
+    quickrecord_samptype: "int24",
     quickrecord_fileformat: "wav",
     cluewindow: 1,
     pfl_channel: 0,
     autoload: "none",
     check_for_updates: 0,
     flop_disable_cursor: 0,
-    default_number_output_channels: 2,
+    host_channels: 2,
   },
   file_paths: {
     quickrecord_path: 0,

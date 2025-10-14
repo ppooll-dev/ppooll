@@ -186,10 +186,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 545, 133, 1800, 849 ],
+						"client_rect" : [ 368, 148, 983, 808 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 583, 68, 1034, 196 ]
+						"storage_rect" : [ 200, 200, 800, 500 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -2050,6 +2050,19 @@
 										"toolbarvisible" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-46",
+													"linecount" : 2,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 398.0, 678.0, 134.0, 33.0 ],
+													"presentation_linecount" : 2,
+													"text" : "revert to default, \ndeleting the arguments:"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-3",
@@ -2410,7 +2423,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-9",
-													"items" : [ "no", ",", "ho_st1", ",", "ll.blues.help1" ],
+													"items" : [ "no", ",", "buffer_host1", ",", "control@1", ",", "control@2", ",", "control@3", ",", "control@4", ",", "ho_st1", ",", "lkforest@1", ",", "ll.blues.help1" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -3690,6 +3703,20 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 62.0, 646.0, 525.0, 169.0 ],
+													"proportion" : 0.5
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"angle" : 270.0,
+													"bgcolor" : [ 0.411764705882353, 0.145098039215686, 0.686274509803922, 1.0 ],
+													"id" : "obj-47",
+													"maxclass" : "panel",
+													"mode" : 0,
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 17.0, 163.0, 232.0, 77.0 ],
 													"proportion" : 0.5
 												}
 

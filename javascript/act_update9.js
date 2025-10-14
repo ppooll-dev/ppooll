@@ -17,8 +17,12 @@ function actname(a){
 	}
 }
 function update(){
-	color = actObj.boxtext.replace(btext[0]+" "+btext[1]+" ","");
+	let btxt = actObj.boxtext;
+	color = btxt.replace(btext[0]+" "+btext[1]+" ","");
+	post("btxt",btext, "color", btext[2]);
 	color = makecolor(color);
+	post("make",color, "\n" );
+	return;
 	if (btext[0] == "actmaker"){
 		tpp.remove(actObj);
 		let am = tpp.newdefault(40,80,"bpatcher","@name", "actmakeB.maxpat", "@args",btext[1],colorH);

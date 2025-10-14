@@ -41,7 +41,7 @@ function cmpVersions (a, b) {
 // check ppooll-preferences to see if we should check for updates on ho_st init load
 function shouldCheckForUpdates(){
 	var dictPreferences = new Dict('ppooll-preferences')
-	dictPreferences.import_json('ppooll-preferences.json')
+	//dictPreferences.import_json('ppooll-preferences.json')
 
 	var check_for_updates = dictPreferences.get("general::check-for-updates")
 	return check_for_updates || 0
