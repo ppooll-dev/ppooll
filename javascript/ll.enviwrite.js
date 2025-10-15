@@ -6,7 +6,7 @@
 */
 
 autowatch = 1;
-outlets = 1;
+outlets = 3;
 
 var actr = new Global("act_rep");
 
@@ -21,10 +21,7 @@ var cl;
 let dict = null;
 let environment = null;
 
-autowatch = 1;
-outlets = 4;
-
-const ignorePresets = ["ho_st1", "buffer_host1"]
+const ignorePresets = ["ho_st1"]
 
 const subfolders = ["presets"]
 
@@ -65,14 +62,11 @@ function msg_dictionary(d){
     pending = null;
 
     // Set environment path
-    enviDir = dict.path + "/environmentsP";
+    const ll_paths = new Dict("ll_paths")
 
-    // Set buffers
-    buffers_dict = dict.buffers;
-    buffers = Object.keys(buffers_dict).map(b => ({
-        name: removeExtension(buffers_dict[b][0]),
-        path: buffers_dict[b][3] 
-    }));
+    enviDir = ll_paths.get("user") + "/environmentsP";
+
+    buffers = dict.buffers.buffers;
 
     // Get acts from 'dict ppoollstate'
     acts = Object.keys(dict.state);
@@ -106,44 +100,35 @@ async function saveToFolder(){
     if(writeParams.copy_buffers){
         ppost("copy buffers...")
         buffers.forEach((b,i) => {
-            const hasFile = b.path !== "-";
-
-            if(hasFile){
-                const newFile = `${enviDir}/${enviName}/buffers/${b.name}.${fileExt}`;
+            if(b.full_path){
+                const newFile = `${enviDir}/${enviName}/buffers/${b.label}.${fileExt}`;
                 if(writeParams.write_files){
                     // Write file to envi folder
-                    pb.send(i + 1, "write", newFile);
+                    pb.send(b.buffer_index, "write", newFile);
 
                     // Replace polybuffer~ with newly created files
-                    pb.send(i + 1, "read", newFile);
+                    pb.send(b.buffer_index, "read", newFile);
 
                 }
                 else{
                     // Re-read the file
-                    pb.send(i + 1, "read", b.path);
+                    pb.send(b.buffer_index, "read", b.path);
                     
                     // Save to folder
-                    pb.send(i + 1, "write", newFile);
+                    pb.send(b.buffer_index, "write", newFile);
                 }
                 buffers_dict[i][3] = newFile;
             }
             else if (writeParams.write_sample_buffers){
                 // Write file to envi folder
                 const newFile = `${enviDir}/${enviName}/buffers/${b.name}.${fileExt}`;
-                pb.send(i + 1, "write", newFile);
+                pb.send(b.buffer_index, "write", newFile);
 
                 // Replace polybuffer~ with newly created files
-                pb.send(i + 1, "read", newFile);
+                pb.send(b.buffer_index, "read", newFile);
                 buffers_dict[i][3] = newFile;
             }
         });
-    }
-
-    if(acts.indexOf("buffer_host1") > -1){
-        outlet_dictionary(3, buffers_dict)
-        outlet(3, "clear");
-        outlet(3, "push_to_coll", "buffer_bank");
-        outlet(3, "write", `${enviDir}/${enviName}/presets/buffer_host1`);
     }
 
     // Save presets
@@ -344,7 +329,7 @@ function addParam(args) {
 
     if (currentAct === null) {
         post(
-            "error ll.dump_to_dict.js: No current act set. Cannot add parameter.\n"
+            "error ll.enviwrite.js: No current act set. Cannot add parameter.\n"
         );
         return;
     }
@@ -355,6 +340,11 @@ function addParam(args) {
     var paramValue = args.length > 1 ? args : args[0];
     environment[currentAct][paramName] = paramValue;
 
+    if(paramValue[0] === "dictionary"){
+        const innerDict = new Dict(paramValue[1])
+        const data = JSON.parse(innerDict.stringify());
+        environment[currentAct][paramName] = { buffers }
+    }   
     // Optional: Output the updated dictionary for verification
     // post("Updated parameter '", paramKey, "' with value: ", paramValue, "\n");
 }

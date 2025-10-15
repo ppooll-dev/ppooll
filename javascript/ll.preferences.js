@@ -156,6 +156,6 @@ function get_preferences(){
 	quickrecord_samptype = preferences.get("general::quickrecord_samptype");
 	this.patcher.getnamed("attrui_st").message("attr", "quickrecord_samptype");
 	//post("co",...preferences.get("general::screencolor"),"\n")
-	//messnamed("ll_preferences_ready", "bang");
+	messnamed("ll_preferences_ready", "bang");
 }
 

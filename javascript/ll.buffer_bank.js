@@ -30,8 +30,94 @@ function getUI() {
     return null;
 }
 
+// Read a "coll" exported file into a dict
+function read_coll(path) {
+    var f = new File(path, "read");
+    if (!f.isopen) {
+        post("could not open file " + path + "\n");
+        return;
+    }
+    const store = [];
+
+    while (f.position < f.eof) {
+        var line = f.readline(65536);
+        if (!line) continue;
+
+        line = line.trim();
+        if (!line || line.charAt(0) === "#") continue; // skip blank/comment lines
+
+        // remove trailing semicolon
+        if (line.endsWith(";")) {
+            line = line.substring(0, line.length - 1);
+        }
+
+        // split into key + rest (first comma)
+        var c = line.indexOf(",");
+        if (c < 0) continue;
+
+        var key = line.substring(0, c).trim();
+        var body = line.substring(c + 1).trim();
+
+        // tokenization (keep quoted strings intact)
+        var tokens = [];
+        var re = /"([^"\\]*(?:\\.[^"\\]*)*)"|(\S+)/g;
+        var m;
+        while ((m = re.exec(body)) !== null) {
+            if (m[1] != null) {
+                tokens.push(m[1].replace(/\\"/g, '"'));
+            } else {
+                tokens.push(m[2]);
+            }
+        }
+
+        store.push(tokens);
+    }
+
+    f.close();
+    return store;
+}
+
+function pres_menu(name){
+    if(["", "_", "write", "clear!", "TEXT"].indexOf(name) > -1)
+        return;
+
+    // Determine if json or coll
+    const ll_paths = new Dict("ll_paths")
+
+    const isFactory = name[0] === 'ƒ';
+    const basePath = ll_paths.get( isFactory ? "factory" : "user" );
+    const fileName = isFactory ? name.substring(2) : name;
+
+    const filePath = `${basePath}/buffer_hostP/${fileName}`;
+    const jsonFilePath = filePath + ".json";
+    // If json
+    const jsonFile = new File(jsonFilePath, "read");
+    if(!jsonFile.isopen) {
+        // is coll
+        readCollPreset(filePath);
+        return;
+    }
+
+    const jsonDict = new Dict();
+    jsonDict.import_json(jsonFilePath);
+
+    const pattrStorageJson = JSON.parse(jsonDict.stringify());
+    const pattrBuffers = pattrStorageJson.pattrstorage.slots["1000"].data.ll_buffers[0].buffers;
+
+    pb.clear();
+    buffersDeleted = {};
+    buffers = {}
+    sbCount = 1;
+
+    pattrBuffers.forEach((b, i) => initBuffer(b, i));
+
+    update_buffer_list();
+}
+
 // Load from coll buffer_hostP file
-function msg_dictionary(dict) {
+function readCollPreset(path) {
+    const dict = read_coll(path);
+
     pb.clear();
     buffersDeleted = {};
     buffers = {}
@@ -55,26 +141,29 @@ function msg_dictionary(dict) {
             }
             return {
                 label: row[0],
-                chans: row[1],
+                chans: parseInt(row[1]),
+                buffer_index: i + 1,
                 buffer_name: `${pbName}.${i + 1}`,
                 full_path: row[3] === "-" ? null : row[3],
-                length: row[4],
+                length: parseFloat(row[4]),
                 srate: row[5],
             };
         })
-        .forEach((b, i) => {
-            buffers[b.buffer_name] = b;
-            if (b.full_path) {
-                if(fileExists(b.full_path)){
-                    pb.append(b.full_path);
-                }else{
-                    error(`ll.buffer_bank: ${b.full_path} not found, adding empty\n`)
-                    pb.appendempty(b.length, b.chans);
-                }
-            }
-            else pb.appendempty(b.length, b.chans);
-        });
+        .forEach((b, i) => initBuffer(b, i));
     update_buffer_list();
+}
+
+function initBuffer(b, i){
+    buffers[b.buffer_name] = b;
+    if (b.full_path) {
+        if(fileExists(b.full_path)){
+            pb.append(b.full_path);
+        }else{
+            error(`ll.buffer_bank: ${b.full_path} not found, adding empty\n`)
+            pb.appendempty(b.length, b.chans);
+        }
+    }
+    else pb.appendempty(b.length, b.chans);
 }
 
 function fileExists(filepath){
@@ -144,8 +233,8 @@ function chunkArray(arr, size = 6) {
 
 function pbState() {
     // polybuffer state (includes deleted buffers)
-    return chunkArray(pb.dump(), 6).map((row) => ({
-        index: row[0],
+    return chunkArray(pb.dump(), 6).map((row, i) => ({
+        buffer_index: row[0],
         buffer_name: row[1],
         file_name: row[2],
         length: row[3],
@@ -172,7 +261,7 @@ function bhState() {
             return {
                 ...b,
                 label,
-                full_path: buffers[b.buffer_name].full_path
+                full_path: buffers[b.buffer_name].full_path ? buffers[b.buffer_name].full_path : null
             };
         });
 }
@@ -184,46 +273,16 @@ function update_buffer_list() {
 
         // Clear All jit.cellblock
         ui.buffer_list.message("clear", "all");
-        outlet(0, "buffer_bank", "clear");
-        outlet(0, "buffer_bankN", "clear");
-
-        // rows $1
         ui.buffer_list.message("rows", bh.length + 1);
 
         // set list items?
         bh.forEach((b, i) => {
             ui.buffer_list.message("set", 0, i, b.label);
-            outlet(0, 
-                "buffer_bank",
-                "store", 
-                i+1, 
-                b.label, 
-                b.chans, 
-                b.buffer_name, 
-                b.full_path === "(undefined)" ? "-" : b.full_path, 
-                b.length, 
-                b.srate
-            );
-            outlet(0, 
-                "buffer_bankN",
-                "store", 
-                b.label, 
-                b.chans, 
-                b.buffer_name, 
-                b.full_path === "(undefined)" ? "-" : b.full_path, 
-                b.length, 
-                b.srate
-            );
         });
 		
-        
-        //ui.buffer_list.message("select", 0, bh.length); //selectedIndex);
 		ui.buffer_list.message("set", 0, bh.length, "new");
-		//post("ln",bh.length,"\n");
-		outlet(0,"buffer_list","select",0,bh.length); //needs to get defered...
+        outlet(0, "buffer_list", "select", 0, bh.length); // needs to get defered...
     }
-
-    // Should update "coll buffer_bankN 1"
 
     outlet_dictionary(1, { buffers: bhState() });
     outlet(1, "bang");
@@ -278,5 +337,5 @@ function onDrop(path){
 }
 
 // Reinit on v8 js "save"
-messnamed("buffer_host_pull_from_coll", "bang")
-messnamed("buffer_hostbuffer_list", "bang")
+// messnamed("buffer_host_pull_from_coll", "bang")
+// messnamed("buffer_hostbuffer_list", "bang")
