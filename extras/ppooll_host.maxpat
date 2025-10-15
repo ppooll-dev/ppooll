@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 329.0, 145.0, 133.0, 124.0 ],
+		"rect" : [ 206.0, 124.0, 133.0, 124.0 ],
 		"default_fontsize" : 11.595186999999999,
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
@@ -658,7 +658,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 114.0, 307.0, 377.0, 615.0 ],
+						"rect" : [ 596.0, 155.0, 377.0, 615.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"toolbarvisible" : 0,
 						"boxes" : [ 							{
@@ -3418,7 +3418,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 480.0, 37.0, 33.0, 23.0 ],
-													"text" : "",
+													"text" : "s",
 													"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 												}
 
@@ -6173,6 +6173,8 @@
 																					"saved_object_attributes" : 																					{
 																						"autostart" : 1,
 																						"defer" : 0,
+																						"node_bin_path" : "",
+																						"npm_bin_path" : "",
 																						"watch" : 1
 																					}
 
@@ -8169,7 +8171,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 163.0, 100.0, 101.0, 22.0 ],
-																					"text" : "ho_st1"
+																					"text" : "buffer_host1"
 																				}
 
 																			}
@@ -8194,7 +8196,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 50.0, 100.0, 96.0, 22.0 ],
-																					"text" : "ho_st1"
+																					"text" : "buffer_host1"
 																				}
 
 																			}
@@ -8807,7 +8809,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 19.0, 290.0, 117.0, 22.0 ],
-													"text" : "ho_st"
+													"text" : "buffer_host"
 												}
 
 											}
@@ -8842,7 +8844,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 19.0, 47.0, 160.0, 24.0 ],
-													"text" : "ho_st1"
+													"text" : "buffer_host1"
 												}
 
 											}
@@ -10023,7 +10025,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ -694.0, 198.0, 761.0, 853.0 ],
+														"rect" : [ 34.0, 100.0, 761.0, 792.0 ],
 														"default_fontsize" : 10.0,
 														"gridsize" : [ 15.0, 15.0 ],
 														"boxes" : [ 															{
@@ -13775,9 +13777,76 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 83.0, 186.0, 627.0, 514.0 ],
+										"rect" : [ 539.0, 177.0, 729.0, 633.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-14",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 5,
+													"outlettype" : [ "dictionary", "", "", "", "" ],
+													"patching_rect" : [ 38.0, 563.0, 222.0, 22.0 ],
+													"saved_object_attributes" : 													{
+														"embed" : 0,
+														"legacy" : 0,
+														"parameter_enable" : 0,
+														"parameter_mappable" : 0
+													}
+,
+													"text" : "dict ll_paths"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-13",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 149.0, 513.0, 111.0, 22.0 ],
+													"text" : "prepend set factory"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-10",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 37.530000000000001, 513.0, 99.0, 22.0 ],
+													"text" : "prepend set user"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-9",
+													"maxclass" : "newobj",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 149.0, 477.339999999999918, 87.0, 22.0 ],
+													"text" : "r ll_factorypath"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-8",
+													"maxclass" : "newobj",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 37.530000000000001, 477.339999999999975, 85.0, 22.0 ],
+													"text" : "r ll_presetpath"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
@@ -13944,7 +14013,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 425.0, 220.5, 189.0, 62.0 ],
+													"patching_rect" : [ 425.0, 220.5, 189.0, 76.0 ],
 													"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets\""
 												}
 
@@ -14056,6 +14125,13 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-14", 0 ],
+													"source" : [ "obj-10", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-22", 1 ],
 													"order" : 0,
 													"source" : [ "obj-11", 0 ]
@@ -14091,6 +14167,13 @@
 													"destination" : [ "obj-2", 1 ],
 													"order" : 0,
 													"source" : [ "obj-12", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-14", 0 ],
+													"source" : [ "obj-13", 0 ]
 												}
 
 											}
@@ -14193,6 +14276,20 @@
 													"destination" : [ "obj-5", 1 ],
 													"order" : 0,
 													"source" : [ "obj-7", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-10", 0 ],
+													"source" : [ "obj-8", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-13", 0 ],
+													"source" : [ "obj-9", 0 ]
 												}
 
 											}
@@ -19919,7 +20016,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-10",
-																	"items" : "ee.json",
+																	"items" : [ "2401009-something-moody", ",", "240217-snowday", ",", "240525-nate-joe", ",", "241217-goose", ",", "241217-gooseboom", ",", "250204_theo-jam", ",", "250325-guitar-processing", ",", "250910-slowvegas", ",", "___test.json", ",", "__mmooll", ",", "_HARDCORE", ",", "_test_joegroove", ",", "adv-handholding-2", ",", "advanced-handholding", ",", "alex-strings", ",", "bb-vp-jamjam", ",", "bblower-test", ",", "bedtime", ",", "bg-track4", ",", "buffer_boy", ",", "calm-sinus", ",", "comatic", ",", "commencement", ",", "cone-o-shame", ",", "demo-dlgran", ",", "dlgran-tester", ",", "ear-smoke", ",", "elastic-walls", ",", "endless-wavs", ",", "fdasfdsafsda", ",", "fireworks", ",", "first-percs", ",", "flappy", ",", "funfuntimes", ",", "geetar-jam", ",", "gg-reload", ",", "gg.test", ",", "gg.trigger", ",", "gg_test", ",", "groanchant", ",", "groov-buff", ",", "hands-interconnected", ",", "henry-230303-bufs", ",", "henry-bbufs-230302", ",", "henry-full-set", ",", "henry-grant", ",", "henry-movers", ",", "henry-track-1", ",", "henry-track-2", ",", "henry-track-3", ",", "hg-22-11-21", ",", "hg-221201", ",", "hg-230301", ",", "hg-232202", ",", "just-groovin", ",", "kylon", ",", "lastlaugh", ",", "many-vst", ",", "mc_wavelets", ",", "mm-in-ppooll", ",", "mm_osc", ",", "mmods-gran", ",", "mmods-test", ",", "morff-test", ",", "mubu-test", ",", "mulch-jam", ",", "my-buffers", ",", "nate-joe-240509", ",", "ola-tester", ",", "perc-expanded", ",", "pl", ",", "plugin-playground", ",", "pseudo-echo", ",", "rcloop-20sec", ",", "ripstick", ",", "saggy", ",", "slur_test", ",", "something", ",", "source-filter-beauty", ",", "squiggles", ",", "swamp-rising", ",", "swipe-strings-and-kyle", ",", "talkingfunny2", ",", "taming-wavelets", ",", "test-dlgran", ",", "test-flop", ",", "test-gg", ",", "test-pitchtracker", ",", "test-rcloop", ",", "test-sogs", ",", "test-vst-mod-au", ",", "testvintageverb", ",", "vox", ",", "vst-test", ",", "washy-well", ",", "wetdry", ",", "wetdryuniverse", ",", "wf-test", ",", "wipply", ",", "york-grain" ],
 																	"maxclass" : "umenu",
 																	"numinlets" : 1,
 																	"numoutlets" : 3,
@@ -20630,7 +20727,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 39.0, 112.0, 114.0, 22.0 ],
-													"text" : "ho_st 1"
+													"text" : "buffer_host 1"
 												}
 
 											}
@@ -20717,7 +20814,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 241.0, 14.0, 263.0, 35.0 ],
-																	"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Library/ppooll_presets/ho_stT\""
+																	"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Library/ppooll_presets/buffer_hostT\""
 																}
 
 															}
@@ -21586,7 +21683,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 298.5, 367.0, 128.0, 22.0 ],
-													"text" : "_"
+													"text" : "\"ƒ factorybank\""
 												}
 
 											}
@@ -24104,12 +24201,13 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-18",
+																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 331.0, 205.0, 76.0, 22.0 ],
-																	"text" : "_"
+																	"text" : "\"ƒ factorybank\""
 																}
 
 															}
@@ -24152,7 +24250,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 405.0, 455.0, 75.0, 22.0 ],
-																					"text" : "ho_st"
+																					"text" : "buffer_host"
 																				}
 
 																			}
@@ -26184,7 +26282,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 63.333333333333314, 89.0, 90.0, 22.0 ],
-																					"text" : "ho_st1"
+																					"text" : "buffer_host1"
 																				}
 
 																			}
@@ -27155,13 +27253,13 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-49",
-																					"linecount" : 2,
+																					"linecount" : 3,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 259.5, 367.0, 35.0, 35.0 ],
-																					"text" : "ho_st"
+																					"text" : "buffer_host"
 																				}
 
 																			}
@@ -28146,7 +28244,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 13.0, 2.0, 87.0, 22.0 ],
-																					"text" : "ho_st1"
+																					"text" : "buffer_host1"
 																				}
 
 																			}
@@ -28593,12 +28691,13 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 12.0,
 																	"id" : "obj-3",
+																	"linecount" : 6,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 92.25, 304.0, 169.0, 76.0 ],
-																	"text" : "send ::ho_st1::pat"
+																	"text" : "read \"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets/buffer_hostP/factorybank.json\""
 																}
 
 															}
@@ -29081,7 +29180,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 264.0, 102.0, 159.0, 22.0 ],
-													"text" : "ho_st1 _"
+													"text" : "buffer_host1 \"ƒ factorybank\""
 												}
 
 											}
@@ -29160,13 +29259,13 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-17",
-																	"linecount" : 4,
+																	"linecount" : 5,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 486.0, 163.0, 50.0, 62.0 ],
-																	"text" : "::ho_st1::act::pres_menu 1"
+																	"text" : "::buffer_host1::act::pres_menu 1"
 																}
 
 															}
@@ -29818,7 +29917,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 158.0, 27.0, 313.0, 22.0 ],
-																	"text" : "_"
+																	"text" : "\"ƒ factorybank\""
 																}
 
 															}
@@ -31741,7 +31840,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 50.0, 186.5, 96.0, 22.0 ],
-																					"text" : "_"
+																					"text" : "ƒ factorybank"
 																				}
 
 																			}
@@ -50091,7 +50190,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 266.0, 718.0, 212.0, 20.0 ],
-													"text" : "load control@.maxpat"
+													"text" : "load buffer_host.maxpat"
 												}
 
 											}
@@ -51518,7 +51617,7 @@
 																				"box" : 																				{
 																					"fontname" : "Geneva",
 																					"fontsize" : 9.0,
-																					"id" : "obj-6",
+																					"id" : "obj-7",
 																					"maxclass" : "newobj",
 																					"numinlets" : 1,
 																					"numoutlets" : 1,
@@ -51532,7 +51631,7 @@
  ],
 																		"lines" : [ 																			{
 																				"patchline" : 																				{
-																					"destination" : [ "obj-6", 0 ],
+																					"destination" : [ "obj-7", 0 ],
 																					"source" : [ "obj-14", 0 ]
 																				}
 
@@ -53780,7 +53879,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 493.0, 69.0, 92.0, 21.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 368, 148, 983, 808 ],
+						"client_rect" : [ 400, 495, 1195, 847 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 200, 200, 800, 500 ]
@@ -53839,7 +53938,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 493.0, 168.0, 107.0, 21.0 ],
 					"restore" : 					{
-						"act_menu" : [ "(__acts__)" ],
+						"act_menu" : [ "buffer_host" ],
 						"audioON/OFF" : [ 0 ],
 						"chans" : [ 16 ],
 						"def" : [ -1 ],
@@ -53851,7 +53950,7 @@
 						"rec" : [ 0 ],
 						"screen" : [ 0 ],
 						"stereo" : [ 0 ],
-						"time" : [ 218.0 ],
+						"time" : [ 283.0 ],
 						"vol" : [ 1.0 ],
 						"vol_ramp" : [ 10.000000000000002 ],
 						"vol_slider" : [ 1.0 ],
@@ -54357,7 +54456,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "u541003787.js",
+				"name" : "u534000967.js",
 				"bootpath" : "~/Library/Application Support/Cycling '74/Max 9/Settings/temp64-Max",
 				"patcherrelativepath" : "../../../../../Library/Application Support/Cycling '74/Max 9/Settings/temp64-Max",
 				"type" : "TEXT",
