@@ -46,9 +46,12 @@
   "website": "http://ppooll.klingt.org",
   "filelist": {
     "externals": [
-      "ll_number",
-      "ll_fastforward",
       "ll_2dslider",
+      "ll_fastforward",
+      "ll_filewatchers",
+      "ll_mcwaveform",
+      "ll_number",
+      "ll_slishi",
       "shell",
       "pattrexists",
       "vbap"
