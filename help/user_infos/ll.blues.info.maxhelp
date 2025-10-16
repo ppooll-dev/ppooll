@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 594.0, 532.0 ],
+		"rect" : [ 101.0, 297.0, 594.0, 532.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "ll.blues.info.help1",
@@ -21,7 +21,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 223.0, 428.0, 150.0, 20.0 ],
-					"text" : "for max-programmers"
+					"text" : "for max-programmers",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -1533,7 +1534,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 500.0, 7.0, 83.0, 20.0 ],
-					"text" : "turn audio on"
+					"text" : "turn audio on",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -1547,7 +1549,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 23.0, 230.0, 281.0, 33.0 ],
-					"text" : "double-click on these subpatches for insights.\n(keep this window and ho_st visible)"
+					"text" : "double-click on these subpatches for insights.\n(keep this window and ho_st visible)",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -2244,7 +2247,7 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-35",
-									"items" : [ "no", ",", "ho_st1", ",", "flop1", ",", "ll.blues.info.help1" ],
+									"items" : [ "no", ",", "ho_st1", ",", "xgroove@1", ",", "ll.blues.info.help1" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -3147,6 +3150,7 @@
 , 							{
 								"box" : 								{
 									"border" : 0,
+									"embedstate" : [ [ "bgcoloroff", 0.333, 0.537, 0.961, 1 ], [ "bgcoloron", 0.024, 0.024, 0.6, 1 ], [ "bordercolor", 0.2, 0.2, 0.2, 1 ], [ "textcolor", 1, 1, 1, 1 ] ],
 									"filename" : "ll.bluebutton.js",
 									"id" : "obj-18",
 									"jsarguments" : [ "x", "x" ],
@@ -4058,7 +4062,7 @@
 									"bgfillcolor_type" : "color",
 									"fontsize" : 11.595186999999999,
 									"id" : "obj-14",
-									"items" : [ "no", ",", "buffer_host1", ",", "flop1", ",", "ho_st1", ",", "lkforest@1", ",", "ll.blues.info.help1" ],
+									"items" : [ "no", ",", "buffer_host1", ",", "ho_st1", ",", "ll.blues.info.help1", ",", "xgroove@1" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -4305,7 +4309,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 34.0, 56.0, 232.0, 38.0 ],
-					"text" : "the blue output section for ppooll\ncalled ll.blues"
+					"text" : "the blue output section for ppooll\ncalled ll.blues",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 				}
 
 			}
@@ -4446,6 +4451,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 17.0, 112.0, 583.0, 102.0 ],
 					"text" : "         volume slider ——\n            mix slider ——                     ——info, and modes\noutput menues(address) ——                     ——show dark/light-blue outputs\n                                            |\n                              |     |   |   output-channel-count\n                   ramp time in ms  |   input-channel-count\n                                   pre fade listening",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "c_basic"
 				}
 
@@ -4461,6 +4467,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 92.0, 98.0, 354.0, 34.0 ],
 					"text" : "                  act     channel\nunfold/fold ———                    ——— info_menu",
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"varname" : "c_mcbasic"
 				}
 
