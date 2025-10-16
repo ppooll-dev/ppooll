@@ -169,6 +169,9 @@ function params() {
     let keys = Object.keys(environment);
     //post("envi_params_keys",keys,"\n");
     for (let a of keys) {
+        if(paramsCount === 1 && a === "buffer_host1")
+            continue;
+        
         let par_keys = Object.keys(environment[a]);
         //post("envi_params_keys",par_keys,"\n");
         if (debugpost > 0)

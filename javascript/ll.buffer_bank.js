@@ -261,7 +261,7 @@ function bhState() {
             return {
                 ...b,
                 label,
-                full_path: buffers[b.buffer_name].full_path ? buffers[b.buffer_name].full_path : null
+                full_path: buffers[b.buffer_name] && buffers[b.buffer_name].full_path ? buffers[b.buffer_name].full_path : null
             };
         });
 }

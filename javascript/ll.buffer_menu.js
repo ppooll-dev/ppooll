@@ -10,7 +10,7 @@ function msg_dictionary(dict){
 
     buffers = {};
     if(!dict.buffers){
-        post("no buffers yet\n");
+        // post("no buffers yet\n");
         return
     }
     dict.buffers.forEach(b => buffers[b.label] = b);
