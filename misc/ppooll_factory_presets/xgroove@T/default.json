@@ -1,5 +1,5 @@
 {
-	"window" : [ 712, 212, 963, 494 ],
+	"window" : [ 442, 299, 693, 581 ],
 	"envelope_display" : 	{
 		"patching_rect" : [ -6, 98, 262, 94 ],
 		"hidden" : 0,
@@ -8,11 +8,6 @@
 		"gridcolor" : [ 0.34902, 0.34902, 0.34902, 0 ],
 		"linecolor" : [ 0, 0, 0, 1 ],
 		"textcolor" : [ 0, 0.011765, 1, 0 ]
-	}
-,
-	"pf" : 	{
-		"patching_rect" : [ 400, 400, 115, 22 ],
-		"hidden" : 1
 	}
 ,
 	"wf" : 	{

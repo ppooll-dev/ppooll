@@ -85,7 +85,7 @@ function msg_dictionary(d){
         outlet(1, `${enviDir}/${enviName}`, ...subfolders);
     }else if(writeParams.type === "json"){
         dict.props.jsonPath = `${enviDir}/${enviName}.json`;
-        outlet(2, "bang");
+        writeEnvi();
     }
 }
 
@@ -157,6 +157,10 @@ async function saveToFolder(){
     ppost("save environment state...")
     dict.props.jsonPath = `${enviDir}/${enviName}/environment.json`;
     
+    writeEnvi();
+}
+
+function writeEnvi(){
     environment = {};
 
     let act_list = Object.keys(dict.state)
@@ -343,7 +347,7 @@ function addParam(args) {
     if(paramValue[0] === "dictionary"){
         const innerDict = new Dict(paramValue[1])
         const data = JSON.parse(innerDict.stringify());
-        environment[currentAct][paramName] = { buffers }
+        environment[currentAct][paramName] = data;
     }   
     // Optional: Output the updated dictionary for verification
     // post("Updated parameter '", paramKey, "' with value: ", paramValue, "\n");

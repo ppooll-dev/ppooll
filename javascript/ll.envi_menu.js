@@ -99,12 +99,6 @@ function selectEnvironment(name){
     const data = { props: selectedEnvi, environment: enviData };
     outlet_dictionary(2, data);
 
-    outlet(1, "type", "symbol", selectedEnvi.type);
-    outlet(1, "name", "set", name);
-    outlet(1, "name", "bang");
-}
-
-function loadbang(){
-    outlet(1, "name", "clear");
-    outlet(1, "name", "bang");
+    outlet(1, "type", selectedEnvi.type);
+    outlet(1, "envi_name", name);
 }
