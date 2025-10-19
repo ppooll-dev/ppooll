@@ -20,7 +20,7 @@ let position = [100, 100];
 // vst-folder, def_folders
 let currentPlug = null;
 let currentPath = null;
-let currentFiles = [];
+let currentFiles = {};
 let currentSubNames = [];
 
 let currentShell = null;
@@ -162,7 +162,7 @@ function vstCreate(c_in, c_out) {
 }
 
 // Load vst with full path
-function vstLoad(pluginPath) {
+function loadVST(pluginPath) {
     // post(pluginPath, "\n")
     if (currentPlug) getPosition(); // Get last position
 
@@ -328,11 +328,10 @@ function vst_folder(selection) {
         jit_define_folders("open");
     } else if (selection.slice(0, 3) === "∆í ") {
         // post("load folder: ", path)
-        setCurrentPath(selection.slice(3));
+        setCurrentPath(selection);
     } else if (selection === "all") {
         // post("show all")
         setCurrentPath("all");
-
     } else if (selection === "auto") {
         // post("auto load")
         setCurrentPath("auto");
@@ -349,9 +348,8 @@ function vst_folder(selection) {
             loadShellPlug(selection);
             // TODO: ll.p def_shell
         } else {
-            let plugpath = `${currentPath}${selection}`;
             pp.getnamed("def_folder").message(currentPath);
-            vstLoad(plugpath);
+            loadVST(currentFiles[selection]);
         }
     }
 }
@@ -370,27 +368,31 @@ function setCurrentPath(path) {
     if(path === "all"){
         const ll_prefs = new Dict("ppooll-preferences");
         const vst_folders = ll_prefs.get("file_paths::vst@_folders");
-        currentFiles = [];
+        currentFiles = {};
 
         vst_folders.forEach((folder) => {
             menuItems.push("<separator>");
             menuItems.push(`(${folder})`);
 
-            const plugFiles = listFiles(folder);
-            menuItems.push(...plugFiles);
-
-            const theseFiles = plugFiles.map((file) => ({ file, folder }));
-            currentFiles.push(...theseFiles);
+            listFiles(folder).forEach(plugFile => {
+                menuItems.push(plugFile);
+                currentFiles[plugFile] = `${folder}${plugFile}`
+            });
         });
     }else if(path === "auto"){
         out("vstscan", "bang");
         return; // wait for setAutoList
-    }else{
-        menuItems = ["<separator>", ...listFiles(currentPath)];
-        currentFiles = menuItems.map((file) => ({ file, folder: currentPath }));
+    }else if(path.slice(0, 3) === "∆í "){
+        let folder = path.slice(3);
+        menuItems = ["<separator>", ...listFiles(folder)];
+        menuItems.forEach(plugFile => { currentFiles[plugFile] = `${folder}${plugFile}` })
     }
 
     resetMenu(menuItems);
+}
+
+function setActname(name){
+    actname = name;
 }
 
 // set vst-folder to "auto" plugin list
@@ -416,15 +418,10 @@ function resetMenu(itemsToAdd = [], setsymbol = null) {
 }
 
 function listFiles(path) {
-    if (path === "bla") {
-        // post("nada folder \n")
-        return [];
-    }
-
     var f = new Folder(path);
     if (f.end) {
         post("Folder not found or empty:", path, "\n");
-        return;
+        return ;
     }
 
     var files = [];
