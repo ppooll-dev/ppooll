@@ -36,6 +36,11 @@ function findEnvironments(path) {
     return results;
 }
 
+function reset(name){
+    fillMenu()
+    outlet(0, "setsymbol", name);
+}
+
 function fillMenu(){
     const ll_paths = new Dict("ll_paths");
     pathUser = ll_paths.get("user");

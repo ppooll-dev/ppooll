@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 341.0, 252.0, 133.0, 124.0 ],
+		"rect" : [ 235.0, 129.0, 133.0, 124.0 ],
 		"default_fontsize" : 11.595186999999999,
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
@@ -519,7 +519,7 @@
 					"fontsize" : 12.0,
 					"hint" : "environment menu",
 					"id" : "obj-22",
-					"items" : [ "(environments)", ",", "<separator>", ",", "(folders)", ",", "_", ",", "alt", ",", "ert", ",", "host_test", ",", "mc.groove_test", ",", "rest", ",", "sinsE_minilab_ko25_9", ",", "test1", ",", "test2", ",", "testvstf", ",", "ui_test", ",", "<separator>", ",", "(.json)", ",", "<none>", ",", "ducks_new", ",", "fmrem_test", ",", "fmvb_test", ",", "klingt.coll.minilab", ",", "mc.gizmo_tutorial", ",", "rec@", ",", "sins_minilabN", ",", "sinsE_MC", ",", "sinsE_minilab_center", ",", "sinsE_minilab_ko25", ",", "snaptesttt", ",", "superspreading11", ",", "test", ",", "xgroovetest", ",", "<separator>", ",", "opentext", ",", "merge...", ",", "paramsonly", ",", "<separator>", ",", "(factory)", ",", "buffertest", ",", "ducks", ",", "envM_test" ],
+					"items" : [ "(environments)", ",", "<separator>", ",", "(folders)", ",", "<separator>", ",", "(.json)", ",", "<separator>", ",", "opentext", ",", "merge...", ",", "paramsonly", ",", "<separator>", ",", "(factory)" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -574,7 +574,7 @@
 					"fontsize" : 12.0,
 					"hint" : "favorites menu",
 					"id" : "obj-48",
-					"items" : [ "(favorites)", ",", "vst@", ",", "vbap@", ",", "<none>", ",", "(favorites)", ",", "-", ",", "add_favorit", ",", "del_favorit" ],
+					"items" : [ "(favorites)", ",", "-", ",", "add_favorit", ",", "del_favorit" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -602,7 +602,7 @@
 					"fontsize" : 12.0,
 					"hint" : "act menu (open acts from here)",
 					"id" : "obj-50",
-					"items" : [ "(__acts__)", ",", "_act_overview", ",", "2Dsliders", ",", "amxd@", ",", "analyze@", ",", "animator@", ",", "arpanner", ",", "autocount@", ",", "bandfollower", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "bildsynthi", ",", "brown", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "envMM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "forbiddenP", ",", "frack", ",", "freeverb@", ",", "frequenzteiler", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.2oscbank", ",", "jit.3m@", ",", "jit.blobs", ",", "jit.brcosa@", ",", "jit.buf", ",", "jit.buffer@", ",", "jit.copyprot.act", ",", "jit.display@", ",", "jit.grab@", ",", "jit.lcd@", ",", "jit.op@", ",", "jit.player", ",", "jit.slide@", ",", "jit.videoplanes", ",", "jit.videoplanesP", ",", "jit.world@", ",", "kaos@", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "limi", ",", "link@", ",", "lkforest@", ",", "matriarch@", ",", "matrix@", ",", "mc.mod", ",", "mc.random@", ",", "mcpanner", ",", "midikeys", ",", "mixer@", ",", "modul.ator", ",", "morph", ",", "mubugrain@", ",", "multitap", ",", "munger@", ",", "noize@", ",", "normalize", ",", "notepad@", ",", "op@", ",", "oscbank@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "period", ",", "pHARM4@", ",", "plug@", ",", "pr.6groov", ",", "pr.spectfreeze", ",", "pr.spectplay", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "SDIFter", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.abba@", ",", "spat.ambicontrol@", ",", "spat.ambidecode@", ",", "spat.ambiencode@", ",", "spat.ambimonitor@", ",", "spat.ambipanning@", ",", "spat.ambitransform@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "threekomp", ",", "timeline@", ",", "TSSSF", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "echoplex@", ",", "efx.step@", ",", "efx.stnp@", ",", "efx.sttp@", ",", "efx.stxp@", ",", "ellipsis@", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gf.graindelay", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "lk.stutz@", ",", "mmods@", ",", "oer_prcs", ",", "oer_prcss", ",", "polyrhythmus", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "smpseq@", ",", "snes@", ",", "snesHardmode@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--" ],
+					"items" : "(__acts__)",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -680,7 +680,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 0.0, 442.0, 843.0, 540.0 ],
+										"rect" : [ 0.0, 387.0, 843.0, 540.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"toolbarvisible" : 0,
 										"enablehscroll" : 0,
@@ -1884,7 +1884,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 26.0, 257.0, 171.0, 22.0 ],
-																	"text" : "general::audioON/OFF 35"
+																	"text" : "general::audioON/OFF 115"
 																}
 
 															}
@@ -2933,13 +2933,13 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-3",
-																	"linecount" : 2,
+																	"linecount" : 3,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 463.0, 309.0, 251.0, 49.0 ],
-																	"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Library/ppooll_presets\""
+																	"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Library/ppooll_presets\""
 																}
 
 															}
@@ -3418,7 +3418,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 480.0, 37.0, 33.0, 23.0 ],
-													"text" : "#",
+													"text" : "",
 													"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 												}
 
@@ -3718,7 +3718,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 104.0, 243.0, 436.0, 508.0 ],
+										"rect" : [ 133.0, 273.0, 436.0, 508.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"boxes" : [ 											{
 												"box" : 												{
@@ -3760,30 +3760,6 @@
 													}
 ,
 													"text" : "dict"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-19",
-													"maxclass" : "button",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
-													"parameter_enable" : 0,
-													"patching_rect" : [ 197.0, 265.0, 24.0, 24.0 ]
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-18",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 197.0, 238.0, 102.0, 22.0 ],
-													"text" : "ll.r ppooll_version"
 												}
 
 											}
@@ -3902,7 +3878,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 672.0, 226.0, 800.0, 800.0 ],
+														"rect" : [ 500.0, 300.0, 200.0, 160.0 ],
 														"openrect" : [ 0.0, 0.0, 800.0, 800.0 ],
 														"openinpresentation" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
@@ -3910,6 +3886,23 @@
 														"enablehscroll" : 0,
 														"enablevscroll" : 0,
 														"boxes" : [ 															{
+																"box" : 																{
+																	"angle" : 270.0,
+																	"bgcolor" : [ 0.2, 0.2, 0.2, 0.19 ],
+																	"bordercolor" : [ 1.0, 1.0, 1.0, 0.0 ],
+																	"id" : "obj-11",
+																	"maxclass" : "panel",
+																	"mode" : 0,
+																	"numinlets" : 1,
+																	"numoutlets" : 0,
+																	"patching_rect" : [ 263.0, 219.0, 173.0, 64.0 ],
+																	"presentation" : 1,
+																	"presentation_rect" : [ 9.0, 72.0, 182.0, 65.0 ],
+																	"proportion" : 0.5
+																}
+
+															}
+, 															{
 																"box" : 																{
 																	"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 																	"fontsize" : 11.0,
@@ -4032,7 +4025,7 @@
 																	"parameter_enable" : 0,
 																	"patching_rect" : [ 6.0, 92.0, 173.0, 20.0 ],
 																	"presentation" : 1,
-																	"presentation_rect" : [ 0.0, 28.0, 173.0, 20.0 ],
+																	"presentation_rect" : [ 0.0, 28.0, 200.0, 20.0 ],
 																	"text_width" : 50.0,
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 																	"varname" : "attrui_name"
@@ -4056,7 +4049,7 @@
 																	"parameter_enable" : 0,
 																	"patching_rect" : [ 6.0, 180.0, 173.0, 20.0 ],
 																	"presentation" : 1,
-																	"presentation_rect" : [ 0.0, 116.0, 173.0, 20.0 ],
+																	"presentation_rect" : [ 18.0, 116.0, 173.0, 20.0 ],
 																	"text_width" : 120.0,
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 																	"varname" : "attrui_write_sample_buffers"
@@ -4080,7 +4073,7 @@
 																	"parameter_enable" : 0,
 																	"patching_rect" : [ 6.0, 158.0, 173.0, 20.0 ],
 																	"presentation" : 1,
-																	"presentation_rect" : [ 0.0, 94.0, 173.0, 20.0 ],
+																	"presentation_rect" : [ 18.0, 94.0, 173.0, 20.0 ],
 																	"text_width" : 120.0,
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 																	"varname" : "attrui_write_files"
@@ -4103,7 +4096,7 @@
 																	"parameter_enable" : 0,
 																	"patching_rect" : [ 6.0, 136.0, 173.0, 20.0 ],
 																	"presentation" : 1,
-																	"presentation_rect" : [ 0.0, 72.0, 173.0, 20.0 ],
+																	"presentation_rect" : [ 18.0, 72.0, 173.0, 20.0 ],
 																	"text_width" : 120.0,
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 																	"varname" : "attrui_copy_buffers"
@@ -4150,7 +4143,7 @@
 																	"parameter_enable" : 0,
 																	"patching_rect" : [ 6.0, 114.0, 173.0, 20.0 ],
 																	"presentation" : 1,
-																	"presentation_rect" : [ 0.0, 50.0, 173.0, 20.0 ],
+																	"presentation_rect" : [ 18.0, 50.0, 173.0, 20.0 ],
 																	"text_width" : 120.0,
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 																	"varname" : "attrui_type"
@@ -4895,7 +4888,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 616.0, 100.0, 396.0, 779.0 ],
+														"rect" : [ 790.0, 100.0, 688.0, 791.0 ],
 														"gridsize" : [ 15.0, 15.0 ],
 														"boxes" : [ 															{
 																"box" : 																{
@@ -5188,7 +5181,7 @@
 																		}
 ,
 																		"classnamespace" : "box",
-																		"rect" : [ 81.0, 126.0, 1444.0, 791.0 ],
+																		"rect" : [ 34.0, 101.0, 1444.0, 791.0 ],
 																		"gridsize" : [ 15.0, 15.0 ],
 																		"boxes" : [ 																			{
 																				"box" : 																				{
@@ -5637,7 +5630,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-42",
-													"items" : [ "(environments)", ",", "<separator>", ",", "(folders)", ",", "_", ",", "alt", ",", "ert", ",", "host_test", ",", "mc.groove_test", ",", "rest", ",", "sinsE_minilab_ko25_9", ",", "test1", ",", "test2", ",", "testvstf", ",", "ui_test", ",", "<separator>", ",", "(.json)", ",", "<none>", ",", "ducks_new", ",", "fmrem_test", ",", "fmvb_test", ",", "klingt.coll.minilab", ",", "mc.gizmo_tutorial", ",", "rec@", ",", "sins_minilabN", ",", "sinsE_MC", ",", "sinsE_minilab_center", ",", "sinsE_minilab_ko25", ",", "snaptesttt", ",", "superspreading11", ",", "test", ",", "xgroovetest", ",", "<separator>", ",", "opentext", ",", "merge...", ",", "paramsonly", ",", "<separator>", ",", "(factory)", ",", "buffertest", ",", "ducks", ",", "envM_test" ],
+													"items" : [ "(environments)", ",", "<separator>", ",", "(folders)", ",", "<separator>", ",", "(.json)", ",", "<separator>", ",", "opentext", ",", "merge...", ",", "paramsonly", ",", "<separator>", ",", "(factory)" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -5669,13 +5662,25 @@
 														"gridsize" : [ 15.0, 15.0 ],
 														"boxes" : [ 															{
 																"box" : 																{
+																	"id" : "obj-18",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "bang" ],
+																	"patching_rect" : [ 168.0, 10.0, 102.0, 22.0 ],
+																	"text" : "ll.r ppooll_version"
+																}
+
+															}
+, 															{
+																"box" : 																{
 																	"id" : "obj-16",
 																	"maxclass" : "button",
 																	"numinlets" : 1,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "bang" ],
 																	"parameter_enable" : 0,
-																	"patching_rect" : [ 54.5, 55.0, 24.0, 24.0 ]
+																	"patching_rect" : [ 38.0, 43.0, 24.0, 24.0 ]
 																}
 
 															}
@@ -5759,7 +5764,7 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 38.0, 28.0, 128.0, 22.0 ],
+																	"patching_rect" : [ 38.0, 10.0, 128.0, 22.0 ],
 																	"text" : "r ll_preferences_ready"
 																}
 
@@ -6189,7 +6194,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-21",
-																	"items" : [ "(environments)", ",", "<separator>", ",", "(folders)", ",", "_", ",", "alt", ",", "ert", ",", "host_test", ",", "mc.groove_test", ",", "rest", ",", "sinsE_minilab_ko25_9", ",", "test1", ",", "test2", ",", "testvstf", ",", "ui_test", ",", "<separator>", ",", "(.json)", ",", "<none>", ",", "ducks_new", ",", "fmrem_test", ",", "fmvb_test", ",", "klingt.coll.minilab", ",", "mc.gizmo_tutorial", ",", "rec@", ",", "sins_minilabN", ",", "sinsE_MC", ",", "sinsE_minilab_center", ",", "sinsE_minilab_ko25", ",", "snaptesttt", ",", "superspreading11", ",", "test", ",", "xgroovetest", ",", "<separator>", ",", "opentext", ",", "merge...", ",", "paramsonly", ",", "<separator>", ",", "(factory)", ",", "buffertest", ",", "ducks", ",", "envM_test" ],
+																	"items" : [ "(environments)", ",", "<separator>", ",", "(folders)", ",", "<separator>", ",", "(.json)", ",", "<separator>", ",", "opentext", ",", "merge...", ",", "paramsonly", ",", "<separator>", ",", "(factory)" ],
 																	"maxclass" : "umenu",
 																	"numinlets" : 1,
 																	"numoutlets" : 3,
@@ -6232,14 +6237,14 @@
 																	"numinlets" : 0,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 187.0, 28.0, 30.0, 30.0 ]
+																	"patching_rect" : [ 204.0, 52.0, 30.0, 30.0 ]
 																}
 
 															}
  ],
 														"lines" : [ 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-24", 0 ],
+																	"destination" : [ "obj-16", 0 ],
 																	"source" : [ "obj-12", 0 ]
 																}
 
@@ -6262,6 +6267,13 @@
 																"patchline" : 																{
 																	"destination" : [ "obj-24", 0 ],
 																	"source" : [ "obj-16", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-16", 0 ],
+																	"source" : [ "obj-18", 0 ]
 																}
 
 															}
@@ -6317,7 +6329,7 @@
 															}
 , 															{
 																"patchline" : 																{
-																	"destination" : [ "obj-24", 0 ],
+																	"destination" : [ "obj-8", 0 ],
 																	"source" : [ "obj-39", 0 ]
 																}
 
@@ -6375,19 +6387,6 @@
 												}
 
 											}
-, 											{
-												"box" : 												{
-													"id" : "obj-13",
-													"maxclass" : "textbutton",
-													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "", "", "int" ],
-													"parameter_enable" : 0,
-													"patching_rect" : [ 173.0, 298.0, 62.0, 22.0 ],
-													"text" : "refresh"
-												}
-
-											}
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
@@ -6398,29 +6397,8 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-40", 1 ],
-													"source" : [ "obj-13", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-42", 0 ],
 													"source" : [ "obj-16", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-19", 0 ],
-													"source" : [ "obj-18", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-13", 0 ],
-													"source" : [ "obj-19", 0 ]
 												}
 
 											}
@@ -6524,7 +6502,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-13", 0 ],
+													"destination" : [ "obj-40", 1 ],
 													"source" : [ "obj-46", 0 ]
 												}
 
@@ -6546,8 +6524,8 @@
  ]
 									}
 ,
-									"patching_rect" : [ 173.0, 189.0, 89.0, 26.0 ],
-									"text" : "p envi_new",
+									"patching_rect" : [ 173.0, 189.0, 118.0, 26.0 ],
+									"text" : "p environments",
 									"varname" : "envi_new"
 								}
 
@@ -7095,7 +7073,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 163.0, 100.0, 101.0, 22.0 ],
-																					"text" : "ho_st1"
+																					"text" : "romb1"
 																				}
 
 																			}
@@ -7120,7 +7098,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 50.0, 100.0, 96.0, 22.0 ],
-																					"text" : "ho_st1"
+																					"text" : "romb1"
 																				}
 
 																			}
@@ -7733,7 +7711,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 19.0, 290.0, 117.0, 22.0 ],
-													"text" : "ho_st"
+													"text" : "romb"
 												}
 
 											}
@@ -7768,7 +7746,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 19.0, 47.0, 160.0, 24.0 ],
-													"text" : "ho_st1"
+													"text" : "romb1"
 												}
 
 											}
@@ -12386,8 +12364,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 425.0, 220.5, 189.0, 76.0 ],
-													"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets\""
+													"patching_rect" : [ 425.0, 220.5, 237.0, 62.0 ],
+													"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets\""
 												}
 
 											}
@@ -12735,7 +12713,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-29",
-													"items" : [ "(__acts__)", ",", "_act_overview", ",", "2Dsliders", ",", "amxd@", ",", "analyze@", ",", "animator@", ",", "arpanner", ",", "autocount@", ",", "bandfollower", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "bildsynthi", ",", "brown", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "envMM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "forbiddenP", ",", "frack", ",", "freeverb@", ",", "frequenzteiler", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.2oscbank", ",", "jit.3m@", ",", "jit.blobs", ",", "jit.brcosa@", ",", "jit.buf", ",", "jit.buffer@", ",", "jit.copyprot.act", ",", "jit.display@", ",", "jit.grab@", ",", "jit.lcd@", ",", "jit.op@", ",", "jit.player", ",", "jit.slide@", ",", "jit.videoplanes", ",", "jit.videoplanesP", ",", "jit.world@", ",", "kaos@", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "limi", ",", "link@", ",", "lkforest@", ",", "matriarch@", ",", "matrix@", ",", "mc.mod", ",", "mc.random@", ",", "mcpanner", ",", "midikeys", ",", "mixer@", ",", "modul.ator", ",", "morph", ",", "mubugrain@", ",", "multitap", ",", "munger@", ",", "noize@", ",", "normalize", ",", "notepad@", ",", "op@", ",", "oscbank@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "period", ",", "pHARM4@", ",", "plug@", ",", "pr.6groov", ",", "pr.spectfreeze", ",", "pr.spectplay", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "SDIFter", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.abba@", ",", "spat.ambicontrol@", ",", "spat.ambidecode@", ",", "spat.ambiencode@", ",", "spat.ambimonitor@", ",", "spat.ambipanning@", ",", "spat.ambitransform@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "threekomp", ",", "timeline@", ",", "TSSSF", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "echoplex@", ",", "efx.step@", ",", "efx.stnp@", ",", "efx.sttp@", ",", "efx.stxp@", ",", "ellipsis@", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gf.graindelay", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "lk.stutz@", ",", "mmods@", ",", "oer_prcs", ",", "oer_prcss", ",", "polyrhythmus", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "smpseq@", ",", "snes@", ",", "snesHardmode@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--" ],
+													"items" : [ "(__acts__)", ",", "_act_overview", ",", "2Dsliders", ",", "amxd@", ",", "arpanner", ",", "autocount@", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "brown", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "envMM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "frack", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.copyprot.act", ",", "jit.grab@", ",", "jit.player", ",", "jit.videoplanes", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "limi", ",", "link@", ",", "lkforest@", ",", "matriarch@", ",", "matrix@", ",", "mc.mod", ",", "mc.random@", ",", "mixer@", ",", "modul.ator", ",", "munger@", ",", "noize@", ",", "notepad@", ",", "op@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "pHARM4@", ",", "pr.spectfreeze", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "threekomp", ",", "timeline@", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "oer_prcs", ",", "oer_prcss", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "airfx@", ",", "ar.bitglitter@", ",", "bb.rainer@", ",", "bounce@", ",", "buresyn@", ",", "clock.in@", ",", "clock.src@", ",", "convolver@", ",", "cross-dog@", ",", "dd.rainer", ",", "deskdust", ",", "djrone@", ",", "djrone_buff@", ",", "dl.granulator@", ",", "dlgranulator@", ",", "duplicator@", ",", "env.follower@", ",", "fcbControl", ",", "feedbliss", ",", "feedbliss_v2", ",", "fft.filter@", ",", "gamepad@", ",", "gigaverb@", ",", "granu.ll.ator", ",", "INa", ",", "joe.groove@", ",", "keyfreq", ",", "keyspeed", ",", "lkforest@", ",", "lkstretch", ",", "miClouds", ",", "miVerb", ",", "mlooch@", ",", "mmarbless", ",", "mmods@", ",", "modul.dupe", ",", "moog.ladder@", ",", "mubu.grain@", ",", "MubuConcat", ",", "MubuGrain", ",", "munger_old@", ",", "music-mouse@", ",", "notepad2@", ",", "ola.granular", ",", "pitchchainer", ",", "pitchtracker@", ",", "polyrhythmusTwo", ",", "pp.rainer@", ",", "pr.spectdelay", ",", "rc.loop@", ",", "rings", ",", "sc.gendy3@", ",", "sh.bubbler", ",", "sidechainer", ",", "slur@", ",", "sogs@", ",", "sp.lpg", ",", "sync_out", ",", "tintinn@", ",", "transport@", ",", "tuner", ",", "uclid", ",", "vp.sourcefilter", ",", "wavegrain", ",", "z.filter@" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -13712,7 +13690,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 113.0, 171.0, 337.0, 38.0 ],
-																	"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Packages\""
+																	"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Packages\""
 																}
 
 															}
@@ -15013,7 +14991,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 25.0, 390.0, 371.0, 35.0 ],
-																	"text" : "read \"Macintosh HD:/Users/klaus/Library/Application Support/Cycling '74/Max 9/Settings/maxpackages.json\""
+																	"text" : "read \"Macintosh HD:/Users/josephsteccato/Library/Application Support/Cycling '74/Max 9/Settings/maxpackages.json\""
 																}
 
 															}
@@ -17808,7 +17786,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-10",
-																	"items" : "ee.json",
+																	"items" : [ "2401009-something-moody", ",", "240217-snowday", ",", "240525-nate-joe", ",", "241217-goose", ",", "241217-gooseboom", ",", "250204_theo-jam", ",", "250325-guitar-processing", ",", "250910-slowvegas", ",", "___morff-test-dict.json", ",", "___test.json", ",", "__json_pls.json", ",", "__mmooll", ",", "__new_factory", ",", "_HARDCORE", ",", "_test_joegroove", ",", "adv-handholding-2", ",", "advanced-handholding", ",", "alex-strings", ",", "bb-vp-jamjam", ",", "bblower-test", ",", "bedtime", ",", "bg-track4", ",", "buffer_boy", ",", "calm-sinus", ",", "comatic", ",", "commencement", ",", "cone-o-shame", ",", "demo-dlgran", ",", "dlgran-tester", ",", "ear-smoke", ",", "elastic-walls", ",", "endless-wavs", ",", "fdasfdsafsda", ",", "fireworks", ",", "first-percs", ",", "flappy", ",", "funfuntimes", ",", "geetar-jam", ",", "gg-reload", ",", "gg.test", ",", "gg.trigger", ",", "gg_test", ",", "groanchant", ",", "groov-buff", ",", "hands-interconnected", ",", "henry-230303-bufs", ",", "henry-bbufs-230302", ",", "henry-full-set", ",", "henry-grant", ",", "henry-movers", ",", "henry-track-1", ",", "henry-track-2", ",", "henry-track-3", ",", "hg-22-11-21", ",", "hg-221201", ",", "hg-230301", ",", "hg-232202", ",", "json.json", ",", "just-groovin", ",", "kylon", ",", "lastlaugh", ",", "many-vst", ",", "mc_wavelets", ",", "mm-in-ppooll", ",", "mm_osc", ",", "mmods-gran", ",", "mmods-test", ",", "morff-test", ",", "mubu-test", ",", "mulch-jam", ",", "my-buffers", ",", "nate-joe-240509", ",", "ola-tester", ",", "perc-expanded", ",", "pl", ",", "plugin-playground", ",", "pseudo-echo", ",", "rcloop-20sec", ",", "ripstick", ",", "saggy", ",", "slur_test", ",", "something", ",", "source-filter-beauty", ",", "squiggles", ",", "swamp-rising", ",", "swipe-strings-and-kyle", ",", "talkingfunny2", ",", "taming-wavelets", ",", "test-dlgran", ",", "test-flop", ",", "test-gg", ",", "test-pitchtracker", ",", "test-rcloop", ",", "test-sogs", ",", "test-vst-mod-au", ",", "testvintageverb", ",", "vox", ",", "vst-test", ",", "washy-well", ",", "wetdry", ",", "wetdryuniverse", ",", "wf-test", ",", "wipply", ",", "york-grain", ",", "york-grain-dict.json" ],
 																	"maxclass" : "umenu",
 																	"numinlets" : 1,
 																	"numoutlets" : 3,
@@ -18519,7 +18497,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 39.0, 112.0, 114.0, 22.0 ],
-													"text" : "ho_st 1"
+													"text" : "romb 1"
 												}
 
 											}
@@ -18605,8 +18583,8 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 241.0, 14.0, 263.0, 49.0 ],
-																	"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Library/ppooll_presets/ho_stT\""
+																	"patching_rect" : [ 241.0, 14.0, 301.0, 35.0 ],
+																	"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Library/ppooll_presets/rombT\""
 																}
 
 															}
@@ -21211,7 +21189,7 @@
 																									"numoutlets" : 1,
 																									"outlettype" : [ "" ],
 																									"patching_rect" : [ 192.0, 25.0, 50.0, 22.0 ],
-																									"text" : "6."
+																									"text" : "3."
 																								}
 
 																							}
@@ -21574,7 +21552,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 548.0, 346.0, 101.0, 22.0 ],
-																					"text" : "18"
+																					"text" : "3"
 																				}
 
 																			}
@@ -22041,7 +22019,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 405.0, 455.0, 75.0, 22.0 ],
-																					"text" : "ho_st"
+																					"text" : "romb"
 																				}
 
 																			}
@@ -23336,7 +23314,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 300.0, 88.0, 101.0, 22.0 ],
-																					"text" : "6. 3."
+																					"text" : "3. 1."
 																				}
 
 																			}
@@ -23777,7 +23755,7 @@
 																									"numoutlets" : 1,
 																									"outlettype" : [ "" ],
 																									"patching_rect" : [ 198.0, 381.0, 154.0, 22.0 ],
-																									"text" : "6. 3."
+																									"text" : "3. 1."
 																								}
 
 																							}
@@ -24073,7 +24051,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 63.333333333333314, 89.0, 90.0, 22.0 ],
-																					"text" : "ho_st1"
+																					"text" : "romb1"
 																				}
 
 																			}
@@ -25050,7 +25028,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 259.5, 367.0, 35.0, 35.0 ],
-																					"text" : "ho_st"
+																					"text" : "romb"
 																				}
 
 																			}
@@ -25958,7 +25936,7 @@
 																			}
 , 																			{
 																				"box" : 																				{
-																					"cols" : 6,
+																					"cols" : 3,
 																					"colwidth" : 20,
 																					"fontface" : 0,
 																					"fontname" : "Arial",
@@ -25970,7 +25948,7 @@
 																					"numoutlets" : 4,
 																					"outlettype" : [ "list", "", "", "" ],
 																					"patching_rect" : [ 13.0, 70.0, 477.0, 389.0 ],
-																					"rows" : 3,
+																					"rows" : 1,
 																					"selmode" : 5,
 																					"vscroll" : 0
 																				}
@@ -26036,7 +26014,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 13.0, 2.0, 87.0, 22.0 ],
-																					"text" : "ho_st1"
+																					"text" : "romb1"
 																				}
 
 																			}
@@ -26488,7 +26466,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 92.25, 304.0, 145.0, 89.0 ],
-																	"text" : "send ::ho_st1::pat"
+																	"text" : "send ::romb1::pat"
 																}
 
 															}
@@ -27000,7 +26978,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 264.0, 102.0, 159.0, 22.0 ],
-													"text" : "ho_st1 _"
+													"text" : "romb1 _"
 												}
 
 											}
@@ -27085,7 +27063,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 486.0, 163.0, 50.0, 62.0 ],
-																	"text" : "::ho_st1::act::pres_menu 1"
+																	"text" : "::romb1::act::pres_menu 1"
 																}
 
 															}
@@ -32786,7 +32764,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 190.0, 31.0, 392.0, 35.0 ],
-																					"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Library/ppooll_presets/xgroove@T\""
+																					"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Library/ppooll_presets/xgroove@T\""
 																				}
 
 																			}
@@ -32805,7 +32783,7 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-66",
-																					"items" : [ "1440_presets.json", ",", "1440wide.json" ],
+																					"items" : [ "musichackspace.json", ",", "wide", ",", "wide.json" ],
 																					"maxclass" : "umenu",
 																					"numinlets" : 1,
 																					"numoutlets" : 3,
@@ -32918,7 +32896,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 110.0, 383.0, 103.0, 22.0 ],
-																					"text" : "tiny"
+																					"text" : "wide"
 																				}
 
 																			}
@@ -33285,7 +33263,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-7",
-																	"items" : [ "12sinsP", ",", "12sinsP copy", ",", "2DslidersP", ",", "2DslidersT", ",", "activetestP", ",", "ambipanning@P", ",", "bach@P", ",", "bach@T", ",", "beautyT", ",", "buffer_hostP", ",", "clocker@P", ",", "control@P", ",", "control@T", ",", "environmentsP", ",", "fffb@P", ",", "flopP", ",", "flopT", ",", "fmrmP", ",", "hardplayT", ",", "ho_stP", ",", "ho_stT", ",", "jit.slide@P", ",", "jit.videoplanesPP", ",", "matrix@P", ",", "mc.random@P", ",", "midikeysP", ",", "modul.atorP", ",", "modul.atorT", ",", "ndi@T", ",", "noize@P", ",", "noize@T", ",", "notepad@P", ",", "notepad@T", ",", "op@P", ",", "overdrive@P", ",", "playlist@P", ",", "pp_worldP", ",", "prdelay@P", ",", "rec_eventsP", ",", "rec_eventsSeq", ",", "simproovP", ",", "sinsEP", ",", "sinsET", ",", "sinusP", ",", "sinusT", ",", "snap@P", ",", "snap@T", ",", "spat.ambicontrol@P", ",", "spat.ambicontrol@T", ",", "spat.ambimonitor@P", ",", "spat.ambipanning@T", ",", "timeline@P", ",", "TSSSFP", ",", "vbap@P", ",", "vst@P", ",", "xgroove@P", ",", "xgroove@T" ],
+																	"items" : [ ".git", ",", "amxd@P", ",", "amxd@T", ",", "ar.bitglitter@T", ",", "autocount@T", ",", "bangerP", ",", "beastP", ",", "buffer_hostP", ",", "buffubT", ",", "chucker@T", ",", "control@P", ",", "dlgranulator@P", ",", "environmentsP", ",", "fcbControlT", ",", "flopP", ",", "gamepad@T", ",", "gizmo@P", ",", "ho_stP", ",", "INmultiP", ",", "keyfreqP", ",", "matriarch@P", ",", "mmods@P", ",", "modul.atorP", ",", "modul.atorT", ",", "notepad@P", ",", "notepad@T", ",", "plug@P", ",", "polyrhythmusP", ",", "rc.loop@T", ",", "rec_eventsSeq", ",", "rombT", ",", "sh.bubblerT", ",", "sinusP", ",", "sinusT", ",", "snap@P", ",", "uclidP", ",", "vst@P", ",", "w_filterT", ",", "waveletsP", ",", "xgroove@P", ",", "xgroove@T" ],
 																	"maxclass" : "umenu",
 																	"numinlets" : 1,
 																	"numoutlets" : 3,
@@ -34112,7 +34090,7 @@
 																									"numoutlets" : 1,
 																									"outlettype" : [ "" ],
 																									"patching_rect" : [ 333.5, 258.0, 226.0, 62.0 ],
-																									"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets/vst@T\""
+																									"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets/xgroove@T\""
 																								}
 
 																							}
@@ -34314,7 +34292,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 245.0, 294.5, 226.0, 62.0 ],
-																					"text" : "write \"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets/vst@T/default.json\""
+																					"text" : "write \"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets/xgroove@T/default.json\""
 																				}
 
 																			}
@@ -34461,7 +34439,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 71.0, 41.0, 197.0, 22.0 ],
-																					"text" : "vst@1"
+																					"text" : "xgroove@1"
 																				}
 
 																			}
@@ -40182,7 +40160,7 @@
 														"boxes" : [ 															{
 																"box" : 																{
 																	"border" : 0,
-																	"embedstate" : [ [ "bgcolor", 0, 0, 0, 0 ], [ "crop", 0, 0, 1, 1 ], [ "fgcolor", 0.556641793251038, 0.1, 0.1, 1.1 ], [ "zoom", 0.92 ] ],
+																	"embedstate" : [ [ "bgcolor", 0, 0, 0, 0 ], [ "crop", 0, 0, 1, 1 ], [ "fgcolor", 0.1, 0.1, 1.1, 1.1 ], [ "zoom", 0.92 ] ],
 																	"filename" : "ll.logo.js",
 																	"id" : "obj-28",
 																	"maxclass" : "v8ui",
@@ -40635,13 +40613,13 @@
 
 															}
  ],
-														"bgcolor" : [ 0.456641793251038, 0.0, 0.0, 1.0 ]
+														"bgcolor" : [ 0.0, 0.0, 1.0, 1.0 ]
 													}
 ,
 													"patching_rect" : [ 427.0, 270.0, 64.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"fontsize" : 10.0,
-														"locked_bgcolor" : [ 0.456641793251038, 0.0, 0.0, 1.0 ]
+														"locked_bgcolor" : [ 0.0, 0.0, 1.0, 1.0 ]
 													}
 ,
 													"text" : "p screen",
@@ -42420,7 +42398,7 @@
 												"box" : 												{
 													"bblend" : 100,
 													"bgcolor" : [ 0.095481, 0.100396, 0.100293, 1.0 ],
-													"celldef" : [ [ 0, 0, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 0, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 1, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 2, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 3, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 4, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 5, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 0, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 1, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 2, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 3, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 4, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 5, 0, 0, 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 6, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 7, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 8, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 9, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 10, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 11, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 12, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 13, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ] ],
+													"celldef" : [ [ 0, 0, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 0, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 1, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 2, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 3, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 4, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 5, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 0, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 1, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 2, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 3, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 4, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 5, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 6, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 7, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 8, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 9, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 10, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 11, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 12, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 13, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ] ],
 													"coldef" : [ [ 0, 100, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 69, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 540, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ] ],
 													"cols" : 3,
 													"colwidth" : 700,
@@ -43998,7 +43976,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 596.0, 117.0, 76.0, 20.0 ],
-																	"text" : "time"
+																	"text" : "stopwatch"
 																}
 
 															}
@@ -47700,6 +47678,18 @@
 										"gridsize" : [ 15.0, 15.0 ],
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-5",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 33.0, 251.0, 95.0, 20.0 ],
+													"text" : "route --add_folder--"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-14",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
@@ -48008,7 +47998,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 640.0, 308.0, 640.0, 480.0 ],
+														"rect" : [ 53.0, 355.0, 640.0, 480.0 ],
 														"gridsize" : [ 15.0, 15.0 ],
 														"boxes" : [ 															{
 																"box" : 																{
@@ -48245,7 +48235,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 266.0, 718.0, 212.0, 20.0 ],
-													"text" : "load buffer_host"
+													"text" : "load (__acts__).maxpat"
 												}
 
 											}
@@ -49672,13 +49662,13 @@
 																				"box" : 																				{
 																					"fontname" : "Geneva",
 																					"fontsize" : 9.0,
-																					"id" : "obj-4",
+																					"id" : "obj-6",
 																					"maxclass" : "newobj",
 																					"numinlets" : 1,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "signal" ],
 																					"patching_rect" : [ 50.0, 100.0, 190.0, 0.0 ],
-																					"text" : "mc.sfrecord~ 2",
+																					"text" : "mc.sfrecord~ 16",
 																					"varname" : "sfr"
 																				}
 
@@ -49686,7 +49676,7 @@
  ],
 																		"lines" : [ 																			{
 																				"patchline" : 																				{
-																					"destination" : [ "obj-4", 0 ],
+																					"destination" : [ "obj-6", 0 ],
 																					"source" : [ "obj-14", 0 ]
 																				}
 
@@ -50068,13 +50058,13 @@
 																					"fontname" : "Arial",
 																					"fontsize" : 13.0,
 																					"id" : "obj-2",
-																					"linecount" : 4,
+																					"linecount" : 5,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 479.0, 221.0, 106.0, 67.0 ],
-																					"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Library\""
+																					"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Library\""
 																				}
 
 																			}
@@ -50359,13 +50349,13 @@
 																									"fontname" : "Arial",
 																									"fontsize" : 13.0,
 																									"id" : "obj-19",
-																									"linecount" : 2,
+																									"linecount" : 3,
 																									"maxclass" : "message",
 																									"numinlets" : 2,
 																									"numoutlets" : 1,
 																									"outlettype" : [ "" ],
 																									"patching_rect" : [ 272.0, 428.0, 260.0, 38.0 ],
-																									"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Library\""
+																									"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Library\""
 																								}
 
 																							}
@@ -50672,7 +50662,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 525.0, 380.0, 168.0, 67.0 ],
-																					"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Library/0.0.0llrec0.0.0.\""
+																					"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Library/0.0.0llrec0.0.0.\""
 																				}
 
 																			}
@@ -51934,10 +51924,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 493.0, 69.0, 92.0, 21.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 842, 164, 1920, 407 ],
+						"client_rect" : [ 545, 133, 1800, 849 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 0, 0, 640, 240 ]
+						"storage_rect" : [ 583, 68, 1034, 196 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -51995,7 +51985,7 @@
 					"restore" : 					{
 						"act_menu" : [ "(__acts__)" ],
 						"audioON/OFF" : [ 0 ],
-						"chans" : [ 2.0 ],
+						"chans" : [ 16 ],
 						"def" : [ -1 ],
 						"envi_menu" : [ "(environments)" ],
 						"favorites" : [ "(favorites)" ],
@@ -52005,11 +51995,11 @@
 						"rec" : [ 0 ],
 						"screen" : [ 0 ],
 						"stereo" : [ 0 ],
-						"time" : [ 3804.0 ],
+						"time" : [ 940.0 ],
 						"vol" : [ 1.0 ],
 						"vol_ramp" : [ 10.000000000000002 ],
 						"vol_slider" : [ 1.0 ],
-						"watch_menu" : [ "time" ],
+						"watch_menu" : [ "stopwatch" ],
 						"write_envi" : [ -1 ]
 					}
 ,
@@ -52518,7 +52508,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "u913008575.js",
+				"name" : "u676022410.js",
 				"bootpath" : "~/Library/Application Support/Cycling '74/Max 9/Settings/temp64-Max",
 				"patcherrelativepath" : "../../../../../Library/Application Support/Cycling '74/Max 9/Settings/temp64-Max",
 				"type" : "TEXT",

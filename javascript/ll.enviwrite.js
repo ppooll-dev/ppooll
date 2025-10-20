@@ -263,7 +263,7 @@ function getacts(act_list) {
     var enviDict = new Dict("environment");
     enviDict.parse(JSON.stringify(environment));
     enviDict.export_json(dict.props.jsonPath);
-    outlet(2, "bang");
+    outlet(2, "reset", dict.props.envi_name);
     ppost("done!");
 }
 
