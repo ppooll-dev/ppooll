@@ -1,5 +1,5 @@
 {
-	"window" : [ 503, 153, 662, 270 ],
+	"window" : [ 420, 190, 579, 307 ],
 	"program_files" : 	{
 		"patching_rect" : [ 44, 33, 43, 19 ],
 		"hidden" : 0,
@@ -136,7 +136,7 @@
 ,
 	"vst_program" : 	{
 		"patching_rect" : [ 85, 34, 16, 16 ],
-		"hidden" : 1,
+		"hidden" : 0,
 		"bgcolor" : [ 0.107977, 0.766704, 0.422636, 1 ],
 		"bordercolor" : [ 0.5, 0.5, 0.5, 1 ],
 		"fontsize" : 12,

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 503.0, 153.0, 159.0, 117.0 ],
+		"rect" : [ 420.0, 190.0, 159.0, 117.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "vst@1",
@@ -55,7 +55,6 @@
 					"bgcolor" : [ 0.107977, 0.766704, 0.422636, 1.0 ],
 					"fontface" : 0,
 					"format" : [ 1 ],
-					"hidden" : 1,
 					"id" : "obj-1045",
 					"max" : 16.0,
 					"maxclass" : "ll_number",
@@ -344,6 +343,28 @@
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-7",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 0,
+									"patching_rect" : [ 802.0, 237.5, 79.0, 22.0 ],
+									"text" : "ll.s vst_name"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-8",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 0,
+									"patching_rect" : [ 735.75, 237.5, 65.0, 22.0 ],
+									"text" : "ll.s vst_AU"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-75",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -493,7 +514,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 760.0, 201.0, 29.0, 22.0 ],
+									"patching_rect" : [ 852.0, 201.0, 29.0, 22.0 ],
 									"text" : "p pf"
 								}
 
@@ -2654,7 +2675,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 48.0, 226.0, 144.0, 22.0 ],
-													"text" : "plug@1 ho_st1"
+													"text" : "ho_st1 vst@1 amxd@1"
 												}
 
 											}
@@ -2894,11 +2915,11 @@
 								"box" : 								{
 									"id" : "obj-24",
 									"maxclass" : "newobj",
-									"numinlets" : 7,
-									"numoutlets" : 7,
-									"outlettype" : [ "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 387.0, 173.0, 387.0, 22.0 ],
-									"text" : "route ll_pm coll collectParams check_pointing_acts def_folders vstscan"
+									"numinlets" : 9,
+									"numoutlets" : 9,
+									"outlettype" : [ "", "", "", "", "", "", "", "", "" ],
+									"patching_rect" : [ 387.0, 173.0, 484.0, 22.0 ],
+									"text" : "route ll_pm coll collectParams check_pointing_acts def_folders vstscan vst_AU vst_name"
 								}
 
 							}
@@ -3587,7 +3608,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 500.0, 100.0, 733.0, 793.0 ],
+										"rect" : [ 709.0, 100.0, 733.0, 791.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"boxes" : [ 											{
 												"box" : 												{
@@ -3680,7 +3701,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 405.0, 236.0, 886.0, 661.0 ],
+														"rect" : [ 549.0, 207.0, 886.0, 661.0 ],
 														"gridsize" : [ 15.0, 15.0 ],
 														"boxes" : [ 															{
 																"box" : 																{
@@ -4707,7 +4728,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 176.0, 193.5, 364.0, 22.0 ],
+													"patching_rect" : [ 178.0, 189.611449999999991, 364.0, 22.0 ],
 													"text" : "clear, append writepgm, append writebank, append read, append -"
 												}
 
@@ -4777,7 +4798,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 141.5, 457.0, 79.0, 22.0 ],
+													"patching_rect" : [ 75.0, 447.0, 79.0, 22.0 ],
 													"text" : "ll.r vst_name"
 												}
 
@@ -5585,7 +5606,7 @@
 									"clickthrough" : 0,
 									"enablehscroll" : 0,
 									"enablevscroll" : 0,
-									"id" : "obj-7",
+									"id" : "obj-16",
 									"lockeddragscroll" : 0,
 									"lockedsize" : 0,
 									"maxclass" : "newobj",
@@ -5641,10 +5662,10 @@
 ,
 													"fileref" : 													{
 														"name" : "",
-														"filename" : "_20251019_13.maxsnap",
+														"filename" : "_20251019_15.maxsnap",
 														"filepath" : "~/Documents/Max 9/Snapshots",
 														"filepos" : -1,
-														"snapshotfileid" : "a22ac0893f93509f5daade4b1b68c3fc"
+														"snapshotfileid" : "668d8e46f8ad651c4beefd903c739826"
 													}
 
 												}
@@ -5669,7 +5690,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-7", 0 ],
+									"destination" : [ "obj-16", 0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -5683,6 +5704,48 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"source" : [ "obj-16", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"source" : [ "obj-16", 6 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-16", 4 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-43", 0 ],
+									"source" : [ "obj-16", 5 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-16", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-66", 0 ],
+									"source" : [ "obj-16", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-26", 0 ],
 									"source" : [ "obj-18", 0 ]
 								}
@@ -5690,7 +5753,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-7", 0 ],
+									"destination" : [ "obj-16", 0 ],
 									"source" : [ "obj-21", 0 ]
 								}
 
@@ -5739,7 +5802,21 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"source" : [ "obj-24", 7 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-71", 0 ],
+									"source" : [ "obj-24", 8 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
 									"source" : [ "obj-24", 6 ]
 								}
 
@@ -5819,48 +5896,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-52", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-10", 0 ],
-									"source" : [ "obj-7", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"source" : [ "obj-7", 6 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"source" : [ "obj-7", 4 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-43", 0 ],
-									"source" : [ "obj-7", 5 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
-									"source" : [ "obj-7", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-66", 0 ],
-									"source" : [ "obj-7", 2 ]
 								}
 
 							}
@@ -5958,6 +5993,20 @@
 						"open!" : 910,
 						"presets" : 1016,
 						"preset-ramp" : 1017,
+						"color" : 102,
+						"gainfive" : 101,
+						"gainfour" : 102,
+						"ingain" : 103,
+						"outgain" : 104,
+						"gainone" : 105,
+						"gaintwo" : 106,
+						"gainseven" : 107,
+						"gainthree" : 108,
+						"midgain" : 100,
+						"sidegain" : 101,
+						"direction" : 105,
+						"Bypass" : 106,
+						"Program" : 107,
 						"ll.blues::status" : 1,
 						"ll.blues::outputs~" : 2,
 						"ll.blues::outputsMix~" : 3,
@@ -5966,10 +6015,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 769, 100, 1512, 880 ],
+						"client_rect" : [ 499, 162, 1139, 402 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 686, 177, 1286, 477 ]
+						"storage_rect" : [ 0, 0, 640, 240 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -6168,7 +6217,7 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-18::obj-7" : [ "vst", "vst", 0 ],
+			"obj-18::obj-16" : [ "vst", "vst", 0 ],
 			"parameterbanks" : 			{
 				"0" : 				{
 					"index" : 0,
@@ -6183,7 +6232,7 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "_20251019_13.maxsnap",
+				"name" : "_20251019_15.maxsnap",
 				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../../Snapshots",
 				"type" : "mx@s",

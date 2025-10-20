@@ -161,6 +161,21 @@ function vstCreate(c_in, c_out) {
     }
 }
 
+function getPluginType(pluginPath) {
+    if (!pluginPath || typeof pluginPath !== 'string') return null;
+
+    // Normalize path to lowercase for consistent checking
+    const path = pluginPath.toLowerCase();
+
+    if (path.endsWith('.vst3')) {
+        return 1;
+    } else if (path.endsWith('.vst')) {
+        return 1;
+    } else if (path.endsWith('.component')) {
+        return 0;
+    }
+}
+
 // Load vst with full path
 function loadVST(pluginPath) {
     // post(pluginPath, "\n")
@@ -172,10 +187,11 @@ function loadVST(pluginPath) {
     currentShell = null;
     currentSubNames = [];
 
-    // TODO: set [ ll.s vst_AU ]
-    //          (1 for vst, 0 for AU)
-    mc_vst.message("getsubnames");
+    // set [ ll.s vst_AU ]
+    out("vst_AU", getPluginType(pluginPath))
 
+    // check if shell plugin
+    mc_vst.message("getsubnames");
     if (currentSubNames.length) {
         // mc_vst.message("drop")
         currentShell = currentPlug;
@@ -349,6 +365,7 @@ function vst_folder(selection) {
             // TODO: ll.p def_shell
         } else {
             pp.getnamed("def_folder").message(currentPath);
+            out("vst_name", selection)
             loadVST(currentFiles[selection]);
         }
     }
