@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 449.0, 199.0, 251.0, 282.0 ],
+		"rect" : [ 443.0, 185.0, 251.0, 282.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"enablehscroll" : 0,
@@ -707,7 +707,7 @@
 						"presets" : [ 0 ],
 						"show_envelope" : [ 0 ],
 						"speed" : [ 1.0 ],
-						"start" : [ 0.0 ],
+						"start" : [ 0.3 ],
 						"toggle_env" : [ 0 ],
 						"trigger" : [ -1 ],
 						"vzoom" : [ 1.0 ],
@@ -1841,7 +1841,7 @@
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 186.72999999999999, 339.800000000000011, 32.0, 22.0 ],
+																	"patching_rect" : [ 167.5, 389.0, 32.0, 22.0 ],
 																	"text" : "print"
 																}
 
@@ -3956,7 +3956,7 @@
 													"patching_rect" : [ 32.0, 267.0, 692.635000000000105, 22.0 ],
 													"style" : "xgroove",
 													"text" : "mc.gen~",
-													"wrapper_uniquekey" : "u663003611"
+													"wrapper_uniquekey" : "u184006241"
 												}
 
 											}
@@ -9188,7 +9188,6 @@
 					"selcolor" : [ 0.816, 0.71, 0.851, 0.529 ],
 					"selectkeep" : 1,
 					"setmode" : 2,
-					"setonly" : 1,
 					"varname" : "wf",
 					"wfcolor" : [ 0.816, 0.71, 0.851, 1.0 ]
 				}
