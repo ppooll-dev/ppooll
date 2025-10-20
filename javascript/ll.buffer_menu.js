@@ -30,7 +30,7 @@ function msg_dictionary(dict){
 }
 
 function setSelected(label){
-    if(!buffers[label])
+    if(!buffers || !buffers[label])
         return;
 
     // post("setSelected " + label + " \n")

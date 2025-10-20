@@ -6,6 +6,8 @@ let pathFactory = null;
 
 let envisAll = [];
 
+let gate = 0;
+
 // Remove file ex from string name
 function removeExtension(filename) {
     return filename.replace(/\.[^/.]+$/, "");
@@ -37,8 +39,10 @@ function findEnvironments(path) {
 }
 
 function reset(name){
+    gate = 1;
     fillMenu()
     outlet(0, "setsymbol", name);
+    gate = 0;
 }
 
 function fillMenu(){
@@ -85,6 +89,10 @@ function saveload(){
 }
 
 function selectEnvironment(name){
+    if(gate){
+        gate = 0;
+        return;
+    }
     // TODO: What about folders/json having the same name?
     //      Maybe uncheck "stores symbol" and use the umenu numeric number to get the environment?
     const selectedEnvi = envisAll.find(e => e.name === name);

@@ -30,6 +30,17 @@ function getUI() {
     return null;
 }
 
+function msg_dictionary(dict){
+    pb.clear();
+    buffersDeleted = {};
+    buffers = {}
+    sbCount = 1;
+
+    dict.buffers.forEach((b, i) => initBuffer(b, i));
+
+    update_buffer_list();
+}
+
 // Read a "coll" exported file into a dict
 function read_coll(path) {
     var f = new File(path, "read");

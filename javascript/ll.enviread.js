@@ -1,4 +1,4 @@
-outlets = 3;
+outlets = 2;
 // var d = new Dict("environment");
 var stateDict = new Dict("ppoollstate");
 
@@ -19,6 +19,8 @@ let environment = null;
 let acts = null;
 let isopen, toopen;
 
+let buffers = null;
+
 // don't recall presets for envi folders
 const presetsIgnore = ["ho_st1"]
 
@@ -37,15 +39,19 @@ function debug_post(a) {
 //##################################################################____acts
 
 function msg_dictionary(d) {
+    buffers = null;
     dict = d;
 
 	outlet(0, dict.props.path);
 
     environment = dict.environment;
+    if(environment.buffer_host1){
+        buffers = environment.buffer_host1.ll_buffers;
+    }
 
-	let enviDict = new Dict("environment");
-	enviDict.parse(JSON.stringify(environment));
-	environment = dict.environment;
+	// let enviDict = new Dict("environment");
+	// enviDict.parse(JSON.stringify(environment));
+	// environment = dict.environment;
 
     loadActs();
 }
@@ -66,14 +72,6 @@ function canonicalActOrder(allKeys) {
     }
 
     return filtered;
-}
-
-function onBuffersLoaded(){
-    if(!isGettingBuffers)
-        return;
-
-    isGettingBuffers = false;
-    loadParams()
 }
 
 function loadActs() {
@@ -119,19 +117,15 @@ function loadAct() {
         messnamed("ll_actload", toopen[0]);
         return;
     }
-    loadBuffers()
-}
-
-function loadBuffers(){
-    // if (dict.buffers_path) {
-    //     isGettingBuffers = true;
-    //     // messnamed("lload", "buffer_host.maxpat")
-	// 	outlet(0, "buffers...")
-    //     outlet(2, dict.buffers_path);
-    //     return;
-    // }
-
     outlet(0, "actsdone");
+
+    // load buffers
+    if(buffers){
+        const buffer_dict = new Dict("ll_buffers");
+        buffer_dict.parse(JSON.stringify(buffers))
+        messnamed("llenviread_loadbuffers", "bang")
+    }
+
 	loadParams();
 }
 
@@ -343,8 +337,13 @@ function check_newblues(a) {
             post("no object called ll.blues or llblues \n");
         }
     }
-    if (blues_o)
-        new_blues_oldenvi = blues_o.subpatcher().getnamed("outputs~") != 0;
+    if (blues_o){
+        try{
+            new_blues_oldenvi = blues_o.subpatcher().getnamed("outputs~") != 0;
+        }catch(e){
+            post(e, "\n")
+        }
+    }
     //post("newblues",new_blues_oldenvi,"\n");
 }
 

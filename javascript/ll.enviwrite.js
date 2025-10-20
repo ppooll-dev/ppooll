@@ -6,7 +6,7 @@
 */
 
 autowatch = 1;
-outlets = 3;
+outlets = 1;
 
 var actr = new Global("act_rep");
 
@@ -82,7 +82,9 @@ function msg_dictionary(d){
 
      // Create Environment folders.  Creation triggers setBuffers
     if(writeParams.type === "folder"){
-        outlet(1, `${enviDir}/${enviName}`, ...subfolders);
+        outlet(0, 'folder', 'create', `${enviDir}/${enviName}`, ...subs);
+        outlet(0, 'folder', 'clear', `${enviDir}/${enviName}`, "presets");
+
     }else if(writeParams.type === "json"){
         dict.props.jsonPath = `${enviDir}/${enviName}.json`;
         writeEnvi();
@@ -143,8 +145,8 @@ async function saveToFolder(){
             const hasPresets = slots.length > 0;
 
             if (hasPresets) {
-                outlet(0, "send", `::${act}::pat`);
-                outlet(0, "write", `${enviDir}/${enviName}/presets/${act}.json`);
+                outlet(0, "pattrforward", "send", `::${act}::pat`);
+                outlet(0, "pattrforward", "write", `${enviDir}/${enviName}/presets/${act}.json`);
                 // post("wrote presets for", act, "\n");
             } else {
                 // post("no presets for", act, "— skipping file\n");
@@ -263,7 +265,7 @@ function getacts(act_list) {
     var enviDict = new Dict("environment");
     enviDict.parse(JSON.stringify(environment));
     enviDict.export_json(dict.props.jsonPath);
-    outlet(2, "reset", dict.props.envi_name);
+    outlet(0, "done", "reset", dict.props.envi_name);
     ppost("done!");
 }
 

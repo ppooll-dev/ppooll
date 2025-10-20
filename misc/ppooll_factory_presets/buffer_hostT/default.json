@@ -1,5 +1,5 @@
 {
-	"window" : [ 230, 337, 349, 523 ],
+	"window" : [ 286, 219, 405, 405 ],
 	"buffer_list" : 	{
 		"patching_rect" : [ -1, 51, 120, 93 ],
 		"hidden" : 0,
@@ -246,7 +246,7 @@
 	}
 ,
 	"ll_buffers" : 	{
-		"patching_rect" : [ 278, 127, 67, 22 ],
+		"patching_rect" : [ 205, 108, 79, 22 ],
 		"hidden" : 1
 	}
 

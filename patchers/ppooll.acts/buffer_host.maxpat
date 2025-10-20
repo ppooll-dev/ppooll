@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 230.0, 337.0, 119.0, 186.0 ],
+		"rect" : [ 286.0, 219.0, 119.0, 186.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "buffer_host1",
@@ -22,7 +22,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 5,
 					"outlettype" : [ "dictionary", "", "", "", "" ],
-					"patching_rect" : [ 278.0, 127.0, 67.0, 22.0 ],
+					"patching_rect" : [ 205.0, 108.0, 79.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
@@ -41,7 +41,7 @@
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "dict buffers",
+					"text" : "dict ll_buffers",
 					"varname" : "ll_buffers"
 				}
 
@@ -134,8 +134,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 227.0, 167.0, 114.0, 22.0 ],
-					"restore" : [ "Macintosh HD:/Users/josephsteccato/Documents/Max 9/Packages/ppooll/media/ll.samples/claire_de_la_lune.aif" ],
+					"patching_rect" : [ 170.0, 160.0, 114.0, 22.0 ],
+					"restore" : [ "Macintosh HD:/Users/josephsteccato/Music/ppooll/ppooll_rec/2025.9.1llrec23.24.20.wav" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -369,27 +369,16 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 423.0, 102.0, 986.0, 788.0 ],
+						"rect" : [ 468.0, 100.0, 986.0, 788.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-5",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 435.0, 260.0, 228.0, 20.0 ],
-									"text" : "separate dict to avoid unwanted reloads"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-8",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 5,
 									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 273.0, 260.0, 67.0, 22.0 ],
+									"patching_rect" : [ 633.0, 171.0, 79.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"legacy" : 0,
@@ -397,7 +386,31 @@
 										"parameter_mappable" : 0
 									}
 ,
-									"text" : "dict buffers"
+									"text" : "dict ll_buffers"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-12",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 633.0, 142.0, 133.0, 22.0 ],
+									"text" : "r llenviread_loadbuffers"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 627.0, 74.0, 76.0, 22.0 ],
+									"text" : "ll.p ll_buffers"
 								}
 
 							}
@@ -433,7 +446,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 384.5, 223.0, 24.0, 24.0 ]
+									"patching_rect" : [ 186.0, 218.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -480,7 +493,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 351.5, 224.0, 29.5, 22.0 ],
+									"patching_rect" : [ 153.0, 219.0, 29.5, 22.0 ],
 									"text" : "edit"
 								}
 
@@ -505,7 +518,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 5,
 									"outlettype" : [ "dictionary", "", "", "", "" ],
-									"patching_rect" : [ 351.5, 260.0, 79.0, 22.0 ],
+									"patching_rect" : [ 153.0, 255.0, 79.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"legacy" : 0,
@@ -2586,6 +2599,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-12", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-28", 0 ],
 									"source" : [ "obj-16", 0 ]
 								}
@@ -2602,14 +2622,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-41", 0 ],
-									"order" : 2,
-									"source" : [ "obj-16", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-8", 0 ],
 									"order" : 1,
 									"source" : [ "obj-16", 1 ]
 								}
@@ -2750,6 +2762,13 @@
 								}
 
 							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-16", 0 ],
+									"source" : [ "obj-5", 0 ]
+								}
+
+							}
  ]
 					}
 ,
@@ -2880,7 +2899,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 606.0, 121.0, 95.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 842, 164, 1920, 407 ],
+						"client_rect" : [ 434, 164, 1512, 407 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 0, 0, 640, 240 ]
@@ -2951,7 +2970,7 @@
  ],
 						"normalize" : [ -1 ],
 						"open!" : [ -1 ],
-						"size-box" : [ 4096.507936507936392 ]
+						"size-box" : [ 28495.782312925170118 ]
 					}
 ,
 					"text" : "autopattr autopattr",
@@ -3031,6 +3050,16 @@
  ],
 		"parameters" : 		{
 			"obj-1" : [ "dict", "dict", 0 ],
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ],
+					"buttons" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
 			"inherited_shortname" : 1
 		}
 ,
