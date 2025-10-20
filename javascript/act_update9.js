@@ -18,11 +18,14 @@ function actname(a){
 }
 function update(){
 	let btxt = actObj.boxtext;
+	// post(actObj, "\n")
 	color = btxt.replace(btext[0]+" "+btext[1]+" ","");
-	post("btxt",btext, "color", btext[2]);
-	color = makecolor(color);
-	post("make",color, "\n" );
-	return;
+	// post("btxt",btext, "color", btext[2], "\n");
+	// var new_color = makecolor(color);
+	// post("make",new_color, "\n" );
+	// return;
+
+	makecolor(color); // overwrites "color"
 	if (btext[0] == "actmaker"){
 		tpp.remove(actObj);
 		let am = tpp.newdefault(40,80,"bpatcher","@name", "actmakeB.maxpat", "@args",btext[1],colorH);
@@ -35,6 +38,7 @@ function update(){
 // ############################# color hassels....
 function makecolor(c) {
 	//post("color_make",c, "\n");
+
     c = c.toString();
     if (c == 0) color = [0, 0, 0];
     else if (c == 1) color = [255, 255, 255];
@@ -57,7 +61,8 @@ function makecolor(c) {
 		}
     }
 	colorH = rgbToHex(color[0],color[1],color[2]);
-	//post("color",color,"colorH",colorH,"\n");
+	// return color;
+	// post("color",color,"colorH",colorH,"\n");
 }
 function componentToHex(c) {
   var hex = c.toString(16);
