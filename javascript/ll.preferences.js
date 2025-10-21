@@ -3,7 +3,7 @@ outlets = 1;
 var preferences = new Dict("ppooll-preferences"); 
 var actr = new Global("act_rep");
 
-var dac_channels = ["Off", 1,2];
+var dac_channels = ["Off", 1, 2];
 var lastenvi = "no";
 
 var presetpath;
@@ -172,5 +172,3 @@ function get_preferences(){
 	//post("co",...preferences.get("general::screencolor"),"\n")
 	messnamed("ll_preferences_ready", "bang");
 }
-
-get_preferences()
