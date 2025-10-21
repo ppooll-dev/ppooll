@@ -109,6 +109,15 @@ function sethost_channels(c){
 	ll_prf_rewrite();
 }
 
+// audio key
+function text(entered_text){
+	let key = entered_text ? entered_text.slice(-1).charCodeAt(0) : 0;
+	this.patcher.getnamed("audio_key").message( ...(key > 0 ? ["set", entered_text.slice(-1)] : ["clear"]) );
+	outlet(0, "audio_key", key)
+	preferences.set("general::audioON/OFF", key);
+	ll_prf_rewrite()
+}
+
 //=====================================get_preferences========================
 function readfile(p){
 	presetpath = p;
@@ -120,17 +129,22 @@ function readfile(p){
 		exists = 1;
 		f.close();
 	} else {
-		post("could not open file: " + s + "need to try old file..", "\n");
+		post("could not open file: " + s + " need to try old file..", "\n");
 	}
 	if (exists) {
 		preferences.readany(s);
 		//get_preferences();
 	}
-
 }
+
 function get_preferences(){
 
-	messnamed("ll_audio_key_prf","bang");
+	// messnamed("ll_audio_key_prf","bang");
+	let current_key = preferences.get("general::audioON/OFF");
+	this.patcher.getnamed("audio_key").message("set", String.fromCharCode(current_key));
+	outlet(0, "audio_key", current_key)
+
+	// text( String.fromCharCode(preferences.get("general::audioON/OFF")) );
 			//post("zzzzz");
 	messnamed ("ho_st1", "v8", "getnamed", "chans");
 	actr.object.message(preferences.get("general::host_channels"));
@@ -159,3 +173,4 @@ function get_preferences(){
 	messnamed("ll_preferences_ready", "bang");
 }
 
+get_preferences()
