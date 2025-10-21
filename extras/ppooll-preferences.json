@@ -1,0 +1,43 @@
+{
+	"general" : 	{
+		"screencolor" : [ 0, 0.183698773384094, 1, 1 ],
+		"audioON/OFF" : 0,
+		"quickrecord_samptype" : "int24",
+		"quickrecord_fileformat" : "wav",
+		"cluewindow" : 1,
+		"pfl_channel" : 0,
+		"autoload" : "none",
+		"check_for_updates" : 0,
+		"flop_disable_cursor" : 0,
+		"host_channels" : 2
+	}
+,
+	"file_paths" : 	{
+		"quickrecord_path" : 0,
+		"unshared_acts" : "",
+		"sdif_folder" : "",
+		"sound_folders" : "",
+		"vst@_folders" : "",
+		"amxd@_folders" : "",
+		"jit.rec_folders" : ""
+	}
+,
+	"act_usage" : 	{
+		"favorite_acts" : "",
+		"never_used_acts" : "",
+		"sometimes_used_acts" : ""
+	}
+,
+	"buffer_host" : 	{
+		"channels" : 2,
+		"length" : 1000
+	}
+,
+	"envi_saving" : 	{
+		"type" : "folder",
+		"copy_buffers" : 0,
+		"write_files" : 0,
+		"write_sample_buffers" : 0
+	}
+
+}
