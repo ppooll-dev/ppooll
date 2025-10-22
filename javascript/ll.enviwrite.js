@@ -332,25 +332,27 @@ function get_pat() {
 function addParam(args) {
     //var args = arrayfromargs(arguments);
     // post("Received args: ", args, "\n");
+    try{
+        if (currentAct === null) {
+            post(
+                "error ll.enviwrite.js: No current act set. Cannot add parameter.\n"
+            );
+            return;
+        }
+        // Extract the parameter name and remove it from args
+        var paramName = args.shift();
 
-    if (currentAct === null) {
-        post(
-            "error ll.enviwrite.js: No current act set. Cannot add parameter.\n"
-        );
-        return;
+        // The remaining args array is the value for the parameter
+        var paramValue = args.length > 1 ? args : args[0];
+        environment[currentAct][paramName] = paramValue;
+
+        if(paramValue[0] === "dictionary"){
+            const innerDict = new Dict(paramValue[1])
+            const data = JSON.parse(innerDict.stringify());
+            environment[currentAct][paramName] = data;
+        }   
+        }catch(e){
+            post("error ll.enviwrite.js: addParam failed.", args, "\n"
+        )
     }
-    // Extract the parameter name and remove it from args
-    var paramName = args.shift();
-
-    // The remaining args array is the value for the parameter
-    var paramValue = args.length > 1 ? args : args[0];
-    environment[currentAct][paramName] = paramValue;
-
-    if(paramValue[0] === "dictionary"){
-        const innerDict = new Dict(paramValue[1])
-        const data = JSON.parse(innerDict.stringify());
-        environment[currentAct][paramName] = data;
-    }   
-    // Optional: Output the updated dictionary for verification
-    // post("Updated parameter '", paramKey, "' with value: ", paramValue, "\n");
 }
