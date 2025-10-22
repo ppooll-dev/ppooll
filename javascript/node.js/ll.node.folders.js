@@ -30,6 +30,13 @@ function resolveCrossPlatformPath(input) {
 // --- Clear folder helper ---
 async function clearFolder(folderPath) {
   try {
+    // Check if the folder exists
+    await fs.access(folderPath).catch(() => {
+      // If it doesn’t exist, just skip silently
+      return null;
+    });
+
+    // Confirm existence after access
     const files = await fs.readdir(folderPath, { withFileTypes: true });
 
     const tasks = files.map(async (file) => {
@@ -37,13 +44,16 @@ async function clearFolder(folderPath) {
       if (file.isDirectory()) {
         await fs.rm(fullPath, { recursive: true, force: true });
       } else {
-        await fs.unlink(fullPath);
+        await fs.unlink(fullPath).catch(() => {}); // ignore missing files
       }
     });
 
     await Promise.all(tasks);
   } catch (err) {
-    Max.error(`Error clearing "${folderPath}": ${err.message}`);
+    // Only post unexpected errors (not ENOENT)
+    if (err.code !== 'ENOENT') {
+      Max.post(`Error clearing "${folderPath}": ${err.message}`);
+    }
   }
 }
 
