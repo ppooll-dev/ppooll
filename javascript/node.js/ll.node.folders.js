@@ -7,7 +7,7 @@ async function createFolder(p) {
   try {
     await fs.mkdir(p, { recursive: true });
   } catch (err) {
-    Max.error(`Error creating "${p}": ${err.message}`);
+    Max.post(`Error creating "${p}": ${err.message}`);
   }
 }
 
