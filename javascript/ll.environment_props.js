@@ -165,7 +165,7 @@ function init() {
     updateUI();
 }
 
-function save_as_default() {
+function save_as_default_preferences() {
     preferences.set("envi_saving::type", type);
     preferences.set("envi_saving::copy_buffers", copy_buffers);
     preferences.set("envi_saving::write_files", write_files);
