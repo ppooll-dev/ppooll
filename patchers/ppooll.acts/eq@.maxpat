@@ -4,20 +4,20 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 7,
+			"revision" : 9,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 656.0, 292.0, 300.0, 157.0 ],
+		"rect" : [ 993.0, 74.0, 300.0, 157.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"enablevscroll" : 0,
 		"globalpatchername" : "eq@1",
 		"boxes" : [ 			{
 				"box" : 				{
-					"args" : [ "@in_mix", 1 ],
+					"args" : [ "@status", 1, 1, 0, 0, 0, 1 ],
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -31,7 +31,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 131.0, 301.0, 27.0 ],
+					"patching_rect" : [ 0.0, 131.0, 301.0, 26.0 ],
 					"varname" : "ll.blues",
 					"viewvisibility" : 1
 				}
@@ -109,8 +109,8 @@
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 263.0, 114.0, 37.0, 16.0 ],
-					"text" : "reset",
-					"texton" : "reset",
+					"text" : "flat",
+					"texton" : "flat",
 					"textoncolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
 					"varname" : "zero"
 				}
@@ -136,27 +136,6 @@
 			}
 , 			{
 				"box" : 				{
-					"hidden" : 1,
-					"id" : "obj-22",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 623.0, 50.5, 82.0, 22.0 ],
-					"restore" : [ "ho_st1~out.1", "_" ],
-					"saved_object_attributes" : 					{
-						"parameter_enable" : 0,
-						"parameter_mappable" : 0
-					}
-,
-					"style" : "default",
-					"text" : "pattr outputs~",
-					"varname" : "outputs~"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"annotation" : "multislider",
 					"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
 					"candicane2" : [ 0.145098, 0.203922, 0.356863, 1.0 ],
@@ -168,7 +147,7 @@
 					"candicane8" : [ 0.027451, 0.447059, 0.501961, 1.0 ],
 					"candycane" : 10,
 					"contdata" : 1,
-					"ghostbar" : 10,
+					"ghostbar" : 30,
 					"id" : "obj-8",
 					"maxclass" : "multislider",
 					"numinlets" : 1,
@@ -245,18 +224,14 @@
 					"active" : 					{
 						"preset-ramp" : 0,
 						"presets" : 0,
-						"title_menu" : 0,
-						"pres_menu" : 0,
-						"tetris_menu" : 0,
-						"master" : 0,
 						"act::active_store" : 0,
 						"act::master/activest" : 0,
 						"ll.blues" : 0,
-						"ll.blues::levels" : 0,
-						"ll.blues::outputs" : 0,
-						"ll.blues::state" : 0,
-						"actmakeB::master/activest" : 0,
-						"actmakeB::active_store" : 0
+						"ll.blues::status" : 0,
+						"ll.blues::outputs~" : 0,
+						"ll.blues::outputsMix~" : 0,
+						"ll.blues::chans" : 0,
+						"ll.blues::levels" : 0
 					}
 ,
 					"hidden" : 1,
@@ -267,17 +242,18 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 623.0, 101.0, 100.0, 22.0 ],
 					"priority" : 					{
-						"title_menu" : 2010,
-						"pres_menu" : 2011,
-						"tetris_menu" : 2012,
-						"master" : 2013
+						"ll.blues::status" : 1,
+						"ll.blues::outputs~" : 2,
+						"ll.blues::outputsMix~" : 3,
+						"ll.blues::chans" : 4,
+						"ll.blues::levels" : 5
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 499, 162, 1139, 402 ],
+						"client_rect" : [ 897, 213, 1512, 873 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 0, 0, 640, 240 ]
+						"storage_rect" : [ 200, 200, 800, 500 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -324,13 +300,13 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 623.0, 194.0, 107.0, 22.0 ],
 					"restore" : 					{
-						"interp" : [ 0.0 ],
+						"interp" : [ 3000.0 ],
 						"max" : [ 12.0 ],
 						"min" : [ -99.0 ],
 						"multislider" : [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 						"preset-ramp" : [ 0 ],
 						"presets" : [ 1 ],
-						"view_band" : [ 0 ],
+						"view_band" : [ 0.0 ],
 						"zero" : [ -1 ]
 					}
 ,
@@ -351,7 +327,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 7,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -370,7 +346,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -537,7 +513,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -595,7 +571,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-29",
-													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
@@ -613,7 +588,7 @@
 															"appversion" : 															{
 																"major" : 9,
 																"minor" : 0,
-																"revision" : 7,
+																"revision" : 9,
 																"architecture" : "x64",
 																"modernui" : 1
 															}
@@ -672,13 +647,13 @@
 																	"box" : 																	{
 																		"maxclass" : "codebox",
 																		"patching_rect" : [ 164.0, 71.0, 788.0, 369.0 ],
-																		"fontname" : "<Monospaced>",
 																		"fontface" : 0,
 																		"numinlets" : 1,
 																		"id" : "obj-3",
-																		"numoutlets" : 1,
 																		"fontsize" : 12.0,
+																		"numoutlets" : 1,
 																		"outlettype" : [ "" ],
+																		"fontname" : "<Monospaced>",
 																		"code" : "\r\nReadChan(buffer, view_band, current_band) {\n\tsample_result, index_result = peek(buffer, view_band, current_band);\n\treturn sample_result;\r\n}\r\n\r\nBuffer meter(\"meter\");\r\n\r\nresult = 0;\r\n\r\ncurrent_band = mc_channel - 1;\r\nchan_count = 1;\r\n\r\nif(view_band != 0) {\r\n\tresult = ReadChan(meter, view_band - 1, current_band);\r\n} else {\r\n\tfor(i = 0; i <= chan_count; i += 1) {\r\n\t\ttemp_result = ReadChan(meter, i, current_band);\r\n\t\tresult = result + temp_result;\r\n\t}\r\n\tresult = result / chan_count;\r\n}\r\n\r\nout1 = result;"
 																	}
 
@@ -703,7 +678,7 @@
 													"outlettype" : [ "multichannelsignal" ],
 													"patching_rect" : [ 49.0, 305.0, 119.0, 22.0 ],
 													"text" : "mc.gen~ @chans 30",
-													"wrapper_uniquekey" : "u364008019"
+													"wrapper_uniquekey" : "u644005943"
 												}
 
 											}
@@ -746,7 +721,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-11",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
@@ -882,7 +856,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-31",
-									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
@@ -907,7 +880,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-15",
-									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
@@ -928,7 +900,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -999,7 +971,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-4",
-													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
@@ -1012,7 +983,6 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-2",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
@@ -1054,7 +1024,7 @@
 															"appversion" : 															{
 																"major" : 9,
 																"minor" : 0,
-																"revision" : 7,
+																"revision" : 9,
 																"architecture" : "x64",
 																"modernui" : 1
 															}
@@ -1174,7 +1144,7 @@
 													"outlettype" : [ "multichannelsignal" ],
 													"patching_rect" : [ 107.0, 368.0, 119.0, 22.0 ],
 													"text" : "mc.gen~ @chans 31",
-													"wrapper_uniquekey" : "u432007162"
+													"wrapper_uniquekey" : "u125006093"
 												}
 
 											}
@@ -1260,7 +1230,7 @@
 											"appversion" : 											{
 												"major" : 9,
 												"minor" : 0,
-												"revision" : 7,
+												"revision" : 9,
 												"architecture" : "x64",
 												"modernui" : 1
 											}
@@ -1308,13 +1278,13 @@
 													"box" : 													{
 														"maxclass" : "codebox",
 														"patching_rect" : [ 50.0, 105.769234299659729, 1185.0, 496.0 ],
-														"fontname" : "<Monospaced>",
 														"fontface" : 0,
 														"numinlets" : 1,
 														"id" : "obj-3",
-														"numoutlets" : 1,
 														"fontsize" : 12.0,
+														"numoutlets" : 1,
 														"outlettype" : [ "" ],
+														"fontname" : "<Monospaced>",
 														"code" : "Crossover(input, cutLow, cutHigh, current_chan, band_no, meter_buffer, meter_update, gains_buffer) {\n\tHistory history_1(0);\n\tHistory history_2(0);\n\tHistory history_3(0);\n\tHistory history_4(0);\n\tHistory history_5(0);\n\tmin_6 = min(cutLow, cutHigh);\n\tmul_7 = min_6 * twopi/samplerate;\n\tcos_8 = cos(mul_7);\n\tsin_9 = sin(mul_7);\n\tsub_10 = sin_9 - 1.;\n\tdiv_11 = sub_10 / cos_8;\n\tgen_12 = div_11;\n\tadd_13 = div_11 + 1;\n\tmul_14 = add_13 * 0.5;\n\tgen_15 = mul_14;\n\tmax_16 = max(cutLow, cutHigh);\n\tmul_17 = max_16 * twopi/samplerate;\n\tcos_18 = cos(mul_17);\n\tsin_19 = sin(mul_17);\n\tsub_20 = sin_19 - 1.;\n\tdiv_21 = sub_20 / cos_18;\n\tgen_22 = div_21;\n\tadd_23 = div_21 + 1;\n\tmul_24 = add_23 * 0.5;\n\tgen_25 = mul_24;\n\tsub_26 = input - history_1;\n\tmul_27 = sub_26 * gen_25;\n\tadd_28 = mul_27 + history_1;\n\tadd_29 = add_28 + mul_27;\n\tsub_30 = add_28 - history_2;\n\tmul_31 = sub_30 * gen_25;\n\tadd_32 = mul_31 + history_2;\n\tgen_33 = add_32;\n\tadd_34 = add_32 + mul_31;\n\thistory_1_next_35 = fixdenorm(add_29);\n\thistory_2_next_36 = fixdenorm(add_34);\n\tmul_37 = history_3 * gen_12;\n\tsub_38 = gen_33 - mul_37;\n\tmul_39 = sub_38 * gen_12;\n\tadd_40 = mul_39 + history_3;\n\tgen_41 = add_40;\n\thistory_3_next_42 = fixdenorm(sub_38);\n\tsub_43 = gen_33 - history_4;\n\tmul_44 = sub_43 * gen_15;\n\tadd_45 = mul_44 + history_4;\n\tadd_46 = add_45 + mul_44;\n\tsub_47 = add_45 - history_5;\n\tmul_48 = sub_47 * gen_15;\n\tadd_49 = mul_48 + history_5;\n\tgen_50 = add_49;\n\tadd_51 = add_49 + mul_48;\n\thistory_4_next_52 = fixdenorm(add_46);\n\thistory_5_next_53 = fixdenorm(add_51);\n\tisolated_band = fixnan(gen_41 - gen_50);\r\n\tband_level = peek(gains_buffer, 0, (band_no - 1), boundmode=\"clamp\");\r\n\tresult = isolated_band * band_level;\n\thistory_1 = history_1_next_35;\n\thistory_5 = history_5_next_53;\n\thistory_4 = history_4_next_52;\n\thistory_3 = history_3_next_42;\n\thistory_2 = history_2_next_36;\n    poke(meter_buffer, result, current_chan, (band_no -1), meter_update, index=\"samples\");\n\treturn result;\n}\n\nBuffer gains(\"gains\");\nBuffer meter(\"meter\");\nParam meter_update(0);\n\ninput = in1;\ncurrent_chan = mc_channel - 1;\n\nband1 = Crossover(input, 22.4, 28.2, current_chan, 1, meter, meter_update, gains);\nband2 = Crossover(input, 28.2, 35.5, current_chan, 2, meter, meter_update, gains);\nband3 = Crossover(input, 35.5, 44.7, current_chan, 3, meter,meter_update, gains);\nband4 = Crossover(input, 44.7, 56.2, current_chan, 4, meter, meter_update, gains);\nband5 = Crossover(input, 56.20, 70.80, current_chan, 5, meter, meter_update, gains);\nband6 = Crossover(input, 70.80, 89.10, current_chan, 6, meter,meter_update, gains);\nband7 = Crossover(input, 89.10, 112.00, current_chan, 7, meter, meter_update, gains);\nband8 = Crossover(input, 112.00, 141.00, current_chan, 8, meter, meter_update, gains);\nband9 = Crossover(input, 141.00, 178.00, current_chan, 9, meter, meter_update, gains);\nband10 = Crossover(input, 178.00, 224.00, current_chan, 10, meter, meter_update, gains);\nband11 = Crossover(input, 224.00, 282.00, current_chan, 11, meter, meter_update, gains);\nband12 = Crossover(input, 282.00, 355.00, current_chan, 12, meter, meter_update, gains);\nband13 = Crossover(input, 355.00, 447.00, current_chan, 13, meter, meter_update, gains);\nband14 = Crossover(input, 447.00, 562.00, current_chan, 14, meter, meter_update, gains);\nband15 = Crossover(input, 562.00, 708.00, current_chan, 15, meter, meter_update, gains);\nband16 = Crossover(input, 708.00, 891.00, current_chan, 16, meter, meter_update, gains);\nband17 = Crossover(input, 891.00, 1122.00, current_chan, 17, meter, meter_update, gains);\nband18 = Crossover(input, 1122.00, 1413.00, current_chan, 18, meter, meter_update, gains);\nband19 = Crossover(input, 1413.00, 1778.00, current_chan, 19, meter, meter_update, gains);\nband20 = Crossover(input, 1778.00, 2239.00, current_chan, 20, meter, meter_update, gains);\nband21 = Crossover(input, 2239.00, 2818.00, current_chan, 21, meter, meter_update, gains);\nband22 = Crossover(input, 2818.00, 3548.00, current_chan, 22, meter, meter_update, gains);\nband23 = Crossover(input, 3548.00, 4467.00, current_chan, 23, meter, meter_update, gains);\nband24 = Crossover(input, 4467.00, 5623.00, current_chan, 24, meter, meter_update, gains);\nband25 = Crossover(input, 5623.00, 7079.00, current_chan, 25, meter, meter_update, gains);\nband26 = Crossover(input, 7079.00, 8913.00, current_chan, 26, meter, meter_update, gains);\nband27 = Crossover(input, 8913.00, 11220.00, current_chan, 27, meter, meter_update, gains);\nband28 = Crossover(input, 11220.00, 14130.00, current_chan, 28, meter, meter_update, gains);\nband29 = Crossover(input, 14130.00, 17780.00, current_chan, 29, meter, meter_update, gains);\nband30 = Crossover(input, 17780.00, 22390.00, current_chan, 30, meter, meter_update, gains);\n//band31 = Crossover(input, 22390.00, samplerate, current_chan, 31, meter, meter_update, gains);\n\r\nout1 = band1 + band2 + band3 + band4 + band5 + band6 + band7 + band8 + band9 + band10 + band11 + band12 + band13 + band14 + band15 + band16 + band17 + band18 + band19 + band20 + band21 + band22 + band23 + band24 + band25 + band26 + band27 + band28 + band29 + band30;\n"
 													}
 
@@ -1357,7 +1327,7 @@
 									"outlettype" : [ "multichannelsignal" ],
 									"patching_rect" : [ 222.0, 217.0, 334.0, 22.0 ],
 									"text" : "mc.gen~ @title pp.eq",
-									"wrapper_uniquekey" : "u452006950"
+									"wrapper_uniquekey" : "u096006157"
 								}
 
 							}
@@ -1498,7 +1468,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 0.0, 44.71484375, 16.0 ],
+					"patching_rect" : [ 0.0, 0.0, 44.052734375, 16.0 ],
 					"varname" : "act",
 					"viewvisibility" : 1
 				}
@@ -1550,6 +1520,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "eq@1.json",
+				"bootpath" : "~/Documents/Max 9/Library/ppooll_presets/environmentsP/duoklaus_klangtheater_251030/presets",
+				"patcherrelativepath" : "../../../../Library/ppooll_presets/environmentsP/duoklaus_klangtheater_251030/presets",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll._utilities.js",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
@@ -1585,6 +1562,20 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.bluebutton.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.blues.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.blues.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
@@ -1599,10 +1590,10 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.mc.stereo_pan.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../abstractions/ll.blues",
-				"type" : "JSON",
+				"name" : "ll.listblock.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -1635,6 +1626,13 @@
 			}
 , 			{
 				"name" : "ll.pm.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.pp.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
@@ -1690,20 +1688,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.s~.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.s~.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ll.wsendback.js",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
@@ -1723,13 +1707,6 @@
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "nblue.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
