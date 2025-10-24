@@ -4,17 +4,31 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 8,
+			"revision" : 9,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 406.0, 84.0, 561.0, 665.0 ],
+		"rect" : [ 634.0, 207.0, 561.0, 665.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "ll.s~.maxhelp1",
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-11",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 297.0, 222.0, 101.0, 22.0 ],
+					"text" : "ho_st1~out.1"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"hidden" : 1,
 					"id" : "obj-1",
@@ -313,7 +327,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -335,7 +349,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 8,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -498,7 +512,7 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-33",
-					"items" : "-no-",
+					"items" : [ "-no-", ",", "out.0", ",", "out.1", ",", "out.2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -521,7 +535,7 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-35",
-					"items" : [ "no", ",", "ho_st1" ],
+					"items" : [ "no", ",", "ho_st1", ",", "fmrm1" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -542,8 +556,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 194.333333333333343, 222.0, 101.0, 22.0 ],
-					"text" : "no~-no-"
+					"patching_rect" : [ 164.0, 222.0, 101.0, 22.0 ],
+					"text" : "ho_st1~out"
 				}
 
 			}
@@ -554,8 +568,8 @@
 					"id" : "obj-37",
 					"maxclass" : "newobj",
 					"numinlets" : 7,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 49.0, 196.0, 237.0, 22.0 ],
 					"text" : "ll.s~"
 				}
@@ -596,7 +610,7 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-10",
-					"items" : "-no-",
+					"items" : [ "-no-", ",", "out.0", ",", "out.1", ",", "out.2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -620,7 +634,7 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-26",
-					"items" : [ "no", ",", "ho_st1" ],
+					"items" : [ "no", ",", "ho_st1", ",", "fmrm1" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -650,8 +664,12 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 454.0, 251.0, 95.0, 22.0 ],
+					"priority" : 					{
+						"bla" : 34
+					}
+,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 1176, 213, 1791, 873 ],
+						"client_rect" : [ 897, 213, 1512, 873 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 200, 200, 800, 500 ]
@@ -676,7 +694,7 @@
 					"patching_rect" : [ 442.0, 317.0, 107.0, 22.0 ],
 					"restore" : 					{
 						"acts" : [ "no" ],
-						"~par" : [ "-no-" ]
+						"~par" : [ "out.1" ]
 					}
 ,
 					"text" : "autopattr autopattr",
@@ -695,7 +713,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -757,8 +775,8 @@
 									"id" : "obj-27",
 									"maxclass" : "newobj",
 									"numinlets" : 7,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
+									"numoutlets" : 4,
+									"outlettype" : [ "", "", "", "" ],
 									"patching_rect" : [ 39.0, 169.0, 83.0, 22.0 ],
 									"text" : "ll.s~ acts ~par"
 								}
@@ -818,7 +836,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 0.0, 98.755859375, 16.0 ],
+					"patching_rect" : [ 0.0, 0.0, 94.05078125, 16.0 ],
 					"varname" : "act",
 					"viewvisibility" : 1
 				}
@@ -909,6 +927,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-37", 1 ],
 					"source" : [ "obj-35", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 1 ],
+					"source" : [ "obj-37", 3 ]
 				}
 
 			}
