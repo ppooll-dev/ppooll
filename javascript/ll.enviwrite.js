@@ -77,7 +77,7 @@ function msg_dictionary(d){
     enviName = writeParams.envi_name;
 
     let subs = [...subfolders]
-    if(writeParams.copy_buffers)
+    if(acts.indexOf("buffer_host1") > -1 && writeParams.copy_buffers)
         subs.push("buffers")
 
      // Create Environment folders.  Creation triggers setBuffers
@@ -99,7 +99,7 @@ function removeExtension(filename) {
 // Save presets, buffers to created folders
 async function saveToFolder(){
     // Save buffers
-    if(writeParams.copy_buffers){
+    if(acts.indexOf("buffer_host1") > -1 && writeParams.copy_buffers){
         ppost("copy buffers...")
         buffers.forEach((b,i) => {
             if(b.full_path){
@@ -351,8 +351,7 @@ function addParam(args) {
             const data = JSON.parse(innerDict.stringify());
             environment[currentAct][paramName] = data;
         }   
-        }catch(e){
-            post("error ll.enviwrite.js: addParam failed.", args, "\n"
-        )
+    }catch(e){
+        post("error ll.enviwrite.js: addParam failed.", args, "\n")
     }
 }

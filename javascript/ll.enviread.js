@@ -269,53 +269,60 @@ function import_old_llblues(a, p, v) {
 			5: mix_adds (0,1)
 			6: link input-channels to output-channels (0,1)
 	*/
-    if (p == "ll.blues::outputs") {
-        check_newblues(a);
-        if (new_blues_oldenvi) {
-            old_outputs = v;
-            post("import old ll.blues, outputs:", v, "\n");
-            return 1;
-        } else return 0;
-    } else if (p == "ll.blues::state") {
-        messnamed(a, "v8", "getnamed", new_blues_name);
-        let get_status = actr.object
-            .subpatcher()
-            .getnamed("status")
-            .getvalueof();
-        let new_status = [
-            get_status[0],
-            v[1] % 2,
-            v[2],
-            v[3],
-            parseInt(v[1] / 2),
-            v[5],
-        ];
-        //post("new_state",new_state,"\n");
-        messnamed(a, new_blues_name + "::status", new_status);
-        messnamed(a, new_blues_name + "::chans", v[4], v[0]);
-        let out = [old_outputs[0]];
-        let outM = [old_outputs[1]];
-        for (i = 1; i < v[0]; i++) {
-            out.push("_");
-            outM.push("_");
-        }
-        //post("out",old_outputs[0]+out_,"outMix",old_outputs[1]+out_);
-        messnamed(a, new_blues_name + "::outputs~", out);
-        messnamed(a, new_blues_name + "::outputsMix~", outM);
-        return 1;
-    } else if (p == "outputs~") {
-        check_newblues(a);
-        if (new_blues_oldenvi) {
-            messnamed(a, "v8", "getnamed", "outputs~");
-            messnamed(a, "v8", "Getpatcher");
-            if (actr.object) {
-                actr.patcher.remove(actr.object);
-                post("removed old outputs~ and set into new ll.blues", "\n");
+    try{
+        if (p == "ll.blues::outputs") {
+            check_newblues(a);
+            if (new_blues_oldenvi) {
+                old_outputs = v;
+                post("import old ll.blues, outputs:", v, "\n");
+                return 1;
+            } else return 0;
+        } else if (p == "ll.blues::state") {
+            messnamed(a, "v8", "getnamed", new_blues_name);
+            let get_status = actr.object
+                .subpatcher()
+                .getnamed("status")
+                .getvalueof();
+            let new_status = [
+                get_status[0],
+                v[1] % 2,
+                v[2],
+                v[3],
+                parseInt(v[1] / 2),
+                v[5],
+            ];
+            //post("new_state",new_state,"\n");
+            messnamed(a, new_blues_name + "::status", new_status);
+            messnamed(a, new_blues_name + "::chans", v[4], v[0]);
+            let out = [old_outputs[0]];
+            let outM = [old_outputs[1]];
+            for (i = 1; i < v[0]; i++) {
+                out.push("_");
+                outM.push("_");
             }
-            //post(new_blues_name+"::outputs~",v,"\n")
-            messnamed(a, new_blues_name + "::outputs~", v);
-        }
-    } else return 0;
+            //post("out",old_outputs[0]+out_,"outMix",old_outputs[1]+out_);
+            messnamed(a, new_blues_name + "::outputs~", out);
+            messnamed(a, new_blues_name + "::outputsMix~", outM);
+            return 1;
+        } else if (p == "outputs~") {
+            check_newblues(a);
+            if (new_blues_oldenvi) {
+                messnamed(a, "v8", "getnamed", "outputs~");
+                messnamed(a, "v8", "Getpatcher");
+                if (actr.object) {
+                    actr.patcher.remove(actr.object);
+                    post("removed old outputs~ and set into new ll.blues", "\n");
+                }
+                //post(new_blues_name+"::outputs~",v,"\n")
+                messnamed(a, new_blues_name + "::outputs~", v);
+            }
+        } else 
+        return 0;
+    }catch(e){
+        error("ll.enviread.js could not import old ll.blues\n\t", a, p, v, "\n\t", e.message, "\n")
+        return 0;
+    }
+    
 }
 
 function check_newblues(a) {
