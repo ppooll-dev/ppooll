@@ -4,13 +4,14 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 7,
+			"revision" : 9,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 138.0, 393.0, 201.0, 183.0 ],
+		"rect" : [ 118.0, 205.0, 199.0, 183.0 ],
+		"openinpresentation" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"assistshowspatchername" : 1,
@@ -20,7 +21,56 @@
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"bordercolor" : [ 0.74, 0.0, 0.0, 1.0 ],
 					"fontface" : 0,
+					"format" : [ 1.5 ],
+					"id" : "obj-47",
+					"label" : [ "offset" ],
+					"max" : 0.5,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"mousefocus" : 1,
+					"multidrag" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ -1.0, 78.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 78.0, 200.0, 16.0 ],
+					"slidermax" : 0.5,
+					"varname" : "p2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"bordercolor" : [ 0.74, 0.0, 0.0, 1.0 ],
+					"fontface" : 0,
+					"id" : "obj-46",
+					"label" : [ "amplitude" ],
+					"maxclass" : "ll_number",
+					"min" : 1.0,
+					"mousefocus" : 1,
+					"multidrag" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 0.0, 60.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 60.0, 200.0, 16.0 ],
+					"sliderlog" : 8.0,
+					"slidermin" : 1.0,
+					"varname" : "p1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"fontface" : 0,
 					"format" : [ 1.3 ],
+					"hidden" : 1,
 					"id" : "obj-10",
 					"label" : [ "distortion" ],
 					"mark" : 0.0,
@@ -32,7 +82,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 60.0, 200.0, 16.0 ],
+					"patching_rect" : [ -1.0, 311.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 60.0, 200.0, 16.0 ],
 					"slidermax" : 10.0,
 					"varname" : "p15"
 				}
@@ -56,7 +108,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 60.0, 200.0, 16.0 ],
+					"patching_rect" : [ -1.0, 293.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 60.0, 200.0, 16.0 ],
 					"slidermax" : 1.0,
 					"slidermin" : -1.0,
 					"varname" : "p14"
@@ -78,7 +132,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 60.0, 200.0, 16.0 ],
+					"patching_rect" : [ -1.0, 275.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 60.0, 200.0, 16.0 ],
 					"slidermin" : 1.0,
 					"varname" : "p13"
 				}
@@ -100,7 +156,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 78.0, 200.0, 16.0 ],
+					"patching_rect" : [ -1.0, 257.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 78.0, 200.0, 16.0 ],
 					"sliderlog" : 4.0,
 					"slidermax" : 100.0,
 					"varname" : "p12"
@@ -123,7 +181,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 60.0, 200.0, 16.0 ],
+					"patching_rect" : [ -1.0, 239.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 60.0, 200.0, 16.0 ],
 					"sliderlog" : 4.0,
 					"slidermax" : 100.0,
 					"varname" : "p11"
@@ -147,7 +207,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 60.0, 200.0, 16.0 ],
+					"patching_rect" : [ -1.0, 222.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 60.0, 200.0, 16.0 ],
 					"slidermax" : 10.0,
 					"varname" : "p10"
 				}
@@ -169,7 +231,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 60.0, 200.0, 16.0 ],
+					"patching_rect" : [ -1.0, 204.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 60.0, 200.0, 16.0 ],
 					"slidermax" : 100.0,
 					"varname" : "p9"
 				}
@@ -191,7 +255,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 60.0, 200.0, 16.0 ],
+					"patching_rect" : [ -1.0, 186.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 60.0, 200.0, 16.0 ],
 					"slidermax" : 100.0,
 					"slidermin" : 1.0,
 					"varname" : "p8"
@@ -214,7 +280,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 60.0, 200.0, 16.0 ],
+					"patching_rect" : [ -1.0, 168.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 60.0, 200.0, 16.0 ],
 					"slidermax" : 100.0,
 					"slidermin" : 1.0,
 					"varname" : "p7"
@@ -238,7 +306,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 95.0, 200.0, 16.0 ],
+					"patching_rect" : [ -1.0, 150.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 95.0, 200.0, 16.0 ],
 					"slidermax" : 4.0,
 					"slidermin" : 0.25,
 					"varname" : "p6"
@@ -262,7 +332,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 78.0, 200.0, 16.0 ],
+					"patching_rect" : [ -1.0, 132.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 78.0, 200.0, 16.0 ],
 					"slidermax" : 1.0,
 					"varname" : "p5"
 				}
@@ -285,7 +357,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 60.0, 200.0, 16.0 ],
+					"patching_rect" : [ -1.0, 114.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 60.0, 200.0, 16.0 ],
 					"slidermax" : 48.0,
 					"slidermin" : 1.0,
 					"varname" : "p4"
@@ -307,55 +381,12 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 60.0, 200.0, 16.0 ],
+					"patching_rect" : [ -1.0, 96.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 60.0, 200.0, 16.0 ],
 					"slidermax" : 100.0,
 					"slidermin" : 1.0,
 					"varname" : "p3"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"fontface" : 0,
-					"format" : [ 1.5 ],
-					"hidden" : 1,
-					"id" : "obj-47",
-					"label" : [ "offset" ],
-					"max" : 0.5,
-					"maxclass" : "ll_number",
-					"min" : 0.0,
-					"mousefocus" : 1,
-					"multidrag" : 0,
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 78.0, 200.0, 16.0 ],
-					"slidermax" : 0.5,
-					"varname" : "p2"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"fontface" : 0,
-					"hidden" : 1,
-					"id" : "obj-46",
-					"label" : [ "amplitude" ],
-					"maxclass" : "ll_number",
-					"min" : 1.0,
-					"mousefocus" : 1,
-					"multidrag" : 0,
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 60.0, 200.0, 16.0 ],
-					"sliderlog" : 8.0,
-					"slidermin" : 1.0,
-					"varname" : "p1"
 				}
 
 			}
@@ -376,7 +407,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 59.0, 200.0, 16.0 ],
+					"patching_rect" : [ 0.0, 383.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 59.0, 200.0, 16.0 ],
 					"slidermax" : 48.0,
 					"varname" : "p19"
 				}
@@ -399,7 +432,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 95.0, 200.0, 16.0 ],
+					"patching_rect" : [ 0.0, 437.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 95.0, 200.0, 16.0 ],
 					"slidermax" : 2.0,
 					"slidermin" : -360.0,
 					"varname" : "p22"
@@ -424,7 +459,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 78.0, 200.0, 16.0 ],
+					"patching_rect" : [ 0.0, 419.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 78.0, 200.0, 16.0 ],
 					"slidermax" : 12.0,
 					"slidermin" : -96.0,
 					"varname" : "p21"
@@ -449,7 +486,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 60.0, 200.0, 16.0 ],
+					"patching_rect" : [ 0.0, 401.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 60.0, 200.0, 16.0 ],
 					"slidermax" : 48.0,
 					"slidermin" : -48.0,
 					"varname" : "p20"
@@ -473,7 +512,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 78.0, 200.0, 16.0 ],
+					"patching_rect" : [ 0.0, 473.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 78.0, 200.0, 16.0 ],
 					"sliderlog" : 4.0,
 					"slidermax" : 48.0,
 					"varname" : "p24"
@@ -497,7 +538,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 59.0, 200.0, 16.0 ],
+					"patching_rect" : [ 0.0, 455.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 59.0, 200.0, 16.0 ],
 					"sliderlog" : 8.0,
 					"slidermax" : 1.0,
 					"varname" : "p23"
@@ -522,7 +565,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 78.0, 200.0, 16.0 ],
+					"patching_rect" : [ 0.0, 365.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 78.0, 200.0, 16.0 ],
 					"slidermax" : 100.0,
 					"slidermin" : 1.0,
 					"varname" : "p18"
@@ -547,7 +592,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 59.0, 200.0, 16.0 ],
+					"patching_rect" : [ -1.0, 347.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 59.0, 200.0, 16.0 ],
 					"slidermax" : 1000.0,
 					"slidermin" : 1.0,
 					"varname" : "p17"
@@ -571,7 +618,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 60.0, 200.0, 16.0 ],
+					"patching_rect" : [ -1.0, 329.0, 200.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 60.0, 200.0, 16.0 ],
 					"slidermax" : 10.0,
 					"varname" : "p16"
 				}
@@ -593,7 +642,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 130.0, 201.0, 53.0 ],
+					"patching_rect" : [ -1.0, 508.0, 201.0, 53.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 130.0, 201.0, 53.0 ],
 					"varname" : "ll.blues",
 					"viewvisibility" : 1
 				}
@@ -635,7 +686,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 42.0, 113.0, 159.0, 16.0 ],
+					"patching_rect" : [ 41.0, 491.0, 159.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 40.0, 113.0, 159.0, 16.0 ],
 					"sliderlog" : 8.0,
 					"slidermax" : 60000.0,
 					"slidermin" : 1.0,
@@ -654,7 +707,9 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 113.0, 40.0, 16.0 ],
+					"patching_rect" : [ 0.0, 491.0, 40.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 113.0, 40.0, 16.0 ],
 					"text" : "reset",
 					"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
 					"texton" : "reset",
@@ -684,27 +739,6 @@
 			}
 , 			{
 				"box" : 				{
-					"bgoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
-					"fontsize" : 12.0,
-					"id" : "obj-34",
-					"maxclass" : "textbutton",
-					"mode" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 36.0, 29.0, 22.0 ],
-					"text" : "off",
-					"textcolor" : [ 0.811764705882353, 0.811764705882353, 0.811764705882353, 1.0 ],
-					"texton" : "on",
-					"textoncolor" : [ 0.145098039215686, 0.0, 0.0, 1.0 ],
-					"usebgoncolor" : 1,
-					"varname" : "on/off"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"annotation" : "presets grid. click on ppooll in the ho_st to find info about it",
 					"filename" : "ll.pattr_ui.js",
 					"id" : "obj-31",
@@ -715,6 +749,8 @@
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 104.0, 0.0, 97.0, 34.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 102.0, 0.0, 97.0, 34.0 ],
 					"varname" : "presets"
 				}
 
@@ -732,6 +768,8 @@
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 0.0, 18.0, 104.0, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 18.0, 104.0, 16.0 ],
 					"sliderlog" : 8.0,
 					"slidermax" : 20000.0,
 					"varname" : "preset-ramp"
@@ -758,6 +796,8 @@
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 31.0, 36.0, 169.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -0.5, 36.0, 198.5, 22.0 ],
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "shapermode"
 				}
@@ -771,9 +811,11 @@
 						"act::active_store" : 0,
 						"act::master/activest" : 0,
 						"ll.blues" : 0,
-						"ll.blues::levels" : 0,
-						"ll.blues::outputs" : 0,
-						"ll.blues::state" : 0
+						"ll.blues::status" : 0,
+						"ll.blues::outputs~" : 0,
+						"ll.blues::outputsMix~" : 0,
+						"ll.blues::chans" : 0,
+						"ll.blues::levels" : 0
 					}
 ,
 					"hidden" : 1,
@@ -783,6 +825,14 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 446.0, 157.0, 100.0, 22.0 ],
+					"priority" : 					{
+						"ll.blues::status" : 1,
+						"ll.blues::outputs~" : 2,
+						"ll.blues::outputsMix~" : 3,
+						"ll.blues::chans" : 4,
+						"ll.blues::levels" : 5
+					}
+,
 					"saved_object_attributes" : 					{
 						"client_rect" : [ 842, 164, 1920, 407 ],
 						"parameter_enable" : 0,
@@ -834,7 +884,6 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 433.0, 241.0, 107.0, 22.0 ],
 					"restore" : 					{
-						"on/off" : [ 1 ],
 						"p1" : [ 1.0 ],
 						"p10" : [ 1.0 ],
 						"p11" : [ 1.0 ],
@@ -863,7 +912,7 @@
 						"presets" : [ 10 ],
 						"ramp" : [ 1 ],
 						"reset" : [ -1 ],
-						"shapermode" : [ 16 ]
+						"shapermode" : [ 1 ]
 					}
 ,
 					"text" : "autopattr autopattr",
@@ -883,13 +932,13 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 7,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 509.0, 412.0, 897.0, 634.0 ],
+						"rect" : [ 509.0, 412.0, 399.0, 457.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -917,7 +966,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -933,7 +982,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 158.0, 133.0, 50.0, 22.0 ],
-													"text" : "16"
+													"text" : "1"
 												}
 
 											}
@@ -945,7 +994,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 210.0, 229.0, 50.0, 22.0 ],
-													"text" : "15"
+													"text" : "1 2"
 												}
 
 											}
@@ -1664,7 +1713,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 286.0, 105.0, 89.0, 22.0 ],
+									"patching_rect" : [ 275.0, 89.0, 89.0, 22.0 ],
 									"text" : "ll.pf thispatcher"
 								}
 
@@ -1675,33 +1724,9 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 136.5, 138.0, 40.0, 22.0 ],
-									"text" : "pak i i"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-43",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 136.5, 168.0, 107.0, 22.0 ],
-									"text" : "expr $i1 * ($i2 + 1)"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-33",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 136.5, 67.0, 54.0, 22.0 ],
-									"text" : "ll.r on/off"
+									"outlettype" : [ "int" ],
+									"patching_rect" : [ 136.5, 170.0, 29.5, 22.0 ],
+									"text" : "+ 1"
 								}
 
 							}
@@ -1712,7 +1737,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 157.5, 100.0, 91.0, 22.0 ],
+									"patching_rect" : [ 136.5, 133.0, 91.0, 22.0 ],
 									"text" : "ll.r shapermode"
 								}
 
@@ -1835,7 +1860,7 @@
 											"appversion" : 											{
 												"major" : 9,
 												"minor" : 0,
-												"revision" : 7,
+												"revision" : 9,
 												"architecture" : "x64",
 												"modernui" : 1
 											}
@@ -1848,10 +1873,10 @@
 														"maxclass" : "newobj",
 														"text" : "in 1",
 														"patching_rect" : [ 50.0, 14.0, 28.0, 22.0 ],
+														"outlettype" : [ "" ],
 														"id" : "obj-1",
 														"numinlets" : 0,
-														"numoutlets" : 1,
-														"outlettype" : [ "" ]
+														"numoutlets" : 1
 													}
 
 												}
@@ -1859,13 +1884,13 @@
 													"box" : 													{
 														"maxclass" : "codebox",
 														"patching_rect" : [ 50.0, 85.0, 676.0, 740.0 ],
-														"fontface" : 0,
-														"id" : "obj-3",
-														"numinlets" : 1,
-														"fontsize" : 12.0,
-														"numoutlets" : 1,
-														"fontname" : "<Monospaced>",
 														"outlettype" : [ "" ],
+														"id" : "obj-3",
+														"fontsize" : 12.0,
+														"numinlets" : 1,
+														"fontname" : "<Monospaced>",
+														"numoutlets" : 1,
+														"fontface" : 0,
 														"code" : "\n/*\ngood old(skool) MSP style\n*/\ntanhShape(x, a) {\n\n\ta = maximum(a, 1.);\n\ty = tanh(x * a);\n\n\treturn y;\n}\n\n/*\ngood old dc offset MSP style\n*/\ntanhOffset(x, d, a) {\n\n\ta = maximum(a, 1.);\n\td = clip(d, 0., 0.2);\n\ty = tanh((x + d) * a);\n\n\treturn dcblock(y);\n}\n\n/*\nmodified hyperbolic tangent, csound\nhttp://www.csounds.com/ezine/winter1999/processing/\n*/\n modHT(xin, d, a) {\n\n\ta = maximum(a, 1.);\n\td = clip(d, 0., 0.5);\n\tx = (xin + d) * a;\n\ty = (exp(x) - exp(-x * 1.2)) / (exp(x) + exp(-x));\n\n\treturn dcblock(y - d);\n}\n\n/*\nlike MSP [overdrive~]:\n*/\noverdrive(x, shape) {\n\n\tshape = maximum(shape, 0.);\n\tsignx = sign(x); /* positive quadrant only */\n\tpx = x * signx;\n\n\ty = 1. - exp(shape * log(1. - px)); /* shape */\n\ty = clip(y, 0., 1.); /* hard limit */\n\n\treturn y * signx; /* return to original quadrant */\n}\n\n/*\nbased on an idea by Volker Böhm; like [overdrive~] but less CPU\n*/\natanDrive(xin, drive) {\n\n\tdrive = maximum(drive, 0.); /* should really be '1.', but... */\n\toutdrive = maximum((1. / atan(drive)), 0.1);\n\n\tx = atan(xin * drive);\n\n\treturn x * outdrive;\n}\n\n/*\npolynomial:\ny = x/(1.+(0.28*x^2.))\n^ Peter McCulloch told me this one ^\n*/\npolyWs(p, d) {\n\n\tm = p * d;\n\ts = 1. / minimum(d, 1.);\n\tb = (m * m) * 0.28;\n\ta = b + 1.;\n\tn = m / a;\t\t\n\n\treturn dcblock(n * s);\n}\n\n/*\nvariable polynomial (as above but with coefficients):\ny = x/(g+(c*x^2.))\n^^ dangerous ^^\n*/\npolyVws(x, c, g, d) {\n\n\tc = clip(c, 0., 1.); /* bound */\n\tg = clip(g, 0.25, 4.); /* comp */\n\n\tm = x * d;\n\ts = 1. / minimum(d, 1.);\n\tb = (m * m) * c;\n\ta = b + g;\n\n\ty = m / a;\t\t\n\n\treturn dcblock(y * s);\n}\n\n/*\ntwo from SuperCollider3, by James McCartney\n*/\n/* 1. like 'distort' UnaryOp */\nscDistort(xin, drive) {\n\n\tdrive = maximum(drive, 0.);\n\tx1 = xin * drive;\n\tx2 = abs(x1) + 1.;\n\n\treturn x1 / x2;\n}\n/* 2. like 'softclip'/'fold2' UnaryOps */\nscSoftclip(xin, drive) {\n\n\tdrive = maximum(drive, 0.);\n\tx1 = xin * drive;\n\tx2 = (x1 * x1) + 0.25;\n\n\treturn x1 / x2;\n}\n\n\n/*\nbased on a patch by Trond Lossius:\n\"...another approach using sinus. Looking at the patch it might look\nridiculous, but it sounds really good and warm. I believe this is the\ndistortion jhno ended up using for the overdrive in 'radiaL'.\nMe and Tim [Place] discussed these issues a lot a while ago, and ended with\nTim implementing both this and the tanh approach in the overdrive external\nused in Jamoma: jmod.saturation~. Note that using tanh or sinus in the\nsignal loop like this is computationally expensive. Lookup tables are much\ncheaper. jmod.saturation uses lookup and linear interpolation AFAIR.\"\n*/\nrsinDrive(xin, rdrive) {\n\n\trdrive = maximum(rdrive, 0.); /* should really be '1.', but... */\n\tscalerdrive = (rdrive / 10.) * PI;\n\toutdrive = 1. / sin(clip(scalerdrive, 0.01, HALFPI));\n\t\n\tx = sin(xin * scalerdrive);\n\n\treturn x * outdrive;\n}\n/* ^ this one really is very good */\n\n\n/*\npolar split distortion, a strange mixture of (strange) ideas from the forums\n*/\ncurveSplit(xin, drive) {\n\n\tdrive = maximum(drive, 1.);\n\tdrive = atan(1. / (drive * 0.785398));\n\t\n\txsplit1 = clip(xin, 0., 1.);\n\txsplit2 = 1. - (clip(xin, -1., 0.) + 1.);\n\n\txpow1 = 1. - pow(drive, xsplit1);\n\txpow2 = pow(drive, xsplit2) - 1.;\n\n\treturn xpow1 + xpow2;\n}\n\n\n/*\nbased on [110.saturn~] by Roman Thelanius\n...this version a bit odd\n*/\npolarSplit(xin, ampl) {\n\n\tampl = maximum(ampl, 0.);\n\tpgate = xin < 0.;\n\tpsplit1 = pgate ? 0. : xin;\n\tpsplit2 = pgate ? xin : 0.;\n\n\tsplit1 = (tanh((psplit1 * TWOPI) - PI) * 0.5) + 0.5;\n\tsplit2 = (tanh((psplit2 * TWOPI) - PI) * 0.5) - 0.5;\n\n\tsplice = (split1 + split2) * ampl;\n\n\treturn dcblock(splice);\n}\n/*\n...a differently odd version\n*/\npolarSplit2(xin, ampl) {\n\n\tampl = maximum(ampl, 0.);\n\tpgate = xin < 0.;\n\tpsplit1 = pgate ? 0. : xin;\n\tpsplit2 = pgate ? xin : 0.;\n\n\tsplit1 = (tanh((psplit1 * TWOPI) - PI) * 0.5) + 0.5;\n\tsplit2 = (tanh((psplit2 * TWOPI) - PI) * 0.5) - 0.5;\n\n\tsplice = interp(pgate, split1, split2, mode=\"cosine\") * ampl;\n\n\treturn dcblock(splice);\n}\n\n\n/*\nfoldback distortion\nhellfire@upb.de\nhttp://www.musicdsp.org/showArchiveComment.php?ArchiveID=203\n\nNotes:\na simple fold-back distortion filter.\nif the signal exceeds the given threshold-level, it mirrors at the\npositive/negative threshold-border as long as the singal lies in\nthe legal range (-threshold..+threshold). there is no range limit,\nso inputs doesn't need to be in -1..+1 scale. threshold should be\n> 0 depending on use (low thresholds) it makes sense to rescale\nthe input to full amplitude\n\nperforms approximately the following code\n(just without the loop)\n\nwhile (in>threshold || in<-threshold)\n{\n// mirror at positive threshold\nif (in>threshold) in= threshold - (in-threshold);\n// mirror at negative threshold\nif (in<-threshold) in= -threshold + (-threshold-in);\n}\n\nCode : \nfloat foldback(float in, float threshold)\n{\nif (in>threshold || in<-threshold)\n{\nin= fabs(fabs(fmod(in - threshold, threshold*4)) - threshold*2) - threshold;\n}\nreturn in;\n}\n*/\n foldBD(xin, thresho, ampl) {\n\n\tampl = maximum(ampl, 1.);\n\tthresho = maximum(thresho, 0.01);\n\tinvthresho = thresho * -1.;\n\n\txa = xin * ampl;\n\tzo = xa > thresho;\n\tzu = xa < invthresho;\n\txc = clip(xa, invthresho, thresho);\n\twp = abs(abs(mod((xa - thresho), (thresho * 4.))) - (thresho * 2.)) - thresho;\n\t/* ...should develop this with xover knees */\n\tslcr = selector(((zo + zu) + 1), xc, wp, wp);\n\n\treturn slcr;\n}\n\n/*\nWaveshaper\nby Bram de Jong\nhttp://www.musicdsp.org/archive.php?classid=4#41\n\nNotes:\nwhere x (in [-1..1]) will be distorted and a is\na distortion parameter that goes from 1 to infinity.\nThe equation is valid for positive and negativ values.\nIf a is 1, it results in a slight distortion and\nwith bigger a's the signal get's more funky.\n\nA good thing about the shaper is that feeding it with\nbigger-than-one values, doesn't create strange fx.\nThe maximum this function will reach is 1.2 for a=1.\n\nCode:\nf(x,a) = x*(abs(x) + a)/(x^2 + (a-1)*abs(x) + 1)\n*/\njongShaper(x, a) {\n\n\ta = maximum(a, 1.);\n\n\treturn (x * (abs(x) + a)) / ((pow(x, 2.) + (a - 1.) * abs(x) + 1.));\n}\n\n\n/*\nWaveshaper\nby Partice Tarrabia and Bram de Jong\nhttp://www.musicdsp.org/archive.php?classid=4#46\n\nNotes:\namount should be in [-1..1] Plot it and stand back\nin astonishment! ;)\n\nCode:\nx = input in [-1..1]\ny = output\nk = 2*amount/(1-amount);\n\nf(x) = (1+k)*x/(1+k*abs(x))\n*/\ntarrabiaShaper(x, amount) {\n\n\tamount = clip(amount, -0.999, 0.997); /* -1. -> 0. fairly pointless */\n\tk = (2. * amount) / (1. - amount);\n\n\treturn ((1. + k) * x) / (1. + k * abs(x));\n}\n\n\n/*\nWaveshaper\nby Jon Watte\nhttp://www.musicdsp.org/archive.php?classid=4#43\n\nNotes:\nA favourite of mine is using a sin() function\ninstead. This will have the \"unfortunate\" side\neffect of removing odd harmonics if you take it\nto the extreme: a triangle wave gets mapped to a\npure sine wave. This will work with a going from\n.1 or so to a= 5 and bigger! The mathematical\nlimits for a = 0 actually turns it into a linear\nfunction at that point, but unfortunately FPUs\naren't that good with calculus :-) Once a goes\nabove 1, you start getting clipping in addition\nto the \"soft\" wave shaping. It starts getting\ninto more of an effect and less of a mastering\ntool, though :-)\n\nSeeing as this is just various forms of wave\nshaping, you could do it all with a look-up\ntable, too. In my version, that would get rid of\nthe somewhat-expensive sin() function.\n\nCode:\n(input: a == \"overdrive amount\")\n\nz = M_PI * a;\ns = 1/sin(z)\nb = 1/a\n\nif (x > b)\n  f(x) = 1\nelse\n  f(x) = sin(z*x)*s\n*/\nwatteShaper(x, a) {\n\n\ta = clip(a, 0.1, 10.); /* only 'normal' use between 0. -> 1. */\n\tz = PI * a;\n\ts = clip((1. / sin(z)), -3.236068, 3.236068); /* otherwise blowup */\n\tb = 1. / a;\n\n\treturn (sin(z * x) * s);\n}\n\n\n/*\nWaveshaper; Polynomial; Distortion\nby Jon Watte\nhttp://www.musicdsp.org/archive.php?classid=4#114\n\nNotes:\n> The other question; what's a 'waveshaper' algorithm.\n> Is it simply another word for distortion?\n\nA typical \"waveshaper\" is some function which takes an\ninput sample value X and transforms it to an output\nsample X'. A typical implementation would be a look-up\ntable of some number of points, and some level of\ninterpolation between those points (say, cubic). When\npeople talk about a wave shaper, this is most often what\nthey mean. Note that a wave shaper, as opposed to a\nfilter, does not have any state. The mapping from\nX -> X' is stateless.\n\nSome wave shapers are implemented as polynomials, or\nusing other math functions. Hard clipping is a wave\nshaper implemented using the min() and max() functions\n(or the three-argument clamp() function, which is the\nsame thing). A very mellow and musical-sounding\ndistortion is implemented using a third-degree\npolynomial; something like X' = (3/2)X - (1/2)X^3.\nThe nice thing with polynomial wave shapers is that\nyou know that the maximum they will expand bandwidth\nis their order. Thus, you need to oversample 3x to\nmake sure that a third-degree polynomial is aliasing\nfree. With a lookup table based wave shaper, you don't\nknow this (unless you treat an N-point table as an\nN-point polynomial :-)\n\nCode:\nfloat waveshape_distort( float in ) {\n  return 1.5f * in - 0.5f * in *in * in;\n}\n*/\nwatteFunc(xin, amp) {\n\n\tamp = maximum(amp, 0.);\n/*\txin = clip(xin, -1., 1.); */\n\txin = tanh(xin);\n\tx = clip((xin * amp), -1., 1.);\n\n\treturn 1.5 * x - 0.5 * x * x * x;\n}\n\n\n/*\nVariable-hardness clipping function\nby Laurent de Soras\nhttp://www.musicdsp.org/archive.php?classid=4#277\n(see link for alternatives)\n\nNotes: \nk >= 1 is the \"clipping hardness\".\n1 gives a smooth clipping, and a high\nvalue gives hardclipping.\n\nDon't set k too high, because the\nformula use the pow() function, which\nuse exp() and would overflow easily.\n100 seems to be a reasonable value\nfor \"hardclipping\"\n\nCode : \nf (x) = sign (x) * pow (atan (pow\n(abs (x), k)), (1 / k));\n*/\nvarHard(x, k, a) { /* a == 'drive', k == 'clipping' */\n\n\ta = clip(a, 1., 100.); /* 'gating' above 10.-ish */\n\tk = clip(k, 1., 1000.); /* aliasing above 100.-ish (depends!) */\n\tx = x * a;\n\n\treturn sign(x) * pow(atan(pow(abs(x), k)), (1. / k));\n}\n\n\n/* and now the great Gloubi-boulga: */\n/*\nWaveshaper :: Gloubi-boulga\nby Laurent de Soras\nhttp://www.musicdsp.org/archive.php?classid=4#86\n(see link for cheaper versions)\n\nNotes:\nMultiply input by gain before processing\n\nCode:\nconst double x = input * 0.686306;\nconst double a = 1 + exp (sqrt (fabs (x)) * -0.75);\noutput = (exp (x) - exp (-x * a)) / (exp (x) + exp (-x));\n*/\ngloubiBoulga(xin, drive) {\n\n\tdrive = maximum(drive, 1.);\n\tx = (xin * drive) * 0.686306;\n\ta = 1. + exp(sqrt(abs(x)) * -0.75);\n\ty = (exp(x) - exp(-x * a)) / (exp(x) + exp(-x));\n\n\treturn dcblock(y);\n}\n\n/*\nbased on Tom Szilagyi plugin:\nhttp://tap-plugins.sourceforge.net/ladspa/sigmoid.html\n'tape' saturation curve == 'sigmoid' @ -5.\n*/\ntapeH(xin, pregain, postgain, sigmoid) {\n\n\tpregain = dbtoa(clip(pregain, -48., 48.));\n\tpostgain = dbtoa(clip(postgain, -96., 12.));\n\tsigmoid = minimum(sigmoid, -2.); /* -5. == 'tape', -2. == tanh approximation */\n\t/* ^ you can drive sigmoid to -100. (for example) ^ */\n\tx = xin * pregain;\n\ty = (2. / (1. + exp(sigmoid * x))) - 1.; /* the sigmoid */\n\n\treturn y * postgain;\n}\n\n/* and now the great JOS: */\n/*\nfrom 'faust' code by Julius O. Smith III\nhttps://ccrma.stanford.edu/realsimple/faust_strings/Cubic_Nonlinear_Distortion.html\n*/\n/* oversample this by 2, 4 or 8 times with [poly~ @resampling 1]: */\ncnld(xin, offset, drive) { /* c_ubic n_on-l_inear d_istortion */\n\n\toffset = clip(offset, 0., 1.);\n\tdrive = clip(drive, 0., 1.);\n\n\tpregain = pow(10., (2. * drive));\n\tx = clip(((xin + offset) * pregain), -1., 1.);\n\tcubic = x - x*x*x/3.;\n\n\treturn dcblock(cubic);\n}\n/* + 1x or 2x more dcblocker after downsampling process */\n/* ^ this function really does sound very good if you follow\nthe oversampling & dcblocking instructions */\n\r\nrampsmooth(input, rampup, rampdown) {\r\n\tHistory value, prev, stepcounter, increment;\r\n\r\n\t// reset ramp if input has changed, or if ramp parameters change:\r\n\tif (input != prev || delta(rampup) || delta(rampdown)) {\r\n\t\tdirection = (input - value);\r\n\t\tif (direction > 0) {\r\n\t\t\tstepcounter = rampup;\n\t\t\tincrement = direction / rampup;\r\n\t\t} else {\r\n\t\t\tstepcounter = rampdown;\n\t\t\tincrement = direction / rampdown;\r\n\t\t}\n\t\tprev = input;\t\r\n\t}\r\n\r\n\t// keep incrementing until stepcounter counts down to zero\r\n\tif (stepcounter) {\r\n\t\tstepcounter -= 1;\r\n\t\tvalue += increment;\r\n\t} else {\r\n\t\tvalue = input;\r\n\t}\r\n\r\n\treturn value;\r\n}\n\nParam p1;\nParam p2;\nParam p3;\nParam p4;\nParam p5;\nParam p6;\nParam p7;\nParam p8;\nParam p9;\nParam p10;\nParam p11;\nParam p12;\nParam p13;\nParam p14;\nParam p15;\nParam p16;\nParam p17;\nParam p18;\nParam p19;\nParam p20;\nParam p21;\nParam p22;\nParam p23;\nParam p24;\nParam shapermode(0);\r\nParam drywet(1);\r\nParam ramp(20, min=1);\r\n\r\nHistory output;\r\n\naudioin = in1;\r\n\r\nrampup = mstosamps(ramp);\r\nrampdown = mstosamps(ramp);\r\n\r\nps1 = rampsmooth(p1, rampup, rampdown);\nps2 = rampsmooth(p2, rampup, rampdown);\nps3 = rampsmooth(p3, rampup, rampdown);\nps4 = rampsmooth(p4, rampup, rampdown);\nps5 = rampsmooth(p5, rampup, rampdown);\nps6 = rampsmooth(p6, rampup, rampdown);\nps7 = rampsmooth(p7, rampup, rampdown);\nps8 = rampsmooth(p8, rampup, rampdown);\nps9 = rampsmooth(p9, rampup, rampdown);\nps10 = rampsmooth(p10, rampup, rampdown);\nps11 = rampsmooth(p11, rampup, rampdown);\nps12 = rampsmooth(p12, rampup, rampdown);\nps13 = rampsmooth(p13, rampup, rampdown);\nps14 = rampsmooth(p14, rampup, rampdown);\nps15 = rampsmooth(p15, rampup, rampdown);\nps16 = rampsmooth(p16, rampup, rampdown);\nps17 = rampsmooth(p17, rampup, rampdown);\nps18 = rampsmooth(p18, rampup, rampdown);\nps19 = rampsmooth(p19, rampup, rampdown);\nps20 = rampsmooth(p20, rampup, rampdown);\nps21 = rampsmooth(p21, rampup, rampdown);\nps22 = rampsmooth(p22, rampup, rampdown);\nps23 = rampsmooth(p23, rampup, rampdown);\nps24 = rampsmooth(p24, rampup, rampdown);\r\n\r\nif (shapermode == 0) {\n\toutput = 0;\n}else if (shapermode == 1) {\n\toutput = tanhShape(audioin, ps1);\n}else if (shapermode == 2) {\n\toutput =  tanhOffset(audioin, ps2, ps1);\n}else if (shapermode == 3) {\n\toutput =  modHT(audioin, ps2, ps1);\n}else if (shapermode == 4) {\n\toutput =  overdrive(audioin, ps3);\n}else if (shapermode == 5) {\n\toutput =  atanDrive(audioin, ps3);\n}else if (shapermode == 6) {\n\toutput =  polyWs(audioin, dbtoa(ps4));\n}else if (shapermode == 7) {\n\toutput =  polyVws(audioin, ps5, ps6, dbtoa(p4));\n}else if (shapermode == 8) {\n\toutput =  scDistort(audioin, ps7);\n}else if (shapermode == 9) {\n\toutput =  scSoftclip(audioin, ps7);\n}else if (shapermode == 10) {\n\toutput =  rsinDrive(audioin, ps8);\n}else if (shapermode == 11) {\n\toutput =  curveSplit(audioin, ps9);\n}else if (shapermode == 12) {\n\toutput =  polarSplit(audioin, ps10);\n}else if (shapermode == 13) {\n\toutput =  polarSplit2(audioin, ps10);\r\n}else if (shapermode == 14) {\n\toutput =  foldBD(audioin, ps11, ps12);\n}else if (shapermode == 15) {\n\toutput =  jongShaper(audioin, ps13);\n}else if (shapermode == 16) {\n\toutput =  tarrabiaShaper(audioin, ps14);\n}else if (shapermode == 17) {\n\toutput =   watteShaper(audioin, ps15);\n}else if (shapermode == 18) {\n\toutput =  watteFunc(audioin, ps16);\n}else if (shapermode == 19) {\n\toutput =  varHard(audioin, ps17, ps18);\n}else if (shapermode == 20) {\n\toutput =   gloubiBoulga(audioin, dbtoa(ps19));\n}else if (shapermode == 21) {\n\toutput =   tapeH(audioin, ps20, ps21, ps22);\n}else if (shapermode == 22) {\n\toutput =   cnld(audioin, ps23, ps24);\r\n}\r\n\r\nout1 = output;"
 													}
 
@@ -1884,15 +1909,15 @@
  ],
 											"lines" : [ 												{
 													"patchline" : 													{
-														"source" : [ "obj-3", 0 ],
-														"destination" : [ "obj-4", 0 ]
+														"source" : [ "obj-1", 0 ],
+														"destination" : [ "obj-3", 0 ]
 													}
 
 												}
 , 												{
 													"patchline" : 													{
-														"source" : [ "obj-1", 0 ],
-														"destination" : [ "obj-3", 0 ]
+														"source" : [ "obj-3", 0 ],
+														"destination" : [ "obj-4", 0 ]
 													}
 
 												}
@@ -1908,7 +1933,7 @@
 									"outlettype" : [ "multichannelsignal" ],
 									"patching_rect" : [ 136.5, 349.0, 55.0, 22.0 ],
 									"text" : "mc.gen~",
-									"wrapper_uniquekey" : "u861028644"
+									"wrapper_uniquekey" : "u157011770"
 								}
 
 							}
@@ -2006,13 +2031,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-46", 0 ],
-									"source" : [ "obj-33", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-46", 1 ],
 									"source" : [ "obj-34", 0 ]
 								}
 
@@ -2020,13 +2038,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-67", 0 ],
-									"source" : [ "obj-43", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-43", 0 ],
 									"source" : [ "obj-46", 0 ]
 								}
 
@@ -2105,7 +2116,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 0.0, 104.703125, 16.0 ],
+					"patching_rect" : [ 0.0, 0.0, 105.4296875, 16.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ -2.0, 0.0, 105.4296875, 16.0 ],
 					"varname" : "act",
 					"viewvisibility" : 1
 				}
@@ -2192,6 +2205,20 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.bluebutton.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.blues.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.blues.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
@@ -2206,10 +2233,10 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.mc.stereo_pan.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../abstractions/ll.blues",
-				"type" : "JSON",
+				"name" : "ll.listblock.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -2242,6 +2269,13 @@
 			}
 , 			{
 				"name" : "ll.pm.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.pp.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
@@ -2297,20 +2331,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.s~.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.s~.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ll.wsendback.js",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
@@ -2330,13 +2350,6 @@
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "nblue.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
