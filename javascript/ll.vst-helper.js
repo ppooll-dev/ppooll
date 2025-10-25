@@ -107,6 +107,9 @@ function setPosition(...pos) {
 // Open/close vst~ window
 function setIsOpen(state) {
     // post("setIsOpen", state)
+    if(!currentPlug)
+        return; 
+
     if (state !== isOpen) {
         isOpen = state;
 
@@ -186,6 +189,9 @@ function loadVST(pluginPath) {
     currentPlug = pluginPath;
     currentShell = null;
     currentSubNames = [];
+
+    pp.getnamed("open!").hidden = 0;
+
 
     // set [ ll.s vst_AU ]
     out("vst_AU", getPluginType(pluginPath))
@@ -356,7 +362,7 @@ function vst_folder(selection) {
         // post("currentpath", currentPath, "\n")
         // post("selection", selection, "\n")
         if (!currentPath) {
-            post("def folders not set (no path)\n");
+            post("no currentPath for plugin " + selection + "\n");
             return;
         }
 
@@ -366,7 +372,7 @@ function vst_folder(selection) {
         } else {
             pp.getnamed("def_folder").message(currentPath);
             out("vst_name", selection)
-            loadVST(currentFiles[selection]);
+            loadVST(currentPath === "auto" ? selection : currentFiles[selection]);
         }
     }
 }
@@ -457,6 +463,7 @@ function listFiles(path) {
 //
 function reset(){
     pp.getnamed("open!").message(0);
+    pp.getnamed("open!").hidden = 1;
 
     deleteParamObjects();
 

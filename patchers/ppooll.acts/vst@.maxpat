@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 420.0, 190.0, 159.0, 117.0 ],
+		"rect" : [ 543.0, 236.0, 159.0, 117.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "vst@1",
@@ -270,6 +270,7 @@
 					"bgcolor" : [ 0.027451, 0.023529, 0.6, 1.0 ],
 					"bgoncolor" : [ 0.55, 0.55, 0.55, 1.0 ],
 					"fontsize" : 11.0,
+					"hidden" : 1,
 					"id" : "obj-42",
 					"legacytextcolor" : 1,
 					"maxclass" : "textbutton",
@@ -5606,7 +5607,7 @@
 									"clickthrough" : 0,
 									"enablehscroll" : 0,
 									"enablevscroll" : 0,
-									"id" : "obj-16",
+									"id" : "obj-11",
 									"lockeddragscroll" : 0,
 									"lockedsize" : 0,
 									"maxclass" : "newobj",
@@ -5662,10 +5663,10 @@
 ,
 													"fileref" : 													{
 														"name" : "",
-														"filename" : "_20251019_15.maxsnap",
+														"filename" : "_20251025.maxsnap",
 														"filepath" : "~/Documents/Max 9/Snapshots",
 														"filepos" : -1,
-														"snapshotfileid" : "668d8e46f8ad651c4beefd903c739826"
+														"snapshotfileid" : "003d0ce197b1452d98606245c58357e4"
 													}
 
 												}
@@ -5683,6 +5684,48 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"source" : [ "obj-11", 6 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-11", 4 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-43", 0 ],
+									"source" : [ "obj-11", 5 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-11", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-66", 0 ],
+									"source" : [ "obj-11", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-27", 0 ],
 									"source" : [ "obj-13", 0 ]
 								}
@@ -5690,7 +5733,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-16", 0 ],
+									"destination" : [ "obj-11", 0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -5704,48 +5747,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-10", 0 ],
-									"source" : [ "obj-16", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"source" : [ "obj-16", 6 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"source" : [ "obj-16", 4 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-43", 0 ],
-									"source" : [ "obj-16", 5 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
-									"source" : [ "obj-16", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-66", 0 ],
-									"source" : [ "obj-16", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-26", 0 ],
 									"source" : [ "obj-18", 0 ]
 								}
@@ -5753,7 +5754,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-16", 0 ],
+									"destination" : [ "obj-11", 0 ],
 									"source" : [ "obj-21", 0 ]
 								}
 
@@ -5993,20 +5994,6 @@
 						"open!" : 910,
 						"presets" : 1016,
 						"preset-ramp" : 1017,
-						"color" : 102,
-						"gainfive" : 101,
-						"gainfour" : 102,
-						"ingain" : 103,
-						"outgain" : 104,
-						"gainone" : 105,
-						"gaintwo" : 106,
-						"gainseven" : 107,
-						"gainthree" : 108,
-						"midgain" : 100,
-						"sidegain" : 101,
-						"direction" : 105,
-						"Bypass" : 106,
-						"Program" : 107,
 						"ll.blues::status" : 1,
 						"ll.blues::outputs~" : 2,
 						"ll.blues::outputsMix~" : 3,
@@ -6217,22 +6204,12 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-18::obj-16" : [ "vst", "vst", 0 ],
-			"parameterbanks" : 			{
-				"0" : 				{
-					"index" : 0,
-					"name" : "",
-					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ],
-					"buttons" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
-				}
-
-			}
-,
+			"obj-18::obj-11" : [ "vst", "vst", 0 ],
 			"inherited_shortname" : 1
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "_20251019_15.maxsnap",
+				"name" : "_20251025.maxsnap",
 				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../../Snapshots",
 				"type" : "mx@s",

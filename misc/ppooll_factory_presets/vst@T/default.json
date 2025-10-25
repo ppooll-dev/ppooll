@@ -1,5 +1,5 @@
 {
-	"window" : [ 420, 190, 579, 307 ],
+	"window" : [ 543, 236, 702, 353 ],
 	"program_files" : 	{
 		"patching_rect" : [ 44, 33, 43, 19 ],
 		"hidden" : 0,
@@ -71,7 +71,7 @@
 ,
 	"open!" : 	{
 		"patching_rect" : [ 124, 0, 35, 16 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"bgcolor" : [ 0.027451, 0.023529, 0.6, 1 ],
 		"bgoncolor" : [ 0.55, 0.55, 0.55, 1 ],
 		"fontsize" : 11,
