@@ -286,7 +286,7 @@ function foldUnfold() {
 
         UI.msg("listblock", "headercolors", 3, 1, 3 + S.keep, 1);
 		UI.msg("listblock", "bgcolors",1);	
-		UI.msg("listblock", "modes", "enum", "menu_outputs_0", "menu_outputs_1");
+		UI.msg("listblock", "modes", "enum", "menu_outputs_0", "menu_outputs_1", S.extraModes);
         UI.hidden("ib", 1);
 		UI.hidden("state_menu", 1);
     }
