@@ -1177,7 +1177,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 162.5, 33.0, 23.0 ],
-																	"text" : "",
+																	"text" : "",
 																	"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 																}
 
@@ -2963,7 +2963,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 500.0, 300.0, 200.0, 190.0 ],
+														"rect" : [ 500.0, 300.0, 800.0, 800.0 ],
 														"openrect" : [ 0.0, 0.0, 800.0, 800.0 ],
 														"openinpresentation" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
@@ -4365,6 +4365,8 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 1,
 																		"defer" : 0,
+																		"node_bin_path" : "",
+																		"npm_bin_path" : "",
 																		"watch" : 0
 																	}
 ,
@@ -5897,7 +5899,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 895.0, 159.0, 291.0, 411.0 ],
+										"rect" : [ 892.0, 151.0, 291.0, 411.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"toolbarvisible" : 0,
 										"boxes" : [ 											{
@@ -6399,7 +6401,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 163.0, 100.0, 101.0, 22.0 ],
-																					"text" : "ho_st1"
+																					"text" : "ppooll_send1"
 																				}
 
 																			}
@@ -6424,7 +6426,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 50.0, 100.0, 96.0, 22.0 ],
-																					"text" : "ho_st1"
+																					"text" : "ppooll_send1"
 																				}
 
 																			}
@@ -7037,7 +7039,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 19.0, 290.0, 117.0, 22.0 ],
-													"text" : "ho_st"
+													"text" : "_act_overview"
 												}
 
 											}
@@ -7072,7 +7074,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 19.0, 47.0, 160.0, 24.0 ],
-													"text" : "ho_st1"
+													"text" : "ppooll_send1"
 												}
 
 											}
@@ -17822,7 +17824,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 39.0, 112.0, 114.0, 22.0 ],
-													"text" : "ho_st 1"
+													"text" : "ppooll_send 1"
 												}
 
 											}
@@ -17909,7 +17911,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 241.0, 14.0, 301.0, 35.0 ],
-																	"text" : "\"cxhmbp:/Users/cxh/Documents/Max 9/Library/ppooll_presets/ho_stT\""
+																	"text" : "\"cxhmbp:/Users/cxh/Documents/Max 9/Library/ppooll_presets/ppooll_sendT\""
 																}
 
 															}
@@ -21344,7 +21346,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 405.0, 455.0, 75.0, 22.0 ],
-																					"text" : "ho_st"
+																					"text" : "ppooll_send"
 																				}
 
 																			}
@@ -23376,7 +23378,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 63.333333333333314, 89.0, 90.0, 22.0 ],
-																					"text" : "ho_st1"
+																					"text" : "ppooll_send1"
 																				}
 
 																			}
@@ -24347,13 +24349,13 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-49",
-																					"linecount" : 2,
+																					"linecount" : 3,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 259.5, 367.0, 35.0, 35.0 ],
-																					"text" : "ho_st"
+																					"text" : "ppooll_send"
 																				}
 
 																			}
@@ -25339,7 +25341,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 13.0, 2.0, 87.0, 22.0 ],
-																					"text" : "ho_st1"
+																					"text" : "ppooll_send1"
 																				}
 
 																			}
@@ -25791,7 +25793,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 92.25, 304.0, 145.0, 89.0 ],
-																	"text" : "send ::ho_st1::pat"
+																	"text" : "send ::ppooll_send1::pat"
 																}
 
 															}
@@ -26303,7 +26305,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 264.0, 102.0, 159.0, 22.0 ],
-													"text" : "ho_st1 _"
+													"text" : "ppooll_send1 _"
 												}
 
 											}
@@ -26382,13 +26384,13 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-17",
-																	"linecount" : 4,
+																	"linecount" : 5,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 486.0, 163.0, 50.0, 62.0 ],
-																	"text" : "::ho_st1::act::pres_menu 1"
+																	"text" : "::ppooll_send1::act::pres_menu 1"
 																}
 
 															}
@@ -40792,10 +40794,11 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 657.0, 203.0, 795.0, 806.0 ],
+										"rect" : [ 348.0, 195.0, 778.0, 808.0 ],
 										"default_fontsize" : 10.0,
 										"gridsize" : [ 15.0, 15.0 ],
 										"toolbarvisible" : 0,
+										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"border" : 0,
@@ -40827,8 +40830,9 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 213.0, 194.0, 469.0, 22.0 ],
-													"text" : "or bugreports to"
+													"patching_rect" : [ 214.0, 187.0, 107.0, 22.0 ],
+													"text" : "or bugreports to",
+													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
 											}
@@ -40839,7 +40843,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 62.0, 652.0, 234.0, 22.0 ],
+													"patching_rect" : [ 34.0, 659.0, 234.0, 22.0 ],
 													"text" : "Click to show in Package Manager"
 												}
 
@@ -40935,7 +40939,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 83.0, 29.0, 264.0, 22.0 ],
-																	"text" : "0 0"
+																	"text" : "0 8 \"MuBu For Max\" enabled mubugrain@"
 																}
 
 															}
@@ -41007,7 +41011,7 @@
  ]
 													}
 ,
-													"patching_rect" : [ 293.0, 653.0, 81.0, 20.0 ],
+													"patching_rect" : [ 265.0, 660.0, 81.0, 20.0 ],
 													"text" : "p show-package"
 												}
 
@@ -41034,8 +41038,9 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 55.0, 238.0, 90.0, 18.0 ],
+													"patching_rect" : [ 53.5, 251.0, 90.0, 18.0 ],
 													"text" : "up to date!",
+													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"textjustification" : 1
 												}
 
@@ -41048,8 +41053,9 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 213.0, 56.0, 95.0, 20.0 ],
+													"patching_rect" : [ 70.0, 171.0, 83.0, 20.0 ],
 													"text" : "9.0.0",
+													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"textjustification" : 2
 												}
 
@@ -41099,7 +41105,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 57.0, 214.0, 87.0, 20.0 ],
+													"patching_rect" : [ 55.5, 227.0, 87.0, 20.0 ],
 													"text" : "check for updates"
 												}
 
@@ -41112,8 +41118,9 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 312.0, 45.0, 76.0, 22.0 ],
-													"text" : "download:"
+													"patching_rect" : [ 214.0, 130.0, 76.0, 22.0 ],
+													"text" : "download:",
+													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
 											}
@@ -41125,8 +41132,9 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 333.0, 21.0, 54.0, 22.0 ],
-													"text" : "github:"
+													"patching_rect" : [ 214.0, 106.0, 54.0, 22.0 ],
+													"text" : "github:",
+													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
 											}
@@ -41141,7 +41149,8 @@
 													"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 													"bgfillcolor_proportion" : 0.39,
 													"bgfillcolor_type" : "color",
-													"fontsize" : 12.0,
+													"fontname" : "Arial",
+													"fontsize" : 14.0,
 													"id" : "obj-25",
 													"items" : "https://github.com/ppooll-dev/ppooll/releases/latest",
 													"labelclick" : 1,
@@ -41151,7 +41160,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "int", "", "" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 376.0, 45.0, 281.5, 22.0 ],
+													"patching_rect" : [ 285.0, 129.0, 337.0, 24.0 ],
 													"textcolor" : [ 0.054902, 0.0, 0.972549, 1.0 ]
 												}
 
@@ -41167,7 +41176,8 @@
 													"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 													"bgfillcolor_proportion" : 0.39,
 													"bgfillcolor_type" : "color",
-													"fontsize" : 12.0,
+													"fontname" : "Arial",
+													"fontsize" : 14.0,
 													"id" : "obj-21",
 													"items" : "https://github.com/ppooll-dev/ppooll",
 													"labelclick" : 1,
@@ -41177,7 +41187,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "int", "", "" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 376.0, 21.0, 202.5, 22.0 ],
+													"patching_rect" : [ 263.0, 105.0, 237.0, 24.0 ],
 													"textcolor" : [ 0.054902, 0.0, 0.972549, 1.0 ]
 												}
 
@@ -41190,7 +41200,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 252.0, 675.0, 192.0, 22.0 ],
+													"patching_rect" : [ 224.0, 682.0, 192.0, 22.0 ],
 													"text" : "File>Show Package Manager",
 													"underline" : 1
 												}
@@ -41205,7 +41215,7 @@
 													"numoutlets" : 4,
 													"outlettype" : [ "bang", "bang", "", "int" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 252.0, 676.0, 192.0, 22.0 ]
+													"patching_rect" : [ 224.0, 683.0, 192.0, 22.0 ]
 												}
 
 											}
@@ -41218,7 +41228,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 469.0, 680.0, 104.0, 31.0 ],
+													"patching_rect" : [ 441.0, 687.0, 104.0, 31.0 ],
 													"text" : ";\rmax packagebrowser"
 												}
 
@@ -41231,19 +41241,20 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 310.0, 375.0, 469.0, 22.0 ],
+													"patching_rect" : [ 167.0, 380.0, 469.0, 22.0 ],
 													"text" : "a short description, how to convert any patch into a ppooll act."
 												}
 
 											}
 , 											{
 												"box" : 												{
+													"fontsize" : 14.0,
 													"id" : "obj-10",
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 214.0, 375.0, 95.0, 20.0 ],
+													"patching_rect" : [ 32.0, 378.0, 130.0, 24.0 ],
 													"text" : "actmaking_tutorial_"
 												}
 
@@ -41256,7 +41267,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 307.0, 350.0, 469.0, 22.0 ],
+													"patching_rect" : [ 160.0, 352.0, 469.0, 22.0 ],
 													"text" : "all the ppooll externals and abstractions and their help files"
 												}
 
@@ -41269,31 +41280,33 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 284.0, 325.0, 469.0, 22.0 ],
+													"patching_rect" : [ 127.0, 324.0, 469.0, 22.0 ],
 													"text" : "a starting point to read about the ppooll concept."
 												}
 
 											}
 , 											{
 												"box" : 												{
+													"fontsize" : 14.0,
 													"id" : "obj-9",
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 214.0, 350.0, 91.0, 20.0 ],
+													"patching_rect" : [ 32.0, 350.0, 124.0, 24.0 ],
 													"text" : "_objects_overview"
 												}
 
 											}
 , 											{
 												"box" : 												{
+													"fontsize" : 14.0,
 													"id" : "obj-56",
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 214.0, 325.0, 64.0, 20.0 ],
+													"patching_rect" : [ 32.0, 323.0, 86.0, 24.0 ],
 													"text" : "ppooll_basic"
 												}
 
@@ -41306,7 +41319,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 211.0, 299.0, 145.0, 22.0 ],
+													"patching_rect" : [ 32.0, 298.0, 145.0, 22.0 ],
 													"text" : "programming support:"
 												}
 
@@ -41319,8 +41332,9 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 325.0, 170.0, 469.0, 22.0 ],
-													"text" : "to our mailinglist to email any questions, comments, ideas"
+													"patching_rect" : [ 328.0, 163.0, 469.0, 22.0 ],
+													"text" : "to our mailinglist to email any questions, comments, ideas",
+													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
 											}
@@ -41332,8 +41346,9 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 213.0, 170.0, 50.0, 22.0 ],
-													"text" : "please"
+													"patching_rect" : [ 214.0, 163.0, 50.0, 22.0 ],
+													"text" : "please",
+													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
 											}
@@ -41627,7 +41642,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 107.0, 746.0, 330.0, 22.0 ],
+													"patching_rect" : [ 113.0, 752.0, 330.0, 22.0 ],
 													"textcolor" : [ 0.458823529411765, 0.458823529411765, 0.458823529411765, 1.0 ]
 												}
 
@@ -41640,7 +41655,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 28.0, 722.0, 674.0, 22.0 ],
+													"patching_rect" : [ 34.0, 728.0, 674.0, 22.0 ],
 													"text" : "for windows some externals are not available in 64bit at the moment, causing the following acts not to work:"
 												}
 
@@ -41653,7 +41668,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 627.0, 667.0, 106.0, 22.0 ],
+													"patching_rect" : [ 633.0, 681.0, 106.0, 22.0 ],
 													"text" : "after managing."
 												}
 
@@ -41666,7 +41681,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 627.0, 649.0, 36.0, 22.0 ],
+													"patching_rect" : [ 633.0, 659.0, 36.0, 22.0 ],
 													"text" : "click"
 												}
 
@@ -41679,7 +41694,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 210.0, 465.0, 368.0, 22.0 ],
+													"patching_rect" : [ 202.0, 471.0, 368.0, 22.0 ],
 													"text" : "acts (disabled if greyed out, also in the act-menu of ho_st)"
 												}
 
@@ -41692,7 +41707,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 137.0, 465.0, 46.0, 22.0 ],
+													"patching_rect" : [ 134.0, 471.0, 46.0, 22.0 ],
 													"text" : "status"
 												}
 
@@ -41705,7 +41720,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 35.0, 465.0, 63.0, 22.0 ],
+													"patching_rect" : [ 32.0, 471.0, 63.0, 22.0 ],
 													"text" : "Package"
 												}
 
@@ -41719,7 +41734,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 28.0, 419.0, 731.0, 38.0 ],
+													"patching_rect" : [ 32.0, 431.0, 731.0, 38.0 ],
 													"text" : "ppooll comes as a full functional basic Package. \nsome additional optional modules (so called \"acts\") depend on other Packages to install:"
 												}
 
@@ -41733,12 +41748,13 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 719.0, 653.0, 16.0, 16.0 ]
+													"patching_rect" : [ 725.0, 663.0, 16.0, 16.0 ]
 												}
 
 											}
 , 											{
 												"box" : 												{
+													"fontsize" : 14.0,
 													"id" : "obj-32",
 													"maxclass" : "textbutton",
 													"numinlets" : 1,
@@ -41746,7 +41762,7 @@
 													"outlettype" : [ "", "", "int" ],
 													"outputmode" : 0,
 													"parameter_enable" : 0,
-													"patching_rect" : [ 664.0, 650.0, 53.0, 20.0 ],
+													"patching_rect" : [ 673.0, 660.0, 53.0, 20.0 ],
 													"text" : "refresh",
 													"texton" : "refresh"
 												}
@@ -41762,7 +41778,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 407.0, 461.0, 30.0, 30.0 ]
+													"patching_rect" : [ 413.0, 467.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -41773,7 +41789,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 62.0, 674.0, 190.0, 22.0 ],
+													"patching_rect" : [ 34.0, 681.0, 190.0, 22.0 ],
 													"text" : "Packages can be installed by"
 												}
 
@@ -41801,7 +41817,7 @@
 													"numoutlets" : 4,
 													"outlettype" : [ "list", "", "", "" ],
 													"outmode" : 1,
-													"patching_rect" : [ 28.0, 489.0, 713.0, 159.0 ],
+													"patching_rect" : [ 34.0, 495.0, 713.0, 159.0 ],
 													"precision" : 4,
 													"rowheight" : 17,
 													"rows" : 14,
@@ -41821,8 +41837,9 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 378.0, 231.0, 102.0, 22.0 ],
-													"text" : "get more info..."
+													"patching_rect" : [ 379.0, 224.0, 102.0, 22.0 ],
+													"text" : "get more info...",
+													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
 											}
@@ -41846,7 +41863,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "int", "", "" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 381.0, 253.0, 199.0, 22.0 ],
+													"patching_rect" : [ 382.0, 248.0, 199.0, 22.0 ],
 													"prefix_mode" : 2,
 													"textcolor" : [ 0.054902, 0.0, 0.972549, 1.0 ]
 												}
@@ -42014,7 +42031,7 @@
  ]
 													}
 ,
-													"patching_rect" : [ 322.0, 255.0, 43.0, 22.0 ],
+													"patching_rect" : [ 329.0, 289.0, 43.0, 22.0 ],
 													"text" : "p load"
 												}
 
@@ -42084,22 +42101,8 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "int", "", "" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 216.0, 255.0, 82.0, 22.0 ],
+													"patching_rect" : [ 217.0, 248.0, 82.0, 22.0 ],
 													"textcolor" : [ 0.054902, 0.0, 0.972549, 1.0 ]
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"fontface" : 1,
-													"fontname" : "Arial",
-													"fontsize" : 25.0,
-													"id" : "obj-34",
-													"maxclass" : "comment",
-													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 213.0, 21.0, 83.0, 34.0 ],
-													"text" : "ppooll"
 												}
 
 											}
@@ -42113,7 +42116,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 684.0, 36.0, 60.0, 19.0 ],
+													"patching_rect" : [ 684.0, 30.0, 60.0, 19.0 ],
 													"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 													"text" : "thispatcher",
 													"varname" : "iTP"
@@ -42156,7 +42159,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "int", "", "" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 325.0, 193.0, 134.0, 24.0 ],
+													"patching_rect" : [ 318.0, 186.0, 134.0, 24.0 ],
 													"textcolor" : [ 0.054902, 0.0, 0.972549, 1.0 ]
 												}
 
@@ -42182,7 +42185,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "int", "", "" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 259.0, 169.0, 72.0, 24.0 ],
+													"patching_rect" : [ 260.0, 162.0, 72.0, 24.0 ],
 													"textcolor" : [ 0.054902, 0.0, 0.972549, 1.0 ]
 												}
 
@@ -42208,7 +42211,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "int", "", "" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 50.0, 190.0, 97.0, 22.0 ],
+													"patching_rect" : [ 48.5, 203.0, 97.0, 22.0 ],
 													"textcolor" : [ 0.054902, 0.0, 0.972549, 1.0 ]
 												}
 
@@ -42234,7 +42237,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "int", "", "" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 516.0, 139.0, 138.0, 24.0 ],
+													"patching_rect" : [ 517.0, 73.0, 138.0, 24.0 ],
 													"textcolor" : [ 0.054902, 0.0, 0.972549, 1.0 ]
 												}
 
@@ -42256,7 +42259,7 @@
 , 											{
 												"box" : 												{
 													"fontname" : "Arial",
-													"fontsize" : 9.160197999999999,
+													"fontsize" : 14.0,
 													"id" : "obj-22",
 													"maxclass" : "newobj",
 													"numinlets" : 0,
@@ -42349,7 +42352,7 @@
 														"lines" : [  ]
 													}
 ,
-													"patching_rect" : [ 601.0, 254.0, 53.0, 19.0 ],
+													"patching_rect" : [ 673.0, 254.0, 68.0, 24.0 ],
 													"saved_object_attributes" : 													{
 														"fontsize" : 10.0
 													}
@@ -42366,8 +42369,9 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 213.0, 231.0, 147.0, 22.0 ],
-													"text" : "special info on ho_st:"
+													"patching_rect" : [ 214.0, 224.0, 147.0, 22.0 ],
+													"text" : "special info on ho_st:",
+													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
 											}
@@ -42380,8 +42384,9 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 213.0, 88.0, 464.0, 53.0 ],
-													"text" : "a collection and system of interacting max patches designed to create an individual setup for live improvisation or installations. open to use with your own max patches and equipped with useful GUIs."
+													"patching_rect" : [ 214.0, 22.0, 464.0, 53.0 ],
+													"text" : "a collection and system of interacting max patches designed to create an individual setup for live improvisation or installations. open to use with your own max patches and equipped with useful GUIs.",
+													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
 											}
@@ -42393,21 +42398,23 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 213.0, 140.0, 307.0, 22.0 ],
-													"text" : "ppooll needs the latest available version of Max:"
+													"patching_rect" : [ 214.0, 74.0, 307.0, 22.0 ],
+													"text" : "ppooll needs the latest available version of Max:",
+													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 
 											}
 , 											{
 												"box" : 												{
 													"angle" : 270.0,
-													"bgcolor" : [ 0.603921568627451, 0.772549019607843, 0.498039215686275, 1.0 ],
+													"background" : 1,
+													"bgcolor" : [ 0.249019607843137, 0.5, 0.362745098039216, 1.0 ],
 													"id" : "obj-53",
 													"maxclass" : "panel",
 													"mode" : 0,
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 10.0, 419.0, 775.0, 373.0 ],
+													"patching_rect" : [ 17.0, 424.0, 739.0, 369.0 ],
 													"proportion" : 0.5
 												}
 
@@ -42415,13 +42422,15 @@
 , 											{
 												"box" : 												{
 													"angle" : 270.0,
-													"bgcolor" : [ 0.701960784313725, 0.847058823529412, 0.607843137254902, 1.0 ],
+													"background" : 1,
+													"bgcolor" : [ 0.249019607843137, 0.5, 0.362745098039216, 1.0 ],
+													"bordercolor" : [ 0.619607843137255, 0.745098039215686, 0.952941176470588, 0.0 ],
 													"id" : "obj-13",
 													"maxclass" : "panel",
 													"mode" : 0,
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 11.0, 295.0, 773.0, 116.0 ],
+													"patching_rect" : [ 17.0, 289.0, 739.0, 122.0 ],
 													"proportion" : 0.5
 												}
 
@@ -42494,6 +42503,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-59", 0 ],
+													"hidden" : 1,
 													"source" : [ "obj-204", 0 ]
 												}
 
@@ -42621,13 +42631,13 @@
 												"multi" : 0
 											}
  ],
-										"bgcolor" : [ 0.52156862745098, 0.666666666666667, 0.431372549019608, 1.0 ]
+										"bgcolor" : [ 0.498039215686275, 1.0, 0.725490196078431, 1.0 ]
 									}
 ,
 									"patching_rect" : [ 17.0, 106.0, 47.0, 24.0 ],
 									"saved_object_attributes" : 									{
 										"fontsize" : 10.0,
-										"locked_bgcolor" : [ 0.52156862745098, 0.666666666666667, 0.431372549019608, 1.0 ]
+										"locked_bgcolor" : [ 0.498039215686275, 1.0, 0.725490196078431, 1.0 ]
 									}
 ,
 									"text" : "p info",
@@ -47619,7 +47629,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 266.0, 718.0, 212.0, 20.0 ],
-													"text" : "load (__acts__).maxpat"
+													"text" : "load _act_overview.maxpat"
 												}
 
 											}
@@ -50289,10 +50299,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 493.0, 69.0, 92.0, 21.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 724, 87, 1484, 866 ],
+						"client_rect" : [ 1176, 213, 1791, 873 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 430, 270, 1276, 999 ]
+						"storage_rect" : [ 200, 200, 800, 500 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -50348,7 +50358,7 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 493.0, 168.0, 107.0, 21.0 ],
 					"restore" : 					{
-						"act_menu" : [ "(__acts__)" ],
+						"act_menu" : [ "_act_overview" ],
 						"audioON/OFF" : [ 0 ],
 						"chans" : [ 2.0 ],
 						"def" : [ -1 ],
@@ -50360,7 +50370,7 @@
 						"rec" : [ 0 ],
 						"screen" : [ 0 ],
 						"stereo" : [ 0 ],
-						"time" : [ 40721.0 ],
+						"time" : [ 42552.0 ],
 						"vol" : [ 1.0 ],
 						"vol_ramp" : [ 10.000000000000002 ],
 						"vol_slider" : [ 1.0 ],
