@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 546.0, 255.0, 159.0, 104.0 ],
+		"rect" : [ 468.0, 150.0, 159.0, 104.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "vst@1",
@@ -300,7 +300,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 595.0, 576.0, 883.0, 366.0 ],
+						"rect" : [ 595.0, 522.0, 883.0, 366.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -5577,7 +5577,7 @@
 									"clickthrough" : 0,
 									"enablehscroll" : 0,
 									"enablevscroll" : 0,
-									"id" : "obj-21",
+									"id" : "obj-11",
 									"lockeddragscroll" : 0,
 									"lockedsize" : 0,
 									"maxclass" : "newobj",
@@ -5633,10 +5633,10 @@
 ,
 													"fileref" : 													{
 														"name" : "",
-														"filename" : "_20251025_1.maxsnap",
+														"filename" : "_20251025_5.maxsnap",
 														"filepath" : "~/Documents/Max 9/Snapshots",
 														"filepos" : -1,
-														"snapshotfileid" : "1b8910f950b34416cb292f36880da6e3"
+														"snapshotfileid" : "9ed2ca1f89e62dbf1e810d121e23683a"
 													}
 
 												}
@@ -5654,6 +5654,48 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"source" : [ "obj-11", 6 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-11", 4 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-43", 0 ],
+									"source" : [ "obj-11", 5 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-11", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-66", 0 ],
+									"source" : [ "obj-11", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-27", 0 ],
 									"source" : [ "obj-13", 0 ]
 								}
@@ -5661,7 +5703,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-21", 0 ],
+									"destination" : [ "obj-11", 0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -5682,15 +5724,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-19", 0 ],
-									"order" : 0,
-									"source" : [ "obj-2", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-21", 0 ],
+									"destination" : [ "obj-11", 0 ],
 									"order" : 1,
 									"source" : [ "obj-2", 0 ]
 								}
@@ -5698,43 +5732,9 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-10", 0 ],
-									"source" : [ "obj-21", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"source" : [ "obj-21", 6 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"source" : [ "obj-21", 4 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-43", 0 ],
-									"source" : [ "obj-21", 5 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
-									"source" : [ "obj-21", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-66", 0 ],
-									"source" : [ "obj-21", 2 ]
+									"destination" : [ "obj-19", 0 ],
+									"order" : 0,
+									"source" : [ "obj-2", 0 ]
 								}
 
 							}
@@ -5974,8 +5974,8 @@
 						"vst-folder" : 3,
 						"program_files" : 5,
 						"vst_program" : 6,
-						"midi-channel" : 900,
-						"midi-port" : 901,
+						"midi-port" : 900,
+						"midi-channel" : 901,
 						"open!" : 910,
 						"presets" : 1016,
 						"preset-ramp" : 1017,
@@ -5987,7 +5987,7 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 916, 166, 2171, 882 ],
+						"client_rect" : [ 257, 166, 1512, 882 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 583, 68, 1034, 196 ]
@@ -6201,12 +6201,12 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-18::obj-21" : [ "vst", "vst", 0 ],
+			"obj-18::obj-11" : [ "vst", "vst", 0 ],
 			"inherited_shortname" : 1
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "_20251025_1.maxsnap",
+				"name" : "_20251025_5.maxsnap",
 				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../../Snapshots",
 				"type" : "mx@s",
