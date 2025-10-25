@@ -1,7 +1,7 @@
 {
-	"window" : [ 539, 393, 698, 586 ],
+	"window" : [ 539, 393, 698, 555 ],
 	"preset-ramp" : 	{
-		"patching_rect" : [ 59, 0, 100, 16 ],
+		"patching_rect" : [ 74, 16, 85, 16 ],
 		"hidden" : 0,
 		"bgcolor" : [ 1, 1, 1, 1 ],
 		"bordercolor" : [ 0.5, 0.5, 0.5, 1 ],
@@ -15,13 +15,13 @@
 	}
 ,
 	"presets" : 	{
-		"patching_rect" : [ 84, 126, 73, 12 ],
+		"patching_rect" : [ 57, 0, 102, 16 ],
 		"hidden" : 0,
-		"jsarguments" : [ 11, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "svf2@1" ]
+		"jsarguments" : [ 16, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "svf2@1" ]
 	}
 ,
 	"freq" : 	{
-		"patching_rect" : [ 0, 16, 159, 30 ],
+		"patching_rect" : [ 0, 32, 159, 16 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.494118, 0.788235, 0, 1 ],
 		"bordercolor" : [ 0, 0, 0, 1 ],
@@ -35,7 +35,7 @@
 	}
 ,
 	"res" : 	{
-		"patching_rect" : [ 0, 75, 159, 20 ],
+		"patching_rect" : [ 0, 71, 159, 16 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.313726, 0.690196, 0.580392, 1 ],
 		"bordercolor" : [ 0, 0, 0, 1 ],
@@ -49,7 +49,7 @@
 	}
 ,
 	"res_ramp" : 	{
-		"patching_rect" : [ 0, 108, 159, 15 ],
+		"patching_rect" : [ 0, 98, 159, 13 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.031373, 0.639216, 1, 1 ],
 		"bordercolor" : [ 0, 0, 0, 1 ],
@@ -63,7 +63,7 @@
 	}
 ,
 	"ll.blues" : 	{
-		"patching_rect" : [ 0, 140, 159, 53 ],
+		"patching_rect" : [ 0, 110, 159, 53 ],
 		"hidden" : 0,
 		"accentcolor" : [ 0.458595350062755, 0.458595237564901, 0.458595266962388, 1 ],
 		"bgcolor" : [ 0.125, 0.125, 0.125, 1 ],
@@ -94,7 +94,7 @@
 	}
 ,
 	"mat" : 	{
-		"patching_rect" : [ 0, 123, 81, 17 ],
+		"patching_rect" : [ 0, 16, 74, 16 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.627450980392157, 0.627450980392157, 0.627450980392157, 1 ],
 		"color" : [ 0.6, 0.92156862745098, 0.364705882352941, 1 ],
@@ -102,7 +102,7 @@
 	}
 ,
 	"freq_ramp" : 	{
-		"patching_rect" : [ 0, 60, 159, 15 ],
+		"patching_rect" : [ 0, 59, 159, 13 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.031372549019608, 1, 0.611844461743031, 1 ],
 		"bordercolor" : [ 0, 0, 0, 1 ],
@@ -116,7 +116,7 @@
 	}
 ,
 	"res_mcspread" : 	{
-		"patching_rect" : [ 0, 93, 159, 15 ],
+		"patching_rect" : [ 0, 86, 159, 13 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.395454545454546, 0.87, 0.731590909090909, 1 ],
 		"bordercolor" : [ 0, 0, 0, 1 ],
@@ -130,7 +130,7 @@
 	}
 ,
 	"freq_mcspread" : 	{
-		"patching_rect" : [ 0, 45, 159, 15 ],
+		"patching_rect" : [ 0, 47, 159, 13 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.813432835820896, 1, 0.5, 1 ],
 		"bordercolor" : [ 0, 0, 0, 1 ],
