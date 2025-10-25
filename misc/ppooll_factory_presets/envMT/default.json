@@ -88,7 +88,7 @@
 		"usetextovercolor" : 1
 	}
 ,
-	"llmcoutput" : 	{
+	"llblues" : 	{
 		"patching_rect" : [ 52.85546875, 0, 117, 16 ],
 		"hidden" : 0,
 		"accentcolor" : [ 0.458595350062755, 0.458595237564901, 0.458595266962388, 1 ],
