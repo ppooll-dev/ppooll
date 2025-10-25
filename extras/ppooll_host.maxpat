@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 313.0, 141.0, 133.0, 124.0 ],
+		"rect" : [ 560.0, 282.0, 133.0, 124.0 ],
 		"default_fontsize" : 11.595186999999999,
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
@@ -1177,6 +1177,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 162.5, 33.0, 23.0 ],
+																	"text" : "",
 																	"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 																}
 
@@ -1850,13 +1851,12 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-5",
-																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 339.0, 243.0, 79.0, 35.0 ],
-																	"text" : "(environments)"
+																	"text" : "opentext"
 																}
 
 															}
@@ -3226,6 +3226,7 @@
 																	"patching_rect" : [ 46.0, 93.0, 133.0, 18.0 ],
 																	"presentation" : 1,
 																	"presentation_rect" : [ 41.0, 29.0, 157.0, 18.0 ],
+																	"text" : "sinsE_conv",
 																	"varname" : "textedit_envi_name"
 																}
 
@@ -3233,7 +3234,6 @@
 , 															{
 																"box" : 																{
 																	"fontsize" : 10.0,
-																	"hidden" : 1,
 																	"id" : "obj-15",
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
@@ -3519,7 +3519,6 @@
 																"box" : 																{
 																	"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 																	"fontsize" : 11.0,
-																	"hidden" : 1,
 																	"id" : "obj-1",
 																	"maxclass" : "textbutton",
 																	"numinlets" : 1,
@@ -4362,6 +4361,8 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 1,
 																		"defer" : 0,
+																		"node_bin_path" : "",
+																		"npm_bin_path" : "",
 																		"watch" : 0
 																	}
 ,
@@ -6396,7 +6397,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 163.0, 100.0, 101.0, 22.0 ],
-																					"text" : "ho_st1"
+																					"text" : "vbap@1"
 																				}
 
 																			}
@@ -6421,7 +6422,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 50.0, 100.0, 96.0, 22.0 ],
-																					"text" : "ho_st1"
+																					"text" : "vbap@1"
 																				}
 
 																			}
@@ -7034,7 +7035,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 19.0, 290.0, 117.0, 22.0 ],
-													"text" : "ho_st"
+													"text" : "vbap@"
 												}
 
 											}
@@ -7069,7 +7070,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 19.0, 47.0, 160.0, 24.0 ],
-													"text" : "ho_st1"
+													"text" : "vbap@1"
 												}
 
 											}
@@ -17109,7 +17110,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-10",
-																	"items" : "ee.json",
+																	"items" : [ "4_points.json", ",", "plug_test.json" ],
 																	"maxclass" : "umenu",
 																	"numinlets" : 1,
 																	"numoutlets" : 3,
@@ -17820,7 +17821,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 39.0, 112.0, 114.0, 22.0 ],
-													"text" : "ho_st 1"
+													"text" : "vbap@ 1"
 												}
 
 											}
@@ -17907,7 +17908,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 241.0, 14.0, 301.0, 35.0 ],
-																	"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Library/ppooll_presets/ho_stT\""
+																	"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Library/ppooll_presets/vbap@T\""
 																}
 
 															}
@@ -20512,7 +20513,7 @@
 																									"numoutlets" : 1,
 																									"outlettype" : [ "" ],
 																									"patching_rect" : [ 192.0, 25.0, 50.0, 22.0 ],
-																									"text" : "6."
+																									"text" : "9."
 																								}
 
 																							}
@@ -20875,7 +20876,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 548.0, 346.0, 101.0, 22.0 ],
-																					"text" : "12"
+																					"text" : "9"
 																				}
 
 																			}
@@ -21342,7 +21343,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 405.0, 455.0, 75.0, 22.0 ],
-																					"text" : "ho_st"
+																					"text" : "vbap@"
 																				}
 
 																			}
@@ -22637,7 +22638,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 300.0, 88.0, 101.0, 22.0 ],
-																					"text" : "6. 2."
+																					"text" : "9. 1."
 																				}
 
 																			}
@@ -23078,7 +23079,7 @@
 																									"numoutlets" : 1,
 																									"outlettype" : [ "" ],
 																									"patching_rect" : [ 198.0, 381.0, 154.0, 22.0 ],
-																									"text" : "6. 2."
+																									"text" : "9. 1."
 																								}
 
 																							}
@@ -23374,7 +23375,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 63.333333333333314, 89.0, 90.0, 22.0 ],
-																					"text" : "ho_st1"
+																					"text" : "vbap@1"
 																				}
 
 																			}
@@ -24351,7 +24352,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 259.5, 367.0, 35.0, 35.0 ],
-																					"text" : "ho_st"
+																					"text" : "vbap@"
 																				}
 
 																			}
@@ -25259,7 +25260,7 @@
 																			}
 , 																			{
 																				"box" : 																				{
-																					"cols" : 6,
+																					"cols" : 9,
 																					"colwidth" : 20,
 																					"fontface" : 0,
 																					"fontname" : "Arial",
@@ -25271,7 +25272,7 @@
 																					"numoutlets" : 4,
 																					"outlettype" : [ "list", "", "", "" ],
 																					"patching_rect" : [ 13.0, 70.0, 477.0, 389.0 ],
-																					"rows" : 2,
+																					"rows" : 1,
 																					"selmode" : 5,
 																					"vscroll" : 0
 																				}
@@ -25337,7 +25338,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 13.0, 2.0, 87.0, 22.0 ],
-																					"text" : "ho_st1"
+																					"text" : "vbap@1"
 																				}
 
 																			}
@@ -25789,7 +25790,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 92.25, 304.0, 145.0, 89.0 ],
-																	"text" : "send ::ho_st1::pat"
+																	"text" : "send ::vbap@1::pat"
 																}
 
 															}
@@ -26301,7 +26302,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 264.0, 102.0, 159.0, 22.0 ],
-													"text" : "ho_st1 _"
+													"text" : "vbap@1 _"
 												}
 
 											}
@@ -26386,7 +26387,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 486.0, 163.0, 50.0, 62.0 ],
-																	"text" : "::ho_st1::act::pres_menu 1"
+																	"text" : "::vbap@1::act::pres_menu 1"
 																}
 
 															}
@@ -36045,7 +36046,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 343.0, 342.0, 379.0, 35.0 ],
-																	"text" : "read \"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets/vst@T/default.json\""
+																	"text" : "read \"Macintosh HD:/Users/klaus/Documents/Max 9/Library/ppooll_presets/control@T/mini2.json\""
 																}
 
 															}
@@ -36142,7 +36143,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 82.0, 63.0, 197.0, 22.0 ],
-																	"text" : "vst@1 \"ƒ default.json\""
+																	"text" : "control@3 mini2.json"
 																}
 
 															}
@@ -38232,7 +38233,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 315.0, 636.0, 1002.0, 790.0 ],
+										"rect" : [ 458.0, 1252.0, 1201.0, 790.0 ],
 										"default_fontsize" : 10.0,
 										"gridsize" : [ 15.0, 15.0 ],
 										"boxes" : [ 											{
@@ -38373,7 +38374,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 176.0, 351.0, 96.0, 22.0 ],
-																	"text" : "263 363"
+																	"text" : "280 386"
 																}
 
 															}
@@ -38789,7 +38790,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 70.0, 381.0, 137.0, 22.0 ],
-													"text" : "0 0 1920 1080"
+													"text" : "0 0 2048 1152"
 												}
 
 											}
@@ -39476,34 +39477,11 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 0.0, 0.0, 1920.0, 1080.0 ],
+														"rect" : [ 0.0, 0.0, 2048.0, 1152.0 ],
 														"default_fontsize" : 10.0,
 														"gridsize" : [ 15.0, 15.0 ],
 														"toolbarvisible" : 0,
 														"boxes" : [ 															{
-																"box" : 																{
-																	"border" : 0,
-																	"embedstate" : [ [ "bgcolor", 0, 0, 0, 0 ], [ "crop", 0, 0, 1, 1 ], [ "fgcolor", 1.1, 0.211474277210884, 0.714953434436569, 1.1 ], [ "zoom", 0.92 ] ],
-																	"filename" : "ll.logo.js",
-																	"id" : "obj-2",
-																	"maxclass" : "v8ui",
-																	"numinlets" : 1,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "" ],
-																	"parameter_enable" : 0,
-																	"patching_rect" : [ 1080.0, 368.0, 263.0, 363.0 ],
-																	"textfile" : 																	{
-																		"filename" : "ll.logo.js",
-																		"flags" : 0,
-																		"embed" : 0,
-																		"autowatch" : 1
-																	}
-,
-																	"varname" : "logo[1]"
-																}
-
-															}
-, 															{
 																"box" : 																{
 																	"border" : 0,
 																	"embedstate" : [ [ "bgcolor", 0, 0, 0, 0 ], [ "crop", 0, 0, 1, 1 ], [ "fgcolor", 0.556641793251038, 0.1, 0.1, 1.1 ], [ "zoom", 0.92 ] ],
@@ -39514,7 +39492,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"parameter_enable" : 0,
-																	"patching_rect" : [ 829.0, 359.0, 263.0, 363.0 ],
+																	"patching_rect" : [ 884.0, 383.0, 280.0, 386.0 ],
 																	"textfile" : 																	{
 																		"filename" : "ll.logo.js",
 																		"flags" : 0,
@@ -39563,7 +39541,7 @@
 																	"numoutlets" : 4,
 																	"outlettype" : [ "bang", "bang", "", "int" ],
 																	"parameter_enable" : 0,
-																	"patching_rect" : [ -0.5, -0.5, 1920.0, 1080.0 ],
+																	"patching_rect" : [ -0.5, -0.5, 2048.0, 1152.0 ],
 																	"varname" : "button"
 																}
 
@@ -40292,6 +40270,18 @@
 												}
 
 											}
+, 											{
+												"box" : 												{
+													"id" : "obj-7",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 98.0, 482.0, 67.0, 20.0 ],
+													"text" : "0 0 2048 800"
+												}
+
+											}
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
@@ -40628,6 +40618,13 @@
 													"destination" : [ "obj-4", 0 ],
 													"disabled" : 1,
 													"source" : [ "obj-6", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-71", 0 ],
+													"source" : [ "obj-7", 0 ]
 												}
 
 											}
@@ -43365,7 +43362,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 596.0, 117.0, 76.0, 20.0 ],
-																	"text" : "time"
+																	"text" : "stopwatch"
 																}
 
 															}
@@ -47624,7 +47621,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 266.0, 718.0, 212.0, 20.0 ],
-													"text" : "load _act_overview.maxpat"
+													"text" : "load vbap@.maxpat"
 												}
 
 											}
@@ -50294,10 +50291,10 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 493.0, 69.0, 92.0, 21.0 ],
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 1176, 213, 1791, 873 ],
+						"client_rect" : [ 257, 195, 1512, 911 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 200, 200, 800, 500 ]
+						"storage_rect" : [ 583, 68, 1034, 196 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -50357,19 +50354,19 @@
 						"audioON/OFF" : [ 0 ],
 						"chans" : [ 2.0 ],
 						"def" : [ -1 ],
-						"envi_menu" : [ "(environments)" ],
+						"envi_menu" : [ "opentext" ],
 						"favorites" : [ "(favorites)" ],
 						"jit.on" : [ 0 ],
-						"menubar" : [ 0 ],
+						"menubar" : [ 1 ],
 						"ppooll" : [ -1 ],
 						"rec" : [ 0 ],
 						"screen" : [ 0 ],
 						"stereo" : [ 0 ],
-						"time" : [ 43528.0 ],
+						"time" : [ 1139.0 ],
 						"vol" : [ 1.0 ],
 						"vol_ramp" : [ 10.000000000000002 ],
 						"vol_slider" : [ 1.0 ],
-						"watch_menu" : [ "time" ],
+						"watch_menu" : [ "stopwatch" ],
 						"write_envi" : [ -1 ]
 					}
 ,
