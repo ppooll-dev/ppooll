@@ -59,6 +59,7 @@ declareattribute("envi_name", {
     type: "symbol"
 });
 function set_envi_name(name) {
+    // post(name, "\n")
     envi_name = name;
     fileInvalid = !isValidFileName(envi_name);
     if(!fileInvalid && error){
@@ -67,6 +68,7 @@ function set_envi_name(name) {
         error = "enter a valid filename"
     }
     updateUI();
+    this.patcher.getnamed("textedit_envi_name").message("set", name);
 }
 
 function text(newName){
@@ -128,6 +130,7 @@ function set_write_sample_buffers(v) {
 
 //============================= utility =============================
 function clear(){
+    // post("clear\n")
     this.patcher.getnamed("textedit_envi_name").message("set", "");
     envi_name = "";
     updateUI();
