@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 757.0, 389.0, 159.0, 104.0 ],
+		"rect" : [ 546.0, 255.0, 159.0, 104.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "vst@1",
@@ -43,33 +43,10 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 85.0, 34.0, 16.0, 16.0 ],
+					"patching_rect" : [ 85.0, 33.0, 15.0, 18.0 ],
 					"slidercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 					"sliderstyle" : 2,
 					"varname" : "vst_program"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"annotation" : "midi-channel",
-					"fontface" : 0,
-					"format" : [ 1 ],
-					"hint" : "midi-channel",
-					"id" : "obj-399",
-					"max" : 16.0,
-					"maxclass" : "ll_number",
-					"min" : 0.0,
-					"multidrag" : 0,
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 143.0, 33.0, 16.0, 19.0 ],
-					"slidercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
-					"slidermax" : 16.0,
-					"sliderstyle" : 2,
-					"varname" : "midi-channel"
 				}
 
 			}
@@ -165,7 +142,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 421.0, 149.0, 91.0, 22.0 ],
-					"restore" : [ "auto" ],
+					"restore" : [ "bla" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -251,6 +228,7 @@
 					"bgcolor" : [ 0.027451, 0.023529, 0.6, 1.0 ],
 					"bgoncolor" : [ 0.55, 0.55, 0.55, 1.0 ],
 					"fontsize" : 11.0,
+					"hidden" : 1,
 					"hint" : "open/close the native plugin window",
 					"id" : "obj-42",
 					"legacytextcolor" : 1,
@@ -289,7 +267,7 @@
 					"fontsize" : 10.0,
 					"hint" : "folder definition and plugin loading",
 					"id" : "obj-6",
-					"items" : [ "def_folders", ",", "∆í ", ",", "∆í Macintosh HD:/Users/klaus/Documents/Arduino/", ",", "all", ",", "auto", ",", "-", ",", "AUAudioFilePlayer", ",", "AUBandpass", ",", "AUDelay", ",", "AUDistortion", ",", "AUDynamicsProcessor", ",", "AUFilter", ",", "AUGraphicEQ", ",", "AUHighShelfFilter", ",", "AUHipass", ",", "AULowpass", ",", "AULowShelfFilter", ",", "AUMatrixReverb", ",", "AUMIDISynth", ",", "AUMultibandCompressor", ",", "AUNBandEQ", ",", "AUNetReceive", ",", "AUNetSend", ",", "AUNewPitch", ",", "AUParametricEQ", ",", "AUPeakLimiter", ",", "AUPitch", ",", "AUReverb2", ",", "AURogerBeep", ",", "AURoundTripAAC", ",", "AUSampleDelay", ",", "AUSampler", ",", "AUScheduledSoundPlayer", ",", "AUSoundFieldPanner", ",", "AUSoundIsolation", ",", "AUSpeechSynthesis", ",", "AUSphericalHeadPanner", ",", "AUVectorPanner", ",", "DLSMusicDevice", ",", "HRTFPanner" ],
+					"items" : [ "def_folders", ",", "all", ",", "auto", ",", "-" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -322,7 +300,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 828.0, 576.0, 883.0, 366.0 ],
+						"rect" : [ 595.0, 576.0, 883.0, 366.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -568,8 +546,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 486.0, 32.0, 204.0, 49.0 ],
-									"text" : "ll.pm def_folder vst-folder position open! act::pres_menu presetsUI ll.inputmix::chans ll.blues::chans"
+									"patching_rect" : [ 486.0, 32.0, 186.0, 49.0 ],
+									"text" : "ll.pm def_folder vst-folder position open! act::pres_menu presetsUI ll.blues::chans"
 								}
 
 							}
@@ -5612,7 +5590,7 @@
 									"clickthrough" : 0,
 									"enablehscroll" : 0,
 									"enablevscroll" : 0,
-									"id" : "obj-6",
+									"id" : "obj-23",
 									"lockeddragscroll" : 0,
 									"lockedsize" : 0,
 									"maxclass" : "newobj",
@@ -5648,14 +5626,7 @@
 										"subtype" : "Undefined",
 										"embed" : 1,
 										"snapshot" : 										{
-											"pluginname" : "AUBandpass.auinfo",
-											"plugindisplayname" : "AUBandpass",
-											"pluginsavedname" : "",
-											"pluginsaveduniqueid" : 1651865447,
-											"version" : 1,
-											"isbank" : 0,
-											"isbase64" : 1,
-											"blob" : "167.hAGaoMGcv.i0AHv.DTfAGfPBJr.CT4VXsUFWsEla0YVXiQWcxUlbTQVXzEFUzkGbkc0b0IFc4AWYWYWYxMWZu4FVU4FcoQGakQlDgAGbr8DDb...............B.....vPL1hF....APDHA.iDgUmY3IgXvE1bP..BUnwIrDSNAozStMGd........AD..........M....................nG"
+
 										}
 ,
 										"snapshotlist" : 										{
@@ -5664,28 +5635,21 @@
 													"filetype" : "C74Snapshot",
 													"version" : 2,
 													"minorversion" : 0,
-													"name" : "AUBandpass",
-													"origin" : "AUBandpass.auinfo",
+													"name" : "",
+													"origin" : "",
 													"type" : "AudioUnit",
 													"subtype" : "AudioEffect",
 													"embed" : 0,
 													"snapshot" : 													{
-														"pluginname" : "AUBandpass.auinfo",
-														"plugindisplayname" : "AUBandpass",
-														"pluginsavedname" : "",
-														"pluginsaveduniqueid" : 1651865447,
-														"version" : 1,
-														"isbank" : 0,
-														"isbase64" : 1,
-														"blob" : "167.hAGaoMGcv.i0AHv.DTfAGfPBJr.CT4VXsUFWsEla0YVXiQWcxUlbTQVXzEFUzkGbkc0b0IFc4AWYWYWYxMWZu4FVU4FcoQGakQlDgAGbr8DDb...............B.....vPL1hF....APDHA.iDgUmY3IgXvE1bP..BUnwIrDSNAozStMGd........AD..........M....................nG"
+
 													}
 ,
 													"fileref" : 													{
-														"name" : "AUBandpass",
-														"filename" : "AUBandpass.maxsnap",
+														"name" : "",
+														"filename" : "_20251025_3.maxsnap",
 														"filepath" : "~/Documents/Max 9/Snapshots",
 														"filepos" : -1,
-														"snapshotfileid" : "836140ff8cebddef952403343e56e74b"
+														"snapshotfileid" : "0f2727c0246f4f0fca9ab49364beff3d"
 													}
 
 												}
@@ -5710,7 +5674,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-6", 0 ],
+									"destination" : [ "obj-23", 0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -5732,23 +5696,56 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
-									"order" : 0,
 									"source" : [ "obj-2", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-6", 0 ],
-									"order" : 1,
-									"source" : [ "obj-2", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-6", 0 ],
+									"destination" : [ "obj-23", 0 ],
 									"source" : [ "obj-21", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"source" : [ "obj-23", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"source" : [ "obj-23", 6 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-23", 4 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-43", 0 ],
+									"source" : [ "obj-23", 5 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-23", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-66", 0 ],
+									"source" : [ "obj-23", 2 ]
 								}
 
 							}
@@ -5893,48 +5890,6 @@
 								}
 
 							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-10", 0 ],
-									"source" : [ "obj-6", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"source" : [ "obj-6", 6 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"source" : [ "obj-6", 4 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-43", 0 ],
-									"source" : [ "obj-6", 5 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
-									"source" : [ "obj-6", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-66", 0 ],
-									"source" : [ "obj-6", 2 ]
-								}
-
-							}
  ],
 						"styles" : [ 							{
 								"name" : "AudioStatus_Menu",
@@ -5968,10 +5923,14 @@
 					"allowdrag" : 0,
 					"annotation" : "midi-port",
 					"arrow" : 0,
-					"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
-					"bgfillcolor_color1" : [ 0.301961, 0.301961, 0.301961, 1 ],
-					"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
-					"bgfillcolor_type" : "gradient",
+					"bgcolor" : [ 0.701960784313725, 0.701960784313725, 0.701960784313725, 1.0 ],
+					"bgfillcolor_angle" : 270.0,
+					"bgfillcolor_autogradient" : 0.0,
+					"bgfillcolor_color" : [ 0.701960784313725, 0.701960784313725, 0.701960784313725, 1.0 ],
+					"bgfillcolor_color1" : [ 0.674509803921569, 0.674509803921569, 0.674509803921569, 1.0 ],
+					"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1.0 ],
+					"bgfillcolor_proportion" : 0.5,
+					"bgfillcolor_type" : "color",
 					"fontsize" : 9.0,
 					"hint" : "midi-port",
 					"id" : "obj-80",
@@ -5983,6 +5942,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 100.0, 33.0, 44.0, 19.0 ],
 					"pattrmode" : 1,
+					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "midi-port"
 				}
 
@@ -6040,7 +6000,7 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 545, 133, 1800, 849 ],
+						"client_rect" : [ 257, 133, 1512, 849 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 583, 68, 1034, 196 ]
@@ -6099,15 +6059,13 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 286.0, 121.0, 107.0, 22.0 ],
 					"restore" : 					{
-						"Bandwidth" : [ 0.045379709452391 ],
-						"Center Frequency" : [ 0.010857062414289 ],
 						"midi-channel" : [ 0.0 ],
 						"midi-port" : [ "-no-" ],
 						"open!" : [ 0 ],
 						"preset-ramp" : [ 0.0 ],
 						"presets" : [ 0 ],
 						"program_files" : [ "writepgm" ],
-						"vst-folder" : [ "AUBandpass" ],
+						"vst-folder" : [ "def_folders" ],
 						"vst_program" : [ 1 ]
 					}
 ,
@@ -6199,29 +6157,25 @@
 			}
 , 			{
 				"box" : 				{
-					"format" : 6,
-					"id" : "obj-2",
-					"maxclass" : "flonum",
+					"annotation" : "midi-channel",
+					"bgcolor" : [ 0.702, 0.702, 0.702, 1.0 ],
+					"fontface" : 0,
+					"format" : [ 1 ],
+					"hint" : "midi-channel",
+					"id" : "obj-399",
+					"max" : 16.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"multidrag" : 0,
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Center Frequency"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"format" : 6,
-					"id" : "obj-11",
-					"maxclass" : "flonum",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
-					"varname" : "Bandwidth"
+					"patching_rect" : [ 143.0, 33.0, 16.0, 19.0 ],
+					"slidercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
+					"slidermax" : 16.0,
+					"sliderstyle" : 2,
+					"varname" : "midi-channel"
 				}
 
 			}
@@ -6260,12 +6214,22 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-18::obj-6" : [ "vst", "vst", 0 ],
+			"obj-18::obj-23" : [ "vst", "vst", 0 ],
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ],
+					"buttons" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
 			"inherited_shortname" : 1
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "AUBandpass.maxsnap",
+				"name" : "_20251025_3.maxsnap",
 				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../../Snapshots",
 				"type" : "mx@s",

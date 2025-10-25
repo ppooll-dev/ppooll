@@ -39,8 +39,7 @@ const pm_map = {
     "open!": setIsOpen,
     "act::pres_menu": pres_menu,
     "presetsUI": presetsUI,
-    "ll.blues::chans": setChansOut,
-    "ll.inputmix::chans": setChansIn
+    "ll.blues::chans": setChans,
 };
 
 function ll_pm(receive, ...args) {
@@ -52,15 +51,9 @@ function ll_pm(receive, ...args) {
     fn(...args);
 }
 
-function setChansIn(c_in){
-    if(chans_in !== c_in){
-        vstCreate(c_in, chans_out);
-    }
-}
-
-function setChansOut(unused, c_out){
-    if(chans_out !== c_out){
-        vstCreate(chans_in, c_out);
+function setChans(c_in, c_out){
+    if(chans_out !== c_out || chans_in !== c_in){
+        vstCreate(c_in, c_out);
     }
 }
 
@@ -480,8 +473,7 @@ function reset(){
 
     mc_vst = tp.getnamed("vst");
 
-    out("ll.blues::chans", 2, 2);
-    out("ll.inputmix::chans", 4);
+    out("ll.blues::chans", 4, 2);
 
     out("act::pres_menu", "symbol", "clear!");
 
