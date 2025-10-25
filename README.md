@@ -13,7 +13,7 @@ authors: klaus filip, c. hausch, noid, taku unami, joe steccato, elin, paulo rap
 contains additional code by adrian freed (CNMAT), Bertrand Fraysse, bill orcutt, CRFMW, Cycling'74, Ernest Meyer, Graham Wakefield, jasch, Jean-François Charles, jhno, Joshua Kit Clayton, Les Stuck, miller puckette, nicolaj kirisits, nathan wolek, olaf matthes, PeRColate, peter elsea, RTC, thomas grill, ted appel, tristan jehan, uhito kiyosue, ville pulkki, volker böhm.
 
 # requirements
-1. Max >= 8.6.1, including Max 9 (https://cycling74.com/products/max)
+1. Max 9 (https://cycling74.com/products/max)
 2. additional Max Packages (download via [Max Package Manager](https://docs.cycling74.com/max8/vignettes/package_manager)):
 
 | package            | act(s)                                                                                       |
