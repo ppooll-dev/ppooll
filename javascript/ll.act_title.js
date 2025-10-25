@@ -4,7 +4,7 @@ mgraphics.init();
 mgraphics.relative_coords = 0;
 mgraphics.autofill = 0;
 
-var xclick, yclick, xmove, ymove;
+var xclick, yclick, xmove, ymove = 0;
 var r = new Array();
 var w = this.patcher.parentpatcher.wind;
 var uib = this.box;
@@ -98,6 +98,8 @@ function onidleout() {
 }
 function windpos(x, y) {
     //w=this.patcher.wind;
+    
+    // post(xclick, yclick, x, y, "\n")
     r[0] = x + w.location[0];
     r[1] = y + w.location[1];
     r[2] = x + w.location[2];
