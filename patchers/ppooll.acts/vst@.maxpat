@@ -10,34 +10,11 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 543.0, 236.0, 159.0, 117.0 ],
+		"rect" : [ 757.0, 389.0, 159.0, 104.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "vst@1",
 		"boxes" : [ 			{
-				"box" : 				{
-					"args" : [ "@default", 4 ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-14",
-					"lockeddragscroll" : 0,
-					"lockedsize" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "ll.inputmix.maxpat",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "multichannelsignal", "multichannelsignal" ],
-					"patching_rect" : [ 0.0, 51.0, 158.0, 13.0 ],
-					"varname" : "ll.inputmix",
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
 				"box" : 				{
 					"hidden" : 1,
 					"id" : "obj-6405",
@@ -55,6 +32,8 @@
 					"bgcolor" : [ 0.107977, 0.766704, 0.422636, 1.0 ],
 					"fontface" : 0,
 					"format" : [ 1 ],
+					"hidden" : 1,
+					"hint" : "vst program load #",
 					"id" : "obj-1045",
 					"max" : 16.0,
 					"maxclass" : "ll_number",
@@ -76,6 +55,7 @@
 					"annotation" : "midi-channel",
 					"fontface" : 0,
 					"format" : [ 1 ],
+					"hint" : "midi-channel",
 					"id" : "obj-399",
 					"max" : 16.0,
 					"maxclass" : "ll_number",
@@ -185,7 +165,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 421.0, 149.0, 91.0, 22.0 ],
-					"restore" : [ "bla" ],
+					"restore" : [ "auto" ],
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
@@ -200,21 +180,22 @@
 				"box" : 				{
 					"annotation" : "presets grid. click on ppooll in the ho_st to find info about it",
 					"filename" : "ll.pattr_ui.js",
+					"hint" : "preset grid",
 					"id" : "obj-12",
-					"jsarguments" : [ 16, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "vst@1" ],
+					"jsarguments" : [ 15 ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 2.0, 16.0, 154.0, 18.0 ],
+					"patching_rect" : [ 0.0, 16.0, 160.0, 17.0 ],
 					"varname" : "presets"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@state", 2, 1, 0, 0, 2, 0 ],
+					"args" : [ "@in_mix", 1 ],
 					"bgmode" : 0,
 					"border" : 1,
 					"clickthrough" : 0,
@@ -228,7 +209,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 64.0, 159.0, 53.0 ],
+					"patching_rect" : [ 0.0, 51.0, 159.0, 53.0 ],
 					"varname" : "ll.blues",
 					"viewvisibility" : 1
 				}
@@ -270,7 +251,7 @@
 					"bgcolor" : [ 0.027451, 0.023529, 0.6, 1.0 ],
 					"bgoncolor" : [ 0.55, 0.55, 0.55, 1.0 ],
 					"fontsize" : 11.0,
-					"hidden" : 1,
+					"hint" : "open/close the native plugin window",
 					"id" : "obj-42",
 					"legacytextcolor" : 1,
 					"maxclass" : "textbutton",
@@ -305,15 +286,16 @@
 					"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "color",
-					"fontsize" : 11.0,
+					"fontsize" : 10.0,
+					"hint" : "folder definition and plugin loading",
 					"id" : "obj-6",
-					"items" : [ "def_folders", ",", "all", ",", "auto", ",", "-" ],
+					"items" : [ "def_folders", ",", "∆í ", ",", "∆í Macintosh HD:/Users/klaus/Documents/Arduino/", ",", "all", ",", "auto", ",", "-", ",", "AUAudioFilePlayer", ",", "AUBandpass", ",", "AUDelay", ",", "AUDistortion", ",", "AUDynamicsProcessor", ",", "AUFilter", ",", "AUGraphicEQ", ",", "AUHighShelfFilter", ",", "AUHipass", ",", "AULowpass", ",", "AULowShelfFilter", ",", "AUMatrixReverb", ",", "AUMIDISynth", ",", "AUMultibandCompressor", ",", "AUNBandEQ", ",", "AUNetReceive", ",", "AUNetSend", ",", "AUNewPitch", ",", "AUParametricEQ", ",", "AUPeakLimiter", ",", "AUPitch", ",", "AUReverb2", ",", "AURogerBeep", ",", "AURoundTripAAC", ",", "AUSampleDelay", ",", "AUSampler", ",", "AUScheduledSoundPlayer", ",", "AUSoundFieldPanner", ",", "AUSoundIsolation", ",", "AUSpeechSynthesis", ",", "AUSphericalHeadPanner", ",", "AUVectorPanner", ",", "DLSMusicDevice", ",", "HRTFPanner" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 50.0, 0.0, 75.0, 21.0 ],
+					"patching_rect" : [ 50.0, 0.0, 75.0, 20.0 ],
 					"pattrmode" : 1,
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"varname" : "vst-folder"
@@ -340,9 +322,32 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 318.0, 483.0, 883.0, 366.0 ],
+						"rect" : [ 828.0, 576.0, 883.0, 366.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-19",
+									"maxclass" : "meter~",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "float" ],
+									"patching_rect" : [ 153.0, 102.0, 96.0, 28.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 78.0, 102.0, 66.0, 22.0 ],
+									"text" : "ll.r in_mix~"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-7",
 									"maxclass" : "newobj",
@@ -1526,7 +1531,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 169.0, 103.0, 201.0, 22.0 ],
-																	"text" : "0. 0. 500 200"
+																	"text" : "100. 600. 600 800"
 																}
 
 															}
@@ -2342,13 +2347,12 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-3",
-													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 62.0, 572.0, 144.0, 35.0 ],
-													"text" : "::modul.ator1::act_menu 1"
+													"text" : "::tetris@1::act_menu 1"
 												}
 
 											}
@@ -2585,7 +2589,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
 													"patching_rect" : [ 236.0, 399.0, 103.0, 22.0 ],
-													"restore" : [ "vst@" ],
+													"restore" : [ "vst@1" ],
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
@@ -2671,12 +2675,13 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-5",
+													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 48.0, 226.0, 144.0, 22.0 ],
-													"text" : "ho_st1 vst@1 amxd@1"
+													"text" : "fmrm1 svf2@1 ho_st1 tetris@1 vst@1"
 												}
 
 											}
@@ -2970,7 +2975,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "multichannelsignal" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 18.0, 81.0, 30.0, 30.0 ],
 									"varname" : "in"
 								}
@@ -3584,7 +3589,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 62.0, 81.0, 66.0, 22.0 ],
+									"patching_rect" : [ 62.0, 70.0, 66.0, 22.0 ],
 									"text" : "ll.r to_vst~",
 									"varname" : "to_vst~"
 								}
@@ -3978,7 +3983,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 561.0, 317.0, 50.0, 22.0 ],
-																	"text" : "6"
+																	"text" : "13"
 																}
 
 															}
@@ -5593,7 +5598,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 140.0, 81.0, 46.0, 22.0 ],
+									"patching_rect" : [ 140.0, 70.0, 46.0, 22.0 ],
 									"text" : "p midi",
 									"varname" : "midi"
 								}
@@ -5607,7 +5612,7 @@
 									"clickthrough" : 0,
 									"enablehscroll" : 0,
 									"enablevscroll" : 0,
-									"id" : "obj-11",
+									"id" : "obj-6",
 									"lockeddragscroll" : 0,
 									"lockedsize" : 0,
 									"maxclass" : "newobj",
@@ -5643,7 +5648,14 @@
 										"subtype" : "Undefined",
 										"embed" : 1,
 										"snapshot" : 										{
-
+											"pluginname" : "AUBandpass.auinfo",
+											"plugindisplayname" : "AUBandpass",
+											"pluginsavedname" : "",
+											"pluginsaveduniqueid" : 1651865447,
+											"version" : 1,
+											"isbank" : 0,
+											"isbase64" : 1,
+											"blob" : "167.hAGaoMGcv.i0AHv.DTfAGfPBJr.CT4VXsUFWsEla0YVXiQWcxUlbTQVXzEFUzkGbkc0b0IFc4AWYWYWYxMWZu4FVU4FcoQGakQlDgAGbr8DDb...............B.....vPL1hF....APDHA.iDgUmY3IgXvE1bP..BUnwIrDSNAozStMGd........AD..........M....................nG"
 										}
 ,
 										"snapshotlist" : 										{
@@ -5652,21 +5664,28 @@
 													"filetype" : "C74Snapshot",
 													"version" : 2,
 													"minorversion" : 0,
-													"name" : "",
-													"origin" : "",
+													"name" : "AUBandpass",
+													"origin" : "AUBandpass.auinfo",
 													"type" : "AudioUnit",
 													"subtype" : "AudioEffect",
 													"embed" : 0,
 													"snapshot" : 													{
-
+														"pluginname" : "AUBandpass.auinfo",
+														"plugindisplayname" : "AUBandpass",
+														"pluginsavedname" : "",
+														"pluginsaveduniqueid" : 1651865447,
+														"version" : 1,
+														"isbank" : 0,
+														"isbase64" : 1,
+														"blob" : "167.hAGaoMGcv.i0AHv.DTfAGfPBJr.CT4VXsUFWsEla0YVXiQWcxUlbTQVXzEFUzkGbkc0b0IFc4AWYWYWYxMWZu4FVU4FcoQGakQlDgAGbr8DDb...............B.....vPL1hF....APDHA.iDgUmY3IgXvE1bP..BUnwIrDSNAozStMGd........AD..........M....................nG"
 													}
 ,
 													"fileref" : 													{
-														"name" : "",
-														"filename" : "_20251025.maxsnap",
+														"name" : "AUBandpass",
+														"filename" : "AUBandpass.maxsnap",
 														"filepath" : "~/Documents/Max 9/Snapshots",
 														"filepos" : -1,
-														"snapshotfileid" : "003d0ce197b1452d98606245c58357e4"
+														"snapshotfileid" : "836140ff8cebddef952403343e56e74b"
 													}
 
 												}
@@ -5684,48 +5703,6 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-10", 0 ],
-									"source" : [ "obj-11", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
-									"source" : [ "obj-11", 6 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"source" : [ "obj-11", 4 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-43", 0 ],
-									"source" : [ "obj-11", 5 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
-									"source" : [ "obj-11", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-66", 0 ],
-									"source" : [ "obj-11", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-27", 0 ],
 									"source" : [ "obj-13", 0 ]
 								}
@@ -5733,7 +5710,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-11", 0 ],
+									"destination" : [ "obj-6", 0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -5754,7 +5731,23 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-11", 0 ],
+									"destination" : [ "obj-19", 0 ],
+									"order" : 0,
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"order" : 1,
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
 									"source" : [ "obj-21", 0 ]
 								}
 
@@ -5900,6 +5893,48 @@
 								}
 
 							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"source" : [ "obj-6", 6 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-6", 4 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-43", 0 ],
+									"source" : [ "obj-6", 5 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-6", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-66", 0 ],
+									"source" : [ "obj-6", 2 ]
+								}
+
+							}
  ],
 						"styles" : [ 							{
 								"name" : "AudioStatus_Menu",
@@ -5938,6 +5973,7 @@
 					"bgfillcolor_color2" : [ 0.2, 0.2, 0.2, 1 ],
 					"bgfillcolor_type" : "gradient",
 					"fontsize" : 9.0,
+					"hint" : "midi-port",
 					"id" : "obj-80",
 					"items" : [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "Network Session 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "Scarlett 18i20 USB", ",", "MIDISPORT 1x1 Port A", ",", "Minilab3 MIDI", ",", "Minilab3 DIN THRU", ",", "Minilab3 MCU/HUI", ",", "Minilab3 ALV", ",", "to Max 1", ",", "to Max 2", ",", "Music Mouse" ],
 					"maxclass" : "umenu",
@@ -5989,6 +6025,8 @@
 						"vst-folder" : 3,
 						"program_files" : 5,
 						"vst_program" : 6,
+						"Center Frequency" : 100,
+						"Bandwidth" : 101,
 						"midi-channel" : 900,
 						"midi-port" : 901,
 						"open!" : 910,
@@ -6002,10 +6040,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 499, 162, 1139, 402 ],
+						"client_rect" : [ 545, 133, 1800, 849 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 0, 0, 640, 240 ]
+						"storage_rect" : [ 583, 68, 1034, 196 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -6061,13 +6099,15 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 286.0, 121.0, 107.0, 22.0 ],
 					"restore" : 					{
+						"Bandwidth" : [ 0.045379709452391 ],
+						"Center Frequency" : [ 0.010857062414289 ],
 						"midi-channel" : [ 0.0 ],
 						"midi-port" : [ "-no-" ],
 						"open!" : [ 0 ],
 						"preset-ramp" : [ 0.0 ],
 						"presets" : [ 0 ],
 						"program_files" : [ "writepgm" ],
-						"vst-folder" : [ "def_folders" ],
+						"vst-folder" : [ "AUBandpass" ],
 						"vst_program" : [ 1 ]
 					}
 ,
@@ -6078,15 +6118,17 @@
 			}
 , 			{
 				"box" : 				{
-					"annotation" : "ramp time between presets. click on ppooll in the ho_st to find info about it",
+					"annotation" : "preset ramp",
 					"fontface" : 0,
+					"format" : [ 10000, 1000, ":", 100, 10, 1 ],
+					"hint" : "preset ramp",
 					"id" : "obj-19",
 					"maxclass" : "ll_number",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 33.0, 45.0, 16.0 ],
+					"patching_rect" : [ 0.0, 33.0, 45.0, 18.0 ],
 					"varname" : "preset-ramp"
 				}
 
@@ -6104,6 +6146,7 @@
 					"bgfillcolor_proportion" : 0.39,
 					"bgfillcolor_type" : "color",
 					"fontsize" : 9.0,
+					"hint" : "program_files, plugin-native preset handling",
 					"id" : "obj-400",
 					"items" : [ "writepgm", ",", "writebank", ",", "read", ",", "-" ],
 					"maxclass" : "umenu",
@@ -6111,7 +6154,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 44.0, 33.0, 43.0, 19.0 ],
+					"patching_rect" : [ 44.0, 32.0, 43.0, 19.0 ],
 					"pattrmode" : 1,
 					"textcolor" : [ 0.149, 0.149, 0.149, 1.0 ],
 					"varname" : "program_files"
@@ -6154,27 +6197,40 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-2",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Center Frequency"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-11",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 66.0, 200.0, 50.0, 22.0 ],
+					"varname" : "Bandwidth"
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-6405", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-12", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-18", 0 ],
-					"hidden" : 1,
-					"source" : [ "obj-14", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"source" : [ "obj-14", 0 ]
 				}
 
 			}
@@ -6204,12 +6260,12 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-18::obj-11" : [ "vst", "vst", 0 ],
+			"obj-18::obj-6" : [ "vst", "vst", 0 ],
 			"inherited_shortname" : 1
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "_20251025.maxsnap",
+				"name" : "AUBandpass.maxsnap",
 				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../../Snapshots",
 				"type" : "mx@s",
@@ -6272,6 +6328,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.allacts.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.bluebutton.js",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
@@ -6300,7 +6363,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.inputmix.maxpat",
+				"name" : "ll.in_mix.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
@@ -6357,6 +6420,13 @@
 			}
 , 			{
 				"name" : "ll.pm.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.pp.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
@@ -6459,13 +6529,6 @@
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ninput.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{

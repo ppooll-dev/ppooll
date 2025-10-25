@@ -6,7 +6,7 @@ var actr = new Global("act_rep");
 
 var actingON = 0;
 var param_excludes = ["_actwindow", "act::title_menu", "presets"];
-var act_param_excludes = ["ho_st1act_menu", "ho_st1envi_menu", "ho_st1rec"];
+var act_param_excludes = ["ho_st1act_menu", "ho_st1envi_menu", "ho_st1rec", "ho_st1audioON/OFF"];
 var debugpost = 0;
 
 var new_blues_oldenvi;
@@ -117,7 +117,7 @@ function loadAct() {
         messnamed("ll_actload", toopen[0]);
         return;
     }
-    outlet(0, "actsdone");
+    // outlet(0, "actsdone");
 
     // load buffers
     if(buffers){
@@ -206,7 +206,9 @@ function params() {
     }else{
         loadPresets()
         messnamed("llenviread", 0)
-        outlet(0, "actsdone");
+        if(environment.ho_st1["audioON/OFF"] === 1){
+            outlet(0, "dac~", 1);
+        }
         outlet(0, "done!");
     }
 }

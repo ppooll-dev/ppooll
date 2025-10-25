@@ -112,6 +112,6 @@ function selectEnvironment(name){
     const data = { props: selectedEnvi, environment: enviData };
     outlet_dictionary(2, data);
 
-    outlet(1, "type", selectedEnvi.type);
-    outlet(1, "envi_name", name);
+    outlet(1, "set_type", selectedEnvi.type);
+    outlet(1, "text", name);
 }
