@@ -8,6 +8,7 @@
 outlets = 1;
 //autowatch = 1;
 var stateDict = new Dict("ppoollstate"); 
+var actsize_folded = 0;
 /* ============================== CONSTANTS ============================== */
 
 const COLORS = {
@@ -292,17 +293,27 @@ function foldUnfold() {
     }
 
     UI.msg( "listblock", "colwidths", S.rowheight, menWidth, menWidth, S.extraWidths);
-    grow();
+    grow(S.folded);
 }
 
-function grow() {
+function grow(f) {
     try {
         const a2 = actpatcher.rect[2],
             a3 = actpatcher.rect[3];
         const b2 = bpatcher.rect[2],
             b3 = bpatcher.rect[3];
         const TP = actpatcher.getnamed("thispatcher");
-
+		if ((a3 < b3 || a2 < b2) && !f) {
+			actsize_folded = actpatcher.rect;
+			//post("<<",a2,b2,"<",a2 < b2,"y:",a3,b3,"<",a3 < b3,"\n");
+			actpatcher.rect = [actpatcher.rect[0], actpatcher.rect[1], Math.max(a2,b2), Math.max(a3,b3)];
+			
+		}
+		if (f && actpatcher.rect) {
+			//post("fold\n")
+			actpatcher.rect = actsize_folded;
+		}
+/*
         if ((a3 < b3 || a2 < b2) && !actpatcher.wind.hasvertscroll) {
             TP.message("window", "flags", "grow");
             TP.message("window", "exec");
@@ -314,7 +325,9 @@ function grow() {
             TP.message("window", "flags", "nogrow");
             TP.message("window", "exec");
         }
+		*/
     } catch (_) {}
+		
 }
 
 function textcolor(){
