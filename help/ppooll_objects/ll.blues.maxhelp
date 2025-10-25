@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 152.0, 54.0, 445.0, 309.0 ],
+		"rect" : [ 100.0, 54.0, 445.0, 309.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"helpsidebarclosed" : 1,
@@ -186,10 +186,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 368, 148, 983, 808 ],
+						"client_rect" : [ 545, 133, 1800, 849 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 200, 200, 800, 500 ]
+						"storage_rect" : [ 583, 68, 1034, 196 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -961,7 +961,7 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-47",
-													"items" : [ "no", ",", "ho_st1", ",", "ll.blues.help1" ],
+													"items" : [ "no", ",", "ho_st1", ",", "fmrm1", ",", "vst@1", ",", "ll.blues.help1", ",", "ll.blues.info.help1" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -980,8 +980,8 @@
 													"id" : "obj-37",
 													"maxclass" : "newobj",
 													"numinlets" : 7,
-													"numoutlets" : 3,
-													"outlettype" : [ "", "", "" ],
+													"numoutlets" : 4,
+													"outlettype" : [ "", "", "", "" ],
 													"patching_rect" : [ 27.835049986839294, 386.597916483879089, 237.0, 22.0 ],
 													"text" : "ll.s~"
 												}
@@ -1286,7 +1286,7 @@
 											}
 , 											{
 												"box" : 												{
-													"cols" : 5,
+													"cols" : 2,
 													"colwidth" : 20,
 													"fontface" : 0,
 													"fontname" : "Arial",
@@ -1432,7 +1432,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-46", 0 ],
-													"midpoints" : [ 146.335049986839294, 413.371110916137695, 161.195866584777832, 413.371110916137695, 161.195866584777832, 348.371110916137695, 184.757722139358521, 348.371110916137695 ],
+													"midpoints" : [ 110.001716653505966, 413.371110916137695, 161.195866584777832, 413.371110916137695, 161.195866584777832, 348.371110916137695, 184.757722139358521, 348.371110916137695 ],
 													"source" : [ "obj-37", 1 ]
 												}
 
@@ -1615,7 +1615,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 699.0, 53.0, 510.0, 724.0 ],
+										"rect" : [ 699.0, 53.0, 533.0, 811.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"toolbarvisible" : 0,
 										"boxes" : [ 											{
@@ -1625,7 +1625,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 28.0, 458.0, 467.0, 74.0 ],
+													"patching_rect" : [ 28.0, 492.0, 467.0, 74.0 ],
 													"text" : "chans: \n1: input_channels (this is relevant if in_mix is activated and also can define the\n    chans-amount of signal receives in the act (ll.r~).\n2: output_channels (this will change the multichannel length of \n    outputs~ and outputsMix~)"
 												}
 
@@ -1637,7 +1637,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 30.0, 432.0, 462.0, 22.0 ],
+													"patching_rect" : [ 30.0, 466.0, 462.0, 22.0 ],
 													"text" : "2 2"
 												}
 
@@ -1649,7 +1649,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 31.0, 406.0, 101.0, 22.0 ],
+													"patching_rect" : [ 31.0, 440.0, 101.0, 22.0 ],
 													"text" : "ll.r ll.blues::chans"
 												}
 
@@ -1661,7 +1661,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 31.0, 356.0, 467.0, 33.0 ],
+													"patching_rect" : [ 31.0, 390.0, 467.0, 33.0 ],
 													"text" : "outputsMix~: \nthe multichannel output destination if the mix-slider is all the way to the right (darkblue)"
 												}
 
@@ -1673,7 +1673,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 31.0, 332.0, 462.0, 22.0 ],
+													"patching_rect" : [ 31.0, 366.0, 462.0, 22.0 ],
 													"text" : "ho_st1~out.1 _"
 												}
 
@@ -1685,7 +1685,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 31.0, 304.0, 134.0, 22.0 ],
+													"patching_rect" : [ 31.0, 338.0, 134.0, 22.0 ],
 													"text" : "ll.r ll.blues::outputsMix~"
 												}
 
@@ -1697,7 +1697,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 31.0, 255.0, 459.0, 33.0 ],
+													"patching_rect" : [ 31.0, 289.0, 459.0, 33.0 ],
 													"text" : "outputs~: \nthe multichannel output destination if the mix-slider is all the way to the left (lightblue)"
 												}
 
@@ -1707,12 +1707,12 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-6",
-													"linecount" : 8,
+													"linecount" : 10,
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 31.0, 87.0, 501.0, 114.0 ],
-													"text" : "status: \n1: 0: basic, 1: basic_in_mix, 2: mc.basic, 3: mc+chan_out\n2: show outputs~/outputsMix~ (0,1)\n3: volume layout (0, 1, 2)\n4: meter (0,1,2)\n5: mix_adds (0,1)\n6: link input-channels to output-channels (0,1)\nyou can edit the status with the i_menu or by a given argument."
+													"patching_rect" : [ 31.0, 87.0, 501.0, 141.0 ],
+													"text" : "status: \n1: 0: basic, 1: basic_in_mix, 2: mc.basic, 3: mc+chan_out\n2: show outputs~/outputsMix~ (0,1)\n3: volume layout (0, 1, 2)\n4: meter (0,1,2)\n5: mix_adds (0,1)\n6: link input-channels to output-channels (0,1)\n7: folded/unfolded in mc-modes\nyou can edit the status with the i_menu \nor by a given argument @status to make this the default appearance in your act."
 												}
 
 											}
@@ -1747,7 +1747,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 31.0, 231.0, 462.0, 22.0 ],
+													"patching_rect" : [ 31.0, 265.0, 462.0, 22.0 ],
 													"text" : "ho_st1~out.1 _"
 												}
 
@@ -1759,7 +1759,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 31.0, 203.0, 115.0, 22.0 ],
+													"patching_rect" : [ 31.0, 237.0, 115.0, 22.0 ],
 													"text" : "ll.r ll.blues::outputs~"
 												}
 
@@ -1773,7 +1773,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 30.0, 587.0, 341.0, 114.0 ],
+													"patching_rect" : [ 30.0, 621.0, 341.0, 114.0 ],
 													"text" : "levels:\n1: volL\n2: volR\n3: mix \n4: input_mix\n5: ramp\n6: pfl \n7: pan"
 												}
 
@@ -1785,7 +1785,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 30.0, 563.0, 462.0, 22.0 ],
+													"patching_rect" : [ 30.0, 597.0, 462.0, 22.0 ],
 													"text" : "0 0 0 0 10 0 0.5"
 												}
 
@@ -1797,7 +1797,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 31.0, 537.0, 99.0, 22.0 ],
+													"patching_rect" : [ 31.0, 571.0, 99.0, 22.0 ],
 													"text" : "ll.r ll.blues::levels"
 												}
 
@@ -2056,7 +2056,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 398.0, 678.0, 134.0, 33.0 ],
-													"presentation_linecount" : 2,
 													"text" : "revert to default, \ndeleting the arguments:"
 												}
 
@@ -2423,7 +2422,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-9",
-													"items" : [ "no", ",", "buffer_host1", ",", "control@1", ",", "control@2", ",", "control@3", ",", "control@4", ",", "ho_st1", ",", "lkforest@1", ",", "ll.blues.help1" ],
+													"items" : [ "no", ",", "envM1", ",", "envMM1", ",", "envMT1", ",", "fmrm1", ",", "ho_st1", ",", "ll.blues.help1", ",", "ll.blues.info.help1", ",", "vst@1" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
