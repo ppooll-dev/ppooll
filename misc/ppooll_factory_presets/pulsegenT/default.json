@@ -1,7 +1,7 @@
 {
 	"window" : [ 441, 458, 663, 554 ],
 	"ll.blues" : 	{
-		"patching_rect" : [ -1, 43, 164, 53 ],
+		"patching_rect" : [ 0, 43, 164, 53 ],
 		"hidden" : 0,
 		"accentcolor" : [ 0.458595350062755, 0.458595237564901, 0.458595266962388, 1 ],
 		"bgcolor" : [ 0.125, 0.125, 0.125, 1 ],
@@ -32,7 +32,7 @@
 	}
 ,
 	"period" : 	{
-		"patching_rect" : [ -1, 16, 110, 13 ],
+		"patching_rect" : [ 0, 16, 110, 13 ],
 		"hidden" : 0,
 		"bgcolor" : [ 1, 1, 1, 1 ],
 		"bordercolor" : [ 0.5, 0.5, 0.5, 1 ],
@@ -46,7 +46,7 @@
 	}
 ,
 	"formant" : 	{
-		"patching_rect" : [ -1, 29.5, 110, 13 ],
+		"patching_rect" : [ 0, 30, 110, 13 ],
 		"hidden" : 0,
 		"bgcolor" : [ 1, 1, 1, 1 ],
 		"bordercolor" : [ 0.5, 0.5, 0.5, 1 ],
