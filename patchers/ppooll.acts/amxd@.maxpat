@@ -4,40 +4,17 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 8,
+			"revision" : 9,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 163.0, 250.0, 157.0, 117.0 ],
+		"rect" : [ 163.0, 250.0, 154.0, 104.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "amxd@1",
 		"boxes" : [ 			{
-				"box" : 				{
-					"args" : [ "@default", 4 ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-16",
-					"lockeddragscroll" : 0,
-					"lockedsize" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "ll.inputmix.maxpat",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "multichannelsignal", "multichannelsignal" ],
-					"patching_rect" : [ 0.0, 51.0, 158.0, 13.0 ],
-					"varname" : "ll.inputmix",
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
@@ -73,7 +50,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 139.0, 33.0, 16.0, 16.0 ],
+					"patching_rect" : [ 137.0, 33.0, 16.0, 16.0 ],
 					"slidercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 					"slidermax" : 16.0,
 					"slidermin" : 1.0,
@@ -125,7 +102,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 81.0, 33.0, 16.0, 16.0 ],
+					"patching_rect" : [ 80.0, 33.0, 16.0, 16.0 ],
 					"slidercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 					"slidermax" : 16.0,
 					"sliderstyle" : 2,
@@ -203,14 +180,14 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 1.0, 16.0, 154.0, 18.0 ],
+					"patching_rect" : [ 0.0, 16.0, 154.0, 18.0 ],
 					"varname" : "presets"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@state", 2, 1, 0, 0, 2, 0 ],
+					"args" : [ "@status", 1, 1, 0, 0, 0, 0 ],
 					"bgmode" : 0,
 					"border" : 1,
 					"clickthrough" : 0,
@@ -224,7 +201,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 64.0, 159.0, 53.0 ],
+					"patching_rect" : [ 0.0, 52.0, 153.0, 53.0 ],
 					"varname" : "ll.blues",
 					"viewvisibility" : 1
 				}
@@ -303,7 +280,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 10.0,
 					"id" : "obj-6",
-					"items" : [ "def_folders", ",", "all", ",", "-" ],
+					"items" : [ "def_folders", ",", "∆í", "<none>", ",", "all", ",", "-" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -330,7 +307,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -339,6 +316,18 @@
 						"rect" : [ 362.0, 492.0, 688.0, 345.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 185.0, 34.0, 66.0, 22.0 ],
+									"text" : "ll.r in_mix~"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-22",
 									"maxclass" : "newobj",
@@ -371,7 +360,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "multichannelsignal" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 145.535712999999987, 30.0, 30.0, 30.0 ]
 								}
 
@@ -435,7 +424,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 8,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -694,7 +683,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 8,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -703,7 +692,7 @@
 										"rect" : [ 446.0, 125.0, 502.0, 170.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"toolbarvisible" : 0,
-										"title" : "amxd@1",
+										"title" : "ho_st1",
 										"boxes" : [ 											{
 												"box" : 												{
 													"hidden" : 1,
@@ -769,7 +758,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 8,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -867,7 +856,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 8,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -986,7 +975,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 8,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1372,7 +1361,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 8,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1487,7 +1476,7 @@
 																		"appversion" : 																		{
 																			"major" : 9,
 																			"minor" : 0,
-																			"revision" : 8,
+																			"revision" : 9,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -1542,7 +1531,7 @@
 																						"appversion" : 																						{
 																							"major" : 9,
 																							"minor" : 0,
-																							"revision" : 8,
+																							"revision" : 9,
 																							"architecture" : "x64",
 																							"modernui" : 1
 																						}
@@ -1967,7 +1956,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 8,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2540,7 +2529,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "multichannelsignal" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 51.5, 177.0, 30.0, 30.0 ],
 													"varname" : "in_1_audioin"
 												}
@@ -2562,7 +2551,7 @@
 													"numoutlets" : 3,
 													"offset" : [ 0.0, 0.0 ],
 													"outlettype" : [ "multichannelsignal", "", "" ],
-													"patching_rect" : [ 0.0, 0.0, 502.0, 170.0 ],
+													"patching_rect" : [ 0.0, 0.0, 296.0, 22.0 ],
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
 															"parameter_invisible" : 1,
@@ -2576,134 +2565,10 @@
 ,
 													"saved_object_attributes" : 													{
 														"parameter_enable" : 1,
-														"patchername" : "Poly-Plaits 1.2.amxd",
+														"patchername" : "",
 														"patchername_fallback" : "~/Desktop/amxd/Poly-Plaits 1.2.amxd",
 														"realtime_params" : 1,
 														"showheader" : 0
-													}
-,
-													"snapshot" : 													{
-														"filetype" : "C74Snapshot",
-														"version" : 2,
-														"minorversion" : 0,
-														"name" : "snapshotlist",
-														"origin" : "max~",
-														"type" : "list",
-														"subtype" : "Undefined",
-														"embed" : 1,
-														"snapshot" : 														{
-															"name" : "Poly-Plaits 1.2.amxd",
-															"origname" : "~/Desktop/amxd/Poly-Plaits 1.2.amxd",
-															"valuedictionary" : 															{
-																"parameter_values" : 																{
-																	"AUX" : 0.0,
-																	"Attack" : 0.0,
-																	"Decay" : 0.0,
-																	"Env Decay" : 0.0,
-																	"Env_Level" : 0.0,
-																	"FREQUENCY" : 0.0,
-																	"Freq_mod" : 0.0,
-																	"GAIN" : 0.0,
-																	"HARMONICS" : 0.0,
-																	"MORPH" : 0.0,
-																	"Model" : 0.0,
-																	"Morph_mod" : 0.0,
-																	"OUT" : 0.0,
-																	"Octave" : 0.0,
-																	"Release" : 0.0,
-																	"STEREO" : 0.0,
-																	"Sustain" : 0.0,
-																	"TIMBRE" : 0.0,
-																	"TRIG" : 0.0,
-																	"fade" : 0.0,
-																	"lpg" : 0.0,
-																	"timbre_mod" : 0.0,
-																	"blob" : 																	{
-																		"Pitchnum" : [ 0.0 ],
-																		"Pitchnum[1]" : [ 0.0 ],
-																		"Pitchnum[2]" : [ 0.0 ],
-																		"Pitchnum[3]" : [ 0.0 ],
-																		"live.numbox" : [ 0.0 ],
-																		"live.toggle[2]" : [ 0.0 ],
-																		"live.toggle[3]" : [ 0.0 ],
-																		"live.toggle[4]" : [ 0.0 ]
-																	}
-
-																}
-
-															}
-,
-															"active" : 1
-														}
-,
-														"snapshotlist" : 														{
-															"current_snapshot" : 0,
-															"entries" : [ 																{
-																	"filetype" : "C74Snapshot",
-																	"version" : 2,
-																	"minorversion" : 0,
-																	"name" : "Poly-Plaits 1.2.amxd",
-																	"origin" : "Poly-Plaits 1.2.amxd",
-																	"type" : "amxd",
-																	"subtype" : "Undefined",
-																	"embed" : 0,
-																	"snapshot" : 																	{
-																		"name" : "Poly-Plaits 1.2.amxd",
-																		"origname" : "~/Desktop/amxd/Poly-Plaits 1.2.amxd",
-																		"valuedictionary" : 																		{
-																			"parameter_values" : 																			{
-																				"AUX" : 0.0,
-																				"Attack" : 0.0,
-																				"Decay" : 0.0,
-																				"Env Decay" : 0.0,
-																				"Env_Level" : 0.0,
-																				"FREQUENCY" : 0.0,
-																				"Freq_mod" : 0.0,
-																				"GAIN" : 0.0,
-																				"HARMONICS" : 0.0,
-																				"MORPH" : 0.0,
-																				"Model" : 0.0,
-																				"Morph_mod" : 0.0,
-																				"OUT" : 0.0,
-																				"Octave" : 0.0,
-																				"Release" : 0.0,
-																				"STEREO" : 0.0,
-																				"Sustain" : 0.0,
-																				"TIMBRE" : 0.0,
-																				"TRIG" : 0.0,
-																				"fade" : 0.0,
-																				"lpg" : 0.0,
-																				"timbre_mod" : 0.0,
-																				"blob" : 																				{
-																					"Pitchnum" : [ 0.0 ],
-																					"Pitchnum[1]" : [ 0.0 ],
-																					"Pitchnum[2]" : [ 0.0 ],
-																					"Pitchnum[3]" : [ 0.0 ],
-																					"live.numbox" : [ 0.0 ],
-																					"live.toggle[2]" : [ 0.0 ],
-																					"live.toggle[3]" : [ 0.0 ],
-																					"live.toggle[4]" : [ 0.0 ]
-																				}
-
-																			}
-
-																		}
-,
-																		"active" : 1
-																	}
-,
-																	"fileref" : 																	{
-																		"name" : "Poly-Plaits 1.2.amxd",
-																		"filename" : "Poly-Plaits 1.2.amxd.maxsnap",
-																		"filepath" : "~/Documents/Max 9/Snapshots",
-																		"filepos" : -1,
-																		"snapshotfileid" : "f0217ff997e607d0c4997d52c7e8898f"
-																	}
-
-																}
- ]
-														}
-
 													}
 ,
 													"text" : "mcs.amxd~ 0 2 @realtime_params 1 @showheader 0",
@@ -2910,7 +2775,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 8,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2997,7 +2862,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 41.0, 210.0, 50.0, 22.0 ],
-													"text" : "1"
+													"text" : "0"
 												}
 
 											}
@@ -3217,7 +3082,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 8,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3278,7 +3143,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 8,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3561,7 +3426,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 8,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3593,7 +3458,7 @@
 																		"appversion" : 																		{
 																			"major" : 9,
 																			"minor" : 0,
-																			"revision" : 8,
+																			"revision" : 9,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -3743,7 +3608,7 @@
 																		"appversion" : 																		{
 																			"major" : 9,
 																			"minor" : 0,
-																			"revision" : 8,
+																			"revision" : 9,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -3916,7 +3781,7 @@
 																		"appversion" : 																		{
 																			"major" : 9,
 																			"minor" : 0,
-																			"revision" : 8,
+																			"revision" : 9,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4317,7 +4182,7 @@
 																		"appversion" : 																		{
 																			"major" : 9,
 																			"minor" : 0,
-																			"revision" : 8,
+																			"revision" : 9,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4680,7 +4545,7 @@
 																		"appversion" : 																		{
 																			"major" : 9,
 																			"minor" : 0,
-																			"revision" : 8,
+																			"revision" : 9,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -5046,7 +4911,7 @@
 																		"appversion" : 																		{
 																			"major" : 9,
 																			"minor" : 0,
-																			"revision" : 8,
+																			"revision" : 9,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -5643,7 +5508,7 @@
 																		"appversion" : 																		{
 																			"major" : 9,
 																			"minor" : 0,
-																			"revision" : 8,
+																			"revision" : 9,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -5943,7 +5808,7 @@
 																		"appversion" : 																		{
 																			"major" : 9,
 																			"minor" : 0,
-																			"revision" : 8,
+																			"revision" : 9,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -5998,7 +5863,7 @@
 																						"appversion" : 																						{
 																							"major" : 9,
 																							"minor" : 0,
-																							"revision" : 8,
+																							"revision" : 9,
 																							"architecture" : "x64",
 																							"modernui" : 1
 																						}
@@ -6559,7 +6424,7 @@
 																						"appversion" : 																						{
 																							"major" : 9,
 																							"minor" : 0,
-																							"revision" : 8,
+																							"revision" : 9,
 																							"architecture" : "x64",
 																							"modernui" : 1
 																						}
@@ -8061,7 +7926,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 8,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -8080,7 +7945,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 8,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -8278,7 +8143,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 8,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -8446,7 +8311,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 8,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -8465,7 +8330,7 @@
 																		"appversion" : 																		{
 																			"major" : 9,
 																			"minor" : 0,
-																			"revision" : 8,
+																			"revision" : 9,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -8779,7 +8644,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 8,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -8913,7 +8778,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 8,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -9428,7 +9293,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 8,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -9510,7 +9375,7 @@
 																		"appversion" : 																		{
 																			"major" : 9,
 																			"minor" : 0,
-																			"revision" : 8,
+																			"revision" : 9,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -10921,6 +10786,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-3", 1 ],
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-54", 0 ]
 								}
@@ -10983,7 +10855,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 38.0, 33.0, 44.0, 19.0 ],
+					"patching_rect" : [ 37.0, 33.0, 44.0, 19.0 ],
 					"pattrmode" : 1,
 					"varname" : "midi-port-in"
 				}
@@ -11030,57 +10902,6 @@
 						"open!" : 910,
 						"presets" : 1016,
 						"preset-ramp" : 1017,
-						"AM Depth" : 100,
-						"AM Feedback" : 101,
-						"AM Frequency" : 102,
-						"Amp Attack" : 103,
-						"Amp Decay" : 104,
-						"Amp Release" : 105,
-						"Amp Sustain" : 106,
-						"Dirt" : 107,
-						"Jitter Speed" : 108,
-						"Jitter Type" : 109,
-						"Jitter to Bend" : 110,
-						"Jitter to Fold" : 111,
-						"Jitter to Noise" : 112,
-						"Jitter to Sync" : 113,
-						"Osc Bend" : 114,
-						"Osc Fold" : 115,
-						"Osc Noise" : 116,
-						"Osc Sync" : 117,
-						"Slope Angle" : 118,
-						"Slope Mode" : 119,
-						"Slope Output" : 120,
-						"Slope Rate" : 121,
-						"Slope Shape" : 122,
-						"Space Dry/Wet" : 123,
-						"Space Gravity" : 124,
-						"Space Trail" : 125,
-						"Sync Window Size" : 126,
-						"Synth Volume" : 127,
-						"Tone Amount" : 128,
-						"AUX" : 100,
-						"Attack" : 101,
-						"Decay" : 102,
-						"Env Decay" : 103,
-						"Env_Level" : 104,
-						"FREQUENCY" : 105,
-						"Freq_mod" : 106,
-						"GAIN" : 107,
-						"HARMONICS" : 108,
-						"MORPH" : 109,
-						"Model" : 110,
-						"Morph_mod" : 111,
-						"OUT" : 112,
-						"Octave" : 113,
-						"Release" : 114,
-						"STEREO" : 115,
-						"Sustain" : 116,
-						"TIMBRE" : 117,
-						"TRIG" : 118,
-						"fade" : 119,
-						"lpg" : 120,
-						"timbre_mod" : 121,
 						"ll.blues::status" : 1,
 						"ll.blues::outputs~" : 2,
 						"ll.blues::outputsMix~" : 3,
@@ -11089,10 +10910,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 769, 100, 1512, 880 ],
+						"client_rect" : [ 257, 195, 1512, 911 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 686, 177, 1286, 477 ]
+						"storage_rect" : [ 583, 68, 1034, 196 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -11170,13 +10991,13 @@
 					"arrow" : 0,
 					"fontsize" : 9.0,
 					"id" : "obj-81",
-					"items" : [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "AU DLS Synth 1", ",", "Network Session 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "Scarlett 18i20 USB", ",", "MIDISPORT 1x1 Port A", ",", "Minilab3 MIDI", ",", "Minilab3 DIN THRU", ",", "Minilab3 MCU/HUI", ",", "Minilab3 ALV", ",", "from Max 1", ",", "from Max 2", ",", "Music Mouse" ],
+					"items" : [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "AU DLS Synth 1", ",", "IAC-Treiber Bus 1", ",", "from Max 1", ",", "from Max 2" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 95.0, 33.0, 45.0, 19.0 ],
+					"patching_rect" : [ 94.0, 33.0, 45.0, 19.0 ],
 					"pattrmode" : 1,
 					"varname" : "midi-port-out"
 				}
@@ -11198,7 +11019,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 0.0, 63.21875, 16.0 ],
+					"patching_rect" : [ 0.0, 0.0, 61.396484375, 16.0 ],
 					"varname" : "act",
 					"viewvisibility" : 1
 				}
@@ -11229,22 +11050,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-18", 0 ],
-					"hidden" : 1,
-					"source" : [ "obj-16", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"hidden" : 1,
-					"source" : [ "obj-16", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-291", 0 ]
@@ -11270,28 +11075,10 @@
  ],
 		"parameters" : 		{
 			"obj-18::obj-3::obj-1" : [ "amxd", "amxd", 0 ],
-			"parameterbanks" : 			{
-
-			}
-,
 			"inherited_shortname" : 1
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "Poly-Plaits 1.2.amxd",
-				"bootpath" : "~/Desktop/amxd",
-				"patcherrelativepath" : "../../../../../../Desktop/amxd",
-				"type" : "amxd",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Poly-Plaits 1.2.amxd.maxsnap",
-				"bootpath" : "~/Documents/Max 9/Snapshots",
-				"patcherrelativepath" : "../../../../Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "actmakeB.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/actmaker",
 				"patcherrelativepath" : "../actmaker",
@@ -11348,6 +11135,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.allacts.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.amxd_create.js",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
@@ -11390,24 +11184,10 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.inputmix.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../abstractions/ll.blues",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ll.listblock.js",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.mc.stereo_pan.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../abstractions/ll.blues",
-				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -11573,13 +11353,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ninput.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "pattrexists.mxo",
 				"type" : "iLaX"
 			}
@@ -11589,10 +11362,6 @@
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "vb.mi.plts~.mxo",
-				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,
