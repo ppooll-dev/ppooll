@@ -2,53 +2,928 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 5,
-			"revision" : 6,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 9,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 634.0, 571.0 ],
-		"bglocked" : 0,
-		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
+		"rect" : [ 272.0, 208.0, 1292.0, 612.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
 		"toolbarvisible" : 0,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"fontface" : 1,
-					"fontsize" : 12.0,
-					"id" : "obj-35",
+					"id" : "obj-69",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 21.0, 94.0, 597.0, 33.0 ],
-					"text" : "works in conjunction with spat.amimonitor@ and spat.ambidecode@. spat.ambiencode@ automatically fetches the coordinates for the sound sources to be encoded from spat.ambimonitor@!"
+					"patching_rect" : [ 750.0, 549.0, 342.0, 33.0 ],
+					"presentation_linecount" : 2,
+					"text" : "mute (active) and volume per source channel. extends automatically with amount of sources"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 0,
+					"format" : [ 1.3 ],
+					"id" : "obj-68",
+					"label" : [ "vol" ],
+					"mark" : 1.0,
+					"max" : 1.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 665.0, 549.0, 70.0, 13.0 ],
+					"prependlabel" : 1,
+					"slidercolor" : [ 0.784313725490196, 0.145098039215686, 0.023529411764706, 1.0 ],
+					"slidercolornofocus" : [ 0.784313725490196, 0.145098039215686, 0.023529411764706, 0.5 ],
+					"sliderlog" : 4.0,
+					"slidermax" : 1.0,
+					"sliderstyle" : 0,
+					"varname" : "levels"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bordercolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
+					"fontface" : 0,
+					"format" : [ 0 ],
+					"id" : "obj-3",
+					"label" : [ "active" ],
+					"labelcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"max" : 1.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 615.0, 549.0, 50.0, 13.0 ],
+					"prependlabel" : 1,
+					"slidercolor" : [ 0.235294117647059, 0.784313725490196, 0.023529411764706, 1.0 ],
+					"slidercolornofocus" : [ 1.0, 1.0, 1.0, 0.99 ],
+					"slidermax" : 1.0,
+					"sliderstyle" : 0,
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"textcolornofocus" : [ 1.0, 1.0, 1.0, 0.788235294117647 ],
+					"varname" : "active"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"fontsize" : 12.0,
+					"id" : "obj-66",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 613.0, 514.0, 101.0, 20.0 ],
+					"text" : "mixer window:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-67",
+					"maxclass" : "panel",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 611.0, 495.0, 597.0, 4.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"id" : "obj-65",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 935.0, 233.0, 267.0, 64.0 ],
+					"presentation_linecount" : 10,
+					"text" : "sources can also be manually placed here by clicking & entering details. additionally they can be accessed externaly by both aed and xyz coordinates"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"bubblepoint" : 0.0,
+					"bubbleside" : 2,
+					"id" : "obj-64",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 801.0, 324.0, 76.0, 39.0 ],
+					"text" : "center view"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"bubblepoint" : 0.0,
+					"bubbleside" : 2,
+					"id" : "obj-63",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 725.0, 324.0, 41.0, 39.0 ],
+					"text" : "zoom"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"id" : "obj-5",
+					"linecount" : 6,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1125.0, 84.0, 117.0, 91.0 ],
+					"text" : "for use with autoroute: add channel offset here if more than 1 ambiencode object is in use."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"bubblepoint" : 1.0,
+					"bubbleside" : 2,
+					"fontface" : 1,
+					"fontsize" : 12.0,
+					"id" : "obj-62",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 611.0, 79.0, 418.0, 52.0 ],
+					"presentation_linecount" : 2,
+					"text" : "autoroute – spat.ambiencode@ can automatically fetch the coordinates for the sound sources to be encoded from spat.ambimonitor@!"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"bubblepoint" : 0.0,
+					"bubbleside" : 0,
+					"id" : "obj-7",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 138.0, 354.0, 498.0, 79.0 ],
+					"text" : "distance encoding method. choose between off (all points are treated as if they have a distance of 1 to the center), exponential scaling, inverse proportional scaling and exponential power smoothed. this is  an attenuation of sources in center area in relation to the closeness to the origin. applied to the signal before encoding!"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"id" : "obj-61",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 497.0, 300.0, 200.0, 51.0 ],
+					"presentation_linecount" : 2,
+					"text" : "coordination system & angle units: these have to be the same as in the decoding stage!!!"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-45",
+					"maxclass" : "textbutton",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 772.0, 358.0, 60.0, 13.191747546195984 ],
+					"text" : "center view",
+					"texton" : "center view",
+					"varname" : "monitor_center"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "order",
+					"fontface" : 0,
+					"fontsize" : 10.0,
+					"format" : [ 1.2 ],
+					"id" : "obj-46",
+					"label" : [ "zoom" ],
+					"mark" : 1.0,
+					"max" : 50.0,
+					"maxclass" : "ll_number",
+					"min" : 0.1,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 665.0, 359.0, 104.85436749458313, 11.616504907608032 ],
+					"slidercolor" : [ 0.0, 0.0, 0.0, 0.33 ],
+					"sliderlog" : 8.0,
+					"slidermax" : 50.0,
+					"slidermin" : 0.1,
+					"sliderstyle" : 0,
+					"varname" : "zoom_scale"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"border_color" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
+					"centre_color" : [ 0.0, 0.0, 0.0, 0.35 ],
+					"constrain" : 2,
+					"coord_color" : [ 0.807843137254902, 0.898039215686275, 0.909803921568627, 1.0 ],
+					"draw_labels" : 0,
+					"grid_color" : [ 0.592156862745098, 0.592156862745098, 0.592156862745098, 0.24 ],
+					"grid_display" : 1,
+					"grid_extend" : 1,
+					"grid_unit_d" : 1.0,
+					"hi_border_color" : [ 0.843137, 0.639216, 0.388235, 1.0 ],
+					"id" : "obj-114",
+					"label_color" : [ 0.423529411764706, 0.776470588235294, 0.756862745098039, 1.0 ],
+					"maxclass" : "ambimonitor",
+					"mode" : 3,
+					"name_color" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"number_font_size" : 9.0,
+					"numbers" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 665.0, 139.0, 465.0, 232.5 ],
+					"point_color" : [ 1.0, 1.0, 1.0, 0.59 ],
+					"prototypename" : "small_light_grey",
+					"save_points" : 1,
+					"varname" : "source_monitor",
+					"zoom_scale" : 0.62
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-47",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 908.0, 121.0, 107.0, 18.0 ],
+					"text" : "ext spat.ambimonitor:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-48",
+					"maxclass" : "textbutton",
+					"mode" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1011.0, 123.0, 56.0, 14.0 ],
+					"text" : "autoroute",
+					"texton" : "autoroute",
+					"varname" : "autoroute"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-49",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 30.0, 337.0, 90.0, 20.0 ],
+					"text" : "distance mode:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "center_att",
+					"fontface" : 0,
+					"fontsize" : 10.0,
+					"format" : [ 1.2 ],
+					"id" : "obj-17",
+					"label" : [ "center_att_db" ],
+					"mark" : 18.0,
+					"max" : 96.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 391.0, 337.0, 103.0, 20.0 ],
+					"slidercolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
+					"sliderlog" : 2.0,
+					"slidermax" : 96.0,
+					"varname" : "center_att_db"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "center_curve",
+					"fontface" : 0,
+					"fontsize" : 10.0,
+					"format" : [ 1.2 ],
+					"id" : "obj-14",
+					"label" : [ "center_curve" ],
+					"mark" : 0.33,
+					"max" : 1.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 300.0, 337.0, 89.0, 20.0 ],
+					"slidercolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
+					"sliderlog" : 2.0,
+					"slidermax" : 1.0,
+					"varname" : "center_curve"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "center_size",
+					"fontface" : 0,
+					"fontsize" : 10.0,
+					"format" : [ 1.2 ],
+					"id" : "obj-12",
+					"label" : [ "center_size" ],
+					"mark" : 0.444444,
+					"maxclass" : "ll_number",
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 220.0, 337.0, 78.0, 20.0 ],
+					"slidercolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
+					"sliderlog" : 4.0,
+					"slidermax" : 10.0,
+					"slidermin" : 0.1,
+					"varname" : "center_size"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"allowdrag" : 0,
+					"annotation" : "distance_mode",
+					"bgcolor" : [ 0.311041, 0.314599, 0.318357, 1.0 ],
+					"bgfillcolor_angle" : 270.0,
+					"bgfillcolor_autogradient" : 0.0,
+					"bgfillcolor_color" : [ 0.311041, 0.314599, 0.318357, 1.0 ],
+					"bgfillcolor_color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
+					"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+					"bgfillcolor_proportion" : 0.39,
+					"bgfillcolor_type" : "color",
+					"color" : [ 0.311041, 0.314599, 0.318357, 1.0 ],
+					"elementcolor" : [ 0.311041, 0.314599, 0.318357, 1.0 ],
+					"fontsize" : 10.0,
+					"id" : "obj-50",
+					"items" : [ "distance", "off", ",", "exponential", ",", "inverse", "proportional", ",", "exp.", "power", "smoothed" ],
+					"labelclick" : 1,
+					"maxclass" : "umenu",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 120.0, 337.0, 100.0, 20.0 ],
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"varname" : "distance_mode"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"angle" : 270.0,
+					"bgcolor" : [ 0.235294117647059, 0.235294117647059, 0.235294117647059, 1.0 ],
+					"id" : "obj-51",
+					"maxclass" : "panel",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 30.0, 336.0, 465.0, 22.0 ],
+					"proportion" : 0.5,
+					"rounded" : 0
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "center_size",
+					"fontface" : 0,
+					"fontsize" : 10.0,
+					"format" : [ 1.2 ],
+					"id" : "obj-52",
+					"label" : [ "exp_curve" ],
+					"mark" : 1.0,
+					"max" : 20.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 150.0, 471.0, 120.0, 16.0 ],
+					"slidercolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
+					"sliderlog" : 4.0,
+					"slidermax" : 20.0,
+					"varname" : "exp_curve"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "center_size",
+					"fontface" : 0,
+					"fontsize" : 10.0,
+					"format" : [ 1.2 ],
+					"id" : "obj-53",
+					"label" : [ "exp_cutoff_dist" ],
+					"mark" : 100.0,
+					"maxclass" : "ll_number",
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 28.0, 471.0, 120.0, 16.0 ],
+					"slidercolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
+					"sliderlog" : 4.0,
+					"slidermax" : 1000.0,
+					"slidermin" : 1.01,
+					"varname" : "exp_cutoff_dist"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "dist_att",
+					"fontface" : 0,
+					"fontsize" : 10.0,
+					"format" : [ 1.2 ],
+					"hidden" : 1,
+					"id" : "obj-10",
+					"label" : [ "dist_att" ],
+					"mark" : 1.4,
+					"max" : 128.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 28.0, 471.0, 120.0, 16.0 ],
+					"slidercolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
+					"sliderlog" : 12.0,
+					"slidermax" : 128.0,
+					"varname" : "dist_att"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "db_unit",
+					"fontface" : 0,
+					"fontsize" : 10.0,
+					"format" : [ 1.2 ],
+					"hidden" : 1,
+					"id" : "obj-20",
+					"label" : [ "db_unit" ],
+					"mark" : 6.0,
+					"maxclass" : "ll_number",
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 28.0, 471.0, 120.0, 16.0 ],
+					"slidercolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
+					"sliderlog" : 12.0,
+					"slidermax" : 128.0,
+					"varname" : "db_unit"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"embedstate" : [ [ "savedState", 1, 3, 1.5, 1, 0.444444, 0.33, 18, 100, 1, 1, 5.407744107744099, 36 ] ],
+					"filename" : "icst.distance_encoding.js",
+					"id" : "obj-54",
+					"maxclass" : "jsui",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 30.0, 336.0, 465.0, 133.0 ],
+					"varname" : "distance_graph"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "chn_offset",
+					"fontface" : 0,
+					"fontsize" : 10.0,
+					"format" : [ 1 ],
+					"id" : "obj-55",
+					"label" : [ "chn_offset" ],
+					"max" : 128.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1069.0, 122.0, 61.0, 15.0 ],
+					"slidercolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
+					"sliderlog" : 12.0,
+					"slidermax" : 128.0,
+					"sliderstyle" : 2,
+					"varname" : "chn_offset"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-56",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 354.0, 316.0, 47.0, 18.0 ],
+					"text" : "angles"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-6",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 181.0, 316.0, 68.0, 18.0 ],
+					"text" : "coord system"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-57",
+					"items" : [ "Degrees", ",", "Radians" ],
+					"maxclass" : "umenu",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 403.0, 315.0, 92.0, 20.0 ],
+					"varname" : "coord_angles"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-58",
+					"items" : [ "Navigation", ",", "Acoustics", ",", "Mathematics", ",", "OpenGL" ],
+					"maxclass" : "umenu",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 249.0, 315.0, 92.0, 20.0 ],
+					"varname" : "coord_system"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-59",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 52.0, 316.0, 31.0, 18.0 ],
+					"text" : "type:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-60",
+					"items" : [ "Furse-Malham", ",", "N3D", ",", "ambix", "SN3D" ],
+					"maxclass" : "umenu",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 85.0, 315.0, 92.0, 20.0 ],
+					"varname" : "type"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "move window",
+					"filename" : "ll.movewindow2.js",
+					"hint" : "move window at left up, close at right down",
+					"id" : "obj-24",
+					"jsarguments" : [ 255, 255, 255, 255, 0, 0, 0, 0, 0 ],
+					"maxclass" : "jsui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 30.0, 314.0, 22.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 30.0, 30.0, 76.0, 14.0 ],
+					"varname" : "close"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"fontsize" : 12.0,
+					"id" : "obj-43",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 21.0, 261.0, 101.0, 20.0 ],
+					"text" : "config window:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"fontsize" : 12.0,
+					"id" : "obj-42",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 220.0, 19.0, 532.0, 20.0 ],
+					"text" : "works in conjunction with spat.amimonitor@, spat.ambicontrol@ and spat.ambidecode@. "
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-34",
+					"maxclass" : "panel",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 19.0, 242.0, 597.0, 4.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"bubblepoint" : 0.25,
+					"bubbleside" : 0,
+					"id" : "obj-33",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 255.5, 166.0, 110.0, 66.0 ],
+					"presentation_linecount" : 3,
+					"text" : "access mixer for per-source mutes & volumes"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"bubblepoint" : 1.0,
+					"bubbleside" : 0,
+					"id" : "obj-31",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 130.5, 166.0, 110.0, 52.0 ],
+					"presentation_linecount" : 2,
+					"text" : "set up ambisonics details"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"id" : "obj-30",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 394.5, 127.0, 179.0, 37.0 ],
+					"presentation_linecount" : 2,
+					"text" : "amount of sources you want to encode into the soundfield"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"bubbleside" : 3,
+					"id" : "obj-11",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 18.5, 120.0, 210.0, 51.0 ],
+					"text" : "ambisonics order (1-11), has to be equal or at least higher than the order used when decoding"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"bubbleside" : 2,
+					"id" : "obj-29",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 182.5, 98.0, 274.0, 39.0 ],
+					"text" : "channel count resulting from order (can't change)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-9",
+					"maxclass" : "textbutton",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 268.5, 154.0, 37.113281000000001, 13.0 ],
+					"text" : "mixer",
+					"texton" : "mixer",
+					"varname" : "mixerWindow"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "ambiorder",
+					"fontface" : 0,
+					"fontsize" : 10.0,
+					"format" : [ 1 ],
+					"id" : "obj-23",
+					"label" : [ "sources" ],
+					"max" : 128.0,
+					"maxclass" : "ll_number",
+					"min" : 1.0,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 334.5, 139.0, 58.0, 13.0 ],
+					"slidermax" : 128.0,
+					"slidermin" : 1.0,
+					"sliderstyle" : 2,
+					"varname" : "sources"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "ambiorder",
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
+					"bordercolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 0.0 ],
+					"fontface" : 0,
+					"fontsize" : 10.0,
+					"format" : [ 1 ],
+					"id" : "obj-25",
+					"ignoreclick" : 1,
+					"label" : [ "chans" ],
+					"labelcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 272.5, 139.0, 48.0, 13.0 ],
+					"slidermax" : 11.0,
+					"sliderstyle" : 2,
+					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+					"varname" : "chans"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "gain",
+					"fontface" : 0,
+					"fontsize" : 10.0,
+					"format" : [ 1.2 ],
+					"id" : "obj-26",
+					"label" : [ "gain" ],
+					"mark" : 1.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"mousefocus" : 1,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 303.5, 154.0, 90.0, 13.0 ],
+					"slidercolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
+					"sliderlog" : 8.0,
+					"slidermax" : 100.0,
+					"sliderstyle" : 0,
+					"varname" : "gain[1]"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 10.0,
+					"id" : "obj-27",
+					"maxclass" : "textbutton",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 229.5, 154.0, 37.113281000000001, 13.0 ],
+					"text" : "config",
+					"texton" : "config",
+					"varname" : "configWindow"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "ambiorder",
+					"fontface" : 0,
+					"fontsize" : 10.0,
+					"format" : [ 1 ],
+					"id" : "obj-28",
+					"label" : [ "order" ],
+					"max" : 11.0,
+					"maxclass" : "ll_number",
+					"min" : 0.0,
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 229.5, 139.0, 40.0, 13.0 ],
+					"slidermax" : 11.0,
+					"slidermin" : 1.0,
+					"sliderstyle" : 2,
+					"varname" : "order"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"fontsize" : 12.0,
+					"id" : "obj-35",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 21.0, 92.0, 101.0, 20.0 ],
+					"text" : "main window:"
 				}
 
 			}
@@ -64,7 +939,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 544.0, 51.0, 77.0, 19.0 ],
+					"patching_rect" : [ 1145.0, 51.0, 77.0, 19.0 ],
 					"text" : "www.icst.net",
 					"textcolor" : [ 0.0, 0.145098, 0.717647, 1.0 ],
 					"textoncolor" : [ 1.0, 0.0, 0.0, 1.0 ],
@@ -78,23 +953,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-37",
-					"linecount" : 3,
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 112.0, 510.0, 503.0, 47.0 ],
-					"text" : "center attenuation curve. sources close to the origin lose directional channels (orders higher than 0) and are only encoded in 0-order channel (W), the mono component of an ambisonics stream."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-36",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 112.0, 488.0, 501.0, 20.0 ],
-					"text" : "attenuation of sources in center area in relation to the closeness to the origin."
+					"patching_rect" : [ 27.0, 539.0, 503.0, 33.0 ],
+					"text" : "center_curve: sources close to the origin lose directional channels (orders higher than 0) and are only encoded in 0-order channel (W), the mono component of an ambisonics stream."
 				}
 
 			}
@@ -104,19 +968,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 112.0, 466.0, 501.0, 20.0 ],
-					"text" : "size of center sphere"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-22",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 106.0, 444.0, 507.0, 20.0 ],
-					"text" : "distance attenuation for exponential distance encoding - watch graph for visualization"
+					"patching_rect" : [ 28.0, 517.0, 501.0, 20.0 ],
+					"text" : "center_size: size of center sphere"
 				}
 
 			}
@@ -126,557 +979,50 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 106.0, 409.0, 507.0, 20.0 ],
-					"text" : "distance attenuation for inverse proportional distance encoding- watch graph for visualization"
+					"patching_rect" : [ 28.0, 495.0, 349.0, 20.0 ],
+					"text" : "change distance encoding mode & watch graph for visualization"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 5,
+					"linecount" : 6,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 70.0, 239.0, 543.0, 74.0 ],
-					"text" : "define outputs - these should be connected to spat.ambidecode@, but can be routed to rec@ for recording as well. note that the ambisonics b-format is not intended to be played back directly. it has to be decoded first. however recording of the ambisonics stream before playback allows later editing in a DAW without losing spatial information and without fixed speaker positioning.\nthis way e.g. a stereo and 5.1 mix can be rendered from the same ambisonics stream."
+					"patching_rect" : [ 661.5, 392.0, 472.0, 87.0 ],
+					"text" : "outputs should be connected to spat.ambidecode@, but can be routed to rec@ for recording as well. note that the ambisonics b-format is not intended to be played back directly. it has to be decoded first. however recording of the ambisonics stream before playback allows later editing in a DAW without losing spatial information and without fixed speaker positioning. this way e.g. a stereo and 5.1 mix can be rendered from the same ambisonics stream."
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"bubble" : 1,
+					"bubblepoint" : 0.0,
+					"bubbleside" : 0,
 					"id" : "obj-15",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 112.0, 218.0, 149.0, 20.0 ],
-					"text" : "gain for all input channels."
+					"patching_rect" : [ 379.5, 166.0, 110.0, 52.0 ],
+					"text" : "global gain for all encoder channels."
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"bubble" : 1,
+					"bubblepoint" : 0.0,
+					"bubbleside" : 2,
 					"id" : "obj-13",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 112.0, 183.0, 501.0, 33.0 ],
-					"text" : "ambisonics type: furse-malham, N3D, SN3D. quasi-standard nowadays: sn3d, as found in ambix."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-11",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 87.0, 159.0, 526.0, 20.0 ],
-					"text" : "ambisonics order (1-11), has to be equal or at least higher than the order used when decoding"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-9",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 197.0, 137.0, 207.0, 20.0 ],
-					"text" : "activate input channels 1-8 (red = on)"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-7",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 106.0, 374.0, 507.0, 33.0 ],
-					"text" : "distance encoding method. choose between off (all points are treated as if they have a distance of 1 to the center), exponential scaling and inverse proportional scaling."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-5",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 81.0, 337.0, 532.0, 33.0 ],
-					"text" : "add channel offset here if more than 1 ambiencode object is in use - for each ambiencode add an offset of 8"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-3",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 70.0, 315.0, 183.0, 20.0 ],
-					"text" : "expands to show further options"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 0,
-					"fontsize" : 10.0,
-					"format" : [ 1 ],
-					"id" : "obj-24",
-					"label" : [ "chn_offset" ],
-					"max" : 128.0,
-					"maxclass" : "ll_number",
-					"min" : 0.0,
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 18.0, 337.0, 61.0, 19.0 ],
-					"slidercolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
-					"sliderlog" : 12.0,
-					"slidermax" : 128.0,
-					"sliderstyle" : 2,
-					"varname" : "chn_offset"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"fontsize" : 10.0,
-					"id" : "obj-34",
-					"maxclass" : "textbutton",
-					"mode" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 18.0, 315.0, 53.0, 20.0 ],
-					"text" : "expand",
-					"texton" : "collapse",
-					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"varname" : "dist_ui"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"annotation" : "amount of channels",
-					"bgcolor" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
-					"cantchange" : 1,
-					"fontname" : "Arial Bold",
-					"fontsize" : 10.0,
-					"hint" : "amount of channels",
-					"htricolor" : [ 0.87, 0.82, 0.24, 1.0 ],
-					"id" : "obj-20",
-					"maxclass" : "number",
-					"maximum" : 50,
-					"minimum" : 3,
-					"mousefilter" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 70.0, 159.0, 19.0, 20.0 ],
-					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"triangle" : 0,
-					"tricolor" : [ 0.75, 0.75, 0.75, 1.0 ],
-					"triscale" : 0.9,
-					"varname" : "chan_amt"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgcolor" : [ 0.698039, 0.698039, 0.698039, 1.0 ],
-					"bgoncolor" : [ 1.0, 0.039216, 0.392157, 1.0 ],
-					"fontsize" : 10.0,
-					"id" : "obj-359",
-					"legacytextcolor" : 1,
-					"maxclass" : "textbutton",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 21.0, 239.0, 48.0, 20.0 ],
-					"prototypename" : "M4L.toggle",
-					"text" : "def_outs",
-					"textcolor" : [ 0.941176, 0.098039, 0.098039, 1.0 ],
-					"texton" : "pile",
-					"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"textovercolor" : [ 1.0, 0.039216, 0.392157, 1.0 ],
-					"usebgoncolor" : 1,
-					"usetextovercolor" : 1,
-					"varname" : "def"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 0,
-					"fontsize" : 10.0,
-					"format" : [ 1.2 ],
-					"id" : "obj-18",
-					"label" : [ "gain" ],
-					"mark" : 1.0,
-					"maxclass" : "ll_number",
-					"min" : 0.0,
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 21.0, 218.0, 89.0, 20.0 ],
-					"slidercolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
-					"sliderlog" : 1.0,
-					"slidermax" : 2.0,
-					"varname" : "gain"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 0,
-					"fontsize" : 10.0,
-					"format" : [ 1.2 ],
-					"id" : "obj-17",
-					"label" : [ "center_att" ],
-					"mark" : 6.0,
-					"max" : 18.0,
-					"maxclass" : "ll_number",
-					"min" : 0.0,
-					"mousefocus" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 18.0, 488.0, 90.0, 20.0 ],
-					"slidercolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
-					"sliderlog" : 1.0,
-					"slidermax" : 18.0,
-					"varname" : "center_att"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 0,
-					"fontsize" : 10.0,
-					"format" : [ 1.2 ],
-					"id" : "obj-14",
-					"label" : [ "center_curve" ],
-					"mark" : 0.2,
-					"max" : 1.0,
-					"maxclass" : "ll_number",
-					"min" : 0.0,
-					"mousefocus" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 18.0, 510.0, 90.0, 20.0 ],
-					"slidercolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
-					"sliderlog" : 2.0,
-					"slidermax" : 1.0,
-					"varname" : "center_curve"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 0,
-					"fontsize" : 10.0,
-					"format" : [ 1.2 ],
-					"id" : "obj-12",
-					"label" : [ "center_size" ],
-					"mark" : 1.0,
-					"maxclass" : "ll_number",
-					"mousefocus" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 18.0, 466.0, 90.0, 20.0 ],
-					"slidercolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
-					"slidermax" : 10.0,
-					"slidermin" : 0.1,
-					"varname" : "center_size"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 0,
-					"fontsize" : 10.0,
-					"format" : [ 1.2 ],
-					"id" : "obj-10",
-					"label" : [ "dist_att" ],
-					"mark" : 1.0,
-					"max" : 128.0,
-					"maxclass" : "ll_number",
-					"min" : 0.0,
-					"mousefocus" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 18.0, 409.0, 80.0, 20.0 ],
-					"slidercolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
-					"sliderlog" : 12.0,
-					"slidermax" : 128.0,
-					"varname" : "dist_att"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 0,
-					"fontsize" : 10.0,
-					"format" : [ 1.2 ],
-					"id" : "obj-8",
-					"label" : [ "db_unit" ],
-					"mark" : 1.5,
-					"maxclass" : "ll_number",
-					"mousefocus" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 18.0, 444.0, 80.0, 20.0 ],
-					"slidercolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
-					"sliderlog" : 12.0,
-					"slidermax" : 128.0,
-					"varname" : "db_unit"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"allowdrag" : 0,
-					"bgcolor" : [ 0.311041, 0.314599, 0.318357, 1.0 ],
-					"bgfillcolor_angle" : 270.0,
-					"bgfillcolor_autogradient" : 0.0,
-					"bgfillcolor_color" : [ 0.311041, 0.314599, 0.318357, 1.0 ],
-					"bgfillcolor_color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
-					"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-					"bgfillcolor_proportion" : 0.39,
-					"bgfillcolor_type" : "color",
-					"color" : [ 0.311041, 0.314599, 0.318357, 1.0 ],
-					"elementcolor" : [ 0.311041, 0.314599, 0.318357, 1.0 ],
-					"fontsize" : 10.0,
-					"id" : "obj-6",
-					"items" : [ "distance", "off", ",", "exponential", ",", "inverse", "proportional" ],
-					"labelclick" : 1,
-					"maxclass" : "umenu",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "int", "", "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 18.0, 374.0, 86.0, 20.0 ],
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"varname" : "distance_mode"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontsize" : 10.0,
-					"id" : "obj-33",
-					"items" : [ "Furse-Malham", ",", "N3D", ",", "SN3D" ],
-					"maxclass" : "umenu",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "int", "", "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 21.0, 183.0, 92.0, 20.0 ],
-					"varname" : "type"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgcolor" : [ 0.376187, 0.409384, 0.445165, 1.0 ],
-					"bgoncolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
-					"id" : "obj-31",
-					"maxclass" : "textbutton",
-					"mode" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 175.0, 137.0, 20.0, 20.0 ],
-					"text" : "8",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"texton" : "8",
-					"usebgoncolor" : 1,
-					"varname" : "8active"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgcolor" : [ 0.376187, 0.409384, 0.445165, 1.0 ],
-					"bgoncolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
-					"id" : "obj-30",
-					"maxclass" : "textbutton",
-					"mode" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 153.0, 137.0, 20.0, 20.0 ],
-					"text" : "7",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"texton" : "7",
-					"usebgoncolor" : 1,
-					"varname" : "7active"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgcolor" : [ 0.376187, 0.409384, 0.445165, 1.0 ],
-					"bgoncolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
-					"id" : "obj-29",
-					"maxclass" : "textbutton",
-					"mode" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 131.0, 137.0, 20.0, 20.0 ],
-					"text" : "6",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"texton" : "6",
-					"usebgoncolor" : 1,
-					"varname" : "6active"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgcolor" : [ 0.376187, 0.409384, 0.445165, 1.0 ],
-					"bgoncolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
-					"id" : "obj-28",
-					"maxclass" : "textbutton",
-					"mode" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 109.0, 137.0, 20.0, 20.0 ],
-					"text" : "5",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"texton" : "5",
-					"usebgoncolor" : 1,
-					"varname" : "5active"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgcolor" : [ 0.376187, 0.409384, 0.445165, 1.0 ],
-					"bgoncolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
-					"id" : "obj-27",
-					"maxclass" : "textbutton",
-					"mode" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 87.0, 137.0, 20.0, 20.0 ],
-					"text" : "4",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"texton" : "4",
-					"usebgoncolor" : 1,
-					"varname" : "4active"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgcolor" : [ 0.376187, 0.409384, 0.445165, 1.0 ],
-					"bgoncolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
-					"id" : "obj-26",
-					"maxclass" : "textbutton",
-					"mode" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 65.0, 137.0, 20.0, 20.0 ],
-					"text" : "3",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"texton" : "3",
-					"usebgoncolor" : 1,
-					"varname" : "3active"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgcolor" : [ 0.376187, 0.409384, 0.445165, 1.0 ],
-					"bgoncolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
-					"id" : "obj-25",
-					"maxclass" : "textbutton",
-					"mode" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 43.0, 137.0, 20.0, 20.0 ],
-					"text" : "2",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"texton" : "2",
-					"usebgoncolor" : 1,
-					"varname" : "2active"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgcolor" : [ 0.376187, 0.409384, 0.445165, 1.0 ],
-					"bgoncolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
-					"id" : "obj-23",
-					"maxclass" : "textbutton",
-					"mode" : 1,
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 21.0, 137.0, 20.0, 20.0 ],
-					"text" : "1",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
-					"texton" : "1",
-					"usebgoncolor" : 1,
-					"varname" : "1active"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 0,
-					"fontsize" : 10.0,
-					"format" : [ 1 ],
-					"id" : "obj-19",
-					"label" : [ "order" ],
-					"max" : 3.0,
-					"maxclass" : "ll_number",
-					"min" : 1.0,
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 21.0, 159.0, 47.0, 20.0 ],
-					"slidermax" : 3.0,
-					"slidermin" : 1.0,
-					"sliderstyle" : 2,
-					"varname" : "ambiorder"
+					"patching_rect" : [ 140.0, 261.0, 501.0, 52.0 ],
+					"text" : "ambisonics type: furse-malham, N3D, ambix SN3D.t this have to be the same as in the decoding stage!!! standard nowadays: sn3d, as found in ambix. should be used."
 				}
 
 			}
@@ -687,7 +1033,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.0, 40.0, 266.0, 20.0 ],
-					"text" : "v1.3 / 230919 / hausch@moozak.org"
+					"text" : "v2 / 251025 / hausch@moozak.org"
 				}
 
 			}
@@ -723,7 +1069,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 480.0, 40.0, 138.0, 17.0 ],
+					"patching_rect" : [ 1081.0, 40.0, 138.0, 17.0 ],
 					"text" : "Zurich University of the Arts",
 					"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
 				}
@@ -738,7 +1084,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 415.0, 14.0, 203.0, 17.0 ],
+					"patching_rect" : [ 1016.0, 14.0, 203.0, 17.0 ],
 					"text" : "Copyright © 2003 - 2021 by Jan Schacher",
 					"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
 				}
@@ -753,7 +1099,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 347.0, 27.0, 270.0, 17.0 ],
+					"patching_rect" : [ 948.0, 27.0, 270.0, 17.0 ],
 					"text" : "ICST Institute for Computer Music and Sound Technology",
 					"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
 				}
@@ -762,6 +1108,24 @@
  ],
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
+				"name" : "ambimonitor.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "icst.distance_encoding.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ICST Ambisonics/javascript",
+				"patcherrelativepath" : "../../../ICST Ambisonics/javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.movewindow2.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll_number.mxo",
 				"type" : "iLaX"
 			}
