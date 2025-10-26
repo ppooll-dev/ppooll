@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 272.0, 208.0, 1292.0, 612.0 ],
+		"rect" : [ 608.0, 453.0, 1292.0, 612.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"boxes" : [ 			{
@@ -21,7 +21,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 750.0, 549.0, 342.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "mute (active) and volume per source channel. extends automatically with amount of sources"
 				}
 
@@ -112,8 +111,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 935.0, 233.0, 267.0, 64.0 ],
-					"presentation_linecount" : 10,
+					"patching_rect" : [ 935.0, 233.0, 269.0, 64.0 ],
 					"text" : "sources can also be manually placed here by clicking & entering details. additionally they can be accessed externaly by both aed and xyz coordinates"
 				}
 
@@ -154,7 +152,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1125.0, 84.0, 117.0, 91.0 ],
+					"patching_rect" : [ 1125.0, 84.0, 120.0, 91.0 ],
 					"text" : "for use with autoroute: add channel offset here if more than 1 ambiencode object is in use."
 				}
 
@@ -171,8 +169,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 611.0, 79.0, 418.0, 52.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 611.0, 79.0, 421.0, 52.0 ],
 					"text" : "autoroute – spat.ambiencode@ can automatically fetch the coordinates for the sound sources to be encoded from spat.ambimonitor@!"
 				}
 
@@ -200,8 +197,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 497.0, 300.0, 200.0, 51.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 497.0, 300.0, 202.0, 51.0 ],
 					"text" : "coordination system & angle units: these have to be the same as in the decoding stage!!!"
 				}
 
@@ -694,11 +690,12 @@
 					"fontface" : 1,
 					"fontsize" : 12.0,
 					"id" : "obj-42",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 220.0, 19.0, 532.0, 20.0 ],
-					"text" : "works in conjunction with spat.amimonitor@, spat.ambicontrol@ and spat.ambidecode@. "
+					"patching_rect" : [ 226.0, 19.0, 532.0, 33.0 ],
+					"text" : "works in conjunction with spat.amimonitor@, spat.ambicontrol@ and spat.ambidecode@. \nambisonics settings have to be identical as in decoding stage!!!"
 				}
 
 			}
@@ -723,7 +720,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 255.5, 166.0, 110.0, 66.0 ],
-					"presentation_linecount" : 3,
 					"text" : "access mixer for per-source mutes & volumes"
 				}
 
@@ -739,7 +735,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 130.5, 166.0, 110.0, 52.0 ],
-					"presentation_linecount" : 2,
 					"text" : "set up ambisonics details"
 				}
 
@@ -753,7 +748,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 394.5, 127.0, 179.0, 37.0 ],
-					"presentation_linecount" : 2,
 					"text" : "amount of sources you want to encode into the soundfield"
 				}
 
@@ -767,7 +761,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 18.5, 120.0, 210.0, 51.0 ],
+					"patching_rect" : [ 18.5, 120.0, 211.0, 51.0 ],
 					"text" : "ambisonics order (1-11), has to be equal or at least higher than the order used when decoding"
 				}
 
@@ -957,7 +951,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 27.0, 539.0, 503.0, 33.0 ],
+					"patching_rect" : [ 27.0, 539.0, 504.0, 33.0 ],
 					"text" : "center_curve: sources close to the origin lose directional channels (orders higher than 0) and are only encoded in 0-order channel (W), the mono component of an ambisonics stream."
 				}
 
@@ -1022,7 +1016,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 140.0, 261.0, 501.0, 52.0 ],
-					"text" : "ambisonics type: furse-malham, N3D, ambix SN3D.t this have to be the same as in the decoding stage!!! standard nowadays: sn3d, as found in ambix. should be used."
+					"text" : "ambisonics types: furse-malham, N3D, ambix SN3D. this have to be identical to the decoding stage!!! standard nowadays: sn3d, as found in ambix. should be used."
 				}
 
 			}
