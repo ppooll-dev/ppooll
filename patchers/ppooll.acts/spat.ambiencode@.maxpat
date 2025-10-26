@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 346.0, 118.0, 164.0, 61.0 ],
+		"rect" : [ 706.0, 125.0, 164.0, 61.0 ],
 		"default_fontsize" : 11.0,
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
@@ -886,7 +886,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 75.0, 386.0, 466.0, 423.0 ],
+						"rect" : [ 774.0, 354.0, 466.0, 423.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"toolbarvisible" : 0,
 						"title" : "config",
@@ -962,7 +962,6 @@
 								"box" : 								{
 									"border_color" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"centre_color" : [ 0.0, 0.0, 0.0, 0.35 ],
-									"constrain" : 2,
 									"coord_color" : [ 0.807843137254902, 0.898039215686275, 0.909803921568627, 1.0 ],
 									"draw_labels" : 0,
 									"grid_color" : [ 0.592156862745098, 0.592156862745098, 0.592156862745098, 0.24 ],
@@ -1249,7 +1248,7 @@
 							}
 , 							{
 								"box" : 								{
-									"embedstate" : [ [ "savedState", 1, 3, 1.5, 1, 0.444444, 0.33, 18, 100, 1, 1, 5.407744107744099, 34.150000000000006 ] ],
+									"embedstate" : [ [ "savedState", 1, 3, 1.5, 1, 0.444444, 0.33, 18, 106.780000000000001, 1, 1, 5.407744107744099, 34.150000000000006 ] ],
 									"filename" : "icst.distance_encoding.js",
 									"id" : "obj-48",
 									"maxclass" : "jsui",
@@ -1396,18 +1395,18 @@
 									"patching_rect" : [ 515.116260647773743, 106.97674036026001, 56.0, 22.0 ],
 									"restore" : 									{
 										"autoroute" : [ 0 ],
-										"center_att_db" : [ 18.0 ],
+										"center_att_db" : [ 35.259999999999998 ],
 										"center_curve" : [ 0.33 ],
-										"center_size" : [ 0.444444 ],
+										"center_size" : [ 0.54 ],
 										"chn_offset" : [ 0.0 ],
-										"coord_angles" : [ 1 ],
+										"coord_angles" : [ 0 ],
 										"coord_system" : [ 0 ],
 										"db_unit" : [ 1.5 ],
 										"dist_att" : [ 1.0 ],
-										"distance_graph" : [ 1, 1, 3, 1.5, 1, 0.444444, 0.33, 18, 100, 1, 5.407744107744099, 34.150000000000006 ],
+										"distance_graph" : [ 1, 1, 3, 1.5, 1, 0.444444, 0.33, 18, 106.780000000000001, 1, 5.407744107744099, 34.150000000000006 ],
 										"distance_mode" : [ 3 ],
 										"exp_curve" : [ 1.0 ],
-										"exp_cutoff_dist" : [ 100.0 ],
+										"exp_cutoff_dist" : [ 106.780000000000001 ],
 										"monitor_center" : [ -1 ],
 										"type" : [ 2 ],
 										"zoom_scale" : [ 0.1 ]
@@ -1751,7 +1750,7 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 499, 162, 1139, 402 ],
+						"client_rect" : [ 842, 164, 1920, 407 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 0, 0, 640, 240 ]
@@ -1801,11 +1800,11 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 368.5, 171.0, 107.0, 21.0 ],
 					"restore" : 					{
-						"chans" : [ 4.0 ],
+						"chans" : [ 16.0 ],
 						"configWindow" : [ -1 ],
 						"gain" : [ 1.0 ],
 						"mixerWindow" : [ -1 ],
-						"order" : [ 1.0 ],
+						"order" : [ 3.0 ],
 						"presets" : [ 2 ],
 						"sources" : [ 1.0 ]
 					}
@@ -1833,10 +1832,22 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 950.0, 584.0, 408.0, 378.0 ],
+						"rect" : [ 950.0, 570.0, 408.0, 378.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"style" : "default",
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"patching_rect" : [ 201.0, 11.0, 67.0, 22.0 ],
+									"text" : "ll.r sources"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-421",
 									"maxclass" : "newobj",
@@ -1853,7 +1864,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 643.0, 248.0, 1099.0, 639.0 ],
+										"rect" : [ 379.0, 248.0, 1099.0, 639.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"boxes" : [ 											{
 												"box" : 												{
@@ -2353,7 +2364,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 143.0, 344.0, 957.0, 702.0 ],
+										"rect" : [ 143.0, 246.0, 957.0, 702.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"boxes" : [ 											{
 												"box" : 												{
@@ -4217,7 +4228,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 250.0, 100.0, 22.0 ],
+													"patching_rect" : [ 50.0, 250.0, 100.0, 0.0 ],
 													"text" : "prepend aed 1",
 													"varname" : "1aed-pre"
 												}
@@ -4245,7 +4256,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 200.0, 250.0, 100.0, 22.0 ],
+													"patching_rect" : [ 200.0, 250.0, 100.0, 0.0 ],
 													"text" : "prepend xyz 1",
 													"varname" : "1xyz-pre"
 												}
@@ -5096,14 +5107,14 @@
 										"center_size" : 1.0,
 										"db_unit" : 1.5,
 										"dist_att" : 1.0,
-										"distance_mode" : 1,
+										"distance_mode" : 3,
 										"exp_curve" : 1.0,
-										"exp_cutoff_dist" : 30.0,
-										"order" : 1,
+										"exp_cutoff_dist" : 106.780000000000001,
+										"order" : 3,
 										"rotate_order" : 0
 									}
 ,
-									"text" : "mc.ambiencode~ 1 1",
+									"text" : "mc.ambiencode~ 3 1",
 									"varname" : "enc"
 								}
 
@@ -5157,6 +5168,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-20", 0 ],
 									"source" : [ "obj-53", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-60", 0 ],
+									"source" : [ "obj-6", 0 ]
 								}
 
 							}
@@ -5323,6 +5341,13 @@
 			}
 , 			{
 				"name" : "ll.address.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.allacts.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
