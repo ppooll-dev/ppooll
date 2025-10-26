@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 775.0, 425.0, 303.0, 247.0 ],
+		"rect" : [ 97.0, 228.0, 303.0, 247.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "threekomp1",
@@ -1058,10 +1058,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 4, 44, 358, 172 ],
+						"client_rect" : [ 754, 398, 1259, 871 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 365, 44, 816, 172 ]
+						"storage_rect" : [ 430, 270, 1276, 999 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -1113,34 +1113,34 @@
 					"restore" : 					{
 						"1attack" : [ 5.0 ],
 						"1bypass" : [ 0 ],
-						"1knee" : [ 0.0 ],
+						"1knee" : [ 18 ],
 						"1lookahead" : [ 480.0 ],
-						"1makeup" : [ 0.0 ],
+						"1makeup" : [ 25.920000000000002 ],
 						"1mute" : [ 0 ],
-						"1ratio" : [ 1.0 ],
+						"1ratio" : [ 3.58 ],
 						"1release" : [ 150.0 ],
 						"1sidechain" : [ 0 ],
 						"1threshold" : [ 0.0 ],
 						"2attack" : [ 5.0 ],
 						"2bypass" : [ 0 ],
-						"2knee" : [ 0.0 ],
+						"2knee" : [ 18 ],
 						"2lookahead" : [ 480.0 ],
 						"2makeup" : [ 0.0 ],
 						"2mute" : [ 0 ],
-						"2ratio" : [ 1.0 ],
+						"2ratio" : [ 3.407 ],
 						"2release" : [ 150.0 ],
 						"2sidechain" : [ 0 ],
-						"2threshold" : [ 0.0 ],
+						"2threshold" : [ -6.72 ],
 						"3attack" : [ 5.0 ],
 						"3bypass" : [ 0 ],
-						"3knee" : [ 0.0 ],
+						"3knee" : [ 17.82 ],
 						"3lookahead" : [ 480.0 ],
 						"3makeup" : [ 0.0 ],
 						"3mute" : [ 0 ],
-						"3ratio" : [ 1.0 ],
+						"3ratio" : [ 2.247 ],
 						"3release" : [ 150.0 ],
 						"3sidechain" : [ 0 ],
-						"3threshold" : [ 0.0 ],
+						"3threshold" : [ -36 ],
 						"cross1" : [ 150 ],
 						"cross2" : [ 2000 ],
 						"preset-ramp" : [ 0.0 ],
@@ -1171,8 +1171,9 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1121.0, 335.0, 758.0, 482.0 ],
+						"rect" : [ 720.0, 335.0, 758.0, 482.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-26",
@@ -1243,6 +1244,7 @@
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-5",
+													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -1549,7 +1551,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 7,
 									"outlettype" : [ "multichannelsignal", "multichannelsignal", "multichannelsignal", "multichannelsignal", "multichannelsignal", "multichannelsignal", "multichannelsignal" ],
-									"patching_rect" : [ 147.0, 235.0, 368.0, 22.0 ],
+									"patching_rect" : [ 147.0, 235.0, 381.0, 22.0 ],
 									"text" : "mc.poly~ threekomp_poly_250908.maxpat @parallel 1 @args #0 ",
 									"varname" : "poly~"
 								}
@@ -1612,7 +1614,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 227.0, 106.0, 47.0, 22.0 ],
-									"text" : "zl nth 5"
+									"text" : "zl nth 1"
 								}
 
 							}
@@ -1623,8 +1625,8 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 227.0, 54.0, 97.0, 22.0 ],
-									"text" : "ll.p ll.blues::state"
+									"patching_rect" : [ 227.0, 54.0, 103.0, 22.0 ],
+									"text" : "ll.p ll.blues::chans"
 								}
 
 							}
@@ -1793,7 +1795,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-12", 1 ],
-									"midpoints" : [ 351.5, 213.0, 505.5, 213.0 ],
+									"midpoints" : [ 351.5, 213.0, 518.5, 213.0 ],
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -1973,6 +1975,16 @@
 			"obj-49" : [ "1sidechain", "1sidechain", 0 ],
 			"obj-50" : [ "2sidechain", "2sidechain", 0 ],
 			"obj-51" : [ "3sidechain", "3sidechain", 0 ],
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ],
+					"buttons" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
 			"inherited_shortname" : 1
 		}
 ,
