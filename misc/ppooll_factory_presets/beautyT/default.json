@@ -23,17 +23,17 @@
 	"delays" : 	{
 		"patching_rect" : [ 100, 17, 337, 61 ],
 		"hidden" : 0,
-		"bgcolor" : [ 0.666666666666667, 0.666666666666667, 0.666666666666667, 1 ],
+		"bgcolor" : [ 1, 1, 1, 1 ],
 		"peakcolor" : [ 0.498039, 0.498039, 0.498039, 1 ],
-		"slidercolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ]
+		"slidercolor" : [ 0.325102880658436, 0.390946502057613, 0.5, 1 ]
 	}
 ,
 	"pans" : 	{
 		"patching_rect" : [ 441, 17, 69, 62 ],
 		"hidden" : 0,
-		"bgcolor" : [ 0.666666666666667, 0.666666666666667, 0.666666666666667, 1 ],
+		"bgcolor" : [ 1, 1, 1, 1 ],
 		"peakcolor" : [ 0.498039, 0.498039, 0.498039, 1 ],
-		"slidercolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ]
+		"slidercolor" : [ 0.325102880658436, 0.390946502057613, 0.5, 1 ]
 	}
 ,
 	"delay_label" : 	{
@@ -44,15 +44,15 @@
 		"bubble_outlinecolor" : [ 0.85, 0.85, 0.85, 1 ],
 		"bubbleusescolors" : 0,
 		"fontsize" : 9,
-		"textcolor" : [ 0.85, 0.85, 0.85, 1 ]
+		"textcolor" : [ 0, 0, 0, 1 ]
 	}
 ,
 	"lp" : 	{
 		"patching_rect" : [ 50, 17, 29, 115 ],
 		"hidden" : 0,
-		"bgcolor" : [ 0.666666666666667, 0.666666666666667, 0.666666666666667, 1 ],
+		"bgcolor" : [ 1, 1, 1, 1 ],
 		"peakcolor" : [ 0.498039, 0.498039, 0.498039, 1 ],
-		"slidercolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ]
+		"slidercolor" : [ 0.325102880658436, 0.390946502057613, 0.5, 1 ]
 	}
 ,
 	"lp_label" : 	{
@@ -63,23 +63,23 @@
 		"bubble_outlinecolor" : [ 0.85, 0.85, 0.85, 1 ],
 		"bubbleusescolors" : 0,
 		"fontsize" : 9,
-		"textcolor" : [ 0.85, 0.85, 0.85, 1 ]
+		"textcolor" : [ 0, 0, 0, 1 ]
 	}
 ,
 	"hp" : 	{
 		"patching_rect" : [ 17, 17, 29, 115 ],
 		"hidden" : 0,
-		"bgcolor" : [ 0.666666666666667, 0.666666666666667, 0.666666666666667, 1 ],
+		"bgcolor" : [ 1, 1, 1, 1 ],
 		"peakcolor" : [ 0.498039, 0.498039, 0.498039, 1 ],
-		"slidercolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ]
+		"slidercolor" : [ 0.325102880658436, 0.390946502057613, 0.5, 1 ]
 	}
 ,
 	"smooth" : 	{
 		"patching_rect" : [ 100, 109, 248, 23 ],
 		"hidden" : 0,
-		"bgcolor" : [ 0.666666666666667, 0.666666666666667, 0.666666666666667, 1 ],
+		"bgcolor" : [ 1, 1, 1, 1 ],
 		"peakcolor" : [ 0.498039, 0.498039, 0.498039, 1 ],
-		"slidercolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ]
+		"slidercolor" : [ 0.325102880658436, 0.390946502057613, 0.5, 1 ]
 	}
 ,
 	"smooth_label" : 	{
@@ -90,7 +90,7 @@
 		"bubble_outlinecolor" : [ 0.85, 0.85, 0.85, 1 ],
 		"bubbleusescolors" : 0,
 		"fontsize" : 9,
-		"textcolor" : [ 0.85, 0.85, 0.85, 1 ]
+		"textcolor" : [ 0, 0, 0, 1 ]
 	}
 ,
 	"hp_label" : 	{
@@ -101,23 +101,23 @@
 		"bubble_outlinecolor" : [ 0.85, 0.85, 0.85, 1 ],
 		"bubbleusescolors" : 0,
 		"fontsize" : 9,
-		"textcolor" : [ 0.85, 0.85, 0.85, 1 ]
+		"textcolor" : [ 0, 0, 0, 1 ]
 	}
 ,
 	"average" : 	{
 		"patching_rect" : [ 100, 83, 248, 23 ],
 		"hidden" : 0,
-		"bgcolor" : [ 0.666666666666667, 0.666666666666667, 0.666666666666667, 1 ],
+		"bgcolor" : [ 1, 1, 1, 1 ],
 		"peakcolor" : [ 0.498039, 0.498039, 0.498039, 1 ],
-		"slidercolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ]
+		"slidercolor" : [ 0.325102880658436, 0.390946502057613, 0.5, 1 ]
 	}
 ,
 	"del_ramp" : 	{
 		"patching_rect" : [ 83, 17, 13, 115 ],
 		"hidden" : 0,
-		"bgcolor" : [ 0.666666666666667, 0.666666666666667, 0.666666666666667, 1 ],
+		"bgcolor" : [ 1, 1, 1, 1 ],
 		"peakcolor" : [ 0.498039, 0.498039, 0.498039, 1 ],
-		"slidercolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ]
+		"slidercolor" : [ 0.325102880658436, 0.390946502057613, 0.5, 1 ]
 	}
 ,
 	"pan_label" : 	{
@@ -128,7 +128,7 @@
 		"bubble_outlinecolor" : [ 0.85, 0.85, 0.85, 1 ],
 		"bubbleusescolors" : 0,
 		"fontsize" : 9,
-		"textcolor" : [ 0.85, 0.85, 0.85, 1 ]
+		"textcolor" : [ 0, 0, 0, 1 ]
 	}
 ,
 	"average_label" : 	{
@@ -139,7 +139,7 @@
 		"bubble_outlinecolor" : [ 0.85, 0.85, 0.85, 1 ],
 		"bubbleusescolors" : 0,
 		"fontsize" : 9,
-		"textcolor" : [ 0.85, 0.85, 0.85, 1 ]
+		"textcolor" : [ 0, 0, 0, 1 ]
 	}
 ,
 	"r_label" : 	{
@@ -150,7 +150,7 @@
 		"bubble_outlinecolor" : [ 0.85, 0.85, 0.85, 1 ],
 		"bubbleusescolors" : 0,
 		"fontsize" : 9,
-		"textcolor" : [ 0.85, 0.85, 0.85, 1 ]
+		"textcolor" : [ 0, 0, 0, 1 ]
 	}
 ,
 	"a_label" : 	{
@@ -161,7 +161,7 @@
 		"bubble_outlinecolor" : [ 0.85, 0.85, 0.85, 1 ],
 		"bubbleusescolors" : 0,
 		"fontsize" : 9,
-		"textcolor" : [ 0.85, 0.85, 0.85, 1 ]
+		"textcolor" : [ 0, 0, 0, 1 ]
 	}
 ,
 	"m_label" : 	{
@@ -172,7 +172,7 @@
 		"bubble_outlinecolor" : [ 0.85, 0.85, 0.85, 1 ],
 		"bubbleusescolors" : 0,
 		"fontsize" : 9,
-		"textcolor" : [ 0.85, 0.85, 0.85, 1 ]
+		"textcolor" : [ 0, 0, 0, 1 ]
 	}
 ,
 	"p_label" : 	{
@@ -183,15 +183,15 @@
 		"bubble_outlinecolor" : [ 0.85, 0.85, 0.85, 1 ],
 		"bubbleusescolors" : 0,
 		"fontsize" : 9,
-		"textcolor" : [ 0.85, 0.85, 0.85, 1 ]
+		"textcolor" : [ 0, 0, 0, 1 ]
 	}
 ,
 	"noise" : 	{
 		"patching_rect" : [ 0, 17, 13, 115 ],
 		"hidden" : 0,
-		"bgcolor" : [ 0.666666666666667, 0.666666666666667, 0.666666666666667, 1 ],
+		"bgcolor" : [ 1, 1, 1, 1 ],
 		"peakcolor" : [ 0.498039, 0.498039, 0.498039, 1 ],
-		"slidercolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ]
+		"slidercolor" : [ 0.325102880658436, 0.390946502057613, 0.5, 1 ]
 	}
 ,
 	"n_label" : 	{
@@ -202,7 +202,7 @@
 		"bubble_outlinecolor" : [ 0.85, 0.85, 0.85, 1 ],
 		"bubbleusescolors" : 0,
 		"fontsize" : 9,
-		"textcolor" : [ 0.85, 0.85, 0.85, 1 ]
+		"textcolor" : [ 0, 0, 0, 1 ]
 	}
 ,
 	"o_label" : 	{
@@ -213,7 +213,7 @@
 		"bubble_outlinecolor" : [ 0.85, 0.85, 0.85, 1 ],
 		"bubbleusescolors" : 0,
 		"fontsize" : 9,
-		"textcolor" : [ 0.85, 0.85, 0.85, 1 ]
+		"textcolor" : [ 0, 0, 0, 1 ]
 	}
 ,
 	"i_label" : 	{
@@ -224,7 +224,7 @@
 		"bubble_outlinecolor" : [ 0.85, 0.85, 0.85, 1 ],
 		"bubbleusescolors" : 0,
 		"fontsize" : 9,
-		"textcolor" : [ 0.85, 0.85, 0.85, 1 ]
+		"textcolor" : [ 0, 0, 0, 1 ]
 	}
 ,
 	"s_label" : 	{
@@ -235,7 +235,7 @@
 		"bubble_outlinecolor" : [ 0.85, 0.85, 0.85, 1 ],
 		"bubbleusescolors" : 0,
 		"fontsize" : 9,
-		"textcolor" : [ 0.85, 0.85, 0.85, 1 ]
+		"textcolor" : [ 0, 0, 0, 1 ]
 	}
 ,
 	"e_label" : 	{
@@ -246,11 +246,11 @@
 		"bubble_outlinecolor" : [ 0.85, 0.85, 0.85, 1 ],
 		"bubbleusescolors" : 0,
 		"fontsize" : 9,
-		"textcolor" : [ 0.85, 0.85, 0.85, 1 ]
+		"textcolor" : [ 0, 0, 0, 1 ]
 	}
 ,
 	"spectrum_view" : 	{
-		"patching_rect" : [ 511, 0, 75, 135 ],
+		"patching_rect" : [ 512, 0, 74, 132 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.125, 0.125, 0.125, 1 ],
 		"fgcolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ],
@@ -265,7 +265,7 @@
 	}
 ,
 	"ll.blues" : 	{
-		"patching_rect" : [ 349, 80, 159, 53 ],
+		"patching_rect" : [ 349, 80, 161, 53 ],
 		"hidden" : 0,
 		"accentcolor" : [ 0.458595350062755, 0.458595237564901, 0.458595266962388, 1 ],
 		"bgcolor" : [ 0.125, 0.125, 0.125, 1 ],
@@ -302,5 +302,5 @@
 	"bubble_outlinecolor" : [ 0.85, 0.85, 0.85, 1 ],
 	"bubbleusescolors" : 0,
 	"fontsize" : 9,
-	"textcolor" : [ 0.85, 0.85, 0.85, 1 ]
+	"textcolor" : [ 0, 0, 0, 1 ]
 }
