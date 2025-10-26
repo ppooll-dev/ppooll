@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 97.0, 228.0, 303.0, 247.0 ],
+		"rect" : [ 98.0, 228.0, 303.0, 247.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "threekomp1",
@@ -1113,34 +1113,34 @@
 					"restore" : 					{
 						"1attack" : [ 5.0 ],
 						"1bypass" : [ 0 ],
-						"1knee" : [ 18 ],
+						"1knee" : [ 0.0 ],
 						"1lookahead" : [ 480.0 ],
-						"1makeup" : [ 25.920000000000002 ],
+						"1makeup" : [ 0.0 ],
 						"1mute" : [ 0 ],
-						"1ratio" : [ 3.58 ],
+						"1ratio" : [ 1.0 ],
 						"1release" : [ 150.0 ],
 						"1sidechain" : [ 0 ],
 						"1threshold" : [ 0.0 ],
 						"2attack" : [ 5.0 ],
 						"2bypass" : [ 0 ],
-						"2knee" : [ 18 ],
+						"2knee" : [ 0.0 ],
 						"2lookahead" : [ 480.0 ],
 						"2makeup" : [ 0.0 ],
 						"2mute" : [ 0 ],
-						"2ratio" : [ 3.407 ],
+						"2ratio" : [ 1.0 ],
 						"2release" : [ 150.0 ],
 						"2sidechain" : [ 0 ],
-						"2threshold" : [ -6.72 ],
+						"2threshold" : [ 0.0 ],
 						"3attack" : [ 5.0 ],
 						"3bypass" : [ 0 ],
-						"3knee" : [ 17.82 ],
+						"3knee" : [ 0.0 ],
 						"3lookahead" : [ 480.0 ],
 						"3makeup" : [ 0.0 ],
 						"3mute" : [ 0 ],
-						"3ratio" : [ 2.247 ],
+						"3ratio" : [ 1.0 ],
 						"3release" : [ 150.0 ],
 						"3sidechain" : [ 0 ],
-						"3threshold" : [ -36 ],
+						"3threshold" : [ 0.0 ],
 						"cross1" : [ 150 ],
 						"cross2" : [ 2000 ],
 						"preset-ramp" : [ 0.0 ],
@@ -1173,7 +1173,6 @@
 						"classnamespace" : "box",
 						"rect" : [ 720.0, 335.0, 758.0, 482.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-26",
@@ -1244,7 +1243,6 @@
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-5",
-													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 0,
 													"numoutlets" : 1,
@@ -1975,16 +1973,6 @@
 			"obj-49" : [ "1sidechain", "1sidechain", 0 ],
 			"obj-50" : [ "2sidechain", "2sidechain", 0 ],
 			"obj-51" : [ "3sidechain", "3sidechain", 0 ],
-			"parameterbanks" : 			{
-				"0" : 				{
-					"index" : 0,
-					"name" : "",
-					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ],
-					"buttons" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
-				}
-
-			}
-,
 			"inherited_shortname" : 1
 		}
 ,
