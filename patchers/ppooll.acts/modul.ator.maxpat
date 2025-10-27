@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 435.0, 443.0, 365.0, 59.0 ],
+		"rect" : [ 619.0, 162.0, 365.0, 59.0 ],
 		"default_fontsize" : 10.0,
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
@@ -62,7 +62,7 @@
 					"outlettype" : [ "", "", "int" ],
 					"outputmode" : 0,
 					"parameter_enable" : 0,
-					"patching_rect" : [ 150.5, 28.5, 21.0, 15.0 ],
+					"patching_rect" : [ 151.0, 29.0, 21.0, 15.0 ],
 					"prototypename" : "jit_on",
 					"text" : "ext",
 					"textcolor" : [ 0.752941, 0.023529, 0.247059, 1.0 ],
@@ -92,40 +92,13 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 122.000004000000004, 14.0, 52.999999999999986, 15.0 ],
+					"patching_rect" : [ 122.0, 14.0, 52.999999999999986, 15.0 ],
 					"selectcolor" : [ 0.45098, 0.670588, 1.0, 0.647059 ],
 					"slidercolornofocus" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"sliderlog" : 5.0,
 					"slidermax" : 1.0,
 					"textcolornofocus" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 					"varname" : "low"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"allowdrag" : 0,
-					"annotation" : "link-lo-hi",
-					"arrow" : 0,
-					"bgcolor" : [ 0.2, 0.2, 0.2, 1 ],
-					"bgfillcolor_angle" : 270.0,
-					"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
-					"bgfillcolor_color1" : [ 0.376470588235294, 0.384313725490196, 0.4, 1.0 ],
-					"bgfillcolor_color2" : [ 0.290196078431373, 0.309803921568627, 0.301960784313725, 1.0 ],
-					"bgfillcolor_proportion" : 0.39,
-					"bgfillcolor_type" : "color",
-					"fontname" : "Arial",
-					"fontsize" : 9.0,
-					"hint" : "lo-hi sliders link or mode Center-Width",
-					"id" : "obj-74",
-					"items" : [ "–", ",", "||", ",", "X", ",", "CW", ",", "-", ",", "getV" ],
-					"maxclass" : "umenu",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "int", "", "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 174.0, 13.0, 15.0, 19.0 ],
-					"varname" : "link-lo-hi"
 				}
 
 			}
@@ -235,7 +208,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 212.5, 29.0, 28.666668000000016, 15.0 ],
+					"patching_rect" : [ 213.0, 29.0, 28.666668000000016, 15.0 ],
 					"selectcolor" : [ 0.45098, 0.670588, 1.0, 0.647059 ],
 					"slidercolornofocus" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"sliderlog" : 5.0,
@@ -264,7 +237,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 171.0, 28.5, 41.0, 15.0 ],
+					"patching_rect" : [ 171.0, 29.0, 41.0, 15.0 ],
 					"selectcolor" : [ 0.45098, 0.670588, 1.0, 0.647059 ],
 					"slidercolornofocus" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"sliderlog" : 5.0,
@@ -293,7 +266,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 189.333338975906372, 44.000001311302185, 43.0, 15.0 ],
+					"patching_rect" : [ 189.0, 44.0, 43.0, 15.0 ],
 					"selectcolor" : [ 0.45098, 0.670588, 1.0, 0.647059 ],
 					"slidercolornofocus" : [ 1.0, 1.0, 1.0, 1.0 ],
 					"sliderlog" : 5.0,
@@ -328,64 +301,6 @@
 					"sliderstyle" : 2,
 					"textcolornofocus" : [ 0.65098, 0.666667, 0.662745, 1.0 ],
 					"varname" : "list_param_item"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"allowdrag" : 0,
-					"annotation" : "par_menu",
-					"arrow" : 0,
-					"bgcolor" : [ 0.294117647058824, 1.0, 0.294117647058824, 1.0 ],
-					"bgfillcolor_angle" : 270.0,
-					"bgfillcolor_color" : [ 0.294117647058824, 1.0, 0.294117647058824, 1.0 ],
-					"bgfillcolor_color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
-					"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-					"bgfillcolor_proportion" : 0.39,
-					"bgfillcolor_type" : "color",
-					"fontname" : "Arial",
-					"fontsize" : 9.0,
-					"hint" : "par_menu",
-					"id" : "obj-72",
-					"items" : [ "-no-", ",", "act::title_menu", ",", "act::tetris_menu", ",", "act::pres_menu", ",", "act::master/activest", ",", "act::active_store", ",", "params_only", ",", "pfl_par_menu", ",", "pfl_act_menu", ",", "ll.dims", ",", "osc_port", ",", "write_envi", ",", "watch_menu", ",", "vol_slider", ",", "vol_ramp", ",", "vol", ",", "time", ",", "stereo", ",", "screen", ",", "rec", ",", "ppooll", ",", "menubar", ",", "logo", ",", "jit.on", ",", "favorites", ",", "envi_menu", ",", "def", ",", "chans", ",", "audioON/OFF", ",", "act_menu" ],
-					"maxclass" : "umenu",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "int", "", "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 129.0, 43.0, 44.0, 19.0 ],
-					"pattrmode" : 1,
-					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"varname" : "par_menu"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"allowdrag" : 0,
-					"annotation" : "act_menu",
-					"arrow" : 0,
-					"bgcolor" : [ 0.294117647058824, 1.0, 0.294117647058824, 1.0 ],
-					"bgfillcolor_angle" : 270.0,
-					"bgfillcolor_color" : [ 0.294117647058824, 1.0, 0.294117647058824, 1.0 ],
-					"bgfillcolor_color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
-					"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-					"bgfillcolor_proportion" : 0.39,
-					"bgfillcolor_type" : "color",
-					"fontname" : "Arial",
-					"fontsize" : 9.0,
-					"hint" : "act_menu",
-					"id" : "obj-73",
-					"items" : [ "no", ",", "ho_st1", ",", "modul.ator1", ",", "modul.ator2", ",", "tetris@1" ],
-					"maxclass" : "umenu",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "int", "", "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 88.00000262260437, 43.333334624767303, 40.0, 19.0 ],
-					"pattrmode" : 1,
-					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"varname" : "act_menu"
 				}
 
 			}
@@ -599,7 +514,7 @@
 					"fontsize" : 8.0,
 					"hint" : "sync to other acts",
 					"id" : "obj-76",
-					"items" : [ "sync-off", ",", "sync_in", ",", "modul.ator2" ],
+					"items" : [ "sync-off", ",", "sync_in" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -640,7 +555,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ -1.0, 14.0, 51.0, 31.0 ],
+					"patching_rect" : [ 0.0, 14.0, 51.0, 31.0 ],
 					"varname" : "presets"
 				}
 
@@ -716,7 +631,7 @@
 					"outlettype" : [ "", "", "int" ],
 					"outputmode" : 0,
 					"parameter_enable" : 0,
-					"patching_rect" : [ 103.5, 29.0, 20.0, 15.0 ],
+					"patching_rect" : [ 104.0, 29.0, 20.0, 15.0 ],
 					"prototypename" : "jit_on",
 					"text" : "T",
 					"textcolor" : [ 0.752941, 0.023529, 0.247059, 1.0 ],
@@ -746,7 +661,7 @@
 					"outlettype" : [ "", "", "int" ],
 					"outputmode" : 0,
 					"parameter_enable" : 0,
-					"patching_rect" : [ 103.333336000000003, 14.0, 20.0, 15.0 ],
+					"patching_rect" : [ 103.0, 14.0, 20.0, 15.0 ],
 					"prototypename" : "jit_on",
 					"rounded" : 2.0,
 					"text" : "ON",
@@ -777,7 +692,7 @@
 					"outlettype" : [ "", "", "int" ],
 					"outputmode" : 0,
 					"parameter_enable" : 0,
-					"patching_rect" : [ 124.5, 29.0, 25.0, 15.0 ],
+					"patching_rect" : [ 125.0, 29.0, 25.0, 15.0 ],
 					"prototypename" : "jit_on",
 					"text" : "loop",
 					"textcolor" : [ 0.752941, 0.023529, 0.247059, 1.0 ],
@@ -807,7 +722,7 @@
 					"outlettype" : [ "", "", "int" ],
 					"outputmode" : 0,
 					"parameter_enable" : 0,
-					"patching_rect" : [ 88.00000262260437, 29.33333420753479, 15.0, 15.0 ],
+					"patching_rect" : [ 88.0, 29.0, 15.0, 15.0 ],
 					"prototypename" : "jit_on",
 					"text" : "/",
 					"textcolor" : [ 0.752941, 0.023529, 0.247059, 1.0 ],
@@ -13985,7 +13900,7 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 400, 495, 1195, 847 ],
+						"client_rect" : [ 55, 344, 670, 1004 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"storage_rect" : [ 200, 200, 800, 500 ]
@@ -14118,6 +14033,91 @@
 , 			{
 				"box" : 				{
 					"allowdrag" : 0,
+					"annotation" : "link-lo-hi",
+					"arrow" : 0,
+					"bgcolor" : [ 0.2, 0.2, 0.2, 1 ],
+					"bgfillcolor_angle" : 270.0,
+					"bgfillcolor_color" : [ 0.2, 0.2, 0.2, 1 ],
+					"bgfillcolor_color1" : [ 0.376470588235294, 0.384313725490196, 0.4, 1.0 ],
+					"bgfillcolor_color2" : [ 0.290196078431373, 0.309803921568627, 0.301960784313725, 1.0 ],
+					"bgfillcolor_proportion" : 0.39,
+					"bgfillcolor_type" : "color",
+					"fontname" : "Arial",
+					"fontsize" : 9.0,
+					"hint" : "lo-hi sliders link or mode Center-Width",
+					"id" : "obj-74",
+					"items" : [ "–", ",", "||", ",", "X", ",", "CW", ",", "-", ",", "getV" ],
+					"maxclass" : "umenu",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 174.0, 13.0, 15.0, 19.0 ],
+					"varname" : "link-lo-hi"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"allowdrag" : 0,
+					"annotation" : "par_menu",
+					"arrow" : 0,
+					"bgcolor" : [ 0.294117647058824, 1.0, 0.294117647058824, 1.0 ],
+					"bgfillcolor_angle" : 270.0,
+					"bgfillcolor_color" : [ 0.294117647058824, 1.0, 0.294117647058824, 1.0 ],
+					"bgfillcolor_color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
+					"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+					"bgfillcolor_proportion" : 0.39,
+					"bgfillcolor_type" : "color",
+					"fontname" : "Arial",
+					"fontsize" : 9.0,
+					"hint" : "par_menu",
+					"id" : "obj-72",
+					"items" : [ "-no-", ",", "act::title_menu", ",", "act::tetris_menu", ",", "act::pres_menu", ",", "act::master/activest", ",", "act::active_store", ",", "params_only", ",", "pfl_par_menu", ",", "pfl_act_menu", ",", "ll.dims", ",", "osc_port", ",", "write_envi", ",", "watch_menu", ",", "vol_slider", ",", "vol_ramp", ",", "vol", ",", "time", ",", "stereo", ",", "screen", ",", "rec", ",", "ppooll", ",", "menubar", ",", "logo", ",", "jit.on", ",", "favorites", ",", "envi_menu", ",", "def", ",", "chans", ",", "audioON/OFF", ",", "act_menu" ],
+					"maxclass" : "umenu",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 129.0, 43.0, 44.0, 19.0 ],
+					"pattrmode" : 1,
+					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"varname" : "par_menu"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"allowdrag" : 0,
+					"annotation" : "act_menu",
+					"arrow" : 0,
+					"bgcolor" : [ 0.294117647058824, 1.0, 0.294117647058824, 1.0 ],
+					"bgfillcolor_angle" : 270.0,
+					"bgfillcolor_color" : [ 0.294117647058824, 1.0, 0.294117647058824, 1.0 ],
+					"bgfillcolor_color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
+					"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+					"bgfillcolor_proportion" : 0.39,
+					"bgfillcolor_type" : "color",
+					"fontname" : "Arial",
+					"fontsize" : 9.0,
+					"hint" : "act_menu",
+					"id" : "obj-73",
+					"items" : [ "no", ",", "ho_st1", ",", "modul.ator1", ",", "tetris@1" ],
+					"maxclass" : "umenu",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 88.0, 44.0, 40.0, 19.0 ],
+					"pattrmode" : 1,
+					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"varname" : "act_menu"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"allowdrag" : 0,
 					"annotation" : "hz-ms-switch",
 					"arrow" : 0,
 					"bgcolor" : [ 0.2, 0.2, 0.2, 1 ],
@@ -14211,6 +14211,16 @@
 			"obj-18" : [ "rate", "live.numbox", 0 ],
 			"obj-33::obj-4::obj-39::obj-11" : [ "live.numbox", "live.numbox", 0 ],
 			"obj-33::obj-4::obj-39::obj-18" : [ "live.numbox[2]", "live.numbox", 0 ],
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ],
+					"buttons" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
 			"inherited_shortname" : 1
 		}
 ,

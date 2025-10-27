@@ -147,7 +147,7 @@ function objdict(a)
 			if (attributes[i] == "jsarguments"){
 				d.set(a.varname+"::jsarguments" , a.getattr(attributes[i]));			
 			}
-			if (pattern.test(attributes[i]) && a.maxclass != "patcher"){
+			if (pattern.test(attributes[i]) && a.maxclass != "patcher" && a.maxclass != "jpatcher"){
 				//post("--------", a.varname, a.maxclass, attributes[i], a.getattr(attributes[i]), "\n");
 				d.set(a.varname+"::"+attributes[i] , a.getattr(attributes[i]));			
 

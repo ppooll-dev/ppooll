@@ -10,9 +10,21 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 109.0, 169.0, 1000.0, 707.0 ],
+		"rect" : [ 467.0, 150.0, 1000.0, 707.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 154.0, 314.0, 92.0, 22.0 ],
+					"text" : "checkIfUpdated"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"attr" : "dryrun",
 					"id" : "obj-3",
@@ -111,7 +123,7 @@
 			}
 , 			{
 				"box" : 				{
-					"embedstate" : [ [ "dryrun", 1 ] ],
+					"embedstate" : [ [ "dryrun", 0 ] ],
 					"filename" : "ll.update_params.js",
 					"id" : "obj-1",
 					"maxclass" : "newobj",
@@ -136,6 +148,13 @@
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-12", 0 ]
