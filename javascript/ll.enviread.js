@@ -158,59 +158,67 @@ function setloc(a) {
     }
 }
 
-//##################################################################____params
 function params() {
     new_blues_oldenvi = 0;
     outlet(0, "parameters... (run " + (paramsCount + 1) + ")");
 
     let keys = Object.keys(environment);
-    //post("envi_params_keys",keys,"\n");
+
     for (let a of keys) {
         if (paramsCount === 1 && a === "buffer_host1") continue;
 
-        let par_keys = Object.keys(environment[a]);
-        //post("envi_params_keys",par_keys,"\n");
+        // First, fix old-style keys before iterating
+        explodeOldEnvironmentKeys(environment[a]);
+
         if (debugpost > 0)
             post("------------------", a, "------------------", "\n");
-        for (let p1 of par_keys) {
-            let par1 = environment[a][p1];
-            if (checkdict(par1)) {
-                let par2_keys = Object.keys(par1);
-                for (let p2 of par2_keys) {
-                    let par2 = par1[p2];
-                    if (checkdict(par2)) {
-                        let par3_keys = Object.keys(par2);
-                        for (let p3 of par3_keys) {
-                            let par3 = par2[p3];
-                            if (checkdict(par3)) {
-                                let par4_keys = Object.keys(par3);
-                                for (let p4 of par4_keys) {
-                                    let par4 = par3[p4];
-                                    setparam(
-                                        a,
-                                        p1 + "::" + p2 + "::" + p3 + "::" + p4,
-                                        par4
-                                    );
-                                }
-                            } else
-                                setparam(a, p1 + "::" + p2 + "::" + p3, par3);
-                        }
-                    } else setparam(a, p1 + "::" + p2, par2);
-                }
-            } else setparam(a, p1, par1);
-        }
+
+        walkEnvironment(a, environment[a], []);
     }
 
     paramsCount += 1;
+
     if (paramsCount < PARAMS_RUN_NUMBER) {
         messnamed("llenviread_getparams", PARAMS_DELAY);
     } else {
         loadPresets();
         messnamed("llenviread", 0);
-        if (environment.ho_st1["audioON/OFF"] === 1) {
-            outlet(0, "dac~", 1);
-        }
+        if (environment.ho_st1["audioON/OFF"] === 1) outlet(0, "dac~", 1);
         outlet(0, "done!");
+    }
+}
+
+function walkEnvironment(actName, obj, path) {
+    for (let key in obj) {
+        let val = obj[key];
+        if (checkdict(val)) {
+            walkEnvironment(actName, val, path.concat(key));
+        } else {
+            let paramPath = path.concat(key).join("::");
+            setparam(actName, paramPath, val);
+        }
+    }
+}
+
+function explodeOldEnvironmentKeys(envObj) {
+    let keys = Object.keys(envObj);
+    for (let key of keys) {
+        if (key.includes("::")) {
+            let parts = key.split("::");
+            let value = envObj[key];
+            delete envObj[key]; // remove old flat key
+
+            // create nested structure
+            let target = envObj;
+            for (let i = 0; i < parts.length - 1; i++) {
+                let part = parts[i];
+                if (!target[part] || !checkdict(target[part])) {
+                    target[part] = {};
+                }
+                target = target[part];
+            }
+            target[parts[parts.length - 1]] = value;
+        }
     }
 }
 

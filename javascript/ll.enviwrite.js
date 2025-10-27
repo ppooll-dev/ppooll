@@ -330,7 +330,6 @@ function get_pat() {
 }
 
 function addParam(args) {
-    //var args = arrayfromargs(arguments);
     // post("Received args: ", args, "\n");
     try{
         if (currentAct === null) {
@@ -339,12 +338,22 @@ function addParam(args) {
             );
             return;
         }
-        // Extract the parameter name and remove it from args
         var paramName = args.shift();
+        var split = paramName.split("::");
 
         // The remaining args array is the value for the parameter
         var paramValue = args.length > 1 ? args : args[0];
-        environment[currentAct][paramName] = paramValue;
+
+        // Make sure the environment path exists
+        var target = environment[currentAct];
+        for (var i = 0; i < split.length - 1; i++) {
+            var key = split[i];
+            if (!target[key]) target[key] = {}; // create nested object if missing
+            target = target[key];
+        }
+
+        // Assign the value to the final key
+        target[split[split.length - 1]] = paramValue;
 
         if(paramValue[0] === "dictionary"){
             const innerDict = new Dict(paramValue[1])
