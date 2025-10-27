@@ -1,5 +1,5 @@
 {
-	"window" : [ 435, 443, 800, 502 ],
+	"window" : [ 435, 443, 712, 604 ],
 	"act_menu" : 	{
 		"patching_rect" : [ 88, 43, 40, 19 ],
 		"hidden" : 1,
@@ -96,7 +96,7 @@
 	}
 ,
 	"freq" : 	{
-		"patching_rect" : [ 80, 0, 178, 14 ],
+		"patching_rect" : [ 100, 0, 178, 15 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.878431, 0.713726, 0.607843, 1 ],
 		"bordercolor" : [ 0, 0, 0, 1 ],
@@ -125,7 +125,7 @@
 ,
 	"settriggermode" : 	{
 		"patching_rect" : [ 0, 44, 17, 15 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"bgcolor" : [ 0.75, 0.75, 0.75, 1 ],
 		"bgoncolor" : [ 0.752941, 0.023529, 0.247059, 1 ],
 		"fontsize" : 9,
@@ -216,7 +216,7 @@
 ,
 	"ramp" : 	{
 		"patching_rect" : [ 257, 0, 54, 15 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"bgcolor" : [ 0.878431, 0.713726, 0.607843, 1 ],
 		"bordercolor" : [ 0, 0, 0, 1 ],
 		"fontsize" : 9,
@@ -258,7 +258,7 @@
 ,
 	"interpolate" : 	{
 		"patching_rect" : [ 0, 29, 15, 15 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"bgcolor" : [ 0.75, 0.75, 0.75, 1 ],
 		"bgoncolor" : [ 0.752941, 0.023529, 0.247059, 1 ],
 		"fontsize" : 9,
@@ -272,7 +272,7 @@
 ,
 	"loop" : 	{
 		"patching_rect" : [ 15, 29, 25, 15 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"bgcolor" : [ 0.749019607843137, 0.749019607843137, 0.749019607843137, 1 ],
 		"bgoncolor" : [ 0.752941176470588, 0.023529411764706, 0.247058823529412, 1 ],
 		"fontsize" : 9,
@@ -285,7 +285,7 @@
 	}
 ,
 	"on/off" : 	{
-		"patching_rect" : [ 0, 14, 20, 15 ],
+		"patching_rect" : [ 80, 0, 20, 15 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0.75, 0.75, 0.75, 1 ],
 		"bgoncolor" : [ 0.752941, 0.023529, 0.247059, 1 ],
@@ -300,7 +300,7 @@
 ,
 	"trigger" : 	{
 		"patching_rect" : [ 20, 14, 20, 15 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"bgcolor" : [ 0.75, 0.75, 0.75, 1 ],
 		"bgoncolor" : [ 0.752941, 0.023529, 0.247059, 1 ],
 		"fontsize" : 9,
@@ -314,7 +314,7 @@
 ,
 	"wave-calc" : 	{
 		"patching_rect" : [ 311, -1, 54, 19 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"applycolors" : 0,
 		"bgfillcolor" : 		{
 			"type" : "color",
@@ -371,7 +371,7 @@
 ,
 	"smooth" : 	{
 		"patching_rect" : [ 20, 44, 19, 15 ],
-		"hidden" : 0,
+		"hidden" : 1,
 		"bgcolor" : [ 0.75, 0.75, 0.75, 1 ],
 		"bgoncolor" : [ 0.752941, 0.023529, 0.247059, 1 ],
 		"fontsize" : 9,
@@ -398,7 +398,7 @@
 	}
 ,
 	"wf1" : 	{
-		"patching_rect" : [ 40, 15, 326, 44 ],
+		"patching_rect" : [ -1, 15, 279, 146 ],
 		"hidden" : 0,
 		"bgcolor" : [ 0, 0, 0, 1 ],
 		"fontsize" : 10,

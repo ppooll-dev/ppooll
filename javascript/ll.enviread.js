@@ -270,6 +270,7 @@ function import_old_llblues(a, p, v) {
 			4: meter (0,1,2)
 			5: mix_adds (0,1)
 			6: link input-channels to output-channels (0,1)
+			7: unfolded/folded
 	*/
     try{
         if (p == "ll.blues::outputs") {
@@ -292,6 +293,7 @@ function import_old_llblues(a, p, v) {
                 v[3],
                 parseInt(v[1] / 2),
                 v[5],
+				0
             ];
             //post("new_state",new_state,"\n");
             messnamed(a, new_blues_name + "::status", new_status);

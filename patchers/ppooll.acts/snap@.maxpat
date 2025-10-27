@@ -2866,8 +2866,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 525.5, 344.0, 68.0, 19.0 ],
-													"text" : "ll.r pres_menu"
+													"patching_rect" : [ 525.5, 344.0, 83.0, 19.0 ],
+													"text" : "ll.r act::pres_menu"
 												}
 
 											}
@@ -4592,7 +4592,7 @@
 					"elementcolor" : [ 0.376471, 0.384314, 0.4, 1.0 ],
 					"fontsize" : 10.0,
 					"id" : "obj-13",
-					"items" : [ "(sel_acts)", ",", "sel_all", ",", "sel_none", ",", "<separator>", ",", "ho_st1", ",", "snap@1" ],
+					"items" : [ "(sel_acts)", ",", "sel_all", ",", "sel_none", ",", "<separator>", ",", "ho_st1", ",", "fffb@1", ",", "kaos@1", ",", "modul.ator1", ",", "modul.ator2", ",", "notepad@1", ",", "overdrive@1", ",", "prdelay@1", ",", "random@1" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
