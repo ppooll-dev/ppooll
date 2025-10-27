@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 7,
+			"revision" : 9,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 303.0, 179.0, 185.0, 278.0 ],
+		"rect" : [ 316.0, 132.0, 185.0, 278.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
 		"globalpatchername" : "flop1",
@@ -24,7 +24,7 @@
 					"hidden" : 1,
 					"id" : "obj-31",
 					"maxclass" : "ll_number",
-					"min" : 24.678843537414966,
+					"min" : 0.108843537414966,
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
@@ -33,7 +33,7 @@
 					"selectcolor" : [ 0.45098, 1.0, 0.698039, 0.470588 ],
 					"slidercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 					"slidercolornofocus" : [ 0.478431, 0.478431, 0.478431, 0.0 ],
-					"slidermax" : 422492.0,
+					"slidermax" : 2867.30158730158746,
 					"varname" : "end"
 				}
 
@@ -56,7 +56,7 @@
 					"selectcolor" : [ 0.45098, 1.0, 0.698039, 0.470588 ],
 					"slidercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 					"slidercolornofocus" : [ 0.478431, 0.478431, 0.478431, 0.0 ],
-					"slidermax" : 422492.0,
+					"slidermax" : 2867.30158730158746,
 					"varname" : "length"
 				}
 
@@ -79,7 +79,7 @@
 					"selectcolor" : [ 0.45098, 1.0, 0.698039, 0.470588 ],
 					"slidercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 					"slidercolornofocus" : [ 0.478431, 0.478431, 0.478431, 0.0 ],
-					"slidermax" : 422492.0,
+					"slidermax" : 2867.30158730158746,
 					"varname" : "start"
 				}
 
@@ -88,6 +88,7 @@
 				"box" : 				{
 					"bgcolor" : [ 0.29, 0.69, 0.369, 1.0 ],
 					"id" : "obj-59",
+					"max" : 2867.30158730158746,
 					"maxclass" : "ll_slishi",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -103,9 +104,9 @@
 					"bgcolor" : [ 0.29, 0.69, 0.369, 1.0 ],
 					"hidden" : 1,
 					"id" : "obj-38",
-					"max" : 422492.0,
+					"max" : 2867.30158730158746,
 					"maxclass" : "ll_slishi",
-					"min" : 24.670000000000002,
+					"min" : 0.1,
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
@@ -119,6 +120,7 @@
 				"box" : 				{
 					"bgcolor" : [ 0.4, 0.4, 0.8, 1.0 ],
 					"id" : "obj-9",
+					"max" : 2867.30158730158746,
 					"maxclass" : "ll_slishi",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -805,7 +807,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 11.0,
 					"id" : "obj-40",
-					"items" : "<empty>",
+					"items" : "3dem.aif",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -860,7 +862,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 7,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -879,7 +881,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2968,7 +2970,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3568,7 +3570,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 301.0, 130.0, 96.0, 22.0 ],
-									"text" : "length/end 0"
+									"text" : "length 0.1"
 								}
 
 							}
@@ -3601,7 +3603,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3881,7 +3883,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4010,7 +4012,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4029,7 +4031,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 7,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4235,7 +4237,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 7,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4340,7 +4342,7 @@
 																		"appversion" : 																		{
 																			"major" : 9,
 																			"minor" : 0,
-																			"revision" : 7,
+																			"revision" : 9,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4714,7 +4716,7 @@
 																		"appversion" : 																		{
 																			"major" : 9,
 																			"minor" : 0,
-																			"revision" : 7,
+																			"revision" : 9,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -5376,7 +5378,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 7,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -5735,7 +5737,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 7,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -6150,7 +6152,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 7,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -6172,7 +6174,7 @@
 																		"appversion" : 																		{
 																			"major" : 9,
 																			"minor" : 0,
-																			"revision" : 7,
+																			"revision" : 9,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -6470,7 +6472,7 @@
 																		"appversion" : 																		{
 																			"major" : 9,
 																			"minor" : 0,
-																			"revision" : 7,
+																			"revision" : 9,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -7199,7 +7201,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -7247,7 +7249,7 @@
 														"appversion" : 														{
 															"major" : 9,
 															"minor" : 0,
-															"revision" : 7,
+															"revision" : 9,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -7866,7 +7868,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 7,
+											"revision" : 9,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -8428,9 +8430,11 @@
 						"act::active_store" : 0,
 						"act::master/activest" : 0,
 						"ll.blues" : 0,
-						"ll.blues::levels" : 0,
-						"ll.blues::outputs" : 0,
-						"ll.blues::state" : 0
+						"ll.blues::status" : 0,
+						"ll.blues::outputs~" : 0,
+						"ll.blues::outputsMix~" : 0,
+						"ll.blues::chans" : 0,
+						"ll.blues::levels" : 0
 					}
 ,
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -8470,14 +8474,19 @@
 						"pitchslider" : 27,
 						"zero" : 28,
 						"preset-ramp" : 1000,
-						"presets" : 1001
+						"presets" : 1001,
+						"ll.blues::status" : 1,
+						"ll.blues::outputs~" : 2,
+						"ll.blues::outputsMix~" : 3,
+						"ll.blues::chans" : 4,
+						"ll.blues::levels" : 5
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 545, 133, 1800, 849 ],
+						"client_rect" : [ 400, 495, 1195, 847 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 583, 68, 1034, 196 ]
+						"storage_rect" : [ 200, 200, 800, 500 ]
 					}
 ,
 					"text" : "pattrstorage pat",
@@ -8533,20 +8542,20 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 655.0, 136.0, 107.0, 22.0 ],
 					"restore" : 					{
-						"buffer" : [ "" ],
-						"current_end" : [ 24.68 ],
-						"current_start" : [ 24.57 ],
-						"end" : [ 24.68 ],
-						"env-scale" : [ 24.189189189189189 ],
+						"buffer" : [ "3dem.aif" ],
+						"current_end" : [ 0.1 ],
+						"current_start" : [ 0.0 ],
+						"end" : [ 0.11 ],
+						"env-scale" : [ 40.243243243243242 ],
 						"ext~vol" : [ 0 ],
 						"full_select" : [ -1 ],
 						"keep-time" : [ 0 ],
 						"l-ramp" : [ 0.0 ],
 						"l-ramp-mode" : [ 1 ],
-						"length" : [ 0.11 ],
+						"length" : [ 0.1 ],
 						"length-ramp-stop" : [ -1 ],
 						"length/end" : [ 0 ],
-						"length_rel" : [ 0.11 ],
+						"length_rel" : [ 0.000034875996457 ],
 						"lookup" : [ 1 ],
 						"on/off" : [ 1 ],
 						"oneshot" : [ 0 ],
@@ -8555,15 +8564,15 @@
 						"pitch-ramp-stop" : [ -1 ],
 						"pitchmenu" : [ 0 ],
 						"pitchslider" : [ 70 ],
-						"play-mode" : [ 3 ],
+						"play-mode" : [ 0 ],
 						"preset-ramp" : [ 0.0 ],
 						"presets" : [ 0 ],
 						"ramp2pitch" : [ 0 ],
 						"s-ramp" : [ 0.0 ],
 						"s-ramp-mode" : [ 1 ],
-						"start" : [ 24.57 ],
+						"start" : [ 0.0 ],
 						"start-ramp-stop" : [ -1 ],
-						"start_rel" : [ 24.57 ],
+						"start_rel" : [ 0.0 ],
 						"ubumenu" : [ "start" ],
 						"zero" : [ -1 ]
 					}
@@ -8670,7 +8679,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 0.0, 42.98046875, 16.0 ],
+					"patching_rect" : [ 0.0, 0.0, 40.337890625, 16.0 ],
 					"varname" : "act",
 					"viewvisibility" : 1
 				}
@@ -8828,10 +8837,38 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.allacts.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
+				"patcherrelativepath" : "../abstractions/filip",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.bluebutton.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.blues.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.blues.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.buffer_menu.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -8849,7 +8886,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.flop_flop.maxpat",
+				"name" : "ll.flop_lop.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
@@ -8863,10 +8900,10 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.mc.stereo_pan.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../abstractions/ll.blues",
-				"type" : "JSON",
+				"name" : "ll.listblock.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -8961,20 +8998,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.s~.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.s~.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ll.wf.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
@@ -9005,13 +9028,6 @@
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "nblue.js",
-				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{

@@ -1,11 +1,11 @@
 {
 	"ho_st1" : 	{
-		"_actwindow" : [ "ho_st", 457, 196, 590, 320 ],
-		"act_menu" : "(__acts__)",
-		"audioON/OFF" : 0,
+		"_actwindow" : [ "ho_st", 177, 131, 310, 255 ],
+		"act_menu" : "notepad@",
+		"audioON/OFF" : 1,
 		"chans" : 16,
 		"def" : -1,
-		"envi_menu" : "buffertest",
+		"envi_menu" : "ƒ buffertest",
 		"favorites" : "(favorites)",
 		"jit.on" : 0,
 		"menubar" : 1,
@@ -13,7 +13,7 @@
 		"rec" : 0,
 		"screen" : 1,
 		"stereo" : 0,
-		"time" : 12284,
+		"time" : 32920,
 		"vol" : 1,
 		"vol_ramp" : 10,
 		"vol_slider" : 1,
@@ -32,12 +32,12 @@
 	}
 ,
 	"buffer_host1" : 	{
-		"_actwindow" : [ "buffer_host", 456, 333, 575, 519 ],
+		"_actwindow" : [ "buffer_host", 180, 262, 299, 448 ],
 		"action_menu" : "clearall",
 		"channels" : 1,
 		"f" : -1,
 		"ff" : -1,
-		"file_menu" : "",
+		"file_menu" : "3dem.aif",
 		"folder_menu" : "ll.samples/",
 		"ll_buffers" : 		{
 			"buffers" : [ 				{
@@ -48,15 +48,25 @@
 					"chans" : 1,
 					"srate" : 44100,
 					"label" : "3dem.aif",
-					"full_path" : "Macintosh HD:/Users/klaus/Documents/Max 8/Packages/ppooll/media/ll.samples/3dem.aif"
+					"full_path" : "Macintosh HD:/Users/klaus/Documents/Max 9/Packages/ppooll/media/ll.samples/3dem.aif"
+				}
+, 				{
+					"buffer_index" : 2,
+					"buffer_name" : "pp.2",
+					"file_name" : "artradioC.aiff",
+					"length" : 27562.5,
+					"chans" : 1,
+					"srate" : 48000,
+					"label" : "artradioC.aiff",
+					"full_path" : "Macintosh HD:/Users/klaus/Documents/Max 9/Packages/ppooll/media/ll.samples/artradioC.aiff"
 				}
  ]
 		}
 ,
 		"normalize" : -1,
 		"open!" : -1,
-		"size-box" : 2867.301514000000225,
-		"file_menu_out" : "Macintosh HD:/Users/klaus/Documents/Max 8/Packages/ppooll/media/ll.samples/3dem.aif",
+		"size-box" : 2867.30158730158746,
+		"file_menu_out" : "Macintosh HD:/Users/klaus/Documents/Max 9/Packages/ppooll/media/ll.samples/3dem.aif",
 		"act::active_store" : "_",
 		"act::master/activest" : [ 0, 0 ],
 		"act::pres_menu" : "_",
@@ -65,7 +75,7 @@
 	}
 ,
 	"control@1" : 	{
-		"_actwindow" : [ "control@", 608, 522, 799, 576 ],
+		"_actwindow" : [ "control@", 511, 324, 702, 378 ],
 		"act_suggested" : 1,
 		"chans" : 1,
 		"send_back_light" : 0,
@@ -126,10 +136,10 @@
 	}
 ,
 	"flop1" : 	{
-		"_actwindow" : [ "flop", 614, 193, 799, 471 ],
-		"current_end" : 247.580000000000013,
-		"current_start" : 76.280000000000001,
-		"end" : 323.860000000000014,
+		"_actwindow" : [ "flop", 316, 132, 501, 410 ],
+		"current_end" : 203.629999999999995,
+		"current_start" : 2856.400000000000091,
+		"end" : 3060.0300000000002,
 		"full_select" : -1,
 		"keep-time" : 0,
 		"ubumenu" : "start",
@@ -140,20 +150,20 @@
 		"act::title_menu" : "",
 		"buffer" : "3dem.aif",
 		"ll.blues::status" : [ 0, 1, 0, 0, 0, 0 ],
-		"start" : 76.280000000000001,
+		"start" : 2856.400000000000091,
 		"ll.blues::outputs~" : [ "ho_st1~out.1", "_" ],
-		"length" : 247.580000000000013,
+		"length" : 203.629999999999995,
 		"ll.blues::outputsMix~" : [ "no~-no-", "_" ],
 		"pitch" : 0,
 		"ll.blues::chans" : [ 2, 2 ],
-		"on/off" : 0,
+		"on/off" : 1,
 		"ll.blues::levels" : [ 1, 1, 0, 0, 10, 0, 0.5 ],
 		"oneshot" : 0,
 		"oneshot_trigger" : -1,
 		"ext~vol" : 0,
 		"lookup" : 1,
-		"start_rel" : 0.026602660266027,
-		"length_rel" : 0.086345992028344,
+		"start_rel" : 0.996199619961996,
+		"length_rel" : 0.071017991585474,
 		"s-ramp" : 0,
 		"s-ramp-mode" : 1,
 		"start-ramp-stop" : -1,
@@ -173,23 +183,23 @@
 	}
 ,
 	"flop2" : 	{
-		"_actwindow" : [ "flop", 808, 196, 993, 474 ],
-		"current_end" : 9.109999999999999,
-		"current_start" : 487.779999999999973,
-		"end" : 496.889999999999986,
+		"_actwindow" : [ "flop", 505, 131, 1283, 306 ],
+		"current_end" : 1.28,
+		"current_start" : 802.919999999999959,
+		"end" : 804.200000000000045,
 		"full_select" : -1,
 		"keep-time" : 0,
 		"ubumenu" : "start",
 		"act::active_store" : "_",
 		"act::master/activest" : [ 0, 0 ],
 		"act::pres_menu" : "_",
-		"act::tetris_menu" : "",
+		"act::tetris_menu" : "ƒ quer.json",
 		"act::title_menu" : "",
 		"buffer" : "3dem.aif",
 		"ll.blues::status" : [ 0, 1, 0, 0, 0, 0 ],
-		"start" : 487.779999999999973,
+		"start" : 802.919999999999959,
 		"ll.blues::outputs~" : [ "ho_st1~out.1", "_" ],
-		"length" : 9.109999999999999,
+		"length" : 1.28,
 		"ll.blues::outputsMix~" : [ "no~-no-", "_" ],
 		"pitch" : 0,
 		"ll.blues::chans" : [ 2, 2 ],
@@ -199,8 +209,8 @@
 		"oneshot_trigger" : -1,
 		"ext~vol" : 0,
 		"lookup" : 1,
-		"start_rel" : 0.17011701170117,
-		"length_rel" : 0.003177203277236,
+		"start_rel" : 0.28002800280028,
+		"length_rel" : 0.00044641275465,
 		"s-ramp" : 0,
 		"s-ramp-mode" : 1,
 		"start-ramp-stop" : -1,
@@ -217,6 +227,21 @@
 		"zero" : -1,
 		"preset-ramp" : 0,
 		"presets" : 0
+	}
+,
+	"notepad@1" : 	{
+		"_actwindow" : [ "notepad@", 712, 323, 1232, 493 ],
+		"fontlist" : "Arial",
+		"fontsize" : 14,
+		"height" : 170,
+		"presets" : 0,
+		"textfield" : "very simple 2-flop environment with control@ listening to your computer keyboard\n\nonly a few keys are defined in control@1 (look into routing)\nq randoms the position (start) of flop1\nw randoms the position (start) of flop2\ns increases loop-length of flop2 (also try to hold s)\nx decreases loop-length \n",
+		"width" : 520,
+		"act::active_store" : "_",
+		"act::master/activest" : [ 0, 0 ],
+		"act::pres_menu" : "_",
+		"act::tetris_menu" : "",
+		"act::title_menu" : ""
 	}
 
 }
