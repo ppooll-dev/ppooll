@@ -9243,7 +9243,7 @@
 																	"numoutlets" : 2,
 																	"outlettype" : [ "", "bang" ],
 																	"patching_rect" : [ 513.0, 92.0, 89.0, 20.0 ],
-																	"text" : "ll.r tetris_menu"
+																	"text" : "ll.r act::tetris_menu"
 																}
 
 															}
