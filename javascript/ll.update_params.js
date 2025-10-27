@@ -3,9 +3,6 @@ autowatch = 1;
 const ll_prefs = new Dict("ppooll-preferences");
 const ll_paths = new Dict("ll_paths");
 
-const removeOldKeys = false; // set true to remove legacy keys
-
-
 // --- Transform rules ---
 const updateMap = {
     "ll.blues::outputs": (v) => ({
@@ -33,6 +30,13 @@ declareattribute("dryrun", {
     embed: 1,
 });
 
+var removeoldparams = 0;
+declareattribute("removeoldparams", {
+    style: "onoff",
+    label: "remove old params",
+    embed: 1,
+});
+
 // =====================================================
 // Entry points
 // =====================================================
@@ -49,8 +53,8 @@ function checkIfUpdated() {
 }
 
 function updateAll() {
-    updatePresets(ll_paths.get("user"));
-    updatePresets(ll_paths.get("factory"));
+    updateParams(ll_paths.get("user"));
+    updateParams(ll_paths.get("factory"));
     post("Preset update complete.\n");
 }
 
@@ -105,7 +109,7 @@ function updateJsonFile(filepath) {
             if (updateMap[key]) {
                 changed = true;
                 const newPairs = updateMap[key](value);
-                return { newPairs, removeOld: removeOldKeys };
+                return { newPairs, removeOld: removeoldparams };
             }
             return null;
         });
