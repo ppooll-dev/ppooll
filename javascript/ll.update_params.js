@@ -9,21 +9,31 @@ const ll_version = "9.0.0";
 const updateMap = {
     "ll.blues::outputs": (v) => ({
         "ll.blues::outputs~": [v[0], "_"],
-        "ll.blues::outputsMix~": [v[1], "_"]
+        "ll.blues::outputsMix~": [v[1], "_"],
     }),
-    "ll.blues::state": (v, json) => ({
-        "ll.blues::status": [
-            json["inputs~"] && json["inputs~"].indexOf("in(") > -1 ? 1 : 0,                      // in-mix
-            v[1] % 2,
-            v[2],
-            v[3],
-            parseInt(v[1] / 2),
-            v[5],
-            0
-        ],
-        "ll.blues::chans": [v[4], v[0]]
-    }),
-    
+    "ll.blues::state": (v, json) => {
+        // 1: style: (0: basic, 1: basic_in_mix, 2: mc.basic, 3: mc+chan_out)
+        // 2: showMix: (0: show outputs~, 1: show outputsMix~ )
+        // 3: vol_layout (0, 1, 2)
+        // 4: meter (0: meter-out,1: meter-pre,2: meter-in,3: meter-off)
+        // 5: mix_adds (0,1)
+        // 6: link (0,1) //link chans
+        // 7: folded (0,1) (in mc. styles wether the object is folded to one line or unfolded.
+        const style = json["inputs~"] && json["inputs~"].some(str => str.includes("in("))
+
+        return {
+            "ll.blues::status": [
+                style,
+                v[1] % 2,
+                v[2],
+                v[3],
+                parseInt(v[1] / 2),
+                v[5],
+                0,
+            ],
+            "ll.blues::chans": [v[4], v[0]],
+        };
+    },
 };
 
 var dryrun = 0;
@@ -49,7 +59,9 @@ function checkIfUpdated() {
         // post("Presets already updated\n");
         return;
     }
-    post("Updating presets and environments for ppooll " + ll_version + "...\n");
+    post(
+        "Updating presets and environments for ppooll " + ll_version + "...\n"
+    );
     updateAll();
     ll_prefs.replace("general::version", ll_version);
     messnamed("ll_prf_rewrite", "bang");
@@ -123,7 +135,7 @@ function updateJsonFile(filepath) {
             } else {
                 const writeDict = new Dict();
                 writeDict.parse(JSON.stringify(newJson));
-                writeDict.export_json(filepath)
+                writeDict.export_json(filepath);
 
                 // post("Updated:", filepath, "\n");
             }
