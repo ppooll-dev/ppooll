@@ -19,7 +19,10 @@ const updateMap = {
         // 5: mix_adds (0,1)
         // 6: link (0,1) //link chans
         // 7: folded (0,1) (in mc. styles wether the object is folded to one line or unfolded.
-
+        Object.keys(json).forEach(key => {
+            post(key, json[key], "\n")
+        })
+        
         let style = 0;
         if(json["inputs~"]){
             let ins = json["inputs~"];
