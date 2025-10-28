@@ -11,7 +11,7 @@ const updateMap = {
         "ll.blues::outputs~": [v[0], "_"],
         "ll.blues::outputsMix~": [v[1], "_"],
     }),
-    "ll.blues::state": (v, json) => {
+    "ll.blues::state": (v, parent) => {
         // 1: style: (0: basic, 1: basic_in_mix, 2: mc.basic, 3: mc+chan_out)
         // 2: showMix: (0: show outputs~, 1: show outputsMix~ )
         // 3: vol_layout (0, 1, 2)
@@ -19,17 +19,12 @@ const updateMap = {
         // 5: mix_adds (0,1)
         // 6: link (0,1) //link chans
         // 7: folded (0,1) (in mc. styles wether the object is folded to one line or unfolded.
-        Object.keys(json).forEach(key => {
-            post(key, json[key], "\n")
-        })
-        
+        const inputs = parent["inputs~"];
         let style = 0;
-        if(json["inputs~"]){
-            let ins = json["inputs~"];
-            if(typeof ins === Array){
-                ins = ins.join(" ");
-            }
-            style = ins.indexOf("in(") > -1;
+
+        if (inputs) {
+            let ins = Array.isArray(inputs) ? inputs.join(" ") : String(inputs);
+            if (ins.includes("in(")) style = 1;
         }
 
         return {
@@ -131,10 +126,10 @@ function updateJsonFile(filepath) {
         }
 
         let changed = false;
-        const newJson = traverseJsonAndUpdate(json, (key, value) => {
+        const newJson = traverseJsonAndUpdate(json, (key, value, parent) => {
             if (updateMap[key]) {
                 changed = true;
-                const newPairs = updateMap[key](value, json);
+                const newPairs = updateMap[key](value, parent);
                 return { newPairs, removeOld: removeoldparams };
             }
             return null;
@@ -166,7 +161,7 @@ function traverseJsonAndUpdate(obj, callback) {
     } else if (typeof obj === "object" && obj !== null) {
         const newObj = {};
         for (const [key, value] of Object.entries(obj)) {
-            const result = callback(key, value);
+            const result = callback(key, value, obj);
             if (result) {
                 if (!result.removeOld) newObj[key] = value;
                 Object.assign(newObj, result.newPairs);
