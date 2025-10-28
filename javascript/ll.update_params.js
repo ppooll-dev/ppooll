@@ -19,7 +19,15 @@ const updateMap = {
         // 5: mix_adds (0,1)
         // 6: link (0,1) //link chans
         // 7: folded (0,1) (in mc. styles wether the object is folded to one line or unfolded.
-        const style = (json["inputs~"] && json["inputs~"].some(str => str.includes("in("))) ? 1 : 0;
+
+        let style = 0;
+        if(json["inputs~"]){
+            let ins = json["inputs~"];
+            if(typeof ins === Array){
+                ins = ins.join(" ");
+            }
+            style = ins.indexOf("in(") > -1;
+        }
 
         return {
             "ll.blues::status": [
