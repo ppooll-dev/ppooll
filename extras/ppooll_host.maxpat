@@ -4609,8 +4609,6 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 1,
 																		"defer" : 0,
-																		"node_bin_path" : "",
-																		"npm_bin_path" : "",
 																		"watch" : 0
 																	}
 ,
@@ -12335,19 +12333,6 @@
 											}
 , 											{
 												"box" : 												{
-													"id" : "obj-29",
-													"items" : [ "(__acts__)", ",", "_act_overview", ",", "2Dsliders", ",", "amxd@", ",", "analyze@", ",", "animator@", ",", "arpanner", ",", "autocount@", ",", "bandfollower", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "bildsynthi", ",", "brown", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "forbiddenP", ",", "frack", ",", "freeverb@", ",", "frequenzteiler", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.2oscbank", ",", "jit.3m@", ",", "jit.blobs", ",", "jit.brcosa@", ",", "jit.buf", ",", "jit.buffer@", ",", "jit.copyprot.act", ",", "jit.display@", ",", "jit.grab@", ",", "jit.lcd@", ",", "jit.op@", ",", "jit.player", ",", "jit.slide@", ",", "jit.videoplanes", ",", "jit.videoplanesP", ",", "jit.world@", ",", "kaos@", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "limi", ",", "link@", ",", "lkforest@", ",", "matriarch@", ",", "matrix@", ",", "mc.mod", ",", "mc.random@", ",", "mcpanner", ",", "midikeys", ",", "mixer@", ",", "modul.ator", ",", "morph", ",", "mubugrain@", ",", "multitap", ",", "munger@", ",", "noize@", ",", "normalize", ",", "notepad@", ",", "op@", ",", "oscbank@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "period", ",", "pHARM4@", ",", "pr.6groov", ",", "pr.spectfreeze", ",", "pr.spectplay", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "SDIFter", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.abba@", ",", "spat.ambicontrol@", ",", "spat.ambidecode@", ",", "spat.ambiencode@", ",", "spat.ambimonitor@", ",", "spat.ambipanning@", ",", "spat.ambitransform@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "threekomp", ",", "timeline@", ",", "transientshaper", ",", "TSSSF", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "echoplex@", ",", "efx.step@", ",", "efx.stnp@", ",", "efx.sttp@", ",", "efx.stxp@", ",", "ellipsis@", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gf.graindelay", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "lk.stutz@", ",", "oer_prcs", ",", "oer_prcss", ",", "polyrhythmus", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "smpseq@", ",", "snes@", ",", "snesHardmode@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "dense", ",", "envzeugg", ",", "gebroesel@", ",", "lapsepulse", ",", "ltrosc-poly@", ",", "ltrosc@", ",", "ltroscbell@", ",", "ltroscx@", ",", "mvmnt-2d@_240811", ",", "mvmnt@_160527", ",", "navierstokes", ",", "plat", ",", "ppooll_convention", ",", "ppooll_conventionb", ",", "revvverb@", ",", "revvverb@_prime", ",", "rungler_200528", ",", "rungler_200701", ",", "spat.revv@", ",", "subku", ",", "subryth_230528", ",", "subryth_230626", ",", "subryth_250827", ",", "subseq", ",", "volcontrol", ",", "wavelets+", ",", "wavelets-control@", ",", "wt_rdis" ],
-													"maxclass" : "umenu",
-													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "int", "", "" ],
-													"parameter_enable" : 0,
-													"patching_rect" : [ 33.0, 235.0, 100.0, 22.0 ]
-												}
-
-											}
-, 											{
-												"box" : 												{
 													"id" : "obj-28",
 													"maxclass" : "button",
 													"numinlets" : 1,
@@ -12572,7 +12557,6 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-21", 0 ],
-													"order" : 0,
 													"source" : [ "obj-14", 0 ]
 												}
 
@@ -12588,14 +12572,6 @@
 												"patchline" : 												{
 													"destination" : [ "obj-22", 0 ],
 													"source" : [ "obj-14", 4 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-29", 0 ],
-													"order" : 1,
-													"source" : [ "obj-14", 0 ]
 												}
 
 											}
@@ -16529,7 +16505,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 347.0, 109.0, 29.5, 22.0 ],
-													"text" : "set "
+													"text" : "set"
 												}
 
 											}
@@ -50926,7 +50902,7 @@
 						"rec" : [ 0 ],
 						"screen" : [ 0 ],
 						"stereo" : [ 0 ],
-						"time" : [ 5191.0 ],
+						"time" : [ 5410.0 ],
 						"vol" : [ 1.0 ],
 						"vol_ramp" : [ 10 ],
 						"vol_slider" : [ 1.0 ],
