@@ -755,8 +755,15 @@ function m_text(x,y,drag){
 }
 
 // ############################ from UIs
+function num(){
+	let a = arrayfromargs(arguments);
+	//post("num",a,"\n");
+	lllbnum(...a);
+}
 function lllbnum() {
 	let a = arrayfromargs(arguments);
+	//post("lllnum",a,"\n");
+	//return;
 	let isA = a.length > 1;
 
 	
