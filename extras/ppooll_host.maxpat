@@ -519,7 +519,7 @@
 					"fontsize" : 12.0,
 					"hint" : "environment menu",
 					"id" : "obj-22",
-					"items" : [ "(environments)", ",", "<separator>", ",", "(folders)", ",", "alt", ",", "mc.groove_test", ",", "<separator>", ",", "(.json)", ",", "<none>", ",", "ducks_new", ",", "klingt.coll.minilab", ",", "mc.gizmo_tutorial", ",", "rec@", ",", "sins_minilabN", ",", "sinsE_convention", ",", "sinsE_MC", ",", "sinsE_minilab_center", ",", "sinsE_minilab_ko25", ",", "snaptesttt", ",", "superspreading11", ",", "tetris_test", ",", "xtest", ",", "ƒ buffertest", ",", "<separator>", ",", "opentext", ",", "merge...", ",", "paramsonly", ",", "<separator>", ",", "(factory)", ",", "buffertest", ",", "ducks", ",", "envM_test" ],
+					"items" : [ "(environments)", ",", "<separator>", ",", "(folders)", ",", "duoklaus_klangtheater_251030", ",", "<separator>", ",", "(.json)", ",", "<none>", ",", "200722", ",", "210828 entfernte erkundungen", ",", "231216_onlinerauschen", ",", "231218_casio", ",", "240625 safeharbour", ",", "240625_safeharbour", ",", "ballon_191102", ",", "bang", ",", "bllb", ",", "density_semmel_240418", ",", "dorama_240103", ",", "drom_soniccell_230928", ",", "ducks_new", ",", "huch", ",", "jezshk19_191114", ",", "kramladen1", ",", "plat_241106", ",", "platanen_241007", ",", "quant-demo", ",", "snimpro_240419", ",", "spat.ambisonics-demo", ",", "stupid quant", ",", "subkutan_231116", ",", "subkutan_231118", ",", "subkutan_231125", ",", "subkutan_231205", ",", "subkutan_231208", ",", "subkutan_240930", ",", "subkutan_241011", ",", "test", ",", "versatz_191206", ",", "xok.24", ",", "xok.24b", ",", "xok24", ",", "äqui18_180920", ",", "<separator>", ",", "opentext", ",", "merge...", ",", "paramsonly", ",", "<separator>", ",", "(factory)", ",", "buffertest", ",", "ducks", ",", "envM_test" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -574,7 +574,7 @@
 					"fontsize" : 12.0,
 					"hint" : "favorites menu",
 					"id" : "obj-48",
-					"items" : [ "(favorites)", ",", "overdrive@", ",", "snap@", ",", "control@", ",", "mmods@", ",", "modul.ator", ",", "vst@", ",", "vbap@", ",", "<none>", ",", "(favorites)", ",", "-", ",", "add_favorit", ",", "del_favorit" ],
+					"items" : [ "(favorites)", ",", "<none>", ",", "(favorites)", ",", "-", ",", "add_favorit", ",", "del_favorit" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -602,7 +602,7 @@
 					"fontsize" : 12.0,
 					"hint" : "act menu (open acts from here)",
 					"id" : "obj-50",
-					"items" : [ "(__acts__)", ",", "_act_overview", ",", "2Dsliders", ",", "amxd@", ",", "analyze@", ",", "animator@", ",", "arpanner", ",", "autocount@", ",", "bandfollower", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "bildsynthi", ",", "brown", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "forbiddenP", ",", "frack", ",", "freeverb@", ",", "frequenzteiler", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.2oscbank", ",", "jit.3m@", ",", "jit.blobs", ",", "jit.brcosa@", ",", "jit.buf", ",", "jit.buffer@", ",", "jit.copyprot.act", ",", "jit.display@", ",", "jit.grab@", ",", "jit.lcd@", ",", "jit.op@", ",", "jit.player", ",", "jit.slide@", ",", "jit.videoplanes", ",", "jit.videoplanesP", ",", "jit.world@", ",", "kaos@", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "limi", ",", "link@", ",", "lkforest@", ",", "matriarch@", ",", "matrix@", ",", "mc.mod", ",", "mc.random@", ",", "mcpanner", ",", "midikeys", ",", "mixer@", ",", "modul.ator", ",", "morph", ",", "mubugrain@", ",", "multitap", ",", "munger@", ",", "noize@", ",", "normalize", ",", "notepad@", ",", "op@", ",", "oscbank@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "period", ",", "pHARM4@", ",", "pr.6groov", ",", "pr.spectfreeze", ",", "pr.spectplay", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "SDIFter", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.abba@", ",", "spat.ambicontrol@", ",", "spat.ambidecode@", ",", "spat.ambiencode@", ",", "spat.ambimonitor@", ",", "spat.ambipanning@", ",", "spat.ambitransform@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "threekomp", ",", "timeline@", ",", "transientshaper", ",", "TSSSF", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "echoplex@", ",", "efx.step@", ",", "efx.stnp@", ",", "efx.sttp@", ",", "efx.stxp@", ",", "ellipsis@", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gf.graindelay", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "lk.stutz@", ",", "mmods@", ",", "oer_prcs", ",", "oer_prcss", ",", "polyrhythmus", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "smpseq@", ",", "snes@", ",", "snesHardmode@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--" ],
+					"items" : [ "(__acts__)", ",", "_act_overview", ",", "2Dsliders", ",", "amxd@", ",", "analyze@", ",", "animator@", ",", "arpanner", ",", "autocount@", ",", "bandfollower", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "bildsynthi", ",", "brown", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "forbiddenP", ",", "frack", ",", "freeverb@", ",", "frequenzteiler", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.2oscbank", ",", "jit.3m@", ",", "jit.blobs", ",", "jit.brcosa@", ",", "jit.buf", ",", "jit.buffer@", ",", "jit.copyprot.act", ",", "jit.display@", ",", "jit.grab@", ",", "jit.lcd@", ",", "jit.op@", ",", "jit.player", ",", "jit.slide@", ",", "jit.videoplanes", ",", "jit.videoplanesP", ",", "jit.world@", ",", "kaos@", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "limi", ",", "link@", ",", "lkforest@", ",", "matriarch@", ",", "matrix@", ",", "mc.mod", ",", "mc.random@", ",", "mcpanner", ",", "midikeys", ",", "mixer@", ",", "modul.ator", ",", "morph", ",", "mubugrain@", ",", "multitap", ",", "munger@", ",", "noize@", ",", "normalize", ",", "notepad@", ",", "op@", ",", "oscbank@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "period", ",", "pHARM4@", ",", "pr.6groov", ",", "pr.spectfreeze", ",", "pr.spectplay", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "SDIFter", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.abba@", ",", "spat.ambicontrol@", ",", "spat.ambidecode@", ",", "spat.ambiencode@", ",", "spat.ambimonitor@", ",", "spat.ambipanning@", ",", "spat.ambitransform@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "threekomp", ",", "timeline@", ",", "transientshaper", ",", "TSSSF", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "echoplex@", ",", "efx.step@", ",", "efx.stnp@", ",", "efx.sttp@", ",", "efx.stxp@", ",", "ellipsis@", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gf.graindelay", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "lk.stutz@", ",", "oer_prcs", ",", "oer_prcss", ",", "polyrhythmus", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "smpseq@", ",", "snes@", ",", "snesHardmode@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "dense", ",", "envzeugg", ",", "gebroesel@", ",", "lapsepulse", ",", "ltrosc-poly@", ",", "ltrosc@", ",", "ltroscbell@", ",", "ltroscx@", ",", "mvmnt-2d@_240811", ",", "mvmnt@_160527", ",", "navierstokes", ",", "plat", ",", "ppooll_convention", ",", "ppooll_conventionb", ",", "revvverb@", ",", "revvverb@_prime", ",", "rungler_200528", ",", "rungler_200701", ",", "spat.revv@", ",", "subku", ",", "subryth_230528", ",", "subryth_230626", ",", "subryth_250827", ",", "subseq", ",", "volcontrol", ",", "wavelets+", ",", "wavelets-control@", ",", "wt_rdis" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -1177,7 +1177,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 162.5, 33.0, 23.0 ],
-																	"text" : "",
+																	"text" : "",
 																	"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 																}
 
@@ -1282,7 +1282,7 @@
 													"outputmode" : 1,
 													"parameter_enable" : 0,
 													"patching_rect" : [ 479.0, 37.0, 34.0, 22.0 ],
-													"text" : "#",
+													"text" : "",
 													"textjustification" : 1,
 													"varname" : "audio_key"
 												}
@@ -2962,7 +2962,7 @@
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 500.0, 300.0, 200.0, 190.0 ],
+														"rect" : [ 500.0, 300.0, 800.0, 800.0 ],
 														"openrect" : [ 0.0, 0.0, 800.0, 800.0 ],
 														"openinpresentation" : 1,
 														"gridsize" : [ 15.0, 15.0 ],
@@ -3226,7 +3226,6 @@
 																	"patching_rect" : [ 46.0, 93.0, 133.0, 18.0 ],
 																	"presentation" : 1,
 																	"presentation_rect" : [ 41.0, 29.0, 157.0, 18.0 ],
-																	"text" : "ƒ buffertest",
 																	"varname" : "textedit_envi_name"
 																}
 
@@ -3234,6 +3233,7 @@
 , 															{
 																"box" : 																{
 																	"fontsize" : 10.0,
+																	"hidden" : 1,
 																	"id" : "obj-15",
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
@@ -3366,7 +3366,6 @@
 																	"attr_display" : 1,
 																	"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
 																	"fontsize" : 10.0,
-																	"hidden" : 1,
 																	"hint" : "copy buffer files into environment folder",
 																	"id" : "obj-21",
 																	"lock" : 1,
@@ -3522,6 +3521,7 @@
 																"box" : 																{
 																	"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 																	"fontsize" : 11.0,
+																	"hidden" : 1,
 																	"id" : "obj-1",
 																	"maxclass" : "textbutton",
 																	"numinlets" : 1,
@@ -4364,6 +4364,8 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 1,
 																		"defer" : 0,
+																		"node_bin_path" : "",
+																		"npm_bin_path" : "",
 																		"watch" : 0
 																	}
 ,
@@ -6398,7 +6400,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 163.0, 100.0, 101.0, 22.0 ],
-																					"text" : "flop3"
+																					"text" : "ho_st1"
 																				}
 
 																			}
@@ -6423,7 +6425,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 50.0, 100.0, 96.0, 22.0 ],
-																					"text" : "flop3"
+																					"text" : "ho_st1"
 																				}
 
 																			}
@@ -7036,7 +7038,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 19.0, 290.0, 117.0, 22.0 ],
-													"text" : "flop"
+													"text" : "ho_st"
 												}
 
 											}
@@ -7071,7 +7073,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 19.0, 47.0, 160.0, 24.0 ],
-													"text" : "flop3"
+													"text" : "ho_st1"
 												}
 
 											}
@@ -11684,13 +11686,13 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-5",
-													"linecount" : 4,
+													"linecount" : 3,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 425.0, 220.5, 241.0, 62.0 ],
-													"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets\""
+													"text" : "\"cxhmbp:/Users/cxh/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets\""
 												}
 
 											}
@@ -12038,7 +12040,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-29",
-													"items" : [ "(__acts__)", ",", "_act_overview", ",", "2Dsliders", ",", "amxd@", ",", "analyze@", ",", "animator@", ",", "arpanner", ",", "autocount@", ",", "bandfollower", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "bildsynthi", ",", "brown", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "forbiddenP", ",", "frack", ",", "freeverb@", ",", "frequenzteiler", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.2oscbank", ",", "jit.3m@", ",", "jit.blobs", ",", "jit.brcosa@", ",", "jit.buf", ",", "jit.buffer@", ",", "jit.copyprot.act", ",", "jit.display@", ",", "jit.grab@", ",", "jit.lcd@", ",", "jit.op@", ",", "jit.player", ",", "jit.slide@", ",", "jit.videoplanes", ",", "jit.videoplanesP", ",", "jit.world@", ",", "kaos@", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "limi", ",", "link@", ",", "lkforest@", ",", "matriarch@", ",", "matrix@", ",", "mc.mod", ",", "mc.random@", ",", "mcpanner", ",", "midikeys", ",", "mixer@", ",", "modul.ator", ",", "morph", ",", "mubugrain@", ",", "multitap", ",", "munger@", ",", "noize@", ",", "normalize", ",", "notepad@", ",", "op@", ",", "oscbank@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "period", ",", "pHARM4@", ",", "pr.6groov", ",", "pr.spectfreeze", ",", "pr.spectplay", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "SDIFter", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.abba@", ",", "spat.ambicontrol@", ",", "spat.ambidecode@", ",", "spat.ambiencode@", ",", "spat.ambimonitor@", ",", "spat.ambipanning@", ",", "spat.ambitransform@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "threekomp", ",", "timeline@", ",", "transientshaper", ",", "TSSSF", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "echoplex@", ",", "efx.step@", ",", "efx.stnp@", ",", "efx.sttp@", ",", "efx.stxp@", ",", "ellipsis@", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gf.graindelay", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "lk.stutz@", ",", "mmods@", ",", "oer_prcs", ",", "oer_prcss", ",", "polyrhythmus", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "smpseq@", ",", "snes@", ",", "snesHardmode@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--" ],
+													"items" : [ "(__acts__)", ",", "_act_overview", ",", "2Dsliders", ",", "amxd@", ",", "analyze@", ",", "animator@", ",", "arpanner", ",", "autocount@", ",", "bandfollower", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "bildsynthi", ",", "brown", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "forbiddenP", ",", "frack", ",", "freeverb@", ",", "frequenzteiler", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.2oscbank", ",", "jit.3m@", ",", "jit.blobs", ",", "jit.brcosa@", ",", "jit.buf", ",", "jit.buffer@", ",", "jit.copyprot.act", ",", "jit.display@", ",", "jit.grab@", ",", "jit.lcd@", ",", "jit.op@", ",", "jit.player", ",", "jit.slide@", ",", "jit.videoplanes", ",", "jit.videoplanesP", ",", "jit.world@", ",", "kaos@", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "limi", ",", "link@", ",", "lkforest@", ",", "matriarch@", ",", "matrix@", ",", "mc.mod", ",", "mc.random@", ",", "mcpanner", ",", "midikeys", ",", "mixer@", ",", "modul.ator", ",", "morph", ",", "mubugrain@", ",", "multitap", ",", "munger@", ",", "noize@", ",", "normalize", ",", "notepad@", ",", "op@", ",", "oscbank@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "period", ",", "pHARM4@", ",", "pr.6groov", ",", "pr.spectfreeze", ",", "pr.spectplay", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "SDIFter", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.abba@", ",", "spat.ambicontrol@", ",", "spat.ambidecode@", ",", "spat.ambiencode@", ",", "spat.ambimonitor@", ",", "spat.ambipanning@", ",", "spat.ambitransform@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "threekomp", ",", "timeline@", ",", "transientshaper", ",", "TSSSF", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "echoplex@", ",", "efx.step@", ",", "efx.stnp@", ",", "efx.sttp@", ",", "efx.stxp@", ",", "ellipsis@", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gf.graindelay", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "lk.stutz@", ",", "oer_prcs", ",", "oer_prcss", ",", "polyrhythmus", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "smpseq@", ",", "snes@", ",", "snesHardmode@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "dense", ",", "envzeugg", ",", "gebroesel@", ",", "lapsepulse", ",", "ltrosc-poly@", ",", "ltrosc@", ",", "ltroscbell@", ",", "ltroscx@", ",", "mvmnt-2d@_240811", ",", "mvmnt@_160527", ",", "navierstokes", ",", "plat", ",", "ppooll_convention", ",", "ppooll_conventionb", ",", "revvverb@", ",", "revvverb@_prime", ",", "rungler_200528", ",", "rungler_200701", ",", "spat.revv@", ",", "subku", ",", "subryth_230528", ",", "subryth_230626", ",", "subryth_250827", ",", "subseq", ",", "volcontrol", ",", "wavelets+", ",", "wavelets-control@", ",", "wt_rdis" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -12560,7 +12562,7 @@
 													"allowdrag" : 0,
 													"fontsize" : 13.0,
 													"id" : "obj-17",
-													"items" : [ "no", ",", "buffer_host1", ",", "control@1", ",", "flop1", ",", "flop2", ",", "flop3", ",", "ho_st1", ",", "notepad@1", ",", "tetris@1" ],
+													"items" : [ "no", ",", "ho_st1" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -13009,13 +13011,12 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 13.0,
 																	"id" : "obj-12",
-																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 113.0, 171.0, 337.0, 38.0 ],
-																	"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Packages\""
+																	"text" : "\"cxhmbp:/Users/cxh/Documents/Max 9/Packages\""
 																}
 
 															}
@@ -14316,7 +14317,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 25.0, 390.0, 371.0, 35.0 ],
-																	"text" : "read \"Macintosh HD:/Users/klaus/Library/Application Support/Cycling '74/Max 9/Settings/maxpackages.json\""
+																	"text" : "read \"cxhmbp:/Users/cxh/Library/Application Support/Cycling '74/Max 9/Settings/maxpackages.json\""
 																}
 
 															}
@@ -17822,7 +17823,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 39.0, 112.0, 114.0, 22.0 ],
-													"text" : "flop 3"
+													"text" : "ho_st 1"
 												}
 
 											}
@@ -17909,7 +17910,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 241.0, 14.0, 301.0, 35.0 ],
-																	"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Library/ppooll_presets/flopT\""
+																	"text" : "\"cxhmbp:/Users/cxh/Documents/Max 9/Library/ppooll_presets/ho_stT\""
 																}
 
 															}
@@ -21344,7 +21345,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 405.0, 455.0, 75.0, 22.0 ],
-																					"text" : "flop"
+																					"text" : "ho_st"
 																				}
 
 																			}
@@ -23376,7 +23377,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 63.333333333333314, 89.0, 90.0, 22.0 ],
-																					"text" : "flop3"
+																					"text" : "ho_st1"
 																				}
 
 																			}
@@ -24347,12 +24348,13 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-49",
+																					"linecount" : 2,
 																					"maxclass" : "message",
 																					"numinlets" : 2,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 259.5, 367.0, 35.0, 35.0 ],
-																					"text" : "flop"
+																					"text" : "ho_st"
 																				}
 
 																			}
@@ -25338,7 +25340,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 13.0, 2.0, 87.0, 22.0 ],
-																					"text" : "flop3"
+																					"text" : "ho_st1"
 																				}
 
 																			}
@@ -25790,7 +25792,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 92.25, 304.0, 145.0, 89.0 ],
-																	"text" : "send ::flop3::pat"
+																	"text" : "send ::ho_st1::pat"
 																}
 
 															}
@@ -26302,7 +26304,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 264.0, 102.0, 159.0, 22.0 ],
-													"text" : "flop3 _"
+													"text" : "ho_st1 _"
 												}
 
 											}
@@ -26387,7 +26389,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 486.0, 163.0, 50.0, 62.0 ],
-																	"text" : "::flop3::act::pres_menu 1"
+																	"text" : "::ho_st1::act::pres_menu 1"
 																}
 
 															}
@@ -32185,7 +32187,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 190.0, 31.0, 392.0, 35.0 ],
-																					"text" : "\"Macintosh HD:/Users/klaus/Documents/Max 9/Library/ppooll_presets/xgroove@T\""
+																					"text" : "\"cxhmbp:/Users/cxh/Documents/Max 9/Library/ppooll_presets/demosound@T\""
 																				}
 
 																			}
@@ -32684,7 +32686,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-7",
-																	"items" : [ "12sinsP", ",", "12sinsP copy", ",", "2DslidersP", ",", "2DslidersT", ",", "activetestP", ",", "ambipanning@P", ",", "bach@P", ",", "bach@T", ",", "beautyT", ",", "buffer_hostP", ",", "clocker@P", ",", "control@P", ",", "control@T", ",", "environmentsP", ",", "fffb@P", ",", "flopP", ",", "flopT", ",", "fmrmP", ",", "hardplayT", ",", "ho_stP", ",", "ho_stT", ",", "jit.slide@P", ",", "jit.videoplanesPP", ",", "matrix@P", ",", "mc.random@P", ",", "midikeysP", ",", "modul.atorP", ",", "modul.atorT", ",", "ndi@T", ",", "noize@P", ",", "noize@T", ",", "notepad@P", ",", "notepad@T", ",", "op@P", ",", "overdrive@P", ",", "playlist@P", ",", "pp_worldP", ",", "prdelay@P", ",", "rec_eventsP", ",", "rec_eventsSeq", ",", "simproovP", ",", "sinsEP", ",", "sinsET", ",", "sinusP", ",", "sinusT", ",", "snap@P", ",", "snap@T", ",", "spat.ambicontrol@P", ",", "spat.ambicontrol@T", ",", "spat.ambimonitor@P", ",", "spat.ambipanning@T", ",", "timeline@P", ",", "TSSSFP", ",", "vbap@P", ",", "vst@P", ",", "xgroove@P", ",", "xgroove@T" ],
+																	"items" : [ "3kompP", ",", "beastP", ",", "beautyP", ",", "BenjolinoP", ",", "buffer_hostP", ",", "chebyshev@P", ",", "control@P", ",", "demosound@T", ",", "denseP", ",", "environmentsP", ",", "eq@P", ",", "gg.rainerP", ",", "ho_stP", ",", "INmultiP", ",", "limiP", ",", "ltrosc@P", ",", "munger@P", ",", "navierstokesP", ",", "noize@P", ",", "notepad@P", ",", "op@P", ",", "paf@P", ",", "platP", ",", "ppooll_conventionP", ",", "quantP", ",", "rec_eventsSeq", ",", "revvverb@P", ",", "snap@P", ",", "spat.ambicontrol@P", ",", "spat.ambidecode@P", ",", "spat.ambimonitor@P", ",", "subkuP", ",", "subrythP", ",", "subseqP", ",", "threekompP", ",", "transientshaperP", ",", "volcontrolP", ",", "waveshapers@P", ",", "wt_rdisP", ",", "x_filterP" ],
 																	"maxclass" : "umenu",
 																	"numinlets" : 1,
 																	"numoutlets" : 3,
@@ -39641,7 +39643,7 @@
 														"boxes" : [ 															{
 																"box" : 																{
 																	"border" : 0,
-																	"embedstate" : [ [ "bgcolor", 0, 0, 0, 0 ], [ "crop", 0, 0, 1, 1 ], [ "fgcolor", 0.1, 0.1, 0.433466198979592, 1.1 ], [ "zoom", 0.92 ] ],
+																	"embedstate" : [ [ "bgcolor", 0, 0, 0, 0 ], [ "crop", 0, 0, 1, 1 ], [ "fgcolor", 1.1, 0.211474277210884, 0.714953434436569, 1.1 ], [ "zoom", 0.92 ] ],
 																	"filename" : "ll.logo.js",
 																	"id" : "obj-28",
 																	"maxclass" : "v8ui",
@@ -40094,13 +40096,13 @@
 
 															}
  ],
-														"bgcolor" : [ 0.0, 0.0, 0.333466198979592, 1.0 ]
+														"bgcolor" : [ 1.0, 0.111474277210884, 0.614953434436569, 1.0 ]
 													}
 ,
 													"patching_rect" : [ 427.0, 270.0, 64.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"fontsize" : 10.0,
-														"locked_bgcolor" : [ 0.0, 0.0, 0.333466198979592, 1.0 ]
+														"locked_bgcolor" : [ 1.0, 0.111474277210884, 0.614953434436569, 1.0 ]
 													}
 ,
 													"text" : "p screen",
@@ -40944,7 +40946,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 348.0, 195.0, 778.0, 808.0 ],
+										"rect" : [ 348.0, 174.0, 778.0, 808.0 ],
 										"default_fontsize" : 10.0,
 										"gridsize" : [ 15.0, 15.0 ],
 										"toolbarvisible" : 0,
@@ -41947,7 +41949,7 @@
 												"box" : 												{
 													"bblend" : 100,
 													"bgcolor" : [ 0.095481, 0.100396, 0.100293, 1.0 ],
-													"celldef" : [ [ 0, 0, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 0, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 1, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 2, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 3, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 4, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 5, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 0, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 1, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 2, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 3, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 4, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 5, 0, 0, 0.392156862745098, 0.392156862745098, 0.392156862745098, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 6, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 7, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 8, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 9, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 10, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 11, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 12, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 13, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ] ],
+													"celldef" : [ [ 0, 0, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 0, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 1, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 2, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 3, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 4, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 5, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 0, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 1, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 2, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 3, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 4, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 5, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 6, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 7, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 8, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 9, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 10, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 11, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 12, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 13, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ] ],
 													"coldef" : [ [ 0, 100, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 1, 69, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ], [ 2, 540, 1, 0.0, 0.0, 0.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ] ],
 													"cols" : 3,
 													"colwidth" : 700,
@@ -49472,13 +49474,13 @@
 																				"box" : 																				{
 																					"fontname" : "Geneva",
 																					"fontsize" : 9.0,
-																					"id" : "obj-10",
+																					"id" : "obj-3",
 																					"maxclass" : "newobj",
 																					"numinlets" : 1,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "signal" ],
 																					"patching_rect" : [ 50.0, 100.0, 190.0, 0.0 ],
-																					"text" : "mc.sfrecord~ 16",
+																					"text" : "mc.sfrecord~ 2",
 																					"varname" : "sfr"
 																				}
 
@@ -49493,7 +49495,7 @@
 																			}
 , 																			{
 																				"patchline" : 																				{
-																					"destination" : [ "obj-10", 0 ],
+																					"destination" : [ "obj-3", 0 ],
 																					"source" : [ "obj-14", 0 ]
 																				}
 
@@ -50509,9 +50511,9 @@
 					"restore" : 					{
 						"act_menu" : [ "(__acts__)" ],
 						"audioON/OFF" : [ 0 ],
-						"chans" : [ 16 ],
+						"chans" : [ 2.0 ],
 						"def" : [ -1 ],
-						"envi_menu" : [ "ƒ buffertest" ],
+						"envi_menu" : [ "(environments)" ],
 						"favorites" : [ "(favorites)" ],
 						"jit.on" : [ 0 ],
 						"menubar" : [ 0 ],
@@ -50519,7 +50521,7 @@
 						"rec" : [ 0 ],
 						"screen" : [ 0 ],
 						"stereo" : [ 0 ],
-						"time" : [ 36026.0 ],
+						"time" : [ 45978.0 ],
 						"vol" : [ 1.0 ],
 						"vol_ramp" : [ 10 ],
 						"vol_slider" : [ 1.0 ],
@@ -50604,7 +50606,7 @@
 					"outlettype" : [ "", "", "int" ],
 					"outputmode" : 0,
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 33.0, 53.0, 19.0 ],
+					"patching_rect" : [ 1.67578125, 38.0, 49.32421875, 14.0 ],
 					"prototypename" : "vst_button",
 					"text" : "ppooll",
 					"textcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
@@ -50626,7 +50628,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 36.0, 57.0, 16.0 ],
+					"patching_rect" : [ 2.0, 37.0, 49.3515625, 15.0 ],
 					"textfile" : 					{
 						"filename" : "ll.logo.js",
 						"flags" : 0,
