@@ -3,15 +3,17 @@ autowatch = 1;
 const ll_prefs = new Dict("ppooll-preferences");
 const ll_paths = new Dict("ll_paths");
 
+const ll_version = "9.0.0";
+
 // --- Transform rules ---
 const updateMap = {
     "ll.blues::outputs": (v) => ({
         "ll.blues::outputs~": [v[0], "_"],
         "ll.blues::outputsMix~": [v[1], "_"]
     }),
-    "ll.blues::state": (v) => ({
+    "ll.blues::state": (v, json) => ({
         "ll.blues::status": [
-            0,
+            json["inputs~"] && json["inputs~"].indexOf("in(") > -1 ? 1 : 0,                      // in-mix
             v[1] % 2,
             v[2],
             v[3],
@@ -21,6 +23,7 @@ const updateMap = {
         ],
         "ll.blues::chans": [v[4], v[0]]
     }),
+    
 };
 
 var dryrun = 0;
@@ -42,20 +45,20 @@ declareattribute("removeoldparams", {
 // =====================================================
 
 function checkIfUpdated() {
-    if (ll_prefs.get("general::preset_files_updated_9") === 1) {
-        post("Presets already updated\n");
+    if (ll_prefs.get("general::version") === ll_version) {
+        // post("Presets already updated\n");
         return;
     }
-    post("Updating presets...\n");
+    post("Updating presets and environments for ppooll " + ll_version + "...\n");
     updateAll();
-    ll_prefs.replace("general::preset_files_updated_9", 1);
-    ll_prefs.save();
+    ll_prefs.replace("general::version", ll_version);
+    messnamed("ll_prf_rewrite", "bang");
 }
 
 function updateAll() {
     updateParams(ll_paths.get("user"));
     updateParams(ll_paths.get("factory"));
-    post("Preset update complete.\n");
+    // post("Preset update complete.\n");
 }
 
 // =====================================================
@@ -67,7 +70,7 @@ function updateParams(rootPath) {
         post("No path found.\n");
         return;
     }
-    post("Checking folder:", rootPath, "\n");
+    // post("Checking folder:", rootPath, "\n");
     traverseFolder(rootPath);
 }
 
@@ -108,7 +111,7 @@ function updateJsonFile(filepath) {
         const newJson = traverseJsonAndUpdate(json, (key, value) => {
             if (updateMap[key]) {
                 changed = true;
-                const newPairs = updateMap[key](value);
+                const newPairs = updateMap[key](value, json);
                 return { newPairs, removeOld: removeoldparams };
             }
             return null;
@@ -122,7 +125,7 @@ function updateJsonFile(filepath) {
                 writeDict.parse(JSON.stringify(newJson));
                 writeDict.export_json(filepath)
 
-                post("Updated:", filepath, "\n");
+                // post("Updated:", filepath, "\n");
             }
         }
     } catch (e) {

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 177.0, 131.0, 133.0, 124.0 ],
+		"rect" : [ 384.0, 151.0, 133.0, 124.0 ],
 		"default_fontsize" : 11.595186999999999,
 		"gridsize" : [ 15.0, 15.0 ],
 		"toolbarvisible" : 0,
@@ -519,7 +519,7 @@
 					"fontsize" : 12.0,
 					"hint" : "environment menu",
 					"id" : "obj-22",
-					"items" : [ "(environments)", ",", "<separator>", ",", "(folders)", ",", "duoklaus_klangtheater_251030", ",", "<separator>", ",", "(.json)", ",", "<none>", ",", "200722", ",", "210828 entfernte erkundungen", ",", "231216_onlinerauschen", ",", "231218_casio", ",", "240625 safeharbour", ",", "240625_safeharbour", ",", "ballon_191102", ",", "bang", ",", "bllb", ",", "density_semmel_240418", ",", "dorama_240103", ",", "drom_soniccell_230928", ",", "ducks_new", ",", "huch", ",", "jezshk19_191114", ",", "kramladen1", ",", "plat_241106", ",", "platanen_241007", ",", "quant-demo", ",", "snimpro_240419", ",", "spat.ambisonics-demo", ",", "stupid quant", ",", "subkutan_231116", ",", "subkutan_231118", ",", "subkutan_231125", ",", "subkutan_231205", ",", "subkutan_231208", ",", "subkutan_240930", ",", "subkutan_241011", ",", "test", ",", "versatz_191206", ",", "xok.24", ",", "xok.24b", ",", "xok24", ",", "äqui18_180920", ",", "<separator>", ",", "opentext", ",", "merge...", ",", "paramsonly", ",", "<separator>", ",", "(factory)", ",", "buffertest", ",", "ducks", ",", "envM_test" ],
+					"items" : [ "(environments)", ",", "<separator>", ",", "(folders)", ",", "<separator>", ",", "(.json)", ",", "<separator>", ",", "opentext", ",", "merge...", ",", "paramsonly", ",", "<separator>", ",", "(factory)" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -574,7 +574,7 @@
 					"fontsize" : 12.0,
 					"hint" : "favorites menu",
 					"id" : "obj-48",
-					"items" : [ "(favorites)", ",", "<none>", ",", "(favorites)", ",", "-", ",", "add_favorit", ",", "del_favorit" ],
+					"items" : [ "(favorites)", ",", "-", ",", "add_favorit", ",", "del_favorit" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -602,7 +602,7 @@
 					"fontsize" : 12.0,
 					"hint" : "act menu (open acts from here)",
 					"id" : "obj-50",
-					"items" : [ "(__acts__)", ",", "_act_overview", ",", "2Dsliders", ",", "amxd@", ",", "analyze@", ",", "animator@", ",", "arpanner", ",", "autocount@", ",", "bandfollower", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "bildsynthi", ",", "brown", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "forbiddenP", ",", "frack", ",", "freeverb@", ",", "frequenzteiler", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.2oscbank", ",", "jit.3m@", ",", "jit.blobs", ",", "jit.brcosa@", ",", "jit.buf", ",", "jit.buffer@", ",", "jit.copyprot.act", ",", "jit.display@", ",", "jit.grab@", ",", "jit.lcd@", ",", "jit.op@", ",", "jit.player", ",", "jit.slide@", ",", "jit.videoplanes", ",", "jit.videoplanesP", ",", "jit.world@", ",", "kaos@", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "limi", ",", "link@", ",", "lkforest@", ",", "matriarch@", ",", "matrix@", ",", "mc.mod", ",", "mc.random@", ",", "mcpanner", ",", "midikeys", ",", "mixer@", ",", "modul.ator", ",", "morph", ",", "mubugrain@", ",", "multitap", ",", "munger@", ",", "noize@", ",", "normalize", ",", "notepad@", ",", "op@", ",", "oscbank@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "period", ",", "pHARM4@", ",", "pr.6groov", ",", "pr.spectfreeze", ",", "pr.spectplay", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "SDIFter", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.abba@", ",", "spat.ambicontrol@", ",", "spat.ambidecode@", ",", "spat.ambiencode@", ",", "spat.ambimonitor@", ",", "spat.ambipanning@", ",", "spat.ambitransform@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "threekomp", ",", "timeline@", ",", "transientshaper", ",", "TSSSF", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "echoplex@", ",", "efx.step@", ",", "efx.stnp@", ",", "efx.sttp@", ",", "efx.stxp@", ",", "ellipsis@", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gf.graindelay", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "lk.stutz@", ",", "oer_prcs", ",", "oer_prcss", ",", "polyrhythmus", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "smpseq@", ",", "snes@", ",", "snesHardmode@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "dense", ",", "envzeugg", ",", "gebroesel@", ",", "lapsepulse", ",", "ltrosc-poly@", ",", "ltrosc@", ",", "ltroscbell@", ",", "ltroscx@", ",", "mvmnt-2d@_240811", ",", "mvmnt@_160527", ",", "navierstokes", ",", "plat", ",", "ppooll_convention", ",", "ppooll_conventionb", ",", "revvverb@", ",", "revvverb@_prime", ",", "rungler_200528", ",", "rungler_200701", ",", "spat.revv@", ",", "subku", ",", "subryth_230528", ",", "subryth_230626", ",", "subryth_250827", ",", "subseq", ",", "volcontrol", ",", "wavelets+", ",", "wavelets-control@", ",", "wt_rdis" ],
+					"items" : "(__acts__)",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -658,10 +658,238 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 94.0, 519.0, 335.0, 623.0 ],
+						"rect" : [ 94.0, 299.0, 335.0, 623.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"toolbarvisible" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"fontsize" : 16.0,
+									"id" : "obj-7",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 0,
+									"patcher" : 									{
+										"fileversion" : 1,
+										"appversion" : 										{
+											"major" : 9,
+											"minor" : 0,
+											"revision" : 9,
+											"architecture" : "x64",
+											"modernui" : 1
+										}
+,
+										"classnamespace" : "box",
+										"rect" : [ 84.0, 144.0, 1000.0, 707.0 ],
+										"gridsize" : [ 15.0, 15.0 ],
+										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-10",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 84.0, 86.0, 92.0, 22.0 ],
+													"text" : "checkIfUpdated"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"attr" : "dryrun",
+													"id" : "obj-3",
+													"maxclass" : "attrui",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 346.0, 64.0, 150.0, 22.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-12",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 346.0, 28.0, 59.0, 22.0 ],
+													"text" : "updateAll"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-7",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 346.0, 218.0, 134.0, 22.0 ],
+													"text" : "prepend updateParams"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-6",
+													"linecount" : 2,
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 346.0, 167.0, 322.0, 35.0 ],
+													"presentation_linecount" : 2,
+													"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Library/ppooll_presets\""
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-5",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 391.0, 100.0, 29.5, 22.0 ],
+													"text" : "3"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-4",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 346.0, 100.0, 29.5, 22.0 ],
+													"text" : "2"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-2",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 346.0, 134.0, 79.0, 22.0 ],
+													"text" : "ll.ppoollpaths"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"embedstate" : [ [ "dryrun", 0 ], [ "removeoldparams", 0 ] ],
+													"filename" : "ll.update_params.js",
+													"id" : "obj-8",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 191.0, 250.0, 129.0, 22.0 ],
+													"saved_object_attributes" : 													{
+														"parameter_enable" : 0
+													}
+,
+													"text" : "v8 ll.update_params.js",
+													"textfile" : 													{
+														"filename" : "ll.update_params.js",
+														"flags" : 0,
+														"embed" : 0,
+														"autowatch" : 1
+													}
+
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-1",
+													"maxclass" : "newobj",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 84.0, 55.0, 128.0, 22.0 ],
+													"text" : "r ll_preferences_ready"
+												}
+
+											}
+ ],
+										"lines" : [ 											{
+												"patchline" : 												{
+													"destination" : [ "obj-10", 0 ],
+													"source" : [ "obj-1", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-8", 0 ],
+													"source" : [ "obj-10", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-8", 0 ],
+													"source" : [ "obj-12", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-6", 1 ],
+													"source" : [ "obj-2", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-8", 0 ],
+													"source" : [ "obj-3", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-2", 0 ],
+													"source" : [ "obj-4", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-2", 0 ],
+													"source" : [ "obj-5", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-7", 0 ],
+													"source" : [ "obj-6", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-8", 0 ],
+													"source" : [ "obj-7", 0 ]
+												}
+
+											}
+ ]
+									}
+,
+									"patching_rect" : [ 173.0, 310.5, 133.0, 26.0 ],
+									"text" : "p update_params"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 13.0,
@@ -1177,7 +1405,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 162.5, 33.0, 23.0 ],
-																	"text" : "",
+																	"text" : "",
 																	"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
 																}
 
@@ -1282,7 +1510,6 @@
 													"outputmode" : 1,
 													"parameter_enable" : 0,
 													"patching_rect" : [ 479.0, 37.0, 34.0, 22.0 ],
-													"text" : "",
 													"textjustification" : 1,
 													"varname" : "audio_key"
 												}
@@ -1851,12 +2078,13 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-5",
+																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 339.0, 243.0, 79.0, 35.0 ],
-																	"text" : "\"ƒ buffertest\""
+																	"text" : "(environments)"
 																}
 
 															}
@@ -4364,8 +4592,6 @@
 																	"saved_object_attributes" : 																	{
 																		"autostart" : 1,
 																		"defer" : 0,
-																		"node_bin_path" : "",
-																		"npm_bin_path" : "",
 																		"watch" : 0
 																	}
 ,
@@ -11686,13 +11912,13 @@
 													"fontname" : "Arial",
 													"fontsize" : 12.0,
 													"id" : "obj-5",
-													"linecount" : 3,
+													"linecount" : 4,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 425.0, 220.5, 241.0, 62.0 ],
-													"text" : "\"cxhmbp:/Users/cxh/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets\""
+													"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets\""
 												}
 
 											}
@@ -12040,7 +12266,7 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-29",
-													"items" : [ "(__acts__)", ",", "_act_overview", ",", "2Dsliders", ",", "amxd@", ",", "analyze@", ",", "animator@", ",", "arpanner", ",", "autocount@", ",", "bandfollower", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "bildsynthi", ",", "brown", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "forbiddenP", ",", "frack", ",", "freeverb@", ",", "frequenzteiler", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.2oscbank", ",", "jit.3m@", ",", "jit.blobs", ",", "jit.brcosa@", ",", "jit.buf", ",", "jit.buffer@", ",", "jit.copyprot.act", ",", "jit.display@", ",", "jit.grab@", ",", "jit.lcd@", ",", "jit.op@", ",", "jit.player", ",", "jit.slide@", ",", "jit.videoplanes", ",", "jit.videoplanesP", ",", "jit.world@", ",", "kaos@", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "limi", ",", "link@", ",", "lkforest@", ",", "matriarch@", ",", "matrix@", ",", "mc.mod", ",", "mc.random@", ",", "mcpanner", ",", "midikeys", ",", "mixer@", ",", "modul.ator", ",", "morph", ",", "mubugrain@", ",", "multitap", ",", "munger@", ",", "noize@", ",", "normalize", ",", "notepad@", ",", "op@", ",", "oscbank@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "period", ",", "pHARM4@", ",", "pr.6groov", ",", "pr.spectfreeze", ",", "pr.spectplay", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "SDIFter", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.abba@", ",", "spat.ambicontrol@", ",", "spat.ambidecode@", ",", "spat.ambiencode@", ",", "spat.ambimonitor@", ",", "spat.ambipanning@", ",", "spat.ambitransform@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "threekomp", ",", "timeline@", ",", "transientshaper", ",", "TSSSF", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "echoplex@", ",", "efx.step@", ",", "efx.stnp@", ",", "efx.sttp@", ",", "efx.stxp@", ",", "ellipsis@", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gf.graindelay", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "lk.stutz@", ",", "oer_prcs", ",", "oer_prcss", ",", "polyrhythmus", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "smpseq@", ",", "snes@", ",", "snesHardmode@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "dense", ",", "envzeugg", ",", "gebroesel@", ",", "lapsepulse", ",", "ltrosc-poly@", ",", "ltrosc@", ",", "ltroscbell@", ",", "ltroscx@", ",", "mvmnt-2d@_240811", ",", "mvmnt@_160527", ",", "navierstokes", ",", "plat", ",", "ppooll_convention", ",", "ppooll_conventionb", ",", "revvverb@", ",", "revvverb@_prime", ",", "rungler_200528", ",", "rungler_200701", ",", "spat.revv@", ",", "subku", ",", "subryth_230528", ",", "subryth_230626", ",", "subryth_250827", ",", "subseq", ",", "volcontrol", ",", "wavelets+", ",", "wavelets-control@", ",", "wt_rdis" ],
+													"items" : [ "(__acts__)", ",", "_act_overview", ",", "2Dsliders", ",", "amxd@", ",", "arpanner", ",", "autocount@", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "brown", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "frack", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.copyprot.act", ",", "jit.grab@", ",", "jit.player", ",", "jit.videoplanes", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "limi", ",", "link@", ",", "lkforest@", ",", "matriarch@", ",", "matrix@", ",", "mc.mod", ",", "mc.random@", ",", "mixer@", ",", "modul.ator", ",", "munger@", ",", "noize@", ",", "notepad@", ",", "op@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "pHARM4@", ",", "pr.spectfreeze", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "threekomp", ",", "timeline@", ",", "transientshaper", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "oer_prcs", ",", "oer_prcss", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "airfx@", ",", "ar.bitglitter@", ",", "bb.rainer@", ",", "bounce@", ",", "buresyn@", ",", "clock.in@", ",", "clock.src@", ",", "convolver@", ",", "cross-dog@", ",", "dd.rainer", ",", "deskdust", ",", "djrone@", ",", "djrone_buff@", ",", "dl.granulator@", ",", "dlgranulator@", ",", "duplicator@", ",", "env.follower@", ",", "failure", ",", "fcbControl", ",", "feedbliss", ",", "feedbliss_v2", ",", "fft.filter@", ",", "gamepad@", ",", "gigaverb@", ",", "granu.ll.ator", ",", "INa", ",", "joe.groove@", ",", "keyfreq", ",", "keyspeed", ",", "lkforest@", ",", "lkstretch", ",", "miClouds", ",", "miVerb", ",", "mlooch@", ",", "mmarbless", ",", "mmods@", ",", "modul.dupe", ",", "moog.ladder@", ",", "mubu.grain@", ",", "MubuConcat", ",", "MubuGrain", ",", "munger_old@", ",", "music-mouse@", ",", "notepad2@", ",", "ola.granular", ",", "pitchchainer", ",", "pitchtracker@", ",", "polyrhythmusTwo", ",", "pp.rainer@", ",", "pr.spectdelay", ",", "rc.loop@", ",", "rings", ",", "sc.gendy3@", ",", "sh.bubbler", ",", "sidechainer", ",", "slur@", ",", "sogs@", ",", "sp.lpg", ",", "sync_out", ",", "tintinn@", ",", "transport@", ",", "tuner", ",", "uclid", ",", "vp.sourcefilter", ",", "wavegrain", ",", "z.filter@" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -13011,12 +13237,13 @@
 																	"fontname" : "Arial",
 																	"fontsize" : 13.0,
 																	"id" : "obj-12",
+																	"linecount" : 2,
 																	"maxclass" : "message",
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 113.0, 171.0, 337.0, 38.0 ],
-																	"text" : "\"cxhmbp:/Users/cxh/Documents/Max 9/Packages\""
+																	"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Packages\""
 																}
 
 															}
@@ -14317,7 +14544,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 25.0, 390.0, 371.0, 35.0 ],
-																	"text" : "read \"cxhmbp:/Users/cxh/Library/Application Support/Cycling '74/Max 9/Settings/maxpackages.json\""
+																	"text" : "read \"Macintosh HD:/Users/josephsteccato/Library/Application Support/Cycling '74/Max 9/Settings/maxpackages.json\""
 																}
 
 															}
@@ -17910,7 +18137,7 @@
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 241.0, 14.0, 301.0, 35.0 ],
-																	"text" : "\"cxhmbp:/Users/cxh/Documents/Max 9/Library/ppooll_presets/ho_stT\""
+																	"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Library/ppooll_presets/ho_stT\""
 																}
 
 															}
@@ -32187,7 +32414,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 190.0, 31.0, 392.0, 35.0 ],
-																					"text" : "\"cxhmbp:/Users/cxh/Documents/Max 9/Library/ppooll_presets/demosound@T\""
+																					"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Library/ppooll_presets/xgroove@T\""
 																				}
 
 																			}
@@ -32206,7 +32433,7 @@
 , 																			{
 																				"box" : 																				{
 																					"id" : "obj-66",
-																					"items" : [ "1440_presets.json", ",", "1440wide.json" ],
+																					"items" : [ "musichackspace.json", ",", "wide", ",", "wide.json" ],
 																					"maxclass" : "umenu",
 																					"numinlets" : 1,
 																					"numoutlets" : 3,
@@ -32319,7 +32546,7 @@
 																					"numoutlets" : 1,
 																					"outlettype" : [ "" ],
 																					"patching_rect" : [ 110.0, 383.0, 103.0, 22.0 ],
-																					"text" : "tiny"
+																					"text" : "wide"
 																				}
 
 																			}
@@ -32686,7 +32913,7 @@
 , 															{
 																"box" : 																{
 																	"id" : "obj-7",
-																	"items" : [ "3kompP", ",", "beastP", ",", "beautyP", ",", "BenjolinoP", ",", "buffer_hostP", ",", "chebyshev@P", ",", "control@P", ",", "demosound@T", ",", "denseP", ",", "environmentsP", ",", "eq@P", ",", "gg.rainerP", ",", "ho_stP", ",", "INmultiP", ",", "limiP", ",", "ltrosc@P", ",", "munger@P", ",", "navierstokesP", ",", "noize@P", ",", "notepad@P", ",", "op@P", ",", "paf@P", ",", "platP", ",", "ppooll_conventionP", ",", "quantP", ",", "rec_eventsSeq", ",", "revvverb@P", ",", "snap@P", ",", "spat.ambicontrol@P", ",", "spat.ambidecode@P", ",", "spat.ambimonitor@P", ",", "subkuP", ",", "subrythP", ",", "subseqP", ",", "threekompP", ",", "transientshaperP", ",", "volcontrolP", ",", "waveshapers@P", ",", "wt_rdisP", ",", "x_filterP" ],
+																	"items" : [ ".git", ",", "amxd@P", ",", "amxd@T", ",", "ar.bitglitter@T", ",", "autocount@T", ",", "bangerP", ",", "beastP", ",", "buffer_hostP", ",", "buffubT", ",", "chucker@T", ",", "control@P", ",", "dlgranulator@P", ",", "environmentsP", ",", "fcbControlT", ",", "flopP", ",", "gamepad@T", ",", "gizmo@P", ",", "ho_stP", ",", "INmultiP", ",", "keyfreqP", ",", "matriarch@P", ",", "mmods@P", ",", "modul.atorP", ",", "modul.atorT", ",", "notepad@P", ",", "notepad@T", ",", "plug@P", ",", "polyrhythmusP", ",", "rc.loop@T", ",", "rec_eventsSeq", ",", "rombT", ",", "sh.bubblerT", ",", "sinusP", ",", "sinusT", ",", "snap@P", ",", "uclidP", ",", "vst@P", ",", "w_filterT", ",", "waveletsP", ",", "xgroove@P", ",", "xgroove@T" ],
 																	"maxclass" : "umenu",
 																	"numinlets" : 1,
 																	"numoutlets" : 3,
@@ -39643,7 +39870,7 @@
 														"boxes" : [ 															{
 																"box" : 																{
 																	"border" : 0,
-																	"embedstate" : [ [ "bgcolor", 0, 0, 0, 0 ], [ "crop", 0, 0, 1, 1 ], [ "fgcolor", 1.1, 0.211474277210884, 0.714953434436569, 1.1 ], [ "zoom", 0.92 ] ],
+																	"embedstate" : [ [ "bgcolor", 0, 0, 0, 0 ], [ "crop", 0, 0, 1, 1 ], [ "fgcolor", 0.232617950439453, 0.146268757432699, 0.29665664434433, 1.1 ], [ "zoom", 0.92 ] ],
 																	"filename" : "ll.logo.js",
 																	"id" : "obj-28",
 																	"maxclass" : "v8ui",
@@ -40096,13 +40323,13 @@
 
 															}
  ],
-														"bgcolor" : [ 1.0, 0.111474277210884, 0.614953434436569, 1.0 ]
+														"bgcolor" : [ 0.132617950439453, 0.046268757432699, 0.19665664434433, 1.0 ]
 													}
 ,
 													"patching_rect" : [ 427.0, 270.0, 64.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"fontsize" : 10.0,
-														"locked_bgcolor" : [ 1.0, 0.111474277210884, 0.614953434436569, 1.0 ]
+														"locked_bgcolor" : [ 0.132617950439453, 0.046268757432699, 0.19665664434433, 1.0 ]
 													}
 ,
 													"text" : "p screen",
@@ -47780,7 +48007,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 266.0, 718.0, 212.0, 20.0 ],
-													"text" : "load (favorites).maxpat"
+													"text" : "load (__acts__).maxpat"
 												}
 
 											}
@@ -49474,13 +49701,13 @@
 																				"box" : 																				{
 																					"fontname" : "Geneva",
 																					"fontsize" : 9.0,
-																					"id" : "obj-3",
+																					"id" : "obj-4",
 																					"maxclass" : "newobj",
 																					"numinlets" : 1,
 																					"numoutlets" : 1,
 																					"outlettype" : [ "signal" ],
 																					"patching_rect" : [ 50.0, 100.0, 190.0, 0.0 ],
-																					"text" : "mc.sfrecord~ 2",
+																					"text" : "mc.sfrecord~ 16",
 																					"varname" : "sfr"
 																				}
 
@@ -49495,7 +49722,7 @@
 																			}
 , 																			{
 																				"patchline" : 																				{
-																					"destination" : [ "obj-3", 0 ],
+																					"destination" : [ "obj-4", 0 ],
 																					"source" : [ "obj-14", 0 ]
 																				}
 
@@ -50511,7 +50738,7 @@
 					"restore" : 					{
 						"act_menu" : [ "(__acts__)" ],
 						"audioON/OFF" : [ 0 ],
-						"chans" : [ 2.0 ],
+						"chans" : [ 16 ],
 						"def" : [ -1 ],
 						"envi_menu" : [ "(environments)" ],
 						"favorites" : [ "(favorites)" ],
@@ -50521,7 +50748,7 @@
 						"rec" : [ 0 ],
 						"screen" : [ 0 ],
 						"stereo" : [ 0 ],
-						"time" : [ 45978.0 ],
+						"time" : [ 46469.0 ],
 						"vol" : [ 1.0 ],
 						"vol_ramp" : [ 10 ],
 						"vol_slider" : [ 1.0 ],
@@ -50976,6 +51203,13 @@
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../patchers/abstractions/filip",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.update_params.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
