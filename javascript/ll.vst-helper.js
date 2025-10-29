@@ -301,6 +301,10 @@ function setDefFoldersJit() {
     jit_define_folders("set", 0, vst_folders.length, "new");
 }
 
+function ll_prf_rewrite(){
+    messnamed("ll_prf_rewrite", "bang");
+}
+
 function addFolder(newFolder) {
     const ll_prefs = new Dict("ppooll-preferences");
     const vst_folders = ll_prefs.get("file_paths::vst@_folders");
@@ -308,7 +312,7 @@ function addFolder(newFolder) {
     vst_folders.push(newFolder);
     ll_prefs.set("file_paths::vst@_folders", vst_folders);
 
-    messnamed("ll_prf_rewrite");
+    ll_prf_rewrite()
     resetMenu();
     setDefFoldersJit();
 }
@@ -320,7 +324,7 @@ function deleteFolder(row) {
     vst_folders.splice(row, 1);
     ll_prefs.set("file_paths::vst@_folders", vst_folders);
 
-    messnamed("ll_prf_rewrite");
+    ll_prf_rewrite()
     resetMenu();
     setDefFoldersJit();
 }
