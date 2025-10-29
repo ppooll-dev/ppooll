@@ -133,6 +133,8 @@ function getAuthors(){
 // print initial ppooll messages to the console
 //   if ppooll pref "check-for-updates", run update check
 function bang(){
+	max.setattr("restorewindows", 0);
+
 	// get version
 	var thisVersion = getCurrentVersion()
 	var VERSION = ["--------------------------version-"+thisVersion+"------------------------------------------"]
