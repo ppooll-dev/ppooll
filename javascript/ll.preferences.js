@@ -16,7 +16,7 @@ var empty_prf_DEFAULT = {
         "audioON/OFF": 0,
         quickrecord_samptype: "int24",
         quickrecord_fileformat: "wav",
-        cluewindow: 1,
+        cluewindow: 0,
         pfl_channel: 0,
         autoload: "none",
         check_for_updates: 0,
