@@ -66,7 +66,7 @@ const S = {
     rowheight: 13,
 };
 
-var tpp, actpatcher, bpatcher, out_patcher;
+var tpp, actpatcher, bpatcher, out_patcher, outMix_patcher;
 
 /* ============================== ATTRIBUTES ============================== */
 
@@ -824,15 +824,15 @@ function outputs() {
     const a = arrayfromargs(arguments);
     const out_parse = chan_sep(a);
 	//post("outputs",out_parse[0],out_parse[1],out_parse[2],out_parse[3],"current", S.outputsParseCurrent,"\n");
-    script_outpatchers(out_parse, S.outputsParseCurrent);
+    script_outpatchers(out_parse, S.outputsParseCurrent, out_patcher);
     S.outputsParseCurrent = out_parse;
 }
 
 function outputsMix() {
-    out_patcher = this.patcher.getnamed("outputsMix").subpatcher();
+    outMix_patcher = this.patcher.getnamed("outputsMix").subpatcher();
     const a = arrayfromargs(arguments);
 	const out_parse = chan_sep(a);
-    script_outpatchers(out_parse, S.outputsMixParseCurrent);
+    script_outpatchers(out_parse, S.outputsMixParseCurrent, outMix_patcher);
     S.outputsMixParseCurrent = out_parse;
 }
 
@@ -870,7 +870,7 @@ function chan_sep(a) { //calculate the channel structure from pattr value
     return [chans_sep, d_offsets, dests, dest_chs];
 }
 
-function script_outpatchers(a, b) {
+function script_outpatchers(a, b, out_p) {
     const chans_sep = a[0],
         d_offsets = a[1],
         dests = a[2];
@@ -884,52 +884,52 @@ function script_outpatchers(a, b) {
         JSON.stringify(dests) !== JSON.stringify(old_dests),
     ];
 	//post("changed",changed,"\n");
-    let sep = out_patcher.getnamed("sep");
+    let sep = out_p.getnamed("sep");
     const al = chans_sep.length,
         bl = old_chans.length;
 
-    if (changed[2]) newsends(al, bl, d_offsets, dests, a[3]);
-    if (changed[1] && !changed[2]) newsends(al, bl, d_offsets, dests, a[3]);
+    if (changed[2]) newsends(al, bl, d_offsets, dests, a[3], out_p);
+    if (changed[1] && !changed[2]) newsends(al, bl, d_offsets, dests, a[3], out_p);
 
     if (changed[0]) {
-        out_patcher.remove(out_patcher.getnamed("sep"));
+        out_p.remove(out_p.getnamed("sep"));
         if (al > 1) {
-            sep = out_patcher.newdefault(40, 80, "mc.separate~", chans_sep);
+            sep = out_p.newdefault(40, 80, "mc.separate~", chans_sep);
             sep.varname = "sep";
             sep.rect = [40, 80, 400, 102];
-            out_patcher.connect(out_patcher.getnamed("in"), 0, sep, 0);
+            out_p.connect(out_p.getnamed("in"), 0, sep, 0);
         }
     }
 
     if (changed[0] || changed[1] || changed[2]) {
         if (al === 1)
-            out_patcher.connect(
-                out_patcher.getnamed("in"),
+            out_p.connect(
+                out_p.getnamed("in"),
                 0,
-                out_patcher.getnamed("send0"),
+                out_p.getnamed("send0"),
                 0
             );
         else
             for (let i = 0; i < al; i++)
-                out_patcher.connect(
+                out_p.connect(
                     sep,
                     i,
-                    out_patcher.getnamed("send" + i),
+                    out_p.getnamed("send" + i),
                     0
                 );
     }
 }
 
-function newsends(al, bl, d_offsets, dests, dest_ch) {
+function newsends(al, bl, d_offsets, dests, dest_ch, out_p) {
     for (let i = 0; i < bl; i++)
-        out_patcher.remove(out_patcher.getnamed("send" + i));
+        out_p.remove(out_p.getnamed("send" + i));
 
     for (let i = 0; i < al; i++) {
         let s;
         if (d_offsets[i] === 1)
-            s = out_patcher.newdefault(100, 100, "mc.send~", dests[i]);
+            s = out_p.newdefault(100, 100, "mc.send~", dests[i]);
         else
-            s = out_patcher.newdefault(100, 100, "ll.mc.s~", d_offsets[i] - 1, dests[i], dest_ch[i] );
+            s = out_p.newdefault(100, 100, "ll.mc.s~", d_offsets[i] - 1, dests[i], dest_ch[i] );
         s.varname = "send" + i;
         s.rect = [40 + 80 * i, 120, 40 + 80 * i + 70, 132];
     }
