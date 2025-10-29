@@ -27,10 +27,10 @@ var empty_prf_DEFAULT = {
         quickrecord_path: 0,
         unshared_acts: "",
         sdif_folder: "",
-        sound_folders: "",
-        "vst@_folders": "",
-        "amxd@_folders": "",
-        "jit.rec_folders": "",
+        sound_folders: [],
+        "vst@_folders": [],
+        "amxd@_folders": [],
+        "jit.rec_folders": [],
     },
     act_usage: {
         favorite_acts: "",
@@ -48,6 +48,59 @@ var empty_prf_DEFAULT = {
         write_sample_buffers: 0,
     },
 };
+
+function reorderByTemplate(obj, template) {
+    const reordered = {};
+    for (const key of Object.keys(template)) {
+        if (obj.hasOwnProperty(key)) {
+            if (
+                typeof template[key] === "object" &&
+                !Array.isArray(template[key]) &&
+                template[key] !== null
+            ) {
+                // Recursively reorder nested objects
+                reordered[key] = reorderByTemplate(obj[key], template[key]);
+            } else {
+                reordered[key] = obj[key];
+            }
+        }
+    }
+    // Include any extra keys not in the template, at the end
+    for (const key of Object.keys(obj)) {
+        if (!template.hasOwnProperty(key)) {
+            reordered[key] = obj[key];
+        }
+    }
+
+    return reordered;
+}
+
+function normalizeFolderArrays() {
+    const folderKeys = [
+        "file_paths::sound_folders",
+        "file_paths::vst@_folders",
+        "file_paths::amxd@_folders",
+        "file_paths::jit.rec_folders",
+    ];
+    for (let key of folderKeys) {
+        let val = preferences.get(key);
+        // Convert empty string or single string to array
+        if (typeof val === "string") {
+            if (val.trim() === "") {
+                preferences.set(key, []);
+            } else if (val.includes(",")) {
+                // if user saved as comma-separated list
+                preferences.set(
+                    key,
+                    val.split(",").map((v) => v.trim())
+                );
+            } else {
+                preferences.set(key, [val]);
+            }
+        }
+    }
+    ll_prf_rewrite(); // re-save updated JSON
+}
 
 function ll_prf_rewrite() {
     preferences.export_json(presetpath + "/ppooll-preferences.json");
@@ -196,7 +249,8 @@ function sethost_channels(c) {
     ll_prf_rewrite();
 }
 
-function text(entered_text) { // audio key
+function text(entered_text) {
+    // audio key
     let key = entered_text ? entered_text.slice(-1).charCodeAt(0) : 0;
     this.patcher
         .getnamed("audio_key")
@@ -214,12 +268,12 @@ function readfile() {
 
     if (f.isopen) {
         f.close();
-		readDict(pref_file) // read from .json
+        readDict(pref_file); // read from .json
     } else {
         post("could not open file: " + pref_file + " creating...", "\n");
-		newPref(pref_file); // create new .json
+        newPref(pref_file); // create new .json
     }
-	// get_preferences()  // instead, run after 1 sec delay outside v8
+    // get_preferences()  // instead, run after 1 sec delay outside v8
 }
 
 function get_preferences() {
@@ -244,7 +298,7 @@ function get_preferences() {
     //outlet(0,"envi",autoload);
 
     // general::check_for_updates
-	check_for_updates = preferences.get("general::check_for_updates");
+    check_for_updates = preferences.get("general::check_for_updates");
     // general::clue_window
     cluewindow = preferences.get("general::cluewindow");
     if (cluewindow) max.showclue(); // can only be open, not closed
@@ -275,7 +329,7 @@ function get_preferences() {
 // create ppooll_preferences.json if DNE
 function newPref(path) {
     preferences.parse(JSON.stringify(empty_prf_DEFAULT));
-	preferences.export_json(path);
+    preferences.export_json(path);
 }
 
 // read preferences .json into dict, merge with EMPTY to update new params
@@ -289,9 +343,12 @@ function readDict(path) {
 
     // merge the dicts into json
     var merged = mergeDicts(preferences, empty_prf);
+    merged = reorderByTemplate(merged, empty_prf_DEFAULT);
 
     // set ppooll_prefs from merged json
     preferences.parse(JSON.stringify(merged));
+
+    normalizeFolderArrays();
 
     // overwrite the file
     preferences.export_json(path);
