@@ -61,6 +61,8 @@ function doit(a, p) {
     let re = tp.newdefault(10, 10, "mc.receive~", act + "~" + path, chan);
     re.varname = "re";
     tp.connect(re, 0, tp.getnamed("out"), 0);
+
+    messnamed("ll_state_inputs_update", "bang");
 }
 
 function getBlues() {
@@ -74,11 +76,15 @@ function getBlues() {
 }
 
 function freebang(){
-	//post("aha",stateDict.getkeys(),"\n");
-	let keys = stateDict.getkeys();
-	if (keys && keys.indexOf(act) > -1){
-		stateDict.remove(act+"::inputs~::"+path);
-	}
-	//post("js removed",act,path,"\n");
+    try{
+        //post("aha",stateDict.getkeys(),"\n");
+        let keys = stateDict.getkeys();
+        if (keys && keys.indexOf(act) > -1 && stateDict.get(act+"::inputs~::"+path)){
+            stateDict.remove(act+"::inputs~::"+path);
+        }
+	    //post("js removed",act,path,"\n");
+    }catch(e){
+        post(e.stringify(), "\n")
+    }
 } 
 
