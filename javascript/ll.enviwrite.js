@@ -1,6 +1,6 @@
-/* 	
-	ll.enviwrite.js
+/* ll.enviwrite.js
 	by joe steccato & klaus filip
+    with help from Carnarts -- thank you!
 	
 	write all act properties and parameter values to [dict environment]
 */
@@ -21,9 +21,9 @@ var cl;
 let dict = null;
 let environment = null;
 
-const ignorePresets = ["ho_st1"]
+const ignorePresets = ["ho_st1"];
 
-const subfolders = ["presets"]
+const subfolders = ["presets"];
 
 let acts = null;
 let buffers = null;
@@ -41,32 +41,50 @@ let enviName = null;
 
 let fileExt = "wav";
 
-function ppost(msg){
-    post("ppooll write environment: ", msg)
-    post()
+function ppost(msg) {
+    post("ppooll write environment: ", msg);
+    post();
 }
 
-function msg_dictionary(d){
-    if(!d.props.envi_name || d.props.envi_name.trim() === ""){
-        ppost("Error: invalid filename for environment")
-        return
+function msg_dictionary(d) {
+    if (!d.props.envi_name || d.props.envi_name.trim() === "") {
+        ppost("Error: invalid filename for environment");
+        return;
     }
 
     ppost(`writing '${d.props.envi_name}' (${d.props.type})`);
     dict = {
         fileExt,
-        ...d
-    }
+        ...d,
+    };
     // Set buffer audio file export file extension
     fileExt = dict.fileExt;
     pending = null;
 
     // Set environment path
-    const ll_paths = new Dict("ll_paths")
+    const ll_paths = new Dict("ll_paths");
 
     enviDir = ll_paths.get("user") + "/environmentsP";
 
     buffers = dict.buffers.buffers;
+
+    // Robustly initialize buffers_dict using deep copy with error handling.
+    // This allows copying nested objects (which [object Object] indicates) without crashing.
+    buffers_dict = buffers
+        ? buffers.map((item) => {
+              if (!item) return null;
+              try {
+                  // Attempt a deep copy of the item. This handles both arrays and nested objects.
+                  return JSON.parse(JSON.stringify(item));
+              } catch (e) {
+                  // Fallback for complex Max/MSP objects that can't be stringified
+                  ppost(
+                      `WARNING: Failed to deep-copy buffer item (JSON error): ${e.message}`
+                  );
+                  return null;
+              }
+          })
+        : [];
 
     // Get acts from 'dict ppoollstate'
     acts = Object.keys(dict.state);
@@ -76,16 +94,15 @@ function msg_dictionary(d){
 
     enviName = writeParams.envi_name;
 
-    let subs = [...subfolders]
-    if(acts.indexOf("buffer_host1") > -1 && writeParams.copy_buffers)
-        subs.push("buffers")
+    let subs = [...subfolders];
+    if (acts.indexOf("buffer_host1") > -1 && writeParams.copy_buffers)
+        subs.push("buffers");
 
-     // Create Environment folders.  Creation triggers setBuffers
-    if(writeParams.type === "folder"){
-        outlet(0, 'folder', 'create', `${enviDir}/${enviName}`, ...subs);
-        outlet(0, 'folder', 'clear', `${enviDir}/${enviName}`, "presets");
-
-    }else if(writeParams.type === "json"){
+    // Create Environment folders.  Creation triggers setBuffers
+    if (writeParams.type === "folder") {
+        outlet(0, "folder", "create", `${enviDir}/${enviName}`, ...subs);
+        outlet(0, "folder", "clear", `${enviDir}/${enviName}`, "presets");
+    } else if (writeParams.type === "json") {
         dict.props.jsonPath = `${enviDir}/${enviName}.json`;
         writeEnvi();
     }
@@ -97,40 +114,54 @@ function removeExtension(filename) {
 }
 
 // Save presets, buffers to created folders
-async function saveToFolder(){
-    // Save buffers
-    if(acts.indexOf("buffer_host1") > -1 && writeParams.copy_buffers){
-        ppost("copy buffers...")
-        buffers.forEach((b,i) => {
-            if(b.full_path){
-                const newFile = `${enviDir}/${enviName}/buffers/${b.label}.${fileExt}`;
-                if(writeParams.write_files){
+async function saveToFolder() {
+    // Wrap buffer saving in try/catch to ensure environment metadata is written even if buffers fail.
+    try {
+        // Save buffers
+        if (acts.indexOf("buffer_host1") > -1 && writeParams.copy_buffers) {
+            ppost("copy buffers...");
+            buffers.forEach((b, i) => {
+                // FIX 4: Check if the buffer's data structure is null before accessing its properties.
+                if (!buffers_dict[i]) {
+                    // CHANGED: Log the raw buffer data at that index for inspection.
+                    ppost(
+                        `WARNING: Skipping buffer at index ${i} due to null entry in buffers_dict. Raw buffer item: ${b}`
+                    );
+                    return; // Skip this iteration if the data is null
+                }
+
+                if (b.full_path) {
+                    const newFile = `${enviDir}/${enviName}/buffers/${b.label}.${fileExt}`;
+                    if (writeParams.write_files) {
+                        // Write file to envi folder
+                        pb.send(b.buffer_index, "write", newFile);
+
+                        // Replace polybuffer~ with newly created files
+                        pb.send(b.buffer_index, "read", newFile);
+                    } else {
+                        // Re-read the file
+                        pb.send(b.buffer_index, "read", b.path);
+
+                        // Save to folder
+                        pb.send(b.buffer_index, "write", newFile);
+                    }
+                    // Update the saved path in the copy array
+                    buffers_dict[i][3] = newFile;
+                } else if (writeParams.write_sample_buffers) {
                     // Write file to envi folder
+                    const newFile = `${enviDir}/${enviName}/buffers/${b.name}.${fileExt}`;
                     pb.send(b.buffer_index, "write", newFile);
 
                     // Replace polybuffer~ with newly created files
                     pb.send(b.buffer_index, "read", newFile);
-
+                    buffers_dict[i][3] = newFile;
                 }
-                else{
-                    // Re-read the file
-                    pb.send(b.buffer_index, "read", b.path);
-                    
-                    // Save to folder
-                    pb.send(b.buffer_index, "write", newFile);
-                }
-                buffers_dict[i][3] = newFile;
-            }
-            else if (writeParams.write_sample_buffers){
-                // Write file to envi folder
-                const newFile = `${enviDir}/${enviName}/buffers/${b.name}.${fileExt}`;
-                pb.send(b.buffer_index, "write", newFile);
-
-                // Replace polybuffer~ with newly created files
-                pb.send(b.buffer_index, "read", newFile);
-                buffers_dict[i][3] = newFile;
-            }
-        });
+            });
+        }
+    } catch (e) {
+        post(
+            `[ ll.enviwrite ] WARNING: Buffer saving failed, but continuing environment write: ${e.message}\n`
+        );
     }
 
     // Save presets
@@ -146,7 +177,12 @@ async function saveToFolder(){
 
             if (hasPresets) {
                 outlet(0, "pattrforward", "send", `::${act}::pat`);
-                outlet(0, "pattrforward", "write", `${enviDir}/${enviName}/presets/${act}.json`);
+                outlet(
+                    0,
+                    "pattrforward",
+                    "write",
+                    `${enviDir}/${enviName}/presets/${act}.json`
+                );
                 // post("wrote presets for", act, "\n");
             } else {
                 // post("no presets for", act, "— skipping file\n");
@@ -156,13 +192,13 @@ async function saveToFolder(){
         }
     }
 
-    ppost("save environment state...")
+    ppost("save environment state...");
     dict.props.jsonPath = `${enviDir}/${enviName}/environment.json`;
-    
+
     writeEnvi();
 }
 
-function writeEnvi(){
+function writeEnvi() {
     environment = {};
 
     let act_list = Object.keys(dict.state)
@@ -182,7 +218,7 @@ function writeEnvi(){
     getacts(act_list);
 }
 
-async function getSlotList(){
+async function getSlotList() {
     const { slots } = await requestSlotlist("sinus1");
     const hasPresets = slots.length > 0;
 }
@@ -192,11 +228,13 @@ function slotlist() {
     var slots = arrayfromargs(arguments);
     if (!pending) return; // spurious/late reply
     var act = pending.act;
-    
 
     // success => cancel/free the timeout task
     if (pending.tsk) {
-        try { pending.tsk.cancel(); pending.tsk.freepeer(); } catch(e){}
+        try {
+            pending.tsk.cancel();
+            pending.tsk.freepeer();
+        } catch (e) {}
     }
 
     // resolve and clear
@@ -207,14 +245,16 @@ function slotlist() {
 // Promise that waits for the next slotlist (with Task-based timeout)
 function requestSlotlist(act, timeoutMs) {
     if (pending) {
-        return Promise.reject(new Error("slotlist already pending; call sequentially"));
+        return Promise.reject(
+            new Error("slotlist already pending; call sequentially")
+        );
     }
 
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
         // make a one-shot Task that rejects if it fires first
         var tsk = null;
         if (timeoutMs > 0) {
-            tsk = new Task(function() {
+            tsk = new Task(function () {
                 // only reject if still pending for this act
                 if (pending && pending.act === act) {
                     var err = new Error("slotlist timeout for " + act);
@@ -223,7 +263,9 @@ function requestSlotlist(act, timeoutMs) {
                     rej(err);
                 }
                 // ensure Task is collectible
-                try { arguments.callee.task.freepeer(); } catch(e){}
+                try {
+                    arguments.callee.task.freepeer();
+                } catch (e) {}
             }, this);
             tsk.schedule(timeoutMs);
         }
@@ -261,9 +303,27 @@ function getacts(act_list) {
         getdump(a);
     }
 
+    // --- FIX START: Merge the corrected buffer data into the global 'environment' object ---
+
+    // Check if we have buffer data to save
+    if (buffers_dict && buffers_dict.length > 0) {
+        // Ensure the buffers path exists in the global environment object
+        // The structure needs to match the key expected by ll.enviread.js: dict.buffers.buffers
+        if (!environment.buffers) environment.buffers = {};
+
+        // Write the updated buffer paths into the environment object's correct key
+        environment.buffers.buffers = buffers_dict;
+    }
+
+    // --- FIX END ---
+
     // Set 'dict environment' and export
     var enviDict = new Dict("environment");
+
+    // FIX: Parse the *fully constructed* global 'environment' object (which now includes buffers).
     enviDict.parse(JSON.stringify(environment));
+
+    // And finally, export
     enviDict.export_json(dict.props.jsonPath);
     outlet(0, "done", "reset", dict.props.envi_name);
     ppost("done!");
@@ -331,7 +391,7 @@ function get_pat() {
 
 function addParam(args) {
     // post("Received args: ", args, "\n");
-    try{
+    try {
         if (currentAct === null) {
             post(
                 "error ll.enviwrite.js: No current act set. Cannot add parameter.\n"
@@ -355,12 +415,12 @@ function addParam(args) {
         // Assign the value to the final key
         target[split[split.length - 1]] = paramValue;
 
-        if(paramValue[0] === "dictionary"){
-            const innerDict = new Dict(paramValue[1])
+        if (paramValue[0] === "dictionary") {
+            const innerDict = new Dict(paramValue[1]);
             const data = JSON.parse(innerDict.stringify());
             environment[currentAct][paramName] = data;
-        }   
-    }catch(e){
-        post("error ll.enviwrite.js: addParam failed.", args, "\n")
+        }
+    } catch (e) {
+        post("error ll.enviwrite.js: addParam failed.", args, "\n");
     }
 }
