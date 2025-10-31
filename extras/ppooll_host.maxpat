@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 398.0, 193.0, 133.0, 124.0 ],
+        "rect": [ 375.0, 188.0, 133.0, 124.0 ],
         "default_fontsize": 11.595187,
         "toolbarvisible": 0,
         "globalpatchername": "ho_st1",
@@ -1498,6 +1498,7 @@
                                                     "outlettype": [ "dictionary", "", "", "", "" ],
                                                     "patching_rect": [ 331.0, 387.0, 130.0, 22.0 ],
                                                     "saved_object_attributes": {
+                                                        "legacy": 1,
                                                         "parameter_enable": 0,
                                                         "parameter_mappable": 0
                                                     },
@@ -2853,6 +2854,7 @@
                                                     "outlettype": [ "dictionary", "", "", "", "" ],
                                                     "patching_rect": [ 281.0, 190.0, 61.0, 22.0 ],
                                                     "saved_object_attributes": {
+                                                        "legacy": 1,
                                                         "parameter_enable": 0,
                                                         "parameter_mappable": 0
                                                     },
@@ -3991,6 +3993,7 @@
                                                                     "outlettype": [ "dictionary", "", "", "", "" ],
                                                                     "patching_rect": [ 253.0, 372.0, 97.0, 22.0 ],
                                                                     "saved_object_attributes": {
+                                                                        "legacy": 1,
                                                                         "parameter_enable": 0,
                                                                         "parameter_mappable": 0
                                                                     },
@@ -4221,8 +4224,6 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 0,
-                                                                        "node_bin_path": "",
-                                                                        "npm_bin_path": "",
                                                                         "watch": 0
                                                                     },
                                                                     "text": "node.script ll.node.folders.js",
@@ -4254,6 +4255,7 @@
                                                                     "outlettype": [ "dictionary", "", "", "", "" ],
                                                                     "patching_rect": [ 416.96, 362.0, 79.0, 22.0 ],
                                                                     "saved_object_attributes": {
+                                                                        "legacy": 1,
                                                                         "parameter_enable": 0,
                                                                         "parameter_mappable": 0
                                                                     },
@@ -4355,6 +4357,7 @@
                                                                     "outlettype": [ "dictionary", "", "", "", "" ],
                                                                     "patching_rect": [ 416.96, 401.0, 97.0, 22.0 ],
                                                                     "saved_object_attributes": {
+                                                                        "legacy": 1,
                                                                         "parameter_enable": 0,
                                                                         "parameter_mappable": 0
                                                                     },
@@ -4426,6 +4429,7 @@
                                                                     "outlettype": [ "dictionary", "", "", "", "" ],
                                                                     "patching_rect": [ 24.0, 316.0, 61.0, 22.0 ],
                                                                     "saved_object_attributes": {
+                                                                        "legacy": 1,
                                                                         "parameter_enable": 0,
                                                                         "parameter_mappable": 0
                                                                     },
@@ -4463,6 +4467,7 @@
                                                                     "outlettype": [ "dictionary", "", "", "", "" ],
                                                                     "patching_rect": [ 369.0, 165.0, 79.0, 22.0 ],
                                                                     "saved_object_attributes": {
+                                                                        "legacy": 1,
                                                                         "parameter_enable": 0,
                                                                         "parameter_mappable": 0
                                                                     },
@@ -4543,6 +4548,7 @@
                                                                     "outlettype": [ "dictionary", "", "", "", "" ],
                                                                     "patching_rect": [ 253.5, 165.0, 89.0, 22.0 ],
                                                                     "saved_object_attributes": {
+                                                                        "legacy": 1,
                                                                         "parameter_enable": 0,
                                                                         "parameter_mappable": 0
                                                                     },
@@ -6027,7 +6033,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 163.0, 100.0, 101.0, 22.0 ],
-                                                                                    "text": "sinus1"
+                                                                                    "text": "ho_st1"
                                                                                 }
                                                                             },
                                                                             {
@@ -6050,7 +6056,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 50.0, 100.0, 96.0, 22.0 ],
-                                                                                    "text": "sinus1"
+                                                                                    "text": "ho_st1"
                                                                                 }
                                                                             },
                                                                             {
@@ -6601,7 +6607,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 19.0, 290.0, 117.0, 22.0 ],
-                                                    "text": "sinus"
+                                                    "text": "ho_st"
                                                 }
                                             },
                                             {
@@ -6634,7 +6640,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 19.0, 47.0, 160.0, 24.0 ],
-                                                    "text": "sinus1"
+                                                    "text": "ho_st1"
                                                 }
                                             },
                                             {
@@ -6914,6 +6920,7 @@
                                                                     "outlettype": [ "dictionary", "", "", "", "" ],
                                                                     "patching_rect": [ 388.0, 92.0, 89.0, 22.0 ],
                                                                     "saved_object_attributes": {
+                                                                        "legacy": 1,
                                                                         "parameter_enable": 0,
                                                                         "parameter_mappable": 0
                                                                     },
@@ -7347,6 +7354,7 @@
                                                     "outlettype": [ "dictionary", "", "", "", "" ],
                                                     "patching_rect": [ 2.0, 7.0, 89.0, 22.0 ],
                                                     "saved_object_attributes": {
+                                                        "legacy": 1,
                                                         "parameter_enable": 0,
                                                         "parameter_mappable": 0
                                                     },
@@ -7882,8 +7890,8 @@
                                                                                     "numinlets": 2,
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
-                                                                                    "patching_rect": [ 86.0, 179.0, 461.0, 35.0 ],
-                                                                                    "text": ";\rmax launch_browser https://github.com/ppooll-dev/ppooll/archive/refs/heads/main.zip"
+                                                                                    "patching_rect": [ 86.0, 179.0, 392.0, 35.0 ],
+                                                                                    "text": ";\rmax launch_browser https://github.com/ppooll-dev/ppooll/releases/latest"
                                                                                 }
                                                                             },
                                                                             {
@@ -10618,6 +10626,7 @@
                                                     "outlettype": [ "dictionary", "", "", "", "" ],
                                                     "patching_rect": [ 38.0, 563.0, 222.0, 22.0 ],
                                                     "saved_object_attributes": {
+                                                        "legacy": 1,
                                                         "parameter_enable": 0,
                                                         "parameter_mappable": 0
                                                     },
@@ -11312,6 +11321,7 @@
                                                     "outlettype": [ "dictionary", "", "", "", "" ],
                                                     "patching_rect": [ 139.0, 85.0, 130.0, 22.0 ],
                                                     "saved_object_attributes": {
+                                                        "legacy": 1,
                                                         "parameter_enable": 0,
                                                         "parameter_mappable": 0
                                                     },
@@ -12166,6 +12176,7 @@
                                                     "outlettype": [ "dictionary", "", "", "", "" ],
                                                     "patching_rect": [ 393.0, 273.0, 133.0, 22.0 ],
                                                     "saved_object_attributes": {
+                                                        "legacy": 1,
                                                         "parameter_enable": 0,
                                                         "parameter_mappable": 0
                                                     },
@@ -16384,7 +16395,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 39.0, 112.0, 114.0, 22.0 ],
-                                                    "text": "sinus 1"
+                                                    "text": "ho_st 1"
                                                 }
                                             },
                                             {
@@ -19569,7 +19580,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 405.0, 455.0, 75.0, 22.0 ],
-                                                                                    "text": "sinus"
+                                                                                    "text": "ho_st"
                                                                                 }
                                                                             },
                                                                             {
@@ -21388,7 +21399,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 63.333333333333314, 89.0, 90.0, 22.0 ],
-                                                                                    "text": "sinus1"
+                                                                                    "text": "ho_st1"
                                                                                 }
                                                                             },
                                                                             {
@@ -22256,7 +22267,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 259.5, 367.0, 35.0, 35.0 ],
-                                                                                    "text": "sinus"
+                                                                                    "text": "ho_st"
                                                                                 }
                                                                             },
                                                                             {
@@ -23144,7 +23155,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 13.0, 2.0, 87.0, 22.0 ],
-                                                                                    "text": "sinus1"
+                                                                                    "text": "ho_st1"
                                                                                 }
                                                                             },
                                                                             {
@@ -23554,7 +23565,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 92.25, 304.0, 145.0, 89.0 ],
-                                                                    "text": "send ::sinus1::pat"
+                                                                    "text": "send ::ho_st1::pat"
                                                                 }
                                                             },
                                                             {
@@ -24012,7 +24023,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 264.0, 102.0, 159.0, 22.0 ],
-                                                    "text": "sinus1 _"
+                                                    "text": "ho_st1 _"
                                                 }
                                             },
                                             {
@@ -24091,7 +24102,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 486.0, 163.0, 50.0, 62.0 ],
-                                                                    "text": "::sinus1::act::pres_menu 1"
+                                                                    "text": "::ho_st1::act::pres_menu 1"
                                                                 }
                                                             },
                                                             {
@@ -36062,7 +36073,7 @@
                                                                     "embedstate": [
                                                                         [ "bgcolor", 0, 0, 0, 0 ],
                                                                         [ "crop", 0, 0, 1, 1 ],
-                                                                        [ "fgcolor", 0.5519476294517517, 0.1, 0.33400574922561643, 1.1 ],
+                                                                        [ "fgcolor", 0.32507736086845396, 0.1837055966258049, 0.5290862381458282, 1.1 ],
                                                                         [ "zoom", 0.92 ]
                                                                     ],
                                                                     "filename": "ll.logo.js",
@@ -36478,12 +36489,12 @@
                                                                 }
                                                             }
                                                         ],
-                                                        "bgcolor": [ 0.4519476294517517, 0.0, 0.23400574922561646, 1.0 ]
+                                                        "bgcolor": [ 0.22507736086845398, 0.0837055966258049, 0.42908623814582825, 1.0 ]
                                                     },
                                                     "patching_rect": [ 427.0, 270.0, 64.0, 22.0 ],
                                                     "saved_object_attributes": {
                                                         "fontsize": 10.0,
-                                                        "locked_bgcolor": [ 0.4519476294517517, 0.0, 0.23400574922561646, 1.0 ]
+                                                        "locked_bgcolor": [ 0.22507736086845398, 0.0837055966258049, 0.42908623814582825, 1.0 ]
                                                     },
                                                     "text": "p screen",
                                                     "varname": "screen"
@@ -37238,7 +37249,7 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 348.0, 174.0, 778.0, 808.0 ],
+                                        "rect": [ 348.0, 114.0, 778.0, 808.0 ],
                                         "default_fontsize": 10.0,
                                         "toolbarvisible": 0,
                                         "boxes": [
@@ -37480,7 +37491,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
                                                     "patching_rect": [ 70.0, 171.0, 83.0, 20.0 ],
-                                                    "text": "9.0.0",
+                                                    "text": "9.0.1",
                                                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                                                     "textjustification": 2
                                                 }
@@ -42995,6 +43006,7 @@
                                                     "outlettype": [ "dictionary", "", "", "", "" ],
                                                     "patching_rect": [ 242.0, 350.0, 75.0, 20.0 ],
                                                     "saved_object_attributes": {
+                                                        "legacy": 1,
                                                         "parameter_enable": 0,
                                                         "parameter_mappable": 0
                                                     },
@@ -45940,7 +45952,7 @@
                         "rec": [ 0 ],
                         "screen": [ 0 ],
                         "stereo": [ 0 ],
-                        "time": [ 46319.0 ],
+                        "time": [ 14234.0 ],
                         "vol": [ 1.0 ],
                         "vol_ramp": [ 10 ],
                         "vol_slider": [ 1.0 ],
