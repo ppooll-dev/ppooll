@@ -2,44 +2,83 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 5,
-			"revision" : 2,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 8,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 174.0, 311.0, 220.0, 175.0 ],
-		"bglocked" : 0,
-		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
+		"rect" : [ 155.0, 493.0, 220.0, 174.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
 		"toolbarvisible" : 0,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"globalpatchername" : "fmrm1",
 		"boxes" : [ 			{
+				"box" : 				{
+					"hidden" : 1,
+					"id" : "obj-19",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 336.0, 12.0, 29.5, 22.0 ],
+					"text" : "330"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"hidden" : 1,
+					"id" : "obj-17",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 302.0, 12.0, 29.5, 22.0 ],
+					"text" : "160"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-13",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 419.0, 56.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"hidden" : 1,
+					"id" : "obj-14",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 302.0, 43.0, 50.0, 22.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"hidden" : 1,
+					"id" : "obj-6",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 302.0, 66.0, 55.0, 22.0 ],
+					"text" : "wsize $1"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"annotation" : "modindex multichannel spread",
 					"bgcolor" : [ 0.2, 0.47451, 0.388235, 1.0 ],
@@ -56,7 +95,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 107.0, 93.0, 15.0 ],
+					"patching_rect" : [ 0.0, 106.0, 93.0, 15.0 ],
 					"selectcolor" : [ 0.45098, 1.0, 0.533333, 0.470588 ],
 					"slidercolornofocus" : [ 0.815686, 0.815686, 0.815686, 1.0 ],
 					"sliderlog" : 5.0,
@@ -83,7 +122,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 78.0, 93.0, 15.0 ],
+					"patching_rect" : [ 0.0, 77.0, 93.0, 15.0 ],
 					"selectcolor" : [ 0.45098, 0.615686, 1.0, 0.470588 ],
 					"slidercolornofocus" : [ 0.85098, 0.85098, 0.85098, 1.0 ],
 					"sliderlog" : 5.0,
@@ -97,7 +136,6 @@
 				"box" : 				{
 					"annotation" : "carrier_freq multichannel spread",
 					"bgcolor" : [ 0.278431, 0.27451, 0.941176, 1.0 ],
-					"border" : 0,
 					"bordercolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"fontface" : 0,
 					"fontsize" : 13.0,
@@ -111,7 +149,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 47.0, 93.0, 14.0 ],
+					"patching_rect" : [ 0.0, 46.0, 93.0, 15.0 ],
 					"selectcolor" : [ 0.45098, 1.0, 0.533333, 0.470588 ],
 					"slidercolornofocus" : [ 0.615686, 0.615686, 0.615686, 1.0 ],
 					"sliderlog" : 5.0,
@@ -164,9 +202,9 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 50.0, 0.0, 170.0, 16.0 ],
+					"patching_rect" : [ 52.0, 0.0, 168.0, 16.0 ],
 					"selectcolor" : [ 0.45098, 1.0, 0.533333, 0.470588 ],
-					"slidercolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
+					"slidercolor" : [ 0.541176470588235, 0.541176470588235, 0.541176470588235, 0.73 ],
 					"slidercolornofocus" : [ 0.815686, 0.815686, 0.815686, 1.0 ],
 					"sliderlog" : 1.0,
 					"slidermax" : 1.0,
@@ -177,7 +215,6 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@state", 2, 1, 0, 0, 1, 0 ],
 					"bgmode" : 0,
 					"border" : 1,
 					"clickthrough" : 0,
@@ -191,7 +228,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 0.0, 122.0, 160.0, 53.0 ],
+					"patching_rect" : [ 0.0, 121.0, 160.0, 53.0 ],
 					"varname" : "ll.blues",
 					"viewvisibility" : 1
 				}
@@ -214,7 +251,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 93.0, 108.0, 126.0, 15.0 ],
+					"patching_rect" : [ 93.0, 107.0, 127.0, 15.0 ],
 					"selectcolor" : [ 0.45098, 1.0, 0.533333, 0.470588 ],
 					"slidercolornofocus" : [ 0.815686, 0.815686, 0.815686, 1.0 ],
 					"sliderlog" : 5.0,
@@ -240,7 +277,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 93.0, 220.0, 16.0 ],
+					"patching_rect" : [ 0.0, 92.0, 220.0, 16.0 ],
 					"selectcolor" : [ 0.45098, 1.0, 0.533333, 0.470588 ],
 					"slidercolornofocus" : [ 0.815686, 0.815686, 0.815686, 1.0 ],
 					"sliderlog" : 5.0,
@@ -267,7 +304,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 93.0, 78.0, 126.0, 15.0 ],
+					"patching_rect" : [ 93.0, 77.0, 127.0, 15.0 ],
 					"selectcolor" : [ 0.45098, 0.615686, 1.0, 0.470588 ],
 					"slidercolornofocus" : [ 0.85098, 0.85098, 0.85098, 1.0 ],
 					"sliderlog" : 5.0,
@@ -293,7 +330,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 62.0, 220.0, 16.0 ],
+					"patching_rect" : [ 0.0, 61.0, 220.0, 16.0 ],
 					"selectcolor" : [ 0.45098, 0.615686, 1.0, 0.470588 ],
 					"slidercolornofocus" : [ 0.776471, 0.776471, 0.776471, 1.0 ],
 					"sliderlog" : 5.0,
@@ -307,7 +344,6 @@
 				"box" : 				{
 					"annotation" : "cf_ramp",
 					"bgcolor" : [ 0.278431, 0.27451, 0.941176, 1.0 ],
-					"border" : 0,
 					"bordercolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"fontface" : 0,
 					"fontsize" : 13.0,
@@ -321,7 +357,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 93.0, 47.0, 126.0, 14.0 ],
+					"patching_rect" : [ 93.0, 46.0, 127.0, 15.0 ],
 					"selectcolor" : [ 0.45098, 1.0, 0.533333, 0.470588 ],
 					"slidercolornofocus" : [ 0.615686, 0.615686, 0.615686, 1.0 ],
 					"sliderlog" : 5.0,
@@ -361,35 +397,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-108",
-					"ignoreclick" : 1,
-					"maxclass" : "lcd",
-					"numinlets" : 1,
-					"numoutlets" : 4,
-					"outlettype" : [ "list", "list", "int", "" ],
-					"patching_rect" : [ 0.0, 0.0, 50.0, 16.0 ],
-					"varname" : "title_LCD"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"hidden" : 1,
-					"id" : "obj-94",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 0,
-					"patching_rect" : [ 294.0, 284.0, 111.0, 22.0 ],
-					"text" : "actmaker fmrm ffffff",
-					"varname" : "act"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 9.0,
 					"hidden" : 1,
@@ -400,43 +407,29 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 5,
-							"revision" : 2,
+							"major" : 9,
+							"minor" : 0,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 622.0, 294.0, 511.0, 736.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
-						"default_fontname" : "Arial",
-						"gridonopen" : 1,
+						"rect" : [ 622.0, 130.0, 511.0, 736.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
-						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
-						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-7",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 177.0, 626.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-2",
 									"maxclass" : "newobj",
@@ -472,42 +465,16 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 8,
-											"minor" : 5,
-											"revision" : 2,
+											"major" : 9,
+											"minor" : 0,
+											"revision" : 8,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
 										"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
-										"bglocked" : 0,
-										"openinpresentation" : 0,
-										"default_fontsize" : 12.0,
-										"default_fontface" : 0,
-										"default_fontname" : "Arial",
-										"gridonopen" : 1,
 										"gridsize" : [ 15.0, 15.0 ],
-										"gridsnaponopen" : 1,
-										"objectsnaponopen" : 1,
-										"statusbarvisible" : 2,
-										"toolbarvisible" : 1,
-										"lefttoolbarpinned" : 0,
-										"toptoolbarpinned" : 0,
-										"righttoolbarpinned" : 0,
-										"bottomtoolbarpinned" : 0,
-										"toolbars_unpinned_last_save" : 0,
-										"tallnewobj" : 0,
-										"boxanimatetime" : 200,
-										"enablehscroll" : 1,
-										"enablevscroll" : 1,
-										"devicewidth" : 0.0,
-										"description" : "",
-										"digest" : "",
-										"tags" : "",
-										"style" : "",
-										"subpatcher_template" : "",
-										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"comment" : "phase~",
@@ -955,13 +922,6 @@
 									}
 ,
 									"patching_rect" : [ 180.333333333333258, 558.0, 84.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"description" : "",
-										"digest" : "",
-										"globalpatchername" : "",
-										"tags" : ""
-									}
-,
 									"text" : "p mc.stpan1~ "
 								}
 
@@ -987,7 +947,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "multichannelsignal" ],
-									"patching_rect" : [ 285.5, 233.0, 96.0, 22.0 ],
+									"patching_rect" : [ 342.0, 184.0, 96.0, 22.0 ],
 									"text" : "ll.mc.r modindex"
 								}
 
@@ -997,8 +957,8 @@
 									"id" : "obj-3",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "multichannelsignal" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "multichannelsignal", "" ],
 									"patching_rect" : [ 266.333333333333258, 558.0, 70.0, 22.0 ],
 									"text" : "ll.r~ audioin"
 								}
@@ -1039,8 +999,8 @@
 									"id" : "obj-23",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
 									"patching_rect" : [ 201.999999999999943, 497.0, 107.0, 22.0 ],
 									"text" : "ll.r fm-fmaudio-mix"
 								}
@@ -1232,7 +1192,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 300.0, 257.0, 107.0, 20.0 ],
+									"patching_rect" : [ 357.0, 208.0, 107.0, 20.0 ],
 									"text" : "Modulation index"
 								}
 
@@ -1388,7 +1348,6 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-34", 1 ],
-									"midpoints" : [ 295.0, 260.5, 296.5, 260.5 ],
 									"source" : [ "obj-48", 0 ]
 								}
 
@@ -1415,6 +1374,13 @@
 								}
 
 							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-7", 0 ]
+								}
+
+							}
  ],
 						"styles" : [ 							{
 								"name" : "AudioStatus_Menu",
@@ -1438,13 +1404,6 @@
 					}
 ,
 					"patching_rect" : [ 434.0, 161.0, 64.0, 19.0 ],
-					"saved_object_attributes" : 					{
-						"description" : "",
-						"digest" : "",
-						"globalpatchername" : "",
-						"tags" : ""
-					}
-,
 					"text" : "p fmrm_sub",
 					"varname" : "sub"
 				}
@@ -1455,15 +1414,14 @@
 					"active" : 					{
 						"preset-ramp" : 0,
 						"presets" : 0,
-						"title_menu" : 0,
-						"pres_menu" : 0,
-						"tetris_menu" : 0,
-						"master" : 0,
-						"act::active_store" : 1,
+						"act::active_store" : 0,
+						"act::master/activest" : 0,
 						"ll.blues" : 0,
-						"ll.blues::levels" : 0,
-						"ll.blues::outputs" : 0,
-						"ll.blues::state" : 0
+						"ll.blues::status" : 0,
+						"ll.blues::outputs~" : 0,
+						"ll.blues::outputsMix~" : 0,
+						"ll.blues::chans" : 0,
+						"ll.blues::levels" : 0
 					}
 ,
 					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
@@ -1482,17 +1440,18 @@
 						"harmonicity" : 4,
 						"modindex" : 6,
 						"fm-fmaudio-mix" : 8,
-						"title_menu" : 2010,
-						"pres_menu" : 2011,
-						"tetris_menu" : 2012,
-						"master" : 2013
+						"ll.blues::status" : 1,
+						"ll.blues::outputs~" : 2,
+						"ll.blues::outputsMix~" : 3,
+						"ll.blues::chans" : 4,
+						"ll.blues::levels" : 5
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 842, 164, 1920, 407 ],
+						"client_rect" : [ 345, 87, 1600, 803 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 0, 0, 640, 240 ]
+						"storage_rect" : [ 200, 200, 800, 500 ]
 					}
 ,
 					"text" : "pattrstorage pat @autorestore 0",
@@ -1549,133 +1508,22 @@
 					"patching_rect" : [ 415.0, 386.0, 107.0, 22.0 ],
 					"restore" : 					{
 						"amplitude" : [ 1.0 ],
-						"carrier_freq" : [ 200.0 ],
+						"carrier_freq" : [ 219.030000000000001 ],
 						"carrier_freq_mcspread" : [ 0.0 ],
 						"carrier_freq_ramp" : [ 0 ],
 						"fm-fmaudio-mix" : [ 0.0 ],
-						"harmonicity" : [ 0.111674762398401 ],
+						"harmonicity" : [ 0.18 ],
 						"harmonicity_mcspread" : [ 0.0 ],
 						"harmonicity_ramp" : [ 0 ],
-						"master" : [ 0, 1 ],
-						"modindex" : [ 14.836088364454099 ],
+						"modindex" : [ 16.620000000000001 ],
 						"modindex_mcspread" : [ 0.0 ],
 						"modindex_ramp" : [ 0 ],
-						"pres_menu" : [ "_" ],
 						"preset-ramp" : [ 0.0 ],
-						"presets" : [ 0 ],
-						"tetris_menu" : [ "" ],
-						"title_menu" : [ "subpatch" ]
+						"presets" : [ 0 ]
 					}
 ,
 					"text" : "autopattr autopattr",
 					"varname" : "autopattr"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"allowdrag" : 0,
-					"annotation" : "title_menu - click on ppooll in the ho_st to find info about it",
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
-					"bgfillcolor_angle" : 270.0,
-					"bgfillcolor_color" : [ 1.0, 1.0, 1.0, 0.0 ],
-					"bgfillcolor_color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
-					"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-					"bgfillcolor_proportion" : 0.39,
-					"bgfillcolor_type" : "color",
-					"id" : "obj-100",
-					"items" : [ "info", ",", "clientwindow", ",", "storagewindow", ",", "-", ",", "titlebar", ",", "close", ",", "back", ",", "grow", ",", "master", ",", "active_store", ",", "-", ",", "subpatch", ",", "actmaker" ],
-					"maxclass" : "umenu",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "int", "", "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 25.0, 0.0, 25.0, 22.0 ],
-					"pattrmode" : 1,
-					"textcolor" : [ 0.149, 0.149, 0.149, 1.0 ],
-					"varname" : "title_menu"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"allowdrag" : 0,
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
-					"bgfillcolor_angle" : 270.0,
-					"bgfillcolor_color" : [ 1.0, 1.0, 1.0, 0.0 ],
-					"bgfillcolor_color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
-					"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-					"bgfillcolor_proportion" : 0.39,
-					"bgfillcolor_type" : "color",
-					"id" : "obj-102",
-					"ignoreclick" : 1,
-					"items" : [ "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
-					"maxclass" : "umenu",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "int", "", "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 25.0, 0.0, 25.0, 22.0 ],
-					"pattrmode" : 1,
-					"textcolor" : [ 0.149, 0.149, 0.149, 1.0 ],
-					"varname" : "pres_menu"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"allowdrag" : 0,
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
-					"bgfillcolor_angle" : 270.0,
-					"bgfillcolor_color" : [ 1.0, 1.0, 1.0, 0.0 ],
-					"bgfillcolor_color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
-					"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-					"bgfillcolor_proportion" : 0.39,
-					"bgfillcolor_type" : "color",
-					"id" : "obj-104",
-					"ignoreclick" : 1,
-					"items" : [ "-", ",", "-", ",", "ƒ", "default" ],
-					"maxclass" : "umenu",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "int", "", "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 25.0, 0.0, 25.0, 22.0 ],
-					"pattrmode" : 1,
-					"textcolor" : [ 0.149, 0.149, 0.149, 1.0 ],
-					"varname" : "tetris_menu"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"hidden" : 1,
-					"id" : "obj-14",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 294.0, 260.0, 113.0, 22.0 ],
-					"text" : "loadmess loadbang",
-					"varname" : "loadmess"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"annotation" : "drag here to move the window",
-					"filename" : "ll.movewindow.js",
-					"id" : "obj-106",
-					"maxclass" : "jsui",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 0.0, 0.0, 25.0, 14.0 ],
-					"varname" : "master"
 				}
 
 			}
@@ -1690,7 +1538,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 159.0, 122.0, 61.0, 37.0 ],
+					"patching_rect" : [ 159.0, 122.0, 61.0, 38.0 ],
 					"varname" : "presets"
 				}
 
@@ -1707,35 +1555,58 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 159.0, 160.0, 60.0, 14.0 ],
+					"patching_rect" : [ 159.0, 160.0, 61.0, 14.0 ],
 					"varname" : "preset-ramp"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"args" : [ "fmrm", "#ffffff" ],
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-10",
+					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "actmakeB.maxpat",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 0.0, 0.0, 51.904296875, 16.0 ],
+					"varname" : "act",
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"hidden" : 1,
-					"id" : "obj-1",
+					"id" : "obj-12",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 415.0, 240.0, 100.0, 22.0 ],
-					"restore" : [ "freq(2)", "harmonicity(1)", "modindex(1)", "amplitude(1)", "carrier_freq(1)", "audioin(1)" ],
-					"saved_object_attributes" : 					{
-						"parameter_enable" : 0,
-						"parameter_mappable" : 0
-					}
-,
-					"text" : "pattr inputs~",
-					"varname" : "inputs~"
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 400.0, 400.0, 115.0, 22.0 ],
+					"text" : "pattrforward act::in2",
+					"varname" : "pf"
 				}
 
 			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-94", 0 ],
+					"destination" : [ "obj-7", 0 ],
+					"source" : [ "obj-13", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-14", 0 ]
 				}
@@ -1743,7 +1614,31 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-94", 1 ],
+					"destination" : [ "obj-14", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-17", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-19", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-7", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
 					"hidden" : 1,
 					"source" : [ "obj-95", 0 ]
 				}
@@ -1751,186 +1646,176 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "actmaker.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
+				"name" : "actmakeB.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/actmaker",
+				"patcherrelativepath" : "../actmaker",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.actmenu.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
+				"name" : "actmaker_specials.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript/actmaker",
+				"patcherrelativepath" : "../../javascript/actmaker",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "actmaker_sub.maxpat",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/actmaker",
+				"patcherrelativepath" : "../actmaker",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll._utilities.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.act_title.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.actmake.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ll.actname.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.actname.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/actmaker",
+				"patcherrelativepath" : "../actmaker",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.actnamehelper.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
+				"name" : "ll.bluebutton.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.an.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"name" : "ll.blues.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.blues.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/ll.blues",
 				"patcherrelativepath" : "../abstractions/ll.blues",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.createact8.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"name" : "ll.listblock.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.mc.r.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.mc.stereo_pan.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/ll.blues",
-				"patcherrelativepath" : "../abstractions/ll.blues",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.movewindow.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.og.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.p.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.pattr_ui.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.pf.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.psto.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.psto1.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.r.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ll.r~.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
+				"patcherrelativepath" : "../../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "ll.r~.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.s.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.shut.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.strip#.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.sub_inputs.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.s~.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.textsize.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.wsendback.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll_fastforward.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/externals/filip",
-				"patcherrelativepath" : "../../externals/filip",
-				"type" : "JSON",
-				"implicit" : 1
+				"name" : "ll_fastforward.mxo",
+				"type" : "iLaX"
 			}
 , 			{
 				"name" : "ll_number.mxo",
@@ -1938,16 +1823,9 @@
 			}
 , 			{
 				"name" : "n.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../abstractions/filip",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "nblue.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
-				"patcherrelativepath" : "../../javascript",
-				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -1955,8 +1833,8 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "tetrishelp.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"name" : "ppooll_state.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1

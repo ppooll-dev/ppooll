@@ -2,42 +2,16 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 3,
-			"revision" : 2,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 7,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 595.0, 380.0 ],
-		"bglocked" : 0,
-		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
+		"rect" : [ 100.0, 100.0, 614.0, 385.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
-		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"globalpatchername" : "ll.pf.maxhelp1",
 		"boxes" : [ 			{
 				"box" : 				{
@@ -75,7 +49,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 334.0, 269.0, 35.0, 20.0 ],
+					"patching_rect" : [ 243.0, 339.0, 35.0, 20.0 ],
 					"text" : "wart"
 				}
 
@@ -90,7 +64,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 325.0, 249.0, 50.0, 22.0 ],
+					"patching_rect" : [ 234.0, 319.0, 50.0, 22.0 ],
 					"varname" : "wart"
 				}
 
@@ -100,11 +74,12 @@
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-14",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 323.0, 211.0, 159.0, 20.0 ],
-					"text" : "sends a bang if object found"
+					"patching_rect" : [ 284.5, 233.0, 318.0, 33.0 ],
+					"text" : "sends a bang if object found.\nuseful also as loadbang (ready for receiving messages)."
 				}
 
 			}
@@ -184,7 +159,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 274.0, 269.0, 35.0, 20.0 ],
+					"patching_rect" : [ 183.0, 339.0, 35.0, 20.0 ],
 					"text" : "wert"
 				}
 
@@ -199,7 +174,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 265.0, 249.0, 50.0, 22.0 ],
+					"patching_rect" : [ 174.0, 319.0, 50.0, 22.0 ],
 					"varname" : "wert"
 				}
 
@@ -338,42 +313,16 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 3,
-							"revision" : 2,
+							"major" : 9,
+							"minor" : 0,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 742.0, 79.0, 364.0, 555.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
-						"default_fontname" : "Arial",
-						"gridonopen" : 1,
+						"rect" : [ 621.0, 176.0, 364.0, 555.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
-						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
-						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -665,13 +614,6 @@
 					}
 ,
 					"patching_rect" : [ 76.0, 329.0, 81.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"description" : "",
-						"digest" : "",
-						"globalpatchername" : "",
-						"tags" : ""
-					}
-,
 					"text" : "p look_inside",
 					"varname" : "more"
 				}
@@ -797,8 +739,8 @@
 					"outlettype" : [ "", "", "", "" ],
 					"patching_rect" : [ 442.0, 165.0, 107.0, 22.0 ],
 					"restore" : 					{
-						"wart" : [ 23 ],
-						"wert" : [ 127 ]
+						"wart" : [ 40 ],
+						"wert" : [ 48 ]
 					}
 ,
 					"text" : "autopattr autopattr",
@@ -868,98 +810,98 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "actmaker.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "actmaker_specials.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript/actmaker",
+				"patcherrelativepath" : "../../javascript/actmaker",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.actname.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.actnamehelper.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
-				"patcherrelativepath" : "../../patchers/abstractions/filip",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ll.an.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"name" : "ll.an2.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.autohelp.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "ll.createact8.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"name" : "ll.makeact.js",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.pf.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.psto.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.psto1.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.r.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.shut.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.strip#.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.textsize.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "ll.wsendback.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
@@ -970,7 +912,7 @@
 			}
 , 			{
 				"name" : "n.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/patchers/abstractions/filip",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/abstractions/filip",
 				"patcherrelativepath" : "../../patchers/abstractions/filip",
 				"type" : "JSON",
 				"implicit" : 1
@@ -981,7 +923,7 @@
 			}
 , 			{
 				"name" : "tetrishelp.js",
-				"bootpath" : "~/Documents/Max 8/Packages/ppooll/javascript",
+				"bootpath" : "~/Documents/Max 9/Packages/ppooll/javascript",
 				"patcherrelativepath" : "../../javascript",
 				"type" : "TEXT",
 				"implicit" : 1

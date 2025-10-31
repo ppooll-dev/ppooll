@@ -19,8 +19,7 @@
   "extends": "",
   "extensible": 1,
   "homepatcher": "ppooll_host.maxpat",
-  "max_version_max": "8.5.7",
-  "max_version_min": "8",
+  "max_version_min": "9",
   "name": "ppooll",
   "os": {
     "macintosh": {
@@ -43,14 +42,16 @@
     "instrument",
     "versatile"
   ],
-  "base_version": "8.6.0",
-  "version": "8.6.0.240121.1",
+  "version": "9.0.1",
   "website": "http://ppooll.klingt.org",
   "filelist": {
     "externals": [
-      "ll_number",
-      "ll_fastforward",
       "ll_2dslider",
+      "ll_fastforward",
+      "ll_filewatchers",
+      "ll_mcwaveform",
+      "ll_number",
+      "ll_slishi",
       "shell",
       "pattrexists",
       "vbap"

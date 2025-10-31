@@ -66,7 +66,7 @@ function make(n,s,i,x,y,z,h) // main function called by actmaker
 
 function check_live(){
 	//post("check################");
-	var a = Global("ll.max_live_envi")
+	var a = new Global("ll.max_live_envi")
 
 	if (tpp.parentpatcher){ // the act was loaded as bpatcher in another patcher
 		a.envi = "live";
@@ -195,7 +195,7 @@ function create_rest()
 		obj.message ("bgcolor", 1.,1.,1.,0. );
 		obj.message ("pattrmode", 1);
 		obj.message ("presentation", 1);
-		obj.message ("presentation_rect", s/2,0,s/2,14);
+		obj.message ("presentation_rect", size/2,0,size/2,14);
 		tpp.sendtoback(obj);
 		}
 	if (!tpp.getnamed("pres_menu"))
@@ -210,7 +210,7 @@ function create_rest()
 		obj.message ("framecolor", 1.,1.,1.,0. );
 		obj.message ("bgcolor", 1.,1.,1.,0. );
 		obj.message ("presentation", 1);
-		obj.message ("presentation_rect", s/2,0,s/2,14);
+		obj.message ("presentation_rect", size/2,0,size/2,14);
 		tpp.sendtoback(obj);
 		}
 	if (!tpp.getnamed("tetris_menu"))

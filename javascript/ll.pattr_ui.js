@@ -161,7 +161,7 @@ function draw()
 		moveto([0,0]);	
 		glcolor(vbrgb);	
 		cube(right_edge*2,bottom_edge*2,1);
-		
+		//post("slots",slots,"\n");
 		var x,y,i,num_x,num_y, txt;
 		num_x = num_y = i = 0;
 		y = top_edge - margin - square;

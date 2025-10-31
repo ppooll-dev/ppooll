@@ -41,7 +41,7 @@ function cmpVersions (a, b) {
 // check ppooll-preferences to see if we should check for updates on ho_st init load
 function shouldCheckForUpdates(){
 	var dictPreferences = new Dict('ppooll-preferences')
-	dictPreferences.import_json('ppooll-preferences.json')
+	//dictPreferences.import_json('ppooll-preferences.json')
 
 	var check_for_updates = dictPreferences.get("general::check-for-updates")
 	return check_for_updates || 0
@@ -82,7 +82,7 @@ function checkVersion(thisVersion, latestVersion){
 
 	var needsUpdate = cmpVersions(latestVersion, thisVersion)
 
-	if(needsUpdate){
+	if(needsUpdate > 1){
 		var stringOut = "latest: " + latestVersion + "\ncurrent: " + thisVersion
 		OUTPUT.push("--------------------------update-available-"+latestVersion+"------------------------------")
 		outlet(1, stringOut)
@@ -133,6 +133,8 @@ function getAuthors(){
 // print initial ppooll messages to the console
 //   if ppooll pref "check-for-updates", run update check
 function bang(){
+	max.setattr("restorewindows", 0);
+
 	// get version
 	var thisVersion = getCurrentVersion()
 	var VERSION = ["--------------------------version-"+thisVersion+"------------------------------------------"]

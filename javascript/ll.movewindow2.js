@@ -100,3 +100,19 @@ function windpos(x,y)
 		w.location = r;
 		
 }
+
+function titlebar(a)
+{		
+	w.hastitlebar = a;		
+}
+function grow(a)
+{		
+	w.hasgrow = a;		
+}
+
+function scroll(a)
+{		
+	w.hasvertscroll = a;
+	w.hashorizscroll = a;
+	w.haszoom = a;		
+}

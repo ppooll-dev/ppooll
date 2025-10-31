@@ -5,19 +5,20 @@
 			"1001" : 			{
 				"id" : 1001,
 				"data" : 				{
-					"inputs~" : [ "in(2)" ],
 					"drive" : [ 20, 51 ],
 					"link" : [ 1 ],
 					"preset-ramp" : [ 0.0 ],
 					"presets" : [ 0 ],
-					"title_menu" : [ "info" ],
-					"pres_menu" : [ "" ],
-					"tetris_menu" : [ "" ],
-					"master" : [ 0 ],
-					"act::active_store" : [ 0 ],
-					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
-					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
+					"act::active_store" : [ "_" ],
+					"act::master/activest" : [ 0, 0 ],
+					"act::pres_menu" : [ "_" ],
+					"act::tetris_menu" : [ "" ],
+					"act::title_menu" : [ "" ],
+					"ll.blues::status" : [ 1, 1, 0, 0, 0, 0, 0 ],
+					"ll.blues::outputs~" : [ "ho_st1~out.1", "_" ],
+					"ll.blues::outputsMix~" : [ "prdelay@1~in.1", "_" ],
+					"ll.blues::chans" : [ 2, 2 ],
+					"ll.blues::levels" : [ 1, 1, 1, 1, 10, 0, 0.5 ]
 				}
 
 			}
@@ -25,19 +26,20 @@
 			"1002" : 			{
 				"id" : 1002,
 				"data" : 				{
-					"inputs~" : [ "in(2)" ],
 					"drive" : [ 61, 51 ],
 					"link" : [ 1 ],
 					"preset-ramp" : [ 0.0 ],
 					"presets" : [ 0 ],
-					"title_menu" : [ "info" ],
-					"pres_menu" : [ "" ],
-					"tetris_menu" : [ "" ],
-					"master" : [ 0 ],
-					"act::active_store" : [ 0 ],
-					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
-					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
+					"act::active_store" : [ "_" ],
+					"act::master/activest" : [ 0, 0 ],
+					"act::pres_menu" : [ "_" ],
+					"act::tetris_menu" : [ "" ],
+					"act::title_menu" : [ "" ],
+					"ll.blues::status" : [ 1, 1, 0, 0, 0, 0, 0 ],
+					"ll.blues::outputs~" : [ "ho_st1~out.1", "_" ],
+					"ll.blues::outputsMix~" : [ "prdelay@1~in.1", "_" ],
+					"ll.blues::chans" : [ 2, 2 ],
+					"ll.blues::levels" : [ 1, 1, 1, 1, 10, 0, 0.5 ]
 				}
 
 			}
@@ -45,19 +47,20 @@
 			"1003" : 			{
 				"id" : 1003,
 				"data" : 				{
-					"inputs~" : [ "in(2)" ],
 					"drive" : [ 82, 87 ],
 					"link" : [ 1 ],
 					"preset-ramp" : [ 0.0 ],
 					"presets" : [ 0 ],
-					"title_menu" : [ "info" ],
-					"pres_menu" : [ "" ],
-					"tetris_menu" : [ "" ],
-					"master" : [ 0 ],
-					"act::active_store" : [ 0 ],
-					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
-					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
+					"act::active_store" : [ "_" ],
+					"act::master/activest" : [ 0, 0 ],
+					"act::pres_menu" : [ "_" ],
+					"act::tetris_menu" : [ "" ],
+					"act::title_menu" : [ "" ],
+					"ll.blues::status" : [ 1, 1, 0, 0, 0, 0, 0 ],
+					"ll.blues::outputs~" : [ "ho_st1~out.1", "_" ],
+					"ll.blues::outputsMix~" : [ "prdelay@1~in.1", "_" ],
+					"ll.blues::chans" : [ 2, 2 ],
+					"ll.blues::levels" : [ 1, 1, 1, 1, 10, 0, 0.5 ]
 				}
 
 			}
@@ -65,19 +68,20 @@
 			"1004" : 			{
 				"id" : 1004,
 				"data" : 				{
-					"inputs~" : [ "in(2)" ],
 					"drive" : [ 21, 51 ],
 					"link" : [ 1 ],
 					"preset-ramp" : [ 0.0 ],
 					"presets" : [ 0 ],
-					"title_menu" : [ "info" ],
-					"pres_menu" : [ "" ],
-					"tetris_menu" : [ "" ],
-					"master" : [ 0 ],
-					"act::active_store" : [ 0 ],
-					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
-					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
+					"act::active_store" : [ "_" ],
+					"act::master/activest" : [ 0, 0 ],
+					"act::pres_menu" : [ "_" ],
+					"act::tetris_menu" : [ "" ],
+					"act::title_menu" : [ "" ],
+					"ll.blues::status" : [ 1, 1, 0, 0, 0, 0, 0 ],
+					"ll.blues::outputs~" : [ "ho_st1~out.1", "_" ],
+					"ll.blues::outputsMix~" : [ "prdelay@1~in.1", "_" ],
+					"ll.blues::chans" : [ 2, 2 ],
+					"ll.blues::levels" : [ 1, 1, 1, 1, 10, 0, 0.5 ]
 				}
 
 			}
@@ -85,19 +89,20 @@
 			"1005" : 			{
 				"id" : 1005,
 				"data" : 				{
-					"inputs~" : [ "in(2)" ],
 					"drive" : [ 61, 51 ],
 					"link" : [ 1 ],
 					"preset-ramp" : [ 0.0 ],
 					"presets" : [ 0 ],
-					"title_menu" : [ "info" ],
-					"pres_menu" : [ "" ],
-					"tetris_menu" : [ "" ],
-					"master" : [ 0 ],
-					"act::active_store" : [ 0 ],
-					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
-					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
+					"act::active_store" : [ "_" ],
+					"act::master/activest" : [ 0, 0 ],
+					"act::pres_menu" : [ "_" ],
+					"act::tetris_menu" : [ "" ],
+					"act::title_menu" : [ "" ],
+					"ll.blues::status" : [ 1, 1, 0, 0, 0, 0, 0 ],
+					"ll.blues::outputs~" : [ "ho_st1~out.1", "_" ],
+					"ll.blues::outputsMix~" : [ "prdelay@1~in.1", "_" ],
+					"ll.blues::chans" : [ 2, 2 ],
+					"ll.blues::levels" : [ 1, 1, 1, 1, 10, 0, 0.5 ]
 				}
 
 			}
@@ -105,19 +110,20 @@
 			"1006" : 			{
 				"id" : 1006,
 				"data" : 				{
-					"inputs~" : [ "in(2)" ],
 					"drive" : [ 82, 87 ],
 					"link" : [ 1 ],
 					"preset-ramp" : [ 0.0 ],
 					"presets" : [ 0 ],
-					"title_menu" : [ "info" ],
-					"pres_menu" : [ "" ],
-					"tetris_menu" : [ "" ],
-					"master" : [ 0 ],
-					"act::active_store" : [ 0 ],
-					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
-					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
+					"act::active_store" : [ "_" ],
+					"act::master/activest" : [ 0, 0 ],
+					"act::pres_menu" : [ "_" ],
+					"act::tetris_menu" : [ "" ],
+					"act::title_menu" : [ "" ],
+					"ll.blues::status" : [ 1, 1, 0, 0, 0, 0, 0 ],
+					"ll.blues::outputs~" : [ "ho_st1~out.1", "_" ],
+					"ll.blues::outputsMix~" : [ "prdelay@1~in.1", "_" ],
+					"ll.blues::chans" : [ 2, 2 ],
+					"ll.blues::levels" : [ 1, 1, 1, 1, 10, 0, 0.5 ]
 				}
 
 			}
@@ -125,19 +131,20 @@
 			"1007" : 			{
 				"id" : 1007,
 				"data" : 				{
-					"inputs~" : [ "in(2)" ],
 					"drive" : [ 82, 87 ],
 					"link" : [ 1 ],
 					"preset-ramp" : [ 0.0 ],
 					"presets" : [ 0 ],
-					"title_menu" : [ "info" ],
-					"pres_menu" : [ "" ],
-					"tetris_menu" : [ "" ],
-					"master" : [ 0 ],
-					"act::active_store" : [ 0 ],
-					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
-					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
+					"act::active_store" : [ "_" ],
+					"act::master/activest" : [ 0, 0 ],
+					"act::pres_menu" : [ "_" ],
+					"act::tetris_menu" : [ "" ],
+					"act::title_menu" : [ "" ],
+					"ll.blues::status" : [ 1, 1, 0, 0, 0, 0, 0 ],
+					"ll.blues::outputs~" : [ "ho_st1~out.1", "_" ],
+					"ll.blues::outputsMix~" : [ "prdelay@1~in.1", "_" ],
+					"ll.blues::chans" : [ 2, 2 ],
+					"ll.blues::levels" : [ 1, 1, 1, 1, 10, 0, 0.5 ]
 				}
 
 			}
@@ -145,19 +152,20 @@
 			"1008" : 			{
 				"id" : 1008,
 				"data" : 				{
-					"inputs~" : [ "in(2)" ],
 					"drive" : [ 77, 94 ],
 					"link" : [ 1 ],
 					"preset-ramp" : [ 0.0 ],
 					"presets" : [ 0 ],
-					"title_menu" : [ "info" ],
-					"pres_menu" : [ "" ],
-					"tetris_menu" : [ "" ],
-					"master" : [ 0 ],
-					"act::active_store" : [ 0 ],
-					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
-					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
+					"act::active_store" : [ "_" ],
+					"act::master/activest" : [ 0, 0 ],
+					"act::pres_menu" : [ "_" ],
+					"act::tetris_menu" : [ "" ],
+					"act::title_menu" : [ "" ],
+					"ll.blues::status" : [ 1, 1, 0, 0, 0, 0, 0 ],
+					"ll.blues::outputs~" : [ "ho_st1~out.1", "_" ],
+					"ll.blues::outputsMix~" : [ "prdelay@1~in.1", "_" ],
+					"ll.blues::chans" : [ 2, 2 ],
+					"ll.blues::levels" : [ 1, 1, 1, 1, 10, 0, 0.5 ]
 				}
 
 			}
@@ -165,19 +173,20 @@
 			"1009" : 			{
 				"id" : 1009,
 				"data" : 				{
-					"inputs~" : [ "in(2)" ],
 					"drive" : [ 1, 17 ],
 					"link" : [ 1 ],
 					"preset-ramp" : [ 0.0 ],
 					"presets" : [ 0 ],
-					"title_menu" : [ "info" ],
-					"pres_menu" : [ "" ],
-					"tetris_menu" : [ "" ],
-					"master" : [ 0 ],
-					"act::active_store" : [ 0 ],
-					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
-					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
+					"act::active_store" : [ "_" ],
+					"act::master/activest" : [ 0, 0 ],
+					"act::pres_menu" : [ "_" ],
+					"act::tetris_menu" : [ "" ],
+					"act::title_menu" : [ "" ],
+					"ll.blues::status" : [ 1, 1, 0, 0, 0, 0, 0 ],
+					"ll.blues::outputs~" : [ "ho_st1~out.1", "_" ],
+					"ll.blues::outputsMix~" : [ "prdelay@1~in.1", "_" ],
+					"ll.blues::chans" : [ 2, 2 ],
+					"ll.blues::levels" : [ 1, 1, 1, 1, 10, 0, 0.5 ]
 				}
 
 			}
@@ -185,19 +194,20 @@
 			"1010" : 			{
 				"id" : 1010,
 				"data" : 				{
-					"inputs~" : [ "in(2)" ],
 					"drive" : [ 100, 98 ],
 					"link" : [ 1 ],
 					"preset-ramp" : [ 0.0 ],
 					"presets" : [ 0 ],
-					"title_menu" : [ "info" ],
-					"pres_menu" : [ "" ],
-					"tetris_menu" : [ "" ],
-					"master" : [ 0 ],
-					"act::active_store" : [ 0 ],
-					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
-					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
+					"act::active_store" : [ "_" ],
+					"act::master/activest" : [ 0, 0 ],
+					"act::pres_menu" : [ "_" ],
+					"act::tetris_menu" : [ "" ],
+					"act::title_menu" : [ "" ],
+					"ll.blues::status" : [ 1, 1, 0, 0, 0, 0, 0 ],
+					"ll.blues::outputs~" : [ "ho_st1~out.1", "_" ],
+					"ll.blues::outputsMix~" : [ "prdelay@1~in.1", "_" ],
+					"ll.blues::chans" : [ 2, 2 ],
+					"ll.blues::levels" : [ 1, 1, 1, 1, 10, 0, 0.5 ]
 				}
 
 			}
@@ -205,19 +215,20 @@
 			"1011" : 			{
 				"id" : 1011,
 				"data" : 				{
-					"inputs~" : [ "in(2)" ],
 					"drive" : [ 82, 87 ],
 					"link" : [ 1 ],
 					"preset-ramp" : [ 0.0 ],
 					"presets" : [ 0 ],
-					"title_menu" : [ "info" ],
-					"pres_menu" : [ "" ],
-					"tetris_menu" : [ "" ],
-					"master" : [ 0 ],
-					"act::active_store" : [ 0 ],
-					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
-					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
+					"act::active_store" : [ "_" ],
+					"act::master/activest" : [ 0, 0 ],
+					"act::pres_menu" : [ "_" ],
+					"act::tetris_menu" : [ "" ],
+					"act::title_menu" : [ "" ],
+					"ll.blues::status" : [ 1, 1, 0, 0, 0, 0, 0 ],
+					"ll.blues::outputs~" : [ "ho_st1~out.1", "_" ],
+					"ll.blues::outputsMix~" : [ "prdelay@1~in.1", "_" ],
+					"ll.blues::chans" : [ 2, 2 ],
+					"ll.blues::levels" : [ 1, 1, 1, 1, 10, 0, 0.5 ]
 				}
 
 			}
@@ -225,19 +236,20 @@
 			"1012" : 			{
 				"id" : 1012,
 				"data" : 				{
-					"inputs~" : [ "in(2)" ],
 					"drive" : [ 87, 90 ],
 					"link" : [ 1 ],
 					"preset-ramp" : [ 0.0 ],
 					"presets" : [ 0 ],
-					"title_menu" : [ "info" ],
-					"pres_menu" : [ "" ],
-					"tetris_menu" : [ "" ],
-					"master" : [ 0 ],
-					"act::active_store" : [ 0 ],
-					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
-					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
+					"act::active_store" : [ "_" ],
+					"act::master/activest" : [ 0, 0 ],
+					"act::pres_menu" : [ "_" ],
+					"act::tetris_menu" : [ "" ],
+					"act::title_menu" : [ "" ],
+					"ll.blues::status" : [ 1, 1, 0, 0, 0, 0, 0 ],
+					"ll.blues::outputs~" : [ "ho_st1~out.1", "_" ],
+					"ll.blues::outputsMix~" : [ "prdelay@1~in.1", "_" ],
+					"ll.blues::chans" : [ 2, 2 ],
+					"ll.blues::levels" : [ 1, 1, 1, 1, 10, 0, 0.5 ]
 				}
 
 			}
@@ -245,19 +257,20 @@
 			"1013" : 			{
 				"id" : 1013,
 				"data" : 				{
-					"inputs~" : [ "in(2)" ],
 					"drive" : [ 51, 38 ],
 					"link" : [ 1 ],
 					"preset-ramp" : [ 0.0 ],
 					"presets" : [ 0 ],
-					"title_menu" : [ "info" ],
-					"pres_menu" : [ "" ],
-					"tetris_menu" : [ "" ],
-					"master" : [ 0 ],
-					"act::active_store" : [ 0 ],
-					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
-					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
+					"act::active_store" : [ "_" ],
+					"act::master/activest" : [ 0, 0 ],
+					"act::pres_menu" : [ "_" ],
+					"act::tetris_menu" : [ "" ],
+					"act::title_menu" : [ "" ],
+					"ll.blues::status" : [ 1, 1, 0, 0, 0, 0, 0 ],
+					"ll.blues::outputs~" : [ "ho_st1~out.1", "_" ],
+					"ll.blues::outputsMix~" : [ "prdelay@1~in.1", "_" ],
+					"ll.blues::chans" : [ 2, 2 ],
+					"ll.blues::levels" : [ 1, 1, 1, 1, 10, 0, 0.5 ]
 				}
 
 			}
@@ -265,19 +278,20 @@
 			"1014" : 			{
 				"id" : 1014,
 				"data" : 				{
-					"inputs~" : [ "in(2)" ],
 					"drive" : [ 82, 78 ],
 					"link" : [ 1 ],
 					"preset-ramp" : [ 0.0 ],
 					"presets" : [ 0 ],
-					"title_menu" : [ "info" ],
-					"pres_menu" : [ "" ],
-					"tetris_menu" : [ "" ],
-					"master" : [ 0 ],
-					"act::active_store" : [ 0 ],
-					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
-					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
+					"act::active_store" : [ "_" ],
+					"act::master/activest" : [ 0, 0 ],
+					"act::pres_menu" : [ "_" ],
+					"act::tetris_menu" : [ "" ],
+					"act::title_menu" : [ "" ],
+					"ll.blues::status" : [ 1, 1, 0, 0, 0, 0, 0 ],
+					"ll.blues::outputs~" : [ "ho_st1~out.1", "_" ],
+					"ll.blues::outputsMix~" : [ "prdelay@1~in.1", "_" ],
+					"ll.blues::chans" : [ 2, 2 ],
+					"ll.blues::levels" : [ 1, 1, 1, 1, 10, 0, 0.5 ]
 				}
 
 			}
@@ -285,19 +299,20 @@
 			"1015" : 			{
 				"id" : 1015,
 				"data" : 				{
-					"inputs~" : [ "in(2)" ],
 					"drive" : [ 77, 57 ],
 					"link" : [ 1 ],
 					"preset-ramp" : [ 0.0 ],
 					"presets" : [ 0 ],
-					"title_menu" : [ "info" ],
-					"pres_menu" : [ "" ],
-					"tetris_menu" : [ "" ],
-					"master" : [ 0 ],
-					"act::active_store" : [ 0 ],
-					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
-					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
+					"act::active_store" : [ "_" ],
+					"act::master/activest" : [ 0, 0 ],
+					"act::pres_menu" : [ "_" ],
+					"act::tetris_menu" : [ "" ],
+					"act::title_menu" : [ "" ],
+					"ll.blues::status" : [ 1, 1, 0, 0, 0, 0, 0 ],
+					"ll.blues::outputs~" : [ "ho_st1~out.1", "_" ],
+					"ll.blues::outputsMix~" : [ "prdelay@1~in.1", "_" ],
+					"ll.blues::chans" : [ 2, 2 ],
+					"ll.blues::levels" : [ 1, 1, 1, 1, 10, 0, 0.5 ]
 				}
 
 			}
@@ -305,19 +320,20 @@
 			"1016" : 			{
 				"id" : 1016,
 				"data" : 				{
-					"inputs~" : [ "in(2)" ],
 					"drive" : [ 82, 87 ],
 					"link" : [ 1 ],
 					"preset-ramp" : [ 0.0 ],
 					"presets" : [ 0 ],
-					"title_menu" : [ "info" ],
-					"pres_menu" : [ "" ],
-					"tetris_menu" : [ "" ],
-					"master" : [ 0 ],
-					"act::active_store" : [ 0 ],
-					"ll.blues::levels" : [ 1.0, 1.0, 1.0, 1.0, 10.0, 0.0, 0.5 ],
-					"ll.blues::outputs" : [ "ho_st1~out.1", "prdelay@1~in.1" ],
-					"ll.blues::state" : [ 2, 1, 0, 0, 2, 0 ]
+					"act::active_store" : [ "_" ],
+					"act::master/activest" : [ 0, 0 ],
+					"act::pres_menu" : [ "_" ],
+					"act::tetris_menu" : [ "" ],
+					"act::title_menu" : [ "" ],
+					"ll.blues::status" : [ 1, 1, 0, 0, 0, 0, 0 ],
+					"ll.blues::outputs~" : [ "ho_st1~out.1", "_" ],
+					"ll.blues::outputsMix~" : [ "prdelay@1~in.1", "_" ],
+					"ll.blues::chans" : [ 2, 2 ],
+					"ll.blues::levels" : [ 1, 1, 1, 1, 10, 0, 0.5 ]
 				}
 
 			}
@@ -328,11 +344,13 @@
 			"active" : 			{
 				"preset-ramp" : 0,
 				"presets" : 0,
-				"title_menu" : 0,
-				"pres_menu" : 0,
-				"tetris_menu" : 0,
 				"act" : 0,
-				"act::active_store" : 0
+				"act::active_store" : 0,
+				"act::master/activest" : 0,
+				"act::u751015509" : 0,
+				"act::pres_menu" : 0,
+				"act::tetris_menu" : 0,
+				"act::title_menu" : 0
 			}
 
 		}

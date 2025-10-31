@@ -1,0 +1,258 @@
+{
+	"window" : [ 842, 156, 1034, 317 ],
+	"local_display" : 	{
+		"patching_rect" : [ 0, 33, 192, 108 ],
+		"hidden" : 0,
+		"bordercolor" : [ 0, 0, 0, 1 ],
+		"colormode" : "argb"
+	}
+,
+	"dims" : 	{
+		"patching_rect" : [ 0, 142, 15, 19 ],
+		"hidden" : 0,
+		"applycolors" : 0,
+		"bgfillcolor" : 		{
+			"type" : "gradient",
+			"color1" : [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
+			"color2" : [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
+			"color" : [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ]
+		}
+,
+		"color" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ],
+		"elementcolor" : [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
+		"fontsize" : 9,
+		"textcolor" : [ 0.9, 0.9, 0.9, 1 ]
+	}
+,
+	"x-dim" : 	{
+		"patching_rect" : [ 13, 142, 30, 19 ],
+		"hidden" : 0,
+		"bgcolor" : [ 0.866667, 0.866667, 0.866667, 1 ],
+		"fontsize" : 9,
+		"htricolor" : [ 0.87, 0.82, 0.24, 1 ],
+		"textcolor" : [ 0, 0, 0, 1 ],
+		"tricolor" : [ 0.75, 0.75, 0.75, 1 ]
+	}
+,
+	"y-dim" : 	{
+		"patching_rect" : [ 42, 142, 24, 19 ],
+		"hidden" : 0,
+		"bgcolor" : [ 0.866667, 0.866667, 0.866667, 1 ],
+		"fontsize" : 9,
+		"htricolor" : [ 0.87, 0.82, 0.24, 1 ],
+		"textcolor" : [ 0, 0, 0, 1 ],
+		"tricolor" : [ 0.75, 0.75, 0.75, 1 ]
+	}
+,
+	"snap-format" : 	{
+		"patching_rect" : [ 173, 0, 19, 19 ],
+		"hidden" : 0,
+		"applycolors" : 0,
+		"bgfillcolor" : 		{
+			"type" : "color",
+			"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
+			"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+			"color" : [ 0.0, 0.776471, 0.482353, 1.0 ],
+			"angle" : 270.0,
+			"proportion" : 0.39
+		}
+,
+		"color" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ],
+		"elementcolor" : [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
+		"fontsize" : 9,
+		"textcolor" : [ 0, 0, 0, 1 ]
+	}
+,
+	"devlist_menu" : 	{
+		"patching_rect" : [ 129, 0, 45, 19 ],
+		"hidden" : 0,
+		"applycolors" : 0,
+		"bgfillcolor" : 		{
+			"type" : "color",
+			"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
+			"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+			"color" : [ 0.392157, 0.0, 0.321569, 1.0 ],
+			"angle" : 270.0,
+			"proportion" : 0.39
+		}
+,
+		"color" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ],
+		"elementcolor" : [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
+		"fontsize" : 9,
+		"textcolor" : [ 1, 1, 1, 1 ]
+	}
+,
+	"inputlist_menu" : 	{
+		"patching_rect" : [ 129, 14, 38, 19 ],
+		"hidden" : 0,
+		"applycolors" : 0,
+		"bgfillcolor" : 		{
+			"type" : "color",
+			"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
+			"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+			"color" : [ 0.392157, 0.0, 0.321569, 1.0 ],
+			"angle" : 270.0,
+			"proportion" : 0.39
+		}
+,
+		"color" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ],
+		"elementcolor" : [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
+		"fontsize" : 9,
+		"textcolor" : [ 1, 1, 1, 1 ]
+	}
+,
+	"snap" : 	{
+		"patching_rect" : [ 173, 17, 19, 16 ],
+		"hidden" : 0,
+		"bgcolor" : [ 0, 0.776471, 0.482353, 1 ],
+		"bgoncolor" : [ 0.55, 0.55, 0.55, 1 ],
+		"fontsize" : 8,
+		"legacytextcolor" : 1,
+		"textcolor" : [ 0.15, 0.15, 0.15, 1 ],
+		"textoncolor" : [ 1, 1, 1, 1 ],
+		"textovercolor" : [ 0.1, 0.1, 0.1, 1 ],
+		"usebgoncolor" : 1,
+		"usetextovercolor" : 1
+	}
+,
+	"open/close" : 	{
+		"patching_rect" : [ 95, 16, 27, 17 ],
+		"hidden" : 0,
+		"bgcolor" : [ 0.75, 0.75, 0.75, 1 ],
+		"bgoncolor" : [ 0.023529, 0.752941, 0.243137, 1 ],
+		"fontsize" : 8,
+		"legacytextcolor" : 1,
+		"textcolor" : [ 0.752941, 0.023529, 0.247059, 1 ],
+		"textoncolor" : [ 0, 0, 0, 1 ],
+		"textovercolor" : [ 0.752941, 0.023529, 0.247059, 1 ],
+		"usebgoncolor" : 1,
+		"usetextovercolor" : 1
+	}
+,
+	"jit_on" : 	{
+		"patching_rect" : [ 0, 16, 21, 17 ],
+		"hidden" : 0,
+		"bgcolor" : [ 0.75, 0.75, 0.75, 1 ],
+		"bgoncolor" : [ 0.752941, 0.023529, 0.247059, 1 ],
+		"fontsize" : 8,
+		"legacytextcolor" : 1,
+		"textcolor" : [ 0.752941, 0.023529, 0.247059, 1 ],
+		"textoncolor" : [ 0.870588, 0.819608, 0.239216, 1 ],
+		"textovercolor" : [ 0.752941, 0.023529, 0.247059, 1 ],
+		"usebgoncolor" : 1,
+		"usetextovercolor" : 1
+	}
+,
+	"local_disp_on" : 	{
+		"patching_rect" : [ 56, 15, 16, 17 ],
+		"hidden" : 0,
+		"bgcolor" : [ 0.75, 0.75, 0.75, 1 ],
+		"bgoncolor" : [ 0.752941, 0.023529, 0.247059, 1 ],
+		"fontsize" : 9,
+		"legacytextcolor" : 1,
+		"textcolor" : [ 0.752941, 0.023529, 0.247059, 1 ],
+		"textoncolor" : [ 0.870588, 0.819608, 0.239216, 1 ],
+		"textovercolor" : [ 0.752941, 0.023529, 0.247059, 1 ],
+		"usebgoncolor" : 1,
+		"usetextovercolor" : 1
+	}
+,
+	"settings" : 	{
+		"patching_rect" : [ 93, 1, 35, 13 ],
+		"hidden" : 0,
+		"bgcolor" : [ 0, 0.776471, 0.482353, 1 ],
+		"bgoncolor" : [ 0.55, 0.55, 0.55, 1 ],
+		"fontsize" : 8,
+		"legacytextcolor" : 1,
+		"textcolor" : [ 0.15, 0.15, 0.15, 1 ],
+		"textoncolor" : [ 1, 1, 1, 1 ],
+		"textovercolor" : [ 0.1, 0.1, 0.1, 1 ],
+		"usebgoncolor" : 1,
+		"usetextovercolor" : 1
+	}
+,
+	"zoom-on/off" : 	{
+		"patching_rect" : [ 125, 142, 35, 13 ],
+		"hidden" : 0,
+		"bgcolor" : [ 0, 0.776471, 0.482353, 1 ],
+		"bgoncolor" : [ 0.55, 0.55, 0.55, 1 ],
+		"fontsize" : 8,
+		"legacytextcolor" : 1,
+		"textcolor" : [ 0.15, 0.15, 0.15, 1 ],
+		"textoncolor" : [ 1, 1, 1, 1 ],
+		"textovercolor" : [ 0.1, 0.1, 0.1, 1 ],
+		"usebgoncolor" : 1,
+		"usetextovercolor" : 1
+	}
+,
+	"zoom" : 	{
+		"patching_rect" : [ 159, 141, 33, 16 ],
+		"hidden" : 0,
+		"bgcolor" : [ 1, 1, 1, 1 ],
+		"bordercolor" : [ 0.5, 0.5, 0.5, 1 ],
+		"fontsize" : 12,
+		"labelcolor" : [ 0, 0, 0, 1 ],
+		"selectcolor" : [ 0.45, 0.67, 1, 0.47 ],
+		"slidercolor" : [ 0, 0, 0, 1 ],
+		"slidercolornofocus" : [ 0.48, 0.48, 0.48, 0.55 ],
+		"textcolor" : [ 0, 0, 0, 1 ],
+		"textcolornofocus" : [ 0.48, 0.48, 0.48, 0.79 ]
+	}
+,
+	"flip_v" : 	{
+		"patching_rect" : [ 82, 142, 17, 17 ],
+		"hidden" : 0,
+		"bgcolor" : [ 0, 0.776471, 0.482353, 1 ],
+		"bgoncolor" : [ 0.55, 0.55, 0.55, 1 ],
+		"fontsize" : 12,
+		"legacytextcolor" : 1,
+		"textcolor" : [ 0.15, 0.15, 0.15, 1 ],
+		"textoncolor" : [ 1, 1, 1, 1 ],
+		"textovercolor" : [ 0.1, 0.1, 0.1, 1 ],
+		"usebgoncolor" : 1,
+		"usetextovercolor" : 1
+	}
+,
+	"flip_h" : 	{
+		"patching_rect" : [ 67, 142, 17, 17 ],
+		"hidden" : 0,
+		"bgcolor" : [ 0, 0.776471, 0.482353, 1 ],
+		"bgoncolor" : [ 0.55, 0.55, 0.55, 1 ],
+		"fontsize" : 12,
+		"legacytextcolor" : 1,
+		"textcolor" : [ 0.15, 0.15, 0.15, 1 ],
+		"textoncolor" : [ 1, 1, 1, 1 ],
+		"textovercolor" : [ 0.1, 0.1, 0.1, 1 ],
+		"usebgoncolor" : 1,
+		"usetextovercolor" : 1
+	}
+,
+	"jit_ms" : 	{
+		"patching_rect" : [ 22, 15, 34, 17 ],
+		"hidden" : 0,
+		"bgcolor" : [ 0.752941176470588, 0.023529411764706, 0.247058823529412, 1 ],
+		"bordercolor" : [ 0.5, 0.5, 0.5, 1 ],
+		"fontsize" : 12,
+		"labelcolor" : [ 0, 0.776470588235294, 0.211764705882353, 1 ],
+		"selectcolor" : [ 0.45, 0.67, 1, 0.47 ],
+		"slidercolor" : [ 0, 0, 0, 1 ],
+		"slidercolornofocus" : [ 0.48, 0.48, 0.48, 0.55 ],
+		"textcolor" : [ 0, 0.776470588235294, 0.211764705882353, 1 ],
+		"textcolornofocus" : [ 0.48, 0.48, 0.48, 0.79 ]
+	}
+,
+	"tex" : 	{
+		"patching_rect" : [ 74, 15, 22, 17 ],
+		"hidden" : 0,
+		"bgcolor" : [ 0.75, 0.75, 0.75, 1 ],
+		"bgoncolor" : [ 0.752941176470588, 0.023529411764706, 0.627450980392157, 1 ],
+		"fontsize" : 11,
+		"legacytextcolor" : 1,
+		"textcolor" : [ 0.752941, 0.023529, 0.247059, 1 ],
+		"textoncolor" : [ 0.870588, 0.819608, 0.239216, 1 ],
+		"textovercolor" : [ 0.752941, 0.023529, 0.247059, 1 ],
+		"usebgoncolor" : 1,
+		"usetextovercolor" : 1
+	}
+
+}
