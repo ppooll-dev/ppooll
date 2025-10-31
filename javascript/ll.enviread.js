@@ -183,7 +183,8 @@ function params() {
     } else {
         loadPresets();
         messnamed("llenviread", 0);
-        if (environment.ho_st1["audioON/OFF"] === 1) outlet(0, "dac~", 1);
+        if (environment.ho_st1 && environment.ho_st1["audioON/OFF"] === 1) 
+            outlet(0, "dac~", 1);
         outlet(0, "done!");
     }
 }
