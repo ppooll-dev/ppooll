@@ -12,6 +12,10 @@ outlets = 3; // Default number of outlets, this will be dynamically updated
 // The initial size for demultiplexing, can be changed dynamically via the first inlet
 var size = 3;
 
+if (jsarguments.length>1)
+	size = jsarguments[1];
+    outlets = jsarguments[1];
+
 // Function to set the size and adjust the number of outlets
 function setSize(newSize) {
     size = newSize;
