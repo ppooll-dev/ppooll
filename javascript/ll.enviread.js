@@ -47,6 +47,9 @@ function msg_dictionary(d) {
 
     environment = dict.environment;
 
+    const envi_dict = new Dict("environment");
+    envi_dict.parse(JSON.stringify(environment))
+
     // TODO: check for buffers loaded via pres_menu and do that first?
     if (environment.buffer_host1 && environment.buffer_host1.ll_buffers) {
         buffers = environment.buffer_host1.ll_buffers;
