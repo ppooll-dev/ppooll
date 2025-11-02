@@ -28,7 +28,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 0.0, 0.0, 1000.0, 755.2 ],
+                        "rect": [ 59.0, 119.0, 1000.0, 755.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -81,8 +81,8 @@
                                     "numinlets": 2,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 50.0, 217.0, 32.0, 22.0 ],
-                                    "text": "gate"
+                                    "patching_rect": [ 50.0, 217.0, 52.0, 22.0 ],
+                                    "text": "gate 1 1"
                                 }
                             },
                             {
