@@ -146,9 +146,9 @@ function paint() {
 
     let title_txt = txt;
     // TODO: Could show different text here depending on key mods
-    // if(isHoveringRight && mod != 0){
-    //     title_txt = mod == 2 ? "tetris" : "presets"
-    // }
+    if(isHoveringRight && mod != 0){
+        title_txt = mod == 2 ? "tetris" : "presets"
+    }
 
     mgraphics.text_path(title_txt);
     mgraphics.fill();

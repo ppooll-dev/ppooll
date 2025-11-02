@@ -67,7 +67,7 @@ function fillMenu(){
         ...envisUser.folders.map(e => e.name),
         '<separator>', '(.json)',
         ...envisUser.json.map(e => e.name),
-        '<separator>', 'opentext', 'merge...', 'paramsonly',
+        '<separator>', 'write!', 'opentext', 'merge...', 'paramsonly',
         '<separator>', '(factory)',
         // TODO: No factory "folders"
         ...envisFactory.json.map(e => e.name),
@@ -81,7 +81,7 @@ function saveload(){
         '(environments)', 
         '<separator>', '(folders)', 
         '<separator>', '(.json)',
-        '<separator>', 'opentext', 'merge...', 'paramsonly',
+        '<separator>', 'write!', 'opentext', 'merge...', 'paramsonly',
         '<separator>', '(factory)',
     ];
 
