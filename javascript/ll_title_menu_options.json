@@ -1,0 +1,43 @@
+{
+    "ho_st": [
+        "info",
+        "clientwindow",
+        "-",
+        "max_console",
+        "clear_console",
+        "titlebar",
+        "all_titlebars",
+        "dsp(audio_settings)",
+        "tetris",
+        "refresh",
+        "-",
+        "stopwatch",
+        "clock",
+        "-",
+        "close",
+        "closeall",
+        "back",
+        "grow",
+        "-",
+        "subpatch",
+        "actmaker",
+        "ppooll_state",
+        "clean",
+        "nan_clear"
+    ],
+    "default": [
+        "info",
+        "clientwindow ",
+        "storagewindow",
+        "-",
+        "titlebar ",
+        "close ",
+        "back",
+        "grow ",
+        "master ",
+        "active_store",
+        "-",
+        "subpatch ",
+        "actmaker"
+    ]    
+}

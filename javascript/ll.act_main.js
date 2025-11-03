@@ -124,6 +124,12 @@ function actname(a, n) {
     //post(txt88,txt);
     mgraphics.redraw();
 
+    // set title_menu options
+    title_menu.message(
+        "dictionary",
+        a === "ho_st" ? "ll_title_menu_ho_st" : "ll_title_menu"
+    )
+
     const ll_state = new Dict("ppoollstate");
     const act_state = {
         class: a,
@@ -212,11 +218,11 @@ act_patcher.message("window", "flags", "nogrow")
 act_patcher.message("window", "exec")
 
 const title_menu_options = {
-    info: function() {
+    info: () => {
         this.patcher.getnamed("pcontrol").message("load", `${act_args.name}.maxhelp` )
         clearTitleMenu();
     },
-    clientwindow: function() {
+    clientwindow: () => {
         act_patcher.getnamed("pat").message("clientwindow")
         clearTitleMenu();
     },
@@ -278,7 +284,10 @@ const title_menu_options = {
 
 function clearTitleMenu(){
     if(title_menu){
-        title_menu.message("\"\"")
+        // TODO: do we need to clear the value in pattrstorage here??
+        
+        // act_patcher.getnamed("pat").message("act::title_menu", "\"\"")
+        // title_menu.message("\"\"")
     }
 }
 
