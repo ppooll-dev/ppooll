@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 374.0, 179.0, 133.0, 124.0 ],
+        "rect": [ 472.0, 184.0, 133.0, 124.0 ],
         "default_fontsize": 11.595187,
         "toolbarvisible": 0,
         "globalpatchername": "ho_st1",
@@ -492,7 +492,7 @@
                     "fontsize": 12.0,
                     "hint": "environment menu",
                     "id": "obj-22",
-                    "items": [ "(environments)", ",", "<separator>", ",", "(folders)", ",", "<separator>", ",", "(.json)", ",", "<separator>", ",", "write!", ",", "opentext", ",", "merge...", ",", "paramsonly", ",", "<separator>", ",", "(factory)" ],
+                    "items": [ "(environments)", ",", "<separator>", ",", "(folders)", ",", "--new-way--", ",", "--new-way-2--", ",", "--new-way-3--", ",", "--new-way-4--", ",", "--new-way-5--", ",", "--new-way-6--", ",", "--new-way-7--", ",", "251015-henry", ",", "_250904_2", ",", "____test_inmulti", ",", "___audioOFF", ",", "___audioON", ",", "___mousie-times", ",", "___show2", ",", "___show3", ",", "__loopy", ",", "__me", ",", "__midi-port-chan-vst", ",", "__modssss", ",", "__show4", ",", "__show5", ",", "__show6", ",", "__show7", ",", "__show8", ",", "__show9", ",", "__snappy", ",", "__vst_all", ",", "__vst_auto", ",", "_altogether_", ",", "_duppie_", ",", "_factory", ",", "_json_buffers", ",", "_json_buffers2", ",", "_nobuffs_", ",", "_paramstest_", ",", "_poop_", ",", "_twinkie_", ",", "_twinkle_", ",", "_vst_v8", ",", "_withbuffs_", ",", "asdfgh", ",", "blahblah", ",", "blahblahblah", ",", "bubbly time", ",", "collected", ",", "danky times", ",", "did-i?", ",", "do i work", ",", "fdafd", ",", "fdafdsfasffad", ",", "fdafsdaffdsa", ",", "fdsafdsaf", ",", "fdsafdsafdsa", ",", "fdsafdsafdsafdsa", ",", "fdsafdsafsa", ",", "fdsfadsfsfa", ",", "fffffffff", ",", "geetar-workshop", ",", "gfgdfsgf", ",", "gg.test", ",", "groovies", ",", "just_factory", ",", "matriarch", ",", "my-cool-window", ",", "my-environment", ",", "my-test", ",", "no-copybuffers", ",", "old", ",", "save control pos", ",", "signal-test", ",", "sinsE_minilab_ko25_9", ",", "smokey", ",", "stinker", ",", "stinker2", ",", "test", ",", "testtesttest", ",", "testy", ",", "testy test", ",", "vst-test", ",", "<separator>", ",", "(.json)", ",", "<none>", ",", "2401009-something-moody", ",", "240109-something-moody", ",", "240217-snowday", ",", "240226-snowday", ",", "240525-nate-joe", ",", "241215", ",", "241217-goose", ",", "241217", ",", "241218-goose", ",", "241218-goose2", ",", "241227-goose-boom", ",", "250204_theo-jam", ",", "250325-guitar processing", ",", "250326-guitar processing", ",", "250331-guitar processing", ",", "250401-a-harmonic-remix-laurie", ",", "250401-guitar processing", ",", "250831", ",", "250910-slowvegas", ",", "_250831-test-buffers-path", ",", "_250831", ",", "_250831_2", ",", "_250831_3", ",", "_250904", ",", "_250904_2", ",", "__2_vsts", ",", "_______gg-reload", ",", "_______mega_u", ",", "_______vst3", ",", "______environment", ",", "_____show", ",", "__amxd", ",", "__mmooll", ",", "__vst-test", ",", "__vst_pls", ",", "_alltogether", ",", "_HARDCORE", ",", "_no-colon", ",", "_test-inmulti", ",", "_test-valhalla", ",", "_test-vst-presets", ",", "_test-vst", ",", "_test_amxd", ",", "_test_joegroove", ",", "_test_llmidiin_control", ",", "_test_vst_mm", ",", "_test_vst_plate", ",", "_test_vst_preset", ",", "_uclid", ",", "_vst_v8-json", ",", "_vst_v8", ",", "adv-handholding-2", ",", "adv-handholding-3", ",", "adv-handholding-dlgran", ",", "advanced-handholding", ",", "airfx-test", ",", "alex-strings", ",", "amplitude-test", ",", "amxd-test", ",", "amxd-test2", ",", "amxd-test3", ",", "amxd-vs-vst", ",", "amxd-vs-vst2", ",", "amxd-window", ",", "atlast", ",", "axmd-save", ",", "bang-offer", ",", "banger-midi", ",", "bb-vp-jamjam", ",", "bblower-test", ",", "bedtime", ",", "buffer_boy", ",", "buffertest", ",", "bufftest", ",", "calm-sinus", ",", "chiral-mouse", ",", "chiral-test", ",", "chriral-rcloop", ",", "comatic-high", ",", "comatic", ",", "comatic2", ",", "comatic3", ",", "comatic4", ",", "commencement", ",", "commencement2", ",", "component-test", ",", "cone-o-shame", ",", "cone-o-shame2", ",", "cone-o-shame3", ",", "cone-o-shame4", ",", "cone-o-shame5", ",", "dangerous-buzz", ",", "danky times", ",", "demo-dlgran", ",", "dlgran-tester", ",", "drankit", ",", "dueling-sinus", ",", "dumpydumpdump", ",", "ear-smoke", ",", "echoboy", ",", "elastic-walls", ",", "endless-wavs", ",", "fdafdsfadfs", ",", "fdafdsfasffad", ",", "fdfdsfasdf", ",", "fdsafdsa", ",", "fdsafdsafdsafdsa", ",", "fdsafdsafsafsda", ",", "fdsfaas", ",", "fdsfdasfdsafda", ",", "fireworks", ",", "first-percs", ",", "flappy", ",", "funfuntimes", ",", "fuzzy-dreams", ",", "geetar-jam", ",", "gg.test", ",", "gg.trigger", ",", "gg.trigger2", ",", "gg_test", ",", "gizmo-channel-demo", ",", "groanchant", ",", "hands-interconnected", ",", "henry-drums-jam", ",", "henry-movers", ",", "henry-track-1", ",", "henry-track-2", ",", "henry-track-3", ",", "henry-will-ham", ",", "hg-230303-envi-romb", ",", "hg-230303-envi", ",", "hg-230405-fullsample", ",", "hg-230601", ",", "hg-230624-2", ",", "hg-230624", ",", "hg-230728", ",", "hg-231130", ",", "hg-231202", ",", "hg-231203", ",", "hg-240228", ",", "hg-240307", ",", "hg-240326", ",", "hg-othernames", ",", "inmulti-save-values", ",", "inmulti-test", ",", "jitter-test", ",", "kylon", ",", "lastlaugh", ",", "live-12-max-9", ",", "many-mmods", ",", "many-vst", ",", "mc-mods-test", ",", "mc_beast", ",", "mc_wavelets", ",", "mm-dm12-jam", ",", "mm-in-ppooll-zfilter", ",", "mm-in-ppooll", ",", "mm-midi-out-test", ",", "mm_osc", ",", "mmods-color", ",", "mmods-env-test", ",", "mmods-gran", ",", "mmods-please", ",", "mmods-test", ",", "mod-native-test", ",", "mod-test", ",", "morff-test", ",", "mouse-chiral-test", ",", "mubutest", ",", "mulch-jam", ",", "musichackspace", ",", "nate-joe-240509", ",", "nithe-bells-zfilltered", ",", "nithe-bells", ",", "ola-tester", ",", "osc-label-test", ",", "osc-wavjam", ",", "perc-expanded", ",", "pg-8x", ",", "plugin-playground", ",", "plugin-playground2", ",", "plugin-playground3", ",", "pseudo-echo", ",", "random-bang-interval", ",", "really-nice-guitar", ",", "ripstick", ",", "ripstick2", ",", "ripstick3", ",", "ripstick4", ",", "saggy", ",", "sinus-mh", ",", "sinus-uclid", ",", "slur_test", ",", "smokey-json", ",", "something mooody", ",", "something-moody", ",", "something-moody2", ",", "source-filter-beauty", ",", "squiggles", ",", "stinky peanuts", ",", "swamp-rising-snapd", ",", "swamp-rising", ",", "talking-funny", ",", "talking-funny2", ",", "talking-funny3", ",", "taming-wavelets", ",", "taming-wavelets2", ",", "taming-wavelets3", ",", "taming-wavelets4", ",", "teast-mtron", ",", "test-airfx", ",", "test-amxd", ",", "test-dlgran", ",", "test-echobode", ",", "test-echoboy", ",", "test-env-write", ",", "test-flop", ",", "test-in_mix-sidechain", ",", "test-ina-save-inputs", ",", "test-mmods", ",", "test-munger", ",", "test-panman-spazpong", ",", "test-pitchtracker", ",", "test-rcloop", ",", "test-recall-vst", ",", "test-sogs", ",", "test-temperance", ",", "test-test", ",", "test-uclid", ",", "test-uhmi", ",", "test-unmod", ",", "test-vintage", ",", "test-vst-changes", ",", "test-vst-echobode", ",", "test-vst-mod-au", ",", "test-vst-mod", ",", "test-vst-odc", ",", "test-vst-params", ",", "test-vst-sinus", ",", "test-vst-tal", ",", "test-vst-vitnage", ",", "test-vst", ",", "test-xgroove", ",", "test-xy", ",", "test", ",", "test3", ",", "test4", ",", "test?", ",", "testnewdump", ",", "testtwo", ",", "testvintageverb", ",", "testy test json", ",", "too-fuzzy", ",", "train-of-wavelets", ",", "uclid-mouse", ",", "uclid-test", ",", "vox-mogwai", ",", "vox-vid", ",", "vox", ",", "vst-save-test", ",", "vst-test-2", ",", "vst-test", ",", "wacky-wings", ",", "warp-classic-event", ",", "washy-well", ",", "wavelets-sync", ",", "wetdry-essense", ",", "wetdry", ",", "wetdryuniverse", ",", "wf-test", ",", "wind-up-syncs", ",", "wipply", ",", "wishing well", ",", "work-grain", ",", "xgroovies", ",", "<separator>", ",", "write!", ",", "opentext", ",", "merge...", ",", "paramsonly", ",", "<separator>", ",", "(factory)", ",", "buffertest", ",", "ducks", ",", "envM_test" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -545,7 +545,7 @@
                     "fontsize": 12.0,
                     "hint": "favorites menu",
                     "id": "obj-48",
-                    "items": [ "(favorites)", ",", "-", ",", "add_favorit", ",", "del_favorit" ],
+                    "items": [ "(favorites)", ",", "INa", ",", "amxd@", ",", "banger", ",", "beauty", ",", "buffub", ",", "control@", ",", "matriarch@", ",", "mmods@", ",", "modul.ator", ",", "xgroove@", ",", "(favorites)", ",", "-", ",", "add_favorit", ",", "del_favorit" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -572,7 +572,7 @@
                     "fontsize": 12.0,
                     "hint": "act menu (open acts from here)",
                     "id": "obj-50",
-                    "items": "(__acts__)",
+                    "items": [ "(__acts__)", ",", "_act_overview", ",", "2Dsliders", ",", "amxd@", ",", "arpanner", ",", "autocount@", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "brown", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "frack", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.copyprot.act", ",", "jit.grab@", ",", "jit.player", ",", "jit.videoplanes", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "limi", ",", "link@", ",", "lkforest@", ",", "matriarch@", ",", "matrix@", ",", "mc.mod", ",", "mc.random@", ",", "mixer@", ",", "modul.ator", ",", "munger@", ",", "noize@", ",", "notepad@", ",", "op@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "pHARM4@", ",", "pr.spectfreeze", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "threekomp", ",", "timeline@", ",", "transientshaper", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "oer_prcs", ",", "oer_prcss", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--", ",", "airfx@", ",", "ar.bitglitter@", ",", "bb.rainer@", ",", "bounce@", ",", "buresyn@", ",", "clock.in@", ",", "clock.src@", ",", "convolver@", ",", "cross-dog@", ",", "dd.rainer", ",", "deskdust", ",", "djrone@", ",", "djrone_buff@", ",", "dl.granulator@", ",", "dlgranulator@", ",", "duplicator@", ",", "env.follower@", ",", "failure", ",", "fcbControl", ",", "feedbliss", ",", "feedbliss_v2", ",", "fft.filter@", ",", "gamepad@", ",", "gigaverb@", ",", "granu.ll.ator", ",", "INa", ",", "joe.groove@", ",", "keyfreq", ",", "keyspeed", ",", "lkforest@", ",", "lkstretch", ",", "miClouds", ",", "miVerb", ",", "mlooch@", ",", "mmarbless", ",", "mmods@", ",", "modul.dupe", ",", "moog.ladder@", ",", "mubu.grain@", ",", "MubuConcat", ",", "MubuGrain", ",", "munger_old@", ",", "music-mouse@", ",", "notepad2@", ",", "ola.granular", ",", "pitchchainer", ",", "pitchtracker@", ",", "polyrhythmusTwo", ",", "pp.rainer@", ",", "pr.spectdelay", ",", "rc.loop@", ",", "rings", ",", "sc.gendy3@", ",", "sh.bubbler", ",", "sidechainer", ",", "slur@", ",", "sogs@", ",", "sp.lpg", ",", "sync_out", ",", "tintinn@", ",", "transport@", ",", "tuner", ",", "uclid", ",", "vp.sourcefilter", ",", "wavegrain", ",", "www", ",", "z.filter@" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -2945,7 +2945,7 @@
                                                             "modernui": 1
                                                         },
                                                         "classnamespace": "box",
-                                                        "rect": [ 500.0, 300.0, 800.0, 800.0 ],
+                                                        "rect": [ 500.0, 300.0, 200.0, 190.0 ],
                                                         "openrect": [ 0.0, 0.0, 800.0, 800.0 ],
                                                         "openrectmode": 0,
                                                         "openinpresentation": 1,
@@ -4224,8 +4224,6 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 0,
-                                                                        "node_bin_path": "",
-                                                                        "npm_bin_path": "",
                                                                         "watch": 0
                                                                     },
                                                                     "text": "node.script ll.node.folders.js",
@@ -5056,7 +5054,7 @@
                                                                                     "numoutlets": 3,
                                                                                     "outlettype": [ "", "", "" ],
                                                                                     "patching_rect": [ 240.0, 291.5, 101.0, 22.0 ],
-                                                                                    "restore": [ "(environments)", ",", "<separator>", ",", "(folders)", ",", "alt", ",", "mc.groove_test", ",", "<separator>", ",", "(.json)", ",", "<none>", ",", "ducks_new", ",", "klingt.coll.minilab", ",", "mc.gizmo_tutorial", ",", "rec@", ",", "sins_minilabN", ",", "sinsE_convention", ",", "sinsE_MC", ",", "sinsE_minilab_center", ",", "sinsE_minilab_ko25", ",", "snaptesttt", ",", "superspreading11", ",", "tetris_test", ",", "xtest", ",", "ƒ buffertest", ",", "<separator>", ",", "opentext", ",", "merge...", ",", "paramsonly", ",", "<separator>", ",", "(factory)", ",", "buffertest", ",", "ducks", ",", "envM_test" ],
+                                                                                    "restore": [ "(environments)", ",", "<separator>", ",", "(folders)", ",", "--new-way--", ",", "--new-way-2--", ",", "--new-way-3--", ",", "--new-way-4--", ",", "--new-way-5--", ",", "--new-way-6--", ",", "--new-way-7--", ",", "251015-henry", ",", "_250904_2", ",", "____test_inmulti", ",", "___audioOFF", ",", "___audioON", ",", "___mousie-times", ",", "___show2", ",", "___show3", ",", "__loopy", ",", "__me", ",", "__midi-port-chan-vst", ",", "__modssss", ",", "__show4", ",", "__show5", ",", "__show6", ",", "__show7", ",", "__show8", ",", "__show9", ",", "__snappy", ",", "__vst_all", ",", "__vst_auto", ",", "_altogether_", ",", "_duppie_", ",", "_factory", ",", "_json_buffers", ",", "_json_buffers2", ",", "_nobuffs_", ",", "_paramstest_", ",", "_poop_", ",", "_twinkie_", ",", "_twinkle_", ",", "_vst_v8", ",", "_withbuffs_", ",", "asdfgh", ",", "blahblah", ",", "blahblahblah", ",", "bubbly time", ",", "collected", ",", "danky times", ",", "did-i?", ",", "do i work", ",", "fdafd", ",", "fdafdsfasffad", ",", "fdafsdaffdsa", ",", "fdsafdsaf", ",", "fdsafdsafdsa", ",", "fdsafdsafdsafdsa", ",", "fdsafdsafsa", ",", "fdsfadsfsfa", ",", "fffffffff", ",", "geetar-workshop", ",", "gfgdfsgf", ",", "gg.test", ",", "groovies", ",", "just_factory", ",", "matriarch", ",", "my-cool-window", ",", "my-environment", ",", "my-test", ",", "no-copybuffers", ",", "old", ",", "save control pos", ",", "signal-test", ",", "sinsE_minilab_ko25_9", ",", "smokey", ",", "stinker", ",", "stinker2", ",", "test", ",", "testtesttest", ",", "testy", ",", "testy test", ",", "vst-test", ",", "<separator>", ",", "(.json)", ",", "<none>", ",", "2401009-something-moody", ",", "240109-something-moody", ",", "240217-snowday", ",", "240226-snowday", ",", "240525-nate-joe", ",", "241215", ",", "241217-goose", ",", "241217", ",", "241218-goose", ",", "241218-goose2", ",", "241227-goose-boom", ",", "250204_theo-jam", ",", "250325-guitar processing", ",", "250326-guitar processing", ",", "250331-guitar processing", ",", "250401-a-harmonic-remix-laurie", ",", "250401-guitar processing", ",", "250831", ",", "250910-slowvegas", ",", "_250831-test-buffers-path", ",", "_250831", ",", "_250831_2", ",", "_250831_3", ",", "_250904", ",", "_250904_2", ",", "__2_vsts", ",", "_______gg-reload", ",", "_______mega_u", ",", "_______vst3", ",", "______environment", ",", "_____show", ",", "__amxd", ",", "__mmooll", ",", "__vst-test", ",", "__vst_pls", ",", "_alltogether", ",", "_HARDCORE", ",", "_no-colon", ",", "_test-inmulti", ",", "_test-valhalla", ",", "_test-vst-presets", ",", "_test-vst", ",", "_test_amxd", ",", "_test_joegroove", ",", "_test_llmidiin_control", ",", "_test_vst_mm", ",", "_test_vst_plate", ",", "_test_vst_preset", ",", "_uclid", ",", "_vst_v8-json", ",", "_vst_v8", ",", "adv-handholding-2", ",", "adv-handholding-3", ",", "adv-handholding-dlgran", ",", "advanced-handholding", ",", "airfx-test", ",", "alex-strings", ",", "amplitude-test", ",", "amxd-test", ",", "amxd-test2", ",", "amxd-test3", ",", "amxd-vs-vst", ",", "amxd-vs-vst2", ",", "amxd-window", ",", "atlast", ",", "axmd-save", ",", "bang-offer", ",", "banger-midi", ",", "bb-vp-jamjam", ",", "bblower-test", ",", "bedtime", ",", "buffer_boy", ",", "buffertest", ",", "bufftest", ",", "calm-sinus", ",", "chiral-mouse", ",", "chiral-test", ",", "chriral-rcloop", ",", "comatic-high", ",", "comatic", ",", "comatic2", ",", "comatic3", ",", "comatic4", ",", "commencement", ",", "commencement2", ",", "component-test", ",", "cone-o-shame", ",", "cone-o-shame2", ",", "cone-o-shame3", ",", "cone-o-shame4", ",", "cone-o-shame5", ",", "dangerous-buzz", ",", "danky times", ",", "demo-dlgran", ",", "dlgran-tester", ",", "drankit", ",", "dueling-sinus", ",", "dumpydumpdump", ",", "ear-smoke", ",", "echoboy", ",", "elastic-walls", ",", "endless-wavs", ",", "fdafdsfadfs", ",", "fdafdsfasffad", ",", "fdfdsfasdf", ",", "fdsafdsa", ",", "fdsafdsafdsafdsa", ",", "fdsafdsafsafsda", ",", "fdsfaas", ",", "fdsfdasfdsafda", ",", "fireworks", ",", "first-percs", ",", "flappy", ",", "funfuntimes", ",", "fuzzy-dreams", ",", "geetar-jam", ",", "gg.test", ",", "gg.trigger", ",", "gg.trigger2", ",", "gg_test", ",", "gizmo-channel-demo", ",", "groanchant", ",", "hands-interconnected", ",", "henry-drums-jam", ",", "henry-movers", ",", "henry-track-1", ",", "henry-track-2", ",", "henry-track-3", ",", "henry-will-ham", ",", "hg-230303-envi-romb", ",", "hg-230303-envi", ",", "hg-230405-fullsample", ",", "hg-230601", ",", "hg-230624-2", ",", "hg-230624", ",", "hg-230728", ",", "hg-231130", ",", "hg-231202", ",", "hg-231203", ",", "hg-240228", ",", "hg-240307", ",", "hg-240326", ",", "hg-othernames", ",", "inmulti-save-values", ",", "inmulti-test", ",", "jitter-test", ",", "kylon", ",", "lastlaugh", ",", "live-12-max-9", ",", "many-mmods", ",", "many-vst", ",", "mc-mods-test", ",", "mc_beast", ",", "mc_wavelets", ",", "mm-dm12-jam", ",", "mm-in-ppooll-zfilter", ",", "mm-in-ppooll", ",", "mm-midi-out-test", ",", "mm_osc", ",", "mmods-color", ",", "mmods-env-test", ",", "mmods-gran", ",", "mmods-please", ",", "mmods-test", ",", "mod-native-test", ",", "mod-test", ",", "morff-test", ",", "mouse-chiral-test", ",", "mubutest", ",", "mulch-jam", ",", "musichackspace", ",", "nate-joe-240509", ",", "nithe-bells-zfilltered", ",", "nithe-bells", ",", "ola-tester", ",", "osc-label-test", ",", "osc-wavjam", ",", "perc-expanded", ",", "pg-8x", ",", "plugin-playground", ",", "plugin-playground2", ",", "plugin-playground3", ",", "pseudo-echo", ",", "random-bang-interval", ",", "really-nice-guitar", ",", "ripstick", ",", "ripstick2", ",", "ripstick3", ",", "ripstick4", ",", "saggy", ",", "sinus-mh", ",", "sinus-uclid", ",", "slur_test", ",", "smokey-json", ",", "something mooody", ",", "something-moody", ",", "something-moody2", ",", "source-filter-beauty", ",", "squiggles", ",", "stinky peanuts", ",", "swamp-rising-snapd", ",", "swamp-rising", ",", "talking-funny", ",", "talking-funny2", ",", "talking-funny3", ",", "taming-wavelets", ",", "taming-wavelets2", ",", "taming-wavelets3", ",", "taming-wavelets4", ",", "teast-mtron", ",", "test-airfx", ",", "test-amxd", ",", "test-dlgran", ",", "test-echobode", ",", "test-echoboy", ",", "test-env-write", ",", "test-flop", ",", "test-in_mix-sidechain", ",", "test-ina-save-inputs", ",", "test-mmods", ",", "test-munger", ",", "test-panman-spazpong", ",", "test-pitchtracker", ",", "test-rcloop", ",", "test-recall-vst", ",", "test-sogs", ",", "test-temperance", ",", "test-test", ",", "test-uclid", ",", "test-uhmi", ",", "test-unmod", ",", "test-vintage", ",", "test-vst-changes", ",", "test-vst-echobode", ",", "test-vst-mod-au", ",", "test-vst-mod", ",", "test-vst-odc", ",", "test-vst-params", ",", "test-vst-sinus", ",", "test-vst-tal", ",", "test-vst-vitnage", ",", "test-vst", ",", "test-xgroove", ",", "test-xy", ",", "test", ",", "test3", ",", "test4", ",", "test?", ",", "testnewdump", ",", "testtwo", ",", "testvintageverb", ",", "testy test json", ",", "too-fuzzy", ",", "train-of-wavelets", ",", "uclid-mouse", ",", "uclid-test", ",", "vox-mogwai", ",", "vox-vid", ",", "vox", ",", "vst-save-test", ",", "vst-test-2", ",", "vst-test", ",", "wacky-wings", ",", "warp-classic-event", ",", "washy-well", ",", "wavelets-sync", ",", "wetdry-essense", ",", "wetdry", ",", "wetdryuniverse", ",", "wf-test", ",", "wind-up-syncs", ",", "wipply", ",", "wishing well", ",", "work-grain", ",", "xgroovies", ",", "<separator>", ",", "write!", ",", "opentext", ",", "merge...", ",", "paramsonly", ",", "<separator>", ",", "(factory)", ",", "buffertest", ",", "ducks", ",", "envM_test" ],
                                                                                     "saved_object_attributes": {
                                                                                         "parameter_enable": 0,
                                                                                         "parameter_mappable": 0
@@ -6068,7 +6066,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 163.0, 100.0, 101.0, 22.0 ],
-                                                                                    "text": "buffer_host1"
+                                                                                    "text": "ho_st1"
                                                                                 }
                                                                             },
                                                                             {
@@ -6091,7 +6089,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 50.0, 100.0, 96.0, 22.0 ],
-                                                                                    "text": "buffer_host1"
+                                                                                    "text": "ho_st1"
                                                                                 }
                                                                             },
                                                                             {
@@ -6642,7 +6640,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 19.0, 290.0, 117.0, 22.0 ],
-                                                    "text": "xgroove@"
+                                                    "text": "ho_st"
                                                 }
                                             },
                                             {
@@ -6675,7 +6673,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 19.0, 47.0, 160.0, 24.0 ],
-                                                    "text": "buffer_host1"
+                                                    "text": "ho_st1"
                                                 }
                                             },
                                             {
@@ -7742,6 +7740,8 @@
                                                     "saved_object_attributes": {
                                                         "autostart": 0,
                                                         "defer": 0,
+                                                        "node_bin_path": "",
+                                                        "npm_bin_path": "",
                                                         "watch": 0
                                                     },
                                                     "text": "node.script ll.node.checkPermissionsOS",
@@ -10922,11 +10922,13 @@
                                                     "fontname": "Arial",
                                                     "fontsize": 12.0,
                                                     "id": "obj-5",
+                                                    "linecount": 4,
                                                     "maxclass": "message",
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 425.0, 220.5, 241.0, 22.0 ]
+                                                    "patching_rect": [ 425.0, 220.5, 241.0, 22.0 ],
+                                                    "text": "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets\""
                                                 }
                                             },
                                             {
@@ -12120,11 +12122,13 @@
                                                                     "fontname": "Arial",
                                                                     "fontsize": 13.0,
                                                                     "id": "obj-12",
+                                                                    "linecount": 2,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
-                                                                    "patching_rect": [ 113.0, 171.0, 337.0, 23.0 ]
+                                                                    "patching_rect": [ 113.0, 171.0, 337.0, 23.0 ],
+                                                                    "text": "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Packages\""
                                                                 }
                                                             },
                                                             {
@@ -13294,11 +13298,13 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-3",
+                                                                    "linecount": 2,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
-                                                                    "patching_rect": [ 25.0, 390.0, 371.0, 22.0 ]
+                                                                    "patching_rect": [ 25.0, 390.0, 371.0, 22.0 ],
+                                                                    "text": "read \"Macintosh HD:/Users/josephsteccato/Library/Application Support/Cycling '74/Max 9/Settings/maxpackages.json\""
                                                                 }
                                                             },
                                                             {
@@ -16499,7 +16505,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 39.0, 112.0, 114.0, 22.0 ],
-                                                    "text": "buffer_host 1"
+                                                    "text": "ho_st 1"
                                                 }
                                             },
                                             {
@@ -16585,11 +16591,13 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-11",
+                                                                    "linecount": 2,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
-                                                                    "patching_rect": [ 211.0, 47.5, 301.0, 22.0 ]
+                                                                    "patching_rect": [ 211.0, 47.5, 301.0, 22.0 ],
+                                                                    "text": "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Library/ppooll_presets/ho_stT\""
                                                                 }
                                                             },
                                                             {
@@ -19684,7 +19692,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 405.0, 455.0, 75.0, 22.0 ],
-                                                                                    "text": "buffer_host"
+                                                                                    "text": "ho_st"
                                                                                 }
                                                                             },
                                                                             {
@@ -21503,7 +21511,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 63.333333333333314, 89.0, 90.0, 22.0 ],
-                                                                                    "text": "buffer_host1"
+                                                                                    "text": "ho_st1"
                                                                                 }
                                                                             },
                                                                             {
@@ -22365,13 +22373,13 @@
                                                                             {
                                                                                 "box": {
                                                                                     "id": "obj-49",
-                                                                                    "linecount": 3,
+                                                                                    "linecount": 2,
                                                                                     "maxclass": "message",
                                                                                     "numinlets": 2,
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 259.5, 367.0, 35.0, 35.0 ],
-                                                                                    "text": "buffer_host"
+                                                                                    "text": "ho_st"
                                                                                 }
                                                                             },
                                                                             {
@@ -23259,7 +23267,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 13.0, 2.0, 87.0, 22.0 ],
-                                                                                    "text": "buffer_host1"
+                                                                                    "text": "ho_st1"
                                                                                 }
                                                                             },
                                                                             {
@@ -23669,7 +23677,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 92.25, 304.0, 145.0, 89.0 ],
-                                                                    "text": "send ::buffer_host1::pat"
+                                                                    "text": "send ::ho_st1::pat"
                                                                 }
                                                             },
                                                             {
@@ -24127,7 +24135,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 264.0, 102.0, 159.0, 22.0 ],
-                                                    "text": "buffer_host1 _"
+                                                    "text": "ho_st1 _"
                                                 }
                                             },
                                             {
@@ -24200,13 +24208,13 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-17",
-                                                                    "linecount": 5,
+                                                                    "linecount": 4,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 486.0, 163.0, 50.0, 62.0 ],
-                                                                    "text": "::buffer_host1::act::pres_menu 1"
+                                                                    "text": "::ho_st1::act::pres_menu 1"
                                                                 }
                                                             },
                                                             {
@@ -29448,11 +29456,13 @@
                                                                             {
                                                                                 "box": {
                                                                                     "id": "obj-8",
+                                                                                    "linecount": 2,
                                                                                     "maxclass": "message",
                                                                                     "numinlets": 2,
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
-                                                                                    "patching_rect": [ 190.0, 31.0, 392.0, 22.0 ]
+                                                                                    "patching_rect": [ 190.0, 31.0, 392.0, 22.0 ],
+                                                                                    "text": "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Library/ppooll_presets/xgroove@T\""
                                                                                 }
                                                                             },
                                                                             {
@@ -33164,7 +33174,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 82.0, 63.0, 197.0, 22.0 ],
-                                                                    "text": "xgroove@1 wide.json"
+                                                                    "text": "ho_st1 (tetris)"
                                                                 }
                                                             },
                                                             {
@@ -43599,7 +43609,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 266.0, 718.0, 212.0, 20.0 ],
-                                                    "text": "load (__acts__).maxpat"
+                                                    "text": "load (favorites).maxpat"
                                                 }
                                             },
                                             {
@@ -45136,7 +45146,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "signal" ],
                                                                                     "patching_rect": [ 50.0, 100.0, 190.0, 0.0 ],
-                                                                                    "text": "mc.sfrecord~ 16",
+                                                                                    "text": "mc.sfrecord~ 2",
                                                                                     "varname": "sfr"
                                                                                 }
                                                                             }
@@ -46063,7 +46073,7 @@
                     "restore": {
                         "act_menu": [ "(__acts__)" ],
                         "audioON/OFF": [ 0 ],
-                        "chans": [ 16 ],
+                        "chans": [ 2.0 ],
                         "def": [ -1 ],
                         "envi_menu": [ "(environments)" ],
                         "favorites": [ "(favorites)" ],
@@ -46073,7 +46083,7 @@
                         "rec": [ 0 ],
                         "screen": [ 0 ],
                         "stereo": [ 0 ],
-                        "time": [ 39502.0 ],
+                        "time": [ 38041.0 ],
                         "vol": [ 1.0 ],
                         "vol_ramp": [ 10 ],
                         "vol_slider": [ 1.0 ],
@@ -46114,7 +46124,7 @@
                     "lockeddragscroll": 0,
                     "lockedsize": 0,
                     "maxclass": "bpatcher",
-                    "name": "actmakeB.maxpat",
+                    "name": "ll.act.maxpat",
                     "numinlets": 1,
                     "numoutlets": 0,
                     "offset": [ 0.0, 0.0 ],
