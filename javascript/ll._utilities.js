@@ -97,8 +97,8 @@ exports.getExtension = (filename) => {
 // check if a folder exists, return true/false
 exports.folderExists = (path) => {
     try {
-        var f = new File(path);
-        var exists = f !== null && f.pathname !== "" && f.filetype === "fold";
+        var f = new Folder(path);
+        var exists = f !== null && f.pathname !== "" && f.end === 0;
         f.close();
         return exists;
     } catch (err) {
