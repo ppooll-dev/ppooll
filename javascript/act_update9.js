@@ -11,7 +11,7 @@ function actname(a){
 	actObj = actr.object;
 	tpp = actr.patcher;
 	btext = actObj.boxtext.split(" "); //.split(" ")[0]
-	if (btext[0] == "actmaker"){
+	if (btext[0] == "actmaker" || btext[0] == "actmake"){
 		post("old actmaker detected \n");
 		this.patcher.front();
 	}
@@ -28,7 +28,7 @@ function update(){
 	makecolor(color); // overwrites "color"
 	if (btext[0] == "actmaker"){
 		tpp.remove(actObj);
-		let am = tpp.newdefault(40,80,"bpatcher","@name", "actmakeB.maxpat", "@args",btext[1],colorH);
+		let am = tpp.newdefault(40,80,"bpatcher","@name", "ll.act.maxpat", "@args",btext[1],colorH);
 		am.varname = "act"
 		post ("updated:",btext[1],colorH,"\n");
 	}
