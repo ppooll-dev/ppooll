@@ -4173,7 +4173,7 @@
 					"lockeddragscroll" : 0,
 					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "ll.act.maxpat",
+					"name" : "act.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
@@ -4208,7 +4208,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "ll.act.maxpat",
+				"name" : "act.maxpat",
 				"bootpath" : "~/Documents/Max 9/Packages/ppooll/patchers/actmaker",
 				"patcherrelativepath" : "../actmaker",
 				"type" : "JSON",

@@ -28,7 +28,7 @@ function update(){
 	makecolor(color); // overwrites "color"
 	if (btext[0] == "actmaker"){
 		tpp.remove(actObj);
-		let am = tpp.newdefault(40,80,"bpatcher","@name", "ll.act.maxpat", "@args",btext[1],colorH);
+		let am = tpp.newdefault(40,80,"bpatcher","@name", "act.maxpat", "@args",btext[1],colorH);
 		am.varname = "act"
 		post ("updated:",btext[1],colorH,"\n");
 	}
