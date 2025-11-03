@@ -10,11 +10,14 @@ const args = jsarguments;
 const act_args = {
     id: args[1],
     name: args[2],
-    color: args[3]
-}
+    color: args[3],
+};
 // post(JSON.stringify(act_args))
 
-var xclick, yclick, xmove, ymove = 0;
+var xclick,
+    yclick,
+    xmove,
+    ymove = 0;
 var r = new Array();
 var act_patcher = this.patcher.parentpatcher;
 var w = act_patcher.wind;
@@ -109,7 +112,7 @@ function onidleout() {
 }
 function windpos(x, y) {
     //w=this.patcher.wind;
-    
+
     // post(xclick, yclick, x, y, "\n")
     r[0] = x + w.location[0];
     r[1] = y + w.location[1];
@@ -124,20 +127,25 @@ function actname(a, n) {
     //post(txt88,txt);
     mgraphics.redraw();
 
-    // set title_menu options
-    title_menu.message(
-        "dictionary",
-        a === "ho_st" ? "ll_title_menu_ho_st" : "ll_title_menu"
-    )
+    // set title_menu options using 
+    // the function mappings title_menu_options & host_title_menu_options
+    const dict_title_menu = new Dict();
+    dict_title_menu.set(
+        "items",
+        Object.keys(
+            a === "ho_st" ? host_title_menu_options() : title_menu_options
+        ).map((o) => (o.startsWith("separator") ? "-" : o))
+    );
+    title_menu.message("dictionary", dict_title_menu.name);
 
     const ll_state = new Dict("ppoollstate");
     const act_state = {
         class: a,
         index: n,
         id: act_args.id,
-        "inputs~" : {}
-    }
-    ll_state.setparse(`${txt}`, JSON.stringify(act_state))
+        "inputs~": {},
+    };
+    ll_state.setparse(`${txt}`, JSON.stringify(act_state));
 }
 function color(r, g, b) {
     bgcolor = [r, g, b, 1];
@@ -154,7 +162,7 @@ function brightness(color) {
 }
 function paint() {
     mgraphics.set_font_size(12);
-    mgraphics.select_font_face(fontfamily = 'Arial', weight= 'bold');
+    mgraphics.select_font_face((fontfamily = "Arial"), (weight = "bold"));
     let tw = mgraphics.text_measure(txt88)[0] + 5;
     let brect = [0, 0, tw, 16];
     let mrect = [0, -7, tw, 16];
@@ -172,8 +180,8 @@ function paint() {
 
     let title_txt = txt;
     // TODO: Could show different text here depending on key mods
-    if(isHoveringRight && mod != 0){
-        title_txt = mod == 2 ? "tetris" : "presets"
+    if (isHoveringRight && mod != 0) {
+        title_txt = mod == 2 ? "tetris" : "presets";
     }
 
     mgraphics.text_path(title_txt);
@@ -205,46 +213,61 @@ function paint() {
     }
 }
 
-
 // TITLE MENU
 
 // initialization
 let titlebarShown = false;
-act_patcher.message("window", "notitle")
+let allTitlebarsShown = false;
+act_patcher.message("window", "notitle");
 
 let isgrow = false;
-act_patcher.message("window", "flags", "nogrow")
+act_patcher.message("window", "flags", "nogrow");
 
-act_patcher.message("window", "exec")
+act_patcher.message("window", "exec");
+
+
+const allActs = () => {
+    var stateDict = new Dict("ppoollstate");
+    return Object.keys(JSON.parse(stateDict.stringify()));
+};
 
 const title_menu_options = {
     info: () => {
-        this.patcher.getnamed("pcontrol").message("load", `${act_args.name}.maxhelp` )
+        this.patcher
+            .getnamed("pcontrol")
+            .message("load", `${act_args.name}.maxhelp`);
         clearTitleMenu();
     },
     clientwindow: () => {
-        act_patcher.getnamed("pat").message("clientwindow")
+        act_patcher.getnamed("pat").message("clientwindow");
         clearTitleMenu();
     },
     storagewindow: () => {
-        act_patcher.getnamed("pat").message("storagewindow")
+        act_patcher.getnamed("pat").message("storagewindow");
         clearTitleMenu();
     },
+    separator1: null,
+
     titlebar: () => {
         titlebarShown = !titlebarShown;
-        act_patcher.message(
-            "window",
-            titlebarShown ? "title" : "notitle"
-        )
+        act_patcher.message("window", titlebarShown ? "title" : "notitle");
 
         isgrow = titlebarShown;
-        act_patcher.message(
-            "window", 
-            "flags",
-            isgrow ? "grow" : "nogrow"
-        )
+        act_patcher.message("window", "flags", isgrow ? "grow" : "nogrow");
 
-        act_patcher.message("window", "exec")
+        act_patcher.message("window", "exec");
+    },
+    close: () => {
+        if (act_args.name === "ho_st") {
+            // if ho_st1 'close', close all other acts first
+            allActs().forEach((act) => {
+                if (act !== "ho_st1") {
+                    messnamed(`${ll_state[act].id}TP`, "dispose");
+                }
+            });
+            max.showmenubar();
+        }
+        act_patcher.message("dispose");
     },
     back: () => {
         // in old act sub, we had this message going into ll.wsendback
@@ -252,60 +275,118 @@ const title_menu_options = {
         //  ho_st_screen back, front, back
         w.sendtoback();
     },
-    close: () => {
-        if(act_args.name === "ho_st"){
-            var stateDict = new Dict("ppoollstate");
-            var ll_state = JSON.parse(stateDict.stringify())
-            Object.keys(ll_state).forEach(act => {
-                if(act !== "ho_st1"){
-                    messnamed(`${ll_state[act].id}TP`, "dispose");
-                }
-            })
-            max.showmenubar();
-        }
-        act_patcher.message("dispose");
-    },
     grow: () => {
         isgrow = !isgrow;
-        act_patcher.message(
-            "window", 
-            "flags",
-            isgrow ? "grow" : "nogrow"
-        )
-        act_patcher.message("window", "exec")
+        act_patcher.message("window", "flags", isgrow ? "grow" : "nogrow");
+        act_patcher.message("window", "exec");
     },
+    master: () => post("TODO: titlemenu 'master'"),
+    active_store: () => post("TODO: titlemenu 'active_store'"),
+    separator2: null,
+
     subpatch: () => {
-        act_patcher.getnamed("sub").message("front")
+        act_patcher.getnamed("sub").message("front");
     },
     actmaker: () => {
-        act_patcher.getnamed("act").message("front")
-    }
-}
+        act_patcher.getnamed("act").message("front");
+    },
+};
 
-function clearTitleMenu(){
-    if(title_menu){
+const host_title_menu_options = () => {
+    const opts = { ...title_menu_options };
+    return {
+        info: opts.info,
+        clientwindow: opts.clientwindow,
+        separator1: null,
+
+        max_console: () => messnamed("max", "maxwindow"),
+        clear_console: () => messnamed("max", "clearmaxwindow"),
+        titlebar: opts.titlebar,
+        all_titlebars: () => {
+            // iterate over ppoollstate and show/hide titlebar
+            allTitlebarsShown = !allTitlebarsShown;
+
+            allActs().forEach((act) => {
+                messnamed(
+                    act,
+                    "TP",
+                    "window",
+                    allTitlebarsShown ? "title" : "notitle"
+                );
+
+                isgrow = allTitlebarsShown;
+                messnamed(
+                    act,
+                    "TP",
+                    "window",
+                    "flags",
+                    isgrow ? "grow" : "nogrow"
+                );
+
+                messnamed(act, "TP", "window", "exec");
+            });
+        },
+        "dsp(audio_settings)": () => messnamed("dsp", "status"),
+        tetris: () => () => messnamed("lload", "tetris@"),
+        refresh: () => () => messnamed("max", "refresh"),
+        separator2: null,
+
+        stopwatch: () => {}, // TODO: is this used anymore?
+        clock: () => {}, // TODO: is this used anymore?
+        separator3: null,
+
+        close: opts.close,
+        closeall: () => {
+            allActs().forEach((act) => {
+                messnamed(act, "TP", act === "ho_st1" ? "clean" : "dispose");
+            });
+        },
+        back: opts.back,
+        grow: opts.grow,
+        separator4: null,
+
+        subpatch: opts.subpatch,
+        actmaker: opts.actmaker,
+        ppooll_state: () => {
+            post("not working yet :/")
+            // post(act_patcher.getnamed("sub"));
+            // act_patcher.getnamed("sub").patcher.getnamed("ppooll_state").patcher.getnamed("TP").message("front")
+        },
+        clean: () => {
+            allActs().forEach((act) => {
+                messnamed(act, "TP", "clean");
+            });
+        },
+        nan_clear: () => messnamed("ll_nan_clear", "clear"),
+    };
+};
+
+function clearTitleMenu() {
+    if (title_menu) {
         // TODO: do we need to clear the value in pattrstorage here??
-        
         // act_patcher.getnamed("pat").message("act::title_menu", "\"\"")
         // title_menu.message("\"\"")
     }
 }
 
-function perform_title_menu(selection){
+function perform_title_menu(selection) {
     // post("perform_title_menu", selection, "\n");
-    if(isLoading){
-        isLoading = false;
+    if (isLoading) {
+        isLoading = false; // ignore first selection?
         return;
     }
 
-    try{
-        const fn = title_menu_options[selection];
-        if(!fn){
-            post("ll.act_title.js error", "no title_menu fn ", selection, "\n")
+    try {
+        const fn =
+            act_args.name === "ho_st"
+                ? host_title_menu_options()[selection]
+                : title_menu_options[selection];
+        if (!fn) {
+            post("ll.act_title.js error", "no title_menu fn ", selection, "\n");
             return;
         }
         fn();
-    }catch(e){
+    } catch (e) {
         post("ll.act_title.js error", JSON.stringify(e));
     }
 }

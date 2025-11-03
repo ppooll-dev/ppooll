@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 352.0, 229.0, 133.0, 124.0 ],
+        "rect": [ 308.0, 242.0, 130.0, 125.0 ],
         "default_fontsize": 11.595187,
         "toolbarvisible": 0,
         "globalpatchername": "ho_st1",
@@ -27,7 +27,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 70.0, 106.5, 58.0, 17.0 ],
+                    "patching_rect": [ 70.0, 106.0, 58.0, 20.0 ],
                     "slidercolor": [ 0.0, 0.0, 0.0, 0.0 ],
                     "slidercolornofocus": [ 0.47843137254902, 0.47843137254902, 0.47843137254902, 0.0 ],
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
@@ -254,7 +254,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 69.5, 104.0, 59.0, 22.0 ],
+                    "patching_rect": [ 70.0, 105.0, 59.0, 22.0 ],
                     "pattrmode": 1,
                     "textcolor": [ 1.0, 1.0, 1.0, 0.0 ],
                     "varname": "watch_menu"
@@ -1321,6 +1321,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 50.0, 162.5, 33.0, 23.0 ],
+                                                                    "text": "",
                                                                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                                                                 }
                                                             },
@@ -2029,12 +2030,13 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-30",
+                                                                    "linecount": 4,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 150.0, 191.0, 88.0, 22.0 ],
-                                                                    "text": "Off 1 2"
+                                                                    "text": "Off 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20"
                                                                 }
                                                             },
                                                             {
@@ -6067,7 +6069,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 163.0, 100.0, 101.0, 22.0 ],
-                                                                                    "text": "sinus1"
+                                                                                    "text": "ho_st1"
                                                                                 }
                                                                             },
                                                                             {
@@ -6090,7 +6092,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 50.0, 100.0, 96.0, 22.0 ],
-                                                                                    "text": "sinus1"
+                                                                                    "text": "ho_st1"
                                                                                 }
                                                                             },
                                                                             {
@@ -6641,7 +6643,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 19.0, 290.0, 117.0, 22.0 ],
-                                                    "text": "sinus"
+                                                    "text": "ho_st"
                                                 }
                                             },
                                             {
@@ -6674,7 +6676,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 19.0, 47.0, 160.0, 24.0 ],
-                                                    "text": "sinus1"
+                                                    "text": "ho_st1"
                                                 }
                                             },
                                             {
@@ -11702,7 +11704,7 @@
                                                     "allowdrag": 0,
                                                     "fontsize": 13.0,
                                                     "id": "obj-17",
-                                                    "items": [ "no", ",", "ho_st1", ",", "sinus1" ],
+                                                    "items": [ "no", ",", "ho_st1" ],
                                                     "maxclass": "umenu",
                                                     "numinlets": 1,
                                                     "numoutlets": 3,
@@ -16498,7 +16500,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 39.0, 112.0, 114.0, 22.0 ],
-                                                    "text": "sinus 1"
+                                                    "text": "ho_st 1"
                                                 }
                                             },
                                             {
@@ -19683,7 +19685,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 405.0, 455.0, 75.0, 22.0 ],
-                                                                                    "text": "sinus"
+                                                                                    "text": "ho_st"
                                                                                 }
                                                                             },
                                                                             {
@@ -21503,7 +21505,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 63.333333333333314, 89.0, 90.0, 22.0 ],
-                                                                                    "text": "sinus1"
+                                                                                    "text": "ho_st1"
                                                                                 }
                                                                             },
                                                                             {
@@ -22371,7 +22373,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 259.5, 367.0, 35.0, 35.0 ],
-                                                                                    "text": "sinus"
+                                                                                    "text": "ho_st"
                                                                                 }
                                                                             },
                                                                             {
@@ -23259,7 +23261,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 13.0, 2.0, 87.0, 22.0 ],
-                                                                                    "text": "sinus1"
+                                                                                    "text": "ho_st1"
                                                                                 }
                                                                             },
                                                                             {
@@ -23669,7 +23671,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 92.25, 304.0, 145.0, 89.0 ],
-                                                                    "text": "send ::sinus1::pat"
+                                                                    "text": "send ::ho_st1::pat"
                                                                 }
                                                             },
                                                             {
@@ -24127,7 +24129,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 264.0, 102.0, 159.0, 22.0 ],
-                                                    "text": "sinus1 _"
+                                                    "text": "ho_st1 _"
                                                 }
                                             },
                                             {
@@ -24206,7 +24208,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 486.0, 163.0, 50.0, 62.0 ],
-                                                                    "text": "::sinus1::act::pres_menu 1"
+                                                                    "text": "::ho_st1::act::pres_menu 1"
                                                                 }
                                                             },
                                                             {
@@ -33074,7 +33076,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 343.0, 342.0, 379.0, 35.0 ],
-                                                                    "text": "read \"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Library/ppooll_presets/xgroove@T/wide.json\""
+                                                                    "text": "read \"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets/ho_stT/default.json\""
                                                                 }
                                                             },
                                                             {
@@ -33164,7 +33166,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 82.0, 63.0, 197.0, 22.0 ],
-                                                                    "text": "sinus1 (tetris)"
+                                                                    "text": "ho_st1 (tetris)"
                                                                 }
                                                             },
                                                             {
@@ -39126,53 +39128,12 @@
                                         "boxes": [
                                             {
                                                 "box": {
-                                                    "id": "obj-21",
-                                                    "linecount": 2,
+                                                    "id": "obj-18",
                                                     "maxclass": "comment",
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
-                                                    "patching_rect": [ 596.0, 21.62, 254.0, 33.0 ],
-                                                    "text": "TODO: \nload dicts from ll.title_menu_options.json"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "data": {
-                                                        "items": [ "info", "clientwindow", "-", "max_console", "clear_console", "titlebar", "all_titlebars", "dsp(audio_settings)", "tetris", "refresh", "-", "stopwatch", "clock", "-", "close", "closeall", "back", "grow", "-", "subpatch", "actmaker", "ppooll_state", "clean", "nan_clear" ]
-                                                    },
-                                                    "id": "obj-19",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 2,
-                                                    "numoutlets": 5,
-                                                    "outlettype": [ "dictionary", "", "", "", "" ],
-                                                    "patching_rect": [ 373.0, 38.0, 196.0, 22.0 ],
-                                                    "saved_object_attributes": {
-                                                        "embed": 1,
-                                                        "legacy": 1,
-                                                        "parameter_enable": 0,
-                                                        "parameter_mappable": 0
-                                                    },
-                                                    "text": "dict ll_title_menu_ho_st @embed 1"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "data": {
-                                                        "items": [ "info", "clientwindow", "storagewindow", "-", "titlebar", "close", "back", "grow", "master", "active_store", "-", "subpatch", "actmaker" ]
-                                                    },
-                                                    "id": "obj-18",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 2,
-                                                    "numoutlets": 5,
-                                                    "outlettype": [ "dictionary", "", "", "", "" ],
-                                                    "patching_rect": [ 373.0, 14.0, 160.0, 22.0 ],
-                                                    "saved_object_attributes": {
-                                                        "embed": 1,
-                                                        "legacy": 1,
-                                                        "parameter_enable": 0,
-                                                        "parameter_mappable": 0
-                                                    },
-                                                    "text": "dict ll_title_menu @embed 1"
+                                                    "patching_rect": [ 195.0, 17.38, 379.0, 20.0 ],
+                                                    "text": "all handled in ll.act_main.js now (except ppooll_state for now)"
                                                 }
                                             },
                                             {
@@ -39217,7 +39178,7 @@
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 774.8888888888889, 118.0, 51.0, 22.0 ],
+                                                    "patching_rect": [ 752.909090909091, 118.0, 51.0, 22.0 ],
                                                     "text": "clear"
                                                 }
                                             },
@@ -39229,7 +39190,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 3,
                                                     "outlettype": [ "", "", "int" ],
-                                                    "patching_rect": [ 774.8888888888889, 146.0, 80.0, 22.0 ],
+                                                    "patching_rect": [ 752.909090909091, 146.0, 80.0, 22.0 ],
                                                     "text": "console"
                                                 }
                                             },
@@ -41218,7 +41179,7 @@
                                                     "numinlets": 5,
                                                     "numoutlets": 5,
                                                     "outlettype": [ "", "", "", "", "" ],
-                                                    "patching_rect": [ 22.0, 43.0, 286.0, 22.0 ],
+                                                    "patching_rect": [ 22.0, 53.0, 286.0, 22.0 ],
                                                     "text": "route all_titlebars dsp(audio_settings) tetris refresh"
                                                 }
                                             },
@@ -41231,7 +41192,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "", "bang" ],
-                                                    "patching_rect": [ 22.0, 19.0, 113.0, 22.0 ],
+                                                    "patching_rect": [ 22.0, 10.0, 113.0, 22.0 ],
                                                     "text": "ll.r act::title_menu 1"
                                                 }
                                             }
@@ -41276,6 +41237,7 @@
                                             {
                                                 "patchline": {
                                                     "destination": [ "obj-16", 0 ],
+                                                    "disabled": 1,
                                                     "source": [ "obj-17", 0 ]
                                                 }
                                             },
@@ -41330,6 +41292,7 @@
                                             {
                                                 "patchline": {
                                                     "destination": [ "obj-20", 0 ],
+                                                    "disabled": 1,
                                                     "source": [ "obj-69", 10 ]
                                                 }
                                             },
@@ -41366,6 +41329,7 @@
                                             {
                                                 "patchline": {
                                                     "destination": [ "obj-3", 0 ],
+                                                    "disabled": 1,
                                                     "midpoints": [ 125.5, 458.0, 16.55078125, 458.0, 16.55078125, 277.0, 36.0, 277.0 ],
                                                     "source": [ "obj-7", 1 ]
                                                 }
@@ -46057,10 +46021,9 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 493.0, 69.0, 92.0, 21.0 ],
                     "saved_object_attributes": {
-                        "client_rect": [ 724, 87, 1484, 866 ],
+                        "client_rect": [ 400, 495, 1195, 847 ],
                         "parameter_enable": 0,
-                        "parameter_mappable": 0,
-                        "storage_rect": [ 430, 159, 1276, 888 ]
+                        "parameter_mappable": 0
                     },
                     "text": "pattrstorage pat",
                     "varname": "pat"
@@ -46124,7 +46087,7 @@
                         "rec": [ 0 ],
                         "screen": [ 0 ],
                         "stereo": [ 0 ],
-                        "time": [ 11163.0 ],
+                        "time": [ 24705.0 ],
                         "vol": [ 1.0 ],
                         "vol_ramp": [ 10 ],
                         "vol_slider": [ 1.0 ],
@@ -46169,7 +46132,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "offset": [ 0.0, 0.0 ],
-                    "patching_rect": [ 0.0, 0.0, 50.3515625, 16.0 ],
+                    "patching_rect": [ 0.0, 0.0, 57.6640625, 16.0 ],
                     "varname": "act",
                     "viewvisibility": 1
                 }
@@ -46202,7 +46165,7 @@
                     "outlettype": [ "", "", "int" ],
                     "outputmode": 0,
                     "parameter_enable": 0,
-                    "patching_rect": [ 1.67578125, 38.0, 49.32421875, 14.0 ],
+                    "patching_rect": [ 0.0, 33.0, 53.0, 19.0 ],
                     "prototypename": "vst_button",
                     "text": "ppooll",
                     "textcolor": [ 1.0, 1.0, 1.0, 0.0 ],
