@@ -181,7 +181,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "var act,tpp;\r\n\r\nfunction basics(){\r\n\tthis.patcher.box.varname = \"act\";\r\n}\r\n\r\nfunction bpatch(a,b){\r\n\ttpp = this.patcher.parentpatcher;\r\n\tact = tpp.newdefault(40,80,\"bpatcher\",\"@name\", \"actmakeB.maxpat\", \"@args\", a, b);\r\n\ttpp.remove(tpp.getnamed(\"act\"));\r\n\tact.varname = \"act\"\r\n}",
+					"code" : "var act,tpp;\r\n\r\nfunction basics(){\r\n\tthis.patcher.box.varname = \"act\";\r\n}\r\n\r\nfunction bpatch(a,b){\r\n\ttpp = this.patcher.parentpatcher;\r\n\tact = tpp.newdefault(40,80,\"bpatcher\",\"@name\", \"act.maxpat\", \"@args\", a, b);\r\n\ttpp.remove(tpp.getnamed(\"act\"));\r\n\tact.varname = \"act\"\r\n}",
 					"filename" : "none",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
