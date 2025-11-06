@@ -316,6 +316,12 @@ function paint() {
     mgraphics.move_to(4, 12);
 
     let title_txt = txt;
+
+    // rename in act-title ?
+    // ["ho_st", "buffer_host"].forEach(n => {
+    //     if(title_txt.startsWith(n))
+    //         title_txt = n;
+    // })
     
     // show different text depending on key mods
     if (isHoveringRight && mod != 0) {
