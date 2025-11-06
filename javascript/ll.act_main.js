@@ -388,12 +388,12 @@ function handleTitleBar(){
 function masterSelected(master_act_name, master_act_instance){
     if(master_act_name === act_args.name){
         if(master_act_instance !== instance){
-            post("MASTER", master_act_name, master_act_instance)
+            // post("master", master_act_name, master_act_instance)
             isMaster = 0;
             act_patcher.getnamed("pat").message("act::master/activest", isMaster, isActiveStore);
             title_menu.message("checkitem", Object.keys(title_menu_options).indexOf("master"), isMaster);
         } else {
-            post("NOT MASTER", master_act_name, master_act_instance)
+            // post("not master", master_act_name, master_act_instance)
             isMaster = 1;
             act_patcher.getnamed("pat").message("act::master/activest", isMaster, isActiveStore);
             title_menu.message("checkitem", Object.keys(title_menu_options).indexOf("master"), isMaster);
@@ -699,7 +699,7 @@ function create_rest() {
     }
 
     if (!tpp.getnamed("sub")) {
-        const obj = tpp.newdefault(
+        let obj = tpp.newdefault(
             ar[0],
             ar[1] + 150,
             "p",
@@ -734,7 +734,7 @@ function givename() {
 }
 
 function first_dump() {
-    const obj = act_patcher.getnamed("pat");
+    let obj = act_patcher.getnamed("pat");
     obj.message("active", "preset-ramp", 0);
     obj.message("active", "presets", 0);
     obj.message("active", "title_menu", 0);
