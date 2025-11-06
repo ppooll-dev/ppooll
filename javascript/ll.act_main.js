@@ -526,8 +526,7 @@ function set_title_menu(selection) {
     if (
         !isReady ||
         selection === "" ||
-        selection === "_" ||
-        selection === "(presets)"
+        selection === "_"
     ) {
         return;
     }
@@ -577,6 +576,9 @@ function _in2(...args) {
 }
 
 function set_llenviread(is_reading){
+    if(is_llenviread && (is_reading === 0)){
+        first_menu_set = false;
+    }
     is_llenviread = is_reading;
 }
 
