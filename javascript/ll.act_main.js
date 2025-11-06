@@ -1,9 +1,55 @@
+/*
+    ll.act_main.js
+        by klaus filip & joe steccato
+
+    the main v8ui javascript for act responsibilities.
+
+    TODO: improve function nomenclature:
+        - "camelCase": called only with this JS
+        - "snake_case": called from outer .maxpat via messages
+
+    NOTE: the files "ll.act_title.js" and "ll.act_make.js" are folded into this file.
+*/
+
 autowatch = 1;
 outlets = 1;
+
+if (typeof utils === "undefined") {
+    var utils = require("ll._utilities");
+}
+
 mgraphics.init();
 mgraphics.relative_coords = 0;
 mgraphics.autofill = 0;
 
+const args = jsarguments;
+
+const act_args = {
+    hash: args[1],
+    name: args[2],
+    color: args[3],
+};
+
+// dicts
+const ll_state = new Dict("ppoollstate");
+
+// Mouse and Keyboard modifiers
+var drag_gate = 1;
+var mod = 0;
+
+var xclick,
+    yclick,
+    xmove,
+    ymove = 0;
+
+let isHoveringLeft,
+    isHoveringRight = false;
+
+let showHoverIcons = true;
+
+let is_llenviread = 0; // [r llenviread]
+
+// [v8] attributes
 var isReady = 0;
 declareattribute("isReady", {
     type: "long",
@@ -12,71 +58,43 @@ declareattribute("isReady", {
     invisible: 1,
 });
 
-const args = jsarguments;
+var act_name_index = "loading...";
+declareattribute("act_name_index", { type: "symbol", embed: 1, default: "loading..." });
 
-const ll_state = new Dict("ppoollstate");
+var act_index = -1; // set dynamically from ppoollstate, declared as attribute for persistence when saving this js
+declareattribute("act_index", { type: "long", embed: 1, default: -1, invisible: 1 });
 
-var act_patcher = this.patcher.parentpatcher;
-var act_box = this.patcher.box;
-var act_rect = [400, 400];
-
-const act_args = {
-    hash: args[1],
-    name: args[2],
-    color: args[3],
-};
-// post(JSON.stringify(act_args))
-
-var xclick,
-    yclick,
-    xmove,
-    ymove = 0;
-var r = new Array();
-
-var bpatcher;
-var title_menu;
-var pres_menu;
-var tetris_menu;
-var drag_gate = 1;
-
-var mod = 0;
-
-let isHoveringLeft,
-    isHoveringRight = false;
-
-let showHoverIcons = true;
-
-let is_llenviread = 0;
-
-var txt = "loading...";
-var txt88 = "loading...";
-
-declareattribute("txt", { type: "symbol", embed: 1, default: "loading..." });
-declareattribute("txt88", { type: "symbol", embed: 1, default: "loading..." });
-
-var instance = -1;
-
-declareattribute("instance", { type: "long", embed: 1, default: -1 });
-
+// colors
 var txt_color = [1, 1, 1, 1];
 var bgcolor = [0, 0, 0, 1];
 
+// patcher, box references
+var act_patcher = this.patcher.parentpatcher; // top-level act patcher
+var act_box = this.patcher.box; // act bpatcher box
+var act_rect = [400, 400]; // act bpatcher rect in top-level act patcher
+
+// act umenus
+var title_menu,
+    pres_menu,
+    tetris_menu = null;
+
 // title_menu options
-let isMaster = 0;
-let isActiveStore = 0;
+let isMaster,
+    isActiveStore = 0;
 
-let titlebarShown = false;
-let allTitlebarsShown = false;
-let isgrow = false;
+let titlebarShown,
+    allTitlebarsShown,
+    isgrow = false;
 
-const title_menu_options = act_args.name === "ho_st" 
-    ? create_host_title_menu_options() 
-    : create_title_menu_options();
+const title_menu_options =
+    act_args.name === "ho_st"
+        ? create_host_title_menu_options()
+        : create_title_menu_options();
 
 const title_menu_options_list = Object.keys(title_menu_options);
 
-// bang();
-
+// refresh js when the file has been changed and save
+//  * only do this after the initial [loadbang]--[deferlow]--
 refresh();
 function refresh() {
     if (isReady) {
@@ -90,35 +108,63 @@ function bang() {
     isReady = 0;
 
     act_patcher = this.patcher.parentpatcher;
+    act_patcher.message("window", "notitle");
+    act_patcher.message("window", "flags", "nogrow");
+    act_patcher.message("window", "exec");
+
     act_box = this.patcher.box;
 
     title_menu = this.patcher.getnamed("title_menu");
     pres_menu = this.patcher.getnamed("pres_menu");
     tetris_menu = this.patcher.getnamed("tetris_menu");
 
-    instance = getinstance(act_args.name);
+    act_index = getActIndex(act_args.name);
 
     delete_old();
 
     act_box.hidden = 1;
     act_box.varname = "act";
-
     createbasics();
-
     act_box.hidden = 0;
 
-    actname();
+    // set title_menu options
+    const dict_title_menu = new Dict();
+    dict_title_menu.set(
+        "items",
+        Object.keys(title_menu_options).map((o) =>
+            o.startsWith("separator") ? "-" : o
+        )
+    );
+    title_menu.message("dictionary", dict_title_menu.name);
+
+    // add actname to dict ppoollstate
+    const act_state = {
+        class: act_args.name,
+        index: act_index,
+        id: act_args.hash,
+        "inputs~": {},
+    };
+    ll_state.setparse(`${act_name_index}`, JSON.stringify(act_state));
+
     create_rest();
-    givename();
+
+    // givename
+    act_name_index = `${act_args.name}${act_index}`;
+    act_patcher.getnamed("pattrmarker").message("name", act_name_index);
+    act_patcher.getnamed("thispatcher").message("patcher", act_name_index);
+    messnamed("actname", act_name_index);
+    messnamed(act_args.hash + "actname", act_name_index);
+    messnamed("::actname", "::" + act_name_index + "::");
+    messnamed(act_args.hash + "::actname", "::" + act_name_index + "::");
 
     check_live();
 
     first_dump();
 
     //everything done !!!
-    messnamed("acting", act_args.name, instance, 1);
-    messnamed("act_ready", `${act_args.name}${instance}`);
-    messnamed(`${act_args.hash}instance`, instance);
+    messnamed("acting", act_args.name, act_index, 1);
+    messnamed("act_ready", `${act_args.name}${act_index}`);
+    messnamed(`${act_args.hash}instance`, act_index);
 
     // post("ready\n");
     isReady = 1;
@@ -132,6 +178,7 @@ function clickreset() {
 
 function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
     let uibr = this.box.rect;
+    yclick = y;
     if (x > uibr[2] / 2) {
         mod = shift | option | ctrl;
         //post("right",mod,"\n");
@@ -146,10 +193,9 @@ function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
         outlet(0, "bang"); //bangs a max [del 100] to function bang (ignoreclick = 0) !!
         messnamed("llto11clicks", "leftclick", 0);
         messnamed("llto11clicks", "leftclick", 1);
-        //uib.ignoreclick = 0;
-        //messnamed("llto11clicks","del",100, "leftclick");
-    } else xclick = x;
-    yclick = y;
+    } else {
+        xclick = x;
+    }
 }
 
 function ondrag(x, y, but, cmd, shift, capslock, option, ctrl) {
@@ -186,15 +232,29 @@ function onidleout() {
 }
 
 function windpos(x, y) {
-    var w = act_patcher.wind;
-    r[0] = x + w.location[0];
-    r[1] = y + w.location[1];
-    r[2] = x + w.location[2];
-    r[3] = y + w.location[3];
-    w.location = r;
+    const w = act_patcher.wind;
+    w.location = [
+        x + w.location[0],
+        y + w.location[1],
+        x + w.location[2],
+        y + w.location[3],
+    ];
 }
 
-function getinstance(name_only) {
+// get the next index for this act (FKA "getinstance()")
+// function getActIndex(name_only) {
+//     // if(act_index > -1){ // we already have an index! don't re-register with ppoollstate
+//     //     return act_index;
+//     // }
+//     post(JSON.stringify(utils.allActObjectsList().filter(a => a.class === name_only))); post()
+//     return utils.allActObjectsList().filter(a => a.class === name_only).length + 1;
+// }
+
+// get the next index for this act (FKA "getinstance()")
+function getActIndex(name_only) {
+    // if(act_index > -1){ // we already have an index! don't re-register with ppoollstate
+    //     return act_index;
+    // }
     var stateDict = new Dict("ppoollstate");
     let m = stateDict.getkeys();
     if (!m) return 1;
@@ -216,71 +276,10 @@ function getinstance(name_only) {
             }
             result = i + 2;
         }
-    } else result = 1;
-
-    return result;
-}
-
-function actname() {
-    txt88 = act_args.name + 88;
-    txt = act_args.name + instance;
-    mgraphics.redraw();
-
-    // set title_menu options using
-    // the function mappings title_menu_options & host_title_menu_options
-    const dict_title_menu = new Dict();
-    dict_title_menu.set(
-        "items",
-        Object.keys(title_menu_options)
-            .map((o) => (o.startsWith("separator") ? "-" : o))
-    );
-    title_menu.message("dictionary", dict_title_menu.name);
-
-    const act_state = {
-        class: act_args.name,
-        index: instance,
-        id: act_args.hash,
-        "inputs~": {},
-    };
-    ll_state.setparse(`${txt}`, JSON.stringify(act_state));
-}
-
-function makecolor(c) {
-    c = c.toString();
-    if (c == 0) bgcolor = [0, 0, 0, 1];
-    else if (c == 1) bgcolor = [1, 1, 1, 1];
-    else if (c.includes(" ")) {
-        let cs = c.split(" ");
-        bgcolor = [cs[0] / 255, cs[1] / 255, cs[2] / 255, 1];
     } else {
-        if (c[0] == "§") c = c.substr(1);
-        let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(c);
-        if (!result) bgcolor = [0, 0, 0, 1];
-        else {
-            bgcolor = [
-                parseInt(result[1], 16) / 255,
-                parseInt(result[2], 16) / 255,
-                parseInt(result[3], 16) / 255,
-                1,
-            ];
-        }
+        result = 1;
     }
-    // mgraphics.redraw();
-}
-
-function color(r, g, b) {
-    // bgcolor = [r, g, b, 1];
-    // mgraphics.redraw();
-}
-
-function brightness(color) {
-    let r = color[0];
-    let g = color[1];
-    let b = color[2];
-    let hsp = Math.sqrt(0.299 * (r * r) + 0.587 * (g * g) + 0.114 * (b * b));
-    let c = 1;
-    if (hsp > 0.5) c = 0;
-    return [c, c, c, 1];
+    return result;
 }
 
 function paint() {
@@ -289,11 +288,11 @@ function paint() {
         return;
     }
     // post("paint\n");
-    makecolor(act_args.color);
+    bgcolor = utils.makeColor(act_args.color);
 
     mgraphics.set_font_size(12);
     mgraphics.select_font_face((fontfamily = "Arial"), (weight = "bold"));
-    let tw = mgraphics.text_measure(txt88)[0] + 5;
+    let tw = mgraphics.text_measure(`${act_args.name}88`)[0] + 5;
     let brect = [0, 0, tw, 16];
     let mrect = [0, -7, tw, 16];
 
@@ -311,18 +310,18 @@ function paint() {
     mgraphics.set_source_rgba(bgcolor);
     mgraphics.rectangle(brect);
     mgraphics.fill();
-    txt_color = brightness(bgcolor);
+    txt_color = utils.getBrightness(bgcolor);
     mgraphics.set_source_rgba(txt_color);
     mgraphics.move_to(4, 12);
 
-    let title_txt = txt;
+    let title_txt = act_name_index;
 
     // rename in act-title ?
     // ["ho_st", "buffer_host"].forEach(n => {
     //     if(title_txt.startsWith(n))
     //         title_txt = n;
     // })
-    
+
     // show different text depending on key mods
     if (isHoveringRight && mod != 0) {
         title_txt = mod == 2 ? "tetris" : "presets";
@@ -361,18 +360,7 @@ function paint() {
 // TITLE MENU
 //
 
-// initialization
-
-act_patcher.message("window", "notitle");
-act_patcher.message("window", "flags", "nogrow");
-act_patcher.message("window", "exec");
-
-const allActs = () => {
-    var stateDict = new Dict("ppoollstate");
-    return Object.keys(JSON.parse(stateDict.stringify()));
-};
-
-function handleTitleBar(){
+function handleTitleBar() {
     titlebarShown = !titlebarShown;
     act_patcher.message("window", titlebarShown ? "title" : "notitle");
 
@@ -380,23 +368,39 @@ function handleTitleBar(){
     act_patcher.message("window", "flags", isgrow ? "grow" : "nogrow");
 
     act_patcher.message("window", "exec");
-    if(title_menu)
-        title_menu.message("checkitem", title_menu_options_list.indexOf("titlebar"), titlebarShown);
+    if (title_menu)
+        title_menu.message(
+            "checkitem",
+            title_menu_options_list.indexOf("titlebar"),
+            titlebarShown
+        );
 }
 
 // when a "master" is selected, this is called via [r ll_master_selected]
-function masterSelected(master_act_name, master_act_instance){
-    if(master_act_name === act_args.name){
-        if(master_act_instance !== instance){
-            // post("master", master_act_name, master_act_instance)
+function masterSelected(master_act_name, master_act_index) {
+    if (master_act_name === act_args.name) {
+        if (master_act_index !== act_index) {
+            // post("master", master_act_name, master_act_index)
             isMaster = 0;
-            act_patcher.getnamed("pat").message("act::master/activest", isMaster, isActiveStore);
-            title_menu.message("checkitem", Object.keys(title_menu_options).indexOf("master"), isMaster);
+            act_patcher
+                .getnamed("pat")
+                .message("act::master/activest", isMaster, isActiveStore);
+            title_menu.message(
+                "checkitem",
+                Object.keys(title_menu_options).indexOf("master"),
+                isMaster
+            );
         } else {
-            // post("not master", master_act_name, master_act_instance)
+            // post("not master", master_act_name, master_act_index)
             isMaster = 1;
-            act_patcher.getnamed("pat").message("act::master/activest", isMaster, isActiveStore);
-            title_menu.message("checkitem", Object.keys(title_menu_options).indexOf("master"), isMaster);
+            act_patcher
+                .getnamed("pat")
+                .message("act::master/activest", isMaster, isActiveStore);
+            title_menu.message(
+                "checkitem",
+                Object.keys(title_menu_options).indexOf("master"),
+                isMaster
+            );
         }
     }
 }
@@ -420,7 +424,8 @@ function create_title_menu_options() {
         close: () => {
             if (act_args.name === "ho_st") {
                 // if ho_st1 'close', close all other acts first
-                allActs()
+                utils
+                    .allActNames()
                     .filter((act) => act !== "ho_st1")
                     .forEach((act) => {
                         messnamed(act, `TP`, "dispose");
@@ -441,12 +446,18 @@ function create_title_menu_options() {
             act_patcher.message("window", "exec");
         },
         master: () => {
-            messnamed("ll_master_selected", act_args.name, instance);
+            messnamed("ll_master_selected", act_args.name, act_index);
         },
         active_store: () => {
             isActiveStore = !isActiveStore;
-            act_patcher.getnamed("pat").message("act::master/activest", isMaster, isActiveStore);
-            title_menu.message("checkitem", Object.keys(title_menu_options).indexOf("active_store"), isActiveStore);
+            act_patcher
+                .getnamed("pat")
+                .message("act::master/activest", isMaster, isActiveStore);
+            title_menu.message(
+                "checkitem",
+                Object.keys(title_menu_options).indexOf("active_store"),
+                isActiveStore
+            );
         },
         separator2: null,
 
@@ -473,7 +484,7 @@ function create_host_title_menu_options() {
             // iterate over ppoollstate and show/hide titlebar
             allTitlebarsShown = !allTitlebarsShown;
 
-            allActs().forEach((act) => {
+            utils.allActNames().forEach((act) => {
                 messnamed(
                     act,
                     "TP",
@@ -504,7 +515,7 @@ function create_host_title_menu_options() {
 
         close: opts.close,
         closeall: () => {
-            allActs().forEach((act) => {
+            utils.allActNames().forEach((act) => {
                 messnamed(act, "TP", act === "ho_st1" ? "clean" : "dispose");
             });
         },
@@ -518,7 +529,7 @@ function create_host_title_menu_options() {
             messnamed("ppooll_state", "bang");
         },
         clean: () => {
-            allActs().forEach((act) => {
+            utils.allActNames().forEach((act) => {
                 messnamed(act, "TP", "clean");
             });
         },
@@ -529,15 +540,9 @@ function create_host_title_menu_options() {
 let first_menu_set = true;
 function set_title_menu(selection) {
     // post("set_title_menu", selection, "\n");
-    if (
-        !isReady ||
-        selection === "" ||
-        selection === "_"
-    ) {
-        return;
-    }
+    if (!isReady || selection === "" || selection === "_") return;
 
-    if(act_args.name !== "ho_st" && first_menu_set){
+    if (act_args.name !== "ho_st" && first_menu_set) {
         first_menu_set = false;
         return;
     }
@@ -554,7 +559,7 @@ function set_title_menu(selection) {
 function set_tetris_menu(selection) {
     if (selection === "_" || selection === "(tetris)") return;
 
-    messnamed("ll.tetris", txt, selection);
+    messnamed("ll.tetris", act_name_index, selection);
 }
 
 // Handle special messages from named [routepass] 'in2'
@@ -562,15 +567,20 @@ function _in2(...args) {
     // post("in2", args); post()
     const msg = args.shift();
 
-    if(msg === "act::master/activest"){
-        if(isMaster !== args[0] && args[0] === 1){
+    if (msg === "act::master/activest") {
+        if (isMaster !== args[0] && args[0] === 1) {
             isMaster = 1;
-            act_patcher.getnamed("pat").message("act::master/activest", isMaster, isActiveStore);
-            title_menu.message("checkitem", Object.keys(title_menu_options).indexOf("master"), isMaster);
+            act_patcher
+                .getnamed("pat")
+                .message("act::master/activest", isMaster, isActiveStore);
+            title_menu.message(
+                "checkitem",
+                Object.keys(title_menu_options).indexOf("master"),
+                isMaster
+            );
         }
         return;
     }
-
 
     if (!isReady) return;
 
@@ -581,13 +591,13 @@ function _in2(...args) {
     }
 }
 
-function set_llenviread(is_reading){
-    if(is_llenviread && (is_reading === 0)){
+// from [r llenviread] :  1 == reading environment
+function set_llenviread(is_reading) {
+    if (is_llenviread && is_reading === 0) {
         first_menu_set = false;
     }
     is_llenviread = is_reading;
 }
-
 
 //
 // ekmek (ll.actmake.js)
@@ -618,9 +628,8 @@ function createbasics() {
     if (!tpp.getnamed("pattrmarker")) {
         if (!tpp.getnamed("pat")) {
             obj = tpp.newdefault(ar[0], ar[1] - 21, "pattrstorage", "pat");
-            obj.hidden = 1;
-            // if (!actui) tpp.hiddenconnect(obj, 0, am, 1);
             obj.varname = "pat";
+            obj.hidden = 1;
             tpp.script("sendbox", "pat", "color", 12);
         }
         if (!tpp.getnamed("thispatcher")) {
@@ -670,9 +679,12 @@ function createbasics() {
             obj.message("outputmode", 1);
         }
     }
-    // messnamed(`${act_args.hash}pattrforwards`, "bang");
-    this.patcher.getnamed("pf_thispatcher").message("send", "parent::thispatcher");
-    this.patcher.getnamed("pf_thispatcher").message("window", "constrain", 10, 10, 8000, 8000);
+    this.patcher
+        .getnamed("pf_thispatcher")
+        .message("send", "parent::thispatcher");
+    this.patcher
+        .getnamed("pf_thispatcher")
+        .message("window", "constrain", 10, 10, 8000, 8000);
     this.patcher.getnamed("pf_thispatcher").message("window", "exec");
 
     this.patcher.getnamed("pf_pat").message("send", "parent::pat");
@@ -699,56 +711,44 @@ function create_rest() {
     }
 
     if (!tpp.getnamed("sub")) {
-        let obj = tpp.newdefault(
+        let obj_sub = tpp.newdefault(
             ar[0],
             ar[1] + 150,
             "p",
             act_args.name + "_sub"
         );
-        obj.varname = "sub";
-        obj.hidden = 1;
-        const subp = obj.subpatcher();
+        obj_sub.varname = "sub";
+        obj_sub.hidden = 1;
+
+        const subp = obj_sub.subpatcher();
         subp.wind.location = [200, 100, 700, 500];
-        obj = subp.newdefault(10, 20, "thispatcher");
-        obj.varname = "subTP";
+        obj_sub = subp.newdefault(10, 20, "thispatcher");
+        obj_sub.varname = "subTP";
         subp.locked = 1;
     }
     messnamed("ll_p_reset", "bang");
 }
 
-function givename() {
-    let obj = null;
-
-    const tpp = act_patcher;
-    const cname = txt;
-    const hash = act_args.hash;
-
-    obj = tpp.getnamed("pattrmarker");
-    obj.message("name", cname);
-    obj = tpp.getnamed("thispatcher");
-    obj.message("patcher", cname);
-    messnamed("actname", cname);
-    messnamed(hash + "actname", cname);
-    messnamed("::actname", "::" + cname + "::");
-    messnamed(hash + "::actname", "::" + cname + "::");
-}
-
 function first_dump() {
-    let obj = act_patcher.getnamed("pat");
-    obj.message("active", "preset-ramp", 0);
-    obj.message("active", "presets", 0);
-    obj.message("active", "title_menu", 0);
-    obj.message("active", "pres_menu", 0);
-    obj.message("active", "tetris_menu", 0);
-    obj.message("active", "ll.blues", 0);
-    obj.message("active", "master", 0);
-    obj.message("savemode", 0);
-    obj.message("changemode", 1);
-    obj.message("notifymode", 1);
-    obj.message("autorestore", 0);
-    obj.message("activewritemode", 1);
-    obj.message("outputmode", 1);
-    obj.message("dump");
+    let obj_pat = act_patcher.getnamed("pat");
+    [
+        ["active", "preset-ramp", 0],
+        ["active", "presets", 0],
+        ["active", "title_menu", 0],
+        ["active", "pres_menu", 0],
+        ["active", "tetris_menu", 0],
+        ["active", "ll.blues", 0],
+        ["active", "master", 0],
+        ["savemode", 0],
+        ["changemode", 1],
+        ["notifymode", 1],
+        ["autorestore", 0],
+        ["activewritemode", 1],
+        ["outputmode", 1],
+        ["dump"],
+    ].forEach((msgs) => {
+        obj_pat.message(...msgs);
+    });
 }
 
 function check_live() {
@@ -764,7 +764,7 @@ function check_live() {
 
 function make_live() {
     const tpp = act_patcher;
-    const cname = txt;
+    const cname = act_name_index;
 
     var lpe = tpp.parentpatcher; //live ppooll environment patcher
     var TO_HIDE = ["audioON/OFF"];
@@ -776,7 +776,7 @@ function make_live() {
     }
     //set box varname to nameInstance
     tpp.box.varname = cname;
-    coords = getcoords(tpp.filepath);
+    coords = utils.getPatcherRectFromMaxpat(tpp.filepath);
 
     // set patching rect of act's bpatcher & bring to front
     lpe.message("script", "sendbox", cname, "patching_rect", coords);
@@ -794,32 +794,6 @@ function make_live() {
     }
 }
 
-function getcoords(a) {
-    var f = new File(a);
-    var i, rect_pos, end_pos, coords;
-
-    if (f.isopen) {
-        i = 0;
-        while ((a = f.readline()) != null && i < 200) {
-            // returns a string
-            rect_pos = a.search('"rect"');
-            if (rect_pos > -1) {
-                end_pos = a.lastIndexOf("]");
-                a = a.slice(rect_pos + 11, end_pos - 1);
-                coords = a.split(",");
-                break;
-            }
-            i++;
-        }
-        f.close();
-        if (i > 199) post("could not find rect in " + a + "\n");
-    } else {
-        post("could not open file: " + s + "\n");
-    }
-    //post("get",coords, "\n");
-    return coords;
-}
-
 //
 // savebang, freebang
 //
@@ -828,14 +802,14 @@ function savebang() {
     // post("savebang\n")
 
     // save tetris "ƒ default"
-    messnamed("ll_write_default_tetris", txt)
+    messnamed("ll_write_default_tetris", act_name_index);
 
-    act_patcher.getnamed("thispatcher").message("patcher", txt);
+    act_patcher.getnamed("thispatcher").message("patcher", act_name_index);
 }
 
 function freebang() {
     // post("freebang")
 
-    // remove from ppooll_state ?
-    messnamed("acting", act_args.name, instance, -1);
+    // send msgs to remove from ppooll_state
+    messnamed("acting", act_args.name, act_index, -1);
 }

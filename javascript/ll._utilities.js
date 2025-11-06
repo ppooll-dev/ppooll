@@ -12,6 +12,26 @@ if (typeof utils === "undefined") {
 
 var stateDict = new Dict("ppoollstate");
 
+//
+// PPOOLL STATE
+//
+
+// ppoollstate as a native JSON object
+exports.allActObjects = () => {
+    return JSON.parse(stateDict.stringify());
+};
+
+// array[] of act objects ie: [{ name: "ho_st", index: 1 }, { name: "sinus", index: 1 }, { name: "sinus", index: 2 }]
+exports.allActObjectsList = () => {
+    const acts = exports.allActObjects();
+    return Object.keys(acts).map(act_name => acts[act_name]);
+};
+
+// array[] of actnames ie: ["ho_st1", "sinus1", "flop1", "sinus2"]
+exports.allActNames = () => {
+    return Object.keys(exports.allActObjects());
+};
+
 // get audio inputs in an act
 exports.getinputs = function (act, curr_item) {
     let c_menu = ["-no-"]; // array to fill menu
@@ -105,3 +125,70 @@ exports.folderExists = (path) => {
         return false;
     }
 };
+
+// parse *.maxpat for patcher "rect" (FKA "getcoords")
+exports.getPatcherRectFromMaxpat = (a) => {
+    var f = new File(a);
+    var i, rect_pos, end_pos, coords;
+
+    if (f.isopen) {
+        i = 0;
+        while ((a = f.readline()) != null && i < 200) {
+            // returns a string
+            rect_pos = a.search('"rect"');
+            if (rect_pos > -1) {
+                end_pos = a.lastIndexOf("]");
+                a = a.slice(rect_pos + 11, end_pos - 1);
+                coords = a.split(",");
+                break;
+            }
+            i++;
+        }
+        f.close();
+        if (i > 199) post("could not find rect in " + a + "\n");
+    } else {
+        post("could not open file: " + s + "\n");
+    }
+    //post("get",coords, "\n");
+    return coords;
+}
+
+//
+// COLORS
+//
+
+// Convert string color formats to rbga
+exports.makeColor = (c) => {
+    let color = [0, 0, 0, 1];
+    c = c.toString();
+    if (c == 0) color = [0, 0, 0, 1];
+    else if (c == 1) color = [1, 1, 1, 1];
+    else if (c.includes(" ")) {
+        let cs = c.split(" ");
+        color = [cs[0] / 255, cs[1] / 255, cs[2] / 255, 1];
+    } else {
+        if (c[0] == "§") c = c.substr(1);
+        let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(c);
+        if (!result) color = [0, 0, 0, 1];
+        else {
+            color = [
+                parseInt(result[1], 16) / 255,
+                parseInt(result[2], 16) / 255,
+                parseInt(result[3], 16) / 255,
+                1,
+            ];
+        }
+    }
+    return color;
+};
+
+// Determine text color (black or white) based on background color
+exports.getBrightness = (color) => {
+    let r = color[0];
+    let g = color[1];
+    let b = color[2];
+    let hsp = Math.sqrt(0.299 * (r * r) + 0.587 * (g * g) + 0.114 * (b * b));
+    let c = 1;
+    if (hsp > 0.5) c = 0;
+    return [c, c, c, 1];
+}

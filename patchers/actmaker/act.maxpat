@@ -276,32 +276,6 @@
             },
             {
                 "box": {
-                    "attr": "txt",
-                    "id": "obj-21",
-                    "lock": 1,
-                    "maxclass": "attrui",
-                    "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 373.0, 36.0, 150.0, 22.0 ]
-                }
-            },
-            {
-                "box": {
-                    "attr": "instance",
-                    "id": "obj-20",
-                    "lock": 1,
-                    "maxclass": "attrui",
-                    "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 373.0, 9.0, 150.0, 22.0 ]
-                }
-            },
-            {
-                "box": {
                     "id": "obj-13",
                     "maxclass": "newobj",
                     "numinlets": 1,
@@ -6317,10 +6291,9 @@
             {
                 "box": {
                     "embedstate": [
-                        [ "instance", 1 ],
-                        [ "isReady", 1 ],
-                        [ "txt", "ho_st1" ],
-                        [ "txt88", "ho_st88" ]
+                        [ "act_index", 1 ],
+                        [ "act_name_index", "ho_st1" ],
+                        [ "isReady", 1 ]
                     ],
                     "filename": "ll.act_main.js",
                     "id": "obj-7",
@@ -6475,20 +6448,6 @@
                 "patchline": {
                     "destination": [ "obj-2", 0 ],
                     "source": [ "obj-18", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-7", 0 ],
-                    "hidden": 1,
-                    "source": [ "obj-20", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-7", 0 ],
-                    "hidden": 1,
-                    "source": [ "obj-21", 0 ]
                 }
             },
             {
