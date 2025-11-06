@@ -28,7 +28,7 @@ let buffers = null;
 
 const presetsIgnore = ["ho_st1"];
 
-const PARAMS_DELAY = 500; // delay 1000 ms
+const PARAMS_DELAY = 1000; // delay 1000 ms
 const PARAMS_RUN_NUMBER = 2; // run 2x
 
 let paramsCount = 0;
@@ -138,7 +138,7 @@ function loadAct() {
 function loadParams() {
     messnamed("llenviread", 1);
     paramsCount = 0;
-    params();
+    messnamed("llenviread_getparams", PARAMS_DELAY);
 }
 
 function acting(c, i, o) {
