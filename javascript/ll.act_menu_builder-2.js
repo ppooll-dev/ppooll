@@ -7,12 +7,9 @@ autowatch = 1;
 inlets = 1;
 outlets = 1;
 
-var console = {
-    log: function (args) {
-        post(args);
-        post();
-    },
-};
+if (typeof utils === "undefined") {
+	var utils = require("ll._utilities");
+}
 
 var MAIN = "Package:/ppooll/patchers/ppooll.acts";
 var CONTRIBUTIONS = "Package:/ppooll_contributions/patchers/ppooll.acts";
@@ -22,14 +19,6 @@ var count = 0;
 // for _act_overview
 var dict_act_overview_plus = new Dict("act_overview++");
 dict_act_overview_plus.import_json("act_overview.json");
-
-// get file extension, return [name_only, ext]
-function get_extension(filename) {
-    return [
-        filename.substring(0, filename.lastIndexOf(".")),
-        filename.substring(filename.lastIndexOf(".") + 1),
-    ];
-}
 
 function sortObjects(originalObject) {
     // Step 1: Get the keys and sort them
@@ -71,7 +60,7 @@ function load_acts_from_folder(folder, desc) {
     f.typelist = ["JSON"];
     //post("\n", "folder",folder,f,"\n");
     while (!f.end) {
-        var file_ext = get_extension(f.filename);
+        var file_ext = utils.getExtension(f.filename);
         //post(f.filename);
         if (file_ext[1] === "maxpat") {
             if (IGNORE_LIST.indexOf("," + file_ext[0] + ",") === -1) {
@@ -117,15 +106,17 @@ function msg_dictionary(ll_preferences){
     watch_folder(MAIN);
 
     // CONTRIBUTIONS
-    append("-");
-    append("(community contributions)");
-    load_acts_from_folder(CONTRIBUTIONS, "(community contributions)");
-    watch_folder(CONTRIBUTIONS);
+    if(utils.folderExists(CONTRIBUTIONS)){
+        append("-");
+        append("(community contributions)");
+        load_acts_from_folder(CONTRIBUTIONS, "(community contributions)");
+        watch_folder(CONTRIBUTIONS);
+    }
 
     // UNSHARED
     append("-");
     append("--unshared_acts--");
-    if (UNSHARED !== "") {
+    if (UNSHARED !== "" && utils.folderExists(UNSHARED)) {
         load_acts_from_folder(UNSHARED, "--unshared_acts--");
         watch_folder(UNSHARED);
     }
