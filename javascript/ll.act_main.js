@@ -29,6 +29,7 @@ const act_args = {
     name: args[2],
     color: args[3],
 };
+// post(JSON.stringify(act_args), "\n")
 
 // dicts
 const ll_state = new Dict("ppoollstate");
@@ -49,6 +50,8 @@ let showHoverIcons = true;
 
 let is_llenviread = 0; // [r llenviread]
 
+let first_menu_set = true;
+
 // [v8] attributes
 var isReady = 0;
 declareattribute("isReady", {
@@ -59,10 +62,19 @@ declareattribute("isReady", {
 });
 
 var act_name_index = "loading...";
-declareattribute("act_name_index", { type: "symbol", embed: 1, default: "loading..." });
+declareattribute("act_name_index", {
+    type: "symbol",
+    embed: 1,
+    default: "loading...",
+});
 
 var act_index = -1; // set dynamically from ppoollstate, declared as attribute for persistence when saving this js
-declareattribute("act_index", { type: "long", embed: 1, default: -1, invisible: 1 });
+declareattribute("act_index", {
+    type: "long",
+    embed: 1,
+    default: -1,
+    invisible: 1,
+});
 
 // colors
 var txt_color = [1, 1, 1, 1];
@@ -97,8 +109,11 @@ const title_menu_options_list = Object.keys(title_menu_options);
 //  * only do this after the initial [loadbang]--[deferlow]--
 refresh();
 function refresh() {
+    // post("isReady", isReady, "\n");
+    // post("act_name_index", act_name_index, "\n");
+    // post("act_index", act_index, "\n");
     if (isReady) {
-        // post("refresh\n")
+        // post("refresh\n");
         bang();
     }
 }
@@ -118,7 +133,16 @@ function bang() {
     pres_menu = this.patcher.getnamed("pres_menu");
     tetris_menu = this.patcher.getnamed("tetris_menu");
 
+    title_menu.ignoreclick = 1;
+    pres_menu.ignoreclick = 1;
+    tetris_menu.ignoreclick = 1;
+
+    this.patcher.sendtoback(title_menu);
+    this.patcher.sendtoback(pres_menu);
+    this.patcher.sendtoback(tetris_menu);
+    
     act_index = getActIndex(act_args.name);
+    act_name_index = `${act_args.name}${act_index}`;
 
     delete_old();
 
@@ -137,32 +161,31 @@ function bang() {
     );
     title_menu.message("dictionary", dict_title_menu.name);
 
+    create_rest();
+
+    // givename
+    act_patcher.getnamed("pattrmarker").message("name", act_name_index);
+    act_patcher.getnamed("thispatcher").message("patcher", act_name_index);
+
     // add actname to dict ppoollstate
     const act_state = {
         class: act_args.name,
         index: act_index,
-        id: act_args.hash,
+        hash: act_args.hash,
         "inputs~": {},
     };
     ll_state.setparse(`${act_name_index}`, JSON.stringify(act_state));
 
-    create_rest();
-
-    // givename
-    act_name_index = `${act_args.name}${act_index}`;
-    act_patcher.getnamed("pattrmarker").message("name", act_name_index);
-    act_patcher.getnamed("thispatcher").message("patcher", act_name_index);
     messnamed("actname", act_name_index);
     messnamed(act_args.hash + "actname", act_name_index);
     messnamed("::actname", "::" + act_name_index + "::");
     messnamed(act_args.hash + "::actname", "::" + act_name_index + "::");
 
     check_live();
-
     first_dump();
 
     //everything done !!!
-    messnamed("acting", act_args.name, act_index, 1);
+    messnamed("acting", act_args.name, act_index, 1, act_args.hash);
     messnamed("act_ready", `${act_args.name}${act_index}`);
     messnamed(`${act_args.hash}instance`, act_index);
 
@@ -177,8 +200,10 @@ function clickreset() {
 }
 
 function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
-    let uibr = this.box.rect;
     yclick = y;
+    xclick = x;
+
+    let uibr = this.box.rect;
     if (x > uibr[2] / 2) {
         mod = shift | option | ctrl;
         //post("right",mod,"\n");
@@ -193,8 +218,6 @@ function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
         outlet(0, "bang"); //bangs a max [del 100] to function bang (ignoreclick = 0) !!
         messnamed("llto11clicks", "leftclick", 0);
         messnamed("llto11clicks", "leftclick", 1);
-    } else {
-        xclick = x;
     }
 }
 
@@ -239,47 +262,19 @@ function windpos(x, y) {
         x + w.location[2],
         y + w.location[3],
     ];
+    // post("windpos", x, y, w.location, "\n")
 }
 
 // get the next index for this act (FKA "getinstance()")
-// function getActIndex(name_only) {
-//     // if(act_index > -1){ // we already have an index! don't re-register with ppoollstate
-//     //     return act_index;
-//     // }
-//     post(JSON.stringify(utils.allActObjectsList().filter(a => a.class === name_only))); post()
-//     return utils.allActObjectsList().filter(a => a.class === name_only).length + 1;
-// }
-
-// get the next index for this act (FKA "getinstance()")
 function getActIndex(name_only) {
-    // if(act_index > -1){ // we already have an index! don't re-register with ppoollstate
-    //     return act_index;
-    // }
-    var stateDict = new Dict("ppoollstate");
-    let m = stateDict.getkeys();
-    if (!m) return 1;
+    const acts = utils.allActObjectsList?.().filter(a => a.class === name_only) || [];
+    const used = acts.map(a => a.index).filter(i => Number.isInteger(i));
 
-    let result = 0;
-    let foundi = [];
-    for (let a of m) {
-        if (stateDict.get(a + "::class") == name_only)
-            foundi.push(stateDict.get(a + "::index"));
+    let next = 1;
+    while (used.includes(next)) {
+        next++;
     }
-    if (foundi.length > 0) {
-        foundi.sort(function (a, b) {
-            return a - b;
-        });
-        for (let i = 0; i < foundi.length; i++) {
-            if (i + 1 != foundi[i]) {
-                result = i + 1;
-                break;
-            }
-            result = i + 2;
-        }
-    } else {
-        result = 1;
-    }
-    return result;
+    return next;
 }
 
 function paint() {
@@ -537,7 +532,6 @@ function create_host_title_menu_options() {
     };
 }
 
-let first_menu_set = true;
 function set_title_menu(selection) {
     // post("set_title_menu", selection, "\n");
     if (!isReady || selection === "" || selection === "_") return;
@@ -811,5 +805,8 @@ function freebang() {
     // post("freebang")
 
     // send msgs to remove from ppooll_state
+    if(ll_state.get(act_name_index))
+        ll_state.remove(act_name_index);
+
     messnamed("acting", act_args.name, act_index, -1);
 }

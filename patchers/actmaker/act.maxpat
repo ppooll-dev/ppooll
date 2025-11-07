@@ -9,8 +9,32 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 642.0, 330.0, 707.0, 326.0 ],
+        "rect": [ 642.0, 231.0, 707.0, 326.0 ],
         "boxes": [
+            {
+                "box": {
+                    "allowdrag": 0,
+                    "annotation": "title_menu - click on ppooll in the ho_st to find info about it",
+                    "bgcolor": [ 1.0, 1.0, 1.0, 0.0 ],
+                    "bgfillcolor_color": [ 1.0, 1.0, 1.0, 0.0 ],
+                    "bgfillcolor_color1": [ 0.301961, 0.301961, 0.301961, 1 ],
+                    "bgfillcolor_color2": [ 0.2, 0.2, 0.2, 1 ],
+                    "bgfillcolor_type": "color",
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-80",
+                    "items": [ "info", ",", "clientwindow", ",", "-", ",", "max_console", ",", "clear_console", ",", "titlebar", ",", "all_titlebars", ",", "dsp(audio_settings)", ",", "tetris", ",", "refresh", ",", "-", ",", "stopwatch", ",", "clock", ",", "-", ",", "close", ",", "closeall", ",", "back", ",", "grow", ",", "-", ",", "subpatch", ",", "actmaker", ",", "ppooll_state", ",", "clean", ",", "nan_clear" ],
+                    "maxclass": "umenu",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "int", "", "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 0.0, -7.0, 50.3515625, 22.0 ],
+                    "pattrmode": 1,
+                    "textcolor": [ 0.149, 0.149, 0.149, 1.0 ],
+                    "varname": "title_menu"
+                }
+            },
             {
                 "box": {
                     "id": "obj-25",
@@ -37,7 +61,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "freebang" ],
-                                    "patching_rect": [ 464.0, 101.0, 63.0, 22.0 ],
+                                    "patching_rect": [ 491.0, 96.0, 63.0, 22.0 ],
                                     "text": "t freebang"
                                 }
                             },
@@ -48,7 +72,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "bang" ],
-                                    "patching_rect": [ 464.0, 75.0, 56.0, 22.0 ],
+                                    "patching_rect": [ 491.0, 70.0, 56.0, 22.0 ],
                                     "text": "freebang"
                                 }
                             },
@@ -59,7 +83,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "savebang" ],
-                                    "patching_rect": [ 383.0, 101.0, 67.0, 22.0 ],
+                                    "patching_rect": [ 410.0, 96.0, 67.0, 22.0 ],
                                     "text": "t savebang"
                                 }
                             },
@@ -70,7 +94,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "bang" ],
-                                    "patching_rect": [ 383.0, 75.0, 61.0, 22.0 ],
+                                    "patching_rect": [ 410.0, 70.0, 61.0, 22.0 ],
                                     "text": "savebang"
                                 }
                             },
@@ -81,7 +105,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 230.0, 101.0, 130.0, 22.0 ],
+                                    "patching_rect": [ 201.0, 101.0, 130.0, 22.0 ],
                                     "text": "prepend set_llenviread"
                                 }
                             },
@@ -92,7 +116,7 @@
                                     "numinlets": 0,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 230.0, 69.59, 67.0, 22.0 ],
+                                    "patching_rect": [ 201.0, 70.0, 67.0, 22.0 ],
                                     "text": "r llenviread"
                                 }
                             },
@@ -6311,30 +6335,6 @@
                         "autowatch": 1
                     },
                     "varname": "actui"
-                }
-            },
-            {
-                "box": {
-                    "allowdrag": 0,
-                    "annotation": "title_menu - click on ppooll in the ho_st to find info about it",
-                    "bgcolor": [ 1.0, 1.0, 1.0, 0.0 ],
-                    "bgfillcolor_color": [ 1.0, 1.0, 1.0, 0.0 ],
-                    "bgfillcolor_color1": [ 0.301961, 0.301961, 0.301961, 1 ],
-                    "bgfillcolor_color2": [ 0.2, 0.2, 0.2, 1 ],
-                    "bgfillcolor_type": "color",
-                    "fontname": "Arial",
-                    "fontsize": 12.0,
-                    "id": "obj-80",
-                    "items": [ "info", ",", "clientwindow", ",", "-", ",", "max_console", ",", "clear_console", ",", "titlebar", ",", "all_titlebars", ",", "dsp(audio_settings)", ",", "tetris", ",", "refresh", ",", "-", ",", "stopwatch", ",", "clock", ",", "-", ",", "close", ",", "closeall", ",", "back", ",", "grow", ",", "-", ",", "subpatch", ",", "actmaker", ",", "ppooll_state", ",", "clean", ",", "nan_clear" ],
-                    "maxclass": "umenu",
-                    "numinlets": 1,
-                    "numoutlets": 3,
-                    "outlettype": [ "int", "", "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 0.0, -7.0, 50.3515625, 22.0 ],
-                    "pattrmode": 1,
-                    "textcolor": [ 0.149, 0.149, 0.149, 1.0 ],
-                    "varname": "title_menu"
                 }
             },
             {
