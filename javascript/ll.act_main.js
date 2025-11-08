@@ -14,8 +14,8 @@
 autowatch = 1;
 outlets = 1;
 
-if (typeof utils === "undefined") {
-    var utils = require("ll._utilities");
+if (typeof ll === "undefined") {
+    var ll = require("ll._utilities");
 }
 
 mgraphics.init();
@@ -33,6 +33,9 @@ const act_args = {
 
 // dicts
 const ll_state = new Dict("ppoollstate");
+
+// globals
+var actr = new Global("act_rep");
 
 // Mouse and Keyboard modifiers
 var drag_gate = 1;
@@ -141,7 +144,7 @@ function bang() {
     this.patcher.sendtoback(pres_menu);
     this.patcher.sendtoback(tetris_menu);
     
-    act_index = getActIndex(act_args.name);
+    act_index = ll.getNextActIndex(act_args.name);
     act_name_index = `${act_args.name}${act_index}`;
 
     delete_old();
@@ -172,9 +175,15 @@ function bang() {
         class: act_args.name,
         index: act_index,
         hash: act_args.hash,
-        "inputs~": {},
+        "inputs~": {}
     };
     ll_state.setparse(`${act_name_index}`, JSON.stringify(act_state));
+
+    // add act_patcher ref to Global actr patcher references
+    if(!actr.patchers){
+        actr.patchers = {};
+    }
+    actr.patchers[act_name_index] = act_patcher;
 
     messnamed("actname", act_name_index);
     messnamed(act_args.hash + "actname", act_name_index);
@@ -265,25 +274,13 @@ function windpos(x, y) {
     // post("windpos", x, y, w.location, "\n")
 }
 
-// get the next index for this act (FKA "getinstance()")
-function getActIndex(name_only) {
-    const acts = utils.allActObjectsList?.().filter(a => a.class === name_only) || [];
-    const used = acts.map(a => a.index).filter(i => Number.isInteger(i));
-
-    let next = 1;
-    while (used.includes(next)) {
-        next++;
-    }
-    return next;
-}
-
 function paint() {
     if (!isReady) {
         // post("paint not ready\n");
         return;
     }
     // post("paint\n");
-    bgcolor = utils.makeColor(act_args.color);
+    bgcolor = ll.makeColor(act_args.color);
 
     mgraphics.set_font_size(12);
     mgraphics.select_font_face((fontfamily = "Arial"), (weight = "bold"));
@@ -305,7 +302,7 @@ function paint() {
     mgraphics.set_source_rgba(bgcolor);
     mgraphics.rectangle(brect);
     mgraphics.fill();
-    txt_color = utils.getBrightness(bgcolor);
+    txt_color = ll.getBrightness(bgcolor);
     mgraphics.set_source_rgba(txt_color);
     mgraphics.move_to(4, 12);
 
@@ -419,7 +416,7 @@ function create_title_menu_options() {
         close: () => {
             if (act_args.name === "ho_st") {
                 // if ho_st1 'close', close all other acts first
-                utils
+                ll
                     .allActNames()
                     .filter((act) => act !== "ho_st1")
                     .forEach((act) => {
@@ -479,7 +476,7 @@ function create_host_title_menu_options() {
             // iterate over ppoollstate and show/hide titlebar
             allTitlebarsShown = !allTitlebarsShown;
 
-            utils.allActNames().forEach((act) => {
+            ll.allActNames().forEach((act) => {
                 messnamed(
                     act,
                     "TP",
@@ -510,7 +507,7 @@ function create_host_title_menu_options() {
 
         close: opts.close,
         closeall: () => {
-            utils.allActNames().forEach((act) => {
+            ll.allActNames().forEach((act) => {
                 messnamed(act, "TP", act === "ho_st1" ? "clean" : "dispose");
             });
         },
@@ -524,7 +521,7 @@ function create_host_title_menu_options() {
             messnamed("ppooll_state", "bang");
         },
         clean: () => {
-            utils.allActNames().forEach((act) => {
+            ll.allActNames().forEach((act) => {
                 messnamed(act, "TP", "clean");
             });
         },
@@ -562,17 +559,27 @@ function _in2(...args) {
     const msg = args.shift();
 
     if (msg === "act::master/activest") {
-        if (isMaster !== args[0] && args[0] === 1) {
+        const newMaster = args[0];
+        const newActiveStore = args[1];
+        if (isMaster !== newMaster && newMaster === 1) {
             isMaster = 1;
-            act_patcher
-                .getnamed("pat")
-                .message("act::master/activest", isMaster, isActiveStore);
             title_menu.message(
                 "checkitem",
                 Object.keys(title_menu_options).indexOf("master"),
                 isMaster
             );
         }
+        if(isActiveStore !== newActiveStore){
+            isActiveStore = newActiveStore;
+            title_menu.message(
+                "checkitem",
+                Object.keys(title_menu_options).indexOf("active_store"),
+                isActiveStore
+            );
+        }
+        act_patcher
+            .getnamed("pat")
+            .message("act::master/activest", isMaster, isActiveStore);
         return;
     }
 
@@ -770,7 +777,7 @@ function make_live() {
     }
     //set box varname to nameInstance
     tpp.box.varname = cname;
-    coords = utils.getPatcherRectFromMaxpat(tpp.filepath);
+    coords = ll.getPatcherRectFromMaxpat(tpp.filepath);
 
     // set patching rect of act's bpatcher & bring to front
     lpe.message("script", "sendbox", cname, "patching_rect", coords);
@@ -807,6 +814,10 @@ function freebang() {
     // send msgs to remove from ppooll_state
     if(ll_state.get(act_name_index))
         ll_state.remove(act_name_index);
+
+    // remove from Global actr patcher references
+    if(actr.patchers[act_name_index])
+        delete actr.patchers[act_name_index];
 
     messnamed("acting", act_args.name, act_index, -1);
 }

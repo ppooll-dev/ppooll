@@ -1,17 +1,23 @@
 /*
-	ll._utilities
 
-		helpers for ppooll
-		
-		import into other v8 .js using:
+ll._utilities
 
-if (typeof utils === "undefined") {
-	var utils = require("ll._utilities");
+	utilities & helpers for ppooll
+
+// define like this...        
+if (typeof ll === "undefined") {
+	var ll = require("ll._utilities");
 }
+
+// and in code...
+const acts = ll.allActObjects();
+
 */
 
 var stateDict = new Dict("ppoollstate");
+var actr = new Global("act_rep");
 
+////////////////////////////////////////////////////////////////////
 //
 // PPOOLL STATE
 //
@@ -31,6 +37,18 @@ exports.allActObjectsList = () => {
 exports.allActNames = () => {
     return Object.keys(exports.allActObjects());
 };
+
+// get the next index for this act (FKA "getinstance()")
+exports.getNextActIndex = (act_class) => {
+    const acts = exports.allActObjectsList().filter(a => a.class === act_class) || [];
+    const used = acts.map(a => a.index).filter(i => Number.isInteger(i));
+
+    let next = 1;
+    while (used.includes(next)) {
+        next++;
+    }
+    return next;
+}
 
 // get audio inputs in an act
 exports.getinputs = function (act, curr_item) {
@@ -64,6 +82,37 @@ exports.getinputs = function (act, curr_item) {
     return [c_menu, c_chans, curr_item];
 };
 
+////////////////////////////////////////////////////////////////////
+//
+// GLOBAL "actr"
+//
+
+// act this.patcher
+exports.getActPatcher = (act) => {
+    return actr.patchers[act];
+}
+
+// parameter Maxobj
+exports.getParamObject = (act, par) => {
+    return exports.getActPatcher(act).getnamed(par);
+}
+
+// parameter value
+exports.getParamValue = (act, par) => {
+    return exports.getParamObject(act, par).getvalueof()
+}
+
+// act this.patcher.wind
+exports.getWind = (act) => {
+    return exports.getParamObject(act).wind;
+}
+
+// act this.patcher.wind.location
+exports.getLocation = (act) => {
+    return exports.getWind(act).location;
+}
+
+////////////////////////////////////////////////////////////////////
 //
 // PATCHER
 //
@@ -102,6 +151,7 @@ exports.findInParentPatchers = function (varname, patcher) {
     return { foundBox: null, foundPatcher: null }; // Not Found
 };
 
+////////////////////////////////////////////////////////////////////
 //
 // FILES & FOLDERS
 //
@@ -153,6 +203,7 @@ exports.getPatcherRectFromMaxpat = (a) => {
     return coords;
 }
 
+////////////////////////////////////////////////////////////////////
 //
 // COLORS
 //
