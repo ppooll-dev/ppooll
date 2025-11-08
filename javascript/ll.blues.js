@@ -261,7 +261,8 @@ function foldUnfold() {
 	// ################################################### folded
     if (S.folded === 1) {       
         UI.rect("listblock", [ lbRect[0], lbRect[1], S.bWidth - S.laneWidth, S.rowheight ]);
-        UI.rect("meter", [lbRect[0], lbRect[1], S.bWidth, S.rowheight]);
+		size_meter(lbRect[0], lbRect[1]);
+        //UI.rect("meter", [lbRect[0], lbRect[1], S.bWidth, S.rowheight]);
         menWidth = (UI.rect("listblock")[2] - UI.rect("listblock")[0] - S.rowheight) / 2;
 
         try {
@@ -278,7 +279,8 @@ function foldUnfold() {
         UI.msg("listblock", "header", 1);
 		let r3 = S.chansV[1]*S.rowheight+S.rowheight;
         UI.rect("listblock", [ lbRect[0],lbRect[1], S.bWidth + S.extraWidth, r3 ]);
-        UI.rect("meter", [lbRect[0], S.rowheight, S.bWidth, r3]);
+		size_meter(lbRect[0], S.rowheight);
+        //UI.rect("meter", [lbRect[0], S.rowheight, S.bWidth, r3]);
         menWidth = (UI.rect("listblock")[2] - UI.rect("listblock")[0] - S.rowheight - S.extraWidth) / 2;
 
         try { bpatcher.rect = [ br[0], br[1], br[0] + S.bWidth + S.extraWidth,
@@ -419,7 +421,8 @@ function size_obj() {
         setSliderRects();
 		//post("size_O",S.wide,"\n");
         if (!S.wide) {
-            UI.rect("meter", [0, 0, S.bWidth, S.rowheight]);
+			size_meter(0,0);
+            //UI.rect("meter", [0, 0, S.bWidth, S.rowheight]);
 
             if (S.inMix) {
                 UI.rect("mix", [
@@ -445,7 +448,8 @@ function size_obj() {
             UI.rect("chans_in", [S.laneWidth * 8, up4, S.laneWidth * 10, dn4]);
             UI.rect("chans_out", [S.laneWidth * 10, up4, S.bWidth, dn4]);
         } else {
-            UI.rect("meter", [0, 0, S.bWidth / 2, S.rowheight]);
+			size_meter(0,0);
+            //UI.rect("meter", [0, 0, S.bWidth / 2, S.rowheight]);
 
             if (S.inMix) {
                 UI.rect("mix", [S.bWidth / 4, up2, S.bWidth / 2, dn2]);
@@ -569,7 +573,10 @@ function status() {
         setSliderRects();
     }
 
-    if (newMeter !== S.meter) S.meter = newMeter;
+    if (newMeter !== S.meter) {
+		S.meter = newMeter;
+		size_meter();
+	}
     if (newMixAdds !== S.mixAdds) S.mixAdds = newMixAdds;
     if (newLink !== S.linkChans) S.linkChans = newLink;
 	if (newFolded !== S.folded) {
@@ -586,11 +593,13 @@ function chans() {
         listblockCompose();
         UI.msg("chans_out", "set", S.chOut);
         foldUnfold();
+		size_meter();
     }
     if (c[0] !== S.chIn) {
         S.chIn = c[0];
         UI.msg("chans_in", "set", S.chIn);
         outlet(0, "chans_in", S.chIn);
+		size_meter();
     }
 }
 function levels() {
@@ -606,6 +615,40 @@ function levels() {
 }
 
 /* ============================== GUI HANDLERS ============================== */
+
+let meter_r0;
+let meter_r1; 
+function size_meter(){
+    let ar = arrayfromargs(arguments);
+    if (ar.length === 2){
+        meter_r0 = ar[0];
+        meter_r1 = ar[1]; 
+    }
+	let r2,r3;
+	if (S.style < 2){
+        if (!S.wide) r2 = S.bWidth
+		else r2 = S.bWidth / 2;
+		if (S.meter === 0){
+			if (S.chOut < 5) r3 = S.rowheight
+			else if (S.chOut < 9 || S.wide) r3 = S.rowheight * 2
+			else if (S.chOut < 13) r3 = S.rowheight * 3
+			else r3 = S.rowheight * 4; 
+		} else {
+			if (S.chIn < 5) r3 = S.rowheight
+			else if (S.chIn < 9 || S.wide) r3 = S.rowheight * 2
+			else if (S.chInm < 13) r3 = S.rowheight * 3
+			else r3 = S.rowheight * 4; 
+		}
+		// S.chIn   ################################_______________CHANNEL COUNT
+	} else if (S.folded === 1) { 
+		r2 = S.bWidth; 
+		r3 = S.rowheight;
+	} else {
+		r2 = S.bWidth;
+		r3 = S.chansV[1]*S.rowheight+S.rowheight;
+	}
+	UI.rect("meter", [meter_r0,meter_r1,r2,r3]);
+}
 
 function vol(a) {
     S.levelsV[0] = a;
@@ -758,62 +801,6 @@ function script_sub() {
         }
     }
 
-}
-
-function script_sub_chchange(c) {
-    const c_in = c[0];
-    const c_out = c[1];
-
-    UI.rect("meter", [
-        0,
-        0,
-        S.volWidth,
-        Math.min(54, 13 * Math.floor((c_out - 1) / 4) + 14),
-    ]);
-
-    let chchst = 0;
-    if (c_out === c_in) chchst = 0;
-    else if (c_out === 2) chchst = 1;
-    else if (c_in > c_out) chchst = 2;
-    else chchst = 3;
-
-    // (rest unchanged from original behavior)
-    const tp = this.patcher;
-    const bits = tp.getnamed("bits");
-    const mal = tp.getnamed("mal");
-
-    if (chchst === 0) {
-        tp.disconnect(bits, 0, tp.getnamed("chchange"), 0);
-        tp.connect(bits, 0, mal, 0);
-    } else {
-        tp.disconnect(bits, 0, mal, 0);
-        tp.remove(tp.getnamed("chchange"));
-
-        let chchange;
-        if (chchst === 1) chchange = tp.newdefault(99, 180, "ll.mc.stereo_pan");
-        else if (chchst === 2)
-            chchange = tp.newdefault(
-                99,
-                180,
-                "mc.mixdown~",
-                c_out,
-                "@autogain",
-                1
-            );
-        else
-            chchange = tp.newdefault(
-                99,
-                180,
-                "mc.resize~",
-                c_out,
-                "@replicate",
-                1
-            );
-
-        chchange.varname = "chchange";
-        tp.connect(bits, 0, chchange, 0);
-        tp.connect(chchange, 0, mal, 0);
-    }
 }
 
 /* ============================== OUTPUTS PARSING ============================== */

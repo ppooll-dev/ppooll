@@ -7,7 +7,8 @@ var stateDict = new Dict("ppoollstate");
 if (typeof utils === "undefined") {
     var utils = require("ll._utilities");
 }
-
+const aa = new Global("ll.max_live_envi");
+let is_live = aa.envi === "live";
 var tpp = this.patcher;
 var boxw = box.rect[2] - box.rect[0];
 var boxh = box.rect[3] - box.rect[1];
@@ -132,9 +133,11 @@ function calc_cols(){
 	}
 	//post(col_pos,"\n");
 }
+
+
 function setparams(){
-    a = arrayfromargs(arguments);
-	//post("lb_params",a,"\n");
+    let a = arrayfromargs(arguments);
+	// post("lb_params",a,"\n");
 	amount = a.length;
 	params = [];
 	paramsObj = [];
@@ -264,19 +267,34 @@ function setfontsize(a){
 	if(lllbmenu) lllbmenu.message("fontsize", a);
 	if(lllbtext) lllbtext.message("fontsize", a);
 }	
+
+
+function live(l){
+	is_live = l;
+}
+
 function settop_patcher(a){
 	top_patcher = Number(a);
+	//let tpp = 0;
+	//post("uioiouui");
 	if (a == 1){
-		let ui=tpp;
-		while (ui) {
-			tpp = ui;
-			ui = tpp.parentpatcher;	
+		let ui_loc = this.patcher;
+		let prev = [];
+		while (ui_loc.parentpatcher) {
+			prev.push(ui_loc);			
+			ui_loc = ui_loc.parentpatcher;	
+			//post(prev,"\n");
 		}
+		tpp = ui_loc;
+		if (is_live) tpp = prev[prev.length - 2];
+		// post(tpp.name, "\n")
+		// post("is_live", is_live)
 	}
 	else if (a == 0) tpp = this.patcher;
+	//setparams(params);
 }
 function get_actpatcher(){
-	//post("an bang\n");
+	// post("an bang\n");
 	let tp = this.patcher;	
 	let found = 0;
 	while (tp){
@@ -291,31 +309,31 @@ function get_actpatcher(){
 // ###################################### __________ post attributes
 function getattributes(){
 	outlet(1,"params",params);
-	post("params",params,"\n");
+	// post("params",params,"\n");
 	outlet(1,"modes",modes);
-	post("modes",modes,"\n");
+	// post("modes",modes,"\n");
 	outlet(1,"rows",rows);
-	post("rows",rows,"\n");
+	// post("rows",rows,"\n");
 	outlet(1,"width_abs",width_abs);
-	post("width_abs",width_abs,"\n");
+	// post("width_abs",width_abs,"\n");
 	outlet(1,"colwidths",colwidths);	
-	post("colwidths",colwidths,"\n");
+	// post("colwidths",colwidths,"\n");
 	outlet(1,"header",header);
-	post("header",header,"\n");
+	// post("header",header,"\n");
 	outlet(1,"header_text",header_text);
-	post("header_text",header_text,"\n");
+	// post("header_text",header_text,"\n");
 	outlet(1,"ignore_headerclick",ignore_headerclick);
-	post("ignore_headerclick",ignore_headerclick,"\n");
+	// post("ignore_headerclick",ignore_headerclick,"\n");
 	outlet(1,"fontsize",fontsize);
-	post("fontsize",fontsize,"\n");
+	// post("fontsize",fontsize,"\n");
 	outlet(1,"param_offset",param_offset);
-	post("param_offset",param_offset,"\n");
+	// post("param_offset",param_offset,"\n");
 	outlet(1,"enum_offset",enum_offset);
-	post("enum_offset",enum_offset,"\n");
+	// post("enum_offset",enum_offset,"\n");
 	outlet(1,"size_lists",size_lists);
-	post("size_lists",size_lists,"\n");
+	// post("size_lists",size_lists,"\n");
 	outlet(1,"top_patcher",top_patcher);
-	post("top_patcher",top_patcher,"\n");
+	// post("top_patcher",top_patcher,"\n");
 	outlet(1,"c1",c1);
 	outlet(1,"c2",c2);
 	outlet(1,"c3",c3);
@@ -328,15 +346,15 @@ function getattributes(){
 	outlet(1,"c10",c10);
 	outlet(1,"c11",c11);
 	outlet(1,"c12",c12);	
-	post("colors:","\n","c1",c1,"\n","c2",c2,"\n","c3",c3,"\n", "c4",c4,"\n", "c5",c5,"\n", "c6",c6,"\n", "c7",c7,"\n", "c8",c8,"\n", "c9",c9,"\n", "c10",c10,"\n", "c11",c11,"\n", "c12",c12,"\n");
+	// post("colors:","\n","c1",c1,"\n","c2",c2,"\n","c3",c3,"\n", "c4",c4,"\n", "c5",c5,"\n", "c6",c6,"\n", "c7",c7,"\n", "c8",c8,"\n", "c9",c9,"\n", "c10",c10,"\n", "c11",c11,"\n", "c12",c12,"\n");
 	outlet(1,"bgcolors",bgcolors);
-	post("bgcolors",bgcolors,"\n","oncolors",oncolors,"\n");
+	// post("bgcolors",bgcolors,"\n","oncolors",oncolors,"\n");
 	outlet(1,"oncolors",oncolors);
-	post("oncolors",oncolors,"\n");
+	// post("oncolors",oncolors,"\n");
 	outlet(1,"headercolors",headercolors);
-	post("headercolors",headercolors,"\n");
+	// post("headercolors",headercolors,"\n");
 	outlet(1,"gridcolor",gridcolor);
-	post("gridcolor",gridcolor,"\n");
+	// post("gridcolor",gridcolor,"\n");
 
 }
 // ################################### _________________UI-inits		
@@ -447,6 +465,7 @@ function paint() {
 			else value[0] = v; 
 		}
 		//post("col",j, "value",value,"\n");
+		// post(mod[j]);post();
 		cm = mod[j][0];
 		cm1 = mod[j][1];
 		cm2 = mod[j][2];
