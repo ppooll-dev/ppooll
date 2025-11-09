@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 517.0, 520.0, 133.0, 200.0 ],
+        "rect": [ 548.0, 184.0, 133.0, 200.0 ],
         "default_fontsize": 10.0,
         "toolbarvisible": 0,
         "enablehscroll": 0,
@@ -2477,13 +2477,9 @@
             {
                 "box": {
                     "active": {
-                        "freq": 0,
                         "freq-relative": 0,
-                        "base-freq": 0,
                         "takeover": 0,
-                        "use-env": 0,
                         "bang-env": 0,
-                        "loop-env": 0,
                         "f-rel>trigger": 0,
                         "length": 0,
                         "length-slider": 0,
@@ -2603,7 +2599,7 @@
                         "loop-env": [ 0 ],
                         "octdiv": [ 20.0 ],
                         "preset-ramp": [ 0 ],
-                        "presets": [ 8 ],
+                        "presets": [ 0 ],
                         "takeover": [ -1 ],
                         "use-env": [ 0 ]
                     },
