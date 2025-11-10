@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 376.0, 170.0, 130.0, 125.0 ],
+        "rect": [ 371.0, 171.0, 130.0, 125.0 ],
         "default_fontsize": 11.595187,
         "toolbarvisible": 0,
         "globalpatchername": "ho_st1",
@@ -628,6 +628,120 @@
                         "rect": [ 221.0, 107.0, 335.0, 623.0 ],
                         "toolbarvisible": 0,
                         "boxes": [
+                            {
+                                "box": {
+                                    "id": "obj-27",
+                                    "maxclass": "newobj",
+                                    "numinlets": 0,
+                                    "numoutlets": 0,
+                                    "patcher": {
+                                        "fileversion": 1,
+                                        "appversion": {
+                                            "major": 9,
+                                            "minor": 1,
+                                            "revision": 0,
+                                            "architecture": "x64",
+                                            "modernui": 1
+                                        },
+                                        "classnamespace": "box",
+                                        "rect": [ 628.0, 126.0, 204.0, 234.0 ],
+                                        "boxes": [
+                                            {
+                                                "box": {
+                                                    "id": "obj-1",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 0,
+                                                    "patching_rect": [ 24.0, 171.0, 85.0, 22.0 ],
+                                                    "text": "s llmousestate"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "fontname": "Arial",
+                                                    "fontsize": 13.0,
+                                                    "id": "obj-14",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "bang" ],
+                                                    "patching_rect": [ 24.0, 33.0, 66.0, 23.0 ],
+                                                    "text": "loadbang"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "fontname": "Arial",
+                                                    "fontsize": 13.0,
+                                                    "id": "obj-10",
+                                                    "maxclass": "message",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 24.0, 65.0, 32.5, 23.0 ],
+                                                    "text": "poll"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "id": "obj-23",
+                                                    "maxclass": "toggle",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "int" ],
+                                                    "parameter_enable": 0,
+                                                    "patching_rect": [ 81.0, 138.0, 20.0, 20.0 ]
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "fontname": "Arial",
+                                                    "fontsize": 13.0,
+                                                    "id": "obj-31",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 10,
+                                                    "outlettype": [ "int", "int", "int", "int", "int", "int", "int", "float", "float", "list" ],
+                                                    "patching_rect": [ 24.0, 100.0, 96.0, 23.0 ],
+                                                    "text": "mousestate"
+                                                }
+                                            }
+                                        ],
+                                        "lines": [
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-31", 0 ],
+                                                    "source": [ "obj-10", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-10", 0 ],
+                                                    "midpoints": [ 33.5, 58.0, 33.5, 58.0 ],
+                                                    "source": [ "obj-14", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-1", 0 ],
+                                                    "order": 1,
+                                                    "source": [ "obj-31", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-23", 0 ],
+                                                    "midpoints": [ 33.5, 124.0, 90.5, 124.0 ],
+                                                    "order": 0,
+                                                    "source": [ "obj-31", 0 ]
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "patching_rect": [ 228.0, 519.0, 81.0, 22.0 ],
+                                    "text": "p mousestate"
+                                }
+                            },
                             {
                                 "box": {
                                     "fontsize": 16.0,
@@ -1938,12 +2052,13 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-5",
+                                                                    "linecount": 2,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 339.0, 243.0, 79.0, 35.0 ],
-                                                                    "text": "ducks"
+                                                                    "text": "(environments)"
                                                                 }
                                                             },
                                                             {
@@ -2029,13 +2144,13 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-30",
-                                                                    "linecount": 33,
+                                                                    "linecount": 4,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 150.0, 191.0, 20.0, 62.0 ],
-                                                                    "text": "Off 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20"
+                                                                    "text": "Off 1 2"
                                                                 }
                                                             },
                                                             {
@@ -3195,6 +3310,7 @@
                                                             {
                                                                 "box": {
                                                                     "fontsize": 10.0,
+                                                                    "hidden": 1,
                                                                     "id": "obj-15",
                                                                     "maxclass": "comment",
                                                                     "numinlets": 1,
@@ -3469,6 +3585,7 @@
                                                                 "box": {
                                                                     "bgcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                                                                     "fontsize": 11.0,
+                                                                    "hidden": 1,
                                                                     "id": "obj-1",
                                                                     "maxclass": "textbutton",
                                                                     "numinlets": 1,
@@ -4222,8 +4339,6 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 0,
-                                                                        "node_bin_path": "",
-                                                                        "npm_bin_path": "",
                                                                         "watch": 0
                                                                     },
                                                                     "text": "node.script ll.node.folders.js",
@@ -6640,7 +6755,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 19.0, 290.0, 117.0, 22.0 ],
-                                                    "text": "snap@"
+                                                    "text": "ho_st"
                                                 }
                                             },
                                             {
@@ -7740,6 +7855,8 @@
                                                     "saved_object_attributes": {
                                                         "autostart": 0,
                                                         "defer": 0,
+                                                        "node_bin_path": "",
+                                                        "npm_bin_path": "",
                                                         "watch": 0
                                                     },
                                                     "text": "node.script ll.node.checkPermissionsOS",
@@ -15245,7 +15362,6 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 294.0, 30.0, 107.0, 22.0 ],
-                                                    "presentation_linecount": 2,
                                                     "text": "control@ 1 1 1234"
                                                 }
                                             },
@@ -16532,7 +16648,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 170.0, 156.0, 114.0, 22.0 ],
-                                                    "text": "snap@ 1"
+                                                    "text": "ho_st 1"
                                                 }
                                             },
                                             {
@@ -17418,7 +17534,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 298.5, 367.0, 128.0, 22.0 ],
-                                                    "text": "\"ƒ ducks\""
+                                                    "text": "_"
                                                 }
                                             },
                                             {
@@ -19689,7 +19805,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 331.0, 205.0, 76.0, 22.0 ],
-                                                                    "text": "\"ƒ ducks\""
+                                                                    "text": "_"
                                                                 }
                                                             },
                                                             {
@@ -19729,7 +19845,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 405.0, 455.0, 75.0, 22.0 ],
-                                                                                    "text": "snap@"
+                                                                                    "text": "ho_st"
                                                                                 }
                                                                             },
                                                                             {
@@ -21548,7 +21664,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 63.333333333333314, 89.0, 90.0, 22.0 ],
-                                                                                    "text": "snap@1"
+                                                                                    "text": "ho_st1"
                                                                                 }
                                                                             },
                                                                             {
@@ -22416,7 +22532,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 259.5, 367.0, 35.0, 35.0 ],
-                                                                                    "text": "snap@"
+                                                                                    "text": "ho_st"
                                                                                 }
                                                                             },
                                                                             {
@@ -23304,7 +23420,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 13.0, 2.0, 87.0, 22.0 ],
-                                                                                    "text": "snap@1"
+                                                                                    "text": "ho_st1"
                                                                                 }
                                                                             },
                                                                             {
@@ -23709,13 +23825,12 @@
                                                                     "fontname": "Arial",
                                                                     "fontsize": 12.0,
                                                                     "id": "obj-3",
-                                                                    "linecount": 6,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 92.25, 304.0, 145.0, 89.0 ],
-                                                                    "text": "read \"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets/snap@P/ducks.json\""
+                                                                    "text": "send ::ho_st1::pat"
                                                                 }
                                                             },
                                                             {
@@ -24173,7 +24288,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 264.0, 102.0, 159.0, 22.0 ],
-                                                    "text": "snap@1 \"ƒ ducks\""
+                                                    "text": "ho_st1 _"
                                                 }
                                             },
                                             {
@@ -24252,7 +24367,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 486.0, 163.0, 50.0, 62.0 ],
-                                                                    "text": "::snap@1::act::pres_menu 1"
+                                                                    "text": "::ho_st1::act::pres_menu 1"
                                                                 }
                                                             },
                                                             {
@@ -24843,7 +24958,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 158.0, 27.0, 313.0, 22.0 ],
-                                                                    "text": "\"ƒ ducks\""
+                                                                    "text": "_"
                                                                 }
                                                             },
                                                             {
@@ -26798,7 +26913,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 50.0, 186.5, 96.0, 22.0 ],
-                                                                                    "text": "ƒ ducks"
+                                                                                    "text": "_"
                                                                                 }
                                                                             },
                                                                             {
@@ -46132,7 +46247,7 @@
                         "rec": [ 0 ],
                         "screen": [ 0 ],
                         "stereo": [ 0 ],
-                        "time": [ 18345.0 ],
+                        "time": [ 38049.0 ],
                         "vol": [ 1.0 ],
                         "vol_ramp": [ 10 ],
                         "vol_slider": [ 1.0 ],
