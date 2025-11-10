@@ -644,6 +644,7 @@ ondrag.local = 1; //private
 function mousestate(c){
 	if (c === 1 && mousestate_gate){
 		lllbmenu.hidden = 1;
+		mousestate_gate = 0;
 		//post("mousestate",c,"\n");
 	}
 }
@@ -826,8 +827,8 @@ function text(data) {
 	}
 }
 function menu(a) {
-	//post("menu_listen",a,ui_inside(lllbmenu.rect),lllbmenu.hidden,"\n");
-	if (lllbmenu.hidden == 0){ // was: (ui_inside(lllbmenu.rect) && lllbmenu.hidden == 0)
+	//post("menu_listen",a,"lllbmenu.hidden",lllbmenu.hidden,"\n");
+	if (1){ // lllbmenu.hidden == 0 was: (ui_inside(lllbmenu.rect) && lllbmenu.hidden == 0)
 		if (header_click){
 			//post("head");
 			for (i=param_offset;i<rows;i++){
