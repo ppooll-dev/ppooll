@@ -36,6 +36,8 @@ const ll_state = new Dict("ppoollstate");
 
 // globals
 var actr = new Global("act_rep");
+var ll_max_live_envi = new Global("ll.max_live_envi");
+
 
 // Mouse and Keyboard modifiers
 var drag_gate = 1;
@@ -190,7 +192,8 @@ function bang() {
     messnamed("::actname", "::" + act_name_index + "::");
     messnamed(act_args.hash + "::actname", "::" + act_name_index + "::");
 
-    check_live();
+    if (ll_max_live_envi.envi == "live") make_live();
+
     first_dump();
 
     //everything done !!!
@@ -754,13 +757,6 @@ function first_dump() {
     ].forEach((msgs) => {
         obj_pat.message(...msgs);
     });
-}
-
-function check_live() {
-    var a = new Global("ll.max_live_envi");
-
-
-    if (a.envi == "live") make_live();
 }
 
 function make_live() {
