@@ -645,8 +645,11 @@ function mousestate(c){
 	if (c === 1 && mousestate_gate){
 		lllbmenu.hidden = 1;
 		mousestate_gate = 0;
-		//post("mousestate",c,"\n");
+		post("mousestate",c,"\n");
 	}
+}
+function hide_menu(){
+		lllbmenu.hidden = 1;
 }
 function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
 	

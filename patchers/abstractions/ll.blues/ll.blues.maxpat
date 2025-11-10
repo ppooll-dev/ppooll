@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 51.0, 324.0, 888.0, 389.0 ],
+        "rect": [ 240.0, 496.0, 888.0, 389.0 ],
         "boxes": [
             {
                 "box": {
@@ -261,6 +261,7 @@
                     "bgfillcolor_proportion": 0.39,
                     "bgfillcolor_type": "color",
                     "fontsize": 11.0,
+                    "hidden": 1,
                     "id": "obj-34",
                     "items": [ "no", ",", "ho_st1", ",", "fmrm1" ],
                     "maxclass": "umenu",
@@ -268,7 +269,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, 19.0, 72.33333333333333, 21.0 ],
+                    "patching_rect": [ 0.0, 22.0, 72.33333333333333, 21.0 ],
                     "prefix": "menu",
                     "prefix_mode": 1,
                     "textcolor": [ 0.0, 0.0, 0.0, 0.0 ],
@@ -287,7 +288,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 523.3958333333334, 121.0, 305.0, 22.0 ],
-                    "restore": [ "no~-no-", "_" ],
+                    "restore": [ "no~-no-" ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -444,8 +445,30 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 734.0, 163.0, 356.0, 215.0 ],
+                                        "rect": [ 686.0, 311.0, 356.0, 215.0 ],
                                         "boxes": [
+                                            {
+                                                "box": {
+                                                    "id": "obj-5",
+                                                    "maxclass": "message",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 165.0, 99.0, 68.0, 22.0 ],
+                                                    "text": "hide_menu"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "id": "obj-3",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 0,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 210.0, 57.0, 48.0, 22.0 ],
+                                                    "text": "r acting"
+                                                }
+                                            },
                                             {
                                                 "box": {
                                                     "id": "obj-2",
@@ -489,8 +512,14 @@
                                             },
                                             {
                                                 "patchline": {
+                                                    "destination": [ "obj-5", 0 ],
+                                                    "source": [ "obj-3", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
                                                     "destination": [ "obj-30", 0 ],
-                                                    "source": [ "obj-2", 0 ]
+                                                    "source": [ "obj-5", 0 ]
                                                 }
                                             }
                                         ]
@@ -4077,7 +4106,7 @@
                                             },
                                             {
                                                 "box": {
-                                                    "id": "obj-2",
+                                                    "id": "obj-4",
                                                     "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
@@ -4091,7 +4120,7 @@
                                         "lines": [
                                             {
                                                 "patchline": {
-                                                    "destination": [ "obj-2", 0 ],
+                                                    "destination": [ "obj-4", 0 ],
                                                     "source": [ "obj-1", 0 ]
                                                 }
                                             }
@@ -6996,7 +7025,7 @@
                         [ "param_offset", 0 ],
                         [ "params", "outputsMix~", "outputsMix~" ],
                         [ "rowheight_fixed", 1 ],
-                        [ "rows", 2 ],
+                        [ "rows", 1 ],
                         [ "size_lists", "_" ],
                         [ "textcolor", 1, 1, 1, 1 ],
                         [ "top_patcher", 0 ],
@@ -7009,7 +7038,7 @@
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, 27.0, 146.66666666666666, 26.0 ],
+                    "patching_rect": [ 0.0, 27.0, 146.66666666666666, 16.0 ],
                     "textfile": {
                         "filename": "ll.listblock.js",
                         "flags": 0,
