@@ -143,7 +143,7 @@ function bang() {
     this.patcher.sendtoback(title_menu);
     this.patcher.sendtoback(pres_menu);
     this.patcher.sendtoback(tetris_menu);
-    
+
     act_index = ll.getNextActIndex(act_args.name);
     act_name_index = `${act_args.name}${act_index}`;
 
@@ -175,12 +175,12 @@ function bang() {
         class: act_args.name,
         index: act_index,
         hash: act_args.hash,
-        "inputs~": {}
+        "inputs~": {},
     };
     ll_state.setparse(`${act_name_index}`, JSON.stringify(act_state));
 
     // add act_patcher ref to Global actr patcher references
-    if(!actr.patchers){
+    if (!actr.patchers) {
         actr.patchers = {};
     }
     actr.patchers[act_name_index] = act_patcher;
@@ -194,6 +194,9 @@ function bang() {
     first_dump();
 
     //everything done !!!
+    pres_refresh_menu();
+    tetris_refresh_menu();
+
     messnamed("acting", act_args.name, act_index, 1, act_args.hash);
     messnamed("act_ready", `${act_args.name}${act_index}`);
     messnamed(`${act_args.hash}instance`, act_index);
@@ -416,8 +419,7 @@ function create_title_menu_options() {
         close: () => {
             if (act_args.name === "ho_st") {
                 // if ho_st1 'close', close all other acts first
-                ll
-                    .allActNames()
+                ll.allActNames()
                     .filter((act) => act !== "ho_st1")
                     .forEach((act) => {
                         messnamed(act, `TP`, "dispose");
@@ -548,7 +550,9 @@ function set_title_menu(selection) {
 }
 
 function set_tetris_menu(selection) {
-    if (selection === "_" || selection === "(tetris)") return;
+    // post("set_tetris_menu", act_name_index, ...args, "\n")
+    if (selection === "_" || selection === "(tetris)" || selection === "")
+        return;
 
     messnamed("ll.tetris", act_name_index, selection);
 }
@@ -569,7 +573,7 @@ function _in2(...args) {
                 isMaster
             );
         }
-        if(isActiveStore !== newActiveStore){
+        if (isActiveStore !== newActiveStore) {
             isActiveStore = newActiveStore;
             title_menu.message(
                 "checkitem",
@@ -755,10 +759,6 @@ function first_dump() {
 function check_live() {
     var a = new Global("ll.max_live_envi");
 
-    if (act_patcher.parentpatcher) {
-        // the act was loaded as bpatcher in another patcher
-        a.envi = "live";
-    } else a.envi = "max";
 
     if (a.envi == "live") make_live();
 }
@@ -796,6 +796,61 @@ function make_live() {
 }
 
 //
+// pres_menu & tetris menu
+//
+function tetris_refresh_menu() {
+    const additionalItems = [];
+    refresh_menu("tetris", [], "T", tetris_menu, additionalItems, false);
+
+    tetris_menu.message("setsymbol", "-");
+}
+
+function pres_refresh_menu() {
+    const additionalItems = ["write", "clear!", "TEXT", "_"];
+    refresh_menu(
+        "presets",
+        ["TEXT", "JSON"],
+        "P",
+        pres_menu,
+        additionalItems,
+        true
+    );
+
+    pres_menu.message("setsymbol", "_");
+}
+
+function refresh_menu(
+    name,
+    fileTypes,
+    folderTail,
+    menuObj,
+    addtItems = [],
+    omitExt = false
+) {
+    const items = [`(${name})`, "-"];
+
+    const ll_paths = new Dict("ll_paths");
+
+    const userPath = `${ll_paths.get("user")}/${act_args.name}${folderTail}`;
+    const factoryPath = `${ll_paths.get("factory")}/${
+        act_args.name
+    }${folderTail}`;
+
+    const userFiles = ll
+        .getFilesInFolder(userPath, fileTypes, omitExt)
+        .filter((f) => f && f !== "");
+    const factoryFiles = ll
+        .getFilesInFolder(factoryPath, fileTypes, omitExt)
+        .filter((f) => f && f !== "")
+        .map((file) => `ƒ ${file}`);
+
+    items.push(...userFiles, "-", ...factoryFiles, "-", ...addtItems);
+    const menuDict = new Dict();
+    menuDict.set("items", items);
+    menuObj.message("dictionary", menuDict.name);
+}
+
+//
 // savebang, freebang
 //
 
@@ -812,12 +867,10 @@ function freebang() {
     // post("freebang")
 
     // send msgs to remove from ppooll_state
-    if(ll_state.get(act_name_index))
-        ll_state.remove(act_name_index);
+    if (ll_state.get(act_name_index)) ll_state.remove(act_name_index);
 
     // remove from Global actr patcher references
-    if(actr.patchers[act_name_index])
-        delete actr.patchers[act_name_index];
+    if (actr.patchers[act_name_index]) delete actr.patchers[act_name_index];
 
     messnamed("acting", act_args.name, act_index, -1);
 }
