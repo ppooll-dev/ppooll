@@ -12,6 +12,7 @@ let is_live = aa.envi === "live";
 var tpp = this.patcher;
 var boxw = box.rect[2] - box.rect[0];
 var boxh = box.rect[3] - box.rect[1];
+var mousestate_gate = 0;
 //post("boxinit",box.rect,"\n");
 
 var amount;
@@ -571,6 +572,7 @@ function paint() {
 
 // ####################################################################   _________  interaction
 function onclick(x,y,but,mod1,shift,capslock,option,mod2) {
+	//post("onclick\n");
 	if(rows === 0)
 		return;
 
@@ -639,10 +641,17 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl) {
 	}
 }
 ondrag.local = 1; //private
-
+function mousestate(c){
+	if (c === 1 && mousestate_gate){
+		lllbmenu.hidden = 1;
+		//post("mousestate",c,"\n");
+	}
+}
 function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
+	
 	if(isIdleOut)
 	{
+		//post("idle");
 		isIdleOut = false;
 		is_selected_menu = false;
 		mgraphics.redraw()
@@ -651,13 +660,14 @@ function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
 function onidleout() {	
 	if(isIdleOut)
 		return
-
+	//post("idleout");
+	//lllbmenu.hidden = 1;
 	isIdleOut = true;
 	mgraphics.redraw()
 }
 
 function outputs(){
-	//post("f_outputs",ccm2,"act",act,"cha",cha,"\n")
+	//post("f_outputs",ccm2,"\n")
 	if (ccm2 == 0){ //act_menu
 		//post("act");
 		let a_menu_state = [];
@@ -857,7 +867,6 @@ function menu(a) {
 		par_mess();
 	}
 }
-
 function keep(a){
 	keep_ = a;
 }
@@ -866,6 +875,7 @@ function none_text(a){
 	mgraphics.redraw();
 }
 function fill_menu(a){
+	//post("fill",a,"\n");
 	//let items = [];
 	if (Array.isArray(a)) menu_items = a
 	else menu_items = arrayfromargs(arguments);
@@ -877,6 +887,7 @@ function fill_menu(a){
 			lllbmenu.message("append",it);
 		}
 		//post("items",items.indexOf(it),"\n");
+		mousestate_gate = 1;
 	}
 }
 function nrect(x,y,m) {
