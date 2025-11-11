@@ -252,7 +252,7 @@ function sethost_channels(c) {
 function audio_key(key) {
     preferences.set("general::audioON/OFF", key);
     outlet(0, "audio_key", key);
-    ll_prf_rewrite();ffff
+    ll_prf_rewrite();
 }
 
 //=====================================get_preferences========================
