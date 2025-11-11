@@ -12,7 +12,7 @@ let is_live = aa.envi === "live";
 var tpp = this.patcher;
 var boxw = box.rect[2] - box.rect[0];
 var boxh = box.rect[3] - box.rect[1];
-var mousestate_gate = 0;
+// var mousestate_gate = 0;
 //post("boxinit",box.rect,"\n");
 
 var amount;
@@ -360,21 +360,16 @@ function getattributes(){
 }
 // ################################### _________________UI-inits		
 function menu_init(){
-		if (!this.patcher.getnamed("lllbmenu")){
-			lllbmenu = this.patcher.newdefault(100,100,"umenu");
-			lllbmenu.varname = "lllbmenu";		
-			lllbmenu.bgfillcolor = [0,0,0,0]
-			lllbmenu.textcolor = [0,0,0,0]
-			this.patcher.bringtofront(lllbmenu);			
-			lllbmenu.message("prefix_mode",1);
-			lllbmenu.message("prefix","menu");
-			lllbmenu.message("arrow",0);
-			lllbmenu.message("bgfillcolor", ...[0,0,0,0])
-			lllbmenu.message("textcolor", ...[0,0,0,0])
-			this.patcher.hiddenconnect(lllbmenu,1,box,0);
+		let currentMenu = this.patcher.getnamed("lllbmenu")
+		if(currentMenu){
+			this.patcher.remove(currentMenu);
 		}
-		else lllbmenu = this.patcher.getnamed("lllbmenu");
-		lllbmenu.hidden = 1;
+		lllbmenu = this.patcher.newdefault(100,100,"ll_popupmenu");
+		lllbmenu.varname = "lllbmenu";		
+		lllbmenu.message("prepend","menu");
+		lllbmenu.message("bgcolor", .23,.23,.23, 1)
+		lllbmenu.message("color", 1.,1.,1.,1.)
+		this.patcher.hiddenconnect(lllbmenu,0,box,0);
 }
 function num_init(){
 	if (!this.patcher.getnamed("lllbnum")){
@@ -577,7 +572,7 @@ function onclick(x,y,but,mod1,shift,capslock,option,mod2) {
 		return;
 
 	if(lllnum) lllnum.message("hidden",1);
-	if(lllbmenu) lllbmenu.message("hidden",1);
+	// if(lllbmenu) lllbmenu.message("hidden",1);
 	if(lllbtext) lllbtext.message("hidden",1);
 	for (i=0;i<col_pos.length;i++){
 		if (x>col_pos[i] && x<=col_pos[i+1]) ccx = i;
@@ -642,10 +637,14 @@ function ondrag(x,y,but,cmd,shift,capslock,option,ctrl) {
 }
 ondrag.local = 1; //private
 function mousestate(c){
-	if (c === 1 && mousestate_gate){
+	// if (c === 1 && mousestate_gate){
+	// 	// lllbmenu.hidden = 1;
+	// 	mousestate_gate = 0;
+	// 	//post("mousestate",c,"\n");
+	// }
+}
+function hide_menu(){
 		lllbmenu.hidden = 1;
-		//post("mousestate",c,"\n");
-	}
 }
 function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
 	
@@ -747,7 +746,7 @@ function m_num(x,y,drag){
 	//listener();	
 }
 function m_menu(x,y,drag){ //called in onclick()
-	//post("m_menu xydrag",x,y,drag,"\n")
+	// post("m_menu xydrag",x,y,drag,"\n")
 	const menuHeight = lllbmenu.rect[3] - lllbmenu.rect[1]; // current height of the menu
 
 	// Calculate the bottom Y of the row
@@ -755,26 +754,20 @@ function m_menu(x,y,drag){ //called in onclick()
 	const by = box.rect[1];
 	const rowBottom = (y + 1) * rowheight + header * rowheight + by - 1;
 	//post("by-rB",by,rowBottom,"\n")
+
 	// Compute the top Y of the menu so it aligns its bottom with the row bottom
 	const adjustedY = (rowBottom - menuHeight - header * rowheight - by + 1) / rowheight;
+
 	// Now use nrect with adjusted y so bottom aligns correctly
 	lllbmenu.rect = nrect(x, adjustedY);
-	//post("mrect",lllbmenu.rect,"\n")
+	// post("mrect",lllbmenu.rect,"\n")
 	let setv = pval[y+param_offset];
 	if (ccm1 == "outputs" && y >= 0) {
 		setv = String(cpval).split("~")[ccm2];
 	}
-	//post("setv", setv, "menu_items",menu_items,"\n")
-	lllbmenu.message("checkitem", menu_items.indexOf(setv))
-
-	lllbmenu.message("bgfillcolor", ...[0,0,0,0])
-	lllbmenu.message("textcolor", ...[0,0,0,0])
-	lllbmenu.hidden = 0;
-
-	messnamed("llto11clicks","leftclick", 0);
-	messnamed("llto11clicks","leftclick", 1);
-	messnamed("llto11clicks","leftclick", 0);
-
+	// post("setv", setv, "menu_items",menu_items,"\n")
+	lllbmenu.message("checksymbol", setv);
+	lllbmenu.message("bang");
 }
 function m_text(x,y,drag){
 		lllbtext.rect = nrect(x,y);
@@ -825,47 +818,55 @@ function text(data) {
 		par_mess();
 	}
 }
-function menu(a) {
-	//post("menu_listen",a,ui_inside(lllbmenu.rect),lllbmenu.hidden,"\n");
-	if (lllbmenu.hidden == 0){ // was: (ui_inside(lllbmenu.rect) && lllbmenu.hidden == 0)
-		if (header_click){
-			//post("head");
-			for (i=param_offset;i<rows;i++){
-				if (ccm1 == "outputs"){
-					let S = pval[i].split("~")[1-ccm2];
-					if (ccm2 == 0) pval[i] = a+"~"+S
-					else pval[i] = S+"~"+a
-				}
-				else pval[i] = a;
-			}
-		}
-		else {
-			if (ccm1 == "outputs"){
-				let S = "no";		
-				if (pval[cy_po].indexOf("~")>=0) S = pval[cy_po].split("~")[1-ccm2];
-				if (S == "-no-") S = "no";
-				//post("outputs curr_ypo",cy_po,"val",pval[cy_po],"S",S,"\n");
-				if (ccm2 == 0) {
-					if (a=="no") S = "-no-"
-					else {
-						let gotinp = utils.getinputs(a,S)[0];
-						let inputs = gotinp[0];//get_inputs(a);
-						//post("menu_outputs_inputs",inputs,"S",S,"\n");
-						S = gotinp[2];
-					}
-					pval[cy_po] = a+"~"+S;
-				}
-				else{
- 					pval[cy_po] = S+"~"+a;
-				}
-				if (!keep_)  for (i=ccy+1;i<rows;i++) pval[i] = "_" ;
-			}
-			else pval[cy_po] = a;
-		}
-		lllbmenu.hidden = 1;
+
+function menu(selectedIndex, a) {
+	// post("menu_listen",a,"lllbmenu.hidden",lllbmenu.hidden,"\n");
+	// post(selectedIndex, a, "\n")
+
+	if(selectedIndex === -1){
+		// post("ll.listblock menu cancelled\n");
 		selected_box = [null, null];
-		par_mess();
+		mgraphics.redraw();
+		return;
 	}
+	
+	if (header_click){
+		//post("head");
+		for (i=param_offset;i<rows;i++){
+			if (ccm1 == "outputs"){
+				let S = pval[i].split("~")[1-ccm2];
+				if (ccm2 == 0) pval[i] = a+"~"+S
+				else pval[i] = S+"~"+a
+			}
+			else pval[i] = a;
+		}
+	}
+	else {
+		if (ccm1 == "outputs"){
+			let S = "no";		
+			if (pval[cy_po].indexOf("~")>=0) S = pval[cy_po].split("~")[1-ccm2];
+			if (S == "-no-") S = "no";
+			//post("outputs curr_ypo",cy_po,"val",pval[cy_po],"S",S,"\n");
+			if (ccm2 == 0) {
+				if (a=="no") S = "-no-"
+				else {
+					let gotinp = utils.getinputs(a,S)[0];
+					let inputs = gotinp[0];//get_inputs(a);
+					//post("menu_outputs_inputs",inputs,"S",S,"\n");
+					S = gotinp[2];
+				}
+				pval[cy_po] = a+"~"+S;
+			}
+			else{
+ 				pval[cy_po] = S+"~"+a;
+			}
+			if (!keep_)  for (i=ccy+1;i<rows;i++) pval[i] = "_" ;
+		}
+		else pval[cy_po] = a;
+	}
+	lllbmenu.hidden = 1;
+	selected_box = [null, null];
+	par_mess();
 }
 function keep(a){
 	keep_ = a;
@@ -880,14 +881,7 @@ function fill_menu(a){
 	if (Array.isArray(a)) menu_items = a
 	else menu_items = arrayfromargs(arguments);
 	if (lllbmenu){
-		lllbmenu.message("clear");
-		//lllbmenu.message("append","(_)"); //????????
-		
-		for (let it of menu_items){
-			lllbmenu.message("append",it);
-		}
-		//post("items",items.indexOf(it),"\n");
-		mousestate_gate = 1;
+		lllbmenu.message("items", ...menu_items)
 	}
 }
 function nrect(x,y,m) {

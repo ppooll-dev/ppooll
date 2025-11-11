@@ -4339,6 +4339,8 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 0,
+                                                                        "node_bin_path": "",
+                                                                        "npm_bin_path": "",
                                                                         "watch": 0
                                                                     },
                                                                     "text": "node.script ll.node.folders.js",
@@ -7855,8 +7857,6 @@
                                                     "saved_object_attributes": {
                                                         "autostart": 0,
                                                         "defer": 0,
-                                                        "node_bin_path": "",
-                                                        "npm_bin_path": "",
                                                         "watch": 0
                                                     },
                                                     "text": "node.script ll.node.checkPermissionsOS",
@@ -45480,7 +45480,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 442.0, 382.0, 81.0, 20.0 ],
-                                                                    "text": "-0.005009"
+                                                                    "text": "-0.433401"
                                                                 }
                                                             },
                                                             {

@@ -47,6 +47,8 @@ function clickreset() {
 }
 function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
     let uibr = uib.rect;
+    yclick = y;
+    xclick = x;
     if (x > uibr[2] / 2) {
         mod = shift | option | ctrl;
         //post("right",mod,"\n");
@@ -63,8 +65,7 @@ function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
         messnamed("llto11clicks", "leftclick", 1);
         //uib.ignoreclick = 0;
         //messnamed("llto11clicks","del",100, "leftclick");
-    } else xclick = x;
-    yclick = y;
+    }
 }
 function ondrag(x, y, but, cmd, shift, capslock, option, ctrl) {
     if (drag_gate) {
