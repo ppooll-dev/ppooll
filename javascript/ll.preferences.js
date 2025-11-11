@@ -249,15 +249,10 @@ function sethost_channels(c) {
     ll_prf_rewrite();
 }
 
-function text(entered_text) {
-    // audio key
-    let key = entered_text ? entered_text.slice(-1).charCodeAt(0) : 0;
-    this.patcher
-        .getnamed("audio_key")
-        .message(...(key > 0 ? ["set", entered_text.slice(-1)] : ["clear"]));
-    outlet(0, "audio_key", key);
+function audio_key(key) {
     preferences.set("general::audioON/OFF", key);
-    ll_prf_rewrite();
+    outlet(0, "audio_key", key);
+    ll_prf_rewrite();ffff
 }
 
 //=====================================get_preferences========================
@@ -279,7 +274,7 @@ function readfile() {
 function get_preferences() {
     // general::audioON/OFF (key)
     let v = preferences.get("general::audioON/OFF");
-    this.patcher.getnamed("audio_key").message("set", String.fromCharCode(v));
+    this.patcher.getnamed("audio_key").message("set", v); //String.fromCharCode(v));
     outlet(0, "audio_key", v);
 
     // general::screencolor
