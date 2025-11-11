@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 595.0, 221.0, 185.0, 278.0 ],
+        "rect": [ 1088.0, 43.0, 185.0, 278.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "flop1",
         "boxes": [
@@ -114,7 +114,7 @@
                 "box": {
                     "bgcolor": [ 0.29, 0.69, 0.369, 1.0 ],
                     "id": "obj-59",
-                    "max": 2867.3015873015875,
+                    "max": 4000.0,
                     "maxclass": "ll_slishi",
                     "numinlets": 1,
                     "numoutlets": 1,
@@ -129,9 +129,9 @@
                     "bgcolor": [ 0.29, 0.69, 0.369, 1.0 ],
                     "hidden": 1,
                     "id": "obj-38",
-                    "max": 2867.3015873015875,
+                    "max": 4000.0,
                     "maxclass": "ll_slishi",
-                    "min": 1200.1,
+                    "min": 0.1,
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
@@ -144,7 +144,7 @@
                 "box": {
                     "bgcolor": [ 0.4, 0.4, 0.8, 1.0 ],
                     "id": "obj-9",
-                    "max": 2867.3015873015875,
+                    "max": 4000.0,
                     "maxclass": "ll_slishi",
                     "numinlets": 1,
                     "numoutlets": 1,
@@ -781,7 +781,7 @@
                     "bgfillcolor_type": "color",
                     "fontsize": 11.0,
                     "id": "obj-40",
-                    "items": "3dem.aif",
+                    "items": "<empty>",
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -839,7 +839,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 725.0, 170.0, 753.0, 394.0 ],
+                        "rect": [ 111.0, 126.0, 753.0, 394.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -868,8 +868,8 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "float", "bang" ],
-                                                    "patching_rect": [ 566.0, 58.0, 85.0, 22.0 ],
-                                                    "text": "buffer~ squ 12"
+                                                    "patching_rect": [ 566.0, 58.0, 143.0, 22.0 ],
+                                                    "text": "buffer~ squ @samps 512"
                                                 }
                                             },
                                             {
@@ -881,8 +881,8 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "float", "bang" ],
-                                                    "patching_rect": [ 566.0, 83.0, 101.0, 22.0 ],
-                                                    "text": "buffer~ coslop 12"
+                                                    "patching_rect": [ 566.0, 83.0, 158.0, 22.0 ],
+                                                    "text": "buffer~ coslop @samps 512"
                                                 }
                                             },
                                             {
@@ -894,8 +894,8 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "float", "bang" ],
-                                                    "patching_rect": [ 391.0, 118.0, 97.0, 22.0 ],
-                                                    "text": "buffer~ isalop 12"
+                                                    "patching_rect": [ 391.0, 118.0, 155.0, 22.0 ],
+                                                    "text": "buffer~ isalop @samps 512"
                                                 }
                                             },
                                             {
@@ -907,8 +907,8 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "float", "bang" ],
-                                                    "patching_rect": [ 391.0, 97.0, 103.0, 22.0 ],
-                                                    "text": "buffer~ sawlop 12"
+                                                    "patching_rect": [ 391.0, 97.0, 161.0, 22.0 ],
+                                                    "text": "buffer~ sawlop @samps 512"
                                                 }
                                             },
                                             {
@@ -920,8 +920,8 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "float", "bang" ],
-                                                    "patching_rect": [ 392.0, 163.0, 92.0, 22.0 ],
-                                                    "text": "buffer~ trilop 12"
+                                                    "patching_rect": [ 392.0, 163.0, 150.0, 22.0 ],
+                                                    "text": "buffer~ trilop @samps 512"
                                                 }
                                             },
                                             {
@@ -933,8 +933,8 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "float", "bang" ],
-                                                    "patching_rect": [ 391.0, 140.0, 76.0, 22.0 ],
-                                                    "text": "buffer~ tri 12"
+                                                    "patching_rect": [ 391.0, 140.0, 134.0, 22.0 ],
+                                                    "text": "buffer~ tri @samps 512"
                                                 }
                                             },
                                             {
@@ -946,8 +946,8 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "float", "bang" ],
-                                                    "patching_rect": [ 565.0, 35.0, 85.0, 22.0 ],
-                                                    "text": "buffer~ säg 12"
+                                                    "patching_rect": [ 565.0, 35.0, 143.0, 22.0 ],
+                                                    "text": "buffer~ säg @samps 512"
                                                 }
                                             },
                                             {
@@ -959,8 +959,8 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "float", "bang" ],
-                                                    "patching_rect": [ 566.0, 153.0, 103.0, 22.0 ],
-                                                    "text": "buffer~ asr640 12"
+                                                    "patching_rect": [ 566.0, 153.0, 160.0, 22.0 ],
+                                                    "text": "buffer~ asr640 @samps 512"
                                                 }
                                             },
                                             {
@@ -972,8 +972,8 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "float", "bang" ],
-                                                    "patching_rect": [ 391.0, 53.0, 87.0, 22.0 ],
-                                                    "text": "buffer~ saw 12"
+                                                    "patching_rect": [ 391.0, 53.0, 145.0, 22.0 ],
+                                                    "text": "buffer~ saw @samps 512"
                                                 }
                                             },
                                             {
@@ -985,8 +985,8 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "float", "bang" ],
-                                                    "patching_rect": [ 391.0, 74.0, 91.0, 22.0 ],
-                                                    "text": "buffer~ -saw 12"
+                                                    "patching_rect": [ 391.0, 74.0, 149.0, 22.0 ],
+                                                    "text": "buffer~ -saw @samps 512"
                                                 }
                                             },
                                             {
@@ -998,8 +998,8 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "float", "bang" ],
-                                                    "patching_rect": [ 566.0, 130.0, 91.0, 22.0 ],
-                                                    "text": "buffer~ cosa 12"
+                                                    "patching_rect": [ 566.0, 130.0, 149.0, 22.0 ],
+                                                    "text": "buffer~ cosa @samps 512"
                                                 }
                                             },
                                             {
@@ -1011,8 +1011,8 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "float", "bang" ],
-                                                    "patching_rect": [ 566.0, 107.0, 91.0, 22.0 ],
-                                                    "text": "buffer~ cosb 12"
+                                                    "patching_rect": [ 566.0, 107.0, 149.0, 22.0 ],
+                                                    "text": "buffer~ cosb @samps 512"
                                                 }
                                             },
                                             {
@@ -1024,8 +1024,8 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "float", "bang" ],
-                                                    "patching_rect": [ 391.0, 31.0, 92.0, 22.0 ],
-                                                    "text": "buffer~ phas 12"
+                                                    "patching_rect": [ 391.0, 31.0, 150.0, 22.0 ],
+                                                    "text": "buffer~ phas @samps 512"
                                                 }
                                             },
                                             {
@@ -3936,7 +3936,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 85.0, 567.0, 325.0, 22.0 ],
-                                                    "text": "mslist 0. 2867.301587 1200. 1500.1"
+                                                    "text": "mslist 0. 0.416667 0. 0."
                                                 }
                                             },
                                             {
@@ -8338,10 +8338,10 @@
                         "ll.blues::levels": 5
                     },
                     "saved_object_attributes": {
-                        "client_rect": [ 913, 155, 1453, 864 ],
+                        "client_rect": [ 434, 164, 1512, 407 ],
                         "parameter_enable": 0,
                         "parameter_mappable": 0,
-                        "storage_rect": [ 430, 270, 1276, 999 ]
+                        "storage_rect": [ 0, 0, 640, 240 ]
                     },
                     "text": "pattrstorage pat",
                     "varname": "pat"
@@ -8393,29 +8393,29 @@
                     "outlettype": [ "", "", "", "" ],
                     "patching_rect": [ 655.0, 136.0, 107.0, 22.0 ],
                     "restore": {
-                        "buffer": [ "3dem.aif" ],
-                        "current_end": [ 0.1 ],
+                        "buffer": [ "" ],
+                        "current_end": [ 0.0 ],
                         "current_start": [ 0.0 ],
-                        "end": [ 1500.1 ],
+                        "end": [ 0.0 ],
                         "env-scale": [ 1.0 ],
                         "ext~vol": [ 0 ],
                         "full_select": [ -1 ],
                         "keep-time": [ 0 ],
                         "l-ramp": [ 0.0 ],
                         "l-ramp-mode": [ 1 ],
-                        "length": [ 0.1 ],
+                        "length": [ 0.0 ],
                         "length-ramp-stop": [ -1 ],
                         "length/end": [ 0 ],
-                        "length_rel": [ 3.487599645704163e-05 ],
-                        "lookup": [ 0 ],
-                        "on/off": [ 1 ],
+                        "length_rel": [ 0.0 ],
+                        "lookup": [ 1 ],
+                        "on/off": [ 0 ],
                         "oneshot": [ 0 ],
                         "oneshot_trigger": [ -1 ],
-                        "pitch": [ 0.0 ],
+                        "pitch": [ -10.0 ],
                         "pitch-ramp-stop": [ -1 ],
                         "pitchmenu": [ 0 ],
-                        "pitchslider": [ 70 ],
-                        "play-mode": [ 6 ],
+                        "pitchslider": [ 60 ],
+                        "play-mode": [ 0 ],
                         "preset-ramp": [ 0.0 ],
                         "presets": [ 0 ],
                         "ramp2pitch": [ 1 ],
