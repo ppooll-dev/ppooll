@@ -643,6 +643,9 @@ function mousestate(c){
 	// 	//post("mousestate",c,"\n");
 	// }
 }
+function hide_menu(){
+		lllbmenu.hidden = 1;
+}
 function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
 	
 	if(isIdleOut)
