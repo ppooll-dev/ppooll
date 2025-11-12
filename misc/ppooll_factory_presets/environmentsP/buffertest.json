@@ -32,7 +32,7 @@
     },
     "buffer_host1": {
         "_actwindow": [ "buffer_host", 180, 262, 299, 448 ],
-        "action_menu": "clearall",
+        "action_menu": "view",
         "channels": 1,
         "f": -1,
         "ff": -1,
