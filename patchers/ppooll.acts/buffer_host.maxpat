@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 340.0, 419.0, 119.0, 186.0 ],
+        "rect": [ 367.0, 168.0, 119.0, 186.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "buffer_host1",
         "boxes": [
@@ -62,7 +62,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 35.0, 170.0, 28.0, 29.0 ],
-                    "text": "44100",
+                    "text": "48000",
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                     "varname": "sr-box"
                 }
@@ -126,7 +126,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 170.0, 160.0, 211.0, 22.0 ],
-                    "restore": [ "Macintosh HD:/Users/josephsteccato/Music/ppooll/ppooll_rec/2025.9.4llrec12.24.52.wav" ],
+                    "restore": [ "Macintosh HD:/Users/klaus/Music/burkina/LS110213.WAV" ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -199,7 +199,7 @@
                     "fontsize": 11.0,
                     "hint": "soundfiles in the folder selected above - select to load it into a buffer",
                     "id": "obj-60",
-                    "items": "<empty>",
+                    "items": [ "221211_1026_mit_ibrahim.mp3", ",", "LS110213.WAV" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -207,7 +207,7 @@
                     "parameter_enable": 0,
                     "patching_rect": [ 0.0, 33.0, 118.0, 21.0 ],
                     "pattrmode": 1,
-                    "prefix": "<empty>",
+                    "prefix": "~/Music/burkina/",
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                     "varname": "file_menu"
                 }
@@ -227,7 +227,7 @@
                     "fontsize": 11.0,
                     "hint": "soundfile folder(s)",
                     "id": "obj-61",
-                    "items": [ "ppooll_rec/", ",", "voice_memos/", ",", "video/", ",", "trumpet/", ",", "tamb/", ",", "talking/", ",", "sunn-o spring reverb IR/", ",", "strings/", ",", "other/", ",", "mixes/", ",", "Metamorphosis 21st Century Grooves/", ",", "Liquid Grooves/", ",", "hl2_sound/", ",", "high_strings/", ",", "hg-gtp/", ",", "Henry Joe Samples 221009/", ",", "Henry GtrCelloUkeKalima C Samples 221009/", ",", "Henry Ambient/", ",", "geetar/", ",", "Future Music CD1/", ",", "field recordings/", ",", "djrone/", ",", "cooler stuff/", ",", "buffub/", ",", "Bizzare Guitars/", ",", "Bizarre Gt 43-48/", ",", "bells_chimes/", ",", "beauty snippets/", ",", "b2tw/", ",", "alex-strings/", ",", "-", ",", "clear_selected", ",", "clear_all", ",", "add_folder" ],
+                    "items": [ "ischl_rec", ",", "burkina", ",", "-", ",", "clear_selected", ",", "clear_all", ",", "add_folder" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -284,7 +284,7 @@
                 "box": {
                     "allowdrag": 0,
                     "bgcolor": [ 0.094118, 0.129412, 0.286275, 1.0 ],
-                    "buffername": "pp.6",
+                    "buffername": "pp.1",
                     "grid": 0.0,
                     "gridcolor": [ 0.392157, 0.392157, 0.392157, 1.0 ],
                     "hidden": 1,
@@ -358,7 +358,7 @@
                                     "numinlets": 2,
                                     "numoutlets": 1,
                                     "outlettype": [ "int" ],
-                                    "patching_rect": [ 186.0, 138.0, 33.0, 22.0 ],
+                                    "patching_rect": [ 132.0, 115.0, 33.0, 22.0 ],
                                     "text": "== 0"
                                 }
                             },
@@ -369,8 +369,8 @@
                                     "numinlets": 2,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 132.0, 144.0, 32.0, 22.0 ],
-                                    "text": "gate"
+                                    "patching_rect": [ 132.0, 144.0, 52.0, 22.0 ],
+                                    "text": "gate 1 1"
                                 }
                             },
                             {
@@ -380,7 +380,7 @@
                                     "numinlets": 0,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 185.97, 111.0, 67.0, 22.0 ],
+                                    "patching_rect": [ 132.0, 88.0, 67.0, 22.0 ],
                                     "text": "r llenviread"
                                 }
                             },
@@ -2244,7 +2244,7 @@
                                     "numinlets": 2,
                                     "numoutlets": 2,
                                     "outlettype": [ "", "" ],
-                                    "patching_rect": [ 132.0, 100.0, 39.0, 22.0 ],
+                                    "patching_rect": [ 165.0, 58.0, 39.0, 22.0 ],
                                     "text": "ll.no1"
                                 }
                             },
@@ -2257,7 +2257,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 2,
                                     "outlettype": [ "", "" ],
-                                    "patching_rect": [ 132.0, 74.0, 105.0, 22.0 ],
+                                    "patching_rect": [ 165.0, 32.0, 105.0, 22.0 ],
                                     "text": "ll.fff sound_folders"
                                 }
                             },
@@ -2746,8 +2746,8 @@
                         "channels": [ 2 ],
                         "f": [ -1 ],
                         "ff": [ -1 ],
-                        "file_menu": [ "" ],
-                        "folder_menu": [ "ppooll_rec/" ],
+                        "file_menu": [ "LS110213.WAV" ],
+                        "folder_menu": [ "burkina" ],
                         "ll_buffers": [
                             {
                                 "buffers": []
@@ -2755,7 +2755,7 @@
                         ],
                         "normalize": [ -1 ],
                         "open!": [ -1 ],
-                        "size-box": [ 533610.6666666666 ]
+                        "size-box": [ 63744.0 ]
                     },
                     "text": "autopattr autopattr",
                     "varname": "autopattr"
