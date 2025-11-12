@@ -259,7 +259,9 @@ function create_rest() {
 }
 
 function first_dump() {
+    //post("first\n");
     obj = tpp.getnamed("pat");
+    obj.message("active", "act", 0);
     obj.message("active", "preset-ramp", 0);
     obj.message("active", "presets", 0);
     obj.message("active", "title_menu", 0);
