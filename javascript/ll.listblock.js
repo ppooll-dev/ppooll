@@ -95,6 +95,7 @@ declareattribute("rows", { setter : "setrows", embed: 1 ,type: "long", min: 0, p
 //post("declare_done\n")
 // ###################################### ____________ attribute setter
 function calc_cols(){
+	//post("calc","\n");
 	mod = [];
 	cwcalc = [];
 	oncolo = [];
@@ -359,8 +360,9 @@ function getattributes(){
 
 }
 // ################################### _________________UI-inits		
-function menu_init(){
-		let currentMenu = this.patcher.getnamed("lllbmenu")
+function menu_init(){	
+	let currentMenu = this.patcher.getnamed("lllbmenu");
+	//post("currentMenu",currentMenu,"\n");
 		if(currentMenu){
 			this.patcher.remove(currentMenu);
 		}
@@ -746,7 +748,7 @@ function m_num(x,y,drag){
 	//listener();	
 }
 function m_menu(x,y,drag){ //called in onclick()
-	// post("m_menu xydrag",x,y,drag,"\n")
+	//post("m_menu xydrag",x,y,drag,"\n")
 	const menuHeight = lllbmenu.rect[3] - lllbmenu.rect[1]; // current height of the menu
 
 	// Calculate the bottom Y of the row
