@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 434.0, 265.0, 133.0, 124.0 ],
+        "rect": [ 393.0, 274.0, 133.0, 124.0 ],
         "default_fontsize": 11.595187,
         "toolbarvisible": 0,
         "globalpatchername": "ho_st1",
@@ -3945,8 +3945,6 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 0,
-                                                                        "node_bin_path": "",
-                                                                        "npm_bin_path": "",
                                                                         "watch": 0
                                                                     },
                                                                     "text": "node.script ll.node.folders.js",
@@ -10879,6 +10877,28 @@
                                         "boxes": [
                                             {
                                                 "box": {
+                                                    "id": "obj-2",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 0,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 295.0, 363.0, 85.0, 22.0 ],
+                                                    "text": "r ll_prf_rewrite"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "id": "obj-1",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 0,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 157.0, 363.0, 128.0, 22.0 ],
+                                                    "text": "r ll_preferences_ready"
+                                                }
+                                            },
+                                            {
+                                                "box": {
                                                     "id": "obj-39",
                                                     "maxclass": "comment",
                                                     "numinlets": 1,
@@ -11088,6 +11108,12 @@
                                         "lines": [
                                             {
                                                 "patchline": {
+                                                    "destination": [ "obj-28", 0 ],
+                                                    "source": [ "obj-1", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
                                                     "destination": [ "obj-26", 1 ],
                                                     "source": [ "obj-13", 0 ]
                                                 }
@@ -11137,7 +11163,7 @@
                                             {
                                                 "patchline": {
                                                     "destination": [ "obj-28", 0 ],
-                                                    "source": [ "obj-21", 1 ]
+                                                    "source": [ "obj-2", 0 ]
                                                 }
                                             },
                                             {
@@ -13661,7 +13687,7 @@
                                                             "modernui": 1
                                                         },
                                                         "classnamespace": "box",
-                                                        "rect": [ 643.0, 170.0, 879.0, 619.0 ],
+                                                        "rect": [ 599.0, 170.0, 879.0, 619.0 ],
                                                         "boxes": [
                                                             {
                                                                 "box": {
@@ -37028,7 +37054,7 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 348.0, 114.0, 778.0, 808.0 ],
+                                        "rect": [ 735.0, 78.0, 778.0, 808.0 ],
                                         "default_fontsize": 10.0,
                                         "toolbarvisible": 0,
                                         "boxes": [
@@ -37162,12 +37188,13 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-58",
+                                                                    "linecount": 4,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 83.0, 29.0, 264.0, 22.0 ],
-                                                                    "text": "0 0"
+                                                                    "text": "0 7 \"ICST Ambisonics\" enabled spat.ambicontrol@ spat.ambidecode@ spat.ambiencode@ spat.ambimonitor@ spat.ambipanning@"
                                                                 }
                                                             },
                                                             {
@@ -45731,7 +45758,7 @@
                         "rec": [ 0 ],
                         "screen": [ 0 ],
                         "stereo": [ 0 ],
-                        "time": [ 38477.0 ],
+                        "time": [ 40455.0 ],
                         "vol": [ 1.0 ],
                         "vol_ramp": [ 10 ],
                         "vol_slider": [ 1.0 ],
