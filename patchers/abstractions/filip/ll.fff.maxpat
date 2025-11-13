@@ -529,7 +529,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 162.0, 432.0, 181.0, 22.0 ],
-                                    "text": "ischl3.WAV"
+                                    "text": "LS110213.WAV"
                                 }
                             },
                             {
@@ -957,7 +957,7 @@
                     "numoutlets": 2,
                     "outlettype": [ "", "bang" ],
                     "patching_rect": [ 28.0, 16.0, 334.0, 22.0 ],
-                    "text": "ll.r folder_menu"
+                    "text": "ll.r folder_menu 1"
                 }
             },
             {
