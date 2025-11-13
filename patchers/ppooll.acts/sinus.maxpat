@@ -18,6 +18,32 @@
         "boxes": [
             {
                 "box": {
+                    "bgcolor": [ 0.556862745098039, 0.556862745098039, 0.556862745098039, 1.0 ],
+                    "border": 0,
+                    "fontface": 0,
+                    "fontsize": 9.0,
+                    "format": [ 1.1 ],
+                    "id": "obj-9",
+                    "label": [ "freq_mc_spread" ],
+                    "labelcolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "maxclass": "ll_number",
+                    "min": 0.0,
+                    "mousefocus": 1,
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 0.0, 42.0, 103.0, 10.0 ],
+                    "slidercolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "sliderlog": 7.0,
+                    "slidermax": 1000.0,
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "textcolornofocus": [ 1.0, 1.0, 1.0, 0.73 ],
+                    "varname": "freq_mcspread"
+                }
+            },
+            {
+                "box": {
                     "annotation": "freqNOramp",
                     "bgcolor": [ 0.603922, 1.0, 0.529412, 1.0 ],
                     "bgoncolor": [ 1.0, 0.529412, 0.529412, 1.0 ],
@@ -61,7 +87,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 68.0, 44.0, 35.0, 17.0 ],
+                    "patching_rect": [ 68.0, 52.0, 35.0, 12.0 ],
                     "slidercolornofocus": [ 1.0, 1.0, 1.0, 1.0 ],
                     "sliderlog": 4.5,
                     "slidermax": 16000.0,
@@ -88,7 +114,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 32.0, 44.0, 37.0, 17.0 ],
+                    "patching_rect": [ 32.0, 52.0, 37.0, 12.0 ],
                     "slidercolornofocus": [ 1.0, 1.0, 1.0, 1.0 ],
                     "sliderlog": 4.5,
                     "slidermax": 16000.0,
@@ -113,7 +139,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, 44.0, 33.0, 17.0 ],
+                    "patching_rect": [ 0.0, 52.0, 33.0, 12.0 ],
                     "slidercolornofocus": [ 1.0, 1.0, 1.0, 1.0 ],
                     "sliderlog": 4.5,
                     "slidermax": 16000.0,
@@ -173,7 +199,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, 28.0, 132.0, 16.0 ],
+                    "patching_rect": [ 0.0, 27.0, 132.0, 15.0 ],
                     "slidercolornofocus": [ 1.0, 1.0, 1.0, 1.0 ],
                     "sliderlog": 4.5,
                     "slidermax": 16000.0,
@@ -826,9 +852,20 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 296.0, 228.0, 503.0, 527.0 ],
+                                        "rect": [ 610.0, 367.0, 503.0, 527.0 ],
                                         "default_fontsize": 10.0,
                                         "boxes": [
+                                            {
+                                                "box": {
+                                                    "id": "obj-13",
+                                                    "maxclass": "message",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 45.0, 255.0, 50.0, 20.0 ],
+                                                    "text": "0."
+                                                }
+                                            },
                                             {
                                                 "box": {
                                                     "id": "obj-10",
@@ -867,10 +904,11 @@
                                                 "box": {
                                                     "id": "obj-46",
                                                     "maxclass": "newobj",
-                                                    "numinlets": 2,
-                                                    "numoutlets": 0,
-                                                    "patching_rect": [ 43.0, 199.0, 90.0, 20.0 ],
-                                                    "text": "ll.s freq_mcspread"
+                                                    "numinlets": 1,
+                                                    "numoutlets": 2,
+                                                    "outlettype": [ "", "bang" ],
+                                                    "patching_rect": [ 43.0, 199.0, 89.0, 20.0 ],
+                                                    "text": "ll.r freq_mcspread"
                                                 }
                                             },
                                             {
@@ -2124,6 +2162,12 @@
                                             },
                                             {
                                                 "patchline": {
+                                                    "destination": [ "obj-13", 1 ],
+                                                    "source": [ "obj-46", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
                                                     "destination": [ "obj-46", 0 ],
                                                     "source": [ "obj-48", 0 ]
                                                 }
@@ -2594,6 +2638,7 @@
                         "freq": [ 440.0 ],
                         "freq-relative": [ 0.0 ],
                         "freqNOramp": [ 0 ],
+                        "freq_mcspread": [ 0.0 ],
                         "length": [ 1070 ],
                         "length-slider": [ 0.48480871149318605 ],
                         "loop-env": [ 0 ],
