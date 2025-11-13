@@ -43,6 +43,7 @@ function fill_folder_menu(){
 	for (i of foldermenu){
 		folder_menu.message("append", i);
 	}
+	folder_menu.message(0);
 }
 
 function getk(){
