@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 432.0, 268.0, 133.0, 124.0 ],
+        "rect": [ 434.0, 265.0, 133.0, 124.0 ],
         "default_fontsize": 11.595187,
         "toolbarvisible": 0,
         "globalpatchername": "ho_st1",
@@ -492,7 +492,7 @@
                     "fontsize": 12.0,
                     "hint": "environment menu",
                     "id": "obj-22",
-                    "items": [ "(environments)", ",", "<separator>", ",", "(folders)", ",", "active_storage", ",", "alt", ",", "mc.groove_test", ",", "test_banger", ",", "testf", ",", "<separator>", ",", "(.json)", ",", "<none>", ",", "ducks_new", ",", "klingt.coll.minilab", ",", "mc.gizmo_tutorial", ",", "oberdöbling", ",", "rec@", ",", "sins_minilabN", ",", "sinsE_bern", ",", "sinsE_convention", ",", "sinsE_MC", ",", "sinsE_minilab_center", ",", "sinsE_minilab_ko25", ",", "snaptesttt", ",", "superspreading11", ",", "test", ",", "tetris_test", ",", "xtest", ",", "<separator>", ",", "write!", ",", "opentext", ",", "merge...", ",", "paramsonly", ",", "<separator>", ",", "(factory)", ",", "buffertest", ",", "ducks", ",", "envM_test" ],
+                    "items": [ "(environments)", ",", "<separator>", ",", "(folders)", ",", "<separator>", ",", "(.json)", ",", "<separator>", ",", "write!", ",", "opentext", ",", "merge...", ",", "paramsonly", ",", "<separator>", ",", "(factory)" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -545,7 +545,7 @@
                     "fontsize": 12.0,
                     "hint": "favorites menu",
                     "id": "obj-48",
-                    "items": [ "(favorites)", ",", "<none>", ",", "(favorites)", ",", "-", ",", "add_favorit", ",", "del_favorit" ],
+                    "items": [ "(favorites)", ",", "-", ",", "add_favorit", ",", "del_favorit" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -572,7 +572,7 @@
                     "fontsize": 12.0,
                     "hint": "act menu (open acts from here)",
                     "id": "obj-50",
-                    "items": [ "(__acts__)", ",", "_act_overview", ",", "2Dsliders", ",", "amxd@", ",", "analyze@", ",", "animator@", ",", "arpanner", ",", "autocount@", ",", "bandfollower", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "bildsynthi", ",", "brown", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "chorus@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "forbiddenP", ",", "frack", ",", "freeverb@", ",", "frequenzteiler", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.2oscbank", ",", "jit.3m@", ",", "jit.blobs", ",", "jit.brcosa@", ",", "jit.buf", ",", "jit.buffer@", ",", "jit.copyprot.act", ",", "jit.display@", ",", "jit.grab@", ",", "jit.lcd@", ",", "jit.op@", ",", "jit.player", ",", "jit.slide@", ",", "jit.videoplanes", ",", "jit.videoplanesP", ",", "jit.world@", ",", "kaos@", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "limi", ",", "link@", ",", "matriarch@", ",", "matrix@", ",", "mc.mod", ",", "mc.random@", ",", "mcpanner", ",", "midikeys", ",", "mixer@", ",", "modul.ator", ",", "morph", ",", "mubugrain@", ",", "multitap", ",", "munger@", ",", "nodes@", ",", "noize@", ",", "normalize", ",", "notepad@", ",", "op@", ",", "oscbank@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "period", ",", "pHARM4@", ",", "pr.6groov", ",", "pr.spectfreeze", ",", "pr.spectplay", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "SDIFter", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.abba@", ",", "spat.ambicontrol@", ",", "spat.ambidecode@", ",", "spat.ambiencode@", ",", "spat.ambimonitor@", ",", "spat.ambipanning@", ",", "spat.ambitransform@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "threekomp", ",", "timeline@", ",", "transientshaper", ",", "TSSSF", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "echoplex@", ",", "efx.step@", ",", "efx.stnp@", ",", "efx.sttp@", ",", "efx.stxp@", ",", "ellipsis@", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gf.graindelay", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "lk.stutz@", ",", "mmods@", ",", "oer_prcs", ",", "oer_prcss", ",", "polyrhythmus", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "smpseq@", ",", "snes@", ",", "snesHardmode@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--" ],
+                    "items": "(__acts__)",
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -928,7 +928,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 487.0, 37.0, 33.0, 22.0 ],
-                                                    "text": "35",
+                                                    "text": "402",
                                                     "varname": "audio_key"
                                                 }
                                             },
@@ -1016,7 +1016,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 108.0, 187.0, 50.0, 22.0 ],
-                                                                    "text": "35"
+                                                                    "text": "402"
                                                                 }
                                                             },
                                                             {
@@ -1665,12 +1665,13 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-5",
+                                                                    "linecount": 2,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 339.0, 243.0, 79.0, 35.0 ],
-                                                                    "text": "opentext"
+                                                                    "text": "(environments)"
                                                                 }
                                                             },
                                                             {
@@ -1756,12 +1757,13 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-30",
+                                                                    "linecount": 4,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 150.0, 191.0, 88.0, 22.0 ],
-                                                                    "text": "Off 1 2"
+                                                                    "text": "Off 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20"
                                                                 }
                                                             },
                                                             {
@@ -7413,7 +7415,7 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 91.0, 532.0, 484.0, 347.0 ],
+                                        "rect": [ 34.0, 508.0, 423.0, 379.0 ],
                                         "default_fontsize": 10.0,
                                         "boxes": [
                                             {
@@ -7422,54 +7424,9 @@
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "patching_rect": [ 30.0, 27.0, 100.0, 20.0 ],
-                                                    "text": "loadmess script start"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "id": "obj-13",
-                                                    "linecount": 2,
-                                                    "maxclass": "message",
-                                                    "numinlets": 2,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "patching_rect": [ 79.0, 107.0, 107.0, 31.0 ],
-                                                    "text": ";\rho_st1 TP dispose"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "id": "obj-4",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 3,
-                                                    "numoutlets": 3,
-                                                    "outlettype": [ "bang", "bang", "" ],
-                                                    "patching_rect": [ 30.0, 78.0, 117.0, 20.0 ],
-                                                    "text": "sel 1 0"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "id": "obj-3",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 2,
-                                                    "outlettype": [ "", "" ],
-                                                    "patching_rect": [ 30.0, 49.0, 198.0, 20.0 ],
-                                                    "saved_object_attributes": {
-                                                        "autostart": 0,
-                                                        "defer": 0,
-                                                        "watch": 0
-                                                    },
-                                                    "text": "node.script ll.node.checkPermissionsOS",
-                                                    "textfile": {
-                                                        "filename": "ll.node.checkPermissionsOS.js",
-                                                        "flags": 0,
-                                                        "embed": 0,
-                                                        "autowatch": 1
-                                                    }
+                                                    "outlettype": [ "bang" ],
+                                                    "patching_rect": [ 30.0, 90.0, 50.0, 20.0 ],
+                                                    "text": "loadbang"
                                                 }
                                             },
                                             {
@@ -10272,32 +10229,14 @@
                                         "lines": [
                                             {
                                                 "patchline": {
-                                                    "destination": [ "obj-3", 0 ],
+                                                    "destination": [ "obj-43", 0 ],
                                                     "source": [ "obj-1", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-4", 0 ],
-                                                    "source": [ "obj-3", 0 ]
                                                 }
                                             },
                                             {
                                                 "patchline": {
                                                     "destination": [ "obj-49", 0 ],
                                                     "source": [ "obj-34", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-13", 0 ],
-                                                    "source": [ "obj-4", 1 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-43", 0 ],
-                                                    "source": [ "obj-4", 0 ]
                                                 }
                                             },
                                             {
@@ -10641,13 +10580,11 @@
                                                     "fontname": "Arial",
                                                     "fontsize": 12.0,
                                                     "id": "obj-5",
-                                                    "linecount": 4,
                                                     "maxclass": "message",
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 425.0, 220.5, 241.0, 22.0 ],
-                                                    "text": "\"Macintosh HD:/Users/klaus/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets\""
+                                                    "patching_rect": [ 425.0, 220.5, 241.0, 22.0 ]
                                                 }
                                             },
                                             {
@@ -11841,13 +11778,11 @@
                                                                     "fontname": "Arial",
                                                                     "fontsize": 13.0,
                                                                     "id": "obj-12",
-                                                                    "linecount": 2,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
-                                                                    "patching_rect": [ 113.0, 171.0, 337.0, 23.0 ],
-                                                                    "text": "\"Macintosh HD:/Users/klaus/Documents/Max 9/Packages\""
+                                                                    "patching_rect": [ 113.0, 171.0, 337.0, 23.0 ]
                                                                 }
                                                             },
                                                             {
@@ -13017,13 +12952,11 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-3",
-                                                                    "linecount": 2,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
-                                                                    "patching_rect": [ 25.0, 390.0, 371.0, 22.0 ],
-                                                                    "text": "read \"Macintosh HD:/Users/klaus/Library/Application Support/Cycling '74/Max 9/Settings/maxpackages.json\""
+                                                                    "patching_rect": [ 25.0, 390.0, 371.0, 22.0 ]
                                                                 }
                                                             },
                                                             {
@@ -16310,13 +16243,11 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-11",
-                                                                    "linecount": 2,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
-                                                                    "patching_rect": [ 211.0, 47.5, 301.0, 22.0 ],
-                                                                    "text": "\"Macintosh HD:/Users/klaus/Documents/Max 9/Library/ppooll_presets/ho_stT\""
+                                                                    "patching_rect": [ 211.0, 47.5, 301.0, 22.0 ]
                                                                 }
                                                             },
                                                             {
@@ -29175,13 +29106,11 @@
                                                                             {
                                                                                 "box": {
                                                                                     "id": "obj-8",
-                                                                                    "linecount": 2,
                                                                                     "maxclass": "message",
                                                                                     "numinlets": 2,
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
-                                                                                    "patching_rect": [ 190.0, 31.0, 392.0, 22.0 ],
-                                                                                    "text": "\"Macintosh HD:/Users/klaus/Documents/Max 9/Library/ppooll_presets/xgroove@T\""
+                                                                                    "patching_rect": [ 190.0, 31.0, 392.0, 22.0 ]
                                                                                 }
                                                                             },
                                                                             {
@@ -29198,7 +29127,7 @@
                                                                             {
                                                                                 "box": {
                                                                                     "id": "obj-66",
-                                                                                    "items": [ "1440_presets.json", ",", "1440wide.json" ],
+                                                                                    "items": [ "musichackspace.json", ",", "wide", ",", "wide.json" ],
                                                                                     "maxclass": "umenu",
                                                                                     "numinlets": 1,
                                                                                     "numoutlets": 3,
@@ -29302,7 +29231,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 110.0, 383.0, 103.0, 22.0 ],
-                                                                                    "text": "tiny"
+                                                                                    "text": "wide"
                                                                                 }
                                                                             },
                                                                             {
@@ -29636,7 +29565,7 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-7",
-                                                                    "items": [ "12sinsP", ",", "12sinsP copy", ",", "2DslidersP", ",", "2DslidersT", ",", "activetestP", ",", "ambipanning@P", ",", "bach@P", ",", "bach@T", ",", "beautyT", ",", "buffer_hostP", ",", "clocker@P", ",", "control@P", ",", "control@T", ",", "environmentsP", ",", "fffb@P", ",", "flopP", ",", "flopT", ",", "fmrmP", ",", "hardplayT", ",", "ho_stP", ",", "ho_stT", ",", "jit.slide@P", ",", "jit.videoplanesPP", ",", "matrix@P", ",", "mc.random@P", ",", "midikeysP", ",", "modul.atorP", ",", "modul.atorT", ",", "ndi@T", ",", "noize@P", ",", "noize@T", ",", "notepad@P", ",", "notepad@T", ",", "op@P", ",", "overdrive@P", ",", "playlist@P", ",", "pp_worldP", ",", "prdelay@P", ",", "rec_eventsP", ",", "rec_eventsSeq", ",", "simproovP", ",", "sinsEP", ",", "sinsET", ",", "sinusP", ",", "sinusT", ",", "snap@P", ",", "snap@T", ",", "spat.ambicontrol@P", ",", "spat.ambicontrol@T", ",", "spat.ambimonitor@P", ",", "spat.ambipanning@T", ",", "timeline@P", ",", "TSSSFP", ",", "vbap@P", ",", "vst@P", ",", "xgroove@P", ",", "xgroove@T" ],
+                                                                    "items": [ ".git", ",", "amxd@P", ",", "amxd@T", ",", "ar.bitglitter@T", ",", "autocount@T", ",", "bangerP", ",", "beastP", ",", "buffer_hostP", ",", "buffubT", ",", "chucker@T", ",", "control@P", ",", "dlgranulator@P", ",", "environmentsP", ",", "fcbControlT", ",", "flopP", ",", "gamepad@T", ",", "gizmo@P", ",", "ho_stP", ",", "INmultiP", ",", "keyfreqP", ",", "matriarch@P", ",", "mmods@P", ",", "modul.atorP", ",", "modul.atorT", ",", "notepad@P", ",", "notepad@T", ",", "plug@P", ",", "polyrhythmusP", ",", "rc.loop@T", ",", "rec_eventsSeq", ",", "rombT", ",", "sh.bubblerT", ",", "sinusP", ",", "sinusT", ",", "snap@P", ",", "uclidP", ",", "vst@P", ",", "w_filterT", ",", "waveletsP", ",", "xgroove@P", ",", "xgroove@T" ],
                                                                     "maxclass": "umenu",
                                                                     "numinlets": 1,
                                                                     "numoutlets": 3,
@@ -35923,7 +35852,7 @@
                                                                     "embedstate": [
                                                                         [ "bgcolor", 0, 0, 0, 0 ],
                                                                         [ "crop", 0, 0, 1, 1 ],
-                                                                        [ "fgcolor", 0.1, 0.1, 1.1, 1.1 ],
+                                                                        [ "fgcolor", 0.32507736086845396, 0.1837055966258049, 0.5290862381458282, 1.1 ],
                                                                         [ "zoom", 0.92 ]
                                                                     ],
                                                                     "filename": "ll.logo.js",
@@ -36339,12 +36268,12 @@
                                                                 }
                                                             }
                                                         ],
-                                                        "bgcolor": [ 0.0, 0.0, 1.0, 1.0 ]
+                                                        "bgcolor": [ 0.22507736086845398, 0.0837055966258049, 0.42908623814582825, 1.0 ]
                                                     },
                                                     "patching_rect": [ 427.0, 270.0, 64.0, 22.0 ],
                                                     "saved_object_attributes": {
                                                         "fontsize": 10.0,
-                                                        "locked_bgcolor": [ 0.0, 0.0, 1.0, 1.0 ]
+                                                        "locked_bgcolor": [ 0.22507736086845398, 0.0837055966258049, 0.42908623814582825, 1.0 ]
                                                     },
                                                     "text": "p screen",
                                                     "varname": "screen"
@@ -38041,7 +37970,7 @@
                                                         [ 2, 2, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ],
                                                         [ 2, 3, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ],
                                                         [ 2, 4, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ],
-                                                        [ 2, 5, 0, 0, 0.39215686274509803, 0.39215686274509803, 0.39215686274509803, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ],
+                                                        [ 2, 5, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ],
                                                         [ 2, 6, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ],
                                                         [ 2, 7, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ],
                                                         [ 2, 8, 0, 0, 1.0, 1.0, 1.0, 1.0, 1, 0.0, 0.0, 0.0, 1.0, -1, -1, -1 ],
@@ -43328,7 +43257,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 266.0, 718.0, 212.0, 20.0 ],
-                                                    "text": "load notepad@.maxpat"
+                                                    "text": "load (__acts__).maxpat"
                                                 }
                                             },
                                             {
@@ -44859,7 +44788,7 @@
                                                                                 "box": {
                                                                                     "fontname": "Geneva",
                                                                                     "fontsize": 9.0,
-                                                                                    "id": "obj-2",
+                                                                                    "id": "obj-4",
                                                                                     "maxclass": "newobj",
                                                                                     "numinlets": 1,
                                                                                     "numoutlets": 1,
@@ -44879,7 +44808,7 @@
                                                                             },
                                                                             {
                                                                                 "patchline": {
-                                                                                    "destination": [ "obj-2", 0 ],
+                                                                                    "destination": [ "obj-4", 0 ],
                                                                                     "source": [ "obj-14", 0 ]
                                                                                 }
                                                                             },
@@ -45792,7 +45721,7 @@
                     "restore": {
                         "act_menu": [ "(__acts__)" ],
                         "audioON/OFF": [ 0 ],
-                        "chans": [ 2.0 ],
+                        "chans": [ 16 ],
                         "def": [ -1 ],
                         "envi_menu": [ "(environments)" ],
                         "favorites": [ "(favorites)" ],
@@ -45802,7 +45731,7 @@
                         "rec": [ 0 ],
                         "screen": [ 0 ],
                         "stereo": [ 0 ],
-                        "time": [ 26549.0 ],
+                        "time": [ 38477.0 ],
                         "vol": [ 1.0 ],
                         "vol_ramp": [ 10 ],
                         "vol_slider": [ 1.0 ],
