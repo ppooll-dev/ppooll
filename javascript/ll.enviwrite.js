@@ -304,7 +304,7 @@ function getacts(act_list) {
     }
 
     // Check if we have buffer data to save
-    if (environment.buffer_host1.ll_buffers) {
+    if (environment.buffer_host1 && environment.buffer_host1.ll_buffers) {
         environment.buffer_host1.ll_buffers = { buffers }
     }
 
