@@ -2642,7 +2642,7 @@
                         "length": [ 1070 ],
                         "length-slider": [ 0.48480871149318605 ],
                         "loop-env": [ 0 ],
-                        "octdiv": [ 20.0 ],
+                        "octdiv": [ 12.0 ],
                         "preset-ramp": [ 0 ],
                         "presets": [ 0 ],
                         "takeover": [ -1 ],
