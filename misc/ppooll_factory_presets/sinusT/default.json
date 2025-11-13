@@ -80,7 +80,7 @@
         "usetextovercolor": 1
     },
     "takeover": {
-        "patching_rect": [ 104, 44, 13, 16 ],
+        "patching_rect": [ 104, 47, 13, 16 ],
         "hidden": 0,
         "bgcolor": [ 0.603922, 1, 0.529412, 1 ],
         "bgoncolor": [ 1, 0.529412, 0.529412, 1 ],
@@ -173,7 +173,7 @@
         "textcolornofocus": [ 1, 1, 1, 1 ]
     },
     "freqNOramp": {
-        "patching_rect": [ 118, 44, 13, 16 ],
+        "patching_rect": [ 118, 42, 13, 16 ],
         "hidden": 0,
         "bgcolor": [ 0.603922, 1, 0.529412, 1 ],
         "bgoncolor": [ 1, 0.529412, 0.529412, 1 ],
