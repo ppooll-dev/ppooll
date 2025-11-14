@@ -323,7 +323,9 @@ function get_preferences() {
 
 // create ppooll_preferences.json if DNE
 function newPref(path) {
-    preferences.parse(JSON.stringify(empty_prf_DEFAULT));
+    const new_prefs = { ...empty_prf_DEFAULT }
+    new_prefs.general.version = "9.0.0"; // hardcoded for update_params, need a better way
+    preferences.parse(JSON.stringify(new_prefs));
     preferences.export_json(path);
 }
 

@@ -40,6 +40,8 @@ const updateMap = {
             "ll.blues::chans": [v[4], v[0]],
         };
     },
+    // TODO: act::* params? 
+    //  (title_menu, pres_menu, tetris, master/activest)
 };
 
 var dryrun = 0;
@@ -68,14 +70,16 @@ function checkIfUpdated() {
     post(
         "Updating presets and environments for ppooll " + ll_version + "...\n"
     );
-    updateAll();
-    ll_prefs.replace("general::version", ll_version);
-    messnamed("ll_prf_rewrite", "bang");
+    this.patcher.wind.visible = true;
+    this.patcher.wind.bringtofront()
 }
 
 function updateAll() {
     updateParams(ll_paths.get("user"));
     updateParams(ll_paths.get("factory"));
+
+    ll_prefs.replace("general::version", ll_version);
+    messnamed("ll_prf_rewrite", "bang");
     // post("Preset update complete.\n");
 }
 
