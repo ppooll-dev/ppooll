@@ -9,8 +9,30 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 42.0, 108.0, 1004.0, 840.0 ],
+        "rect": [ 726.0, 95.0, 1004.0, 840.0 ],
         "boxes": [
+            {
+                "box": {
+                    "id": "obj-7",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "bang" ],
+                    "patching_rect": [ 181.0, 732.0, 55.0, 22.0 ],
+                    "text": "del 1000"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-6",
+                    "maxclass": "button",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "bang" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 43.0, 9.0, 24.0, 24.0 ]
+                }
+            },
             {
                 "box": {
                     "id": "obj-25",
@@ -285,7 +307,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 181.0, 787.0, 77.0, 22.0 ],
+                    "patching_rect": [ 181.0, 793.0, 77.0, 22.0 ],
                     "text": "set_actmenu"
                 }
             },
@@ -372,7 +394,7 @@
             },
             {
                 "box": {
-                    "code": "var stateDict = new Dict(\"ppoollstate\"); \r\nvar actr = new Global(\"act_rep\");\r\nvar acting_gate = 0;\r\nvar this_act;\r\nvar act;\r\nvar actname;\r\n\r\nfunction search(a){\r\n    //post(\"search\",a,\"\\n\");\r\n\tthis_act = a;\r\n\tlet keys = stateDict.getkeys();\r\n\tlet found = 0;\r\n\tfor (let key of keys) {\r\n\t\t//post(stateDict.get(key+\"::class\"));\r\n\t\tif (stateDict.get(key+\"::class\") == \"control@\") {\r\n\t\t\t\r\n\t\t\tmessnamed(key, \"v8\", \"Getpatcher\");\r\n\t\t\tact = actr.patcher;\r\n\t\t\t//let input_menu = actr.patcher.getnamed(\"input_menu\");\r\n\t\t\tif (act.getnamed(\"input_menu\").getvalueof() == \"ppooll\"){\r\n\t\t\t\tif (act.getnamed(\"act_menu\").getvalueof() == a){\r\n\t\t\t\t\tfound = 1;\r\n\t\t\t\t\tactname = key;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\tif (found) {\r\n\t\tmessnamed(actname, \"routingW\", 1);\r\n\t\toutlet(0,\"actname\",actname);\r\n\t}\r\n\telse {acting_gate = 1; outlet(0,\"open\");}\r\n}\r\n\r\n\r\nfunction acting(a,b,c){\r\n\tif (acting_gate && c && a == \"control@\"){\r\n\t\t//post(\"acting\",a, b,c,\"\\n\");\r\n\t\tacting_gate = 0;\r\n\t\t\tactname = a+b;\r\n\t\t\tmessnamed(actname, \"v8\", \"Getpatcher\");\r\n\t\t\tact = actr.patcher;\r\n\t\t\tact.getnamed(\"input_menu\").setvalueof(\"ppooll\");\r\n\t\t\t//post(act);\r\n\t\t\toutlet(0,\"set_actmenu\");\r\n\t}\t\r\n}\r\n\r\nfunction set_actmenu(){\r\n\tact.getnamed(\"act_menu\").setvalueof(this_act);\r\n\tmessnamed(actname, \"routingW\", 1);\r\n\toutlet(0,\"actname\",actname);\r\n}",
+                    "code": "var stateDict = new Dict(\"ppoollstate\"); \r\nvar actr = new Global(\"act_rep\");\r\nvar acting_gate = 0;\r\nvar this_act;\r\nvar act;\r\nvar actname;\r\n\r\nfunction search(a){\r\n    //post(\"search\",a,\"\\n\");\r\n\tthis_act = a;\r\n\tlet keys = stateDict.getkeys();\r\n\tlet found = 0;\r\n\tfor (let key of keys) {\r\n\t\t//post(stateDict.get(key+\"::class\"));\r\n\t\tif (stateDict.get(key+\"::class\") == \"control@\") {\r\n\t\t\t\r\n\t\t\tmessnamed(key, \"v8\", \"Getpatcher\");\r\n\t\t\tact = actr.patcher;\r\n\t\t\t//let input_menu = actr.patcher.getnamed(\"input_menu\");\r\n\t\t\tif (act.getnamed(\"input_menu\").getvalueof() == \"ppooll\"){\r\n\t\t\t\tif (act.getnamed(\"act_menu\").getvalueof() == a){\r\n\t\t\t\t\tfound = 1;\r\n\t\t\t\t\tactname = key;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\tif (found) {\r\n\t\tmessnamed(actname, \"routingW\", 1);\r\n\t\toutlet(0,\"actname\",actname);\r\n\t}\r\n\telse {acting_gate = 1; outlet(0,\"open\");}\r\n}\r\n\r\n\r\nfunction acting(a,b,c){\r\n\tif (acting_gate && c && a == \"control@\"){\r\n\t\t//post(\"acting\",a, b,c,\"\\n\");\r\n\t\tacting_gate = 0;\r\n\t\t\tactname = a+b;\r\n\t\t\tmessnamed(actname, \"v8\", \"Getpatcher\");\r\n\t\t\tact = actr.patcher;\r\n\t\t\tact.getnamed(\"input_menu\").setvalueof(\"ppooll\");\r\n\t\t\t//post(act);\r\n\t\t\toutlet(0,\"set_actmenu\");\r\n\t}\t\r\n}\r\n\r\nfunction set_actmenu(){\r\n    //post(act, this_act,\"\\n\");\r\n\tact.getnamed(\"act_menu\").setvalueof(this_act);\r\n\tmessnamed(actname, \"routingW\", 1);\r\n\toutlet(0,\"actname\",actname);\r\n}",
                     "filename": "none",
                     "fontface": 0,
                     "fontname": "<Monospaced>",
@@ -404,14 +426,14 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-19", 0 ],
-                    "source": [ "obj-10", 1 ]
+                    "destination": [ "obj-2", 0 ],
+                    "source": [ "obj-10", 2 ]
                 }
             },
             {
                 "patchline": {
-                    "destination": [ "obj-2", 0 ],
-                    "source": [ "obj-10", 2 ]
+                    "destination": [ "obj-7", 0 ],
+                    "source": [ "obj-10", 1 ]
                 }
             },
             {
@@ -491,6 +513,18 @@
                 "patchline": {
                     "destination": [ "obj-25", 0 ],
                     "source": [ "obj-4", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-31", 0 ],
+                    "source": [ "obj-6", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-19", 0 ],
+                    "source": [ "obj-7", 0 ]
                 }
             },
             {

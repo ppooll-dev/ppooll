@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 630.0, 455.0, 831.0, 434.0 ],
+        "rect": [ 553.0, 429.0, 831.0, 434.0 ],
         "default_fontsize": 11.595187,
         "boxes": [
             {
@@ -19,7 +19,7 @@
                     "numinlets": 0,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 212.43, 22.37, 94.0, 21.0 ],
+                    "patching_rect": [ 212.43, 22.37, 132.0, 21.0 ],
                     "text": "r ll_state_inputs_update"
                 }
             },
@@ -74,8 +74,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 671.0, 213.0, 49.0, 21.0 ],
-                    "text": "no~-no-"
+                    "patching_rect": [ 671.0, 213.0, 76.0, 21.0 ],
+                    "text": "ho_st1~out.1"
                 }
             },
             {
@@ -681,8 +681,37 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 34.0, 114.0, 823.0, 591.0 ],
+                        "rect": [ 332.0, 360.0, 943.0, 686.0 ],
                         "boxes": [
+                            {
+                                "box": {
+                                    "id": "obj-16",
+                                    "maxclass": "message",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 611.0, 383.0, 37.0, 22.0 ],
+                                    "text": "script"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "code": "function script(){\r\n    let tp = this.patcher;\r\n    tp.connect(tp.getnamed(\"in\"),0,tp.getnamed(\"send\"),0);\r\n}",
+                                    "filename": "none",
+                                    "fontface": 0,
+                                    "fontname": "<Monospaced>",
+                                    "fontsize": 12.0,
+                                    "id": "obj-8",
+                                    "maxclass": "v8.codebox",
+                                    "numinlets": 1,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 474.0, 445.0, 340.0, 200.0 ],
+                                    "saved_object_attributes": {
+                                        "parameter_enable": 0
+                                    }
+                                }
+                            },
                             {
                                 "box": {
                                     "id": "obj-28",
@@ -701,7 +730,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 243.0, 371.0, 200.0, 22.0 ],
-                                    "text": "no~-no-"
+                                    "text": "ho_st1~out"
                                 }
                             },
                             {
@@ -723,7 +752,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 501.16666424707034, 145.0, 29.083327999999938, 22.0 ],
-                                    "text": "0"
+                                    "text": "1"
                                 }
                             },
                             {
@@ -745,7 +774,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 601.0, 189.0, 29.5, 22.0 ],
-                                    "text": "0"
+                                    "text": "16"
                                 }
                             },
                             {
@@ -767,7 +796,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 407.0, 60.0, 342.0, 22.0 ],
-                                    "text": "no~-no- -no- 0 0"
+                                    "text": "ho_st1~out out 1 16"
                                 }
                             },
                             {
@@ -800,19 +829,8 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 969.0, 227.0, 847.0, 678.0 ],
+                                        "rect": [ 88.0, 408.0, 847.0, 678.0 ],
                                         "boxes": [
-                                            {
-                                                "box": {
-                                                    "id": "obj-1",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 2,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "patching_rect": [ 132.0, 132.0, 48.0, 22.0 ],
-                                                    "text": "pipe 10"
-                                                }
-                                            },
                                             {
                                                 "box": {
                                                     "id": "obj-32",
@@ -1272,7 +1290,7 @@
                                     "maxclass": "inlet",
                                     "numinlets": 0,
                                     "numoutlets": 1,
-                                    "outlettype": [ "multichannelsignal" ],
+                                    "outlettype": [ "signal" ],
                                     "patching_rect": [ 92.0, 126.0, 30.0, 30.0 ],
                                     "varname": "in"
                                 }
@@ -1322,19 +1340,6 @@
                                     "text": "mc.send~",
                                     "varname": "send"
                                 }
-                            },
-                            {
-                                "box": {
-                                    "id": "obj-29",
-                                    "linecount": 2,
-                                    "maxclass": "newobj",
-                                    "numinlets": 1,
-                                    "numoutlets": 1,
-                                    "outlettype": [ "multichannelsignal" ],
-                                    "patching_rect": [ 80.0, 200.0, 100.0, 0.0 ],
-                                    "text": "mc.resize~ 0 @replicate 1",
-                                    "varname": "resize"
-                                }
                             }
                         ],
                         "lines": [
@@ -1346,7 +1351,7 @@
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-29", 0 ],
+                                    "destination": [ "obj-2", 0 ],
                                     "source": [ "obj-12", 0 ]
                                 }
                             },
@@ -1360,6 +1365,12 @@
                                 "patchline": {
                                     "destination": [ "obj-14", 0 ],
                                     "source": [ "obj-15", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-8", 0 ],
+                                    "source": [ "obj-16", 0 ]
                                 }
                             },
                             {
@@ -1422,12 +1433,6 @@
                                     "destination": [ "obj-24", 0 ],
                                     "order": 0,
                                     "source": [ "obj-22", 0 ]
-                                }
-                            },
-                            {
-                                "patchline": {
-                                    "destination": [ "obj-2", 0 ],
-                                    "source": [ "obj-29", 0 ]
                                 }
                             },
                             {
@@ -1562,7 +1567,7 @@
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
-                    "outlettype": [ "multichannelsignal" ],
+                    "outlettype": [ "signal" ],
                     "patching_rect": [ 39.0, 311.0, 25.0, 25.0 ]
                 }
             },

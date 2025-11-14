@@ -1,0 +1,110 @@
+{
+    "pattrstorage": {
+        "name": "pat",
+        "slots": {
+            "1": {
+                "id": 1,
+                "data": {
+                    "amplitude": [ 0.0 ],
+                    "carrier_freq_mcspread": [ 0.0 ],
+                    "carrier_freq_ramp": [ 0 ],
+                    "harmonicity_mcspread": [ 0.0 ],
+                    "harmonicity_ramp": [ 0 ],
+                    "modindex_mcspread": [ 0.0 ],
+                    "modindex_ramp": [ 0 ],
+                    "preset-ramp": [ 0.0 ],
+                    "presets": [ 0 ],
+                    "carrier_freq": [ 0.0 ],
+                    "harmonicity": [ 0.0 ],
+                    "modindex": [ 0.0 ],
+                    "fm-fmaudio-mix": [ 0.0 ],
+                    "act::active_store": [ "_" ],
+                    "act::master/activest": [ 0, 0 ],
+                    "act::pres_menu": [ "_" ],
+                    "act::tetris_menu": [ "(tetris)" ],
+                    "act::title_menu": [ "" ],
+                    "ll.blues::status": [ 0, 1, 0, 0, 0, 0, 1 ],
+                    "ll.blues::outputs~": [ "ho_st1~out.1", "_" ],
+                    "ll.blues::outputsMix~": [ "no~-no-" ],
+                    "ll.blues::chans": [ 2, 2 ],
+                    "ll.blues::levels": [ 0.212966864582596, 0.212966864582596, 0, 0, 10, 0, 0.5 ]
+                }
+            },
+            "2": {
+                "id": 2,
+                "data": {
+                    "amplitude": [ 0.0 ],
+                    "carrier_freq_mcspread": [ 31.88 ],
+                    "carrier_freq_ramp": [ 0 ],
+                    "harmonicity_mcspread": [ 0.04 ],
+                    "harmonicity_ramp": [ 0 ],
+                    "modindex_mcspread": [ 1.87 ],
+                    "modindex_ramp": [ 0 ],
+                    "preset-ramp": [ 0.0 ],
+                    "presets": [ 1 ],
+                    "carrier_freq": [ 0.0 ],
+                    "harmonicity": [ 0.0 ],
+                    "modindex": [ 0.0 ],
+                    "fm-fmaudio-mix": [ 0.0 ],
+                    "act::active_store": [ "_" ],
+                    "act::master/activest": [ 0, 0 ],
+                    "act::pres_menu": [ "_" ],
+                    "act::tetris_menu": [ "(tetris)" ],
+                    "act::title_menu": [ "" ],
+                    "ll.blues::status": [ 0, 1, 0, 0, 0, 0, 1 ],
+                    "ll.blues::outputs~": [ "ho_st1~out.1", "_" ],
+                    "ll.blues::outputsMix~": [ "no~-no-" ],
+                    "ll.blues::chans": [ 2, 2 ],
+                    "ll.blues::levels": [ 0.212966864582596, 0.212966864582596, 0, 0, 10, 0, 0.5 ]
+                }
+            },
+            "3": {
+                "id": 3,
+                "data": {
+                    "amplitude": [ 0.0 ],
+                    "carrier_freq_mcspread": [ 90.04 ],
+                    "carrier_freq_ramp": [ 0 ],
+                    "harmonicity_mcspread": [ 0.19 ],
+                    "harmonicity_ramp": [ 0 ],
+                    "modindex_mcspread": [ 6.79 ],
+                    "modindex_ramp": [ 0 ],
+                    "preset-ramp": [ 0.0 ],
+                    "presets": [ 2 ],
+                    "carrier_freq": [ 0.0 ],
+                    "harmonicity": [ 0.0 ],
+                    "modindex": [ 0.0 ],
+                    "fm-fmaudio-mix": [ 0.0 ],
+                    "act::active_store": [ "_" ],
+                    "act::master/activest": [ 0, 0 ],
+                    "act::pres_menu": [ "_" ],
+                    "act::tetris_menu": [ "(tetris)" ],
+                    "act::title_menu": [ "" ],
+                    "ll.blues::status": [ 0, 1, 0, 0, 0, 0, 1 ],
+                    "ll.blues::outputs~": [ "ho_st1~out.1", "_" ],
+                    "ll.blues::outputsMix~": [ "no~-no-" ],
+                    "ll.blues::chans": [ 2, 2 ],
+                    "ll.blues::levels": [ 0.212966864582596, 0.212966864582596, 0, 0, 10, 0, 0.5 ]
+                }
+            }
+        },
+        "clientstate": {
+            "active": {
+                "preset-ramp": 0,
+                "presets": 0,
+                "act": 0,
+                "act::active_store": 0,
+                "act::master/activest": 0,
+                "act::u751015509": 0,
+                "act::pres_menu": 0,
+                "act::tetris_menu": 0,
+                "act::title_menu": 0,
+                "ll.blues": 0,
+                "ll.blues::status": 0,
+                "ll.blues::outputs~": 0,
+                "ll.blues::outputsMix~": 0,
+                "ll.blues::chans": 0,
+                "ll.blues::levels": 0
+            }
+        }
+    }
+}

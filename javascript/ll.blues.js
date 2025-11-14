@@ -9,6 +9,7 @@ outlets = 1;
 //autowatch = 1;
 var stateDict = new Dict("ppoollstate"); 
 var actsize_folded = 0;
+var tild;
 /* ============================== CONSTANTS ============================== */
 
 const COLORS = {
@@ -239,7 +240,8 @@ function setTildeHeader() {
     const v = UI.get("outputs~") ? UI.get("outputs~").getvalueof() : [];
     const arr = toArray(v);
     const af = arr.slice(1).filter((item) => item !== "_");
-    const tild = af.length === 0 ? "~" : "≈";
+    tild = af.length === 0 ? "~" : "≈";
+	//post("TT",tild,S.extraHeader,"\n");
 	UI.msg("listblock", "none_text", tild );	
 	UI.msg("listblock", "header_text", tild,"act","keep",S.extraHeader);
     //const head = (arr[0] || "outputs~").split("~");
@@ -258,6 +260,7 @@ function foldUnfold() {
         }
     })();
     let menWidth = 0;
+	//post("folded",S.folded,"\n");
 	// ################################################### folded
     if (S.folded === 1) {       
         UI.rect("listblock", [ lbRect[0], lbRect[1], S.bWidth - S.laneWidth, S.rowheight ]);
@@ -768,8 +771,9 @@ function extra() {
         listblockCompose();
     } else if (tag === "header") {
         S.extraHeader = args;
+		UI.msg("listblock", "header_text", tild,"act","keep",S.extraHeader);
     } else if (tag === "modes") {
-        UI.msg("listblock", "modes", "enum", "menu_outputs_0", "menu_outputs_1", args);
+        UI.msg("listblock", "modes", "none", "menu_outputs_0", "menu_outputs_1", args);
     } else if (tag === "widths") {
         S.extraWidths = args;
     }

@@ -71,6 +71,7 @@ function fillMenu(){
         '<separator>', '(factory)',
         // TODO: No factory "folders"
         ...envisFactory.json.map(e => e.name),
+        ...envisFactory.folders.map(e => e.name),
     ];
 
     outlet_dictionary(0, {items});

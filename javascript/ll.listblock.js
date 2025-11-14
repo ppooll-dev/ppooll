@@ -166,7 +166,7 @@ function setmodes(){
 	for (let b of a){
 		let m = b.split("_");
 		let c = m[0];
-		//post("mmm",m);
+		//post("mmm",m,"\n");
 		if (c != "tog" && c != "button" && c != "enum" && c != "num" 
 			&& c != "menu" && c != "text" && c != "none") 
 			modes.push("none")
@@ -430,6 +430,7 @@ function brightness(color){
 	return [c, c, c, 1];
 }
 function paint() {
+	//post(non_txt,"nt\n");
 	let s = rowheight;
 	let cw = 0;
 	let cm, cm1, cm2;
@@ -874,6 +875,7 @@ function keep(a){
 	keep_ = a;
 }
 function none_text(a){
+	//post("nt",a,"\n");
 	non_txt = a;
 	mgraphics.redraw();
 }
