@@ -68,11 +68,32 @@ mv "$REPO_ROOT/tmp-ll/ll_externals" "$PACKAGE_DIR/externals/ll_externals"
 # Clean up temp files
 rm -rf "$REPO_ROOT/tmp-ll" "$REPO_ROOT/ll_externals.zip"
 
+# ===== Remove quarantine attributes =====
+echo "Removing ALL extended attributes from externals…"
+find "$PACKAGE_DIR/externals" -type f | while IFS= read -r f; do
+    xattr -c "$f" 2>/dev/null || true
+done
+
+# ===== Remove ALL extended attributes (quarantine, provenance, metadata, etc.) =====
+echo "Removing ALL extended attributes recursively..."
+find "$PACKAGE_DIR/externals" -exec xattr -c {} \; 2>/dev/null || true
+
 # ===== Sign all .mxo files =====
 echo "Signing macOS externals (.mxo files)..."
-find "$PACKAGE_DIR/externals" -name "*.mxo" | while read mxo; do
-    echo "Signing $mxo"
-    codesign --force --deep --timestamp --sign "$PPOOLL_DEVELOPER_ID" "$mxo"
+
+# First sign any executable binaries inside the .mxo bundles
+find "$PACKAGE_DIR/externals" -name "*.mxo" | while IFS= read -r mxo; do
+    echo "  → Processing bundle: $mxo"
+
+    # Sign inner Mach-O binaries (anything executable inside the bundle)
+    find "$mxo" -type f -perm -111 2>/dev/null | while IFS= read -r bin; do
+        echo "    Signing inner binary: $bin"
+        codesign --force --timestamp --options runtime --sign "$PPOOLL_DEVELOPER_ID" "$bin"
+    done
+
+    # Now sign the bundle itself
+    echo "    Signing bundle: $mxo"
+    codesign --force --timestamp --options runtime --sign "$PPOOLL_DEVELOPER_ID" "$mxo"
 done
 
 # ===== Create final zip =====
@@ -85,4 +106,8 @@ cd "$REPO_ROOT"
 echo "Submitting $ZIP_NAME for notarization..."
 xcrun notarytool submit "$ZIP_NAME" --keychain-profile "$PPOOLL_NOTARIZATION_PROFILE" --wait --output-format json
 
-echo "\n✅ Build, signing, and notarization complete: $ZIP_NAME is ready!"
+echo "Stapling notarization ticket to $ZIP_NAME..."
+xcrun stapler staple "$ZIP_NAME"
+
+echo
+echo "✅ Build, signing, and notarization complete: $ZIP_NAME is ready!"
