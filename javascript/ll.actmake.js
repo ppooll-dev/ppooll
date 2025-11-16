@@ -35,6 +35,8 @@ var tpp, obj;
 var am, name, cname, size, s, fg, m, pat, instance, hash, actui, ar, pf, color;
 
 function make(a, b, c) {
+	//post("make",a,b,c,"\n");
+		//return;
     // main function called by actmaker
     name = a;
     makecolor(b);
@@ -50,6 +52,7 @@ function make(a, b, c) {
     am.varname = "act";
     actui = this.patcher.parentpatcher.getnamed("actui");
     ar = am.rect;
+	//post("actui",actui,"ar",ar,"\n");
     if (actui) ar = [400, 400];
     else tpp.script("sendbox", "act", "color", 12);
 
@@ -75,6 +78,7 @@ function delete_old() {
         "tetris_menu",
         "pres_menu",
         "loadmess",
+		"movewind"
     ];
 
     for (var i = 0; i < toDelete.length; i++) {

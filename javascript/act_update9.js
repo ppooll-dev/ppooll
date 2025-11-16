@@ -18,21 +18,33 @@ function actname(a){
 }
 function update(){
 	let btxt = actObj.boxtext;
-	// post(actObj, "\n")
-	color = btxt.replace(btext[0]+" "+btext[1]+" ","");
-	// post("btxt",btext, "color", btext[2], "\n");
-	// var new_color = makecolor(color);
-	// post("make",new_color, "\n" );
-	// return;
+	//post(actObj,"btxt", btxt, "\n");
+	if (btext[0] != "actmaker") post("no old actmaker !! \n")
+	else {
+		let len = btext.length;
+		let amrect = actObj.rect;
+		//post("btext_len", len, actObj.rect,"\n");
+		if (len < 2) post("no actname !! \n")
+		else {
+			let actname = btext[1];
+			if (len < 3){ //no color
+				post("no color \n");
+				tpp.remove(actObj);
+				let am = tpp.newdefault(amrect[0],amrect[1],"actmake", actname);
+				am.varname = "act"
+				tpp.hiddenconnect(tpp.getnamed("pat"),0,am,1);
+			}
+			else {
 
-	makecolor(color); // overwrites "color"
-	if (btext[0] == "actmaker"){
-		tpp.remove(actObj);
-		let am = tpp.newdefault(40,80,"bpatcher","@name", "actmakeB.maxpat", "@args",btext[1],colorH);
-		am.varname = "act"
-		post ("updated:",btext[1],colorH,"\n");
+				color = btxt.replace(btext[0]+" "+btext[1]+" ","");
+				makecolor(color); // overwrites "color"
+				tpp.remove(actObj);
+				let am = tpp.newdefault(40,80,"bpatcher","@name", "actmakeB.maxpat", "@args",btext[1],colorH);
+				am.varname = "act"
+				post ("updated:",btext[1],colorH,"\n");
+			}
+		}
 	}
-	else post("no old actmaker !! \n");
 	
 }
 // ############################# color hassels....

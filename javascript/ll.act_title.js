@@ -128,12 +128,14 @@ function brightness(color) {
     return [c, c, c, 1];
 }
 function paint() {
+	bang();
     mgraphics.set_font_size(12);
     mgraphics.select_font_face(fontfamily = 'Arial', weight= 'bold');
     let tw = mgraphics.text_measure(txt88)[0] + 5;
     let brect = [0, 0, tw, 16];
     let mrect = [0, -7, tw, 16];
     uib.rect = brect;
+	//bpatcher = this.patcher.box;
     bpatcher.rect = brect;
     title_menu.rect = mrect;
     pres_menu.rect = mrect;
