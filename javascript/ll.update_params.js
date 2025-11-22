@@ -187,3 +187,26 @@ function readWholeFile(f) {
     while (f.position < f.eof) s += f.readstring(512);
     return s;
 }
+
+/// Make Backup .zip
+
+function makeBackup(){
+    ll_paths.get("user")
+    
+    const now = new Date();
+    const pad = n => String(n).padStart(2, '0');
+
+    const ts =
+        pad(now.getFullYear() % 100) +
+        pad(now.getDate()) +
+        pad(now.getMonth() + 1) + "-" +
+        pad(now.getHours()) +
+        pad(now.getMinutes()) +
+        pad(now.getSeconds());
+
+    outlet(0, "zip", "Usermax:/Library/ppooll_presets", `ppooll_presets_${ts}.zip` );
+}
+
+function backupDone(){
+    this.patcher.getnamed("zip_done").message("set", "done!");
+}
