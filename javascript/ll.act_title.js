@@ -22,6 +22,7 @@ let isHoveringLeft,
 // Joe Jun 21 2025 -- maybe if a user doesn't like the hover icons,
 //		we can have a ppooll preference & global var to disable
 let showHoverIcons = true;
+let showMenuPreview = true;
 
 var txt = "loading...";
 var txt88 = "loading...";
@@ -36,35 +37,29 @@ function bang() {
     title_menu = this.patcher.getnamed("title_menu");
     pres_menu = this.patcher.getnamed("pres_menu");
     tetris_menu = this.patcher.getnamed("tetris_menu");
-    //post("ui_boxr",uib.rect,"bpatcherr",bpatcher.rect,"\n");
-    //myval = "test";
-    //notifyclients();
+
+    [title_menu, pres_menu, tetris_menu].forEach(m => {
+        if(!m) return;
+
+        this.patcher.sendtoback(m)
+        m.checkmode = 0;
+    })
 }
-function clickreset() {
-    uib.ignoreclick = 0;
-    drag_gate = 1;
-    // post("clickreset\n");
-}
+
+function clickreset() {}
+
 function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
     let uibr = uib.rect;
     yclick = y;
     xclick = x;
-    if (x > uibr[2] / 2) {
+
+    drag_gate = x <= uibr[2] / 2;
+
+    if (!drag_gate) {
         mod = shift | option | ctrl;
-        //post("right",mod,"\n");
-        title_menu.ignoreclick = 1;
-        pres_menu.ignoreclick = 1;
-        tetris_menu.ignoreclick = 1;
-        if (mod == 0) title_menu.ignoreclick = 0;
-        else if (mod == 2) tetris_menu.ignoreclick = 0;
-        else pres_menu.ignoreclick = 0;
-        drag_gate = 0;
-        uib.ignoreclick = 1;
-        outlet(0, "bang"); //bangs a max [del 100] to function bang (ignoreclick = 0) !!
-        messnamed("llto11clicks", "leftclick", 0);
-        messnamed("llto11clicks", "leftclick", 1);
-        //uib.ignoreclick = 0;
-        //messnamed("llto11clicks","del",100, "leftclick");
+        if (mod == 0)       title_menu.message("show")
+        else if (mod == 2)  tetris_menu.message("show")
+        else                pres_menu.message("show")
     }
 }
 function ondrag(x, y, but, cmd, shift, capslock, option, ctrl) {
@@ -148,8 +143,8 @@ function paint() {
     mgraphics.move_to(4, 12);
 
     let title_txt = txt;
-    // TODO: Could show different text here depending on key mods
-    if(isHoveringRight && mod != 0){
+    
+    if(showMenuPreview && isHoveringRight && mod != 0){
         title_txt = mod == 2 ? "tetris" : "presets"
     }
 
