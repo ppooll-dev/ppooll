@@ -366,12 +366,16 @@ function menu_init(){
 		if(currentMenu){
 			this.patcher.remove(currentMenu);
 		}
-		lllbmenu = this.patcher.newdefault(100,100,"ll_popupmenu");
-		lllbmenu.varname = "lllbmenu";		
-		lllbmenu.message("prepend","menu");
+		lllbmenu = this.patcher.newdefault(100,100,"ll_menu");
+		lllbmenu.varname = "lllbmenu";	
+		lllbmenu.message("prefix", "menu");
 		lllbmenu.message("bgcolor", .23,.23,.23, 1)
 		lllbmenu.message("color", 1.,1.,1.,1.)
-		this.patcher.hiddenconnect(lllbmenu,0,box,0);
+		lllbmenu.message("pattrmode", 1);
+		lllbmenu.message("checkmode", 1);
+		lllbmenu.message("outputcancel", 1);
+		lllbmenu.rect = nrect(0, 0);
+		this.patcher.hiddenconnect(lllbmenu,1,box,0);
 }
 function num_init(){
 	if (!this.patcher.getnamed("lllbnum")){
@@ -749,7 +753,7 @@ function m_num(x,y,drag){
 	//listener();	
 }
 function m_menu(x,y,drag){ //called in onclick()
-	//post("m_menu xydrag",x,y,drag,"\n")
+	// post("m_menu xydrag",x,y,drag,lllbmenu.rect,"\n")
 	const menuHeight = lllbmenu.rect[3] - lllbmenu.rect[1]; // current height of the menu
 
 	// Calculate the bottom Y of the row
@@ -769,8 +773,9 @@ function m_menu(x,y,drag){ //called in onclick()
 		setv = String(cpval).split("~")[ccm2];
 	}
 	// post("setv", setv, "menu_items",menu_items,"\n")
-	lllbmenu.message("checksymbol", setv);
-	lllbmenu.message("bang");
+	lllbmenu.message("clearchecks");
+	lllbmenu.message("checksymbol", setv, 1);
+	lllbmenu.message("show");
 }
 function m_text(x,y,drag){
 		lllbtext.rect = nrect(x,y);
@@ -822,11 +827,11 @@ function text(data) {
 	}
 }
 
-function menu(selectedIndex, a) {
+function menu(a) {
 	// post("menu_listen",a,"lllbmenu.hidden",lllbmenu.hidden,"\n");
-	// post(selectedIndex, a, "\n")
+	// post(a, "\n")
 
-	if(selectedIndex === -1){
+	if(a === "<cancel>"){
 		// post("ll.listblock menu cancelled\n");
 		selected_box = [null, null];
 		mgraphics.redraw();
@@ -884,8 +889,12 @@ function fill_menu(a){
 	//let items = [];
 	if (Array.isArray(a)) menu_items = a
 	else menu_items = arrayfromargs(arguments);
+
 	if (lllbmenu){
-		lllbmenu.message("items", ...menu_items)
+		lllbmenu.message("clear")
+		menu_items.forEach(item => {
+			lllbmenu.message("append", item)
+		})
 	}
 }
 function nrect(x,y,m) {

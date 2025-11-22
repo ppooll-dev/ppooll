@@ -17827,7 +17827,7 @@
                                                     "hidden": 1,
                                                     "id": "obj-12",
                                                     "items": "-no-",
-                                                    "maxclass": "ll_popupmenu",
+                                                    "maxclass": "ll_menu",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
@@ -17844,7 +17844,7 @@
                                                     "hidden": 1,
                                                     "id": "obj-13",
                                                     "items": "no",
-                                                    "maxclass": "ll_popupmenu",
+                                                    "maxclass": "ll_menu",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
@@ -17860,7 +17860,7 @@
                                                     "fontname": "Arial",
                                                     "id": "obj-14",
                                                     "items": "",
-                                                    "maxclass": "ll_popupmenu",
+                                                    "maxclass": "ll_menu",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
@@ -18004,7 +18004,7 @@
                                                     "fontface": 0,
                                                     "fontname": "Arial",
                                                     "id": "obj-17",
-                                                    "maxclass": "ll_popupmenu",
+                                                    "maxclass": "ll_menu",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
@@ -18767,11 +18767,11 @@
                                                                             },
                                                                             {
                                                                                 "key": [ "acts", 7 ],
-                                                                                "value": [ "acts", "-no-" ]
+                                                                                "value": [ "acts", "no" ]
                                                                             },
                                                                             {
                                                                                 "key": [ "pars", 8 ],
-                                                                                "value": [ "pars", "no" ]
+                                                                                "value": [ "pars", "-no-" ]
                                                                             },
                                                                             {
                                                                                 "key": [ "list_item", 9 ],
