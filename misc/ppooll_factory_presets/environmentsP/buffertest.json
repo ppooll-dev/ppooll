@@ -207,7 +207,7 @@
             "tetris_menu": "ƒ quer.json",
             "title_menu": ""
         },
-        "buffer": "3dem.aif",
+        "buffer": "artradioC.aiff",
         "ll.blues": {
             "status": [ 0, 1, 0, 0, 0, 0 ],
             "outputs~": [ "ho_st1~out.1", "_" ],
@@ -223,8 +223,8 @@
         "oneshot_trigger": -1,
         "ext~vol": 0,
         "lookup": 1,
-        "start_rel": 0.28002800280028,
-        "length_rel": 0.0006975199291408326,
+        "start_rel": 0.31,
+        "length_rel": 0.0002,
         "s-ramp": 0,
         "s-ramp-mode": 1,
         "start-ramp-stop": -1,
