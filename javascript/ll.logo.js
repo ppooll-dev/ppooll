@@ -43,10 +43,15 @@ function getSvgSize() {
         }
     } catch (e) {}
     try {
-        if (svgObj && svgObj.size && svgObj.size.length === 2) {
+        let viewbox = svgObj.viewbox;
+        let width = viewbox[2] + viewbox[0]; 
+        let height = viewbox[3] + viewbox[1]; // viewbox height plus y offset
+        return [width, height];
+       /* if (svgObj && svgObj.size && svgObj.size.length === 2) {
+              post("da","\n");
             var s2 = svgObj.size;
             if (s2[0] > 0 && s2[1] > 0) return s2;
-        }
+        }*/
     } catch (e) {}
     return [1000, 1000];
 }
@@ -146,3 +151,4 @@ function setcropbottom(percent) {
 function onclick() {
     outlet(0, "bang");
 }
+
