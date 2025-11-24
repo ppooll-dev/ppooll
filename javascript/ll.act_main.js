@@ -219,20 +219,27 @@ function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
     xclick = x;
 
     let uibr = this.box.rect;
-    if (x > uibr[2] / 2) {
+
+    let drag_gate = x <= uibr[2] / 2
+
+    if (!drag_gate) {
         mod = shift | option | ctrl;
         //post("right",mod,"\n");
-        title_menu.ignoreclick = 1;
-        pres_menu.ignoreclick = 1;
-        tetris_menu.ignoreclick = 1;
-        if (mod == 0) title_menu.ignoreclick = 0;
-        else if (mod == 2) tetris_menu.ignoreclick = 0;
-        else pres_menu.ignoreclick = 0;
-        drag_gate = 0;
-        this.box.ignoreclick = 1;
-        outlet(0, "bang"); //bangs a max [del 100] to function bang (ignoreclick = 0) !!
-        messnamed("llto11clicks", "leftclick", 0);
-        messnamed("llto11clicks", "leftclick", 1);
+        // title_menu.ignoreclick = 1;
+        // pres_menu.ignoreclick = 1;
+        // tetris_menu.ignoreclick = 1;
+        // if (mod == 0) title_menu.ignoreclick = 0;
+        // else if (mod == 2) tetris_menu.ignoreclick = 0;
+        // else pres_menu.ignoreclick = 0;
+        // drag_gate = 0;
+        // this.box.ignoreclick = 1;
+        // outlet(0, "bang"); //bangs a max [del 100] to function bang (ignoreclick = 0) !!
+        // messnamed("llto11clicks", "leftclick", 0);
+        // messnamed("llto11clicks", "leftclick", 1);
+
+        if (mod == 0) title_menu.message("show")
+        else if (mod == 2) tetris_menu.message("show")
+        else pres_menu.message("show")
     }
 }
 
