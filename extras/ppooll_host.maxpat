@@ -492,7 +492,7 @@
                     "fontsize": 12.0,
                     "hint": "environment menu",
                     "id": "obj-22",
-                    "items": [ "(environments)", ",", "<separator>", ",", "(folders)", ",", "active_storage", ",", "alt", ",", "mc.groove_test", ",", "test_banger", ",", "testf", ",", "testmod", ",", "<separator>", ",", "(.json)", ",", "<none>", ",", "ducks_new", ",", "klingt.coll.minilab", ",", "mc.gizmo_tutorial", ",", "oberdöbling", ",", "rec@", ",", "sins_minilabN", ",", "sinsE_bern", ",", "sinsE_convention", ",", "sinsE_MC", ",", "sinsE_minilab_center", ",", "sinsE_minilab_ko25", ",", "snaptesttt", ",", "superspreading11", ",", "test", ",", "tetris_test", ",", "xtest", ",", "<separator>", ",", "write!", ",", "opentext", ",", "merge...", ",", "paramsonly", ",", "<separator>", ",", "(factory)", ",", "buffertest", ",", "ducks", ",", "envM_test" ],
+                    "items": [ "(environments)", ",", "<separator>", ",", "(folders)", ",", "<separator>", ",", "(.json)", ",", "<separator>", ",", "write!", ",", "opentext", ",", "merge...", ",", "paramsonly", ",", "<separator>", ",", "(factory)" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -545,7 +545,7 @@
                     "fontsize": 12.0,
                     "hint": "favorites menu",
                     "id": "obj-48",
-                    "items": [ "(favorites)", ",", "<none>", ",", "(favorites)", ",", "-", ",", "add_favorit", ",", "del_favorit" ],
+                    "items": [ "(favorites)", ",", "-", ",", "add_favorit", ",", "del_favorit" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -572,7 +572,7 @@
                     "fontsize": 12.0,
                     "hint": "act menu (open acts from here)",
                     "id": "obj-50",
-                    "items": [ "(__acts__)", ",", "_act_overview", ",", "2Dsliders", ",", "amxd@", ",", "analyze@", ",", "animator@", ",", "arpanner", ",", "autocount@", ",", "bandfollower", ",", "banger", ",", "beast", ",", "beauty", ",", "benjolino", ",", "bildsynthi", ",", "brown", ",", "buffer_host", ",", "buffub", ",", "chaos", ",", "chebyshev@", ",", "chorus@", ",", "cll_cltl@", ",", "clocker@", ",", "cloud", ",", "control@", ",", "delayloops", ",", "demosound@", ",", "distort@", ",", "envM", ",", "eq@", ",", "equalAmp", ",", "euclid", ",", "feedbacker", ",", "fffb@", ",", "flop", ",", "fmrm", ",", "forbiddenP", ",", "frack", ",", "freeverb@", ",", "frequenzteiler", ",", "gg.rainer", ",", "gizmo@", ",", "gverb@", ",", "hardplay", ",", "INmulti", ",", "jit.2oscbank", ",", "jit.3m@", ",", "jit.blobs", ",", "jit.brcosa@", ",", "jit.buf", ",", "jit.buffer@", ",", "jit.copyprot.act", ",", "jit.display@", ",", "jit.grab@", ",", "jit.lcd@", ",", "jit.op@", ",", "jit.player", ",", "jit.slide@", ",", "jit.videoplanes", ",", "jit.videoplanesP", ",", "jit.world@", ",", "kaos@", ",", "karma@", ",", "kk.rainer", ",", "kompressor", ",", "LFFO", ",", "limi", ",", "link@", ",", "matriarch@", ",", "matrix@", ",", "mc.mod", ",", "mc.random@", ",", "mcpanner", ",", "midikeys", ",", "mixer@", ",", "modul.ator", ",", "morph", ",", "mubugrain@", ",", "multitap", ",", "munger@", ",", "nodes@", ",", "noize@", ",", "normalize", ",", "notepad@", ",", "op@", ",", "oscbank@", ",", "overdrive@", ",", "paf@", ",", "peakfinder", ",", "peakfollow@", ",", "period", ",", "pHARM4@", ",", "pr.6groov", ",", "pr.spectfreeze", ",", "pr.spectplay", ",", "prdelay@", ",", "pulse@", ",", "pulsegen", ",", "quant", ",", "random0_1-", ",", "random@", ",", "rec@", ",", "rec_events", ",", "rez@", ",", "rm@", ",", "scope@", ",", "SDIFter", ",", "signaltocontrol", ",", "simproov", ",", "sinsE", ",", "sinus", ",", "snap@", ",", "sonogram@", ",", "spat.abba@", ",", "spat.ambicontrol@", ",", "spat.ambidecode@", ",", "spat.ambiencode@", ",", "spat.ambimonitor@", ",", "spat.ambipanning@", ",", "spat.ambitransform@", ",", "spat.uhj2b@", ",", "spectral_sins", ",", "svf2@", ",", "tetris@", ",", "TFF", ",", "threekomp", ",", "timeline@", ",", "transientshaper", ",", "TSSSF", ",", "vbap@", ",", "vst@", ",", "w_filter", ",", "walk", ",", "wavelets", ",", "waveshapers@", ",", "wrapfilter", ",", "x_filter", ",", "xgroove@", ",", "-", ",", "(community contributions)", ",", "ar.blockparty@", ",", "ar.verbity@", ",", "b259wf@", ",", "choppa@", ",", "chucker@", ",", "cstone@", ",", "djrone", ",", "djrone_buff", ",", "duffingOsc", ",", "echoplex@", ",", "efx.step@", ",", "efx.stnp@", ",", "efx.sttp@", ",", "efx.stxp@", ",", "ellipsis@", ",", "erbe@", ",", "feedbliss", ",", "flap@", ",", "fNw", ",", "frantz@", ",", "gf.graindelay", ",", "gutterSynth", ",", "jit.ndi@", ",", "kocyu@", ",", "lk.stutz@", ",", "mmods@", ",", "oer_prcs", ",", "oer_prcss", ",", "polyrhythmus", ",", "r_seqh", ",", "romb", ",", "sev@", ",", "smpseq@", ",", "snes@", ",", "snesHardmode@", ",", "tst_ingp", ",", "velour@", ",", "-", ",", "--unshared_acts--" ],
+                    "items": "(__acts__)",
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -4163,8 +4163,6 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 0,
-                                                                        "node_bin_path": "",
-                                                                        "npm_bin_path": "",
                                                                         "watch": 0
                                                                     },
                                                                     "text": "node.script ll.node.folders.js",
@@ -10562,13 +10560,11 @@
                                                     "fontname": "Arial",
                                                     "fontsize": 12.0,
                                                     "id": "obj-5",
-                                                    "linecount": 4,
                                                     "maxclass": "message",
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 425.0, 220.5, 241.0, 22.0 ],
-                                                    "text": "\"Macintosh HD:/Users/klaus/Documents/Max 9/Packages/ppooll/misc/ppooll_factory_presets\""
+                                                    "patching_rect": [ 425.0, 220.5, 241.0, 22.0 ]
                                                 }
                                             },
                                             {
@@ -11790,13 +11786,11 @@
                                                                     "fontname": "Arial",
                                                                     "fontsize": 13.0,
                                                                     "id": "obj-12",
-                                                                    "linecount": 2,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
-                                                                    "patching_rect": [ 113.0, 171.0, 337.0, 23.0 ],
-                                                                    "text": "\"Macintosh HD:/Users/klaus/Documents/Max 9/Packages\""
+                                                                    "patching_rect": [ 113.0, 171.0, 337.0, 23.0 ]
                                                                 }
                                                             },
                                                             {
@@ -12966,13 +12960,11 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-3",
-                                                                    "linecount": 2,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
-                                                                    "patching_rect": [ 25.0, 390.0, 371.0, 22.0 ],
-                                                                    "text": "read \"Macintosh HD:/Users/klaus/Library/Application Support/Cycling '74/Max 9/Settings/maxpackages.json\""
+                                                                    "patching_rect": [ 25.0, 390.0, 371.0, 22.0 ]
                                                                 }
                                                             },
                                                             {
@@ -16274,7 +16266,6 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 13.0, 495.0, 65.0, 19.0 ],
-                                                                    "presentation_linecount": 2,
                                                                     "text": "symbol (tetris)"
                                                                 }
                                                             },
@@ -16327,13 +16318,11 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-11",
-                                                                    "linecount": 2,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
-                                                                    "patching_rect": [ 329.0, 67.0, 301.0, 35.0 ],
-                                                                    "text": "\"Macintosh HD:/Users/klaus/Documents/Max 9/Library/ppooll_presets/ho_stT\""
+                                                                    "patching_rect": [ 329.0, 67.0, 301.0, 35.0 ]
                                                                 }
                                                             },
                                                             {
@@ -44128,7 +44117,7 @@
                         "rec": [ 0 ],
                         "screen": [ 0 ],
                         "stereo": [ 0 ],
-                        "time": [ 8221.0 ],
+                        "time": [ 8736.0 ],
                         "vol": [ 1.0 ],
                         "vol_ramp": [ 10 ],
                         "vol_slider": [ 1.0 ],
