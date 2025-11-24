@@ -30,7 +30,7 @@ let buffers = null;
 
 let pending = null;
 
-let buffers_dict = null;
+// let buffers_dict = null;
 
 let writeParams = null;
 
@@ -70,21 +70,21 @@ function msg_dictionary(d) {
 
     // Robustly initialize buffers_dict using deep copy with error handling.
     // This allows copying nested objects (which [object Object] indicates) without crashing.
-    buffers_dict = buffers
-        ? buffers.map((item) => {
-              if (!item) return null;
-              try {
-                  // Attempt a deep copy of the item. This handles both arrays and nested objects.
-                  return JSON.parse(JSON.stringify(item));
-              } catch (e) {
-                  // Fallback for complex Max/MSP objects that can't be stringified
-                  ppost(
-                      `WARNING: Failed to deep-copy buffer item (JSON error): ${e.message}`
-                  );
-                  return null;
-              }
-          })
-        : [];
+    // buffers_dict = buffers
+    //     ? buffers.map((item) => {
+    //           if (!item) return null;
+    //           try {
+    //               // Attempt a deep copy of the item. This handles both arrays and nested objects.
+    //               return JSON.parse(JSON.stringify(item));
+    //           } catch (e) {
+    //               // Fallback for complex Max/MSP objects that can't be stringified
+    //               ppost(
+    //                   `WARNING: Failed to deep-copy buffer item (JSON error): ${e.message}`
+    //               );
+    //               return null;
+    //           }
+    //       })
+    //     : [];
 
     // Get acts from 'dict ppoollstate'
     acts = Object.keys(dict.state);
@@ -122,13 +122,13 @@ async function saveToFolder() {
             ppost("copy buffers...");
             buffers.forEach((b, i) => {
                 // FIX 4: Check if the buffer's data structure is null before accessing its properties.
-                if (!buffers_dict[i]) {
-                    // CHANGED: Log the raw buffer data at that index for inspection.
-                    ppost(
-                        `WARNING: Skipping buffer at index ${i} due to null entry in buffers_dict. Raw buffer item: ${b}`
-                    );
-                    return; // Skip this iteration if the data is null
-                }
+                // if (!buffers_dict[i]) {
+                //     // CHANGED: Log the raw buffer data at that index for inspection.
+                //     ppost(
+                //         `WARNING: Skipping buffer at index ${i} due to null entry in buffers_dict. Raw buffer item: ${b}`
+                //     );
+                //     return; // Skip this iteration if the data is null
+                // }
 
                 if (b.full_path) {
                     const newFile = `${enviDir}/${enviName}/buffers/${b.label}.${fileExt}`;
@@ -146,15 +146,15 @@ async function saveToFolder() {
                         pb.send(b.buffer_index, "write", newFile);
                     }
                     // Update the saved path in the copy array
-                    buffers_dict[i][3] = newFile;
+                    b.full_path = newFile;
                 } else if (writeParams.write_sample_buffers) {
                     // Write file to envi folder
-                    const newFile = `${enviDir}/${enviName}/buffers/${b.name}.${fileExt}`;
+                    const newFile = `${enviDir}/${enviName}/buffers/${b.label}.${fileExt}`;
                     pb.send(b.buffer_index, "write", newFile);
 
                     // Replace polybuffer~ with newly created files
                     pb.send(b.buffer_index, "read", newFile);
-                    buffers_dict[i][3] = newFile;
+                    b.full_path = newFile;
                 }
             });
         }
@@ -303,27 +303,14 @@ function getacts(act_list) {
         getdump(a);
     }
 
-    // --- FIX START: Merge the corrected buffer data into the global 'environment' object ---
-
     // Check if we have buffer data to save
-    if (buffers_dict && buffers_dict.length > 0) {
-        // Ensure the buffers path exists in the global environment object
-        // The structure needs to match the key expected by ll.enviread.js: dict.buffers.buffers
-        if (!environment.buffers) environment.buffers = {};
-
-        // Write the updated buffer paths into the environment object's correct key
-        environment.buffers.buffers = buffers_dict;
+    if (environment.buffer_host1 && environment.buffer_host1.ll_buffers) {
+        environment.buffer_host1.ll_buffers = { buffers }
     }
 
-    // --- FIX END ---
-
-    // Set 'dict environment' and export
     var enviDict = new Dict("environment");
-
-    // FIX: Parse the *fully constructed* global 'environment' object (which now includes buffers).
     enviDict.parse(JSON.stringify(environment));
 
-    // And finally, export
     enviDict.export_json(dict.props.jsonPath);
     outlet(0, "done", "reset", dict.props.envi_name);
     ppost("done!");

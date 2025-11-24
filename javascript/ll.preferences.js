@@ -249,14 +249,9 @@ function sethost_channels(c) {
     ll_prf_rewrite();
 }
 
-function text(entered_text) {
-    // audio key
-    let key = entered_text ? entered_text.slice(-1).charCodeAt(0) : 0;
-    this.patcher
-        .getnamed("audio_key")
-        .message(...(key > 0 ? ["set", entered_text.slice(-1)] : ["clear"]));
-    outlet(0, "audio_key", key);
+function audio_key(key) {
     preferences.set("general::audioON/OFF", key);
+    outlet(0, "audio_key", key);
     ll_prf_rewrite();
 }
 
@@ -279,7 +274,7 @@ function readfile() {
 function get_preferences() {
     // general::audioON/OFF (key)
     let v = preferences.get("general::audioON/OFF");
-    this.patcher.getnamed("audio_key").message("set", String.fromCharCode(v));
+    this.patcher.getnamed("audio_key").message("set", v); //String.fromCharCode(v));
     outlet(0, "audio_key", v);
 
     // general::screencolor
@@ -328,7 +323,9 @@ function get_preferences() {
 
 // create ppooll_preferences.json if DNE
 function newPref(path) {
-    preferences.parse(JSON.stringify(empty_prf_DEFAULT));
+    const new_prefs = { ...empty_prf_DEFAULT }
+    new_prefs.general.version = "9.0.0"; // hardcoded for update_params, need a better way
+    preferences.parse(JSON.stringify(new_prefs));
     preferences.export_json(path);
 }
 

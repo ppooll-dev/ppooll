@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 548.0, 184.0, 133.0, 200.0 ],
+        "rect": [ 556.0, 331.0, 132.0, 200.0 ],
         "default_fontsize": 10.0,
         "toolbarvisible": 0,
         "enablehscroll": 0,
@@ -18,12 +18,39 @@
         "boxes": [
             {
                 "box": {
+                    "bgcolor": [ 0.556862745098039, 0.556862745098039, 0.556862745098039, 1.0 ],
+                    "border": 0,
+                    "fontface": 0,
+                    "fontsize": 9.0,
+                    "format": [ 1.1 ],
+                    "hint": "spread the freq",
+                    "id": "obj-9",
+                    "label": [ "freq_mc_spread" ],
+                    "labelcolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "maxclass": "ll_number",
+                    "min": 0.0,
+                    "mousefocus": 1,
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 0.0, 42.0, 103.0, 10.0 ],
+                    "slidercolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "sliderlog": 7.0,
+                    "slidermax": 1000.0,
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "textcolornofocus": [ 1.0, 1.0, 1.0, 0.73 ],
+                    "varname": "freq_mcspread"
+                }
+            },
+            {
+                "box": {
                     "annotation": "freqNOramp",
                     "bgcolor": [ 0.603922, 1.0, 0.529412, 1.0 ],
                     "bgoncolor": [ 1.0, 0.529412, 0.529412, 1.0 ],
                     "fontname": "Arial",
                     "fontsize": 9.0,
-                    "hint": "freqNOramp",
+                    "hint": "preset ramp to freq",
                     "id": "obj-16",
                     "legacytextcolor": 1,
                     "maxclass": "textbutton",
@@ -33,7 +60,7 @@
                     "outlettype": [ "", "", "int" ],
                     "outputmode": 0,
                     "parameter_enable": 0,
-                    "patching_rect": [ 118.0, 44.0, 13.0, 16.0 ],
+                    "patching_rect": [ 118.0, 42.0, 13.0, 16.0 ],
                     "text": "n",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "texton": "n",
@@ -61,7 +88,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 68.0, 44.0, 35.0, 17.0 ],
+                    "patching_rect": [ 68.0, 52.0, 35.0, 12.0 ],
                     "slidercolornofocus": [ 1.0, 1.0, 1.0, 1.0 ],
                     "sliderlog": 4.5,
                     "slidermax": 16000.0,
@@ -88,7 +115,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 32.0, 44.0, 37.0, 17.0 ],
+                    "patching_rect": [ 32.0, 52.0, 37.0, 12.0 ],
                     "slidercolornofocus": [ 1.0, 1.0, 1.0, 1.0 ],
                     "sliderlog": 4.5,
                     "slidermax": 16000.0,
@@ -105,6 +132,7 @@
                     "bordercolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "fontface": 0,
                     "format": [ 1.0 ],
+                    "hint": "octave divider",
                     "id": "obj-5",
                     "label": [ "rel" ],
                     "labelcolor": [ 0.427450980392157, 0.415686274509804, 0.415686274509804, 0.7 ],
@@ -113,7 +141,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, 44.0, 33.0, 17.0 ],
+                    "patching_rect": [ 0.0, 52.0, 33.0, 12.0 ],
                     "slidercolornofocus": [ 1.0, 1.0, 1.0, 1.0 ],
                     "sliderlog": 4.5,
                     "slidermax": 16000.0,
@@ -164,6 +192,7 @@
                     "bordercolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "fontface": 0,
                     "format": [ 5.2 ],
+                    "hint": "frequency",
                     "id": "obj-10",
                     "label": [ "freq" ],
                     "labelcolor": [ 0.368627450980392, 0.364705882352941, 0.364705882352941, 0.7 ],
@@ -173,7 +202,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, 28.0, 132.0, 16.0 ],
+                    "patching_rect": [ 0.0, 27.0, 132.0, 15.0 ],
                     "slidercolornofocus": [ 1.0, 1.0, 1.0, 1.0 ],
                     "sliderlog": 4.5,
                     "slidermax": 16000.0,
@@ -244,6 +273,7 @@
                     "bgoncolor": [ 1.0, 0.529412, 0.529412, 1.0 ],
                     "fontname": "Arial",
                     "fontsize": 8.0,
+                    "hint": "freq to basefreq",
                     "id": "obj-4",
                     "legacytextcolor": 1,
                     "maxclass": "textbutton",
@@ -252,7 +282,7 @@
                     "outlettype": [ "", "", "int" ],
                     "outputmode": 0,
                     "parameter_enable": 0,
-                    "patching_rect": [ 104.0, 44.0, 13.0, 16.0 ],
+                    "patching_rect": [ 104.0, 47.0, 13.0, 16.0 ],
                     "text": "<",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "texton": "env",
@@ -270,6 +300,7 @@
                     "bgoncolor": [ 1.0, 0.529412, 0.529412, 1.0 ],
                     "fontname": "Arial",
                     "fontsize": 10.0,
+                    "hint": "loop-env",
                     "id": "obj-3",
                     "legacytextcolor": 1,
                     "maxclass": "textbutton",
@@ -297,6 +328,7 @@
                     "bgoncolor": [ 1.0, 0.529412, 0.529412, 1.0 ],
                     "fontname": "Arial",
                     "fontsize": 10.0,
+                    "hint": "trigger env",
                     "id": "obj-2",
                     "legacytextcolor": 1,
                     "maxclass": "textbutton",
@@ -323,6 +355,7 @@
                     "bgoncolor": [ 1.0, 0.529412, 0.529412, 1.0 ],
                     "fontname": "Arial",
                     "fontsize": 10.0,
+                    "hint": "use env",
                     "id": "obj-1",
                     "legacytextcolor": 1,
                     "maxclass": "textbutton",
@@ -371,7 +404,7 @@
             },
             {
                 "box": {
-                    "addpoints": [ 0.0, 0.0, 0, 272.54716981132077, 1.0, 0, 353.3018867924528, 0.65, 0, 1069.9999999999995, 0.0, 0 ],
+                    "addpoints": [ 0.0, 0.0, 0, 272.5471698113208, 1.0, 0, 353.30188679245254, 0.65, 0, 1069.999999999999, 0.0, 0 ],
                     "annotation": "envelope",
                     "bgcolor": [ 0.196078, 0.784314, 0.196078, 1.0 ],
                     "classic_curve": 1,
@@ -826,9 +859,20 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 296.0, 228.0, 503.0, 527.0 ],
+                                        "rect": [ 607.0, 483.0, 503.0, 527.0 ],
                                         "default_fontsize": 10.0,
                                         "boxes": [
+                                            {
+                                                "box": {
+                                                    "id": "obj-13",
+                                                    "maxclass": "message",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 45.0, 255.0, 50.0, 20.0 ],
+                                                    "text": "0."
+                                                }
+                                            },
                                             {
                                                 "box": {
                                                     "id": "obj-10",
@@ -867,10 +911,11 @@
                                                 "box": {
                                                     "id": "obj-46",
                                                     "maxclass": "newobj",
-                                                    "numinlets": 2,
-                                                    "numoutlets": 0,
-                                                    "patching_rect": [ 43.0, 199.0, 90.0, 20.0 ],
-                                                    "text": "ll.s freq_mcspread"
+                                                    "numinlets": 1,
+                                                    "numoutlets": 2,
+                                                    "outlettype": [ "", "bang" ],
+                                                    "patching_rect": [ 43.0, 199.0, 89.0, 20.0 ],
+                                                    "text": "ll.r freq_mcspread"
                                                 }
                                             },
                                             {
@@ -924,7 +969,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 364.0, 344.0, 50.0, 20.0 ],
-                                                    "text": "1. 20"
+                                                    "text": "0. 20"
                                                 }
                                             },
                                             {
@@ -936,7 +981,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 422.0, 151.0, 50.0, 87.0 ],
-                                                    "text": "0.725 323.018868 0.925 680.795584 0. 66.185548"
+                                                    "text": "1. 795.226415 0.65 235.622642 0. 2091.150943"
                                                 }
                                             },
                                             {
@@ -1088,7 +1133,7 @@
                                                             "modernui": 1
                                                         },
                                                         "classnamespace": "box",
-                                                        "rect": [ 605.0, 205.0, 742.0, 427.0 ],
+                                                        "rect": [ 914.0, 213.0, 742.0, 427.0 ],
                                                         "default_fontsize": 10.0,
                                                         "boxes": [
                                                             {
@@ -2124,6 +2169,12 @@
                                             },
                                             {
                                                 "patchline": {
+                                                    "destination": [ "obj-13", 1 ],
+                                                    "source": [ "obj-46", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
                                                     "destination": [ "obj-46", 0 ],
                                                     "source": [ "obj-48", 0 ]
                                                 }
@@ -2436,6 +2487,7 @@
                     "bgcolor": [ 0.545098, 0.85098, 0.592157, 1.0 ],
                     "fontname": "Arial",
                     "fontsize": 11.0,
+                    "hint": "env length",
                     "htricolor": [ 0.87, 0.82, 0.24, 1.0 ],
                     "id": "obj-49",
                     "maxclass": "number",
@@ -2462,8 +2514,9 @@
                     "bgfillcolor_type": "color",
                     "fontname": "Arial",
                     "fontsize": 9.0,
+                    "hint": "freq triggers",
                     "id": "obj-52",
-                    "items": [ "off", ",", "freq-rel", ",", "freq", ",", "vol" ],
+                    "items": [ "off", ",", "freq-rel", ",", "freq" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -2532,10 +2585,9 @@
                         "ll.blues::levels": 5
                     },
                     "saved_object_attributes": {
-                        "client_rect": [ 724, 87, 1484, 866 ],
+                        "client_rect": [ 400, 495, 1195, 847 ],
                         "parameter_enable": 0,
-                        "parameter_mappable": 0,
-                        "storage_rect": [ 430, 270, 1276, 999 ]
+                        "parameter_mappable": 0
                     },
                     "text": "pattrstorage pat",
                     "varname": "pat"
@@ -2589,19 +2641,20 @@
                     "restore": {
                         "bang-env": [ -1 ],
                         "base-freq": [ 440.0 ],
-                        "envelope": [ 1070.0, 0.0, 1.0, 0.0, 0.0, 0, 272.54716981132077, 1.0, 0, 353.3018867924528, 0.65, 0, 1069.9999999999995, 0.0, 0, "linear" ],
+                        "envelope": [ 1070.0, 0.0, 1.0, 0.0, 0.0, 0, 272.5471698113208, 1.0, 0, 353.30188679245254, 0.65, 0, 1069.999999999999, 0.0, 0, "linear" ],
                         "f-rel>trigger": [ 0 ],
                         "freq": [ 440.0 ],
                         "freq-relative": [ 0.0 ],
                         "freqNOramp": [ 0 ],
+                        "freq_mcspread": [ 0.0 ],
                         "length": [ 1070 ],
                         "length-slider": [ 0.48480871149318605 ],
                         "loop-env": [ 0 ],
-                        "octdiv": [ 20.0 ],
-                        "preset-ramp": [ 0 ],
+                        "octdiv": [ 12.0 ],
+                        "preset-ramp": [ 0.0 ],
                         "presets": [ 0 ],
                         "takeover": [ -1 ],
-                        "use-env": [ 0 ]
+                        "use-env": [ 1 ]
                     },
                     "text": "autopattr autopattr",
                     "varname": "autopattr"

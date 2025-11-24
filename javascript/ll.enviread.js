@@ -249,11 +249,16 @@ function loadPresets() {
 
 function setparam(a, p, v) {
     //act, param, value
-    if (!param_excludes.includes(p) && !act_param_excludes.includes(a + p)) {
+    if (!param_excludes.includes(p) && 
+		!act_param_excludes.includes(a + p) &&
+		!(p == "act::tetris_menu" && v == "(tetris)")
+		) {
         if (debugpost > 1) post("parameter___", p, "####", v, "\n");
 
         if (v[0] == "dictionary") senddict(a, p, v);
-        else messnamed(a, p, v);
+        else {
+			messnamed(a, p, v);
+		}
     }
 }
 

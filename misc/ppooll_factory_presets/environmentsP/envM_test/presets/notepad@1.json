@@ -1,0 +1,51 @@
+{
+    "pattrstorage": {
+        "name": "pat",
+        "slots": {
+            "1": {
+                "id": 1,
+                "data": {
+                    "fontlist": [ "Courier New" ],
+                    "fontsize": [ 14 ],
+                    "height": [ 370.0 ],
+                    "presets": [ 1 ],
+                    "textfield": [ "this is an example about multichannel signal routing\n\nenvM is creating a 4channel signal \nwhich is split and goes to different\nsignal inputs of fmrm1\n\nclick on the ≈ button on top in the ll.blues output section of envM. \nthat is where the single channels are routed to. additional there are min-max values that scale the signals to reasonable values for the chosen parameter.\n\nnote, that the according parameters in fmrm1 are all set to 0, if you change that they act as offsets.\n\nif you select \"mess\" in envM's menu appearing as \"sig\"\nenvM will send out messages going to its attached control@.\n\nclick on presets of this notepad@1 for more..." ],
+                    "width": [ 460 ],
+                    "act::active_store": [ "_" ],
+                    "act::master/activest": [ 0, 0 ],
+                    "act::pres_menu": [ "_" ],
+                    "act::tetris_menu": [ "(tetris)" ],
+                    "act::title_menu": [ "" ]
+                }
+            },
+            "2": {
+                "id": 2,
+                "data": {
+                    "fontlist": [ "Courier New" ],
+                    "fontsize": [ 14 ],
+                    "height": [ 370.0 ],
+                    "presets": [ 2 ],
+                    "textfield": [ "in envM there are some presets stored.\nthe button p-t makes these presets triggering the envelope.\n\nyou may note that len (envelope-length) and the loop button are not affected by these presets - they stay where you put it.\nthats because these parameters are NOT active.\nyou can see and change this with the clientwindow's leftmost checkboxes.\n\nin fmrm1 there are presets as well.\nthey change the \"sp\"-parameters aka spread.\nspread deviates the multichannel\n\nspread deviates the according parameter.\nsince fmrm1 is currently playing 2 channels,\nspread unfolds these 2 channels.\n\nyou can chance the internal channels of fmrm by selecting more input-channels (i) in ll.blues." ],
+                    "width": [ 460 ],
+                    "act::active_store": [ "_" ],
+                    "act::master/activest": [ 0, 0 ],
+                    "act::pres_menu": [ "_" ],
+                    "act::tetris_menu": [ "(tetris)" ],
+                    "act::title_menu": [ "" ]
+                }
+            }
+        },
+        "clientstate": {
+            "active": {
+                "presets": 0,
+                "act": 0,
+                "act::active_store": 0,
+                "act::master/activest": 0,
+                "act::u751015509": 0,
+                "act::pres_menu": 0,
+                "act::tetris_menu": 0,
+                "act::title_menu": 0
+            }
+        }
+    }
+}

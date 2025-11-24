@@ -264,7 +264,7 @@
 					"fontsize" : 12.0,
 					"id" : "obj-80",
 					"items" : [ "info", ",", "clientwindow", ",", "storagewindow", ",", "-", ",", "titlebar", ",", "close", ",", "back", ",", "grow", ",", "master", ",", "active_store", ",", "-", ",", "subpatch", ",", "actmaker" ],
-					"maxclass" : "umenu",
+					"maxclass" : "ll_menu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
@@ -272,7 +272,9 @@
 					"patching_rect" : [ 0.0, -7.0, 49.830078125, 22.0 ],
 					"pattrmode" : 1,
 					"textcolor" : [ 0.149, 0.149, 0.149, 1.0 ],
-					"varname" : "title_menu"
+					"varname" : "title_menu",
+					"checkmode": 0,
+					"ignoreclick": 1
 				}
 
 			}
@@ -289,7 +291,7 @@
 					"id" : "obj-82",
 					"ignoreclick" : 1,
 					"items" : [ "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
-					"maxclass" : "umenu",
+					"maxclass" : "ll_menu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
@@ -297,7 +299,8 @@
 					"patching_rect" : [ 0.0, -7.0, 49.830078125, 22.0 ],
 					"pattrmode" : 1,
 					"textcolor" : [ 0.149, 0.149, 0.149, 1.0 ],
-					"varname" : "pres_menu"
+					"varname" : "pres_menu",
+					"ignoreclick": 1
 				}
 
 			}
@@ -314,7 +317,7 @@
 					"id" : "obj-84",
 					"ignoreclick" : 1,
 					"items" : [ "-", ",", "-", ",", "ƒ", "default.json" ],
-					"maxclass" : "umenu",
+					"maxclass" : "ll_menu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
@@ -322,7 +325,8 @@
 					"patching_rect" : [ 0.0, -7.0, 49.830078125, 22.0 ],
 					"pattrmode" : 1,
 					"textcolor" : [ 0.149, 0.149, 0.149, 1.0 ],
-					"varname" : "tetris_menu"
+					"varname" : "tetris_menu",
+					"ignoreclick": 1
 				}
 
 			}

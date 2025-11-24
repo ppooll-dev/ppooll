@@ -1,691 +1,588 @@
 {
-	"patcher" : 	{
-		"fileversion" : 1,
-		"rect" : [ 886.0, 211.0, 521.0, 618.0 ],
-		"bglocked" : 0,
-		"defrect" : [ 886.0, 211.0, 521.0, 618.0 ],
-		"openrect" : [ 0.0, 0.0, 0.0, 0.0 ],
-		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 0,
-		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 0,
-		"toolbarvisible" : 1,
-		"boxanimatetime" : 200,
-		"imprint" : 0,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"globalpatchername" : "ll.jact.maxhelp1",
-		"boxes" : [ 			{
-				"box" : 				{
-					"maxclass" : "newobj",
-					"varname" : "thispatcher",
-					"text" : "thispatcher",
-					"fontname" : "Arial",
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"fontsize" : 12.0,
-					"patching_rect" : [ 366.0, 124.0, 100.0, 20.0 ],
-					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"id" : "obj-44",
-					"numinlets" : 1,
-					"hidden" : 1,
-					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "jit.pwindow",
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 57.0, 524.0, 80.0, 60.0 ],
-					"id" : "obj-2",
-					"numinlets" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "comment",
-					"text" : "grab the matrix with ll.rj",
-					"fontname" : "Arial",
-					"numoutlets" : 0,
-					"fontsize" : 12.0,
-					"patching_rect" : [ 48.0, 419.0, 150.0, 20.0 ],
-					"id" : "obj-31",
-					"numinlets" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "comment",
-					"text" : "ll.jact is inside here.",
-					"fontname" : "Arial",
-					"numoutlets" : 0,
-					"fontsize" : 12.0,
-					"patching_rect" : [ 130.0, 318.0, 179.0, 20.0 ],
-					"id" : "obj-28",
-					"numinlets" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "comment",
-					"text" : "dim",
-					"fontname" : "Arial",
-					"numoutlets" : 0,
-					"fontsize" : 12.0,
-					"patching_rect" : [ 201.0, 274.0, 30.0, 20.0 ],
-					"id" : "obj-27",
-					"numinlets" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "comment",
-					"text" : "local_display for the jit.pwindow",
-					"fontname" : "Arial",
-					"numoutlets" : 0,
-					"fontsize" : 12.0,
-					"patching_rect" : [ 148.0, 234.0, 179.0, 20.0 ],
-					"id" : "obj-25",
-					"numinlets" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "comment",
-					"text" : "jit_on, jit.ms, (local_disp_on optional)",
-					"fontname" : "Arial",
-					"numoutlets" : 0,
-					"fontsize" : 12.0,
-					"patching_rect" : [ 148.0, 214.0, 323.0, 20.0 ],
-					"id" : "obj-24",
-					"numinlets" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "comment",
-					"text" : "scripting names are obligatory here:",
-					"fontname" : "Arial",
-					"numoutlets" : 0,
-					"fontsize" : 12.0,
-					"patching_rect" : [ 148.0, 194.0, 323.0, 20.0 ],
-					"id" : "obj-23",
-					"numinlets" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "number",
-					"varname" : "dim",
-					"fontname" : "Arial",
-					"numoutlets" : 2,
-					"outlettype" : [ "int", "bang" ],
-					"fontsize" : 12.0,
-					"patching_rect" : [ 149.0, 274.0, 50.0, 20.0 ],
-					"id" : "obj-22",
-					"numinlets" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "newobj",
-					"text" : "p subpatch",
-					"fontname" : "Arial",
-					"numoutlets" : 0,
-					"fontsize" : 12.0,
-					"patching_rect" : [ 51.0, 318.0, 69.0, 20.0 ],
-					"id" : "obj-18",
-					"numinlets" : 0,
-					"patcher" : 					{
-						"fileversion" : 1,
-						"rect" : [ 970.0, 473.0, 420.0, 404.0 ],
-						"bglocked" : 0,
-						"defrect" : [ 970.0, 473.0, 420.0, 404.0 ],
-						"openrect" : [ 0.0, 0.0, 0.0, 0.0 ],
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
-						"default_fontname" : "Arial",
-						"gridonopen" : 0,
-						"gridsize" : [ 15.0, 15.0 ],
-						"gridsnaponopen" : 0,
-						"toolbarvisible" : 1,
-						"boxanimatetime" : 200,
-						"imprint" : 0,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"boxes" : [ 							{
-								"box" : 								{
-									"maxclass" : "comment",
-									"text" : "optional you may use the \"local_disp_on\" switch to turn off\nthe local_display and save some speed.\nthe matrix can still be grabbed from somewhere else.",
-									"linecount" : 3,
-									"fontname" : "Arial",
-									"numoutlets" : 0,
-									"fontsize" : 12.0,
-									"patching_rect" : [ 19.0, 238.0, 335.0, 48.0 ],
-									"id" : "obj-5",
-									"numinlets" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"maxclass" : "comment",
-									"text" : "ll.act provides a qmetro, that listens to jit_on and jit_ms from the main patch.",
-									"linecount" : 2,
-									"fontname" : "Arial",
-									"numoutlets" : 0,
-									"fontsize" : 12.0,
-									"patching_rect" : [ 20.0, 203.0, 335.0, 34.0 ],
-									"id" : "obj-4",
-									"numinlets" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"maxclass" : "comment",
-									"text" : "the last object of the jitter act needs to be connected to ll.jact.",
-									"fontname" : "Arial",
-									"numoutlets" : 0,
-									"fontsize" : 12.0,
-									"patching_rect" : [ 20.0, 181.0, 335.0, 20.0 ],
-									"id" : "obj-3",
-									"numinlets" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"maxclass" : "newobj",
-									"text" : "ll.r dim",
-									"fontname" : "Arial",
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"fontsize" : 12.0,
-									"patching_rect" : [ 180.0, 56.0, 46.0, 20.0 ],
-									"id" : "obj-1",
-									"numinlets" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"maxclass" : "number",
-									"fontname" : "Arial",
-									"numoutlets" : 2,
-									"minimum" : 0,
-									"outlettype" : [ "int", "bang" ],
-									"fontsize" : 12.0,
-									"patching_rect" : [ 180.0, 83.0, 50.0, 20.0 ],
-									"id" : "obj-25",
-									"numinlets" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"maxclass" : "message",
-									"text" : "dim $1 $1",
-									"fontname" : "Arial",
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"fontsize" : 12.0,
-									"patching_rect" : [ 180.0, 108.0, 63.0, 18.0 ],
-									"id" : "obj-63",
-									"numinlets" : 2
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"maxclass" : "newobj",
-									"text" : "jit.noise",
-									"fontname" : "Arial",
-									"numoutlets" : 2,
-									"outlettype" : [ "jit_matrix", "" ],
-									"fontsize" : 12.0,
-									"patching_rect" : [ 98.0, 125.0, 51.0, 20.0 ],
-									"id" : "obj-57",
-									"numinlets" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"maxclass" : "newobj",
-									"text" : "ll.jact",
-									"fontname" : "Arial",
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"fontsize" : 12.0,
-									"patching_rect" : [ 98.0, 96.0, 46.0, 20.0 ],
-									"id" : "obj-56",
-									"numinlets" : 1
-								}
-
-							}
- ],
-						"lines" : [ 							{
-								"patchline" : 								{
-									"source" : [ "obj-63", 0 ],
-									"destination" : [ "obj-57", 0 ],
-									"hidden" : 0,
-									"midpoints" : [  ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"source" : [ "obj-57", 0 ],
-									"destination" : [ "obj-56", 0 ],
-									"hidden" : 0,
-									"midpoints" : [ 107.5, 159.0, 89.0, 159.0, 89.0, 84.0, 107.5, 84.0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"source" : [ "obj-56", 0 ],
-									"destination" : [ "obj-57", 0 ],
-									"hidden" : 0,
-									"midpoints" : [  ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"source" : [ "obj-56", 2 ],
-									"destination" : [ "obj-57", 0 ],
-									"hidden" : 0,
-									"midpoints" : [  ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"source" : [ "obj-25", 0 ],
-									"destination" : [ "obj-63", 0 ],
-									"hidden" : 0,
-									"midpoints" : [  ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"source" : [ "obj-1", 0 ],
-									"destination" : [ "obj-25", 0 ],
-									"hidden" : 0,
-									"midpoints" : [  ]
-								}
-
-							}
- ]
-					}
-,
-					"saved_object_attributes" : 					{
-						"fontname" : "Arial",
-						"default_fontsize" : 12.0,
-						"fontface" : 0,
-						"fontsize" : 12.0,
-						"default_fontface" : 0,
-						"globalpatchername" : "",
-						"default_fontname" : "Arial"
-					}
-
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "textbutton",
-					"varname" : "local_disp_on",
-					"textoncolor" : [ 0.870588, 0.819608, 0.239216, 1.0 ],
-					"fontname" : "Arial",
-					"mode" : 1,
-					"numoutlets" : 3,
-					"border" : 1,
-					"outputmode" : 0,
-					"textovercolor" : [ 0.752941, 0.023529, 0.247059, 1.0 ],
-					"text" : "v",
-					"outlettype" : [ "", "", "int" ],
-					"bgovercolor" : [ 0.984314, 0.65098, 0.65098, 1.0 ],
-					"fontsize" : 12.0,
-					"texton" : "v",
-					"patching_rect" : [ 116.0, 212.0, 20.0, 20.0 ],
-					"id" : "obj-17",
-					"bgoveroncolor" : [ 0.909804, 0.356863, 0.52549, 1.0 ],
-					"rounded" : 1.0,
-					"textoveroncolor" : [ 0.870588, 0.819608, 0.239216, 1.0 ],
-					"textcolor" : [ 0.752941, 0.023529, 0.247059, 1.0 ],
-					"bgoncolor" : [ 0.752941, 0.023529, 0.247059, 1.0 ],
-					"numinlets" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "number",
-					"varname" : "jit_ms",
-					"fontname" : "Arial",
-					"numoutlets" : 2,
-					"minimum" : 1,
-					"bgcolor" : [ 0.752941, 0.023529, 0.247059, 1.0 ],
-					"outlettype" : [ "int", "bang" ],
-					"triscale" : 0.9,
-					"htextcolor" : [ 0.870588, 0.870588, 0.870588, 1.0 ],
-					"fontsize" : 12.0,
-					"patching_rect" : [ 72.0, 212.0, 43.0, 20.0 ],
-					"id" : "obj-4",
-					"textcolor" : [ 0.870588, 0.819608, 0.239216, 1.0 ],
-					"triangle" : 0,
-					"numinlets" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "comment",
-					"text" : "currently there is only one jitter output possible at each act.",
-					"fontname" : "Arial",
-					"numoutlets" : 0,
-					"fontsize" : 12.0,
-					"patching_rect" : [ 60.0, 131.0, 323.0, 20.0 ],
-					"id" : "obj-3",
-					"numinlets" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "textbutton",
-					"varname" : "jit_on",
-					"prototypename" : "jit_on",
-					"textoncolor" : [ 0.870588, 0.819608, 0.239216, 1.0 ],
-					"fontname" : "Arial",
-					"mode" : 1,
-					"numoutlets" : 3,
-					"border" : 1,
-					"outputmode" : 0,
-					"textovercolor" : [ 0.752941, 0.023529, 0.247059, 1.0 ],
-					"text" : "ON",
-					"outlettype" : [ "", "", "int" ],
-					"bgovercolor" : [ 0.984314, 0.65098, 0.65098, 1.0 ],
-					"fontsize" : 12.0,
-					"texton" : "ON",
-					"patching_rect" : [ 46.0, 212.0, 25.0, 20.0 ],
-					"id" : "obj-30",
-					"bgoveroncolor" : [ 0.909804, 0.356863, 0.52549, 1.0 ],
-					"rounded" : 1.0,
-					"textoveroncolor" : [ 0.870588, 0.819608, 0.239216, 1.0 ],
-					"textcolor" : [ 0.752941, 0.023529, 0.247059, 1.0 ],
-					"bgoncolor" : [ 0.752941, 0.023529, 0.247059, 1.0 ],
-					"numinlets" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "jit.pwindow",
-					"varname" : "local_display",
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 47.0, 238.0, 89.0, 65.0 ],
-					"id" : "obj-61",
-					"numinlets" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "newobj",
-					"varname" : "act",
-					"text" : "actmaker ll.jact.maxhelp",
-					"fontname" : "Arial",
-					"numoutlets" : 0,
-					"fontsize" : 12.0,
-					"patching_rect" : [ 360.0, 52.0, 139.0, 20.0 ],
-					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"id" : "obj-20",
-					"numinlets" : 2,
-					"hidden" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "newobj",
-					"varname" : "pattrmarker",
-					"text" : "pattrmarker no",
-					"fontname" : "Arial",
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"fontsize" : 12.0,
-					"patching_rect" : [ 366.0, 74.0, 100.0, 20.0 ],
-					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"id" : "obj-45",
-					"numinlets" : 1,
-					"hidden" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "toggle",
-					"varname" : "rj_on[1]",
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 57.0, 447.0, 20.0, 20.0 ],
-					"id" : "obj-5",
-					"numinlets" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "newobj",
-					"text" : "qmetro 20",
-					"fontname" : "Arial",
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"fontsize" : 12.0,
-					"patching_rect" : [ 57.0, 472.0, 65.0, 20.0 ],
-					"id" : "obj-7",
-					"numinlets" : 2
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "umenu",
-					"varname" : "jit_menu",
-					"fontname" : "Arial",
-					"numoutlets" : 3,
-					"items" : "ll.jact.maxhelp1",
-					"outlettype" : [ "int", "", "" ],
-					"pattrmode" : 1,
-					"types" : [  ],
-					"fontsize" : 12.0,
-					"patching_rect" : [ 82.0, 447.0, 100.0, 20.0 ],
-					"id" : "obj-9",
-					"numinlets" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "newobj",
-					"text" : "ll.rj jit_menu",
-					"fontname" : "Arial",
-					"numoutlets" : 2,
-					"outlettype" : [ "jit_matrix", "" ],
-					"fontsize" : 12.0,
-					"patching_rect" : [ 57.0, 495.0, 75.0, 20.0 ],
-					"id" : "obj-10",
-					"numinlets" : 2
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "comment",
-					"text" : "sets the out_name of a matrix and defines this patch as jitter act, ready to be seen by ll.rj.",
-					"linecount" : 2,
-					"fontname" : "Arial",
-					"numoutlets" : 0,
-					"fontsize" : 12.0,
-					"patching_rect" : [ 60.0, 94.0, 260.0, 34.0 ],
-					"id" : "obj-16",
-					"numinlets" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "comment",
-					"text" : "ll.jact \"send\" jitter",
-					"fontname" : "Arial",
-					"numoutlets" : 0,
-					"fontsize" : 18.0,
-					"patching_rect" : [ 62.0, 63.0, 287.0, 27.0 ],
-					"id" : "obj-34",
-					"numinlets" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "newobj",
-					"varname" : "pat",
-					"text" : "pattrstorage pat",
-					"fontname" : "Arial",
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"fontsize" : 12.0,
-					"patching_rect" : [ 378.0, 31.0, 95.0, 20.0 ],
-					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"id" : "obj-1",
-					"numinlets" : 1,
-					"hidden" : 1,
-					"saved_object_attributes" : 					{
-						"client_rect" : [ 499, 162, 1139, 402 ],
-						"storage_rect" : [ 0, 0, 640, 240 ],
-						"parameter_enable" : 0,
-						"paraminitmode" : 0
-					}
-
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "newobj",
-					"varname" : "autopattr",
-					"text" : "autopattr autopattr",
-					"fontname" : "Arial",
-					"numoutlets" : 4,
-					"outlettype" : [ "", "", "", "" ],
-					"fontsize" : 12.0,
-					"patching_rect" : [ 365.0, 102.0, 107.0, 20.0 ],
-					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"id" : "obj-6",
-					"numinlets" : 1,
-					"hidden" : 1,
-					"restore" : 					{
-						"dim" : [ 8 ],
-						"jit_menu" : [ "ll.jact.maxhelp1" ],
-						"jit_ms" : [ 1 ],
-						"jit_on" : [ 0 ],
-						"local_disp_on" : [ 1 ],
-						"rj_on[1]" : [ 0 ]
-					}
-
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"maxclass" : "newobj",
-					"varname" : "loadmess",
-					"text" : "loadmess loadbang",
-					"fontname" : "Arial",
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"fontsize" : 12.0,
-					"patching_rect" : [ 360.0, 10.0, 113.0, 20.0 ],
-					"color" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"id" : "obj-8",
-					"numinlets" : 1,
-					"hidden" : 1
-				}
-
-			}
- ],
-		"lines" : [ 			{
-				"patchline" : 				{
-					"source" : [ "obj-8", 0 ],
-					"destination" : [ "obj-20", 0 ],
-					"hidden" : 1,
-					"midpoints" : [  ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"source" : [ "obj-7", 0 ],
-					"destination" : [ "obj-10", 0 ],
-					"hidden" : 0,
-					"midpoints" : [  ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"source" : [ "obj-5", 0 ],
-					"destination" : [ "obj-7", 0 ],
-					"hidden" : 0,
-					"midpoints" : [  ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"source" : [ "obj-10", 0 ],
-					"destination" : [ "obj-2", 0 ],
-					"hidden" : 0,
-					"midpoints" : [  ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"source" : [ "obj-1", 0 ],
-					"destination" : [ "obj-20", 1 ],
-					"hidden" : 1,
-					"midpoints" : [  ]
-				}
-
-			}
- ],
-		"parameters" : 		{
-
-		}
-
-	}
-
+    "patcher": {
+        "fileversion": 1,
+        "appversion": {
+            "major": 9,
+            "minor": 1,
+            "revision": 0,
+            "architecture": "x64",
+            "modernui": 1
+        },
+        "classnamespace": "box",
+        "rect": [ 100.0, 100.0, 521.0, 618.0 ],
+        "globalpatchername": "ll.jact.maxhelp1",
+        "boxes": [
+            {
+                "box": {
+                    "color": [ 0.0, 0.0, 0.0, 1.0 ],
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "hidden": 1,
+                    "id": "obj-44",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "" ],
+                    "patching_rect": [ 366.0, 124.0, 100.0, 22.0 ],
+                    "save": [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+                    "text": "thispatcher",
+                    "varname": "thispatcher"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-2",
+                    "maxclass": "jit.pwindow",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [ "jit_matrix", "" ],
+                    "patching_rect": [ 57.0, 524.0, 80.0, 60.0 ],
+                    "sync": 1
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-31",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 48.0, 419.0, 150.0, 20.0 ],
+                    "text": "grab the matrix with ll.rj"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-28",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 130.0, 318.0, 179.0, 20.0 ],
+                    "text": "ll.jact is inside here."
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-27",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 201.0, 274.0, 30.0, 20.0 ],
+                    "text": "dim"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-25",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 148.0, 234.0, 179.0, 20.0 ],
+                    "text": "local_display for the jit.pwindow"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-24",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 148.0, 214.0, 323.0, 20.0 ],
+                    "text": "jit_on, jit.ms, (local_disp_on optional)"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-23",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 148.0, 194.0, 323.0, 20.0 ],
+                    "text": "scripting names are obligatory here:"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-22",
+                    "maxclass": "number",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "bang" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 149.0, 274.0, 50.0, 22.0 ],
+                    "varname": "dim"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-18",
+                    "maxclass": "newobj",
+                    "numinlets": 0,
+                    "numoutlets": 0,
+                    "patcher": {
+                        "fileversion": 1,
+                        "appversion": {
+                            "major": 9,
+                            "minor": 1,
+                            "revision": 0,
+                            "architecture": "x64",
+                            "modernui": 1
+                        },
+                        "classnamespace": "box",
+                        "rect": [ 970.0, 473.0, 420.0, 404.0 ],
+                        "boxes": [
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-5",
+                                    "linecount": 3,
+                                    "maxclass": "comment",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [ 19.0, 238.0, 335.0, 48.0 ],
+                                    "text": "optional you may use the \"local_disp_on\" switch to turn off\nthe local_display and save some speed.\nthe matrix can still be grabbed from somewhere else."
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-4",
+                                    "linecount": 2,
+                                    "maxclass": "comment",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [ 20.0, 203.0, 335.0, 34.0 ],
+                                    "text": "ll.act provides a qmetro, that listens to jit_on and jit_ms from the main patch."
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-3",
+                                    "maxclass": "comment",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [ 20.0, 181.0, 335.0, 20.0 ],
+                                    "text": "the last object of the jitter act needs to be connected to ll.jact."
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-1",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 2,
+                                    "outlettype": [ "", "bang" ],
+                                    "patching_rect": [ 180.0, 56.0, 46.0, 20.0 ],
+                                    "text": "ll.r dim"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-25",
+                                    "maxclass": "number",
+                                    "minimum": 0,
+                                    "numinlets": 1,
+                                    "numoutlets": 2,
+                                    "outlettype": [ "", "bang" ],
+                                    "parameter_enable": 0,
+                                    "patching_rect": [ 180.0, 83.0, 50.0, 20.0 ]
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-63",
+                                    "maxclass": "message",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 180.0, 108.0, 63.0, 18.0 ],
+                                    "text": "dim $1 $1"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-57",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 2,
+                                    "outlettype": [ "jit_matrix", "" ],
+                                    "patching_rect": [ 98.0, 125.0, 51.0, 20.0 ],
+                                    "text": "jit.noise"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-56",
+                                    "maxclass": "newobj",
+                                    "numinlets": 2,
+                                    "numoutlets": 3,
+                                    "outlettype": [ "", "", "" ],
+                                    "patching_rect": [ 98.0, 96.0, 46.0, 20.0 ],
+                                    "text": "ll.jact"
+                                }
+                            }
+                        ],
+                        "lines": [
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-25", 0 ],
+                                    "source": [ "obj-1", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-63", 0 ],
+                                    "source": [ "obj-25", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-57", 0 ],
+                                    "source": [ "obj-56", 2 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-57", 0 ],
+                                    "source": [ "obj-56", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-56", 0 ],
+                                    "midpoints": [ 107.5, 159.0, 89.0, 159.0, 89.0, 84.0, 107.5, 84.0 ],
+                                    "source": [ "obj-57", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-57", 0 ],
+                                    "source": [ "obj-63", 0 ]
+                                }
+                            }
+                        ]
+                    },
+                    "patching_rect": [ 51.0, 318.0, 69.0, 22.0 ],
+                    "text": "p subpatch"
+                }
+            },
+            {
+                "box": {
+                    "bgcolor": [ 0.75, 0.75, 0.75, 1.0 ],
+                    "bgoncolor": [ 0.752941, 0.023529, 0.247059, 1.0 ],
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-17",
+                    "legacytextcolor": 1,
+                    "maxclass": "textbutton",
+                    "mode": 1,
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "int" ],
+                    "outputmode": 0,
+                    "parameter_enable": 0,
+                    "patching_rect": [ 116.0, 212.0, 20.0, 20.0 ],
+                    "rounded": 1.0,
+                    "text": "v",
+                    "textcolor": [ 0.752941, 0.023529, 0.247059, 1.0 ],
+                    "texton": "v",
+                    "textoncolor": [ 0.870588, 0.819608, 0.239216, 1.0 ],
+                    "textovercolor": [ 0.752941, 0.023529, 0.247059, 1.0 ],
+                    "usebgoncolor": 1,
+                    "usetextovercolor": 1,
+                    "varname": "local_disp_on"
+                }
+            },
+            {
+                "box": {
+                    "bgcolor": [ 0.752941, 0.023529, 0.247059, 1.0 ],
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "htricolor": [ 0.87, 0.82, 0.24, 1.0 ],
+                    "id": "obj-4",
+                    "maxclass": "number",
+                    "minimum": 1,
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "bang" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 72.0, 212.0, 43.0, 22.0 ],
+                    "textcolor": [ 0.870588, 0.819608, 0.239216, 1.0 ],
+                    "triangle": 0,
+                    "tricolor": [ 0.75, 0.75, 0.75, 1.0 ],
+                    "triscale": 0.9,
+                    "varname": "jit_ms"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-3",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 60.0, 131.0, 323.0, 20.0 ],
+                    "text": "currently there is only one jitter output possible at each act."
+                }
+            },
+            {
+                "box": {
+                    "bgcolor": [ 0.75, 0.75, 0.75, 1.0 ],
+                    "bgoncolor": [ 0.752941, 0.023529, 0.247059, 1.0 ],
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-30",
+                    "legacytextcolor": 1,
+                    "maxclass": "textbutton",
+                    "mode": 1,
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "int" ],
+                    "outputmode": 0,
+                    "parameter_enable": 0,
+                    "patching_rect": [ 46.0, 212.0, 25.0, 20.0 ],
+                    "prototypename": "jit_on",
+                    "rounded": 1.0,
+                    "text": "ON",
+                    "textcolor": [ 0.752941, 0.023529, 0.247059, 1.0 ],
+                    "texton": "ON",
+                    "textoncolor": [ 0.870588, 0.819608, 0.239216, 1.0 ],
+                    "textovercolor": [ 0.752941, 0.023529, 0.247059, 1.0 ],
+                    "usebgoncolor": 1,
+                    "usetextovercolor": 1,
+                    "varname": "jit_on"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-61",
+                    "maxclass": "jit.pwindow",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [ "jit_matrix", "" ],
+                    "patching_rect": [ 47.0, 238.0, 89.0, 65.0 ],
+                    "sync": 1,
+                    "varname": "local_display"
+                }
+            },
+            {
+                "box": {
+                    "color": [ 0.0, 0.0, 0.0, 1.0 ],
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "hidden": 1,
+                    "id": "obj-45",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 366.0, 74.0, 100.0, 22.0 ],
+                    "text": "pattrmarker no",
+                    "varname": "pattrmarker"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-5",
+                    "maxclass": "toggle",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "int" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 57.0, 447.0, 20.0, 20.0 ],
+                    "varname": "rj_on[1]"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-7",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "bang" ],
+                    "patching_rect": [ 57.0, 472.0, 65.0, 22.0 ],
+                    "text": "qmetro 20"
+                }
+            },
+            {
+                "box": {
+                    "allowdrag": 0,
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-9",
+                    "items": "ll.jact.maxhelp1",
+                    "maxclass": "umenu",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "int", "", "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 82.0, 447.0, 100.0, 22.0 ],
+                    "pattrmode": 1,
+                    "varname": "jit_menu"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-10",
+                    "maxclass": "newobj",
+                    "numinlets": 3,
+                    "numoutlets": 2,
+                    "outlettype": [ "jit_matrix", "" ],
+                    "patching_rect": [ 57.0, 495.0, 75.0, 22.0 ],
+                    "text": "ll.rj jit_menu"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-16",
+                    "linecount": 2,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 60.0, 94.0, 260.0, 33.0 ],
+                    "text": "sets the out_name of a matrix and defines this patch as jitter act, ready to be seen by ll.rj."
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 18.0,
+                    "id": "obj-34",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 62.0, 63.0, 287.0, 27.0 ],
+                    "text": "ll.jact \"send\" jitter"
+                }
+            },
+            {
+                "box": {
+                    "active": {
+                        "act": 0,
+                        "act::active_store": 0,
+                        "actmake::active_store": 0
+                    },
+                    "color": [ 0.0, 0.0, 0.0, 1.0 ],
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "hidden": 1,
+                    "id": "obj-1",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 378.0, 31.0, 95.0, 22.0 ],
+                    "saved_object_attributes": {
+                        "client_rect": [ 499, 162, 1139, 402 ],
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0,
+                        "storage_rect": [ 0, 0, 640, 240 ]
+                    },
+                    "text": "pattrstorage pat",
+                    "varname": "pat"
+                }
+            },
+            {
+                "box": {
+                    "color": [ 0.0, 0.0, 0.0, 1.0 ],
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "hidden": 1,
+                    "id": "obj-6",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 4,
+                    "outlettype": [ "", "", "", "" ],
+                    "patching_rect": [ 365.0, 102.0, 107.0, 22.0 ],
+                    "restore": {
+                        "dim": [ 8 ],
+                        "jit_menu": [ "ll.jact.maxhelp1" ],
+                        "jit_ms": [ 1 ],
+                        "jit_on": [ 0 ],
+                        "local_disp_on": [ 1 ],
+                        "rj_on[1]": [ 0 ]
+                    },
+                    "text": "autopattr autopattr",
+                    "varname": "autopattr"
+                }
+            },
+            {
+                "box": {
+                    "color": [ 0.4, 0.4, 0.8, 1.0 ],
+                    "hidden": 1,
+                    "id": "obj-11",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 0,
+                    "patching_rect": [ 360.0, 52.0, 133.0, 22.0 ],
+                    "text": "actmake ll.jact.maxhelp",
+                    "varname": "act"
+                }
+            }
+        ],
+        "lines": [
+            {
+                "patchline": {
+                    "destination": [ "obj-11", 1 ],
+                    "hidden": 1,
+                    "source": [ "obj-1", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-2", 0 ],
+                    "source": [ "obj-10", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-7", 0 ],
+                    "source": [ "obj-5", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-10", 0 ],
+                    "source": [ "obj-7", 0 ]
+                }
+            }
+        ],
+        "autosave": 0
+    }
 }
