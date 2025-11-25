@@ -1,5 +1,9 @@
 outlets = 1;
 
+if (typeof ll === "undefined") {
+	var ll = require("ll._utilities");
+}
+
 var preferences = new Dict("ppooll-preferences");
 var ll_paths = new Dict("ll_paths");
 var actr = new Global("act_rep");
@@ -48,32 +52,6 @@ var empty_prf_DEFAULT = {
         write_sample_buffers: 0,
     },
 };
-
-function reorderByTemplate(obj, template) {
-    const reordered = {};
-    for (const key of Object.keys(template)) {
-        if (obj.hasOwnProperty(key)) {
-            if (
-                typeof template[key] === "object" &&
-                !Array.isArray(template[key]) &&
-                template[key] !== null
-            ) {
-                // Recursively reorder nested objects
-                reordered[key] = reorderByTemplate(obj[key], template[key]);
-            } else {
-                reordered[key] = obj[key];
-            }
-        }
-    }
-    // Include any extra keys not in the template, at the end
-    for (const key of Object.keys(obj)) {
-        if (!template.hasOwnProperty(key)) {
-            reordered[key] = obj[key];
-        }
-    }
-
-    return reordered;
-}
 
 function normalizeFolderArrays() {
     const folderKeys = [
@@ -243,9 +221,8 @@ declareattribute("host_channels", {
 });
 function sethost_channels(c) {
     host_channels = c;
-    preferences.set("general::host_channels", c);
-    messnamed("ho_st1", "v8", "getnamed", "chans");
-    actr.object.message(c);
+    preferences.set("general::host_channels", host_channels);
+    actr.patchers.ho_st1.getnamed("chans").message(host_channels)
     ll_prf_rewrite();
 }
 
@@ -257,19 +234,18 @@ function audio_key(key) {
 
 let favorite_acts = []; // not a V8 attribute
 function set_favorite_acts(){
-    messnamed("ho_st1", "v8", "getnamed", "favorites");
-
     const favorite_items = new Dict();
     favorite_items.set("items", [...favorite_acts, "(favorites)", "-", "add_favorit", "del_favorit"])
-    actr.object.message("dictionary", favorite_items.name);
-    actr.object.message("setsymbol", "(favorites)")
-
+    
+    const fav_menu = actr.patchers.ho_st1.getnamed("favorites");
+    fav_menu.message("dictionary", favorite_items.name);
+    fav_menu.message("setsymbol", "(favorites)")
+    
     preferences.set("act_usage::favorite_acts", favorite_acts);
 }
 
 function add_favorit(){
-    messnamed("ho_st1", "v8", "getnamed", "act_menu");
-    let actname = actr.object.getvalueof()
+    let actname = actr.patchers.ho_st1.getnamed("favorites").getvalueof();
     
     if(actname[0] === "(" || actname === "<separator>" || actname === "-" || actname === "--unshared_acts--")
         return
@@ -280,8 +256,7 @@ function add_favorit(){
 }
 
 function del_favorit(){
-    messnamed("ho_st1", "v8", "getnamed", "act_menu");
-    let actname = actr.object.getvalueof()
+    let actname = actr.patchers.ho_st1.getnamed("favorites").getvalueof();
     
     favorite_acts = favorite_acts.filter(item => item !== actname);
     set_favorite_acts();
@@ -321,15 +296,14 @@ function get_preferences() {
     // general::autoload
     autoload = preferences.get("general::autoload");
     this.patcher.getnamed("attrui_al").message("attr", "autoload");
-    messnamed("ho_st1", "v8", "getnamed", "envi_menu");
-    actr.object.message("symbol", autoload);
-    //outlet(0,"envi",autoload);
+    actr.patchers.ho_st1.getnamed("envi_menu").message("symbol", autoload);
 
     // general::check_for_updates
     check_for_updates = preferences.get("general::check_for_updates");
+
     // general::clue_window
     cluewindow = preferences.get("general::cluewindow");
-    if (cluewindow) max.showclue(); // can only be open, not closed
+    if (cluewindow) max.showclue(); // can only be shown, not hidden
 
     // file_paths::quickrecord_path
     quickrecord_path = preferences.get("file_paths::quickrecord_path");
@@ -347,8 +321,7 @@ function get_preferences() {
 
     // general::host_channels
     host_channels = preferences.get("general::host_channels");
-    messnamed("ho_st1", "v8", "getnamed", "chans");
-    actr.object.message(host_channels);
+    actr.patchers.ho_st1.getnamed("chans").message(host_channels);
     this.patcher.getnamed("attrui_hc").message("attr", "host_channels");
 
     // act_usage::favorite_acts
@@ -377,8 +350,8 @@ function readDict(path) {
     empty_prf.parse(JSON.stringify(empty_prf_DEFAULT));
 
     // merge the dicts into json
-    var merged = mergeDicts(preferences, empty_prf);
-    merged = reorderByTemplate(merged, empty_prf_DEFAULT);
+    var merged = ll.mergeDicts(preferences, empty_prf);
+    merged = ll.reorderByTemplate(merged, empty_prf_DEFAULT);
 
     // set ppooll_prefs from merged json
     preferences.parse(JSON.stringify(merged));
@@ -387,31 +360,4 @@ function readDict(path) {
 
     // overwrite the file
     preferences.export_json(path);
-}
-
-function mergeDicts(dict1, dict2) {
-    var str1 = dict1.stringify();
-    var str2 = dict2.stringify();
-
-    var obj1 = JSON.parse(str1);
-    var obj2 = JSON.parse(str2);
-
-    return mergeObjects(obj1, obj2);
-}
-
-function mergeObjects(obj1, obj2) {
-    for (var key in obj2) {
-        if (obj2.hasOwnProperty(key)) {
-            if (
-                typeof obj2[key] === "object" &&
-                obj2[key] !== null &&
-                obj1.hasOwnProperty(key)
-            ) {
-                obj1[key] = mergeObjects(obj1[key], obj2[key]);
-            } else if (!obj1.hasOwnProperty(key)) {
-                obj1[key] = obj2[key];
-            }
-        }
-    }
-    return obj1;
 }

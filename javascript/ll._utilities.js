@@ -264,6 +264,8 @@ exports.getBrightness = (color) => {
 // MISC
 //
 
+// compare semantic versions 0.0.0
+//  -- a older than b returns -1, same is 0, a ahead of b is 1
 exports.cmpVersions = (a, b) => {
     var i, diff;
     var regExStrip0 = /(\.0+)+$/;
@@ -278,4 +280,60 @@ exports.cmpVersions = (a, b) => {
         }
     }
     return segmentsA.length - segmentsB.length;
+}
+
+// merge two Max Dicts()
+exports.mergeDicts = (dict1, dict2) => {
+    var str1 = dict1.stringify();
+    var str2 = dict2.stringify();
+
+    var obj1 = JSON.parse(str1);
+    var obj2 = JSON.parse(str2);
+
+    return exports.mergeObjects(obj1, obj2);
+}
+
+// merge two js objects dictionaries
+exports.mergeObjects = (obj1, obj2) => {
+    for (var key in obj2) {
+        if (obj2.hasOwnProperty(key)) {
+            if (
+                typeof obj2[key] === "object" &&
+                obj2[key] !== null &&
+                obj1.hasOwnProperty(key)
+            ) {
+                obj1[key] = exports.mergeObjects(obj1[key], obj2[key]);
+            } else if (!obj1.hasOwnProperty(key)) {
+                obj1[key] = obj2[key];
+            }
+        }
+    }
+    return obj1;
+}
+
+// reorder keys in an object according to a template object
+exports.reorderByTemplate = (obj, template) => {
+    const reordered = {};
+    for (const key of Object.keys(template)) {
+        if (obj.hasOwnProperty(key)) {
+            if (
+                typeof template[key] === "object" &&
+                !Array.isArray(template[key]) &&
+                template[key] !== null
+            ) {
+                // Recursively reorder nested objects
+                reordered[key] = exports.reorderByTemplate(obj[key], template[key]);
+            } else {
+                reordered[key] = obj[key];
+            }
+        }
+    }
+    // Include any extra keys not in the template, at the end
+    for (const key of Object.keys(obj)) {
+        if (!template.hasOwnProperty(key)) {
+            reordered[key] = obj[key];
+        }
+    }
+
+    return reordered;
 }

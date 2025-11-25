@@ -55,9 +55,9 @@ function checkVersion(thisVersion, latestVersion) {
     // checkVersion HTTP status !== 200
     if (!latestVersion) return [];
 
-    var needsUpdate = ll.cmpVersions(latestVersion, thisVersion);
+    var needsUpdate = ll.cmpVersions(thisVersion, latestVersion);
 
-    if (needsUpdate > 1) {
+    if (needsUpdate < 0) {
         var stringOut =
             "latest: " + latestVersion + "\ncurrent: " + thisVersion;
         OUTPUT.push(
