@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "checkJs": true,
+        "checkJs": false,
         "lib": ["es5"],
         "types": ["maxmsp"]
     },
