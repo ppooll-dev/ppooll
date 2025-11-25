@@ -38,7 +38,6 @@ const ll_state = new Dict("ppoollstate");
 var actr = new Global("act_rep");
 var ll_max_live_envi = new Global("ll.max_live_envi");
 
-
 // Mouse and Keyboard modifiers
 var drag_gate = 1;
 var mod = 0;
@@ -220,7 +219,7 @@ function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
 
     let uibr = this.box.rect;
 
-    let drag_gate = x <= uibr[2] / 2
+    let drag_gate = x <= uibr[2] / 2;
 
     if (!drag_gate) {
         mod = shift | option | ctrl;
@@ -237,9 +236,9 @@ function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
         // messnamed("llto11clicks", "leftclick", 0);
         // messnamed("llto11clicks", "leftclick", 1);
 
-        if (mod == 0) title_menu.message("show")
-        else if (mod == 2) tetris_menu.message("show")
-        else pres_menu.message("show")
+        if (mod == 0) title_menu.message("show");
+        else if (mod == 2) tetris_menu.message("show");
+        else pres_menu.message("show");
     }
 }
 
@@ -876,4 +875,86 @@ function freebang() {
     if (actr.patchers[act_name_index]) delete actr.patchers[act_name_index];
 
     messnamed("acting", act_args.name, act_index, -1);
+}
+
+////////////////////////////////
+//
+// SPECIALS
+//
+
+function getloc() {
+    messnamed("tetristhis", act_patcher.wind.location);
+}
+
+function setloc(x, y, o) {
+    if (o) {
+        //an object
+        var obj = act_patcher.getnamed(o);
+        obj.rect = [
+            x,
+            y,
+            obj.rect[2] - obj.rect[0] + x,
+            obj.rect[3] - obj.rect[1] + y,
+        ];
+        //post(o, obj.rect, "\n");
+    } else {
+        const loc = act_patcher.wind.location;
+        act_patcher.wind.location = [
+            x,
+            y,
+            loc[2] - loc[0] + x,
+            loc[3] - loc[1] + y,
+        ];
+    }
+}
+
+function wsize(width, height) {
+    //post("wsize");
+    const wind = act_patcher.wind;
+    act_patcher.wind.location = [
+        wind[0],
+        wind[1],
+        wind[0] + (width > 0 ? width : 0),
+        wind[1] + height,
+    ];
+}
+
+function apply() {
+    // function printobj(a) {
+    //     if (a.varname) {
+    //         messnamed(
+    //             "tetrislist",
+    //             a.maxclass,
+    //             a.varname,
+    //             a.rect[0],
+    //             a.rect[1],
+    //             a.rect[2],
+    //             a.rect[3],
+    //             a.hidden
+    //         );
+    //     }
+    //     return true;
+    // }
+    // act_patcher.apply(printobj);
+
+    // better ?? (delete above ?)
+    act_patcher.apply((a) => {
+        if (a.varname) {
+            messnamed(
+                "tetrislist",
+                a.maxclass,
+                a.varname,
+                a.rect[0],
+                a.rect[1],
+                a.rect[2],
+                a.rect[3],
+                a.hidden
+            );
+        }
+        return true;
+    });
+}
+
+function active_set(...args){
+    messnamed(`${act_args.hash}active_set`, ...args);
 }
