@@ -7,6 +7,10 @@ let only_one = ["ho_st", "buffer_host"];
 
 const stateDict = new Dict("ppoollstate");
 
+function loadbang(){
+    check()
+}
+
 function load(actname) {
     check();
     acts = Object.keys(JSON.parse(stateDict.stringify()));
@@ -41,4 +45,5 @@ function check() {
     }
     a.envi = isLiveEnvi ? "live" : "max";
     messnamed("ll.maxlive", a.envi);
+    outlet(0, "envi", a.envi)
 }
