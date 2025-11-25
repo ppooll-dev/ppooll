@@ -10,3 +10,6 @@ notarize_mac.zip
 
 # Scripts env files
 .env
+
+# npm
+node_modules/

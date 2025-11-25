@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "checkJs": true,
+        "lib": ["es5"],
+        "types": ["maxmsp"]
+    },
+    "include": ["**/*.js"]
+}

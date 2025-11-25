@@ -1,0 +1,25 @@
+{
+  "name": "ppooll",
+  "version": "1.0.0",
+  "description": "## about ppooll is an audio and visual networking system created from Max/MSP and Jitter patches.   ppooll itself is an architecturally refined version of the earlier software lloopp.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ppooll-dev/ppooll.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ppooll-dev/ppooll/issues"
+  },
+  "homepage": "https://github.com/ppooll-dev/ppooll#readme",
+  "devDependencies": {
+    "@types/maxmsp": "^1.0.15"
+  }
+}

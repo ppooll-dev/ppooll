@@ -52,6 +52,14 @@ git submodule sync
 git submodule update --init --recursive
 ```
 
+## install javascript type definitions
+
+to show javascript hints & autocomplete from [@types/maxmsp](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/maxmsp):
+
+```bash
+npm install
+```
+
 ---
 
 # license
