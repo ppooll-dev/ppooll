@@ -149,9 +149,7 @@ function vstCreate(c_in, c_out) {
 
         // Re-init params
         paramNames.forEach((param) => {
-            messnamed(actname, "v8", "getnamed", param);
-            let val = actr.object.getvalueof();
-            // post(actname, param, val, mc_vst, "\n")
+            let val = actr.patchers[actname].getnamed(param).getvalueof();
             mc_vst.message(param, val)
         });
     }
