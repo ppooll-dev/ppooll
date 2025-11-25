@@ -9,8 +9,10 @@ function bpatch(a,b){
     
     if(this.patcher.box){
         // in some patches, actmaker object already has varname "act"
-        this.patcher.box.varname = "actmaker"; 
-        post("old actmaker replaced in act",a,"\n");
+		if (this.patcher.box.varname === "actmaker")
+			post("old actmaker replaced in act",a,"\n");
+		else
+        	this.patcher.box.varname = "actmaker";       
     }
     
 	let act = tpp.newdefault(40,80,"bpatcher","@name", "act.maxpat", "@args", a, b);
