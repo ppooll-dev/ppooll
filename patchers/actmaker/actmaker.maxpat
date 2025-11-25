@@ -9,15 +9,36 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 85.0, 269.0, 1069.0, 762.0 ],
+        "rect": [ 611.0, 310.0, 400.0, 317.0 ],
         "boxes": [
+            {
+                "box": {
+                    "filename": "actmaker.js",
+                    "id": "obj-2",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 43.0, 217.0, 74.0, 22.0 ],
+                    "saved_object_attributes": {
+                        "parameter_enable": 0
+                    },
+                    "text": "v8 actmaker",
+                    "textfile": {
+                        "filename": "actmaker.js",
+                        "flags": 0,
+                        "embed": 0,
+                        "autowatch": 1
+                    }
+                }
+            },
             {
                 "box": {
                     "id": "obj-16",
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 185.0, 577.0, 139.0, 20.0 ],
+                    "patching_rect": [ 116.0, 259.0, 139.0, 20.0 ],
                     "text": " far less crashes like this"
                 }
             },
@@ -28,7 +49,7 @@
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 112.0, 576.0, 67.0, 22.0 ],
+                    "patching_rect": [ 43.0, 258.0, 67.0, 22.0 ],
                     "save": [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
                     "text": "thispatcher"
                 }
@@ -40,7 +61,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 112.0, 234.0, 119.0, 22.0 ],
+                    "patching_rect": [ 43.0, 178.0, 119.0, 22.0 ],
                     "text": "bpatch #1 $1"
                 }
             },
@@ -52,7 +73,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 112.0, 156.0, 24.0, 24.0 ]
+                    "patching_rect": [ 43.0, 100.0, 24.0, 24.0 ]
                 }
             },
             {
@@ -484,7 +505,7 @@
                             {
                                 "box": {
                                     "angle": 0.0,
-                                    "bgcolor": [ 0.6588235294117647, 0.0, 0.9450980392156862 ],
+                                    "bgcolor": [ 0.0, 1.0, 1.0 ],
                                     "id": "obj-16",
                                     "maxclass": "panel",
                                     "mode": 0,
@@ -719,7 +740,7 @@
                             }
                         ]
                     },
-                    "patching_rect": [ 112.0, 187.0, 103.0, 22.0 ],
+                    "patching_rect": [ 43.0, 131.0, 103.0, 22.0 ],
                     "text": "p choose_a_color"
                 }
             },
@@ -730,7 +751,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 259.0, 234.0, 119.0, 22.0 ],
+                    "patching_rect": [ 190.0, 178.0, 119.0, 22.0 ],
                     "text": "bpatch #1 #2"
                 }
             },
@@ -741,7 +762,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 112.0, 82.0, 77.0, 22.0 ],
+                    "patching_rect": [ 43.0, 26.0, 77.0, 22.0 ],
                     "text": "loadmess #2"
                 }
             },
@@ -752,39 +773,15 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 112.0, 123.0, 166.0, 22.0 ],
+                    "patching_rect": [ 43.0, 67.0, 166.0, 22.0 ],
                     "text": "route 0"
-                }
-            },
-            {
-                "box": {
-                    "code": "outlets = 1;\r\n\r\nfunction bpatch(a,b){\r\n    let tpp = this.patcher.parentpatcher;\r\n\tlet act = tpp.newdefault(\r\n        40,80,\"bpatcher\",\"@name\", \"act.maxpat\", \"@args\", a, b);\r\n\tact.varname = \"act\";\r\n    outlet(0,\"dispose\");\r\n}\r\n",
-                    "filename": "none",
-                    "fontface": 0,
-                    "fontname": "<Monospaced>",
-                    "fontsize": 12.0,
-                    "id": "obj-1",
-                    "maxclass": "v8.codebox",
-                    "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 112.0, 297.0, 725.0, 268.0 ],
-                    "saved_object_attributes": {
-                        "parameter_enable": 0
-                    }
                 }
             }
         ],
         "lines": [
             {
                 "patchline": {
-                    "destination": [ "obj-9", 0 ],
-                    "source": [ "obj-1", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-1", 0 ],
+                    "destination": [ "obj-2", 0 ],
                     "source": [ "obj-10", 0 ]
                 }
             },
@@ -802,7 +799,13 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-1", 0 ],
+                    "destination": [ "obj-9", 0 ],
+                    "source": [ "obj-2", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-2", 0 ],
                     "source": [ "obj-22", 0 ]
                 }
             },

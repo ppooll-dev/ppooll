@@ -748,11 +748,8 @@ function first_dump() {
     [
         ["active", "preset-ramp", 0],
         ["active", "presets", 0],
-        ["active", "title_menu", 0],
-        ["active", "pres_menu", 0],
-        ["active", "tetris_menu", 0],
+		["active", "act", 0],
         ["active", "ll.blues", 0],
-        ["active", "master", 0],
         ["savemode", 0],
         ["changemode", 1],
         ["notifymode", 1],
