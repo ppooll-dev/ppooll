@@ -36,7 +36,7 @@ const ll_state = new Dict("ppoollstate");
 
 // globals
 var actr = new Global("act_rep");
-var ll_max_live_envi = new Global("ll.max_live_envi");
+var ll_max_live_envi = new Global("ppooll");
 
 // Mouse and Keyboard modifiers
 var drag_gate = 1;
@@ -788,7 +788,7 @@ function make_live() {
 
     // if this is the ho_st hide defined objects
     if (act_args.name === "ho_st") {
-        post("create ho_st1");
+        // post("create ho_st1");
         for (var i = 0; i < TO_HIDE.length; i++) {
             if (tpp.getnamed(TO_HIDE[i])) {
                 tpp.message("script", "hide", TO_HIDE[i]);

@@ -255,6 +255,39 @@ function audio_key(key) {
     ll_prf_rewrite();
 }
 
+let favorite_acts = []; // not a V8 attribute
+function set_favorite_acts(){
+    messnamed("ho_st1", "v8", "getnamed", "favorites");
+
+    const favorite_items = new Dict();
+    favorite_items.set("items", [...favorite_acts, "(favorites)", "-", "add_favorit", "del_favorit"])
+    actr.object.message("dictionary", favorite_items.name);
+    actr.object.message("setsymbol", "(favorites)")
+
+    preferences.set("act_usage::favorite_acts", favorite_acts);
+}
+
+function add_favorit(){
+    messnamed("ho_st1", "v8", "getnamed", "act_menu");
+    let actname = actr.object.getvalueof()
+    
+    if(actname[0] === "(" || actname === "<separator>" || actname === "-" || actname === "--unshared_acts--")
+        return
+
+    favorite_acts.push(actname);
+    set_favorite_acts();
+    ll_prf_rewrite();
+}
+
+function del_favorit(){
+    messnamed("ho_st1", "v8", "getnamed", "act_menu");
+    let actname = actr.object.getvalueof()
+    
+    favorite_acts = favorite_acts.filter(item => item !== actname);
+    set_favorite_acts();
+    ll_prf_rewrite();
+}
+
 //=====================================get_preferences========================
 function readfile() {
     presetpath = ll_paths.get("user");
@@ -317,6 +350,11 @@ function get_preferences() {
     messnamed("ho_st1", "v8", "getnamed", "chans");
     actr.object.message(host_channels);
     this.patcher.getnamed("attrui_hc").message("attr", "host_channels");
+
+    // act_usage::favorite_acts
+    favorite_acts = preferences.get("act_usage::favorite_acts");
+    if(!Array.isArray(favorite_acts)) favorite_acts = [favorite_acts];
+    set_favorite_acts();
 
     messnamed("ll_preferences_ready", "bang");
 }

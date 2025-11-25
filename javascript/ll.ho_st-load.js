@@ -29,12 +29,16 @@ function shouldCheckForUpdates() {
 }
 
 // get latest version from package-info.json downloaded from GitHub
-function getLatestVersion() {
-    var dictPackageInfoLatest = new Dict("ppooll_package_info_latest");
-    if (dictPackageInfoLatest.get("status") !== 200) {
+async function getLatestVersion() {
+    try {
+        const data = await fetch_json();
+        if (!data) return null;
+
+        return data.version; // or data.body.version if that's your structure
+    } catch (e) {
+        post("Error in getLatestVersion: " + e + "\n");
         return null;
     }
-    return dictPackageInfoLatest.get("body::version");
 }
 
 // get current version from package-info.json
@@ -49,8 +53,7 @@ function checkVersion(thisVersion, latestVersion) {
     var OUTPUT = [];
 
     // checkVersion HTTP status !== 200
-    if (!latestVersion)
-        return [];
+    if (!latestVersion) return [];
 
     var needsUpdate = ll.cmpVersions(latestVersion, thisVersion);
 
@@ -83,9 +86,9 @@ function checkVersion(thisVersion, latestVersion) {
 }
 
 // MANUALLY called via button press for manually checking for updates
-function checkForUpdates() {
+async function checkForUpdates() {
     var thisVersion = getCurrentVersion();
-    var latestVersion = getLatestVersion();
+    var latestVersion = await getLatestVersion();
     var OUTPUT = [
         "--------------------------version-" +
             thisVersion +
@@ -118,11 +121,13 @@ function getAuthors() {
 
 // print initial ppooll messages to the console
 //   if ppooll pref "check-for-updates", run update check
-function bang() {
+async function init_host() {
     max.setattr("restorewindows", 0);
 
     // get version
     var thisVersion = getCurrentVersion();
+    const latestVersion = await getLatestVersion();
+
     var VERSION = [
         "--------------------------version-" +
             thisVersion +
@@ -130,16 +135,56 @@ function bang() {
     ];
 
     if (shouldCheckForUpdates() == 0)
-        VERSION.push(checkVersion(thisVersion, getLatestVersion()));
+        VERSION.push(checkVersion(thisVersion, latestVersion));
 
-    [].concat(
-        BLANK_LINE,
-        PPOOLL_INFO,
-        getAuthors(),
-        BLANK_LINE,
-        BLANK_LINE,
-        VERSION,
-        BLANK_LINE,
-        BLANK_LINE
-    ).forEach(o => outlet(0, o));
+    []
+        .concat(
+            BLANK_LINE,
+            PPOOLL_INFO,
+            getAuthors(),
+            BLANK_LINE,
+            BLANK_LINE,
+            VERSION,
+            BLANK_LINE,
+            BLANK_LINE
+        )
+        .forEach((o) => outlet(0, o));
+}
+
+// fetch_json returns a Promise!
+function fetch_json() {
+    return new Promise((resolve, reject) => {
+        const url =
+            "https://raw.githubusercontent.com/ppooll-dev/ppooll/main/package-info.json";
+
+        const req = new XMLHttpRequest();
+        req.timeout = 10000;
+
+        req.onreadystatechange = function () {
+            if (this.readyState === 4) {
+                if (this.status === 200) {
+                    try {
+                        const obj = JSON.parse(this.responseText);
+                        resolve(obj);
+                    } catch (e) {
+                        reject("JSON parse error: " + e);
+                    }
+                } else {
+                    reject("HTTP error " + this.status);
+                }
+            }
+        };
+
+        req.onerror = function () {
+            reject("Network error");
+        };
+
+        req.ontimeout = function () {
+            reject("Request timed out");
+        };
+
+        req.open("GET", url);
+        req.setRequestHeader("Accept", "application/json");
+        req.send();
+    });
 }

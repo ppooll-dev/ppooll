@@ -144,7 +144,7 @@ function getinstance() {
 
 function check_live() {
     //post("check################");
-    var a = new Global("ll.max_live_envi");
+    var a = new Global("ppooll");
 
     if (tpp.parentpatcher) {
         // the act was loaded as bpatcher in another patcher

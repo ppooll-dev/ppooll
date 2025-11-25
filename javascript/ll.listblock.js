@@ -7,7 +7,7 @@ var stateDict = new Dict("ppoollstate");
 if (typeof utils === "undefined") {
     var utils = require("ll._utilities");
 }
-const aa = new Global("ll.max_live_envi");
+const aa = new Global("ppooll");
 let is_live = aa.envi === "live";
 var tpp = this.patcher;
 var boxw = box.rect[2] - box.rect[0];

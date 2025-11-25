@@ -1,6 +1,6 @@
 autowatch = 1;
 
-const a = new Global("ll.max_live_envi");
+const a = new Global("ppooll");
 const isLive = a.envi === "live";
 const inType = isLive ? "mc.plugin~" : "mc.adc~";
 
