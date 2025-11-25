@@ -33,7 +33,7 @@ function bang(){
 }
 
 function cellblock(...args) {
-    outlet(0, "cellblock", ...args);
+    this.patcher.parentpatcher.getnamed("packages_cellblock").message(...args)
 }
 
 function print_errors(...args) {

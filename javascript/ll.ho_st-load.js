@@ -23,13 +23,9 @@ var PPOOLL_INFO = [
     "----------------------------------------------------------------------------------------",
 ];
 
-// check ppooll-preferences to see if we should check for updates on ho_st init load
 function shouldCheckForUpdates() {
     var dictPreferences = new Dict("ppooll-preferences");
-    //dictPreferences.import_json('ppooll-preferences.json')
-
-    var check_for_updates = dictPreferences.get("general::check-for-updates");
-    return check_for_updates || 0;
+    return dictPreferences.get("general::check-for-updates") || 0;
 }
 
 // get latest version from package-info.json downloaded from GitHub
@@ -38,18 +34,14 @@ function getLatestVersion() {
     if (dictPackageInfoLatest.get("status") !== 200) {
         return null;
     }
-
-    var latestVersion = dictPackageInfoLatest.get("body::version"); // 8.6 hardcoded for testing
-    return latestVersion;
+    return dictPackageInfoLatest.get("body::version");
 }
 
 // get current version from package-info.json
 function getCurrentVersion() {
     var dictPackageInfo = new Dict("ppooll_package_info");
     dictPackageInfo.import_json(PACKAGE_INFO_PATH);
-
-    var thisVersion = dictPackageInfo.get("version");
-    return thisVersion;
+    return dictPackageInfo.get("version");
 }
 
 // check for updates
@@ -57,10 +49,8 @@ function checkVersion(thisVersion, latestVersion) {
     var OUTPUT = [];
 
     // checkVersion HTTP status !== 200
-    if (!latestVersion) {
-        outlet(1, "OK");
+    if (!latestVersion)
         return [];
-    }
 
     var needsUpdate = ll.cmpVersions(latestVersion, thisVersion);
 
@@ -73,14 +63,22 @@ function checkVersion(thisVersion, latestVersion) {
                 "------------------------------"
         );
         outlet(1, stringOut);
+        this.patcher.parentpatcher
+            .getnamed("is_latest_version")
+            .message("set", "update_available!");
     } else {
         OUTPUT.push(
             "--------------------------up-to-date!------------------------------------------------------"
         );
-        outlet(1, "OK");
     }
 
-    outlet(2, thisVersion);
+    this.patcher.parentpatcher
+        .getnamed("is_latest_version")
+        .message("set", needsUpdate ? "update available!" : "up to date!");
+
+    this.patcher.parentpatcher
+        .getnamed("version_number")
+        .message("set", thisVersion);
     return OUTPUT;
 }
 
@@ -131,24 +129,17 @@ function bang() {
             "------------------------------------------",
     ];
 
-    if (shouldCheckForUpdates() == 0) {
+    if (shouldCheckForUpdates() == 0)
         VERSION.push(checkVersion(thisVersion, getLatestVersion()));
-    }
 
-    var AUTHORS_LIST = getAuthors();
-
-    var OUTPUT = [].concat(
+    [].concat(
         BLANK_LINE,
         PPOOLL_INFO,
-        AUTHORS_LIST,
+        getAuthors(),
         BLANK_LINE,
         BLANK_LINE,
         VERSION,
         BLANK_LINE,
         BLANK_LINE
-    );
-
-    for (var i = 0; i < OUTPUT.length; i++) {
-        outlet(0, OUTPUT[i]);
-    }
+    ).forEach(o => outlet(0, o));
 }
