@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 642.0, 231.0, 429.0, 326.0 ],
+        "rect": [ 129.0, 478.0, 747.0, 374.0 ],
         "boxes": [
             {
                 "box": {
@@ -462,7 +462,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 378.0, 487.0, 382.0, 208.0 ],
+                        "rect": [ 210.0, 553.0, 382.0, 208.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -1811,7 +1811,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 110.0, 290.0, 127.0, 22.0 ],
-                                                                    "text": "sameclass sinus1"
+                                                                    "text": "sameclass ho_st1"
                                                                 }
                                                             },
                                                             {
@@ -2773,7 +2773,7 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 215.0, 325.0, 1008.0, 437.0 ],
+                                        "rect": [ 771.0, 310.0, 1008.0, 437.0 ],
                                         "boxes": [
                                             {
                                                 "box": {
@@ -2835,7 +2835,7 @@
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 537.0, 23.5, 34.0, 76.0 ],
+                                                    "patching_rect": [ 537.0, 23.5, 37.0, 76.0 ],
                                                     "text": "applydict tetris_work"
                                                 }
                                             },
@@ -3101,7 +3101,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 264.0, 0.5, 136.0, 22.0 ],
-                                                    "text": "sinus1"
+                                                    "text": "ho_st1"
                                                 }
                                             },
                                             {
@@ -3187,7 +3187,7 @@
                                                             "modernui": 1
                                                         },
                                                         "classnamespace": "box",
-                                                        "rect": [ 134.0, 172.0, 809.0, 670.0 ],
+                                                        "rect": [ 644.0, 226.0, 809.0, 670.0 ],
                                                         "boxes": [
                                                             {
                                                                 "box": {
@@ -5120,7 +5120,7 @@
                                                                     "numinlets": 0,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
-                                                                    "patching_rect": [ 152.0, 44.0, 81.0, 35.0 ],
+                                                                    "patching_rect": [ 152.0, 44.0, 81.0, 49.0 ],
                                                                     "text": "r #0::actname"
                                                                 }
                                                             },
@@ -6288,7 +6288,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 350.0, 117.0, 75.0, 20.0 ],
+                    "patching_rect": [ 350.0, 101.0, 75.0, 20.0 ],
                     "text": "named \"in2\""
                 }
             },
@@ -6312,8 +6312,8 @@
                     "numinlets": 5,
                     "numoutlets": 5,
                     "outlettype": [ "", "", "", "", "" ],
-                    "patching_rect": [ 314.0, 147.0, 117.0, 76.0 ],
-                    "text": "routepass act::title_menu act::tetris_menu act::master/activest write_tetris",
+                    "patching_rect": [ 314.0, 123.0, 115.0, 76.0 ],
+                    "text": "routepass act::title_menu act::tetris_menu act::pres_menu act::master/activest",
                     "varname": "in2"
                 }
             },
@@ -6442,7 +6442,7 @@
                 "box": {
                     "embedstate": [
                         [ "act_index", 1 ],
-                        [ "act_name_index", "sinus1" ],
+                        [ "act_name_index", "ho_st1" ],
                         [ "isReady", 1 ]
                     ],
                     "filename": "ll.act_main.js",
@@ -6453,7 +6453,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, 0.0, 49.689453125, 16.0 ],
+                    "patching_rect": [ 0.0, 0.0, 50.3515625, 16.0 ],
                     "textfile": {
                         "filename": "ll.act_main.js",
                         "flags": 0,
@@ -6501,13 +6501,13 @@
                     "fontsize": 12.0,
                     "id": "obj-80",
                     "ignoreclick": 1,
-                    "items": [ "info", ",", "clientwindow", ",", "storagewindow", ",", "-", ",", "titlebar", ",", "close", ",", "back", ",", "grow", ",", "master", ",", "active_store", ",", "-", ",", "subpatch", ",", "actmaker" ],
+                    "items": [ "info", ",", "clientwindow", ",", "-", ",", "max_console", ",", "clear_console", ",", "titlebar", ",", "all_titlebars", ",", "dsp(audio_settings)", ",", "tetris", ",", "refresh", ",", "-", ",", "stopwatch", ",", "clock", ",", "-", ",", "close", ",", "closeall", ",", "back", ",", "grow", ",", "-", ",", "subpatch", ",", "actmaker", ",", "ppooll_state", ",", "clean", ",", "nan_clear" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, -7.0, 49.689453125, 23.0 ],
+                    "patching_rect": [ 0.0, -7.0, 50.3515625, 23.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "title_menu"
@@ -6521,13 +6521,13 @@
                     "fontsize": 12.0,
                     "id": "obj-82",
                     "ignoreclick": 1,
-                    "items": [ "(presets)", ",", "_test_vst_preset", ",", "cone-o-shame", ",", "sinus-presets", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
+                    "items": [ "(presets)", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, -7.0, 49.689453125, 23.0 ],
+                    "patching_rect": [ 0.0, -7.0, 50.3515625, 23.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "pres_menu"
@@ -6541,13 +6541,13 @@
                     "fontsize": 12.0,
                     "id": "obj-84",
                     "ignoreclick": 1,
-                    "items": [ "(tetris)", ",", "-", ",", "bang.json", ",", "beeg.json", ",", "something.json", ",", "testin.json", ",", "-", ",", "ƒ default.json", ",", "ƒ default_TEST.json", ",", "-" ],
+                    "items": [ "(tetris)", ",", "-", ",", "ƒ", "default.json", ",", "ƒ", "default_TEST.json" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, -7.0, 49.689453125, 23.0 ],
+                    "patching_rect": [ 0.0, -7.0, 50.3515625, 23.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "tetris_menu"
@@ -6578,6 +6578,12 @@
                 "patchline": {
                     "destination": [ "obj-17", 1 ],
                     "order": 0,
+                    "source": [ "obj-12", 3 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-17", 1 ],
                     "source": [ "obj-12", 2 ]
                 }
             },
@@ -6585,7 +6591,7 @@
                 "patchline": {
                     "destination": [ "obj-18", 0 ],
                     "order": 1,
-                    "source": [ "obj-12", 2 ]
+                    "source": [ "obj-12", 3 ]
                 }
             },
             {
@@ -6598,12 +6604,6 @@
                 "patchline": {
                     "destination": [ "obj-18", 0 ],
                     "source": [ "obj-12", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-2", 0 ],
-                    "source": [ "obj-12", 3 ]
                 }
             },
             {

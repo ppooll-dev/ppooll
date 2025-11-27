@@ -235,18 +235,6 @@ function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
 
     if (!drag_gate) {
         mod = shift | option | ctrl;
-        //post("right",mod,"\n");
-        // title_menu.ignoreclick = 1;
-        // pres_menu.ignoreclick = 1;
-        // tetris_menu.ignoreclick = 1;
-        // if (mod == 0) title_menu.ignoreclick = 0;
-        // else if (mod == 2) tetris_menu.ignoreclick = 0;
-        // else pres_menu.ignoreclick = 0;
-        // drag_gate = 0;
-        // this.box.ignoreclick = 1;
-        // outlet(0, "bang"); //bangs a max [del 100] to function bang (ignoreclick = 0) !!
-        // messnamed("llto11clicks", "leftclick", 0);
-        // messnamed("llto11clicks", "leftclick", 1);
 
         if (mod == 0) title_menu.message("show");
         else if (mod == 2) tetris_menu.message("show");
@@ -773,6 +761,8 @@ function _in2(...args) {
         set_title_menu(args[0]);
     } else if (msg === "act::tetris_menu") {
         set_tetris_menu(args[0]);
+    } else if(msg === "act::pres_menu"){
+        set_preset_menu(Array.isArray(args) ? args : [args])
     }
 }
 
@@ -970,13 +960,16 @@ function make_live() {
 //
 function tetris_refresh_menu() {
     const additionalItems = [];
+    // const current = tetris_menu.getvalueof();
     refresh_menu("tetris", [], "T", tetris_menu, additionalItems, false);
 
-    tetris_menu.message("setsymbol", "-");
+    // tetris_menu.message("setsymbol", current);
 }
 
 function pres_refresh_menu() {
     const additionalItems = ["write", "clear!", "TEXT", "_"];
+    // const current = pres_menu.getvalueof();
+
     refresh_menu(
         "presets",
         ["TEXT", "JSON"],
@@ -986,7 +979,7 @@ function pres_refresh_menu() {
         true
     );
 
-    pres_menu.message("setsymbol", "_");
+    // pres_menu.message("setsymbol", current);
 }
 
 function refresh_menu(
@@ -1016,6 +1009,59 @@ function refresh_menu(
     const menuDict = new Dict();
     menuDict.set("items", items);
     menuObj.message("dictionary", menuDict.name);
+}
+
+function set_preset_menu(args) {
+    const selection = args[0];
+
+    messnamed("ll_preset_menu", act_name_index, selection);
+    return; // handled in ho_st
+
+    pres_menu.message("clearchecks");
+    
+    if (selection === "_" || selection === "(presets)" || selection === "")
+        return;
+
+    const pat = act_patcher.getnamed("pat");
+
+    if(selection === "write"){
+        // show popup with last selected name
+        messnamed("ll_preset_menu", act_name_index, "write");
+        return
+    }
+
+    if(selection === "clear!"){
+        // clear presets
+        const presetsUI = act_patcher.getnamed("presets");
+        if(presetsUI)
+            presetsUI.message("clear")
+
+        pat.message("clear");
+        pat.message("getslotlist");
+        pat.message("presets", 0);
+
+        pres_menu.message("setsymbol", "-");
+
+        return;
+    }
+
+    if(selection === "TEXT"){
+        messnamed("ll_preset_menu", act_name_index, "TEXT");
+        return;
+    }
+
+    // post(selection, "\n")
+
+    pres_menu.message("checksymbol", selection, 1);
+
+    // load tetris layout
+    const isFactory = selection.startsWith("ƒ ");
+    const basePath = isFactory ? ll_paths.get("factory") : ll_paths.get("user");
+
+    const presetName = selection.replace("ƒ ", "");
+    const presetPath = `${basePath}/${act_args.name}P/${presetName}.json`;
+
+    act_patcher.getnamed("pat").message("read", presetPath);
 }
 
 //
