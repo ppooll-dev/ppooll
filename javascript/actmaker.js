@@ -37,6 +37,6 @@ function bpatch(a, b) {
 
     if(show_update)
         messnamed("ll_show_update_act", "bang");
-
-    this.patcher.message("dispose");
+    
+    outlet(0, "dispose");
 }

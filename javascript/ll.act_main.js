@@ -22,6 +22,8 @@ if (typeof ll_shell === "undefined") {
     var ll_shell = require("ll.shell.js");
 }
 
+var shell = null;
+
 mgraphics.init();
 mgraphics.relative_coords = 0;
 mgraphics.autofill = 0;
@@ -625,8 +627,19 @@ function set_tetris_menu(selection) {
                         );
                         return;
                     }
+                    let attrValue = tetrisObj[objName][attrName];
 
-                    obj[attrName] = tetrisObj[objName][attrName];
+                    // post("typeof", attrName, typeof(tetrisObj[objName][attrName]), "isArray", Array.isArray(tetrisObj[objName][attrName]), "\n")
+                    
+                    // not yet working....
+                    if(typeof(attrValue) === "object" && !Array.isArray(attrValue)){
+                        post(attrName, JSON.stringify(attrValue), "\n")
+                        const d = new Dict();
+                        d.parse(JSON.stringify(attrValue))
+                        attrValue = { name: d.name, quiet: 0 };
+                    }
+
+                    obj[attrName] = attrValue;
 
                     // bang bpatchers
                     if (attrName === "patcher") {
@@ -691,8 +704,19 @@ function getTetrisFromObject(obj) {
             obj.maxclass !== "patcher" &&
             obj.maxclass !== "jpatcher"
         ) {
+            let attrs = obj.getattr(attributes[i])
+
+            if(attrs.name){
+                const d = new Dict(attrs.name);
+
+                attrs = JSON.parse(d.stringify())
+                post(attrs, "\n")
+            }
+            
+            // post(attributes[i], attrs, typeof(attrs), "\n")
+            
             //post("--------", obj.varname, obj.maxclass, attributes[i], obj.getattr(attributes[i]), "\n");
-            objTetris[attributes[i]] = obj.getattr(attributes[i]);
+            objTetris[attributes[i]] = attrs;
         }
     }
     return objTetris;
