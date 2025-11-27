@@ -19,6 +19,16 @@ var actr = new Global("act_rep");
 
 ////////////////////////////////////////////////////////////////////
 //
+// CONSTANTS
+//
+
+exports.tetris = {
+    class_excludes: ["route", "pv", "pattr", "coll", "pattrmarker", "autopattr", "pattrstorage", "thispatcher", "send", "pvar", "outlet", "inlet", "closebang", "loadmess", "bgcolor"],
+    name_excludes: ["pf", "route", "master", "movewind", "tetris_menu", "pres_menu", "title_menu", "title_LCD", "sub"]
+}
+
+////////////////////////////////////////////////////////////////////
+//
 // PPOOLL STATE
 //
 
@@ -189,6 +199,22 @@ exports.folderExists = (path) => {
         return false;
     }
 };
+
+exports.convertMaxPathToNative = (path) => {
+    // Windows path?
+    if (/^[A-Za-z]:/.test(path)) {
+        return path.replace(/\//g, "\\");   // normalize
+    }
+
+    // macOS Max-style path?
+    if (/:/.test(path)) {
+        let i = path.indexOf(":");
+        return "/" + path.substring(i + 1); // drop volume
+    }
+
+    // Already native-ish
+    return path;
+}
 
 // parse *.maxpat for patcher "rect" (FKA "getcoords")
 exports.getPatcherRectFromMaxpat = (a) => {

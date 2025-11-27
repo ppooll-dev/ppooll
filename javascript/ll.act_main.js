@@ -18,6 +18,10 @@ if (typeof ll === "undefined") {
     var ll = require("ll._utilities");
 }
 
+if (typeof ll_shell === "undefined") {
+    var ll_shell = require("ll.shell.js");
+}
+
 mgraphics.init();
 mgraphics.relative_coords = 0;
 mgraphics.autofill = 0;
@@ -33,10 +37,11 @@ const act_args = {
 
 // dicts
 const ll_state = new Dict("ppoollstate");
+const ll_paths = new Dict("ll_paths");
 
 // globals
-var actr = new Global("act_rep");
-var ll_max_live_envi = new Global("ppooll");
+const actr = new Global("act_rep");
+const ll_max_live_envi = new Global("ppooll");
 
 // Mouse and Keyboard modifiers
 var drag_gate = 1;
@@ -206,6 +211,13 @@ function bang() {
     // post("ready\n");
     isReady = 1;
     mgraphics.redraw();
+}
+
+// ll_shell
+function handleShellOutput() { shell.handleShellOutput() }; 
+
+function loadbang() {
+    shell = new ll_shell.ll_shell(this, "myshell");
 }
 
 function clickreset() {
@@ -563,7 +575,166 @@ function set_tetris_menu(selection) {
     if (selection === "_" || selection === "(tetris)" || selection === "")
         return;
 
-    messnamed("ll.tetris", act_name_index, selection);
+    tetris_menu.message("clearchecks");
+    tetris_menu.message("checksymbol", selection, 1);
+
+    // load tetris layout
+    const isFactory = selection.startsWith("ƒ ");
+    const basePath = isFactory ? ll_paths.get("factory") : ll_paths.get("user");
+
+    const tetrisName = selection.replace("ƒ ", "");
+    const tetrisPath = `${basePath}/${act_args.name}T/${tetrisName}`;
+
+    const tetrisDict = new Dict();
+    tetrisDict.import_json(tetrisPath);
+    const tetrisObj = JSON.parse(tetrisDict.stringify());
+
+    const hiddenAttrs = {};
+
+    Object.keys(tetrisObj)
+        .filter((o) => o !== "window")
+        .forEach((objName) => {
+            const obj = act_patcher.getnamed(objName);
+            if (!obj) {
+                post(
+                    "ppooll tetris_read: ",
+                    "no object",
+                    act_name_index,
+                    objName,
+                    "\n"
+                );
+                return;
+            }
+            obj.hidden = 1;
+            Object.keys(tetrisObj[objName])
+                .filter((a) => {
+                    if (a === "hidden") {
+                        hiddenAttrs[objName] = tetrisObj[objName].hidden;
+                        return false;
+                    }
+                    return true;
+                })
+                .forEach((attrName) => {
+                    if (!obj[attrName]) {
+                        post(
+                            "ppooll tetris: no object attr",
+                            act_name_index,
+                            objName,
+                            attrName,
+                            "\n"
+                        );
+                        return;
+                    }
+
+                    obj[attrName] = tetrisObj[objName][attrName];
+
+                    // bang bpatchers
+                    if (attrName === "patcher") {
+                        messnamed(act_name_index, objName, "bang");
+                    }
+                });
+            // bang bpatchers
+            if (["ll.blues", "llblues", "llwf"].indexOf(objName) > -1) {
+                messnamed(act_name_index, objName, "bang");
+            }
+        });
+
+    // window size
+    const w = tetrisObj.window;
+    const size = [w[2] - w[0], w[3] - w[1]]; // [width, height]
+    wsize(size[0], size[1]);
+
+    // a patchersize smaller than 50 is supressed normally.
+    // hack:
+    //  send the size again,
+    //  move the window vertically a bit, and back.
+    if (size[0] <= 50) {
+        wsize(size[0], size[1]);
+        setloc(act_patcher.wind.location[0], act_patcher.wind.location[1] + 1);
+        setloc(act_patcher.wind.location[0], act_patcher.wind.location[1]);
+    }
+
+    // reset all hidden
+    Object.keys(hiddenAttrs).forEach((objName) => {
+        const obj = act_patcher.getnamed(objName);
+        if (obj) obj.hidden = hiddenAttrs[objName];
+    });
+}
+
+function getTetrisFromObject(obj) {
+    const objTetris = {
+        patching_rect: [
+            obj.rect[0],
+            obj.rect[1],
+            obj.rect[2] - obj.rect[0],
+            obj.rect[3] - obj.rect[1],
+        ],
+        hidden: obj.hidden,
+    };
+
+    const attributes = obj.getattrnames();
+    if (!attributes) {
+        post("ppooll write_tetris: no attributes for obj", obj.varname, "\n");
+        return null;
+    }
+
+    for (i = 0; i < attributes.length; i++) {
+        if (attributes[i] === "fontsize") {
+            if (obj.maxclass !== "patcher")
+                objTetris[attributes[i]] = obj.getattr(attributes[i]);
+        }
+        if (attributes[i] === "jsarguments") {
+            objTetris[attributes[i]], obj.getattr(attributes[i]);
+        }
+        if (
+            /color/.test(attributes[i]) &&
+            obj.maxclass !== "patcher" &&
+            obj.maxclass !== "jpatcher"
+        ) {
+            //post("--------", obj.varname, obj.maxclass, attributes[i], obj.getattr(attributes[i]), "\n");
+            objTetris[attributes[i]] = obj.getattr(attributes[i]);
+        }
+    }
+    return objTetris;
+}
+
+async function write_tetris(name) {
+    try{
+        const actTetris = { window: act_patcher.wind.location };
+        act_patcher.apply((obj) => {
+            if (
+                !obj.varname ||
+                ll.tetris.class_excludes.indexOf(" " + obj.maxclass + " ") > -1 ||
+                ll.tetris.name_excludes.indexOf(" " + obj.varname + " ") > -1
+            )
+                return true; // skip
+
+            const objTetris = getTetrisFromObject(obj);
+            if (objTetris) actTetris[obj.varname] = { ...objTetris };
+            return true;
+        });
+
+        const tetrisDict = new Dict();
+        tetrisDict.parse(JSON.stringify(actTetris));
+
+        const isFactory = name.startsWith("ƒ ");
+
+        const tetrisName = name.replace("ƒ ", "");
+        const basePath = ll_paths.get(isFactory ? "factory" : "user");
+        const actPath = `${basePath}/${act_args.name}T`;
+        const fullPath = `${actPath}/${tetrisName}.json`;
+
+        await shell.mkdir(ll.convertMaxPathToNative(actPath));
+
+        tetrisDict.export_json(fullPath);
+
+        // post("ppooll write_tetris: DONE", act_args.name, tetrisName, "\n")
+
+        messnamed("tetris_refresh_menu", "bang");
+    }catch(e){
+        post("ppooll write_tetris error: ");
+        post(JSON.stringify(e));
+    }
 }
 
 // Handle special messages from named [routepass] 'in2'
@@ -748,7 +919,7 @@ function first_dump() {
     [
         ["active", "preset-ramp", 0],
         ["active", "presets", 0],
-		["active", "act", 0],
+        ["active", "act", 0],
         ["active", "ll.blues", 0],
         ["savemode", 0],
         ["changemode", 1],
@@ -828,8 +999,6 @@ function refresh_menu(
 ) {
     const items = [`(${name})`, "-"];
 
-    const ll_paths = new Dict("ll_paths");
-
     const userPath = `${ll_paths.get("user")}/${act_args.name}${folderTail}`;
     const factoryPath = `${ll_paths.get("factory")}/${
         act_args.name
@@ -857,7 +1026,8 @@ function savebang() {
     // post("savebang\n")
 
     // save tetris "ƒ default"
-    messnamed("ll_write_default_tetris", act_name_index);
+    // messnamed("ll_write_default_tetris", act_name_index);
+    write_tetris("ƒ default_TEST");
 
     act_patcher.getnamed("thispatcher").message("patcher", act_name_index);
 }
@@ -907,12 +1077,12 @@ function setloc(x, y, o) {
 
 function wsize(width, height) {
     //post("wsize");
-    const wind = act_patcher.wind;
+    const l = act_patcher.wind.location;
     act_patcher.wind.location = [
-        wind[0],
-        wind[1],
-        wind[0] + (width > 0 ? width : 0),
-        wind[1] + height,
+        l[0],
+        l[1],
+        l[0] + (width > 0 ? width : 0),
+        l[1] + height,
     ];
 }
 
@@ -952,6 +1122,6 @@ function apply() {
     });
 }
 
-function active_set(...args){
+function active_set(...args) {
     messnamed(`${act_args.hash}active_set`, ...args);
 }
