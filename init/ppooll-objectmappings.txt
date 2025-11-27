@@ -1,1 +1,0 @@
-max objectfile actmakeB actmaker;
