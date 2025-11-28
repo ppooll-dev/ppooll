@@ -1198,6 +1198,17 @@ function apply() {
 function active_set(...args) {
     messnamed(`${act_args.hash}active_set`, ...args);
 }
+////////////////// new for special messages /////////////////////////
+
+function rampstop(){
+	messnamed(`${act_args.hash}rampstop`, "bang");
+}
+
+function actname(to){
+	messnamed("actname", act_name_index);
+	messnamed("::actname", "::"+act_name_index+"::");
+	if(to==="to") post("actname to seems useless"); 
+}
 
 ///////////////////////////////////////////pasted from specials//////////////////
 
