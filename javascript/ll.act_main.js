@@ -1198,3 +1198,100 @@ function apply() {
 function active_set(...args) {
     messnamed(`${act_args.hash}active_set`, ...args);
 }
+
+///////////////////////////////////////////pasted from specials//////////////////
+
+function getnamedobj(a){ //was "getnamed"", which is a bad name for a function..
+	//post("actspecials getnamed",a,"\n");
+	actr.object = act_patcher.getnamed(a);
+}
+function Getpatcher(){
+	actr.patcher = act_patcher;
+}
+
+var console = { ////////                                what is this???
+  log: function(message){
+    post("tetrishelp: " + message)
+    post()
+  }
+}
+
+
+/*
+function bang()
+{
+
+messnamed ("tetristhis", "there", act_patcher);
+// TODO find tetristhis in tetris@
+
+}
+*/
+///////////////////////////////////////// move these into tetris@ ?  ///////////
+function getloc_to(a,o){
+		
+	if (o) { //objects varname
+		messnamed (a, act_patcher.getnamed(o).rect);
+		}
+	//window
+	else messnamed (a, act_patcher.wind.location);
+}
+
+function setwin(a){
+	rect = arrayfromargs(arguments);
+	//post ("SW", a, rec); 
+	var p = act_patcher.wind;
+    p.location = rect;
+}
+
+function applydict(dn){
+	let dict_name = dn;
+	var w = act_patcher.wind;
+	var d = new Dict(dict_name);
+	d.set("window", w.location);
+    act_patcher.apply(objdict);
+}
+
+function getobj(a){
+	a = act_patcher.a;
+    if (a.varname)
+        messnamed ("tetrislist", a.maxclass, a.varname, a.rect[0], a.rect[1], a.rect[2], a.rect[3], a.hidden);
+    return true;
+}
+
+var newstate = new Array();
+function applyblue(b){
+	//post("\n", "got: " + b);	
+	newstate = b.split(' ');
+	for (i=1;i<newstate.length;i++) newstate[i] = Number(newstate[i]);
+	//post ("new: " + newstate, "\n");
+    act_patcher.apply(getblueargs);
+}
+
+function getblueargs(a){
+	if (a.varname == "ll.blues"){
+		//post ("newd: " + newstate, "\n");	
+		//post ("newd: ", a.getattrnames(), "\n");	
+		var args;
+		if (a.getboxattr("args")){
+ 			args = a.getboxattr("args");
+			var istate = -10;
+			if (newstate[0] == "@state"){
+			for (i=0;i<args.length;i++) {
+				if (args[i] == "@state")istate = i;
+				if (i<istate+7) args[i] = newstate[i-istate];
+				}
+			}
+		if (istate<0) args = args.concat(newstate);	
+		a.setboxattr("args",args);
+		}
+		else {
+			a.setboxattr("args",newstate);		
+		}
+	messnamed ("getargs", a.getboxattr("args"));
+	}
+}
+
+function getblueargsonly(){
+	a = act_patcher.getnamed("ll.blues");
+	messnamed ("getargs", a.getboxattr("args"));
+}
