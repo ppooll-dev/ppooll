@@ -616,15 +616,13 @@ function set_tetris_menu(selection) {
                         return;
                     }
                     let attrValue = tetrisObj[objName][attrName];
-
-                    // post("typeof", attrName, typeof(tetrisObj[objName][attrName]), "isArray", Array.isArray(tetrisObj[objName][attrName]), "\n")
                     
-                    // not yet working....
+                    // if value is object and has .color key, set here
                     if(typeof(attrValue) === "object" && !Array.isArray(attrValue)){
-                        post(attrName, JSON.stringify(attrValue), "\n")
-                        const d = new Dict();
-                        d.parse(JSON.stringify(attrValue))
-                        attrValue = { name: d.name, quiet: 0 };
+                        if(!attrValue.color){
+                            return;
+                        }
+                        attrValue = attrValue.color
                     }
 
                     obj[attrName] = attrValue;
