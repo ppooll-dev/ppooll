@@ -561,7 +561,7 @@ function set_title_menu(selection) {
 }
 
 function set_tetris_menu(selection) {
-    // post("set_tetris_menu", act_name_index, ...args, "\n")
+    //post("set_tetris_menu", act_name_index, ...args, "\n")
     if (selection === "_" || selection === "(tetris)" || selection === "")
         return;
 
@@ -616,9 +616,10 @@ function set_tetris_menu(selection) {
                         return;
                     }
                     let attrValue = tetrisObj[objName][attrName];
-                    
+                    //post("all_Attr",attrName," : ",attrValue,"\n");
                     // if value is object and has .color key, set here
                     if(typeof(attrValue) === "object" && !Array.isArray(attrValue)){
+						//post("dictAttr",attrName," : ",Object.keys(attrValue),"\n");
                         if(!attrValue.color){
                             return;
                         }
@@ -647,11 +648,14 @@ function set_tetris_menu(selection) {
     // hack:
     //  send the size again,
     //  move the window vertically a bit, and back.
+	// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>not needed anymore, because we re- constrain the patchers in function createbasics()
+	/*
     if (size[0] <= 50) {
         wsize(size[0], size[1]);
         setloc(act_patcher.wind.location[0], act_patcher.wind.location[1] + 1);
         setloc(act_patcher.wind.location[0], act_patcher.wind.location[1]);
     }
+	*/
 
     // reset all hidden
     Object.keys(hiddenAttrs).forEach((objName) => {
