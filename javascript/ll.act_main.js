@@ -1306,3 +1306,39 @@ function getblueargsonly(){
 	a = act_patcher.getnamed("ll.blues");
 	messnamed ("getargs", a.getboxattr("args"));
 }
+
+
+// sendto, sendto1
+function sendto(...args){
+    let msg = [...args];
+    const dest = msg.shift()
+
+    msg = Array.isArray(msg) ? msg : [msg];
+    
+    const obj_gate = this.patcher.getnamed("sendto_gate");
+    const obj_forward = this.patcher.getnamed("sendto_forward");
+    const obj_pat = act_patcher.getnamed("pat");
+
+    obj_gate.message(1);
+    obj_forward.message("send", dest);
+    obj_pat.message(...msg);
+    obj_gate.message(3);
+    obj_forward.message("send", "no");
+}
+
+function sendto1(...args){
+    let msg = [...args];
+    const dest = msg.shift()
+
+    msg = Array.isArray(msg) ? msg : [msg];
+    
+    const obj_gate = this.patcher.getnamed("sendto_gate");
+    const obj_forward = this.patcher.getnamed("sendto_forward");
+    const obj_pat = act_patcher.getnamed("pat");
+
+    obj_gate.message(2);
+    obj_forward.message("send", dest);
+    obj_pat.message(...msg);
+    // first message from pattrstorage closes the gate outside js
+    obj_forward.message("send", "no");
+}
