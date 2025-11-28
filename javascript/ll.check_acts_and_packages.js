@@ -11,7 +11,6 @@ var count = 0;
 
 // for _act_overview
 var dict_act_overview_plus = new Dict("act_overview++");
-dict_act_overview_plus.import_json("act_overview.json");
 
 const PACKAGES_JSON = {
     macintosh:
@@ -180,6 +179,8 @@ function rebuild_menu() {
     );
 
     const ll_preferences = JSON.parse(ppooll_preferences_dict.stringify());
+
+    dict_act_overview_plus.import_json("act_overview.json");
 
     count = 0;
 

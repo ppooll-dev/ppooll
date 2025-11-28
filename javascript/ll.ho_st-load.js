@@ -28,19 +28,6 @@ function shouldCheckForUpdates() {
     return dictPreferences.get("general::check-for-updates") || 0;
 }
 
-// get latest version from package-info.json downloaded from GitHub
-async function getLatestVersion() {
-    try {
-        const data = await fetch_json();
-        if (!data) return null;
-
-        return data.version; // or data.body.version if that's your structure
-    } catch (e) {
-        post("Error in getLatestVersion: " + e + "\n");
-        return null;
-    }
-}
-
 // get current version from package-info.json
 function getCurrentVersion() {
     var dictPackageInfo = new Dict("ppooll_package_info");
@@ -86,9 +73,8 @@ function checkVersion(thisVersion, latestVersion) {
 }
 
 // MANUALLY called via button press for manually checking for updates
-async function checkForUpdates() {
+function checkForUpdates(latestVersion) {
     var thisVersion = getCurrentVersion();
-    var latestVersion = await getLatestVersion();
     var OUTPUT = [
         "--------------------------version-" +
             thisVersion +
@@ -121,12 +107,11 @@ function getAuthors() {
 
 // print initial ppooll messages to the console
 //   if ppooll pref "check-for-updates", run update check
-async function init_host() {
+function init_host(latestVersion) {
     max.setattr("restorewindows", 0);
 
     // get version
     var thisVersion = getCurrentVersion();
-    const latestVersion = await getLatestVersion();
 
     var VERSION = [
         "--------------------------version-" +
@@ -149,42 +134,4 @@ async function init_host() {
             BLANK_LINE
         )
         .forEach((o) => outlet(0, o));
-}
-
-// fetch_json returns a Promise!
-function fetch_json() {
-    return new Promise((resolve, reject) => {
-        const url =
-            "https://raw.githubusercontent.com/ppooll-dev/ppooll/main/package-info.json";
-
-        const req = new XMLHttpRequest();
-        req.timeout = 10000;
-
-        req.onreadystatechange = function () {
-            if (this.readyState === 4) {
-                if (this.status === 200) {
-                    try {
-                        const obj = JSON.parse(this.responseText);
-                        resolve(obj);
-                    } catch (e) {
-                        reject("JSON parse error: " + e);
-                    }
-                } else {
-                    reject("HTTP error " + this.status);
-                }
-            }
-        };
-
-        req.onerror = function () {
-            reject("Network error");
-        };
-
-        req.ontimeout = function () {
-            reject("Request timed out");
-        };
-
-        req.open("GET", url);
-        req.setRequestHeader("Accept", "application/json");
-        req.send();
-    });
 }
