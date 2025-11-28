@@ -276,7 +276,7 @@ function readfile() {
         post("could not open file: " + pref_file + " creating...", "\n");
         newPref(pref_file); // create new .json
     }
-    // get_preferences()  // instead, run after 1 sec delay outside v8
+    get_preferences()  // instead, run after 1 sec delay outside v8
 }
 
 function get_preferences() {
