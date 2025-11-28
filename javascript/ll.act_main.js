@@ -690,10 +690,11 @@ function getTetrisFromObject(obj) {
         post("ppooll write_tetris: no attributes for obj", obj.varname, "\n");
         return null;
     }
-
+	//post("aaaaaaaa",obj.varname, obj.maxclass,"ttt",attributes, "\n");
     for (i = 0; i < attributes.length; i++) {
         if (attributes[i] === "fontsize") {
-            if (obj.maxclass !== "patcher")
+			//post("--------", obj.varname, obj.maxclass, attributes[i], obj.getattr(attributes[i]), "\n");
+            if (obj.maxclass !== "patcher" && obj.maxclass !== "jpatcher")
                 objTetris[attributes[i]] = obj.getattr(attributes[i]);
         }
         if (attributes[i] === "jsarguments") {
@@ -710,7 +711,7 @@ function getTetrisFromObject(obj) {
                 const d = new Dict(attrs.name);
 
                 attrs = JSON.parse(d.stringify())
-                post(attrs, "\n")
+                //post(attrs, "\n")
             }
             
             // post(attributes[i], attrs, typeof(attrs), "\n")
@@ -728,8 +729,8 @@ async function write_tetris(name) {
         act_patcher.apply((obj) => {
             if (
                 !obj.varname ||
-                ll.tetris.class_excludes.indexOf(" " + obj.maxclass + " ") > -1 ||
-                ll.tetris.name_excludes.indexOf(" " + obj.varname + " ") > -1
+                ll.tetris.class_excludes.indexOf(obj.maxclass) > -1 ||
+                ll.tetris.name_excludes.indexOf(obj.varname) > -1
             )
                 return true; // skip
 
