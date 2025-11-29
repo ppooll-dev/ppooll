@@ -9,10 +9,22 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 744.0, 335.0, 351.0, 536.0 ],
+        "rect": [ 707.0, 191.0, 351.0, 536.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "tetris@1",
         "boxes": [
+            {
+                "box": {
+                    "hidden": 1,
+                    "id": "obj-3",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 218.0, 168.0, 35.0, 22.0 ],
+                    "text": "clear"
+                }
+            },
             {
                 "box": {
                     "hidden": 1,
@@ -241,7 +253,7 @@
                     "fontsize": 12.0,
                     "hint": "select an object to work on",
                     "id": "obj-47",
-                    "items": [ "bgcolor", 0.862745, 0.470588, 0.470588, 1, ",", "bordercolor", 0, 0, 0, 1, ",", "labelcolor", 0.368627450980392, 0.364705882352941, 0.364705882352941, 0.7, ",", "selectcolor", 0.45, 0.67, 1, 0.47, ",", "slidercolor", 0, 0, 0, 1, ",", "slidercolornofocus", 1, 1, 1, 1, ",", "textcolor", 0, 0, 0, 1, ",", "textcolornofocus", 1, 1, 1, 1 ],
+                    "items": "<empty>",
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -394,6 +406,7 @@
                     "outlettype": [ "", "int", "", "" ],
                     "parameter_enable": 0,
                     "patching_rect": [ 19.0, 351.0, 295.0, 81.0 ],
+                    "text": "@in_mix 1",
                     "varname": "textedit"
                 }
             },
@@ -488,7 +501,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 135.0, 444.0, 78.0, 22.0 ],
-                    "text": "0 1 0 0 0 0 1",
+                    "text": "doesnotexist",
                     "varname": "status_show"
                 }
             },
@@ -954,7 +967,7 @@
                     "fontsize": 16.0,
                     "hint": "select an act to work on",
                     "id": "obj-44",
-                    "items": [ "no", ",", "sinus1", ",", "tetris@1" ],
+                    "items": [ "no", ",", "ho_st1", ",", "tetris@1" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -1043,7 +1056,7 @@
                     "outlettype": [ "", "", "", "" ],
                     "patching_rect": [ 412.0, 237.0, 107.0, 21.0 ],
                     "restore": {
-                        "act_menu": [ "sinus1" ],
+                        "act_menu": [ "no" ],
                         "arrow_keys": [ 0 ],
                         "blink": [ 1 ],
                         "color1_toggl": [ 0 ],
@@ -1067,7 +1080,7 @@
                         "pos_y": [ 27 ],
                         "size_x": [ 76 ],
                         "size_y": [ 15 ],
-                        "textedit": [ "" ],
+                        "textedit": [ "@in_mix 1" ],
                         "titlebar": [ 1 ],
                         "w1": [ 557 ],
                         "w2": [ 206 ],
@@ -1101,7 +1114,6 @@
                         },
                         "classnamespace": "box",
                         "rect": [ 259.0, 430.0, 726.0, 616.0 ],
-                        "visible": 1,
                         "boxes": [
                             {
                                 "box": {
@@ -1320,17 +1332,16 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 410.0, 125.0, 538.0, 570.0 ],
+                                        "rect": [ 164.0, 248.0, 538.0, 570.0 ],
                                         "boxes": [
                                             {
                                                 "box": {
                                                     "id": "obj-4",
-                                                    "linecount": 3,
                                                     "maxclass": "newobj",
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 85.0, 130.0, 137.0, 49.0 ],
+                                                    "patching_rect": [ 85.0, 130.0, 259.0, 22.0 ],
                                                     "text": "r #0color_menu_symbol"
                                                 }
                                             },
@@ -3713,7 +3724,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 514.0, 172.1400146484375, 51.0, 35.0 ],
-                                                                                    "text": "tetris@ 1 1 3722"
+                                                                                    "text": "tetris@ 1 1 1639"
                                                                                 }
                                                                             },
                                                                             {
@@ -7941,7 +7952,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 499.0, 14.0, 161.0, 22.0 ],
-                                                    "text": "sinus1"
+                                                    "text": "no"
                                                 }
                                             },
                                             {
@@ -15354,6 +15365,13 @@
             }
         ],
         "lines": [
+            {
+                "patchline": {
+                    "destination": [ "obj-47", 0 ],
+                    "hidden": 1,
+                    "source": [ "obj-3", 0 ]
+                }
+            },
             {
                 "patchline": {
                     "destination": [ "obj-21", 0 ],

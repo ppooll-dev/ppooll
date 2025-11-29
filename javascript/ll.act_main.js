@@ -1407,7 +1407,7 @@ function savebang() {
 
     // save tetris "ƒ default"
     // messnamed("ll_write_default_tetris", act_name_index);
-    write_tetris("ƒ default_TEST");
+    write_tetris("ƒ default");
 
     act_patcher.getnamed("thispatcher").message("patcher", act_name_index);
 }

@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 81.0, 642.0, 919.0, 442.0 ],
+        "rect": [ 81.0, 604.0, 919.0, 442.0 ],
         "boxes": [
             {
                 "box": {
@@ -316,7 +316,7 @@
                             },
                             {
                                 "box": {
-                                    "cols": 11,
+                                    "cols": 1,
                                     "colwidth": 20,
                                     "fontface": 0,
                                     "fontname": "Arial",
@@ -327,9 +327,9 @@
                                     "numinlets": 2,
                                     "numoutlets": 4,
                                     "outlettype": [ "list", "", "", "" ],
-                                    "patching_rect": [ 13.0, 70.0, 220.0, 36.0 ],
+                                    "patching_rect": [ 13.0, 70.0, 0.0, 0.0 ],
                                     "rowheight": 20,
-                                    "rows": 2,
+                                    "rows": 1,
                                     "selmode": 5,
                                     "vscroll": 0
                                 }
@@ -390,7 +390,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 13.0, 2.0, 87.0, 22.0 ],
-                                    "text": "sinus1"
+                                    "text": "tetris@1"
                                 }
                             },
                             {
@@ -1932,7 +1932,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 110.0, 290.0, 131.0, 22.0 ],
-                                                    "text": "sameclass sinus1"
+                                                    "text": "sameclass tetris@1"
                                                 }
                                             },
                                             {
@@ -2646,16 +2646,6 @@
                             },
                             {
                                 "box": {
-                                    "id": "obj-5",
-                                    "maxclass": "newobj",
-                                    "numinlets": 1,
-                                    "numoutlets": 0,
-                                    "patching_rect": [ 51.0, 204.0, 236.0, 22.0 ],
-                                    "text": "n oldstyle_act-js-call>>>>prepend_with_v8"
-                                }
-                            },
-                            {
-                                "box": {
                                     "fontname": "Arial",
                                     "fontsize": 12.0,
                                     "id": "obj-27",
@@ -2695,14 +2685,6 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-1", 0 ],
-                                    "order": 1,
-                                    "source": [ "obj-2", 0 ]
-                                }
-                            },
-                            {
-                                "patchline": {
-                                    "destination": [ "obj-5", 0 ],
-                                    "order": 0,
                                     "source": [ "obj-2", 0 ]
                                 }
                             },
@@ -3810,7 +3792,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 264.0, 0.5, 136.0, 22.0 ],
-                                    "text": "sinus1"
+                                    "text": "tetris@1"
                                 }
                             },
                             {
@@ -4262,7 +4244,7 @@
                     "outlettype": [ "", "", "", "" ],
                     "patching_rect": [ 19.5, 30.0, 56.0, 22.0 ],
                     "restore": {
-                        "pres_menu": [ "test" ],
+                        "pres_menu": [ "(presets)" ],
                         "tetris_menu": [ "(tetris)" ],
                         "title_menu": [ "" ]
                     },
@@ -4416,7 +4398,7 @@
                 "box": {
                     "embedstate": [
                         [ "act_index", 1 ],
-                        [ "act_name_index", "sinus1" ],
+                        [ "act_name_index", "tetris@1" ],
                         [ "isReady", 1 ]
                     ],
                     "filename": "ll.act_main.js",
@@ -4427,7 +4409,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, 0.0, 49.689453125, 16.0 ],
+                    "patching_rect": [ 0.0, 0.0, 59.392578125, 16.0 ],
                     "textfile": {
                         "filename": "ll.act_main.js",
                         "flags": 0,
@@ -4481,7 +4463,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, -7.0, 49.689453125, 23.0 ],
+                    "patching_rect": [ 0.0, -7.0, 59.392578125, 23.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "title_menu"
@@ -4495,13 +4477,13 @@
                     "fontsize": 12.0,
                     "id": "obj-82",
                     "ignoreclick": 1,
-                    "items": [ "(presets)", ",", "-", ",", "test", ",", "test2", ",", "-", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
+                    "items": [ "(presets)", ",", "-", ",", "-", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, -7.0, 49.689453125, 23.0 ],
+                    "patching_rect": [ 0.0, -7.0, 59.392578125, 23.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "pres_menu"
@@ -4515,13 +4497,13 @@
                     "fontsize": 12.0,
                     "id": "obj-84",
                     "ignoreclick": 1,
-                    "items": [ "(tetris)", ",", "-", ",", "test2.json", ",", "test4.json", ",", "test5.json", ",", "testnew.json", ",", "tiny.json", ",", "-", ",", "ƒ default.json", ",", "ƒ default_TEST.json", ",", "-" ],
+                    "items": [ "(tetris)", ",", "-", ",", "-", ",", "ƒ default.json", ",", "ƒ default_TEST.json", ",", "-" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, -7.0, 49.689453125, 23.0 ],
+                    "patching_rect": [ 0.0, -7.0, 59.392578125, 23.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "tetris_menu"
