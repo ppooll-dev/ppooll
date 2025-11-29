@@ -837,6 +837,19 @@ function delete_old() {
             post(...e, "\n"); // Object not found, ignore
         }
     });
+
+    const presetsUI = act_patcher.getnamed("presets")
+    if(presetsUI && presetsUI.maxclass === "jsui"){
+        // Object.keys(presetsUI).forEach(key => post(key, presetsUI[key], "\n"))
+        const rect = presetsUI.rect;
+        const jsarguments = presetsUI.getattr("jsarguments");
+
+        post("remove jsui presets", "\n")
+        act_patcher.remove(presetsUI)
+
+        const presets_v8 = act_patcher.newdefault(rect[0], rect[1], "v8ui", "@filename", "ll.pattr_v8ui", "@jsarguments", ...jsarguments, "@varname", "presets");
+        presets_v8.rect = rect;
+    }
 }
 
 function createbasics() {
