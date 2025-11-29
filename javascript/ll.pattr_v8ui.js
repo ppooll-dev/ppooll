@@ -295,22 +295,6 @@ function paint() {
 
             mgraphics.set_source_rgba(vbrgb);
 
-            const textIndex = i - 1;
-            let txt = "";
-            if (mytext && mytext[textIndex] != null) {
-                txt = String(mytext[textIndex]);
-            }
-
-            mgraphics.set_font_size(myfontsize);
-            const tm = mgraphics.text_measure(txt);
-            const th = tm[1];
-
-            // left-aligned text inside square
-            const tx = x - square + 2; // left padding
-            const ty = y + th * 0.35; // baseline adjustment
-            mgraphics.move_to(tx, ty);
-            mgraphics.show_text(txt);
-
             // Hover overlay + icon
             // Hover overlay + icon
             if (i === hoverIndex) {
@@ -350,6 +334,40 @@ function paint() {
                     mgraphics.stroke();
                 }
             }
+
+            x += square * 2 + inner;
+        }
+        y += square * 2 + inner;
+    }
+
+    // draw text
+    i = 0;
+    y = margin + square;
+
+    for (let row = 0; row < num_rows; row++) {
+        let x = margin + square;
+
+        for (let col = 0; col < num_cols; col++) {
+            i++;
+
+            const textIndex = i - 1;
+            let txt =
+                mytext && mytext[textIndex] != null
+                    ? String(mytext[textIndex])
+                    : "";
+
+            mgraphics.set_source_rgba(vbrgb);
+            mgraphics.set_font_size(myfontsize);
+
+            const tm = mgraphics.text_measure(txt);
+            const th = tm[1];
+
+            // left-aligned inside the square, overflowing right
+            const tx = x - square + 2;
+            const ty = y + th * 0.35;
+
+            mgraphics.move_to(tx, ty);
+            mgraphics.show_text(txt);
 
             x += square * 2 + inner;
         }
