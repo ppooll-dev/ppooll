@@ -1147,15 +1147,15 @@ function recall_TEXT_from_dict(deviceName, presetName, path) {
     temp.import_json(`${ll_paths.get("user")}/presets_text.json`);
 
     const preset_TEXT = JSON.parse(temp.stringify());
-    if (preset_TEXT[act_args.name] && preset_TEXT[act_args.name][selection]) {
+    if (preset_TEXT[act_args.name] && preset_TEXT[act_args.name][presetName]) {
         post("has TEXT, recall\n");
         const temp = new Dict();
         temp.import_json(`${ll_paths.get("user")}/presets_text.json`);
 
         const root = JSON.parse(temp.stringify());
-        if (!root[act_args.name] || !root[deviceName][presetName]) return;
+        if (!root[act_args.name] || !root[act_args.name][presetName]) return;
 
-        const data = root[deviceName][presetName];
+        const data = root[act_args.name][presetName];
 
         if (data.fontsize !== undefined) {
             TEXT_fontsize = data.fontsize;
