@@ -40,11 +40,11 @@ var interp_target = 0; // nearest integer (preview)
 
 // ---------- attributes ----------
 
-var SQUARE_SIZE = 6; // square size in pixels
-declareattribute("SQUARE_SIZE", {
-    type: "float",
+var boxsize = 12; // square size in pixels
+declareattribute("boxsize", {
+    type: "int",
     label: "Square Size",
-    initial: 6,
+    initial: 12,
     embed: 1,
     paint: 1,
 });
@@ -110,18 +110,27 @@ loadbang();
 refresh();
 getactname();
 
+
+function msg_int(boxsize){
+    // post("boxsize?", boxsize);
+}
+
 // ------------------------------------------------------------
 // BACKWARD COMPATIBILITY: convert legacy jsarguments into attributes
 // ------------------------------------------------------------
 function loadbang() {
     // If patch was created using legacy args, convert them now.
+    jsargumentsConvert()
+}
+
+function jsargumentsConvert(){
     if (jsarguments.length > 1) {
-        post("ll.pattr_v8ui: converting legacy jsarguments to attributes...\n");
-        post(jsarguments, "\n");
+        post("ll.pattr_v8ui: converting legacy jsarguments to attributes...");
 
         // LEGACY ARG 1 = square size
         if (jsarguments.length > 1 && typeof jsarguments[1] === "number") {
-            SQUARE_SIZE = jsarguments[1] / 2;
+            boxsize = jsarguments[1];
+            post("boxsize",boxsize,'\n')
         }
 
         // helper to convert "r g b" → [r/255, g/255, b/255, 1]
@@ -144,7 +153,7 @@ function loadbang() {
         jsarguments = "";
         refresh();
 
-        post("ll.pattr_v8ui: legacy arguments successfully converted.\n");
+        post("Done.\n");
     }
 }
 
@@ -225,7 +234,7 @@ function paint() {
     const width = box.rect[2] - box.rect[0];
     const height = box.rect[3] - box.rect[1];
 
-    const square = SQUARE_SIZE;
+    const square = boxsize / 2;
     const margin = 1;
     const inner = 1;
 
@@ -378,7 +387,7 @@ function paint() {
 }
 
 function coord_to_square(px, py) {
-    const square = SQUARE_SIZE;
+    const square = boxsize / 2;
     const margin = 1;
     const inner = 1;
 
@@ -421,7 +430,7 @@ function clear_interp() {
 }
 
 function hover_hit_test(px, py) {
-    const square = SQUARE_SIZE;
+    const square = boxsize / 2;
     const margin = 1;
     const inner = 1;
     const startX = margin + square;

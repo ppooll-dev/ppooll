@@ -643,6 +643,10 @@ function set_tetris_menu(selection) {
 
                     obj[attrName] = attrValue;
 
+                    if(objName === "presets" && obj.maxclass === "v8ui"){
+                        obj.message("jsargumentsConvert", "bang")
+                    }
+
                     // bang bpatchers
                     if (attrName === "patcher") {
                         messnamed(act_name_index, objName, "bang");
@@ -703,7 +707,9 @@ function getTetrisFromObject(obj) {
                 objTetris[attributes[i]] = obj.getattr(attributes[i]);
         }
         if (attributes[i] === "jsarguments") {
-            objTetris[attributes[i]], obj.getattr(attributes[i]);
+            post(obj[attributes[i]]); post()
+            objTetris[attributes[i]] = obj[attributes[i]];
+            post(objTetris[attributes[i]]);
         }
         if (
             /color/.test(attributes[i]) &&
@@ -850,7 +856,8 @@ function delete_old() {
     if(presetsUI && presetsUI.maxclass === "jsui"){
         // Object.keys(presetsUI).forEach(key => post(key, presetsUI[key], "\n"))
         const rect = presetsUI.rect;
-        const jsarguments = presetsUI.getattr("jsarguments");
+        let jsarguments = presetsUI.getattr("jsarguments");
+        jsarguments = Array.isArray(jsarguments) ? jsarguments : [jsarguments];
 
         post("remove jsui presets", "\n")
         act_patcher.remove(presetsUI)
@@ -1090,8 +1097,8 @@ function calc_TEXT_dimensions() {
     const obj_presets = act_patcher.getnamed("presets");
     let boxsize = 0;
     if (obj_presets) {
-        if (obj_presets.getattr("SQUARE_SIZE")) {
-            boxsize = obj_presets.getattr("SQUARE_SIZE") * 2;
+        if (obj_presets.getattr("boxsize")) {
+            boxsize = obj_presets.getattr("boxsize");
         }
         else if (
             obj_presets.getattr("jsarguments") &&
