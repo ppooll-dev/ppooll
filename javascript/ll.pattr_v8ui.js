@@ -602,6 +602,14 @@ function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
 }
 onidle.local = 1;
 
+function onidleout() {
+    hoverIndex = -1;
+    hoverRemove = false;
+    hoverAdd = false;
+    refresh();
+}
+onidleout.local = 1;
+
 let use_legacy = false;
 function msg_float(a) {
     //post("msg", a);
@@ -689,8 +697,7 @@ onclick.local = 1; //private. could be left public to permit "synthetic" events
 
 function onresize(w, h) {
     refresh();
-    if(act_name)
-        messnamed(act_name, "v8", "change_TEXT", "refresh");
+    if (act_name) messnamed(act_name, "v8", "change_TEXT", "refresh");
 }
 onresize.local = 1; //private
 

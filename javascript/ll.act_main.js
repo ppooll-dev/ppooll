@@ -1183,6 +1183,7 @@ function update_TEXT() {
 
         editTEXT("grid", "cols", TEXT_dimensions[0]);
         editTEXT("grid", "rows", TEXT_dimensions[1]);
+        editTEXT("grid", "size", TEXT_dimensions[0]*20, TEXT_dimensions[1]*18);
 
         const TEXT_presetsUI = [];
         for (let i = 0; i < TEXT_size; i++) {
