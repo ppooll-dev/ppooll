@@ -219,6 +219,8 @@ function bang() {
     pres_menu.message("symbol", "(presets)")
     tetris_menu.message("symbol", "(tetris)")
 
+    change_TEXT("refresh");
+
     messnamed("acting", act_args.name, act_index, 1, act_args.hash);
     messnamed("act_ready", `${act_args.name}${act_index}`);
     messnamed(`${act_args.hash}instance`, act_index);

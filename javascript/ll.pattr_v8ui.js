@@ -18,6 +18,8 @@ mgraphics.init();
 mgraphics.relative_coords = 0; // use pixel coordinates
 mgraphics.autofill = 0;
 
+const actr = new Global("act_rep");
+
 var current = 0;
 var current_idle_slot;
 var last_click = 0; // for drag interpolation in x direction
@@ -687,6 +689,8 @@ onclick.local = 1; //private. could be left public to permit "synthetic" events
 
 function onresize(w, h) {
     refresh();
+    if(act_name)
+        messnamed(act_name, "v8", "change_TEXT", "refresh");
 }
 onresize.local = 1; //private
 
