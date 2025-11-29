@@ -63,7 +63,7 @@ let is_llenviread = 0; // [r llenviread]
 
 let first_menu_set = true;
 
-let prev_pres_menu = "_";
+let prev_pres_menu = "(presets)";
 
 // preset TEXT
 let TEXT_fontsize = 8;
@@ -214,6 +214,10 @@ function bang() {
     //everything done !!!
     pres_refresh_menu();
     tetris_refresh_menu();
+
+    title_menu.message("symbol", "")
+    pres_menu.message("symbol", "(presets)")
+    tetris_menu.message("symbol", "(tetris)")
 
     messnamed("acting", act_args.name, act_index, 1, act_args.hash);
     messnamed("act_ready", `${act_args.name}${act_index}`);
@@ -563,7 +567,7 @@ function set_title_menu(selection) {
         return;
     }
     fn();
-    title_menu.message("symbol", "-");
+    title_menu.message("symbol", "");
 }
 
 function set_tetris_menu(selection) {
@@ -753,7 +757,9 @@ async function write_tetris(name) {
         const actPath = `${basePath}/${act_args.name}T`;
         const fullPath = `${actPath}/${tetrisName}.json`;
 
-        await shell.mkdir(ll.convertMaxPathToNative(actPath));
+        // TODO: remove ll.shell, just find a way to do with ll.mkdir in act.maxpat
+        // await shell.mkdir(ll.convertMaxPathToNative(actPath));
+
 		//post("actPath",actPath,"\n");
 		//post("fullPath",fullPath,"\n");
         tetrisDict.export_json(fullPath);
@@ -1095,7 +1101,7 @@ function calc_TEXT_dimensions() {
         if (boxsize > 0) {
             const rect = obj_presets.getattr("patching_rect");
             TEXT_dimensions = [
-                Math.round(rect[2] / boxsize),
+                Math.round(rect[2] / boxsize) - 1,
                 Math.round(rect[3] / boxsize),
             ];
             TEXT_size = TEXT_dimensions[0] * TEXT_dimensions[1];
@@ -1173,6 +1179,9 @@ function update_TEXT() {
         editTEXT("fontsize", TEXT_fontsize);
         calc_TEXT_dimensions();
 
+        editTEXT("grid", "cols", TEXT_dimensions[0]);
+        editTEXT("grid", "rows", TEXT_dimensions[1]);
+
         const TEXT_presetsUI = [];
         for (let i = 0; i < TEXT_size; i++) {
             const iStr = (i + 1).toString();
@@ -1180,18 +1189,11 @@ function update_TEXT() {
             const cols = TEXT_dimensions[0];
             const row = Math.floor(i / cols);
             const col = i % cols;
-            post(text);
             TEXT_presetsUI.push(text);
-
             editTEXT("grid", "set", col, row, text);
         }
-        post(TEXT_presetsUI, "\n");
-
         const presetsUI = act_patcher.getnamed("presets");
         if (presetsUI) {
-            // presetsUI.message("fontsize", TEXT_fontsize);
-            // presetsUI.message("text", ...TEXT_presetsUI);
-
             const d = new Dict();
             d.set("fontsize", TEXT_fontsize);
             d.set("text", [...TEXT_presetsUI]);
@@ -1312,9 +1314,6 @@ function set_preset_menu(args) {
     const msgs = Array.isArray(args) ? args : [args];
     const selection = msgs.shift();
     let preset_name = selection;
-    // if (selection === "write") {
-    //     preset_name = prev_pres_menu;
-    // }
 
     pres_menu.message("clearchecks");
 
@@ -1657,4 +1656,14 @@ function from_pat(...args) {
             act_patcher.getnamed("pat").message("recall", 1000);
         }
     }
+}
+
+
+//
+// clean - before saving act.maxpat
+//
+function _clean(){
+    title_menu.message("symbol", "")
+    pres_menu.message("symbol", "(presets)")
+    tetris_menu.message("symbol", "(tetris)")
 }

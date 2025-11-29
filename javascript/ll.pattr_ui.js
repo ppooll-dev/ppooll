@@ -147,6 +147,8 @@ function set_TEXT_data(dictName){
     // post("mytext", mytext, "\n");
     myfontsize = dict.get("fontsize");
     // post("myfontsize", myfontsize, "\n");
+	draw();
+	refresh();
 }
 
 function draw()

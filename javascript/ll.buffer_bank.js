@@ -89,7 +89,7 @@ function read_coll(path) {
 }
 
 function pres_menu(name){
-    if(["", "_", "write", "clear!", "TEXT"].indexOf(name) > -1)
+    if(["", "_", "write", "clear!", "TEXT", "(presets)"].indexOf(name) > -1)
         return;
 
     // Determine if json or coll

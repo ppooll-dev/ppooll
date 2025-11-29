@@ -202,21 +202,21 @@ function fontsize(v) {
     refresh();
 }
 
-function text()
-{
-	mytext = arrayfromargs(messagename, arguments);
+function text() {
+    mytext = arrayfromargs(messagename, arguments);
     // post(arguments, "\n")
-	// draw();
-	refresh();
+    // draw();
+    refresh();
 }
 
-function set_TEXT_data(dictName){
+function set_TEXT_data(dictName) {
     // post(dictName, "\n");
     const dict = new Dict(dictName);
     mytext = dict.get("text");
     // post("mytext", mytext, "\n");
     myfontsize = dict.get("fontsize");
     // post("myfontsize", myfontsize, "\n");
+    refresh();
 }
 
 function paint() {
@@ -294,11 +294,21 @@ function paint() {
             }
 
             mgraphics.set_source_rgba(vbrgb);
-            const txt = mytext[i] ? String(mytext[i]) : "";
+
+            const textIndex = i - 1;
+            let txt = "";
+            if (mytext && mytext[textIndex] != null) {
+                txt = String(mytext[textIndex]);
+            }
+
             mgraphics.set_font_size(myfontsize);
-            const tw = mgraphics.text_measure(txt)[0];
-            const th = mgraphics.text_measure(txt)[1];
-            mgraphics.move_to(x - tw / 2, y + th / 2);
+            const tm = mgraphics.text_measure(txt);
+            const th = tm[1];
+
+            // left-aligned text inside square
+            const tx = x - square + 2; // left padding
+            const ty = y + th * 0.35; // baseline adjustment
+            mgraphics.move_to(tx, ty);
             mgraphics.show_text(txt);
 
             // Hover overlay + icon
