@@ -63,6 +63,16 @@ let is_llenviread = 0; // [r llenviread]
 
 let first_menu_set = true;
 
+let prev_pres_menu = "_";
+
+// preset TEXT
+let TEXT_fontsize = 8;
+let TEXT_dimensions = [0, 0];
+let TEXT_size = 0; // num boxes
+let TEXT_data = {};
+let TEXT_presetUI = []; // list of text values
+let TEXT_updating = false;
+
 // [v8] attributes
 var isReady = 0;
 declareattribute("isReady", {
@@ -1038,22 +1048,165 @@ function refresh_menu(
     menuObj.message("dictionary", menuDict.name);
 }
 
-function set_preset_menu(args) {
-    const selection = args[0];
+//
+// TEXT (presets text editor)
+//
 
-    messnamed("ll_preset_menu", act_name_index, selection);
-    return; // handled in ho_st
+// helper to convert col, row to index (String, like in dict)
+function linearIndex(col, row) {
+    const cols = TEXT_dimensions[0];
+    return (row * cols + col + 1).toString();
+}
+
+// calculate the columns, rows and total size of TEXT (number of clickable preset squares)
+function calc_TEXT_dimensions() {
+    const obj_presets = act_patcher.getnamed("presets");
+    if (obj_presets && obj_presets.getattr("jsarguments")[0]) {
+        const rect = obj_presets.getattr("patching_rect");
+        const boxsize = obj_presets.getattr("jsarguments")[0] + 1;
+        TEXT_dimensions = [
+            Math.round(rect[2] / boxsize),
+            Math.round(rect[3] / boxsize),
+        ];
+        TEXT_size = TEXT_dimensions[0] * TEXT_dimensions[1];
+        return;
+    }
+    TEXT_dimensions = [0, 0];
+    TEXT_size = 0;
+}
+
+// from jit.cellblock
+function from_TEXT_cellblock(col, row, text) {
+    if (!TEXT_dimensions || TEXT_dimensions.length === 0) return;
+
+    const indexStr = linearIndex(col, row);
+
+    if (!text || text.trim() === "") {
+        delete TEXT_data[indexStr];
+    } else {
+        TEXT_data[indexStr] = text;
+    }
+}
+
+function recall_TEXT_from_dict(deviceName, presetName) {
+    const temp = new Dict();
+    temp.import_json(`${ll_paths.get("user")}/presets_text.json`);
+
+    const root = JSON.parse(temp.stringify());
+    if (!root[deviceName] || !root[deviceName][presetName]) return;
+
+    const data = root[deviceName][presetName];
+
+    if (data.fontsize !== undefined) {
+        TEXT_fontsize = data.fontsize;
+        delete data.fontsize;
+    }
+
+    TEXT_data = { ...data };
+}
+
+// update editor patcher and presets UI
+function update_TEXT() {
+    try {
+        editTEXT("fontsize", TEXT_fontsize);
+
+        const TEXT_presetsUI = [];
+        for (let i = 0; i < TEXT_size; i++) {
+            const iStr = (i + 1).toString();
+            const text = TEXT_data[iStr] || " ";
+            const cols = TEXT_dimensions[0];
+            const row = Math.floor(i / cols);
+            const col = i % cols;
+
+            TEXT_presetsUI.push(text);
+
+            editTEXT("grid", "set", col, row, text);
+        }
+
+        const presetsUI = act_patcher.getnamed("presets");
+        if (presetsUI) {
+            presetsUI.message("fontsize", TEXT_fontsize);
+            presetsUI.message("text", ...TEXT_presetsUI);
+        }
+    } catch (e) {
+        post("error update_TEXT? \n");
+    }
+}
+
+function change_TEXT(...args) {
+    const msgs = Array.isArray(args) ? args : [args];
+    const msg_name = msgs.shift();
+
+    if (TEXT_updating) return;
+
+    TEXT_updating = true;
+
+    if (msg_name === "fontsize") {
+        TEXT_fontsize = msgs[0];
+        update_TEXT();
+    } else if (msg_name === "numbers") {
+        // TODO
+    } else if (msg_name === "grid") {
+        from_TEXT_cellblock(...msgs);
+        update_TEXT();
+    } else if (msg_name === "clearText") {
+        clearTEXT();
+        update_TEXT();
+    } else if (msg_name === "refresh") {
+        update_TEXT();
+    }
+    TEXT_updating = false;
+}
+
+function editTEXT(msg, ...args) {
+    const obj = this.patcher
+        .getnamed("edit_preset_TEXT")
+        .subpatcher()
+        .getnamed("route");
+    if (!obj) {
+        post("edit_preset_TEXT not found\n");
+        return;
+    }
+    obj.message(msg, ...args);
+}
+
+function clearTEXT() {
+    TEXT_data = {};
+    TEXT_updating = false;
+    const obj = this.patcher
+        .getnamed("edit_preset_TEXT")
+        .subpatcher()
+        .getnamed("route");
+    if (!obj) {
+        post("edit_preset_TEXT not found\n");
+        return;
+    }
+    obj.message("grid", "clear", "all");
+}
+
+function set_preset_menu(args) {
+    const msgs = Array.isArray(args) ? args : [args];
+    const selection = msgs.shift();
+    let preset_name = selection;
+    if (selection === "write") {
+        preset_name = prev_pres_menu;
+    }
 
     pres_menu.message("clearchecks");
 
-    if (selection === "_" || selection === "(presets)" || selection === "")
+    if (
+        preset_name === "_" ||
+        preset_name === "(presets)" ||
+        preset_name === ""
+    )
         return;
 
     const pat = act_patcher.getnamed("pat");
 
     if (selection === "write") {
         // show popup with last selected name
-        messnamed("ll_preset_menu", act_name_index, "write");
+        messnamed("ll_preset_menu", act_name_index, "write", prev_pres_menu);
+        pres_menu.message("setsymbol", prev_pres_menu);
         return;
     }
 
@@ -1068,26 +1221,70 @@ function set_preset_menu(args) {
 
         pres_menu.message("setsymbol", "-");
 
+        clearTEXT();
+        update_TEXT();
+
         return;
     }
 
     if (selection === "TEXT") {
-        messnamed("ll_preset_menu", act_name_index, "TEXT");
+        // show TEXT
+        calc_TEXT_dimensions();
+        const editPatcher = this.patcher.getnamed("edit_preset_TEXT");
+        editPatcher.message("front");
+
+        // messnamed("ll_preset_menu", act_name_index, "TEXT", prev_pres_menu);
+        pres_menu.message("setsymbol", prev_pres_menu);
         return;
     }
 
-    // post(selection, "\n")
+    // read
+    prev_pres_menu = selection;
 
     pres_menu.message("checksymbol", selection, 1);
 
-    // load tetris layout
-    const isFactory = selection.startsWith("ƒ ");
-    const basePath = isFactory ? ll_paths.get("factory") : ll_paths.get("user");
+    const doPresetHandler = false;
+    if (doPresetHandler) {
+        // message preset-handler in ho_st
+        messnamed("ll_preset_menu", act_name_index, selection);
+    } else {
+        // load tetris layout
+        const isFactory = selection.startsWith("ƒ ");
+        const basePath = isFactory
+            ? ll_paths.get("factory")
+            : ll_paths.get("user");
 
-    const presetName = selection.replace("ƒ ", "");
-    const presetPath = `${basePath}/${act_args.name}P/${presetName}.json`;
+        const presetName = selection.replace("ƒ ", "");
+        const presetPath = `${basePath}/${act_args.name}P/${presetName}.json`;
 
-    act_patcher.getnamed("pat").message("read", presetPath);
+        act_patcher.getnamed("pat").message("read", presetPath);
+    }
+
+    // read TEXT
+    //   stored in dict like this
+    // {
+    //     "sinus": {
+    //         "cone-o-shame": {
+    //             "fontsize": 10,
+    //             "1": "t",
+    //             "2": "e",
+    //             "3": "s",
+    //             "4": "t"
+    //         }
+    //     }
+    // }
+    // key string-ints correspond to box, text can be any length
+    const temp = new Dict();
+    temp.import_json(`${ll_paths.get("user")}/presets_text.json`);
+    // read TEXT
+    const preset_TEXT = JSON.parse(temp.stringify());
+
+    if (preset_TEXT[act_args.name] && preset_TEXT[act_args.name][selection]) {
+        post("has TEXT, recall\n");
+        calc_TEXT_dimensions();
+        recall_TEXT_from_dict(act_args.name, selection);
+        update_TEXT();
+    }
 }
 
 //
@@ -1159,24 +1356,6 @@ function wsize(width, height) {
 }
 
 function apply() {
-    // function printobj(a) {
-    //     if (a.varname) {
-    //         messnamed(
-    //             "tetrislist",
-    //             a.maxclass,
-    //             a.varname,
-    //             a.rect[0],
-    //             a.rect[1],
-    //             a.rect[2],
-    //             a.rect[3],
-    //             a.hidden
-    //         );
-    //     }
-    //     return true;
-    // }
-    // act_patcher.apply(printobj);
-
-    // better ?? (delete above ?)
     act_patcher.apply((a) => {
         if (a.varname) {
             messnamed(
@@ -1305,7 +1484,9 @@ function getblueargsonly() {
     messnamed("getargs", a.getboxattr("args"));
 }
 
+//
 // sendto, sendto1
+//
 function sendto(...args) {
     let msg = [...args];
     const dest = msg.shift();
@@ -1340,7 +1521,11 @@ function sendto1(...args) {
     obj_forward.message("send", "no");
 }
 
+//
 // special messages from pattrstorage
+//      ie: client_add, slotlist, read
+//
+
 function from_pat(...args) {
     const msg = args.shift();
     if (msg === "client_add") {
@@ -1349,7 +1534,11 @@ function from_pat(...args) {
     } else if (msg === "read") {
         const file_name = args[0];
         const shouldGetSlotList = args[1];
-        messnamed(`::${act_name_index}::pstoread`, file_name, shouldGetSlotList);
+        messnamed(
+            `::${act_name_index}::pstoread`,
+            file_name,
+            shouldGetSlotList
+        );
         act_patcher.getnamed("pat").message("getslotlist");
     } else if (msg === "slotlist") {
         const obj_presets = act_patcher.getnamed("presets");
