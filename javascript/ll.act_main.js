@@ -70,7 +70,6 @@ let TEXT_fontsize = 8;
 let TEXT_dimensions = [0, 0];
 let TEXT_size = 0; // num boxes
 let TEXT_data = {};
-let TEXT_presetUI = []; // list of text values
 let TEXT_updating = false;
 
 // [v8] attributes
@@ -749,7 +748,8 @@ async function write_tetris(name) {
         const actPath = `${basePath}/${act_args.name}T`;
         const fullPath = `${actPath}/${tetrisName}.json`;
 
-        await shell.mkdir(ll.convertMaxPathToNative(actPath));
+        // TODO: remove ll.shell, just find a way to do with ll.mkdir in act.maxpat
+        // await shell.mkdir(ll.convertMaxPathToNative(actPath));
 
         tetrisDict.export_json(fullPath);
 
@@ -763,6 +763,7 @@ async function write_tetris(name) {
 }
 
 // Handle special messages from named [routepass] 'in2'
+let is_setting_pres_menu = false;
 function _in2(...args) {
     // post("in2", args); post()
     const msg = args.shift();
@@ -798,8 +799,10 @@ function _in2(...args) {
         set_title_menu(args[0]);
     } else if (msg === "act::tetris_menu") {
         set_tetris_menu(args[0]);
-    } else if (msg === "act::pres_menu") {
+    } else if (msg === "act::pres_menu" && !is_setting_pres_menu) {
+        is_setting_pres_menu = true;
         set_preset_menu(Array.isArray(args) ? args : [args]);
+        is_setting_pres_menu = false;
     }
 }
 
@@ -1061,16 +1064,29 @@ function linearIndex(col, row) {
 // calculate the columns, rows and total size of TEXT (number of clickable preset squares)
 function calc_TEXT_dimensions() {
     const obj_presets = act_patcher.getnamed("presets");
-    if (obj_presets && obj_presets.getattr("jsarguments")[0]) {
-        const rect = obj_presets.getattr("patching_rect");
-        const boxsize = obj_presets.getattr("jsarguments")[0] + 1;
-        TEXT_dimensions = [
-            Math.round(rect[2] / boxsize),
-            Math.round(rect[3] / boxsize),
-        ];
-        TEXT_size = TEXT_dimensions[0] * TEXT_dimensions[1];
-        return;
+    let boxsize = 0;
+    if (obj_presets) {
+        if (obj_presets.getattr("SQUARE_SIZE")) {
+            boxsize = obj_presets.getattr("SQUARE_SIZE") * 2;
+        }
+        else if (
+            obj_presets.getattr("jsarguments") &&
+            obj_presets.getattr("jsarguments")[0]
+        ) {
+            boxsize = obj_presets.getattr("jsarguments")[0] + 1;
+        }
+
+        if (boxsize > 0) {
+            const rect = obj_presets.getattr("patching_rect");
+            TEXT_dimensions = [
+                Math.round(rect[2] / boxsize),
+                Math.round(rect[3] / boxsize),
+            ];
+            TEXT_size = TEXT_dimensions[0] * TEXT_dimensions[1];
+            return;
+        }
     }
+
     TEXT_dimensions = [0, 0];
     TEXT_size = 0;
 }
@@ -1088,27 +1104,58 @@ function from_TEXT_cellblock(col, row, text) {
     }
 }
 
-function recall_TEXT_from_dict(deviceName, presetName) {
+function recall_TEXT_from_dict(deviceName, presetName, path) {
+    // first check for pattrstorage
+    const presetsDict = new Dict();
+    presetsDict.import_json(path);
+    const presetsJSON = JSON.parse(presetsDict.stringify());
+
+    if (presetsJSON.pattrstorage && presetsJSON.pattrstorage.TEXT) {
+        const temp_TEXT = presetsJSON.pattrstorage.TEXT;
+        // post("read from preset json --", JSON.stringify(temp_TEXT), "\n")
+        if (temp_TEXT.fontsize !== undefined) {
+            TEXT_fontsize = temp_TEXT.fontsize;
+            delete temp_TEXT.fontsize;
+        }
+        TEXT_data = { ...temp_TEXT };
+        update_TEXT();
+        return;
+    }
+
+    if (!presetName)
+        // folder environments will not provide a presetName
+        return;
+
+    // in ../ppooll_presets/presets_text.json ?
     const temp = new Dict();
     temp.import_json(`${ll_paths.get("user")}/presets_text.json`);
 
-    const root = JSON.parse(temp.stringify());
-    if (!root[deviceName] || !root[deviceName][presetName]) return;
+    const preset_TEXT = JSON.parse(temp.stringify());
+    if (preset_TEXT[act_args.name] && preset_TEXT[act_args.name][selection]) {
+        post("has TEXT, recall\n");
+        const temp = new Dict();
+        temp.import_json(`${ll_paths.get("user")}/presets_text.json`);
 
-    const data = root[deviceName][presetName];
+        const root = JSON.parse(temp.stringify());
+        if (!root[act_args.name] || !root[deviceName][presetName]) return;
 
-    if (data.fontsize !== undefined) {
-        TEXT_fontsize = data.fontsize;
-        delete data.fontsize;
+        const data = root[deviceName][presetName];
+
+        if (data.fontsize !== undefined) {
+            TEXT_fontsize = data.fontsize;
+            delete data.fontsize;
+        }
+
+        TEXT_data = { ...data };
+        update_TEXT();
     }
-
-    TEXT_data = { ...data };
 }
 
 // update editor patcher and presets UI
 function update_TEXT() {
     try {
         editTEXT("fontsize", TEXT_fontsize);
+        calc_TEXT_dimensions();
 
         const TEXT_presetsUI = [];
         for (let i = 0; i < TEXT_size; i++) {
@@ -1117,16 +1164,23 @@ function update_TEXT() {
             const cols = TEXT_dimensions[0];
             const row = Math.floor(i / cols);
             const col = i % cols;
-
+            post(text);
             TEXT_presetsUI.push(text);
 
             editTEXT("grid", "set", col, row, text);
         }
+        post(TEXT_presetsUI, "\n");
 
         const presetsUI = act_patcher.getnamed("presets");
         if (presetsUI) {
             presetsUI.message("fontsize", TEXT_fontsize);
             presetsUI.message("text", ...TEXT_presetsUI);
+
+            const d = new Dict();
+            d.set("fontsize", TEXT_fontsize);
+            d.set("text", [...TEXT_presetsUI]);
+
+            presetsUI.message("set_TEXT_data", d.name);
         }
     } catch (e) {
         post("error update_TEXT? \n");
@@ -1184,13 +1238,68 @@ function clearTEXT() {
     obj.message("grid", "clear", "all");
 }
 
+//
+// pres_menu
+//
+
+async function write_preset(name) {
+    // post("write preset", name, "\n");
+    try {
+        const isFactory = name.startsWith("ƒ ");
+
+        const tetrisName = name.replace("ƒ ", "");
+        const basePath = ll_paths.get(isFactory ? "factory" : "user");
+        const actPath = `${basePath}/${act_args.name}P`;
+        const fullPath = `${actPath}/${name}.json`;
+
+        // TODO: remove ll.shell, just find a way to do with ll.mkdir in act.maxpat
+        // await shell.mkdir(ll.convertMaxPathToNative(actPath));
+
+        write_preset_path(fullPath);
+
+        messnamed("pres_refresh_menu", "bang");
+    } catch (e) {
+        post("ppooll write_preset error: ");
+        post(JSON.stringify(e));
+    }
+}
+
+function write_preset_path(fullPath) {
+    act_patcher.getnamed("pat").message("write", fullPath);
+
+    const presetDict = new Dict();
+    presetDict.import_json(fullPath);
+    const presetJSON = JSON.parse(presetDict.stringify());
+
+    if (presetJSON.pattrstorage) {
+        presetJSON.pattrstorage.TEXT = {
+            fontsize: TEXT_fontsize,
+            ...TEXT_data,
+        };
+    }
+
+    presetDict.parse(JSON.stringify(presetJSON));
+    presetDict.export_json(fullPath);
+
+    post("ppooll write_preset: DONE", act_args.name, name, "\n");
+}
+
+function read_preset_path(fullPath, presetName = 0) {
+    act_patcher.getnamed("pat").message("read", fullPath);
+
+    const presetDict = new Dict();
+    presetDict.parse(fullPath);
+
+    recall_TEXT_from_dict(act_args.name, presetName, fullPath);
+}
+
 function set_preset_menu(args) {
     const msgs = Array.isArray(args) ? args : [args];
     const selection = msgs.shift();
     let preset_name = selection;
-    if (selection === "write") {
-        preset_name = prev_pres_menu;
-    }
+    // if (selection === "write") {
+    //     preset_name = prev_pres_menu;
+    // }
 
     pres_menu.message("clearchecks");
 
@@ -1205,8 +1314,17 @@ function set_preset_menu(args) {
 
     if (selection === "write") {
         // show popup with last selected name
-        messnamed("ll_preset_menu", act_name_index, "write", prev_pres_menu);
-        pres_menu.message("setsymbol", prev_pres_menu);
+        // messnamed("ll_preset_menu", act_name_index, "write", prev_pres_menu);
+        const dialog = this.patcher
+            .getnamed("dialog")
+            .subpatcher()
+            .getnamed("route");
+        dialog.message("return", "write_preset");
+        dialog.message("path", `${ll_paths.get("user")}/${act_args.name}P`);
+        dialog.message("set", preset_name);
+        dialog.message("bang");
+        pres_menu.message("setsymbol", preset_name);
+        prev_pres_menu = preset_name;
         return;
     }
 
@@ -1220,7 +1338,7 @@ function set_preset_menu(args) {
         pat.message("presets", 0);
 
         pres_menu.message("setsymbol", "-");
-
+        prev_pres_menu = "_";
         clearTEXT();
         update_TEXT();
 
@@ -1248,42 +1366,18 @@ function set_preset_menu(args) {
         // message preset-handler in ho_st
         messnamed("ll_preset_menu", act_name_index, selection);
     } else {
-        // load tetris layout
+        // load preset json
         const isFactory = selection.startsWith("ƒ ");
         const basePath = isFactory
             ? ll_paths.get("factory")
             : ll_paths.get("user");
 
         const presetName = selection.replace("ƒ ", "");
-        const presetPath = `${basePath}/${act_args.name}P/${presetName}.json`;
+        const fullPath = `${basePath}/${act_args.name}P/${presetName}.json`;
 
-        act_patcher.getnamed("pat").message("read", presetPath);
-    }
+        read_preset_path(fullPath, selection);
 
-    // read TEXT
-    //   stored in dict like this
-    // {
-    //     "sinus": {
-    //         "cone-o-shame": {
-    //             "fontsize": 10,
-    //             "1": "t",
-    //             "2": "e",
-    //             "3": "s",
-    //             "4": "t"
-    //         }
-    //     }
-    // }
-    // key string-ints correspond to box, text can be any length
-    const temp = new Dict();
-    temp.import_json(`${ll_paths.get("user")}/presets_text.json`);
-    // read TEXT
-    const preset_TEXT = JSON.parse(temp.stringify());
-
-    if (preset_TEXT[act_args.name] && preset_TEXT[act_args.name][selection]) {
-        post("has TEXT, recall\n");
-        calc_TEXT_dimensions();
-        recall_TEXT_from_dict(act_args.name, selection);
-        update_TEXT();
+        pres_menu.message("setsymbol", prev_pres_menu);
     }
 }
 

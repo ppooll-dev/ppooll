@@ -176,13 +176,7 @@ async function saveToFolder() {
             const hasPresets = slots.length > 0;
 
             if (hasPresets) {
-                outlet(0, "pattrforward", "send", `::${act}::pat`);
-                outlet(
-                    0,
-                    "pattrforward",
-                    "write",
-                    `${enviDir}/${enviName}/presets/${act}.json`
-                );
+                messnamed(act, "v8", "write_preset_path", `${enviDir}/${enviName}/presets/${act}.json`)
                 // post("wrote presets for", act, "\n");
             } else {
                 // post("no presets for", act, "— skipping file\n");

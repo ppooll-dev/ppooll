@@ -241,8 +241,7 @@ function loadPresets() {
 
         if (f.isopen) {
             f.close();
-            outlet(1, "send", `::${keys[i]}::pat`);
-            outlet(1, "read", filepath);
+            messnamed(keys[i], "v8", "read_preset_path", filepath, 0)
         }
     }
 }
