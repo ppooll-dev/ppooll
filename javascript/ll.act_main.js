@@ -216,15 +216,12 @@ function bang() {
 }
 
 // ll_shell
-function handleShellOutput() { shell.handleShellOutput() }; 
+function handleShellOutput() {
+    shell.handleShellOutput();
+}
 
 function loadbang() {
     shell = new ll_shell.ll_shell(this, "myshell");
-}
-
-function clickreset() {
-    this.box.ignoreclick = 0;
-    drag_gate = 1;
 }
 
 function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
@@ -618,12 +615,15 @@ function set_tetris_menu(selection) {
                     let attrValue = tetrisObj[objName][attrName];
                     //post("all_Attr",attrName," : ",attrValue,"\n");
                     // if value is object and has .color key, set here
-                    if(typeof(attrValue) === "object" && !Array.isArray(attrValue)){
-						//post("dictAttr",attrName," : ",Object.keys(attrValue),"\n");
-                        if(!attrValue.color){
+                    if (
+                        typeof attrValue === "object" &&
+                        !Array.isArray(attrValue)
+                    ) {
+                        //post("dictAttr",attrName," : ",Object.keys(attrValue),"\n");
+                        if (!attrValue.color) {
                             return;
                         }
-                        attrValue = attrValue.color
+                        attrValue = attrValue.color;
                     }
 
                     obj[attrName] = attrValue;
@@ -648,8 +648,8 @@ function set_tetris_menu(selection) {
     // hack:
     //  send the size again,
     //  move the window vertically a bit, and back.
-	// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>not needed anymore, because we re- constrain the patchers in function createbasics()
-	/*
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>not needed anymore, because we re- constrain the patchers in function createbasics()
+    /*
     if (size[0] <= 50) {
         wsize(size[0], size[1]);
         setloc(act_patcher.wind.location[0], act_patcher.wind.location[1] + 1);
@@ -680,10 +680,10 @@ function getTetrisFromObject(obj) {
         post("ppooll write_tetris: no attributes for obj", obj.varname, "\n");
         return null;
     }
-	//post("aaaaaaaa",obj.varname, obj.maxclass,"ttt",attributes, "\n");
+    //post("aaaaaaaa",obj.varname, obj.maxclass,"ttt",attributes, "\n");
     for (i = 0; i < attributes.length; i++) {
         if (attributes[i] === "fontsize") {
-			//post("--------", obj.varname, obj.maxclass, attributes[i], obj.getattr(attributes[i]), "\n");
+            //post("--------", obj.varname, obj.maxclass, attributes[i], obj.getattr(attributes[i]), "\n");
             if (obj.maxclass !== "patcher" && obj.maxclass !== "jpatcher")
                 objTetris[attributes[i]] = obj.getattr(attributes[i]);
         }
@@ -695,17 +695,17 @@ function getTetrisFromObject(obj) {
             obj.maxclass !== "patcher" &&
             obj.maxclass !== "jpatcher"
         ) {
-            let attrs = obj.getattr(attributes[i])
+            let attrs = obj.getattr(attributes[i]);
 
-            if(attrs.name){
+            if (attrs.name) {
                 const d = new Dict(attrs.name);
 
-                attrs = JSON.parse(d.stringify())
+                attrs = JSON.parse(d.stringify());
                 //post(attrs, "\n")
             }
-            
+
             // post(attributes[i], attrs, typeof(attrs), "\n")
-            
+
             //post("--------", obj.varname, obj.maxclass, attributes[i], obj.getattr(attributes[i]), "\n");
             objTetris[attributes[i]] = attrs;
         }
@@ -714,7 +714,7 @@ function getTetrisFromObject(obj) {
 }
 
 async function write_tetris(name) {
-    try{
+    try {
         const actTetris = { window: act_patcher.wind.location };
         act_patcher.apply((obj) => {
             if (
@@ -746,7 +746,7 @@ async function write_tetris(name) {
         // post("ppooll write_tetris: DONE", act_args.name, tetrisName, "\n")
 
         messnamed("tetris_refresh_menu", "bang");
-    }catch(e){
+    } catch (e) {
         post("ppooll write_tetris error: ");
         post(JSON.stringify(e));
     }
@@ -788,8 +788,8 @@ function _in2(...args) {
         set_title_menu(args[0]);
     } else if (msg === "act::tetris_menu") {
         set_tetris_menu(args[0]);
-    } else if(msg === "act::pres_menu"){
-        set_preset_menu(Array.isArray(args) ? args : [args])
+    } else if (msg === "act::pres_menu") {
+        set_preset_menu(Array.isArray(args) ? args : [args]);
     }
 }
 
@@ -1045,23 +1045,22 @@ function set_preset_menu(args) {
     return; // handled in ho_st
 
     pres_menu.message("clearchecks");
-    
+
     if (selection === "_" || selection === "(presets)" || selection === "")
         return;
 
     const pat = act_patcher.getnamed("pat");
 
-    if(selection === "write"){
+    if (selection === "write") {
         // show popup with last selected name
         messnamed("ll_preset_menu", act_name_index, "write");
-        return
+        return;
     }
 
-    if(selection === "clear!"){
+    if (selection === "clear!") {
         // clear presets
         const presetsUI = act_patcher.getnamed("presets");
-        if(presetsUI)
-            presetsUI.message("clear")
+        if (presetsUI) presetsUI.message("clear");
 
         pat.message("clear");
         pat.message("getslotlist");
@@ -1072,7 +1071,7 @@ function set_preset_menu(args) {
         return;
     }
 
-    if(selection === "TEXT"){
+    if (selection === "TEXT") {
         messnamed("ll_preset_menu", act_name_index, "TEXT");
         return;
     }
@@ -1200,121 +1199,119 @@ function active_set(...args) {
 }
 ////////////////// new for special messages /////////////////////////
 
-function rampstop(){
-	messnamed(`${act_args.hash}rampstop`, "bang");
+function rampstop() {
+    messnamed(`${act_args.hash}rampstop`, "bang");
 }
 
-function actname(to){
-	messnamed("actname", act_name_index);
-	messnamed("::actname", "::"+act_name_index+"::");
-	if(to==="to") post("actname to seems useless"); 
+function actname(to) {
+    messnamed("actname", act_name_index);
+    messnamed("::actname", "::" + act_name_index + "::");
+    if (to === "to") post("actname to seems useless");
 }
 
 ///////////////////////////////////////////pasted from specials//////////////////
 
-function getnamedobj(a){ //was "getnamed"", which is a bad name for a function..
-	//post("actspecials getnamed",a,"\n");
-	actr.object = act_patcher.getnamed(a);
+function getnamedobj(a) {
+    //was "getnamed"", which is a bad name for a function..
+    //post("actspecials getnamed",a,"\n");
+    actr.object = act_patcher.getnamed(a);
 }
-function Getpatcher(){
-	actr.patcher = act_patcher;
+function Getpatcher() {
+    actr.patcher = act_patcher;
 }
-
-var console = { ////////                                what is this???
-  log: function(message){
-    post("tetrishelp: " + message)
-    post()
-  }
-}
-
 
 /*
-function bang()
-{
-
-messnamed ("tetristhis", "there", act_patcher);
-// TODO find tetristhis in tetris@
-
+function bang() {
+    messnamed ("tetristhis", "there", act_patcher);
+    // TODO find tetristhis in tetris@
 }
 */
+
 ///////////////////////////////////////// move these into tetris@ ?  ///////////
-function getloc_to(a,o){
-		
-	if (o) { //objects varname
-		messnamed (a, act_patcher.getnamed(o).rect);
-		}
-	//window
-	else messnamed (a, act_patcher.wind.location);
+function getloc_to(a, o) {
+    if (o) {
+        //objects varname
+        messnamed(a, act_patcher.getnamed(o).rect);
+    }
+    //window
+    else messnamed(a, act_patcher.wind.location);
 }
 
-function setwin(a){
-	rect = arrayfromargs(arguments);
-	//post ("SW", a, rec); 
-	var p = act_patcher.wind;
+function setwin(a) {
+    rect = arrayfromargs(arguments);
+    //post ("SW", a, rec);
+    var p = act_patcher.wind;
     p.location = rect;
 }
 
-function applydict(dn){
-	let dict_name = dn;
-	var w = act_patcher.wind;
-	var d = new Dict(dict_name);
-	d.set("window", w.location);
+function applydict(dn) {
+    let dict_name = dn;
+    var w = act_patcher.wind;
+    var d = new Dict(dict_name);
+    d.set("window", w.location);
     act_patcher.apply(objdict);
 }
 
-function getobj(a){
-	a = act_patcher.a;
+function getobj(a) {
+    a = act_patcher.a;
     if (a.varname)
-        messnamed ("tetrislist", a.maxclass, a.varname, a.rect[0], a.rect[1], a.rect[2], a.rect[3], a.hidden);
+        messnamed(
+            "tetrislist",
+            a.maxclass,
+            a.varname,
+            a.rect[0],
+            a.rect[1],
+            a.rect[2],
+            a.rect[3],
+            a.hidden
+        );
     return true;
 }
 
 var newstate = new Array();
-function applyblue(b){
-	//post("\n", "got: " + b);	
-	newstate = b.split(' ');
-	for (i=1;i<newstate.length;i++) newstate[i] = Number(newstate[i]);
-	//post ("new: " + newstate, "\n");
+function applyblue(b) {
+    //post("\n", "got: " + b);
+    newstate = b.split(" ");
+    for (i = 1; i < newstate.length; i++) newstate[i] = Number(newstate[i]);
+    //post ("new: " + newstate, "\n");
     act_patcher.apply(getblueargs);
 }
 
-function getblueargs(a){
-	if (a.varname == "ll.blues"){
-		//post ("newd: " + newstate, "\n");	
-		//post ("newd: ", a.getattrnames(), "\n");	
-		var args;
-		if (a.getboxattr("args")){
- 			args = a.getboxattr("args");
-			var istate = -10;
-			if (newstate[0] == "@state"){
-			for (i=0;i<args.length;i++) {
-				if (args[i] == "@state")istate = i;
-				if (i<istate+7) args[i] = newstate[i-istate];
-				}
-			}
-		if (istate<0) args = args.concat(newstate);	
-		a.setboxattr("args",args);
-		}
-		else {
-			a.setboxattr("args",newstate);		
-		}
-	messnamed ("getargs", a.getboxattr("args"));
-	}
+function getblueargs(a) {
+    if (a.varname == "ll.blues") {
+        //post ("newd: " + newstate, "\n");
+        //post ("newd: ", a.getattrnames(), "\n");
+        var args;
+        if (a.getboxattr("args")) {
+            args = a.getboxattr("args");
+            var istate = -10;
+            if (newstate[0] == "@state") {
+                for (i = 0; i < args.length; i++) {
+                    if (args[i] == "@state") istate = i;
+                    if (i < istate + 7) args[i] = newstate[i - istate];
+                }
+            }
+            if (istate < 0) args = args.concat(newstate);
+            a.setboxattr("args", args);
+        } else {
+            a.setboxattr("args", newstate);
+        }
+        messnamed("getargs", a.getboxattr("args"));
+    }
 }
 
-function getblueargsonly(){
-	a = act_patcher.getnamed("ll.blues");
-	messnamed ("getargs", a.getboxattr("args"));
+function getblueargsonly() {
+    a = act_patcher.getnamed("ll.blues");
+    messnamed("getargs", a.getboxattr("args"));
 }
-
 
 // sendto, sendto1
-function sendto(...args){
+function sendto(...args) {
     let msg = [...args];
-    const dest = msg.shift()
+    const dest = msg.shift();
 
     msg = Array.isArray(msg) ? msg : [msg];
-    
+
     const obj_gate = this.patcher.getnamed("sendto_gate");
     const obj_forward = this.patcher.getnamed("sendto_forward");
     const obj_pat = act_patcher.getnamed("pat");
@@ -1326,12 +1323,12 @@ function sendto(...args){
     obj_forward.message("send", "no");
 }
 
-function sendto1(...args){
+function sendto1(...args) {
     let msg = [...args];
-    const dest = msg.shift()
+    const dest = msg.shift();
 
     msg = Array.isArray(msg) ? msg : [msg];
-    
+
     const obj_gate = this.patcher.getnamed("sendto_gate");
     const obj_forward = this.patcher.getnamed("sendto_forward");
     const obj_pat = act_patcher.getnamed("pat");
@@ -1341,4 +1338,26 @@ function sendto1(...args){
     obj_pat.message(...msg);
     // first message from pattrstorage closes the gate outside js
     obj_forward.message("send", "no");
+}
+
+// special messages from pattrstorage
+function from_pat(...args) {
+    const msg = args.shift();
+    if (msg === "client_add") {
+        const client_name = args[0];
+        messnamed(`::${act_name_index}::client_add`, client_name);
+    } else if (msg === "read") {
+        const file_name = args[0];
+        const shouldGetSlotList = args[1];
+        messnamed(`::${act_name_index}::pstoread`, file_name, shouldGetSlotList);
+        act_patcher.getnamed("pat").message("getslotlist");
+    } else if (msg === "slotlist") {
+        const obj_presets = act_patcher.getnamed("presets");
+        if (obj_presets) {
+            obj_presets.message("slotlist", ...args);
+        }
+        if (args.indexOf(1000) > -1) {
+            act_patcher.getnamed("pat").message("recall", 1000);
+        }
+    }
 }

@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 359.0, 221.0, 130.0, 125.0 ],
+        "rect": [ 348.0, 244.0, 130.0, 125.0 ],
         "default_fontsize": 11.595187,
         "toolbarvisible": 0,
         "globalpatchername": "ho_st1",
@@ -3089,13 +3089,12 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-5",
-                                                                    "linecount": 2,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 339.0, 243.0, 79.0, 35.0 ],
-                                                                    "text": "(environments)"
+                                                                    "text": "ducks"
                                                                 }
                                                             },
                                                             {
@@ -10424,7 +10423,7 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-10",
-                                                                    "items": [ "musichackspace.json", ",", "pseudo-echo.json", ",", "testeroni.json", ",", "xgroove-test.json", ",", "xgroove-test2.json" ],
+                                                                    "items": [ "240217-snowday.json", ",", "henry-full-set.json", ",", "henry-grant.json", ",", "hg-221201-big.json", ",", "hg-221202.json", ",", "hg-230222.json", ",", "hg-230302-REWRiTE.json", ",", "hg-230303-romb-snap.json", ",", "hg-230303-snap.json", ",", "hg-230303.json", ",", "hg-230405-snap.json", ",", "hg-230405.json", ",", "hg-230601-snap.json", ",", "hg-231130-snap.json", ",", "hg-231202-snap.json", ",", "hg-231203-snap.json", ",", "hg-240228-snap.json", ",", "hg-240326-snap.json", ",", "ripstick2.json" ],
                                                                     "maxclass": "umenu",
                                                                     "numinlets": 1,
                                                                     "numoutlets": 3,
@@ -13625,7 +13624,7 @@
                                                                                                     "numoutlets": 1,
                                                                                                     "outlettype": [ "" ],
                                                                                                     "patching_rect": [ 192.0, 25.0, 50.0, 22.0 ],
-                                                                                                    "text": "8."
+                                                                                                    "text": "16."
                                                                                                 }
                                                                                             },
                                                                                             {
@@ -13951,7 +13950,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 548.0, 346.0, 101.0, 22.0 ],
-                                                                                    "text": "24"
+                                                                                    "text": "64"
                                                                                 }
                                                                             },
                                                                             {
@@ -14367,7 +14366,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 405.0, 455.0, 75.0, 22.0 ],
-                                                                                    "text": "ho_st"
+                                                                                    "text": "snap@"
                                                                                 }
                                                                             },
                                                                             {
@@ -15523,7 +15522,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 300.0, 88.0, 101.0, 22.0 ],
-                                                                                    "text": "8. 3."
+                                                                                    "text": "16. 4."
                                                                                 }
                                                                             },
                                                                             {
@@ -15925,7 +15924,7 @@
                                                                                                     "numoutlets": 1,
                                                                                                     "outlettype": [ "" ],
                                                                                                     "patching_rect": [ 198.0, 381.0, 154.0, 22.0 ],
-                                                                                                    "text": "8. 3."
+                                                                                                    "text": "16. 4."
                                                                                                 }
                                                                                             },
                                                                                             {
@@ -16186,7 +16185,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 63.333333333333314, 89.0, 90.0, 22.0 ],
-                                                                                    "text": "ho_st1"
+                                                                                    "text": "snap@1"
                                                                                 }
                                                                             },
                                                                             {
@@ -17054,7 +17053,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 259.5, 367.0, 35.0, 35.0 ],
-                                                                                    "text": "ho_st"
+                                                                                    "text": "snap@"
                                                                                 }
                                                                             },
                                                                             {
@@ -17868,7 +17867,7 @@
                                                                             },
                                                                             {
                                                                                 "box": {
-                                                                                    "cols": 8,
+                                                                                    "cols": 16,
                                                                                     "colwidth": 20,
                                                                                     "fontface": 0,
                                                                                     "fontname": "Arial",
@@ -17880,7 +17879,7 @@
                                                                                     "numoutlets": 4,
                                                                                     "outlettype": [ "list", "", "", "" ],
                                                                                     "patching_rect": [ 13.0, 70.0, 477.0, 389.0 ],
-                                                                                    "rows": 3,
+                                                                                    "rows": 4,
                                                                                     "selmode": 5,
                                                                                     "vscroll": 0
                                                                                 }
@@ -17942,7 +17941,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 13.0, 2.0, 87.0, 22.0 ],
-                                                                                    "text": "ho_st1"
+                                                                                    "text": "snap@1"
                                                                                 }
                                                                             },
                                                                             {
@@ -18352,7 +18351,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 92.25, 304.0, 145.0, 89.0 ],
-                                                                    "text": "send ::ho_st1::pat"
+                                                                    "text": "send ::snap@1::pat"
                                                                 }
                                                             },
                                                             {
@@ -18810,7 +18809,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 264.0, 102.0, 159.0, 22.0 ],
-                                                    "text": "ho_st1 _"
+                                                    "text": "snap@1 _"
                                                 }
                                             },
                                             {
@@ -18889,7 +18888,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 486.0, 163.0, 50.0, 62.0 ],
-                                                                    "text": "::ho_st1::act::pres_menu 1"
+                                                                    "text": "::snap@1::act::pres_menu 1"
                                                                 }
                                                             },
                                                             {
@@ -28139,7 +28138,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 176.0, 351.0, 96.0, 22.0 ],
-                                                                    "text": "263 363"
+                                                                    "text": "209 289"
                                                                 }
                                                             },
                                                             {
@@ -28513,7 +28512,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 70.0, 381.0, 137.0, 22.0 ],
-                                                    "text": "0 0 1920 1080"
+                                                    "text": "0 0 1512 982"
                                                 }
                                             },
                                             {
@@ -29139,7 +29138,7 @@
                                                             "modernui": 1
                                                         },
                                                         "classnamespace": "box",
-                                                        "rect": [ 0.0, 0.0, 1920.0, 1080.0 ],
+                                                        "rect": [ 0.0, 0.0, 1512.0, 982.0 ],
                                                         "default_fontsize": 10.0,
                                                         "toolbarvisible": 0,
                                                         "boxes": [
@@ -29159,7 +29158,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "parameter_enable": 0,
-                                                                    "patching_rect": [ 829.0, 359.0, 263.0, 363.0 ],
+                                                                    "patching_rect": [ 652.0, 347.0, 209.0, 289.0 ],
                                                                     "textfile": {
                                                                         "filename": "ll.logo.js",
                                                                         "flags": 0,
@@ -29204,7 +29203,7 @@
                                                                     "numoutlets": 4,
                                                                     "outlettype": [ "bang", "bang", "", "int" ],
                                                                     "parameter_enable": 0,
-                                                                    "patching_rect": [ -0.5, -0.5, 1920.0, 1080.0 ],
+                                                                    "patching_rect": [ -0.5, -0.5, 1512.0, 982.0 ],
                                                                     "varname": "button"
                                                                 }
                                                             },
@@ -36228,10 +36227,10 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 493.0, 69.0, 92.0, 21.0 ],
                     "saved_object_attributes": {
-                        "client_rect": [ 434, 164, 1512, 407 ],
+                        "client_rect": [ 401, 195, 1161, 974 ],
                         "parameter_enable": 0,
                         "parameter_mappable": 0,
-                        "storage_rect": [ 0, 0, 640, 240 ]
+                        "storage_rect": [ 583, 69, 1034, 197 ]
                     },
                     "text": "pattrstorage pat",
                     "varname": "pat"
@@ -36295,7 +36294,7 @@
                         "rec": [ 0 ],
                         "screen": [ 0 ],
                         "stereo": [ 0 ],
-                        "time": [ 23621 ],
+                        "time": [ 30424 ],
                         "vol": [ 1.0 ],
                         "vol_ramp": [ 10 ],
                         "vol_slider": [ 1.0 ],
