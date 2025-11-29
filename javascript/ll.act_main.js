@@ -1176,13 +1176,12 @@ function update_TEXT() {
 
         const presetsUI = act_patcher.getnamed("presets");
         if (presetsUI) {
-            presetsUI.message("fontsize", TEXT_fontsize);
-            presetsUI.message("text", ...TEXT_presetsUI);
+            // presetsUI.message("fontsize", TEXT_fontsize);
+            // presetsUI.message("text", ...TEXT_presetsUI);
 
             const d = new Dict();
             d.set("fontsize", TEXT_fontsize);
             d.set("text", [...TEXT_presetsUI]);
-
             presetsUI.message("set_TEXT_data", d.name);
         }
     } catch (e) {

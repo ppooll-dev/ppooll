@@ -140,6 +140,15 @@ function text(v)
 	refresh();
 }
 
+function set_TEXT_data(dictName){
+    // post(dictName, "\n");
+    const dict = new Dict(dictName);
+    mytext = dict.get("text");
+    // post("mytext", mytext, "\n");
+    myfontsize = dict.get("fontsize");
+    // post("myfontsize", myfontsize, "\n");
+}
+
 function draw()
 {
 	//post("draw", SQUARE_SIZE);
