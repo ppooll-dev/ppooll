@@ -1428,9 +1428,9 @@ function freebang() {
 //
 // SPECIALS
 //
-
-function getloc() {
-    messnamed("tetristhis", act_patcher.wind.location);
+function getloc(r,o){
+	let obj = act_patcher.getnamed(o);
+	messnamed(r,obj.rect);
 }
 
 function setloc(x, y, o) {
