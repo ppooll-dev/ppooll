@@ -63,6 +63,15 @@ let is_llenviread = 0; // [r llenviread]
 
 let first_menu_set = true;
 
+let prev_pres_menu = "_";
+
+// preset TEXT
+let TEXT_fontsize = 8;
+let TEXT_dimensions = [0, 0];
+let TEXT_size = 0; // num boxes
+let TEXT_data = {};
+let TEXT_updating = false;
+
 // [v8] attributes
 var isReady = 0;
 declareattribute("isReady", {
@@ -216,15 +225,12 @@ function bang() {
 }
 
 // ll_shell
-function handleShellOutput() { shell.handleShellOutput() }; 
+function handleShellOutput() {
+    shell.handleShellOutput();
+}
 
 function loadbang() {
     shell = new ll_shell.ll_shell(this, "myshell");
-}
-
-function clickreset() {
-    this.box.ignoreclick = 0;
-    drag_gate = 1;
 }
 
 function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
@@ -618,12 +624,15 @@ function set_tetris_menu(selection) {
                     let attrValue = tetrisObj[objName][attrName];
                     //post("all_Attr",attrName," : ",attrValue,"\n");
                     // if value is object and has .color key, set here
-                    if(typeof(attrValue) === "object" && !Array.isArray(attrValue)){
-						//post("dictAttr",attrName," : ",Object.keys(attrValue),"\n");
-                        if(!attrValue.color){
+                    if (
+                        typeof attrValue === "object" &&
+                        !Array.isArray(attrValue)
+                    ) {
+                        //post("dictAttr",attrName," : ",Object.keys(attrValue),"\n");
+                        if (!attrValue.color) {
                             return;
                         }
-                        attrValue = attrValue.color
+                        attrValue = attrValue.color;
                     }
 
                     obj[attrName] = attrValue;
@@ -648,8 +657,8 @@ function set_tetris_menu(selection) {
     // hack:
     //  send the size again,
     //  move the window vertically a bit, and back.
-	// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>not needed anymore, because we re- constrain the patchers in function createbasics()
-	/*
+    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>not needed anymore, because we re- constrain the patchers in function createbasics()
+    /*
     if (size[0] <= 50) {
         wsize(size[0], size[1]);
         setloc(act_patcher.wind.location[0], act_patcher.wind.location[1] + 1);
@@ -680,10 +689,10 @@ function getTetrisFromObject(obj) {
         post("ppooll write_tetris: no attributes for obj", obj.varname, "\n");
         return null;
     }
-	//post("aaaaaaaa",obj.varname, obj.maxclass,"ttt",attributes, "\n");
+    //post("aaaaaaaa",obj.varname, obj.maxclass,"ttt",attributes, "\n");
     for (i = 0; i < attributes.length; i++) {
         if (attributes[i] === "fontsize") {
-			//post("--------", obj.varname, obj.maxclass, attributes[i], obj.getattr(attributes[i]), "\n");
+            //post("--------", obj.varname, obj.maxclass, attributes[i], obj.getattr(attributes[i]), "\n");
             if (obj.maxclass !== "patcher" && obj.maxclass !== "jpatcher")
                 objTetris[attributes[i]] = obj.getattr(attributes[i]);
         }
@@ -695,17 +704,17 @@ function getTetrisFromObject(obj) {
             obj.maxclass !== "patcher" &&
             obj.maxclass !== "jpatcher"
         ) {
-            let attrs = obj.getattr(attributes[i])
+            let attrs = obj.getattr(attributes[i]);
 
-            if(attrs.name){
+            if (attrs.name) {
                 const d = new Dict(attrs.name);
 
-                attrs = JSON.parse(d.stringify())
+                attrs = JSON.parse(d.stringify());
                 //post(attrs, "\n")
             }
-            
+
             // post(attributes[i], attrs, typeof(attrs), "\n")
-            
+
             //post("--------", obj.varname, obj.maxclass, attributes[i], obj.getattr(attributes[i]), "\n");
             objTetris[attributes[i]] = attrs;
         }
@@ -715,23 +724,23 @@ function getTetrisFromObject(obj) {
 
 function get_tetris() { // used also by tetris@ to fill its local dict "tetris_work"
 	//post("getT",act_patcher.name,"\n");
-    const actTetris = { window: act_patcher.wind.location };
+        const actTetris = { window: act_patcher.wind.location };
 	
-    act_patcher.apply((obj) => {
-        if (
-            !obj.varname ||
-            ll.tetris.class_excludes.indexOf(obj.maxclass) > -1 ||
-            ll.tetris.name_excludes.indexOf(obj.varname) > -1
-        )
-            return true; // skip
+        act_patcher.apply((obj) => {
+            if (
+                !obj.varname ||
+                ll.tetris.class_excludes.indexOf(obj.maxclass) > -1 ||
+                ll.tetris.name_excludes.indexOf(obj.varname) > -1
+            )
+                return true; // skip
 
-        const objTetris = getTetrisFromObject(obj);
-        if (objTetris) actTetris[obj.varname] = { ...objTetris };
-        return true;
-    });
+            const objTetris = getTetrisFromObject(obj);
+            if (objTetris) actTetris[obj.varname] = { ...objTetris };
+            return true;
+        });
 	//post("actT",Object.keys(actTetris),"\n");
     const tetrisDict = new Dict("tetris_work");
-    tetrisDict.parse(JSON.stringify(actTetris));
+        tetrisDict.parse(JSON.stringify(actTetris));
 	return tetrisDict;
 }
 
@@ -743,7 +752,7 @@ async function write_tetris(name) {
         const basePath = ll_paths.get(isFactory ? "factory" : "user");
         const actPath = `${basePath}/${act_args.name}T`;
         const fullPath = `${actPath}/${tetrisName}.json`;
-		
+
         await shell.mkdir(ll.convertMaxPathToNative(actPath));
 		//post("actPath",actPath,"\n");
 		//post("fullPath",fullPath,"\n");
@@ -757,6 +766,7 @@ async function write_tetris(name) {
 }
 
 // Handle special messages from named [routepass] 'in2'
+let is_setting_pres_menu = false;
 function _in2(...args) {
     // post("in2", args); post()
     const msg = args.shift();
@@ -792,8 +802,10 @@ function _in2(...args) {
         set_title_menu(args[0]);
     } else if (msg === "act::tetris_menu") {
         set_tetris_menu(args[0]);
-    } else if(msg === "act::pres_menu"){
-        set_preset_menu(Array.isArray(args) ? args : [args])
+    } else if (msg === "act::pres_menu" && !is_setting_pres_menu) {
+        is_setting_pres_menu = true;
+        set_preset_menu(Array.isArray(args) ? args : [args]);
+        is_setting_pres_menu = false;
     }
 }
 
@@ -1042,57 +1054,334 @@ function refresh_menu(
     menuObj.message("dictionary", menuDict.name);
 }
 
-function set_preset_menu(args) {
-    const selection = args[0];
+//
+// TEXT (presets text editor)
+//
 
-    messnamed("ll_preset_menu", act_name_index, selection);
-    return; // handled in ho_st
+// helper to convert col, row to index (String, like in dict)
+function linearIndex(col, row) {
+    const cols = TEXT_dimensions[0];
+    return (row * cols + col + 1).toString();
+}
+
+// calculate the columns, rows and total size of TEXT (number of clickable preset squares)
+function calc_TEXT_dimensions() {
+    const obj_presets = act_patcher.getnamed("presets");
+    let boxsize = 0;
+    if (obj_presets) {
+        if (obj_presets.getattr("SQUARE_SIZE")) {
+            boxsize = obj_presets.getattr("SQUARE_SIZE") * 2;
+        }
+        else if (
+            obj_presets.getattr("jsarguments") &&
+            obj_presets.getattr("jsarguments")[0]
+        ) {
+            boxsize = obj_presets.getattr("jsarguments")[0] + 1;
+        }
+
+        if (boxsize > 0) {
+            const rect = obj_presets.getattr("patching_rect");
+            TEXT_dimensions = [
+                Math.round(rect[2] / boxsize),
+                Math.round(rect[3] / boxsize),
+            ];
+            TEXT_size = TEXT_dimensions[0] * TEXT_dimensions[1];
+            return;
+        }
+    }
+
+    TEXT_dimensions = [0, 0];
+    TEXT_size = 0;
+}
+
+// from jit.cellblock
+function from_TEXT_cellblock(col, row, text) {
+    if (!TEXT_dimensions || TEXT_dimensions.length === 0) return;
+
+    const indexStr = linearIndex(col, row);
+
+    if (!text || text.trim() === "") {
+        delete TEXT_data[indexStr];
+    } else {
+        TEXT_data[indexStr] = text;
+    }
+}
+
+function recall_TEXT_from_dict(deviceName, presetName, path) {
+    // first check for pattrstorage
+    const presetsDict = new Dict();
+    presetsDict.import_json(path);
+    const presetsJSON = JSON.parse(presetsDict.stringify());
+
+    if (presetsJSON.pattrstorage && presetsJSON.pattrstorage.TEXT) {
+        const temp_TEXT = presetsJSON.pattrstorage.TEXT;
+        // post("read from preset json --", JSON.stringify(temp_TEXT), "\n")
+        if (temp_TEXT.fontsize !== undefined) {
+            TEXT_fontsize = temp_TEXT.fontsize;
+            delete temp_TEXT.fontsize;
+        }
+        TEXT_data = { ...temp_TEXT };
+        update_TEXT();
+        return;
+    }
+
+    if (!presetName)
+        // folder environments will not provide a presetName
+        return;
+
+    // in ../ppooll_presets/presets_text.json ?
+    const temp = new Dict();
+    temp.import_json(`${ll_paths.get("user")}/presets_text.json`);
+
+    const preset_TEXT = JSON.parse(temp.stringify());
+    if (preset_TEXT[act_args.name] && preset_TEXT[act_args.name][selection]) {
+        post("has TEXT, recall\n");
+        const temp = new Dict();
+        temp.import_json(`${ll_paths.get("user")}/presets_text.json`);
+
+        const root = JSON.parse(temp.stringify());
+        if (!root[act_args.name] || !root[deviceName][presetName]) return;
+
+        const data = root[deviceName][presetName];
+
+        if (data.fontsize !== undefined) {
+            TEXT_fontsize = data.fontsize;
+            delete data.fontsize;
+        }
+
+        TEXT_data = { ...data };
+        update_TEXT();
+    }
+}
+
+// update editor patcher and presets UI
+function update_TEXT() {
+    try {
+        editTEXT("fontsize", TEXT_fontsize);
+        calc_TEXT_dimensions();
+
+        const TEXT_presetsUI = [];
+        for (let i = 0; i < TEXT_size; i++) {
+            const iStr = (i + 1).toString();
+            const text = TEXT_data[iStr] || " ";
+            const cols = TEXT_dimensions[0];
+            const row = Math.floor(i / cols);
+            const col = i % cols;
+            post(text);
+            TEXT_presetsUI.push(text);
+
+            editTEXT("grid", "set", col, row, text);
+        }
+        post(TEXT_presetsUI, "\n");
+
+        const presetsUI = act_patcher.getnamed("presets");
+        if (presetsUI) {
+            presetsUI.message("fontsize", TEXT_fontsize);
+            presetsUI.message("text", ...TEXT_presetsUI);
+
+            const d = new Dict();
+            d.set("fontsize", TEXT_fontsize);
+            d.set("text", [...TEXT_presetsUI]);
+
+            presetsUI.message("set_TEXT_data", d.name);
+        }
+    } catch (e) {
+        post("error update_TEXT? \n");
+    }
+}
+
+function change_TEXT(...args) {
+    const msgs = Array.isArray(args) ? args : [args];
+    const msg_name = msgs.shift();
+
+    if (TEXT_updating) return;
+
+    TEXT_updating = true;
+
+    if (msg_name === "fontsize") {
+        TEXT_fontsize = msgs[0];
+        update_TEXT();
+    } else if (msg_name === "numbers") {
+        // TODO
+    } else if (msg_name === "grid") {
+        from_TEXT_cellblock(...msgs);
+        update_TEXT();
+    } else if (msg_name === "clearText") {
+        clearTEXT();
+        update_TEXT();
+    } else if (msg_name === "refresh") {
+        update_TEXT();
+    }
+    TEXT_updating = false;
+}
+
+function editTEXT(msg, ...args) {
+    const obj = this.patcher
+        .getnamed("edit_preset_TEXT")
+        .subpatcher()
+        .getnamed("route");
+    if (!obj) {
+        post("edit_preset_TEXT not found\n");
+        return;
+    }
+    obj.message(msg, ...args);
+}
+
+function clearTEXT() {
+    TEXT_data = {};
+    TEXT_updating = false;
+    const obj = this.patcher
+        .getnamed("edit_preset_TEXT")
+        .subpatcher()
+        .getnamed("route");
+    if (!obj) {
+        post("edit_preset_TEXT not found\n");
+        return;
+    }
+    obj.message("grid", "clear", "all");
+}
+
+//
+// pres_menu
+//
+
+async function write_preset(name) {
+    // post("write preset", name, "\n");
+    try {
+        const isFactory = name.startsWith("ƒ ");
+
+        const tetrisName = name.replace("ƒ ", "");
+        const basePath = ll_paths.get(isFactory ? "factory" : "user");
+        const actPath = `${basePath}/${act_args.name}P`;
+        const fullPath = `${actPath}/${name}.json`;
+
+        // TODO: remove ll.shell, just find a way to do with ll.mkdir in act.maxpat
+        // await shell.mkdir(ll.convertMaxPathToNative(actPath));
+
+        write_preset_path(fullPath);
+
+        messnamed("pres_refresh_menu", "bang");
+    } catch (e) {
+        post("ppooll write_preset error: ");
+        post(JSON.stringify(e));
+    }
+}
+
+function write_preset_path(fullPath) {
+    act_patcher.getnamed("pat").message("write", fullPath);
+
+    const presetDict = new Dict();
+    presetDict.import_json(fullPath);
+    const presetJSON = JSON.parse(presetDict.stringify());
+
+    if (presetJSON.pattrstorage) {
+        presetJSON.pattrstorage.TEXT = {
+            fontsize: TEXT_fontsize,
+            ...TEXT_data,
+        };
+    }
+
+    presetDict.parse(JSON.stringify(presetJSON));
+    presetDict.export_json(fullPath);
+
+    post("ppooll write_preset: DONE", act_args.name, name, "\n");
+}
+
+function read_preset_path(fullPath, presetName = 0) {
+    act_patcher.getnamed("pat").message("read", fullPath);
+
+    const presetDict = new Dict();
+    presetDict.parse(fullPath);
+
+    recall_TEXT_from_dict(act_args.name, presetName, fullPath);
+}
+
+function set_preset_menu(args) {
+    const msgs = Array.isArray(args) ? args : [args];
+    const selection = msgs.shift();
+    let preset_name = selection;
+    // if (selection === "write") {
+    //     preset_name = prev_pres_menu;
+    // }
 
     pres_menu.message("clearchecks");
-    
-    if (selection === "_" || selection === "(presets)" || selection === "")
+
+    if (
+        preset_name === "_" ||
+        preset_name === "(presets)" ||
+        preset_name === ""
+    )
         return;
 
     const pat = act_patcher.getnamed("pat");
 
-    if(selection === "write"){
+    if (selection === "write") {
         // show popup with last selected name
-        messnamed("ll_preset_menu", act_name_index, "write");
-        return
+        // messnamed("ll_preset_menu", act_name_index, "write", prev_pres_menu);
+        const dialog = this.patcher
+            .getnamed("dialog")
+            .subpatcher()
+            .getnamed("route");
+        dialog.message("return", "write_preset");
+        dialog.message("path", `${ll_paths.get("user")}/${act_args.name}P`);
+        dialog.message("set", preset_name);
+        dialog.message("bang");
+        pres_menu.message("setsymbol", preset_name);
+        prev_pres_menu = preset_name;
+        return;
     }
 
-    if(selection === "clear!"){
+    if (selection === "clear!") {
         // clear presets
         const presetsUI = act_patcher.getnamed("presets");
-        if(presetsUI)
-            presetsUI.message("clear")
+        if (presetsUI) presetsUI.message("clear");
 
         pat.message("clear");
         pat.message("getslotlist");
         pat.message("presets", 0);
 
         pres_menu.message("setsymbol", "-");
+        prev_pres_menu = "_";
+        clearTEXT();
+        update_TEXT();
 
         return;
     }
 
-    if(selection === "TEXT"){
-        messnamed("ll_preset_menu", act_name_index, "TEXT");
+    if (selection === "TEXT") {
+        // show TEXT
+        calc_TEXT_dimensions();
+        const editPatcher = this.patcher.getnamed("edit_preset_TEXT");
+        editPatcher.message("front");
+
+        // messnamed("ll_preset_menu", act_name_index, "TEXT", prev_pres_menu);
+        pres_menu.message("setsymbol", prev_pres_menu);
         return;
     }
 
-    // post(selection, "\n")
+    // read
+    prev_pres_menu = selection;
 
     pres_menu.message("checksymbol", selection, 1);
 
-    // load tetris layout
-    const isFactory = selection.startsWith("ƒ ");
-    const basePath = isFactory ? ll_paths.get("factory") : ll_paths.get("user");
+    const doPresetHandler = false;
+    if (doPresetHandler) {
+        // message preset-handler in ho_st
+        messnamed("ll_preset_menu", act_name_index, selection);
+    } else {
+        // load preset json
+        const isFactory = selection.startsWith("ƒ ");
+        const basePath = isFactory
+            ? ll_paths.get("factory")
+            : ll_paths.get("user");
 
-    const presetName = selection.replace("ƒ ", "");
-    const presetPath = `${basePath}/${act_args.name}P/${presetName}.json`;
+        const presetName = selection.replace("ƒ ", "");
+        const fullPath = `${basePath}/${act_args.name}P/${presetName}.json`;
 
-    act_patcher.getnamed("pat").message("read", presetPath);
+        read_preset_path(fullPath, selection);
+
+        pres_menu.message("setsymbol", prev_pres_menu);
+    }
 }
 
 //
@@ -1104,7 +1393,7 @@ function savebang() {
 
     // save tetris "ƒ default"
     // messnamed("ll_write_default_tetris", act_name_index);
-    write_tetris("ƒ default");
+    write_tetris("ƒ default_TEST");
 
     act_patcher.getnamed("thispatcher").message("patcher", act_name_index);
 }
@@ -1164,24 +1453,6 @@ function wsize(width, height) {
 }
 
 function apply() {
-    // function printobj(a) {
-    //     if (a.varname) {
-    //         messnamed(
-    //             "tetrislist",
-    //             a.maxclass,
-    //             a.varname,
-    //             a.rect[0],
-    //             a.rect[1],
-    //             a.rect[2],
-    //             a.rect[3],
-    //             a.hidden
-    //         );
-    //     }
-    //     return true;
-    // }
-    // act_patcher.apply(printobj);
-
-    // better ?? (delete above ?)
     act_patcher.apply((a) => {
         if (a.varname) {
             messnamed(
@@ -1204,12 +1475,12 @@ function active_set(...args) {
 }
 ////////////////// new for special messages /////////////////////////
 
-function rampstop(){
-	messnamed(`${act_args.hash}rampstop`, "bang");
+function rampstop() {
+    messnamed(`${act_args.hash}rampstop`, "bang");
 }
 
-function actname(to){
-	messnamed("actname", act_name_index);
+function actname(to) {
+    messnamed("actname", act_name_index);
 	messnamed("::actname", "::"+act_name_index+"::");
 	if(to==="to") post("actname to seems useless"); 
 }
@@ -1217,100 +1488,107 @@ function actname(to){
 ///////////////////////////////////////////pasted from specials//////////////////
 
 function getnamedobj(a){ //was "getnamed"", which is a bad name for a function..
-	//post("actspecials getnamed",a,"\n");
-	actr.object = act_patcher.getnamed(a);
+    //post("actspecials getnamed",a,"\n");
+    actr.object = act_patcher.getnamed(a);
 }
 function Getpatcher(){
-	actr.patcher = act_patcher;
+    actr.patcher = act_patcher;
 }
-
-var console = { ////////                                what is this???
-  log: function(message){
-    post("tetrishelp: " + message)
-    post()
-  }
-}
-
 
 /*
-function bang()
-{
-
-messnamed ("tetristhis", "there", act_patcher);
-// TODO find tetristhis in tetris@
-
+function bang() {
+    messnamed ("tetristhis", "there", act_patcher);
+    // TODO find tetristhis in tetris@
 }
 */
+
 ///////////////////////////////////////// move these into tetris@ ?  ///////////
-function getloc_to(a,o){
-		
-	if (o) { //objects varname
-		messnamed (a, act_patcher.getnamed(o).rect);
-		}
-	//window
-	else messnamed (a, act_patcher.wind.location);
+function getloc_to(a, o) {
+    if (o) {
+        //objects varname
+        messnamed(a, act_patcher.getnamed(o).rect);
+    }
+    //window
+    else messnamed(a, act_patcher.wind.location);
 }
 
-function setwin(a){
-	rect = arrayfromargs(arguments);
-	//post ("SW", a, rec); 
-	var p = act_patcher.wind;
+function setwin(a) {
+    rect = arrayfromargs(arguments);
+    //post ("SW", a, rec);
+    var p = act_patcher.wind;
     p.location = rect;
 }
 
-function getobj(a){
-	a = act_patcher.a;
+function applydict(dn) {
+    let dict_name = dn;
+    var w = act_patcher.wind;
+    var d = new Dict(dict_name);
+    d.set("window", w.location);
+    act_patcher.apply(objdict);
+}
+
+function getobj(a) {
+    a = act_patcher.a;
     if (a.varname)
-        messnamed ("tetrislist", a.maxclass, a.varname, a.rect[0], a.rect[1], a.rect[2], a.rect[3], a.hidden);
+        messnamed(
+            "tetrislist",
+            a.maxclass,
+            a.varname,
+            a.rect[0],
+            a.rect[1],
+            a.rect[2],
+            a.rect[3],
+            a.hidden
+        );
     return true;
 }
 
 var newstate = new Array();
-function applyblue(b){
-	//post("\n", "got: " + b);	
-	newstate = b.split(' ');
-	for (i=1;i<newstate.length;i++) newstate[i] = Number(newstate[i]);
-	//post ("new: " + newstate, "\n");
+function applyblue(b) {
+    //post("\n", "got: " + b);
+    newstate = b.split(" ");
+    for (i = 1; i < newstate.length; i++) newstate[i] = Number(newstate[i]);
+    //post ("new: " + newstate, "\n");
     act_patcher.apply(getblueargs);
 }
 
-function getblueargs(a){
-	if (a.varname == "ll.blues"){
-		//post ("newd: " + newstate, "\n");	
-		//post ("newd: ", a.getattrnames(), "\n");	
-		var args;
-		if (a.getboxattr("args")){
- 			args = a.getboxattr("args");
-			var istate = -10;
-			if (newstate[0] == "@state"){
-			for (i=0;i<args.length;i++) {
-				if (args[i] == "@state")istate = i;
-				if (i<istate+7) args[i] = newstate[i-istate];
-				}
-			}
-		if (istate<0) args = args.concat(newstate);	
-		a.setboxattr("args",args);
-		}
-		else {
-			a.setboxattr("args",newstate);		
-		}
-	messnamed ("getargs", a.getboxattr("args"));
-	}
+function getblueargs(a) {
+    if (a.varname == "ll.blues") {
+        //post ("newd: " + newstate, "\n");
+        //post ("newd: ", a.getattrnames(), "\n");
+        var args;
+        if (a.getboxattr("args")) {
+            args = a.getboxattr("args");
+            var istate = -10;
+            if (newstate[0] == "@state") {
+                for (i = 0; i < args.length; i++) {
+                    if (args[i] == "@state") istate = i;
+                    if (i < istate + 7) args[i] = newstate[i - istate];
+                }
+            }
+            if (istate < 0) args = args.concat(newstate);
+            a.setboxattr("args", args);
+        } else {
+            a.setboxattr("args", newstate);
+        }
+        messnamed("getargs", a.getboxattr("args"));
+    }
 }
 
-function getblueargsonly(){
-	a = act_patcher.getnamed("ll.blues");
-	messnamed ("getargs", a.getboxattr("args"));
+function getblueargsonly() {
+    a = act_patcher.getnamed("ll.blues");
+    messnamed("getargs", a.getboxattr("args"));
 }
 
-
+//
 // sendto, sendto1
-function sendto(...args){
+//
+function sendto(...args) {
     let msg = [...args];
-    const dest = msg.shift()
+    const dest = msg.shift();
 
     msg = Array.isArray(msg) ? msg : [msg];
-    
+
     const obj_gate = this.patcher.getnamed("sendto_gate");
     const obj_forward = this.patcher.getnamed("sendto_forward");
     const obj_pat = act_patcher.getnamed("pat");
@@ -1322,12 +1600,12 @@ function sendto(...args){
     obj_forward.message("send", "no");
 }
 
-function sendto1(...args){
+function sendto1(...args) {
     let msg = [...args];
-    const dest = msg.shift()
+    const dest = msg.shift();
 
     msg = Array.isArray(msg) ? msg : [msg];
-    
+
     const obj_gate = this.patcher.getnamed("sendto_gate");
     const obj_forward = this.patcher.getnamed("sendto_forward");
     const obj_pat = act_patcher.getnamed("pat");
@@ -1337,4 +1615,34 @@ function sendto1(...args){
     obj_pat.message(...msg);
     // first message from pattrstorage closes the gate outside js
     obj_forward.message("send", "no");
+}
+
+//
+// special messages from pattrstorage
+//      ie: client_add, slotlist, read
+//
+
+function from_pat(...args) {
+    const msg = args.shift();
+    if (msg === "client_add") {
+        const client_name = args[0];
+        messnamed(`::${act_name_index}::client_add`, client_name);
+    } else if (msg === "read") {
+        const file_name = args[0];
+        const shouldGetSlotList = args[1];
+        messnamed(
+            `::${act_name_index}::pstoread`,
+            file_name,
+            shouldGetSlotList
+        );
+        act_patcher.getnamed("pat").message("getslotlist");
+    } else if (msg === "slotlist") {
+        const obj_presets = act_patcher.getnamed("presets");
+        if (obj_presets) {
+            obj_presets.message("slotlist", ...args);
+        }
+        if (args.indexOf(1000) > -1) {
+            act_patcher.getnamed("pat").message("recall", 1000);
+        }
+    }
 }
