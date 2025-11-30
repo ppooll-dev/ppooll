@@ -500,7 +500,7 @@
                             }
                         ]
                     },
-                    "patching_rect": [ 769.31, 255.54, 51.0, 22.0 ],
+                    "patching_rect": [ 683.0, 294.0, 51.0, 22.0 ],
                     "text": "p dialog",
                     "varname": "dialog"
                 }
@@ -829,7 +829,7 @@
                             }
                         ]
                     },
-                    "patching_rect": [ 713.0, 317.0, 117.0, 22.0 ],
+                    "patching_rect": [ 683.0, 352.0, 117.0, 22.0 ],
                     "text": "p edit_preset_TEXT",
                     "varname": "edit_preset_TEXT"
                 }
@@ -848,12 +848,11 @@
             {
                 "box": {
                     "id": "obj-55",
-                    "linecount": 2,
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 589.0, 94.0, 211.0, 33.0 ],
-                    "text": "joe, do we need this ?\nyes, to open .maxhelp from act_main"
+                    "patching_rect": [ 393.0, 69.0, 223.0, 20.0 ],
+                    "text": "needed to open .maxhelp from act_main"
                 }
             },
             {
@@ -2608,7 +2607,7 @@
                             }
                         ]
                     },
-                    "patching_rect": [ 593.0, 353.0, 105.99999999999989, 22.0 ],
+                    "patching_rect": [ 593.0, 353.0, 60.0, 22.0 ],
                     "text": "p master",
                     "varname": "master"
                 }
@@ -2830,7 +2829,7 @@
                             }
                         ]
                     },
-                    "patching_rect": [ 700.9999999999999, 352.0, 129.0, 24.0 ],
+                    "patching_rect": [ 445.0, 352.0, 129.0, 24.0 ],
                     "text": "p send_parameters"
                 }
             },
@@ -4003,7 +4002,7 @@
                             }
                         ]
                     },
-                    "patching_rect": [ 770.0, 286.0, 60.0, 22.0 ],
+                    "patching_rect": [ 683.0, 324.0, 60.0, 22.0 ],
                     "text": "p presets"
                 }
             },
@@ -4015,7 +4014,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 700.9999999999999, 287.0, 25.0, 20.0 ],
+                    "patching_rect": [ 466.0, 238.0, 25.0, 20.0 ],
                     "text": "pat"
                 }
             },
@@ -4420,7 +4419,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 287.0, 210.5, 79.0, 35.0 ],
+                    "patching_rect": [ 262.0, 210.5, 79.0, 35.0 ],
                     "text": "pattrforward parent::pat",
                     "varname": "pf_pat"
                 }
@@ -4434,7 +4433,7 @@
                     "numinlets": 0,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 307.0, 178.5, 66.0, 22.0 ],
+                    "patching_rect": [ 275.0, 183.5, 66.0, 22.0 ],
                     "text": "r #0pat"
                 }
             },
@@ -4448,7 +4447,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 171.0, 210.5, 109.0, 35.0 ],
+                    "patching_rect": [ 146.0, 210.5, 109.0, 35.0 ],
                     "text": "pattrforward parent::thispatcher",
                     "varname": "pf_thispatcher"
                 }
@@ -4462,7 +4461,7 @@
                     "numinlets": 0,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 189.0, 183.5, 51.0, 22.0 ],
+                    "patching_rect": [ 184.0, 183.5, 51.0, 22.0 ],
                     "text": "r ll_TPs"
                 }
             },
@@ -4484,7 +4483,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 593.0, 76.0, 51.0, 22.0 ],
+                    "patching_rect": [ 397.0, 51.0, 51.0, 22.0 ],
                     "text": "pcontrol",
                     "varname": "pcontrol"
                 }
@@ -4542,7 +4541,7 @@
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 593.0, 18.0, 67.0, 22.0 ],
+                    "patching_rect": [ 397.0, 24.0, 67.0, 22.0 ],
                     "save": [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
                     "text": "thispatcher",
                     "varname": "thispatcher"
@@ -4831,14 +4830,14 @@
             {
                 "patchline": {
                     "destination": [ "obj-50", 1 ],
-                    "order": 1,
+                    "order": 0,
                     "source": [ "obj-39", 1 ]
                 }
             },
             {
                 "patchline": {
                     "destination": [ "obj-54", 0 ],
-                    "order": 0,
+                    "order": 1,
                     "source": [ "obj-39", 1 ]
                 }
             },
