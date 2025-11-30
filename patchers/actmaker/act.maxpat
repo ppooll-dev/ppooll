@@ -2779,6 +2779,7 @@
                         },
                         "classnamespace": "box",
                         "rect": [ 393.0, 439.0, 358.0, 449.0 ],
+                        "visible": 1,
                         "boxes": [
                             {
                                 "box": {
@@ -2889,7 +2890,19 @@
                                         "classnamespace": "box",
                                         "rect": [ 733.0, 256.0, 700.0, 632.0 ],
                                         "default_fontsize": 10.0,
+                                        "visible": 1,
                                         "boxes": [
+                                            {
+                                                "box": {
+                                                    "id": "obj-23",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 3,
+                                                    "numoutlets": 2,
+                                                    "outlettype": [ "", "bang" ],
+                                                    "patching_rect": [ 166.19, 552.96, 60.0, 20.0 ],
+                                                    "text": "ll.pf presets"
+                                                }
+                                            },
                                             {
                                                 "box": {
                                                     "id": "obj-13",
@@ -2908,7 +2921,7 @@
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 24.0, 272.0, 79.0, 31.0 ],
+                                                    "patching_rect": [ 24.0, 272.0, 79.0, 20.0 ],
                                                     "text": "r #0rampstop"
                                                 }
                                             },
@@ -3438,6 +3451,13 @@
                                                 "patchline": {
                                                     "destination": [ "obj-1", 0 ],
                                                     "order": 0,
+                                                    "source": [ "obj-17", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-23", 0 ],
+                                                    "order": 2,
                                                     "source": [ "obj-17", 0 ]
                                                 }
                                             },

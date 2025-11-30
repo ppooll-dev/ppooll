@@ -11,6 +11,16 @@ this software under the terms of the GPL.  There is no warranty whatsoever.
 
 arguments: fgred fggreen fgblue bgred bggreen bgblue hilightred highlightgreen highlightblue
 
+
+TODO:
+- fix vertical animation -- both should start from bottom
+- option-click should suspend any recall messages
+    - this needs to happen at the patcher level 
+        we should off-load [p preset] functionality from act.maxpat here
+- feature: shift allows recallmulti (slide box anywhere in grid)
+    overall, we should try to make all messages functional with recallmulti
+    allows sending lists to presets !! 
+
 */
 
 autowatch = 1;
@@ -34,9 +44,24 @@ var hoverAdd = false;
 var hoverRemove = false;
 
 var interp_active = false;
-var interp_base = 0; // starting preset index
-var interp_value = 0; // floating recall value sent to pattrstorage
-var interp_target = 0; // nearest integer (preview)
+
+var interp_prevslot = 0; // explicitly set
+var interp_nextslot = 0; // explicitly set
+var interp_amount = 0; // 0..1
+
+var interp_display = "none"; // "horizontal" | "vertical"
+
+// === Cached geometry for fast paint() ===
+let g_square = 6; // half of boxsize
+let g_margin = 1;
+let g_inner = 1;
+let g_step = 0;
+
+let g_num_cols = 0;
+let g_num_rows = 0;
+
+let g_startX = 0;
+let g_startY = 0;
 
 // ---------- attributes ----------
 
@@ -47,6 +72,7 @@ declareattribute("boxsize", {
     initial: 12,
     embed: 1,
     paint: 1,
+    setter: "set_boxsize",
 });
 
 // global background
@@ -85,6 +111,16 @@ declareattribute("vrgb3", {
     paint: 1,
 });
 
+var interp_direction = "horizontal"; // or "horizontal"
+// declareattribute("interp_direction", {
+//     type: "symbol",
+//     label: "Interpolation Direction",
+//     initial: "vertical",
+//     enum: ["vertical", "horizontal"],
+//     embed: 1,
+//     paint: 1,
+// });
+
 var width,
     height,
     w,
@@ -110,27 +146,37 @@ loadbang();
 refresh();
 getactname();
 
-
-function msg_int(boxsize){
-    // post("boxsize?", boxsize);
+function msg_int(boxsize) {
+    post("new slot?", boxsize, "\n");
 }
+
+function set_boxsize(val) {
+    boxsize = val;
+    recomputeGrid();
+    refresh();
+}
+
 
 // ------------------------------------------------------------
 // BACKWARD COMPATIBILITY: convert legacy jsarguments into attributes
 // ------------------------------------------------------------
 function loadbang() {
-    // If patch was created using legacy args, convert them now.
-    jsargumentsConvert()
+
+
+    jsargumentsConvert();
+    recomputeGrid();
+    refresh();
 }
 
-function jsargumentsConvert(){
+function jsargumentsConvert() {
     if (jsarguments.length > 1) {
         post("ll.pattr_v8ui: converting legacy jsarguments to attributes...");
 
         // LEGACY ARG 1 = square size
         if (jsarguments.length > 1 && typeof jsarguments[1] === "number") {
             boxsize = jsarguments[1];
-            post("boxsize",boxsize,'\n')
+            post("boxsize", boxsize);
+            recomputeGrid();
         }
 
         // helper to convert "r g b" → [r/255, g/255, b/255, 1]
@@ -153,7 +199,7 @@ function jsargumentsConvert(){
         jsarguments = "";
         refresh();
 
-        post("Done.\n");
+        post("done.\n");
     }
 }
 
@@ -183,6 +229,7 @@ function actname(a) {
     out_name = "::" + a + "::preset_gui";
     pat_name = "::" + a + "::pat";
     pat = this.patcher.getnamed("pat");
+    preset_ramp = this.patcher.getnamed("preset-ramp")
     if (pat) {
         pat.message("getslotlist");
     }
@@ -192,11 +239,22 @@ function actname(a) {
 function ramp(a) {
     ramp_ = a;
 }
-function recall() {
-    if (current != arguments[0]) {
-        current = arguments[0];
-        outlet(0, current);
-    }
+
+function recall(prev, next, amount) {
+    interp_active = true;
+
+    interp_prevslot = prev;
+    interp_nextslot = next;
+    interp_amount = amount;
+
+    interp_display = "vertical"; // always vertical for external
+    refresh();
+
+    // TODO what is this
+    // if (current != arguments[0]) {
+    //     current = arguments[0];
+    //     outlet(0, current);
+    // }
 }
 
 function write() {}
@@ -232,23 +290,67 @@ function set_TEXT_data(dictName) {
     refresh();
 }
 
-function paint() {
+function recomputeGrid() {
     const width = box.rect[2] - box.rect[0];
     const height = box.rect[3] - box.rect[1];
 
-    const square = boxsize / 2;
-    const margin = 1;
-    const inner = 1;
+    // cached geometry
+    g_square = boxsize / 2;
+    g_step = g_square * 2 + g_inner;
+
+    g_startX = g_margin + g_square;
+    g_startY = g_margin + g_square;
+
+    // --- compute columns using half-visible rule ---
+    let cols = 0;
+    for (let cx = g_startX; ; cx += g_step) {
+        const left = cx - g_square;
+        const right = cx + g_square;
+
+        const visible =
+            Math.min(right, width - g_margin) - Math.max(left, g_margin);
+
+        if (visible < g_square / 2) break;
+        cols++;
+    }
+
+    // --- compute rows using half-visible rule ---
+    let rows = 0;
+    for (let cy = g_startY; ; cy += g_step) {
+        const top = cy - g_square;
+        const bottom = cy + g_square;
+
+        const visible =
+            Math.min(bottom, height - g_margin) - Math.max(top, g_margin);
+
+        if (visible < g_square / 2) break;
+        rows++;
+    }
+
+    g_num_cols = cols;
+    g_num_rows = rows;
+
+    num_squares = [cols, rows];
+}
+
+function paint() {
+    const width = box.rect[2] - box.rect[0];
+    const height = box.rect[3] - box.rect[1];
 
     mgraphics.set_source_rgba(vbrgb);
     mgraphics.rectangle(0, 0, width, height);
     mgraphics.fill();
 
-    let i = 0;
-    let y = margin + square; // ← FIXED: ensures row is fully visible
+    const square = g_square;
+    const margin = g_margin;
+    const inner = g_inner;
+    const step = g_step;
 
-    const num_cols = Math.floor((width - margin) / (square * 2 + inner));
-    const num_rows = Math.floor((height - margin) / (square * 2 + inner));
+    const num_cols = g_num_cols;
+    const num_rows = g_num_rows;
+
+    let i = 0;
+    let y = margin + square;
 
     num_squares = [num_cols, num_rows];
 
@@ -271,38 +373,61 @@ function paint() {
             // ----- interpolation visual fill -----
             // ----- interpolation visual fill (full color, no transparency) -----
             // ----- interpolation visual fill (full color, only when truly between) -----
-            if (interp_active) {
-                var base = interp_base;
-                var value = interp_value;
-                var frac = value - base;
+            if (interp_active && interp_display !== "none") {
+                const prev = interp_prevslot;
+                const next = interp_nextslot;
+                const amt = interp_amount;
 
-                // only draw if strictly between base and base+1
-                if (frac > 0 && frac < 1 && slots[base] && slots[base + 1]) {
-                    // base preset (left / lower)
-                    if (i === base) {
-                        var w0 = 1 - frac; // weight for base
-                        mgraphics.set_source_rgba(vrgb2); // full color
+                if (i === prev) {
+                    // base square
+                    mgraphics.set_source_rgba(vrgb2);
+
+                    if (interp_display === "horizontal") {
+                        // fill RIGHT side, shrinking left→right
+                        const w0 = 1 - amt;
+                        mgraphics.rectangle(
+                            x - square + square * 2 * amt,
+                            y - square,
+                            square * 2 * w0,
+                            square * 2
+                        );
+                    } else if (interp_display === "vertical") {
+                        // fill BOTTOM section, shrinking up
+                        const h0 = 1 - amt;
                         mgraphics.rectangle(
                             x - square,
-                            y + square - square * 2 * w0,
+                            y + square - square * 2 * h0,
                             square * 2,
-                            square * 2 * w0
+                            square * 2 * h0
                         );
-                        mgraphics.fill();
                     }
 
-                    // next preset (right / upper)
-                    if (i === base + 1) {
-                        var w1 = frac; // weight for next
-                        mgraphics.set_source_rgba(vrgb2); // full color
+                    mgraphics.fill();
+                }
+
+                if (i === next) {
+                    // next square
+                    mgraphics.set_source_rgba(vrgb2);
+
+                    if (interp_display === "horizontal") {
+                        // fill LEFT side, growing left→right
                         mgraphics.rectangle(
                             x - square,
-                            y + square,
-                            square * 2,
-                            -square * 2 * w1
+                            y - square,
+                            square * 2 * amt,
+                            square * 2
                         );
-                        mgraphics.fill();
+                    } else if (interp_display === "vertical") {
+                        // fill TOP section, growing down
+                        mgraphics.rectangle(
+                            x - square,
+                            y - square,
+                            square * 2,
+                            square * 2 * amt
+                        );
                     }
+
+                    mgraphics.fill();
                 }
             }
 
@@ -310,7 +435,7 @@ function paint() {
 
             // Hover overlay + icon
             // Hover overlay + icon
-            if (i === hoverIndex) {
+            if (!interp_active && i === hoverIndex) {
                 // subtle hover highlight
                 mgraphics.set_source_rgba(vbrgb[0], vbrgb[1], vbrgb[2], 0.2);
                 mgraphics.rectangle(
@@ -426,9 +551,10 @@ function coord_to_square(px, py) {
 
 function clear_interp() {
     interp_active = false;
-    interp_base = 0;
-    interp_value = 0;
-    interp_target = 0;
+    interp_prevslot = 0;
+    interp_nextslot = 0;
+    interp_amount = 0;
+    interp_display = "none";
 }
 
 function hover_hit_test(px, py) {
@@ -543,6 +669,7 @@ function store(slot) {
     pat.message("getslotlist");
 }
 
+let ramp_value = 0;
 function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
     last_click = x;
     click = coord_to_square(x, y);
@@ -606,7 +733,7 @@ function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
         hoverIndex = idx;
 
         // delete-hover only when holding ctrl (or cmd if you prefer)
-        hoverRemove = ctrl;
+        hoverRemove = ctrl || cmd;
 
         // plus icon when slot is empty OR user is not in delete mode
         hoverAdd = !hoverRemove && !slots[hoverIndex];
@@ -626,7 +753,7 @@ onidleout.local = 1;
 
 let use_legacy = false;
 function msg_float(a) {
-    //post("msg", a);
+    post("msg", a);
     if (use_legacy) {
         if (parseInt(a) != current) set_current(parseInt(a));
         messnamed(act_name, "active_set", "recall", parseInt(a));
@@ -667,14 +794,12 @@ function msg_float(a) {
         refresh();
     }
 }
-
+let drag_mode = 0; // could default to dragging mode
 function ondrag(x, y, but, cmd, shift, capslock, option, ctrl) {
     //post("drag", "\n");
     if (option) {
-        // offset in pixels
+        // horizontal drag interpolation
         var offset = x - last_click;
-
-        // convert to fractional preset index
         var scaled = (offset * scrub_rate) / 100;
         var newFloat = drag_start + scaled;
 
@@ -684,16 +809,26 @@ function ondrag(x, y, but, cmd, shift, capslock, option, ctrl) {
             Math.min(num_squares[0] * num_squares[1], newFloat)
         );
 
-        interp_active = true;
-        interp_base = Math.floor(newFloat);
-        interp_value = newFloat;
+        // Compute integer prev/next pair
+        var prev = Math.floor(newFloat);
+        var next = Math.min(prev + 1, num_squares[0] * num_squares[1]);
+        var amt = newFloat - prev;
 
-        // Send FLOAT recall to pattrstorage
-        pat.message(interp_value);
+        // Set new unified state
+        interp_active = true;
+        interp_prevslot = prev;
+        interp_nextslot = next;
+        interp_amount = amt;
+        interp_display = "horizontal";
+
+        // Tell pattrstorage the same float
+        pat.message(newFloat);
 
         refresh();
         return;
     } else {
+        interp_active = false;
+
         var drag = coord_to_square(x, y);
         if ((drag != click) & slots[drag]) {
             click = drag;
@@ -710,9 +845,11 @@ function scrubRate(n) {
 onclick.local = 1; //private. could be left public to permit "synthetic" events
 
 function onresize(w, h) {
+    recomputeGrid();
     refresh();
     if (act_name) messnamed(act_name, "v8", "change_TEXT", "refresh");
 }
+
 onresize.local = 1; //private
 
 function setvalueof(v) {
