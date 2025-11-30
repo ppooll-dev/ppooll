@@ -62,8 +62,6 @@ let showHoverIcons = true;
 
 let is_llenviread = 0; // [r llenviread]
 
-let first_menu_set = true;
-
 let prev_pres_menu = "(presets)";
 
 // preset TEXT
@@ -561,11 +559,6 @@ function set_title_menu(selection) {
     // post("set_title_menu", selection, "\n");
     if (!isReady || selection === "" || selection === "_") return;
 
-    if (act_args.name !== "ho_st" && first_menu_set) {
-        first_menu_set = false;
-        return;
-    }
-
     const fn = title_menu_options[selection];
     if (!fn) {
         post("ll.act_title.js error", "no title_menu fn ", selection, "\n");
@@ -828,9 +821,6 @@ function _in2(...args) {
 
 // from [r llenviread] :  1 == reading environment
 function set_llenviread(is_reading) {
-    if (is_llenviread && is_reading === 0) {
-        first_menu_set = false;
-    }
     is_llenviread = is_reading;
 }
 
@@ -862,7 +852,7 @@ function delete_old() {
         let jsarguments = presetsUI.getattr("jsarguments");
         jsarguments = Array.isArray(jsarguments) ? jsarguments : [jsarguments];
 
-        post("remove jsui presets", "\n")
+        // post("remove jsui presets", "\n")
         act_patcher.remove(presetsUI)
 
         const presets_v8 = act_patcher.newdefault(rect[0], rect[1], "v8ui", "@filename", "ll.pattr_v8ui", "@jsarguments", ...jsarguments, "@varname", "presets");
@@ -1685,7 +1675,7 @@ function from_pat(...args) {
         if (obj_presets) {
             obj_presets.message("slotlist", ...args);
             pat_slotlist = Array.isArray(args) ? args : [args];
-            post(act_name_index, "slotlist", pat_slotlist, "\n")
+            // post(act_name_index, "slotlist", pat_slotlist, "\n")
         }
         if (args.indexOf(1000) > -1) {
             act_patcher.getnamed("pat").message("recall", 1000);
