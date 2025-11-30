@@ -183,7 +183,9 @@ function actname(a) {
     out_name = "::" + a + "::preset_gui";
     pat_name = "::" + a + "::pat";
     pat = this.patcher.getnamed("pat");
-    if (pat) pat.message("getslotlist");
+    if (pat) {
+        pat.message("getslotlist");
+    }
     refresh();
 }
 
@@ -538,6 +540,7 @@ function store(slot) {
     set_current(slot);
     outlet(0, "store", slot);
     pat.message("store", slot);
+    pat.message("getslotlist");
 }
 
 function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
@@ -549,6 +552,7 @@ function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
             // remove slot
             slots[click] = false;
             pat.message("delete", click);
+            pat.message("getslotlist");
             outlet(0, "delete", click);
             refresh();
             return;
@@ -567,6 +571,7 @@ function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
                 clear_interp();
                 slots[click] = false;
                 pat.message("delete", click);
+                pat.message("getslotlist");
                 outlet(0, "delete", click);
                 refresh();
             } else {
