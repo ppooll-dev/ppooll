@@ -9,8 +9,19 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 81.0, 455.0, 919.0, 442.0 ],
+        "rect": [ 81.0, 453.0, 919.0, 442.0 ],
         "boxes": [
+            {
+                "box": {
+                    "id": "obj-20",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 81.91, 371.9, 50.0, 22.0 ],
+                    "text": "dispose"
+                }
+            },
             {
                 "box": {
                     "id": "obj-34",
@@ -2779,8 +2790,17 @@
                         },
                         "classnamespace": "box",
                         "rect": [ 393.0, 439.0, 358.0, 449.0 ],
-                        "visible": 1,
                         "boxes": [
+                            {
+                                "box": {
+                                    "id": "obj-1",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [ 211.21, 200.42, 91.0, 22.0 ],
+                                    "text": "n presets-value"
+                                }
+                            },
                             {
                                 "box": {
                                     "id": "obj-20",
@@ -2890,7 +2910,6 @@
                                         "classnamespace": "box",
                                         "rect": [ 733.0, 256.0, 700.0, 632.0 ],
                                         "default_fontsize": 10.0,
-                                        "visible": 1,
                                         "boxes": [
                                             {
                                                 "box": {
@@ -3722,7 +3741,14 @@
                             },
                             {
                                 "patchline": {
+                                    "destination": [ "obj-1", 0 ],
+                                    "source": [ "obj-20", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
                                     "destination": [ "obj-26", 0 ],
+                                    "disabled": 1,
                                     "source": [ "obj-20", 0 ]
                                 }
                             },
@@ -4581,6 +4607,12 @@
                 "patchline": {
                     "destination": [ "obj-2", 0 ],
                     "source": [ "obj-18", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-33", 0 ],
+                    "source": [ "obj-20", 0 ]
                 }
             },
             {

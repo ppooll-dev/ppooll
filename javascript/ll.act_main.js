@@ -196,6 +196,10 @@ function bang() {
         actr.patchers = {};
     }
     actr.patchers[act_name_index] = act_patcher;
+    if (!actr.pat) {
+        actr.pat = {};
+    }
+    actr.pat[act_name_index] = {};
 
     messnamed("actname", act_name_index);
     messnamed(act_args.hash + "actname", act_name_index);
@@ -1645,6 +1649,9 @@ function sendto1(...args) {
 
 function from_pat(...args) {
     const msg = args.shift();
+    if( actr.pat[act_name_index])
+        actr.pat[act_name_index][msg] = args; // always store pat values!
+
     if (msg === "client_add") {
         const client_name = args[0];
         messnamed(`::${act_name_index}::client_add`, client_name);
