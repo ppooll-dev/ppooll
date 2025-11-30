@@ -18,12 +18,6 @@ if (typeof ll === "undefined") {
     var ll = require("ll._utilities");
 }
 
-if (typeof ll_shell === "undefined") {
-    var ll_shell = require("ll.shell.js");
-}
-
-var shell = null;
-
 mgraphics.init();
 mgraphics.relative_coords = 0;
 mgraphics.autofill = 0;
@@ -229,15 +223,6 @@ function bang() {
     // post("ready\n");
     isReady = 1;
     mgraphics.redraw();
-}
-
-// ll_shell
-function handleShellOutput() {
-    shell.handleShellOutput();
-}
-
-function loadbang() {
-    shell = new ll_shell.ll_shell(this, "myshell");
 }
 
 function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {

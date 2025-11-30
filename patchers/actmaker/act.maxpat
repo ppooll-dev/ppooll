@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 81.0, 604.0, 919.0, 442.0 ],
+        "rect": [ 81.0, 455.0, 919.0, 442.0 ],
         "boxes": [
             {
                 "box": {
@@ -390,7 +390,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 13.0, 2.0, 87.0, 22.0 ],
-                                    "text": "tetris@1"
+                                    "text": "ho_st1"
                                 }
                             },
                             {
@@ -1932,7 +1932,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 110.0, 290.0, 131.0, 22.0 ],
-                                                    "text": "sameclass tetris@1"
+                                                    "text": "sameclass ho_st1"
                                                 }
                                             },
                                             {
@@ -3792,7 +3792,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 264.0, 0.5, 136.0, 22.0 ],
-                                    "text": "tetris@1"
+                                    "text": "ho_st1"
                                 }
                             },
                             {
@@ -4398,7 +4398,7 @@
                 "box": {
                     "embedstate": [
                         [ "act_index", 1 ],
-                        [ "act_name_index", "tetris@1" ],
+                        [ "act_name_index", "ho_st1" ],
                         [ "isReady", 1 ]
                     ],
                     "filename": "ll.act_main.js",
@@ -4409,7 +4409,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, 0.0, 59.392578125, 16.0 ],
+                    "patching_rect": [ 0.0, 0.0, 50.3515625, 16.0 ],
                     "textfile": {
                         "filename": "ll.act_main.js",
                         "flags": 0,
@@ -4421,35 +4421,6 @@
             },
             {
                 "box": {
-                    "hidden": 1,
-                    "id": "obj-20",
-                    "maxclass": "newobj",
-                    "numinlets": 1,
-                    "numoutlets": 2,
-                    "outlettype": [ "", "bang" ],
-                    "patching_rect": [ 120.0, 0.0, 100.0, 22.0 ],
-                    "saved_object_attributes": {
-                        "shell": "(default)"
-                    },
-                    "text": "shell",
-                    "varname": "myshell"
-                }
-            },
-            {
-                "box": {
-                    "hidden": 1,
-                    "id": "obj-21",
-                    "maxclass": "newobj",
-                    "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 120.0, 30.0, 155.0, 22.0 ],
-                    "text": "prepend handleShellOutput",
-                    "varname": "myshell_prepend"
-                }
-            },
-            {
-                "box": {
                     "annotation": "title_menu - click on ppooll in the ho_st to find info about it",
                     "bgcolor": [ 1.0, 1.0, 1.0, 0.0 ],
                     "fontface": 0,
@@ -4457,13 +4428,13 @@
                     "fontsize": 12.0,
                     "id": "obj-80",
                     "ignoreclick": 1,
-                    "items": [ "info", ",", "clientwindow", ",", "storagewindow", ",", "-", ",", "titlebar", ",", "close", ",", "back", ",", "grow", ",", "master", ",", "active_store", ",", "-", ",", "subpatch", ",", "actmaker" ],
+                    "items": [ "info", ",", "clientwindow", ",", "-", ",", "max_console", ",", "clear_console", ",", "titlebar", ",", "all_titlebars", ",", "dsp(audio_settings)", ",", "tetris", ",", "refresh", ",", "-", ",", "stopwatch", ",", "clock", ",", "-", ",", "close", ",", "closeall", ",", "back", ",", "grow", ",", "-", ",", "subpatch", ",", "actmaker", ",", "ppooll_state", ",", "clean", ",", "nan_clear" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, -7.0, 59.392578125, 23.0 ],
+                    "patching_rect": [ 0.0, -7.0, 50.3515625, 23.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "title_menu"
@@ -4483,7 +4454,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, -7.0, 59.392578125, 23.0 ],
+                    "patching_rect": [ 0.0, -7.0, 50.3515625, 23.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "pres_menu"
@@ -4503,7 +4474,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, -7.0, 59.392578125, 23.0 ],
+                    "patching_rect": [ 0.0, -7.0, 50.3515625, 23.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "tetris_menu"
@@ -4590,27 +4561,6 @@
                 "patchline": {
                     "destination": [ "obj-2", 0 ],
                     "source": [ "obj-18", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-21", 0 ],
-                    "hidden": 1,
-                    "source": [ "obj-20", 1 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-21", 0 ],
-                    "hidden": 1,
-                    "source": [ "obj-20", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-7", 0 ],
-                    "hidden": 1,
-                    "source": [ "obj-21", 0 ]
                 }
             },
             {
