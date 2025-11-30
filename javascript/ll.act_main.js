@@ -522,7 +522,7 @@ function create_host_title_menu_options() {
             });
         },
         "dsp(audio_settings)": () => messnamed("dsp", "status"),
-        tetris: () => () => messnamed("lload", "tetris@"),
+        tetris: () => messnamed("lload", "tetris@"),
         refresh: () => () => messnamed("max", "refresh"),
         separator2: null,
 
