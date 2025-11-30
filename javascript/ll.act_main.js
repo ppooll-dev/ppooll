@@ -40,6 +40,7 @@ const act_args = {
 // dicts
 const ll_state = new Dict("ppoollstate");
 const ll_paths = new Dict("ll_paths");
+const ll_presetsindict = new Dict("llpresetsindict");
 
 // globals
 const actr = new Global("act_rep");
@@ -71,6 +72,8 @@ let TEXT_dimensions = [0, 0];
 let TEXT_size = 0; // num boxes
 let TEXT_data = {};
 let TEXT_updating = false;
+
+let pat_slotlist = [];
 
 // [v8] attributes
 var isReady = 0;
@@ -516,7 +519,7 @@ function create_host_title_menu_options() {
                     "window",
                     "flags",
                     isgrow ? "grow" : "nogrow"
-                );
+                );  
 
                 messnamed(act, "TP", "window", "exec");
             });
@@ -1321,6 +1324,26 @@ function read_preset_path(fullPath, presetName = 0) {
 }
 
 function set_preset_menu(args) {
+    const d = new Dict();
+    messnamed("ll_dict_pull_from_coll", "llpresetsincoll", d.name);
+
+    const presets_in_coll = JSON.parse(d.stringify());
+    if(Object.keys(presets_in_coll).includes(act_name_index)){
+        post("TODO: presets in coll!\n")
+
+        // symbol => coll name ie "1447clocker"
+        // matrix => jit.matrix?  can't find what uses this
+        // special => send %s_%s, pattrforward
+        
+        return;
+    }
+    
+    act_patcher.getnamed("pat").message("getslotlist");
+    if(pat_slotlist.includes(1000)){
+        // post("preset 1000 ! what now... \n")
+        // return
+    }
+
     const msgs = Array.isArray(args) ? args : [args];
     const selection = msgs.shift();
     let preset_name = selection;
@@ -1661,6 +1684,8 @@ function from_pat(...args) {
         const obj_presets = act_patcher.getnamed("presets");
         if (obj_presets) {
             obj_presets.message("slotlist", ...args);
+            pat_slotlist = Array.isArray(args) ? args : [args];
+            post(act_name_index, "slotlist", pat_slotlist, "\n")
         }
         if (args.indexOf(1000) > -1) {
             act_patcher.getnamed("pat").message("recall", 1000);
