@@ -200,6 +200,17 @@ exports.folderExists = (path) => {
     }
 };
 
+exports.mkdir = (path) => {
+    let exists = exports.folderExists(path);
+    if(!exists){
+        messnamed("ll_mkdir", folder);
+        exists = exports.folderExists(folder);
+    }
+    
+    // post("ll.mkdir exists?", exists, "\n");
+    return exists
+}
+
 exports.convertMaxPathToNative = (path) => {
     // Windows path?
     if (/^[A-Za-z]:/.test(path)) {

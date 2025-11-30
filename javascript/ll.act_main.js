@@ -703,9 +703,9 @@ function getTetrisFromObject(obj) {
                 objTetris[attributes[i]] = obj.getattr(attributes[i]);
         }
         if (attributes[i] === "jsarguments") {
-            post(obj[attributes[i]]); post()
+            // post(obj[attributes[i]]); post()
             objTetris[attributes[i]] = obj[attributes[i]];
-            post(objTetris[attributes[i]]);
+            post("tetris jsarguments", objTetris[attributes[i]], "\n");
         }
         if (
             /color/.test(attributes[i]) &&
@@ -761,9 +761,10 @@ async function write_tetris(name) {
         const actPath = `${basePath}/${act_args.name}T`;
         const fullPath = `${actPath}/${tetrisName}.json`;
 
-        // TODO: remove ll.shell, just find a way to do with ll.mkdir in act.maxpat
-        // await shell.mkdir(ll.convertMaxPathToNative(actPath));
-
+        if(!ll.mkdir(actPath)){
+            post("ppooll write_tetris error: folder could not be made:\n", actPath, "\n");
+            return;
+        }
 		//post("actPath",actPath,"\n");
 		//post("fullPath",fullPath,"\n");
         tetrisDict.export_json(fullPath);
@@ -1272,9 +1273,10 @@ async function write_preset(name) {
         const actPath = `${basePath}/${act_args.name}P`;
         const fullPath = `${actPath}/${name}.json`;
 
-        // TODO: remove ll.shell, just find a way to do with ll.mkdir in act.maxpat
-        // await shell.mkdir(ll.convertMaxPathToNative(actPath));
-
+        if(!ll.mkdir(actPath)){
+            post("ppooll write_tetris error: folder could not be made:\n", actPath, "\n");
+            return;
+        }
         write_preset_path(fullPath);
 
         messnamed("pres_refresh_menu", "bang");
