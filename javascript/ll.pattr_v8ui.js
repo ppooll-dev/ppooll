@@ -48,6 +48,9 @@ var interp_active = false;
 var interp_prevslot = 0; // explicitly set
 var interp_nextslot = 0; // explicitly set
 var interp_amount = 0; // 0..1
+var interp_mode = "float"; // "float" (old behavior) or "slots" (click crossfade)
+var interp_start_slot = 0;
+var interp_target_slot = 0;
 
 var interp_display = "none"; // "horizontal" | "vertical"
 
@@ -679,6 +682,14 @@ function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
     click = coord_to_square(x, y);
 
     if (click != 0) {
+
+        // OPTION-CLICK: neighbor slide, no ramp
+        if (option) {
+            handle_option_click(x, y, click);
+            drag_start = myval || click;
+            return;
+        }
+
         if (hoverIndex === click && hoverRemove) {
             // remove slot
             slots[click] = false;
@@ -709,17 +720,30 @@ function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
                 if (mod2) {
                     outlet(0, "ctrl", click);
                 } else {
-                    // CLICK & RELEASE RECALL → uses ramp
-                    var old_current = current;
-                    current = click;     // logical target
+                    // CLICK & RELEASE RECALL
+                    // if ramp > 0 → ramp directly from prev to new using recallmulti
+                    // if ramp == 0 → discrete recall
+                    var old_current = current || click;
                     var r = getramp();   // ms from [preset-ramp]
-                    start_interpolation(old_current, current, r, "vertical");
+
+                    current = click;     // logical target
+
+                    if (r > 0) {
+                        start_slot_interpolation(old_current, current, r, "vertical");
+                    } else {
+                        stop_interpolation();
+                        clear_interp();
+                        set_current(current);
+                        myval = current;
+                        if (pat) pat.message(current);
+                    }
                 }
             }
         }
     }
     drag_start = current;
 }
+onclick.local = 1;
 
 function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
     // same grid mapping as clicks
@@ -826,6 +850,69 @@ function ondrag(x, y, but, cmd, shift, capslock, option, ctrl) {
     }
 }
 
+function handle_option_click(x, y, slotIndex) {
+    // only meaningful if there is at least one stored neighbor
+    if (!slots[slotIndex]) {
+        return;
+    }
+
+    const rect = square_rect(slotIndex);
+    if (!rect) return;
+
+    const maxSlot = g_num_cols * g_num_rows;
+
+    let ratio = 0;
+    if (rect.right > rect.left) {
+        ratio = (x - rect.left) / (rect.right - rect.left);
+        if (ratio < 0) ratio = 0;
+        if (ratio > 1) ratio = 1;
+    }
+
+    let prev = slotIndex;
+    let next = slotIndex;
+    let amt = 0;
+
+    // left half = between (slot-1 → slot)
+    if (ratio < 0.5 && slotIndex > 1) {
+        prev = slotIndex - 1;
+        next = slotIndex;
+        amt = ratio / 0.5; // 0..1
+    }
+    // right half = between (slot → slot+1)
+    else if (ratio >= 0.5 && slotIndex < maxSlot) {
+        prev = slotIndex;
+        next = slotIndex + 1;
+        amt = (ratio - 0.5) / 0.5; // 0..1
+    }
+
+    stop_interpolation();          // kill any running ramp
+    interp_display = "horizontal"; // slide/neighbor visual
+
+    if (prev !== next && amt > 0) {
+        // UI
+        update_interp_two_slot(prev, next, amt);
+
+        // immediate recallmulti between neighbors, no ramp
+        if (pat) {
+            const wPrev = 1 - amt;
+            const wNext = amt;
+            const vPrev = prev + wPrev;
+            const vNext = next + wNext;
+            pat.message("recallmulti", vPrev, vNext);
+        }
+
+        myval = prev + (next - prev) * amt;
+    } else {
+        // click dead-center or no neighbor: just recall that slot
+        clear_interp();
+        set_current(slotIndex);
+        myval = slotIndex;
+        if (pat) pat.message(slotIndex);
+    }
+
+    refresh();
+}
+
 
 function scrubRate(n) {
     scrub_rate = n;
@@ -852,65 +939,72 @@ function getvalueof() {
 // INTERNAL INTERPOLATOR
 // ------------------------------------------------------------
 
-function start_interpolation(start_val, end_val, ramp_ms, display = "vertical") {
-    interp_start = start_val;
-    interp_target = end_val;
-    interp_time = Math.max(1, ramp_ms); // avoid div-by-zero
-    interp_start_time = Date.now();
-
-    interp_display = display;
-
-    if (ramp_ms > 0) {
-        interp_running = true;
-        interp_task.interval = 20; // ~50 FPS
-        interp_task.repeat();
-    } else {
-        // ramp == 0 → immediate jump, but still drive UI consistently
-        if (pat) pat.message(end_val);
-        myval = end_val;
-        set_current(Math.round(end_val));
-        clear_interp();
-        refresh();
-    }
-}
-
 function stop_interpolation() {
     interp_running = false;
     interp_task.cancel();
     clear_interp();
     refresh();
 }
+
 function interp_tick() {
     if (!interp_running) return;
 
     var now = Date.now();
     var elapsed = now - interp_start_time;
-
     var amt = elapsed / interp_time;
     if (amt >= 1) amt = 1;
 
-    // linear interpolated float
-    var f = interp_start + (interp_target - interp_start) * amt;
+    if (interp_mode === "float") {
+        // OLD BEHAVIOR: float interpolation (used by msg_float)
+        var f = interp_start + (interp_target - interp_start) * amt;
 
-    // update UI interpolation
-    update_interp_from_float(f);
+        // update UI between neighboring slots
+        update_interp_from_float(f);
 
-    // send to pattrstorage
-    if (pat) pat.message(f);
+        // drive pattrstorage with float
+        if (pat) pat.message(f);
 
-    myval = f;
+        myval = f;
 
-    if (amt >= 1) {
-        // finalize: snap current to target, clear interpolation
-        set_current(Math.round(interp_target));
-        stop_interpolation();
-    } else {
-        refresh();
+        if (amt >= 1) {
+            set_current(Math.round(interp_target));
+            stop_interpolation();
+        } else {
+            refresh();
+        }
+
+    } else if (interp_mode === "slots") {
+        // NEW BEHAVIOR: crossfade between two discrete slots using recallmulti
+        var prev = interp_start_slot;
+        var next = interp_target_slot;
+
+        // UI: show interpolation between those two slots
+        update_interp_two_slot(prev, next, amt);
+
+        // encode weights into "slot.weight" style floats: e.g. 1.25 7.75
+        if (pat) {
+            var wPrev = 1 - amt;
+            var wNext = amt;
+            var vPrev = prev + wPrev;
+            var vNext = next + wNext;
+            pat.message("recallmulti", vPrev, vNext);
+        }
+
+        // keep myval as a logical "position" for getvalueof
+        myval = prev + (next - prev) * amt;
+
+        if (amt >= 1) {
+            // at the end: snap fully to target slot
+            set_current(next);
+            if (pat) pat.message(next);
+            stop_interpolation();
+        } else {
+            refresh();
+        }
     }
 }
 
 function update_interp_from_float(f) {
-    post(f, "\n");
     const maxSlot = g_num_cols * g_num_rows;
 
     // clamp to valid range
@@ -939,4 +1033,100 @@ function getramp(){
     if (this.patcher.getnamed("preset-ramp"))
         return this.patcher.getnamed("preset-ramp").getvalueof();
     return 0;
+}
+
+function update_interp_two_slot(prev, next, amt) {
+    if (amt <= 0 || prev === next) {
+        // nothing in-between to draw
+        interp_active = false;
+        interp_prevslot = prev;
+        interp_nextslot = next;
+        interp_amount = 0;
+        return;
+    }
+
+    interp_active = true;
+    interp_prevslot = prev;
+    interp_nextslot = next;
+    interp_amount = amt;
+}
+
+function start_slot_interpolation(prev_slot, next_slot, ramp_ms, display) {
+    if (display == null) display = "vertical";
+
+    interp_start_slot = prev_slot;
+    interp_target_slot = next_slot;
+    interp_time = Math.max(1, ramp_ms);
+    interp_start_time = Date.now();
+    interp_display = display;
+    interp_mode = "slots";
+
+    if (ramp_ms > 0) {
+        interp_running = true;
+        interp_task.interval = 20; // ~50 FPS
+        interp_task.repeat();
+    } else {
+        // no ramp: immediate discrete jump
+        stop_interpolation();
+        clear_interp();
+        set_current(next_slot);
+        myval = next_slot;
+        if (pat) pat.message(next_slot);
+        refresh();
+    }
+}
+
+function start_interpolation(start_val, end_val, ramp_ms, display) {
+    if (display == null) display = "vertical";
+
+    interp_start = start_val;
+    interp_target = end_val;
+    interp_time = Math.max(1, ramp_ms); // avoid div-by-zero
+    interp_start_time = Date.now();
+    interp_display = display;
+    interp_mode = "float";
+
+    if (ramp_ms > 0) {
+        interp_running = true;
+        interp_task.interval = 20; // ~50 FPS
+        interp_task.repeat();
+    } else {
+        if (pat) pat.message(end_val);
+        myval = end_val;
+        set_current(Math.round(end_val));
+        clear_interp();
+        refresh();
+    }
+}
+
+function square_rect(index) {
+    const square = boxsize / 2;
+    const margin = 1;
+    const inner = 1;
+
+    const num_cols = num_squares[0];
+    const num_rows = num_squares[1];
+    const max = num_cols * num_rows;
+
+    if (index < 1 || index > max) return null;
+
+    const zeroBased = index - 1;
+    const row = Math.floor(zeroBased / num_cols);
+    const col = zeroBased % num_cols;
+
+    const startX = margin + square;
+    const startY = margin + square;
+    const step = square * 2 + inner;
+
+    const cx = startX + col * step;
+    const cy = startY + row * step;
+
+    return {
+        left:   cx - square,
+        right:  cx + square,
+        top:    cy - square,
+        bottom: cy + square,
+        cx:     cx,
+        cy:     cy
+    };
 }

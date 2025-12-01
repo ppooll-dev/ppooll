@@ -196,6 +196,7 @@ function bang() {
         actr.patchers = {};
     }
     actr.patchers[act_name_index] = act_patcher;
+
     if (!actr.pat) {
         actr.pat = {};
     }
@@ -1649,7 +1650,8 @@ function sendto1(...args) {
 
 function from_pat(...args) {
     const msg = args.shift();
-    if( actr.pat[act_name_index])
+    post('from_pat', msg, args, "\n")
+    if( actr.pat && actr.pat[act_name_index])
         actr.pat[act_name_index][msg] = args; // always store pat values!
 
     if (msg === "client_add") {

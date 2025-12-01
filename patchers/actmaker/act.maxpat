@@ -629,7 +629,7 @@
                             },
                             {
                                 "box": {
-                                    "cols": 1,
+                                    "cols": 6,
                                     "colwidth": 20,
                                     "fontface": 0,
                                     "fontname": "Arial",
@@ -640,9 +640,9 @@
                                     "numinlets": 2,
                                     "numoutlets": 4,
                                     "outlettype": [ "list", "", "", "" ],
-                                    "patching_rect": [ 13.0, 70.0, 0.0, 0.0 ],
+                                    "patching_rect": [ 13.0, 70.0, 120.0, 40.0 ],
                                     "rowheight": 20,
-                                    "rows": 1,
+                                    "rows": 2,
                                     "selmode": 5,
                                     "vscroll": 0
                                 }
@@ -703,7 +703,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 13.0, 2.0, 87.0, 22.0 ],
-                                    "text": "ho_st1"
+                                    "text": "sinus1"
                                 }
                             },
                             {
@@ -1765,7 +1765,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 370.5, 56.0, 57.0, 22.0 ],
-                                    "text": "store 21"
+                                    "text": "store 4"
                                 }
                             },
                             {
@@ -2162,7 +2162,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 110.0, 290.0, 131.0, 22.0 ],
-                                                    "text": "sameclass ho_st1"
+                                                    "text": "sameclass sinus1"
                                                 }
                                             },
                                             {
@@ -3967,6 +3967,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-26", 0 ],
+                                    "disabled": 1,
                                     "source": [ "obj-20", 0 ]
                                 }
                             },
@@ -4056,7 +4057,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 264.0, 0.5, 136.0, 22.0 ],
-                                    "text": "ho_st1"
+                                    "text": "sinus1"
                                 }
                             },
                             {
@@ -4614,7 +4615,7 @@
                 "box": {
                     "embedstate": [
                         [ "act_index", 1 ],
-                        [ "act_name_index", "ho_st1" ],
+                        [ "act_name_index", "sinus1" ],
                         [ "isReady", 1 ]
                     ],
                     "filename": "ll.act_main.js",
@@ -4625,7 +4626,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, 0.0, 50.3515625, 16.0 ],
+                    "patching_rect": [ 0.0, 0.0, 49.689453125, 16.0 ],
                     "textfile": {
                         "filename": "ll.act_main.js",
                         "flags": 0,
@@ -4673,13 +4674,13 @@
                     "fontsize": 12.0,
                     "id": "obj-80",
                     "ignoreclick": 1,
-                    "items": [ "info", ",", "clientwindow", ",", "-", ",", "max_console", ",", "clear_console", ",", "titlebar", ",", "all_titlebars", ",", "dsp(audio_settings)", ",", "tetris", ",", "refresh", ",", "-", ",", "stopwatch", ",", "clock", ",", "-", ",", "close", ",", "closeall", ",", "back", ",", "grow", ",", "-", ",", "subpatch", ",", "actmaker", ",", "ppooll_state", ",", "clean", ",", "nan_clear" ],
+                    "items": [ "info", ",", "clientwindow", ",", "storagewindow", ",", "-", ",", "titlebar", ",", "close", ",", "back", ",", "grow", ",", "master", ",", "active_store", ",", "-", ",", "subpatch", ",", "actmaker" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, -7.0, 50.3515625, 23.0 ],
+                    "patching_rect": [ 0.0, -7.0, 49.689453125, 23.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "title_menu"
@@ -4693,13 +4694,13 @@
                     "fontsize": 12.0,
                     "id": "obj-82",
                     "ignoreclick": 1,
-                    "items": [ "(presets)", ",", "-", ",", "ee", ",", "-", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
+                    "items": [ "(presets)", ",", "-", ",", "_fdafdsafdsaf", ",", "_test_vst_preset", ",", "cone-o-shame-TEXT", ",", "cone-o-shame", ",", "sinus-presets", ",", "text-pls", ",", "-", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, -7.0, 50.3515625, 23.0 ],
+                    "patching_rect": [ 0.0, -7.0, 49.689453125, 23.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "pres_menu"
@@ -4713,13 +4714,13 @@
                     "fontsize": 12.0,
                     "id": "obj-84",
                     "ignoreclick": 1,
-                    "items": [ "(tetris)", ",", "-", ",", "big_clock.json", ",", "ioioi.json", ",", "minimal.json", ",", "quer.json", ",", "-", ",", "ƒ default.json", ",", "ƒ default_TEST.json", ",", "-" ],
+                    "items": [ "(tetris)", ",", "-", ",", "bang.json", ",", "beeg.json", ",", "hahahahah.json", ",", "something.json", ",", "testin.json", ",", "-", ",", "ƒ default.json", ",", "-" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, -7.0, 50.3515625, 23.0 ],
+                    "patching_rect": [ 0.0, -7.0, 49.689453125, 23.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "tetris_menu"
