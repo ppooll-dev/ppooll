@@ -689,8 +689,9 @@ function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
             // add / store
             clear_interp();
             outlet(0, "store", click);
+			store(click);
             messnamed(act_name, "active_set", "store", click);
-            store(click);
+            
             myval = click;
             return;
         } else if (slots[click]) {

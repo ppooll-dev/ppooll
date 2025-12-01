@@ -1,0 +1,11 @@
+
+
+presets need to be inactive (always)
+and get a high priority
+
+priorities !!!
+act
+ll.blues (force ll.blues varname?)
+
+v8ui: ppooll write_tetris error:   {} 
+with new acts at saving ??
