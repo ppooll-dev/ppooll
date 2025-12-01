@@ -66,6 +66,7 @@ let TEXT_data = {};
 let TEXT_updating = false;
 
 let pat_slotlist = [];
+let pat_clientlist = [];
 
 // [v8] attributes
 var isReady = 0;
@@ -103,7 +104,8 @@ var act_rect = [400, 400]; // act bpatcher rect in top-level act patcher
 // act umenus
 var title_menu,
     pres_menu,
-    tetris_menu = null;
+    tetris_menu = null,
+	obj_pat;
 
 // title_menu options
 let isMaster,
@@ -119,6 +121,17 @@ const title_menu_options =
         : create_title_menu_options();
 
 const title_menu_options_list = Object.keys(title_menu_options);
+
+
+
+
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
+
 
 // refresh js when the file has been changed and save
 //  * only do this after the initial [loadbang]--[deferlow]--
@@ -764,7 +777,7 @@ async function write_tetris(name) {
 // Handle special messages from named [routepass] 'in2'
 let is_setting_pres_menu = false;
 function _in2(...args) {
-    // post("in2", args); post()
+    //post("in2", args); post()
     const msg = args.shift();
 
     if (msg === "act::master/activest") {
@@ -799,9 +812,10 @@ function _in2(...args) {
     } else if (msg === "act::tetris_menu") {
         set_tetris_menu(args[0]);
     } else if (msg === "act::pres_menu" && !is_setting_pres_menu) {
+		if(args == "clear!") obj_pat.message("act::active_store","_");  //== better than === here
         is_setting_pres_menu = true;
         set_preset_menu(Array.isArray(args) ? args : [args]);
-        is_setting_pres_menu = false;
+        is_setting_pres_menu = false;		
     }
 }
 
@@ -955,7 +969,7 @@ function create_rest() {
 }
 
 function first_dump() {
-    let obj_pat = act_patcher.getnamed("pat");
+    obj_pat = act_patcher.getnamed("pat");
     [
         ["active", "preset-ramp", 0],
         ["active", "presets", 0],
@@ -1062,8 +1076,13 @@ function refresh_menu(
 }
 
 //
-// TEXT (presets text editor)
-//
+// ############################################################### TEXT (presets text editor)
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
 
 // helper to convert col, row to index (String, like in dict)
 function linearIndex(col, row) {
@@ -1491,9 +1510,7 @@ function apply() {
     });
 }
 
-function active_set(...args) {
-    messnamed(`${act_args.hash}active_set`, ...args);
-}
+
 ////////////////// new for special messages /////////////////////////
 
 function rampstop() {
@@ -1670,6 +1687,60 @@ function from_pat(...args) {
     }
 }
 
+// ############################################################### active_store
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
+let pat_activelist = [];
+function active_set(...args) {
+    //messnamed(`${act_args.hash}active_set`, ...args);
+	obj_pat = act_patcher.getnamed("pat");
+	pat_clientlist = [];
+	sendto(`${act_args.hash}clientlist`,"getclientlist");
+	//post("cl",pat_clientlist,"\n");
+	if (1){ /////(activest === 1)
+		//const msg = args.shift();
+		//post("active_set",args[0],args[1],"\n");
+		if (args[0] === "store"){		
+			pat_activelist = [];
+			for (let p of pat_clientlist){
+				//post("getactive",p,"\n");
+				sendto(`${act_args.hash}gotactive`,"getactive",p);
+			}
+			post("pat_activelist",pat_activelist,"\n");
+			obj_pat = act_patcher.getnamed("pat");
+			obj_pat.message("act::active_store",pat_activelist);
+			
+			
+		} else if (args[0] === "recall"){
+				sendto(`${act_args.hash}recall_active_store`,"getstoredvalue","act::active_store",args[1]);
+			}
+	}
+}
+function clientlist(...args){
+	const msg = args.shift();
+    if (msg === "clientlist") {
+   		//post("clientlist",args[0],"\n");
+		if (args[0] !== "done") pat_clientlist.push(args[0]);
+   	}
+}
+function gotactive(...args){
+	const msg = args.shift();
+	if (args[1] === 1 && args[0] !== "act::active_store") pat_activelist.push(args[0]);
+	//post("gotactive",args[0],args[1],"\n");
+}
+function recall_active_store(...args){
+	const msg = args.shift();
+	//post("recall_active_store",args,"\n");
+	for (let p of pat_clientlist){
+		let active = args.indexOf(p) > -1;
+		//post("setactive",p,active,"\n");
+		obj_pat.message("active",p,active);  // set parameter's activ_state		
+	}
+}
 
 //
 // clean - before saving act.maxpat
