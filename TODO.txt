@@ -9,3 +9,7 @@ ll.blues (force ll.blues varname?)
 
 v8ui: ppooll write_tetris error:   {} 
 with new acts at saving ??
+
+ll_menu:
+at "arrow 0" i want to be able to size the menu to the text-size.
+
