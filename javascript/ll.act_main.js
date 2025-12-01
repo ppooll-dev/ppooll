@@ -1610,8 +1610,8 @@ function sendto(...args) {
 
     msg = Array.isArray(msg) ? msg : [msg];
 
-    const obj_gate = this.patcher.getnamed("sendto_gate");
-    const obj_forward = this.patcher.getnamed("sendto_forward");
+    const obj_gate = pa = this.patcher.getnamed("sendto").subpatcher().getnamed("sendto_gate");  //this.patcher.getnamed("sendto_gate");
+    const obj_forward = this.patcher.getnamed("sendto").subpatcher().getnamed("sendto_forward");
     const obj_pat = act_patcher.getnamed("pat");
 
     obj_gate.message(1);
