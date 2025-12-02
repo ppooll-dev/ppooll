@@ -1,0 +1,81 @@
+{
+    "ho_st1": {
+        "_actwindow": [ "ho_st", 457, 196, 587, 321 ],
+        "act_menu": "(__acts__)",
+        "audioON/OFF": 0,
+        "chans": 16,
+        "def": -1,
+        "envi_menu": "ƒ active_storage",
+        "favorites": "(favorites)",
+        "jit.on": 0,
+        "menubar": 1,
+        "ppooll": -1,
+        "rec": 0,
+        "screen": 1,
+        "stereo": 0,
+        "time": 19862,
+        "vol": 0.08,
+        "vol_ramp": 10,
+        "vol_slider": 0.43243243243243246,
+        "watch_menu": "time",
+        "write_envi": -1,
+        "osc_port": 7400,
+        "ll.dims": 0,
+        "pfl_act_menu": "no",
+        "pfl_par_menu": "-no-",
+        "params_only": 0,
+        "act": {
+            "active_store": 0,
+            "master": 0,
+            "pres_menu": "_",
+            "tetris_menu": "(tetris)",
+            "title_menu": ""
+        }
+    },
+    "fmrm1": {
+        "_actwindow": [ "fmrm", 459, 345, 679, 519 ],
+        "amplitude": 0.119,
+        "carrier_freq_mcspread": 0,
+        "carrier_freq_ramp": 0,
+        "harmonicity_mcspread": 0,
+        "harmonicity_ramp": 0,
+        "modindex_mcspread": 0,
+        "modindex_ramp": 0,
+        "preset-ramp": 0,
+        "presets": 1,
+        "act": {
+            "active_store": 1,
+            "master": 0,
+            "pres_menu": "_",
+            "tetris_menu": "(tetris)",
+            "title_menu": ""
+        },
+        "ll.blues": {
+            "status": [ 0, 1, 0, 0, 0, 0, 1 ],
+            "outputs~": [ "ho_st1~out.1", "_" ],
+            "outputsMix~": [ "no~-no-", "_" ],
+            "chans": [ 2, 2 ],
+            "levels": [ 0.527, 0.527, 0.4, 0, 10, 0, 0.5 ]
+        },
+        "carrier_freq": 219.03,
+        "harmonicity": 0.31,
+        "modindex": 29.41,
+        "fm-fmaudio-mix": 0
+    },
+    "notepad@1": {
+        "_actwindow": [ "notepad@", 744, 180, 1164, 580 ],
+        "fontlist": "Courier New",
+        "fontsize": 12,
+        "height": 400,
+        "presets": 0,
+        "textfield": "fmrm1 has active_store ON\n\nthe preset grid in fmrm holds 8 presets with this envi.\n\nopen the clientwindow of fmrm1 (from its title_menu) and watch the active-checks on the left. \n\nclick on preset 1-3, you will see the only active params are amplitude, carrier_freq)\naccording to this only these parameters are recalled by the preset, all others are not recalled.\n\nclick in the second line of the preset-grid:\nthese 3 presets are stored with a different active-setting: active params: harmonicity and modindex\n\nin the 3rd line of the grid, there are 2 presets that only recall levels of ll.blues.\n\n..to store such presets you need to \n- turn active_store ON in the title_menu of the act\n- make your choice of active params in the clientwindow\n- store the preset\n\n",
+        "width": 420,
+        "act": {
+            "active_store": 0,
+            "master": 0,
+            "pres_menu": "_",
+            "tetris_menu": "(tetris)",
+            "title_menu": ""
+        }
+    }
+}

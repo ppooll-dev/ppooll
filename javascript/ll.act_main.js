@@ -1717,46 +1717,57 @@ function from_pat(...args) {
 // ##########################################################################################
 let pat_activelist = [];
 function active_set(...args) {
-	obj_pat = act_patcher.getnamed("pat");
-	pat_clientlist = [];
-	sendto("prepend","clientlist",`${act_args.hash}actui`,"getclientlist");
-	//post("cl",pat_clientlist,"\n");
-	if (isActiveStore){ /////(activest === 1)
-		//const msg = args.shift();
-		//post("active_set",args[0],args[1],"\n");
-		if (args[0] === "store"){		
+	if (isActiveStore){ 
+		obj_pat = act_patcher.getnamed("pat");
+		pat_clientlist = [];
+		const msg = args.shift();
+		const slot = args.shift();
+		sendto("prepend","clientlist",`${act_args.hash}actui`,"getclientlist");
+		//post("cl",msg,slot,"\n");
+		if (msg === "store"){		
 			pat_activelist = [];
 			for (let p of pat_clientlist){
-				//post("getactive",p,"\n");
 				sendto("prepend","gotactive",`${act_args.hash}actui`,"getactive",p);
 			}
 			post("pat_activelist",pat_activelist,"\n");
-			obj_pat = act_patcher.getnamed("pat");
-			obj_pat.message("setstoredvalue","act::active_store",args[1],pat_activelist);
-			
-			
-		} else if (args[0] === "recall"){
-				sendto("prepend","get_active_store",`${act_args.hash}actui`,"getstoredvalue","act::active_store",args[1]);
-			}
+			if (pat_activelist.length === 0) pat_activelist = "_";
+			obj_pat.message("setstoredvalue","act::active_store",slot,pat_activelist);		
+		} else if (msg === "recall"){
+			sendto("prepend","get_active_store",`${act_args.hash}actui`,"getstoredvalue","act::active_store",slot);
+		}
 	}
 }
 function clientlist(...args){
 	const msg = args.shift();
     if (msg === "clientlist") {
-   		//post("clientlist",args[0],"\n");
 		if (args[0] !== "done") pat_clientlist.push(args[0]);
    	}
 }
 function gotactive(...args){
 	const msg = args.shift();
-	if (args[1] === 1 && args[0] !== "act::active_store") pat_activelist.push(args[0]);
-	//post("gotactive",args[0],args[1],"\n");
+	const param = args[0];
+	const active = args[1];
+	if (active && param !== "act::active_store"){
+		pat_activelist.push(param);
+	}
 }
 function get_active_store(...args){
+
 	const msg = args.shift();
 	//post("recall_active_store",args,"\n");
+	let arr = [];
+	for(let p of args) { 
+		if (p !== "act::active_store") {
+			arr.push(p);
+			if (p.includes("::")){//hack to activate subpatcher first
+				//post(":::",p.split("::")[0],"\n");
+				obj_pat.message("active",p.split("::")[0],1);
+			} 
+		}
+	} 	
+		//return;
 	for (let p of pat_clientlist){
-		let active = args.indexOf(p) > -1;
+		let active = arr.indexOf(p) > -1;
 		//post("setactive",p,active,"\n");
 		obj_pat.message("active",p,active);  // set parameter's activ_state		
 	}

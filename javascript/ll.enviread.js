@@ -256,6 +256,7 @@ function setparam(a, p, v) {
 
         if (v[0] == "dictionary") senddict(a, p, v);
         else {
+            if (p === "act::active_store") v = (v === "_" || v ===0)? 0 : 1;
 			messnamed(a, p, v);
 		}
     }
