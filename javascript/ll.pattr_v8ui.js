@@ -43,17 +43,6 @@ var hoverIndex = -1;
 var hoverAdd = false;
 var hoverRemove = false;
 
-var interp_active = false;
-
-var interp_prevslot = 0; // explicitly set
-var interp_nextslot = 0; // explicitly set
-var interp_amount = 0; // 0..1
-var interp_mode = "float"; // "float" (old behavior) or "slots" (click crossfade)
-var interp_start_slot = 0;
-var interp_target_slot = 0;
-
-var interp_display = "none"; // "horizontal" | "vertical"
-
 // === Cached geometry for fast paint() ===
 let g_square = 6; // half of boxsize
 let g_margin = 1;
@@ -66,13 +55,22 @@ let g_num_rows = 0;
 let g_startX = 0;
 let g_startY = 0;
 
-var interp_running = false;
-var interp_start = 0;
-var interp_target = 0;
-var interp_time = 100; // in ms
-var interp_start_time = 0;
+// interpolation direction for UI only:
+// "none" | "vertical" (ramps / recall) | "horizontal" (option scrubs)
+var interp_dir = "none";
 
-var interp_task = new Task(interp_tick, this);
+// ramp state (click + ramp → list-based recall-style interpolation)
+var ramp_running = false;
+var ramp_prev = 0;
+var ramp_next = 0;
+var ramp_time = 0;
+var ramp_start_time = 0;
+var ramp_task = new Task(ramp_tick, this);
+
+var option_down = false;
+var saved_mouse_pos = null; // {x, y} recorded at click-down
+var scrub_accum = 0; // accumulated drag distance
+var last_drag_x = null;
 
 // ---------- attributes ----------
 
@@ -243,14 +241,13 @@ function ramp(a) {
 }
 
 function recall(prev, next, amount) {
-    post("ll.pattr_v8ui recall()\n")
-    interp_active = true;
-
-    interp_prevslot = prev;
-    interp_nextslot = next;
-    interp_amount = amount;
-
-    interp_display = "vertical"; // always vertical for external
+    // external recall message from pattrstorage-style logic:
+    // match recall prev next amt
+    myval = [prev, next, amount];
+    interp_dir = "vertical";
+    update_current_from_myval();
+    // NOTE: we do NOT notifyclients() here usually, because this is
+    // driven by pattrstorage -> GUI. If you want it to echo out, you can add it.
     refresh();
 }
 
@@ -350,7 +347,8 @@ function paint() {
     let y = margin + square;
 
     num_squares = [num_cols, num_rows];
-    post(interp_active, "\n")
+
+    const interp = get_interp_state();
 
     for (let row = 0; row < num_rows; row++) {
         let x = margin + square;
@@ -360,7 +358,7 @@ function paint() {
             let isCurrent = current === i && slots[i];
             let isStored = slots[i];
             let color = vfrgb;
-            if (isCurrent && !interp_active) color = vrgb2;
+            if (isCurrent && !interp.active) color = vrgb2;
             else if (isStored) color = vrgb3;
 
             mgraphics.set_source_rgba(color);
@@ -368,19 +366,16 @@ function paint() {
             mgraphics.fill();
 
             // ----- interpolation visual fill -----
-            // ----- interpolation visual fill (full color, no transparency) -----
-            // ----- interpolation visual fill (full color, only when truly between) -----
-            if (interp_active && interp_display !== "none") {
-                const prev = interp_prevslot;
-                const next = interp_nextslot;
-                const amt = interp_amount;
+            if (interp.active && (i === interp.prev || i === interp.next)) {
+                const prev = interp.prev;
+                const next = interp.next;
+                const amt = interp.amt;
 
-                if (i === prev) {
-                    // base square
-                    mgraphics.set_source_rgba(vrgb2);
+                mgraphics.set_source_rgba(vrgb2);
 
-                    if (interp_display === "horizontal") {
-                        // fill RIGHT side, shrinking left→right
+                if (interp.dir === "horizontal") {
+                    if (i === prev) {
+                        // prev drains left→right
                         const w0 = 1 - amt;
                         mgraphics.rectangle(
                             x - square + square * 2 * amt,
@@ -388,52 +383,45 @@ function paint() {
                             square * 2 * w0,
                             square * 2
                         );
-                    } else if (interp_display === "vertical") {
-                        // previous drains bottom→up
-                        const fillHeight = (1 - amt) * (square * 2); // shrinking
-                        mgraphics.rectangle(
-                            x - square,
-                            y + square - fillHeight, // anchor at bottom
-                            square * 2,
-                            fillHeight
-                        );
-                    }
-
-                    mgraphics.fill();
-                }
-
-                if (i === next) {
-                    // next square
-                    mgraphics.set_source_rgba(vrgb2);
-
-                    if (interp_display === "horizontal") {
-                        // fill LEFT side, growing left→right
+                    } else if (i === next) {
+                        // next fills left→right
                         mgraphics.rectangle(
                             x - square,
                             y - square,
                             square * 2 * amt,
                             square * 2
                         );
-                    } else if (interp_display === "vertical") {
-                        // next fills bottom→up
-                        const fillHeight = amt * (square * 2); // growing
+                    }
+                } else if (interp.dir === "vertical") {
+                    if (i === prev) {
+                        // prev drains bottom→up
+                        const h0 = (1 - amt) * (square * 2);
                         mgraphics.rectangle(
                             x - square,
-                            y + square - fillHeight, // anchor at bottom
+                            y + square - h0,
                             square * 2,
-                            fillHeight
+                            h0
+                        );
+                    } else if (i === next) {
+                        // next fills bottom→up
+                        const h1 = amt * (square * 2);
+                        mgraphics.rectangle(
+                            x - square,
+                            y + square - h1,
+                            square * 2,
+                            h1
                         );
                     }
-
-                    mgraphics.fill();
                 }
+
+                mgraphics.fill();
             }
 
             mgraphics.set_source_rgba(vbrgb);
 
             // Hover overlay + icon
             // Hover overlay + icon
-            if (!interp_active && i === hoverIndex) {
+            if (!interp.active && !option_down && i === hoverIndex) {
                 // subtle hover highlight
                 mgraphics.set_source_rgba(vbrgb[0], vbrgb[1], vbrgb[2], 0.2);
                 mgraphics.rectangle(
@@ -667,17 +655,38 @@ function store(slot) {
     pat.message("getslotlist");
 }
 
+function toAbsolute(x, y) {
+    var win = this.patcher.wind; // window
+    if (!win) return { x: x, y: y };
+
+    return {
+        x: x + box.rect[0] + win.location[0],
+        y: y + box.rect[1] + win.location[1],
+    };
+}
+
 function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
     last_click = x;
     click = coord_to_square(x, y);
+    last_drag_x = null; // IMPORTANT
 
     if (click != 0) {
         // OPTION-CLICK: neighbor slide, no ramp
         if (option) {
+            option_down = true;
+
+            // Save local jsui coordinates on click
+            saved_mouse_pos = { x: x, y: y };
+
+            // Hide cursor
+            messnamed("max", "hidecursor");
+
             last_click = x;
-            // drag_start = current; // or whatever you use for previous slot float
             drag_start = myval || click;
-            interp_active = true;
+            scrub_accum = 0;
+            last_drag_x = x; // start accumulating from first event
+
+            stop_ramp();
             handle_option_click(x, y, click);
             return;
         }
@@ -719,22 +728,17 @@ function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
                     var old_current = current || click;
                     var r = getramp(); // ms from [preset-ramp]
 
-                    current = click; // logical target
-
                     if (r > 0) {
-                        start_slot_interpolation(
-                            old_current,
-                            current,
-                            r,
-                            "vertical"
-                        );
+                        // CLICK + RAMP → list-based recall interpolation
+                        start_ramp(old_current, click, r);
                     } else {
-                        stop_interpolation();
-                        clear_interp();
-                        set_current(current);
-                        myval = current;
+                        // no ramp → discrete int
+                        stop_ramp();
+                        interp_dir = "none";
+                        myval = click;
+                        update_current_from_myval();
                         notifyclients();
-                        // if (pat) pat.message(current);
+                        refresh();
                     }
                 }
             }
@@ -744,26 +748,84 @@ function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
 }
 onclick.local = 1;
 
+let drag_mode = 0; // could default to dragging mode
+function ondrag(x, y, button, cmd, shift, capslock, option, ctrl) {
+    // Option-drag release
+    if (option_down && button === 0) {
+        option_down = false;
+        messnamed("max", "showcursor");
+        saved_mouse_pos = null;
+        last_drag_x = null;
+        refresh();
+        return;
+    }
+
+    // OPTION-DRAG SCRUBBING (NO MOUSE WARP)
+    if (option) {
+        option_down = true;
+
+        if (last_drag_x === null) last_drag_x = x;
+
+        // simple real delta
+        var dx = x - last_drag_x;
+        last_drag_x = x;
+
+        scrub_accum += dx;
+
+        var scaled = (scrub_accum * scrub_rate) / 100;
+        var newFloat = drag_start + scaled;
+
+        var maxSlot = g_num_cols * g_num_rows;
+        newFloat = Math.max(1, Math.min(maxSlot, newFloat));
+
+        stop_ramp();
+        interp_dir = "horizontal";
+
+        myval = newFloat;
+        update_current_from_myval();
+        notifyclients();
+        refresh();
+        return;
+    }
+
+    // Normal discrete drag
+    var drag = coord_to_square(x, y);
+    if ((drag != click) & slots[drag]) {
+        click = drag;
+        stop_ramp();
+        interp_dir = "none";
+        myval = click;
+        update_current_from_myval();
+        notifyclients();
+        refresh();
+    }
+}
+
 function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
-    // same grid mapping as clicks
+    if (option_down) {
+        // No hover during option mode
+        if (hoverIndex !== -1) {
+            hoverIndex = -1;
+            hoverAdd = false;
+            hoverRemove = false;
+            refresh();
+        }
+        return;
+    }
+
     var idx = coord_to_square(x, y);
 
     if (idx === 0) {
-        // nothing under cursor
         hoverIndex = -1;
         hoverRemove = false;
         hoverAdd = false;
     } else {
         hoverIndex = idx;
-
-        // delete-hover only when holding ctrl (or cmd if you prefer)
         hoverRemove = ctrl || cmd;
-
-        // plus icon when slot is empty OR user is not in delete mode
         hoverAdd = !hoverRemove && !slots[hoverIndex];
     }
 
-    refresh(); // or mgraphics.redraw();
+    refresh();
 }
 onidle.local = 1;
 
@@ -781,7 +843,10 @@ function msg_float(a) {
     if (isNaN(f)) return;
 
     var maxSlot = g_num_cols * g_num_rows;
-    f = Math.max(1, Math.min(maxSlot, f));
+    if (maxSlot > 0) {
+        if (f < 1) f = 1;
+        if (f > maxSlot) f = maxSlot;
+    }
 
     if (use_legacy) {
         if (parseInt(f) != current) set_current(parseInt(f));
@@ -794,72 +859,20 @@ function msg_float(a) {
         return;
     }
 
-    // NO RAMP → direct jump
-    if (!ramp_ || ramp_ <= 0) {
-        stop_interpolation();
-        myval = f;
-        set_current(Math.floor(f));
-        // if (pat) pat.message(f);
-        update_interp_from_float(f);
-        notifyclients();
-
-        return;
-    }
-
-    // RAMP > 0 → smooth interpolation from current myval to new f
-    start_interpolation(myval, f, ramp_, "vertical");
+    // Modern: direct float, vertical UI (like pattr float recall)
+    stop_ramp();
+    interp_dir = "vertical";
+    myval = f;
+    update_current_from_myval();
+    notifyclients();
+    refresh();
 }
 
 function anything() {
     post("hmmmmmm\n");
 }
 
-let drag_mode = 0; // could default to dragging mode
-function ondrag(x, y, but, cmd, shift, capslock, option, ctrl) {
-    if (option) {
-        // --- LIVE SCRUB MODE (no ramp) ---
-        // horizontal drag interpolation
-        var offset = x - last_click;
-        var scaled = (offset * scrub_rate) / 100;
-        var newFloat = drag_start + scaled;
-
-        var maxSlot = g_num_cols * g_num_rows;
-        newFloat = Math.max(1, Math.min(maxSlot, newFloat));
-        // post(offset, scaled, maxSlot, newFloat, "\n")
-        // stop any ongoing ramp so we don't fight with it
-        stop_interpolation();
-
-        // UI interpolation bar goes horizontal for scrub
-        interp_display = "horizontal";
-
-        // update UI interp state
-        update_interp_from_float(newFloat);
-
-        // directly drive pattrstorage (no ramp)
-        // if (pat) pat.message(newFloat);
-
-        // update logical value
-        myval = newFloat;
-        notifyclients();
-
-        return;
-    } else {
-        // old discrete drag behaviour
-        interp_active = false;
-
-        var drag = coord_to_square(x, y);
-        if ((drag != click) & slots[drag]) {
-            click = drag;
-            set_current(click);
-            myval = click;
-            notifyclients();
-            // if (pat) pat.message(click);
-        }
-    }
-}
-
 function handle_option_click(x, y, slotIndex) {
-    // only meaningful if there is at least one stored neighbor
     if (!slots[slotIndex]) {
         return;
     }
@@ -868,70 +881,37 @@ function handle_option_click(x, y, slotIndex) {
     if (!rect) return;
 
     const maxSlot = g_num_cols * g_num_rows;
+    if (maxSlot <= 0) return;
 
-    let ratio = 0;
+    var ratio = 0;
     if (rect.right > rect.left) {
         ratio = (x - rect.left) / (rect.right - rect.left);
         if (ratio < 0) ratio = 0;
         if (ratio > 1) ratio = 1;
     }
 
-    let prev = slotIndex;
-    let next = slotIndex;
-    let amt = 0;
+    // OPTION-CLICK is always float-wise between neighbors
+    // Left half → between (slot-1 → slot), right half → (slot → slot+1)
+    var f = slotIndex; // default = center on this slot
 
-    // left half = between (slot-1 → slot)
     if (ratio < 0.5 && slotIndex > 1) {
-        prev = slotIndex - 1;
-        next = slotIndex;
-        amt = ratio / 0.5; // 0..1
-    }
-    // right half = between (slot → slot+1)
-    else if (ratio >= 0.5 && slotIndex < maxSlot) {
-        prev = slotIndex;
-        next = slotIndex + 1;
-        amt = (ratio - 0.5) / 0.5; // 0..1
-    }
-
-    stop_interpolation(); // kill any running ramp
-    interp_display = "horizontal"; // slide/neighbor visual
-
-    if (prev !== next && amt > 0) {
-        // UI
-        // update_interp_two_slot(prev, next, amt);
-
-        // // encode weights into "slot.weight" style floats: e.g. 1.25 7.75
-        // var wPrev = 1 - amt;
-        // var wNext = amt;
-        // var vPrev = prev + wPrev;
-        // var vNext = next + wNext;
-
-        // if (pat) {
-        //     // pat.message("recallmulti", vPrev, vNext);
-        // }
-
-        // // keep myval as a logical "position" for getvalueof
-        // // myval = prev + (next - prev) * amt;
-
-        // // no ramp here: option-click is instantaneous crossfade
-        // myval = [vPrev, vNext];
-
-        // const selected = select_by_weight(vPrev, vNext);
-        // set_current(selected);
-        // if (pat) pat.message(selected);
-
-        refresh();
-
-        // myval = prev + (next - prev) * amt;
+        // between slot-1 and slot
+        var amt = ratio / 0.5; // 0..1
+        f = slotIndex - 1 + amt;
+    } else if (ratio >= 0.5 && slotIndex < maxSlot) {
+        // between slot and slot+1
+        var amt2 = (ratio - 0.5) / 0.5; // 0..1
+        f = slotIndex + amt2;
     } else {
-        // click dead-center or no neighbor: just recall that slot
-        clear_interp();
-        set_current(slotIndex);
-        myval = slotIndex;
-        // if (pat) pat.message(slotIndex);
+        // edges with no neighbor → treat as the slot itself
+        f = slotIndex;
     }
-    notifyclients();
 
+    stop_ramp(); // no ramp for option-click
+    interp_dir = "horizontal"; // horizontal fill
+    myval = f;
+    update_current_from_myval();
+    notifyclients();
     refresh();
 }
 
@@ -948,9 +928,34 @@ function onresize(w, h) {
 
 onresize.local = 1; //private
 
-function setvalueof(v) {
-    post("setvalueof", v, "\n");
-    msg_float(v);
+function setvalueof() {
+    // supports int, float, or list [prev, next, amt]
+    var args = arrayfromargs(arguments);
+
+    if (args.length === 1 && typeof args[0] === "number") {
+        myval = args[0];
+        // direction: assume vertical if fractional, none if int
+        if (myval % 1 === 0) {
+            interp_dir = "none";
+        } else {
+            interp_dir = "vertical";
+        }
+    } else if (
+        args.length >= 3 &&
+        typeof args[0] === "number" &&
+        typeof args[1] === "number"
+    ) {
+        myval = [args[0], args[1], args[2]];
+        interp_dir = "vertical";
+    } else {
+        // fallback: ignore or extend as needed
+        return;
+    }
+
+    // When pattrstorage sets us, we do NOT call notifyclients()
+    // to avoid feedback loops. Just update visuals.
+    update_current_from_myval();
+    refresh();
 }
 
 function getvalueof() {
@@ -962,186 +967,10 @@ function getvalueof() {
 // INTERNAL INTERPOLATOR
 // ------------------------------------------------------------
 
-function stop_interpolation() {
-    interp_running = false;
-    interp_task.cancel();
-    clear_interp();
-    refresh();
-}
-
-function interp_tick() {
-    if (!interp_running) return;
-
-    var now = Date.now();
-    var elapsed = now - interp_start_time;
-    var amt = elapsed / interp_time;
-    if (amt >= 1) amt = 1;
-
-    if (interp_mode === "float") {
-        // OLD BEHAVIOR: float interpolation (used by msg_float)
-        var f = interp_start + (interp_target - interp_start) * amt;
-
-        // update UI between neighboring slots
-        update_interp_from_float(f);
-
-        // drive pattrstorage with float
-        // if (pat) pat.message(f);
-
-        myval = f;
-
-        if (amt >= 1) {
-            set_current(Math.round(interp_target));
-            stop_interpolation();
-        } else {
-            refresh();
-        }
-    } else if (interp_mode === "slots") {
-        // NEW BEHAVIOR: crossfade between two discrete slots using recallmulti
-        var prev = interp_start_slot;
-        var next = interp_target_slot;
-
-        // UI: show interpolation between those two slots
-        update_interp_two_slot(prev, next, amt);
-
-        // encode weights into "slot.weight" style floats: e.g. 1.25 7.75
-        var wPrev = 1 - amt;
-        var wNext = amt;
-        var vPrev = prev + wPrev;
-        var vNext = next + wNext;
-
-        if (pat) {
-            // post("pat ??\n")
-            // messnamed(act_name, "pat", "recallmulti", vPrev, vNext)
-            // pat.message("recallmulti", vPrev, vNext);
-        }
-
-        // keep myval as a logical "position" for getvalueof
-        // myval = prev + (next - prev) * amt;
-
-        if (amt >= 1) {
-            // final weights
-            // const selected = select_by_weight(vPrev, vNext-1);
-
-            // STOP the task safely (NO stop_interpolation()!)
-            interp_running = false;
-            interp_task.cancel();
-
-            // clear interpolation visuals ONLY
-            clear_interp();
-
-            // lock in final slot selection
-            set_current(vNext - 1);
-            myval = vNext - 1;
-            post("seleected", vNext - 1);
-
-            // if (pat) pat.message(vNext-1);
-
-            notifyclients();
-            refresh();
-            return; // <- IMPORTANT: prevent further updates
-        } else {
-            myval = [Math.floor(vPrev), Math.floor(vNext), vNext % 1];
-            const selected = select_by_weight(vPrev, vNext);
-            set_current(selected);
-            refresh();
-        }
-    }
-    notifyclients();
-}
-
-function update_interp_from_float(f) {
-    const maxSlot = g_num_cols * g_num_rows;
-
-    // clamp to valid range
-    f = Math.max(1, Math.min(maxSlot, f));
-
-    const prev = Math.floor(f);
-    const next = Math.min(prev + 1, maxSlot);
-    const amt = f - prev;
-
-    if (amt === 0) {
-        // exactly on a slot → no UI interpolation
-        clear_interp();
-        return;
-    }
-
-    // update UI interpolation only
-    interp_active = true;
-    interp_prevslot = prev;
-    interp_nextslot = next;
-    interp_amount = amt;
-
-    refresh();
-}
-
 function getramp() {
     if (this.patcher.getnamed("preset-ramp"))
         return this.patcher.getnamed("preset-ramp").getvalueof();
     return 0;
-}
-
-function update_interp_two_slot(prev, next, amt) {
-    if (amt <= 0 || prev === next) {
-        // nothing in-between to draw
-        interp_active = false;
-        interp_prevslot = prev;
-        interp_nextslot = next;
-        interp_amount = 0;
-        return;
-    }
-
-    interp_active = true;
-    interp_prevslot = prev;
-    interp_nextslot = next;
-    interp_amount = amt;
-}
-
-function start_slot_interpolation(prev_slot, next_slot, ramp_ms, display) {
-    if (display == null) display = "vertical";
-
-    interp_start_slot = prev_slot;
-    interp_target_slot = next_slot;
-    interp_time = Math.max(1, ramp_ms);
-    interp_start_time = Date.now();
-    interp_display = display;
-    interp_mode = "slots";
-
-    if (ramp_ms > 0) {
-        interp_running = true;
-        interp_task.interval = 20; // ~50 FPS
-        interp_task.repeat();
-    } else {
-        // no ramp: immediate discrete jump
-        interp_running = false;
-
-        set_current(next_slot);
-        myval = next_slot;
-        // if (pat) pat.message(next_slot);
-        refresh();
-    }
-}
-
-function start_interpolation(start_val, end_val, ramp_ms, display) {
-    if (display == null) display = "vertical";
-
-    interp_start = start_val;
-    interp_target = end_val;
-    interp_time = Math.max(1, ramp_ms); // avoid div-by-zero
-    interp_start_time = Date.now();
-    interp_display = display;
-    interp_mode = "float";
-
-    if (ramp_ms > 0) {
-        interp_running = true;
-        interp_task.interval = 20; // ~50 FPS
-        interp_task.repeat();
-    } else {
-        // if (pat) pat.message(end_val);
-        myval = end_val;
-        set_current(Math.round(end_val));
-        clear_interp();
-        refresh();
-    }
 }
 
 function square_rect(index) {
@@ -1176,10 +1005,127 @@ function square_rect(index) {
     };
 }
 
-function select_by_weight(vPrev, vNext) {
-    const slotA = Math.floor(vPrev);
-    const slotB = Math.floor(vNext);
-    const weightA = vPrev - slotA;
-    const weightB = vNext - slotB;
-    return weightA >= weightB ? slotA : slotB;
+/// rewrite interp
+
+function get_interp_state() {
+    // CASE 1: list → [prev, next, amt]
+    if (Array.isArray(myval) && myval.length >= 3) {
+        var prev = myval[0] | 0;
+        var next = myval[1] | 0;
+        var amt = myval[2];
+
+        // clamp
+        if (amt < 0) amt = 0;
+        if (amt > 1) amt = 1;
+
+        var dir =
+            interp_dir === "horizontal" || interp_dir === "vertical"
+                ? interp_dir
+                : "vertical"; // safe default for recall-style
+
+        return {
+            active: true,
+            prev: prev,
+            next: next,
+            amt: amt,
+            dir: dir,
+        };
+    }
+
+    // CASE 2: float → between neighboring slots
+    if (typeof myval === "number" && myval % 1 !== 0) {
+        var maxSlot = g_num_cols * g_num_rows;
+        var f = myval;
+
+        if (maxSlot > 0) {
+            if (f < 1) f = 1;
+            if (f > maxSlot) f = maxSlot;
+        }
+
+        var prev = Math.floor(f);
+        var next = Math.min(prev + 1, maxSlot);
+        var amt = f - prev;
+
+        if (amt === 0 || maxSlot === 0) {
+            return { active: false };
+        }
+
+        // floats come from scrubbing or external float recall:
+        // scrubbing sets interp_dir = "horizontal"
+        // external recall can set interp_dir = "vertical"
+        var dir =
+            interp_dir === "horizontal" || interp_dir === "vertical"
+                ? interp_dir
+                : "horizontal";
+
+        return {
+            active: true,
+            prev: prev,
+            next: next,
+            amt: amt,
+            dir: dir,
+        };
+    }
+
+    // CASE 3: int or anything else → no UI interpolation
+    return { active: false };
+}
+
+function update_current_from_myval() {
+    if (Array.isArray(myval) && myval.length >= 3) {
+        var p = myval[0] | 0;
+        var n = myval[1] | 0;
+        var amt = myval[2];
+        current = amt >= 0.5 ? n : p;
+    } else if (typeof myval === "number") {
+        if (myval % 1 === 0) {
+            current = myval | 0;
+        } else {
+            current = Math.round(myval);
+        }
+    }
+}
+
+function stop_ramp() {
+    ramp_running = false;
+    ramp_task.cancel();
+}
+
+function ramp_tick() {
+    if (!ramp_running) return;
+
+    var now = Date.now();
+    var elapsed = now - ramp_start_time;
+    var t = ramp_time > 0 ? elapsed / ramp_time : 1;
+    if (t >= 1) t = 1;
+
+    var amt = t;
+
+    // CLICK + RAMP → [prev, next, amt]
+    myval = [ramp_prev, ramp_next, amt];
+    interp_dir = "vertical";
+    update_current_from_myval();
+    notifyclients();
+    refresh();
+
+    if (t >= 1) {
+        // end of ramp: collapse to int next
+        myval = ramp_next;
+        interp_dir = "none";
+        update_current_from_myval();
+        notifyclients();
+        refresh();
+        stop_ramp();
+    }
+}
+
+function start_ramp(prev_slot, next_slot, ramp_ms) {
+    ramp_prev = prev_slot;
+    ramp_next = next_slot;
+    ramp_time = Math.max(1, ramp_ms);
+    ramp_start_time = Date.now();
+    interp_dir = "vertical";
+    ramp_running = true;
+    ramp_task.interval = 20; // ~50fps
+    ramp_task.repeat();
 }
