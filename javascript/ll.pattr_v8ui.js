@@ -153,6 +153,7 @@ var myfont = "Sans Serif"; // Geneva on Mac, Arial on PC
 var myfontsize = 12; // relative to height
 var mytext = [];
 
+post("myval", myval, "\n");
 loadbang();
 refresh();
 getactname();
@@ -239,7 +240,7 @@ function actname(a) {
     pat = this.patcher.getnamed("pat");
     preset_ramp = this.patcher.getnamed("preset-ramp");
     if (pat) {
-        pat.message("getslotlist");
+        // pat.message("getslotlist");
     }
     refresh();
 }
@@ -682,11 +683,12 @@ function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
     click = coord_to_square(x, y);
 
     if (click != 0) {
-
         // OPTION-CLICK: neighbor slide, no ramp
         if (option) {
-            handle_option_click(x, y, click);
+            last_click = x;
+            // drag_start = current; // or whatever you use for previous slot float
             drag_start = myval || click;
+            handle_option_click(x, y, click);
             return;
         }
 
@@ -707,6 +709,7 @@ function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
             messnamed(act_name, "active_set", "store", click);
             store(click);
             myval = click;
+            notifyclients();
             return;
         } else if (slots[click]) {
             if (mod1) {
@@ -724,18 +727,24 @@ function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
                     // if ramp > 0 → ramp directly from prev to new using recallmulti
                     // if ramp == 0 → discrete recall
                     var old_current = current || click;
-                    var r = getramp();   // ms from [preset-ramp]
+                    var r = getramp(); // ms from [preset-ramp]
 
-                    current = click;     // logical target
+                    current = click; // logical target
 
                     if (r > 0) {
-                        start_slot_interpolation(old_current, current, r, "vertical");
+                        start_slot_interpolation(
+                            old_current,
+                            current,
+                            r,
+                            "vertical"
+                        );
                     } else {
                         stop_interpolation();
                         clear_interp();
                         set_current(current);
                         myval = current;
-                        if (pat) pat.message(current);
+                        notifyclients();
+                        // if (pat) pat.message(current);
                     }
                 }
             }
@@ -778,6 +787,8 @@ onidleout.local = 1;
 
 let use_legacy = false;
 function msg_float(a) {
+
+
     var f = parseFloat(a);
     if (isNaN(f)) return;
 
@@ -800,13 +811,19 @@ function msg_float(a) {
         stop_interpolation();
         myval = f;
         set_current(Math.floor(f));
-        if (pat) pat.message(f);
+        // if (pat) pat.message(f);
         update_interp_from_float(f);
+         notifyclients();
+
         return;
     }
 
     // RAMP > 0 → smooth interpolation from current myval to new f
     start_interpolation(myval, f, ramp_, "vertical");
+}
+
+function anything(){
+    post("hmmmmmm\n")
 }
 
 let drag_mode = 0; // could default to dragging mode
@@ -820,7 +837,7 @@ function ondrag(x, y, but, cmd, shift, capslock, option, ctrl) {
 
         var maxSlot = g_num_cols * g_num_rows;
         newFloat = Math.max(1, Math.min(maxSlot, newFloat));
-
+        // post(offset, scaled, maxSlot, newFloat, "\n")
         // stop any ongoing ramp so we don't fight with it
         stop_interpolation();
 
@@ -831,10 +848,11 @@ function ondrag(x, y, but, cmd, shift, capslock, option, ctrl) {
         update_interp_from_float(newFloat);
 
         // directly drive pattrstorage (no ramp)
-        if (pat) pat.message(newFloat);
+        // if (pat) pat.message(newFloat);
 
         // update logical value
         myval = newFloat;
+        notifyclients();
 
         return;
     } else {
@@ -845,7 +863,9 @@ function ondrag(x, y, but, cmd, shift, capslock, option, ctrl) {
         if ((drag != click) & slots[drag]) {
             click = drag;
             set_current(click);
-            if (pat) pat.message(click);
+            myval = click;
+            notifyclients();
+            // if (pat) pat.message(click);
         }
     }
 }
@@ -885,34 +905,49 @@ function handle_option_click(x, y, slotIndex) {
         amt = (ratio - 0.5) / 0.5; // 0..1
     }
 
-    stop_interpolation();          // kill any running ramp
+    stop_interpolation(); // kill any running ramp
     interp_display = "horizontal"; // slide/neighbor visual
 
     if (prev !== next && amt > 0) {
         // UI
-        update_interp_two_slot(prev, next, amt);
+        // update_interp_two_slot(prev, next, amt);
 
-        // immediate recallmulti between neighbors, no ramp
-        if (pat) {
-            const wPrev = 1 - amt;
-            const wNext = amt;
-            const vPrev = prev + wPrev;
-            const vNext = next + wNext;
-            pat.message("recallmulti", vPrev, vNext);
-        }
+        // // encode weights into "slot.weight" style floats: e.g. 1.25 7.75
+        // var wPrev = 1 - amt;
+        // var wNext = amt;
+        // var vPrev = prev + wPrev;
+        // var vNext = next + wNext;
 
-        myval = prev + (next - prev) * amt;
+        // if (pat) {
+        //     // pat.message("recallmulti", vPrev, vNext);
+        // }
+
+        // // keep myval as a logical "position" for getvalueof
+        // // myval = prev + (next - prev) * amt;
+
+        // // no ramp here: option-click is instantaneous crossfade
+        // myval = [vPrev, vNext];
+
+        // const selected = select_by_weight(vPrev, vNext);
+        // set_current(selected);
+        // if (pat) pat.message(selected);
+
+        refresh();
+
+
+        // myval = prev + (next - prev) * amt;
     } else {
         // click dead-center or no neighbor: just recall that slot
         clear_interp();
         set_current(slotIndex);
         myval = slotIndex;
-        if (pat) pat.message(slotIndex);
+        // if (pat) pat.message(slotIndex);
     }
+    notifyclients();
+
 
     refresh();
 }
-
 
 function scrubRate(n) {
     scrub_rate = n;
@@ -928,10 +963,13 @@ function onresize(w, h) {
 onresize.local = 1; //private
 
 function setvalueof(v) {
+    post("setvalueof", v, "\n");
     msg_float(v);
 }
 
 function getvalueof() {
+    post("getvalueof", myval, "\n");
+
     return myval;
 }
 
@@ -962,7 +1000,7 @@ function interp_tick() {
         update_interp_from_float(f);
 
         // drive pattrstorage with float
-        if (pat) pat.message(f);
+        // if (pat) pat.message(f);
 
         myval = f;
 
@@ -972,7 +1010,6 @@ function interp_tick() {
         } else {
             refresh();
         }
-
     } else if (interp_mode === "slots") {
         // NEW BEHAVIOR: crossfade between two discrete slots using recallmulti
         var prev = interp_start_slot;
@@ -982,26 +1019,49 @@ function interp_tick() {
         update_interp_two_slot(prev, next, amt);
 
         // encode weights into "slot.weight" style floats: e.g. 1.25 7.75
+        var wPrev = 1 - amt;
+        var wNext = amt;
+        var vPrev = prev + wPrev;
+        var vNext = next + wNext;
+
         if (pat) {
-            var wPrev = 1 - amt;
-            var wNext = amt;
-            var vPrev = prev + wPrev;
-            var vNext = next + wNext;
-            pat.message("recallmulti", vPrev, vNext);
+            // post("pat ??\n")
+            // messnamed(act_name, "pat", "recallmulti", vPrev, vNext)
+            // pat.message("recallmulti", vPrev, vNext);
         }
 
         // keep myval as a logical "position" for getvalueof
-        myval = prev + (next - prev) * amt;
+        // myval = prev + (next - prev) * amt;
 
         if (amt >= 1) {
-            // at the end: snap fully to target slot
-            set_current(next);
-            if (pat) pat.message(next);
-            stop_interpolation();
+            // final weights
+            // const selected = select_by_weight(vPrev, vNext-1);
+
+            // STOP the task safely (NO stop_interpolation()!)
+            interp_running = false;
+            interp_task.cancel();
+
+            // clear interpolation visuals ONLY
+            clear_interp();
+
+            // lock in final slot selection
+            set_current(vNext-1);
+            myval = vNext-1;
+            post("seleected", vNext-1)
+
+            // if (pat) pat.message(vNext-1);
+
+            notifyclients();
+            refresh();
+            return; // <- IMPORTANT: prevent further updates
         } else {
+            myval = [Math.floor(vPrev), Math.floor(vNext), vNext % 1];
+            const selected = select_by_weight(vPrev, vNext);
+            set_current(selected);
             refresh();
         }
     }
+    notifyclients();
 }
 
 function update_interp_from_float(f) {
@@ -1029,7 +1089,7 @@ function update_interp_from_float(f) {
     refresh();
 }
 
-function getramp(){
+function getramp() {
     if (this.patcher.getnamed("preset-ramp"))
         return this.patcher.getnamed("preset-ramp").getvalueof();
     return 0;
@@ -1067,11 +1127,11 @@ function start_slot_interpolation(prev_slot, next_slot, ramp_ms, display) {
         interp_task.repeat();
     } else {
         // no ramp: immediate discrete jump
-        stop_interpolation();
-        clear_interp();
+        interp_running = false;
+
         set_current(next_slot);
         myval = next_slot;
-        if (pat) pat.message(next_slot);
+        // if (pat) pat.message(next_slot);
         refresh();
     }
 }
@@ -1091,7 +1151,7 @@ function start_interpolation(start_val, end_val, ramp_ms, display) {
         interp_task.interval = 20; // ~50 FPS
         interp_task.repeat();
     } else {
-        if (pat) pat.message(end_val);
+        // if (pat) pat.message(end_val);
         myval = end_val;
         set_current(Math.round(end_val));
         clear_interp();
@@ -1122,11 +1182,19 @@ function square_rect(index) {
     const cy = startY + row * step;
 
     return {
-        left:   cx - square,
-        right:  cx + square,
-        top:    cy - square,
+        left: cx - square,
+        right: cx + square,
+        top: cy - square,
         bottom: cy + square,
-        cx:     cx,
-        cy:     cy
+        cx: cx,
+        cy: cy,
     };
+}
+
+function select_by_weight(vPrev, vNext) {
+    const slotA = Math.floor(vPrev);
+    const slotB = Math.floor(vNext);
+    const weightA = vPrev - slotA;
+    const weightB = vNext - slotB;
+    return weightA >= weightB ? slotA : slotB;
 }
