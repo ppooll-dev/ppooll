@@ -55,9 +55,16 @@ let g_num_rows = 0;
 let g_startX = 0;
 let g_startY = 0;
 
-// interpolation direction for UI only:
+// interpolation direction for logic:
 // "none" | "vertical" (ramps / recall) | "horizontal" (option scrubs)
 var interp_dir = "none";
+
+// visual display mode for interpolation
+// "direction" → use interp_dir (current behavior)
+// "vertical"  → always vertical display
+// "horizontal"→ always horizontal display
+// "random"    → random sub-squares
+var interp_display_mode = "direction";
 
 // ramp state (click + ramp → list-based recall-style interpolation)
 var ramp_running = false;
@@ -365,56 +372,84 @@ function paint() {
             mgraphics.rectangle(x - square, y - square, square * 2, square * 2);
             mgraphics.fill();
 
-            // ----- interpolation visual fill -----
+                        // ----- interpolation visual fill -----
             if (interp.active && (i === interp.prev || i === interp.next)) {
                 const prev = interp.prev;
                 const next = interp.next;
                 const amt = interp.amt;
 
+                // highlight color
                 mgraphics.set_source_rgba(vrgb2);
 
-                if (interp.dir === "horizontal") {
-                    if (i === prev) {
-                        // prev drains left→right
-                        const w0 = 1 - amt;
-                        mgraphics.rectangle(
-                            x - square + square * 2 * amt,
-                            y - square,
-                            square * 2 * w0,
-                            square * 2
-                        );
-                    } else if (i === next) {
-                        // next fills left→right
-                        mgraphics.rectangle(
-                            x - square,
-                            y - square,
-                            square * 2 * amt,
-                            square * 2
-                        );
-                    }
-                } else if (interp.dir === "vertical") {
-                    if (i === prev) {
-                        // prev drains bottom→up
-                        const h0 = (1 - amt) * (square * 2);
-                        mgraphics.rectangle(
-                            x - square,
-                            y + square - h0,
-                            square * 2,
-                            h0
-                        );
-                    } else if (i === next) {
-                        // next fills bottom→up
-                        const h1 = amt * (square * 2);
-                        mgraphics.rectangle(
-                            x - square,
-                            y + square - h1,
-                            square * 2,
-                            h1
-                        );
-                    }
-                }
+                // if (interp.dir === "horizontal") {
+                //     if (i === prev) {
+                //         // prev drains left→right
+                //         const w0 = 1 - amt;
+                //         mgraphics.rectangle(
+                //             x - square + square * 2 * amt,
+                //             y - square,
+                //             square * 2 * w0,
+                //             square * 2
+                //         );
+                //     } else if (i === next) {
+                //         // next fills left→right
+                //         mgraphics.rectangle(
+                //             x - square,
+                //             y - square,
+                //             square * 2 * amt,
+                //             square * 2
+                //         );
+                //     }
+                //     mgraphics.fill();
+                // } else if (interp.dir === "random") {
+                //     if (i === prev) {
+                //         // prev drains bottom→up
+                //         const h0 = (1 - amt) * (square * 2);
+                //         mgraphics.rectangle(
+                //             x - square,
+                //             y + square - h0,
+                //             square * 2,
+                //             h0
+                //         );
+                //     } else if (i === next) {
+                //         // next fills bottom→up
+                //         const h1 = amt * (square * 2);
+                //         mgraphics.rectangle(
+                //             x - square,
+                //             y + square - h1,
+                //             square * 2,
+                //             h1
+                //         );
+                //     }
+                //     mgraphics.fill();
+                // } else 
+                // if (interp.dir === "vertical") {
+                    // RANDOM MODE:
+                    // break the slot into a small grid and fill random sub-squares
+                    var cells = 9; // NxN sub-cells; tweak for coarser/finer grain
+                    var cellW = (square * 2) / cells;
+                    var cellH = (square * 2) / cells;
 
-                mgraphics.fill();
+                    for (var ry = 0; ry < cells; ry++) {
+                        for (var rx = 0; rx < cells; rx++) {
+                            // stable seed per slot + cell
+                            var seed = i * 1000 + ry * cells + rx;
+                            var r = rand01(seed);
+
+                            // next slot: fills from 0 → 1
+                            // prev slot: drains from 1 → 0
+                            var threshold =
+                                i === next ? amt : (1 - amt);
+
+                            if (r < threshold) {
+                                var px0 = x - square + rx * cellW;
+                                var py0 = y - square + ry * cellH;
+                                mgraphics.rectangle(px0, py0, cellW, cellH);
+                                mgraphics.fill();
+                            }
+                        }
+                    }
+                // }
             }
 
             mgraphics.set_source_rgba(vbrgb);
@@ -1023,6 +1058,11 @@ function get_interp_state() {
                 ? interp_dir
                 : "vertical"; // safe default for recall-style
 
+        // NEW: visual override
+        if (interp_display_mode !== "direction") {
+            dir = interp_display_mode; // "vertical" | "horizontal" | "random"
+        }
+
         return {
             active: true,
             prev: prev,
@@ -1051,12 +1091,15 @@ function get_interp_state() {
         }
 
         // floats come from scrubbing or external float recall:
-        // scrubbing sets interp_dir = "horizontal"
-        // external recall can set interp_dir = "vertical"
         var dir =
             interp_dir === "horizontal" || interp_dir === "vertical"
                 ? interp_dir
                 : "horizontal";
+
+        // NEW: visual override
+        if (interp_display_mode !== "direction") {
+            dir = interp_display_mode;
+        }
 
         return {
             active: true,
@@ -1128,4 +1171,10 @@ function start_ramp(prev_slot, next_slot, ramp_ms) {
     ramp_running = true;
     ramp_task.interval = 20; // ~50fps
     ramp_task.repeat();
+}
+
+// small deterministic "random" in [0,1)
+function rand01(seed) {
+    var x = Math.sin(seed) * 10000;
+    return x - Math.floor(x);
 }
