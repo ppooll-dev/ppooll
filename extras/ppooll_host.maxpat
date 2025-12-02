@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 314.0, 149.0, 130.0, 125.0 ],
+        "rect": [ 279.0, 162.0, 130.0, 125.0 ],
         "default_fontsize": 11.595187,
         "toolbarvisible": 0,
         "globalpatchername": "ho_st1",
@@ -1158,7 +1158,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 163.0, 100.0, 101.0, 22.0 ],
-                                                                                    "text": "preset_test1"
+                                                                                    "text": "sinus1"
                                                                                 }
                                                                             },
                                                                             {
@@ -1181,7 +1181,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 50.0, 100.0, 96.0, 22.0 ],
-                                                                                    "text": "preset_test1"
+                                                                                    "text": "sinus1"
                                                                                 }
                                                                             },
                                                                             {
@@ -1686,7 +1686,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 19.0, 47.0, 160.0, 24.0 ],
-                                                    "text": "preset_test1"
+                                                    "text": "sinus1"
                                                 }
                                             },
                                             {
@@ -3214,13 +3214,12 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-30",
-                                                                    "linecount": 4,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 150.0, 191.0, 88.0, 62.0 ],
-                                                                    "text": "Off 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20"
+                                                                    "text": "Off 1 2"
                                                                 }
                                                             },
                                                             {
@@ -5475,8 +5474,6 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 0,
-                                                                        "node_bin_path": "",
-                                                                        "npm_bin_path": "",
                                                                         "watch": 0
                                                                     },
                                                                     "text": "node.script ll.node.folders.js",
@@ -7855,7 +7852,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 19.0, 290.0, 117.0, 22.0 ],
-                                                    "text": "preset_test"
+                                                    "text": "sinus"
                                                 }
                                             },
                                             {
@@ -8060,6 +8057,82 @@
                                                         "classnamespace": "box",
                                                         "rect": [ 157.0, 465.0, 639.0, 352.0 ],
                                                         "boxes": [
+                                                            {
+                                                                "box": {
+                                                                    "id": "obj-2",
+                                                                    "maxclass": "newobj",
+                                                                    "numinlets": 0,
+                                                                    "numoutlets": 0,
+                                                                    "patcher": {
+                                                                        "fileversion": 1,
+                                                                        "appversion": {
+                                                                            "major": 9,
+                                                                            "minor": 1,
+                                                                            "revision": 1,
+                                                                            "architecture": "x64",
+                                                                            "modernui": 1
+                                                                        },
+                                                                        "classnamespace": "box",
+                                                                        "rect": [ 256.0, 460.0, 1000.0, 709.0 ],
+                                                                        "boxes": [
+                                                                            {
+                                                                                "box": {
+                                                                                    "id": "obj-4",
+                                                                                    "maxclass": "button",
+                                                                                    "numinlets": 1,
+                                                                                    "numoutlets": 1,
+                                                                                    "outlettype": [ "bang" ],
+                                                                                    "parameter_enable": 0,
+                                                                                    "patching_rect": [ 142.0, 24.0, 24.0, 24.0 ]
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "box": {
+                                                                                    "id": "obj-2",
+                                                                                    "maxclass": "dict.view",
+                                                                                    "numinlets": 1,
+                                                                                    "numoutlets": 0,
+                                                                                    "patching_rect": [ 123.0, 404.0, 100.0, 100.0 ]
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "box": {
+                                                                                    "code": "const actr = new Global(\"act_rep\")\r\n\r\nfunction bang(){\r\n    outlet_dictionary(actr.pat.sinus1);\r\n}",
+                                                                                    "filename": "none",
+                                                                                    "fontface": 0,
+                                                                                    "fontname": "<Monospaced>",
+                                                                                    "fontsize": 12.0,
+                                                                                    "id": "obj-1",
+                                                                                    "maxclass": "v8.codebox",
+                                                                                    "numinlets": 1,
+                                                                                    "numoutlets": 1,
+                                                                                    "outlettype": [ "" ],
+                                                                                    "patching_rect": [ 123.0, 67.0, 549.0, 306.0 ],
+                                                                                    "saved_object_attributes": {
+                                                                                        "parameter_enable": 0
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        ],
+                                                                        "lines": [
+                                                                            {
+                                                                                "patchline": {
+                                                                                    "destination": [ "obj-2", 0 ],
+                                                                                    "source": [ "obj-1", 0 ]
+                                                                                }
+                                                                            },
+                                                                            {
+                                                                                "patchline": {
+                                                                                    "destination": [ "obj-1", 0 ],
+                                                                                    "source": [ "obj-4", 0 ]
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "patching_rect": [ 443.78, 260.63, 58.0, 22.0 ],
+                                                                    "text": "p actr.pat"
+                                                                }
+                                                            },
                                                             {
                                                                 "box": {
                                                                     "id": "obj-4",
@@ -9416,7 +9489,7 @@
                                                     "allowdrag": 0,
                                                     "fontsize": 13.0,
                                                     "id": "obj-17",
-                                                    "items": [ "no", ",", "ho_st1" ],
+                                                    "items": [ "no", ",", "ho_st1", ",", "sinus1" ],
                                                     "maxclass": "umenu",
                                                     "numinlets": 1,
                                                     "numoutlets": 3,

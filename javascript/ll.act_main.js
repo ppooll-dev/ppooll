@@ -195,6 +195,9 @@ function bang() {
     act_patcher.getnamed("pattrmarker").message("name", act_name_index);
     act_patcher.getnamed("thispatcher").message("patcher", act_name_index);
 
+    if(act_patcher.getnamed("presets"))
+        act_patcher.getnamed("presets").message("actname", act_name_index)
+
     // add actname to dict ppoollstate
     const act_state = {
         class: act_args.name,
@@ -1667,7 +1670,7 @@ function sendto1(...args) {
 
 function from_pat(...args) {
     const msg = args.shift();
-    post('from_pat', msg, args, "\n")
+    // post('from_pat', msg, args, "\n")
     if( actr.pat && actr.pat[act_name_index])
         actr.pat[act_name_index][msg] = args; // always store pat values!
 

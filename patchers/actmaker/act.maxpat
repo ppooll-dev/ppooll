@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 126.0, 539.0, 919.0, 442.0 ],
+        "rect": [ 510.0, 367.0, 919.0, 442.0 ],
         "boxes": [
             {
                 "box": {
@@ -28,19 +28,31 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 158.0, 532.0, 668.0, 492.0 ],
+                        "rect": [ 158.0, 398.0, 668.0, 492.0 ],
                         "boxes": [
                             {
                                 "box": {
                                     "bgcolor": [ 0.0, 0.0, 0.0, 1.0 ],
-                                    "id": "obj-12",
+                                    "id": "obj-4",
                                     "linecount": 5,
                                     "maxclass": "newobj",
-                                    "numinlets": 8,
-                                    "numoutlets": 8,
-                                    "outlettype": [ "", "", "", "", "", "", "", "" ],
-                                    "patching_rect": [ 131.0, 69.0, 157.0, 76.0 ],
-                                    "text": "routepass act::title_menu act::tetris_menu act::pres_menu act::master/activest client_add read slotlist"
+                                    "numinlets": 5,
+                                    "numoutlets": 5,
+                                    "outlettype": [ "", "", "", "", "" ],
+                                    "patching_rect": [ 131.0, 75.0, 118.0, 76.0 ],
+                                    "text": "routepass act::title_menu act::tetris_menu act::pres_menu act::master/activest"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "bgcolor": [ 0.0, 0.0, 0.0, 1.0 ],
+                                    "id": "obj-12",
+                                    "maxclass": "newobj",
+                                    "numinlets": 4,
+                                    "numoutlets": 4,
+                                    "outlettype": [ "", "", "", "" ],
+                                    "patching_rect": [ 230.0, 159.0, 183.0, 22.0 ],
+                                    "text": "routepass client_add read slotlist"
                                 }
                             },
                             {
@@ -103,13 +115,6 @@
                         "lines": [
                             {
                                 "patchline": {
-                                    "destination": [ "obj-12", 0 ],
-                                    "order": 1,
-                                    "source": [ "obj-1", 0 ]
-                                }
-                            },
-                            {
-                                "patchline": {
                                     "destination": [ "obj-3", 0 ],
                                     "midpoints": [ 140.5, 61.73828125, 479.5, 61.73828125 ],
                                     "order": 0,
@@ -118,43 +123,26 @@
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-16", 0 ],
-                                    "source": [ "obj-12", 6 ]
+                                    "destination": [ "obj-4", 0 ],
+                                    "order": 1,
+                                    "source": [ "obj-1", 0 ]
                                 }
                             },
                             {
                                 "patchline": {
                                     "destination": [ "obj-16", 0 ],
-                                    "source": [ "obj-12", 5 ]
-                                }
-                            },
-                            {
-                                "patchline": {
-                                    "destination": [ "obj-16", 0 ],
-                                    "source": [ "obj-12", 4 ]
-                                }
-                            },
-                            {
-                                "patchline": {
-                                    "destination": [ "obj-18", 0 ],
-                                    "source": [ "obj-12", 3 ]
-                                }
-                            },
-                            {
-                                "patchline": {
-                                    "destination": [ "obj-18", 0 ],
                                     "source": [ "obj-12", 2 ]
                                 }
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-18", 0 ],
+                                    "destination": [ "obj-16", 0 ],
                                     "source": [ "obj-12", 1 ]
                                 }
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-18", 0 ],
+                                    "destination": [ "obj-16", 0 ],
                                     "source": [ "obj-12", 0 ]
                                 }
                             },
@@ -168,6 +156,36 @@
                                 "patchline": {
                                     "destination": [ "obj-2", 0 ],
                                     "source": [ "obj-18", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-12", 0 ],
+                                    "source": [ "obj-4", 4 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-18", 0 ],
+                                    "source": [ "obj-4", 3 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-18", 0 ],
+                                    "source": [ "obj-4", 2 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-18", 0 ],
+                                    "source": [ "obj-4", 1 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-18", 0 ],
+                                    "source": [ "obj-4", 0 ]
                                 }
                             }
                         ]
@@ -629,7 +647,7 @@
                             },
                             {
                                 "box": {
-                                    "cols": 16,
+                                    "cols": 1,
                                     "colwidth": 20,
                                     "fontface": 0,
                                     "fontname": "Arial",
@@ -640,9 +658,9 @@
                                     "numinlets": 2,
                                     "numoutlets": 4,
                                     "outlettype": [ "list", "", "", "" ],
-                                    "patching_rect": [ 13.0, 70.0, 320.0, 80.0 ],
+                                    "patching_rect": [ 13.0, 70.0, 0.0, 0.0 ],
                                     "rowheight": 20,
-                                    "rows": 4,
+                                    "rows": 1,
                                     "selmode": 5,
                                     "vscroll": 0
                                 }
@@ -703,7 +721,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 13.0, 2.0, 87.0, 22.0 ],
-                                    "text": "snap@1"
+                                    "text": "ho_st1"
                                 }
                             },
                             {
@@ -959,7 +977,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 110.0, 290.0, 131.0, 22.0 ],
-                                                    "text": "sameclass snap@1"
+                                                    "text": "sameclass ho_st1"
                                                 }
                                             },
                                             {
@@ -1839,7 +1857,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 393.0, 439.0, 358.0, 449.0 ],
+                        "rect": [ 34.0, 381.0, 717.0, 509.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -1944,7 +1962,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 63.0, 137.0, 104.0, 22.0 ],
+                                    "patching_rect": [ 63.0, 127.0, 104.0, 22.0 ],
                                     "text": "prepend actname"
                                 }
                             },
@@ -2823,6 +2841,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-26", 0 ],
+                                    "disabled": 1,
                                     "source": [ "obj-20", 0 ]
                                 }
                             },
@@ -2835,6 +2854,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-20", 0 ],
+                                    "disabled": 1,
                                     "source": [ "obj-32", 0 ]
                                 }
                             },
@@ -2913,7 +2933,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 264.0, 0.5, 136.0, 22.0 ],
-                                    "text": "snap@1"
+                                    "text": "ho_st1"
                                 }
                             },
                             {
@@ -3491,8 +3511,8 @@
                     "outlettype": [ "", "", "", "" ],
                     "patching_rect": [ 19.5, 30.0, 56.0, 22.0 ],
                     "restore": {
-                        "pres_menu": [ "ƒ ducks" ],
-                        "tetris_menu": [ "ƒ ducks.json" ],
+                        "pres_menu": [ "(presets)" ],
+                        "tetris_menu": [ "(tetris)" ],
                         "title_menu": [ "" ]
                     },
                     "text": "autopattr",
@@ -3608,7 +3628,7 @@
                 "box": {
                     "embedstate": [
                         [ "act_index", 1 ],
-                        [ "act_name_index", "snap@1" ],
+                        [ "act_name_index", "ho_st1" ],
                         [ "isReady", 1 ]
                     ],
                     "filename": "ll.act_main.js",
@@ -3619,7 +3639,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, 0.0, 58.056640625, 16.0 ],
+                    "patching_rect": [ 0.0, 0.0, 50.3515625, 16.0 ],
                     "textfile": {
                         "filename": "ll.act_main.js",
                         "flags": 0,
@@ -3667,13 +3687,13 @@
                     "fontsize": 12.0,
                     "id": "obj-80",
                     "ignoreclick": 1,
-                    "items": [ "info", ",", "clientwindow", ",", "storagewindow", ",", "-", ",", "titlebar", ",", "close", ",", "back", ",", "grow", ",", "master", ",", "active_store", ",", "-", ",", "subpatch", ",", "actmaker" ],
+                    "items": [ "info", ",", "clientwindow", ",", "-", ",", "max_console", ",", "clear_console", ",", "titlebar", ",", "all_titlebars", ",", "dsp(audio_settings)", ",", "tetris", ",", "refresh", ",", "-", ",", "stopwatch", ",", "clock", ",", "-", ",", "close", ",", "closeall", ",", "back", ",", "grow", ",", "-", ",", "subpatch", ",", "actmaker", ",", "ppooll_state", ",", "clean", ",", "nan_clear" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, -7.0, 58.056640625, 23.0 ],
+                    "patching_rect": [ 0.0, -7.0, 50.3515625, 23.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "title_menu"
@@ -3687,13 +3707,13 @@
                     "fontsize": 12.0,
                     "id": "obj-82",
                     "ignoreclick": 1,
-                    "items": [ "(presets)", ",", "-", ",", "240217-snowday", ",", "henry-full-set", ",", "henry-grant", ",", "hg-221201-big", ",", "hg-221202", ",", "hg-230222", ",", "hg-230302-REWRiTE", ",", "hg-230303-romb-snap", ",", "hg-230303-snap", ",", "hg-230303", ",", "hg-230405-snap", ",", "hg-230405", ",", "hg-230601-snap", ",", "hg-231130-snap", ",", "hg-231202-snap", ",", "hg-231203-snap", ",", "hg-240228-snap", ",", "hg-240326-snap", ",", "ripstick2", ",", "-", ",", "ƒ ducks", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
+                    "items": [ "(presets)", ",", "-", ",", "-", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, -7.0, 58.056640625, 23.0 ],
+                    "patching_rect": [ 0.0, -7.0, 50.3515625, 23.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "pres_menu"
@@ -3707,13 +3727,13 @@
                     "fontsize": 12.0,
                     "id": "obj-84",
                     "ignoreclick": 1,
-                    "items": [ "(tetris)", ",", "-", ",", "-", ",", "ƒ default.json", ",", "ƒ ducks.json", ",", "-" ],
+                    "items": [ "(tetris)", ",", "-", ",", "-", ",", "ƒ default.json", ",", "ƒ default_TEST.json", ",", "-" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, -7.0, 58.056640625, 23.0 ],
+                    "patching_rect": [ 0.0, -7.0, 50.3515625, 23.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "tetris_menu"
