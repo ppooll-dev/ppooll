@@ -401,13 +401,13 @@ function paint() {
                             square * 2
                         );
                     } else if (interp_display === "vertical") {
-                        // fill BOTTOM section, shrinking up
-                        const h0 = 1 - amt;
+                        // previous drains bottom→up
+                        const fillHeight = (1 - amt) * (square * 2); // shrinking
                         mgraphics.rectangle(
                             x - square,
-                            y + square - square * 2 * h0,
+                            y + square - fillHeight, // anchor at bottom
                             square * 2,
-                            square * 2 * h0
+                            fillHeight
                         );
                     }
 
@@ -427,12 +427,13 @@ function paint() {
                             square * 2
                         );
                     } else if (interp_display === "vertical") {
-                        // fill TOP section, growing down
+                        // next fills bottom→up
+                        const fillHeight = amt * (square * 2); // growing
                         mgraphics.rectangle(
                             x - square,
-                            y - square,
+                            y + square - fillHeight, // anchor at bottom
                             square * 2,
-                            square * 2 * amt
+                            fillHeight
                         );
                     }
 
@@ -688,6 +689,7 @@ function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
             last_click = x;
             // drag_start = current; // or whatever you use for previous slot float
             drag_start = myval || click;
+            interp_active = true;
             handle_option_click(x, y, click);
             return;
         }
@@ -787,8 +789,6 @@ onidleout.local = 1;
 
 let use_legacy = false;
 function msg_float(a) {
-
-
     var f = parseFloat(a);
     if (isNaN(f)) return;
 
@@ -813,7 +813,7 @@ function msg_float(a) {
         set_current(Math.floor(f));
         // if (pat) pat.message(f);
         update_interp_from_float(f);
-         notifyclients();
+        notifyclients();
 
         return;
     }
@@ -822,8 +822,8 @@ function msg_float(a) {
     start_interpolation(myval, f, ramp_, "vertical");
 }
 
-function anything(){
-    post("hmmmmmm\n")
+function anything() {
+    post("hmmmmmm\n");
 }
 
 let drag_mode = 0; // could default to dragging mode
@@ -934,7 +934,6 @@ function handle_option_click(x, y, slotIndex) {
 
         refresh();
 
-
         // myval = prev + (next - prev) * amt;
     } else {
         // click dead-center or no neighbor: just recall that slot
@@ -944,7 +943,6 @@ function handle_option_click(x, y, slotIndex) {
         // if (pat) pat.message(slotIndex);
     }
     notifyclients();
-
 
     refresh();
 }
@@ -1045,9 +1043,9 @@ function interp_tick() {
             clear_interp();
 
             // lock in final slot selection
-            set_current(vNext-1);
-            myval = vNext-1;
-            post("seleected", vNext-1)
+            set_current(vNext - 1);
+            myval = vNext - 1;
+            post("seleected", vNext - 1);
 
             // if (pat) pat.message(vNext-1);
 
