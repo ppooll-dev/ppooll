@@ -123,14 +123,6 @@ declareattribute("vrgb3", {
 });
 
 var interp_direction = "horizontal"; // or "horizontal"
-// declareattribute("interp_direction", {
-//     type: "symbol",
-//     label: "Interpolation Direction",
-//     initial: "vertical",
-//     enum: ["vertical", "horizontal"],
-//     embed: 1,
-//     paint: 1,
-// });
 
 var width,
     height,
@@ -153,7 +145,6 @@ var myfont = "Sans Serif"; // Geneva on Mac, Arial on PC
 var myfontsize = 12; // relative to height
 var mytext = [];
 
-post("myval", myval, "\n");
 loadbang();
 refresh();
 getactname();
@@ -174,6 +165,7 @@ function set_boxsize(val) {
 function loadbang() {
     jsargumentsConvert();
     recomputeGrid();
+
     refresh();
 }
 
@@ -240,8 +232,9 @@ function actname(a) {
     pat = this.patcher.getnamed("pat");
     preset_ramp = this.patcher.getnamed("preset-ramp");
     if (pat) {
-        // pat.message("getslotlist");
+        pat.message("getslotlist");
     }
+
     refresh();
 }
 
@@ -250,6 +243,7 @@ function ramp(a) {
 }
 
 function recall(prev, next, amount) {
+    post("ll.pattr_v8ui recall()\n")
     interp_active = true;
 
     interp_prevslot = prev;
@@ -258,12 +252,6 @@ function recall(prev, next, amount) {
 
     interp_display = "vertical"; // always vertical for external
     refresh();
-
-    // TODO what is this
-    // if (current != arguments[0]) {
-    //     current = arguments[0];
-    //     outlet(0, current);
-    // }
 }
 
 function write() {}
@@ -362,6 +350,7 @@ function paint() {
     let y = margin + square;
 
     num_squares = [num_cols, num_rows];
+    post(interp_active, "\n")
 
     for (let row = 0; row < num_rows; row++) {
         let x = margin + square;
@@ -370,7 +359,6 @@ function paint() {
             i++;
             let isCurrent = current === i && slots[i];
             let isStored = slots[i];
-
             let color = vfrgb;
             if (isCurrent && !interp_active) color = vrgb2;
             else if (isStored) color = vrgb3;
@@ -708,8 +696,8 @@ function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
             // add / store
             clear_interp();
             outlet(0, "store", click);
-            messnamed(act_name, "active_set", "store", click);
             store(click);
+            messnamed(act_name, "active_set", "store", click);
             myval = click;
             notifyclients();
             return;
@@ -966,8 +954,7 @@ function setvalueof(v) {
 }
 
 function getvalueof() {
-    post("getvalueof", myval, "\n");
-
+    // post("getvalueof", myval, "\n");
     return myval;
 }
 
