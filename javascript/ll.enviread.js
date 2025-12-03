@@ -251,12 +251,11 @@ function setparam(a, p, v) {
     if (!param_excludes.includes(p) && 
 		!act_param_excludes.includes(a + p) &&
 		!(p == "act::tetris_menu" && v == "(tetris)")
-		) {
+	) {
         if (debugpost > 1) post("parameter___", p, "####", v, "\n");
 
         if (v[0] == "dictionary") senddict(a, p, v);
         else {
-            if (p === "act::active_store") v = (v === "_" || v ===0)? 0 : 1;
 			messnamed(a, p, v);
 		}
     }

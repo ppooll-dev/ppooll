@@ -798,7 +798,11 @@ function _in2(...args) {
         act_patcher.getnamed("pat").message("act::master", isMaster);
         return;
     } else if (msg === "act::active_store") {
-        const newActiveStore = args[0];
+        const active_clients = (Array.isArray(args) ? args : [args]).filter(
+            (a) => a && a !== 0 && a !== "_" && a !== "act::active_store"
+        );
+
+        const newActiveStore = active_clients.length > 0;
         if (isActiveStore !== newActiveStore) {
             isActiveStore = newActiveStore;
             title_menu.message(
@@ -1337,11 +1341,42 @@ function write_preset_path(fullPath) {
     post("ppooll write_preset: DONE", act_args.name, fullPath, "\n");
 }
 
+function anySlotHasActiveStore(pattrObj) {
+    const slots = pattrObj?.pattrstorage?.slots;
+    if (!slots) return false;
+
+    for (const slotId in slots) {
+        const data = slots[slotId]?.data;
+        if (!data) continue;
+
+        const v = data["act::active_store"];
+        post(v);
+        if (
+            Array.isArray(v) &&
+            v.some((item) => typeof item === "string" && item.length > 0)
+        ) {
+            return true; // FOUND one
+        }
+    }
+    return false; // none found
+}
+
 function read_preset_path(fullPath, presetName = 0) {
     act_patcher.getnamed("pat").message("read", fullPath);
 
     const presetDict = new Dict();
-    presetDict.parse(fullPath);
+    presetDict.import_json(fullPath);
+
+    const presetJson = JSON.parse(presetDict.stringify());
+    if (anySlotHasActiveStore(presetJson)) {
+        isActiveStore = 1;
+        title_menu.message(
+            "checkitem",
+            Object.keys(title_menu_options).indexOf("active_store"),
+            isActiveStore
+        );
+        act_patcher.getnamed("pat").message("act::active_store", 1);
+    }
 
     recall_TEXT_from_dict(act_args.name, presetName, fullPath);
 }
@@ -1438,24 +1473,16 @@ function set_preset_menu(args) {
     pres_menu.message("clearchecks");
     pres_menu.message("checksymbol", selection, 1);
 
-    const doPresetHandler = false;
-    if (doPresetHandler) {
-        // message preset-handler in ho_st
-        messnamed("ll_preset_menu", act_name_index, selection);
-    } else {
-        // load preset json
-        const isFactory = selection.startsWith("ƒ ");
-        const basePath = isFactory
-            ? ll_paths.get("factory")
-            : ll_paths.get("user");
+    // load preset json
+    const isFactory = selection.startsWith("ƒ ");
+    const basePath = isFactory ? ll_paths.get("factory") : ll_paths.get("user");
 
-        const presetName = selection.replace("ƒ ", "");
-        const fullPath = `${basePath}/${act_args.name}P/${presetName}.json`;
+    const presetName = selection.replace("ƒ ", "");
+    const fullPath = `${basePath}/${act_args.name}P/${presetName}.json`;
 
-        read_preset_path(fullPath, selection);
+    read_preset_path(fullPath, selection);
 
-        pres_menu.message("setsymbol", prev_pres_menu);
-    }
+    pres_menu.message("setsymbol", prev_pres_menu);
 }
 
 //
