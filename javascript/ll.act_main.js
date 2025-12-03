@@ -121,12 +121,11 @@ const title_menu_options =
 
 const title_menu_options_list = Object.keys(title_menu_options);
 
-// ##########################################################################.  functions
+// ######################################################################## general Handlers
 // ##########################################################################################
 // ##########################################################################################
 // ##########################################################################################
-// ##########################################################################################
-// ##########################################################################################
+
 
 // refresh js when the file has been changed and save
 //  * only do this after the initial [loadbang]--[deferlow]--
@@ -139,6 +138,18 @@ function refresh() {
         // post("refresh\n");
         bang();
     }
+}
+
+// clean - before saving act.maxpat
+function _clean() {
+    title_menu.message("symbol", "");
+    pres_menu.message("symbol", "(presets)");
+    tetris_menu.message("symbol", "(tetris)");
+}
+
+// from [r llenviread] :  1 == reading environment
+function set_llenviread(is_reading) {
+    is_llenviread = is_reading;
 }
 
 function bang() {
@@ -247,6 +258,33 @@ function bang() {
     mgraphics.redraw();
 }
 
+function savebang() {
+    // post("savebang\n")
+
+    // save tetris "ƒ default"
+    write_tetris("ƒ default");
+
+    act_patcher.getnamed("thispatcher").message("patcher", act_name_index);
+}
+
+function freebang() {
+    // post("freebang")
+
+    // send msgs to remove from ppooll_state
+    if (ll_state.get(act_name_index)) ll_state.remove(act_name_index);
+
+    // remove from Global actr patcher references
+    if (actr.patchers[act_name_index]) delete actr.patchers[act_name_index];
+    if (actr.pat[act_name_index]) delete actr.pat[act_name_index];
+
+    messnamed("acting", act_args.name, act_index, -1);
+}
+
+
+// ##########################################################################.  actui
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
 function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
     yclick = y;
     xclick = x;
@@ -295,17 +333,6 @@ function onidleout() {
     mod = 0;
 
     mgraphics.redraw();
-}
-
-function windpos(x, y) {
-    const w = act_patcher.wind;
-    w.location = [
-        x + w.location[0],
-        y + w.location[1],
-        x + w.location[2],
-        y + w.location[3],
-    ];
-    // post("windpos", x, y, w.location, "\n")
 }
 
 function paint() {
@@ -382,9 +409,10 @@ function paint() {
     }
 }
 
-//
-// TITLE MENU
-//
+// ##########################################################################.  title_menu
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
 
 function handleTitleBar() {
     titlebarShown = !titlebarShown;
@@ -570,6 +598,42 @@ function set_title_menu(selection) {
     fn();
     title_menu.message("symbol", "");
 }
+
+// ##################################################################### tetris & pres_menu
+// ##########################################################################################
+function refresh_menu(
+    name,
+    fileTypes,
+    folderTail,
+    menuObj,
+    addtItems = [],
+    omitExt = false
+) {
+    const items = [`(${name})`, "-"];
+
+    const userPath = `${ll_paths.get("user")}/${act_args.name}${folderTail}`;
+    const factoryPath = `${ll_paths.get("factory")}/${
+        act_args.name
+    }${folderTail}`;
+
+    const userFiles = ll
+        .getFilesInFolder(userPath, fileTypes, omitExt)
+        .filter((f) => f && f !== "");
+    const factoryFiles = ll
+        .getFilesInFolder(factoryPath, fileTypes, omitExt)
+        .filter((f) => f && f !== "")
+        .map((file) => `ƒ ${file}`);
+
+    items.push(...userFiles, "-", ...factoryFiles, "-", ...addtItems);
+    const menuDict = new Dict();
+    menuDict.set("items", items);
+    menuObj.message("dictionary", menuDict.name);
+}
+
+// ##########################################################################.  Tetris
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
 
 function set_tetris_menu(selection) {
     //post("set_tetris_menu", act_name_index, ...args, "\n")
@@ -781,66 +845,230 @@ function write_tetris(name) {
     tetris_menu.message("checksymbol", name, 1);
 }
 
-// Handle special messages from named [routepass] 'in2'
-let is_setting_pres_menu = false;
-function _in2(...args) {
-    //post("in2", args); post()
-    const msg = args.shift();
+function tetris_refresh_menu() {
+    const additionalItems = [];
+    const current = tetris_menu.getvalueof();
+    refresh_menu("tetris", [], "T", tetris_menu, additionalItems, false);
+    tetris_menu.message("clearchecks");
+    tetris_menu.message("checksymbol", current, 1);
+}
 
-    if (msg === "act::master") {
-        const newMaster = args[0];
+// ########################################################################## presets
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
 
-        if (isMaster !== newMaster && newMaster === 1) {
-            isMaster = 1;
-            title_menu.message(
-                "checkitem",
-                Object.keys(title_menu_options).indexOf("master"),
-                isMaster
-            );
-        }
+function write_preset(name) {
+    const isFactory = name.startsWith("ƒ ");
 
-        act_patcher.getnamed("pat").message("act::master", isMaster);
-        return;
-    } else if (msg === "act::active_store") {
-        const active_clients = (Array.isArray(args) ? args : [args]).filter(
-            (a) => a && a !== 0 && a !== "_" && a !== "act::active_store"
+    const tetrisName = name.replace("ƒ ", "");
+    const basePath = ll_paths.get(isFactory ? "factory" : "user");
+    const actPath = `${basePath}/${act_args.name}P`;
+    const fullPath = `${actPath}/${name}.json`;
+
+    if (!ll.mkdir(actPath)) {
+        post(
+            "ppooll write_preset error: folder could not be made:\n",
+            actPath,
+            "\n"
         );
-
-        const newActiveStore = active_clients.length > 0;
-        if (isActiveStore !== newActiveStore) {
-            isActiveStore = newActiveStore;
-            title_menu.message(
-                "checkitem",
-                Object.keys(title_menu_options).indexOf("active_store"),
-                isActiveStore
-            );
-        }
-        act_patcher.getnamed("pat").message("act::active_store", isActiveStore);
         return;
     }
 
-    if (!isReady) return;
+    write_preset_path(fullPath);
+    messnamed("pres_refresh_menu", "bang");
 
-    if (msg === "act::title_menu" && !is_llenviread) {
-        set_title_menu(args[0]);
-    } else if (msg === "act::tetris_menu") {
-        set_tetris_menu(args[0]);
-    } else if (msg === "act::pres_menu" && !is_setting_pres_menu) {
-        //if(args == "clear!") obj_pat.message("act::active_store","_");  //== better than === here
-        is_setting_pres_menu = true;
-        set_preset_menu(Array.isArray(args) ? args : [args]);
-        is_setting_pres_menu = false;
+    // check in pres_menu
+    prev_pres_menu = name;
+    pres_menu.message("clearchecks");
+    pres_menu.message("checksymbol", name, 1);
+}
+
+function write_preset_path(fullPath) {
+    act_patcher.getnamed("pat").message("write", fullPath);
+
+    const presetDict = new Dict();
+    presetDict.import_json(fullPath);
+    const presetJSON = JSON.parse(presetDict.stringify());
+
+    if (presetJSON.pattrstorage) {
+        presetJSON.pattrstorage.TEXT = {
+            fontsize: TEXT_fontsize,
+            ...TEXT_data,
+        };
     }
+
+    presetDict.parse(JSON.stringify(presetJSON));
+    presetDict.export_json(fullPath);
+
+    post("ppooll write_preset: DONE", act_args.name, fullPath, "\n");
 }
 
-// from [r llenviread] :  1 == reading environment
-function set_llenviread(is_reading) {
-    is_llenviread = is_reading;
+function anySlotHasActiveStore(pattrObj) {
+    const slots = pattrObj?.pattrstorage?.slots;
+    if (!slots) return false;
+
+    for (const slotId in slots) {
+        const data = slots[slotId]?.data;
+        if (!data) continue;
+
+        const v = data["act::active_store"];
+        if (
+            Array.isArray(v) &&
+            v.some((item) => typeof item === "string" && item.length > 0)
+        ) {
+            return true; // FOUND one
+        }
+    }
+    return false; // none found
 }
 
-//
-// ekmek (ll.actmake.js)
-//
+function read_preset_path(fullPath, presetName = 0) {
+    act_patcher.getnamed("pat").message("read", fullPath);
+
+    const presetDict = new Dict();
+    presetDict.import_json(fullPath);
+
+    const presetJson = JSON.parse(presetDict.stringify());
+    if (anySlotHasActiveStore(presetJson)) {
+        isActiveStore = 1;
+        title_menu.message(
+            "checkitem",
+            Object.keys(title_menu_options).indexOf("active_store"),
+            isActiveStore
+        );
+        act_patcher.getnamed("pat").message("act::active_store", 1);
+    }
+
+    recall_TEXT_from_dict(act_args.name, presetName, fullPath);
+}
+
+function set_preset_menu(args) {
+    const d = new Dict();
+    messnamed("ll_dict_pull_from_coll", "llpresetsincoll", d.name);
+
+    const presets_in_coll = JSON.parse(d.stringify());
+    if (Object.keys(presets_in_coll).includes(act_name_index)) {
+        post("TODO: presets in coll!\n");
+
+        // symbol => coll name ie "1447clocker"
+        // matrix => jit.matrix?  can't find what uses this
+        // special => send %s_%s, pattrforward
+
+        return;
+    }
+
+    act_patcher.getnamed("pat").message("getslotlist");
+    if (pat_slotlist.includes(1000)) {
+        // post("preset 1000 ! what now... \n")
+        // return
+    }
+
+    const msgs = Array.isArray(args) ? args : [args];
+    const selection = msgs.shift();
+    let preset_name = selection;
+
+    pres_menu.message("clearchecks");
+
+    if (
+        preset_name === "_" ||
+        preset_name === "(presets)" ||
+        preset_name === ""
+    )
+        return;
+
+    const pat = act_patcher.getnamed("pat");
+
+    if (selection === "write") {
+        post(selection, prev_pres_menu, "\n");
+        // show popup with last selected name
+        // messnamed("ll_preset_menu", act_name_index, "write", prev_pres_menu);
+        const dialog = this.patcher
+            .getnamed("dialog")
+            .subpatcher()
+            .getnamed("route");
+        dialog.message("return", "write_preset");
+        dialog.message("path", `${ll_paths.get("user")}/${act_args.name}P`);
+        let write_pres_name = prev_pres_menu;
+        if (
+            write_pres_name === "_" ||
+            write_pres_name === "(presets)" ||
+            write_pres_name === ""
+        )
+            write_pres_name = "_";
+
+        dialog.message("set", write_pres_name);
+        dialog.message("bang");
+        return;
+    }
+
+    if (selection === "clear!") {
+        // clear presets
+        const presetsUI = act_patcher.getnamed("presets");
+        if (presetsUI) presetsUI.message("clear");
+
+        pat.message("clear");
+        pat.message("getslotlist");
+        pat.message("presets", 0);
+
+        pres_menu.message("setsymbol", "-");
+        prev_pres_menu = "_";
+        clearTEXT();
+        update_TEXT();
+
+        return;
+    }
+
+    if (selection === "TEXT") {
+        // show TEXT
+        calc_TEXT_dimensions();
+        const editPatcher = this.patcher.getnamed("edit_preset_TEXT");
+        editPatcher.message("front");
+
+        // messnamed("ll_preset_menu", act_name_index, "TEXT", prev_pres_menu);
+        pres_menu.message("setsymbol", prev_pres_menu);
+        return;
+    }
+
+    // read
+    prev_pres_menu = selection;
+    pres_menu.message("clearchecks");
+    pres_menu.message("checksymbol", selection, 1);
+
+    // load preset json
+    const isFactory = selection.startsWith("ƒ ");
+    const basePath = isFactory ? ll_paths.get("factory") : ll_paths.get("user");
+
+    const presetName = selection.replace("ƒ ", "");
+    const fullPath = `${basePath}/${act_args.name}P/${presetName}.json`;
+
+    read_preset_path(fullPath, selection);
+
+    pres_menu.message("setsymbol", prev_pres_menu);
+}
+
+function pres_refresh_menu() {
+    const additionalItems = ["write", "clear!", "TEXT", "_"];
+    const current = pres_menu.getvalueof();
+
+    refresh_menu(
+        "presets",
+        ["TEXT", "JSON"],
+        "P",
+        pres_menu,
+        additionalItems,
+        true
+    );
+    pres_menu.message("clearchecks");
+    pres_menu.message("checksymbol", current, 1);
+}
+
+// ####################################################################### ekmek actmake
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
 
 function delete_old() {
     let did_delete = false;
@@ -1047,62 +1275,6 @@ function make_live() {
 }
 
 //
-// pres_menu & tetris menu
-//
-function tetris_refresh_menu() {
-    const additionalItems = [];
-    const current = tetris_menu.getvalueof();
-    refresh_menu("tetris", [], "T", tetris_menu, additionalItems, false);
-    tetris_menu.message("clearchecks");
-    tetris_menu.message("checksymbol", current, 1);
-}
-
-function pres_refresh_menu() {
-    const additionalItems = ["write", "clear!", "TEXT", "_"];
-    const current = pres_menu.getvalueof();
-
-    refresh_menu(
-        "presets",
-        ["TEXT", "JSON"],
-        "P",
-        pres_menu,
-        additionalItems,
-        true
-    );
-    pres_menu.message("clearchecks");
-    pres_menu.message("checksymbol", current, 1);
-}
-
-function refresh_menu(
-    name,
-    fileTypes,
-    folderTail,
-    menuObj,
-    addtItems = [],
-    omitExt = false
-) {
-    const items = [`(${name})`, "-"];
-
-    const userPath = `${ll_paths.get("user")}/${act_args.name}${folderTail}`;
-    const factoryPath = `${ll_paths.get("factory")}/${
-        act_args.name
-    }${folderTail}`;
-
-    const userFiles = ll
-        .getFilesInFolder(userPath, fileTypes, omitExt)
-        .filter((f) => f && f !== "");
-    const factoryFiles = ll
-        .getFilesInFolder(factoryPath, fileTypes, omitExt)
-        .filter((f) => f && f !== "")
-        .map((file) => `ƒ ${file}`);
-
-    items.push(...userFiles, "-", ...factoryFiles, "-", ...addtItems);
-    const menuDict = new Dict();
-    menuDict.set("items", items);
-    menuObj.message("dictionary", menuDict.name);
-}
-
-//
 // ############################################################### TEXT (presets text editor)
 // ##########################################################################################
 // ##########################################################################################
@@ -1294,460 +1466,67 @@ function clearTEXT() {
     obj.message("grid", "clear", "all");
 }
 
-// ########################################################################## pres_menu
+
+
+// ########################################################################## SPECIALS
 // ##########################################################################################
 // ##########################################################################################
 // ##########################################################################################
-// ##########################################################################################
-// ##########################################################################################
-// ##########################################################################################
 
-function write_preset(name) {
-    const isFactory = name.startsWith("ƒ ");
+// Handle special messages from named [routepass] 'in2'
+let is_setting_pres_menu = false;
+function _in2(...args) {
+    //post("in2", args); post()
+    const msg = args.shift();
 
-    const tetrisName = name.replace("ƒ ", "");
-    const basePath = ll_paths.get(isFactory ? "factory" : "user");
-    const actPath = `${basePath}/${act_args.name}P`;
-    const fullPath = `${actPath}/${name}.json`;
+    if (msg === "act::master") {
+        const newMaster = args[0];
 
-    if (!ll.mkdir(actPath)) {
-        post(
-            "ppooll write_preset error: folder could not be made:\n",
-            actPath,
-            "\n"
-        );
-        return;
-    }
-
-    write_preset_path(fullPath);
-    messnamed("pres_refresh_menu", "bang");
-
-    // check in pres_menu
-    prev_pres_menu = name;
-    pres_menu.message("clearchecks");
-    pres_menu.message("checksymbol", name, 1);
-}
-
-function write_preset_path(fullPath) {
-    act_patcher.getnamed("pat").message("write", fullPath);
-
-    const presetDict = new Dict();
-    presetDict.import_json(fullPath);
-    const presetJSON = JSON.parse(presetDict.stringify());
-
-    if (presetJSON.pattrstorage) {
-        presetJSON.pattrstorage.TEXT = {
-            fontsize: TEXT_fontsize,
-            ...TEXT_data,
-        };
-    }
-
-    presetDict.parse(JSON.stringify(presetJSON));
-    presetDict.export_json(fullPath);
-
-    post("ppooll write_preset: DONE", act_args.name, fullPath, "\n");
-}
-
-function anySlotHasActiveStore(pattrObj) {
-    const slots = pattrObj?.pattrstorage?.slots;
-    if (!slots) return false;
-
-    for (const slotId in slots) {
-        const data = slots[slotId]?.data;
-        if (!data) continue;
-
-        const v = data["act::active_store"];
-        if (
-            Array.isArray(v) &&
-            v.some((item) => typeof item === "string" && item.length > 0)
-        ) {
-            return true; // FOUND one
-        }
-    }
-    return false; // none found
-}
-
-function read_preset_path(fullPath, presetName = 0) {
-    act_patcher.getnamed("pat").message("read", fullPath);
-
-    const presetDict = new Dict();
-    presetDict.import_json(fullPath);
-
-    const presetJson = JSON.parse(presetDict.stringify());
-    if (anySlotHasActiveStore(presetJson)) {
-        isActiveStore = 1;
-        title_menu.message(
-            "checkitem",
-            Object.keys(title_menu_options).indexOf("active_store"),
-            isActiveStore
-        );
-        act_patcher.getnamed("pat").message("act::active_store", 1);
-    }
-
-    recall_TEXT_from_dict(act_args.name, presetName, fullPath);
-}
-
-function set_preset_menu(args) {
-    const d = new Dict();
-    messnamed("ll_dict_pull_from_coll", "llpresetsincoll", d.name);
-
-    const presets_in_coll = JSON.parse(d.stringify());
-    if (Object.keys(presets_in_coll).includes(act_name_index)) {
-        post("TODO: presets in coll!\n");
-
-        // symbol => coll name ie "1447clocker"
-        // matrix => jit.matrix?  can't find what uses this
-        // special => send %s_%s, pattrforward
-
-        return;
-    }
-
-    act_patcher.getnamed("pat").message("getslotlist");
-    if (pat_slotlist.includes(1000)) {
-        // post("preset 1000 ! what now... \n")
-        // return
-    }
-
-    const msgs = Array.isArray(args) ? args : [args];
-    const selection = msgs.shift();
-    let preset_name = selection;
-
-    pres_menu.message("clearchecks");
-
-    if (
-        preset_name === "_" ||
-        preset_name === "(presets)" ||
-        preset_name === ""
-    )
-        return;
-
-    const pat = act_patcher.getnamed("pat");
-
-    if (selection === "write") {
-        post(selection, prev_pres_menu, "\n");
-        // show popup with last selected name
-        // messnamed("ll_preset_menu", act_name_index, "write", prev_pres_menu);
-        const dialog = this.patcher
-            .getnamed("dialog")
-            .subpatcher()
-            .getnamed("route");
-        dialog.message("return", "write_preset");
-        dialog.message("path", `${ll_paths.get("user")}/${act_args.name}P`);
-        let write_pres_name = prev_pres_menu;
-        if (
-            write_pres_name === "_" ||
-            write_pres_name === "(presets)" ||
-            write_pres_name === ""
-        )
-            write_pres_name = "_";
-
-        dialog.message("set", write_pres_name);
-        dialog.message("bang");
-        return;
-    }
-
-    if (selection === "clear!") {
-        // clear presets
-        const presetsUI = act_patcher.getnamed("presets");
-        if (presetsUI) presetsUI.message("clear");
-
-        pat.message("clear");
-        pat.message("getslotlist");
-        pat.message("presets", 0);
-
-        pres_menu.message("setsymbol", "-");
-        prev_pres_menu = "_";
-        clearTEXT();
-        update_TEXT();
-
-        return;
-    }
-
-    if (selection === "TEXT") {
-        // show TEXT
-        calc_TEXT_dimensions();
-        const editPatcher = this.patcher.getnamed("edit_preset_TEXT");
-        editPatcher.message("front");
-
-        // messnamed("ll_preset_menu", act_name_index, "TEXT", prev_pres_menu);
-        pres_menu.message("setsymbol", prev_pres_menu);
-        return;
-    }
-
-    // read
-    prev_pres_menu = selection;
-    pres_menu.message("clearchecks");
-    pres_menu.message("checksymbol", selection, 1);
-
-    // load preset json
-    const isFactory = selection.startsWith("ƒ ");
-    const basePath = isFactory ? ll_paths.get("factory") : ll_paths.get("user");
-
-    const presetName = selection.replace("ƒ ", "");
-    const fullPath = `${basePath}/${act_args.name}P/${presetName}.json`;
-
-    read_preset_path(fullPath, selection);
-
-    pres_menu.message("setsymbol", prev_pres_menu);
-}
-
-//
-// savebang, freebang
-//
-
-function savebang() {
-    // post("savebang\n")
-
-    // save tetris "ƒ default"
-    write_tetris("ƒ default");
-
-    act_patcher.getnamed("thispatcher").message("patcher", act_name_index);
-}
-
-function freebang() {
-    // post("freebang")
-
-    // send msgs to remove from ppooll_state
-    if (ll_state.get(act_name_index)) ll_state.remove(act_name_index);
-
-    // remove from Global actr patcher references
-    if (actr.patchers[act_name_index]) delete actr.patchers[act_name_index];
-    if (actr.pat[act_name_index]) delete actr.pat[act_name_index];
-
-    messnamed("acting", act_args.name, act_index, -1);
-}
-
-////////////////////////////////
-//
-// SPECIALS
-//
-function getloc(r, o) {
-    let obj = act_patcher.getnamed(o);
-    messnamed(r, obj.rect);
-}
-
-function setloc(x, y, o) {
-    if (o) {
-        //an object
-        var obj = act_patcher.getnamed(o);
-        obj.rect = [
-            x,
-            y,
-            obj.rect[2] - obj.rect[0] + x,
-            obj.rect[3] - obj.rect[1] + y,
-        ];
-        //post(o, obj.rect, "\n");
-    } else {
-        const loc = act_patcher.wind.location;
-        act_patcher.wind.location = [
-            x,
-            y,
-            loc[2] - loc[0] + x,
-            loc[3] - loc[1] + y,
-        ];
-    }
-}
-
-function wsize(width, height) {
-    //post("wsize");
-    const l = act_patcher.wind.location;
-    act_patcher.wind.location = [
-        l[0],
-        l[1],
-        l[0] + (width > 0 ? width : 0),
-        l[1] + height,
-    ];
-}
-
-function apply() {
-    act_patcher.apply((a) => {
-        if (a.varname) {
-            messnamed(
-                "tetrislist",
-                a.maxclass,
-                a.varname,
-                a.rect[0],
-                a.rect[1],
-                a.rect[2],
-                a.rect[3],
-                a.hidden
+        if (isMaster !== newMaster && newMaster === 1) {
+            isMaster = 1;
+            title_menu.message(
+                "checkitem",
+                Object.keys(title_menu_options).indexOf("master"),
+                isMaster
             );
         }
-        return true;
-    });
-}
 
-////////////////// new for special messages /////////////////////////
-
-function rampstop() {
-    messnamed(`${act_args.hash}rampstop`, "bang");
-}
-
-function actname(to) {
-    messnamed("actname", act_name_index);
-    messnamed("::actname", "::" + act_name_index + "::");
-    if (to === "to") post("actname to seems useless");
-}
-
-///////////////////////////////////////////pasted from specials//////////////////
-
-function getnamedobj(a) {
-    //was "getnamed"", which is a bad name for a function..
-    //post("actspecials getnamed",a,"\n");
-    actr.object = act_patcher.getnamed(a);
-}
-function Getpatcher() {
-    actr.patcher = act_patcher;
-}
-
-/*
-function bang() {
-    messnamed ("tetristhis", "there", act_patcher);
-    // TODO find tetristhis in tetris@
-}
-*/
-
-///////////////////////////////////////// move these into tetris@ ?  ///////////
-function getloc_to(a, o) {
-    if (o) {
-        //objects varname
-        messnamed(a, act_patcher.getnamed(o).rect);
-    }
-    //window
-    else messnamed(a, act_patcher.wind.location);
-}
-
-function setwin(a) {
-    rect = arrayfromargs(arguments);
-    //post ("SW", a, rec);
-    var p = act_patcher.wind;
-    p.location = rect;
-}
-
-function applydict(dn) {
-    let dict_name = dn;
-    var w = act_patcher.wind;
-    var d = new Dict(dict_name);
-    d.set("window", w.location);
-    act_patcher.apply(objdict);
-}
-
-function getobj(a) {
-    a = act_patcher.a;
-    if (a.varname)
-        messnamed(
-            "tetrislist",
-            a.maxclass,
-            a.varname,
-            a.rect[0],
-            a.rect[1],
-            a.rect[2],
-            a.rect[3],
-            a.hidden
+        act_patcher.getnamed("pat").message("act::master", isMaster);
+        return;
+    } else if (msg === "act::active_store") {
+        const active_clients = (Array.isArray(args) ? args : [args]).filter(
+            (a) => a && a !== 0 && a !== "_" && a !== "act::active_store"
         );
-    return true;
-}
 
-var newstate = new Array();
-function applyblue(b) {
-    //post("\n", "got: " + b);
-    newstate = b.split(" ");
-    for (i = 1; i < newstate.length; i++) newstate[i] = Number(newstate[i]);
-    //post ("new: " + newstate, "\n");
-    act_patcher.apply(getblueargs);
-}
-
-function getblueargs(a) {
-    if (a.varname == "ll.blues") {
-        //post ("newd: " + newstate, "\n");
-        //post ("newd: ", a.getattrnames(), "\n");
-        var args;
-        if (a.getboxattr("args")) {
-            args = a.getboxattr("args");
-            var istate = -10;
-            if (newstate[0] == "@state") {
-                for (i = 0; i < args.length; i++) {
-                    if (args[i] == "@state") istate = i;
-                    if (i < istate + 7) args[i] = newstate[i - istate];
-                }
-            }
-            if (istate < 0) args = args.concat(newstate);
-            a.setboxattr("args", args);
-        } else {
-            a.setboxattr("args", newstate);
+        const newActiveStore = active_clients.length > 0;
+        if (isActiveStore !== newActiveStore) {
+            isActiveStore = newActiveStore;
+            title_menu.message(
+                "checkitem",
+                Object.keys(title_menu_options).indexOf("active_store"),
+                isActiveStore
+            );
         }
-        messnamed("getargs", a.getboxattr("args"));
+        act_patcher.getnamed("pat").message("act::active_store", isActiveStore);
+        return;
+    }
+
+    if (!isReady) return;
+
+    if (msg === "act::title_menu" && !is_llenviread) {
+        set_title_menu(args[0]);
+    } else if (msg === "act::tetris_menu") {
+        set_tetris_menu(args[0]);
+    } else if (msg === "act::pres_menu" && !is_setting_pres_menu) {
+        //if(args == "clear!") obj_pat.message("act::active_store","_");  //== better than === here
+        is_setting_pres_menu = true;
+        set_preset_menu(Array.isArray(args) ? args : [args]);
+        is_setting_pres_menu = false;
     }
 }
 
-function getblueargsonly() {
-    a = act_patcher.getnamed("ll.blues");
-    messnamed("getargs", a.getboxattr("args"));
-}
-
-//
-// sendto, sendto1
-//
-function sendto(...args) {
-    let msg = [...args];
-    let prep = 0;
-    let prep_mess = 0;
-
-    if (msg[0] === "prepend") {
-        prep = msg.shift();
-        prep_mess = msg.shift();
-    }
-
-    const dest = msg.shift();
-
-    msg = Array.isArray(msg) ? msg : [msg];
-
-    const obj_gate = (pa = this.patcher
-        .getnamed("sendto")
-        .subpatcher()
-        .getnamed("sendto_gate")); //this.patcher.getnamed("sendto_gate");
-    const obj_forward = this.patcher
-        .getnamed("sendto")
-        .subpatcher()
-        .getnamed("sendto_forward");
-    const obj_prepend = this.patcher
-        .getnamed("sendto")
-        .subpatcher()
-        .getnamed("sendto_prepend");
-    const obj_pat = act_patcher.getnamed("pat");
-
-    obj_gate.message(prep ? 1 : 2);
-    obj_prepend.message("set", prep_mess);
-    obj_forward.message("send", dest);
-    obj_pat.message(...msg);
-    obj_gate.message(4);
-    obj_forward.message("send", "no");
-}
-
-function sendto1(...args) {
-    let msg = [...args];
-    const dest = msg.shift();
-
-    msg = Array.isArray(msg) ? msg : [msg];
-
-    const obj_gate = this.patcher.getnamed("sendto_gate");
-    const obj_forward = this.patcher.getnamed("sendto_forward");
-    const obj_pat = act_patcher.getnamed("pat");
-
-    obj_gate.message(2);
-    obj_forward.message("send", dest);
-    obj_pat.message(...msg);
-    // first message from pattrstorage closes the gate outside js
-    obj_forward.message("send", "no");
-}
-
-//
 // special messages from pattrstorage
-//      ie: client_add, slotlist, read
-//
-
 let temp_client_list = []; // for special "client" messages
-
 function from_pat(...args) {
     const msg = args.shift();
     // post('from_pat', msg, args, "\n")
@@ -1793,10 +1572,106 @@ function from_pat(...args) {
     }
 }
 
+function windpos(x, y) {
+    const w = act_patcher.wind;
+    w.location = [
+        x + w.location[0],
+        y + w.location[1],
+        x + w.location[2],
+        y + w.location[3],
+    ];
+    // post("windpos", x, y, w.location, "\n")
+}
+
+function getloc(a, o) {
+    if (o) messnamed(a, act_patcher.getnamed(o).rect); //objects varname
+    else messnamed(a, act_patcher.wind.location);    //window
+}
+
+function setloc(x, y, o) {
+    if (o) {
+        //an object
+        var obj = act_patcher.getnamed(o);
+        obj.rect = [
+            x,
+            y,
+            obj.rect[2] - obj.rect[0] + x,
+            obj.rect[3] - obj.rect[1] + y,
+        ];
+        //post(o, obj.rect, "\n");
+    } else {
+        const loc = act_patcher.wind.location;
+        act_patcher.wind.location = [
+            x,
+            y,
+            loc[2] - loc[0] + x,
+            loc[3] - loc[1] + y,
+        ];
+    }
+}
+
+function setwin(a) {
+    rect = arrayfromargs(arguments);
+    //post ("SW", a, rec);
+    var p = act_patcher.wind;
+    p.location = rect;
+}
+
+function wsize(width, height) {
+    //post("wsize");
+    const l = act_patcher.wind.location;
+    act_patcher.wind.location = [
+        l[0],
+        l[1],
+        l[0] + (width > 0 ? width : 0),
+        l[1] + height,
+    ];
+}
+
+function sendto(...args) {
+    let msg = [...args];
+    let prep = 0;
+    let prep_mess = 0;
+
+    if (msg[0] === "prepend") {
+        prep = msg.shift();
+        prep_mess = msg.shift();
+    }
+
+    const dest = msg.shift();
+
+    msg = Array.isArray(msg) ? msg : [msg];
+
+    const obj_gate = (pa = this.patcher
+        .getnamed("sendto")
+        .subpatcher()
+        .getnamed("sendto_gate")); //this.patcher.getnamed("sendto_gate");
+    const obj_forward = this.patcher
+        .getnamed("sendto")
+        .subpatcher()
+        .getnamed("sendto_forward");
+    const obj_prepend = this.patcher
+        .getnamed("sendto")
+        .subpatcher()
+        .getnamed("sendto_prepend");
+    const obj_pat = act_patcher.getnamed("pat");
+
+    obj_gate.message(prep ? 1 : 2);
+    obj_prepend.message("set", prep_mess);
+    obj_forward.message("send", dest);
+    obj_pat.message(...msg);
+    obj_gate.message(4);
+    obj_forward.message("send", "no");
+}
+
+function actname(to) {
+    messnamed("actname", act_name_index);
+    messnamed("::actname", "::" + act_name_index + "::");
+    if (to === "to") post("actname to seems useless");
+}
+
+
 // ############################################################### active_store
-// ##########################################################################################
-// ##########################################################################################
-// ##########################################################################################
 // ##########################################################################################
 // ##########################################################################################
 // ##########################################################################################
@@ -1862,11 +1737,47 @@ function get_active_store(...args) {
     });
 }
 
-//
-// clean - before saving act.maxpat
-//
-function _clean() {
-    title_menu.message("symbol", "");
-    pres_menu.message("symbol", "(presets)");
-    tetris_menu.message("symbol", "(tetris)");
+
+// ###################################################################### ??????????????????
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
+
+
+// i(klaus) would skip sendto1, it is not very logic and can be done in the patch TODO 
+// also the remaining messages go to "somwehere" again
+function sendto1(...args) {
+    let msg = [...args];
+    const dest = msg.shift();
+
+    msg = Array.isArray(msg) ? msg : [msg];
+
+    const obj_gate = this.patcher.getnamed("sendto_gate");
+    const obj_forward = this.patcher.getnamed("sendto_forward");
+    const obj_pat = act_patcher.getnamed("pat");
+
+    obj_gate.message(2);
+    obj_forward.message("send", dest);
+    obj_pat.message(...msg);
+    // first message from pattrstorage closes the gate outside js
+    obj_forward.message("send", "no");
 }
+
+//////////////////////////deprecated ???????? TODO
+function rampstop() {
+    messnamed(`${act_args.hash}rampstop`, "bang");
+}
+
+function getnamedobj(a) {
+    //was "getnamed"", which is a bad name for a function..
+    //post("actspecials getnamed",a,"\n");
+    actr.object = act_patcher.getnamed(a);
+}
+function Getpatcher() {
+    actr.patcher = act_patcher;
+}
+
+
+
