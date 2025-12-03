@@ -66,7 +66,6 @@ let TEXT_data = {};
 let TEXT_updating = false;
 
 let pat_slotlist = [];
-let pat_clientlist = [];
 
 // [v8] attributes
 var isReady = 0;
@@ -105,7 +104,7 @@ var act_rect = [400, 400]; // act bpatcher rect in top-level act patcher
 var title_menu,
     pres_menu,
     tetris_menu = null,
-	obj_pat;
+    obj_pat;
 
 // title_menu options
 let isMaster,
@@ -122,16 +121,12 @@ const title_menu_options =
 
 const title_menu_options_list = Object.keys(title_menu_options);
 
-
-
-
 // ##########################################################################.  functions
 // ##########################################################################################
 // ##########################################################################################
 // ##########################################################################################
 // ##########################################################################################
 // ##########################################################################################
-
 
 // refresh js when the file has been changed and save
 //  * only do this after the initial [loadbang]--[deferlow]--
@@ -195,8 +190,8 @@ function bang() {
     act_patcher.getnamed("pattrmarker").message("name", act_name_index);
     act_patcher.getnamed("thispatcher").message("patcher", act_name_index);
 
-    if(act_patcher.getnamed("presets"))
-        act_patcher.getnamed("presets").message("actname", act_name_index)
+    if (act_patcher.getnamed("presets"))
+        act_patcher.getnamed("presets").message("actname", act_name_index);
 
     // add actname to dict ppoollstate
     const act_state = {
@@ -211,12 +206,14 @@ function bang() {
     if (!actr.patchers) {
         actr.patchers = {};
     }
-    actr.patchers[act_name_index] = act_patcher;
+    if (!actr.patchers[act_name_index])
+        actr.patchers[act_name_index] = act_patcher;
 
     if (!actr.pat) {
         actr.pat = {};
     }
-    actr.pat[act_name_index] = {};
+    if (!actr.pat[act_name_index])
+        actr.pat[act_name_index] = { activelist: {}, clientlist: [] };
 
     messnamed("actname", act_name_index);
     messnamed(act_args.hash + "actname", act_name_index);
@@ -231,9 +228,9 @@ function bang() {
     pres_refresh_menu();
     tetris_refresh_menu();
 
-    title_menu.message("symbol", "")
-    pres_menu.message("symbol", "(presets)")
-    tetris_menu.message("symbol", "(tetris)")
+    title_menu.message("symbol", "");
+    pres_menu.message("symbol", "(presets)");
+    tetris_menu.message("symbol", "(tetris)");
 
     change_TEXT("refresh");
 
@@ -407,9 +404,7 @@ function masterSelected(master_act_name, master_act_index) {
         if (master_act_index !== act_index) {
             // post("master", master_act_name, master_act_index)
             isMaster = 0;
-            act_patcher
-                .getnamed("pat")
-                .message("act::master", isMaster);
+            act_patcher.getnamed("pat").message("act::master", isMaster);
             title_menu.message(
                 "checkitem",
                 Object.keys(title_menu_options).indexOf("master"),
@@ -418,9 +413,7 @@ function masterSelected(master_act_name, master_act_index) {
         } else {
             // post("not master", master_act_name, master_act_index)
             isMaster = 1;
-            act_patcher
-                .getnamed("pat")
-                .message("act::master", isMaster);
+            act_patcher.getnamed("pat").message("act::master", isMaster);
             title_menu.message(
                 "checkitem",
                 Object.keys(title_menu_options).indexOf("master"),
@@ -523,7 +516,7 @@ function create_host_title_menu_options() {
                     "window",
                     "flags",
                     isgrow ? "grow" : "nogrow"
-                );  
+                );
 
                 messnamed(act, "TP", "window", "exec");
             });
@@ -645,8 +638,8 @@ function set_tetris_menu(selection) {
 
                     obj[attrName] = attrValue;
 
-                    if(objName === "presets" && obj.maxclass === "v8ui"){
-                        obj.message("jsargumentsConvert", "bang")
+                    if (objName === "presets" && obj.maxclass === "v8ui") {
+                        obj.message("jsargumentsConvert", "bang");
                     }
 
                     // bang bpatchers
@@ -736,50 +729,52 @@ function getTetrisFromObject(obj) {
     return objTetris;
 }
 
-function get_tetris() { // used also by tetris@ to fill its local dict "tetris_work"
-	//post("getT",act_patcher.name,"\n");
-        const actTetris = { window: act_patcher.wind.location };
-	
-        act_patcher.apply((obj) => {
-            if (
-                !obj.varname ||
-                ll.tetris.class_excludes.indexOf(obj.maxclass) > -1 ||
-                ll.tetris.name_excludes.indexOf(obj.varname) > -1
-            )
-                return true; // skip
+function get_tetris() {
+    // used also by tetris@ to fill its local dict "tetris_work"
+    //post("getT",act_patcher.name,"\n");
+    const actTetris = { window: act_patcher.wind.location };
 
-            const objTetris = getTetrisFromObject(obj);
-            if (objTetris) actTetris[obj.varname] = { ...objTetris };
-            return true;
-        });
-	//post("actT",Object.keys(actTetris),"\n");
+    act_patcher.apply((obj) => {
+        if (
+            !obj.varname ||
+            ll.tetris.class_excludes.indexOf(obj.maxclass) > -1 ||
+            ll.tetris.name_excludes.indexOf(obj.varname) > -1
+        )
+            return true; // skip
+
+        const objTetris = getTetrisFromObject(obj);
+        if (objTetris) actTetris[obj.varname] = { ...objTetris };
+        return true;
+    });
+    //post("actT",Object.keys(actTetris),"\n");
     const tetrisDict = new Dict("tetris_work");
-        tetrisDict.parse(JSON.stringify(actTetris));
-	return tetrisDict;
+    tetrisDict.parse(JSON.stringify(actTetris));
+    return tetrisDict;
 }
 
-async function write_tetris(name) {
-    try{
-        const tetrisDict = get_tetris();
-        const isFactory = name.startsWith("ƒ ");
-        const tetrisName = name.replace("ƒ ", "");
-        const basePath = ll_paths.get(isFactory ? "factory" : "user");
-        const actPath = `${basePath}/${act_args.name}T`;
-        const fullPath = `${actPath}/${tetrisName}.json`;
+function write_tetris(name) {
+    const tetrisDict = get_tetris();
+    const isFactory = name.startsWith("ƒ ");
+    const tetrisName = name.replace("ƒ ", "");
+    const basePath = ll_paths.get(isFactory ? "factory" : "user");
+    const actPath = `${basePath}/${act_args.name}T`;
+    const fullPath = `${actPath}/${tetrisName}.json`;
 
-        if(!ll.mkdir(actPath)){
-            post("ppooll write_tetris error: folder could not be made:\n", actPath, "\n");
-            return;
-        }
-		//post("actPath",actPath,"\n");
-		//post("fullPath",fullPath,"\n");
-        tetrisDict.export_json(fullPath);
-        // post("ppooll write_tetris: DONE", act_args.name, tetrisName, "\n")
-        messnamed("tetris_refresh_menu", "bang");
-    }catch(e){
-        post("ppooll write_tetris error: ");
-        post(JSON.stringify(e));
+    if (!ll.mkdir(actPath)) {
+        post(
+            "ppooll write_tetris error: folder could not be made:\n",
+            actPath,
+            "\n"
+        );
+        return;
     }
+
+    tetrisDict.export_json(fullPath);
+    messnamed("tetris_refresh_menu", "bang");
+
+    // check in tetris_menu
+    tetris_menu.message("clearchecks");
+    tetris_menu.message("checksymbol", name, 1);
 }
 
 // Handle special messages from named [routepass] 'in2'
@@ -790,7 +785,7 @@ function _in2(...args) {
 
     if (msg === "act::master") {
         const newMaster = args[0];
-        
+
         if (isMaster !== newMaster && newMaster === 1) {
             isMaster = 1;
             title_menu.message(
@@ -800,12 +795,10 @@ function _in2(...args) {
             );
         }
 
-        act_patcher
-            .getnamed("pat")
-            .message("act::master", isMaster);
+        act_patcher.getnamed("pat").message("act::master", isMaster);
         return;
     } else if (msg === "act::active_store") {
-    	const newActiveStore = args[0];
+        const newActiveStore = args[0];
         if (isActiveStore !== newActiveStore) {
             isActiveStore = newActiveStore;
             title_menu.message(
@@ -814,10 +807,8 @@ function _in2(...args) {
                 isActiveStore
             );
         }
-	    act_patcher
-	        .getnamed("pat")
-	        .message("act::active_store", isActiveStore);
-	    return;
+        act_patcher.getnamed("pat").message("act::active_store", isActiveStore);
+        return;
     }
 
     if (!isReady) return;
@@ -827,10 +818,10 @@ function _in2(...args) {
     } else if (msg === "act::tetris_menu") {
         set_tetris_menu(args[0]);
     } else if (msg === "act::pres_menu" && !is_setting_pres_menu) {
-		//if(args == "clear!") obj_pat.message("act::active_store","_");  //== better than === here
+        //if(args == "clear!") obj_pat.message("act::active_store","_");  //== better than === here
         is_setting_pres_menu = true;
         set_preset_menu(Array.isArray(args) ? args : [args]);
-        is_setting_pres_menu = false;		
+        is_setting_pres_menu = false;
     }
 }
 
@@ -860,17 +851,27 @@ function delete_old() {
         }
     });
 
-    const presetsUI = act_patcher.getnamed("presets")
-    if(presetsUI && presetsUI.maxclass === "jsui"){
+    const presetsUI = act_patcher.getnamed("presets");
+    if (presetsUI && presetsUI.maxclass === "jsui") {
         // Object.keys(presetsUI).forEach(key => post(key, presetsUI[key], "\n"))
         const rect = presetsUI.rect;
         let jsarguments = presetsUI.getattr("jsarguments");
         jsarguments = Array.isArray(jsarguments) ? jsarguments : [jsarguments];
 
         // post("remove jsui presets", "\n")
-        act_patcher.remove(presetsUI)
+        act_patcher.remove(presetsUI);
 
-        const presets_v8 = act_patcher.newdefault(rect[0], rect[1], "v8ui", "@filename", "ll.pattr_v8ui", "@jsarguments", ...jsarguments, "@varname", "presets");
+        const presets_v8 = act_patcher.newdefault(
+            rect[0],
+            rect[1],
+            "v8ui",
+            "@filename",
+            "ll.pattr_v8ui",
+            "@jsarguments",
+            ...jsarguments,
+            "@varname",
+            "presets"
+        );
         presets_v8.rect = rect;
     }
 }
@@ -1039,15 +1040,15 @@ function make_live() {
 //
 function tetris_refresh_menu() {
     const additionalItems = [];
-    // const current = tetris_menu.getvalueof();
+    const current = tetris_menu.getvalueof();
     refresh_menu("tetris", [], "T", tetris_menu, additionalItems, false);
-
-    // tetris_menu.message("setsymbol", current);
+    tetris_menu.message("clearchecks");
+    tetris_menu.message("checksymbol", current, 1);
 }
 
 function pres_refresh_menu() {
     const additionalItems = ["write", "clear!", "TEXT", "_"];
-    // const current = pres_menu.getvalueof();
+    const current = pres_menu.getvalueof();
 
     refresh_menu(
         "presets",
@@ -1057,8 +1058,8 @@ function pres_refresh_menu() {
         additionalItems,
         true
     );
-
-    // pres_menu.message("setsymbol", current);
+    pres_menu.message("clearchecks");
+    pres_menu.message("checksymbol", current, 1);
 }
 
 function refresh_menu(
@@ -1112,8 +1113,7 @@ function calc_TEXT_dimensions() {
     if (obj_presets) {
         if (obj_presets.getattr("boxsize")) {
             boxsize = obj_presets.getattr("boxsize");
-        }
-        else if (
+        } else if (
             obj_presets.getattr("jsarguments") &&
             obj_presets.getattr("jsarguments")[0]
         ) {
@@ -1203,7 +1203,12 @@ function update_TEXT() {
 
         editTEXT("grid", "cols", TEXT_dimensions[0]);
         editTEXT("grid", "rows", TEXT_dimensions[1]);
-        editTEXT("grid", "size", TEXT_dimensions[0]*20, TEXT_dimensions[1]*20);
+        editTEXT(
+            "grid",
+            "size",
+            TEXT_dimensions[0] * 20,
+            TEXT_dimensions[1] * 20
+        );
 
         const TEXT_presetsUI = [];
         for (let i = 0; i < TEXT_size; i++) {
@@ -1286,27 +1291,30 @@ function clearTEXT() {
 // ##########################################################################################
 // ##########################################################################################
 
-async function write_preset(name) {
-    // post("write preset", name, "\n");
-    try {
-        const isFactory = name.startsWith("ƒ ");
+function write_preset(name) {
+    const isFactory = name.startsWith("ƒ ");
 
-        const tetrisName = name.replace("ƒ ", "");
-        const basePath = ll_paths.get(isFactory ? "factory" : "user");
-        const actPath = `${basePath}/${act_args.name}P`;
-        const fullPath = `${actPath}/${name}.json`;
+    const tetrisName = name.replace("ƒ ", "");
+    const basePath = ll_paths.get(isFactory ? "factory" : "user");
+    const actPath = `${basePath}/${act_args.name}P`;
+    const fullPath = `${actPath}/${name}.json`;
 
-        if(!ll.mkdir(actPath)){
-            post("ppooll write_tetris error: folder could not be made:\n", actPath, "\n");
-            return;
-        }
-        write_preset_path(fullPath);
-
-        messnamed("pres_refresh_menu", "bang");
-    } catch (e) {
-        post("ppooll write_preset error: ");
-        post(JSON.stringify(e));
+    if (!ll.mkdir(actPath)) {
+        post(
+            "ppooll write_preset error: folder could not be made:\n",
+            actPath,
+            "\n"
+        );
+        return;
     }
+
+    write_preset_path(fullPath);
+    messnamed("pres_refresh_menu", "bang");
+
+    // check in pres_menu
+    prev_pres_menu = name;
+    pres_menu.message("clearchecks");
+    pres_menu.message("checksymbol", name, 1);
 }
 
 function write_preset_path(fullPath) {
@@ -1326,7 +1334,7 @@ function write_preset_path(fullPath) {
     presetDict.parse(JSON.stringify(presetJSON));
     presetDict.export_json(fullPath);
 
-    post("ppooll write_preset: DONE", act_args.name, name, "\n");
+    post("ppooll write_preset: DONE", act_args.name, fullPath, "\n");
 }
 
 function read_preset_path(fullPath, presetName = 0) {
@@ -1343,18 +1351,18 @@ function set_preset_menu(args) {
     messnamed("ll_dict_pull_from_coll", "llpresetsincoll", d.name);
 
     const presets_in_coll = JSON.parse(d.stringify());
-    if(Object.keys(presets_in_coll).includes(act_name_index)){
-        post("TODO: presets in coll!\n")
+    if (Object.keys(presets_in_coll).includes(act_name_index)) {
+        post("TODO: presets in coll!\n");
 
         // symbol => coll name ie "1447clocker"
         // matrix => jit.matrix?  can't find what uses this
         // special => send %s_%s, pattrforward
-        
+
         return;
     }
-    
+
     act_patcher.getnamed("pat").message("getslotlist");
-    if(pat_slotlist.includes(1000)){
+    if (pat_slotlist.includes(1000)) {
         // post("preset 1000 ! what now... \n")
         // return
     }
@@ -1375,6 +1383,7 @@ function set_preset_menu(args) {
     const pat = act_patcher.getnamed("pat");
 
     if (selection === "write") {
+        post(selection, prev_pres_menu, "\n");
         // show popup with last selected name
         // messnamed("ll_preset_menu", act_name_index, "write", prev_pres_menu);
         const dialog = this.patcher
@@ -1383,10 +1392,16 @@ function set_preset_menu(args) {
             .getnamed("route");
         dialog.message("return", "write_preset");
         dialog.message("path", `${ll_paths.get("user")}/${act_args.name}P`);
-        dialog.message("set", preset_name);
+        let write_pres_name = prev_pres_menu;
+        if (
+            write_pres_name === "_" ||
+            write_pres_name === "(presets)" ||
+            write_pres_name === ""
+        )
+            write_pres_name = "_";
+
+        dialog.message("set", write_pres_name);
         dialog.message("bang");
-        pres_menu.message("setsymbol", preset_name);
-        prev_pres_menu = preset_name;
         return;
     }
 
@@ -1420,7 +1435,7 @@ function set_preset_menu(args) {
 
     // read
     prev_pres_menu = selection;
-
+    pres_menu.message("clearchecks");
     pres_menu.message("checksymbol", selection, 1);
 
     const doPresetHandler = false;
@@ -1451,7 +1466,6 @@ function savebang() {
     // post("savebang\n")
 
     // save tetris "ƒ default"
-    // messnamed("ll_write_default_tetris", act_name_index);
     write_tetris("ƒ default");
 
     act_patcher.getnamed("thispatcher").message("patcher", act_name_index);
@@ -1465,6 +1479,7 @@ function freebang() {
 
     // remove from Global actr patcher references
     if (actr.patchers[act_name_index]) delete actr.patchers[act_name_index];
+    if (actr.pat[act_name_index]) delete actr.pat[act_name_index];
 
     messnamed("acting", act_args.name, act_index, -1);
 }
@@ -1473,9 +1488,9 @@ function freebang() {
 //
 // SPECIALS
 //
-function getloc(r,o){
-	let obj = act_patcher.getnamed(o);
-	messnamed(r,obj.rect);
+function getloc(r, o) {
+    let obj = act_patcher.getnamed(o);
+    messnamed(r, obj.rect);
 }
 
 function setloc(x, y, o) {
@@ -1529,7 +1544,6 @@ function apply() {
     });
 }
 
-
 ////////////////// new for special messages /////////////////////////
 
 function rampstop() {
@@ -1538,17 +1552,18 @@ function rampstop() {
 
 function actname(to) {
     messnamed("actname", act_name_index);
-	messnamed("::actname", "::"+act_name_index+"::");
-	if(to==="to") post("actname to seems useless"); 
+    messnamed("::actname", "::" + act_name_index + "::");
+    if (to === "to") post("actname to seems useless");
 }
 
 ///////////////////////////////////////////pasted from specials//////////////////
 
-function getnamedobj(a){ //was "getnamed"", which is a bad name for a function..
+function getnamedobj(a) {
+    //was "getnamed"", which is a bad name for a function..
     //post("actspecials getnamed",a,"\n");
     actr.object = act_patcher.getnamed(a);
 }
-function Getpatcher(){
+function Getpatcher() {
     actr.patcher = act_patcher;
 }
 
@@ -1642,25 +1657,34 @@ function getblueargsonly() {
 //
 function sendto(...args) {
     let msg = [...args];
-	let prep = 0;
-	let prep_mess = 0;
-	
-	if (msg[0]==="prepend"){
-		prep = msg.shift();
-		prep_mess = msg.shift();
-	}
+    let prep = 0;
+    let prep_mess = 0;
+
+    if (msg[0] === "prepend") {
+        prep = msg.shift();
+        prep_mess = msg.shift();
+    }
 
     const dest = msg.shift();
 
     msg = Array.isArray(msg) ? msg : [msg];
 
-    const obj_gate = pa = this.patcher.getnamed("sendto").subpatcher().getnamed("sendto_gate");  //this.patcher.getnamed("sendto_gate");
-    const obj_forward = this.patcher.getnamed("sendto").subpatcher().getnamed("sendto_forward");
-	const obj_prepend = this.patcher.getnamed("sendto").subpatcher().getnamed("sendto_prepend");
+    const obj_gate = (pa = this.patcher
+        .getnamed("sendto")
+        .subpatcher()
+        .getnamed("sendto_gate")); //this.patcher.getnamed("sendto_gate");
+    const obj_forward = this.patcher
+        .getnamed("sendto")
+        .subpatcher()
+        .getnamed("sendto_forward");
+    const obj_prepend = this.patcher
+        .getnamed("sendto")
+        .subpatcher()
+        .getnamed("sendto_prepend");
     const obj_pat = act_patcher.getnamed("pat");
 
     obj_gate.message(prep ? 1 : 2);
-	obj_prepend.message("set", prep_mess);
+    obj_prepend.message("set", prep_mess);
     obj_forward.message("send", dest);
     obj_pat.message(...msg);
     obj_gate.message(4);
@@ -1689,10 +1713,12 @@ function sendto1(...args) {
 //      ie: client_add, slotlist, read
 //
 
+let temp_client_list = []; // for special "client" messages
+
 function from_pat(...args) {
     const msg = args.shift();
     // post('from_pat', msg, args, "\n")
-    if( actr.pat && actr.pat[act_name_index])
+    if (actr.pat && actr.pat[act_name_index])
         actr.pat[act_name_index][msg] = args; // always store pat values!
 
     if (msg === "client_add") {
@@ -1717,6 +1743,20 @@ function from_pat(...args) {
         if (args.indexOf(1000) > -1) {
             act_patcher.getnamed("pat").message("recall", 1000);
         }
+    } else if (msg === "active") {
+        // post("active", ...args);
+        const param = args.shift();
+        const isActive = args.shift();
+        // post("isActive?", param, isActive, "\n");
+        actr.pat[act_name_index].activelist[param] = isActive;
+    } else if (msg === "clientlist") {
+        const param = args.shift();
+        if (param === "done") {
+            actr.pat[act_name_index].clientlist = temp_client_list;
+            temp_client_list = [];
+        } else {
+            temp_client_list.push(param);
+        }
     }
 }
 
@@ -1727,69 +1767,73 @@ function from_pat(...args) {
 // ##########################################################################################
 // ##########################################################################################
 // ##########################################################################################
-let pat_activelist = [];
-function active_set(...args) {
-	if (isActiveStore){ 
-		obj_pat = act_patcher.getnamed("pat");
-		pat_clientlist = [];
-		const msg = args.shift();
-		const slot = args.shift();
-		sendto("prepend","clientlist",`${act_args.hash}actui`,"getclientlist");
-		//post("cl",msg,slot,"\n");
-		if (msg === "store"){		
-			pat_activelist = [];
-			for (let p of pat_clientlist){
-				sendto("prepend","gotactive",`${act_args.hash}actui`,"getactive",p);
-			}
-			post("pat_activelist",pat_activelist,"\n");
-			if (pat_activelist.length === 0) pat_activelist = "_";
-			obj_pat.message("setstoredvalue","act::active_store",slot,pat_activelist);		
-		} else if (msg === "recall"){
-			sendto("prepend","get_active_store",`${act_args.hash}actui`,"getstoredvalue","act::active_store",slot);
-		}
-	}
-}
-function clientlist(...args){
-	const msg = args.shift();
-    if (msg === "clientlist") {
-		if (args[0] !== "done") pat_clientlist.push(args[0]);
-   	}
-}
-function gotactive(...args){
-	const msg = args.shift();
-	const param = args[0];
-	const active = args[1];
-	if (active && param !== "act::active_store"){
-		pat_activelist.push(param);
-	}
-}
-function get_active_store(...args){
 
-	const msg = args.shift();
-	//post("recall_active_store",args,"\n");
-	let arr = [];
-	for(let p of args) { 
-		if (p !== "act::active_store") {
-			arr.push(p);
-			if (p.includes("::")){//hack to activate subpatcher first
-				//post(":::",p.split("::")[0],"\n");
-				obj_pat.message("active",p.split("::")[0],1);
-			} 
-		}
-	} 	
-		//return;
-	for (let p of pat_clientlist){
-		let active = arr.indexOf(p) > -1;
-		//post("setactive",p,active,"\n");
-		obj_pat.message("active",p,active);  // set parameter's activ_state		
-	}
+function active_set(...args) {
+    if (!isActiveStore) return;
+    obj_pat = act_patcher.getnamed("pat");
+    // post("active_set", args, "\n");
+
+    const msg = args.shift();
+    const slot = args.shift();
+
+    obj_pat.message("getclientlist");
+    // post("active_set clientlist:", actr.pat[act_name_index].clientlist);
+
+    if (msg === "store") {
+        let pat_activelist = [];
+        actr.pat[act_name_index].clientlist.forEach((client) => {
+            obj_pat.message("getactive", client);
+            if (actr.pat[act_name_index].activelist[client]) {
+                pat_activelist.push(client);
+            }
+        });
+
+        if (pat_activelist.length === 0) pat_activelist = "_";
+        obj_pat.message(
+            "setstoredvalue",
+            "act::active_store",
+            slot,
+            pat_activelist
+        );
+    } else if (msg === "recall") {
+        sendto(
+            "prepend",
+            "get_active_store",
+            `${act_args.hash}actui`,
+            "getstoredvalue",
+            "act::active_store",
+            slot
+        );
+    }
+}
+
+function get_active_store(...args) {
+    const msg = args.shift();
+    // post("recall_active_store", args, "\n");
+    let active_params = args
+        .filter((p) => p !== "act::active_store" && p !== 0 && p !== 1)
+        .map((p) => {
+            if (p.includes("::")) {
+                //hack to activate subpatcher first
+                obj_pat.message("active", p.split("::")[0], 1);
+            }
+            return p;
+        });
+
+    actr.pat[act_name_index].clientlist.forEach((client) => {
+        if (client === "act::active_store") return;
+
+        let active = active_params.indexOf(client) > -1;
+        // post("setactive", client, active, "\n");
+        obj_pat.message("active", client, active); // set parameter's activ_state
+    });
 }
 
 //
 // clean - before saving act.maxpat
 //
-function _clean(){
-    title_menu.message("symbol", "")
-    pres_menu.message("symbol", "(presets)")
-    tetris_menu.message("symbol", "(tetris)")
+function _clean() {
+    title_menu.message("symbol", "");
+    pres_menu.message("symbol", "(presets)");
+    tetris_menu.message("symbol", "(tetris)");
 }

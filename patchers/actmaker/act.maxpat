@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 364.0, 448.0, 919.0, 442.0 ],
+        "rect": [ 156.0, 412.0, 919.0, 442.0 ],
         "boxes": [
             {
                 "box": {
@@ -34,13 +34,13 @@
                                 "box": {
                                     "bgcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                                     "id": "obj-12",
-                                    "linecount": 6,
+                                    "linecount": 2,
                                     "maxclass": "newobj",
-                                    "numinlets": 9,
-                                    "numoutlets": 9,
-                                    "outlettype": [ "", "", "", "", "", "", "", "", "" ],
-                                    "patching_rect": [ 131.0, 69.0, 149.0, 89.0 ],
-                                    "text": "routepass act::title_menu act::tetris_menu act::pres_menu act::active_store act::master client_add read slotlist"
+                                    "numinlets": 11,
+                                    "numoutlets": 11,
+                                    "outlettype": [ "", "", "", "", "", "", "", "", "", "", "" ],
+                                    "patching_rect": [ 131.0, 69.0, 532.0, 35.0 ],
+                                    "text": "routepass act::title_menu act::tetris_menu act::pres_menu act::active_store act::master client_add read slotlist clientlist active"
                                 }
                             },
                             {
@@ -114,6 +114,18 @@
                                     "midpoints": [ 140.5, 61.73828125, 479.5, 61.73828125 ],
                                     "order": 0,
                                     "source": [ "obj-1", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-16", 0 ],
+                                    "source": [ "obj-12", 9 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-16", 0 ],
+                                    "source": [ "obj-12", 8 ]
                                 }
                             },
                             {

@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 279.0, 162.0, 130.0, 125.0 ],
+        "rect": [ 434.0, 194.0, 130.0, 125.0 ],
         "default_fontsize": 11.595187,
         "toolbarvisible": 0,
         "globalpatchername": "ho_st1",
@@ -1158,7 +1158,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 163.0, 100.0, 101.0, 22.0 ],
-                                                                                    "text": "sinus1"
+                                                                                    "text": "notepad@1"
                                                                                 }
                                                                             },
                                                                             {
@@ -1181,7 +1181,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 50.0, 100.0, 96.0, 22.0 ],
-                                                                                    "text": "sinus1"
+                                                                                    "text": "notepad@1"
                                                                                 }
                                                                             },
                                                                             {
@@ -1686,7 +1686,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 19.0, 47.0, 160.0, 24.0 ],
-                                                    "text": "sinus1"
+                                                    "text": "notepad@1"
                                                 }
                                             },
                                             {
@@ -3128,7 +3128,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 339.0, 243.0, 79.0, 35.0 ],
-                                                                    "text": "(environments)"
+                                                                    "text": "active_storage"
                                                                 }
                                                             },
                                                             {
@@ -3214,12 +3214,13 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-30",
+                                                                    "linecount": 4,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 150.0, 191.0, 88.0, 62.0 ],
-                                                                    "text": "Off 1 2"
+                                                                    "text": "Off 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20"
                                                                 }
                                                             },
                                                             {
@@ -4445,7 +4446,6 @@
                                                             {
                                                                 "box": {
                                                                     "fontsize": 10.0,
-                                                                    "hidden": 1,
                                                                     "id": "obj-15",
                                                                     "maxclass": "comment",
                                                                     "numinlets": 1,
@@ -4720,7 +4720,6 @@
                                                                 "box": {
                                                                     "bgcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                                                                     "fontsize": 11.0,
-                                                                    "hidden": 1,
                                                                     "id": "obj-1",
                                                                     "maxclass": "textbutton",
                                                                     "numinlets": 1,
@@ -5474,6 +5473,8 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 0,
+                                                                        "node_bin_path": "",
+                                                                        "npm_bin_path": "",
                                                                         "watch": 0
                                                                     },
                                                                     "text": "node.script ll.node.folders.js",
@@ -7852,7 +7853,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 19.0, 290.0, 117.0, 22.0 ],
-                                                    "text": "sinus"
+                                                    "text": "notepad@"
                                                 }
                                             },
                                             {
@@ -8055,7 +8056,7 @@
                                                             "modernui": 1
                                                         },
                                                         "classnamespace": "box",
-                                                        "rect": [ 157.0, 465.0, 639.0, 352.0 ],
+                                                        "rect": [ 128.0, 655.0, 639.0, 352.0 ],
                                                         "boxes": [
                                                             {
                                                                 "box": {
@@ -8073,7 +8074,7 @@
                                                                             "modernui": 1
                                                                         },
                                                                         "classnamespace": "box",
-                                                                        "rect": [ 256.0, 460.0, 1000.0, 709.0 ],
+                                                                        "rect": [ 725.0, 233.0, 1000.0, 709.0 ],
                                                                         "boxes": [
                                                                             {
                                                                                 "box": {
@@ -8092,12 +8093,12 @@
                                                                                     "maxclass": "dict.view",
                                                                                     "numinlets": 1,
                                                                                     "numoutlets": 0,
-                                                                                    "patching_rect": [ 123.0, 404.0, 100.0, 100.0 ]
+                                                                                    "patching_rect": [ 142.0, 219.0, 327.0, 462.0 ]
                                                                                 }
                                                                             },
                                                                             {
                                                                                 "box": {
-                                                                                    "code": "const actr = new Global(\"act_rep\")\r\n\r\nfunction bang(){\r\n    outlet_dictionary(actr.pat.sinus1);\r\n}",
+                                                                                    "code": "const actr = new Global(\"act_rep\")\r\n\r\nfunction bang(){\r\n    outlet_dictionary(0, actr.pat);\r\n}",
                                                                                     "filename": "none",
                                                                                     "fontface": 0,
                                                                                     "fontname": "<Monospaced>",
@@ -8107,7 +8108,7 @@
                                                                                     "numinlets": 1,
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
-                                                                                    "patching_rect": [ 123.0, 67.0, 549.0, 306.0 ],
+                                                                                    "patching_rect": [ 142.0, 57.0, 327.0, 152.0 ],
                                                                                     "saved_object_attributes": {
                                                                                         "parameter_enable": 0
                                                                                     }
@@ -9489,7 +9490,7 @@
                                                     "allowdrag": 0,
                                                     "fontsize": 13.0,
                                                     "id": "obj-17",
-                                                    "items": [ "no", ",", "ho_st1", ",", "sinus1" ],
+                                                    "items": [ "no", ",", "ho_st1" ],
                                                     "maxclass": "umenu",
                                                     "numinlets": 1,
                                                     "numoutlets": 3,
@@ -34336,7 +34337,7 @@
                     "active": {
                         "act": 0,
                         "act::active_store": 0,
-                        "act::master/activest": 0,
+                        "act::master": 0,
                         "act::u751015509": 0,
                         "act::pres_menu": 0,
                         "act::tetris_menu": 0,
@@ -34353,10 +34354,10 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 493.0, 69.0, 92.0, 21.0 ],
                     "saved_object_attributes": {
-                        "client_rect": [ 400, 495, 1195, 847 ],
+                        "client_rect": [ 20, 48, 680, 503 ],
                         "parameter_enable": 0,
                         "parameter_mappable": 0,
-                        "storage_rect": [ 25, 119, 665, 359 ]
+                        "storage_rect": [ 430, 270, 1276, 999 ]
                     },
                     "text": "pattrstorage pat",
                     "varname": "pat"
@@ -34410,7 +34411,6 @@
                     "restore": {
                         "act_menu": [ "(__acts__)" ],
                         "audioON/OFF": [ 0 ],
-                        "chans": [ 16 ],
                         "def": [ -1 ],
                         "envi_menu": [ "(environments)" ],
                         "favorites": [ "(favorites)" ],
@@ -34420,7 +34420,7 @@
                         "rec": [ 0 ],
                         "screen": [ 0 ],
                         "stereo": [ 0 ],
-                        "time": [ 30424 ],
+                        "time": [ 19862 ],
                         "vol": [ 1.0 ],
                         "vol_ramp": [ 10 ],
                         "vol_slider": [ 1.0 ],

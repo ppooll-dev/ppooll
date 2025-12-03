@@ -27,7 +27,7 @@ mgraphics.init();
 mgraphics.relative_coords = 0; // use pixel coordinates
 mgraphics.autofill = 0;
 
-const actr = new Global("act_rep");
+var actr = new Global("act_rep");
 
 var last_click = 0; // for drag interpolation in x direction
 var drag_start = 0; // starting preset for dragging
@@ -122,6 +122,14 @@ declareattribute("vrgb3", {
     label: "Stored Slot",
     embed: 1,
     paint: 1,
+});
+
+var act_name = "";
+declareattribute("act_name", {
+    type: "symbol",
+    label: "actname",
+    setter: "actname",
+    embed: 1,
 });
 
 var interp_direction = "horizontal"; // or "horizontal"
@@ -629,7 +637,7 @@ function bang() {
 }
 
 function q_size(v) {
-    set_boxsize(v);  // backwards compatible
+    set_boxsize(v); // backwards compatible
 }
 
 function store(slot) {
@@ -637,6 +645,12 @@ function store(slot) {
     pat = this.patcher.getnamed("pat");
     pat.message("store", slot);
     pat.message("getslotlist");
+
+    actr.patchers[act_name]
+        .getnamed("act")
+        .subpatcher()
+        .getnamed("actui")
+        .message("active_set", "store", click);
 }
 
 function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
@@ -678,7 +692,7 @@ function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
             // add / store
             clear_interp();
             store(click);
-            messnamed(act_name, "active_set", "store", click);
+
             setvalueof(click);
             notifyclients();
             return;
@@ -801,7 +815,7 @@ function onidleout() {
 }
 onidleout.local = 1;
 
-let use_legacy = false;
+let use_legacy = true;
 function msg_float(a) {
     post("msg_float, what is this?", a, "\n");
     var f = parseFloat(a);
@@ -814,21 +828,20 @@ function msg_float(a) {
     }
 
     if (use_legacy) {
-        if (parseInt(f) != current_slot()) set_current(parseInt(f));
-        messnamed(act_name, "active_set", "recall", parseInt(f));
-        setvalueof(parseInt(f));
-        notifyclients();
+        // messnamed(act_name, "active_set", "recall", parseInt(f));
         if (!slots[parseInt(f)]) {
             if (f > 0) store(parseInt(f));
         }
+        setvalueof(parseInt(f));
+        notifyclients();
         return;
     }
 
     // Modern: direct float, vertical UI (like pattr float recall)
-    stop_ramp();
-    interp_dir = "vertical";
-    setvalueof(f);
-    notifyclients();
+    // stop_ramp();
+    // interp_dir = "vertical";
+    // setvalueof(f);
+    // notifyclients();
 }
 
 function anything() {
@@ -897,6 +910,13 @@ function setvalueof() {
         // direction: assume vertical if fractional, none if int
         if (myval % 1 === 0) {
             interp_dir = "none";
+            try {
+                actr.patchers[act_name]
+                    .getnamed("act")
+                    .subpatcher()
+                    .getnamed("actui")
+                    .message("active_set", "recall", click);
+            } catch (_) {}
         } else {
             interp_dir = "vertical";
         }
