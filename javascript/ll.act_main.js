@@ -125,7 +125,7 @@ const title_menu_options_list = Object.keys(title_menu_options);
 
 
 
-// ##########################################################################################
+// ##########################################################################.  functions
 // ##########################################################################################
 // ##########################################################################################
 // ##########################################################################################
@@ -409,7 +409,7 @@ function masterSelected(master_act_name, master_act_index) {
             isMaster = 0;
             act_patcher
                 .getnamed("pat")
-                .message("act::master/activest", isMaster, isActiveStore);
+                .message("act::master", isMaster);
             title_menu.message(
                 "checkitem",
                 Object.keys(title_menu_options).indexOf("master"),
@@ -420,7 +420,7 @@ function masterSelected(master_act_name, master_act_index) {
             isMaster = 1;
             act_patcher
                 .getnamed("pat")
-                .message("act::master/activest", isMaster, isActiveStore);
+                .message("act::master", isMaster);
             title_menu.message(
                 "checkitem",
                 Object.keys(title_menu_options).indexOf("master"),
@@ -476,7 +476,7 @@ function create_title_menu_options() {
             isActiveStore = !isActiveStore;
             act_patcher
                 .getnamed("pat")
-                .message("act::master/activest", isMaster, isActiveStore);
+                .message("act::active_store", isActiveStore);
             title_menu.message(
                 "checkitem",
                 Object.keys(title_menu_options).indexOf("active_store"),
@@ -788,9 +788,9 @@ function _in2(...args) {
     //post("in2", args); post()
     const msg = args.shift();
 
-    if (msg === "act::master/activest") {
+    if (msg === "act::master") {
         const newMaster = args[0];
-        const newActiveStore = args[1];
+        
         if (isMaster !== newMaster && newMaster === 1) {
             isMaster = 1;
             title_menu.message(
@@ -799,6 +799,13 @@ function _in2(...args) {
                 isMaster
             );
         }
+
+        act_patcher
+            .getnamed("pat")
+            .message("act::master", isMaster);
+        return;
+    } else if (msg === "act::active_store") {
+    	const newActiveStore = args[0];
         if (isActiveStore !== newActiveStore) {
             isActiveStore = newActiveStore;
             title_menu.message(
@@ -807,10 +814,10 @@ function _in2(...args) {
                 isActiveStore
             );
         }
-        act_patcher
-            .getnamed("pat")
-            .message("act::master/activest", isMaster, isActiveStore);
-        return;
+	    act_patcher
+	        .getnamed("pat")
+	        .message("act::active_store", isActiveStore);
+	    return;
     }
 
     if (!isReady) return;
@@ -820,7 +827,7 @@ function _in2(...args) {
     } else if (msg === "act::tetris_menu") {
         set_tetris_menu(args[0]);
     } else if (msg === "act::pres_menu" && !is_setting_pres_menu) {
-		if(args == "clear!") obj_pat.message("act::active_store","_");  //== better than === here
+		//if(args == "clear!") obj_pat.message("act::active_store","_");  //== better than === here
         is_setting_pres_menu = true;
         set_preset_menu(Array.isArray(args) ? args : [args]);
         is_setting_pres_menu = false;		
@@ -1271,9 +1278,13 @@ function clearTEXT() {
     obj.message("grid", "clear", "all");
 }
 
-//
-// pres_menu
-//
+// ########################################################################## pres_menu
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
+// ##########################################################################################
 
 async function write_preset(name) {
     // post("write preset", name, "\n");
@@ -1631,18 +1642,28 @@ function getblueargsonly() {
 //
 function sendto(...args) {
     let msg = [...args];
+	let prep = 0;
+	let prep_mess = 0;
+	
+	if (msg[0]==="prepend"){
+		prep = msg.shift();
+		prep_mess = msg.shift();
+	}
+
     const dest = msg.shift();
 
     msg = Array.isArray(msg) ? msg : [msg];
 
     const obj_gate = pa = this.patcher.getnamed("sendto").subpatcher().getnamed("sendto_gate");  //this.patcher.getnamed("sendto_gate");
     const obj_forward = this.patcher.getnamed("sendto").subpatcher().getnamed("sendto_forward");
+	const obj_prepend = this.patcher.getnamed("sendto").subpatcher().getnamed("sendto_prepend");
     const obj_pat = act_patcher.getnamed("pat");
 
-    obj_gate.message(1);
+    obj_gate.message(prep ? 1 : 2);
+	obj_prepend.message("set", prep_mess);
     obj_forward.message("send", dest);
     obj_pat.message(...msg);
-    obj_gate.message(3);
+    obj_gate.message(4);
     obj_forward.message("send", "no");
 }
 
@@ -1708,47 +1729,57 @@ function from_pat(...args) {
 // ##########################################################################################
 let pat_activelist = [];
 function active_set(...args) {
-    //messnamed(`${act_args.hash}active_set`, ...args);
-	obj_pat = act_patcher.getnamed("pat");
-	pat_clientlist = [];
-	sendto(`${act_args.hash}clientlist`,"getclientlist");
-	//post("cl",pat_clientlist,"\n");
-	if (1){ /////(activest === 1)
-		//const msg = args.shift();
-		//post("active_set",args[0],args[1],"\n");
-		if (args[0] === "store"){		
+	if (isActiveStore){ 
+		obj_pat = act_patcher.getnamed("pat");
+		pat_clientlist = [];
+		const msg = args.shift();
+		const slot = args.shift();
+		sendto("prepend","clientlist",`${act_args.hash}actui`,"getclientlist");
+		//post("cl",msg,slot,"\n");
+		if (msg === "store"){		
 			pat_activelist = [];
 			for (let p of pat_clientlist){
-				//post("getactive",p,"\n");
-				sendto(`${act_args.hash}gotactive`,"getactive",p);
+				sendto("prepend","gotactive",`${act_args.hash}actui`,"getactive",p);
 			}
 			post("pat_activelist",pat_activelist,"\n");
-			obj_pat = act_patcher.getnamed("pat");
-			obj_pat.message("act::active_store",pat_activelist);
-			
-			
-		} else if (args[0] === "recall"){
-				sendto(`${act_args.hash}recall_active_store`,"getstoredvalue","act::active_store",args[1]);
-			}
+			if (pat_activelist.length === 0) pat_activelist = "_";
+			obj_pat.message("setstoredvalue","act::active_store",slot,pat_activelist);		
+		} else if (msg === "recall"){
+			sendto("prepend","get_active_store",`${act_args.hash}actui`,"getstoredvalue","act::active_store",slot);
+		}
 	}
 }
 function clientlist(...args){
 	const msg = args.shift();
     if (msg === "clientlist") {
-   		//post("clientlist",args[0],"\n");
 		if (args[0] !== "done") pat_clientlist.push(args[0]);
    	}
 }
 function gotactive(...args){
 	const msg = args.shift();
-	if (args[1] === 1 && args[0] !== "act::active_store") pat_activelist.push(args[0]);
-	//post("gotactive",args[0],args[1],"\n");
+	const param = args[0];
+	const active = args[1];
+	if (active && param !== "act::active_store"){
+		pat_activelist.push(param);
+	}
 }
-function recall_active_store(...args){
+function get_active_store(...args){
+
 	const msg = args.shift();
 	//post("recall_active_store",args,"\n");
+	let arr = [];
+	for(let p of args) { 
+		if (p !== "act::active_store") {
+			arr.push(p);
+			if (p.includes("::")){//hack to activate subpatcher first
+				//post(":::",p.split("::")[0],"\n");
+				obj_pat.message("active",p.split("::")[0],1);
+			} 
+		}
+	} 	
+		//return;
 	for (let p of pat_clientlist){
-		let active = args.indexOf(p) > -1;
+		let active = arr.indexOf(p) > -1;
 		//post("setactive",p,active,"\n");
 		obj_pat.message("active",p,active);  // set parameter's activ_state		
 	}
