@@ -11,8 +11,6 @@ error message in console:
 v8ui: ppooll write_tetris error:   {} 
 with new acts at saving ??
 
-ll_menu:
-at "arrow 0": i want to be able to size the menu to the text-size.
 
 actmaker does not set the background-color of the patcher
 
