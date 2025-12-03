@@ -231,7 +231,7 @@ function bang() {
     title_menu.message("symbol", "");
     pres_menu.message("symbol", "(presets)");
     tetris_menu.message("symbol", "(tetris)");
-    
+
     title_menu.message("clearchecks");
     pres_menu.message("clearchecks");
     tetris_menu.message("clearchecks");
@@ -843,6 +843,7 @@ function set_llenviread(is_reading) {
 //
 
 function delete_old() {
+    let did_delete = false;
     [
         "master",
         "title_LCD",
@@ -851,11 +852,10 @@ function delete_old() {
         "pres_menu",
         "loadmess",
     ].forEach((old_name) => {
-        try {
-            let o = act_patcher.getnamed(old_name);
+        let o = act_patcher.getnamed(old_name);
+        if (o) {
+            did_delete = true;
             act_patcher.remove(o);
-        } catch (e) {
-            post(...e, "\n"); // Object not found, ignore
         }
     });
 
@@ -881,7 +881,10 @@ function delete_old() {
             "presets"
         );
         presets_v8.rect = rect;
+        did_delete = true;
     }
+
+    if (did_delete) messnamed("ll_show_update_act", act_name_index);
 }
 
 function createbasics() {
@@ -1354,7 +1357,6 @@ function anySlotHasActiveStore(pattrObj) {
         if (!data) continue;
 
         const v = data["act::active_store"];
-        post(v);
         if (
             Array.isArray(v) &&
             v.some((item) => typeof item === "string" && item.length > 0)
