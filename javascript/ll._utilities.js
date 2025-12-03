@@ -203,8 +203,8 @@ exports.folderExists = (path) => {
 exports.mkdir = (path) => {
     let exists = exports.folderExists(path);
     if(!exists){
-        messnamed("ll_mkdir", folder);
-        exists = exports.folderExists(folder);
+        messnamed("ll_mkdir", path);
+        exists = exports.folderExists(path);
     }
     
     // post("ll.mkdir exists?", exists, "\n");
