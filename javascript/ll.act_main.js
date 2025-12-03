@@ -231,6 +231,10 @@ function bang() {
     title_menu.message("symbol", "");
     pres_menu.message("symbol", "(presets)");
     tetris_menu.message("symbol", "(tetris)");
+    
+    title_menu.message("clearchecks");
+    pres_menu.message("clearchecks");
+    tetris_menu.message("clearchecks");
 
     change_TEXT("refresh");
 
