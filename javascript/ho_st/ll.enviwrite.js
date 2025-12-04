@@ -67,25 +67,7 @@ function msg_dictionary(d) {
     enviDir = ll_paths.get("user") + "/environmentsP";
 
     buffers = dict.buffers.buffers;
-
-    // Robustly initialize buffers_dict using deep copy with error handling.
-    // This allows copying nested objects (which [object Object] indicates) without crashing.
-    // buffers_dict = buffers
-    //     ? buffers.map((item) => {
-    //           if (!item) return null;
-    //           try {
-    //               // Attempt a deep copy of the item. This handles both arrays and nested objects.
-    //               return JSON.parse(JSON.stringify(item));
-    //           } catch (e) {
-    //               // Fallback for complex Max/MSP objects that can't be stringified
-    //               ppost(
-    //                   `WARNING: Failed to deep-copy buffer item (JSON error): ${e.message}`
-    //               );
-    //               return null;
-    //           }
-    //       })
-    //     : [];
-
+    
     // Get acts from 'dict ppoollstate'
     acts = Object.keys(dict.state);
 
@@ -114,22 +96,13 @@ function removeExtension(filename) {
 }
 
 // Save presets, buffers to created folders
-async function saveToFolder() {
+function saveToFolder() {
     // Wrap buffer saving in try/catch to ensure environment metadata is written even if buffers fail.
     try {
         // Save buffers
         if (acts.indexOf("buffer_host1") > -1 && writeParams.copy_buffers) {
             ppost("copy buffers...");
             buffers.forEach((b, i) => {
-                // FIX 4: Check if the buffer's data structure is null before accessing its properties.
-                // if (!buffers_dict[i]) {
-                //     // CHANGED: Log the raw buffer data at that index for inspection.
-                //     ppost(
-                //         `WARNING: Skipping buffer at index ${i} due to null entry in buffers_dict. Raw buffer item: ${b}`
-                //     );
-                //     return; // Skip this iteration if the data is null
-                // }
-
                 if (b.full_path) {
                     const newFile = `${enviDir}/${enviName}/buffers/${b.label}.${fileExt}`;
                     if (writeParams.write_files) {
@@ -172,11 +145,14 @@ async function saveToFolder() {
         }
 
         try {
-            const { slots } = await requestSlotlist(act);
-            const hasPresets = slots.length > 0;
-
-            if (hasPresets) {
-                messnamed(act, "v8", "write_preset_path", `${enviDir}/${enviName}/presets/${act}.json`)
+            actr.patchers[act].getnamed("pat").message("getslotlist");
+            if (actr.pat[act].slotlist && actr.pat[act].slotlist.length > 0) {
+                messnamed(
+                    act,
+                    "v8",
+                    "write_preset_path",
+                    `${enviDir}/${enviName}/presets/${act}.json`
+                );
                 // post("wrote presets for", act, "\n");
             } else {
                 // post("no presets for", act, "— skipping file\n");
@@ -212,65 +188,6 @@ function writeEnvi() {
     getacts(act_list);
 }
 
-async function getSlotList() {
-    const { slots } = await requestSlotlist("sinus1");
-    const hasPresets = slots.length > 0;
-}
-
-// Max will call this later with the slot list for the current request
-function slotlist() {
-    var slots = arrayfromargs(arguments);
-    if (!pending) return; // spurious/late reply
-    var act = pending.act;
-
-    // success => cancel/free the timeout task
-    if (pending.tsk) {
-        try {
-            pending.tsk.cancel();
-            pending.tsk.freepeer();
-        } catch (e) {}
-    }
-
-    // resolve and clear
-    pending.resolve({ act: act, slots: slots });
-    pending = null;
-}
-
-// Promise that waits for the next slotlist (with Task-based timeout)
-function requestSlotlist(act, timeoutMs) {
-    if (pending) {
-        return Promise.reject(
-            new Error("slotlist already pending; call sequentially")
-        );
-    }
-
-    return new Promise(function (resolve, reject) {
-        // make a one-shot Task that rejects if it fires first
-        var tsk = null;
-        if (timeoutMs > 0) {
-            tsk = new Task(function () {
-                // only reject if still pending for this act
-                if (pending && pending.act === act) {
-                    var err = new Error("slotlist timeout for " + act);
-                    var rej = pending.reject;
-                    pending = null;
-                    rej(err);
-                }
-                // ensure Task is collectible
-                try {
-                    arguments.callee.task.freepeer();
-                } catch (e) {}
-            }, this);
-            tsk.schedule(timeoutMs);
-        }
-
-        pending = { act: act, resolve: resolve, reject: reject, tsk: tsk };
-
-        // ask pattrstorage for slots
-        messnamed(act, "sendto", "envi_write_get_pat", "getslotlist");
-    });
-}
-
 function getacts(act_list) {
     // sort acts
     actname_map = {};
@@ -299,7 +216,7 @@ function getacts(act_list) {
 
     // Check if we have buffer data to save
     if (environment.buffer_host1 && environment.buffer_host1.ll_buffers) {
-        environment.buffer_host1.ll_buffers = { buffers }
+        environment.buffer_host1.ll_buffers = { buffers };
     }
 
     var enviDict = new Dict("environment");
@@ -310,25 +227,16 @@ function getacts(act_list) {
     ppost("done!");
 }
 
-function addAct(a, c) {
-    // ie ho_st1 ho_st
-    let key = a;
-    let stripped = c;
-    messnamed(key, "v8", "Getpatcher");
-    let wloc = actr.patcher.wind.location;
-
+function addAct(act_name_index, act_name) {
     // if there there was a gap in the index, here is the new key
-    key = actname_map[key];
+    act_name_index = actname_map[act_name_index];
 
-    environment[key] = {
-        _actwindow: [stripped, wloc[0], wloc[1], wloc[2], wloc[3]],
+    environment[act_name_index] = {
+        _actwindow: [act_name, ...actr.patchers[act_name_index].wind.location],
     };
 
     // Set currentAct to the key of the newly added act
-    currentAct = key;
-
-    // Optional: Output the updated dictionary for verification
-    //post("Updated enviDict: " + JSON.stringify(enviDict) + "\n");
+    currentAct = act_name_index;
 }
 
 function getdump(a) {

@@ -8,9 +8,3 @@ act
 ll.blues (force ll.blues varname?)
 
 error message in console:
-v8ui: ppooll write_tetris error:   {} 
-with new acts at saving ??
-
-
-actmaker does not set the background-color of the patcher
-
