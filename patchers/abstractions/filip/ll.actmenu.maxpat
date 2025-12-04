@@ -14,6 +14,17 @@
         "boxes": [
             {
                 "box": {
+                    "id": "obj-1",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "bang" ],
+                    "patching_rect": [ 264.0, 65.0, 50.0, 20.0 ],
+                    "text": "loadbang"
+                }
+            },
+            {
+                "box": {
                     "id": "obj-2",
                     "maxclass": "button",
                     "numinlets": 1,
@@ -196,7 +207,7 @@
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
-                    "outlettype": [ "" ],
+                    "outlettype": [ "bang" ],
                     "patching_rect": [ 50.0, 46.0, 25.0, 25.0 ]
                 }
             },
@@ -265,6 +276,12 @@
             }
         ],
         "lines": [
+            {
+                "patchline": {
+                    "destination": [ "obj-24", 0 ],
+                    "source": [ "obj-1", 0 ]
+                }
+            },
             {
                 "patchline": {
                     "destination": [ "obj-19", 0 ],

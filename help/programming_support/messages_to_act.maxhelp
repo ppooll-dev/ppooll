@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 268.0, 152.0, 991.0, 782.0 ],
+        "rect": [ 333.0, 110.0, 991.0, 782.0 ],
         "subpatcher_template": "Untitled3_template",
         "showrootpatcherontab": 0,
         "boxes": [
@@ -234,7 +234,7 @@
                             },
                             {
                                 "box": {
-                                    "code": "// dicts\nconst ll_state = new Dict(\"ppoollstate\");\nconst ll_paths_ = new Dict(\"ll_paths\");\nconst ll_presetsindict = new Dict(\"llpresetsindict\");\n// globals\nconst actr = new Global(\"act_rep\");\nconst ll_max_live_envi = new Global(\"ppooll\");\r\n\r\n\r\noutlets = 1;\r\nconst C = new Dict(\"empty\"); //just for clearing the dictview\r\nfunction ppoollstate(){ \r\n    post(\"----------------------------------\\n\"); \r\n    post(\"ppoollstate: dict of all open acts\\n\"); \r\n    post(\"keys: actnames\\n\");  \r\n    post(\"values: class index hash(#0) inputs~ \\n\");  \r\n    outlet_dictionary(0, ll_state);\r\n}\r\nfunction ll_paths(){ \r\n    post(\"----------------------------------\\n\"); \r\n    post(\"ll_paths: dict holding local paths for\\n\"); \r\n    post(\"factory: folder for factory presets\\n\");  \r\n    post(\"user: folder for user presets \\n\");  \r\n    outlet_dictionary(0, ll_paths_);\r\n}\r\nfunction llpresetsindict(){ \r\n    post(\"llpresetsindict\\n\"); \r\n    post(\"maybe currently empty\\n\");   \r\n    outlet_dictionary(0, ll_presetsindict);\r\n}\r\nfunction actr_patchers(){ \r\n    post(\"----------------------------------\\n\"); \r\n    outlet_dictionary(0, C);\r\n    post(\"actr.patchers holds the jspatcher reference\\n\"); \r\n    post(\"for every open act\\n\");\r\n    post(\"extremely convenient for getting info from there\\n\");\r\n    for (let a in actr.patchers) {\r\n        post(a,actr.patchers[a],\"\\n\");\r\n    }   \r\n}\r\nfunction get_wind_locations(){ \r\n    post(\"----------------------------------\\n\"); \r\n    outlet_dictionary(0, C);\r\n    post(\"iter through actr.patchers and grab the wind.location\\n\"); \r\n    for (let a in actr.patchers) {\r\n        post(a,actr.patchers[a].wind.location,\"\\n\");\r\n    }   \r\n}\r\nfunction get_object(act,object){ \r\n    post(\"----------------------------------\\n\"); \r\n    outlet_dictionary(0, C);\r\n    post(\"properties of \", act+\"::\"+object, \" :\\n\"); \r\n    let obj = actr.patchers[act].getnamed(object);\r\n    post(\"value:\",obj.getvalueof(),\"\\n\");\r\n    for (let key of Object.keys(obj)){\r\n        post(key,obj[key],\"\\n\");\r\n    }\r\n}\r\nfunction actr_pat(){   \r\n    outlet_dictionary(0, actr.pat);\r\n}",
+                                    "code": "// dicts\nconst ll_state = new Dict(\"ppoollstate\");\nconst ll_paths_ = new Dict(\"ll_paths\");\nconst ll_presetsindict = new Dict(\"llpresetsindict\");\n// globals\nconst actr = new Global(\"act_rep\");\nconst ll_max_live_envi = new Global(\"ppooll\");\r\n\r\n\r\noutlets = 1;\r\nconst C = new Dict(\"empty\"); //just for clearing the dictview\r\nfunction ppoollstate(){ \r\n    post(\"----------------------------------\\n\"); \r\n    post(\"ppoollstate: dict of all open acts\\n\"); \r\n    post(\"keys: actnames\\n\");  \r\n    post(\"values: class index hash(#0) inputs~ \\n\");  \r\n    outlet_dictionary(0, ll_state);\r\n}\r\nfunction ll_paths(){ \r\n    post(\"----------------------------------\\n\"); \r\n    post(\"ll_paths: dict holding local paths for\\n\"); \r\n    post(\"factory: folder for factory presets\\n\");  \r\n    post(\"user: folder for user presets \\n\");  \r\n    outlet_dictionary(0, ll_paths_);\r\n}\r\nfunction llpresetsindict(){ \r\n    post(\"----------------------------------\\n\"); \r\n    post(\"llpresetsindict\\n\"); \r\n    post(\"maybe currently empty\\n\");   \r\n    outlet_dictionary(0, ll_presetsindict);\r\n}\r\nfunction actr_patchers(){ \r\n    post(\"----------------------------------\\n\"); \r\n    outlet_dictionary(0, C);\r\n    post(\"actr.patchers holds the jspatcher reference\\n\"); \r\n    post(\"for every open act\\n\");\r\n    post(\"extremely convenient for getting info from there\\n\");\r\n    for (let a in actr.patchers) {\r\n        post(a,actr.patchers[a],\"\\n\");\r\n    }   \r\n}\r\nfunction get_wind_locations(){ \r\n    post(\"----------------------------------\\n\"); \r\n    outlet_dictionary(0, C);\r\n    post(\"iter through actr.patchers and grab the wind.location\\n\"); \r\n    for (let a in actr.patchers) {\r\n        post(a,actr.patchers[a].wind.location,\"\\n\");\r\n    }   \r\n}\r\nfunction get_object(act,object){ \r\n    post(\"----------------------------------\\n\"); \r\n    outlet_dictionary(0, C);\r\n    post(\"properties of \", act+\"::\"+object, \" :\\n\"); \r\n    let obj = actr.patchers[act].getnamed(object);\r\n    post(\"value:\",obj.getvalueof(),\"\\n\");\r\n    for (let key of Object.keys(obj)){\r\n        post(key,obj[key],\"\\n\");\r\n    }\r\n}\r\nfunction actr_pat(){   \r\n    outlet_dictionary(0, actr.pat);\r\n}",
                                     "filename": "none",
                                     "fontface": 0,
                                     "fontname": "<Monospaced>",
@@ -386,7 +386,8 @@
                                     "numinlets": 2,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 72.0, 104.0, 208.0, 22.0 ]
+                                    "patching_rect": [ 72.0, 104.0, 208.0, 22.0 ],
+                                    "text": "fmrm1 ho_st1"
                                 }
                             },
                             {
@@ -603,10 +604,22 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 268.0, 178.0, 991.0, 756.0 ],
+                        "rect": [ 333.0, 136.0, 991.0, 756.0 ],
                         "subpatcher_template": "Untitled3_template",
                         "title": "messages",
                         "boxes": [
+                            {
+                                "box": {
+                                    "id": "obj-1",
+                                    "maxclass": "message",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 187.0, 645.0, 121.0, 22.0 ],
+                                    "presentation_linecount": 2,
+                                    "text": "pattrstorage.maxhelp"
+                                }
+                            },
                             {
                                 "box": {
                                     "id": "obj-27",
@@ -731,7 +744,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 0,
                                     "patching_rect": [ 532.0, 595.0, 114.0, 33.0 ],
-                                    "text": "send to the same\nreceive as above."
+                                    "text": "sent to the same\nreceive as above."
                                 }
                             },
                             {
@@ -924,13 +937,12 @@
                                             },
                                             {
                                                 "box": {
-                                                    "hidden": 1,
                                                     "id": "obj-19",
                                                     "maxclass": "message",
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 322.0, 486.0, 29.5, 22.0 ],
+                                                    "patching_rect": [ 456.0, 445.0, 29.5, 22.0 ],
                                                     "text": "set"
                                                 }
                                             },
@@ -1213,24 +1225,6 @@
                             },
                             {
                                 "box": {
-                                    "id": "obj-66",
-                                    "maxclass": "newobj",
-                                    "numinlets": 1,
-                                    "numoutlets": 1,
-                                    "outlettype": [ "" ],
-                                    "patching_rect": [ 190.0, 643.0, 73.0, 22.0 ],
-                                    "saved_object_attributes": {
-                                        "client_rect": [ 434, 164, 1512, 407 ],
-                                        "parameter_enable": 0,
-                                        "parameter_mappable": 0,
-                                        "storage_rect": [ 0, 0, 640, 240 ]
-                                    },
-                                    "text": "pattrstorage",
-                                    "varname": "u610008211"
-                                }
-                            },
-                            {
-                                "box": {
                                     "id": "obj-65",
                                     "maxclass": "message",
                                     "numinlets": 2,
@@ -1441,8 +1435,8 @@
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 717.0, 161.0, 50.0, 22.0 ],
-                                    "text": "ll.ld 500"
+                                    "patching_rect": [ 717.0, 161.0, 87.0, 22.0 ],
+                                    "text": "ll.ld bang 1000"
                                 }
                             },
                             {
@@ -1668,7 +1662,7 @@
                                     "fontface": 0,
                                     "fontname": "Arial",
                                     "id": "obj-9",
-                                    "items": [ "no", ",", "ho_st1" ],
+                                    "items": [ "no", ",", "fmrm1", ",", "ho_st1" ],
                                     "maxclass": "ll_menu",
                                     "numinlets": 1,
                                     "numoutlets": 3,
@@ -1694,6 +1688,13 @@
                             }
                         ],
                         "lines": [
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-6", 0 ],
+                                    "hidden": 1,
+                                    "source": [ "obj-1", 0 ]
+                                }
+                            },
                             {
                                 "patchline": {
                                     "destination": [ "obj-10", 0 ],
