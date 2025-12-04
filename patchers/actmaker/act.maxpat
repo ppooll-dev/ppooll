@@ -1722,7 +1722,7 @@
                                     "maxclass": "comment",
                                     "numinlets": 1,
                                     "numoutlets": 0,
-                                    "patching_rect": [ 474.0, 188.0, 150.0, 33.0 ],
+                                    "patching_rect": [ 296.0, 182.0, 150.0, 33.0 ],
                                     "text": "everything else goes to pattrstorage"
                                 }
                             },
@@ -1734,7 +1734,7 @@
                                     "maxclass": "outlet",
                                     "numinlets": 1,
                                     "numoutlets": 0,
-                                    "patching_rect": [ 439.5, 152.0, 30.0, 30.0 ]
+                                    "patching_rect": [ 262.0, 146.0, 30.0, 30.0 ]
                                 }
                             },
                             {
@@ -1744,7 +1744,7 @@
                                     "numinlets": 3,
                                     "numoutlets": 3,
                                     "outlettype": [ "", "", "" ],
-                                    "patching_rect": [ 414.0, 110.0, 70.0, 22.0 ],
+                                    "patching_rect": [ 236.0, 104.0, 70.0, 22.0 ],
                                     "text": "route v8 TP"
                                 }
                             },
@@ -1765,11 +1765,11 @@
                                     "fontsize": 12.0,
                                     "id": "obj-27",
                                     "maxclass": "newobj",
-                                    "numinlets": 10,
-                                    "numoutlets": 10,
-                                    "outlettype": [ "", "", "", "", "", "", "", "", "", "" ],
-                                    "patching_rect": [ 14.0, 64.0, 419.0, 22.0 ],
-                                    "text": "routepass open getloc setloc wsize apply actname active_set sendto sendto1"
+                                    "numinlets": 6,
+                                    "numoutlets": 6,
+                                    "outlettype": [ "", "", "", "", "", "" ],
+                                    "patching_rect": [ 14.0, 64.0, 241.0, 22.0 ],
+                                    "text": "routepass getloc setloc wsize setwin sendto"
                                 }
                             },
                             {
@@ -1792,35 +1792,11 @@
                                     "maxclass": "outlet",
                                     "numinlets": 1,
                                     "numoutlets": 0,
-                                    "patching_rect": [ 465.0, 226.0, 30.0, 30.0 ]
+                                    "patching_rect": [ 287.0, 220.0, 30.0, 30.0 ]
                                 }
                             }
                         ],
                         "lines": [
-                            {
-                                "patchline": {
-                                    "destination": [ "obj-1", 0 ],
-                                    "source": [ "obj-27", 8 ]
-                                }
-                            },
-                            {
-                                "patchline": {
-                                    "destination": [ "obj-1", 0 ],
-                                    "source": [ "obj-27", 7 ]
-                                }
-                            },
-                            {
-                                "patchline": {
-                                    "destination": [ "obj-1", 0 ],
-                                    "source": [ "obj-27", 6 ]
-                                }
-                            },
-                            {
-                                "patchline": {
-                                    "destination": [ "obj-1", 0 ],
-                                    "source": [ "obj-27", 5 ]
-                                }
-                            },
                             {
                                 "patchline": {
                                     "destination": [ "obj-1", 0 ],
@@ -1854,7 +1830,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-3", 0 ],
-                                    "source": [ "obj-27", 9 ]
+                                    "source": [ "obj-27", 5 ]
                                 }
                             },
                             {

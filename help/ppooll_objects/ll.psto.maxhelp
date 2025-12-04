@@ -9,10 +9,22 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 250.0, 402.0, 608.0, 372.0 ],
+        "rect": [ 100.0, 100.0, 608.0, 372.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "ll.psto.maxhelp1",
         "boxes": [
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-2",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 396.0, 254.0, 38.0, 20.0 ],
+                    "text": "etc...."
+                }
+            },
             {
                 "box": {
                     "fontname": "Arial",
@@ -22,7 +34,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 325.0, 269.0, 79.0, 22.0 ],
+                    "patching_rect": [ 315.0, 253.0, 79.0, 22.0 ],
                     "text": "clientwindow"
                 }
             },
@@ -34,7 +46,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 239.0, 245.0, 166.0, 20.0 ],
+                    "patching_rect": [ 238.0, 224.0, 166.0, 20.0 ],
                     "text": "any message to pattrstorage:"
                 }
             },
@@ -59,7 +71,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 272.0, 269.0, 47.0, 22.0 ],
+                    "patching_rect": [ 260.5, 253.0, 47.0, 22.0 ],
                     "text": "toni 33"
                 }
             },
@@ -273,7 +285,7 @@
                     "active": {
                         "act": 0,
                         "act::active_store": 0,
-                        "act::master/activest": 0,
+                        "act::master": 0,
                         "act::u751015509": 0,
                         "act::pres_menu": 0,
                         "act::tetris_menu": 0,
@@ -339,7 +351,7 @@
                     "restore": {
                         "flo": [ 0.43 ],
                         "men": [ "b" ],
-                        "toni": [ 33 ]
+                        "toni": [ 2 ]
                     },
                     "text": "autopattr autopattr",
                     "varname": "autopattr"

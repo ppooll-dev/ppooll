@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 134.0, 159.0, 634.0, 289.0 ],
+        "rect": [ 134.0, 159.0, 457.0, 243.0 ],
         "boxes": [
             {
                 "box": {
@@ -20,7 +20,7 @@
                     "numinlets": 0,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 212.0, 19.0, 25.0, 25.0 ]
+                    "patching_rect": [ 241.0, 17.0, 25.0, 25.0 ]
                 }
             },
             {
@@ -32,7 +32,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 239.0, 44.0, 56.0, 20.0 ],
+                    "patching_rect": [ 271.0, 24.0, 56.0, 20.0 ],
                     "text": "ll.actname"
                 }
             },
@@ -45,7 +45,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 213.0, 69.0, 72.0, 20.0 ],
+                    "patching_rect": [ 241.0, 67.0, 72.0, 20.0 ],
                     "text": "prepend send"
                 }
             },
@@ -58,7 +58,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 301.0, 48.0, 63.0, 20.0 ],
+                    "patching_rect": [ 335.0, 24.0, 63.0, 20.0 ],
                     "text": "modul.ator1"
                 }
             },
@@ -70,7 +70,7 @@
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 52.0, 97.0, 44.0, 20.0 ],
+                    "patching_rect": [ 52.0, 142.0, 44.0, 20.0 ],
                     "text": "forward"
                 }
             },
@@ -83,7 +83,7 @@
                     "numinlets": 0,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 146.0, 24.0, 25.0, 25.0 ]
+                    "patching_rect": [ 94.0, 94.0, 25.0, 25.0 ]
                 }
             },
             {
@@ -107,7 +107,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 52.0, 66.0, 161.0, 22.0 ],
+                    "patching_rect": [ 52.0, 66.0, 162.0, 22.0 ],
                     "text": "prepend v8 sendto #0here"
                 }
             },
@@ -119,7 +119,7 @@
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 52.0, 143.0, 25.0, 25.0 ]
+                    "patching_rect": [ 52.0, 201.0, 25.0, 25.0 ]
                 }
             },
             {
@@ -131,7 +131,7 @@
                     "numinlets": 0,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 52.0, 117.0, 66.0, 22.0 ],
+                    "patching_rect": [ 52.0, 175.0, 67.0, 22.0 ],
                     "text": "r #0here"
                 }
             }
