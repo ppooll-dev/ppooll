@@ -161,6 +161,8 @@ function bang() {
     act_patcher.message("window", "flags", "nogrow");
     act_patcher.message("window", "exec");
 
+    act_patcher.locked_bgcolor = ll.makeColor(act_args.color);
+
     act_box = this.patcher.box;
 
     title_menu = this.patcher.getnamed("title_menu");
