@@ -126,7 +126,6 @@ const title_menu_options_list = Object.keys(title_menu_options);
 // ##########################################################################################
 // ##########################################################################################
 
-
 // refresh js when the file has been changed and save
 //  * only do this after the initial [loadbang]--[deferlow]--
 refresh();
@@ -168,12 +167,12 @@ function bang() {
     title_menu = this.patcher.getnamed("title_menu");
     pres_menu = this.patcher.getnamed("pres_menu");
     tetris_menu = this.patcher.getnamed("tetris_menu");
-    
-    [title_menu, pres_menu, tetris_menu].forEach(m => {
+
+    [title_menu, pres_menu, tetris_menu].forEach((m) => {
         m.ignoreclick = 1;
         m.hidden = 1;
-        this.patcher.sendtoback(m)
-    })
+        this.patcher.sendtoback(m);
+    });
 
     act_index = ll.getNextActIndex(act_args.name);
     act_name_index = `${act_args.name}${act_index}`;
@@ -279,7 +278,6 @@ function freebang() {
 
     messnamed("acting", act_args.name, act_index, -1);
 }
-
 
 // ##########################################################################.  actui
 // ##########################################################################################
@@ -584,7 +582,7 @@ function create_host_title_menu_options() {
         },
         nan_clear: () => messnamed("ll_nan_clear", "clear"),
         separator5: null,
-        report: () => messnamed("ll_report", "bang")
+        report: () => messnamed("ll_report", "bang"),
     };
 }
 
@@ -1027,6 +1025,16 @@ function set_preset_menu(args) {
         const editPatcher = this.patcher.getnamed("edit_preset_TEXT");
         editPatcher.message("front");
 
+        let l = editPatcher.subpatcher().wind.location;
+        let width = Math.max(TEXT_dimensions[0] * 20 + 40, 280);
+        let height = Math.max(TEXT_dimensions[1] * 20 + 90, 130);
+        editPatcher.subpatcher().wind.location = [
+            l[0],
+            l[1],
+            l[0] + width,
+            l[1] + height,
+        ];
+
         // messnamed("ll_preset_menu", act_name_index, "TEXT", prev_pres_menu);
         pres_menu.message("setsymbol", prev_pres_menu);
         return;
@@ -1323,7 +1331,9 @@ function calc_TEXT_dimensions() {
 // from jit.cellblock
 function from_TEXT_cellblock(col, row, text) {
     if (!TEXT_dimensions || TEXT_dimensions.length === 0) return;
-
+    
+    text = `${text}`;
+    
     const indexStr = linearIndex(col, row);
 
     if (!text || text.trim() === "") {
@@ -1468,8 +1478,6 @@ function clearTEXT() {
     obj.message("grid", "clear", "all");
 }
 
-
-
 // ########################################################################## SPECIALS
 // ##########################################################################################
 // ##########################################################################################
@@ -1587,7 +1595,7 @@ function windpos(x, y) {
 
 function getloc(a, o) {
     if (o) messnamed(a, act_patcher.getnamed(o).rect); //objects varname
-    else messnamed(a, act_patcher.wind.location);    //window
+    else messnamed(a, act_patcher.wind.location); //window
 }
 
 function setloc(x, y, o) {
@@ -1672,7 +1680,6 @@ function actname(to) {
     if (to === "to") post("actname to seems useless");
 }
 
-
 // ############################################################### active_store
 // ##########################################################################################
 // ##########################################################################################
@@ -1738,5 +1745,3 @@ function get_active_store(...args) {
         obj_pat.message("active", client, active); // set parameter's activ_state
     });
 }
-
-
