@@ -27,12 +27,12 @@ const PACKAGE_STATUSES = ["not installed", "not enabled", "enabled"];
 
 let is_parsing = true;
 
-function bang(){
+function bang() {
     rebuild_menu();
 }
 
 function cellblock(...args) {
-    this.patcher.parentpatcher.getnamed("packages_cellblock").message(...args)
+    this.patcher.parentpatcher.getnamed("packages_cellblock").message(...args);
 }
 
 function print_errors(...args) {
@@ -76,7 +76,10 @@ function package_compare() {
 
     cellblock(["clear", "all"]);
 
+    const packages_report = {};
+
     const IGNORE = ["comments"];
+    shouldShowInfo = false;
     Object.keys(package_dependencies)
         .filter((pd) => IGNORE.indexOf(pd) === -1)
         .forEach((dependency, i) => {
@@ -93,17 +96,31 @@ function package_compare() {
             cellblock(["set", 0, i, dependency]);
             cellblock(["set", 2, i, acts_string]);
             cellblock(["set", 1, i, PACKAGE_STATUSES[status + 1]]);
-            const color = status === 1 ? [255, 255, 255] : [200, 50, 50]
-            cellblock(["cell", 2, i, "frgb", ...color]);
+            const color_status = status === 1 ? [255, 255, 255] : [255, 50, 50];
+            const color_acts = status === 1 ? [255, 255, 255] : [100, 100, 100];
+            cellblock(["cell", 1, i, "frgb", ...color_status]);
+            cellblock(["cell", 2, i, "frgb", ...color_acts]);
 
             // enable/disable in act_menu
             act_menu(status, dependency, ...acts);
 
             print_errors(status, dependency, acts_string);
+
+            packages_report[dependency] = status;
+
+            if (status !== 1) shouldShowInfo = true;
         });
+
+    const d = new Dict("ll_packages_report");
+    d.parse(JSON.stringify(packages_report));
 
     outlet(0, "packages_done");
     is_parsing = false;
+
+    if (shouldShowInfo) {
+        this.patcher.parentpatcher.front();
+        messnamed("max", "maxwindow");
+    }
 }
 
 function show_package(col, row, package, status, acts) {

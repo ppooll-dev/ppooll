@@ -276,10 +276,10 @@ function readfile() {
         post("could not open file: " + pref_file + " creating...", "\n");
         newPref(pref_file); // create new .json
     }
-    get_preferences()  // instead, run after 1 sec delay outside v8
-}
-
-function get_preferences() {
+    //
+    // get preferences
+    //
+    
     // general::audioON/OFF (key)
     let v = preferences.get("general::audioON/OFF");
     this.patcher.getnamed("audio_key").message("set", v); //String.fromCharCode(v));

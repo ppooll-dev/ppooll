@@ -168,14 +168,12 @@ function bang() {
     title_menu = this.patcher.getnamed("title_menu");
     pres_menu = this.patcher.getnamed("pres_menu");
     tetris_menu = this.patcher.getnamed("tetris_menu");
-
-    title_menu.ignoreclick = 1;
-    pres_menu.ignoreclick = 1;
-    tetris_menu.ignoreclick = 1;
-
-    this.patcher.sendtoback(title_menu);
-    this.patcher.sendtoback(pres_menu);
-    this.patcher.sendtoback(tetris_menu);
+    
+    [title_menu, pres_menu, tetris_menu].forEach(m => {
+        m.ignoreclick = 1;
+        m.hidden = 1;
+        this.patcher.sendtoback(m)
+    })
 
     act_index = ll.getNextActIndex(act_args.name);
     act_name_index = `${act_args.name}${act_index}`;
@@ -585,6 +583,8 @@ function create_host_title_menu_options() {
             });
         },
         nan_clear: () => messnamed("ll_nan_clear", "clear"),
+        separator5: null,
+        report: () => messnamed("ll_report", "bang")
     };
 }
 

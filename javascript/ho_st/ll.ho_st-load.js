@@ -7,6 +7,8 @@ if (typeof ll === "undefined") {
     var ll = require("ll._utilities");
 }
 
+var ppooll_global = new Global("ppooll")
+
 var PACKAGE_INFO_PATH = "Package:/ppooll/package-info.json";
 
 var BLANK_LINE = [
@@ -69,6 +71,8 @@ function checkVersion(thisVersion, latestVersion) {
     this.patcher.parentpatcher
         .getnamed("version_number")
         .message("set", thisVersion);
+
+    ppooll_global.version = thisVersion;
     return OUTPUT;
 }
 
