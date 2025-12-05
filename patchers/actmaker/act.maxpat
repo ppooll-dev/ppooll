@@ -608,6 +608,7 @@
                                 "box": {
                                     "bgcolor": [ 0.556863, 0.556863, 0.556863, 1.0 ],
                                     "bgoncolor": [ 0.55, 0.55, 0.55, 1.0 ],
+                                    "hidden": 1,
                                     "id": "obj-19",
                                     "legacytextcolor": 1,
                                     "maxclass": "textbutton",
@@ -628,6 +629,7 @@
                             },
                             {
                                 "box": {
+                                    "hidden": 1,
                                     "id": "obj-3",
                                     "maxclass": "newobj",
                                     "numinlets": 1,
@@ -639,6 +641,7 @@
                             },
                             {
                                 "box": {
+                                    "hidden": 1,
                                     "id": "obj-2",
                                     "maxclass": "newobj",
                                     "numinlets": 1,
@@ -650,6 +653,7 @@
                             },
                             {
                                 "box": {
+                                    "hidden": 1,
                                     "id": "obj-12",
                                     "maxclass": "newobj",
                                     "numinlets": 1,
@@ -661,6 +665,7 @@
                             },
                             {
                                 "box": {
+                                    "hidden": 1,
                                     "id": "obj-6",
                                     "maxclass": "newobj",
                                     "numinlets": 1,
@@ -695,7 +700,7 @@
                                     "outlettype": [ "", "", "int" ],
                                     "outputmode": 0,
                                     "parameter_enable": 0,
-                                    "patching_rect": [ 223.5, 25.0, 56.0, 19.0 ],
+                                    "patching_rect": [ 219.0, 4.0, 56.0, 19.0 ],
                                     "prototypename": "button_grey",
                                     "text": "clearText",
                                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
@@ -718,7 +723,7 @@
                                     "numinlets": 2,
                                     "numoutlets": 4,
                                     "outlettype": [ "list", "", "", "" ],
-                                    "patching_rect": [ 13.0, 70.0, 0.0, 0.0 ],
+                                    "patching_rect": [ 13.0, 70.0, 30.0, 20.0 ],
                                     "rowheight": 20,
                                     "rows": 1,
                                     "selmode": 5,
@@ -727,36 +732,15 @@
                             },
                             {
                                 "box": {
-                                    "bgcolor": [ 0.556863, 0.556863, 0.556863, 1.0 ],
-                                    "bgoncolor": [ 0.55, 0.55, 0.55, 1.0 ],
-                                    "id": "obj-9",
-                                    "legacytextcolor": 1,
-                                    "maxclass": "textbutton",
-                                    "numinlets": 1,
-                                    "numoutlets": 3,
-                                    "outlettype": [ "", "", "int" ],
-                                    "outputmode": 0,
-                                    "parameter_enable": 0,
-                                    "patching_rect": [ 223.5, 4.0, 56.0, 19.0 ],
-                                    "prototypename": "button_grey",
-                                    "text": "numbers",
-                                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
-                                    "textoncolor": [ 1.0, 1.0, 1.0, 1.0 ],
-                                    "textovercolor": [ 0.0, 0.0, 0.0, 1.0 ],
-                                    "usebgoncolor": 1,
-                                    "usetextovercolor": 1
-                                }
-                            },
-                            {
-                                "box": {
                                     "fontname": "Arial",
                                     "fontsize": 12.0,
                                     "id": "obj-11",
+                                    "linecount": 2,
                                     "maxclass": "comment",
                                     "numinlets": 1,
                                     "numoutlets": 0,
-                                    "patching_rect": [ 13.0, 48.0, 429.0, 20.0 ],
-                                    "text": "select a slot, write some short text and watch the preset-grid in your act."
+                                    "patching_rect": [ 13.0, 34.0, 260.0, 33.0 ],
+                                    "text": "select a slot, write some short text, press return\nand watch the preset-grid in your act."
                                 }
                             },
                             {
@@ -841,6 +825,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-2", 0 ],
+                                    "hidden": 1,
                                     "source": [ "obj-12", 0 ]
                                 }
                             },
@@ -861,6 +846,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-3", 0 ],
+                                    "hidden": 1,
                                     "source": [ "obj-2", 0 ]
                                 }
                             },
@@ -888,6 +874,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-2", 0 ],
+                                    "hidden": 1,
                                     "source": [ "obj-6", 0 ]
                                 }
                             },
@@ -896,13 +883,6 @@
                                     "destination": [ "obj-7", 1 ],
                                     "hidden": 1,
                                     "source": [ "obj-8", 0 ]
-                                }
-                            },
-                            {
-                                "patchline": {
-                                    "destination": [ "obj-2", 0 ],
-                                    "hidden": 1,
-                                    "source": [ "obj-9", 1 ]
                                 }
                             }
                         ]

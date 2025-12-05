@@ -1,6 +1,19 @@
+alt-preset clicking -- feature requests::
+
+on click full preset of clicked slot 
+only interpolate when dragging.
+do not recall empty presets (stop if empty OR go to next stored.)
+dragging vertical: interpolation between none-neighbour slots?
+(ramp or dragging with active_store is maybe too exotic,
+but it would need to active_set both slots ....)
 
 
-presets need to be inactive (always)
+presets and active_store need to be inactive (always)
+this could be checked (and reset) in ll.pattr_v8
+on any click ?
+
+
+
 and get a high priority
 
 default priorities !!!
