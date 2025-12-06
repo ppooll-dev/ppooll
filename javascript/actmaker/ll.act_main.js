@@ -114,12 +114,8 @@ let titlebarShown,
     allTitlebarsShown,
     isgrow = false;
 
-const title_menu_options =
-    act_args.name === "ho_st"
-        ? create_host_title_menu_options()
-        : create_title_menu_options();
-
-const title_menu_options_list = Object.keys(title_menu_options);
+let title_menu_options = {}
+let title_menu_options_list = []
 
 // ######################################################################## general Handlers
 // ##########################################################################################
@@ -184,16 +180,6 @@ function bang() {
     createbasics();
     act_box.hidden = 0;
 
-    // set title_menu options
-    const dict_title_menu = new Dict();
-    dict_title_menu.set(
-        "items",
-        Object.keys(title_menu_options).map((o) =>
-            o.startsWith("separator") ? "-" : o
-        )
-    );
-    title_menu.message("dictionary", dict_title_menu.name);
-
     create_rest();
 
     // givename
@@ -231,6 +217,22 @@ function bang() {
     messnamed(act_args.hash + "::actname", "::" + act_name_index + "::");
 
     if (ll_max_live_envi.envi == "live") make_live();
+
+    // set title_menu options
+    title_menu_options = act_args.name === "ho_st"
+        ? create_host_title_menu_options()
+        : create_title_menu_options();
+
+    title_menu_options_list = Object.keys(title_menu_options);
+
+    const dict_title_menu = new Dict();
+    dict_title_menu.set(
+        "items",
+        Object.keys(title_menu_options).map((o) =>
+            o.startsWith("separator") ? "-" : o
+        )
+    );
+    title_menu.message("dictionary", dict_title_menu.name);
 
     first_dump();
 
@@ -519,7 +521,7 @@ function create_title_menu_options() {
 
 function create_host_title_menu_options() {
     const opts = { ...create_title_menu_options() };
-    return {
+    const ho_st_opts = {
         info: opts.info,
         clientwindow: opts.clientwindow,
         separator1: null,
@@ -584,6 +586,12 @@ function create_host_title_menu_options() {
         separator5: null,
         report: () => messnamed("ll_report", "bang"),
     };
+
+    if(ll_max_live_envi.envi === "live"){
+        delete ho_st_opts.close;
+    }
+
+    return ho_st_opts;
 }
 
 function set_title_menu(selection) {
@@ -1331,15 +1339,13 @@ function calc_TEXT_dimensions() {
 // from jit.cellblock
 function from_TEXT_cellblock(col, row, text) {
     if (!TEXT_dimensions || TEXT_dimensions.length === 0) return;
-    
-    text = `${text}`;
-    
+
     const indexStr = linearIndex(col, row);
 
     if (!text || text.trim() === "") {
         delete TEXT_data[indexStr];
     } else {
-        TEXT_data[indexStr] = text;
+        TEXT_data[indexStr] = `${text}`;
     }
 }
 
