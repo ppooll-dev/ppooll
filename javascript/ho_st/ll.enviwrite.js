@@ -224,6 +224,7 @@ function getacts(act_list) {
 
     enviDict.export_json(dict.props.jsonPath);
     outlet(0, "done", "reset", dict.props.envi_name);
+    messnamed("envi_name", dict.props.envi_name);
     ppost("done!");
 }
 

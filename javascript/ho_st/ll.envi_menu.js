@@ -8,6 +8,10 @@ let envisAll = [];
 
 let gate = 0;
 
+let hasFilledMenu = 0;
+let live_envi = null;
+let isPrefsReady = false;
+
 // Remove file ex from string name
 function removeExtension(filename) {
     return filename.replace(/\.[^/.]+$/, "");
@@ -94,6 +98,7 @@ function selectEnvironment(name){
         gate = 0;
         return;
     }
+
     // TODO: What about folders/json having the same name?
     //      Maybe uncheck "stores symbol" and use the umenu numeric number to get the environment?
     const selectedEnvi = envisAll.find(e => e.name === name);
@@ -115,4 +120,31 @@ function selectEnvironment(name){
 
     outlet(1, "set_type", selectedEnvi.type);
     outlet(1, "text", name);
+
+    messnamed("envi_name", name);
+}
+
+// r ll_live_envi_name
+function ll_live_envi_name(name){
+    post("name!", name, "\n")
+    if(!name || name === ""){
+        post("setLiveEnvi no name \n")
+        return
+    }
+    if(isPrefsReady){
+        selectEnvironment(name);
+    }else{
+        live_envi = name;
+    }
+}   
+
+function preferencesReady(){
+    isPrefsReady = true;
+    
+    fillMenu();
+
+    if(live_envi){
+        selectEnvironment(live_envi);
+        live_envi = null;
+    }
 }

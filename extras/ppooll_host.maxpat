@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 282.0, 162.0, 130.0, 125.0 ],
+        "rect": [ 350.0, 159.0, 130.0, 125.0 ],
         "default_fontsize": 11.595187,
         "toolbarvisible": 0,
         "globalpatchername": "ho_st1",
@@ -6140,6 +6140,50 @@
                                                         "boxes": [
                                                             {
                                                                 "box": {
+                                                                    "id": "obj-18",
+                                                                    "maxclass": "newobj",
+                                                                    "numinlets": 1,
+                                                                    "numoutlets": 1,
+                                                                    "outlettype": [ "" ],
+                                                                    "patching_rect": [ 218.0, 29.0, 151.0, 22.0 ],
+                                                                    "text": "prepend ll_live_envi_name"
+                                                                }
+                                                            },
+                                                            {
+                                                                "box": {
+                                                                    "id": "obj-17",
+                                                                    "maxclass": "newobj",
+                                                                    "numinlets": 0,
+                                                                    "numoutlets": 1,
+                                                                    "outlettype": [ "" ],
+                                                                    "patching_rect": [ 218.0, 5.0, 111.0, 22.0 ],
+                                                                    "text": "r ll_live_envi_name"
+                                                                }
+                                                            },
+                                                            {
+                                                                "box": {
+                                                                    "id": "obj-16",
+                                                                    "maxclass": "button",
+                                                                    "numinlets": 1,
+                                                                    "numoutlets": 1,
+                                                                    "outlettype": [ "bang" ],
+                                                                    "parameter_enable": 0,
+                                                                    "patching_rect": [ 168.0, 9.0, 24.0, 24.0 ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "box": {
+                                                                    "id": "obj-10",
+                                                                    "maxclass": "newobj",
+                                                                    "numinlets": 1,
+                                                                    "numoutlets": 1,
+                                                                    "outlettype": [ "preferencesReady" ],
+                                                                    "patching_rect": [ 38.0, 56.0, 113.0, 22.0 ],
+                                                                    "text": "t preferencesReady"
+                                                                }
+                                                            },
+                                                            {
+                                                                "box": {
                                                                     "id": "obj-11",
                                                                     "maxclass": "button",
                                                                     "numinlets": 1,
@@ -6157,17 +6201,6 @@
                                                                     "numoutlets": 0,
                                                                     "patching_rect": [ 242.0, 347.0, 81.0, 22.0 ],
                                                                     "text": "ll.s write_envi"
-                                                                }
-                                                            },
-                                                            {
-                                                                "box": {
-                                                                    "id": "obj-16",
-                                                                    "maxclass": "button",
-                                                                    "numinlets": 1,
-                                                                    "numoutlets": 1,
-                                                                    "outlettype": [ "bang" ],
-                                                                    "parameter_enable": 0,
-                                                                    "patching_rect": [ 38.0, 43.0, 24.0, 24.0 ]
                                                                 }
                                                             },
                                                             {
@@ -6625,7 +6658,7 @@
                                                                     "numinlets": 1,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "fillMenu" ],
-                                                                    "patching_rect": [ 38.0, 110.0, 57.0, 22.0 ],
+                                                                    "patching_rect": [ 168.0, 56.0, 57.0, 22.0 ],
                                                                     "text": "t fillMenu"
                                                                 }
                                                             },
@@ -6659,11 +6692,17 @@
                                                                     "numinlets": 0,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
-                                                                    "patching_rect": [ 204.0, 52.0, 30.0, 30.0 ]
+                                                                    "patching_rect": [ 264.0, 56.0, 30.0, 30.0 ]
                                                                 }
                                                             }
                                                         ],
                                                         "lines": [
+                                                            {
+                                                                "patchline": {
+                                                                    "destination": [ "obj-8", 0 ],
+                                                                    "source": [ "obj-10", 0 ]
+                                                                }
+                                                            },
                                                             {
                                                                 "patchline": {
                                                                     "destination": [ "obj-5", 0 ],
@@ -6672,7 +6711,7 @@
                                                             },
                                                             {
                                                                 "patchline": {
-                                                                    "destination": [ "obj-16", 0 ],
+                                                                    "destination": [ "obj-10", 0 ],
                                                                     "source": [ "obj-12", 0 ]
                                                                 }
                                                             },
@@ -6692,6 +6731,18 @@
                                                                 "patchline": {
                                                                     "destination": [ "obj-24", 0 ],
                                                                     "source": [ "obj-16", 0 ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "patchline": {
+                                                                    "destination": [ "obj-18", 0 ],
+                                                                    "source": [ "obj-17", 0 ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "patchline": {
+                                                                    "destination": [ "obj-8", 0 ],
+                                                                    "source": [ "obj-18", 0 ]
                                                                 }
                                                             },
                                                             {
@@ -18434,6 +18485,7 @@
                     "restore": {
                         "act_menu": [ "(__acts__)" ],
                         "audioON/OFF": [ 0 ],
+                        "chans": [ 16 ],
                         "def": [ -1 ],
                         "envi_menu": [ "(environments)" ],
                         "favorites": [ "(favorites)" ],
