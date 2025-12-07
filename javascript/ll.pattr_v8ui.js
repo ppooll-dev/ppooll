@@ -174,6 +174,8 @@ function loadbang() {
     if (pat) pat.message("getslotlist");
 
     mgraphics.redraw();
+
+    this.patcher.bringtofront(box);
 }
 
 function jsargumentsConvert() {
