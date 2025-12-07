@@ -356,6 +356,14 @@ function getattributes(){
 	// post("gridcolor",gridcolor,"\n");
 
 }
+
+function loadbang(){
+	let old_menu = this.patcher.getnamed("lllbmenu");
+	if(old_menu){
+		this.patcher.remove(old_menu);
+	}
+}
+
 // ################################### _________________UI-inits		
 function menu_init(){	
 	if (!this.patcher.getnamed("lllbmenu")){
