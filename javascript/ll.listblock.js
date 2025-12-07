@@ -174,10 +174,10 @@ function setmodes(){
 	}
 	//post("modes",modes,"\n")
 	calc_cols();
-	let tstm = " " + modes.join(" ");
-	if(tstm.includes(" menu")) menu_init();
-	if(tstm.includes(" num")) num_init();
-	if(tstm.includes(" text")) text_init();
+	// let tstm = " " + modes.join(" ");
+	// if(tstm.includes(" menu")) menu_init();
+	// if(tstm.includes(" num")) num_init();
+	// if(tstm.includes(" text")) text_init();
 }
 function setcolwidths(){
 	//post("setcolwidth\n")
@@ -265,9 +265,6 @@ function size_list(){
 }
 function setfontsize(a){
 	fontsize = Number(a);
-	if(lllnum) lllnum.message("fontsize", a);
-	if(lllbmenu) lllbmenu.message("fontsize", a);
-	if(lllbtext) lllbtext.message("fontsize", a);
 }	
 
 
@@ -361,52 +358,69 @@ function getattributes(){
 }
 // ################################### _________________UI-inits		
 function menu_init(){	
-	let currentMenu = this.patcher.getnamed("lllbmenu");
-	//post("currentMenu",currentMenu,"\n");
-		if(currentMenu){
-			this.patcher.remove(currentMenu);
-		}
-		lllbmenu = this.patcher.newdefault(100,100,"ll_menu");
-		lllbmenu.varname = "lllbmenu";	
-		lllbmenu.message("prefix", "menu");
-		lllbmenu.message("bgcolor", .23,.23,.23, 1)
-		lllbmenu.message("color", 1.,1.,1.,1.)
-		lllbmenu.message("pattrmode", 1);
-		lllbmenu.message("checkmode", 1);
-		lllbmenu.message("outputcancel", 1);
+	if (!this.patcher.getnamed("lllbmenu")){
+		lllbmenu = this.patcher.newdefault(
+			100, 100,
+			"ll_menu",
+			"@varname", "llbmenu",
+			"@prefix", "menu",
+			"@bgcolor", .23,.23,.23, 1,
+			"@color", 1.,1.,1.,1.,
+			"@pattrmode", 1,
+			"@checkmode", 1,
+			"@outputcancel", 1,
+			"@fontsize", a,
+		);
 		lllbmenu.rect = nrect(0, 0);
 		this.patcher.hiddenconnect(lllbmenu,1,box,0);
+	}
+	else
+		lllbmenu = this.patcher.getnamed("lllbmenu");
+
+	lllbmenu.hidden = 1;
 }
+
 function num_init(){
 	if (!this.patcher.getnamed("lllbnum")){
- 			//post("not");
-			lllnum = this.patcher.newdefault(100,100,"ll_number");
-			lllnum.varname = "lllbnum";
-			lllnum.message("format", 1);
-			lllnum.message("sliderstyle", 2);
-			lllnum.message("hideonenter", 1);	
-			//lllnum.message("label", "num");
-			//lllnum.message("labelcolor", 0.,0.,0.,0.);	
-			lllnum.message("prependname", 1);	
-			this.patcher.bringtofront(lllnum);	
-			this.patcher.hiddenconnect(lllnum,0,box,0);
-		}
-		else lllnum = this.patcher.getnamed("lllbnum");
-		lllnum.hidden = 1;			
+ 		//post("not");
+		lllnum = this.patcher.newdefault(
+			100,100,
+			"ll_number",
+			"@varname", "lllbnum",
+			"@format", 1,
+			"@sliderstyle", 2,
+			"@hideonenter", 1,
+			"@fontsize", fontsize,
+			"@prependname", 1,
+		);
+		this.patcher.bringtofront(lllnum);	
+		this.patcher.hiddenconnect(lllnum,0,box,0);
+	}
+	else 
+		lllnum = this.patcher.getnamed("lllbnum");
+
+	lllnum.hidden = 1;			
 }
+
 function text_init(){
-		if (!this.patcher.getnamed("lllbtext")){
-			lllbtext = this.patcher.newdefault(200,100,"textedit");
-			lllbtext.varname = "lllbtext";		
-			this.patcher.bringtofront(lllbtext);			
-			lllbtext.message("lines",1);
-			lllbtext.message("keymode",1);
-			lllbtext.message("border",0);
-			lllbtext.message("rounded",0);
-			this.patcher.hiddenconnect(lllbtext,0,box,0);
-		}
-		else lllbtext = this.patcher.getnamed("lllbtext");
-		lllbtext.hidden = 1;	
+	if (!this.patcher.getnamed("lllbtext")){
+		lllbtext = this.patcher.newdefault(
+			200,100,
+			"textedit",
+			"@varname", "lllbtext",
+			"@lines", 1,
+			"@keymode", 1,
+			"@border", 0,
+			"@rounded", 0,
+			"@fontsize", fontsize,
+		);
+		this.patcher.bringtofront(lllbtext);			
+		this.patcher.hiddenconnect(lllbtext,0,box,0);
+	}
+	else 
+		lllbtext = this.patcher.getnamed("lllbtext");
+
+	lllbtext.hidden = 1;	
 }	
 
 function onresize(w,h){
@@ -574,13 +588,16 @@ function paint() {
 
 // ####################################################################   _________  interaction
 function onclick(x,y,but,mod1,shift,capslock,option,mod2) {
-	//post("onclick\n");
+	// post("onclick\n");
 	if(rows === 0)
 		return;
 
-	if(lllnum) lllnum.message("hidden",1);
-	// if(lllbmenu) lllbmenu.message("hidden",1);
-	if(lllbtext) lllbtext.message("hidden",1);
+	if(lllnum)
+		lllnum.hidden = 1;
+
+	if(lllbtext)
+		lllbtext.hidden = 1;
+
 	for (i=0;i<col_pos.length;i++){
 		if (x>col_pos[i] && x<=col_pos[i+1]) ccx = i;
 	}
@@ -651,7 +668,7 @@ function mousestate(c){
 	// }
 }
 function hide_menu(){
-		lllbmenu.hidden = 1;
+	// lllbmenu.hidden = 1;
 }
 function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
 	
@@ -737,6 +754,8 @@ function m_button(x,y,drag){
 	}
 }
 function m_num(x,y,drag){
+	num_init()
+
 	if (ccm1 != "none") lllnum.message("format",Number(ccm1))
 	else lllnum.message("format",1);
 	//post("multinumber?",multinumber,"\n");
@@ -753,6 +772,15 @@ function m_num(x,y,drag){
 	//listener();	
 }
 function m_menu(x,y,drag){ //called in onclick()
+	menu_init();
+
+	if (lllbmenu){
+		lllbmenu.message("clear")
+		menu_items.forEach(item => {
+			lllbmenu.message("append", item)
+		})
+	}
+
 	// post("m_menu xydrag",x,y,drag,lllbmenu.rect,"\n")
 	const menuHeight = lllbmenu.rect[3] - lllbmenu.rect[1]; // current height of the menu
 
@@ -778,16 +806,17 @@ function m_menu(x,y,drag){ //called in onclick()
 	lllbmenu.message("show");
 }
 function m_text(x,y,drag){
-		lllbtext.rect = nrect(x,y);
-		lllbtext.message("set",cpval);
-		lllbtext.hidden = 0;
-		lllbtext.message("select");
+	text_init();
+	lllbtext.rect = nrect(x,y);
+	lllbtext.message("set",cpval);
+	lllbtext.hidden = 0;
+	lllbtext.message("select");
 }
 
 // ############################ from UIs
 function num(){
 	let a = arrayfromargs(arguments);
-	//post("num",a,"\n");
+	post("num",a,"\n");
 	lllbnum(...a);
 }
 function lllbnum() {
@@ -810,6 +839,12 @@ function lllbnum() {
 			if (isA) pval = a
 			else pval[cy_po] = Number(a);
 		}
+		
+		// if(lllnum){
+		// 	lllnum.hidden = 1;
+		// 	// this.patcher.remove(lllnum);
+		// }
+
 		par_mess();
 	}
 }
@@ -822,7 +857,12 @@ function text(data) {
 				}
 		}
 		else pval[cy_po] = data;
-		lllbtext.hidden = 1;
+
+		if(lllbtext){
+			lllbtext.hidden = 1;
+			// this.patcher.remove(lllbtext);
+		}
+
 		par_mess();
 	}
 }
@@ -872,7 +912,11 @@ function menu(a) {
 		}
 		else pval[cy_po] = a;
 	}
-	lllbmenu.hidden = 1;
+	if(lllbmenu){
+		lllbmenu.hidden = 1;
+		this.patcher.remove(lllbmenu)
+	}
+
 	selected_box = [null, null];
 	par_mess();
 }
@@ -889,13 +933,6 @@ function fill_menu(a){
 	//let items = [];
 	if (Array.isArray(a)) menu_items = a
 	else menu_items = arrayfromargs(arguments);
-
-	if (lllbmenu){
-		lllbmenu.message("clear")
-		menu_items.forEach(item => {
-			lllbmenu.message("append", item)
-		})
-	}
 }
 function nrect(x,y,m) {
 	//post("nrect",m,"\n")
