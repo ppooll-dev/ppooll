@@ -837,7 +837,7 @@ function lllbnum() {
 	//if (isA) data = inp[0];
 	//post("num ", a, a.length,"data", data,"isa",isA,"\n");
 	//if (ui_inside(lllnum.rect) && lllnum.hidden == 0){
-	if (lllnum.hidden == 0){
+	if (lllnum && lllnum.hidden == 0){
 		if (header_click){
 				for (i=param_offset;i<pval.length;i++){
 					pval[i] = Number(a);
@@ -857,7 +857,7 @@ function lllbnum() {
 	}
 }
 function text(data) {
-	if (ui_inside(lllbtext.rect) && lllbtext.hidden == 0){
+	if (lllbtext && ui_inside(lllbtext.rect) && lllbtext.hidden == 0){
 		
 		if (ccy == -1){
 				for (i=param_offset;i<rows;i++){
