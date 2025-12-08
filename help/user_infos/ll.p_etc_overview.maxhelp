@@ -9,192 +9,254 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 556.0, 181.0, 504.0, 388.0 ],
+        "rect": [ 456.0, 283.0, 603.0, 504.0 ],
         "toolbarvisible": 0,
-        "globalpatchername": "ll.pm.maxhelp1",
+        "subpatcher_template": "Untitled3_template",
+        "globalpatchername": "ll.p_etc_overview1",
         "boxes": [
             {
                 "box": {
-                    "fontname": "Arial",
-                    "fontsize": 12.0,
-                    "id": "obj-17",
-                    "maxclass": "message",
-                    "numinlets": 2,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 340.0, 145.0, 98.0, 22.0 ]
+                    "id": "obj-38",
+                    "linecount": 4,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 364.0, 247.0, 165.0, 60.0 ],
+                    "presentation_linecount": 4,
+                    "text": "useful to retrieve the parameter by a bang.\nalso you can bind to parameters of other acts."
                 }
             },
             {
                 "box": {
-                    "fontname": "Arial",
-                    "fontsize": 12.0,
-                    "id": "obj-33",
+                    "id": "obj-35",
+                    "linecount": 4,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 182.0, 325.0, 207.0, 60.0 ],
+                    "presentation_linecount": 5,
+                    "text": "prepend multi\nreceive and\nprepend the parameter with its name.\nhandle many parameters."
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-36",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 99.0, 330.0, 83.0, 22.0 ],
+                    "text": "ll.pm.maxhelp"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-37",
                     "maxclass": "newobj",
                     "numinlets": 0,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 340.0, 107.0, 108.0, 22.0 ],
-                    "text": "ll.pm flo @nofirst 1"
+                    "patching_rect": [ 42.0, 330.0, 57.0, 22.0 ],
+                    "text": "ll.pm toni"
                 }
             },
             {
                 "box": {
                     "id": "obj-32",
-                    "linecount": 2,
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 13.0, 341.0, 376.0, 33.0 ],
-                    "text": "the first message from a param is happening at loading an act\nyou may want to close and reopen this help-file to get @nofirst clear.."
+                    "patching_rect": [ 184.1171875, 395.0, 165.0, 20.0 ],
+                    "text": "if parameters are numbered.."
                 }
             },
             {
                 "box": {
-                    "hidden": 1,
-                    "id": "obj-31",
+                    "id": "obj-33",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 99.1171875, 394.0, 83.0, 22.0 ],
+                    "presentation_linecount": 2,
+                    "text": "ll.mp.maxhelp"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-34",
                     "maxclass": "newobj",
                     "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "bang" ],
-                    "patching_rect": [ 380.0, 25.0, 58.0, 22.0 ],
-                    "text": "loadbang"
+                    "numoutlets": 4,
+                    "outlettype": [ "", "", "", "" ],
+                    "patching_rect": [ 42.1171875, 394.0, 57.0, 22.0 ],
+                    "text": "ll.mp toni"
                 }
             },
             {
                 "box": {
-                    "hidden": 1,
-                    "id": "obj-30",
+                    "id": "obj-31",
+                    "linecount": 6,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 182.0, 242.0, 165.0, 87.0 ],
+                    "presentation_linecount": 6,
+                    "text": "pattr param\nsimilar to ll.p\nbut using a pattr objcect bound to the parameter.\nmessages to the userinterface will not work"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-27",
                     "maxclass": "message",
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 380.0, 59.0, 29.5, 22.0 ],
-                    "text": "set"
-                }
-            },
-            {
-                "box": {
-                    "fontname": "Arial",
-                    "fontsize": 12.0,
-                    "id": "obj-3",
-                    "maxclass": "message",
-                    "numinlets": 2,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 225.0, 145.0, 98.0, 22.0 ],
-                    "text": "flo 0."
-                }
-            },
-            {
-                "box": {
-                    "fontname": "Arial",
-                    "fontsize": 12.0,
-                    "id": "obj-8",
-                    "maxclass": "newobj",
-                    "numinlets": 0,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 225.0, 107.0, 50.0, 22.0 ],
-                    "text": "ll.pm flo"
+                    "patching_rect": [ 101.0, 262.0, 79.0, 22.0 ],
+                    "presentation_linecount": 2,
+                    "text": "ll.pp.maxhelp"
                 }
             },
             {
                 "box": {
                     "id": "obj-29",
-                    "linecount": 4,
-                    "maxclass": "comment",
-                    "numinlets": 1,
-                    "numoutlets": 0,
-                    "patching_rect": [ 285.0, 274.0, 164.0, 60.0 ],
-                    "text": "in this example:\ntoni's first message will arrive\nmen & multi's first message is supressed"
+                    "maxclass": "newobj",
+                    "numinlets": 3,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "" ],
+                    "patching_rect": [ 44.1171875, 262.0, 53.0, 22.0 ],
+                    "text": "ll.pp toni"
                 }
             },
             {
                 "box": {
-                    "id": "obj-16",
+                    "id": "obj-22",
+                    "linecount": 2,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 177.1171875, 207.0, 165.0, 33.0 ],
+                    "presentation_linecount": 3,
+                    "text": "param\ncombination of the two above"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-23",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 95.1171875, 206.0, 73.0, 22.0 ],
+                    "text": "ll.p.maxhelp"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-24",
+                    "maxclass": "newobj",
+                    "numinlets": 3,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "bang" ],
+                    "patching_rect": [ 44.1171875, 206.0, 47.0, 22.0 ],
+                    "text": "ll.p toni"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-21",
                     "linecount": 3,
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 206.0, 206.0, 153.0, 47.0 ],
-                    "text": "list:\nignore first message for selected parameters"
+                    "patching_rect": [ 173.0, 155.5, 163.0, 47.0 ],
+                    "presentation_linecount": 3,
+                    "text": "pattrforward\nthe basic parameter sender.\nbased on pattrforward"
                 }
             },
             {
                 "box": {
-                    "id": "obj-14",
-                    "linecount": 3,
-                    "maxclass": "comment",
-                    "numinlets": 1,
-                    "numoutlets": 0,
-                    "patching_rect": [ 19.0, 205.0, 153.0, 47.0 ],
-                    "text": "single value:\nignore first message for all parameters"
+                    "id": "obj-19",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 95.1171875, 168.0, 76.0, 22.0 ],
+                    "presentation_linecount": 2,
+                    "text": "ll.pf.maxhelp"
                 }
             },
             {
                 "box": {
-                    "id": "obj-10",
-                    "maxclass": "comment",
-                    "numinlets": 1,
-                    "numoutlets": 0,
-                    "patching_rect": [ 13.0, 187.0, 150.0, 20.0 ],
-                    "text": "attribute @nofirst :"
+                    "id": "obj-20",
+                    "maxclass": "newobj",
+                    "numinlets": 3,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "bang" ],
+                    "patching_rect": [ 44.1171875, 168.0, 50.0, 22.0 ],
+                    "text": "ll.pf toni"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-18",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 95.0, 130.0, 69.0, 22.0 ],
+                    "text": "ll.r.maxhelp"
                 }
             },
             {
                 "box": {
                     "fontname": "Arial",
                     "fontsize": 12.0,
-                    "id": "obj-7",
+                    "hidden": 1,
+                    "id": "obj-30",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 308.0, 437.0, 81.0, 22.0 ],
+                    "text": "prepend load"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "hidden": 1,
+                    "id": "obj-14",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 308.0, 464.0, 53.0, 22.0 ],
+                    "text": "pcontrol"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-16",
+                    "linecount": 2,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 173.0, 119.0, 163.0, 33.0 ],
+                    "text": "receive\nthe basic parameter receiver."
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-11",
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 256.0, 75.0, 34.0, 20.0 ],
                     "text": "multi"
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-5",
-                    "maxclass": "message",
-                    "numinlets": 2,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 206.0, 288.0, 74.0, 22.0 ],
-                    "text": "toni 29"
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-6",
-                    "maxclass": "newobj",
-                    "numinlets": 0,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 206.0, 252.0, 190.0, 22.0 ],
-                    "text": "ll.pm toni men multi @nofirst 0 1 1"
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-4",
-                    "maxclass": "message",
-                    "numinlets": 2,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 26.0, 288.0, 74.0, 22.0 ]
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-2",
-                    "maxclass": "newobj",
-                    "numinlets": 0,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 26.0, 252.0, 141.0, 22.0 ],
-                    "text": "ll.pm toni men @nofirst 1"
                 }
             },
             {
@@ -215,44 +277,6 @@
                     "fontname": "Arial",
                     "fontsize": 12.0,
                     "id": "obj-12",
-                    "maxclass": "message",
-                    "numinlets": 2,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 51.0, 145.0, 128.0, 22.0 ],
-                    "text": "toni 29"
-                }
-            },
-            {
-                "box": {
-                    "fontname": "Arial",
-                    "fontsize": 12.0,
-                    "id": "obj-18",
-                    "maxclass": "newobj",
-                    "numinlets": 0,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 50.5, 107.0, 128.0, 22.0 ],
-                    "text": "ll.pm toni flo men multi"
-                }
-            },
-            {
-                "box": {
-                    "fontname": "Arial",
-                    "fontsize": 12.0,
-                    "id": "obj-13",
-                    "maxclass": "comment",
-                    "numinlets": 1,
-                    "numoutlets": 0,
-                    "patching_rect": [ 40.0, 26.0, 151.0, 20.0 ],
-                    "text": "multiple  ll.r out one outlet."
-                }
-            },
-            {
-                "box": {
-                    "fontname": "Arial",
-                    "fontsize": 12.0,
-                    "id": "obj-11",
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
@@ -321,7 +345,7 @@
                 "box": {
                     "fontname": "Arial",
                     "fontsize": 12.0,
-                    "id": "obj-9",
+                    "id": "obj-13",
                     "maxclass": "number",
                     "numinlets": 1,
                     "numoutlets": 2,
@@ -333,13 +357,24 @@
             },
             {
                 "box": {
-                    "args": [ "ll.pm.maxhelp", "0 78 34" ],
+                    "id": "obj-10",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "bang" ],
+                    "patching_rect": [ 44.1171875, 130.0, 44.0, 22.0 ],
+                    "text": "ll.r toni"
+                }
+            },
+            {
+                "box": {
+                    "args": [ "ll.p_etc_overview", "74 0 48" ],
                     "bgmode": 0,
                     "border": 0,
                     "clickthrough": 0,
                     "enablehscroll": 0,
                     "enablevscroll": 0,
-                    "id": "obj-19",
+                    "id": "obj-3",
                     "lockeddragscroll": 0,
                     "lockedsize": 0,
                     "maxclass": "bpatcher",
@@ -347,7 +382,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "offset": [ 0.0, 0.0 ],
-                    "patching_rect": [ 0.0, 0.0, 98.369140625, 16.0 ],
+                    "patching_rect": [ 0.0, 0.0, 117.734375, 16.0 ],
                     "varname": "act",
                     "viewvisibility": 1
                 }
@@ -365,7 +400,7 @@
                     },
                     "color": [ 0.4, 0.4, 0.8, 1.0 ],
                     "hidden": 1,
-                    "id": "obj-20",
+                    "id": "obj-4",
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 1,
@@ -385,7 +420,7 @@
                 "box": {
                     "color": [ 0.4, 0.4, 0.8, 1.0 ],
                     "hidden": 1,
-                    "id": "obj-21",
+                    "id": "obj-5",
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 2,
@@ -400,7 +435,7 @@
                 "box": {
                     "color": [ 0.4, 0.4, 0.8, 1.0 ],
                     "hidden": 1,
-                    "id": "obj-22",
+                    "id": "obj-6",
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 1,
@@ -414,7 +449,7 @@
                 "box": {
                     "color": [ 0.4, 0.4, 0.8, 1.0 ],
                     "hidden": 1,
-                    "id": "obj-23",
+                    "id": "obj-7",
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 4,
@@ -422,9 +457,9 @@
                     "patching_rect": [ 400.0, 463.0, 107.0, 22.0 ],
                     "restore": {
                         "flo": [ 0.0 ],
-                        "men": [ "b" ],
-                        "multi": [ 0.5588235294117647, -0.2941176470588235, 0.0, 0.2647058823529411, 0.4411764705882353 ],
-                        "toni": [ 29 ]
+                        "men": [ "a" ],
+                        "multi": [ 0.0, 0.0, 0.0, 0.0, 0.0 ],
+                        "toni": [ 0 ]
                     },
                     "text": "autopattr autopattr",
                     "varname": "autopattr"
@@ -433,7 +468,7 @@
             {
                 "box": {
                     "hidden": 1,
-                    "id": "obj-24",
+                    "id": "obj-8",
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 1,
@@ -446,7 +481,7 @@
             {
                 "box": {
                     "hidden": 1,
-                    "id": "obj-27",
+                    "id": "obj-9",
                     "maxclass": "newobj",
                     "numinlets": 0,
                     "numoutlets": 0,
@@ -461,6 +496,7 @@
                         },
                         "classnamespace": "box",
                         "rect": [ 234.0, 134.0, 432.0, 332.0 ],
+                        "subpatcher_template": "Untitled3_template",
                         "boxes": [
                             {
                                 "box": {
@@ -478,8 +514,8 @@
                         ],
                         "lines": []
                     },
-                    "patching_rect": [ 400.0, 550.0, 119.0, 22.0 ],
-                    "text": "p ll.pm.maxhelp_sub",
+                    "patching_rect": [ 400.0, 550.0, 137.0, 22.0 ],
+                    "text": "p ll.p_etc_overview_sub",
                     "varname": "sub"
                 }
             }
@@ -487,60 +523,36 @@
         "lines": [
             {
                 "patchline": {
-                    "destination": [ "obj-12", 1 ],
+                    "destination": [ "obj-30", 0 ],
+                    "hidden": 1,
                     "source": [ "obj-18", 0 ]
                 }
             },
             {
                 "patchline": {
-                    "destination": [ "obj-4", 1 ],
-                    "source": [ "obj-2", 0 ]
+                    "destination": [ "obj-30", 0 ],
+                    "hidden": 1,
+                    "source": [ "obj-19", 0 ]
                 }
             },
             {
                 "patchline": {
-                    "destination": [ "obj-24", 0 ],
+                    "destination": [ "obj-30", 0 ],
                     "hidden": 1,
-                    "source": [ "obj-20", 0 ]
+                    "source": [ "obj-23", 0 ]
                 }
             },
             {
                 "patchline": {
-                    "destination": [ "obj-12", 0 ],
+                    "destination": [ "obj-30", 0 ],
                     "hidden": 1,
-                    "order": 3,
-                    "source": [ "obj-30", 0 ]
+                    "source": [ "obj-27", 0 ]
                 }
             },
             {
                 "patchline": {
-                    "destination": [ "obj-17", 0 ],
+                    "destination": [ "obj-14", 0 ],
                     "hidden": 1,
-                    "order": 0,
-                    "source": [ "obj-30", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-3", 0 ],
-                    "hidden": 1,
-                    "order": 1,
-                    "source": [ "obj-30", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-4", 0 ],
-                    "hidden": 1,
-                    "order": 4,
-                    "source": [ "obj-30", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-5", 0 ],
-                    "hidden": 1,
-                    "order": 2,
                     "source": [ "obj-30", 0 ]
                 }
             },
@@ -548,29 +560,25 @@
                 "patchline": {
                     "destination": [ "obj-30", 0 ],
                     "hidden": 1,
-                    "source": [ "obj-31", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-17", 1 ],
                     "source": [ "obj-33", 0 ]
                 }
             },
             {
                 "patchline": {
-                    "destination": [ "obj-5", 1 ],
-                    "source": [ "obj-6", 0 ]
+                    "destination": [ "obj-30", 0 ],
+                    "hidden": 1,
+                    "source": [ "obj-36", 0 ]
                 }
             },
             {
                 "patchline": {
-                    "destination": [ "obj-3", 1 ],
-                    "source": [ "obj-8", 0 ]
+                    "destination": [ "obj-8", 0 ],
+                    "hidden": 1,
+                    "source": [ "obj-4", 0 ]
                 }
             }
         ],
         "autosave": 0,
-        "bgcolor": [ 0.0, 0.3058823529411765, 0.13333333333333333, 1.0 ]
+        "bgcolor": [ 0.2901960784313726, 0.0, 0.18823529411764706, 1.0 ]
     }
 }

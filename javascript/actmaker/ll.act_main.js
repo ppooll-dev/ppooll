@@ -1648,11 +1648,16 @@ function sendto(...args) {
     let msg = [...args];
     let prep = 0;
     let prep_mess = 0;
-
-    if (msg[0] === "prepend") {
-        prep = msg.shift();
-        prep_mess = msg.shift();
-    }
+	let send1 = 0;
+	
+	if (msg[0] === "send1") {
+		msg.shift();
+		send1 = 1;
+	}
+	if (msg[0] === "prepend") {
+  	  prep = msg.shift();
+  	  prep_mess = msg.shift();
+	}
 
     const dest = msg.shift();
 
@@ -1672,7 +1677,7 @@ function sendto(...args) {
         .getnamed("sendto_prepend");
     const obj_pat = act_patcher.getnamed("pat");
 
-    obj_gate.message(prep ? 1 : 2);
+    obj_gate.message(prep ? 1 : (send1 ? 3 : 2));
     obj_prepend.message("set", prep_mess);
     obj_forward.message("send", dest);
     obj_pat.message(...msg);

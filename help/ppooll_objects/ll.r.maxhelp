@@ -4,12 +4,13 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 0,
+            "revision": 1,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
         "rect": [ 100.0, 100.0, 561.0, 489.0 ],
+        "toolbarvisible": 0,
         "globalpatchername": "ll.r.maxhelp1",
         "boxes": [
             {
@@ -404,7 +405,11 @@
                     "active": {
                         "act": 0,
                         "act::active_store": 0,
-                        "actmake::active_store": 0
+                        "act::master": 0,
+                        "act::u751015509": 0,
+                        "act::pres_menu": 0,
+                        "act::tetris_menu": 0,
+                        "act::title_menu": 0
                     },
                     "color": [ 0.0, 0.0, 0.0, 1.0 ],
                     "fontname": "Arial",
@@ -485,15 +490,76 @@
             },
             {
                 "box": {
-                    "color": [ 0.4, 0.4, 0.8, 1.0 ],
-                    "hidden": 1,
-                    "id": "obj-2",
-                    "maxclass": "newobj",
-                    "numinlets": 2,
+                    "args": [ "ll.r.maxhelp", "0 143 83" ],
+                    "bgmode": 0,
+                    "border": 0,
+                    "clickthrough": 0,
+                    "enablehscroll": 0,
+                    "enablevscroll": 0,
+                    "id": "obj-35",
+                    "lockeddragscroll": 0,
+                    "lockedsize": 0,
+                    "maxclass": "bpatcher",
+                    "name": "act.maxpat",
+                    "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 427.0, 63.0, 118.0, 22.0 ],
-                    "text": "actmake ll.r.maxhelp",
-                    "varname": "act"
+                    "offset": [ 0.0, 0.0 ],
+                    "patching_rect": [ 0.0, 0.0, 84.376953125, 16.0 ],
+                    "varname": "act",
+                    "viewvisibility": 1
+                }
+            },
+            {
+                "box": {
+                    "hidden": 1,
+                    "id": "obj-38",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 430.0, 35.0, 115.0, 22.0 ],
+                    "text": "pattrforward act::in2",
+                    "varname": "pf"
+                }
+            },
+            {
+                "box": {
+                    "hidden": 1,
+                    "id": "obj-39",
+                    "maxclass": "newobj",
+                    "numinlets": 0,
+                    "numoutlets": 0,
+                    "patcher": {
+                        "fileversion": 1,
+                        "appversion": {
+                            "major": 9,
+                            "minor": 1,
+                            "revision": 1,
+                            "architecture": "x64",
+                            "modernui": 1
+                        },
+                        "classnamespace": "box",
+                        "rect": [ 234.0, 134.0, 432.0, 332.0 ],
+                        "boxes": [
+                            {
+                                "box": {
+                                    "id": "obj-1",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 2,
+                                    "outlettype": [ "", "" ],
+                                    "patching_rect": [ 10.0, 20.0, 100.0, 22.0 ],
+                                    "save": [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+                                    "text": "thispatcher",
+                                    "varname": "subTP"
+                                }
+                            }
+                        ],
+                        "lines": []
+                    },
+                    "patching_rect": [ 400.0, 550.0, 105.0, 22.0 ],
+                    "text": "p ll.r.maxhelp_sub",
+                    "varname": "sub"
                 }
             }
         ],
@@ -542,12 +608,13 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-2", 1 ],
+                    "destination": [ "obj-38", 0 ],
                     "hidden": 1,
                     "source": [ "obj-4", 0 ]
                 }
             }
         ],
-        "autosave": 0
+        "autosave": 0,
+        "bgcolor": [ 0.0, 0.5607843137254902, 0.3254901960784314, 1.0 ]
     }
 }

@@ -12,6 +12,11 @@ presets and active_store need to be inactive (always)
 this could be checked (and reset) in ll.pattr_v8
 on any click ?
 
+actmake: actmake: No such object
+in many help-files etc.
+we need a wrapper, that does an update here.
+
+(don't) showtoolbar at open setter
 
 
 and get a high priority
@@ -20,4 +25,7 @@ default priorities !!!
 act
 ll.blues (force ll.blues varname?)
 
-error message in console:
+sort inputs in ppooll_state
+in always first !!
+
+factory tetris on savebang only for acts, not for others like helpfiles etc

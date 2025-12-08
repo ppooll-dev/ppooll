@@ -4,13 +4,14 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 0,
+            "revision": 1,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
         "rect": [ 100.0, 100.0, 573.0, 662.0 ],
-        "globalpatchername": "ll.p.maxhelp1",
+        "toolbarvisible": 0,
+        "globalpatchername": "ll.p.maxhelp2",
         "boxes": [
             {
                 "box": {
@@ -52,7 +53,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 115.0, 547.0, 23.0, 169.0 ],
-                    "text": "0 ::ll.p.maxhelp1::inputs~"
+                    "text": "0 ::ll.r.maxhelp1::inputs~"
                 }
             },
             {
@@ -408,8 +409,12 @@
                 "box": {
                     "active": {
                         "act": 0,
-                        "act::active_store": 0,
-                        "actmake::active_store": 0
+                        "act::master": 0,
+                        "act::u751015509": 0,
+                        "act::pres_menu": 0,
+                        "act::tetris_menu": 0,
+                        "act::title_menu": 0,
+                        "act::active_store": 0
                     },
                     "color": [ 0.0, 0.0, 0.0, 1.0 ],
                     "fontname": "Arial",
@@ -422,7 +427,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 430.0, 14.0, 100.0, 22.0 ],
                     "saved_object_attributes": {
-                        "client_rect": [ 499, 162, 1157, 766 ],
+                        "client_rect": [ 499, 162, 1139, 402 ],
                         "parameter_enable": 0,
                         "parameter_mappable": 0,
                         "storage_rect": [ 0, 0, 640, 240 ]
@@ -490,15 +495,76 @@
             },
             {
                 "box": {
-                    "color": [ 0.4, 0.4, 0.8, 1.0 ],
-                    "hidden": 1,
-                    "id": "obj-2",
-                    "maxclass": "newobj",
-                    "numinlets": 2,
+                    "args": [ "ll.p.maxhelp", "71 25 25" ],
+                    "bgmode": 0,
+                    "border": 0,
+                    "clickthrough": 0,
+                    "enablehscroll": 0,
+                    "enablevscroll": 0,
+                    "id": "obj-16",
+                    "lockeddragscroll": 0,
+                    "lockedsize": 0,
+                    "maxclass": "bpatcher",
+                    "name": "act.maxpat",
+                    "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 427.0, 63.0, 121.0, 22.0 ],
-                    "text": "actmake ll.p.maxhelp",
-                    "varname": "act"
+                    "offset": [ 0.0, 0.0 ],
+                    "patching_rect": [ 0.0, 0.0, 87.69921875, 16.0 ],
+                    "varname": "act",
+                    "viewvisibility": 1
+                }
+            },
+            {
+                "box": {
+                    "hidden": 1,
+                    "id": "obj-30",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 430.0, 35.0, 115.0, 22.0 ],
+                    "text": "pattrforward act::in2",
+                    "varname": "pf"
+                }
+            },
+            {
+                "box": {
+                    "hidden": 1,
+                    "id": "obj-36",
+                    "maxclass": "newobj",
+                    "numinlets": 0,
+                    "numoutlets": 0,
+                    "patcher": {
+                        "fileversion": 1,
+                        "appversion": {
+                            "major": 9,
+                            "minor": 1,
+                            "revision": 1,
+                            "architecture": "x64",
+                            "modernui": 1
+                        },
+                        "classnamespace": "box",
+                        "rect": [ 234.0, 134.0, 432.0, 332.0 ],
+                        "boxes": [
+                            {
+                                "box": {
+                                    "id": "obj-1",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 2,
+                                    "outlettype": [ "", "" ],
+                                    "patching_rect": [ 10.0, 20.0, 100.0, 22.0 ],
+                                    "save": [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+                                    "text": "thispatcher",
+                                    "varname": "subTP"
+                                }
+                            }
+                        ],
+                        "lines": []
+                    },
+                    "patching_rect": [ 400.0, 550.0, 109.0, 22.0 ],
+                    "text": "p ll.p.maxhelp_sub",
+                    "varname": "sub"
                 }
             }
         ],
@@ -554,7 +620,7 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-2", 1 ],
+                    "destination": [ "obj-30", 0 ],
                     "hidden": 1,
                     "source": [ "obj-4", 0 ]
                 }
@@ -566,6 +632,7 @@
                 }
             }
         ],
-        "autosave": 0
+        "autosave": 0,
+        "bgcolor": [ 0.2784313725490196, 0.09803921568627451, 0.09803921568627451, 1.0 ]
     }
 }
