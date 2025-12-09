@@ -876,7 +876,7 @@ function text(data) {
 }
 
 function menu(a) {
-	// post("menu_listen",a,"lllbmenu.hidden",lllbmenu.hidden,"\n");
+	//post("menu_listen",a,"lllbmenu.hidden",lllbmenu.hidden,"\n");
 	// post(a, "\n")
 
 	if(a === "<cancel>"){

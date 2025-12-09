@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 333.0, 110.0, 991.0, 782.0 ],
+        "rect": [ 197.0, 104.0, 991.0, 782.0 ],
         "subpatcher_template": "Untitled3_template",
         "showrootpatcherontab": 0,
         "boxes": [
@@ -55,10 +55,45 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 0.0, 26.0, 991.0, 756.0 ],
+                        "rect": [ 197.0, 130.0, 991.0, 756.0 ],
                         "subpatcher_template": "Untitled3_template",
                         "title": "js",
                         "boxes": [
+                            {
+                                "box": {
+                                    "id": "obj-6",
+                                    "maxclass": "message",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 57.0, 155.0, 93.0, 22.0 ],
+                                    "presentation_linecount": 2,
+                                    "text": "getindex ho_st1"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "obj-2",
+                                    "maxclass": "message",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 53.0, 128.0, 91.0, 22.0 ],
+                                    "presentation_linecount": 2,
+                                    "text": "getstate ho_st1"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "obj-3",
+                                    "maxclass": "message",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 484.0, 122.0, 91.0, 22.0 ],
+                                    "text": "clientlist ho_st1"
+                                }
+                            },
                             {
                                 "box": {
                                     "id": "obj-29",
@@ -234,7 +269,7 @@
                             },
                             {
                                 "box": {
-                                    "code": "// dicts\nconst ll_state = new Dict(\"ppoollstate\");\nconst ll_paths_ = new Dict(\"ll_paths\");\nconst ll_presetsindict = new Dict(\"llpresetsindict\");\n// globals\nconst actr = new Global(\"act_rep\");\nconst ll_max_live_envi = new Global(\"ppooll\");\r\n\r\n\r\noutlets = 1;\r\nconst C = new Dict(\"empty\"); //just for clearing the dictview\r\nfunction ppoollstate(){ \r\n    post(\"----------------------------------\\n\"); \r\n    post(\"ppoollstate: dict of all open acts\\n\"); \r\n    post(\"keys: actnames\\n\");  \r\n    post(\"values: class index hash(#0) inputs~ \\n\");  \r\n    outlet_dictionary(0, ll_state);\r\n}\r\nfunction ll_paths(){ \r\n    post(\"----------------------------------\\n\"); \r\n    post(\"ll_paths: dict holding local paths for\\n\"); \r\n    post(\"factory: folder for factory presets\\n\");  \r\n    post(\"user: folder for user presets \\n\");  \r\n    outlet_dictionary(0, ll_paths_);\r\n}\r\nfunction llpresetsindict(){ \r\n    post(\"----------------------------------\\n\"); \r\n    post(\"llpresetsindict\\n\"); \r\n    post(\"maybe currently empty\\n\");   \r\n    outlet_dictionary(0, ll_presetsindict);\r\n}\r\nfunction actr_patchers(){ \r\n    post(\"----------------------------------\\n\"); \r\n    outlet_dictionary(0, C);\r\n    post(\"actr.patchers holds the jspatcher reference\\n\"); \r\n    post(\"for every open act\\n\");\r\n    post(\"extremely convenient for getting info from there\\n\");\r\n    for (let a in actr.patchers) {\r\n        post(a,actr.patchers[a],\"\\n\");\r\n    }   \r\n}\r\nfunction get_wind_locations(){ \r\n    post(\"----------------------------------\\n\"); \r\n    outlet_dictionary(0, C);\r\n    post(\"iter through actr.patchers and grab the wind.location\\n\"); \r\n    for (let a in actr.patchers) {\r\n        post(a,actr.patchers[a].wind.location,\"\\n\");\r\n    }   \r\n}\r\nfunction get_object(act,object){ \r\n    post(\"----------------------------------\\n\"); \r\n    outlet_dictionary(0, C);\r\n    post(\"properties of \", act+\"::\"+object, \" :\\n\"); \r\n    let obj = actr.patchers[act].getnamed(object);\r\n    post(\"value:\",obj.getvalueof(),\"\\n\");\r\n    for (let key of Object.keys(obj)){\r\n        post(key,obj[key],\"\\n\");\r\n    }\r\n}\r\nfunction actr_pat(){   \r\n    outlet_dictionary(0, actr.pat);\r\n}",
+                                    "code": "// dicts\nconst ll_state = new Dict(\"ppoollstate\");\nconst ll_paths_ = new Dict(\"ll_paths\");\nconst ll_presetsindict = new Dict(\"llpresetsindict\");\n// globals\nconst actr = new Global(\"act_rep\");\nconst ll_max_live_envi = new Global(\"ppooll\");\r\n\r\n\r\noutlets = 1;\r\nconst C = new Dict(\"empty\"); //just for clearing the dictview\r\nfunction ppoollstate(){ \r\n    post(\"----------------------------------\\n\"); \r\n    post(\"ppoollstate: dict of all open acts\\n\"); \r\n    post(\"keys: actnames\\n\");  \r\n    post(\"values: class index hash(#0) inputs~ \\n\");  \r\n    outlet_dictionary(0, ll_state);\r\n}\r\nfunction getstate(a){\r\n    post(\"-------------------\",a,\"---------------\\n\"); \r\n    let a_state = ll_state.get(a);\r\n    for (k of a_state.getkeys()){\r\n        if (typeof a_state.get(k) === \"object\") {\r\n            let o = a_state.get(k);\r\n            for (k2 of o.getkeys()) {\r\n                post(k, k2,o.get(k2),\"\\n\");\r\n            }\r\n        }\r\n        else post(k, a_state.get(k),\"\\n\");\r\n    }\r\n    //post(a, a_state,\"\\n\");\r\n    //post(a, ll_state.get(a).get(\"index\"),\"\\n\");\r\n}\r\nfunction getindex(a){\r\n    post(a, \"index is: \", ll_state.get(a).get(\"index\"),\"\\n\");\r\n}\r\nfunction ll_paths(){ \r\n    post(\"----------------------------------\\n\"); \r\n    post(\"ll_paths: dict holding local paths for\\n\"); \r\n    post(\"factory: folder for factory presets\\n\");  \r\n    post(\"user: folder for user presets \\n\");  \r\n    outlet_dictionary(0, ll_paths_);\r\n}\r\nfunction llpresetsindict(){ \r\n    post(\"----------------------------------\\n\"); \r\n    post(\"llpresetsindict\\n\"); \r\n    post(\"maybe currently empty\\n\");   \r\n    outlet_dictionary(0, ll_presetsindict);\r\n}\r\nfunction actr_patchers(){ \r\n    post(\"----------------------------------\\n\"); \r\n    outlet_dictionary(0, C);\r\n    post(\"actr.patchers holds the jspatcher reference\\n\"); \r\n    post(\"for every open act\\n\");\r\n    post(\"extremely convenient for getting info from there\\n\");\r\n    for (let a in actr.patchers) {\r\n        post(a,actr.patchers[a],\"\\n\");\r\n    }   \r\n}\r\nfunction get_wind_locations(){ \r\n    post(\"----------------------------------\\n\"); \r\n    outlet_dictionary(0, C);\r\n    post(\"iter through actr.patchers and grab the wind.location\\n\"); \r\n    for (let a in actr.patchers) {\r\n        post(a,actr.patchers[a].wind.location,\"\\n\");\r\n    }   \r\n}\r\nfunction get_object(act,object){ \r\n    post(\"----------------------------------\\n\"); \r\n    outlet_dictionary(0, C);\r\n    post(\"properties of \", act+\"::\"+object, \" :\\n\"); \r\n    let obj = actr.patchers[act].getnamed(object);\r\n    post(\"value:\",obj.getvalueof(),\"\\n\");\r\n    for (let key of Object.keys(obj)){\r\n        post(key,obj[key],\"\\n\");\r\n    }\r\n}\r\nfunction actr_pat(){   \r\n    outlet_dictionary(0, actr.pat);\r\n}\r\n\r\nfunction clientlist(a){\r\n    post(actr.pat[a][\"clientlist\"]);\r\n}",
                                     "filename": "none",
                                     "fontface": 0,
                                     "fontname": "<Monospaced>",
@@ -302,6 +337,12 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-1", 0 ],
+                                    "source": [ "obj-2", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-1", 0 ],
                                     "hidden": 1,
                                     "source": [ "obj-21", 0 ]
                                 }
@@ -318,6 +359,18 @@
                                     "destination": [ "obj-1", 0 ],
                                     "hidden": 1,
                                     "source": [ "obj-25", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-1", 0 ],
+                                    "source": [ "obj-3", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-1", 0 ],
+                                    "source": [ "obj-6", 0 ]
                                 }
                             }
                         ]
@@ -604,7 +657,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 333.0, 136.0, 991.0, 756.0 ],
+                        "rect": [ 0.0, 26.0, 991.0, 756.0 ],
                         "subpatcher_template": "Untitled3_template",
                         "title": "messages",
                         "boxes": [
@@ -616,7 +669,6 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 187.0, 645.0, 121.0, 22.0 ],
-                                    "presentation_linecount": 2,
                                     "text": "pattrstorage.maxhelp"
                                 }
                             },
@@ -1039,7 +1091,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 336.0, 445.0, 109.0, 22.0 ],
-                                                    "text": "::ho_st1::"
+                                                    "text": "::fmrm1::"
                                                 }
                                             },
                                             {
@@ -1061,7 +1113,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 223.0, 445.0, 95.0, 22.0 ],
-                                                    "text": "ho_st1"
+                                                    "text": "fmrm1"
                                                 }
                                             },
                                             {
@@ -1662,7 +1714,7 @@
                                     "fontface": 0,
                                     "fontname": "Arial",
                                     "id": "obj-9",
-                                    "items": [ "no", ",", "fmrm1", ",", "ho_st1" ],
+                                    "items": [ "no", ",", "control@1", ",", "ho_st1" ],
                                     "maxclass": "ll_menu",
                                     "numinlets": 1,
                                     "numoutlets": 3,

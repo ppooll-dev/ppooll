@@ -162,7 +162,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 206.0, 288.0, 74.0, 22.0 ],
-                    "text": "toni 29"
+                    "text": "toni 77"
                 }
             },
             {
@@ -220,7 +220,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 51.0, 145.0, 128.0, 22.0 ],
-                    "text": "toni 29"
+                    "text": "toni 77"
                 }
             },
             {
@@ -422,9 +422,9 @@
                     "patching_rect": [ 400.0, 463.0, 107.0, 22.0 ],
                     "restore": {
                         "flo": [ 0.0 ],
-                        "men": [ "b" ],
+                        "men": [ "a" ],
                         "multi": [ 0.5588235294117647, -0.2941176470588235, 0.0, 0.2647058823529411, 0.4411764705882353 ],
-                        "toni": [ 29 ]
+                        "toni": [ 77 ]
                     },
                     "text": "autopattr autopattr",
                     "varname": "autopattr"
