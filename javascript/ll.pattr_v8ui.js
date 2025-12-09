@@ -39,6 +39,7 @@ var scrub_rate = 2; // number of preset interpolation ticks per 100 pixels dragg
 var hoverIndex = -1;
 var hoverAdd = false;
 var hoverRemove = false;
+var hoverReplace = false;
 
 // === Cached geometry for fast paint() ===
 let g_square = 6; // half of boxsize
@@ -180,12 +181,12 @@ function loadbang() {
 
 function jsargumentsConvert() {
     if (jsarguments.length > 1) {
-        post("ll.pattr_v8ui: converting legacy jsarguments to attributes...");
+        // post("ll.pattr_v8ui: converting legacy jsarguments to attributes...");
 
         // LEGACY ARG 1 = square size
         if (jsarguments.length > 1 && typeof jsarguments[1] === "number") {
             boxsize = jsarguments[1];
-            post("boxsize", boxsize);
+            // post("boxsize", boxsize);
             recomputeGrid();
         }
 
@@ -209,7 +210,7 @@ function jsargumentsConvert() {
         jsarguments = "";
         mgraphics.redraw();
 
-        post("done.\n");
+        // post("done.\n");
     }
 }
 
@@ -502,6 +503,12 @@ function paint() {
                     mgraphics.move_to(cx - size / 2, cy + size / 2);
                     mgraphics.line_to(cx + size / 2, cy - size / 2);
                     mgraphics.stroke();
+                } else if (hoverReplace) {
+                    mgraphics.move_to(cx - size / 2, cy);
+                    mgraphics.line_to(cx + size / 2, cy);
+                    mgraphics.move_to(cx, cy - size / 2);
+                    mgraphics.line_to(cx, cy + size / 2);
+                    mgraphics.stroke();
                 }
             }
 
@@ -677,7 +684,7 @@ function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
             last_drag_x = x; // start accumulating from first event
 
             stop_ramp();
-            handle_option_click(x, y, click);
+            // handle_option_click(x, y, click);
             return;
         }
 
@@ -799,10 +806,12 @@ function onidle(x, y, but, cmd, shift, capslock, option, ctrl) {
         hoverIndex = -1;
         hoverRemove = false;
         hoverAdd = false;
+        hoverReplace = false;
     } else {
         hoverIndex = idx;
         hoverRemove = ctrl || cmd;
-        hoverAdd = !hoverRemove && !slots[hoverIndex];
+        hoverReplace = shift && slots[hoverIndex];
+        hoverAdd = !hoverRemove && !hoverReplace && !slots[hoverIndex];
     }
 
     mgraphics.redraw();

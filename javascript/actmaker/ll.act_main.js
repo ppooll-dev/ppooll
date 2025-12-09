@@ -74,13 +74,14 @@ declareattribute("isReady", {
     embed: 1,
     default: 0,
     invisible: 1,
+    setter: "set_isReady",
 });
 
-var act_name_index = "loading...";
+var act_name_index = "";
 declareattribute("act_name_index", {
     type: "symbol",
     embed: 1,
-    default: "loading...",
+    default: "",
 });
 
 var act_index = -1; // set dynamically from ppoollstate, declared as attribute for persistence when saving this js
@@ -114,24 +115,19 @@ let titlebarShown,
     allTitlebarsShown,
     isgrow = false;
 
-let title_menu_options = {}
-let title_menu_options_list = []
+let title_menu_options = {};
+let title_menu_options_list = [];
 
 // ######################################################################## general Handlers
 // ##########################################################################################
 // ##########################################################################################
 // ##########################################################################################
 
-// refresh js when the file has been changed and save
-//  * only do this after the initial [loadbang]--[deferlow]--
-refresh();
-function refresh() {
-    // post("isReady", isReady, "\n");
-    // post("act_name_index", act_name_index, "\n");
-    // post("act_index", act_index, "\n");
+function set_isReady(v) {
+    isReady = v;
     if (isReady) {
-        // post("refresh\n");
-        bang();
+        post("already ready!\n");
+        bang(true);
     }
 }
 
@@ -140,6 +136,7 @@ function _clean() {
     title_menu.message("symbol", "");
     pres_menu.message("symbol", "(presets)");
     tetris_menu.message("symbol", "(tetris)");
+    isReady = 0;
 }
 
 // from [r llenviread] :  1 == reading environment
@@ -147,7 +144,7 @@ function set_llenviread(is_reading) {
     is_llenviread = is_reading;
 }
 
-function bang() {
+function bang(alreadyRegistered = false) {
     // post("bang\n");
     isReady = 0;
 
@@ -165,6 +162,7 @@ function bang() {
     tetris_menu = this.patcher.getnamed("tetris_menu");
 
     [title_menu, pres_menu, tetris_menu].forEach((m) => {
+        if (!m) return;
         m.ignoreclick = 1;
         m.hidden = 1;
         this.patcher.sendtoback(m);
@@ -219,9 +217,10 @@ function bang() {
     if (ll_max_live_envi.envi == "live") make_live();
 
     // set title_menu options
-    title_menu_options = act_args.name === "ho_st"
-        ? create_host_title_menu_options()
-        : create_title_menu_options();
+    title_menu_options =
+        act_args.name === "ho_st"
+            ? create_host_title_menu_options()
+            : create_title_menu_options();
 
     title_menu_options_list = Object.keys(title_menu_options);
 
@@ -234,7 +233,9 @@ function bang() {
     );
     title_menu.message("dictionary", dict_title_menu.name);
 
-    first_dump();
+    if (!alreadyRegistered) {
+        first_dump();
+    }
 
     //everything done !!!
     pres_refresh_menu();
@@ -254,8 +255,8 @@ function bang() {
     messnamed("act_ready", `${act_args.name}${act_index}`);
     messnamed(`${act_args.hash}instance`, act_index);
 
-    // post("ready\n");
     isReady = 1;
+    // post("ready\n");
     mgraphics.redraw();
 }
 
@@ -268,8 +269,8 @@ function savebang() {
     act_patcher.getnamed("thispatcher").message("patcher", act_name_index);
 }
 
-function freebang() {
-    // post("freebang")
+function notifydeleted() {
+    // post("notifydeleted\n") // "freebang"
 
     // send msgs to remove from ppooll_state
     if (ll_state.get(act_name_index)) ll_state.remove(act_name_index);
@@ -336,11 +337,6 @@ function onidleout() {
 }
 
 function paint() {
-    if (!isReady) {
-        // post("paint not ready\n");
-        return;
-    }
-    // post("paint\n");
     bgcolor = ll.makeColor(act_args.color);
 
     mgraphics.set_font_size(12);
@@ -367,7 +363,7 @@ function paint() {
     mgraphics.set_source_rgba(txt_color);
     mgraphics.move_to(4, 12);
 
-    let title_txt = act_name_index;
+    let title_txt = !isReady ? "loading..." : act_name_index;
 
     // rename in act-title ?
     // ["ho_st", "buffer_host"].forEach(n => {
@@ -456,7 +452,7 @@ function masterSelected(master_act_name, master_act_index) {
 }
 
 function create_title_menu_options() {
-    return {
+    const opts = {
         info: () => {
             this.patcher
                 .getnamed("pcontrol")
@@ -517,6 +513,16 @@ function create_title_menu_options() {
             act_patcher.getnamed("act").message("front");
         },
     };
+
+    const filteredOpts = {};
+    for (const [key, value] of Object.entries(opts)) {
+        if (key === "info" && !ll.fileExists(`${act_args.name}.maxhelp`)) {
+            filteredOpts["(info)"] = value; // if no .maxhelp, disable info
+        } else {
+            filteredOpts[key] = value;
+        }
+    }
+    return filteredOpts
 }
 
 function create_host_title_menu_options() {
@@ -587,7 +593,7 @@ function create_host_title_menu_options() {
         report: () => messnamed("ll_report", "bang"),
     };
 
-    if(ll_max_live_envi.envi === "live"){
+    if (ll_max_live_envi.envi === "live") {
         delete ho_st_opts.close;
     }
 
@@ -734,19 +740,6 @@ function set_tetris_menu(selection) {
     const size = [w[2] - w[0], w[3] - w[1]]; // [width, height]
     wsize(size[0], size[1]);
 
-    // a patchersize smaller than 50 is supressed normally.
-    // hack:
-    //  send the size again,
-    //  move the window vertically a bit, and back.
-    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>not needed anymore, because we re- constrain the patchers in function createbasics()
-    /*
-    if (size[0] <= 50) {
-        wsize(size[0], size[1]);
-        setloc(act_patcher.wind.location[0], act_patcher.wind.location[1] + 1);
-        setloc(act_patcher.wind.location[0], act_patcher.wind.location[1]);
-    }
-	*/
-
     // reset all hidden
     Object.keys(hiddenAttrs).forEach((objName) => {
         const obj = act_patcher.getnamed(objName);
@@ -778,9 +771,8 @@ function getTetrisFromObject(obj) {
                 objTetris[attributes[i]] = obj.getattr(attributes[i]);
         }
         if (attributes[i] === "jsarguments") {
-            // post(obj[attributes[i]]); post()
+            // post("tetris jsarguments", objTetris[attributes[i]], "\n");
             objTetris[attributes[i]] = obj[attributes[i]];
-            post("tetris jsarguments", objTetris[attributes[i]], "\n");
         }
         if (
             /color/.test(attributes[i]) &&
@@ -795,8 +787,6 @@ function getTetrisFromObject(obj) {
                 attrs = JSON.parse(d.stringify());
                 //post(attrs, "\n")
             }
-
-            // post(attributes[i], attrs, typeof(attrs), "\n")
 
             //post("--------", obj.varname, obj.maxclass, attributes[i], obj.getattr(attributes[i]), "\n");
             objTetris[attributes[i]] = attrs;
@@ -1648,16 +1638,16 @@ function sendto(...args) {
     let msg = [...args];
     let prep = 0;
     let prep_mess = 0;
-	let send1 = 0;
-	
-	if (msg[0] === "send1") {
-		msg.shift();
-		send1 = 1;
-	}
-	if (msg[0] === "prepend") {
-  	  prep = msg.shift();
-  	  prep_mess = msg.shift();
-	}
+    let send1 = 0;
+
+    if (msg[0] === "send1") {
+        msg.shift();
+        send1 = 1;
+    }
+    if (msg[0] === "prepend") {
+        prep = msg.shift();
+        prep_mess = msg.shift();
+    }
 
     const dest = msg.shift();
 
@@ -1677,7 +1667,7 @@ function sendto(...args) {
         .getnamed("sendto_prepend");
     const obj_pat = act_patcher.getnamed("pat");
 
-    obj_gate.message(prep ? 1 : (send1 ? 3 : 2));
+    obj_gate.message(prep ? 1 : send1 ? 3 : 2);
     obj_prepend.message("set", prep_mess);
     obj_forward.message("send", dest);
     obj_pat.message(...msg);

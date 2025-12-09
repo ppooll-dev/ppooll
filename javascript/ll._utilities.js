@@ -188,6 +188,18 @@ exports.getExtension = (filename) => {
     ];
 };
 
+// check if a file exists, return true/false
+exports.fileExists = (path) => {
+    try {
+        var f = new File(path);
+        var exists = f.isopen;
+        f.close();
+        return exists;
+    } catch (err) {
+        return false;
+    }
+};
+
 // check if a folder exists, return true/false
 exports.folderExists = (path) => {
     try {
