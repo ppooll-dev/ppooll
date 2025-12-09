@@ -147,17 +147,23 @@
             },
             {
                 "box": {
+                    "filename": "ll.actname.js",
                     "id": "obj-1",
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 278.0, 212.0, 87.0, 22.0 ],
+                    "patching_rect": [ 278.0, 212.0, 91.0, 22.0 ],
                     "saved_object_attributes": {
-                        "filename": "ll.actname.js",
                         "parameter_enable": 0
                     },
-                    "text": "js ll.actname.js",
+                    "text": "v8 ll.actname.js",
+                    "textfile": {
+                        "filename": "ll.actname.js",
+                        "flags": 0,
+                        "embed": 0,
+                        "autowatch": 1
+                    },
                     "varname": "js"
                 }
             },
