@@ -3,12 +3,13 @@ outlets = 2;
 mgraphics.init();
 mgraphics.relative_coords = 0;
 mgraphics.autofill = 0;
-var stateDict = new Dict("ppoollstate"); 
+
 if (typeof utils === "undefined") {
     var utils = require("ll._utilities");
 }
-const aa = new Global("ppooll");
-let is_live = aa.envi === "live";
+var ll_global = new Global("ppooll");
+let is_live = ll_global.envi === "live";
+
 var tpp = this.patcher;
 var boxw = box.rect[2] - box.rect[0];
 var boxh = box.rect[3] - box.rect[1];
@@ -703,13 +704,12 @@ function outputs(){
 		//post("act");
 		let a_menu_state = [];
 		a_menu_state.push("no");
-		let keys = stateDict.getkeys();
-		for (var i in keys) {
-			var inputs = stateDict.get(keys[i]+"::inputs~").getkeys();
-			if (inputs){
-				a_menu_state.push(keys[i]);
-			}
-		}
+		post(Object.keys(ll_global.state), "\n");
+		Object.keys(ll_global.state).forEach(act_name => {
+			if(ll_global.state[act_name]["inputs~"])
+				a_menu_state.push(act_name);
+		})
+
 		fill_menu(a_menu_state);
 	}
 	else if (ccm2 == 1){	
@@ -876,7 +876,7 @@ function text(data) {
 }
 
 function menu(a) {
-	//post("menu_listen",a,"lllbmenu.hidden",lllbmenu.hidden,"\n");
+	// post("menu_listen",a,"lllbmenu.hidden",lllbmenu.hidden,"\n");
 	// post(a, "\n")
 
 	if(a === "<cancel>"){

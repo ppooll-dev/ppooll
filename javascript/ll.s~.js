@@ -1,11 +1,13 @@
 outlets = 1;
-var stateDict = new Dict("ppoollstate"); 
+
+var ll_global = new Global("ppooll");
+
 var c_item,a_item;
 var c_menu_state = [];
 var c_chans = [];
 var a_menu_state = [];
-if (typeof utils === "undefined") {
-    var utils = require("ll._utilities");
+if (typeof ll === "undefined") {
+    var ll = require("ll._utilities");
 }
 
 function actmenu(){
@@ -14,20 +16,21 @@ function actmenu(){
 	outlet(0,"a_menu","append","no");
 	a_menu_state = [];
 	a_menu_state.push("no");
-	var keys = stateDict.getkeys();
-	for (var i in keys) {
-		var inputs = stateDict.get(keys[i]+"::inputs~").getkeys();
+
+	Object.keys(ll_global.state).forEach((act_name) => {
+		var inputs = ll_global.state[act_name]["inputs~"];
 		//post(a,inputs,"\n");
 		if (inputs){
-			outlet(0,"a_menu","append",keys[i]);
-			a_menu_state.push(keys[i]);
+			outlet(0,"a_menu","append",act_name);
+			a_menu_state.push(act_name);
 		}
-	}
+	})
+
 	outlet(0,"a_menu","symbol",a_item);
 }
 
 function getinputs(a){
-	let gotinp = utils.getinputs(a,c_item);
+	let gotinp = ll.getinputs(a,c_item);
 	c_menu_state = gotinp[0];
 	c_chans = gotinp[1];
 	//post("_getinputs",gotinp[0],"chansD",gotinp[1],"\n");

@@ -7,7 +7,7 @@ if (typeof ll === "undefined") {
     var ll = require("ll._utilities");
 }
 
-var ppooll_global = new Global("ppooll")
+var ll_global = new Global("ppooll")
 
 var PACKAGE_INFO_PATH = "Package:/ppooll/package-info.json";
 
@@ -72,7 +72,7 @@ function checkVersion(thisVersion, latestVersion) {
         .getnamed("version_number")
         .message("set", thisVersion);
 
-    ppooll_global.version = thisVersion;
+    ll_global.version = thisVersion;
     return OUTPUT;
 }
 

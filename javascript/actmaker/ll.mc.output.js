@@ -1,6 +1,5 @@
 outlets = 1;
-var actr = new Global("act_rep");
-var stateDict = new Dict("ppoollstate"); 
+
 var tpp, bpatcher, outputs,lb, bp_width,actpatcher;
 var size_state = 0;
 var size_gate = 0;

@@ -1,7 +1,7 @@
 autowatch = 1;
 
-const a = new Global("ppooll");
-const isLive = a.envi === "live";
+var ll_global = new Global("ppooll");
+const isLive = ll_global.envi === "live";
 const inType = isLive ? "mc.plugin~" : "mc.adc~";
 
 const tp = this.patcher;

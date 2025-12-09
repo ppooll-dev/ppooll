@@ -7,7 +7,7 @@
 
 outlets = 1;
 //autowatch = 1;
-var stateDict = new Dict("ppoollstate"); 
+var ll_global = new Global("ppooll")
 var actsize_folded = 0;
 var tild;
 /* ============================== CONSTANTS ============================== */
@@ -847,7 +847,7 @@ function chan_sep(a) { //calculate the channel structure from pattr value
 			let r_offset = parseInt(result[2]);
 			//post("act_obj_offs",r_act,r_obj,r_offset,"\n");
 			if (r_act == "no") dest_chs.push(1)
-			else dest_chs.push( stateDict.get(r_act+"::inputs~::"+r_obj));	
+            else dest_chs.push( ll_global.state[r_act]["inputs~"][r_obj] );	
             dests.push(result[1]);
             d_offsets.push(r_offset);
             if (i > 0) {

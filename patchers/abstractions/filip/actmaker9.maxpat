@@ -7256,7 +7256,7 @@
 ,
 									"text" : "v8",
 									"textfile" : 									{
-										"text" : "var tpp = this.patcher.parentpatcher.parentpatcher;\n\nvar actr = new Global(\"act_rep\");\n\nfunction getnamed(a)\n{\n\tactr.object = tpp.getnamed(a)\n}",
+										"text" : "var tpp = this.patcher.parentpatcher.parentpatcher;\n\nvar actr = new Global(\"ppooll\");\n\nfunction getnamed(a)\n{\n\tactr.object = tpp.getnamed(a)\n}",
 										"filename" : "none",
 										"flags" : 0,
 										"embed" : 1,

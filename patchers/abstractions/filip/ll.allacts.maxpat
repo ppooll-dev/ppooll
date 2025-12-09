@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 330.0, 283.0, 574.0, 491.0 ],
+        "rect": [ 111.0, 290.0, 574.0, 491.0 ],
         "boxes": [
             {
                 "box": {
@@ -23,19 +23,22 @@
             },
             {
                 "box": {
-                    "code": "outlets = 2\r\nvar stateDict = new Dict(\"ppoollstate\"); \r\nfunction bang(){\n\tlet keys = stateDict.getkeys()\n\tif(!keys)\n\t\treturn\t\n\tkeys = keys.sort();\r\n    for (k of keys) outlet(1,k);\n\toutlet(0,keys);\n}",
-                    "filename": "none",
-                    "fontface": 0,
-                    "fontname": "<Monospaced>",
-                    "fontsize": 12.0,
+                    "filename": "ll.allacts.js",
                     "id": "obj-10",
-                    "maxclass": "v8.codebox",
+                    "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 44.0, 186.0, 424.0, 180.0 ],
+                    "patching_rect": [ 44.0, 186.0, 67.0, 22.0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0
+                    },
+                    "text": "v8 ll.allacts",
+                    "textfile": {
+                        "filename": "ll.allacts.js",
+                        "flags": 0,
+                        "embed": 0,
+                        "autowatch": 1
                     }
                 }
             },
@@ -43,11 +46,11 @@
                 "box": {
                     "comment": "act list iterated",
                     "id": "obj-5",
-                    "index": 2,
+                    "index": 0,
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 449.0, 385.0, 25.0, 25.0 ]
+                    "patching_rect": [ 92.0, 221.0, 25.0, 25.0 ]
                 }
             },
             {
@@ -78,20 +81,20 @@
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 1,
-                    "outlettype": [ "bang" ],
-                    "patching_rect": [ 111.0, 120.0, 22.0, 22.0 ],
-                    "text": "t b"
+                    "outlettype": [ "iter" ],
+                    "patching_rect": [ 111.0, 120.0, 32.0, 22.0 ],
+                    "text": "t iter"
                 }
             },
             {
                 "box": {
                     "comment": "",
                     "id": "obj-6",
-                    "index": 1,
+                    "index": 0,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
-                    "outlettype": [ "bang" ],
+                    "outlettype": [ "" ],
                     "patching_rect": [ 44.0, 67.0, 25.0, 25.0 ]
                 }
             },
@@ -112,22 +115,22 @@
                 "box": {
                     "comment": "act list",
                     "id": "obj-8",
-                    "index": 1,
+                    "index": 0,
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 44.0, 398.0, 25.0, 25.0 ]
+                    "patching_rect": [ 44.0, 221.0, 25.0, 25.0 ]
                 }
             },
             {
                 "box": {
                     "id": "obj-7",
-                    "maxclass": "button",
+                    "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 1,
-                    "outlettype": [ "bang" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 44.0, 121.0, 20.0, 20.0 ]
+                    "outlettype": [ "iter" ],
+                    "patching_rect": [ 44.0, 121.0, 32.0, 22.0 ],
+                    "text": "t iter"
                 }
             },
             {
@@ -199,6 +202,7 @@
                     "source": [ "obj-9", 0 ]
                 }
             }
-        ]
+        ],
+        "autosave": 0
     }
 }

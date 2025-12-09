@@ -5,7 +5,7 @@ var a = new Global("ppooll");
 let acts = [];
 let only_one = ["ho_st", "buffer_host"];
 
-const stateDict = new Dict("ppoollstate");
+var ll_global = new Global("ppooll");
 
 function loadbang(){
     check()
@@ -13,7 +13,7 @@ function loadbang(){
 
 function load(actname) {
     check();
-    acts = Object.keys(JSON.parse(stateDict.stringify()));
+    acts = Object.keys(ll_global.state);
 
     for (const i in only_one) {
         if (

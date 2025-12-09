@@ -8,7 +8,7 @@
 autowatch = 1;
 outlets = 1;
 
-var actr = new Global("act_rep");
+var ll_global = new Global("ppooll");
 
 var currentAct = null;
 var actname_map;
@@ -68,8 +68,8 @@ function msg_dictionary(d) {
 
     buffers = dict.buffers.buffers;
     
-    // Get acts from 'dict ppoollstate'
-    acts = Object.keys(dict.state);
+    // Get acts
+    acts = Object.keys(ll_global.state);
 
     // Set environment write props (name, type "folder" or "json", etc)
     writeParams = dict.props;
@@ -145,8 +145,8 @@ function saveToFolder() {
         }
 
         try {
-            actr.patchers[act].getnamed("pat").message("getslotlist");
-            if (actr.pat[act].slotlist && actr.pat[act].slotlist.length > 0) {
+            ll_global.patchers[act].getnamed("pat").message("getslotlist");
+            if (ll_global.pat[act].slotlist && ll_global.pat[act].slotlist.length > 0) {
                 messnamed(
                     act,
                     "v8",
@@ -171,7 +171,7 @@ function saveToFolder() {
 function writeEnvi() {
     environment = {};
 
-    let act_list = Object.keys(dict.state)
+    let act_list = Object.keys(ll_global.state)
         .filter((k) => k !== "ho_st1")
         .sort();
 
@@ -198,7 +198,7 @@ function getacts(act_list) {
     let compare = "";
     let counter;
     for (let a of pstate) {
-        let a_class = dict.state[a].class;
+        let a_class = ll_global.state[a].class;
         if (a_class != compare) {
             counter = 1;
             compare = a_class;
@@ -210,7 +210,7 @@ function getacts(act_list) {
     }
 
     for (let a of pstate) {
-        addAct(a, dict.state[a].class);
+        addAct(a, ll_global.state[a].class);
         getdump(a);
     }
 
@@ -233,7 +233,7 @@ function addAct(act_name_index, act_name) {
     act_name_index = actname_map[act_name_index];
 
     environment[act_name_index] = {
-        _actwindow: [act_name, ...actr.patchers[act_name_index].wind.location],
+        _actwindow: [act_name, ...ll_global.patchers[act_name_index].wind.location],
     };
 
     // Set currentAct to the key of the newly added act

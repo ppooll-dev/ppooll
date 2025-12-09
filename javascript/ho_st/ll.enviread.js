@@ -1,8 +1,6 @@
 outlets = 2;
 
-var stateDict = new Dict("ppoollstate");
-
-var actr = new Global("act_rep");
+var ll_global = new Global("ppooll");
 
 var actingON = 0;
 var param_excludes = ["_actwindow", "act::title_menu", "presets"];
@@ -82,7 +80,7 @@ function loadActs() {
     const allKeys = Object.keys(environment || {});
     const order = canonicalActOrder(allKeys);
 
-    const pstate = stateDict.getkeys() || [];
+    const pstate = Object.keys(ll_global.state) || [];
     const openSet = new Set(pstate);
 
     isopen = [];

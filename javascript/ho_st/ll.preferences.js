@@ -6,7 +6,8 @@ if (typeof ll === "undefined") {
 
 var preferences = new Dict("ppooll-preferences");
 var ll_paths = new Dict("ll_paths");
-var actr = new Global("act_rep");
+
+var actr = new Global("ppooll");
 
 var dac_channels = ["Off", 1, 2];
 var lastenvi = "no";
@@ -360,4 +361,23 @@ function readDict(path) {
 
     // overwrite the file
     preferences.export_json(path);
+}
+
+// set preset and factory folders
+function set_paths(max_library_path){
+
+    let factory = ll.folderExists(ll.presets.factory);
+    let user = ll.folderExists(ll.presets.user);
+
+    if(!user){
+        user = ll.mkdir(`${max_library_path}/${ll.presets.user}`);
+    }
+
+    ll_paths.set("factory", factory)
+    ll_paths.set("user", user)
+
+    messnamed("ll_factorypath", factory);
+    messnamed("ll_presetpath", user);
+
+    readfile();
 }
