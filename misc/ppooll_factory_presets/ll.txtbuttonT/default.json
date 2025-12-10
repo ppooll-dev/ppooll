@@ -1,0 +1,17 @@
+{
+    "window": [ 706, 185, 1297, 631 ],
+    "act": {
+        "patching_rect": [ 0, 0, 80.328125, 16 ],
+        "hidden": 0
+    },
+    "on/off": {
+        "patching_rect": [ 80, 153, 77, 24 ],
+        "hidden": 0,
+        "bgcolor_off": [ 0.3, 0.3, 0.3, 1 ],
+        "bgcolor_on": [ 0.6, 0.6, 0.6, 1 ],
+        "bordercolor": [ 0.2, 0.2, 0.2, 1 ],
+        "fontsize": 11,
+        "txtcolor_off": [ 1, 1, 1, 1 ],
+        "txtcolor_on": [ 1, 1, 1, 1 ]
+    }
+}

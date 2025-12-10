@@ -13,7 +13,7 @@ declareattribute("button_mode", {embed: 1, style: "enum", enumvals: ["toggle", "
 var blinktime = 150;
 declareattribute("blinktime", {embed: 1});
 var output_mode = 0;
-declareattribute("output_mode", {embed: 1, style: "onoff", label: ["pattr stores symbol"]});
+declareattribute("output_mode", {embed: 1, style: "onoff", label: ["pattr stores symbol"], setter: "output_mode_set"});
 var bgcolor_on = [0.6,0.6,0.6,1];
 declareattribute("bgcolor_on", {embed: 1, style: "rgba", paint: 1});
 var bgcolor_off = [0.3,0.3,0.3,1];
@@ -32,13 +32,35 @@ declareattribute("txtcolor_on", {embed: 1, style: "rgba", paint: 1});
 function button_mode_setter(v) {
     button_mode = v;
     if (button_mode == "button") {
-        myval = 0;  // reset to off state when switching to button mode
+        myval = 0; // reset to off state when switching to button mode
     }
-    // defer the redraw to ensure attribute is fully set
+    
+    notifyclients(); // notify pattr
+    
+    // defer the redraw 
     var redrawTask = new Task(function() {
         mgraphics.redraw();
     }, this);
     redrawTask.schedule(1);
+}
+
+function output_mode_set(v) {
+    output_mode = v;
+    
+    if (output_mode) {
+        // output mode 1: output text to outlet 1
+        var current_txt = myval ? txt_on : txt_off;
+        outlet(1, current_txt);
+    } else {
+        // output mode 0: output based on button_mode
+        if (button_mode == "button") {
+            outlet(0, "bang");
+        } else {
+            outlet(0, myval);
+        }
+    }
+    
+    notifyclients();
 }
 
 function onclick() {
@@ -63,14 +85,30 @@ function onclick() {
 onclick.local = 1;
 
 function bang() {
-    myval = 1 - myval; // toggle 0/1
-    notifyclients();
-    mgraphics.redraw();
-    outlet(0, myval);
-    if (myval)
-        outlet(1, txt_on);
-    else
+    if (button_mode == "button") {
+        // button mode: flash and output bang
+        myval = 1;
+        mgraphics.redraw();
         outlet(1, txt_off);
+        outlet(0, "bang");
+        notifyclients();
+        
+        var flashTask = new Task(function() {
+            myval = 0;
+            mgraphics.redraw();
+        }, this);
+        flashTask.schedule(blinktime);
+    } else {
+        // toggle mode: toggle state
+        myval = 1 - myval;
+        notifyclients();
+        mgraphics.redraw();
+        outlet(0, myval);
+        if (myval)
+            outlet(1, txt_on);
+        else
+            outlet(1, txt_off);
+    }
 }
 
 function paint() {
@@ -110,27 +148,33 @@ function paint() {
 }
 
 function msg_int(v) {
-    var newval;
-    if (v == 0)
-        newval = 0;
-    else
-        newval = 1;
-    
-    if (newval != myval) {
-        myval = newval;
-        notifyclients();
-        mgraphics.redraw();
-        outlet(0, myval);
-        if (myval)
-            outlet(1, txt_on);
+    if (button_mode == "button") {
+        // button mode: treat any int as a bang
+        bang();
+    } else {
+        // toggle mode: set state based on value
+        var newval;
+        if (v == 0)
+            newval = 0;
         else
-            outlet(1, txt_off);
+            newval = 1;
+        
+        if (newval != myval) {
+            myval = newval;
+            notifyclients();
+            mgraphics.redraw();
+            outlet(0, myval);
+            if (myval)
+                outlet(1, txt_on);
+            else
+                outlet(1, txt_off);
+        }
     }
 }
 
 function anything() {
-    var a = arrayfromargs(messagename, arguments);
-    outlet(0, a);
+    // treat any message as a bang
+    bang();
 }
 
 function set(v) {
