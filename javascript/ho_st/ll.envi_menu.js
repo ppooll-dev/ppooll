@@ -12,6 +12,12 @@ let hasFilledMenu = 0;
 let live_envi = null;
 let isPrefsReady = false;
 
+var ll_global = new Global("ppooll");
+
+function loadbang(){
+    ll_global.envi_name = 0;
+}
+
 // Remove file ex from string name
 function removeExtension(filename) {
     return filename.replace(/\.[^/.]+$/, "");
@@ -122,6 +128,7 @@ function selectEnvironment(name){
     outlet(1, "text", name);
 
     messnamed("envi_name", name);
+    ll_global.envi_name = name;
 }
 
 // r ll_live_envi_name

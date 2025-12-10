@@ -4,8 +4,7 @@ if (typeof utils === "undefined") {
     var utils = require("ll._utilities");
 }
 
-var ar = new Global("act_rep");
-var stateDict = new Dict("ppoollstate"); 
+var ll_global = new Global("ppooll");
 
 var tpp;
 var inputsValue = [];
@@ -18,7 +17,7 @@ var chan;
 var ready = false; // we can't 'doit' until we have actname
 
 function actname(act, path, c) {
-    if (chanfix == -1){
+    if (chanfix == -1) {
         // only set chans if first actname?
         chanfix = c;
     }
@@ -41,20 +40,20 @@ function chan_blue(a) {
 
 function doit(a, p) {
     if (!ready) return;
-   
+
     act = a;
     path = p;
-    const { foundPatcher, foundBox} = utils.findInParentPatchers(
+    const { foundPatcher, foundBox } = utils.findInParentPatchers(
         "act",
         this.patcher
     );
     tpp = foundPatcher;
-    
 
     if (chanfix == 0) getBlues();
     else chan = chanfix;
     outlet(0, chan);
-	stateDict.set(act+"::inputs~::"+path,chan);
+
+    ll_global.state[act]["inputs~"][path] = chan;
 
     /////// script it
     tp.remove(tp.getnamed("re"));
@@ -68,23 +67,20 @@ function doit(a, p) {
 function getBlues() {
     if (tpp.getnamed("ll.blues")) {
         let lb = tpp.getnamed("ll.blues");
-		let newblues = lb.subpatcher().getnamed("outputsMix~");
-		if (newblues) chan = lb.subpatcher().getnamed("chans").getvalueof()[0]
-		else chan = lb.subpatcher().getnamed("state").getvalueof()[4];
+        let newblues = lb.subpatcher().getnamed("outputsMix~");
+        if (newblues) chan = lb.subpatcher().getnamed("chans").getvalueof()[0];
+        else chan = lb.subpatcher().getnamed("state").getvalueof()[4];
         //post("blue-channels", chan,"\n");
     } else chan = 1;
 }
 
-function freebang(){
-    try{
-        //post("aha",stateDict.getkeys(),"\n");
-        let keys = stateDict.getkeys();
-        if (keys && keys.indexOf(act) > -1 && stateDict.get(act+"::inputs~::"+path)){
-            stateDict.remove(act+"::inputs~::"+path);
-        }
-	    //post("js removed",act,path,"\n");
-    }catch(e){
-        post(e.stringify(), "\n")
-    }
-} 
-
+function freebang() {
+    //post("aha",stateDict.getkeys(),"\n");
+    if (
+        ll_global.state &&
+        ll_global.state[act] &&
+        ll_global.state[act]["inputs~"][path]
+    )
+        delete ll_global.state[act]["inputs~"][path];
+    //post("js removed",act,path,"\n");
+}

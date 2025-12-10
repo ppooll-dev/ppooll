@@ -27,7 +27,7 @@ mgraphics.init();
 mgraphics.relative_coords = 0; // use pixel coordinates
 mgraphics.autofill = 0;
 
-var actr = new Global("act_rep");
+var actr = new Global("ppooll");
 
 var last_click = 0; // for drag interpolation in x direction
 var drag_start = 0; // starting preset for dragging

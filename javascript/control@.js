@@ -1,6 +1,6 @@
 outlets = 1;
-const actr = new Global("act_rep");
-const ll_state = new Dict("ppoollstate"); //only needed for index ;)
+const ll_global = new Global("ppooll");
+
 var act_name;
 var ap; //act_patcher
 var rp; //routing_patcher
@@ -51,7 +51,7 @@ const mode_labels = {
 
 function actname(an){ //init
 	act_name = an;
-	ap = actr.patchers[an];
+	ap = ll_global.patchers[an];
 	rp = ap.getnamed("sub").subpatcher().getnamed("routing").subpatcher();
 	listblock_obj = rp.getnamed ("listblock");
 	movewind_obj = rp.getnamed ("movewind");
@@ -60,7 +60,7 @@ function actname(an){ //init
 	movewind_obj.message("titlebar", 0);
 	movewind_obj.message("tpw_flags", "nogrow");
 	movewind_obj.message("w_param",act_name, "routingW");
-	windowbar_obj.message("title", `[${ll_state.get(an).get("index")}]`);
+	windowbar_obj.message("title", `[${ll_global.state[an].index}]`);
 	windowbar_obj.message("pos_param", act_name, "routingPos");
 	windowbar_obj.message("w_param", act_name, "routingW");
 	//windowbar_obj.message("set_wind", actpars["routingPos"]);
@@ -155,11 +155,11 @@ function listblock(m,col,row){
 function fill_menu(col,sel){
 		if (col === 7){
 			if (actpars["output_menu"] == 2) listblock_obj.message("fill_menu", "pitch", "vel", "makenote", "alloff", "ctlout", "bendout", "pgmout")
-			else listblock_obj.message("fill_menu", "no",Object.keys(actr.patchers));
+			else listblock_obj.message("fill_menu", "no",Object.keys(ll_global.patchers));
 		} else if (col === 8){
 			let selact = actpars["acts"][sel];
 			messnamed(`${selact}`,"getclientlist");
-			listblock_obj.message("fill_menu", actr.pat[selact]["clientlist"]);
+			listblock_obj.message("fill_menu", ll_global.pat[selact]["clientlist"]);
 			//post("c8",selact,"\n");
 		} else if (col === 10){ ////////////// TODO listmodes
 			listblock_obj.message("fill_menu", Object.keys(mode_labels));

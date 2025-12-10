@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 144.0, 100.0, 1004.0, 790.0 ],
+        "rect": [ 144.0, 395.0, 614.0, 495.0 ],
         "boxes": [
             {
                 "box": {
@@ -95,7 +95,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "bang" ],
-                    "patching_rect": [ 182.0, 812.0, 55.0, 22.0 ],
+                    "patching_rect": [ 182.0, 363.0, 55.0, 22.0 ],
                     "text": "del 1000"
                 }
             },
@@ -317,11 +317,11 @@
                 "box": {
                     "comment": "",
                     "id": "obj-2",
-                    "index": 1,
+                    "index": 0,
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 320.0, 823.0, 30.0, 30.0 ]
+                    "patching_rect": [ 320.0, 374.0, 30.0, 30.0 ]
                 }
             },
             {
@@ -342,8 +342,8 @@
                     "id": "obj-31",
                     "maxclass": "newobj",
                     "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
+                    "numoutlets": 2,
+                    "outlettype": [ "", "" ],
                     "patching_rect": [ 154.0, 168.0, 65.0, 22.0 ],
                     "text": "ll.actname"
                 }
@@ -352,7 +352,7 @@
                 "box": {
                     "comment": "",
                     "id": "obj-20",
-                    "index": 1,
+                    "index": 0,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -377,7 +377,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 182.0, 836.0, 54.0, 22.0 ],
+                    "patching_rect": [ 182.0, 387.0, 54.0, 22.0 ],
                     "text": "deferlow"
                 }
             },
@@ -388,7 +388,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 182.0, 873.0, 77.0, 22.0 ],
+                    "patching_rect": [ 182.0, 424.0, 77.0, 22.0 ],
                     "text": "set_actmenu"
                 }
             },
@@ -425,7 +425,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 44.0, 823.0, 83.0, 22.0 ],
+                    "patching_rect": [ 44.0, 374.0, 83.0, 22.0 ],
                     "text": "load control@"
                 }
             },
@@ -436,7 +436,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 44.0, 857.0, 51.0, 22.0 ],
+                    "patching_rect": [ 44.0, 408.0, 51.0, 22.0 ],
                     "text": "pcontrol"
                 }
             },
@@ -447,7 +447,7 @@
                     "numinlets": 4,
                     "numoutlets": 4,
                     "outlettype": [ "", "", "", "" ],
-                    "patching_rect": [ 44.0, 789.0, 433.0, 22.0 ],
+                    "patching_rect": [ 44.0, 340.0, 433.0, 22.0 ],
                     "text": "route open set_actmenu actname"
                 }
             },
@@ -475,19 +475,22 @@
             },
             {
                 "box": {
-                    "code": "var stateDict = new Dict(\"ppoollstate\"); \r\nvar actr = new Global(\"act_rep\");\r\nvar acting_gate = 0;\r\nvar this_act;\r\nvar act;\r\nvar actname;\r\n\r\nfunction search(a){\r\n    //post(\"search\",a,\"\\n\");\r\n\tthis_act = a;\r\n\tlet keys = stateDict.getkeys();\r\n\tlet found = 0;\r\n\tfor (let key of keys) {\r\n\t\t//post(stateDict.get(key+\"::class\"));\r\n\t\tif (stateDict.get(key+\"::class\") == \"control@\") {\r\n\t\t\t\r\n\t\t\tact = actr.patchers[key];\r\n\t\t\t//let input_menu = actr.patcher.getnamed(\"input_menu\");\r\n\t\t\tif (act.getnamed(\"input_menu\").getvalueof() == \"ppooll\"){\r\n\t\t\t\tif (act.getnamed(\"act_menu\").getvalueof() == a){\r\n\t\t\t\t\tfound = 1;\r\n\t\t\t\t\tactname = key;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\tif (found) {\r\n\t\tmessnamed(actname, \"routingW\", 1);\r\n\t\toutlet(0,\"actname\",actname);\r\n\t}\r\n\telse {acting_gate = 1; outlet(0,\"open\");}\r\n}\r\n\r\n\r\nfunction acting(a,b,c){\r\n\tif (acting_gate && c && a == \"control@\"){\r\n\t\t//post(\"acting\",a, b,c,\"\\n\");\r\n\t\tacting_gate = 0;\r\n\t\t\tactname = a+b;\r\n\t\t\tact = actr.patchers[actname];\r\n\t\t\tact.getnamed(\"input_menu\").setvalueof(\"ppooll\");\r\n\t\t\t//post(act);\r\n\t\t\toutlet(0,\"set_actmenu\");\r\n\t}\t\r\n}\r\n\r\nfunction set_actmenu(){\r\n    //post(act, this_act,\"\\n\");\r\n\tact.getnamed(\"act_menu\").setvalueof(this_act);\r\n\tmessnamed(actname, \"routingW\", 1);\r\n\toutlet(0,\"actname\",actname);\r\n}",
-                    "filename": "none",
-                    "fontface": 0,
-                    "fontname": "<Monospaced>",
-                    "fontsize": 12.0,
+                    "filename": "ll.my_control@.js",
                     "id": "obj-1",
-                    "maxclass": "v8.codebox",
+                    "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 44.0, 306.0, 767.0, 454.0 ],
+                    "patching_rect": [ 44.0, 306.0, 116.0, 22.0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0
+                    },
+                    "text": "v8 ll.my_control@.js",
+                    "textfile": {
+                        "filename": "ll.my_control@.js",
+                        "flags": 0,
+                        "embed": 0,
+                        "autowatch": 1
                     }
                 }
             }
@@ -550,7 +553,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-1", 0 ],
-                    "midpoints": [ 191.5, 899.0, 22.4375, 899.0, 22.4375, 296.0, 53.5, 296.0 ],
+                    "midpoints": [ 191.5, 467.38671875, 22.4375, 467.38671875, 22.4375, 296.0, 53.5, 296.0 ],
                     "source": [ "obj-18", 0 ]
                 }
             },
@@ -657,6 +660,7 @@
                     "source": [ "obj-9", 0 ]
                 }
             }
-        ]
+        ],
+        "autosave": 0
     }
 }

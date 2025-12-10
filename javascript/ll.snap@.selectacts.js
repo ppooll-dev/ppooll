@@ -1,6 +1,6 @@
 autowatch = 1;
 
-const ll_state = new Dict("ppoollstate");
+var ll_global = new Global("ppooll");
 
 let items = [];  // umenu items
 let acts = [];
@@ -28,7 +28,7 @@ function getSelectActsUmenu() {
 }
 
 function setMenuItems(){
-    acts = Object.keys(JSON.parse(ll_state.stringify()))
+    acts = Object.keys(ll_global.state)
         .filter(act => [...ignored_acts, actname].indexOf(act) === -1)
     acts.unshift("ho_st1");
 

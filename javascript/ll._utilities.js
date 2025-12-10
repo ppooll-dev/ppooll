@@ -14,13 +14,17 @@ const acts = ll.allActObjects();
 
 */
 
-var stateDict = new Dict("ppoollstate");
-var actr = new Global("act_rep");
+var ll_global = new Global("ppooll");
 
 ////////////////////////////////////////////////////////////////////
 //
 // CONSTANTS
 //
+
+exports.presets = {
+    user: "ppooll_presets",
+    factory: "ppooll_factory_presets"
+}
 
 exports.tetris = {
     class_excludes: ["route", "pv", "pattr", "coll", "pattrmarker", "autopattr", "pattrstorage", "thispatcher", "send", "pvar", "outlet", "inlet", "closebang", "loadmess", "bgcolor"],
@@ -32,9 +36,9 @@ exports.tetris = {
 // PPOOLL STATE
 //
 
-// ppoollstate as a native JSON object
+// ll_global.state as a native JSON object
 exports.allActObjects = () => {
-    return JSON.parse(stateDict.stringify());
+    return ll_global.state ? ll_global.state : {};
 };
 
 // array[] of act objects ie: [{ name: "ho_st", index: 1 }, { name: "sinus", index: 1 }, { name: "sinus", index: 2 }]
@@ -66,11 +70,11 @@ exports.getinputs = function (act, curr_item) {
     let c_chans = [["-no-", 0, 0]]; //meta data array [name, offset,chans]
     if (act != "no") {
         //(a != "no")
-        let inputs = stateDict.get(act + "::inputs~");
-        let inpkeys = inputs.getkeys();
+        let inputs = ll_global.state[act]["inputs~"];
+        let inpkeys = Object.keys(inputs);
         for (let i in inpkeys) {
             let k = inpkeys[i];
-            let c = inputs.get(k);
+            let c = inputs[k];
             if (c > 1) {
                 let item = k + ".0";
                 c_menu.push(item);
@@ -94,12 +98,12 @@ exports.getinputs = function (act, curr_item) {
 
 ////////////////////////////////////////////////////////////////////
 //
-// GLOBAL "actr"
+// GLOBAL "ll_global"
 //
 
 // act this.patcher
 exports.getActPatcher = (act) => {
-    return actr.patchers[act];
+    return ll_global.patchers[act];
 }
 
 // parameter Maxobj
@@ -206,7 +210,7 @@ exports.folderExists = (path) => {
         var f = new Folder(path);
         var exists = f !== null && f.pathname !== "" && f.end === 0;
         f.close();
-        return exists;
+        return exists ? f.pathname : 0;
     } catch (err) {
         return false;
     }

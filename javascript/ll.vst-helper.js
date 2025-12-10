@@ -3,7 +3,7 @@ autowatch = 1;
 inlets = 1;
 outlets = 1;
 
-var actr = new Global("act_rep");
+var actr = new Global("ppooll");
 
 let tp = this.patcher;
 let pp = tp.parentpatcher;

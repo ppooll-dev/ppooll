@@ -1,6 +1,6 @@
 autowatch = 1;
 
-var ppooll_global = new Global("ppooll")
+var ll_global = new Global("ppooll")
 
 const ll_report = {
     ppooll_version: null,
@@ -27,7 +27,7 @@ function console(objname, message, type){
 }
 
 function write_report(){
-    ll_report.ppooll_version = ppooll_global.version;
+    ll_report.ppooll_version = ll_global.version;
     ll_report.max_version = max.version
     ll_report.time = max.time
     ll_report.arch = max.arch
@@ -37,7 +37,7 @@ function write_report(){
     ll_report.paths = getJSONfromDictName("ll_paths");
     ll_report.packages = getJSONfromDictName("ll_packages_report")
 
-    ll_report.state = getJSONfromDictName("ppoollstate");
+    ll_report.state = ll_global.state;
     ll_report.environment = getJSONfromDictName("environment");
 
     const d = new Dict();
