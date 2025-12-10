@@ -89,8 +89,14 @@ function ll_tab(i,v){
 		}
 		ap.getnamed("listlength").message(0); // maybe we don't need this anymore ?
 		routing_sizes(0);
-	} else if (i === 12) {
-		
+	} else if (i === 0) { //reset
+		let r = []
+		for ( let j = 0; j<=actpars["listlength"]; j++) r.push("-");	
+		ap.getnamed("in_lo").message(r);
+		ap.getnamed("in_hi").message(r);
+	} else if (i === 1) { //all>>. getin_lo in_min, getin_hi in_max
+		ap.getnamed("in_min").message(actpars["in_lo"]);
+		ap.getnamed("in_max").message(actpars["in_hi"]);
 	}
 	
 }
