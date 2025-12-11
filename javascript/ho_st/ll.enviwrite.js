@@ -62,11 +62,9 @@ function msg_dictionary(d) {
     pending = null;
 
     // Set environment path
-    const ll_paths = new Dict("ll_paths");
+    enviDir = `${ll_global.paths.user}/environmentsP`;
 
-    enviDir = ll_paths.get("user") + "/environmentsP";
-
-    buffers = dict.buffers.buffers;
+    buffers = ll_global.buffers;
     
     // Get acts
     acts = Object.keys(ll_global.state);

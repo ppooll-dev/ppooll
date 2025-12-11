@@ -1,18 +1,14 @@
 outlets = 1;
 
 if (typeof ll === "undefined") {
-	var ll = require("ll._utilities");
+    var ll = require("ll._utilities");
 }
 
 var preferences = new Dict("ppooll-preferences");
-var ll_paths = new Dict("ll_paths");
-
-var actr = new Global("ppooll");
+var ll_global = new Global("ppooll");
 
 var dac_channels = ["Off", 1, 2];
 var lastenvi = "no";
-
-var presetpath;
 
 // empty_prf -- add new default ppooll prefs here
 var empty_prf_DEFAULT = {
@@ -82,7 +78,7 @@ function normalizeFolderArrays() {
 }
 
 function ll_prf_rewrite() {
-    preferences.export_json(presetpath + "/ppooll-preferences.json");
+    preferences.export_json(`${ll_global.paths.user}/ppooll-preferences.json`);
 }
 
 //==========================================attributes===================================
@@ -223,7 +219,7 @@ declareattribute("host_channels", {
 function sethost_channels(c) {
     host_channels = c;
     preferences.set("general::host_channels", host_channels);
-    actr.patchers.ho_st1.getnamed("chans").message(host_channels)
+    ll_global.patchers.ho_st1.getnamed("chans").message(host_channels);
     ll_prf_rewrite();
 }
 
@@ -234,40 +230,50 @@ function audio_key(key) {
 }
 
 let favorite_acts = []; // not a V8 attribute
-function set_favorite_acts(){
+function set_favorite_acts() {
     const favorite_items = new Dict();
-    favorite_items.set("items", [...favorite_acts, "(favorites)", "-", "add_favorit", "del_favorit"])
-    
-    const fav_menu = actr.patchers.ho_st1.getnamed("favorites");
+    favorite_items.set("items", [
+        ...favorite_acts,
+        "(favorites)",
+        "-",
+        "add_favorit",
+        "del_favorit",
+    ]);
+
+    const fav_menu = ll_global.patchers.ho_st1.getnamed("favorites");
     fav_menu.message("dictionary", favorite_items.name);
-    fav_menu.message("setsymbol", "(favorites)")
-    
+    fav_menu.message("setsymbol", "(favorites)");
+
     preferences.set("act_usage::favorite_acts", favorite_acts);
 }
 
-function add_favorit(){
-    let actname = actr.patchers.ho_st1.getnamed("favorites").getvalueof();
-    
-    if(actname[0] === "(" || actname === "<separator>" || actname === "-" || actname === "--unshared_acts--")
-        return
+function add_favorit() {
+    let actname = ll_global.patchers.ho_st1.getnamed("favorites").getvalueof();
+
+    if (
+        actname[0] === "(" ||
+        actname === "<separator>" ||
+        actname === "-" ||
+        actname === "--unshared_acts--"
+    )
+        return;
 
     favorite_acts.push(actname);
     set_favorite_acts();
     ll_prf_rewrite();
 }
 
-function del_favorit(){
-    let actname = actr.patchers.ho_st1.getnamed("favorites").getvalueof();
-    
-    favorite_acts = favorite_acts.filter(item => item !== actname);
+function del_favorit() {
+    let actname = ll_global.patchers.ho_st1.getnamed("favorites").getvalueof();
+
+    favorite_acts = favorite_acts.filter((item) => item !== actname);
     set_favorite_acts();
     ll_prf_rewrite();
 }
 
 //=====================================get_preferences========================
 function readfile() {
-    presetpath = ll_paths.get("user");
-    let pref_file = presetpath + "/ppooll-preferences.json";
+    let pref_file = ll_global.paths.user + "/ppooll-preferences.json";
     var f = new File(pref_file);
 
     if (f.isopen) {
@@ -280,7 +286,7 @@ function readfile() {
     //
     // get preferences
     //
-    
+
     // general::audioON/OFF (key)
     let v = preferences.get("general::audioON/OFF");
     this.patcher.getnamed("audio_key").message("set", v); //String.fromCharCode(v));
@@ -297,7 +303,8 @@ function readfile() {
     // general::autoload
     autoload = preferences.get("general::autoload");
     this.patcher.getnamed("attrui_al").message("attr", "autoload");
-    actr.patchers.ho_st1.getnamed("envi_menu").message("symbol", autoload);
+
+    ll_global.patchers.ho_st1.getnamed("envi_menu").message("symbol", autoload);
 
     // general::check_for_updates
     check_for_updates = preferences.get("general::check_for_updates");
@@ -322,12 +329,12 @@ function readfile() {
 
     // general::host_channels
     host_channels = preferences.get("general::host_channels");
-    actr.patchers.ho_st1.getnamed("chans").message(host_channels);
+    ll_global.patchers.ho_st1.getnamed("chans").message(host_channels);
     this.patcher.getnamed("attrui_hc").message("attr", "host_channels");
 
     // act_usage::favorite_acts
     favorite_acts = preferences.get("act_usage::favorite_acts");
-    if(!Array.isArray(favorite_acts)) favorite_acts = [favorite_acts];
+    if (!Array.isArray(favorite_acts)) favorite_acts = [favorite_acts];
     set_favorite_acts();
 
     messnamed("ll_preferences_ready", "bang");
@@ -335,7 +342,7 @@ function readfile() {
 
 // create ppooll_preferences.json if DNE
 function newPref(path) {
-    const new_prefs = { ...empty_prf_DEFAULT }
+    const new_prefs = { ...empty_prf_DEFAULT };
     new_prefs.general.version = "9.0.0"; // hardcoded for update_params, need a better way
     preferences.parse(JSON.stringify(new_prefs));
     preferences.export_json(path);
@@ -364,20 +371,19 @@ function readDict(path) {
 }
 
 // set preset and factory folders
-function set_paths(max_library_path){
-
+function set_preset_paths(max_library_path) {
     let factory = ll.folderExists(ll.presets.factory);
     let user = ll.folderExists(ll.presets.user);
 
-    if(!user){
+    if (!user) {
         user = ll.mkdir(`${max_library_path}/${ll.presets.user}`);
-    }
+    }   
 
-    ll_paths.set("factory", factory)
-    ll_paths.set("user", user)
+    ll_global.paths = {
+        user,
+        factory,
+    };
 
     messnamed("ll_factorypath", factory);
     messnamed("ll_presetpath", user);
-
-    readfile();
 }

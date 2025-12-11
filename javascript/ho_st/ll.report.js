@@ -34,7 +34,7 @@ function write_report(){
     ll_report.os = max.os
     ll_report.osversion = max.osversion
     
-    ll_report.paths = getJSONfromDictName("ll_paths");
+    ll_report.paths = ll_global.paths;
     ll_report.packages = getJSONfromDictName("ll_packages_report")
 
     ll_report.state = ll_global.state;

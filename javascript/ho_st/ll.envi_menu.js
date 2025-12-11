@@ -56,9 +56,8 @@ function reset(name){
 }
 
 function fillMenu(){
-    const ll_paths = new Dict("ll_paths");
-    pathUser = ll_paths.get("user");
-    pathFactory = ll_paths.get("factory");
+    pathUser = ll_global.paths.user;
+    pathFactory = ll_global.paths.factory;
 
     const envisUser = findEnvironments(pathUser);
     const envisFactory = findEnvironments(pathFactory);

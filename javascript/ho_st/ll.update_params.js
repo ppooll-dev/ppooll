@@ -1,7 +1,7 @@
 autowatch = 1;
 
 const ll_prefs = new Dict("ppooll-preferences");
-const ll_paths = new Dict("ll_paths");
+var ll_global = new Global("ppooll");
 
 const ll_version = "9.0.0";
 
@@ -40,7 +40,7 @@ const updateMap = {
             "ll.blues::chans": [v[4], v[0]],
         };
     },
-    // TODO: act::* params? 
+    // TODO: act::* params?
     //  (title_menu, pres_menu, tetris, master/activest)
 };
 
@@ -71,12 +71,12 @@ function checkIfUpdated() {
         "Updating presets and environments for ppooll " + ll_version + "...\n"
     );
     this.patcher.wind.visible = true;
-    this.patcher.wind.bringtofront()
+    this.patcher.wind.bringtofront();
 }
 
 function updateAll() {
-    updateParams(ll_paths.get("user"));
-    updateParams(ll_paths.get("factory"));
+    updateParams(ll_global.paths.user);
+    updateParams(ll_global.paths.factory);
 
     ll_prefs.replace("general::version", ll_version);
     messnamed("ll_prf_rewrite", "bang");
@@ -190,23 +190,22 @@ function readWholeFile(f) {
 
 /// Make Backup .zip
 
-function makeBackup(){
-    ll_paths.get("user")
-    
+function makeBackup() {
     const now = new Date();
-    const pad = n => String(n).padStart(2, '0');
+    const pad = (n) => String(n).padStart(2, "0");
 
     const ts =
         pad(now.getFullYear() % 100) +
         pad(now.getDate()) +
-        pad(now.getMonth() + 1) + "-" +
+        pad(now.getMonth() + 1) +
+        "-" +
         pad(now.getHours()) +
         pad(now.getMinutes()) +
         pad(now.getSeconds());
 
-    outlet(0, "zip", "Usermax:/Library/ppooll_presets", `ppooll_presets_${ts}.zip` );
+    outlet(0, "zip", ll_global.paths.user, `ppooll_presets_${ts}.zip`);
 }
 
-function backupDone(){
+function backupDone() {
     this.patcher.getnamed("zip_done").message("set", "done!");
 }

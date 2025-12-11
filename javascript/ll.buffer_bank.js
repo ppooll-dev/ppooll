@@ -4,6 +4,8 @@ outlets = 2;
 const pbName = "pp";
 const pb = new PolyBuffer(pbName);
 
+var ll_global = new Global("ppooll");
+
 let selectedIndex = 0; // Index of selected buffer
 
 let buffersDeleted = {};
@@ -93,10 +95,8 @@ function pres_menu(name){
         return;
 
     // Determine if json or coll
-    const ll_paths = new Dict("ll_paths")
-
     const isFactory = name[0] === 'ƒ';
-    const basePath = ll_paths.get( isFactory ? "factory" : "user" );
+    const basePath = ll_global.paths[isFactory ? "factory" : "user" ];
     const fileName = isFactory ? name.substring(2) : name;
 
     const filePath = `${basePath}/buffer_hostP/${fileName}`;
@@ -279,9 +279,9 @@ function bhState() {
 
 function update_buffer_list() {
     let ui = getUI();
-    if (ui) {
-        const bh = bhState();
+    const bh = bhState();
 
+    if (ui) {
         // Clear All jit.cellblock
         ui.buffer_list.message("clear", "all");
         ui.buffer_list.message("rows", bh.length + 1);
@@ -295,9 +295,10 @@ function update_buffer_list() {
         outlet(0, "buffer_list", "select", 0, bh.length); // needs to get defered...
     }
 
-    outlet_dictionary(1, { buffers: bhState() });
+    outlet_dictionary(1, { buffers: bh });
     outlet(1, "bang");
     messnamed("buffer_menu_refresh", "bang");
+    ll_global.buffers = bh;
 }
 
 function view() {

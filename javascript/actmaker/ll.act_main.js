@@ -32,7 +32,6 @@ const act_args = {
 // post(JSON.stringify(act_args), "\n")
 
 // dicts
-const ll_paths = new Dict("ll_paths");
 const ll_presetsindict = new Dict("llpresetsindict");
 
 // globals
@@ -185,8 +184,7 @@ function bang(alreadyRegistered = false) {
     if (act_patcher.getnamed("presets"))
         act_patcher.getnamed("presets").message("actname", act_name_index);
 
-    if (!ll_global.state)
-        ll_global.state = {};
+    if (!ll_global.state) ll_global.state = {};
     // add actname to Global state
     const act_state = {
         class: act_args.name,
@@ -194,7 +192,7 @@ function bang(alreadyRegistered = false) {
         hash: act_args.hash,
         "inputs~": {},
     };
-    ll_global.state[act_name_index] = { ...act_state }
+    ll_global.state[act_name_index] = { ...act_state };
 
     // add act_patcher ref to Global ll_global patcher references
     if (!ll_global.patchers) {
@@ -277,7 +275,8 @@ function notifydeleted() {
     if (ll_global.state[act_name_index]) delete ll_global.state[act_name_index];
 
     // remove from Global patcher references
-    if (ll_global.patchers[act_name_index]) delete ll_global.patchers[act_name_index];
+    if (ll_global.patchers[act_name_index])
+        delete ll_global.patchers[act_name_index];
     if (ll_global.pat[act_name_index]) delete ll_global.pat[act_name_index];
 
     messnamed("acting", act_args.name, act_index, -1);
@@ -523,7 +522,7 @@ function create_title_menu_options() {
             filteredOpts[key] = value;
         }
     }
-    return filteredOpts
+    return filteredOpts;
 }
 
 function create_host_title_menu_options() {
@@ -627,10 +626,8 @@ function refresh_menu(
 ) {
     const items = [`(${name})`, "-"];
 
-    const userPath = `${ll_paths.get("user")}/${act_args.name}${folderTail}`;
-    const factoryPath = `${ll_paths.get("factory")}/${
-        act_args.name
-    }${folderTail}`;
+    const userPath = `${ll_global.paths.user}/${act_args.name}${folderTail}`;
+    const factoryPath = `${ll_global.paths.factory}/${act_args.name}${folderTail}`;
 
     const userFiles = ll
         .getFilesInFolder(userPath, fileTypes, omitExt)
@@ -661,7 +658,7 @@ function set_tetris_menu(selection) {
 
     // load tetris layout
     const isFactory = selection.startsWith("ƒ ");
-    const basePath = isFactory ? ll_paths.get("factory") : ll_paths.get("user");
+    const basePath = ll_global.paths[isFactory ? "factory" : "user"];
 
     const tetrisName = selection.replace("ƒ ", "");
     const tetrisPath = `${basePath}/${act_args.name}T/${tetrisName}`;
@@ -824,7 +821,7 @@ function write_tetris(name) {
     const tetrisDict = get_tetris();
     const isFactory = name.startsWith("ƒ ");
     const tetrisName = name.replace("ƒ ", "");
-    const basePath = ll_paths.get(isFactory ? "factory" : "user");
+    const basePath = ll_global.paths[isFactory ? "factory" : "user"];
     const actPath = `${basePath}/${act_args.name}T`;
     const fullPath = `${actPath}/${tetrisName}.json`;
 
@@ -862,7 +859,7 @@ function write_preset(name) {
     const isFactory = name.startsWith("ƒ ");
 
     const tetrisName = name.replace("ƒ ", "");
-    const basePath = ll_paths.get(isFactory ? "factory" : "user");
+    const basePath = ll_global.paths[isFactory ? "factory" : "user"];
     const actPath = `${basePath}/${act_args.name}P`;
     const fullPath = `${actPath}/${name}.json`;
 
@@ -988,7 +985,7 @@ function set_preset_menu(args) {
             .subpatcher()
             .getnamed("route");
         dialog.message("return", "write_preset");
-        dialog.message("path", `${ll_paths.get("user")}/${act_args.name}P`);
+        dialog.message("path", `${ll_global.paths.user}/${act_args.name}P`);
         let write_pres_name = prev_pres_menu;
         if (
             write_pres_name === "_" ||
@@ -1047,7 +1044,7 @@ function set_preset_menu(args) {
 
     // load preset json
     const isFactory = selection.startsWith("ƒ ");
-    const basePath = isFactory ? ll_paths.get("factory") : ll_paths.get("user");
+    const basePath = ll_global.paths[isFactory ? "factory" : "user"]
 
     const presetName = selection.replace("ƒ ", "");
     const fullPath = `${basePath}/${act_args.name}P/${presetName}.json`;
@@ -1365,13 +1362,13 @@ function recall_TEXT_from_dict(deviceName, presetName, path) {
 
     // in ../ppooll_presets/presets_text.json ?
     const temp = new Dict();
-    temp.import_json(`${ll_paths.get("user")}/presets_text.json`);
+    temp.import_json(`${ll_global.paths.user}/presets_text.json`);
 
     const preset_TEXT = JSON.parse(temp.stringify());
     if (preset_TEXT[act_args.name] && preset_TEXT[act_args.name][presetName]) {
         post("has TEXT, recall\n");
         const temp = new Dict();
-        temp.import_json(`${ll_paths.get("user")}/presets_text.json`);
+        temp.import_json(`${ll_global.paths.user}/presets_text.json`);
 
         const root = JSON.parse(temp.stringify());
         if (!root[act_args.name] || !root[act_args.name][presetName]) return;
