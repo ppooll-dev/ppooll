@@ -458,6 +458,8 @@ function brightness(color){
 }
 function paint() {
 	//post(non_txt,"nt\n");
+	mgraphics.select_font_face((fontfamily = "Arial"));
+
 	let s = rowheight;
 	let cw = 0;
 	let cm, cm1, cm2;
@@ -883,6 +885,8 @@ function menu(a) {
 		// post("ll.listblock menu cancelled\n");
 		selected_box = [null, null];
 		mgraphics.redraw();
+		lllbmenu.hidden = 1;
+		this.patcher.remove(lllbmenu)
 		return;
 	}
 	
