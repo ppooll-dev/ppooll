@@ -77,6 +77,7 @@ function actname(an){ //init
 	ap = ll_global.patchers[an];
 	rp = ap.getnamed("sub").subpatcher().getnamed("routing").subpatcher();
 	tp = this.patcher;
+	sp = tp.getnamed("send").subpatcher();
 	learn_gate = tp.getnamed("receives").subpatcher().getnamed("learn_gate");
 	listblock_obj = rp.getnamed ("listblock");
 	movewind_obj = rp.getnamed ("movewind");
@@ -96,12 +97,12 @@ function actname(an){ //init
 function allpars(){
 	let ar = arrayfromargs(arguments);
 	let p = ar.shift();
+	if (p === "modes" && ar !== actpars[p]) new_mode(ar); //script modes
 	actpars[p] = ar;
 	if (Object.keys(defaults).includes(p)) {
 		listblock_obj.message("bang"); //update listblock
 		messnamed(`::${act_name}::llc_props`, p, ar); //goes to the send-abstractions ::control@1::llc_props
-		if (p === "acts") acts_pars()
-		else if (p === "pars") acts_pars();
+		if (p === "acts" || p === "pars") acts_pars();
 	} 
 	else if (p === "routingPos") windowbar_obj.message("set_wind", "location", ar)
 	else if (p === "routingW") windowbar_obj.message("set_wind", "visible", ar);
@@ -126,6 +127,21 @@ function new_name(n){
 			 select(len);
 		 }
 	 }
+}
+function new_mode(ar){
+	if (actpars["modes"]){
+		//post("newmode:",ar,"old:",actpars["modes"],"\n");
+		for (let i=1; i<ar.length; i++) {
+			if (ar[i] != actpars["modes"][i] ) {
+				sp.remove(sp.getnamed(`c${i}`));
+				let c = sp.newdefault(30,i*30,`llc.${ar[i]}`, i, act_name);
+				c.varname = `c${i}`;
+			}
+		}
+		for (let i=ar.length ; i < actpars["modes"].length + 1; i++) sp.remove(sp.getnamed(`c${i}`));;
+	// get send_back
+
+	}
 }
 function acts_pars(s){ // ::act::par string and par_type
 	for ( let j = 0; j<=listlength; j++){
@@ -275,8 +291,9 @@ function select(s){
 }
 function delete_row(s){
 	for (let k in defaults) {
-		actpars[k].splice(s, 1);
-		ap.getnamed(k).message(actpars[k]);
+		let a = actpars[k].slice(0); //copy array to keep old actpars for now
+		a.splice(s, 1); 
+		ap.getnamed(k).message(a);
 	}
 }
 
@@ -310,11 +327,11 @@ function listblock(m,col,row){
 	if (m === "none") { //click on in_lo, in_hi rows (mode is none there)
 		if (row !== -1){
 			if (col === 0){
-				actpars[in_min][sel] = actpars[in_lo][sel];
-				ap.getnamed("in_min").message( actpars[in_min] );
+				actpars["in_min"][sel] = actpars["in_lo"][sel];
+				ap.getnamed("in_min").message( actpars["in_min"] );
 			} else if (col === 0){
-				actpars[in_max][sel] = actpars[in_hi][sel];
-				ap.getnamed("in_max").message( actpars[in_max] );
+				actpars["in_max"][sel] = actpars["in_hi"][sel];
+				ap.getnamed("in_max").message( actpars["in_max"] );
 			}
 		}
 	}
