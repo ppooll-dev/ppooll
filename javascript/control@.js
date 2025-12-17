@@ -11,28 +11,11 @@ var sel = 0; //selected
 var listlength;
 var copymove = [0,0,0];
 var learn_gate;
+var mode_labels = {};
 
-const actpars = {};
-const header_fix = ["in_lo", "in_hi", "input_name", "name_usr", "ON", "in_min", "in_max", "act", "par", "listit", "mode"];
-const defaults ={
-	in_lo: "-",
-	in_hi: "-",
-	input_name: "_",
-	name_user: "nn",
-	ON: 1,
-	in_min: 0,
-	in_max: 1,
-	acts: "no",
-	pars: "-no-",
-	list_item: 0,
-	modes: "scale",
-	opt1: 0,
-	opt2: 1,
-	opt3: 0,
-	opt4: 0
-}
-const mode_labels = {
-	scale: ["min", "max", "log", "smooth"],
+/*
+var mode_labels = {
+	scale: ["mn", "mx", "lg", "smth"],
 	toggle: ["val1", "val2", "thresh", "ramp"],
 	togg: ["val1", "val2", "thresh", "ramp"],
 	"inv0-1": ["thresh", "ignored", "ignored", "ignored"],
@@ -53,6 +36,29 @@ const mode_labels = {
 	rel1: ["incdec", "accel", "ignored", "ignored"],
 	rel64: ["incdec", "accel", "lim_min", "lim_max"]
 }
+*/
+
+const actpars = {};
+const header_fix = ["in_lo", "in_hi", "input_name", "name_usr", "ON", "in_min", "in_max", "act", "par", "listit", "mode"];
+const defaults ={ //also used for ll.listblock params
+	in_lo: "-",
+	in_hi: "-",
+	input_name: "_",
+	name_user: "nn",
+	ON: 1,
+	in_min: 0,
+	in_max: 1,
+	acts: "no",
+	pars: "-no-",
+	list_item: 0,
+	modes: "scale",
+	opt1: 0,
+	opt2: 1,
+	opt3: 0,
+	opt4: 0
+}
+const load_order = ["input_name", "modes",  "ON", "name_user", "in_min", "in_max", "acts", "pars", "list_item", "opt1", "opt2", "opt3", "opt4","in_lo", "in_hi"];
+
 const c_in_menu = {
 	midi: ["ll.ctlin", "midi_receive_port", "note_mode", "midi_channels"],
 	osc: ["ll.osc_in", "osc_receive_port", "sendbackIPW"],
@@ -101,7 +107,10 @@ function allpars(){
 	actpars[p] = ar;
 	if (Object.keys(defaults).includes(p)) {
 		listblock_obj.message("bang"); //update listblock
-		messnamed(`::${act_name}::llc_props`, p, ar); //goes to the send-abstractions ::control@1::llc_props
+		for ( let i = 1; i<actpars["input_name"].length; i++ ){
+			//post(`::${act_name}::llc_${i}`, "props", p, ar[i],"\n");
+			messnamed(`::${act_name}::llc_${actpars["input_name"][i]}`, "props", p, ar[i]); //goes to the send-abstractions
+		} 
 		if (p === "acts" || p === "pars") acts_pars();
 	} 
 	else if (p === "routingPos") windowbar_obj.message("set_wind", "location", ar)
@@ -110,11 +119,25 @@ function allpars(){
 	//else if (p === "ll_tab") post("ttt",ar,"\n");	
 	//post("aptest",Object.keys(defaults).includes(p),p,"\n")
 } 
+function new_input(...args){
+	//post("newn", "type", args[0].match(/\s/), "\n");
+	let n = args.shift();
+	
+	let len = args.length;
+	if (len > 1 && !actpars["list_inputs"].includes(n)) {
+		for (i in args){
+			new_name(`${n}(${i})`);  //post("new_list_input", `${n}(${i})`, "args", args[i],"\n");
+		}
+	}
+	else {
+		new_name(n);
+	} 
+}
 function new_name(n){
 	if (!actpars["ignored"].includes(n)) { // is ignored?
 		 if (!actpars["input_name"].includes(n)){ // is not old?
 			 //post("new\n");	 
-			 for (let k in defaults) {				
+			 for (let k of load_order) {				
 				let topush = defaults[k];
 				if (k=="input_name") topush = n
 				else if (k==="modes" && actpars["list_inputs"].includes(n) ) topush = "listscale"
@@ -132,10 +155,17 @@ function new_mode(ar){
 	if (actpars["modes"]){
 		//post("newmode:",ar,"old:",actpars["modes"],"\n");
 		for (let i=1; i<ar.length; i++) {
-			if (ar[i] != actpars["modes"][i] ) {
+			let mode = ar[i];
+			if (mode != actpars["modes"][i] ) {
 				sp.remove(sp.getnamed(`c${i}`));
-				let c = sp.newdefault(30,i*30,`llc.${ar[i]}`, i, act_name);
+				//let c = sp.newdefault(30,i*30,`llc.${ar[i]}`, i, act_name);
+				let c = sp.newdefault(30,i*30,`llc.${ar[i]}`, actpars["input_name"][i], act_name);
 				c.varname = `c${i}`;
+				for (let k of load_order) {
+					//post(`::${act_name}::llc_${actpars["input_name"][i]}`, "props", k, actpars[k][i],"\n");
+					messnamed(`::${act_name}::llc_${actpars["input_name"][i]}`, "props", k, actpars[k][i]);
+				}
+				//messnamed(act_name, "dump");a
 			}
 		}
 		for (let i=ar.length ; i < actpars["modes"].length + 1; i++) sp.remove(sp.getnamed(`c${i}`));;
@@ -143,6 +173,9 @@ function new_mode(ar){
 
 	}
 }
+
+
+// _________________________________________________________specials
 function acts_pars(s){ // ::act::par string and par_type
 	for ( let j = 0; j<=listlength; j++){
 		actpars["act_par"][j] = (`::${actpars["acts"][j]}::${actpars["pars"][j]}`);
@@ -169,6 +202,11 @@ function bang(){ //only for testing...
 	routing_sizes(actpars["input_name"].length - 1);
 	//post(rp["ON"],rp["ON"][1],"\n");
 	//post("listblock:", rp.getnamed ("listblock"),"\n");
+}
+function labels(...args){
+	let m = args.shift();
+	mode_labels[m] = args;
+	//post("labels", m, mode_labels[m],"\n");
 }
 
 function input_menu(s){
@@ -346,7 +384,23 @@ function fill_menu(col,sel){
 			listblock_obj.message("fill_menu", ll_global.pat[selact]["clientlist"]);
 			//post("c8",selact,"\n");
 		} else if (col === 10){ ////////////// TODO listmodes
-			listblock_obj.message("fill_menu", Object.keys(mode_labels));
+			listblock_obj.message("fill_menu", getmodes()); //Object.keys(mode_labels));
 			//post(Object.keys(mode_labels));
 		}
+}
+function getmodes(){
+	let f = new Folder("Package:/ppooll/patchers/abstractions/control@patches/modes/");	
+	let got = [];
+	f.reset();
+	while (!f.end) {
+		let fname = f.filename;
+		if (fname.includes("llc.")){
+			fname = fname.split("llc.")[1].split(".maxpat")[0];
+			got.push(fname);
+			//post("modes::",fname,fname.includes("llc."), "\n");
+		}
+		f.next();
+	}
+	f.close();
+	return got;
 }
