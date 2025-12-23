@@ -224,6 +224,38 @@ function explodeOldEnvironmentKeys(envObj) {
     }
 }
 
+function normalizePath(p) {
+    // Keep Max's "Macintosh HD:" prefix intact; just normalize slashes.
+    return (p || "").replace(/\\/g, "/").replace(/\/+/g, "/");
+}
+
+function dirnameFromPath(p) {
+    p = normalizePath(p);
+    const idx = p.lastIndexOf("/");
+    return idx >= 0 ? p.slice(0, idx) : p;
+}
+
+function fileExists(filepath) {
+    const expectedDir = dirnameFromPath(filepath);
+
+    const f = new File(filepath, "read");
+    const isOpen = f.isopen;
+
+    // Capture what Max actually opened (or tried to)
+    const resolvedDir = normalizePath(f.foldername);
+    const resolvedName = f.filename; // just the basename when it opens cleanly
+
+    // Always close if it opened
+    if (isOpen) f.close();
+
+    // Must have opened something
+    if (!isOpen) return false;
+
+    // Must have opened it from the exact expected directory (prevents search-path substitution)
+    return resolvedDir === expectedDir;
+}
+
+
 // load presets files for "folder" environments
 function loadPresets() {
     if (dict.props.type !== "folder") return;
@@ -235,10 +267,9 @@ function loadPresets() {
         if (presetsIgnore.indexOf(keys[i]) > -1) continue;
 
         const filepath = `${dict.props.path}/presets/${keys[i]}.json`;
-        const f = new File(filepath, "read");
-
-        if (f.isopen) {
-            f.close();
+        // post(JSON.stringify(f), "\n")
+        if (fileExists(filepath)) {
+            post("read preset", keys[i], "\n")
             messnamed(keys[i], "v8", "read_preset_path", filepath, 0)
         }
     }
