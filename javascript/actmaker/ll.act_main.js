@@ -564,8 +564,25 @@ function create_host_title_menu_options() {
         refresh: () => () => messnamed("max", "refresh"),
         separator2: null,
 
-        stopwatch: () => {}, // TODO: is this used anymore?
-        clock: () => {}, // TODO: is this used anymore?
+        stopwatch: () => {
+            const watch_menu = act_patcher.getnamed("watch_menu");
+
+            watch_menu.message("symbol", "stopwatch");
+            watch_menu.message("clearchecks");
+            watch_menu.message("checksymbol", "stopwatch", 1);
+
+            title_menu.message("checksymbol", "stopwatch", 1)
+            title_menu.message("checksymbol", "time", 0)
+        },
+        time: () => {
+            const watch_menu = act_patcher.getnamed("watch_menu");
+            watch_menu.message("symbol", "time");
+            watch_menu.message("clearchecks");
+            watch_menu.message("checksymbol", "time", 1);
+
+            title_menu.message("checksymbol", "stopwatch", 0)
+            title_menu.message("checksymbol", "time", 1)
+        },
         separator3: null,
 
         close: opts.close,
