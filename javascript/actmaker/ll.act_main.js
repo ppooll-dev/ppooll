@@ -214,9 +214,10 @@ function bang(alreadyRegistered = false) {
 
     if (ll_global.envi == "live") make_live();
 
+    let is_host = act_args.name === "ho_st";
     // set title_menu options
     title_menu_options =
-        act_args.name === "ho_st"
+        is_host
             ? create_host_title_menu_options()
             : create_title_menu_options();
 
@@ -247,6 +248,25 @@ function bang(alreadyRegistered = false) {
     title_menu.message("clearchecks");
     pres_menu.message("clearchecks");
     tetris_menu.message("clearchecks");
+
+    if(is_host) { // time, stopwatch menu
+        const watch_menu = act_patcher.getnamed("watch_menu");
+
+        watch_menu.message("clear");
+        watch_menu.message("append", "time");
+        watch_menu.message("append", "stopwatch");
+        watch_menu.message("append", "-");
+        watch_menu.message("append", "(start)")
+        watch_menu.message("append", "(stop)")
+        watch_menu.message("append", "(resume)")
+
+        watch_menu.message("symbol", "time");
+        watch_menu.message("clearchecks");
+        watch_menu.message("checksymbol", "time", 1);
+
+        title_menu.message("checksymbol", "stopwatch", 0)
+        title_menu.message("checksymbol", "time", 1)
+    }
 
     change_TEXT("refresh");
 
@@ -564,8 +584,42 @@ function create_host_title_menu_options() {
         refresh: () => () => messnamed("max", "refresh"),
         separator2: null,
 
-        stopwatch: () => {}, // TODO: is this used anymore?
-        clock: () => {}, // TODO: is this used anymore?
+        time: () => {
+            const watch_menu = act_patcher.getnamed("watch_menu");
+
+            watch_menu.message("clear");
+            watch_menu.message("append", "time");
+            watch_menu.message("append", "stopwatch");
+            watch_menu.message("append", "-");
+            watch_menu.message("append", "(start)")
+            watch_menu.message("append", "(stop)")
+            watch_menu.message("append", "(resume)")
+
+            watch_menu.message("symbol", "time");
+            watch_menu.message("clearchecks");
+            watch_menu.message("checksymbol", "time", 1);
+
+            title_menu.message("checksymbol", "stopwatch", 0)
+            title_menu.message("checksymbol", "time", 1)
+        },
+        stopwatch: () => {
+            const watch_menu = act_patcher.getnamed("watch_menu");
+
+            watch_menu.message("clear");
+            watch_menu.message("append", "time");
+            watch_menu.message("append", "stopwatch");
+            watch_menu.message("append", "-");
+            watch_menu.message("append", "start")
+            watch_menu.message("append", "stop")
+            watch_menu.message("append", "resume")
+
+            watch_menu.message("symbol", "stopwatch");
+            watch_menu.message("clearchecks");
+            watch_menu.message("checksymbol", "stopwatch", 1);
+
+            title_menu.message("checksymbol", "stopwatch", 1)
+            title_menu.message("checksymbol", "time", 0)
+        },
         separator3: null,
 
         close: opts.close,
@@ -780,7 +834,7 @@ function getTetrisFromObject(obj) {
         ) {
             let attrs = obj.getattr(attributes[i]);
 
-            if (attrs.name) {
+            if (attrs && attrs.name) {
                 const d = new Dict(attrs.name);
 
                 attrs = JSON.parse(d.stringify());
