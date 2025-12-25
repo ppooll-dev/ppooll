@@ -1,5 +1,5 @@
 {
-    "window": [ 292, 143, 422, 268 ],
+    "window": [ 403, 210, 533, 335 ],
     "logo": {
         "patching_rect": [ 2, 37, 49.3515625, 15 ],
         "hidden": 0,
@@ -178,6 +178,15 @@
         "textovercolor": [ 1, 1, 1, 1 ],
         "usebgoncolor": 1,
         "usetextovercolor": 0
+    },
+    "watch_menu": {
+        "patching_rect": [ 67, 104, 10, 23 ],
+        "hidden": 0,
+        "bgcolor": [ 0.92549, 0.047059, 0.047059, 0 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
+        "fontsize": 12,
+        "textcolor": null
     },
     "vol_ramp": {
         "patching_rect": [ 73, 92, 37, 13 ],
