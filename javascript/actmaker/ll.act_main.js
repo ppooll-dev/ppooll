@@ -250,22 +250,7 @@ function bang(alreadyRegistered = false) {
     tetris_menu.message("clearchecks");
 
     if(is_host) { // time, stopwatch menu
-        const watch_menu = act_patcher.getnamed("watch_menu");
-
-        watch_menu.message("clear");
-        watch_menu.message("append", "time");
-        watch_menu.message("append", "stopwatch");
-        watch_menu.message("append", "-");
-        watch_menu.message("append", "(start)")
-        watch_menu.message("append", "(stop)")
-        watch_menu.message("append", "(resume)")
-
-        watch_menu.message("symbol", "time");
-        watch_menu.message("clearchecks");
-        watch_menu.message("checksymbol", "time", 1);
-
-        title_menu.message("checksymbol", "stopwatch", 0)
-        title_menu.message("checksymbol", "time", 1)
+        handle_watch_selection("time")
     }
 
     change_TEXT("refresh");
@@ -545,6 +530,27 @@ function create_title_menu_options() {
     return filteredOpts;
 }
 
+function handle_watch_selection(selection){
+    // selection either time or stopwatch
+    const watch_menu = act_patcher.getnamed("watch_menu");
+
+    watch_menu.message("clear");
+    watch_menu.message("append", "time");
+    watch_menu.message("append", "stopwatch");
+    watch_menu.message("append", "-");
+    watch_menu.message("append", "(start)")
+    watch_menu.message("append", "(stop)")
+    watch_menu.message("append", "(resume)")
+
+    watch_menu.message("symbol", selection);
+    watch_menu.message("clearchecks");
+    watch_menu.message("checksymbol", selection, 1);
+
+    ["stopwatch", "time"].forEach(mode => 
+        title_menu.message("checksymbol", mode, selection === mode)
+    )
+}
+
 function create_host_title_menu_options() {
     const opts = { ...create_title_menu_options() };
     const ho_st_opts = {
@@ -585,40 +591,10 @@ function create_host_title_menu_options() {
         separator2: null,
 
         time: () => {
-            const watch_menu = act_patcher.getnamed("watch_menu");
-
-            watch_menu.message("clear");
-            watch_menu.message("append", "time");
-            watch_menu.message("append", "stopwatch");
-            watch_menu.message("append", "-");
-            watch_menu.message("append", "(start)")
-            watch_menu.message("append", "(stop)")
-            watch_menu.message("append", "(resume)")
-
-            watch_menu.message("symbol", "time");
-            watch_menu.message("clearchecks");
-            watch_menu.message("checksymbol", "time", 1);
-
-            title_menu.message("checksymbol", "stopwatch", 0)
-            title_menu.message("checksymbol", "time", 1)
+            handle_watch_selection("time")
         },
         stopwatch: () => {
-            const watch_menu = act_patcher.getnamed("watch_menu");
-
-            watch_menu.message("clear");
-            watch_menu.message("append", "time");
-            watch_menu.message("append", "stopwatch");
-            watch_menu.message("append", "-");
-            watch_menu.message("append", "start")
-            watch_menu.message("append", "stop")
-            watch_menu.message("append", "resume")
-
-            watch_menu.message("symbol", "stopwatch");
-            watch_menu.message("clearchecks");
-            watch_menu.message("checksymbol", "stopwatch", 1);
-
-            title_menu.message("checksymbol", "stopwatch", 1)
-            title_menu.message("checksymbol", "time", 0)
+            handle_watch_selection("stopwatch")
         },
         separator3: null,
 
