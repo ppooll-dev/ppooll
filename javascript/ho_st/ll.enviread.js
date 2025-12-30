@@ -262,14 +262,14 @@ function loadPresets() {
 
     outlet(0, "presets...");
 
-    let keys = Object.keys(environment);
+    let keys = Object.keys(environment).filter(a => a !== "buffer_host1");
     for (const i in keys) {
         if (presetsIgnore.indexOf(keys[i]) > -1) continue;
 
         const filepath = `${dict.props.path}/presets/${keys[i]}.json`;
         // post(JSON.stringify(f), "\n")
         if (fileExists(filepath)) {
-            post("read preset", keys[i], "\n")
+            post("read preset", keys[i], filepath, "\n")
             messnamed(keys[i], "v8", "read_preset_path", filepath, 0)
         }
     }
