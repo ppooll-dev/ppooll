@@ -10,6 +10,10 @@ if (typeof utils === "undefined") {
 var ll_global = new Global("ppooll");
 let is_live = ll_global.envi === "live";
 
+const MENU_VARNAME = "lllbmenu";
+const NUM_VARNAME  = "lllbnum";
+const TEXT_VARNAME = "lllbtext";
+
 var tpp = this.patcher;
 var boxw = box.rect[2] - box.rect[0];
 var boxh = box.rect[3] - box.rect[1];
@@ -95,6 +99,19 @@ var rows = 3;
 declareattribute("rows", { setter : "setrows", embed: 1 ,type: "long", min: 0, paint: 1});
 //post("declare_done\n")
 // ###################################### ____________ attribute setter
+
+function get_or_create(patcher, varname, createFn) {
+    let obj = patcher.getnamed(varname);
+
+    if (obj && obj.valid) {
+        return obj;
+    }
+
+    obj = createFn();
+    obj.varname = varname;
+    return obj;
+}
+
 function calc_cols(){
 	//post("calc","\n");
 	mod = [];
@@ -358,79 +375,66 @@ function getattributes(){
 
 }
 
-function loadbang(){
-	let old_menu = this.patcher.getnamed("lllbmenu");
-	if(old_menu){
-		this.patcher.remove(old_menu);
-	}
-}
-
 // ################################### _________________UI-inits		
-function menu_init(){	
-	if (!this.patcher.getnamed("lllbmenu")){
-		lllbmenu = this.patcher.newdefault(
-			100, 100,
-			"ll_menu",
-			"@varname", "llbmenu",
-			"@prefix", "menu",
-			"@bgcolor", .23,.23,.23, 1,
-			"@color", 1.,1.,1.,1.,
-			"@pattrmode", 1,
-			"@checkmode", 1,
-			"@outputcancel", 1,
-			"@fontsize", a,
-		);
-		lllbmenu.rect = nrect(0, 0);
-		this.patcher.hiddenconnect(lllbmenu,1,box,0);
-	}
-	else
-		lllbmenu = this.patcher.getnamed("lllbmenu");
+function menu_init() {
+    lllbmenu = get_or_create(this.patcher, MENU_VARNAME, () => {
+        let m = this.patcher.newdefault(
+            100, 100,
+            "ll_menu",
+            "@prefix", "menu",
+            "@bgcolor", .23, .23, .23, 1,
+            "@color", 1, 1, 1, 1,
+            "@pattrmode", 1,
+            "@checkmode", 1,
+            "@outputcancel", 1,
+            "@fontsize", fontsize
+        );
 
-	lllbmenu.hidden = 1;
+        this.patcher.hiddenconnect(m, 1, box, 0);
+        m.hidden = 1;
+        return m;
+    });
+
+    lllbmenu.hidden = 1;
 }
 
-function num_init(){
-	if (!this.patcher.getnamed("lllbnum")){
- 		//post("not");
-		lllnum = this.patcher.newdefault(
-			100,100,
-			"ll_number",
-			"@varname", "lllbnum",
-			"@format", 1,
-			"@sliderstyle", 2,
-			"@hideonenter", 1,
-			"@fontsize", fontsize,
-			"@prependname", 1,
-		);
-		this.patcher.bringtofront(lllnum);	
-		this.patcher.hiddenconnect(lllnum,0,box,0);
-	}
-	else 
-		lllnum = this.patcher.getnamed("lllbnum");
+function num_init() {
+    lllnum = get_or_create(this.patcher, NUM_VARNAME, () => {
+        let n = this.patcher.newdefault(
+            100, 100,
+            "ll_number",
+            "@format", 1,
+            "@sliderstyle", 2,
+            "@hideonenter", 1,
+            "@fontsize", fontsize,
+            "@prependname", 1
+        );
+        this.patcher.hiddenconnect(n, 0, box, 0);
+        n.hidden = 1;
+        return n;
+    });
 
-	lllnum.hidden = 1;			
+    lllnum.hidden = 1;
 }
 
-function text_init(){
-	if (!this.patcher.getnamed("lllbtext")){
-		lllbtext = this.patcher.newdefault(
-			200,100,
-			"textedit",
-			"@varname", "lllbtext",
-			"@lines", 1,
-			"@keymode", 1,
-			"@border", 0,
-			"@rounded", 0,
-			"@fontsize", fontsize,
-		);
-		this.patcher.bringtofront(lllbtext);			
-		this.patcher.hiddenconnect(lllbtext,0,box,0);
-	}
-	else 
-		lllbtext = this.patcher.getnamed("lllbtext");
+function text_init() {
+    lllbtext = get_or_create(this.patcher, TEXT_VARNAME, () => {
+        let t = this.patcher.newdefault(
+            200, 100,
+            "textedit",
+            "@lines", 1,
+            "@keymode", 1,
+            "@border", 0,
+            "@rounded", 0,
+            "@fontsize", fontsize
+        );
+        this.patcher.hiddenconnect(t, 0, box, 0);
+        t.hidden = 1;
+        return t;
+    });
 
-	lllbtext.hidden = 1;	
-}	
+    lllbtext.hidden = 1;
+}
 
 function onresize(w,h){
 	//post("onresize_wh",w,h,"\n");
@@ -886,7 +890,6 @@ function menu(a) {
 		selected_box = [null, null];
 		mgraphics.redraw();
 		lllbmenu.hidden = 1;
-		this.patcher.remove(lllbmenu)
 		return;
 	}
 	
@@ -926,7 +929,6 @@ function menu(a) {
 	}
 	if(lllbmenu){
 		lllbmenu.hidden = 1;
-		this.patcher.remove(lllbmenu)
 	}
 
 	selected_box = [null, null];
