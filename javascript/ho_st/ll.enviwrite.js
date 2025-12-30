@@ -21,7 +21,7 @@ var cl;
 let dict = null;
 let environment = null;
 
-const ignorePresets = ["ho_st1"];
+const ignorePresets = ["ho_st1", "buffer_host1"];
 
 const subfolders = ["presets"];
 
