@@ -64,6 +64,8 @@ let TEXT_updating = false;
 
 let pat_slotlist = [];
 
+let actname_receivers = [];
+
 // [v8] attributes
 var isReady = 0;
 declareattribute("isReady", {
@@ -207,6 +209,12 @@ function bang(alreadyRegistered = false) {
     if (!ll_global.pat[act_name_index])
         ll_global.pat[act_name_index] = { activelist: {}, clientlist: [] };
 
+    if(actname_receivers.length){
+        actname_receivers.forEach(r_address => {
+            messnamed(r_address, act_name_index);
+        })
+    }
+
     messnamed("actname", act_name_index);
     messnamed(act_args.hash + "actname", act_name_index);
     messnamed("::actname", "::" + act_name_index + "::");
@@ -259,6 +267,9 @@ function bang(alreadyRegistered = false) {
     messnamed("act_ready", `${act_args.name}${act_index}`);
     messnamed(`${act_args.hash}instance`, act_index);
 
+    // cascade appearance of act windows of the same type
+    windpos((act_index - 1) * -16, (act_index - 1) * 16);
+
     isReady = 1;
     // post("ready\n");
     mgraphics.redraw();
@@ -285,6 +296,16 @@ function notifydeleted() {
     if (ll_global.pat[act_name_index]) delete ll_global.pat[act_name_index];
 
     messnamed("acting", act_args.name, act_index, -1);
+}
+
+function request_actname(r_address) {
+    // post("request actname", hash, "\n")
+    if(isReady){
+        messnamed(r_address, act_name_index);
+    }else{
+        // post("not ready for actname", hash, "\n")
+    }
+    actname_receivers.push(r_address);
 }
 
 // ##########################################################################.  actui
@@ -538,9 +559,12 @@ function handle_watch_selection(selection){
     watch_menu.message("append", "time");
     watch_menu.message("append", "stopwatch");
     watch_menu.message("append", "-");
-    watch_menu.message("append", "(start)")
-    watch_menu.message("append", "(stop)")
-    watch_menu.message("append", "(resume)")
+
+    let stopwatch_items = ["start", "stop", "resume"];
+    if(selection === "time")
+        stopwatch_items = stopwatch_items.map(item => `(${item})`);
+
+    stopwatch_items.forEach(item => watch_menu.message("append", item))
 
     watch_menu.message("symbol", selection);
     watch_menu.message("clearchecks");
