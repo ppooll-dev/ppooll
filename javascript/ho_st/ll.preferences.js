@@ -23,6 +23,8 @@ var empty_prf_DEFAULT = {
         check_for_updates: 0,
         flop_disable_cursor: 0,
         host_channels: 2,
+        sort_envi_by: "name", // ["name", "recent"]
+        envi_history: []
     },
     file_paths: {
         quickrecord_path: 0,
@@ -268,6 +270,18 @@ function del_favorit() {
 
     favorite_acts = favorite_acts.filter((item) => item !== actname);
     set_favorite_acts();
+    ll_prf_rewrite();
+}
+
+var sort_envi_by = "name";
+declareattribute("sort_envi_by", {
+    style: "enum",
+    enumvals: ["name", "date"],
+    setter: "set_sort_envi_by",
+});
+function set_sort_envi_by(c) {
+    sort_envi_by = c;
+    preferences.set("general::sort_envi_by", c);
     ll_prf_rewrite();
 }
 
