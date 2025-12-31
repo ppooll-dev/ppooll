@@ -351,6 +351,9 @@ function readfile() {
     if (!Array.isArray(favorite_acts)) favorite_acts = [favorite_acts];
     set_favorite_acts();
 
+    sort_envi_by = preferences.get("general::sort_envi_by");
+    this.patcher.getnamed("attrui_sort_envi_by").message("attr", "sort_envi_by");
+
     messnamed("ll_preferences_ready", "bang");
 }
 
