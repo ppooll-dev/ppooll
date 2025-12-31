@@ -269,7 +269,7 @@ function loadPresets() {
         const filepath = `${dict.props.path}/presets/${keys[i]}.json`;
         // post(JSON.stringify(f), "\n")
         if (fileExists(filepath)) {
-            post("read preset", keys[i], filepath, "\n")
+            // post("read preset", keys[i], filepath, "\n")
             messnamed(keys[i], "v8", "read_preset_path", filepath, 0)
         }
     }
