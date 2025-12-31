@@ -77,6 +77,6 @@ function compare() {
     }
 }
 
-function refresh() {
-    outlet_dictionary(2, { state: ll_global.state, pat: ll_global.pat });
+function _refresh() {
+    outlet_dictionary(2, { state: ll_global.state, pat: ll_global.pat, buffers: ll_global.buffers });
 }

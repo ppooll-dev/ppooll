@@ -197,8 +197,9 @@ exports.fileExists = (path) => {
     try {
         var f = new File(path);
         var exists = f.isopen;
+        var fullpath = `${f.foldername}/${f.filename}`
         f.close();
-        return exists;
+        return exists ? fullpath : 0;
     } catch (err) {
         return false;
     }
