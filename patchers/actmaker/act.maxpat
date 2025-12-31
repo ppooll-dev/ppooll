@@ -39,7 +39,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 656.0, 185.0, 848.0, 409.0 ],
+                        "rect": [ 150.0, 261.0, 848.0, 409.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -57,7 +57,7 @@
                                     "maxclass": "comment",
                                     "numinlets": 1,
                                     "numoutlets": 0,
-                                    "patching_rect": [ 394.0, 176.0, 269.0, 20.0 ],
+                                    "patching_rect": [ 421.0, 217.0, 269.0, 20.0 ],
                                     "text": "parameters that are (also) handled in act_main.js"
                                 }
                             },
@@ -66,11 +66,11 @@
                                     "bgcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                                     "id": "obj-4",
                                     "maxclass": "newobj",
-                                    "numinlets": 6,
-                                    "numoutlets": 6,
-                                    "outlettype": [ "", "", "", "", "", "" ],
-                                    "patching_rect": [ 131.0, 91.0, 264.0, 22.0 ],
-                                    "text": "routepass client_add read slotlist clientlist active"
+                                    "numinlets": 7,
+                                    "numoutlets": 7,
+                                    "outlettype": [ "", "", "", "", "", "", "" ],
+                                    "patching_rect": [ 131.0, 91.0, 303.0, 22.0 ],
+                                    "text": "routepass client_add read slotlist clientlist active priority"
                                 }
                             },
                             {
@@ -81,7 +81,7 @@
                                     "numinlets": 6,
                                     "numoutlets": 6,
                                     "outlettype": [ "", "", "", "", "", "" ],
-                                    "patching_rect": [ 319.0, 194.0, 471.0, 22.0 ],
+                                    "patching_rect": [ 346.0, 235.0, 471.0, 22.0 ],
                                     "text": "routepass act::title_menu act::tetris_menu act::pres_menu act::active_store act::master"
                                 }
                             },
@@ -92,7 +92,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 131.0, 151.0, 103.0, 22.0 ],
+                                    "patching_rect": [ 131.0, 235.0, 103.0, 22.0 ],
                                     "text": "prepend from_pat"
                                 }
                             },
@@ -103,7 +103,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 319.0, 267.0, 79.0, 22.0 ],
+                                    "patching_rect": [ 346.0, 308.0, 79.0, 22.0 ],
                                     "text": "prepend _in2"
                                 }
                             },
@@ -115,7 +115,7 @@
                                     "maxclass": "outlet",
                                     "numinlets": 1,
                                     "numoutlets": 0,
-                                    "patching_rect": [ 376.0, 143.0, 30.0, 30.0 ]
+                                    "patching_rect": [ 415.0, 157.0, 30.0, 30.0 ]
                                 }
                             },
                             {
@@ -126,7 +126,7 @@
                                     "maxclass": "outlet",
                                     "numinlets": 1,
                                     "numoutlets": 0,
-                                    "patching_rect": [ 131.0, 293.0, 30.0, 30.0 ]
+                                    "patching_rect": [ 131.0, 362.0, 30.0, 30.0 ]
                                 }
                             },
                             {
@@ -153,13 +153,19 @@
                                 "patchline": {
                                     "destination": [ "obj-3", 0 ],
                                     "order": 0,
-                                    "source": [ "obj-4", 5 ]
+                                    "source": [ "obj-4", 6 ]
                                 }
                             },
                             {
                                 "patchline": {
                                     "destination": [ "obj-5", 0 ],
                                     "order": 1,
+                                    "source": [ "obj-4", 6 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-8", 0 ],
                                     "source": [ "obj-4", 5 ]
                                 }
                             },

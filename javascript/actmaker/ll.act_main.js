@@ -62,8 +62,6 @@ let TEXT_size = 0; // num boxes
 let TEXT_data = {};
 let TEXT_updating = false;
 
-let pat_slotlist = [];
-
 let actname_receivers = [];
 
 // [v8] attributes
@@ -206,13 +204,98 @@ function bang(alreadyRegistered = false) {
     if (!ll_global.pat) {
         ll_global.pat = {};
     }
-    if (!ll_global.pat[act_name_index])
-        ll_global.pat[act_name_index] = { activelist: {}, clientlist: [] };
+    if (!ll_global.pat[act_name_index]) {
+        ll_global.pat[act_name_index] = {
+            // state is set by from_pat()
+            clientlist: [],
+            slotlist: [],
+            activelist: {}, // { paramName: isActive }
+            priority: {}, // { paramName: priority }
+            dump: {}, // { paramName: value }
 
-    if(actname_receivers.length){
-        actname_receivers.forEach(r_address => {
+            getclientlist() {
+                act_patcher.getnamed("pat").message("getclientlist");
+                return this.clientlist;
+            },
+
+            getslotlist() {
+                act_patcher.getnamed("pat").message("getslotlist");
+                return this.slotlist;
+            },
+
+            getactive(client) {
+                act_patcher.getnamed("pat").message("getactive", client);
+                return this.priority[client];
+            },
+
+            getactivelist() {
+                return this.getclientlist()
+                    .map((c) => ({ name: c, active: this.getactive(c) }))
+                    .filter((c) => c.active)
+                    .map((c) => c.name);
+            },
+
+            getpriority(client) {
+                act_patcher.getnamed("pat").message("getpriority", client);
+                return this.priority[client];
+            },
+
+            getprioritylist() {
+                return this.getclientlist()
+                    .map((c) => ({ name: c, priority: this.getpriority(c) }))
+                    .sort((a, b) => a.priority - b.priority);
+            },
+
+            getdump() {
+                const dict_dump = new Dict();
+                const pat = act_patcher.getnamed("pat");
+                this.getprioritylist().forEach(({ name: full_name }) => {
+                    const param_path = full_name.split("::"); // ie. [vol] or [act, title_menu]
+                    const param_name = param_path.pop(); // last item is the param varname
+
+                    let patcher = act_patcher;
+
+                    // walk subpatchers
+                    param_path.forEach((seg) => {
+                        const obj = patcher.getnamed(seg);
+                        if (!obj || !obj.subpatcher) {
+                            post(
+                                "missing sub:",
+                                seg,
+                                act_name,
+                                full_name,
+                                "\n"
+                            );
+                            return;
+                        }
+                        patcher = obj.subpatcher();
+                    });
+
+                    // nested param object
+                    const param_obj = patcher.getnamed(param_name);
+
+                    if (!param_obj || !param_obj.getvalueof) {
+                        post("missing param:", act_name_index, full_name, "\n");
+                        return;
+                    }
+
+                    dict_dump.replace(full_name, param_obj.getvalueof());
+                });
+                return dict_dump;
+            },
+
+            getdumpJSON() {
+                return JSON.parse(this.getdump().stringify());
+            },
+
+            write_preset_path: write_preset_path
+        };
+    }
+
+    if (actname_receivers.length) {
+        actname_receivers.forEach((r_address) => {
             messnamed(r_address, act_name_index);
-        })
+        });
     }
 
     messnamed("actname", act_name_index);
@@ -224,10 +307,9 @@ function bang(alreadyRegistered = false) {
 
     let is_host = act_args.name === "ho_st";
     // set title_menu options
-    title_menu_options =
-        is_host
-            ? create_host_title_menu_options()
-            : create_title_menu_options();
+    title_menu_options = is_host
+        ? create_host_title_menu_options()
+        : create_title_menu_options();
 
     title_menu_options_list = Object.keys(title_menu_options);
 
@@ -257,8 +339,9 @@ function bang(alreadyRegistered = false) {
     pres_menu.message("clearchecks");
     tetris_menu.message("clearchecks");
 
-    if(is_host) { // time, stopwatch menu
-        handle_watch_selection("time")
+    if (is_host) {
+        // time, stopwatch menu
+        handle_watch_selection("time");
     }
 
     change_TEXT("refresh");
@@ -300,9 +383,9 @@ function notifydeleted() {
 
 function request_actname(r_address) {
     // post("request actname", hash, "\n")
-    if(isReady){
+    if (isReady) {
         messnamed(r_address, act_name_index);
-    }else{
+    } else {
         // post("not ready for actname", hash, "\n")
     }
     actname_receivers.push(r_address);
@@ -551,7 +634,7 @@ function create_title_menu_options() {
     return filteredOpts;
 }
 
-function handle_watch_selection(selection){
+function handle_watch_selection(selection) {
     // selection either time or stopwatch
     const watch_menu = act_patcher.getnamed("watch_menu");
 
@@ -561,18 +644,18 @@ function handle_watch_selection(selection){
     watch_menu.message("append", "-");
 
     let stopwatch_items = ["start", "stop", "resume"];
-    if(selection === "time")
-        stopwatch_items = stopwatch_items.map(item => `(${item})`);
+    if (selection === "time")
+        stopwatch_items = stopwatch_items.map((item) => `(${item})`);
 
-    stopwatch_items.forEach(item => watch_menu.message("append", item))
+    stopwatch_items.forEach((item) => watch_menu.message("append", item));
 
     watch_menu.message("symbol", selection);
     watch_menu.message("clearchecks");
     watch_menu.message("checksymbol", selection, 1);
 
-    ["stopwatch", "time"].forEach(mode => 
+    ["stopwatch", "time"].forEach((mode) =>
         title_menu.message("checksymbol", mode, selection === mode)
-    )
+    );
 }
 
 function create_host_title_menu_options() {
@@ -615,10 +698,10 @@ function create_host_title_menu_options() {
         separator2: null,
 
         time: () => {
-            handle_watch_selection("time")
+            handle_watch_selection("time");
         },
         stopwatch: () => {
-            handle_watch_selection("stopwatch")
+            handle_watch_selection("stopwatch");
         },
         separator3: null,
 
@@ -952,7 +1035,7 @@ function write_preset_path(fullPath) {
     presetDict.parse(JSON.stringify(presetJSON));
     presetDict.export_json(fullPath);
 
-    post("ppooll write_preset: DONE", act_args.name, fullPath, "\n");
+    // post("ppooll write_preset: DONE", act_args.name, fullPath, "\n");
 }
 
 function anySlotHasActiveStore(pattrObj) {
@@ -1009,8 +1092,7 @@ function set_preset_menu(args) {
         return;
     }
 
-    act_patcher.getnamed("pat").message("getslotlist");
-    if (pat_slotlist.includes(1000)) {
+    if (ll_global.pat[act_name_index].getslotlist().includes(1000)) {
         // post("preset 1000 ! what now... \n")
         // return
     }
@@ -1098,7 +1180,7 @@ function set_preset_menu(args) {
 
     // load preset json
     const isFactory = selection.startsWith("ƒ ");
-    const basePath = ll_global.paths[isFactory ? "factory" : "user"]
+    const basePath = ll_global.paths[isFactory ? "factory" : "user"];
 
     const presetName = selection.replace("ƒ ", "");
     const fullPath = `${basePath}/${act_args.name}P/${presetName}.json`;
@@ -1589,9 +1671,6 @@ let temp_client_list = []; // for special "client" messages
 function from_pat(...args) {
     const msg = args.shift();
     // post('from_pat', msg, args, "\n")
-    if (ll_global.pat && ll_global.pat[act_name_index])
-        ll_global.pat[act_name_index][msg] = args; // always store pat values!
-
     if (msg === "client_add") {
         const client_name = args[0];
         messnamed(`::${act_name_index}::client_add`, client_name);
@@ -1604,16 +1683,18 @@ function from_pat(...args) {
             shouldGetSlotList
         );
         act_patcher.getnamed("pat").message("getslotlist");
+        if (ll_global.pat && ll_global.pat[act_name_index])
+            ll_global.pat[act_name_index][msg] = args; // always store pat values
     } else if (msg === "slotlist") {
         const obj_presets = act_patcher.getnamed("presets");
         if (obj_presets) {
             obj_presets.message("slotlist", ...args);
-            pat_slotlist = Array.isArray(args) ? args : [args];
-            // post(act_name_index, "slotlist", pat_slotlist, "\n")
         }
         if (args.indexOf(1000) > -1) {
             act_patcher.getnamed("pat").message("recall", 1000);
         }
+        if (ll_global.pat && ll_global.pat[act_name_index])
+            ll_global.pat[act_name_index][msg] = args; // always store pat values
     } else if (msg === "active") {
         // post("active", ...args);
         const param = args.shift();
@@ -1628,6 +1709,10 @@ function from_pat(...args) {
         } else {
             temp_client_list.push(param);
         }
+    } else if (msg === "priority") {
+        const param = args.shift();
+        const value = args.shift();
+        ll_global.pat[act_name_index].priority[param] = value;
     }
 }
 
@@ -1747,17 +1832,8 @@ function active_set(...args) {
     const msg = args.shift();
     const slot = args.shift();
 
-    obj_pat.message("getclientlist");
-    // post("active_set clientlist:", ll_global.pat[act_name_index].clientlist);
-
     if (msg === "store") {
-        let pat_activelist = [];
-        ll_global.pat[act_name_index].clientlist.forEach((client) => {
-            obj_pat.message("getactive", client);
-            if (ll_global.pat[act_name_index].activelist[client]) {
-                pat_activelist.push(client);
-            }
-        });
+        let pat_activelist = ll_global.pat[act_name_index].getactivelist();
 
         if (pat_activelist.length === 0) pat_activelist = "_";
         obj_pat.message(
@@ -1791,7 +1867,7 @@ function get_active_store(...args) {
             return p;
         });
 
-    ll_global.pat[act_name_index].clientlist.forEach((client) => {
+    ll_global.pat[act_name_index].getclientlist().forEach((client) => {
         if (client === "act::active_store") return;
 
         let active = active_params.indexOf(client) > -1;

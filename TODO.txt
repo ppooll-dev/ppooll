@@ -2,19 +2,33 @@ alt-preset clicking -- feature requests::
 
 on click full preset of clicked slot 
 only interpolate when dragging.
+    joe steccato 25-12-29: 
+        can we have some sort of ppooll preference for this behavior?
+            "preset-drag": 
+                change on click: the old behavior which sets to a full slot on first click
+                relative: does not change preset on alt-click, only on drag.  this method makes more sense to me, 
+                    ie: if I want to change the preset I can just click and then hold option
+
 do not recall empty presets (stop if empty OR go to next stored.)
+        joe steccato 25-12-29: done
+
 dragging vertical: interpolation between none-neighbour slots?
+        joe steccato 25-12-19: i would rather have a "free" drag mode
 (ramp or dragging with active_store is maybe too exotic,
 but it would need to active_set both slots ....)
+    
 
 
 presets and active_store need to be inactive (always)
 this could be checked (and reset) in ll.pattr_v8
 on any click ?
+    joe steccato 25-12-29: do we not already do this in firstdump?
+
 
 actmake: actmake: No such object
 in many help-files etc.
 we need a wrapper, that does an update here.
+    joe steccato 25-12-29: done, actmake.maxpat we always set the color "1" (white)
 
 (don't) showtoolbar at open setter
 

@@ -1,126 +1,278 @@
-/* ll.enviwrite.js
-	by joe steccato & klaus filip
-    with help from Carnarts -- thank you!
-	
-	write all act properties and parameter values to [dict environment]
-*/
-
 autowatch = 1;
 outlets = 1;
 
+if (typeof ll === "undefined") {
+    var ll = require("ll._utilities");
+}
+
 var ll_global = new Global("ppooll");
-
-var currentAct = null;
-var actname_map;
-
-var pat_gate;
-var index;
-var client_list;
-var cl;
-
-let dict = null;
-let environment = null;
-
-const ignorePresets = ["ho_st1", "buffer_host1"];
-
-const subfolders = ["presets"];
-
-let acts = null;
-let buffers = null;
-
-let pending = null;
-
-// let buffers_dict = null;
-
-let writeParams = null;
+var ll_prefs = new Dict("ppooll-preferences");
 
 const pb = new PolyBuffer("pp");
 
-let enviDir = null;
-let enviName = null;
+const PRESETS_IGNORE = ["ho_st1", "buffer_host1"];
+const ENVI_SUBFOLDERS = ["presets"];
 
-let fileExt = "wav";
+let environment = null;
+let act_list = [];
 
+//============================= globals =============================
+var envi_name = "";
+var envi_path = "";
+var type = "folder";
+var copy_buffers = 0;
+var write_files = 0;
+var write_sample_buffers = 0;
+
+let buffers = null;
+
+var fileInvalid = true;
+var error = null;
+
+//============================= helpers =============================
 function ppost(msg) {
     post("ppooll write environment: ", msg);
     post();
 }
 
-function msg_dictionary(d) {
-    if (!d.props.envi_name || d.props.envi_name.trim() === "") {
-        ppost("Error: invalid filename for environment");
-        return;
-    }
+function isValidFileName(name) {
+    const invalidChars = /[<>:"/\\|?*\x00-\x1F]/g;
+    if (!name || !name.trim()) return false;
 
-    ppost(`writing '${d.props.envi_name}' (${d.props.type})`);
-    dict = {
-        fileExt,
-        ...d,
-    };
-    // Set buffer audio file export file extension
-    fileExt = dict.fileExt;
-    pending = null;
+    // reserved Windows filenames
+    const reserved = [
+        "CON",
+        "PRN",
+        "AUX",
+        "NUL",
+        "COM1",
+        "COM2",
+        "COM3",
+        "COM4",
+        "COM5",
+        "COM6",
+        "COM7",
+        "COM8",
+        "COM9",
+        "LPT1",
+        "LPT2",
+        "LPT3",
+        "LPT4",
+        "LPT5",
+        "LPT6",
+        "LPT7",
+        "LPT8",
+        "LPT9",
+    ];
 
-    // Set environment path
-    enviDir = `${ll_global.paths.user}/environmentsP`;
-
-    buffers = ll_global.buffers;
-    
-    // Get acts
-    acts = Object.keys(ll_global.state);
-
-    // Set environment write props (name, type "folder" or "json", etc)
-    writeParams = dict.props;
-
-    enviName = writeParams.envi_name;
-
-    let subs = [...subfolders];
-    if (acts.indexOf("buffer_host1") > -1 && writeParams.copy_buffers)
-        subs.push("buffers");
-
-    // Create Environment folders.  Creation triggers setBuffers
-    if (writeParams.type === "folder") {
-        outlet(0, "folder", "create", `${enviDir}/${enviName}`, ...subs);
-        outlet(0, "folder", "clear", `${enviDir}/${enviName}`, "presets");
-    } else if (writeParams.type === "json") {
-        dict.props.jsonPath = `${enviDir}/${enviName}.json`;
-        writeEnvi();
-    }
+    // Strip any extension before comparison
+    const baseName = name.split(".")[0].toUpperCase();
+    return !invalidChars.test(name) && !reserved.includes(baseName);
 }
 
-// Remove file ex from string name
-function removeExtension(filename) {
-    return filename.replace(/\.[^/.]+$/, "");
+//============================= attributes ==========================
+// Name
+declareattribute("envi_name", {
+    label: "name",
+    // setter: "set_envi_name",
+    type: "symbol",
+});
+function set_envi_name(name) {
+    // post(name, "\n")
+    envi_name = name;
+    fileInvalid = !isValidFileName(envi_name);
+    if (!fileInvalid && error) {
+        error = null;
+    } else if (fileInvalid && !error) {
+        error = "enter a valid filename";
+    }
+    updateUI();
+    this.patcher.getnamed("textedit_envi_name").message("set", name);
+}
+
+function text(newName) {
+    set_envi_name(newName ? newName : "");
+}
+
+function textchanged() {
+    this.patcher.getnamed("textedit_envi_name").message("bang");
+}
+
+function char(c) {
+    if (c === 13)
+        // enter/return
+        write();
+    else if (c === 9) {
+    } // tab
+}
+
+// Type
+declareattribute("type", {
+    style: "enum",
+    enumvals: ["folder", "json"],
+    label: "export type",
+    setter: "set_type",
+});
+function set_type(v) {
+    type = v;
+    updateUI();
+}
+
+// Copy Buffers
+declareattribute("copy_buffers", {
+    style: "onoff",
+    label: "copy buffers",
+    setter: "set_copy_buffers",
+});
+function set_copy_buffers(v) {
+    copy_buffers = v;
+    updateUI();
+}
+
+// Write Files
+declareattribute("write_files", {
+    style: "onoff",
+    label: "write files",
+    setter: "set_write_files",
+});
+function set_write_files(v) {
+    write_files = v;
+}
+
+// Write Sample Buffers
+declareattribute("write_sample_buffers", {
+    style: "onoff",
+    label: "write sample buffers",
+    setter: "set_write_sample_buffers",
+});
+function set_write_sample_buffers(v) {
+    write_sample_buffers = v;
+}
+
+//============================= dialog =============================
+function clear() {
+    // post("clear\n")
+    this.patcher.getnamed("textedit_envi_name").message("set", "");
+    envi_name = "";
+    updateUI();
+}
+
+function select() {
+    this.patcher.getnamed("textedit_envi_name").message("select");
+}
+
+function updateUI() {
+    this.patcher.getnamed("error_comment").hidden = !error;
+    this.patcher.getnamed("error_comment").message("set", error ? error : "");
+
+    this.patcher.getnamed("write_btn").hidden = fileInvalid;
+    this.patcher.getnamed("write_comment").hidden = fileInvalid;
+
+    const isFolder = type === "folder";
+    this.patcher.getnamed("attrui_copy_buffers").hidden = !isFolder;
+
+    const isCopyBuffers = copy_buffers && isFolder;
+    this.patcher.getnamed("attrui_write_files").hidden = !isCopyBuffers;
+    this.patcher.getnamed("attrui_write_sample_buffers").hidden =
+        !isCopyBuffers;
+}
+
+function init() {
+    this.patcher.getnamed("textedit_envi_name").message("set", "");
+    error = null;
+    set_type(ll_prefs.get("envi_saving::type"));
+    set_copy_buffers(ll_prefs.get("envi_saving::copy_buffers"));
+    set_write_files(ll_prefs.get("envi_saving::write_files"));
+    set_write_sample_buffers(ll_prefs.get("envi_saving::write_sample_buffers"));
+    updateUI();
+}
+
+function save_as_default_preferences() {
+    ll_prefs.set("envi_saving::type", type);
+    ll_prefs.set("envi_saving::copy_buffers", copy_buffers);
+    ll_prefs.set("envi_saving::write_files", write_files);
+    ll_prefs.set("envi_saving::write_sample_buffers", write_sample_buffers);
+    messnamed("ll_prf_rewrite", "bang");
+}
+
+function enter() {
+    write();
+}
+
+//============================= write =============================
+function write() {
+    if (!isValidFileName(envi_name)) {
+        error = "enter a valid filename";
+        updateUI();
+        post(
+            "ll.environment error: invalid name",
+            envi_name ? envi_name : "(blank)",
+            "\n"
+        );
+        return;
+    }
+    error = null;
+    buffers = null;
+    ppost(`writing '${envi_name}' (${type})`);
+
+    envi_name = envi_name.trim();
+    envi_path = `${ll_global.paths.user}/environmentsP/${envi_name}`;
+
+    // Get acts
+    act_list = Object.keys(ll_global.state);
+
+    // Create Environment folders.  Creation triggers setBuffers
+    if (type === "folder") {
+        let subfolders = [...ENVI_SUBFOLDERS];
+        if (act_list.indexOf("buffer_host1") > -1 && copy_buffers) {
+            buffers = ll_global.buffers;
+            subfolders.push("buffers");
+        }
+        outlet(0, "folder", "create", envi_path, ...subfolders);
+        outlet(0, "folder", "clear", envi_path, "presets");
+    } else if (type === "json") {
+        writeEnvi(`${envi_path}.json`);
+    }
 }
 
 // Save presets, buffers to created folders
 function saveToFolder() {
-    // Wrap buffer saving in try/catch to ensure environment metadata is written even if buffers fail.
     try {
         // Save buffers
-        if (acts.indexOf("buffer_host1") > -1 && writeParams.copy_buffers) {
-            ppost("copy buffers...");
+        if (buffers) {
+            ppost("copy buffers..." + JSON.stringify(buffers));
             buffers.forEach((b, i) => {
+                const bufferFileExt = ll_prefs.get(
+                    "general::quickrecord_fileformat"
+                );
+                let newFile = null;
                 if (b.full_path) {
-                    const newFile = `${enviDir}/${enviName}/buffers/${b.label}.${fileExt}`;
-                    if (writeParams.write_files) {
+                    let newFile = null;
+                    if (write_files) {
+                        // write, replacing
+                        newFile = `${envi_path}/buffers/${
+                            ll.getExtension(b.label)[0]
+                        }.${bufferFileExt}`;
+
                         // Write file to envi folder
                         pb.send(b.buffer_index, "write", newFile);
 
                         // Replace polybuffer~ with newly created files
                         pb.send(b.buffer_index, "read", newFile);
                     } else {
+                        // copy, preserve original
+                        newFile = `${envi_path}/buffers/${b.label}`;
+
                         // Re-read the file
-                        pb.send(b.buffer_index, "read", b.path);
+                        pb.send(b.buffer_index, "read", b.full_path);
 
                         // Save to folder
                         pb.send(b.buffer_index, "write", newFile);
                     }
                     // Update the saved path in the copy array
                     b.full_path = newFile;
-                } else if (writeParams.write_sample_buffers) {
+                } else if (write_sample_buffers) {
                     // Write file to envi folder
-                    const newFile = `${enviDir}/${enviName}/buffers/${b.label}.${fileExt}`;
                     pb.send(b.buffer_index, "write", newFile);
 
                     // Replace polybuffer~ with newly created files
@@ -130,28 +282,23 @@ function saveToFolder() {
             });
         }
     } catch (e) {
-        post(
-            `[ ll.enviwrite ] WARNING: Buffer saving failed, but continuing environment write: ${e.message}\n`
+        ppost(
+            `failed to save buffers, continuing environment write: ${e.message}\n`
         );
     }
 
     // Save presets
-    for (const act of acts) {
-        if (ignorePresets.indexOf(act) !== -1) {
-            // post("skip", act, "(ignored)\n");
-            continue;
-        }
+    ppost("save presets...");
+
+    for (const act of act_list) {
+        if (PRESETS_IGNORE.indexOf(act) !== -1) continue;
 
         try {
-            ll_global.patchers[act].getnamed("pat").message("getslotlist");
-            if (ll_global.pat[act].slotlist && ll_global.pat[act].slotlist.length > 0) {
-                messnamed(
-                    act,
-                    "v8",
-                    "write_preset_path",
-                    `${enviDir}/${enviName}/presets/${act}.json`
-                );
-                // post("wrote presets for", act, "\n");
+            const ll_pat = ll_global.pat[act];
+            const slotlist = ll_pat.getslotlist();
+            if (slotlist && slotlist.length > 0) {
+                ll_pat.write_preset_path(`${envi_path}/presets/${act}.json`);
+                ppost(`    ✓ preset: ${act}`);
             } else {
                 // post("no presets for", act, "— skipping file\n");
             }
@@ -161,12 +308,10 @@ function saveToFolder() {
     }
 
     ppost("save environment state...");
-    dict.props.jsonPath = `${enviDir}/${enviName}/environment.json`;
-
-    writeEnvi();
+    writeEnvi(`${envi_path}/environment.json`);
 }
 
-function writeEnvi() {
+function writeEnvi(jsonPath) {
     environment = {};
 
     let act_list = Object.keys(ll_global.state)
@@ -183,132 +328,40 @@ function writeEnvi() {
         act_list.splice(1, 0, "buffer_host1");
     }
 
-    getacts(act_list);
-}
-
-function getacts(act_list) {
-    // sort acts
-    actname_map = {};
-    let pstate = [...act_list];
-
     // if an act-index is missing, we need to get rid of the gap.
-    // >> actname_map
-    let compare = "";
-    let counter;
-    for (let a of pstate) {
-        let a_class = ll_global.state[a].class;
-        if (a_class != compare) {
-            counter = 1;
-            compare = a_class;
-        } else counter++;
-        actname_map[a] = a_class + counter;
+    let last_class = null;
+    let class_count = 0;
 
-        if (a != actname_map[a])
-            post("renaming", a, "to", actname_map[a], "in this environment\n");
-    }
+    act_list.forEach((oldName) => {
+        const act_class = ll_global.state[oldName].class;
 
-    for (let a of pstate) {
-        addAct(a, ll_global.state[a].class);
-        getdump(a);
-    }
+        class_count = act_class === last_class ? class_count + 1 : 1;
+        last_class = act_class;
 
-    // Check if we have buffer data to save
-    if (environment.buffer_host1 && environment.buffer_host1.ll_buffers) {
+        const newName = act_class + class_count;
+
+        if (oldName !== newName)
+            post("renaming", oldName, "to", newName, "in this environment\n");
+
+        const patcher = ll_global.patchers[oldName];
+
+        // set act in envi with new name
+        environment[newName] = {
+            _actwindow: [act_class, ...patcher.wind.location],
+            ...ll_global.pat[oldName].getdumpJSON(),
+        };
+    });
+
+    if (buffers) {
         environment.buffer_host1.ll_buffers = { buffers };
     }
 
     var enviDict = new Dict("environment");
     enviDict.parse(JSON.stringify(environment));
 
-    enviDict.export_json(dict.props.jsonPath);
-    outlet(0, "done", "reset", dict.props.envi_name);
-    messnamed("envi_name", dict.props.envi_name);
+    enviDict.export_json(jsonPath);
+    outlet(0, "done", "reset", envi_name);
+    messnamed("envi_name", envi_name);
     ppost("done!");
-}
-
-function addAct(act_name_index, act_name) {
-    // if there there was a gap in the index, here is the new key
-    act_name_index = actname_map[act_name_index];
-
-    environment[act_name_index] = {
-        _actwindow: [act_name, ...ll_global.patchers[act_name_index].wind.location],
-    };
-
-    // Set currentAct to the key of the newly added act
-    currentAct = act_name_index;
-}
-
-function getdump(a) {
-    client_list = [];
-    cl = [];
-    pat_gate = 1;
-    // "envi_write_get_pat" is the receive object connected (calling "get_pat")
-    messnamed(a, "sendto", "envi_write_get_pat", "dump");
-    client_list = cl.slice(0, -1); //cut last message "dump done"
-    cl = [];
-    pat_gate = 2;
-    for (index in client_list)
-        messnamed(
-            a,
-            "sendto",
-            "envi_write_get_pat",
-            "getpriority",
-            client_list[index][0]
-        );
-
-    //sort by priorities
-    cl = client_list.sort((a, b) => a[0] - b[0]);
-    for (let i in cl) {
-        cl[i].shift();
-        //post("give",cl[i],"\n");
-        addParam(cl[i]);
-    }
-}
-
-function get_pat() {
-    let args = arrayfromargs(arguments);
-    if (pat_gate == 1) {
-        //the dump eg. vol 0.45
-        cl.push(args);
-    }
-    if (pat_gate == 2) {
-        //prepend the priorities
-        client_list[index].splice(0, 0, args[2]);
-    }
-}
-
-function addParam(args) {
-    // post("Received args: ", args, "\n");
-    try {
-        if (currentAct === null) {
-            post(
-                "error ll.enviwrite.js: No current act set. Cannot add parameter.\n"
-            );
-            return;
-        }
-        var paramName = args.shift();
-        var split = paramName.split("::");
-
-        // The remaining args array is the value for the parameter
-        var paramValue = args.length > 1 ? args : args[0];
-
-        // Make sure the environment path exists
-        var target = environment[currentAct];
-        for (var i = 0; i < split.length - 1; i++) {
-            var key = split[i];
-            if (!target[key]) target[key] = {}; // create nested object if missing
-            target = target[key];
-        }
-
-        // Assign the value to the final key
-        target[split[split.length - 1]] = paramValue;
-
-        if (paramValue[0] === "dictionary") {
-            const innerDict = new Dict(paramValue[1]);
-            const data = JSON.parse(innerDict.stringify());
-            environment[currentAct][paramName] = data;
-        }
-    } catch (e) {
-        post("error ll.enviwrite.js: addParam failed.", args, "\n");
-    }
+    this.patcher.message("wclose");
 }

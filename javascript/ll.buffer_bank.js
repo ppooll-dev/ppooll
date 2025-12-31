@@ -1,6 +1,10 @@
 autowatch = 1;
 outlets = 2;
 
+if (typeof ll === "undefined") {
+	var ll = require("ll._utilities");
+}
+
 const pbName = "pp";
 const pb = new PolyBuffer(pbName);
 
@@ -167,23 +171,15 @@ function readCollPreset(path) {
 function initBuffer(b, i){
     buffers[b.buffer_name] = b;
     if (b.full_path) {
-        if(fileExists(b.full_path)){
-            pb.append(b.full_path);
+        const full_path = ll.fileExists(b.full_path);
+        if(full_path){
+            pb.append(full_path);
         }else{
             error(`ll.buffer_bank: ${b.full_path} not found, adding empty\n`)
             pb.appendempty(b.length, b.chans);
         }
     }
     else pb.appendempty(b.length, b.chans);
-}
-
-function fileExists(filepath){
-    const f = new File(filepath, "read");
-    if (f.isopen) {
-        f.close();
-        return true;
-    } 
-    return false;
 }
 
 function setSelectedBuffer(index) {
@@ -215,18 +211,19 @@ function addSampleBuffer(length, channels) {
 }
 
 function loadFilePath(filepath) {
-    if(fileExists(filepath)){
+    const full_path = ll.fileExists(filepath);
+    if(fullpath){
         const bh = bhState();
 
         // Replace-Append
         const file_name = filepath.split("/").pop();
 
         if (selectedIndex === bh.length) {
-            pb.append(filepath);
-            buffers[`${pbName}.${bh.length + 1}`] = { label: file_name, full_path: filepath }
+            pb.append(fullpath);
+            buffers[`${pbName}.${bh.length + 1}`] = { label: file_name, full_path: fullpath }
         } else {
-            pb.send(selectedIndex + 1, "replace", filepath);
-            buffers[`${pbName}.${selectedIndex + 1}`] = { label: file_name, full_path: filepath }
+            pb.send(selectedIndex + 1, "replace", fullpath);
+            buffers[`${pbName}.${selectedIndex + 1}`] = { label: file_name, full_path: fullpath }
         }
         update_buffer_list();
     }
@@ -272,7 +269,7 @@ function bhState() {
             return {
                 ...b,
                 label,
-                full_path: buffers[b.buffer_name] && buffers[b.buffer_name].full_path ? buffers[b.buffer_name].full_path : null
+                full_path: (buffers[b.buffer_name] && buffers[b.buffer_name].full_path) ? ll.fileExists(buffers[b.buffer_name].full_path) : null
             };
         });
 }
