@@ -16,6 +16,8 @@ let sortByDate = false;
 
 var ll_global = new Global("ppooll");
 
+var ll_prefs = new Dict("ppooll-preferences");
+
 const DEFAULT_ITEMS = [
     "(environments)",
     "by name",
@@ -269,7 +271,7 @@ function ll_live_envi_name(name) {
 
 function preferencesReady() {
     isPrefsReady = true;
-
+    sortByDate = ll_prefs.get("general::sort_envi_by") === "date";
     fillMenu();
 
     if (live_envi) {
