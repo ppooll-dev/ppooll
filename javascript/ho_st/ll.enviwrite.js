@@ -199,7 +199,7 @@ function enter() {
     write();
 }
 
-//============================= write =============================
+//============================= write envi =============================
 function write() {
     if (!isValidFileName(envi_name)) {
         error = "enter a valid filename";
@@ -235,51 +235,50 @@ function write() {
     }
 }
 
+function saveBuffer(b) {
+    const bufferFileExt = ll_prefs.get("general::quickrecord_fileformat");
+    let newFile = null;
+    if (b.full_path) {
+        let newFile = `${envi_path}/buffers/${b.label}`;
+        if (write_files) {
+            // write, replacing
+
+            // Write file to envi folder
+            pb.send(b.buffer_index, "write", newFile);
+
+            // Replace polybuffer~ with newly created files
+            pb.send(b.buffer_index, "read", newFile);
+        } else {
+            // copy, preserve original
+
+            // Re-read the file
+            pb.send(b.buffer_index, "read", b.full_path);
+
+            // Save to folder
+            pb.send(b.buffer_index, "write", newFile);
+        }
+        // Update the saved path in the copy array
+        b.full_path = newFile;
+    } else if (write_sample_buffers) {
+        newFile = `${envi_path}/buffers/${b.label}.${bufferFileExt}`;
+
+        // Write file to envi folder
+        pb.send(b.buffer_index, "write", newFile);
+
+        // Replace polybuffer~ with newly created files
+        pb.send(b.buffer_index, "read", newFile);
+        b.full_path = newFile;
+        b.label = `${b.label}.${bufferFileExt}`;
+    }
+}
+
 // Save presets, buffers to created folders
 function saveToFolder() {
     try {
         // Save buffers
         if (buffers) {
-            ppost("copy buffers..." + JSON.stringify(buffers));
-            buffers.forEach((b, i) => {
-                const bufferFileExt = ll_prefs.get(
-                    "general::quickrecord_fileformat"
-                );
-                let newFile = null;
-                if (b.full_path) {
-                    let newFile = null;
-                    if (write_files) {
-                        // write, replacing
-                        newFile = `${envi_path}/buffers/${
-                            ll.getExtension(b.label)[0]
-                        }.${bufferFileExt}`;
-
-                        // Write file to envi folder
-                        pb.send(b.buffer_index, "write", newFile);
-
-                        // Replace polybuffer~ with newly created files
-                        pb.send(b.buffer_index, "read", newFile);
-                    } else {
-                        // copy, preserve original
-                        newFile = `${envi_path}/buffers/${b.label}`;
-
-                        // Re-read the file
-                        pb.send(b.buffer_index, "read", b.full_path);
-
-                        // Save to folder
-                        pb.send(b.buffer_index, "write", newFile);
-                    }
-                    // Update the saved path in the copy array
-                    b.full_path = newFile;
-                } else if (write_sample_buffers) {
-                    // Write file to envi folder
-                    pb.send(b.buffer_index, "write", newFile);
-
-                    // Replace polybuffer~ with newly created files
-                    pb.send(b.buffer_index, "read", newFile);
-                    b.full_path = newFile;
-                }
-            });
+            ppost("copy buffers...");
+            buffers.forEach((b) => saveBuffer(b));
         }
     } catch (e) {
         ppost(
@@ -303,7 +302,7 @@ function saveToFolder() {
                 // post("no presets for", act, "— skipping file\n");
             }
         } catch (e) {
-            post("error fetching slotlist for", act, ":", e.message, "\n");
+            ppost("error fetching slotlist for", act, ":", e.message, "\n");
         }
     }
 
