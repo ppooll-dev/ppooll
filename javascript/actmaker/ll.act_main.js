@@ -288,7 +288,7 @@ function bang(alreadyRegistered = false) {
                 return JSON.parse(this.getdump().stringify());
             },
 
-            write_preset_path: write_preset_path
+            write_preset_path: write_preset_path,
         };
     }
 
@@ -1049,7 +1049,7 @@ function anySlotHasActiveStore(pattrObj) {
         const v = data["act::active_store"];
         if (
             Array.isArray(v) &&
-            v.some((item) => typeof item === "string" && item.length > 0)
+            v.some((item) => typeof item === "string" && item.trim().length > 0)
         ) {
             return true; // FOUND one
         }
@@ -1636,7 +1636,13 @@ function _in2(...args) {
         return;
     } else if (msg === "act::active_store") {
         const active_clients = (Array.isArray(args) ? args : [args]).filter(
-            (a) => a && a !== 0 && a !== "_" && a !== "act::active_store"
+            (a) =>
+                a &&
+                a !== 0 &&
+                a !== 1 &&
+                a !== "_" &&
+                a !== " " &&
+                a !== "act::active_store"
         );
 
         const newActiveStore = active_clients.length > 0;
