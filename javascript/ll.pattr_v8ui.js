@@ -910,13 +910,13 @@ function setvalueof() {
         interp_dir = "none";
 
         // notify actui only for discrete recalls
-        try {
+        // try {
             ll_global.patchers[act_name]
                 .getnamed("act")
                 .subpatcher()
                 .getnamed("actui")
                 .message("active_set", "recall", prev);
-        } catch (_) {}
+        // } catch (_) {}
 
         this.patcher.getnamed("pat").message("recall", prev);
     } else {

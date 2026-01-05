@@ -181,7 +181,6 @@ function msg_write_dialog(...args) {
 }
 
 function write_envi() {
-    post("write_envi\n");
     this.patcher.getnamed("environment_dialog").message("front");
     this.patcher.getnamed("environment_dialog").message("select");
 }
