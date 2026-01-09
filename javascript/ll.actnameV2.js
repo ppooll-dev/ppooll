@@ -45,6 +45,7 @@ function request_actname_from_main() {
     // find act::actui AKA ll.act_main.js
     if(!act || !act.subpatcher() || !act.subpatcher().getnamed("actui")) {
         post("ll.actname error: could not find act::actui\n");
+        outlet(0, "bang"); // bang to delay 100, "retry"
         return;
     }
     const act_v8 = act.subpatcher().getnamed("actui");

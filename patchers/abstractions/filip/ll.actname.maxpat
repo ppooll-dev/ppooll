@@ -13,6 +13,28 @@
         "boxes": [
             {
                 "box": {
+                    "id": "obj-11",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "request_actname_from_main" ],
+                    "patching_rect": [ 209.0, 71.0, 171.0, 22.0 ],
+                    "text": "t request_actname_from_main"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-5",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "bang" ],
+                    "patching_rect": [ 209.0, 41.0, 61.0, 22.0 ],
+                    "text": "delay 100"
+                }
+            },
+            {
+                "box": {
                     "id": "obj-17",
                     "linecount": 3,
                     "maxclass": "comment",
@@ -61,7 +83,7 @@
                     "annotation": "actname",
                     "comment": "actname prepended with \"actname\"",
                     "id": "obj-15",
-                    "index": 0,
+                    "index": 2,
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
@@ -108,7 +130,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 51.0, 41.0, 123.0, 22.0 ],
+                    "patching_rect": [ 51.0, 41.0, 136.0, 22.0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0
                     },
@@ -126,7 +148,7 @@
                 "box": {
                     "comment": "bang for actname",
                     "id": "obj-9",
-                    "index": 0,
+                    "index": 1,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -166,7 +188,7 @@
                     "annotation": "actname",
                     "comment": "actname",
                     "id": "obj-2",
-                    "index": 0,
+                    "index": 1,
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
@@ -175,6 +197,18 @@
             }
         ],
         "lines": [
+            {
+                "patchline": {
+                    "destination": [ "obj-5", 0 ],
+                    "source": [ "obj-1", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-1", 0 ],
+                    "source": [ "obj-11", 0 ]
+                }
+            },
             {
                 "patchline": {
                     "destination": [ "obj-15", 0 ],
@@ -209,6 +243,12 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-11", 0 ],
+                    "source": [ "obj-5", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-10", 1 ],
                     "order": 0,
                     "source": [ "obj-7", 0 ]
@@ -233,7 +273,6 @@
                     "source": [ "obj-9", 0 ]
                 }
             }
-        ],
-        "autosave": 0
+        ]
     }
 }
