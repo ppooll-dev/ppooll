@@ -78,5 +78,10 @@ function compare() {
 }
 
 function _refresh() {
-    outlet_dictionary(2, { state: ll_global.state, pat: ll_global.pat, buffers: ll_global.buffers });
+    outlet_dictionary(2, {
+        state: ll_global.state,
+        pat: ll_global.pat,
+        buffers: ll_global.buffers,
+        syncs: ll_global.syncs,
+    });
 }

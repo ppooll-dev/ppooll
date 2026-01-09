@@ -212,18 +212,18 @@ function addSampleBuffer(length, channels) {
 
 function loadFilePath(filepath) {
     const full_path = ll.fileExists(filepath);
-    if(fullpath){
+    if(full_path){
         const bh = bhState();
 
         // Replace-Append
         const file_name = filepath.split("/").pop();
 
         if (selectedIndex === bh.length) {
-            pb.append(fullpath);
-            buffers[`${pbName}.${bh.length + 1}`] = { label: file_name, full_path: fullpath }
+            pb.append(full_path);
+            buffers[`${pbName}.${bh.length + 1}`] = { label: file_name, full_path: full_path }
         } else {
-            pb.send(selectedIndex + 1, "replace", fullpath);
-            buffers[`${pbName}.${selectedIndex + 1}`] = { label: file_name, full_path: fullpath }
+            pb.send(selectedIndex + 1, "replace", full_path);
+            buffers[`${pbName}.${selectedIndex + 1}`] = { label: file_name, full_path: full_path }
         }
         update_buffer_list();
     }
