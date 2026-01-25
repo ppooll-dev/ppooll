@@ -1,0 +1,27 @@
+max define ll.blues 
+    bpatcher @name ll.blues.maxpat;
+max define ll.txtbutton 
+    v8ui @filename ll.txtbutton.js;
+max define ll.pattr_ui 
+    v8ui @filename ll.pattr_v8ui.js
+    @varname presets 
+    @vbrgb 0.196 0.196 0.196 1.000 
+    @vrgb2 1.000 0.000 0.000 1.000 
+    @boxsize 12 
+    @vfrgb 1.000 1.000 1.000 1.000 
+    @vrgb3 0.000 1.000 0.000 1.000;
+max define ll.pattr_v8ui 
+    v8ui @filename ll.pattr_v8ui.js 
+    @varname presets 
+    @vbrgb 0.196 0.196 0.196 1.000 
+    @vrgb2 1.000 0.000 0.000 1.000 
+    @boxsize 12 @vfrgb 1.000 1.000 1.000 1.000 
+    @vrgb3 0.000 1.000 0.000 1.000;
+max define ll.preset-ramp 
+    ll_number 
+    @varname preset-ramp 
+    @min 0. 
+    @slidermin 0. 
+    @slidermax 2000. 
+    @format 10000 1000 : 100 10 1 
+    @sliderstyle 1;

@@ -14,6 +14,9 @@
 outlets = 1;
 autowatch = 1;
 
+const TOTAL_RETRIES = 5;
+
+let retries = 0;
 const hash = jsarguments[1];
 
 function loadbang() {
@@ -44,8 +47,13 @@ function request_actname_from_main() {
 
     // find act::actui AKA ll.act_main.js
     if(!act || !act.subpatcher() || !act.subpatcher().getnamed("actui")) {
-        post("ll.actname error: could not find act::actui\n");
+        if(retries >= TOTAL_RETRIES){
+            post("ll.actname fatal error: could not find act::actui\n");
+            return;
+        }
+        // post("ll.actname error: could not find act::actui\n");
         outlet(0, "bang"); // bang to delay 100, "retry"
+        retries += 1;
         return;
     }
     const act_v8 = act.subpatcher().getnamed("actui");

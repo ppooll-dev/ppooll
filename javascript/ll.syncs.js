@@ -61,17 +61,19 @@ function set_patcherargs(dictname) {
     };
 
     fill_menu();
-
+    outlet(0, "sync_name", sync_name);
     messnamed("ll_syncs_update", "bang");
 }
 
 function fill_menu() {
     const act_patcher = ll_global.patchers[actname];
     const umenu = act_patcher.getnamed(ll_r_name);
-    let current_value = umenu.getvalueof();
     if(!umenu) {
-        post("ll.syncs error: could not find named umenu", ll_r_name, "\n");
+        // post("ll.syncs error: could not find named umenu", ll_r_name, "\n");
+        return;
     }
+
+    let current_value = umenu.getvalueof();
 
     const items = ["sync-off", "sync_in"];
     if(ext_midi) items.push("ext_midi");
@@ -88,7 +90,6 @@ function fill_menu() {
     umenu.message("symbol", current_value);
     
     outlet(0, "ll_r", ll_r_name);
-    outlet(0, "sync_name", sync_name);
 }
 
 function notifydeleted(){
