@@ -197,6 +197,7 @@ function loadVST(pluginPath) {
         return;
     }
     refreshParams();
+    outlet(0, "getpgm", "bang");
 }
 
 function loadShellPlug(subname) {
