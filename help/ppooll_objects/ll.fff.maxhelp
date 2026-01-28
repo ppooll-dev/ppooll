@@ -4,12 +4,12 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 0,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 100.0, 100.0, 640.0, 506.0 ],
+        "rect": [ 98.0, 139.0, 640.0, 506.0 ],
         "globalpatchername": "ll.fffhelp1",
         "boxes": [
             {
@@ -272,7 +272,7 @@
                     "fontname": "Arial",
                     "fontsize": 11.0,
                     "id": "obj-51",
-                    "items": [ "ischl1.WAV", ",", "ischl2.WAV", ",", "ischl3.WAV", ",", "ischl4.WAV", ",", "ischl@gassnerweg7.wav", ",", "ischl@gassnerweg7.wav.zip" ],
+                    "items": "<empty>",
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -281,7 +281,6 @@
                     "patching_rect": [ 13.0, 45.0, 152.0, 21.0 ],
                     "pattrmode": 1,
                     "prefix": "~/Music/ischl_rec/",
-                    "textcolor": [ 0.968627, 0.968627, 0.968627, 1.0 ],
                     "varname": "file_menu"
                 }
             },
@@ -297,7 +296,7 @@
                     "fontname": "Arial",
                     "fontsize": 11.0,
                     "id": "obj-52",
-                    "items": [ "ischl_rec", ",", "tokyo_university-0505-d5f713fce0206cc2b223e671d04f0ea5", ",", "billy bragg", ",", "-", ",", "clear_selected", ",", "clear_all", ",", "add_folder" ],
+                    "items": [ "ppooll_rec", ",", "voice_memos", ",", "video", ",", "trumpet", ",", "tamb", ",", "talking", ",", "sunn-o spring reverb IR", ",", "strings", ",", "other", ",", "mixes", ",", "Metamorphosis 21st Century Grooves", ",", "Liquid Grooves", ",", "hl2_sound", ",", "high_strings", ",", "hg-gtp", ",", "Henry Joe Samples 221009", ",", "Henry GtrCelloUkeKalima C Samples 221009", ",", "Henry Ambient", ",", "geetar", ",", "Future Music CD1", ",", "field recordings", ",", "djrone", ",", "cooler stuff", ",", "buffub", ",", "Bizzare Guitars", ",", "Bizarre Gt 43-48", ",", "bells_chimes", ",", "beauty snippets", ",", "b2tw", ",", "alex-strings", ",", "-", ",", "clear_selected", ",", "clear_all", ",", "add_folder" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -314,7 +313,11 @@
                     "active": {
                         "act": 0,
                         "act::active_store": 0,
-                        "actmake::active_store": 0
+                        "act::master": 0,
+                        "act::u751015509": 0,
+                        "act::pres_menu": 0,
+                        "act::tetris_menu": 0,
+                        "act::title_menu": 0
                     },
                     "color": [ 0.0, 0.0, 0.0, 1.0 ],
                     "fontname": "Arial",
@@ -384,8 +387,8 @@
                     "restore": {
                         "f": [ -1 ],
                         "ff": [ -1 ],
-                        "file_menu": [ "ischl1.WAV" ],
-                        "folder_menu": [ "ischl_rec" ],
+                        "file_menu": [ "" ],
+                        "folder_menu": [ "ppooll_rec" ],
                         "open!": [ -1 ]
                     },
                     "text": "autopattr autopattr",
@@ -394,15 +397,76 @@
             },
             {
                 "box": {
-                    "color": [ 0.4, 0.4, 0.8, 1.0 ],
-                    "hidden": 1,
-                    "id": "obj-1",
-                    "maxclass": "newobj",
-                    "numinlets": 2,
+                    "args": [ "ll.fffhelp", 1 ],
+                    "bgmode": 0,
+                    "border": 0,
+                    "clickthrough": 0,
+                    "enablehscroll": 0,
+                    "enablevscroll": 0,
+                    "id": "obj-15",
+                    "lockeddragscroll": 0,
+                    "lockedsize": 0,
+                    "maxclass": "bpatcher",
+                    "name": "act.maxpat",
+                    "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 300.0, 47.0, 100.0, 22.0 ],
-                    "text": "actmake ll.fffhelp",
-                    "varname": "act"
+                    "offset": [ 0.0, 0.0 ],
+                    "patching_rect": [ 0.0, 0.0, 65.00586318969727, 16.0 ],
+                    "varname": "act",
+                    "viewvisibility": 1
+                }
+            },
+            {
+                "box": {
+                    "hidden": 1,
+                    "id": "obj-17",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 314.0, 47.0, 115.0, 22.0 ],
+                    "text": "pattrforward act::in2",
+                    "varname": "pf"
+                }
+            },
+            {
+                "box": {
+                    "hidden": 1,
+                    "id": "obj-19",
+                    "maxclass": "newobj",
+                    "numinlets": 0,
+                    "numoutlets": 0,
+                    "patcher": {
+                        "fileversion": 1,
+                        "appversion": {
+                            "major": 9,
+                            "minor": 1,
+                            "revision": 2,
+                            "architecture": "x64",
+                            "modernui": 1
+                        },
+                        "classnamespace": "box",
+                        "rect": [ 234.0, 134.0, 432.0, 332.0 ],
+                        "boxes": [
+                            {
+                                "box": {
+                                    "id": "obj-1",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 2,
+                                    "outlettype": [ "", "" ],
+                                    "patching_rect": [ 10.0, 20.0, 100.0, 22.0 ],
+                                    "save": [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+                                    "text": "thispatcher",
+                                    "varname": "subTP"
+                                }
+                            }
+                        ],
+                        "lines": []
+                    },
+                    "patching_rect": [ 400.0, 550.0, 100.0, 22.0 ],
+                    "text": "p ll.fffhelp_sub",
+                    "varname": "sub"
                 }
             }
         ],
@@ -443,7 +507,7 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-1", 1 ],
+                    "destination": [ "obj-17", 0 ],
                     "hidden": 1,
                     "source": [ "obj-2", 0 ]
                 }
@@ -482,6 +546,7 @@
                 }
             }
         ],
-        "autosave": 0
+        "autosave": 0,
+        "bgcolor": [ 1.0, 1.0, 1.0, 1.0 ]
     }
 }
