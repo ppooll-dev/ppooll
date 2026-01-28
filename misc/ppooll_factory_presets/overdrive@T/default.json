@@ -1,63 +1,54 @@
 {
-	"window" : [ 283, 201, 442, 297 ],
-	"act" : 	{
-		"patching_rect" : [ 0, 0, 84.078125, 16 ],
-		"hidden" : 0,
-		"fontsize" : 12
-	}
-,
-	"preset-ramp" : 	{
-		"patching_rect" : [ 123, 1, 36, 13 ],
-		"hidden" : 0,
-		"bgcolor" : [ 1, 1, 1, 1 ],
-		"bordercolor" : [ 0.5, 0.5, 0.5, 1 ],
-		"fontsize" : 8,
-		"labelcolor" : [ 0, 0, 0, 1 ],
-		"selectcolor" : [ 0.45, 0.67, 1, 0.47 ],
-		"slidercolor" : [ 0, 0, 0, 1 ],
-		"slidercolornofocus" : [ 0.48, 0.48, 0.48, 0.55 ],
-		"textcolor" : [ 0, 0, 0, 1 ],
-		"textcolornofocus" : [ 0.48, 0.48, 0.48, 0.79 ]
-	}
-,
-	"presets" : 	{
-		"patching_rect" : [ 86, 1, 37, 13 ],
-		"hidden" : 0,
-		"jsarguments" : [ 11, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "overdrive@1" ]
-	}
-,
-	"ll.blues" : 	{
-		"patching_rect" : [ 0, 43, 159, 53 ],
-		"hidden" : 0,
-		"fontsize" : 12
-	}
-,
-	"drive" : 	{
-		"patching_rect" : [ 15, 16, 144, 27 ],
-		"hidden" : 0,
-		"bgcolor" : [ 1, 0.890196078431372, 0.090196078431373, 1 ],
-		"bordercolor" : [ 0.5, 0.5, 0.5, 1 ],
-		"fontsize" : 12,
-		"labelcolor" : [ 0, 0, 0, 1 ],
-		"selectcolor" : [ 0.45, 0.67, 1, 0.47 ],
-		"slidercolor" : [ 0, 0, 0, 1 ],
-		"slidercolornofocus" : [ 0.48, 0.48, 0.48, 0.55 ],
-		"textcolor" : [ 0, 0, 0, 1 ],
-		"textcolornofocus" : [ 0.48, 0.48, 0.48, 0.79 ]
-	}
-,
-	"link" : 	{
-		"patching_rect" : [ 0, 16, 14, 27 ],
-		"hidden" : 0,
-		"bgcolor" : [ 0, 0, 0, 1 ],
-		"bgoncolor" : [ 1, 0.890196078431372, 0.090196078431373, 1 ],
-		"fontsize" : 12,
-		"legacytextcolor" : 0,
-		"textcolor" : [ 1, 0.890196078431372, 0.090196078431373, 1 ],
-		"textoncolor" : [ 0, 0, 0, 1 ],
-		"textovercolor" : [ 0, 0, 0, 1 ],
-		"usebgoncolor" : 1,
-		"usetextovercolor" : 1
-	}
-
+    "window": [ 283, 201, 442, 297 ],
+    "act": {
+        "patching_rect": [ 0, 0, 84.078125, 16 ],
+        "hidden": 0
+    },
+    "preset-ramp": {
+        "patching_rect": [ 123, 1, 36, 13 ],
+        "hidden": 0,
+        "bgcolor": [ 1, 1, 1, 1 ],
+        "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
+        "fontsize": 8,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45, 0.67, 1, 0.47 ],
+        "slidercolor": [ 0, 0, 0, 1 ],
+        "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
+    },
+    "ll.blues": {
+        "patching_rect": [ 0, 43, 159, 53 ],
+        "hidden": 0
+    },
+    "drive": {
+        "patching_rect": [ 15, 16, 144, 27 ],
+        "hidden": 0,
+        "bgcolor": [ 1, 0.890196078431372, 0.090196078431373, 1 ],
+        "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
+        "fontsize": 12,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45, 0.67, 1, 0.47 ],
+        "slidercolor": [ 0, 0, 0, 1 ],
+        "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
+    },
+    "link": {
+        "patching_rect": [ 0, 16, 14, 27 ],
+        "hidden": 0,
+        "bgcolor": [ 0, 0, 0, 1 ],
+        "bgoncolor": [ 1, 0.890196078431372, 0.090196078431373, 1 ],
+        "fontsize": 12,
+        "legacytextcolor": 0,
+        "textcolor": [ 1, 0.890196078431372, 0.090196078431373, 1 ],
+        "textoncolor": [ 0, 0, 0, 1 ],
+        "textovercolor": [ 0, 0, 0, 1 ],
+        "usebgoncolor": 1,
+        "usetextovercolor": 1
+    },
+    "presets": {
+        "patching_rect": [ 86, 1, 37, 13 ],
+        "hidden": 0
+    }
 }

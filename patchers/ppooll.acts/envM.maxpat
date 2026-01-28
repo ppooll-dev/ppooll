@@ -4,15 +4,42 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 0,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 362.0, 181.0, 330.0, 262.0 ],
+        "rect": [ 346.0, 186.0, 330.0, 262.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "envM1",
         "boxes": [
+            {
+                "box": {
+                    "embedstate": [
+                        [ "boxsize", 14 ],
+                        [ "vbrgb", 0.19607843137254902, 0.19607843137254902, 0.19607843137254902, 1 ],
+                        [ "vfrgb", 1, 1, 1, 1 ],
+                        [ "vrgb2", 1, 0, 0, 1 ],
+                        [ "vrgb3", 0, 1, 0, 1 ]
+                    ],
+                    "filename": "ll.pattr_v8ui.js",
+                    "id": "obj-17",
+                    "jsarguments": [ "" ],
+                    "maxclass": "v8ui",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 168.0, 0.0, 136.0, 16.0 ],
+                    "textfile": {
+                        "filename": "ll.pattr_v8ui.js",
+                        "flags": 0,
+                        "embed": 0,
+                        "autowatch": 1
+                    },
+                    "varname": "presets"
+                }
+            },
             {
                 "box": {
                     "annotation": "my_control@",
@@ -146,7 +173,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 487.0, 156.0, 96.0, 22.0 ],
-                    "restore": [ 1, 1, 1, 1 ],
+                    "restore": [ 1, 1 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -164,7 +191,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 504.0, 180.0, 93.0, 22.0 ],
-                    "restore": [ 0, 0, 0, 0 ],
+                    "restore": [ 0, 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -222,21 +249,6 @@
                     "rows": 1,
                     "varname": "cellblock",
                     "vscroll": 0
-                }
-            },
-            {
-                "box": {
-                    "annotation": "presets grid. click on ppooll in the ho_st to find info about it",
-                    "filename": "ll.pattr_ui.js",
-                    "id": "obj-3",
-                    "jsarguments": [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "envMM1" ],
-                    "maxclass": "jsui",
-                    "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 168.0, 0.0, 136.0, 16.0 ],
-                    "varname": "presets"
                 }
             },
             {
@@ -313,20 +325,37 @@
                     "classic_curve": 1,
                     "data": [
                         {
-                            "addpoints": [ 0.0, 0.08641975308642, 0, 65.23899371069183, 1.0, 0, 343.9874213836478, 0.7530864197530864, 0, 1773.314465408805, 0.41975308641975306, 0, 1886.0, 0.0, 0 ]
+                            "addpoints": [ 0.0, 0.08641975308642, 0, 14.147798742138365, 1.0, 0, 74.59748427672956, 0.7530864197530864, 0, 384.562893081761, 0.41975308641975306, 0, 409.0, 0.0, 0 ]
                         },
                         {
-                            "addpoints": [ 0.0, 0.2716049382716049, 0, 444.811320754717, 0.5185185185185185, 0, 1886.0, 0.024691358024691357, 0 ]
+                            "addpoints": [ 0.0, 0.2716049382716049, 0, 96.4622641509434, 0.5185185185185185, 0, 409.0, 0.024691358024691357, 0 ]
                         },
                         {
-                            "addpoints": [ 0.0, 0.7222222222222222, 0, 859.9685534591196, 0.265432098765432, 0, 1826.691823899371, 0.5617283950617284, 0, 1886.0, 0.0, 0 ]
+                            "addpoints": [ 0.0, 0.7222222222222222, 0, 186.4937106918239, 0.265432098765432, 0, 396.13836477987417, 0.5617283950617284, 0, 409.0, 0.0, 0 ]
                         },
                         {
-                            "addpoints": [ 0.0, 0.0, 0, 1417.4654088050315, 0.6666666666666666, 0, 1826.6918238993712, 0.314814814814815, 0, 1886.0000000000014, 0.0, 0 ]
-                        }
+                            "addpoints": [ 0.0, 0.0, 0, 307.3930817610063, 0.6666666666666666, 0, 396.1383647798742, 0.314814814814815, 0, 409.0000000000003, 0.0, 0 ]
+                        },
+                        {                        },
+                        {                        },
+                        {                        },
+                        {                        },
+                        {                        },
+                        {                        },
+                        {                        },
+                        {                        },
+                        {                        },
+                        {                        },
+                        {                        },
+                        {                        },
+                        {                        },
+                        {                        },
+                        {                        },
+                        {                        },
+                        {                        }
                     ],
                     "displaychan": 4,
-                    "domain": 1886.0,
+                    "domain": 409.0,
                     "frozen_box_attributes": [ "chans" ],
                     "id": "obj-2",
                     "maxclass": "mc.function",
@@ -348,7 +377,7 @@
                         "presets": 0,
                         "act": 0,
                         "act::active_store": 0,
-                        "act::master/activest": 0,
+                        "act::master": 0,
                         "act::u751015509": 0,
                         "act::pres_menu": 0,
                         "act::tetris_menu": 0,
@@ -369,7 +398,6 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 732.0, 159.0, 100.0, 22.0 ],
                     "priority": {
-                        "chans": 1,
                         "function": 2,
                         "env-length": 3,
                         "loop": 4,
@@ -435,15 +463,14 @@
                     "outlettype": [ "", "", "", "" ],
                     "patching_rect": [ 719.0, 243.0, 107.0, 22.0 ],
                     "restore": {
-                        "chans": [ 4.0 ],
                         "env-length": [ 409 ],
-                        "function": [ "data", 0, 19, 1886.0, 0.0, 1.0, 0.0, 0.08641975308642, 0, 65.23899371069183, 1.0, 0, 343.9874213836478, 0.7530864197530864, 0, 1773.314465408805, 0.41975308641975306, 0, 1886.0, 0.0, 0, "linear", "data", 1, 13, 1886.0, 0.0, 1.0, 0.0, 0.2716049382716049, 0, 444.811320754717, 0.5185185185185185, 0, 1886.0, 0.024691358024691357, 0, "linear", "data", 2, 16, 1886.0, 0.0, 1.0, 0.0, 0.7222222222222222, 0, 859.9685534591196, 0.265432098765432, 0, 1826.691823899371, 0.5617283950617284, 0, 1886.0, 0.0, 0, "linear", "data", 3, 16, 1886.0, 0.0, 1.0, 0.0, 0.0, 0, 1417.4654088050315, 0.6666666666666666, 0, 1826.6918238993712, 0.314814814814815, 0, 1886.0000000000014, 0.0, 0, "linear" ],
+                        "function": [ "data", 0, 19, 409.0, 0.0, 1.0, 0.0, 0.08641975308642, 0, 14.147798742138365, 1.0, 0, 74.59748427672956, 0.7530864197530864, 0, 384.562893081761, 0.41975308641975306, 0, 409.0, 0.0, 0, "linear", "data", 1, 13, 409.0, 0.0, 1.0, 0.0, 0.2716049382716049, 0, 96.4622641509434, 0.5185185185185185, 0, 409.0, 0.024691358024691357, 0, "linear", "data", 2, 16, 409.0, 0.0, 1.0, 0.0, 0.7222222222222222, 0, 186.4937106918239, 0.265432098765432, 0, 396.13836477987417, 0.5617283950617284, 0, 409.0, 0.0, 0, "linear", "data", 3, 16, 409.0, 0.0, 1.0, 0.0, 0.0, 0, 307.3930817610063, 0.6666666666666666, 0, 396.1383647798742, 0.314814814814815, 0, 409.0000000000003, 0.0, 0, "linear", "data", 4, 4, 409.0, 0.0, 1.0, "linear", "data", 5, 4, 409.0, 0.0, 1.0, "linear", "data", 6, 4, 409.0, 0.0, 1.0, "linear", "data", 7, 4, 409.0, 0.0, 1.0, "linear", "data", 8, 4, 409.0, 0.0, 1.0, "linear", "data", 9, 4, 409.0, 0.0, 1.0, "linear", "data", 10, 4, 409.0, 0.0, 1.0, "linear", "data", 11, 4, 409.0, 0.0, 1.0, "linear", "data", 12, 4, 409.0, 0.0, 1.0, "linear", "data", 13, 4, 409.0, 0.0, 1.0, "linear", "data", 14, 4, 409.0, 0.0, 1.0, "linear", "data", 15, 4, 409.0, 0.0, 1.0, "linear", "data", 16, 4, 409.0, 0.0, 1.0, "linear", "data", 17, 4, 409.0, 0.0, 1.0, "linear", "data", 18, 4, 409.0, 0.0, 1.0, "linear", "data", 19, 4, 409.0, 0.0, 1.0, "linear", "data", 20, 4, 409.0, 0.0, 1.0, "linear" ],
                         "loop": [ 0 ],
                         "my_control@": [ -1 ],
                         "p_trig": [ 1 ],
-                        "presets": [ 2 ],
+                        "presets": [ 0 ],
                         "s&h": [ 1.0 ],
-                        "sig_mess": [ "sig" ],
+                        "sig_mess": [ "sig mess both" ],
                         "trigger": [ 0.0 ]
                     },
                     "text": "autopattr autopattr",
@@ -462,7 +489,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -481,7 +508,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -574,7 +601,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 128.0, 77.0, 165.0, 22.0 ],
-                                                    "text": "0 0 0 0"
+                                                    "text": "0 0"
                                                 }
                                             },
                                             {
@@ -596,7 +623,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 231.0, 112.0, 165.0, 22.0 ],
-                                                    "text": "1 1 1 1"
+                                                    "text": "1 1"
                                                 }
                                             },
                                             {
@@ -706,7 +733,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -915,12 +942,13 @@
                                             {
                                                 "box": {
                                                     "id": "obj-4",
+                                                    "linecount": 3,
                                                     "maxclass": "message",
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 239.0, 57.0, 50.0, 22.0 ],
-                                                    "text": "sig"
+                                                    "text": "\"sig mess both\""
                                                 }
                                             },
                                             {
@@ -1107,7 +1135,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1182,7 +1210,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 0,
+                                                            "revision": 2,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1622,7 +1650,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1896,7 +1924,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -2242,7 +2270,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -2532,7 +2560,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 160.0, 250.0, 50.0, 22.0 ],
-                                                    "text": "0 0 0"
+                                                    "text": "0 0"
                                                 }
                                             },
                                             {

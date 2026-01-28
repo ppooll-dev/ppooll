@@ -4,15 +4,42 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 0,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 445.0, 820.0, 316.0, 106.0 ],
+        "rect": [ 488.0, 269.0, 316.0, 131.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "op@1",
         "boxes": [
+            {
+                "box": {
+                    "embedstate": [
+                        [ "boxsize", 14 ],
+                        [ "vbrgb", 0.19607843137254902, 0.19607843137254902, 0.19607843137254902, 1 ],
+                        [ "vfrgb", 1, 1, 1, 1 ],
+                        [ "vrgb2", 1, 0, 0, 1 ],
+                        [ "vrgb3", 0, 1, 0, 1 ]
+                    ],
+                    "filename": "ll.pattr_v8ui.js",
+                    "id": "obj-10",
+                    "jsarguments": [ "" ],
+                    "maxclass": "v8ui",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 47.0, 0.0, 198.0, 16.0 ],
+                    "textfile": {
+                        "filename": "ll.pattr_v8ui.js",
+                        "flags": 0,
+                        "embed": 0,
+                        "autowatch": 1
+                    },
+                    "varname": "presets"
+                }
+            },
             {
                 "box": {
                     "bgcolor": [ 1.0, 0.890196078431372, 0.329411764705882, 1.0 ],
@@ -247,7 +274,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "offset": [ 0.0, 0.0 ],
-                    "patching_rect": [ 155.0, 92.0, 160.0, 13.0 ],
+                    "patching_rect": [ 155.0, 92.0, 160.0, 39.0 ],
                     "varname": "ll.blues",
                     "viewvisibility": 1
                 }
@@ -817,7 +844,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "multichannelsignal", "float", "int" ],
                     "patching_rect": [ 158.0, 18.0, 69.0, 34.0 ],
-                    "sig": [ 0.0, 0.0 ],
+                    "sig": 0.0,
                     "sigoutmode": 0,
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "varname": "right"
@@ -839,7 +866,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "multichannelsignal", "float", "int" ],
                     "patching_rect": [ 25.0, 18.0, 70.0, 34.0 ],
-                    "sig": [ 1.0, 1.0 ],
+                    "sig": 1.0,
                     "sigoutmode": 0,
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "varname": "left"
@@ -861,7 +888,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "multichannelsignal", "float", "int" ],
                     "patching_rect": [ 246.0, 18.0, 69.0, 34.0 ],
-                    "sig": [ 0.0, 0.0 ],
+                    "sig": 0.0,
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "varname": "result~ui"
                 }
@@ -871,8 +898,13 @@
                     "active": {
                         "preset-ramp": 0,
                         "presets": 0,
+                        "act": 0,
                         "act::active_store": 0,
-                        "act::master/activest": 0,
+                        "act::master": 0,
+                        "act::u751015509": 0,
+                        "act::pres_menu": 0,
+                        "act::tetris_menu": 0,
+                        "act::title_menu": 0,
                         "ll.blues": 0,
                         "ll.blues::status": 0,
                         "ll.blues::outputs~": 0,
@@ -972,7 +1004,7 @@
                         "pRampMs": [ 100.0 ],
                         "par_numoutput": [ "-no-" ],
                         "preset-ramp": [ 0.0 ],
-                        "presets": [ 1 ],
+                        "presets": [ 0 ],
                         "rAbsMinus": [ 0 ],
                         "rAbsPlus": [ 0 ],
                         "rightMode": [ 0 ],
@@ -1007,7 +1039,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1025,7 +1057,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1124,7 +1156,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1143,7 +1175,7 @@
                                                     "numoutlets": 3,
                                                     "outlettype": [ "multichannelsignal", "float", "int" ],
                                                     "patching_rect": [ 315.77065682411194, 273.0, 91.0, 34.0 ],
-                                                    "sig": [ 0.0, 0.0 ]
+                                                    "sig": 0.0
                                                 }
                                             },
                                             {
@@ -1158,7 +1190,7 @@
                                                     "numoutlets": 3,
                                                     "outlettype": [ "multichannelsignal", "float", "int" ],
                                                     "patching_rect": [ 30.0, 298.0, 91.0, 34.0 ],
-                                                    "sig": [ 0.0, 0.0 ]
+                                                    "sig": 0.0
                                                 }
                                             },
                                             {
@@ -1716,7 +1748,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -2704,7 +2736,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -3289,21 +3321,6 @@
                     "patching_rect": [ 355.0, 195.0, 100.0, 22.0 ],
                     "text": "p op@_sub",
                     "varname": "sub"
-                }
-            },
-            {
-                "box": {
-                    "annotation": "presets grid. click on ppooll in the ho_st to find info about it",
-                    "filename": "ll.pattr_ui.js",
-                    "id": "obj-6",
-                    "jsarguments": [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "op@1" ],
-                    "maxclass": "jsui",
-                    "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 47.0, 0.0, 198.0, 16.0 ],
-                    "varname": "presets"
                 }
             },
             {

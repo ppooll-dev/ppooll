@@ -4,19 +4,18 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 1,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 91.0, 96.0, 191.0, 54.0 ],
+        "rect": [ 434.0, 261.0, 191.0, 54.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "control@1",
         "boxes": [
             {
                 "box": {
                     "embedstate": [
-                        [ "act_name", "control@1" ],
                         [ "boxsize", 11 ],
                         [ "vbrgb", 0.19607843137254902, 0.19607843137254902, 0.19607843137254902, 1 ],
                         [ "vfrgb", 0.6078431372549019, 1, 1, 1 ],
@@ -159,7 +158,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 553.0, 444.0, 61.0, 19.0 ],
-                    "restore": [ "::_::_", "::undefined::undefined", "::undefined::undefined", "::undefined::undefined", "::undefined::undefined", "::undefined::undefined", "::undefined::undefined", "::undefined::undefined" ],
+                    "restore": [ 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -234,7 +233,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 466.0, 444.0, 66.0, 19.0 ],
-                    "restore": [ 0, 0, 0, 0, 0, 0, 0, 0 ],
+                    "restore": [ 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -892,13 +891,12 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 1,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
                         "classnamespace": "box",
                         "rect": [ 36.0, 262.0, 542.0, 606.0 ],
-                        "visible": 1,
                         "boxes": [
                             {
                                 "box": {
@@ -911,7 +909,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 1,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -998,7 +996,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 1,
+                                                            "revision": 2,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1163,7 +1161,7 @@
                                                                     "allowdrag": 0,
                                                                     "fontsize": 9.0,
                                                                     "id": "obj-14",
-                                                                    "items": [ "AU DLS Synth 1", ",", "from Max 1", ",", "from Max 2" ],
+                                                                    "items": [ "AU DLS Synth 1", ",", "Network Session 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "Scarlett 18i20 USB", ",", "from Max 1", ",", "from Max 2" ],
                                                                     "maxclass": "umenu",
                                                                     "numinlets": 1,
                                                                     "numoutlets": 3,
@@ -1526,7 +1524,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 1,
+                                                            "revision": 2,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -2467,7 +2465,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 1,
+                                                            "revision": 2,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -2601,7 +2599,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 1,
+                                                            "revision": 2,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -3245,7 +3243,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 1,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -3483,7 +3481,7 @@
                                                     "id": "obj-27",
                                                     "linecount": 4,
                                                     "maxclass": "newobj",
-                                                    "numinlets": 0,
+                                                    "numinlets": 1,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 107.0, 213.0, 98.0, 62.0 ],
@@ -3709,7 +3707,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 1,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -4125,7 +4123,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 1,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -4398,7 +4396,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 1,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -4460,7 +4458,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 1,
+                                                            "revision": 2,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -4613,7 +4611,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 1,
+                                                            "revision": 2,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -5429,7 +5427,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 1,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -5458,7 +5456,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 1,
+                                                            "revision": 2,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -5741,7 +5739,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 1,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -5905,12 +5903,12 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 1,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 22.0, 272.0, 730.0, 60.0 ],
+                                        "rect": [ 22.0, 272.0, 730.0, 93.0 ],
                                         "toolbarvisible": 0,
                                         "boxes": [
                                             {
@@ -6042,7 +6040,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 1,
+                                                            "revision": 2,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -6195,7 +6193,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 1,
+                                                            "revision": 2,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -6411,7 +6409,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
                                                     "patching_rect": [ 680.0, -1.0, 46.0, 20.0 ],
-                                                    "text": "sel: 4",
+                                                    "text": "sel: 0",
                                                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                                                     "varname": "c_sel"
                                                 }
@@ -6431,7 +6429,7 @@
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 860.0, 3.0, 163.0, 22.0 ],
                                                     "saved_object_attributes": {
-                                                        "client_rect": [ 100, 87, 860, 1046 ],
+                                                        "client_rect": [ 815, 168, 1575, 1016 ],
                                                         "parameter_enable": 0,
                                                         "parameter_mappable": 0,
                                                         "storage_rect": [ 430, 270, 1276, 999 ]
@@ -6475,8 +6473,8 @@
                                                     "outlettype": [ "", "", "", "" ],
                                                     "patching_rect": [ 860.0, 69.0, 65.0, 19.0 ],
                                                     "restore": {
-                                                        "listblock": [ "none", 1, 1 ],
-                                                        "ll_tab": [ 12, 1 ]
+                                                        "listblock": [ "n" ],
+                                                        "ll_tab": [ 0 ]
                                                     },
                                                     "text": "autopattr ap",
                                                     "varname": "ap"
@@ -6541,7 +6539,7 @@
                                                         [ "fontsize", 9 ],
                                                         [ "gridcolor", 0, 0, 0, 1 ],
                                                         [ "header", 1 ],
-                                                        [ "header_text", "in_lo", "in_hi", "input_name", "name_usr", "ON", "in_min", "in_max", "act", "par", "listit", "mode", "val1", "val2", "thresh", "ramp" ],
+                                                        [ "header_text", "in_lo", "in_hi", "input_name", "name_usr", "ON", "in_min", "in_max", "act", "par", "listit", "mode", 0 ],
                                                         [ "headercolors", 5 ],
                                                         [ "ignore_headerclick", 0 ],
                                                         [ "modes", "none", "none", "text", "text", "tog_0_1", "num_1.2", "num_1.2", "menu", "menu", "num", "menu", "num_1.2", "num_1.2", "num_1.2", "num_1.2" ],
@@ -6563,7 +6561,7 @@
                                                     "numoutlets": 2,
                                                     "outlettype": [ "", "" ],
                                                     "parameter_enable": 0,
-                                                    "patching_rect": [ 43.0, 17.0, 687.0, 15.0 ],
+                                                    "patching_rect": [ 43.0, 17.0, 687.0, 64.0 ],
                                                     "textfile": {
                                                         "filename": "ll.listblock.js",
                                                         "flags": 0,
@@ -6659,7 +6657,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 1,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -6692,7 +6690,7 @@
                                                 "box": {
                                                     "id": "obj-1",
                                                     "maxclass": "newobj",
-                                                    "numinlets": 0,
+                                                    "numinlets": 1,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 164.0, 5.0, 193.0, 22.0 ],
@@ -6797,7 +6795,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 1,
+                                                            "revision": 2,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -6999,7 +6997,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 1,
+                                                            "revision": 2,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -7038,7 +7036,7 @@
                                                                         "appversion": {
                                                                             "major": 9,
                                                                             "minor": 1,
-                                                                            "revision": 1,
+                                                                            "revision": 2,
                                                                             "architecture": "x64",
                                                                             "modernui": 1
                                                                         },
@@ -7254,7 +7252,7 @@
                                                                         "appversion": {
                                                                             "major": 9,
                                                                             "minor": 1,
-                                                                            "revision": 1,
+                                                                            "revision": 2,
                                                                             "architecture": "x64",
                                                                             "modernui": 1
                                                                         },
@@ -7764,7 +7762,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 1,
+                                                            "revision": 2,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -8148,18 +8146,24 @@
                             },
                             {
                                 "box": {
-                                    "id": "obj-114",
+                                    "id": "obj-10",
                                     "maxclass": "newobj",
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 140.0, 100.0, 100.0, 22.0 ],
-                                    "text": "ll.keyin",
+                                    "patching_rect": [ 140.0, 100.0, 100.0, 0.0 ],
+                                    "text": "ll.ctlin",
                                     "varname": "in"
                                 }
                             }
                         ],
                         "lines": [
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-38", 0 ],
+                                    "source": [ "obj-10", 0 ]
+                                }
+                            },
                             {
                                 "patchline": {
                                     "destination": [ "obj-8", 0 ],
@@ -8174,19 +8178,13 @@
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-38", 0 ],
-                                    "source": [ "obj-114", 0 ]
-                                }
-                            },
-                            {
-                                "patchline": {
                                     "destination": [ "obj-41", 0 ],
                                     "source": [ "obj-20", 0 ]
                                 }
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-114", 0 ],
+                                    "destination": [ "obj-10", 0 ],
                                     "source": [ "obj-21", 0 ]
                                 }
                             },
@@ -8284,19 +8282,19 @@
                     "outlettype": [ "", "", "", "" ],
                     "patching_rect": [ 939.0, 206.0, 107.0, 22.0 ],
                     "restore": {
-                        "act_menu": [ "" ],
+                        "act_menu": [ "no" ],
                         "act_suggested": [ 1 ],
                         "baud_rate": [ "9600" ],
                         "chans": [ 1 ],
                         "hi_menu": [ "Apple Internal Keyboard / Trackpad" ],
-                        "input_menu": [ "keyboard" ],
+                        "input_menu": [ "midi" ],
                         "midi_channels": [ 0 ],
-                        "midi_receive_port": [ "to Max 1" ],
+                        "midi_receive_port": [ "-no-" ],
                         "note_mode": [ "no_notes" ],
                         "on/off": [ 1 ],
                         "osc_receive_port": [ 8001 ],
                         "output_menu": [ 0 ],
-                        "presets": [ 3 ],
+                        "presets": [ 0 ],
                         "routingW": [ 0 ],
                         "send_back": [ 0 ],
                         "send_back_light": [ 0 ],
@@ -8388,7 +8386,6 @@
                     "bgfillcolor_proportion": 0.39,
                     "bgfillcolor_type": "color",
                     "fontsize": 9.0,
-                    "hidden": 1,
                     "id": "obj-15",
                     "items": [ "no_notes", ",", "notes_single", ",", "notes_range", ",", "notes_chords" ],
                     "maxclass": "umenu",
@@ -8417,7 +8414,7 @@
                     "fontsize": 9.0,
                     "hidden": 1,
                     "id": "obj-13",
-                    "items": "<empty>",
+                    "items": [ "no", ",", "control@1", ",", "ho_st1" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -8442,9 +8439,8 @@
                     "bgfillcolor_proportion": 0.39,
                     "bgfillcolor_type": "color",
                     "fontsize": 9.0,
-                    "hidden": 1,
                     "id": "obj-22",
-                    "items": [ "to Max 1", ",", "to Max 2" ],
+                    "items": [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "Network Session 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "Scarlett 18i20 USB", ",", "to Max 1", ",", "to Max 2" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -8516,7 +8512,6 @@
                     "bgfillcolor_proportion": 0.39,
                     "bgfillcolor_type": "color",
                     "fontsize": 9.0,
-                    "hidden": 1,
                     "id": "obj-7",
                     "items": [ "all_channels", ",", 1, ",", 2, ",", 3, ",", 4, ",", 5, ",", 6, ",", 7, ",", 8, ",", 9, ",", 10, ",", 11, ",", 12, ",", 13, ",", 14, ",", 15, ",", 16 ],
                     "maxclass": "umenu",
