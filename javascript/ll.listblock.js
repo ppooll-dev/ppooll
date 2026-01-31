@@ -710,10 +710,13 @@ function outputs(){
 		//post("act");
 		let a_menu_state = [];
 		a_menu_state.push("no");
-		post(Object.keys(ll_global.state), "\n");
-		Object.keys(ll_global.state).forEach(act_name => {
-			if(ll_global.state[act_name]["inputs~"])
+		// post(Object.keys(ll_global.state), "\n");
+		Object.keys(ll_global.state).sort((a, b) => a.localeCompare(b)).forEach(act_name => {
+			const act_inputs = ll_global.state[act_name]["inputs~"];
+			// post(act_name, JSON.stringify(act_inputs), "\n")
+			if(Object.keys(act_inputs).length > 0){
 				a_menu_state.push(act_name);
+			}
 		})
 
 		fill_menu(a_menu_state);
