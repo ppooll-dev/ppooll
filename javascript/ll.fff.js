@@ -32,10 +32,10 @@ function getFolderName(path) {
 
 function f_refresh() {
     if (file_menu) file_menu.message("clear");
-	post(key, "\n")
+	// post(key, "\n")
 
     paths = preferences.get("file_paths::" + key);
-	post(paths, "\n")
+	// post(paths, "\n")
     if (!Array.isArray(paths)) paths = [paths]; //make an array, even if its a single value
 
     paths = paths.filter((p) => p !== "");
