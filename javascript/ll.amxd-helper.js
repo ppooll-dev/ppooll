@@ -115,6 +115,14 @@ function setIsOpen(state) {
         if (isOpen) {
             // mc_vst.message("open", ...position);
             amxd_p.message("front");
+            tp.getnamed("amxd-window").subpatcher().wind.size = [200, 200]
+            amxd_p.message("wclose");
+
+            var rect = mc_vst.getattr("patching_rect")
+            // post("resize window", rect, "\n")
+            // mc_vst.message("autosize", 1);
+            tp.getnamed("amxd-window").subpatcher().wind.size = [rect[2] - rect[0], rect[3] - rect[1]]
+            amxd_p.message("front");
 
         } else {
             getPosition();
@@ -156,7 +164,7 @@ function vstCreate(c_in, c_out) {
 
 	topTP.message("script", "newdefault", "amxd", 0, 0, "mcs.amxd~", arguments[0], arguments[1], "@realtime_params", 1, "@showheader", 0)
 		
-	topTP.message("script", "hidden", "connect", "amxd", 2, "p_amxd_loaded", 0);
+	// topTP.message("script", "hidden", "connect", "amxd", 2, "p_amxd_loaded", 0);
 	topTP.message("script", "hidden", "connect", "amxd", 2, "out_3_msgs", 0);
 	topTP.message("script", "hidden", "connect", "amxd", 1, "out_2_midiout", 0);
 	topTP.message("script", "hidden", "connect", "amxd", 0, "out_1_audioout", 0);
@@ -223,7 +231,6 @@ function loadVST(pluginPath) {
     pp.getnamed("open!").hidden = 0;
 
     var rect = mc_vst.getattr("patching_rect")
-    post(rect, "\n")
     tp.getnamed("amxd-window").subpatcher().wind.size = [rect[2] - rect[0], rect[3] - rect[1]]
     // set [ ll.s vst_AU ]
     // out("vst_AU", getPluginType(pluginPath))
@@ -238,6 +245,10 @@ function loadVST(pluginPath) {
     //     return;
     // }
     refreshParams();
+}
+
+function loading_done(){
+    
 }
 
 function loadShellPlug(subname) {
