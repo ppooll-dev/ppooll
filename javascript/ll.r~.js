@@ -53,6 +53,10 @@ function doit(a, p) {
     else chan = chanfix;
     outlet(0, chan);
 
+    if(!ll_global.state[act]){
+        // post("ll.r~ act not found: ", act, "inputs~", path, chan, "\n")
+        return
+    }
     ll_global.state[act]["inputs~"][path] = chan;
 
     /////// script it
