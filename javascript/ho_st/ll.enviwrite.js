@@ -334,18 +334,18 @@ function writeEnvi(jsonPath) {
     act_list.forEach((oldName) => {
         const act_class = ll_global.state[oldName].class;
 
-        class_count = act_class === last_class ? class_count + 1 : 1;
-        last_class = act_class;
+        // class_count = act_class === last_class ? class_count + 1 : 1;
+        // last_class = act_class;
 
-        const newName = act_class + class_count;
+        // const newName = act_class + class_count;
 
-        if (oldName !== newName)
-            post("renaming", oldName, "to", newName, "in this environment\n");
+        // if (oldName !== newName)
+        //     post("renaming", oldName, "to", newName, "in this environment\n");
 
         const patcher = ll_global.patchers[oldName];
 
         // set act in envi with new name
-        environment[newName] = {
+        environment[oldName] = {
             _actwindow: [act_class, ...patcher.wind.location],
             ...ll_global.pat[oldName].getdumpJSON(),
         };
