@@ -1,5 +1,5 @@
 {
-    "window": [ 452, 141, 611, 245 ],
+    "window": [ 253, 407, 412, 511 ],
     "midi-channel": {
         "patching_rect": [ 143, 33, 16, 19 ],
         "hidden": 0,
@@ -101,7 +101,7 @@
     },
     "vst_program": {
         "patching_rect": [ 85, 33, 15, 18 ],
-        "hidden": 0,
+        "hidden": 1,
         "bgcolor": [ 0.107977, 0.766704, 0.422636, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
         "fontsize": 12,
