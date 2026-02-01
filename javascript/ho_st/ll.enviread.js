@@ -132,7 +132,7 @@ function loadAct() {
     if (buffers) {
         const buffer_dict = new Dict("ll_buffers");
         buffer_dict.parse(JSON.stringify(buffers));
-        // messnamed("llenviread_loadbuffers", "bang");
+        messnamed("llenviread_loadbuffers", "bang");
     }
 
     loadParams();
