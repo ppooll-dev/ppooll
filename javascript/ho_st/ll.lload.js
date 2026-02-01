@@ -11,7 +11,7 @@ function loadbang(){
     check()
 }
 
-function load(actname) {
+function load(actname, index = 0) {
     check();
     acts = Object.keys(ll_global.state);
 
@@ -26,9 +26,9 @@ function load(actname) {
     }
 
     if (a.envi === "live") {
-        messnamed("live.load_act", actname);
+        messnamed("live.load_act", actname, index);
     } else {
-        outlet(0, "load", actname);
+        outlet(0, "load", actname, index);
     }
 }
 

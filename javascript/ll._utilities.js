@@ -318,6 +318,15 @@ exports.getBrightness = (color) => {
 // MISC
 //
 
+// get act [name, index]
+exports.getActNameAndIndex = (name) => {
+    const m = name.match(/^(.*?)(\d+)?$/);
+    return [
+        m[1],
+        m[2] !== undefined ? parseInt(m[2], 10) : null
+    ];
+}
+
 // compare semantic versions 0.0.0
 //  -- a older than b returns -1, same is 0, a ahead of b is 1
 exports.cmpVersions = (a, b) => {

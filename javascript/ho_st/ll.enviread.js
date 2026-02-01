@@ -1,5 +1,9 @@
 outlets = 2;
 
+if (typeof ll === "undefined") {
+    var ll = require("ll._utilities");
+}
+
 var ll_global = new Global("ppooll");
 
 var actingON = 0;
@@ -89,12 +93,11 @@ function loadActs() {
     for (const a of order) {
         const env = environment[a];
         if (!env) continue;
-
+        
         if (openSet.has(a)) {
             isopen.push(a);
         } else {
-            const win = env._actwindow?.[0];
-            if (win != null) toopen.push(win);
+            toopen.push(a)
         }
     }
 
@@ -116,92 +119,12 @@ function loadActs() {
     loadAct();
 }
 
-function getTrailingIndex(name) {
-    const m = name.match(/(\d+)$/);
-    return m ? parseInt(m[1], 10) : null;
-}
-
-function getBaseName(name) {
-    return name.replace(/\d+$/, "");
-}
-
-function collectOriginalActIndices() {
-    const map = {}; // baseName -> [{ name, idx }]
-
-    for (const key of Object.keys(environment)) {
-        const idx = getTrailingIndex(key);
-        if (idx === null) continue;
-
-        const base = getBaseName(key);
-
-        if (!map[base]) map[base] = [];
-        map[base].push({ name: key, idx });
-    }
-
-    for (const b in map) {
-        map[b].sort((a, b) => a.idx - b.idx);
-    }
-
-    return map;
-}
-function collectLoadedActIndices() {
-    const map = {};
-
-    const pstate = Object.keys(ll_global.state) || [];
-    for (const key of pstate) {
-        const idx = getTrailingIndex(key);
-        if (idx === null) continue;
-
-        const base = getBaseName(key);
-
-        if (!map[base]) map[base] = [];
-        map[base].push({ name: key, idx });
-    }
-
-    for (const b in map) {
-        map[b].sort((a, b) => a.idx - b.idx);
-    }
-
-    return map;
-}
-
-function buildActRenumberPlan(original, loaded) {
-    const renames = [];
-
-    for (const base in original) {
-        if (!loaded[base]) continue;
-
-        const orig = original[base];
-        const curr = loaded[base];
-        const n = Math.min(orig.length, curr.length);
-
-        for (let i = 0; i < n; i++) {
-            if (orig[i].idx !== curr[i].idx) {
-                renames.push({
-                    from: curr[i].name,   // full act name
-                    to:   orig[i].idx     // index ONLY
-                });
-            }
-        }
-    }
-
-    return renames;
-}
-
-function applyActRenumbering(plan) {
-    plan
-        .sort((a, b) => b.to - a.to)
-        .forEach(({ from, to }) => {
-            ll_global.patchers[from].getnamed("act").subpatcher().getnamed("actui").message("renumber", to);
-            // messnamed("ll_actrename", from, to);
-        });
-}
-
 function loadAct() {
     if (toopen.length > 0) {
         outlet(0, "   " + toopen[0]);
         actingON = 1;
-        messnamed("ll_actload", toopen[0]);
+        const name_index = ll.getActNameAndIndex(toopen[0])
+        messnamed("lload", name_index[0], name_index[1]);
         return;
     }
 
@@ -211,20 +134,6 @@ function loadAct() {
         buffer_dict.parse(JSON.stringify(buffers));
         // messnamed("llenviread_loadbuffers", "bang");
     }
-
-    // re-number acts based on environment (vst@1, vst@2, vst@3, vst@5)
-    // at this point, we have loaded for eaxmple vst@1, vst@2, vst@3, vst@4
-    // we need to refer to the original environment state, so that we can correctly set
-    //  vst@1, vst@2, vst@3, vst@5
-    // re-number acts based on environment (vst@1, vst@2, vst@3, vst@5)
-    const original = collectOriginalActIndices();
-    const loaded   = collectLoadedActIndices();
-    const plan     = buildActRenumberPlan(original, loaded);
-
-    if (plan.length) {
-        applyActRenumbering(plan);
-    }
-
 
     loadParams();
 }

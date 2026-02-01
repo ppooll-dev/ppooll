@@ -141,14 +141,7 @@ function set_llenviread(is_reading) {
     is_llenviread = is_reading;
 }
 
-function renumber(new_index){
-    notifydeleted()
-    // post("new index", new_index, "\n")
-    bang(false, new_index)
-}
-
-function bang(alreadyRegistered = false, this_index = -1) {
-    // post("bang\n");
+function bang(alreadyRegistered = false) {
     isReady = 0;
 
     act_patcher = this.patcher.parentpatcher;
@@ -171,7 +164,13 @@ function bang(alreadyRegistered = false, this_index = -1) {
         this.patcher.sendtoback(m);
     });
     
-    act_index = this_index < 1 ? ll.getNextActIndex(act_args.name) : this_index;
+    // check if act .maxpat was loaded with 2nd argument for index (ie "lload sinus 3")
+    const act_patch_args = this.patcher.parentpatcher.getattr("arguments");
+    if(act_patch_args[1] !== "#2" && act_patch_args[1] > 0){
+        act_index = act_patch_args[1]
+    }else{
+        act_index = ll.getNextActIndex(act_args.name)
+    }
     act_name_index = `${act_args.name}${act_index}`;
 
     delete_old();
