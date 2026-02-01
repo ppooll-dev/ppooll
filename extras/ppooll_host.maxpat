@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 188.0, 133.0, 130.0, 125.0 ],
+        "rect": [ 231.0, 195.0, 130.0, 125.0 ],
         "default_fontsize": 11.595187,
         "toolbarvisible": 0,
         "globalpatchername": "ho_st1",
@@ -199,7 +199,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 346.0, 234.0, 103.0, 21.0 ],
-                    "restore": [ 1 ],
+                    "restore": [ 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -2425,7 +2425,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 163.0, 100.0, 101.0, 22.0 ],
-                                                                                    "text": "gverb@1"
+                                                                                    "text": "romb1"
                                                                                 }
                                                                             },
                                                                             {
@@ -2448,7 +2448,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 50.0, 100.0, 96.0, 22.0 ],
-                                                                                    "text": "gverb@1"
+                                                                                    "text": "romb1"
                                                                                 }
                                                                             },
                                                                             {
@@ -2965,7 +2965,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 19.0, 47.0, 160.0, 24.0 ],
-                                                    "text": "gverb@1"
+                                                    "text": "romb1"
                                                 }
                                             },
                                             {
@@ -4423,12 +4423,13 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-5",
+                                                                    "linecount": 2,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 436.0, 216.0, 89.0, 22.0 ],
-                                                                    "text": "test-lite-blues"
+                                                                    "text": "251206-dragged-string"
                                                                 }
                                                             },
                                                             {
@@ -5548,8 +5549,6 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 0,
-                                                                        "node_bin_path": "",
-                                                                        "npm_bin_path": "",
                                                                         "watch": 0
                                                                     },
                                                                     "text": "node.script ll.node.folders.js",
@@ -5825,7 +5824,6 @@
                                                             {
                                                                 "box": {
                                                                     "fontsize": 10.0,
-                                                                    "hidden": 1,
                                                                     "id": "obj-15",
                                                                     "maxclass": "comment",
                                                                     "numinlets": 1,
@@ -6079,7 +6077,6 @@
                                                                 "box": {
                                                                     "bgcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                                                                     "fontsize": 11.0,
-                                                                    "hidden": 1,
                                                                     "id": "obj-1",
                                                                     "maxclass": "textbutton",
                                                                     "numinlets": 1,
@@ -7731,7 +7728,7 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 298.0, 176.0, 763.0, 360.0 ],
+                                        "rect": [ 366.0, 183.0, 763.0, 360.0 ],
                                         "boxes": [
                                             {
                                                 "box": {
@@ -10135,7 +10132,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 304.0, 161.041504, 87.0, 19.0 ],
-                                                                    "text": "vst@1 vst@2"
+                                                                    "text": "vst@1"
                                                                 }
                                                             },
                                                             {
@@ -10850,12 +10847,12 @@
                                                                 }
                                                             }
                                                         ],
-                                                        "bgcolor": [ 0.22507736086845398, 0.0837055966258049, 0.42908623814582825, 1.0 ]
+                                                        "bgcolor": [ 0.6359697580337524, 0.43371719121932983, 0.21700680255889893, 1.0 ]
                                                     },
                                                     "patching_rect": [ 427.0, 270.0, 64.0, 22.0 ],
                                                     "saved_object_attributes": {
                                                         "fontsize": 10.0,
-                                                        "locked_bgcolor": [ 0.22507736086845398, 0.0837055966258049, 0.42908623814582825, 1.0 ]
+                                                        "locked_bgcolor": [ 0.6359697580337524, 0.43371719121932983, 0.21700680255889893, 1.0 ]
                                                     },
                                                     "text": "p screen",
                                                     "varname": "screen"
@@ -17460,10 +17457,10 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 493.0, 69.0, 92.0, 21.0 ],
                     "saved_object_attributes": {
-                        "client_rect": [ 257, 166, 1512, 882 ],
+                        "client_rect": [ 752, 100, 1512, 888 ],
                         "parameter_enable": 0,
                         "parameter_mappable": 0,
-                        "storage_rect": [ 583, 68, 1034, 196 ]
+                        "storage_rect": [ 430, 270, 1276, 999 ]
                     },
                     "text": "pattrstorage pat",
                     "varname": "pat"
@@ -17519,7 +17516,7 @@
                         "audioON/OFF": [ 0 ],
                         "chans": [ 16 ],
                         "def": [ -1 ],
-                        "envi_menu": [ "(environments)" ],
+                        "envi_menu": [ "(factory)" ],
                         "favorites": [ "(favorites)" ],
                         "jit.on": [ 0 ],
                         "menubar": [ 0 ],
@@ -17527,7 +17524,7 @@
                         "rec": [ 0 ],
                         "screen": [ 0 ],
                         "stereo": [ 0 ],
-                        "time": [ 52921.0 ],
+                        "time": [ 60675.0 ],
                         "vol": [ 1.0 ],
                         "vol_ramp": [ 10 ],
                         "vol_slider": [ 1.0 ],
