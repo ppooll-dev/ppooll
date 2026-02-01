@@ -96,7 +96,6 @@ function setscreencolor() {
     screencolor = c;
     preferences.set("general::screencolor", c);
     messnamed("ll.screenTP", "bgcolor", c);
-    messnamed("live_env_TP", "bgcolor", c);
     const logoc = c.map((item) => item + 0.1);
     messnamed("ll.screenTP", "script", "send", "logo", "fgcolor", logoc);
     ll_prf_rewrite();

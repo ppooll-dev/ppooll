@@ -5,6 +5,8 @@ var a = new Global("ppooll");
 let acts = [];
 let only_one = ["ho_st", "buffer_host"];
 
+var live_ppooll_patcher = null;
+
 var ll_global = new Global("ppooll");
 
 function loadbang(){
@@ -26,7 +28,8 @@ function load(actname, index = 0) {
     }
 
     if (a.envi === "live") {
-        messnamed("live.load_act", actname, index);
+        // messnamed("live.load_act", actname, index);
+        live_ppooll_patcher.newdefault(10, 80 + (acts.length * 30), actname, index);
     } else {
         outlet(0, "load", actname, index);
     }
@@ -40,6 +43,7 @@ function check() {
         owner = owner.patcher.box;
         // the scripting name of the subpatch of the "environment" in live.ppooll
         if (prev.patcher.name === "LIVE_PPOOLL_ENVIRONMENT") {
+            live_ppooll_patcher = prev.patcher;
             isLiveEnvi = true;
         }
     }
