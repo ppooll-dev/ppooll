@@ -8,7 +8,7 @@ if (typeof utils === "undefined") {
     var utils = require("ll._utilities");
 }
 var ll_global = new Global("ppooll");
-let is_live = ll_global.envi === "live";
+let is_live = ll_global.live_ppooll_patcher;
 
 const MENU_VARNAME = "lllbmenu";
 const NUM_VARNAME  = "lllbnum";

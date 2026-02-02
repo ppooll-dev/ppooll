@@ -308,7 +308,7 @@ function bang(alreadyRegistered = false) {
     messnamed("::actname", "::" + act_name_index + "::");
     messnamed(act_args.hash + "::actname", "::" + act_name_index + "::");
 
-    if (ll_global.envi == "live") make_live();
+    if (ll_global.live_ppooll_patcher) make_live();
 
     let is_host = act_args.name === "ho_st";
     // set title_menu options
@@ -736,7 +736,7 @@ function create_host_title_menu_options() {
         report: () => messnamed("ll_report", "bang"),
     };
 
-    if (ll_global.envi === "live") {
+    if (ll_global.live_ppooll_patcher) {
         delete ho_st_opts.close;
     }
 
@@ -1391,32 +1391,18 @@ function first_dump() {
 }
 
 function make_live() {
-    const tpp = act_patcher;
-    const cname = act_name_index;
-
-    var lpe = tpp.parentpatcher; //live ppooll environment patcher
-    var TO_HIDE = ["audioON/OFF"];
-    var IGNORE_ACTS_LIST = [];
-    var coords = [0, 0, 200, 200];
-    // ignore acts that are meant to be hidden and will always load in environment
-    if (IGNORE_ACTS_LIST.indexOf(act_args.name) > -1) {
-        return;
-    }
-    //set box varname to nameInstance
-    tpp.box.varname = cname;
-    coords = ll.getPatcherRectFromMaxpat(tpp.filepath);
-
-    // set patching rect of act's bpatcher & bring to front
-    lpe.message("script", "sendbox", cname, "patching_rect", coords);
-    lpe.message("script", "bringtofront", cname);
-    messnamed(cname, "TP", "front");
+    post("live.ppooll\n");
+    ll_global.live_ppooll_patcher.message("script", "bringtofront", act_name_index);
+    messnamed(act_name_index, "TP", "front");
 
     // if this is the ho_st hide defined objects
     if (act_args.name === "ho_st") {
         // post("create ho_st1");
+        var TO_HIDE = ["audioON/OFF"];
+
         for (var i = 0; i < TO_HIDE.length; i++) {
-            if (tpp.getnamed(TO_HIDE[i])) {
-                tpp.message("script", "hide", TO_HIDE[i]);
+            if (act_patcher.getnamed(TO_HIDE[i])) {
+                act_patcher.message("script", "hide", TO_HIDE[i]);
             }
         }
     }
