@@ -12,7 +12,7 @@ var listlength;
 var copymove = [0,0,0];
 var learn_gate;
 
-const actpars = {};
+let actpars = {};
 const header_fix = ["in_lo", "in_hi", "input_name", "name_usr", "ON", "in_min", "in_max", "act", "par", "listit", "mode"];
 const defaults ={
 	in_lo: "-",
@@ -90,14 +90,15 @@ function actname(an){ //init
 	windowbar_obj.message("pos_param", act_name, "routingPos");
 	windowbar_obj.message("w_param", act_name, "routingW");
 	listblock_obj.message("params", Object.keys(defaults) );
-	
-	//windowbar_obj.message("set_wind", actpars["routingPos"]);
-
 }
+
 function allpars(){
 	let ar = arrayfromargs(arguments);
 	let p = ar.shift();
-	if (p === "modes" && ar !== actpars[p]) new_mode(ar); //script modes
+
+	if (p === "modes" && ar !== actpars[p]) {
+		new_mode(ar); // create llc mode object
+	}
 	actpars[p] = ar;
 	if (Object.keys(defaults).includes(p)) {
 		listblock_obj.message("bang"); //update listblock
@@ -353,4 +354,9 @@ function fill_menu(col,sel){
 			listblock_obj.message("fill_menu", Object.keys(mode_labels));
 			//post(Object.keys(mode_labels));
 		}
+}
+
+function reset(){
+	ll_tab(12, "")
+	ll_tab(0, "")
 }

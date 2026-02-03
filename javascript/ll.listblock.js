@@ -908,6 +908,9 @@ function menu(a) {
 		}
 	}
 	else {
+		if(!pval)
+			return;
+
 		if (ccm1 == "outputs"){
 			let S = "no";		
 			if (pval[cy_po].indexOf("~")>=0) S = pval[cy_po].split("~")[1-ccm2];
