@@ -18,8 +18,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 100.36, 64.84, 116.0, 22.0 ],
-                    "text": "val min max ignored"
+                    "patching_rect": [ 100.36, 64.84, 161.0, 22.0 ],
+                    "text": "randON val min max ignored"
                 }
             },
             {
@@ -187,6 +187,7 @@
                     "source": [ "obj-7", 0 ]
                 }
             }
-        ]
+        ],
+        "autosave": 0
     }
 }

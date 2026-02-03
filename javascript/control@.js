@@ -508,6 +508,7 @@ function getmodes() {
         .map((f) => f.split(".")[1])
         .filter(f => f !== "v8mode");
 
+    // order based on old modes   
     const order = Object.keys(old_mode_labels);
     const orderMap = new Map(order.map((v, i) => [v, i]));
 
