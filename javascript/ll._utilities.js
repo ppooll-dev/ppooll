@@ -205,6 +205,37 @@ exports.fileExists = (path) => {
     }
 };
 
+exports.normalizePath = (p) => {
+    // Keep Max's "Macintosh HD:" prefix intact; just normalize slashes.
+    return (p || "").replace(/\\/g, "/").replace(/\/+/g, "/");
+}
+
+exports.dirnameFromPath = (p) => {
+    p = exports.normalizePath(p);
+    const idx = p.lastIndexOf("/");
+    return idx >= 0 ? p.slice(0, idx) : p;
+}
+
+exports.fileExistsStrict = (filepath) => {
+    const expectedDir = exports.dirnameFromPath(filepath);
+
+    const f = new File(filepath, "read");
+    const isOpen = f.isopen;
+
+    // Capture what Max actually opened (or tried to)
+    const resolvedDir = exports.normalizePath(f.foldername);
+    const resolvedName = f.filename; // just the basename when it opens cleanly
+
+    // Always close if it opened
+    if (isOpen) f.close();
+
+    // Must have opened something
+    if (!isOpen) return false;
+
+    // Must have opened it from the exact expected directory (prevents search-path substitution)
+    return resolvedDir === expectedDir;
+}
+
 // check if a folder exists, return true/false
 exports.folderExists = (path) => {
     try {
@@ -269,6 +300,42 @@ exports.getPatcherRectFromMaxpat = (a) => {
     }
     //post("get",coords, "\n");
     return coords;
+}
+
+
+exports.isValidFileName = (name) => {
+    const invalidChars = /[<>:"/\\|?*\x00-\x1F]/g;
+    if (!name || !name.trim()) return false;
+
+    // reserved Windows filenames
+    const reserved = [
+        "CON",
+        "PRN",
+        "AUX",
+        "NUL",
+        "COM1",
+        "COM2",
+        "COM3",
+        "COM4",
+        "COM5",
+        "COM6",
+        "COM7",
+        "COM8",
+        "COM9",
+        "LPT1",
+        "LPT2",
+        "LPT3",
+        "LPT4",
+        "LPT5",
+        "LPT6",
+        "LPT7",
+        "LPT8",
+        "LPT9",
+    ];
+
+    // Strip any extension before comparison
+    const baseName = name.split(".")[0].toUpperCase();
+    return !invalidChars.test(name) && !reserved.includes(baseName);
 }
 
 ////////////////////////////////////////////////////////////////////

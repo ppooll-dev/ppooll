@@ -35,41 +35,6 @@ function ppost(msg) {
     post();
 }
 
-function isValidFileName(name) {
-    const invalidChars = /[<>:"/\\|?*\x00-\x1F]/g;
-    if (!name || !name.trim()) return false;
-
-    // reserved Windows filenames
-    const reserved = [
-        "CON",
-        "PRN",
-        "AUX",
-        "NUL",
-        "COM1",
-        "COM2",
-        "COM3",
-        "COM4",
-        "COM5",
-        "COM6",
-        "COM7",
-        "COM8",
-        "COM9",
-        "LPT1",
-        "LPT2",
-        "LPT3",
-        "LPT4",
-        "LPT5",
-        "LPT6",
-        "LPT7",
-        "LPT8",
-        "LPT9",
-    ];
-
-    // Strip any extension before comparison
-    const baseName = name.split(".")[0].toUpperCase();
-    return !invalidChars.test(name) && !reserved.includes(baseName);
-}
-
 //============================= attributes ==========================
 // Name
 declareattribute("envi_name", {
@@ -80,7 +45,7 @@ declareattribute("envi_name", {
 function set_envi_name(name) {
     // post(name, "\n")
     envi_name = name;
-    fileInvalid = !isValidFileName(envi_name);
+    fileInvalid = !ll.isValidFileName(envi_name);
     if (!fileInvalid && error) {
         error = null;
     } else if (fileInvalid && !error) {
@@ -201,7 +166,7 @@ function enter() {
 
 //============================= write envi =============================
 function write() {
-    if (!isValidFileName(envi_name)) {
+    if (!ll.isValidFileName(envi_name)) {
         error = "enter a valid filename";
         updateUI();
         post(
@@ -231,7 +196,7 @@ function write() {
         outlet(0, "folder", "create", envi_path, ...subfolders);
         outlet(0, "folder", "clear", envi_path, "presets");
     } else if (type === "json") {
-        writeEnvi(`${envi_path}.json`);
+        writeJson(`${envi_path}.json`);
     }
 }
 
@@ -307,10 +272,10 @@ function saveToFolder() {
     }
 
     ppost("save environment state...");
-    writeEnvi(`${envi_path}/environment.json`);
+    writeJson(`${envi_path}/environment.json`);
 }
 
-function writeEnvi(jsonPath) {
+function writeJson(jsonPath) {
     environment = {};
 
     let act_list = Object.keys(ll_global.state)
@@ -327,21 +292,8 @@ function writeEnvi(jsonPath) {
         act_list.splice(1, 0, "buffer_host1");
     }
 
-    // if an act-index is missing, we need to get rid of the gap.
-    let last_class = null;
-    let class_count = 0;
-
     act_list.forEach((oldName) => {
         const act_class = ll_global.state[oldName].class;
-
-        // class_count = act_class === last_class ? class_count + 1 : 1;
-        // last_class = act_class;
-
-        // const newName = act_class + class_count;
-
-        // if (oldName !== newName)
-        //     post("renaming", oldName, "to", newName, "in this environment\n");
-
         const patcher = ll_global.patchers[oldName];
 
         // set act in envi with new name
