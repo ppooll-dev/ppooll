@@ -484,8 +484,13 @@ function fill_menu(col, sel) {
             );
     } else if (col === 8) {
         let selact = actpars["acts"][sel];
-        messnamed(`${selact}`, "getclientlist");
-        listblock_obj.message("fill_menu", ll_global.pat[selact]["clientlist"]);
+        let param_list = ["-no-"];
+
+        if(selact !== "no"){
+            param_list.push(...ll_global.pat[selact].getclientlist());
+        }
+        listblock_obj.message("fill_menu", param_list);
+
         //post("c8",selact,"\n");
     } else if (col === 10) {
         ////////////// TODO listmodes
