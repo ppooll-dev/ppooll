@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 92.0, 299.0, 191.0, 54.0 ],
+        "rect": [ 96.0, 310.0, 191.0, 54.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "control@1",
         "boxes": [
@@ -178,7 +178,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 553.0, 444.0, 61.0, 19.0 ],
-                    "restore": [ "::_::_", "::undefined::undefined", "::undefined::undefined", "::undefined::undefined", "::undefined::undefined" ],
+                    "restore": [ 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -253,7 +253,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 466.0, 444.0, 66.0, 19.0 ],
-                    "restore": [ 0, 0, 0, 0, 0 ],
+                    "restore": [ 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -4336,7 +4336,7 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 652.0, 601.0, 716.0, 445.0 ],
+                                        "rect": [ 652.0, 443.0, 716.0, 445.0 ],
                                         "boxes": [
                                             {
                                                 "box": {
@@ -5243,7 +5243,7 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 758.0, 550.0, 773.0, 361.0 ],
+                                        "rect": [ 705.0, 527.0, 773.0, 361.0 ],
                                         "boxes": [
                                             {
                                                 "box": {
@@ -5518,16 +5518,6 @@
                                         "classnamespace": "box",
                                         "rect": [ 331.0, 209.0, 485.0, 553.0 ],
                                         "boxes": [
-                                            {
-                                                "box": {
-                                                    "id": "obj-3",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 0,
-                                                    "patching_rect": [ 83.5, 445.0, 32.0, 22.0 ],
-                                                    "text": "print"
-                                                }
-                                            },
                                             {
                                                 "box": {
                                                     "fontname": "Arial",
@@ -6522,14 +6512,6 @@
                                             {
                                                 "patchline": {
                                                     "destination": [ "obj-16", 0 ],
-                                                    "order": 1,
-                                                    "source": [ "obj-17", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-3", 0 ],
-                                                    "order": 0,
                                                     "source": [ "obj-17", 0 ]
                                                 }
                                             },
@@ -7619,7 +7601,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
                                                     "patching_rect": [ 680.0, -1.0, 46.0, 20.0 ],
-                                                    "text": "sel: 2",
+                                                    "text": "sel: 0",
                                                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                                                     "varname": "c_sel"
                                                 }
@@ -7683,8 +7665,8 @@
                                                     "outlettype": [ "", "", "", "" ],
                                                     "patching_rect": [ 860.0, 69.0, 65.0, 19.0 ],
                                                     "restore": {
-                                                        "listblock": [ "menu", 10, 1 ],
-                                                        "ll_tab": [ 12, 1 ],
+                                                        "listblock": [ "n" ],
+                                                        "ll_tab": [ 0 ],
                                                         "lllbmenu": [ "scale" ]
                                                     },
                                                     "text": "autopattr ap",
@@ -7750,7 +7732,7 @@
                                                         [ "fontsize", 9 ],
                                                         [ "gridcolor", 0, 0, 0, 1 ],
                                                         [ "header", 1 ],
-                                                        [ "header_text", "in_lo", "in_hi", "input_name", "name_usr", "ON", "in_min", "in_max", "act", "par", "listit", "mode", "min", "max", "log", "smooth" ],
+                                                        [ "header_text", "in_lo", "in_hi", "input_name", "name_usr", "ON", "in_min", "in_max", "act", "par", "listit", "mode", 0 ],
                                                         [ "headercolors", 5 ],
                                                         [ "ignore_headerclick", 0 ],
                                                         [ "modes", "none", "none", "text", "text", "tog_0_1", "num_1.2", "num_1.2", "menu", "menu", "num", "menu", "num_1.2", "num_1.2", "num_1.2", "num_1.2" ],

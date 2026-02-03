@@ -17,8 +17,8 @@ var copymove = [0, 0, 0];
 var learn_gate;
 var mode_labels = {};
 
-/*
-var mode_labels = {
+
+var old_mode_labels = {
 	scale: ["mn", "mx", "lg", "smth"],
 	toggle: ["val1", "val2", "thresh", "ramp"],
 	togg: ["val1", "val2", "thresh", "ramp"],
@@ -40,7 +40,8 @@ var mode_labels = {
 	rel1: ["incdec", "accel", "ignored", "ignored"],
 	rel64: ["incdec", "accel", "lim_min", "lim_max"]
 }
-*/
+
+// TO ADD: bang!, random, randON, xt
 
 const actpars = {};
 const header_fix = [
@@ -499,10 +500,22 @@ function fill_menu(col, sel) {
     }
 }
 function getmodes() {
-    return ll
+    const _modes = ll
         .getFilesInFolder(
             "Package:/ppooll/patchers/abstractions/control@patches/modes/"
         )
-        .filter((f) => f.startsWith("llc.") && f.endsWith(".maxpat"))
-        .map((f) => f.split(".")[1]);
+        .filter((f) => f.startsWith("llc.") && f.endsWith(".maxpat"))        
+        .map((f) => f.split(".")[1])
+        .filter(f => f !== "v8mode");
+
+    const order = Object.keys(old_mode_labels);
+    const orderMap = new Map(order.map((v, i) => [v, i]));
+
+    _modes.sort((a, b) => {
+        const aOrder = orderMap.get(a) ?? Infinity;
+        const bOrder = orderMap.get(b) ?? Infinity;
+        return aOrder - bOrder;
+    });
+
+    return _modes;
 }

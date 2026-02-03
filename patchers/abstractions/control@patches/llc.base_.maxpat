@@ -4,7 +4,7 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 1,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
@@ -36,7 +36,7 @@
                 "box": {
                     "comment": "labels prepended by mode",
                     "id": "obj-5",
-                    "index": 0,
+                    "index": 2,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -52,7 +52,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 79.0, 155.0, 149.0, 22.0 ],
-                    "text": "::#2::llc_#1"
+                    "text": "::control@1::llc_s"
                 }
             },
             {
@@ -67,7 +67,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 1,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -437,7 +437,7 @@
                 "box": {
                     "comment": "bound value if changed in ppooll",
                     "id": "obj-19",
-                    "index": 0,
+                    "index": 3,
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
@@ -545,7 +545,7 @@
                 "box": {
                     "comment": "back value",
                     "id": "obj-4",
-                    "index": 0,
+                    "index": 3,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -557,7 +557,7 @@
                 "box": {
                     "comment": "all routing pars",
                     "id": "obj-1",
-                    "index": 0,
+                    "index": 2,
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
@@ -573,8 +573,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 52.0, 322.0, 97.0, 22.0 ],
-                    "text": "gate"
+                    "patching_rect": [ 52.0, 322.0, 42.0, 22.0 ],
+                    "text": "gate 1"
                 }
             },
             {
@@ -591,7 +591,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 1,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -610,7 +610,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 1,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -657,7 +657,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 1,
+                                                            "revision": 2,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -972,7 +972,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 1,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1015,7 +1015,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 1,
+                                                            "revision": 2,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1332,7 +1332,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 1,
+                                                            "revision": 2,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1347,7 +1347,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 289.0, 134.0, 135.0, 22.0 ],
-                                                                    "text": "ho_st1 vol"
+                                                                    "text": "wavelets1 one"
                                                                 }
                                                             },
                                                             {
@@ -1359,7 +1359,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 258.0, 195.0, 55.0, 22.0 ],
-                                                                    "text": "ho_st1 -no-"
+                                                                    "text": "wavelets1 -no-"
                                                                 }
                                                             },
                                                             {
@@ -1429,7 +1429,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 311.0, 484.0, 181.0, 22.0 ],
-                                                                    "text": "::ho_st1::vol 1"
+                                                                    "text": "::wavelets1::one 1"
                                                                 }
                                                             },
                                                             {
@@ -1442,7 +1442,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 311.0, 437.0, 181.0, 22.0 ],
-                                                                    "text": "::ho_st1::vol 1"
+                                                                    "text": "::wavelets1::one 1"
                                                                 }
                                                             },
                                                             {
@@ -1455,7 +1455,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 269.0, 390.0, 181.0, 22.0 ],
-                                                                    "text": "::ho_st1::vol"
+                                                                    "text": "::wavelets1::one"
                                                                 }
                                                             },
                                                             {
@@ -1904,7 +1904,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 1,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -2112,7 +2112,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 1,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -2345,7 +2345,7 @@
                                     "numoutlets": 3,
                                     "outlettype": [ "", "", "" ],
                                     "patching_rect": [ 285.75, 251.0, 103.0, 22.0 ],
-                                    "restore": [ 0.17 ],
+                                    "restore": [ -1 ],
                                     "saved_object_attributes": {
                                         "parameter_enable": 0,
                                         "parameter_mappable": 0
@@ -2667,7 +2667,7 @@
                 "box": {
                     "comment": "processed value",
                     "id": "obj-48",
-                    "index": 0,
+                    "index": 1,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -2679,7 +2679,7 @@
                 "box": {
                     "comment": "value comming in",
                     "id": "obj-49",
-                    "index": 0,
+                    "index": 1,
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
@@ -2829,7 +2829,6 @@
                     "source": [ "obj-5", 0 ]
                 }
             }
-        ],
-        "autosave": 0
+        ]
     }
 }
