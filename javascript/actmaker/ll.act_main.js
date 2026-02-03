@@ -166,7 +166,7 @@ function bang(alreadyRegistered = false) {
     
     // check if act .maxpat was loaded with 2nd argument for index (ie "lload sinus 3")
     const act_patch_args = this.patcher.parentpatcher.getattr("arguments");
-    if(act_patch_args[1] !== "#2" && act_patch_args[1] > 0){
+    if(act_patch_args && act_patch_args.length > 1 && act_patch_args[1] !== "#2" && act_patch_args[1] > 0){
         act_index = act_patch_args[1]
     }else{
         act_index = ll.getNextActIndex(act_args.name)
