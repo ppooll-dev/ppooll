@@ -4,7 +4,7 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 1,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
@@ -94,7 +94,7 @@
                     "numinlets": 3,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
-                    "patching_rect": [ 46.0, 107.0, 89.0, 22.0 ],
+                    "patching_rect": [ 46.0, 107.0, 124.0, 22.0 ],
                     "text": "llc.base_ #1 #2",
                     "varname": "llc.base"
                 }
@@ -110,13 +110,13 @@
             {
                 "patchline": {
                     "destination": [ "obj-24", 1 ],
-                    "source": [ "obj-2", 1 ]
+                    "source": [ "obj-2", 0 ]
                 }
             },
             {
                 "patchline": {
                     "destination": [ "obj-32", 1 ],
-                    "source": [ "obj-2", 0 ]
+                    "source": [ "obj-2", 1 ]
                 }
             },
             {
@@ -156,7 +156,6 @@
                     "source": [ "obj-5", 0 ]
                 }
             }
-        ],
-        "autosave": 0
+        ]
     }
 }
