@@ -8,7 +8,7 @@ if (typeof utils === "undefined") {
     var utils = require("ll._utilities");
 }
 var ll_global = new Global("ppooll");
-let is_live = ll_global.envi === "live";
+let is_live = ll_global.live_ppooll_patcher;
 
 const MENU_VARNAME = "lllbmenu";
 const NUM_VARNAME  = "lllbnum";
@@ -710,10 +710,13 @@ function outputs(){
 		//post("act");
 		let a_menu_state = [];
 		a_menu_state.push("no");
-		post(Object.keys(ll_global.state), "\n");
-		Object.keys(ll_global.state).forEach(act_name => {
-			if(ll_global.state[act_name]["inputs~"])
+		// post(Object.keys(ll_global.state), "\n");
+		Object.keys(ll_global.state).sort((a, b) => a.localeCompare(b)).forEach(act_name => {
+			const act_inputs = ll_global.state[act_name]["inputs~"];
+			// post(act_name, JSON.stringify(act_inputs), "\n")
+			if(Object.keys(act_inputs).length > 0){
 				a_menu_state.push(act_name);
+			}
 		})
 
 		fill_menu(a_menu_state);
@@ -905,6 +908,9 @@ function menu(a) {
 		}
 	}
 	else {
+		if(!pval)
+			return;
+
 		if (ccm1 == "outputs"){
 			let S = "no";		
 			if (pval[cy_po].indexOf("~")>=0) S = pval[cy_po].split("~")[1-ccm2];

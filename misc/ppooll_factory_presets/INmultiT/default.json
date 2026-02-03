@@ -2,13 +2,7 @@
     "window": [ 318, 151, 491, 218 ],
     "act": {
         "patching_rect": [ 0, 0, 59.01171875, 16 ],
-        "hidden": 0,
-        "fontsize": 12
-    },
-    "presets": {
-        "patching_rect": [ 116, 0, 57, 15 ],
-        "hidden": 0,
-        "jsarguments": [ 13, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "INmulti1" ]
+        "hidden": 0
     },
     "gains": {
         "patching_rect": [ 43, 33, 130, 34 ],
@@ -88,7 +82,10 @@
     },
     "ll.blues": {
         "patching_rect": [ 52, 16, 121, 17 ],
-        "hidden": 0,
-        "fontsize": 12
+        "hidden": 0
+    },
+    "presets": {
+        "patching_rect": [ 116, 0, 57, 15 ],
+        "hidden": 0
     }
 }

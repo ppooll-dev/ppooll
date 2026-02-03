@@ -1,5 +1,9 @@
 outlets = 2;
 
+if (typeof ll === "undefined") {
+    var ll = require("ll._utilities");
+}
+
 var ll_global = new Global("ppooll");
 
 var actingON = 0;
@@ -10,19 +14,14 @@ var act_param_excludes = [
     "ho_st1rec",
     "ho_st1audioON/OFF",
 ];
-var debugpost = 0;
-
-var new_blues_oldenvi;
-var new_blues_name;
-var old_outputs;
 
 // Dict Objects
 let dict = null;
 let environment = null;
 let acts = null;
-let isopen, toopen;
 
-let buffers = null;
+let actsAlreadyOpen = [];
+let actsToOpen = [];
 
 const presetsIgnore = ["ho_st1"];
 
@@ -31,6 +30,7 @@ const PARAMS_RUN_NUMBER = 2; // run 2x
 
 let paramsCount = 0;
 
+var debugpost = 0;
 function debug_post(a) {
     debugpost = a;
 }
@@ -38,21 +38,10 @@ function debug_post(a) {
 //##################################################################____acts
 
 function msg_dictionary(d) {
-    buffers = null;
     dict = d;
-
-    outlet(0, dict.props.path);
-
     environment = dict.environment;
 
-    const envi_dict = new Dict("environment");
-    envi_dict.parse(JSON.stringify(environment))
-
-    // TODO: check for buffers loaded via pres_menu and do that first?
-    if (environment.buffer_host1 && environment.buffer_host1.ll_buffers) {
-        buffers = environment.buffer_host1.ll_buffers;
-    }
-
+    outlet(0, dict.props.path);
     loadActs();
 }
 
@@ -77,59 +66,50 @@ function canonicalActOrder(allKeys) {
 function loadActs() {
     outlet(0, "acts...");
 
-    const allKeys = Object.keys(environment || {});
-    const order = canonicalActOrder(allKeys);
+    const order = canonicalActOrder(Object.keys(environment));
+    const currentlyOpen = new Set(Object.keys(ll_global.state));
 
-    const pstate = Object.keys(ll_global.state) || [];
-    const openSet = new Set(pstate);
+    actsAlreadyOpen = [];
+    actsToOpen = [];
 
-    isopen = [];
-    toopen = [];
+    order.forEach(a => {
+        if(!environment[a]) return;
 
-    for (const a of order) {
-        const env = environment[a];
-        if (!env) continue;
-
-        if (openSet.has(a)) {
-            isopen.push(a);
+        if (currentlyOpen.has(a)) {
+            actsAlreadyOpen.push(a);
+            setloc(a)
         } else {
-            const win = env._actwindow?.[0];
-            if (win != null) toopen.push(win);
+            actsToOpen.push(a);
         }
-    }
+    })
 
     if (debugpost > 1) {
-        post(
-            "order:",
-            order,
-            "\n",
-            "toopen:",
-            toopen,
-            "\n",
-            "open:",
-            isopen,
-            "\n"
-        );
+        post("order:", order, "\n");
+        post("actsToOpen:", actsToOpen, "\n");
+        post("actsAlreadyOpen:", actsAlreadyOpen, "\n");
     }
 
-    for (const a of isopen) setloc(a);
     loadAct();
 }
 
 function loadAct() {
-    if (toopen.length > 0) {
-        outlet(0, "   " + toopen[0]);
+    if (actsToOpen.length > 0) {
+        const this_act = actsToOpen.shift();
+        outlet(0, "   " + this_act);
         actingON = 1;
-        messnamed("ll_actload", toopen[0]);
+        const name_index = ll.getActNameAndIndex(this_act);
+        messnamed("lload", name_index[0], name_index[1]);
         return;
     }
 
     // load buffers
-    if (buffers) {
+    //  TODO: check for buffers loaded via pres_menu and do that first?
+    if (environment.buffer_host1 && environment.buffer_host1.ll_buffers) {
         const buffer_dict = new Dict("ll_buffers");
-        buffer_dict.parse(JSON.stringify(buffers));
+        buffer_dict.parse(JSON.stringify(environment.buffer_host1.ll_buffers));
         messnamed("llenviread_loadbuffers", "bang");
     }
+
     loadParams();
 }
 
@@ -139,12 +119,11 @@ function loadParams() {
     messnamed("llenviread_getparams", PARAMS_DELAY);
 }
 
-function acting(c, i, o) {
-    //response from an act when ready loaded
-    if (actingON === 1 && o === 1) {
+function acting(act_class, act_index, is_open) {
+    // response from an act when ready loaded
+    if (actingON === 1 && is_open === 1) {
         actingON = 0;
-        setloc(c + i);
-        toopen = toopen.slice(1);
+        setloc(`${act_class}${act_index}`);
         loadAct();
     }
 }
@@ -166,7 +145,7 @@ function params() {
     let keys = Object.keys(environment);
 
     for (let a of keys) {
-        if (paramsCount === 1 && a === "buffer_host1") continue;
+        if (paramsCount > 0 && a === "buffer_host1") continue;
 
         // First, fix old-style keys before iterating
         explodeOldEnvironmentKeys(environment[a]);
@@ -184,7 +163,7 @@ function params() {
     } else {
         loadPresets();
         messnamed("llenviread", 0);
-        if (environment.ho_st1 && environment.ho_st1["audioON/OFF"] === 1) 
+        if (environment.ho_st1 && environment.ho_st1["audioON/OFF"] === 1)
             outlet(0, "dac~", 1);
         outlet(0, "done!");
     }
@@ -224,69 +203,38 @@ function explodeOldEnvironmentKeys(envObj) {
     }
 }
 
-function normalizePath(p) {
-    // Keep Max's "Macintosh HD:" prefix intact; just normalize slashes.
-    return (p || "").replace(/\\/g, "/").replace(/\/+/g, "/");
-}
-
-function dirnameFromPath(p) {
-    p = normalizePath(p);
-    const idx = p.lastIndexOf("/");
-    return idx >= 0 ? p.slice(0, idx) : p;
-}
-
-function fileExists(filepath) {
-    const expectedDir = dirnameFromPath(filepath);
-
-    const f = new File(filepath, "read");
-    const isOpen = f.isopen;
-
-    // Capture what Max actually opened (or tried to)
-    const resolvedDir = normalizePath(f.foldername);
-    const resolvedName = f.filename; // just the basename when it opens cleanly
-
-    // Always close if it opened
-    if (isOpen) f.close();
-
-    // Must have opened something
-    if (!isOpen) return false;
-
-    // Must have opened it from the exact expected directory (prevents search-path substitution)
-    return resolvedDir === expectedDir;
-}
-
-
 // load presets files for "folder" environments
 function loadPresets() {
     if (dict.props.type !== "folder") return;
 
     outlet(0, "presets...");
 
-    let keys = Object.keys(environment).filter(a => a !== "buffer_host1");
+    let keys = Object.keys(environment).filter((a) => a !== "buffer_host1");
     for (const i in keys) {
         if (presetsIgnore.indexOf(keys[i]) > -1) continue;
 
         const filepath = `${dict.props.path}/presets/${keys[i]}.json`;
         // post(JSON.stringify(f), "\n")
-        if (fileExists(filepath)) {
+        if (ll.fileExistsStrict(filepath)) {
             // post("read preset", keys[i], filepath, "\n")
-            messnamed(keys[i], "v8", "read_preset_path", filepath, 0)
+            messnamed(keys[i], "v8", "read_preset_path", filepath, 0);
         }
     }
 }
 
 function setparam(a, p, v) {
     //act, param, value
-    if (!param_excludes.includes(p) && 
-		!act_param_excludes.includes(a + p) &&
-		!(p == "act::tetris_menu" && v == "(tetris)")
-	) {
+    if (
+        !param_excludes.includes(p) &&
+        !act_param_excludes.includes(a + p) &&
+        !(p == "act::tetris_menu" && v == "(tetris)")
+    ) {
         if (debugpost > 1) post("parameter___", p, "####", v, "\n");
 
         if (v[0] == "dictionary") senddict(a, p, v);
         else {
-			messnamed(a, p, v);
-		}
+            messnamed(a, p, v);
+        }
     }
 }
 

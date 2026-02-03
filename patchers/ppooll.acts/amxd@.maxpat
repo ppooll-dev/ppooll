@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 648.0, 220.0, 154.0, 104.0 ],
+        "rect": [ 360.0, 210.0, 154.0, 104.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "amxd@1",
         "boxes": [
@@ -317,18 +317,8 @@
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 267.0, 258.0, 81.0, 35.0 ],
+                                    "patching_rect": [ 246.0, 232.0, 81.0, 35.0 ],
                                     "text": "prepend paramname"
-                                }
-                            },
-                            {
-                                "box": {
-                                    "id": "obj-18",
-                                    "maxclass": "newobj",
-                                    "numinlets": 1,
-                                    "numoutlets": 0,
-                                    "patching_rect": [ 306.0, 227.0, 62.0, 22.0 ],
-                                    "text": "print done"
                                 }
                             },
                             {
@@ -2034,7 +2024,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 48.0, 226.0, 144.0, 22.0 ],
-                                                    "text": "ho_st1 vst@1 amxd@1"
+                                                    "text": "amxd@1 ho_st1"
                                                 }
                                             },
                                             {
@@ -2836,12 +2826,6 @@
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-18", 0 ],
-                                    "source": [ "obj-24", 1 ]
-                                }
-                            },
-                            {
-                                "patchline": {
                                     "destination": [ "obj-21", 0 ],
                                     "source": [ "obj-24", 0 ]
                                 }
@@ -3054,6 +3038,18 @@
                     "patching_rect": [ 413.0, 289.0, 100.0, 22.0 ],
                     "priority": {
                         "vst-folder": 3,
+                        "midi-channel-in": 900,
+                        "midi-channel-out": 901,
+                        "midi-port-in": 902,
+                        "midi-port-out": 903,
+                        "open!": 910,
+                        "presets": 1016,
+                        "preset-ramp": 1017,
+                        "Check": 100,
+                        "Feed": 101,
+                        "Level": 102,
+                        "Mode": 103,
+                        "Time": 104,
                         "live.dial[1]": 100,
                         "live.text[3]": 101,
                         "Attack Time": 102,
@@ -3063,13 +3059,6 @@
                         "Solo Side Chain": 106,
                         "Stereo Link": 107,
                         "Stereo Mode": 108,
-                        "midi-channel-in": 900,
-                        "midi-channel-out": 901,
-                        "midi-port-in": 902,
-                        "midi-port-out": 903,
-                        "open!": 910,
-                        "presets": 1016,
-                        "preset-ramp": 1017,
                         "ll.blues::status": 1,
                         "ll.blues::outputs~": 2,
                         "ll.blues::outputsMix~": 3,
@@ -3138,7 +3127,7 @@
                         "midi-port-out": [ "-no-" ],
                         "open!": [ 0 ],
                         "preset-ramp": [ 0 ],
-                        "presets": [ 1 ],
+                        "presets": [ 0 ],
                         "vst-folder": [ "def_folders" ]
                     },
                     "text": "autopattr autopattr",
@@ -3152,7 +3141,7 @@
                     "arrow": 0,
                     "fontsize": 9.0,
                     "id": "obj-81",
-                    "items": [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "AU DLS Synth 1", ",", "Network Session 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "Scarlett 18i20 USB", ",", "MIDISPORT 1x1 Port A", ",", "from Max 1", ",", "from Max 2" ],
+                    "items": [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "AU DLS Synth 1", ",", "Network Session 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "Scarlett 18i20 USB", ",", "from Max 1", ",", "from Max 2" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,

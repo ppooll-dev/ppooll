@@ -4,17 +4,44 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 0,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 475.0, 453.0, 175.0, 250.0 ],
+        "rect": [ 421.0, 439.0, 175.0, 250.0 ],
         "toolbarvisible": 0,
         "enablehscroll": 0,
         "enablevscroll": 0,
         "globalpatchername": "chorus@1",
         "boxes": [
+            {
+                "box": {
+                    "embedstate": [
+                        [ "boxsize", 14 ],
+                        [ "vbrgb", 0.19607843137254902, 0.19607843137254902, 0.19607843137254902, 1 ],
+                        [ "vfrgb", 1, 1, 1, 1 ],
+                        [ "vrgb2", 1, 0, 0, 1 ],
+                        [ "vrgb3", 0, 1, 0, 1 ]
+                    ],
+                    "filename": "ll.pattr_v8ui.js",
+                    "id": "obj-2",
+                    "jsarguments": [ "" ],
+                    "maxclass": "v8ui",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 69.0, 0.0, 106.0, 31.0 ],
+                    "textfile": {
+                        "filename": "ll.pattr_v8ui.js",
+                        "flags": 0,
+                        "embed": 0,
+                        "autowatch": 1
+                    },
+                    "varname": "presets"
+                }
+            },
             {
                 "box": {
                     "args": [ "@min", 2, "@max", 2, "@in_mix", 1 ],
@@ -234,8 +261,14 @@
             {
                 "box": {
                     "active": {
+                        "presets": 0,
+                        "act": 0,
                         "act::active_store": 0,
-                        "act::master/activest": 0,
+                        "act::master": 0,
+                        "act::u751015509": 0,
+                        "act::pres_menu": 0,
+                        "act::tetris_menu": 0,
+                        "act::title_menu": 0,
                         "ll.blues": 0,
                         "ll.blues::status": 0,
                         "ll.blues::outputs~": 0,
@@ -263,7 +296,8 @@
                     "saved_object_attributes": {
                         "client_rect": [ 368, 148, 983, 808 ],
                         "parameter_enable": 0,
-                        "parameter_mappable": 0
+                        "parameter_mappable": 0,
+                        "storage_rect": [ 583, 68, 1034, 196 ]
                     },
                     "text": "pattrstorage pat",
                     "varname": "pat"
@@ -322,7 +356,7 @@
                         "feedback_mcspread": [ 0.0 ],
                         "feedback_ramp": [ 0.0 ],
                         "preset-ramp[1]": [ 0.0 ],
-                        "presets[1]": [ 3 ],
+                        "presets": [ 0 ],
                         "rate": [ 3.0 ],
                         "rate_mcspread": [ 0.0 ],
                         "rate_ramp": [ 0.0 ],
@@ -380,7 +414,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -420,7 +454,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -795,21 +829,6 @@
                     "patching_rect": [ 495.5, 221.0, 100.0, 22.0 ],
                     "text": "p chorus@_sub",
                     "varname": "sub"
-                }
-            },
-            {
-                "box": {
-                    "annotation": "presets grid. click on ppooll in the ho_st to find info about it",
-                    "filename": "ll.pattr_ui.js",
-                    "id": "obj-2",
-                    "jsarguments": [ 14, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "gverb@1" ],
-                    "maxclass": "jsui",
-                    "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 69.0, 0.0, 106.0, 31.0 ],
-                    "varname": "presets[1]"
                 }
             },
             {

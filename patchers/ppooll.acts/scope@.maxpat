@@ -4,15 +4,42 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 0,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 221.0, 434.0, 350.0, 195.0 ],
+        "rect": [ 124.0, 485.0, 350.0, 195.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "scope@1",
         "boxes": [
+            {
+                "box": {
+                    "embedstate": [
+                        [ "boxsize", 16 ],
+                        [ "vbrgb", 0.19607843137254902, 0.19607843137254902, 0.19607843137254902, 1 ],
+                        [ "vfrgb", 1, 1, 1, 1 ],
+                        [ "vrgb2", 1, 0, 0, 1 ],
+                        [ "vrgb3", 0, 1, 0, 1 ]
+                    ],
+                    "filename": "ll.pattr_v8ui.js",
+                    "id": "obj-11",
+                    "jsarguments": [ "" ],
+                    "maxclass": "v8ui",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 63.0, -1.0, 66.0, 20.0 ],
+                    "textfile": {
+                        "filename": "ll.pattr_v8ui.js",
+                        "flags": 0,
+                        "embed": 0,
+                        "autowatch": 1
+                    },
+                    "varname": "presets"
+                }
+            },
             {
                 "box": {
                     "angle": 270.0,
@@ -104,12 +131,12 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 669.0, 530.0, 195.0, 104.0 ],
+                        "rect": [ 572.0, 533.0, 195.0, 104.0 ],
                         "toolbarvisible": 0,
                         "boxes": [
                             {
@@ -239,7 +266,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -551,7 +578,7 @@
             {
                 "box": {
                     "automatic": 1,
-                    "bgcolor": [ 0.20000000298023224, 0.0, 0.0, 0.30000001192092896 ],
+                    "bgcolor": [ 0.2, 0.0, 0.0, 0.3 ],
                     "bufsize": 256,
                     "calccount": 64,
                     "displaychan": 2,
@@ -568,22 +595,6 @@
             },
             {
                 "box": {
-                    "annotation": "presets grid. click on ppooll in the ho_st to find info about it",
-                    "border": 0,
-                    "filename": "ll.pattr_ui.js",
-                    "id": "obj-10",
-                    "jsarguments": [ 16, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "PEQ@1" ],
-                    "maxclass": "jsui",
-                    "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 63.0, -1.0, 66.0, 20.0 ],
-                    "varname": "presets"
-                }
-            },
-            {
-                "box": {
                     "fontname": "Arial",
                     "fontsize": 12.0,
                     "hidden": 1,
@@ -593,7 +604,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 668.0, 255.0, 68.0, 22.0 ],
-                    "restore": [ 1.0, 0.0, 1.0, 1.0, 0.20000000298023224, 0.0, 0.0, 0.30000001192092896, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.5 ],
+                    "restore": [ 1, 0, 1, 1, 0.2, 0, 0, 0.3, 1, 1, 1, 1, 1, 0, 0, 0.5 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -634,12 +645,12 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 732.0, 247.0, 1079.0, 776.0 ],
+                        "rect": [ 399.0, 119.0, 1079.0, 776.0 ],
                         "toolbars_unpinned_last_save": 2,
                         "boxes": [
                             {
@@ -665,7 +676,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -691,7 +702,6 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 560.0, 550.0, 159.0, 22.0 ],
-                                                    "presentation_linecount": 2,
                                                     "text": "sendtoback panel_gonio_on"
                                                 }
                                             },
@@ -703,7 +713,6 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 555.0, 450.0, 158.0, 22.0 ],
-                                                    "presentation_linecount": 2,
                                                     "text": "bringtofront panel_gonio_on"
                                                 }
                                             },
@@ -1010,12 +1019,12 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 1172.0, 390.0, 546.0, 564.0 ],
+                                        "rect": [ 932.0, 331.0, 546.0, 564.0 ],
                                         "boxes": [
                                             {
                                                 "box": {
@@ -1026,7 +1035,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 334.0, 436.22, 149.0, 35.0 ],
-                                                    "text": "1. 0. 1. 1. 0.2 0. 0. 0.3 1. 1. 1. 1. 1. 0. 0. 0.5"
+                                                    "text": "1 0 1 1 0.2 0 0 0.3 1 1 1 1 1 0 0 0.5"
                                                 }
                                             },
                                             {
@@ -1045,13 +1054,23 @@
                                             },
                                             {
                                                 "box": {
+                                                    "filename": "list.Multiplex.js",
                                                     "id": "obj-3",
                                                     "maxclass": "newobj",
                                                     "numinlets": 4,
-                                                    "numoutlets": 2,
-                                                    "outlettype": [ "", "" ],
-                                                    "patching_rect": [ 243.0, 391.0, 106.0, 22.0 ],
-                                                    "text": "mxj list.Multiplex 4"
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 243.0, 391.0, 100.0, 22.0 ],
+                                                    "saved_object_attributes": {
+                                                        "parameter_enable": 0
+                                                    },
+                                                    "text": "v8 list.Multiplex 4",
+                                                    "textfile": {
+                                                        "filename": "list.Multiplex.js",
+                                                        "flags": 0,
+                                                        "embed": 0,
+                                                        "autowatch": 1
+                                                    }
                                                 }
                                             },
                                             {
@@ -1483,7 +1502,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -2289,8 +2308,13 @@
                 "box": {
                     "active": {
                         "presets": 0,
+                        "act": 0,
                         "act::active_store": 0,
-                        "act::master/activest": 0
+                        "act::master": 0,
+                        "act::u751015509": 0,
+                        "act::pres_menu": 0,
+                        "act::tetris_menu": 0,
+                        "act::title_menu": 0
                     },
                     "color": [ 0.0, 0.0, 0.0, 1.0 ],
                     "fontname": "Arial",
@@ -2364,7 +2388,7 @@
                         "chans": [ 2.0 ],
                         "configWindow": [ -1 ],
                         "mode": [ 0 ],
-                        "presets": [ 4 ],
+                        "presets": [ 0 ],
                         "range": [ 1.0 ],
                         "range_hi": [ 1.0 ],
                         "range_lo": [ -1.0 ],

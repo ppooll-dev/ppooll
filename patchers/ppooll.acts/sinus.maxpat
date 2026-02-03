@@ -4,18 +4,45 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 1,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 477.0, 137.0, 132.0, 200.0 ],
+        "rect": [ 216.0, 270.0, 132.0, 200.0 ],
         "default_fontsize": 10.0,
         "toolbarvisible": 0,
         "enablehscroll": 0,
         "enablevscroll": 0,
         "globalpatchername": "sinus1",
         "boxes": [
+            {
+                "box": {
+                    "embedstate": [
+                        [ "boxsize", 12 ],
+                        [ "vbrgb", 0.19607843137254902, 0.19607843137254902, 0.19607843137254902, 1 ],
+                        [ "vfrgb", 1, 1, 1, 1 ],
+                        [ "vrgb2", 1, 0, 0, 1 ],
+                        [ "vrgb3", 0, 1, 0, 1 ]
+                    ],
+                    "filename": "ll.pattr_v8ui.js",
+                    "id": "obj-11",
+                    "jsarguments": [ "" ],
+                    "maxclass": "v8ui",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 53.0, 0.0, 79.0, 27.0 ],
+                    "textfile": {
+                        "filename": "ll.pattr_v8ui.js",
+                        "flags": 0,
+                        "embed": 0,
+                        "autowatch": 1
+                    },
+                    "varname": "presets"
+                }
+            },
             {
                 "box": {
                     "bgcolor": [ 0.556862745098039, 0.556862745098039, 0.556862745098039, 1.0 ],
@@ -420,7 +447,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 1,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -439,7 +466,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 1,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -594,7 +621,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 1,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -839,7 +866,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 1,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -954,7 +981,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 364.0, 344.0, 50.0, 20.0 ],
-                                                    "text": "0. 20"
+                                                    "text": "1. 20"
                                                 }
                                             },
                                             {
@@ -1113,7 +1140,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 1,
+                                                            "revision": 2,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -2278,7 +2305,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 1,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -2640,37 +2667,10 @@
                         "preset-ramp": [ 0.0 ],
                         "presets": [ 0 ],
                         "takeover": [ -1 ],
-                        "use-env": [ 1 ]
+                        "use-env": [ 0 ]
                     },
                     "text": "autopattr autopattr",
                     "varname": "autopattr"
-                }
-            },
-            {
-                "box": {
-                    "embedstate": [
-                        [ "boxsize", 12 ],
-                        [ "vbrgb", 0.19607843137254902, 0.19607843137254902, 0.19607843137254902, 1 ],
-                        [ "vfrgb", 1, 1, 1, 1 ],
-                        [ "vrgb2", 1, 0, 0, 1 ],
-                        [ "vrgb3", 0, 1, 0, 1 ]
-                    ],
-                    "filename": "ll.pattr_v8ui.js",
-                    "id": "obj-11",
-                    "jsarguments": [ "" ],
-                    "maxclass": "v8ui",
-                    "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 53.0, 0.0, 79.0, 27.0 ],
-                    "textfile": {
-                        "filename": "ll.pattr_v8ui.js",
-                        "flags": 0,
-                        "embed": 0,
-                        "autowatch": 1
-                    },
-                    "varname": "presets"
                 }
             }
         ],

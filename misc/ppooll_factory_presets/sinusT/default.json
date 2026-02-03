@@ -1,5 +1,5 @@
 {
-    "window": [ 557, 206, 689, 406 ],
+    "window": [ 216, 270, 348, 470 ],
     "f-rel>trigger": {
         "patching_rect": [ 68, 63, 19, 19 ],
         "hidden": 0,
@@ -10,8 +10,8 @@
             "color2": [ 0.2, 0.2, 0.2, 1 ],
             "color": [ 1, 1, 1, 1 ]
         },
-        "color": [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ],
-        "elementcolor": [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
+        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
+        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
         "fontsize": 9,
         "textcolor": [ 0.121569, 0.121569, 0.121569, 1 ]
     },
@@ -31,7 +31,7 @@
         "fontsize": 10,
         "gridcolor": [ 0.5, 0.5, 0.5, 0.5 ],
         "linecolor": [ 0.333333, 0.333333, 0.333333, 1 ],
-        "textcolor": [ 0.9, 0.9, 0.9, 1 ]
+        "textcolor": [ 0.968627, 0.968627, 0.968627, 1 ]
     },
     "length-slider": {
         "patching_rect": [ 117, 82, 15, 66 ],
@@ -104,10 +104,6 @@
         "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
         "textcolor": [ 0, 0, 0, 1 ],
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
-    },
-    "presets": {
-        "patching_rect": [ 53, 0, 79, 27 ],
-        "hidden": 0
     },
     "ll.blues": {
         "patching_rect": [ 0, 147, 132, 53 ],
@@ -194,5 +190,9 @@
         "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
         "textcolor": [ 1, 1, 1, 1 ],
         "textcolornofocus": [ 1, 1, 1, 0.73 ]
+    },
+    "presets": {
+        "patching_rect": [ 53, 0, 79, 27 ],
+        "hidden": 0
     }
 }

@@ -157,7 +157,7 @@ function fillMenu() {
     envi_menu.message("checksymbol", "by name", !sortByDate);
     envi_menu.message("checksymbol", "by date", sortByDate);
 
-    envi_menu.message("setsymbol", "(environments)");
+    envi_menu.message("symbol", "(environments)");
 }
 
 function saveload(v) {
@@ -168,7 +168,7 @@ function saveload(v) {
 
     const envi_menu = get_envi_menu();
     envi_menu.message("dictionary", items_dict.name);
-
+    envi_menu.message("setsymbol", "environments")
     msg_write_dialog(["init"]);
 }
 

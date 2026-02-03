@@ -4,7 +4,7 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 0,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
@@ -14,6 +14,33 @@
         "subpatcher_template": "Default Max 7",
         "globalpatchername": "nodes@1",
         "boxes": [
+            {
+                "box": {
+                    "embedstate": [
+                        [ "boxsize", 12 ],
+                        [ "vbrgb", 0.19607843137254902, 0.19607843137254902, 0.19607843137254902, 1 ],
+                        [ "vfrgb", 1, 1, 1, 1 ],
+                        [ "vrgb2", 1, 0, 0, 1 ],
+                        [ "vrgb3", 0, 1, 0, 1 ]
+                    ],
+                    "filename": "ll.pattr_v8ui.js",
+                    "id": "obj-13",
+                    "jsarguments": [ "" ],
+                    "maxclass": "v8ui",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 183.0, 143.0, 27.0, 66.0 ],
+                    "textfile": {
+                        "filename": "ll.pattr_v8ui.js",
+                        "flags": 0,
+                        "embed": 0,
+                        "autowatch": 1
+                    },
+                    "varname": "presets"
+                }
+            },
             {
                 "box": {
                     "bgcolor": [ 0.215686274509804, 0.545098039215686, 0.407843137254902, 1.0 ],
@@ -226,7 +253,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -245,7 +272,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -341,7 +368,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -612,7 +639,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -753,7 +780,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 0,
+                                                            "revision": 2,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1224,7 +1251,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1429,20 +1456,6 @@
             },
             {
                 "box": {
-                    "filename": "ll.pattr_ui.js",
-                    "id": "obj-17",
-                    "jsarguments": [ 12, "255 255 255", "50 50 50", "255 0 0", "0 255 0", "lkforest@1" ],
-                    "maxclass": "jsui",
-                    "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 183.0, 143.0, 27.0, 66.0 ],
-                    "varname": "presets"
-                }
-            },
-            {
-                "box": {
                     "fontface": 0,
                     "id": "obj-18",
                     "maxclass": "ll_number",
@@ -1581,8 +1594,13 @@
                     "active": {
                         "preset-ramp": 0,
                         "presets": 0,
+                        "act": 0,
                         "act::active_store": 0,
-                        "act::master/activest": 0
+                        "act::master": 0,
+                        "act::u751015509": 0,
+                        "act::pres_menu": 0,
+                        "act::tetris_menu": 0,
+                        "act::title_menu": 0
                     },
                     "color": [ 0.4, 0.4, 0.8, 1.0 ],
                     "hidden": 1,
@@ -1593,9 +1611,10 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 323.0, 35.0, 100.0, 22.0 ],
                     "saved_object_attributes": {
-                        "client_rect": [ 368, 148, 983, 808 ],
+                        "client_rect": [ 815, 168, 1575, 1016 ],
                         "parameter_enable": 0,
-                        "parameter_mappable": 0
+                        "parameter_mappable": 0,
+                        "storage_rect": [ 430, 270, 1276, 999 ]
                     },
                     "text": "pattrstorage pat",
                     "varname": "pat"
@@ -1651,7 +1670,7 @@
                         "param-X": [ 0.0 ],
                         "param-Y": [ 0.0 ],
                         "preset-ramp": [ 0.0 ],
-                        "presets": [ 1 ],
+                        "presets": [ 0 ],
                         "ramp": [ 0.0 ],
                         "random": [ -1 ],
                         "time-ms": [ 1000.0 ]
