@@ -4,15 +4,40 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 1,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 427.0, 153.0, 275.0, 163.0 ],
+        "rect": [ 427.0, 153.0, 277.0, 184.0 ],
         "default_fontsize": 10.0,
         "toolbarvisible": 0,
         "boxes": [
+            {
+                "box": {
+                    "hidden": 1,
+                    "id": "obj-34",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 205.0, 22.0, 134.0, 20.0 ],
+                    "presentation_linecount": 2,
+                    "text": "window notitle, window exec"
+                }
+            },
+            {
+                "box": {
+                    "hidden": 1,
+                    "id": "obj-31",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 205.0, 4.0, 123.0, 20.0 ],
+                    "text": "window title, window exec"
+                }
+            },
             {
                 "box": {
                     "hidden": 1,
@@ -186,13 +211,13 @@
                 "box": {
                     "fontname": "Arial",
                     "fontsize": 12.0,
-                    "hidden": 1,
                     "id": "obj-2",
+                    "linecount": 3,
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 8.0, 122.0, 266.0, 20.0 ],
-                    "text": "so/tz",
+                    "patching_rect": [ 8.0, 122.0, 266.0, 47.0 ],
+                    "text": "Macintosh HD:/Users/josephsteccato/Documents/Max 9/Library/ppooll_presets/ho_stP",
                     "varname": "where"
                 }
             },
@@ -200,7 +225,6 @@
                 "box": {
                     "fontname": "Arial",
                     "fontsize": 12.0,
-                    "hidden": 1,
                     "id": "obj-3",
                     "maxclass": "comment",
                     "numinlets": 1,
@@ -296,7 +320,7 @@
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
-                    "outlettype": [ "bang" ],
+                    "outlettype": [ "" ],
                     "patching_rect": [ 471.0, 35.0, 15.0, 15.0 ]
                 }
             },
@@ -368,7 +392,8 @@
                     "numoutlets": 4,
                     "outlettype": [ "", "int", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 8.0, 34.0, 253.0, 22.0 ]
+                    "patching_rect": [ 8.0, 34.0, 253.0, 22.0 ],
+                    "text": "_"
                 }
             },
             {
@@ -674,6 +699,13 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-18", 0 ],
+                    "hidden": 1,
+                    "source": [ "obj-31", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-2", 0 ],
                     "hidden": 1,
                     "order": 0,
@@ -693,6 +725,13 @@
                     "destination": [ "obj-17", 0 ],
                     "hidden": 1,
                     "source": [ "obj-33", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-18", 0 ],
+                    "hidden": 1,
+                    "source": [ "obj-34", 0 ]
                 }
             },
             {
