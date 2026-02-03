@@ -25,3 +25,5 @@ max define ll.preset-ramp
     @slidermax 2000. 
     @format 10000 1000 : 100 10 1 
     @sliderstyle 1;
+max define ll.listblock
+    v8ui @filename ll.listblock.js
