@@ -342,8 +342,12 @@ function fill_menu(col,sel){
 			else listblock_obj.message("fill_menu", "no",Object.keys(ll_global.patchers));
 		} else if (col === 8){
 			let selact = actpars["acts"][sel];
+			if(selact === "no") {
+				listblock_obj.message("fill_menu", ["-no-"]);
+				return;
+			}
 			messnamed(`${selact}`,"getclientlist");
-			listblock_obj.message("fill_menu", ll_global.pat[selact]["clientlist"]);
+			listblock_obj.message("fill_menu", ["-no-", ...ll_global.pat[selact]["clientlist"]]);
 			//post("c8",selact,"\n");
 		} else if (col === 10){ ////////////// TODO listmodes
 			listblock_obj.message("fill_menu", Object.keys(mode_labels));
