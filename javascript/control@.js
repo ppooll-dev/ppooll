@@ -167,10 +167,18 @@ function allpars() {
 }
 function new_input(...args) {
     //post("newn", "type", args[0].match(/\s/), "\n");
+	
     let n = args.shift();
-    if (args.length > 1 /* && !actpars["list_inputs"].includes(n) */) {
-        args.forEach((item, index) => new_name(`${n}(${index})`));
+	post("list",n,args,"\n");
+    if (args.length > 1 && !actpars["list_inputs"].includes(n) ) {
+		post("list\n");
+        args.forEach((item, index) => new_name(`${n}(${index+1})`));
+		/*
         let list_inputs_spread = ap.getnamed("list_inputs_spread").getvalueof();
+		//if (list_inputs_spread == "_") list_inputs_spread = ["_"]
+		//args.forEach((item, index) => list_inputs_spread.push(`${n}(${index+1})`));
+		//ap.getnamed("list_inputs_spread").setvalueof(list_inputs_spread);
+		
         if(list_inputs_spread === 0) {
             list_inputs_spread = []
         }
@@ -178,7 +186,7 @@ function new_input(...args) {
 
         list_inputs_spread.push(n)
         ap.getnamed("list_inputs_spread").setvalueof(list_inputs_spread)
-
+		
         let list_inputs = ap.getnamed("list_inputs").getvalueof();
         // post("list_inputs", list_inputs, "\n")
         if(list_inputs === 0 || list_inputs === "_") {
@@ -190,7 +198,8 @@ function new_input(...args) {
         ap.getnamed("list_inputs").setvalueof(list_inputs)
 
         // post("list_inputs", list_inputs, "\n")
-        new_name(n);
+        // new_name(n);
+		*/
     } else {
         new_name(n);
     }
@@ -394,9 +403,23 @@ const getTopButtons = () => ({
             }
         }
         routing_sizes(listlength);
+		new_name(iname);
+		//let lis = ap.getnamed("list_inputs_spread").getvalueof();
+		//post("lis", lis, "\n");
+		//ap.getnamed("list_inputs_spread").message(0);
     },
     "clr-listin": (v) => {
         //clr list-in
+		let listinputs = ap.getnamed("list_inputs").getvalueof();
+        for (let j = listlength; j > 0; j--) {
+			for (let k of listinputs){
+	            if (actpars["input_name"][j].match(k)) {
+	                delete_row(j);
+	                listlength--;
+	            }
+            }
+        }
+		routing_sizes(listlength);
         ap.getnamed("list_inputs").message("_");
     },
     learn: (v) => {
@@ -570,7 +593,7 @@ function reset() {
     midi_items.set("items", "-no-", "append", "~refresh~");
     ap.getnamed("midi_receive_port").message("dictionary", midi_items.name);
     
-    ap.getnamed("list_inputs_spread").setvalueof(0);
+    //ap.getnamed("list_inputs_spread").setvalueof(0);
     ap.getnamed("list_inputs").setvalueof("_");
 
     ap.getnamed("input_menu").setvalueof("midi")
