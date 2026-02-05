@@ -132,6 +132,12 @@ function actname(an) {
     windowbar_obj.message("w_param", act_name, "routingW");
     listblock_obj.message("params", Object.keys(defaults));
 
+    const args = ll_global.patchers[an].getattr("arguments");
+    // TODO: check args[2] is a valid act
+    if(args[2]) {
+        tp.getnamed("handle_my_control").subpatcher().getnamed("route").message(args[2]);
+    }
+
     //windowbar_obj.message("set_wind", actpars["routingPos"]);
 }
 function allpars() {
@@ -146,6 +152,7 @@ function allpars() {
             messnamed(
                 `::${act_name}::llc_${actpars["input_name"][i]}`,
                 "props",
+                `c${i}`,
                 p,
                 ar[i]
             ); //goes to the send-abstractions
@@ -161,8 +168,29 @@ function allpars() {
 function new_input(...args) {
     //post("newn", "type", args[0].match(/\s/), "\n");
     let n = args.shift();
-    if (args.length > 1 && !actpars["list_inputs"].includes(n)) {
-        args.forEach((item) => new_name(`${n}(${item})`));
+    if (args.length > 1 /* && !actpars["list_inputs"].includes(n) */) {
+        args.forEach((item, index) => new_name(`${n}(${index})`));
+        let list_inputs_spread = ap.getnamed("list_inputs_spread").getvalueof();
+        if(list_inputs_spread === 0) {
+            list_inputs_spread = []
+        }
+        // post("list_input_spread", list_input_spread, "\n")
+
+        list_inputs_spread.push(n)
+        ap.getnamed("list_inputs_spread").setvalueof(list_inputs_spread)
+
+        let list_inputs = ap.getnamed("list_inputs").getvalueof();
+        // post("list_inputs", list_inputs, "\n")
+        if(list_inputs === 0 || list_inputs === "_") {
+            list_inputs = ["_"]
+        }
+        // post("list_input_spread", list_input_spread, "\n")
+
+        list_inputs.push(n)
+        ap.getnamed("list_inputs").setvalueof(list_inputs)
+
+        // post("list_inputs", list_inputs, "\n")
+        new_name(n);
     } else {
         new_name(n);
     }
@@ -191,15 +219,23 @@ function new_mode(ar) {
 
     // //post("newmode:",ar,"old:",actpars["modes"],"\n");
     ar.forEach((mode, i) => {
-        if (i === 0 || mode === actpars["modes"][i]) return;
-        sp.remove(sp.getnamed(`c${i}`));
+        // post(mode, i, actpars["modes"][i], "\n")
+        let llc = sp.getnamed(`c${i}`);
+
+        if (i === 0 || (mode === actpars["modes"][i] && llc)) {
+            // post("modes equal\n")
+            return;
+        }
+        if(llc)
+            sp.remove(llc);
         //let c = sp.newdefault(30,i*30,`llc.${ar[i]}`, i, act_name);
         let c = sp.newdefault(
             30,
             i * 30,
             `llc.${ar[i]}`,
             actpars["input_name"][i],
-            act_name
+            act_name,
+            // "@varname", `c${i}`
         );
         c.varname = `c${i}`;
         for (let k of load_order) {
@@ -207,6 +243,7 @@ function new_mode(ar) {
             messnamed(
                 `::${act_name}::llc_${actpars["input_name"][i]}`,
                 "props",
+                `c${i}`,
                 k,
                 actpars[k][i]
             );
@@ -303,10 +340,13 @@ const getTopButtons = () => ({
         ap.getnamed("in_max").message(actpars["in_hi"]);
     },
     clone: (v) => {
+        // post("actpars[k][sel]", actpars["mode"][sel], "\n")
         for (let k in defaults) {
+            // post("k", k, "\n", "sel", sel, "\n", "actpars[k][sel]", actpars[k][sel], "\n")
             actpars[k].splice(sel, 0, actpars[k][sel]);
             ap.getnamed(k).message(actpars[k]);
         }
+
         routing_sizes(listlength + 1);
     },
     delete: (v) => {
@@ -337,11 +377,14 @@ const getTopButtons = () => ({
     },
     "list-in": (v) => {
         //list-in
+        post("sel", sel, "\n")
         let str = actpars["input_name"][sel];
+        post("str", str, "\n")
         //post("listin",str,"\n");
         if (str.match(/\(/g) === 0) return;
 
         let iname = str.split("(")[0];
+        post("iname", iname, "\n")
         actpars["list_inputs"].push(iname);
         ap.getnamed("list_inputs").message(actpars["list_inputs"]);
         for (let j = listlength; j > 0; j--) {
@@ -520,3 +563,26 @@ function getmodes() {
 
     return _modes;
 }
+
+// clean for saving .maxpat
+function reset() {
+    const midi_items = new Dict();
+    midi_items.set("items", "-no-", "append", "~refresh~");
+    ap.getnamed("midi_receive_port").message("dictionary", midi_items.name);
+    
+    ap.getnamed("list_inputs_spread").setvalueof(0);
+    ap.getnamed("list_inputs").setvalueof("_");
+
+    ap.getnamed("input_menu").setvalueof("midi")
+
+    getTopButtons().reset()
+    getTopButtons().clear()
+
+    ap.getnamed("routingW").setvalueof(0);
+
+    this.patcher.message("wclose");
+
+    savebang();
+}
+
+outlet(0, "didreload", "bang")

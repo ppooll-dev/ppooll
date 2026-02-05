@@ -9,8 +9,59 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 854.0, 149.0, 519.0, 695.0 ],
+        "rect": [ 533.0, 101.0, 500.0, 787.0 ],
         "boxes": [
+            {
+                "box": {
+                    "id": "obj-25",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "bang" ],
+                    "patching_rect": [ 440.15, 118.0, 58.0, 22.0 ],
+                    "text": "loadbang"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-24",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "bang" ],
+                    "patching_rect": [ 440.15, 152.07, 61.0, 22.0 ],
+                    "text": "delay 500"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-22",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "" ],
+                    "patching_rect": [ 52.0, 192.75, 52.0, 22.0 ],
+                    "text": "route c0"
+                }
+            },
+            {
+                "box": {
+                    "code": "function bang(){\r\n    const i = this.patcher\r\n        .parentpatcher\r\n        .box.varname;\r\n    outlet(0, i);\r\n}",
+                    "filename": "none",
+                    "fontface": 0,
+                    "fontname": "<Monospaced>",
+                    "fontsize": 12.0,
+                    "id": "obj-12",
+                    "maxclass": "v8.codebox",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 347.0, 192.75, 250.0, 199.25 ],
+                    "saved_object_attributes": {
+                        "parameter_enable": 0
+                    }
+                }
+            },
             {
                 "box": {
                     "id": "obj-20",
@@ -28,7 +79,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 156.0, 76.0, 83.0, 20.0 ],
+                    "patching_rect": [ 139.0, 21.0, 83.0, 20.0 ],
                     "text": "register labels"
                 }
             },
@@ -41,7 +92,7 @@
                     "numinlets": 0,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 124.0, 71.0, 30.0, 30.0 ]
+                    "patching_rect": [ 102.0, 27.0, 30.0, 30.0 ]
                 }
             },
             {
@@ -51,8 +102,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 79.0, 155.0, 149.0, 22.0 ],
-                    "text": "::control@1::llc_s"
+                    "patching_rect": [ 79.0, 115.07, 149.0, 22.0 ],
+                    "text": "::control@1::llc_metro1"
                 }
             },
             {
@@ -100,6 +151,7 @@
                                     "fontname": "Arial",
                                     "fontsize": 12.0,
                                     "id": "obj-21",
+                                    "linecount": 2,
                                     "maxclass": "newobj",
                                     "numinlets": 1,
                                     "numoutlets": 1,
@@ -199,6 +251,7 @@
                             {
                                 "box": {
                                     "id": "obj-22",
+                                    "linecount": 2,
                                     "maxclass": "newobj",
                                     "numinlets": 5,
                                     "numoutlets": 2,
@@ -429,7 +482,7 @@
                             }
                         ]
                     },
-                    "patching_rect": [ 52.0, 118.0, 199.0, 22.0 ],
+                    "patching_rect": [ 52.0, 81.0, 199.0, 22.0 ],
                     "text": "p set_r"
                 }
             },
@@ -462,7 +515,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 275.0, 84.0, 32.0, 22.0 ],
+                    "patching_rect": [ 275.0, 81.0, 32.0, 22.0 ],
                     "text": "gate"
                 }
             },
@@ -596,7 +649,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 478.0, 126.0, 612.0, 752.0 ],
+                        "rect": [ 834.0, 119.0, 612.0, 752.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -1347,7 +1400,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 289.0, 134.0, 135.0, 22.0 ],
-                                                                    "text": "wavelets1 one"
+                                                                    "text": "sinus1 bang-env"
                                                                 }
                                                             },
                                                             {
@@ -1359,7 +1412,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 258.0, 195.0, 55.0, 22.0 ],
-                                                                    "text": "wavelets1 -no-"
+                                                                    "text": "sinus1 -no-"
                                                                 }
                                                             },
                                                             {
@@ -1429,7 +1482,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 311.0, 484.0, 181.0, 22.0 ],
-                                                                    "text": "::wavelets1::one 1"
+                                                                    "text": "::sinus1::bang-env 1"
                                                                 }
                                                             },
                                                             {
@@ -1442,7 +1495,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 311.0, 437.0, 181.0, 22.0 ],
-                                                                    "text": "::wavelets1::one 1"
+                                                                    "text": "::sinus1::bang-env 1"
                                                                 }
                                                             },
                                                             {
@@ -1455,7 +1508,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 269.0, 390.0, 181.0, 22.0 ],
-                                                                    "text": "::wavelets1::one"
+                                                                    "text": "::sinus1::bang-env"
                                                                 }
                                                             },
                                                             {
@@ -2648,7 +2701,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 52.0, 192.0, 97.0, 22.0 ],
+                    "patching_rect": [ 52.0, 152.07, 97.0, 22.0 ],
                     "text": "route props"
                 }
             },
@@ -2659,7 +2712,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 52.0, 155.0, 19.0, 22.0 ],
+                    "patching_rect": [ 52.0, 115.07, 19.0, 22.0 ],
                     "text": "r"
                 }
             },
@@ -2722,6 +2775,12 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-22", 1 ],
+                    "source": [ "obj-12", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-11", 0 ],
                     "source": [ "obj-13", 0 ]
                 }
@@ -2766,6 +2825,41 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-1", 0 ],
+                    "midpoints": [ 61.5, 236.734375, 88.5, 236.734375 ],
+                    "order": 1,
+                    "source": [ "obj-22", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-42", 0 ],
+                    "order": 2,
+                    "source": [ "obj-22", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-47", 1 ],
+                    "midpoints": [ 61.5, 234.7421875, 165.5, 234.7421875 ],
+                    "order": 0,
+                    "source": [ "obj-22", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-12", 0 ],
+                    "source": [ "obj-24", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-24", 0 ],
+                    "source": [ "obj-25", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-16", 1 ],
                     "source": [ "obj-4", 0 ]
                 }
@@ -2778,30 +2872,13 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-1", 0 ],
-                    "midpoints": [ 61.5, 236.734375, 88.5, 236.734375 ],
-                    "order": 1,
-                    "source": [ "obj-41", 0 ]
-                }
-            },
-            {
-                "patchline": {
                     "destination": [ "obj-17", 1 ],
                     "source": [ "obj-41", 1 ]
                 }
             },
             {
                 "patchline": {
-                    "destination": [ "obj-42", 0 ],
-                    "order": 2,
-                    "source": [ "obj-41", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-47", 1 ],
-                    "midpoints": [ 61.5, 234.7421875, 165.5, 234.7421875 ],
-                    "order": 0,
+                    "destination": [ "obj-22", 0 ],
                     "source": [ "obj-41", 0 ]
                 }
             },

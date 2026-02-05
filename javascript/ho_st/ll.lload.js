@@ -5,7 +5,7 @@ var ll_global = new Global("ppooll");
 let acts = [];
 let only_one = ["ho_st", "buffer_host"];
 
-function load(actname, index = 0) {
+function load(actname, index = 0, my_control = "") {
     acts = Object.keys(ll_global.state);
 
     for (const i in only_one) {
@@ -19,8 +19,8 @@ function load(actname, index = 0) {
     }
 
     if (ll_global.live_ppooll_patcher) {
-        ll_global.live_ppooll_patcher.newdefault(5, 74 + (acts.length * 30), actname, index);
+        ll_global.live_ppooll_patcher.newdefault(5, 74 + (acts.length * 30), actname, index, my_control);
     } else {
-        outlet(0, "load", actname, index);
+        outlet(0, "load", actname, index, my_control);
     }
 }

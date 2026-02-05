@@ -165,7 +165,7 @@ function bang(alreadyRegistered = false) {
     });
     
     // check if act .maxpat was loaded with 2nd argument for index (ie "lload sinus 3")
-    const act_patch_args = this.patcher.parentpatcher.getattr("arguments");
+    const act_patch_args = act_patcher.getattr("arguments");
     if(act_patch_args && act_patch_args.length > 1 && act_patch_args[1] !== "#2" && act_patch_args[1] > 0){
         act_index = act_patch_args[1]
     }else{
