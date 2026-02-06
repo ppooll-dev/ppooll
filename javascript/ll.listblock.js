@@ -28,6 +28,7 @@ var par, pval, drag_val;
 var lllnum, lllbmenu, lllbtext;
 var val = "n"; //notifyclients about clicked mode and position
 var selected_box = [null, null];
+var selected_menu = [null, null];
 var is_selected_menu = false;
 var isIdleOut = false;
 var button_on = -1;
@@ -426,13 +427,18 @@ function text_init() {
             "@keymode", 1,
             "@border", 0,
             "@rounded", 0,
-            "@fontsize", fontsize
+            "@fontsize", fontsize,
+			// "@bgcolor", 1, 1, 1, 0,
+			// "@textcolor", 0,0,0,0,
+			"@textjustification", 1
         );
         this.patcher.hiddenconnect(t, 0, box, 0);
         t.hidden = 1;
         return t;
     });
-
+	lllbtext.bgcolor = [1, 1, 1, 1];
+	lllbtext.textcolor = textcolor;
+	lllbtext.textjustification = 1;
     lllbtext.hidden = 1;
 }
 
@@ -463,7 +469,7 @@ function brightness(color){
 function paint() {
 	//post(non_txt,"nt\n");
 	mgraphics.select_font_face((fontfamily = "Arial"));
-
+	let table_w = col_pos[col_pos.length - 1] - col_pos[0];
 	let s = rowheight;
 	let cw = 0;
 	let cm, cm1, cm2;
@@ -514,12 +520,9 @@ function paint() {
 			mgraphics.rectangle(col_pos[j],i*rowheight, cw, rowheight);
 			mgraphics.stroke_preserve();
 
-			let isSelected = selected_box &&
-                 selected_box[0] === j &&
-                 selected_box[1] === (i - header);
-
-
-			// TODO Draw Dark border around selected row
+			let isSelected = selected_menu &&
+                 selected_menu[0] === j &&
+                 selected_menu[1] === (i - header);
 
 			is_selected_menu = false;
 			if (isSelected && i >= header && cm == "menu" && isIdleOut) {
@@ -598,6 +601,38 @@ function paint() {
 			mgraphics.fill();
 		}
 	
+	}
+	
+	// TODO Draw Dark border around selected row and highlight
+	if (selected_box && selected_box[1] >= 0) {
+
+		let row = selected_box[1] + header;
+
+		mgraphics.new_path();
+		mgraphics.set_line_width(1);
+		mgraphics.set_source_rgba(0.15, 0.15, 0.15, 1);
+
+		mgraphics.rectangle(
+			col_pos[0] + 1,
+			row * rowheight,
+			table_w - 2,
+			rowheight 
+		);
+
+		mgraphics.stroke();
+
+		mgraphics.rectangle(
+			col_pos[0] + 1,
+			row * rowheight,
+			table_w - 2,
+			rowheight 
+		);
+
+		mgraphics.set_source_rgba(0.15, 0.15, 0.15, 0.05);
+		mgraphics.fill();
+
+
+		mgraphics.set_line_width(1);
 	}
 }
 
@@ -786,10 +821,12 @@ function m_num(x,y,drag){
 	}
 	lllnum.hidden = 0;
 	lllnum.message("select");	
-	//listener();	
+	this.patcher.bringtofront(lllnum)
 }
 function m_menu(x,y,drag){ //called in onclick()
 	menu_init();
+
+	selected_menu = [x,y]
 
 	if (lllbmenu){
 		lllbmenu.message("clear")
@@ -890,7 +927,7 @@ function menu(a) {
 
 	if(a === "<cancel>"){
 		// post("ll.listblock menu cancelled\n");
-		selected_box = [null, null];
+		selected_menu = [null, null];
 		mgraphics.redraw();
 		lllbmenu.hidden = 1;
 		return;
@@ -937,7 +974,7 @@ function menu(a) {
 		lllbmenu.hidden = 1;
 	}
 
-	selected_box = [null, null];
+	selected_menu = [null, null];
 	par_mess();
 }
 function keep(a){
