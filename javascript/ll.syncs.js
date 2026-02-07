@@ -1,4 +1,5 @@
 autowatch = 1;
+outlets = 1;
 
 if (typeof ll === "undefined") {
     var ll = require("ll._utilities");
@@ -12,6 +13,8 @@ let sync_name = null;       // this ll.sync name
 let sync_send = null;       // send~ for this ll.sync's signal
 let ll_r_name = "syncto";   // umenu name
 let ext_midi = false; 
+
+let is_deleting = false;
 
 function set_actname(v) {
     actname = v;
@@ -66,10 +69,13 @@ function set_patcherargs(dictname) {
 }
 
 function fill_menu() {
+    if(is_deleting || !actname || !ll_global.patchers[actname]) {
+        return
+    }
     const act_patcher = ll_global.patchers[actname];
     const umenu = act_patcher.getnamed(ll_r_name);
     if(!umenu) {
-        // post("ll.syncs error: could not find named umenu", ll_r_name, "\n");
+        menu_select("sync-off")
         return;
     }
 
@@ -92,7 +98,33 @@ function fill_menu() {
     outlet(0, "ll_r", ll_r_name);
 }
 
+function menu_select(syncto){
+    if(syncto === "sync-off"){
+        outlet(0, "receive", "set", "off~sync");
+        outlet(0, "active", 0);
+        outlet(0, "ext_midi_clock", 0);
+        outlet(0, "selector", 1);
+    } else if(syncto === "sync_in"){
+        outlet(0, "receive", "set", ll_r_name + "~sync_in");
+        outlet(0, "active", 1);
+        outlet(0, "ext_midi_clock", 0);
+        outlet(0, "selector", 2);
+    } else if(syncto === "ext_midi"){
+        outlet(0, "receive", "set", syncto + "~sync");
+        outlet(0, "active", 1);
+        outlet(0, "ext_midi_clock", 1);
+        outlet(0, "selector", 3);        
+    } else {
+        outlet(0, "receive", "set", syncto + "~sync");
+        outlet(0, "active", 1);
+        outlet(0, "ext_midi_clock", 0);
+        //outlet(3, 1);
+    }
+}
+
 function notifydeleted(){
+    is_deleting = true;
+
     if(ll_global.syncs[sync_name])
         delete ll_global.syncs[sync_name];
 
