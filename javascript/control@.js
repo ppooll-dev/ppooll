@@ -138,7 +138,7 @@ function actname(an) {
     const args = ll_global.patchers[an].getattr("arguments");
     
     // TODO: check args[2] is a valid act
-    if(args[2]) {
+    if(args[2] && ll_global.state[args[2]]) {
         tp.getnamed("handle_my_control").subpatcher().getnamed("route").message(args[2]);
     }
 }
