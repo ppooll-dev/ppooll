@@ -170,6 +170,8 @@ mgraphics.autofill = 0;
 				
 function paint(){  // ________________________________  draw 
 	//post("val",val,"\n");		
+		mgraphics.select_font_face((fontfamily = "Arial"));
+
 	let oncolor, bgcolor;
 	let txt_color = [1,1,1,1];
 	for (j=0;j<amount;j++){
