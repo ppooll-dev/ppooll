@@ -4,14 +4,14 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 1,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
         "rect": [ 100.0, 100.0, 573.0, 662.0 ],
         "toolbarvisible": 0,
-        "globalpatchername": "ll.p.maxhelp2",
+        "globalpatchername": "ll.p.maxhelp1",
         "boxes": [
             {
                 "box": {
@@ -31,7 +31,8 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 193.0, 482.0, 285.0, 20.0 ],
-                    "text": "also optional as \"fullpath\" to overwrite the argument:"
+                    "text": "also optional as \"fullpath\" to overwrite the argument:",
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
             },
             {
@@ -41,7 +42,8 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 12.0, 445.0, 354.0, 20.0 ],
-                    "text": "the 3rd inlet can be used to lookup a parameter from another act:"
+                    "text": "the 3rd inlet can be used to lookup a parameter from another act:",
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
             },
             {
@@ -53,7 +55,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 115.0, 547.0, 23.0, 169.0 ],
-                    "text": "0 ::ll.r.maxhelp1::inputs~"
+                    "text": "0 ::ll.p.maxhelp1::inputs~"
                 }
             },
             {
@@ -125,8 +127,9 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 57.0, 65.0, 310.0, 33.0 ],
-                    "text": "like ll.p but using a pattr inside.\nit is not recomended using a lot of ll.pp for speed issues."
+                    "patching_rect": [ 56.0, 95.0, 310.0, 33.0 ],
+                    "text": "like ll.p but using a pattr inside.\nit is not recomended using a lot of ll.pp for speed issues.",
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
             },
             {
@@ -138,7 +141,8 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 299.0, 324.0, 34.0, 20.0 ],
-                    "text": "men"
+                    "text": "men",
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
             },
             {
@@ -166,8 +170,9 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 57.0, 5.0, 287.0, 27.0 ],
-                    "text": "ll.pp"
+                    "patching_rect": [ 56.0, 35.0, 287.0, 27.0 ],
+                    "text": "ll.pp",
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
             },
             {
@@ -209,7 +214,8 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 429.5, 543.0, 55.0, 20.0 ],
-                    "text": "see also"
+                    "text": "see also",
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
             },
             {
@@ -222,7 +228,8 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 230.0, 362.5, 258.0, 33.0 ],
-                    "text": "ll.p takes one argument, which is the scripting name of the parameter it should bind to."
+                    "text": "ll.p takes one argument, which is the scripting name of the parameter it should bind to.",
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
             },
             {
@@ -261,7 +268,8 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 190.0, 326.0, 23.0, 20.0 ],
-                    "text": "flo"
+                    "text": "flo",
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
             },
             {
@@ -289,7 +297,8 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 122.0, 326.0, 34.0, 20.0 ],
-                    "text": "num"
+                    "text": "num",
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
             },
             {
@@ -315,7 +324,8 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 297.0, 271.0, 49.0, 20.0 ],
-                    "text": "2D"
+                    "text": "2D",
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
             },
             {
@@ -339,7 +349,8 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 150.0, 281.0, 42.0, 20.0 ],
-                    "text": "multi"
+                    "text": "multi",
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
             },
             {
@@ -366,7 +377,8 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 49.0, 296.0, 39.0, 20.0 ],
-                    "text": "slider"
+                    "text": "slider",
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
             },
             {
@@ -378,7 +390,8 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 56.0, 152.0, 266.0, 20.0 ],
-                    "text": "these userinterfaces are script named as labeld."
+                    "text": "these userinterfaces are script named as labeld.",
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
             },
             {
@@ -401,20 +414,21 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 57.0, 34.0, 287.0, 27.0 ],
-                    "text": "bind to a parameter"
+                    "patching_rect": [ 56.0, 64.0, 287.0, 27.0 ],
+                    "text": "bind to a parameter",
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
             },
             {
                 "box": {
                     "active": {
                         "act": 0,
+                        "act::active_store": 0,
                         "act::master": 0,
                         "act::u751015509": 0,
                         "act::pres_menu": 0,
                         "act::tetris_menu": 0,
-                        "act::title_menu": 0,
-                        "act::active_store": 0
+                        "act::title_menu": 0
                     },
                     "color": [ 0.0, 0.0, 0.0, 1.0 ],
                     "fontname": "Arial",
@@ -539,7 +553,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 1,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
