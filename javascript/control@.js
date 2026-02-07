@@ -615,7 +615,7 @@ function fill_menu(col, sel) {
             listblock_obj.message(
                 "fill_menu",
                 "no",
-                Object.keys(ll_global.patchers)
+                Object.keys(ll_global.patchers).sort((a, b) => a.localeCompare(b))
             );
     } else if (col === 8) {
         let selact = actpars["acts"][sel];
