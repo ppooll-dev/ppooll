@@ -3,7 +3,7 @@ autowatch = 1;
 inlets = 1;
 outlets = 1;
 
-var actr = new Global("ppooll");
+var ll_global = new Global("ppooll");
 
 let tp = this.patcher;
 let pp = tp.parentpatcher;
@@ -149,7 +149,7 @@ function vstCreate(c_in, c_out) {
 
         // Re-init params
         paramNames.forEach((param) => {
-            let val = actr.patchers[actname].getnamed(param).getvalueof();
+            let val = ll_global.patchers[actname].getnamed(param).getvalueof();
             mc_vst.message(param, val)
         });
     }
@@ -183,6 +183,9 @@ function loadVST(pluginPath) {
 
     pp.getnamed("open!").hidden = 0;
 
+
+    if(ll_global.live_ppooll_patcher)
+        mc_vst.message("floateditorwindow", 1);
 
     // set [ ll.s vst_AU ]
     out("vst_AU", getPluginType(pluginPath))

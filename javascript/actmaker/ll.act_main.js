@@ -1391,9 +1391,11 @@ function first_dump() {
 }
 
 function make_live() {
-    post("live.ppooll\n");
+    // post("live.ppooll\n");
     ll_global.live_ppooll_patcher.message("script", "bringtofront", act_name_index);
     messnamed(act_name_index, "TP", "front");
+    messnamed(act_name_index, "TP", "window", "flags", "float");
+    messnamed(act_name_index, "TP", "window", "exec");
 
     // if this is the ho_st hide defined objects
     if (act_args.name === "ho_st") {
