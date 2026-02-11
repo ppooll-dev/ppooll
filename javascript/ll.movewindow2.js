@@ -116,3 +116,7 @@ function scroll(a)
 	w.hashorizscroll = a;
 	w.haszoom = a;		
 }
+
+function getvalueof(){
+	return 0;
+}
