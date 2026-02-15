@@ -77,6 +77,7 @@ function pointInRect(x, y, r) {
     return (x >= r[0] && x <= r[2] && y >= r[1] && y <= r[3]);
 }
 
+
 // -------------------- PAINT ---------------------
 function paint() {
     var R = getRect();
@@ -173,6 +174,10 @@ function ondrag(x, y, but, cmd, shift, caps, opt, ctrl) {
     win.location = [loc[0]+dx, loc[1]+dy, loc[2]+dx, loc[3]+dy];
     if(pos_param.length > 0)
         messnamed(...pos_param, ...win.location);
+	if (but === 0){ //check if in control@
+		let cjs = this.patcher.parentpatcher.getnamed("main_js");
+		if (cjs) cjs.message("check_size");
+	}
 }
 
 function onmouseup() { dragging = false; }

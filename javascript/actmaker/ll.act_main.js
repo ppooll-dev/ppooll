@@ -1498,7 +1498,7 @@ function recall_TEXT_from_dict(deviceName, presetName, path) {
 
     const preset_TEXT = JSON.parse(temp.stringify());
     if (preset_TEXT[act_args.name] && preset_TEXT[act_args.name][presetName]) {
-        post("has TEXT, recall\n");
+        //post("has TEXT, recall\n");
         const temp = new Dict();
         temp.import_json(`${ll_global.paths.user}/presets_text.json`);
 
