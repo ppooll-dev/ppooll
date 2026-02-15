@@ -407,6 +407,8 @@ function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
     let uibr = this.box.rect;
 
     let drag_gate = x <= uibr[2] / 2;
+    if(ll_global.nested_patcher)
+        ll_global.live_ppooll_patcher.bringtofront(act_patcher.box)
 
     if (!drag_gate) {
         mod = shift | option | ctrl;
@@ -1392,6 +1394,18 @@ function first_dump() {
 
 function make_live() {
     // post("live.ppooll\n");
+    if(ll_global.nested_patcher){
+        const name = act_args.name === "ho_st" ? "ppooll_host" : act_args.name
+        const coords = [...ll.getPatcherRectFromMaxpat(`${name}.maxpat`)]
+        act_patcher.box.rect = [
+            coords[0],
+            coords[1],
+            coords[2] + coords[0],
+            coords[3] + coords[1]
+        ]
+        return;
+    }
+
     ll_global.live_ppooll_patcher.message("script", "bringtofront", act_name_index);
     messnamed(act_name_index, "TP", "front");
     messnamed(act_name_index, "TP", "window", "flags", "float");
@@ -1716,6 +1730,18 @@ function from_pat(...args) {
 }
 
 function windpos(x, y) {
+    if(ll_global.nested_patcher){
+        let w = [...act_patcher.box.rect];
+        w = [
+            x + w[0],
+            y + w[1],
+            x + w[2],
+            y + w[3],
+        ];
+        act_patcher.box.rect = w;
+        return
+    }
+
     const w = act_patcher.wind;
     w.location = [
         x + w.location[0],
@@ -1743,6 +1769,16 @@ function setloc(x, y, o) {
         ];
         //post(o, obj.rect, "\n");
     } else {
+        if(ll_global.nested_patcher){
+            const loc = act_patcher.box.rect;
+            act_patcher.box.rect = [
+                x,
+                y,
+                loc[2] - loc[0] + x,
+                loc[3] - loc[1] + y,
+            ];
+            return
+        }
         const loc = act_patcher.wind.location;
         act_patcher.wind.location = [
             x,

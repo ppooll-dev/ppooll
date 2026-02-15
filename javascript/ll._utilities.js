@@ -288,7 +288,7 @@ exports.getPatcherRectFromMaxpat = (a) => {
             if (rect_pos > -1) {
                 end_pos = a.lastIndexOf("]");
                 a = a.slice(rect_pos + 11, end_pos - 1);
-                coords = a.split(",");
+                coords = a.split(",").map(c => parseInt(c));
                 break;
             }
             i++;
@@ -296,7 +296,7 @@ exports.getPatcherRectFromMaxpat = (a) => {
         f.close();
         if (i > 199) post("could not find rect in " + a + "\n");
     } else {
-        post("could not open file: " + s + "\n");
+        post("could not open file: " + a + "\n");
     }
     //post("get",coords, "\n");
     return coords;

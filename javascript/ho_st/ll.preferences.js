@@ -98,6 +98,10 @@ function setscreencolor() {
     messnamed("ll.screenTP", "bgcolor", c);
     const logoc = c.map((item) => item + 0.1);
     messnamed("ll.screenTP", "script", "send", "logo", "fgcolor", logoc);
+
+    if(ll_global.nested_patcher)
+        ll_global.live_ppooll_patcher.setattr("locked_bgcolor", ...screencolor)
+
     ll_prf_rewrite();
 }
 

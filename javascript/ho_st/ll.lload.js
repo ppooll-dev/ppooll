@@ -21,7 +21,14 @@ function load(actname, index = 0, my_control = "") {
     const maxpat = `${actname}.maxpat`
 
     if (ll_global.live_ppooll_patcher) {
-        ll_global.live_ppooll_patcher.newdefault(5, 74 + (acts.length * 30), maxpat, index, my_control);
+        if(ll_global.nested_patcher){
+            ll_global.live_ppooll_patcher
+                .newobject("bpatcher", "@name", maxpat, "@args", index, my_control, "@bgmode", 1)
+            return
+        }
+
+        ll_global.live_ppooll_patcher
+            .newdefault(5, 74 + (acts.length * 30), maxpat, index, my_control);
     } else {
         outlet(0, "load", maxpat, index, my_control);
     }

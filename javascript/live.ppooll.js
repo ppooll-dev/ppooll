@@ -2,6 +2,8 @@ autowatch = 1;
 
 var ll_global = new Global("ppooll");
 
+const USE_NESTED_PATCHER = false;
+
 const SUBS_TO_SHOW = [
     {
         act_class: "control@",
@@ -28,9 +30,26 @@ const SUBS_TO_SHOW = [
 ];
 
 function loadbang() {
+    ll_global.nested_patcher = USE_NESTED_PATCHER;
+
     ll_global.live_ppooll_patcher = this.patcher
         .getnamed("LIVE_PPOOLL_ENVIRONMENT")
         .subpatcher();
+
+    if (ll_global.nested_patcher) {
+        ll_global.live_ppooll_patcher.newobject(
+            "bpatcher",
+            "@name",
+            "ppooll_host.maxpat",
+            "@args",
+            1,
+            "@varname",
+            "ho_st1",
+            "@bgmode",
+            1,
+        );
+        return;
+    }
     ll_global.live_ppooll_patcher.newdefault(5, 74, "ppooll_host", 1);
 }
 
@@ -44,11 +63,16 @@ function send_to_all_TP(msgs) {
 
 function show_hide(v) {
     const front_wclose = v ? "front" : "wclose";
-    send_to_all_TP([front_wclose]);
 
-    send_to_all_TP(["window", "flags", v ? "float" : "nofloat"]);
+    if (ll_global.nested_patcher) {
+        ll_global.live_ppooll_patcher.message(front_wclose);
+    } else {
+        send_to_all_TP([front_wclose]);
 
-    send_to_all_TP(["window", "exec"]);
+        send_to_all_TP(["window", "flags", v ? "float" : "nofloat"]);
+
+        send_to_all_TP(["window", "exec"]);
+    }
 
     const act_objects_array = all_acts().map((a) => ll_global.state[a]);
 

@@ -295,10 +295,10 @@ function writeJson(jsonPath) {
     act_list.forEach((oldName) => {
         const act_class = ll_global.state[oldName].class;
         const patcher = ll_global.patchers[oldName];
-
+        const loc = ll_global.nested_patcher ? patcher.box.rect : patcher.wind.location;
         // set act in envi with new name
         environment[oldName] = {
-            _actwindow: [act_class, ...patcher.wind.location],
+            _actwindow: [act_class, ...loc],
             ...ll_global.pat[oldName].getdumpJSON(),
         };
     });
