@@ -113,12 +113,6 @@ function loadAct() {
     loadParams();
 }
 
-function loadParams() {
-    messnamed("llenviread", 1);
-    paramsCount = 0;
-    messnamed("llenviread_getparams", PARAMS_DELAY);
-}
-
 function acting(act_class, act_index, is_open) {
     // response from an act when ready loaded
     if (actingON === 1 && is_open === 1) {
@@ -138,7 +132,14 @@ function setloc(a) {
     }
 }
 
-function params() {
+//##################################################################____params
+function loadParams() {
+    messnamed("llenviread", 1);
+    paramsCount = 0;
+    messnamed("llenviread_getparams", PARAMS_DELAY);
+}
+
+function params() { //called from max after delay
     new_blues_oldenvi = 0;
     outlet(0, "parameters... (run " + (paramsCount + 1) + ")");
 
@@ -181,47 +182,6 @@ function walkEnvironment(actName, obj, path) {
     }
 }
 
-function explodeOldEnvironmentKeys(envObj) {
-    let keys = Object.keys(envObj);
-    for (let key of keys) {
-        if (key.includes("::")) {
-            let parts = key.split("::");
-            let value = envObj[key];
-            delete envObj[key]; // remove old flat key
-
-            // create nested structure
-            let target = envObj;
-            for (let i = 0; i < parts.length - 1; i++) {
-                let part = parts[i];
-                if (!target[part] || !checkdict(target[part])) {
-                    target[part] = {};
-                }
-                target = target[part];
-            }
-            target[parts[parts.length - 1]] = value;
-        }
-    }
-}
-
-// load presets files for "folder" environments
-function loadPresets() {
-    if (dict.props.type !== "folder") return;
-
-    outlet(0, "presets...");
-
-    let keys = Object.keys(environment).filter((a) => a !== "buffer_host1");
-    for (const i in keys) {
-        if (presetsIgnore.indexOf(keys[i]) > -1) continue;
-
-        const filepath = `${dict.props.path}/presets/${keys[i]}.json`;
-        // post(JSON.stringify(f), "\n")
-        if (ll.fileExistsStrict(filepath)) {
-            // post("read preset", keys[i], filepath, "\n")
-            messnamed(keys[i], "v8", "read_preset_path", filepath, 0);
-        }
-    }
-}
-
 function setparam(a, p, v) {
     //act, param, value
     if (
@@ -249,3 +209,48 @@ function senddict(a, p, v) {
     outlet(1, "send", "::" + a + "::" + p);
     outlet(1, "dictionary", v[1]);
 }
+
+function explodeOldEnvironmentKeys(envObj) {
+    let keys = Object.keys(envObj);
+    for (let key of keys) {
+        if (key.includes("::")) {
+            let parts = key.split("::");
+            let value = envObj[key];
+            delete envObj[key]; // remove old flat key
+
+            // create nested structure
+            let target = envObj;
+            for (let i = 0; i < parts.length - 1; i++) {
+                let part = parts[i];
+                if (!target[part] || !checkdict(target[part])) {
+                    target[part] = {};
+                }
+                target = target[part];
+            }
+            target[parts[parts.length - 1]] = value;
+        }
+    }
+}
+
+// ###################################################### load presets files for "folder" environments
+function loadPresets() {
+    if (dict.props.type !== "folder") return;
+
+    outlet(0, "presets...");
+
+    let keys = Object.keys(environment).filter((a) => a !== "buffer_host1");
+    for (const i in keys) {
+        if (presetsIgnore.indexOf(keys[i]) > -1) continue;
+
+        const filepath = `${dict.props.path}/presets/${keys[i]}.json`;
+        // post(JSON.stringify(f), "\n")
+        if (ll.fileExistsStrict(filepath)) {
+            // post("read preset", keys[i], filepath, "\n")
+            messnamed(keys[i], "v8", "read_preset_path", filepath, 0);
+        }
+    }
+}
+
+
+
+

@@ -812,11 +812,12 @@ function set_tetris_menu(selection) {
     const tetrisObj = JSON.parse(tetrisDict.stringify());
 
     const hiddenAttrs = {};
-
+	
     Object.keys(tetrisObj)
         .filter((o) => o !== "window")
         .forEach((objName) => {
             const obj = act_patcher.getnamed(objName);
+			//post("tetris",tetrisPath,objName,"\n");
             if (!obj) {
                 post(
                     "ppooll tetris_read: ",
@@ -920,7 +921,9 @@ function getTetrisFromObject(obj) {
         if (
             /color/.test(attributes[i]) &&
             obj.maxclass !== "patcher" &&
-            obj.maxclass !== "jpatcher"
+            obj.maxclass !== "jpatcher" &&
+			attributes[i] !== "applycolors" &&
+			attributes[i] !== "bubbleusescolors"	
         ) {
             let attrs = obj.getattr(attributes[i]);
 
@@ -1509,7 +1512,7 @@ function recall_TEXT_from_dict(deviceName, presetName, path) {
 
     const preset_TEXT = JSON.parse(temp.stringify());
     if (preset_TEXT[act_args.name] && preset_TEXT[act_args.name][presetName]) {
-        post("has TEXT, recall\n");
+        //post("has TEXT, recall\n");
         const temp = new Dict();
         temp.import_json(`${ll_global.paths.user}/presets_text.json`);
 

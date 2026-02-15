@@ -10,12 +10,13 @@ var ap; //act_patcher
 var rp; //routing_patcher
 var tp; //this.patcher
 var listblock_obj;
-var movewind_obj;
+var windowbar_obj;
 var sel = 1; //selected
 var listlength;
 var copymove = [0, 0, 0];
 var learn_gate;
 var mode_labels = {};
+var screen_size;
 
 let last_mode = 0;
 
@@ -124,12 +125,10 @@ function actname(an) {
     sp = tp.getnamed("send").subpatcher();
     learn_gate = tp.getnamed("receives").subpatcher().getnamed("learn_gate");
     listblock_obj = rp.getnamed("listblock");
-    movewind_obj = rp.getnamed("movewind");
     windowbar_obj = rp.getnamed("window_bar");
-    movewind_obj.message("deconstrain");
-    movewind_obj.message("titlebar", 0);
-    movewind_obj.message("tpw_flags", "nogrow");
-    movewind_obj.message("w_param", act_name, "routingW");
+	rp.wind.hastitlebar = 0;	
+	rp.window("flags","nogrow");
+	rp.window("exec");
     windowbar_obj.message("title", `[${ll_global.state[an].index}]`);
     windowbar_obj.message("pos_param", act_name, "routingPos");
     windowbar_obj.message("w_param", act_name, "routingW");
@@ -158,18 +157,19 @@ function update_header_text(){
 function allpars() {
     let ar = arrayfromargs(arguments);
     let p = ar.shift();
-
+	if (p === "client_remove") return;
+	//post("allpars",p,"value:",ar,"\n");
     if (p === "modes" && ar !== actpars[p]) 
         new_mode(ar); // create the llc. object if modes list changed "_ scale xt random"
 
     actpars[p] = ar;
 
     if (Object.keys(defaults).includes(p)) {
-
+		let p_len = actpars["input_name"].length;
         update_header_text()
         listblock_obj.message("bang"); //update listblock
-
-        for (let i = 1; i < actpars["input_name"].length; i++) {
+		
+        for (let i = 1; i < p_len; i++) {
             //post(`::${act_name}::llc_${i}`, "props", p, ar[i],"\n");
             messnamed(
                 `::${act_name}::llc_${actpars["input_name"][i]}`,
@@ -179,6 +179,7 @@ function allpars() {
                 ar[i]
             ); //goes to the send-abstractions
         }
+		//routing_sizes(p_len);
         if (p === "acts" || p === "pars") acts_pars();
     } else if (p === "routingPos")
         windowbar_obj.message("set_wind", "location", ar);
@@ -186,7 +187,8 @@ function allpars() {
         windowbar_obj.message("set_wind", "visible", ar);
 }
 
-function new_name(n) {
+function new_name(n) { //push actpars
+	//post("newname\n");
     // is ignored and not old?
     if (actpars["ignored"].includes(n) || actpars["input_name"].includes(n))
         return;
@@ -205,39 +207,44 @@ function new_name(n) {
     routing_sizes(len);
     select(len);
 }
-
-// changes from control@ source (midi, ppooll, OSC, etc)
-function new_or_old(...args){
-    const param = args.shift();
+function incoming(...args){ // from control@ source (midi, keys, ppooll, OSC, etc)
+	// send ::control@1::midiin was set 0 and 1 here in the original max-patcher, so maybe this is needed in special cases.
+	if (actpars["on/off"] == 1){
+		//post("income", actpars["on/off"],"\n");
+		ap.getnamed("led").message("bang");
+	    const param = args.shift();    
+	    let list_inputs = actpars["list_inputs"];
+	    let input_name = actpars["input_name"];
+	    if(!Array.isArray(input_name))
+	        input_name = [input_name]
     
-    const list_inputs = ap.getnamed("list_inputs").getvalueof();
-    let input_name = ap.getnamed("input_name").getvalueof();
-
-    if(!Array.isArray(input_name))
-        input_name = [input_name]
-    
-    if(args.length > 1 && list_inputs.indexOf(param) === -1) {
-        // list => spread
-        args.forEach((val, index) => {
-            const s_param = `${param}(${index+1})`
-            if(input_name.indexOf(s_param) > -1){
-                old_input(s_param, val)
-            } else {
-                new_input(s_param, val);
-            }
-        })
-        return;
-    }
-    // single value or full list
-    if(input_name.indexOf(param) > -1) {
-        old_input(param, ...args)
-    }else{
-        new_input(param, ...args);
-    }
+	    if(args.length > 1 && list_inputs.indexOf(param) === -1) {
+	        // list => spread
+	        args.forEach((val, index) => {
+	            const s_param = `${param}(${index+1})`
+	            if(input_name.indexOf(s_param) > -1){
+	                old_input(s_param, val) //______________old
+	            } else {
+					if ( actpars["routingW"] === 1)
+	                	new_input(s_param, val); //______________new
+	            }
+	        })
+	        return;
+	    }
+	    // single value or full list
+	    if(input_name.indexOf(param) > -1) {
+	        old_input(param, ...args) //______________old
+	    }else{
+			if ( actpars["routingW"] == 1)
+	        	new_input(param, ...args); //______________new
+	    }
+	}
+	
 }
 
 // handle new input => create [routing] row
 function new_input(...args) {	
+	//post("new_input\n");
     let n = args.shift();
     if (args.length > 1 && !actpars["list_inputs"].includes(n) ) {
         args.forEach((item, index) => new_name(`${n}(${index+1})`));
@@ -248,43 +255,46 @@ function new_input(...args) {
 
 // handle old input => send param changes to ll_fastforward llc's and set in_lo_hi
 function old_input(param, ...args){
-    outlet(0, "_ff", param, ...args);
+	// eg. send ::control@1::llc_q 1
+    messnamed(
+        `::${act_name}::llc_${param}`,
+        ...args
+    ); //goes to the send-abstractions
 
     if(args.length > 1)
         return;
-
-    const val = args[0];
-
-    const input_names = ap.getnamed("input_name").getvalueof();
-    const in_lo = ap.getnamed("in_lo").getvalueof();
-    const in_hi = ap.getnamed("in_hi").getvalueof();
-
-    const out = [];
-    input_names.forEach((in_name, i) => {
-        
-        if(in_name === param){
-            if(in_lo[i] === "-" || val < in_lo[i])
-                in_lo[i] = val;
+// view in routingW
+	if ( actpars["routingW"] == 1){
+	    const val = args[0];
+	    const input_names = actpars["input_name"];
+	    const in_lo = actpars["in_lo"];
+	    const in_hi = actpars["in_hi"];;
+	    const out = [];
+	
+	    input_names.forEach((in_name, i) => {       
+	        if(in_name === param){
+	            if(in_lo[i] === "-" || val < in_lo[i])
+	                in_lo[i] = val;
             
-            if(in_hi[i] === "-" || val > in_hi[i])
-                in_hi[i] = val;
+	            if(in_hi[i] === "-" || val > in_hi[i])
+	                in_hi[i] = val;
             
-            out.push(i)
-            out.push((val - in_lo[i]) / (in_hi[i] - in_lo[i]))
-        }
-    })
-    ap.getnamed("in_lo").setvalueof(in_lo);
-    ap.getnamed("in_hi").setvalueof(in_hi);
-    
-    rp.getnamed("ms").message("select", ...out)
+	            out.push(i)
+	            out.push((val - in_lo[i]) / (in_hi[i] - in_lo[i]))
+	        }
+	    })
+	    ap.getnamed("in_lo").setvalueof(in_lo);
+	    ap.getnamed("in_hi").setvalueof(in_hi);    
+	    rp.getnamed("ms").message("select", ...out)
+	}
 }
 
 // list of selected modes changed -- check all llc objects and create/remove/update
 function new_mode(current_modes) {
-    // post("new_mode\n")
-    update_header_text()
+    
+    update_header_text();
     if (!actpars["modes"]) return;
-
+	//post("new_mode",current_modes,"\n");
     current_modes.forEach((mode, i) => {
         let llc = sp.getnamed(`c${i}`);
 
@@ -330,6 +340,9 @@ function new_mode(current_modes) {
     for (let i = current_modes.length; i < actpars["modes"].length + 1; i++)
         sp.remove(sp.getnamed(`c${i}`));
     
+	let len = actpars["input_name"].length - 1;
+    routing_sizes(len);
+	
     // TODO: get send_back ?
 }
 
@@ -393,7 +406,7 @@ function input_menu(s) {
     tp.remove(tp.getnamed("in"));
     let inp = tp.newdefault(140, 100, inp_patch);
     inp.varname = "in";
-    tp.connect(inp, 0, tp.getnamed("pn&s"), 0);
+    tp.connect(inp, 0, tp.getnamed("main_js"), 0);
     tp.connect(tp.getnamed("s_b"), 0, inp, 0);
 }
 
@@ -553,30 +566,50 @@ function delete_row(s) {
 
 // _______________________________________________routing_window
 function screensize(x, y) {
-    movewind_obj.message("screensize", x, y);
+	screen_size = [x,y];
 }
+function check_size(){ //compare window size with screensize
+	outlet(0, "getscreensize");
+	let wh = Math.max((listlength + 1) * 15 + 18, 60); //window_height
+	rp.wind.size = [730,wh];
+	let r = rp.wind.location;
+	if (r[3]>screen_size[1]) {
+		//post("uuuu",r[3],screen_size[1]);
+		rp.window("flags","grow");
+		rp.window("exec");
+		r[2] = r[2]+25;
+		r[3] = screen_size[1]-5;
+		rp.wind.location = r;
+	}
+	else {
+		rp.window("flags","nogrow");
+		rp.window("exec");
+	}
+			
+} 
 
 function routing_sizes(len) {
+	//post("routing_sizes",len,"\n");
     listlength = len;
-    outlet(0, "getscreensize");
-    movewind_obj.message("ohide", "ms", len > 0 ? 0 : 1);
+	let ms = rp.getnamed("ms");
+	let lbh = (len + 1) * 15; //listblock_height
+	check_size();
+	ms.hidden = len > 0 ? 0 : 1;
     listblock_obj.message("rows", len);
-    let lbh = (len + 1) * 15; //listblock_height
     listblock_obj.message("size", 687, lbh);
-    let wh = Math.max(lbh + 18, 60); //window_height
-    movewind_obj.message("wsize", 730, wh);
-    movewind_obj.message("osize", "ms", 41, lbh - 14);
-    let ms = rp.getnamed("ms");
+	ms.rect = [ms.rect[0],ms.rect[1], ms.rect[0]+41, ms.rect[1]+lbh - 14];
+
     if (len < 2) ms.message("size", 1);
     let ms_init = [];
     for (let i = 0; i < len; i++) ms_init.push(0);
     ms.message(ms_init);
+	
 }
 
 // _______________________________________________listblock
 function listblock(m, col, row) {
     select(row + 1);
-
+	//post("listblock",m, col, row,"\n");
     if (m === "menu") {
         fill_menu(col, sel);
         if(col === 10){
@@ -599,6 +632,7 @@ function listblock(m, col, row) {
 }
 
 function fill_menu(col, sel) {
+	//post("fillmenu",col, sel,"\n");
     if (col === 7) {
         if (actpars["output_menu"] == 2)
             listblock_obj.message(
@@ -611,12 +645,13 @@ function fill_menu(col, sel) {
                 "bendout",
                 "pgmout"
             );
-        else
+        else 
             listblock_obj.message(
                 "fill_menu",
                 "no",
                 Object.keys(ll_global.patchers).sort((a, b) => a.localeCompare(b))
             );
+		
     } else if (col === 8) {
         let selact = actpars["acts"][sel];
         let param_list = ["-no-"];

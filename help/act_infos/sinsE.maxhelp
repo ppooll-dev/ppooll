@@ -4,14 +4,31 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 0,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 321.0, 105.0, 1170.0, 904.0 ],
+        "rect": [ 100.0, 100.0, 1170.0, 904.0 ],
         "toolbarvisible": 0,
         "boxes": [
+            {
+                "box": {
+                    "arrows": 2,
+                    "id": "obj-3",
+                    "justification": 4,
+                    "linecolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "maxclass": "live.line",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 586.0, 70.0, 373.0, 205.0 ],
+                    "saved_attribute_attributes": {
+                        "linecolor": {
+                            "expression": ""
+                        }
+                    }
+                }
+            },
             {
                 "box": {
                     "id": "obj-65",
@@ -48,7 +65,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 381.0, 857.0, 130.0, 20.0 ],
-                    "presentation_linecount": 2,
                     "text": "zero all \"e\" with vol==0"
                 }
             },
@@ -69,7 +85,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 273.0, 813.0, 111.0, 20.0 ],
-                    "presentation_linecount": 2,
                     "text": "masters for buttons"
                 }
             },
@@ -101,7 +116,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 56.0, 735.0, 221.0, 33.0 ],
-                    "presentation_linecount": 14,
                     "text": "* line between big env and sins-block:\nenvfreX: freq of selected env"
                 }
             },
@@ -162,7 +176,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 308.0, 647.0, 213.0, 20.0 ],
-                    "presentation_linecount": 2,
                     "text": "s: select envelopes for trigger selected"
                 }
             },
@@ -173,7 +186,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 292.0, 625.0, 151.0, 20.0 ],
-                    "presentation_linecount": 2,
                     "text": "~: play env smooth or hard"
                 }
             },
@@ -184,7 +196,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 280.0, 609.0, 115.0, 20.0 ],
-                    "presentation_linecount": 2,
                     "text": "w: walk the env-freq"
                 }
             },
@@ -215,7 +226,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 849.0, 355.0, 311.0, 20.0 ],
-                    "presentation_linecount": 2,
                     "text": "freq-ramp, \"one\" sets the f_ramp to zero after used once."
                 }
             },
@@ -226,7 +236,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 849.0, 336.0, 184.0, 20.0 ],
-                    "presentation_linecount": 2,
                     "text": "volume ramps, up and down, link"
                 }
             },
@@ -236,9 +245,8 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 857.0, 305.0, 178.0, 20.0 ],
-                    "presentation_linecount": 2,
-                    "text": "comment when using local keys"
+                    "patching_rect": [ 857.0, 305.0, 189.0, 20.0 ],
+                    "text": "comment when using private keys"
                 }
             },
             {
@@ -267,7 +275,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 853.0, 273.0, 157.0, 33.0 ],
-                    "presentation_linecount": 8,
                     "text": "recent list\nuseful for external controller"
                 }
             },
@@ -298,7 +305,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 537.0, 247.0, 140.0, 20.0 ],
-                    "presentation_linecount": 4,
                     "text": "direct 2Dsliders connect"
                 }
             },
@@ -319,7 +325,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 484.0, 211.0, 87.0, 20.0 ],
-                    "presentation_linecount": 2,
                     "text": "amount of sins"
                 }
             },
@@ -350,7 +355,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 357.0, 211.0, 86.0, 20.0 ],
-                    "presentation_linecount": 3,
                     "text": "show Function"
                 }
             },
@@ -361,7 +365,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 333.0, 247.0, 83.0, 20.0 ],
-                    "presentation_linecount": 2,
                     "text": "set for Trigger"
                 }
             },
@@ -372,7 +375,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 314.0, 231.0, 71.0, 20.0 ],
-                    "presentation_linecount": 2,
                     "text": "end smooth"
                 }
             },
@@ -383,7 +385,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 291.0, 211.0, 48.0, 20.0 ],
-                    "presentation_linecount": 2,
                     "text": "smooth"
                 }
             },
@@ -395,7 +396,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 252.0, 234.0, 37.0, 33.0 ],
-                    "presentation_linecount": 2,
                     "text": "apply\nto all"
                 }
             },
@@ -407,7 +407,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 214.0, 234.0, 35.0, 33.0 ],
-                    "presentation_linecount": 2,
                     "text": "full\nenv"
                 }
             },
@@ -419,7 +418,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 171.0, 234.0, 41.0, 33.0 ],
-                    "presentation_linecount": 2,
                     "text": "clear\nenv"
                 }
             },
@@ -430,8 +428,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 128.0, 234.0, 39.0, 33.0 ],
-                    "presentation_linecount": 2,
+                    "patching_rect": [ 128.0, 234.0, 41.0, 33.0 ],
                     "text": "apply again"
                 }
             },
@@ -442,7 +439,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 71.0, 247.0, 55.0, 20.0 ],
-                    "presentation_linecount": 2,
                     "text": "wf-menu"
                 }
             },
@@ -454,7 +450,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 32.0, 105.0, 869.0, 33.0 ],
-                    "presentation_linecount": 4,
                     "text": "it is playing its sinewaves as a multichannel signal. \nto hear all channels in a stereo setting, you may set channels in ho_st to 12 and activate \"st\" (stereo mixdown)."
                 }
             },
@@ -475,8 +470,8 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 1037.0, 144.0, 122.0, 181.0 ],
-                    "text": "keys:\nw: loop selected\ne: ext selected\nr: trigger recent 0\nt: trigger recent 1\nz: trigger recent 2\nu: trigger recent 3\na: trigger selected\ns: setT selected\nd: clear selected\nf: full selected\ng: again selected\nh: recent back"
+                    "patching_rect": [ 961.0, 61.0, 122.0, 181.0 ],
+                    "text": "private sinsE keys:\nw: loop selected\ne: ext selected\nr: trigger recent 0\nt: trigger recent 1\nz: trigger recent 2\nu: trigger recent 3\na: trigger selected\ns: setT selected\nd: clear selected\nf: full selected\ng: again selected\nh: recent back"
                 }
             },
             {
