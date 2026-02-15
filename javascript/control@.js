@@ -645,19 +645,13 @@ function fill_menu(col, sel) {
                 "bendout",
                 "pgmout"
             );
-        else {
+        else 
             listblock_obj.message(
                 "fill_menu",
                 "no",
                 Object.keys(ll_global.patchers).sort((a, b) => a.localeCompare(b))
             );
-            post(
-                "fill_menu",
-                "no",
-                Object.keys(ll_global.patchers).sort((a, b) => a.localeCompare(b)),
-				"\n"
-            );
-		}
+		
     } else if (col === 8) {
         let selact = actpars["acts"][sel];
         let param_list = ["-no-"];
