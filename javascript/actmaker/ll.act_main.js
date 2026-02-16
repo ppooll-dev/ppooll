@@ -852,9 +852,11 @@ function set_tetris_menu(selection) {
                     //post("all_Attr",attrName," : ",attrValue,"\n");
                     // if value is object and has .color key, set here
                     if (
+                        attrValue &&
                         typeof attrValue === "object" &&
                         !Array.isArray(attrValue)
                     ) {
+						
                         //post("dictAttr",attrName," : ",Object.keys(attrValue),"\n");
                         if (!attrValue.color) {
                             return;
