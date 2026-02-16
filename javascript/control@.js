@@ -1,10 +1,8 @@
 outlets = 1;
 const ll_global = new Global("ppooll");
-
 if (typeof ll === "undefined") {
     var ll = require("ll._utilities");
 }
-
 var act_name;
 var ap; //act_patcher
 var rp; //routing_patcher
@@ -16,10 +14,8 @@ var listlength;
 var copymove = [0, 0, 0];
 var learn_gate;
 var screen_size;
-
 let last_mode = 0;
-
-var mode_order = [
+const mode_order = [
 	"scale",
 	"toggle",
 	"togg",
@@ -41,11 +37,7 @@ var mode_order = [
 	"rel1",
 	"rel64"
 ];
-
-// TO ADD: bang!
-
 const actpars = {}; // state of control@ params
-
 const header_fix = [
     "in_lo",
     "in_hi",
@@ -59,7 +51,6 @@ const header_fix = [
     "listit",
     "mode",
 ];
-
 const defaults = {
     //also used for ll.listblock params
     in_lo: "-",
@@ -78,7 +69,6 @@ const defaults = {
     opt3: 0,
     opt4: 0,
 };
-
 const load_order = [
     "input_name",
     "modes",
@@ -96,7 +86,6 @@ const load_order = [
     "in_lo",
     "in_hi",
 ];
-
 const c_in_menu = {
     midi: ["ll.ctlin", "midi_receive_port", "note_mode", "midi_channels"],
     osc: ["ll.osc_in", "osc_receive_port", "sendbackIPW"],
@@ -140,16 +129,6 @@ function actname(an) {
         tp.getnamed("handle_my_control").subpatcher().getnamed("route").message(args[2]);
     }
 }
-
-function update_header_text(){
-    try{
-        listblock_obj.message(
-            "header_text", 
-            [...header_fix, ...ll_global.llc_modes[actpars.modes[sel]]]
-        );
-    }catch(_){}
-}
-
 // handle all control pattrstorage output
 //      listblock handles interactions, updated pattr lists
 //      this function receives changed pattr lists, updates llc objects (props like min, max)
@@ -184,27 +163,6 @@ function allpars() {
         windowbar_obj.message("set_wind", "location", ar);
     else if (p === "routingW") 
         windowbar_obj.message("set_wind", "visible", ar);
-}
-
-function new_name(n) { //push actpars
-	//post("newname\n");
-    // is ignored and not old?
-    if (actpars["ignored"].includes(n) || actpars["input_name"].includes(n))
-        return;
-
-    for (let k of load_order) {
-        let topush = defaults[k];
-        if (k == "input_name") topush = n;
-        else if (k === "modes" && actpars["list_inputs"].includes(n))
-            topush = "listscale";
-        else if (k === "in_max" && actpars["input_menu"] == "midi")
-            topush = 127;
-        ap.getnamed(k).message(actpars[k], topush);
-    }
-    let len = actpars["input_name"].length - 1;
-    //ap.getnamed("listlength").message(len); // maybe we don't need this anymore ?
-    routing_sizes(len);
-    select(len);
 }
 
 function incoming(...args){ // from control@ source (midi, keys, ppooll, OSC, etc)
@@ -251,6 +209,27 @@ function new_input(...args) {
     } else {
         new_name(n);
     }
+}
+
+function new_name(n) { //push actpars
+	//post("newname\n");
+    // is ignored and not old?
+    if (actpars["ignored"].includes(n) || actpars["input_name"].includes(n))
+        return;
+
+    for (let k of load_order) {
+        let topush = defaults[k];
+        if (k == "input_name") topush = n;
+        else if (k === "modes" && actpars["list_inputs"].includes(n))
+            topush = "listscale";
+        else if (k === "in_max" && actpars["input_menu"] == "midi")
+            topush = 127;
+        ap.getnamed(k).message(actpars[k], topush);
+    }
+    let len = actpars["input_name"].length - 1;
+    //ap.getnamed("listlength").message(len); // maybe we don't need this anymore ?
+    routing_sizes(len);
+    select(len);
 }
 
 // handle old input => send param changes to ll_fastforward llc's and set in_lo_hi
@@ -598,6 +577,15 @@ function routing_sizes(len) {
     for (let i = 0; i < len; i++) ms_init.push(0);
     ms.message(ms_init);
 	
+}
+
+function update_header_text(){
+    try{
+        listblock_obj.message(
+            "header_text", 
+            [...header_fix, ...ll_global.llc_modes[actpars.modes[sel]]]
+        );
+    }catch(_){}
 }
 
 // _______________________________________________listblock

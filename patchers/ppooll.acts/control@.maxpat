@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 380.0, 214.0, 193.0, 55.0 ],
+        "rect": [ 335.0, 180.0, 193.0, 55.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "control@1",
         "boxes": [
@@ -38,6 +38,24 @@
                         "autowatch": 1
                     },
                     "varname": "presets"
+                }
+            },
+            {
+                "box": {
+                    "bgcolor": [ 0.19607843137254902, 0.19607843137254902, 0.19607843137254902, 1.0 ],
+                    "fontface": 0,
+                    "fontname": "Arial",
+                    "id": "obj-1",
+                    "items": [ "midi", ",", "osc", ",", "usb", ",", "ppooll", ",", "dial", ",", "bcf", ",", "serial", ",", "keyboard", ",", "signal~", ",", "live.ppooll", ",", "ppooll2" ],
+                    "maxclass": "ll_menu",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 71.0, 0.0, 55.712891, 16.0 ],
+                    "pattrmode": 1,
+                    "prefix": "",
+                    "varname": "input_menu"
                 }
             },
             {
@@ -118,7 +136,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 260.0, 192.0, 61.0, 19.0 ],
-                    "restore": [ "::_::_" ],
+                    "restore": [ 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -193,7 +211,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 260.0, 213.0, 66.0, 19.0 ],
-                    "restore": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+                    "restore": [ 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -845,7 +863,6 @@
                                     "numinlets": 1,
                                     "numoutlets": 0,
                                     "patching_rect": [ 84.0, 344.0, 283.0, 20.0 ],
-                                    "presentation_linecount": 2,
                                     "text": "____________________________TODO________"
                                 }
                             },
@@ -5032,7 +5049,7 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 101.0, 453.0, 730.0, 243.0 ],
+                                        "rect": [ 101.0, 453.0, 730.0, 93.0 ],
                                         "toolbarvisible": 0,
                                         "boxes": [
                                             {
@@ -5507,7 +5524,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
                                                     "patching_rect": [ 680.0, -1.0, 46.0, 20.0 ],
-                                                    "text": "sel: 14",
+                                                    "text": "sel: 0",
                                                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                                                     "varname": "c_sel"
                                                 }
@@ -5571,7 +5588,7 @@
                                                     "outlettype": [ "", "", "", "" ],
                                                     "patching_rect": [ 860.0, 69.0, 65.0, 19.0 ],
                                                     "restore": {
-                                                        "listblock": [ "menu", 10, 5 ],
+                                                        "listblock": [ "n" ],
                                                         "ll_tab": [ 0 ],
                                                         "lllbmenu": [ "scale" ]
                                                     },
@@ -5660,7 +5677,7 @@
                                                     "numoutlets": 2,
                                                     "outlettype": [ "", "" ],
                                                     "parameter_enable": 0,
-                                                    "patching_rect": [ 43.0, 17.0, 687.0, 15.0 ],
+                                                    "patching_rect": [ 43.0, 17.0, 687.0, 64.0 ],
                                                     "textfile": {
                                                         "filename": "ll.listblock.js",
                                                         "flags": 0,
@@ -5787,7 +5804,7 @@
                             },
                             {
                                 "box": {
-                                    "id": "obj-7",
+                                    "id": "obj-42",
                                     "maxclass": "newobj",
                                     "numinlets": 1,
                                     "numoutlets": 1,
@@ -5807,7 +5824,7 @@
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-7", 0 ],
+                                    "destination": [ "obj-42", 0 ],
                                     "source": [ "obj-21", 0 ]
                                 }
                             },
@@ -5826,7 +5843,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-8", 0 ],
-                                    "source": [ "obj-7", 0 ]
+                                    "source": [ "obj-42", 0 ]
                                 }
                             },
                             {
@@ -5877,7 +5894,7 @@
                         "act_suggested": [ 1 ],
                         "baud_rate": [ "9600" ],
                         "chans": [ 1 ],
-                        "hi_menu": [ "Apple Internal Keyboard / Trackpad" ],
+                        "hi_menu": [ "Keyboard Backlight" ],
                         "input_menu": [ "midi" ],
                         "midi_channels": [ "all_channels" ],
                         "midi_receive_port": [ "-no-" ],
@@ -5889,7 +5906,7 @@
                         "send_back": [ 0 ],
                         "send_back_light": [ 0 ],
                         "serial_open-close": [ "close" ],
-                        "serial_port": [ "Bluetooth-Incoming-Port" ],
+                        "serial_port": [ "debug-console" ],
                         "throttle": [ 10 ],
                         "wacom_menu": [ 0 ]
                     },
@@ -6153,7 +6170,7 @@
                     "fontsize": 9.0,
                     "hidden": 1,
                     "id": "obj-17",
-                    "items": [ "3Dconnexion Virtual Mouse", ",", "3Dconnexion Virtual Keyboard", ",", "TouchBarUserDevice", ",", "Keyboard Backlight", ",", "Digitizer Usage 0x4", ",", "Apple Internal Keyboard / Trackpad", ",", "Apple Internal Keyboard / Trackpad 2", ",", "Apple Internal Keyboard / Trackpad 3", ",", "Apple Internal Keyboard / Trackpad 4", ",", "Apple Internal Keyboard / Trackpad 5", ",", "Page: 0xff00, Usage: 0x4", ",", "Page: 0xff00, Usage: 0xff", ",", "Headset", ",", "BTM" ],
+                    "items": [ "Keyboard Backlight", ",", "Apple Internal Keyboard / Trackpad", ",", "Apple Internal Keyboard / Trackpad 2", ",", "Apple Internal Keyboard / Trackpad 3", ",", "Apple Internal Keyboard / Trackpad 4", ",", "Apple Internal Keyboard / Trackpad 5", ",", "Apple Internal Keyboard / Trackpad 6", ",", "Headset", ",", "Vendor Defined Usage 0x5", ",", "Page: 0x20, Usage: 0x8a", ",", "Vendor Defined Usage 0x1", ",", "Page: 0xff00, Usage: 0x4", ",", "Page: 0xff00, Usage: 0x5", ",", "Page: 0xff00, Usage: 0x9", ",", "Page: 0xff00, Usage: 0xff", ",", "Page: 0xff00, Usage: 0x3", ",", "BTM" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -6258,31 +6275,6 @@
                     "patching_rect": [ 90.0, 16.0, 32.0, 17.0 ],
                     "pattrmode": 1,
                     "varname": "baud_rate"
-                }
-            },
-            {
-                "box": {
-                    "allowdrag": 0,
-                    "annotation": "input_menu",
-                    "bgcolor": [ 0.196078, 0.196078, 0.196078, 1.0 ],
-                    "bgfillcolor_angle": 270.0,
-                    "bgfillcolor_color": [ 0.196078, 0.196078, 0.196078, 1.0 ],
-                    "bgfillcolor_color1": [ 0.376471, 0.384314, 0.4, 1.0 ],
-                    "bgfillcolor_color2": [ 0.290196, 0.309804, 0.301961, 1.0 ],
-                    "bgfillcolor_proportion": 0.39,
-                    "bgfillcolor_type": "color",
-                    "fontsize": 10.0,
-                    "id": "obj-23",
-                    "items": [ "midi", ",", "osc", ",", "usb", ",", "ppooll", ",", "dial", ",", "bcf", ",", "serial", ",", "keyboard", ",", "signal~", ",", "live.ppooll", ",", "ppooll2" ],
-                    "maxclass": "umenu",
-                    "numinlets": 1,
-                    "numoutlets": 3,
-                    "outlettype": [ "int", "", "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 74.0, 0.0, 51.0, 20.0 ],
-                    "pattrmode": 1,
-                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
-                    "varname": "input_menu"
                 }
             },
             {
