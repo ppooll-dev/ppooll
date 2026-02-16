@@ -15,33 +15,32 @@ var sel = 1; //selected
 var listlength;
 var copymove = [0, 0, 0];
 var learn_gate;
-var mode_labels = {};
 var screen_size;
 
 let last_mode = 0;
 
-var old_mode_labels = {
-	scale: ["mn", "mx", "lg", "smth"],
-	toggle: ["val1", "val2", "thresh", "ramp"],
-	togg: ["val1", "val2", "thresh", "ramp"],
-	"inv0-1": ["thresh", "ignored", "ignored", "ignored"],
-	valON: ["val", "ON", "ignored", "ignored"],
-	cycle: ["min", "max", "thresh", "ignored"],
-	"bang!": ["ignored", "directn", "thresh", "ignored"],
-	weight: ["min", "max", "log", "weight"],
-	move: ["incdec", "ignored", "lim_min", "lim_max"],
-	moveON: ["val", "incdec", "lim_min", "lim_max"],
-	random: ["min", "max", "ignored", "ignored"],
-	randON: ["val", "min", "max", "ignored"],
-	randPass: ["thresh", "min", "max", "direction"],
-	xt: ["*", "+", "ignored", "ignored"],
-	scale_delay: ["min", "max", "log", "delay"],
-	scale_round: ["min", "max", "log", "round"],
-	moveC: ["incdec", "center", "log", "min"],
-	FOXrel: ["incdec", "accel", "ignored", "ignored"],
-	rel1: ["incdec", "accel", "ignored", "ignored"],
-	rel64: ["incdec", "accel", "lim_min", "lim_max"]
-}
+var mode_order = [
+	"scale",
+	"toggle",
+	"togg",
+	"inv0-1",
+	"valON",
+	"cycle",
+	"bang!",
+	"weight",
+	"move",
+	"moveON",
+	"random",
+	"randON",
+	"randPass",
+	"xt",
+	"scale_delay",
+	"scale_round",
+	"moveC",
+	"FOXrel",
+	"rel1",
+	"rel64"
+];
 
 // TO ADD: bang!
 
@@ -207,6 +206,7 @@ function new_name(n) { //push actpars
     routing_sizes(len);
     select(len);
 }
+
 function incoming(...args){ // from control@ source (midi, keys, ppooll, OSC, etc)
 	// send ::control@1::midiin was set 0 and 1 here in the original max-patcher, so maybe this is needed in special cases.
 	if (actpars["on/off"] == 1){
@@ -380,12 +380,6 @@ function acts_pars(s) {
 function bang() {
     //only for testing...
     routing_sizes(actpars["input_name"].length - 1);
-}
-
-function labels(...args) {
-    let m = args.shift();
-    mode_labels[m] = args;
-    update_header_text()
 }
 
 function input_menu(s) {
@@ -662,9 +656,10 @@ function fill_menu(col, sel) {
         listblock_obj.message("fill_menu", param_list);
     } else if (col === 10) {
         ////////////// TODO listmodes
-        listblock_obj.message("fill_menu", getmodes()); //Object.keys(mode_labels));
+        listblock_obj.message("fill_menu", getmodes());
     }
 }
+
 function getmodes() {
     const _modes = ll
         .getFilesInFolder(
@@ -674,9 +669,7 @@ function getmodes() {
         .map((f) => f.split(".")[1])
         .filter(f => f !== "v8mode");
 
-    // order based on old modes   
-    const order = Object.keys(old_mode_labels);
-    const orderMap = new Map(order.map((v, i) => [v, i]));
+    const orderMap = new Map(mode_order.map((v, i) => [v, i]));
 
     _modes.sort((a, b) => {
         const aOrder = orderMap.get(a) ?? Infinity;
