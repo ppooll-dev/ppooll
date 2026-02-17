@@ -50,6 +50,9 @@ var empty_prf_DEFAULT = {
         write_files: 0,
         write_sample_buffers: 0,
     },
+    live_ppooll: {
+        nested: 0
+    }
 };
 
 function normalizeFolderArrays() {
@@ -285,6 +288,15 @@ declareattribute("sort_envi_by", {
 function set_sort_envi_by(c) {
     sort_envi_by = c;
     preferences.set("general::sort_envi_by", c);
+    ll_prf_rewrite();
+}
+
+
+var liveppooll_nested = 0;
+declareattribute("liveppooll_nested", { style: "onoff", setter: "set_liveppooll_nested" });
+function set_liveppooll_nested(c) {
+    liveppooll_nested = c;
+    preferences.set("live_ppooll::nested", c);
     ll_prf_rewrite();
 }
 

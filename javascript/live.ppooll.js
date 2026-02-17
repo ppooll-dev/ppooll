@@ -2,8 +2,6 @@ autowatch = 1;
 
 var ll_global = new Global("ppooll");
 
-const USE_NESTED_PATCHER = false;
-
 const SUBS_TO_SHOW = [
     {
         act_class: "control@",
@@ -30,7 +28,12 @@ const SUBS_TO_SHOW = [
 ];
 
 function loadbang() {
-    ll_global.nested_patcher = USE_NESTED_PATCHER;
+    var d = new Dict();
+
+    d.import_json("ppooll-preferences.json")
+
+    var prefs = JSON.parse(d.stringify())
+    ll_global.nested_patcher = prefs.live_ppooll && prefs.live_ppooll.nested;
 
     ll_global.live_ppooll_patcher = this.patcher
         .getnamed("LIVE_PPOOLL_ENVIRONMENT")
