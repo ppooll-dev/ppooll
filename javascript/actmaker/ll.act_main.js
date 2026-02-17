@@ -1124,7 +1124,7 @@ function set_preset_menu(args) {
 
     const pat = act_patcher.getnamed("pat");
 
-    if (selection === "write") {
+    if (selection === "write" && !is_llenviread) {
         post(selection, prev_pres_menu, "\n");
         // show popup with last selected name
         // messnamed("ll_preset_menu", act_name_index, "write", prev_pres_menu);
