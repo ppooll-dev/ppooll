@@ -1,5 +1,81 @@
 {
-    "window": [ 1438, 603, 1754, 710 ],
+    "window": [ 581, 128, 897, 234 ],
+    "rPreNum": {
+        "patching_rect": [ 132, 18, 24, 34 ],
+        "hidden": 1,
+        "activebgcolor": [ 0.011764705882352941, 0.396078431372549, 0.7529411764705882, 1 ],
+        "activebgoncolor": [ 1, 0, 0, 1 ],
+        "bgcolor": [ 0.011764705882352941, 0.396078431372549, 0.7529411764705882, 1 ],
+        "bgoncolor": [ 1, 0, 0, 1 ],
+        "bordercolor": [ 0.09803921568627451, 0.09803921568627451, 0.09803921568627451, 0 ],
+        "focusbordercolor": [ 0.4470588235294118, 0.4470588235294118, 0.4470588235294118, 0 ],
+        "fontsize": 9.5,
+        "inactivelcdcolor": [ 0.325, 0.325, 0.325, 1 ],
+        "inactivetextoffcolor": [ 0.57636836783545, 0.576368229540612, 0.576368265679262, 1 ],
+        "inactivetextoncolor": [ 1, 1, 1, 1 ],
+        "lcdbgcolor": [ 0.079348079365577, 0.07934804057877, 0.079348050547289, 1 ],
+        "lcdcolor": [ 0.931948395395052, 0.771744459193783, 0.523883756405412, 1 ],
+        "remapsvgcolors": 0,
+        "textcolor": [ 0.85, 0.85, 0.85, 1 ],
+        "textoncolor": [ 1, 1, 1, 1 ]
+    },
+    "lPreSig": {
+        "patching_rect": [ 0, 18, 24, 34 ],
+        "hidden": 0,
+        "activebgcolor": [ 0.011764705882352941, 0.396078431372549, 0.7529411764705882, 1 ],
+        "activebgoncolor": [ 1, 0, 0, 1 ],
+        "bgcolor": [ 0.011764705882352941, 0.396078431372549, 0.7529411764705882, 1 ],
+        "bgoncolor": [ 1, 0, 0, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "focusbordercolor": [ 0.4470588235294118, 0.4470588235294118, 0.4470588235294118, 0 ],
+        "fontsize": 9,
+        "inactivelcdcolor": [ 0.325, 0.325, 0.325, 1 ],
+        "inactivetextoffcolor": [ 0.57636836783545, 0.576368229540612, 0.576368265679262, 1 ],
+        "inactivetextoncolor": [ 0, 0, 0, 1 ],
+        "lcdbgcolor": [ 0.079348079365577, 0.07934804057877, 0.079348050547289, 1 ],
+        "lcdcolor": [ 0.931948395395052, 0.771744459193783, 0.523883756405412, 1 ],
+        "remapsvgcolors": 0,
+        "textcolor": [ 0.85, 0.85, 0.85, 1 ],
+        "textoncolor": [ 0.079348079365577, 0.07934804057877, 0.079348050547289, 1 ]
+    },
+    "rPreSig": {
+        "patching_rect": [ 133, 18, 24, 34 ],
+        "hidden": 0,
+        "activebgcolor": [ 0.011764705882352941, 0.396078431372549, 0.7529411764705882, 1 ],
+        "activebgoncolor": [ 1, 0, 0, 1 ],
+        "bgcolor": [ 0.011764705882352941, 0.396078431372549, 0.7529411764705882, 1 ],
+        "bgoncolor": [ 1, 0, 0, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "focusbordercolor": [ 0.4470588235294118, 0.4470588235294118, 0.4470588235294118, 0 ],
+        "fontsize": 9,
+        "inactivelcdcolor": [ 0.325, 0.325, 0.325, 1 ],
+        "inactivetextoffcolor": [ 0.57636836783545, 0.576368229540612, 0.576368265679262, 1 ],
+        "inactivetextoncolor": [ 0, 0, 0, 1 ],
+        "lcdbgcolor": [ 0.079348079365577, 0.07934804057877, 0.079348050547289, 1 ],
+        "lcdcolor": [ 0.931948395395052, 0.771744459193783, 0.523883756405412, 1 ],
+        "remapsvgcolors": 0,
+        "textcolor": [ 0.85, 0.85, 0.85, 1 ],
+        "textoncolor": [ 0.079348079365577, 0.07934804057877, 0.079348050547289, 1 ]
+    },
+    "lPreNum": {
+        "patching_rect": [ 0, 18, 24, 34 ],
+        "hidden": 1,
+        "activebgcolor": [ 0.011764705882352941, 0.396078431372549, 0.7529411764705882, 1 ],
+        "activebgoncolor": [ 1, 0, 0, 1 ],
+        "bgcolor": [ 0.011764705882352941, 0.396078431372549, 0.7529411764705882, 1 ],
+        "bgoncolor": [ 1, 0, 0, 1 ],
+        "bordercolor": [ 0.09803921568627451, 0.09803921568627451, 0.09803921568627451, 0 ],
+        "focusbordercolor": [ 0.4470588235294118, 0.4470588235294118, 0.4470588235294118, 0 ],
+        "fontsize": 9.5,
+        "inactivelcdcolor": [ 0.325, 0.325, 0.325, 1 ],
+        "inactivetextoffcolor": [ 0.57636836783545, 0.576368229540612, 0.576368265679262, 1 ],
+        "inactivetextoncolor": [ 1, 1, 1, 1 ],
+        "lcdbgcolor": [ 0.079348079365577, 0.07934804057877, 0.079348050547289, 1 ],
+        "lcdcolor": [ 0.931948395395052, 0.771744459193783, 0.523883756405412, 1 ],
+        "remapsvgcolors": 0,
+        "textcolor": [ 0.85, 0.85, 0.85, 1 ],
+        "textoncolor": [ 1, 1, 1, 1 ]
+    },
     "act": {
         "patching_rect": [ 0, 0, 44.708984375, 16 ],
         "hidden": 0
@@ -41,51 +117,8 @@
         "fontsize": 12,
         "textcolor": [ 0, 0, 0, 1 ]
     },
-    "op": {
-        "patching_rect": [ 97, 18, 35, 21 ],
-        "hidden": 0,
-        "applycolors": 0,
-        "bgfillcolor": {
-            "type": "gradient",
-            "color1": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-            "color2": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-            "color": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ]
-        },
-        "color": [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ],
-        "elementcolor": [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
-        "fontsize": 11,
-        "textcolor": [ 0.9, 0.9, 0.9, 1 ]
-    },
-    "clipMode": {
-        "patching_rect": [ 25, 73, 30, 17 ],
-        "hidden": 0,
-        "applycolors": 0,
-        "bgfillcolor": {
-            "type": "gradient",
-            "color1": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-            "color2": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-            "color": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ]
-        },
-        "color": [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ],
-        "elementcolor": [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
-        "fontsize": 8,
-        "textcolor": [ 0.9, 0.9, 0.9, 1 ]
-    },
     "dcBlockPostOp": {
         "patching_rect": [ 1, 54, 22, 17 ],
-        "hidden": 0,
-        "bgcolor": [ 0.862745, 0.870588, 0.878431, 1 ],
-        "bgoncolor": [ 1, 0, 0, 1 ],
-        "fontsize": 8,
-        "legacytextcolor": 1,
-        "textcolor": [ 0, 0, 0, 1 ],
-        "textoncolor": [ 1, 1, 1, 1 ],
-        "textovercolor": [ 0, 0, 0, 1 ],
-        "usebgoncolor": 1,
-        "usetextovercolor": 1
-    },
-    "dcBlockPreB": {
-        "patching_rect": [ 134, 40, 22, 12 ],
         "hidden": 0,
         "bgcolor": [ 0.862745, 0.870588, 0.878431, 1 ],
         "bgoncolor": [ 1, 0, 0, 1 ],
@@ -124,7 +157,7 @@
         "usetextovercolor": 1
     },
     "smoothMode": {
-        "patching_rect": [ 131, 73, 40, 17 ],
+        "patching_rect": [ 210, 73, 40, 17 ],
         "hidden": 0,
         "bgcolor": [ 0.862745, 0.870588, 0.878431, 1 ],
         "bgoncolor": [ 1, 0, 0, 1 ],
@@ -135,21 +168,6 @@
         "textovercolor": [ 0, 0, 0, 1 ],
         "usebgoncolor": 1,
         "usetextovercolor": 1
-    },
-    "scaleSym": {
-        "patching_rect": [ 240, 54, 31, 17 ],
-        "hidden": 0,
-        "applycolors": 0,
-        "bgfillcolor": {
-            "type": "gradient",
-            "color1": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-            "color2": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-            "color": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ]
-        },
-        "color": [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ],
-        "elementcolor": [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
-        "fontsize": 8,
-        "textcolor": [ 0.9, 0.9, 0.9, 1 ]
     },
     "dcBlockPostScale": {
         "patching_rect": [ 1, 73, 22, 17 ],
@@ -256,7 +274,7 @@
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
     "smoothUp": {
-        "patching_rect": [ 173, 73, 30, 17 ],
+        "patching_rect": [ 252, 73, 30, 17 ],
         "hidden": 0,
         "bgcolor": [ 1, 1, 1, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -269,7 +287,7 @@
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
     "smoothDown": {
-        "patching_rect": [ 205, 73, 30, 17 ],
+        "patching_rect": [ 284, 73, 30, 17 ],
         "hidden": 0,
         "bgcolor": [ 1, 1, 1, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -281,115 +299,16 @@
         "textcolor": [ 0, 0, 0, 1 ],
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
-    "rAbsMinus": {
-        "patching_rect": [ 134, 30, 22, 9 ],
-        "hidden": 0,
-        "bgcolor": [ 0.011765, 0.396078, 0.752941, 1 ],
-        "bgoncolor": [ 1, 0, 0, 1 ],
-        "fontsize": 8,
-        "legacytextcolor": 1,
-        "textcolor": [ 1, 1, 1, 1 ],
-        "textoncolor": [ 1, 1, 1, 1 ],
-        "textovercolor": [ 0, 0, 0, 1 ],
-        "usebgoncolor": 1,
-        "usetextovercolor": 1
-    },
-    "rAbsPlus": {
-        "patching_rect": [ 135, 18, 22, 9 ],
-        "hidden": 0,
-        "bgcolor": [ 0.011765, 0.396078, 0.752941, 1 ],
-        "bgoncolor": [ 1, 0, 0, 1 ],
-        "fontsize": 8,
-        "legacytextcolor": 1,
-        "textcolor": [ 1, 1, 1, 1 ],
-        "textoncolor": [ 1, 1, 1, 1 ],
-        "textovercolor": [ 0, 0, 0, 1 ],
-        "usebgoncolor": 1,
-        "usetextovercolor": 1
-    },
-    "dcBlockPreA": {
-        "patching_rect": [ 1, 40, 22, 12 ],
-        "hidden": 0,
-        "bgcolor": [ 0.862745, 0.870588, 0.878431, 1 ],
-        "bgoncolor": [ 1, 0, 0, 1 ],
-        "fontsize": 8,
-        "legacytextcolor": 1,
-        "textcolor": [ 0, 0, 0, 1 ],
-        "textoncolor": [ 1, 1, 1, 1 ],
-        "textovercolor": [ 0, 0, 0, 1 ],
-        "usebgoncolor": 1,
-        "usetextovercolor": 1
-    },
-    "lAbsMinus": {
-        "patching_rect": [ 1, 29, 22, 9 ],
-        "hidden": 0,
-        "bgcolor": [ 0.011765, 0.396078, 0.752941, 1 ],
-        "bgoncolor": [ 1, 0, 0, 1 ],
-        "fontsize": 8,
-        "legacytextcolor": 1,
-        "textcolor": [ 1, 1, 1, 1 ],
-        "textoncolor": [ 1, 1, 1, 1 ],
-        "textovercolor": [ 0, 0, 0, 1 ],
-        "usebgoncolor": 1,
-        "usetextovercolor": 1
-    },
-    "lAbsPlus": {
-        "patching_rect": [ 1, 18, 22, 9 ],
-        "hidden": 0,
-        "bgcolor": [ 0.011765, 0.396078, 0.752941, 1 ],
-        "bgoncolor": [ 1, 0, 0, 1 ],
-        "fontsize": 8,
-        "legacytextcolor": 1,
-        "textcolor": [ 1, 1, 1, 1 ],
-        "textoncolor": [ 1, 1, 1, 1 ],
-        "textovercolor": [ 0, 0, 0, 1 ],
-        "usebgoncolor": 1,
-        "usetextovercolor": 1
-    },
     "ll.blues": {
         "patching_rect": [ 155, 92, 160, 13 ],
         "hidden": 0
     },
-    "act_numoutput": {
-        "patching_rect": [ 237, 73, 24.489795684814453, 17 ],
-        "hidden": 0,
-        "applycolors": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 0.294118, 1, 0.294118, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ],
-        "elementcolor": [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
-        "fontsize": 8,
-        "textcolor": [ 0, 0, 0, 1 ]
-    },
-    "par_numoutput": {
-        "patching_rect": [ 263, 73, 24.489795684814453, 17 ],
-        "hidden": 0,
-        "applycolors": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 0.294118, 1, 0.294118, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ],
-        "elementcolor": [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
-        "fontsize": 8,
-        "textcolor": [ 0, 0, 0, 1 ]
-    },
     "pRampMs": {
-        "patching_rect": [ 1, 92, 151.83246552944183, 13.089005649089813 ],
+        "patching_rect": [ 1, 92, 62, 13 ],
         "hidden": 0,
         "bgcolor": [ 1, 1, 1, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
-        "fontsize": 8,
+        "fontsize": 10,
         "labelcolor": [ 0, 0, 0, 1 ],
         "selectcolor": [ 0.45, 0.67, 1, 0.47 ],
         "slidercolor": [ 0, 0, 0, 1 ],
@@ -398,7 +317,7 @@
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
     "numOutInterval": {
-        "patching_rect": [ 290, 73, 24.99999976158142, 17.346938610076904 ],
+        "patching_rect": [ 128, 92, 25, 13 ],
         "hidden": 0,
         "bgcolor": [ 1, 1, 1, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -474,6 +393,77 @@
         "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
         "textcolor": [ 0, 0, 0, 1 ],
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
+    },
+    "roundMode": {
+        "patching_rect": [ 132.5, 73, 33, 17 ],
+        "hidden": 0,
+        "bgcolor": [ 0.862745, 0.870588, 0.878431, 1 ],
+        "bgoncolor": [ 1, 0, 0, 1 ],
+        "fontsize": 10,
+        "legacytextcolor": 1,
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textoncolor": [ 1, 1, 1, 1 ],
+        "textovercolor": [ 0, 0, 0, 1 ],
+        "usebgoncolor": 1,
+        "usetextovercolor": 1
+    },
+    "roundPos": {
+        "patching_rect": [ 168, 73, 40, 17 ],
+        "hidden": 0,
+        "bgcolor": [ 1, 1, 1, 1 ],
+        "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
+        "fontsize": 10,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45, 0.67, 1, 0.47 ],
+        "slidercolor": [ 0, 0, 0, 1 ],
+        "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
+    },
+    "op": {
+        "patching_rect": [ 97, 18, 35, 21 ],
+        "hidden": 0,
+        "bgcolor": [ 0.17254901960784313, 0.17254901960784313, 0.17254901960784313, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
+        "fontsize": 11,
+        "textcolor": null
+    },
+    "clipMode": {
+        "patching_rect": [ 25, 73, 30, 17 ],
+        "hidden": 0,
+        "bgcolor": [ 0.173, 0.173, 0.173, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
+        "fontsize": 11,
+        "textcolor": null
+    },
+    "scaleSym": {
+        "patching_rect": [ 240, 54, 31, 17 ],
+        "hidden": 0,
+        "bgcolor": [ 0.17254901960784313, 0.17254901960784313, 0.17254901960784313, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
+        "fontsize": 11,
+        "textcolor": null
+    },
+    "act_numoutput": {
+        "patching_rect": [ 65, 92, 30, 13 ],
+        "hidden": 0,
+        "bgcolor": [ 0.29411764705882354, 1, 0.29411764705882354, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 0, 0, 0, 1 ],
+        "fontsize": 11,
+        "textcolor": null
+    },
+    "par_numoutput": {
+        "patching_rect": [ 96, 92, 30, 13 ],
+        "hidden": 0,
+        "bgcolor": [ 0.29411764705882354, 1, 0.29411764705882354, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 0, 0, 0, 1 ],
+        "fontsize": 11,
+        "textcolor": null
     },
     "presets": {
         "patching_rect": [ 47, 0, 198, 16 ],
