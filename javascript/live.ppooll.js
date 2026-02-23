@@ -106,4 +106,5 @@ function reset() {
 
 function notifydeleted() {
     ll_global.live_ppooll_patcher = null;
+    ll_global.nested_patcher = 0;
 }

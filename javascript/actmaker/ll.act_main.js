@@ -1759,7 +1759,11 @@ function windpos(x, y) {
 
 function getloc(a, o) {
     if (o) messnamed(a, act_patcher.getnamed(o).rect); //objects varname
-    else messnamed(a, act_patcher.wind.location); //window
+    else messnamed(a, 
+        ll_global.nested_patcher
+        ? act_patcher.box.rect
+        : act_patcher.wind.location
+    ); //window
 }
 
 function setloc(x, y, o) {
@@ -1796,13 +1800,26 @@ function setloc(x, y, o) {
 
 function setwin(a) {
     rect = arrayfromargs(arguments);
-    //post ("SW", a, rec);
-    var p = act_patcher.wind;
-    p.location = rect;
+    //post ("SW", a, rect);
+    if(ll_global.nested_patcher){
+        act_patcher.box.rect = rect
+        return
+    }
+    act_patcher.wind.location = rect;
 }
 
 function wsize(width, height) {
     //post("wsize");
+    if(ll_global.nested_patcher){
+        const l = act_patcher.box.rect;
+        act_patcher.box.rect = [
+            l[0],
+            l[1],
+            l[0] + (width > 0 ? width : 0),
+            l[1] + height,
+        ];
+        return
+    }
     const l = act_patcher.wind.location;
     act_patcher.wind.location = [
         l[0],

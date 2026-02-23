@@ -17,6 +17,8 @@ var console = {
 
 var tpp = this.patcher.parentpatcher.parentpatcher;
 
+var ll_global = new Global("ppooll");
+
 
 var newstate = new Array();
 var class_excludes = " route pv pattr coll pattrmarker autopattr pattrstorage thispatcher send pvar outlet inlet closebang loadmess bgcolor ";
@@ -49,7 +51,7 @@ messnamed ("ll_amh_receiver", "there", tpp, this.patcher.parentpatcher.box, a);
 
 function getloc()
 {
-	messnamed ("tetristhis", tpp.wind.location);
+	messnamed ("tetristhis", get_wind_location());
 }
 
 function getloc_to(a,o)
@@ -59,7 +61,7 @@ function getloc_to(a,o)
 		messnamed (a, tpp.getnamed(o).rect);
 		}
 	//window
-	else messnamed (a, tpp.wind.location);
+	else messnamed (a, get_wind_location());
 }
 
 function setloc(x,y,o)
@@ -71,8 +73,13 @@ function setloc(x,y,o)
 	}
 	else {
 		// console.log('is Max runtime; set patch window location')
-		var p = tpp;
-		p.wind.location = [x,y,p.wind.location[2]-p.wind.location[0]+x,p.wind.location[3]-p.wind.location[1]+y];
+		var p = get_wind_location();
+		p = [
+				x, 
+				y, 
+				p[2] - p[0] + x, 
+				p[3] - p[1] + y
+			];
 	}
 }
 
@@ -80,34 +87,41 @@ function setwin(a)
 {
 	rect = arrayfromargs(arguments);
 	//post ("SW", a, rec); 
-	var p = tpp.wind;
-    p.location = rect;
+	var win_loc = get_wind_location();
+    win_loc = rect;
+}
+
+function get_wind_location(){
+	if(ll_global.nested_patcher) {
+		return tpp.box.rect;
+	}
+	return tpp.wind.location;
 }
 
 function wsize(width,height)
 {
 	//post("wsize");
-	var w = tpp.wind;
+	var w = get_wind_location();
 	var r = new Array();
 
-	r[0] = w.location[0];
-	r[1] = w.location[1];
+	r[0] = w[0];
+	r[1] = w[1];
 
 	if (width > 0) 
-		r[2] = w.location[0]+width;
+		r[2] = w[0]+width;
 	else 
-		r[2] = w.location[2];
+		r[2] = w[2];
 	
-	r[3] = w.location[1]+height;
-	w.location = r;
+	r[3] = w[1]+height;
+	w = r;
 }
 
 function applydict(dn)
 {
 	dict_name = dn;
-	var w = tpp.wind;
+	var location = get_wind_location();
 	var d = new Dict(dict_name);
-	d.set("window", w.location);
+	d.set("window", location);
     tpp.apply(objdict);
 }
 
