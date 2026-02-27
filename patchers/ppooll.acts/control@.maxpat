@@ -9,14 +9,14 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 335.0, 180.0, 193.0, 55.0 ],
+        "rect": [ 391.0, 291.0, 189.0, 48.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "control@1",
         "boxes": [
             {
                 "box": {
                     "embedstate": [
-                        [ "boxsize", 11 ],
+                        [ "boxsize", 10 ],
                         [ "vbrgb", 0.19607843137254902, 0.19607843137254902, 0.19607843137254902, 1 ],
                         [ "vfrgb", 0.6078431372549019, 1, 1, 1 ],
                         [ "vrgb2", 1, 0, 0, 1 ],
@@ -30,7 +30,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 154.0, 16.0, 37.0, 37.0 ],
+                    "patching_rect": [ 154.0, 16.0, 34.0, 33.0 ],
                     "textfile": {
                         "filename": "ll.pattr_v8ui.js",
                         "flags": 0,
@@ -42,59 +42,72 @@
             },
             {
                 "box": {
-                    "bgcolor": [ 0.19607843137254902, 0.19607843137254902, 0.19607843137254902, 1.0 ],
+                    "annotation": "act_menu",
+                    "bgcolor": [ 0.3254901960784314, 0.34509803921568627, 0.37254901960784315, 1.0 ],
                     "fontface": 0,
                     "fontname": "Arial",
-                    "id": "obj-1",
-                    "items": [ "midi", ",", "osc", ",", "usb", ",", "ppooll", ",", "dial", ",", "bcf", ",", "serial", ",", "keyboard", ",", "signal~", ",", "live.ppooll", ",", "ppooll2" ],
+                    "hidden": 1,
+                    "hint": "act_menu",
+                    "id": "obj-35",
+                    "items": [ "no", ",", "control@1", ",", "ho_st1" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 71.0, 0.0, 55.712891, 16.0 ],
+                    "patching_rect": [ 0.0, 16.0, 102.0, 16.0 ],
                     "pattrmode": 1,
                     "prefix": "",
-                    "varname": "input_menu"
+                    "varname": "act_menu"
                 }
             },
             {
                 "box": {
-                    "fontname": "Arial",
-                    "fontsize": 9.0,
-                    "hidden": 1,
-                    "id": "obj-29",
-                    "maxclass": "newobj",
+                    "annotation": "on/off",
+                    "bgcolor": [ 0.75, 0.75, 0.75, 1.0 ],
+                    "bgoncolor": [ 0.752941, 0.023529, 0.247059, 1.0 ],
+                    "fontsize": 10.0,
+                    "id": "obj-37",
+                    "legacytextcolor": 1,
+                    "maxclass": "textbutton",
+                    "mode": 1,
                     "numinlets": 1,
                     "numoutlets": 3,
-                    "outlettype": [ "", "", "" ],
-                    "patching_rect": [ 371.0, 8.0, 72.0, 19.0 ],
-                    "restore": [ 101, 453, 831, 546 ],
-                    "saved_object_attributes": {
-                        "parameter_enable": 0,
-                        "parameter_mappable": 0
-                    },
-                    "text": "pattr routingPos",
-                    "varname": "routingPos"
+                    "outlettype": [ "", "", "int" ],
+                    "outputmode": 0,
+                    "parameter_enable": 0,
+                    "patching_rect": [ 124.0, 0.0, 23.0, 16.0 ],
+                    "prototypename": "jit_on",
+                    "rounded": 1.0,
+                    "text": "ON",
+                    "textcolor": [ 0.752941, 0.023529, 0.247059, 1.0 ],
+                    "texton": "ON",
+                    "textoncolor": [ 0.870588, 0.819608, 0.239216, 1.0 ],
+                    "textovercolor": [ 0.752941, 0.023529, 0.247059, 1.0 ],
+                    "usebgoncolor": 1,
+                    "usetextovercolor": 1,
+                    "varname": "on/off"
                 }
             },
             {
                 "box": {
+                    "bgcolor": [ 1.0, 1.0, 1.0, 0.0 ],
                     "fontface": 0,
+                    "fontsize": 10.0,
                     "format": [ 1 ],
-                    "hidden": 1,
-                    "id": "obj-66",
-                    "label": [ "chans" ],
-                    "max": 256.0,
+                    "id": "obj-17",
+                    "label": [ "throttle" ],
+                    "labelcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                     "maxclass": "ll_number",
-                    "min": 1.0,
+                    "min": 0.0,
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 73.0, 18.0, 55.0, 14.0 ],
+                    "patching_rect": [ 0.0, 32.0, 52.0, 16.0 ],
                     "sliderstyle": 2,
-                    "varname": "chans"
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "varname": "throttle"
                 }
             },
             {
@@ -112,7 +125,7 @@
                     "outlettype": [ "", "", "int" ],
                     "outputmode": 0,
                     "parameter_enable": 0,
-                    "patching_rect": [ 99.0, 35.0, 17.0, 17.0 ],
+                    "patching_rect": [ 99.0, 32.0, 17.0, 16.0 ],
                     "prototypename": "jit_on",
                     "rounded": 1.0,
                     "text": "L",
@@ -123,53 +136,6 @@
                     "usebgoncolor": 1,
                     "usetextovercolor": 1,
                     "varname": "send_back_light"
-                }
-            },
-            {
-                "box": {
-                    "fontname": "Arial",
-                    "fontsize": 9.0,
-                    "hidden": 1,
-                    "id": "obj-16",
-                    "maxclass": "newobj",
-                    "numinlets": 1,
-                    "numoutlets": 3,
-                    "outlettype": [ "", "", "" ],
-                    "patching_rect": [ 260.0, 192.0, 61.0, 19.0 ],
-                    "restore": [ 0 ],
-                    "saved_object_attributes": {
-                        "parameter_enable": 0,
-                        "parameter_mappable": 0
-                    },
-                    "text": "pattr act_par",
-                    "varname": "act_par"
-                }
-            },
-            {
-                "box": {
-                    "annotation": "routingW",
-                    "bgcolor": [ 0.317647, 0.317647, 0.317647, 1.0 ],
-                    "bgoncolor": [ 0.55, 0.55, 0.55, 1.0 ],
-                    "fontsize": 13.0,
-                    "id": "obj-46",
-                    "legacytextcolor": 1,
-                    "maxclass": "textbutton",
-                    "mode": 1,
-                    "numinlets": 1,
-                    "numoutlets": 3,
-                    "outlettype": [ "", "", "int" ],
-                    "outputmode": 0,
-                    "parameter_enable": 0,
-                    "patching_rect": [ 145.0, 0.0, 47.0, 16.0 ],
-                    "prototypename": "button_16",
-                    "text": "routing",
-                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
-                    "texton": "routing",
-                    "textoncolor": [ 1.0, 1.0, 1.0, 1.0 ],
-                    "textovercolor": [ 1.0, 1.0, 1.0, 1.0 ],
-                    "usebgoncolor": 1,
-                    "usetextovercolor": 1,
-                    "varname": "routingW"
                 }
             },
             {
@@ -187,7 +153,7 @@
                     "outlettype": [ "", "", "int" ],
                     "outputmode": 0,
                     "parameter_enable": 0,
-                    "patching_rect": [ 83.0, 35.0, 17.0, 17.0 ],
+                    "patching_rect": [ 82.0, 32.0, 17.0, 16.0 ],
                     "prototypename": "jit_on",
                     "rounded": 1.0,
                     "text": "B",
@@ -198,6 +164,125 @@
                     "usebgoncolor": 1,
                     "usetextovercolor": 1,
                     "varname": "send_back"
+                }
+            },
+            {
+                "box": {
+                    "annotation": "output_menu",
+                    "arrow": 0,
+                    "bgcolor": [ 0.19607843137254902, 0.19607843137254902, 0.19607843137254902, 1.0 ],
+                    "fontface": 0,
+                    "fontname": "Arial",
+                    "hint": "output_menu",
+                    "id": "obj-20",
+                    "items": [ "ll", ",", "osc", ",", "midi" ],
+                    "maxclass": "ll_menu",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 52.0, 32.0, 30.0, 16.0 ],
+                    "prefix": "",
+                    "varname": "output_menu"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 9.0,
+                    "id": "obj-18",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 119.0, 32.0, 22.0, 17.0 ],
+                    "text": "rcv",
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "varname": "comment_rcv"
+                }
+            },
+            {
+                "box": {
+                    "bgcolor": [ 0.19607843137254902, 0.19607843137254902, 0.19607843137254902, 1.0 ],
+                    "fontface": 0,
+                    "fontname": "Arial",
+                    "id": "obj-1",
+                    "items": [ "midi", ",", "osc", ",", "usb", ",", "ppooll", ",", "dial", ",", "bcf", ",", "serial", ",", "keyboard", ",", "signal~", ",", "live.ppooll" ],
+                    "maxclass": "ll_menu",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 70.0, 0.0, 55.0, 16.0 ],
+                    "pattrmode": 1,
+                    "prefix": "",
+                    "varname": "input_menu"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 9.0,
+                    "hidden": 1,
+                    "id": "obj-29",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "" ],
+                    "patching_rect": [ 426.6666793823242, 9.333333611488342, 72.0, 19.0 ],
+                    "restore": [ 103, 705, 833, 768 ],
+                    "saved_object_attributes": {
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "pattr routingPos",
+                    "varname": "routingPos"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 9.0,
+                    "hidden": 1,
+                    "id": "obj-16",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "" ],
+                    "patching_rect": [ 260.0, 192.0, 61.0, 19.0 ],
+                    "restore": [ "::_::_" ],
+                    "saved_object_attributes": {
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "pattr act_par",
+                    "varname": "act_par"
+                }
+            },
+            {
+                "box": {
+                    "annotation": "routingW",
+                    "bgcolor": [ 0.317647, 0.317647, 0.317647, 1.0 ],
+                    "bgoncolor": [ 0.55, 0.55, 0.55, 1.0 ],
+                    "fontsize": 12.0,
+                    "id": "obj-46",
+                    "legacytextcolor": 1,
+                    "maxclass": "textbutton",
+                    "mode": 1,
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "int" ],
+                    "outputmode": 0,
+                    "parameter_enable": 0,
+                    "patching_rect": [ 145.0, 0.0, 44.0, 16.0 ],
+                    "prototypename": "button_16",
+                    "text": "routing",
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "texton": "routing",
+                    "textoncolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "textovercolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "usebgoncolor": 1,
+                    "usetextovercolor": 1,
+                    "varname": "routingW"
                 }
             },
             {
@@ -610,7 +695,7 @@
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
-                    "patching_rect": [ 475.0, 40.0, 120.0, 19.0 ],
+                    "patching_rect": [ 530.6666824817657, 41.33333456516266, 120.0, 19.0 ],
                     "restore": [ 1 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
@@ -630,7 +715,7 @@
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
-                    "patching_rect": [ 371.0, 40.0, 102.0, 19.0 ],
+                    "patching_rect": [ 426.6666793823242, 41.33333456516266, 102.0, 19.0 ],
                     "restore": [ "AU DLS Synth 1" ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
@@ -650,7 +735,7 @@
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
-                    "patching_rect": [ 475.0, 67.0, 77.0, 19.0 ],
+                    "patching_rect": [ 530.6666824817657, 68.6666687130928, 77.0, 19.0 ],
                     "restore": [ "localhost", 7000 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
@@ -658,31 +743,6 @@
                     },
                     "text": "pattr osc_send",
                     "varname": "osc_send"
-                }
-            },
-            {
-                "box": {
-                    "allowdrag": 0,
-                    "annotation": "output_menu",
-                    "arrow": 0,
-                    "bgcolor": [ 0.196078, 0.196078, 0.196078, 1.0 ],
-                    "bgfillcolor_angle": 270.0,
-                    "bgfillcolor_color": [ 0.196078, 0.196078, 0.196078, 1.0 ],
-                    "bgfillcolor_color1": [ 0.376471, 0.384314, 0.4, 1.0 ],
-                    "bgfillcolor_color2": [ 0.290196, 0.309804, 0.301961, 1.0 ],
-                    "bgfillcolor_proportion": 0.39,
-                    "bgfillcolor_type": "color",
-                    "fontsize": 9.0,
-                    "id": "obj-5",
-                    "items": [ "ll", ",", "osc", ",", "midi" ],
-                    "maxclass": "umenu",
-                    "numinlets": 1,
-                    "numoutlets": 3,
-                    "outlettype": [ "int", "", "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 55.0, 35.0, 28.0, 19.0 ],
-                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
-                    "varname": "output_menu"
                 }
             },
             {
@@ -695,8 +755,8 @@
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
-                    "patching_rect": [ 371.0, 115.0, 69.0, 19.0 ],
-                    "restore": [ "_" ],
+                    "patching_rect": [ 426.6666793823242, 116.66667014360428, 69.0, 19.0 ],
+                    "restore": [ "_", "time" ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -728,8 +788,8 @@
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
-                    "patching_rect": [ 371.0, 67.0, 102.0, 19.0 ],
-                    "restore": [ 0 ],
+                    "patching_rect": [ 426.6666793823242, 68.6666687130928, 102.0, 19.0 ],
+                    "restore": [ "localhost", 8001 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -748,7 +808,7 @@
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
-                    "patching_rect": [ 445.0, 115.0, 84.0, 19.0 ],
+                    "patching_rect": [ 500.6666815876961, 116.66667014360428, 84.0, 19.0 ],
                     "restore": [ "_" ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
@@ -760,55 +820,8 @@
             },
             {
                 "box": {
-                    "fontname": "Arial",
-                    "fontsize": 9.0,
-                    "id": "obj-18",
-                    "maxclass": "comment",
-                    "numinlets": 1,
-                    "numoutlets": 0,
-                    "patching_rect": [ 117.0, 36.0, 22.0, 17.0 ],
-                    "text": "rcv",
-                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
-                }
-            },
-            {
-                "box": {
-                    "fontname": "Arial",
-                    "fontsize": 9.0,
-                    "id": "obj-19",
-                    "maxclass": "comment",
-                    "numinlets": 1,
-                    "numoutlets": 0,
-                    "patching_rect": [ 0.0, 36.0, 45.0, 17.0 ],
-                    "text": "throttle",
-                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
-                    "varname": "comment_throttle"
-                }
-            },
-            {
-                "box": {
-                    "annotation": "throttle",
-                    "bgcolor": [ 0.9, 0.9, 0.9, 0.0 ],
-                    "fontname": "Arial",
-                    "fontsize": 9.0,
-                    "htricolor": [ 0.87, 0.82, 0.24, 1.0 ],
-                    "id": "obj-20",
-                    "maxclass": "number",
-                    "minimum": 0,
-                    "numinlets": 1,
-                    "numoutlets": 2,
-                    "outlettype": [ "", "bang" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 30.0, 35.0, 30.0, 19.0 ],
-                    "triangle": 0,
-                    "tricolor": [ 0.75, 0.75, 0.75, 1.0 ],
-                    "triscale": 0.9,
-                    "varname": "throttle"
-                }
-            },
-            {
-                "box": {
                     "bgcolor": [ 0.35294, 0.35294, 0.35294, 1.0 ],
+                    "hint": "rcv",
                     "id": "obj-24",
                     "maxclass": "led",
                     "numinlets": 1,
@@ -817,22 +830,9 @@
                     "oncolor": [ 0.0, 1.0, 0.0, 1.0 ],
                     "outlettype": [ "int" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 136.0, 35.0, 17.0, 17.0 ],
+                    "patching_rect": [ 137.0, 32.0, 17.0, 16.0 ],
+                    "valuepopuplabel": 1,
                     "varname": "led"
-                }
-            },
-            {
-                "box": {
-                    "fontname": "Arial",
-                    "fontsize": 9.0,
-                    "id": "obj-25",
-                    "maxclass": "comment",
-                    "numinlets": 1,
-                    "numoutlets": 0,
-                    "patching_rect": [ 1.0, 17.0, 33.0, 17.0 ],
-                    "text": "port:",
-                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
-                    "varname": "coment_port"
                 }
             },
             {
@@ -854,7 +854,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 635.0, 124.0, 542.0, 606.0 ],
+                        "rect": [ 1270.0, 323.0, 542.0, 606.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -862,7 +862,7 @@
                                     "maxclass": "comment",
                                     "numinlets": 1,
                                     "numoutlets": 0,
-                                    "patching_rect": [ 84.0, 344.0, 283.0, 20.0 ],
+                                    "patching_rect": [ 89.0, 379.0, 283.0, 20.0 ],
                                     "text": "____________________________TODO________"
                                 }
                             },
@@ -1104,7 +1104,7 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 59.0, 81.0, 513.0, 476.0 ],
+                                        "rect": [ 134.0, 159.0, 513.0, 476.0 ],
                                         "boxes": [
                                             {
                                                 "box": {
@@ -3358,17 +3358,6 @@
                             },
                             {
                                 "box": {
-                                    "id": "obj-9",
-                                    "linecount": 2,
-                                    "maxclass": "comment",
-                                    "numinlets": 1,
-                                    "numoutlets": 0,
-                                    "patching_rect": [ 141.5, 370.0, 202.0, 33.0 ],
-                                    "text": "send_back recall on mode-change !!\ncheck with vbap ??"
-                                }
-                            },
-                            {
-                                "box": {
                                     "id": "obj-41",
                                     "maxclass": "newobj",
                                     "numinlets": 1,
@@ -4744,290 +4733,13 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 878.0, 340.0, 510.0, 537.0 ],
-                                        "boxes": [
-                                            {
-                                                "box": {
-                                                    "id": "obj-61",
-                                                    "maxclass": "comment",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 0,
-                                                    "patching_rect": [ 286.0, 162.0, 49.0, 20.0 ],
-                                                    "text": "in llc ??"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "coll_data": {
-                                                        "count": 20,
-                                                        "data": [
-                                                            {
-                                                                "key": "scale",
-                                                                "value": [ "min", "max", "log", "smooth" ]
-                                                            },
-                                                            {
-                                                                "key": "toggle",
-                                                                "value": [ "val1", "val2", "thresh", "ramp" ]
-                                                            },
-                                                            {
-                                                                "key": "togg",
-                                                                "value": [ "val1", "val2", "thresh", "ramp" ]
-                                                            },
-                                                            {
-                                                                "key": "inv0-1",
-                                                                "value": [ "thresh", "ignored", "ignored", "ignored" ]
-                                                            },
-                                                            {
-                                                                "key": "valON",
-                                                                "value": [ "val", "ON", "ignored", "ignored" ]
-                                                            },
-                                                            {
-                                                                "key": "cycle",
-                                                                "value": [ "min", "max", "thresh", "ignored" ]
-                                                            },
-                                                            {
-                                                                "key": "bang!",
-                                                                "value": [ "ignored", "directn", "thresh", "ignored" ]
-                                                            },
-                                                            {
-                                                                "key": "weight",
-                                                                "value": [ "min", "max", "log", "weight" ]
-                                                            },
-                                                            {
-                                                                "key": "move",
-                                                                "value": [ "incdec", "ignored", "lim_min", "lim_max" ]
-                                                            },
-                                                            {
-                                                                "key": "moveON",
-                                                                "value": [ "val", "incdec", "lim_min", "lim_max" ]
-                                                            },
-                                                            {
-                                                                "key": "random",
-                                                                "value": [ "min", "max", "ignored", "ignored" ]
-                                                            },
-                                                            {
-                                                                "key": "randON",
-                                                                "value": [ "val", "min", "max", "ignored" ]
-                                                            },
-                                                            {
-                                                                "key": "randPass",
-                                                                "value": [ "thresh", "min", "max", "direction" ]
-                                                            },
-                                                            {
-                                                                "key": "xt",
-                                                                "value": [ "*", "+", "ignored", "ignored" ]
-                                                            },
-                                                            {
-                                                                "key": "scale_delay",
-                                                                "value": [ "min", "max", "log", "delay" ]
-                                                            },
-                                                            {
-                                                                "key": "scale_round",
-                                                                "value": [ "min", "max", "log", "round" ]
-                                                            },
-                                                            {
-                                                                "key": "moveC",
-                                                                "value": [ "incdec", "center", "log", "min" ]
-                                                            },
-                                                            {
-                                                                "key": "FOXrel",
-                                                                "value": [ "incdec", "accel", "ignored", "ignored" ]
-                                                            },
-                                                            {
-                                                                "key": "rel1",
-                                                                "value": [ "incdec", "accel", "ignored", "ignored" ]
-                                                            },
-                                                            {
-                                                                "key": "rel64",
-                                                                "value": [ "incdec", "accel", "lim_min", "lim_max" ]
-                                                            }
-                                                        ]
-                                                    },
-                                                    "fontname": "Arial",
-                                                    "fontsize": 9.0,
-                                                    "id": "obj-52",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 4,
-                                                    "outlettype": [ "", "", "", "" ],
-                                                    "patching_rect": [ 282.0, 141.0, 91.0, 19.0 ],
-                                                    "saved_object_attributes": {
-                                                        "embed": 1,
-                                                        "precision": 6
-                                                    },
-                                                    "text": "coll modes&labels 1"
-                                                }
-                                            }
-                                        ],
+                                        "rect": [ 878.0, 340.0, 293.0, 537.0 ],
+                                        "boxes": [],
                                         "lines": []
                                     },
                                     "patching_rect": [ 140.0, 275.0, 97.0, 24.0 ],
                                     "text": "p send",
                                     "varname": "send"
-                                }
-                            },
-                            {
-                                "box": {
-                                    "fontname": "Arial",
-                                    "fontsize": 12.0,
-                                    "id": "obj-21",
-                                    "maxclass": "newobj",
-                                    "numinlets": 0,
-                                    "numoutlets": 1,
-                                    "outlettype": [ "" ],
-                                    "patcher": {
-                                        "fileversion": 1,
-                                        "appversion": {
-                                            "major": 9,
-                                            "minor": 1,
-                                            "revision": 2,
-                                            "architecture": "x64",
-                                            "modernui": 1
-                                        },
-                                        "classnamespace": "box",
-                                        "rect": [ 567.0, 135.0, 268.0, 343.0 ],
-                                        "boxes": [
-                                            {
-                                                "box": {
-                                                    "fontname": "Arial",
-                                                    "fontsize": 12.0,
-                                                    "id": "obj-2",
-                                                    "linecount": 25,
-                                                    "maxclass": "message",
-                                                    "numinlets": 2,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "patching_rect": [ 150.0, 246.0, 50.0, 344.0 ],
-                                                    "text": "Xpos 0.363919 0.329679 0.392529 0.437095 0.470609 0.499004 0.523061 0.613671 0.750596 0.629392 0.515745 0.648807"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "fontname": "Arial",
-                                                    "fontsize": 12.0,
-                                                    "id": "obj-91",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 2,
-                                                    "numoutlets": 2,
-                                                    "outlettype": [ "", "" ],
-                                                    "patching_rect": [ 42.0, 152.0, 58.0, 22.0 ],
-                                                    "text": "zl lookup"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "fontname": "Arial",
-                                                    "fontsize": 12.0,
-                                                    "id": "obj-90",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 2,
-                                                    "outlettype": [ "", "bang" ],
-                                                    "patching_rect": [ 100.0, 102.0, 89.0, 22.0 ],
-                                                    "text": "ll.r input_name"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "fontname": "Arial",
-                                                    "fontsize": 12.0,
-                                                    "id": "obj-73",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 2,
-                                                    "numoutlets": 2,
-                                                    "outlettype": [ "", "" ],
-                                                    "patching_rect": [ 42.0, 50.0, 57.0, 22.0 ],
-                                                    "text": "zl slice 1"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "fontname": "Arial",
-                                                    "fontsize": 12.0,
-                                                    "id": "obj-56",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 2,
-                                                    "outlettype": [ "", "bang" ],
-                                                    "patching_rect": [ 44.0, -9.0, 52.0, 22.0 ],
-                                                    "text": "ll.r back"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "fontname": "Arial",
-                                                    "fontsize": 12.0,
-                                                    "id": "obj-79",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 2,
-                                                    "numoutlets": 2,
-                                                    "outlettype": [ "", "" ],
-                                                    "patching_rect": [ 44.0, 222.0, 41.0, 22.0 ],
-                                                    "text": "zl join"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "comment": "",
-                                                    "id": "obj-13",
-                                                    "index": 1,
-                                                    "maxclass": "outlet",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 0,
-                                                    "patching_rect": [ 43.0, 274.0, 15.0, 15.0 ]
-                                                }
-                                            }
-                                        ],
-                                        "lines": [
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-73", 0 ],
-                                                    "source": [ "obj-56", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-79", 1 ],
-                                                    "source": [ "obj-73", 1 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-91", 0 ],
-                                                    "source": [ "obj-73", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-13", 0 ],
-                                                    "order": 1,
-                                                    "source": [ "obj-79", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-2", 1 ],
-                                                    "order": 0,
-                                                    "source": [ "obj-79", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-91", 1 ],
-                                                    "source": [ "obj-90", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-79", 0 ],
-                                                    "source": [ "obj-91", 0 ]
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    "patching_rect": [ 140.0, 62.0, 83.0, 22.0 ],
-                                    "text": "p send_back",
-                                    "varname": "s_b"
                                 }
                             },
                             {
@@ -5049,7 +4761,7 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 101.0, 453.0, 730.0, 93.0 ],
+                                        "rect": [ 103.0, 705.0, 730.0, 60.0 ],
                                         "toolbarvisible": 0,
                                         "boxes": [
                                             {
@@ -5524,7 +5236,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
                                                     "patching_rect": [ 680.0, -1.0, 46.0, 20.0 ],
-                                                    "text": "sel: 0",
+                                                    "text": "sel: 1",
                                                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                                                     "varname": "c_sel"
                                                 }
@@ -5544,10 +5256,10 @@
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 860.0, 3.0, 163.0, 22.0 ],
                                                     "saved_object_attributes": {
-                                                        "client_rect": [ 325, 240, 983, 844 ],
+                                                        "client_rect": [ 400, 495, 1195, 847 ],
                                                         "parameter_enable": 0,
                                                         "parameter_mappable": 0,
-                                                        "storage_rect": [ 0, 0, 640, 240 ]
+                                                        "storage_rect": [ 583, 68, 1034, 196 ]
                                                     },
                                                     "text": "pattrstorage @outputmode 1",
                                                     "varname": "u711011814"
@@ -5588,9 +5300,9 @@
                                                     "outlettype": [ "", "", "", "" ],
                                                     "patching_rect": [ 860.0, 69.0, 65.0, 19.0 ],
                                                     "restore": {
-                                                        "listblock": [ "n" ],
-                                                        "ll_tab": [ 0 ],
-                                                        "lllbmenu": [ "scale" ]
+                                                        "listblock": [ "num", 12, 0 ],
+                                                        "ll_tab": [ 12, 1 ],
+                                                        "lllbmenu": [ "throttle" ]
                                                     },
                                                     "text": "autopattr ap",
                                                     "varname": "ap"
@@ -5677,7 +5389,7 @@
                                                     "numoutlets": 2,
                                                     "outlettype": [ "", "" ],
                                                     "parameter_enable": 0,
-                                                    "patching_rect": [ 43.0, 17.0, 687.0, 64.0 ],
+                                                    "patching_rect": [ 43.0, 17.0, 687.0, 15.0 ],
                                                     "textfile": {
                                                         "filename": "ll.listblock.js",
                                                         "flags": 0,
@@ -5695,14 +5407,14 @@
                                                     "fontsize": 9.0,
                                                     "hidden": 1,
                                                     "id": "obj-13",
-                                                    "items": [ "scale", ",", "toggle", ",", "togg", ",", "inv0-1", ",", "valON", ",", "cycle", ",", "bang!", ",", "move", ",", "moveON", ",", "random", ",", "randON", ",", "xt", ",", "listscale" ],
+                                                    "items": [ "-no-", ",", "input_menu", ",", "on/off", ",", "routingW", ",", "throttle", ",", "output_menu", ",", "send_back", ",", "send_back_light", ",", "osc_receive_port", ",", "act_suggested", ",", "chans", ",", "act_menu", ",", "baud_rate", ",", "hi_menu", ",", "midi_channels", ",", "midi_receive_port", ",", "note_mode", ",", "serial_open-close", ",", "serial_port", ",", "wacom_menu", ",", "presets", ",", "list_inputs", ",", "osc_sendback", ",", "ignored", ",", "osc_send", ",", "midi_send_port", ",", "midi_send_channel", ",", "val1", ",", "val2", ",", "val3", ",", "val4", ",", "input_name", ",", "in_lo", ",", "in_hi", ",", "name_user", ",", "in_min", ",", "in_max", ",", "acts", ",", "pars", ",", "list_item", ",", "modes", ",", "opt1", ",", "opt2", ",", "opt3", ",", "opt4", ",", "ON", ",", "par_type", ",", "act_par", ",", "routingPos", ",", "act::active_store", ",", "act::master", ",", "act::pres_menu", ",", "act::tetris_menu", ",", "act::title_menu", ",", "sub::routing::u711011814" ],
                                                     "maxclass": "ll_menu",
                                                     "numinlets": 1,
                                                     "numoutlets": 3,
                                                     "outlettype": [ "", "", "" ],
                                                     "outputcancel": 1,
                                                     "parameter_enable": 0,
-                                                    "patching_rect": [ 510.0, 108.0, 39.0, 14.0 ],
+                                                    "patching_rect": [ 425.0, 33.0, 59.0, 14.0 ],
                                                     "pattrmode": 1,
                                                     "prefix": "menu",
                                                     "varname": "lllbmenu"
@@ -5804,9 +5516,9 @@
                             },
                             {
                                 "box": {
-                                    "id": "obj-42",
+                                    "id": "obj-7",
                                     "maxclass": "newobj",
-                                    "numinlets": 1,
+                                    "numinlets": 0,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 140.0, 100.0, 100.0, 0.0 ],
@@ -5824,12 +5536,6 @@
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-42", 0 ],
-                                    "source": [ "obj-21", 0 ]
-                                }
-                            },
-                            {
-                                "patchline": {
                                     "destination": [ "obj-16", 0 ],
                                     "source": [ "obj-28", 0 ]
                                 }
@@ -5843,7 +5549,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-8", 0 ],
-                                    "source": [ "obj-42", 0 ]
+                                    "source": [ "obj-7", 0 ]
                                 }
                             },
                             {
@@ -5855,7 +5561,7 @@
                             }
                         ]
                     },
-                    "patching_rect": [ 237.0, 8.0, 74.0, 19.0 ],
+                    "patching_rect": [ 304.6666757464409, 8.000000238418579, 74.0, 19.0 ],
                     "text": "p contol@_sub",
                     "varname": "sub"
                 }
@@ -5871,7 +5577,7 @@
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 237.0, 130.5, 107.0, 22.0 ],
+                    "patching_rect": [ 304.6666757464409, 130.6666705608368, 107.0, 22.0 ],
                     "save": [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
                     "text": "thispatcher",
                     "varname": "thispatcher"
@@ -5888,11 +5594,11 @@
                     "numinlets": 1,
                     "numoutlets": 4,
                     "outlettype": [ "", "", "", "" ],
-                    "patching_rect": [ 237.0, 106.5, 107.0, 22.0 ],
+                    "patching_rect": [ 304.6666757464409, 106.66666984558105, 107.0, 22.0 ],
                     "restore": {
-                        "act_menu": [ "no" ],
-                        "act_suggested": [ 1 ],
-                        "baud_rate": [ "9600" ],
+                        "act_menu": [ "ho_st1" ],
+                        "act_suggested": [ "all" ],
+                        "baud_rate": [ "28800" ],
                         "chans": [ 1 ],
                         "hi_menu": [ "Keyboard Backlight" ],
                         "input_menu": [ "midi" ],
@@ -5900,14 +5606,15 @@
                         "midi_receive_port": [ "-no-" ],
                         "note_mode": [ "no_notes" ],
                         "on/off": [ 1 ],
-                        "osc_receive_port": [ 8001 ],
+                        "osc_receive_port": [ 8000.0 ],
+                        "output_menu": [ 0 ],
                         "presets": [ 0 ],
                         "routingW": [ 0 ],
                         "send_back": [ 0 ],
                         "send_back_light": [ 0 ],
-                        "serial_open-close": [ "close" ],
+                        "serial_open-close": [ "open" ],
                         "serial_port": [ "debug-console" ],
-                        "throttle": [ 10 ],
+                        "throttle": [ 0.0 ],
                         "wacom_menu": [ 0 ]
                     },
                     "text": "autopattr autopattr",
@@ -5925,7 +5632,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 237.0, 80.5, 107.0, 22.0 ],
+                    "patching_rect": [ 304.6666757464409, 80.66666907072067, 107.0, 22.0 ],
                     "text": "pattrmarker no",
                     "varname": "pattrmarker"
                 }
@@ -5951,282 +5658,41 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 237.0, 32.5, 95.0, 22.0 ],
+                    "patching_rect": [ 304.6666757464409, 32.6666676402092, 95.0, 22.0 ],
                     "priority": {
                         "input_menu": 1,
                         "on/off": 2,
                         "routingW": 4,
-                        "send_back": 5,
                         "throttle": 7,
+                        "output_menu": 8,
+                        "send_back": 9,
+                        "send_back_light": 10,
+                        "osc_receive_port": 31,
+                        "act_suggested": 200,
+                        "chans": 200,
                         "act_menu": 300,
                         "baud_rate": 300,
                         "hi_menu": 300,
                         "midi_channels": 300,
                         "midi_receive_port": 300,
                         "note_mode": 300,
-                        "osc_receive_port": 300,
                         "serial_open-close": 300,
                         "serial_port": 300,
-                        "wacom_menu": 300
+                        "wacom_menu": 300,
+                        "presets": 1000,
+                        "act::pres_menu": 3000,
+                        "act::tetris_menu": 3000,
+                        "act::title_menu": 3000,
+                        "sub::routing::u711011814": 9000
                     },
                     "saved_object_attributes": {
-                        "client_rect": [ 325, 240, 983, 844 ],
+                        "client_rect": [ 400, 495, 1195, 847 ],
                         "parameter_enable": 0,
                         "parameter_mappable": 0,
-                        "storage_rect": [ 0, 0, 640, 240 ]
+                        "storage_rect": [ 583, 68, 1034, 196 ]
                     },
                     "text": "pattrstorage pat",
                     "varname": "pat"
-                }
-            },
-            {
-                "box": {
-                    "allowdrag": 0,
-                    "annotation": "note_mode",
-                    "bgcolor": [ 0.32549, 0.345098, 0.372549, 1.0 ],
-                    "bgfillcolor_angle": 270.0,
-                    "bgfillcolor_autogradient": 0,
-                    "bgfillcolor_color": [ 0.32549, 0.345098, 0.372549, 1.0 ],
-                    "bgfillcolor_color1": [ 0.376471, 0.384314, 0.4, 1.0 ],
-                    "bgfillcolor_color2": [ 0.290196, 0.309804, 0.301961, 1.0 ],
-                    "bgfillcolor_proportion": 0.39,
-                    "bgfillcolor_type": "color",
-                    "fontsize": 9.0,
-                    "id": "obj-15",
-                    "items": [ "no_notes", ",", "notes_single", ",", "notes_range", ",", "notes_chords" ],
-                    "maxclass": "umenu",
-                    "numinlets": 1,
-                    "numoutlets": 3,
-                    "outlettype": [ "int", "", "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 119.0, 16.0, 34.0, 19.0 ],
-                    "pattrmode": 1,
-                    "textcolor": [ 0.862745, 0.870588, 0.878431, 1.0 ],
-                    "varname": "note_mode"
-                }
-            },
-            {
-                "box": {
-                    "allowdrag": 0,
-                    "annotation": "act_menu",
-                    "bgcolor": [ 0.32549, 0.345098, 0.372549, 1.0 ],
-                    "bgfillcolor_angle": 270.0,
-                    "bgfillcolor_autogradient": 0,
-                    "bgfillcolor_color": [ 0.32549, 0.345098, 0.372549, 1.0 ],
-                    "bgfillcolor_color1": [ 0.376471, 0.384314, 0.4, 1.0 ],
-                    "bgfillcolor_color2": [ 0.290196, 0.309804, 0.301961, 1.0 ],
-                    "bgfillcolor_proportion": 0.39,
-                    "bgfillcolor_type": "color",
-                    "fontsize": 9.0,
-                    "hidden": 1,
-                    "id": "obj-13",
-                    "items": [ "no", ",", "control@1", ",", "ho_st1" ],
-                    "maxclass": "umenu",
-                    "numinlets": 1,
-                    "numoutlets": 3,
-                    "outlettype": [ "int", "", "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 24.0, 16.0, 81.0, 19.0 ],
-                    "pattrmode": 1,
-                    "textcolor": [ 0.862745, 0.870588, 0.878431, 1.0 ],
-                    "varname": "act_menu"
-                }
-            },
-            {
-                "box": {
-                    "allowdrag": 0,
-                    "annotation": "midi_receive_port",
-                    "bgcolor": [ 0.32549, 0.345098, 0.372549, 1.0 ],
-                    "bgfillcolor_angle": 270.0,
-                    "bgfillcolor_autogradient": 0,
-                    "bgfillcolor_color": [ 0.32549, 0.345098, 0.372549, 1.0 ],
-                    "bgfillcolor_color1": [ 0.376471, 0.384314, 0.4, 1.0 ],
-                    "bgfillcolor_color2": [ 0.290196, 0.309804, 0.301961, 1.0 ],
-                    "bgfillcolor_proportion": 0.39,
-                    "bgfillcolor_type": "color",
-                    "fontsize": 9.0,
-                    "id": "obj-22",
-                    "items": [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "to Max 1", ",", "to Max 2" ],
-                    "maxclass": "umenu",
-                    "numinlets": 1,
-                    "numoutlets": 3,
-                    "outlettype": [ "int", "", "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 24.0, 16.0, 58.0, 19.0 ],
-                    "pattrmode": 1,
-                    "textcolor": [ 0.862745, 0.870588, 0.878431, 1.0 ],
-                    "varname": "midi_receive_port"
-                }
-            },
-            {
-                "box": {
-                    "annotation": "osc_receive_port",
-                    "bgcolor": [ 0.311041, 0.314599, 0.318357, 1.0 ],
-                    "fontname": "Arial",
-                    "fontsize": 9.0,
-                    "hidden": 1,
-                    "htricolor": [ 0.87, 0.82, 0.24, 1.0 ],
-                    "id": "obj-26",
-                    "maxclass": "number",
-                    "mousefilter": 1,
-                    "numinlets": 1,
-                    "numoutlets": 2,
-                    "outlettype": [ "", "bang" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 28.0, 16.0, 33.0, 19.0 ],
-                    "textcolor": [ 0.862745, 0.870588, 0.878431, 1.0 ],
-                    "triangle": 0,
-                    "tricolor": [ 0.75, 0.75, 0.75, 1.0 ],
-                    "triscale": 0.9,
-                    "varname": "osc_receive_port"
-                }
-            },
-            {
-                "box": {
-                    "allowdrag": 0,
-                    "annotation": "serial_port",
-                    "arrow": 0,
-                    "bgcolor": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1.0 ],
-                    "bgfillcolor_color": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1.0 ],
-                    "bgfillcolor_color1": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-                    "bgfillcolor_color2": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-                    "bgfillcolor_type": "color",
-                    "fontsize": 9.0,
-                    "hidden": 1,
-                    "id": "obj-50",
-                    "items": [ "debug-console", ",", "Bluetooth-Incoming-Port", ",", "refresh" ],
-                    "labelclick": 1,
-                    "maxclass": "umenu",
-                    "numinlets": 1,
-                    "numoutlets": 3,
-                    "outlettype": [ "int", "", "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 24.0, 16.0, 68.0, 19.0 ],
-                    "pattrmode": 1,
-                    "varname": "serial_port"
-                }
-            },
-            {
-                "box": {
-                    "allowdrag": 0,
-                    "annotation": "midi_channels",
-                    "bgcolor": [ 0.32549, 0.345098, 0.372549, 1.0 ],
-                    "bgfillcolor_angle": 270.0,
-                    "bgfillcolor_autogradient": 0,
-                    "bgfillcolor_color": [ 0.32549, 0.345098, 0.372549, 1.0 ],
-                    "bgfillcolor_color1": [ 0.376471, 0.384314, 0.4, 1.0 ],
-                    "bgfillcolor_color2": [ 0.290196, 0.309804, 0.301961, 1.0 ],
-                    "bgfillcolor_proportion": 0.39,
-                    "bgfillcolor_type": "color",
-                    "fontsize": 9.0,
-                    "id": "obj-7",
-                    "items": [ "all_channels", ",", 1, ",", 2, ",", 3, ",", 4, ",", 5, ",", 6, ",", 7, ",", 8, ",", 9, ",", 10, ",", 11, ",", 12, ",", 13, ",", 14, ",", 15, ",", 16 ],
-                    "maxclass": "umenu",
-                    "numinlets": 1,
-                    "numoutlets": 3,
-                    "outlettype": [ "int", "", "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 82.0, 16.0, 36.0, 19.0 ],
-                    "pattrmode": 1,
-                    "textcolor": [ 0.862745, 0.870588, 0.878431, 1.0 ],
-                    "varname": "midi_channels"
-                }
-            },
-            {
-                "box": {
-                    "allowdrag": 0,
-                    "annotation": "act_suggested",
-                    "bgcolor": [ 0.32549, 0.345098, 0.372549, 1.0 ],
-                    "bgfillcolor_angle": 270.0,
-                    "bgfillcolor_autogradient": 0,
-                    "bgfillcolor_color": [ 0.32549, 0.345098, 0.372549, 1.0 ],
-                    "bgfillcolor_color1": [ 0.376471, 0.384314, 0.4, 1.0 ],
-                    "bgfillcolor_color2": [ 0.290196, 0.309804, 0.301961, 1.0 ],
-                    "bgfillcolor_proportion": 0.39,
-                    "bgfillcolor_type": "color",
-                    "fontsize": 9.0,
-                    "hidden": 1,
-                    "id": "obj-21",
-                    "items": [ "all", ",", "suggested" ],
-                    "maxclass": "umenu",
-                    "numinlets": 1,
-                    "numoutlets": 3,
-                    "outlettype": [ "int", "", "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 103.0, 16.0, 51.0, 19.0 ],
-                    "textcolor": [ 0.862745, 0.870588, 0.878431, 1.0 ],
-                    "varname": "act_suggested"
-                }
-            },
-            {
-                "box": {
-                    "allowdrag": 0,
-                    "annotation": "hi_menu",
-                    "bgcolor": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1.0 ],
-                    "bgfillcolor_color": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1.0 ],
-                    "bgfillcolor_color1": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-                    "bgfillcolor_color2": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-                    "bgfillcolor_type": "color",
-                    "fontsize": 9.0,
-                    "hidden": 1,
-                    "id": "obj-17",
-                    "items": [ "Keyboard Backlight", ",", "Apple Internal Keyboard / Trackpad", ",", "Apple Internal Keyboard / Trackpad 2", ",", "Apple Internal Keyboard / Trackpad 3", ",", "Apple Internal Keyboard / Trackpad 4", ",", "Apple Internal Keyboard / Trackpad 5", ",", "Apple Internal Keyboard / Trackpad 6", ",", "Headset", ",", "Vendor Defined Usage 0x5", ",", "Page: 0x20, Usage: 0x8a", ",", "Vendor Defined Usage 0x1", ",", "Page: 0xff00, Usage: 0x4", ",", "Page: 0xff00, Usage: 0x5", ",", "Page: 0xff00, Usage: 0x9", ",", "Page: 0xff00, Usage: 0xff", ",", "Page: 0xff00, Usage: 0x3", ",", "BTM" ],
-                    "maxclass": "umenu",
-                    "numinlets": 1,
-                    "numoutlets": 3,
-                    "outlettype": [ "int", "", "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 24.0, 16.0, 130.0, 19.0 ],
-                    "pattrmode": 1,
-                    "varname": "hi_menu"
-                }
-            },
-            {
-                "box": {
-                    "allowdrag": 0,
-                    "annotation": "serial_open-close",
-                    "arrow": 0,
-                    "bgcolor": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1.0 ],
-                    "bgfillcolor_color": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1.0 ],
-                    "bgfillcolor_color1": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-                    "bgfillcolor_color2": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-                    "bgfillcolor_type": "color",
-                    "fontsize": 8.0,
-                    "hidden": 1,
-                    "id": "obj-68",
-                    "items": [ "open", ",", "close" ],
-                    "labelclick": 1,
-                    "maxclass": "umenu",
-                    "numinlets": 1,
-                    "numoutlets": 3,
-                    "outlettype": [ "int", "", "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 122.0, 16.0, 32.0, 17.0 ],
-                    "pattrmode": 1,
-                    "varname": "serial_open-close"
-                }
-            },
-            {
-                "box": {
-                    "bgcolor": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-                    "bgcolor2": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-                    "bgfillcolor_autogradient": 0.0,
-                    "bgfillcolor_color": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1.0 ],
-                    "bgfillcolor_color1": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-                    "bgfillcolor_color2": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-                    "bgfillcolor_type": "color",
-                    "fontname": "Arial",
-                    "fontsize": 9.0,
-                    "gradient": 1,
-                    "hidden": 1,
-                    "id": "obj-10",
-                    "maxclass": "message",
-                    "numinlets": 2,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 73.0, 18.0, 65.0, 19.0 ],
-                    "text": "sendback_IP",
-                    "varname": "sendbackIPW"
                 }
             },
             {
@@ -6248,61 +5714,8 @@
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 24.0, 16.0, 130.0, 19.0 ],
+                    "patching_rect": [ 150.00000447034836, 132.0, 130.0, 19.0 ],
                     "varname": "wacom_menu"
-                }
-            },
-            {
-                "box": {
-                    "allowdrag": 0,
-                    "annotation": "baud_rate",
-                    "arrow": 0,
-                    "bgcolor": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1.0 ],
-                    "bgfillcolor_color": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1.0 ],
-                    "bgfillcolor_color1": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-                    "bgfillcolor_color2": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-                    "bgfillcolor_type": "color",
-                    "fontsize": 8.0,
-                    "hidden": 1,
-                    "id": "obj-67",
-                    "items": [ 300, ",", 1200, ",", 2400, ",", 4800, ",", 9600, ",", 14400, ",", 19200, ",", 28800, ",", 38400, ",", 57600, ",", 76800, ",", 115200, ",", 230400, ",", 460800, ",", 921600 ],
-                    "labelclick": 1,
-                    "maxclass": "umenu",
-                    "numinlets": 1,
-                    "numoutlets": 3,
-                    "outlettype": [ "int", "", "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 90.0, 16.0, 32.0, 17.0 ],
-                    "pattrmode": 1,
-                    "varname": "baud_rate"
-                }
-            },
-            {
-                "box": {
-                    "annotation": "on/off",
-                    "bgcolor": [ 0.75, 0.75, 0.75, 1.0 ],
-                    "bgoncolor": [ 0.752941, 0.023529, 0.247059, 1.0 ],
-                    "fontsize": 10.0,
-                    "id": "obj-37",
-                    "legacytextcolor": 1,
-                    "maxclass": "textbutton",
-                    "mode": 1,
-                    "numinlets": 1,
-                    "numoutlets": 3,
-                    "outlettype": [ "", "", "int" ],
-                    "outputmode": 0,
-                    "parameter_enable": 0,
-                    "patching_rect": [ 124.0, 0.0, 23.0, 16.0 ],
-                    "prototypename": "jit_on",
-                    "rounded": 1.0,
-                    "text": "ON",
-                    "textcolor": [ 0.752941, 0.023529, 0.247059, 1.0 ],
-                    "texton": "ON",
-                    "textoncolor": [ 0.870588, 0.819608, 0.239216, 1.0 ],
-                    "textovercolor": [ 0.752941, 0.023529, 0.247059, 1.0 ],
-                    "usebgoncolor": 1,
-                    "usetextovercolor": 1,
-                    "varname": "on/off"
                 }
             },
             {
@@ -6334,24 +5747,271 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 237.0, 56.5, 115.0, 22.0 ],
+                    "patching_rect": [ 304.6666757464409, 56.666668355464935, 115.0, 22.0 ],
                     "text": "pattrforward act::in2",
                     "varname": "pf"
+                }
+            },
+            {
+                "box": {
+                    "annotation": "note_mode",
+                    "bgcolor": [ 0.3254901960784314, 0.34509803921568627, 0.37254901960784315, 1.0 ],
+                    "fontface": 0,
+                    "fontname": "Arial",
+                    "hint": "note_mode",
+                    "id": "obj-31",
+                    "items": [ "no_notes", ",", "notes_single", ",", "notes_range", ",", "notes_chords" ],
+                    "maxclass": "ll_menu",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 110.0, 16.0, 43.0, 16.0 ],
+                    "pattrmode": 1,
+                    "prefix": "",
+                    "valuepopup": 1,
+                    "varname": "note_mode"
+                }
+            },
+            {
+                "box": {
+                    "annotation": "midi_channels",
+                    "bgcolor": [ 0.3254901960784314, 0.34509803921568627, 0.37254901960784315, 1.0 ],
+                    "fontface": 0,
+                    "fontname": "Arial",
+                    "hint": "midi_channels",
+                    "id": "obj-27",
+                    "items": [ "all_channels", ",", 1, ",", 2, ",", 3, ",", 4, ",", 5, ",", 6, ",", 7, ",", 8, ",", 9, ",", 10, ",", 11, ",", 12, ",", 13, ",", 14, ",", 15, ",", 16 ],
+                    "maxclass": "ll_menu",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 71.0, 16.0, 38.0, 16.0 ],
+                    "pattrmode": 1,
+                    "prefix": "",
+                    "valuepopup": 1,
+                    "varname": "midi_channels"
+                }
+            },
+            {
+                "box": {
+                    "annotation": "midi_receive_port",
+                    "bgcolor": [ 0.3254901960784314, 0.34509803921568627, 0.37254901960784315, 1.0 ],
+                    "fontface": 0,
+                    "fontname": "Arial",
+                    "hint": "midi_receive_port",
+                    "id": "obj-26",
+                    "items": [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "to Max 1", ",", "to Max 2" ],
+                    "maxclass": "ll_menu",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 0.0, 16.0, 70.0, 16.0 ],
+                    "pattrmode": 1,
+                    "prefix": "",
+                    "varname": "midi_receive_port"
+                }
+            },
+            {
+                "box": {
+                    "bgcolor": [ 0.30980392156862746, 0.3137254901960784, 0.3176470588235294, 1.0 ],
+                    "border": 0,
+                    "fontface": 0,
+                    "fontsize": 10.0,
+                    "format": [ 1 ],
+                    "hidden": 1,
+                    "id": "obj-14",
+                    "label": [ "port:" ],
+                    "labelcolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "maxclass": "ll_number",
+                    "min": 1.0,
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 0.0, 16.0, 59.0, 16.0 ],
+                    "sliderstyle": 2,
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "varname": "osc_receive_port"
+                }
+            },
+            {
+                "box": {
+                    "bgcolor": [ 0.19607843137254902, 0.19607843137254902, 0.19607843137254902, 1.0 ],
+                    "fontface": 0,
+                    "fontname": "Arial",
+                    "hidden": 1,
+                    "id": "obj-32",
+                    "items": [ "Keyboard Backlight", ",", "Apple Internal Keyboard / Trackpad", ",", "Apple Internal Keyboard / Trackpad 2", ",", "Apple Internal Keyboard / Trackpad 3", ",", "Apple Internal Keyboard / Trackpad 4", ",", "Apple Internal Keyboard / Trackpad 5", ",", "Apple Internal Keyboard / Trackpad 6", ",", "Headset", ",", "Vendor Defined Usage 0x5", ",", "Page: 0x20, Usage: 0x8a", ",", "Vendor Defined Usage 0x1", ",", "Page: 0xff00, Usage: 0x4", ",", "Page: 0xff00, Usage: 0x5", ",", "Page: 0xff00, Usage: 0x9", ",", "Page: 0xff00, Usage: 0xff", ",", "Page: 0xff00, Usage: 0x3", ",", "BTM" ],
+                    "maxclass": "ll_menu",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 0.0, 16.0, 154.0, 16.0 ],
+                    "pattrmode": 1,
+                    "prefix": "",
+                    "varname": "hi_menu"
+                }
+            },
+            {
+                "box": {
+                    "fontface": 0,
+                    "format": [ 1 ],
+                    "hidden": 1,
+                    "id": "obj-66",
+                    "label": [ "chans" ],
+                    "max": 256.0,
+                    "maxclass": "ll_number",
+                    "min": 1.0,
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 71.0, 16.0, 60.0, 16.0 ],
+                    "sliderstyle": 2,
+                    "varname": "chans"
+                }
+            },
+            {
+                "box": {
+                    "annotation": "serial_port",
+                    "arrow": 0,
+                    "bgcolor": [ 0.38823529411764707, 0.20784313725490197, 0.20784313725490197, 1.0 ],
+                    "fontface": 0,
+                    "fontname": "Arial",
+                    "fontsize": 8.0,
+                    "hidden": 1,
+                    "hint": "serial_port",
+                    "id": "obj-13",
+                    "items": [ 300, ",", 1200, ",", 2400, ",", 4800, ",", 9600, ",", 14400, ",", 19200, ",", 28800, ",", 38400, ",", 57600, ",", 76800, ",", 115200, ",", 230400, ",", 460800, ",", 921600 ],
+                    "maxclass": "ll_menu",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 90.0, 16.0, 34.0, 16.0 ],
+                    "pattrmode": 1,
+                    "prefix": "",
+                    "varname": "baud_rate"
+                }
+            },
+            {
+                "box": {
+                    "annotation": "act_suggested",
+                    "bgcolor": [ 0.3254901960784314, 0.34509803921568627, 0.37254901960784315, 1.0 ],
+                    "fontface": 0,
+                    "fontname": "Arial",
+                    "hidden": 1,
+                    "hint": "act_suggested",
+                    "id": "obj-38",
+                    "items": [ "all", ",", "suggested" ],
+                    "maxclass": "ll_menu",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 103.0, 16.0, 50.0, 16.0 ],
+                    "pattrmode": 1,
+                    "prefix": "",
+                    "varname": "act_suggested"
+                }
+            },
+            {
+                "box": {
+                    "annotation": "serial_open-close",
+                    "arrow": 0,
+                    "bgcolor": [ 0.38823529411764707, 0.20784313725490197, 0.20784313725490197, 1.0 ],
+                    "fontface": 0,
+                    "fontname": "Arial",
+                    "fontsize": 8.0,
+                    "hidden": 1,
+                    "hint": "serial_open-close",
+                    "id": "obj-15",
+                    "items": [ "open", ",", "close" ],
+                    "maxclass": "ll_menu",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 125.0, 16.0, 28.0, 16.0 ],
+                    "pattrmode": 1,
+                    "prefix": "",
+                    "varname": "serial_open-close"
+                }
+            },
+            {
+                "box": {
+                    "annotation": "serial_port",
+                    "bgcolor": [ 0.38823529411764707, 0.20784313725490197, 0.20784313725490197, 1.0 ],
+                    "fontface": 0,
+                    "fontname": "Arial",
+                    "hidden": 1,
+                    "hint": "serial_port",
+                    "id": "obj-10",
+                    "items": [ "debug-console", ",", "Bluetooth-Incoming-Port", ",", "refresh" ],
+                    "maxclass": "ll_menu",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 0.0, 16.0, 90.0, 16.0 ],
+                    "pattrmode": 1,
+                    "prefix": "",
+                    "varname": "serial_port"
+                }
+            },
+            {
+                "box": {
+                    "border": 0,
+                    "embedstate": [
+                        [ "bgcolor_off", 0.3, 0.3, 0.3, 1 ],
+                        [ "bgcolor_on", 0.6, 0.6, 0.6, 1 ],
+                        [ "blinktime", 150 ],
+                        [ "bordercolor", 0.2, 0.2, 0.2, 1 ],
+                        [ "button_mode", "button" ],
+                        [ "fontsize", 10 ],
+                        [ "output_mode", 0 ],
+                        [ "txt_off", "sendback_IP" ],
+                        [ "txt_on", "on" ],
+                        [ "txtcolor_off", 1, 1, 1, 1 ],
+                        [ "txtcolor_on", 1, 1, 1, 1 ]
+                    ],
+                    "filename": "ll.txtbutton.js",
+                    "hidden": 1,
+                    "id": "obj-23",
+                    "maxclass": "v8ui",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 60.0, 16.0, 94.0, 16.0 ],
+                    "textfile": {
+                        "filename": "ll.txtbutton.js",
+                        "flags": 0,
+                        "embed": 0,
+                        "autowatch": 1
+                    },
+                    "varname": "sendbackIPW"
                 }
             }
         ],
         "lines": [
             {
                 "patchline": {
-                    "destination": [ "obj-9", 0 ],
+                    "destination": [ "obj-23", 0 ],
                     "hidden": 1,
-                    "source": [ "obj-10", 0 ]
+                    "order": 1,
+                    "source": [ "obj-116", 1 ]
                 }
             },
             {
                 "patchline": {
                     "destination": [ "obj-24", 0 ],
                     "hidden": 1,
+                    "order": 0,
                     "source": [ "obj-116", 1 ]
                 }
             },
@@ -6360,6 +6020,13 @@
                     "destination": [ "obj-43", 0 ],
                     "hidden": 1,
                     "source": [ "obj-120", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-9", 0 ],
+                    "hidden": 1,
+                    "source": [ "obj-23", 0 ]
                 }
             }
         ],

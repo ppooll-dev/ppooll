@@ -178,12 +178,15 @@ function incoming(...args){ // from control@ source (midi, keys, ppooll, OSC, et
     
 	    if(args.length > 1 && list_inputs.indexOf(param) === -1) {
 	        // list => spread
+			//post("c@list",args,"\n");
 	        args.forEach((val, index) => {
 	            const s_param = `${param}(${index+1})`
+				//post("c@list",args,s_param,input_name.indexOf(s_param),"\n");
 	            if(input_name.indexOf(s_param) > -1){
 	                old_input(s_param, val) //______________old
 	            } else {
-					if ( actpars["routingW"] === 1)
+					
+					if ( actpars["routingW"] == 1) //=== does NOT work
 	                	new_input(s_param, val); //______________new
 	            }
 	        })
@@ -193,7 +196,7 @@ function incoming(...args){ // from control@ source (midi, keys, ppooll, OSC, et
 	    if(input_name.indexOf(param) > -1) {
 	        old_input(param, ...args) //______________old
 	    }else{
-			if ( actpars["routingW"] == 1)
+			if ( actpars["routingW"] == 1) //=== does NOT work
 	        	new_input(param, ...args); //______________new
 	    }
 	}
@@ -380,7 +383,6 @@ function input_menu(s) {
     let inp = tp.newdefault(140, 100, inp_patch);
     inp.varname = "in";
     tp.connect(inp, 0, tp.getnamed("main_js"), 0);
-    tp.connect(tp.getnamed("s_b"), 0, inp, 0);
 }
 
 function savebang() {
@@ -676,7 +678,7 @@ function reset() {
     
     //ap.getnamed("list_inputs_spread").setvalueof(0);
     ap.getnamed("list_inputs").setvalueof("_");
-
+	ap.getnamed("send_back").setvalueof(0);
     ap.getnamed("input_menu").setvalueof("midi")
 
     getTopButtons().reset()

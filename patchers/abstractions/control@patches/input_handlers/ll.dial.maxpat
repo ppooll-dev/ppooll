@@ -13,6 +13,29 @@
         "boxes": [
             {
                 "box": {
+                    "id": "obj-20",
+                    "linecount": 3,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 125.0, 72.0, 78.0, 47.0 ],
+                    "text": "sendbackO\naddressed in\nmode_base_"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-18",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "" ],
+                    "patching_rect": [ 27.0, 76.0, 91.0, 22.0 ],
+                    "text": "route sendback",
+                    "varname": "sendbackO"
+                }
+            },
+            {
+                "box": {
                     "fontname": "Arial",
                     "fontsize": 9.0,
                     "id": "obj-1",
@@ -319,23 +342,11 @@
                 "box": {
                     "comment": "",
                     "id": "obj-7",
-                    "index": 0,
+                    "index": 1,
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 223.0, 349.0, 15.0, 15.0 ]
-                }
-            },
-            {
-                "box": {
-                    "comment": "",
-                    "id": "obj-8",
-                    "index": 0,
-                    "maxclass": "inlet",
-                    "numinlets": 0,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 137.0, 50.0, 15.0, 15.0 ]
                 }
             },
             {
@@ -593,7 +604,6 @@
                     "source": [ "obj-9", 0 ]
                 }
             }
-        ],
-        "autosave": 0
+        ]
     }
 }
