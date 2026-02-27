@@ -916,6 +916,10 @@ function getTetrisFromObject(obj) {
             if (obj.maxclass !== "patcher" && obj.maxclass !== "jpatcher")
                 objTetris[attributes[i]] = obj.getattr(attributes[i]);
         }
+        if (attributes[i] === "boxsize" && obj.varname === "presets") {
+            //post("--------", obj.varname, obj.maxclass, attributes[i], obj.getattr(attributes[i]), "\n");
+            objTetris[attributes[i]] = obj.getattr(attributes[i]);
+        }
         if (attributes[i] === "jsarguments") {
             // post("tetris jsarguments", objTetris[attributes[i]], "\n");
             objTetris[attributes[i]] = obj[attributes[i]];
