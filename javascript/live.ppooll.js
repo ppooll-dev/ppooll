@@ -50,6 +50,8 @@ function loadbang() {
             "ho_st1",
             "@bgmode",
             1,
+            "@border",
+            0
         );
         return;
     }
