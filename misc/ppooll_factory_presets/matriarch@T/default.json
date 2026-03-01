@@ -1,11 +1,11 @@
 {
-    "window": [ 350, 360, 606, 526 ],
+    "window": [ 370, 343, 626, 509 ],
     "act": {
         "patching_rect": [ 0, 0, 84.740234375, 16 ],
         "hidden": 0
     },
     "out_meter": {
-        "patching_rect": [ 70, 41, 745, 126 ],
+        "patching_rect": [ 70, 41, 745, 124 ],
         "hidden": 0,
         "bgcolor": [ 0, 0, 0, 1 ],
         "offcolor": [ 0.349019607843137, 0.349019607843137, 0.349019607843137, 0 ],
@@ -101,6 +101,10 @@
         "patching_rect": [ 0, 430, 806, 31 ],
         "hidden": 0
     },
+    "routing": {
+        "patching_rect": [ 72.5, 18, 752, 54 ],
+        "hidden": 0
+    },
     "num_inputs": {
         "patching_rect": [ 3, 27, 33, 22 ],
         "hidden": 0,
@@ -121,6 +125,7 @@
     },
     "presets": {
         "patching_rect": [ 126, 0, 689, 15 ],
-        "hidden": 0
+        "hidden": 0,
+        "boxsize": 13
     }
 }
