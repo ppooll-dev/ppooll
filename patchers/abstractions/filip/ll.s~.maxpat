@@ -703,7 +703,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 332.0, 360.0, 943.0, 686.0 ],
+                        "rect": [ 318.0, 206.0, 943.0, 686.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -851,8 +851,37 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 88.0, 408.0, 847.0, 678.0 ],
+                                        "rect": [ 351.0, 136.0, 965.0, 644.0 ],
                                         "boxes": [
+                                            {
+                                                "box": {
+                                                    "id": "obj-10",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 2,
+                                                    "outlettype": [ "bang", "" ],
+                                                    "patching_rect": [ 416.0, 393.0, 34.0, 22.0 ],
+                                                    "text": "sel 1"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "code": "// check if object is actually connected \r\n// before trying \"disconnect\"\r\n//  (to prevent \"script disconnect: connection not found\")\r\n\r\nfunction bang(){\r\n    const pp = this.patcher.parentpatcher;\r\n    const obj_in = pp.getnamed(\"in\");\r\n    const obj_send = pp.getnamed(\"send\");\r\n    \r\n    const outs = obj_in.patchcords.outputs;\r\n    \r\n    if(outs.length){\r\n        for(let i=0; i<outs.length; i++){\r\n            const o = outs[i];\r\n            if(o.dstobject === obj_send){\r\n                outlet(0, 1)\r\n                return;\r\n            }\r\n        }\r\n    }\r\n    outlet(0, 0)\r\n}",
+                                                    "filename": "none",
+                                                    "fontface": 0,
+                                                    "fontname": "<Monospaced>",
+                                                    "fontsize": 12.0,
+                                                    "id": "obj-1",
+                                                    "maxclass": "v8.codebox",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 416.0, 144.0, 508.0, 204.0 ],
+                                                    "saved_object_attributes": {
+                                                        "parameter_enable": 0
+                                                    }
+                                                }
+                                            },
                                             {
                                                 "box": {
                                                     "id": "obj-32",
@@ -882,8 +911,8 @@
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 415.6666666666666, 146.0, 131.0, 22.0 ],
-                                                    "text": "disconnect in 0 send 0,"
+                                                    "patching_rect": [ 416.0, 423.0, 128.0, 22.0 ],
+                                                    "text": "disconnect in 0 send 0"
                                                 }
                                             },
                                             {
@@ -1067,6 +1096,18 @@
                                         "lines": [
                                             {
                                                 "patchline": {
+                                                    "destination": [ "obj-10", 0 ],
+                                                    "source": [ "obj-1", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-30", 0 ],
+                                                    "source": [ "obj-10", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
                                                     "destination": [ "obj-7", 0 ],
                                                     "source": [ "obj-11", 0 ]
                                                 }
@@ -1147,7 +1188,7 @@
                                             },
                                             {
                                                 "patchline": {
-                                                    "destination": [ "obj-30", 0 ],
+                                                    "destination": [ "obj-1", 0 ],
                                                     "source": [ "obj-29", 1 ]
                                                 }
                                             },
@@ -1312,7 +1353,7 @@
                                     "maxclass": "inlet",
                                     "numinlets": 0,
                                     "numoutlets": 1,
-                                    "outlettype": [ "" ],
+                                    "outlettype": [ "multichannelsignal" ],
                                     "patching_rect": [ 92.0, 126.0, 30.0, 30.0 ],
                                     "varname": "in"
                                 }
@@ -1365,13 +1406,48 @@
                             },
                             {
                                 "box": {
-                                    "id": "obj-34",
-                                    "linecount": 2,
+                                    "id": "obj-10",
                                     "maxclass": "newobj",
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "multichannelsignal" ],
-                                    "patching_rect": [ 80.0, 200.0, 100.0, 0.0 ],
+                                    "patching_rect": [ 80.0, 200.0, 148.0, 22.0 ],
+                                    "text": "mc.resize~ 0 @replicate 1",
+                                    "varname": "resize[1]"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "obj-23",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "multichannelsignal" ],
+                                    "patching_rect": [ 80.0, 200.0, 148.0, 22.0 ],
+                                    "text": "mc.resize~ 0 @replicate 1",
+                                    "varname": "resize[2]"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "obj-26",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "multichannelsignal" ],
+                                    "patching_rect": [ 80.0, 200.0, 148.0, 22.0 ],
+                                    "text": "mc.resize~ 0 @replicate 1",
+                                    "varname": "resize[3]"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "obj-46",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "multichannelsignal" ],
+                                    "patching_rect": [ 80.0, 200.0, 148.0, 22.0 ],
                                     "text": "mc.resize~ 0 @replicate 1",
                                     "varname": "resize"
                                 }
@@ -1386,7 +1462,7 @@
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-34", 0 ],
+                                    "destination": [ "obj-46", 0 ],
                                     "source": [ "obj-12", 0 ]
                                 }
                             },
@@ -1479,7 +1555,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-2", 0 ],
-                                    "source": [ "obj-34", 0 ]
+                                    "source": [ "obj-46", 0 ]
                                 }
                             },
                             {
@@ -1608,7 +1684,7 @@
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
-                    "outlettype": [ "" ],
+                    "outlettype": [ "multichannelsignal" ],
                     "patching_rect": [ 39.0, 311.0, 25.0, 25.0 ]
                 }
             },
