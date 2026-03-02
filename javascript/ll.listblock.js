@@ -690,6 +690,8 @@ function onclick(x,y,but,mod1,shift,capslock,option,mod2) {
 }
 onclick.local = 1; //private
 function ondrag(x,y,but,cmd,shift,capslock,option,ctrl) {
+	if(ccm == "menu" || ccm == "num" || ccm == "text") return;
+
 	if(rows === 0) return;
 
 	x = ccx;
