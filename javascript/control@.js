@@ -150,7 +150,8 @@ function allpars() {
         for (let i = 1; i < p_len; i++) {
             //post(`::${act_name}::llc_${i}`, "props", p, ar[i],"\n");
             messnamed(
-                `::${act_name}::llc_${actpars["input_name"][i]}`,
+				`::${act_name}::llc_${i}`,
+                //`::${act_name}::llc_${actpars["input_name"][i]}`,
                 "props",
                 `c${i}`,
                 p,
@@ -163,6 +164,13 @@ function allpars() {
         windowbar_obj.message("set_wind", "location", ar);
     else if (p === "routingW") 
         windowbar_obj.message("set_wind", "visible", ar);
+    else if (p === "output_menu") {
+    	//post("output_menu",ar,"\n");
+		let modesfix1 = ["none", "none", "text", "text", "tog_0_1", "num_1.2", "num_1.2", "menu"];
+		let modesfix2 = ["menu", "num_1.2","num_1.2", "num_1.2", "num_1.2"];
+		if (ar == 0) listblock_obj.message("modes",[...modesfix1, "menu", "num", ...modesfix2]);
+		if (ar == 2) listblock_obj.message("modes",[...modesfix1, "num", "num", ...modesfix2]);
+    }
 }
 
 function incoming(...args){ // from control@ source (midi, keys, ppooll, OSC, etc)
@@ -238,8 +246,11 @@ function new_name(n) { //push actpars
 // handle old input => send param changes to ll_fastforward llc's and set in_lo_hi
 function old_input(param, ...args){
 	// eg. send ::control@1::llc_q 1
+	//post(actpars["input_name"],actpars["input_name"].indexOf(param),"\n");
+	//let indx = actpars["input_name"].indexOf(param);
     messnamed(
-        `::${act_name}::llc_${param}`,
+        `::${act_name}::llc_${actpars["input_name"].indexOf(param)}`,
+		//`::${act_name}::llc_${param}`,
         ...args
     ); //goes to the send-abstractions
 
@@ -284,14 +295,16 @@ function new_mode(current_modes) {
             return; // mode did not change
 
         // remove mode
-        if(llc) sp.remove(llc);
-
+        if(llc){
+			sp.remove(llc);
+        	post("remove",i,"\n");
+        } 
         // create mode
         let c = sp.newdefault(
             30,
             i * 30,
             `llc.${mode}`,
-            actpars["input_name"][i],
+            i, //actpars["input_name"][i],
             act_name,
         );
         c.varname = `c${i}`
@@ -309,7 +322,8 @@ function new_mode(current_modes) {
         // initalize row props
         for (let k of load_order) {
             messnamed(
-                `::${act_name}::llc_${actpars["input_name"][i]}`,
+				`::${act_name}::llc_${i}`,
+                //`::${act_name}::llc_${actpars["input_name"][i]}`,
                 "props",
                 `c${i}`,
                 k,
@@ -325,7 +339,6 @@ function new_mode(current_modes) {
 	let len = actpars["input_name"].length - 1;
     routing_sizes(len);
 	
-    // TODO: get send_back ?
 }
 
 // _________________________________________________________specials
@@ -533,10 +546,14 @@ function select(s) {
 
 function delete_row(s) {
     for (let k in defaults) {
+		//post("del",k,"\n");
         let a = actpars[k].slice(0); //copy array to keep old actpars for now
         a.splice(s, 1);
         ap.getnamed(k).message(a);
     }
+	let len = actpars["input_name"].length; //ap.getnamed("input_name").length;
+	//post(len);
+	routing_sizes(len);
 }
 
 // _______________________________________________routing_window
@@ -582,10 +599,17 @@ function routing_sizes(len) {
 }
 
 function update_header_text(){
+	let actparlist = ["act", "par", "listit"];
+	if (actpars["output_menu"] == 2) actparlist = ["midi_type", "val1", "val2"];
+	if (actpars["output_menu"] == 1) actparlist = ["ignored", "ignored", "ignored"];
     try{
         listblock_obj.message(
             "header_text", 
-            [...header_fix, ...ll_global.llc_modes[actpars.modes[sel]]]
+			["in_lo", "in_hi", "input_name", "name_usr", "ON",  "in_min", "in_max",
+    		...actparlist,
+    		"mode",
+			...ll_global.llc_modes[actpars.modes[sel]]]
+            //[...header_fix, ...ll_global.llc_modes[actpars.modes[sel]]]
         );
     }catch(_){}
 }
@@ -637,6 +661,7 @@ function fill_menu(col, sel) {
             );
 		
     } else if (col === 8) {
+		if (actpars["output_menu"] > 0) return;
         let selact = actpars["acts"][sel];
         let param_list = ["-no-"];
         
@@ -678,8 +703,10 @@ function reset() {
     
     //ap.getnamed("list_inputs_spread").setvalueof(0);
     ap.getnamed("list_inputs").setvalueof("_");
+	ap.getnamed("ignored").setvalueof("_");
 	ap.getnamed("send_back").setvalueof(0);
     ap.getnamed("input_menu").setvalueof("midi")
+	ap.getnamed("output_menu").setvalueof(0)
 
     getTopButtons().reset()
     getTopButtons().clear()

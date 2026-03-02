@@ -169,7 +169,7 @@ mgraphics.relative_coords = 0;
 mgraphics.autofill = 0;
 				
 function paint(){  // ________________________________  draw 
-	//post("val",val,"\n");		
+	//post("paint val",val,"\n");		
 		mgraphics.select_font_face((fontfamily = "Arial"));
 
 	let oncolor, bgcolor;
@@ -182,6 +182,7 @@ function paint(){  // ________________________________  draw
 		if (multiline) mgraphics.rectangle(0,j*boxh/amount,boxw,boxh/amount+j*boxh/amount);
 		else mgraphics.rectangle(col_pos[j],0, col_pos[j+1]-col_pos[j], boxh);
 		mgraphics.stroke_preserve();
+		
 		if (val[j] == 1){
 			mgraphics.set_source_rgba(oncolor);
 			txt_color = brightness(oncolor);
@@ -335,12 +336,15 @@ function bang()
 
 function getvalueof()
 {
+	//post("getvo",val,"ov",out_val,"\n");
 	return out_val;
 }
 function setvalueof()
 {
+
 	let a = arrayfromargs(arguments);
-	if (output_click) val[a[0]-1] = a[1];
+		//post("setvo1",val,"\n",a,"o",output_click,"\n");
+	if (output_click) ;//val[a[0]-1] = a[1];
 	else val = a;
 }
 

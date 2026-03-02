@@ -1,5 +1,5 @@
 {
-    "window": [ 391, 291, 580, 339 ],
+    "window": [ 306, 431, 495, 479 ],
     "sendbackIPW": {
         "patching_rect": [ 60, 16, 94, 16 ],
         "hidden": 1,
@@ -189,7 +189,7 @@
     },
     "send_back_light": {
         "patching_rect": [ 99, 32, 17, 16 ],
-        "hidden": 0,
+        "hidden": 1,
         "bgcolor": [ 0.75, 0.75, 0.75, 1 ],
         "bgoncolor": [ 0.752941, 0.023529, 0.247059, 1 ],
         "fontsize": 12,
