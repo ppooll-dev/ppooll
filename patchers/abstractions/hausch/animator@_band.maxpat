@@ -2875,7 +2875,7 @@
 			}
 , 			{
 				"name" : "animator@_pfft.maxpat",
-				"bootpath" : "/Applications/Max 6.1/Cycling '74/ppooll/abstractions/clemens hausch",
+				"bootpath" : "/Applications/Max 6.1/Cycling '74/ppooll/abstractions/hausch",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
