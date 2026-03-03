@@ -248,11 +248,16 @@ function old_input(param, ...args){
 	// eg. send ::control@1::llc_q 1
 	//post(actpars["input_name"],actpars["input_name"].indexOf(param),"\n");
 	//let indx = actpars["input_name"].indexOf(param);
-    messnamed(
-        `::${act_name}::llc_${actpars["input_name"].indexOf(param)}`,
-		//`::${act_name}::llc_${param}`,
-        ...args
-    ); //goes to the send-abstractions
+	for (i in actpars["input_name"]) {
+		if (actpars["input_name"][i] == param) 
+	    	messnamed(
+	        	`::${act_name}::llc_${i}`,
+	     	   ...args
+	    ); //goes to the send-abstractions
+			//post(i,param);
+	}
+
+
 
     if(args.length > 1)
         return;
@@ -424,7 +429,7 @@ const getTopButtons = () => ({
             actpars[k].splice(sel, 0, actpars[k][sel]);
             ap.getnamed(k).message(actpars[k]);
         }
-        routing_sizes(listlength + 1);
+        routing_sizes(listlength);
     },
     delete: (v) => {
         delete_row(sel);
