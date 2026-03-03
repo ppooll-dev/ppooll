@@ -103,6 +103,7 @@ const c_in_menu = {
     "signal~": ["ll.~2control", "chans"],
     "live.ppooll": "ll.live2control@",
 };
+var input_maxobj;
 
 // _______________________________________________main functions
 function actname(an) {
@@ -114,6 +115,7 @@ function actname(an) {
     learn_gate = tp.getnamed("receives").subpatcher().getnamed("learn_gate");
     listblock_obj = rp.getnamed("listblock");
     windowbar_obj = rp.getnamed("window_bar");
+	input_maxobj = tp.getnamed("in");
 	rp.wind.hastitlebar = 0;	
 	rp.window("flags","nogrow");
 	rp.window("exec");
@@ -139,24 +141,23 @@ function allpars() {
 	//post("allpars",p,"value:",ar,"\n");
     if (p === "modes" && ar !== actpars[p]) 
         new_mode(ar); // create the llc. object if modes list changed "_ scale xt random"
+	
+	//post("allpars",p,"invalue:",ar,"old",actpars[p],"comp",JSON.stringify(ar) == JSON.stringify(actpars[p]),"\n");
 
     actpars[p] = ar;
 
-    if (Object.keys(defaults).includes(p)) {
+    if (Object.keys(defaults).includes(p) && p!="in_lo" && p!="in_hi") {
 		let p_len = actpars["input_name"].length;
         update_header_text()
         listblock_obj.message("bang"); //update listblock
-		
+	
         for (let i = 1; i < p_len; i++) {
             //post(`::${act_name}::llc_${i}`, "props", p, ar[i],"\n");
             messnamed(
 				`::${act_name}::llc_${i}`,
-                //`::${act_name}::llc_${actpars["input_name"][i]}`,
-                "props",
-                `c${i}`,
                 p,
                 ar[i]
-            ); //goes to the send-abstractions
+            ); //properties to the send-abstractions
         }
 		//routing_sizes(p_len);
         if (p === "acts" || p === "pars") acts_pars();
@@ -247,16 +248,8 @@ function new_name(n) { //push actpars
 function old_input(param, ...args){
 	// eg. send ::control@1::llc_q 1
 	//post(actpars["input_name"],actpars["input_name"].indexOf(param),"\n");
-	//let indx = actpars["input_name"].indexOf(param);
-	for (i in actpars["input_name"]) {
-		if (actpars["input_name"][i] == param) 
-	    	messnamed(
-	        	`::${act_name}::llc_${i}`,
-	     	   ...args
-	    ); //goes to the send-abstractions
-			//post(i,param);
-	}
-
+	
+	messnamed(`::${act_name}::llc_${param}`, ...args); //goes to maybe multiple send-abstractions
 
 
     if(args.length > 1)
@@ -309,15 +302,10 @@ function new_mode(current_modes) {
             30,
             i * 30,
             `llc.${mode}`,
-            i, //actpars["input_name"][i],
+            i,
             act_name,
         );
         c.varname = `c${i}`
-
-        // need to set c${i} in llc.base_ to get correct row "props"
-        const this_base = sp.getnamed(`c${i}`).subpatcher().getnamed("base");
-        if(this_base)
-            this_base.subpatcher().getnamed("route_c_id").message(`c${i}`)
 
         // set width
         let r = c.rect;
@@ -328,9 +316,6 @@ function new_mode(current_modes) {
         for (let k of load_order) {
             messnamed(
 				`::${act_name}::llc_${i}`,
-                //`::${act_name}::llc_${actpars["input_name"][i]}`,
-                "props",
-                `c${i}`,
                 k,
                 actpars[k][i]
             );
@@ -398,9 +383,9 @@ function input_menu(s) {
         inp_patch = c_in_menu[s];
     
     tp.remove(tp.getnamed("in"));
-    let inp = tp.newdefault(140, 100, inp_patch);
-    inp.varname = "in";
-    tp.connect(inp, 0, tp.getnamed("main_js"), 0);
+    input_maxobj = tp.newdefault(140, 100, inp_patch);
+    input_maxobj.varname = "in";
+    tp.connect(input_maxobj, 0, tp.getnamed("main_js"), 0);
 }
 
 function savebang() {
@@ -408,6 +393,16 @@ function savebang() {
     if (rp.getnamed("lllbnum")) rp.remove(rp.getnamed("lllbnum"));
     if (rp.getnamed("llbmenu")) rp.remove(rp.getnamed("llbmenu"));
     if (rp.getnamed("lllbtext")) rp.remove(rp.getnamed("lllbtext"));
+}
+
+function sendback(){
+	
+	if (actpars["send_back"] && input_maxobj) {
+		//post("sendback",arrayfromargs(arguments),"on?",actpars["send_back"],input_maxobj.subpatcher().getnamed("sendbackO"),"\n");
+		let sendbackO = input_maxobj.subpatcher().getnamed("sendbackO");
+		sendbackO.message(arrayfromargs(arguments));
+	}
+	//.subpatcher().getnamed("sendbackO")
 }
 
 // _______________________________________________routing_buttons

@@ -234,7 +234,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 426.6666793823242, 9.333333611488342, 72.0, 19.0 ],
-                    "restore": [ 103, 705, 833, 783 ],
+                    "restore": [ 103, 705, 833, 765 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -301,7 +301,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 260.0, 213.0, 66.0, 19.0 ],
-                    "restore": [ 0, 0, 0, 0 ],
+                    "restore": [ 0, 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -641,7 +641,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 17.0, 120.0, 48.0, 19.0 ],
-                    "restore": [ 1 ],
+                    "restore": [ 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -1342,7 +1342,7 @@
                                                                     "allowdrag": 0,
                                                                     "fontsize": 9.0,
                                                                     "id": "obj-14",
-                                                                    "items": [ "AU DLS Synth 1", ",", "from Max 1", ",", "from Max 2" ],
+                                                                    "items": [ "AU DLS Synth 1", ",", "from Max 1", ",", "from Max 2", ",", "Komplete Audio 6 MK2" ],
                                                                     "maxclass": "umenu",
                                                                     "numinlets": 1,
                                                                     "numoutlets": 3,
@@ -3063,7 +3063,7 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 203.0, 98.0, 998.0, 531.0 ],
+                                        "rect": [ 661.0, 416.0, 998.0, 531.0 ],
                                         "boxes": [
                                             {
                                                 "box": {
@@ -3103,7 +3103,7 @@
                                                             "modernui": 1
                                                         },
                                                         "classnamespace": "box",
-                                                        "rect": [ 625.0, 321.0, 295.0, 448.0 ],
+                                                        "rect": [ 160.0, 673.0, 295.0, 448.0 ],
                                                         "boxes": [
                                                             {
                                                                 "box": {
@@ -3247,13 +3247,12 @@
                                             {
                                                 "box": {
                                                     "id": "obj-29",
-                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 544.0, 286.0, 101.0, 35.0 ],
-                                                    "text": "ll.pm listblock ll_tab @nofirst 1"
+                                                    "patching_rect": [ 561.5, 402.0, 225.0, 22.0 ],
+                                                    "text": "ll.pm listblock ll_tab sendback @nofirst 1"
                                                 }
                                             },
                                             {
@@ -3407,7 +3406,7 @@
                                                     "maxclass": "comment",
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
-                                                    "patching_rect": [ 822.0, 325.0, 65.0, 33.0 ],
+                                                    "patching_rect": [ 821.0, 342.0, 65.0, 33.0 ],
                                                     "text": "named:\nlearn_gate"
                                                 }
                                             },
@@ -3419,7 +3418,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "int" ],
                                                     "parameter_enable": 0,
-                                                    "patching_rect": [ 784.0, 363.0, 24.0, 24.0 ],
+                                                    "patching_rect": [ 837.0, 377.0, 24.0, 24.0 ],
                                                     "varname": "learn_gate"
                                                 }
                                             },
@@ -3430,7 +3429,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 784.0, 434.0, 83.0, 22.0 ],
+                                                    "patching_rect": [ 837.0, 448.0, 83.0, 22.0 ],
                                                     "text": "prepend learn"
                                                 }
                                             },
@@ -3441,7 +3440,7 @@
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 784.0, 400.0, 51.0, 22.0 ],
+                                                    "patching_rect": [ 837.0, 414.0, 51.0, 22.0 ],
                                                     "text": "gate"
                                                 }
                                             },
@@ -3452,7 +3451,7 @@
                                                     "numinlets": 0,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 816.0, 364.0, 52.0, 22.0 ],
+                                                    "patching_rect": [ 869.0, 378.0, 52.0, 22.0 ],
                                                     "text": "r act.out"
                                                 }
                                             },
@@ -4154,7 +4153,7 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 103.0, 705.0, 730.0, 78.0 ],
+                                        "rect": [ 103.0, 705.0, 730.0, 60.0 ],
                                         "toolbarvisible": 0,
                                         "boxes": [
                                             {
@@ -4629,7 +4628,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
                                                     "patching_rect": [ 680.0, -1.0, 46.0, 20.0 ],
-                                                    "text": "sel: 3",
+                                                    "text": "sel: 1",
                                                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                                                     "varname": "c_sel"
                                                 }
@@ -4693,9 +4692,9 @@
                                                     "outlettype": [ "", "", "", "" ],
                                                     "patching_rect": [ 860.0, 69.0, 65.0, 19.0 ],
                                                     "restore": {
-                                                        "listblock": [ "menu", 7, 1 ],
-                                                        "ll_tab": [ 12, 1 ],
-                                                        "lllbmenu": [ "act::title_menu" ]
+                                                        "listblock": [ "num", 6, 0 ],
+                                                        "ll_tab": [ 0 ],
+                                                        "lllbmenu": [ "audioON/OFF" ]
                                                     },
                                                     "text": "autopattr ap",
                                                     "varname": "ap"
@@ -4807,7 +4806,7 @@
                                                     "outlettype": [ "", "", "" ],
                                                     "outputcancel": 1,
                                                     "parameter_enable": 0,
-                                                    "patching_rect": [ 365.0, 48.0, 59.0, 14.0 ],
+                                                    "patching_rect": [ 425.0, 33.0, 59.0, 14.0 ],
                                                     "pattrmode": 1,
                                                     "prefix": "menu",
                                                     "varname": "lllbmenu"
@@ -4909,7 +4908,7 @@
                             },
                             {
                                 "box": {
-                                    "id": "obj-12",
+                                    "id": "obj-1",
                                     "maxclass": "newobj",
                                     "numinlets": 0,
                                     "numoutlets": 1,
@@ -4924,7 +4923,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-8", 0 ],
-                                    "source": [ "obj-12", 0 ]
+                                    "source": [ "obj-1", 0 ]
                                 }
                             },
                             {
@@ -5001,7 +5000,7 @@
                         "on/off": [ 1 ],
                         "osc_receive_port": [ 8000.0 ],
                         "output_menu": [ 0 ],
-                        "presets": [ 1 ],
+                        "presets": [ 0 ],
                         "routingW": [ 0 ],
                         "send_back": [ 0 ],
                         "send_back_light": [ 0 ],
@@ -5195,7 +5194,7 @@
                     "fontname": "Arial",
                     "hint": "midi_receive_port",
                     "id": "obj-26",
-                    "items": [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "to Max 1", ",", "to Max 2" ],
+                    "items": [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "to Max 1", ",", "to Max 2", ",", "Komplete Audio 6 MK2" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
