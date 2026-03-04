@@ -4,7 +4,7 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 1,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
@@ -53,7 +53,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 80.0, 84.0, 138.0, 22.0 ],
-                    "text": "togg val1 val2 split ramp"
+                    "text": "val1 val2 split ramp"
                 }
             },
             {
@@ -173,7 +173,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 1,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -478,6 +478,7 @@
                     "source": [ "obj-8", 0 ]
                 }
             }
-        ]
+        ],
+        "autosave": 0
     }
 }

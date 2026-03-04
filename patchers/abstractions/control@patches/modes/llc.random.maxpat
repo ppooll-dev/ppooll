@@ -31,8 +31,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 98.0, 61.0, 185.0, 22.0 ],
-                    "text": "random min max ignored ignored"
+                    "patching_rect": [ 98.0, 61.0, 141.0, 22.0 ],
+                    "text": "min max ignored ignored"
                 }
             },
             {

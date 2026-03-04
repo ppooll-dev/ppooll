@@ -43,7 +43,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 88.0, 57.0, 206.0, 22.0 ],
-                    "text": "valON val ON ignored ignored"
+                    "text": "val ON ignored ignored"
                 }
             },
             {
@@ -156,6 +156,7 @@
                     "source": [ "obj-5", 0 ]
                 }
             }
-        ]
+        ],
+        "autosave": 0
     }
 }

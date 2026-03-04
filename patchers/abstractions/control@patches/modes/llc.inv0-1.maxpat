@@ -52,8 +52,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 193.5, 71.0, 208.0, 22.0 ],
-                    "text": "inv0-1 thresh ignored ignored ignored"
+                    "patching_rect": [ 193.5, 71.0, 172.0, 22.0 ],
+                    "text": "thresh ignored ignored ignored"
                 }
             },
             {

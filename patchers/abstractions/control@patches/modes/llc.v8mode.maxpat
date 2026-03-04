@@ -4,7 +4,7 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 1,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
@@ -57,8 +57,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 203.0, 34.0, 145.0, 22.0 ],
-                    "text": "v8mode op1 op2 op3 op4"
+                    "patching_rect": [ 203.0, 34.0, 99.0, 22.0 ],
+                    "text": "op1 op2 op3 op4"
                 }
             },
             {

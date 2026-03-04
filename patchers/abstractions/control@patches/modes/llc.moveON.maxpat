@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 1546.0, -642.0, 1012.0, 851.0 ],
+        "rect": [ 134.0, 159.0, 1012.0, 851.0 ],
         "boxes": [
             {
                 "box": {
@@ -18,8 +18,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 109.0, 49.0, 205.0, 22.0 ],
-                    "text": "moveON val incdec lim_min lim_max"
+                    "patching_rect": [ 109.0, 49.0, 155.0, 22.0 ],
+                    "text": "val incdec lim_min lim_max"
                 }
             },
             {
@@ -633,6 +633,7 @@
                     "source": [ "obj-8", 0 ]
                 }
             }
-        ]
+        ],
+        "autosave": 0
     }
 }

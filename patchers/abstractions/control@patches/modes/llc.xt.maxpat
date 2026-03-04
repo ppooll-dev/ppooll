@@ -18,8 +18,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 96.5, 35.0, 51.0, 22.0 ],
-                    "text": "xt * + - -"
+                    "patching_rect": [ 96.5, 35.0, 38.0, 22.0 ],
+                    "text": "* + - -"
                 }
             },
             {

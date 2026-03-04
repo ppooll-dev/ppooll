@@ -29,8 +29,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 168.0, 70.0, 201.0, 22.0 ],
-                    "text": "bang! ignored directn thresh ignored"
+                    "patching_rect": [ 168.0, 70.0, 168.0, 22.0 ],
+                    "text": "ignored directn thresh ignored"
                 }
             },
             {
@@ -225,6 +225,7 @@
                     "source": [ "obj-54", 0 ]
                 }
             }
-        ]
+        ],
+        "autosave": 0
     }
 }

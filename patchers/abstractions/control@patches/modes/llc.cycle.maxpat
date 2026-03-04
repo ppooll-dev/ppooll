@@ -4,12 +4,12 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 1,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 127.0, 543.0, 505.0, 653.0 ],
+        "rect": [ 127.0, 393.0, 505.0, 653.0 ],
         "boxes": [
             {
                 "box": {
@@ -29,8 +29,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 163.0, 59.0, 153.0, 22.0 ],
-                    "text": "cycle min max split ignored"
+                    "patching_rect": [ 163.0, 59.0, 122.0, 22.0 ],
+                    "text": "min max split ignored"
                 }
             },
             {

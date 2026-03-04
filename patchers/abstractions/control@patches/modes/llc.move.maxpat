@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 132.0, 553.0, 450.0, 588.0 ],
+        "rect": [ 132.0, 458.0, 450.0, 588.0 ],
         "boxes": [
             {
                 "box": {
@@ -39,9 +39,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 110.5, 67.0, 212.0, 22.0 ],
-                    "presentation_linecount": 2,
-                    "text": "move incdec ignored lim_min lim_max"
+                    "patching_rect": [ 110.5, 67.0, 179.0, 22.0 ],
+                    "text": "incdec ignored lim_min lim_max"
                 }
             },
             {
@@ -579,6 +578,7 @@
                     "source": [ "obj-9", 0 ]
                 }
             }
-        ]
+        ],
+        "autosave": 0
     }
 }
