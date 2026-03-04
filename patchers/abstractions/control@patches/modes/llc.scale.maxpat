@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 639.0, 249.0, 529.0, 451.0 ],
+        "rect": [ 363.0, 277.0, 529.0, 451.0 ],
         "boxes": [
             {
                 "box": {
@@ -18,7 +18,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "bang" ],
-                    "patching_rect": [ 195.0, 17.0, 58.0, 22.0 ],
+                    "patching_rect": [ 195.5, 51.0, 58.0, 22.0 ],
                     "text": "loadbang"
                 }
             },
@@ -28,7 +28,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 239.0, 46.0, 204.0, 20.0 ],
+                    "patching_rect": [ 259.5, 52.0, 204.0, 20.0 ],
                     "text": "register labels for op1 opt2 opt3 opt4"
                 }
             },
@@ -39,7 +39,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 195.5, 73.0, 116.0, 22.0 ],
+                    "patching_rect": [ 195.5, 77.0, 116.0, 22.0 ],
                     "text": "min max log smooth"
                 }
             },
@@ -566,6 +566,7 @@
                     "source": [ "obj-9", 0 ]
                 }
             }
-        ]
+        ],
+        "autosave": 0
     }
 }
