@@ -1,0 +1,541 @@
+{
+    "patcher": {
+        "fileversion": 1,
+        "appversion": {
+            "major": 9,
+            "minor": 1,
+            "revision": 2,
+            "architecture": "x64",
+            "modernui": 1
+        },
+        "classnamespace": "rnbo",
+        "rect": [ 59.0, 119.0, 1000.0, 713.0 ],
+        "default_fontname": "Lato",
+        "title": "untitled",
+        "boxes": [
+            {
+                "box": {
+                    "id": "obj-5",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 392.0, 418.0, 36.0, 23.0 ],
+                    "rnbo_classname": "out",
+                    "rnbo_extra_attributes": {
+                        "comment": "",
+                        "meta": ""
+                    },
+                    "rnbo_serial": 3,
+                    "rnbo_uniqueid": "out_obj-5",
+                    "rnboinfo": {
+                        "needsInstanceInfo": 1,
+                        "argnames": {
+                            "index": {
+                                "attrOrProp": 2,
+                                "digest": "outlet number",
+                                "defaultarg": 1,
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 1,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "type": "number",
+                                "mandatory": 1
+                            },
+                            "comment": {
+                                "attrOrProp": 2,
+                                "digest": "mouse over comment",
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 1,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "type": "symbol"
+                            },
+                            "meta": {
+                                "attrOrProp": 2,
+                                "digest": "A JSON formatted string containing metadata for use by the exported code",
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 1,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "type": "symbol",
+                                "defaultValue": "",
+                                "label": "Metadata",
+                                "displayorder": 3
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "name": "in1",
+                                "type": [ "bang", "number", "list" ],
+                                "digest": "value sent to outlet with index 2",
+                                "displayName": "",
+                                "hot": 1,
+                                "docked": 0
+                            }
+                        ],
+                        "outputs": [],
+                        "helpname": "out",
+                        "aliasOf": "out",
+                        "classname": "out",
+                        "operator": 0,
+                        "versionId": 1131826829,
+                        "changesPatcherIO": 1
+                    },
+                    "text": "out 2"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-4",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 71.0, 418.0, 36.0, 23.0 ],
+                    "rnbo_classname": "out",
+                    "rnbo_extra_attributes": {
+                        "comment": "",
+                        "meta": ""
+                    },
+                    "rnbo_serial": 1,
+                    "rnbo_uniqueid": "out_obj-4",
+                    "rnboinfo": {
+                        "needsInstanceInfo": 1,
+                        "argnames": {
+                            "index": {
+                                "attrOrProp": 2,
+                                "digest": "outlet number",
+                                "defaultarg": 1,
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 1,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "type": "number",
+                                "mandatory": 1
+                            },
+                            "comment": {
+                                "attrOrProp": 2,
+                                "digest": "mouse over comment",
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 1,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "type": "symbol"
+                            },
+                            "meta": {
+                                "attrOrProp": 2,
+                                "digest": "A JSON formatted string containing metadata for use by the exported code",
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 1,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "type": "symbol",
+                                "defaultValue": "",
+                                "label": "Metadata",
+                                "displayorder": 3
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "name": "in1",
+                                "type": [ "bang", "number", "list" ],
+                                "digest": "value sent to outlet with index 1",
+                                "displayName": "",
+                                "hot": 1,
+                                "docked": 0
+                            }
+                        ],
+                        "outputs": [],
+                        "helpname": "out",
+                        "aliasOf": "out",
+                        "classname": "out",
+                        "operator": 0,
+                        "versionId": 1131826829,
+                        "changesPatcherIO": 1
+                    },
+                    "text": "out 1"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-3",
+                    "maxclass": "newobj",
+                    "numinlets": 0,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 293.0, 45.0, 118.0, 23.0 ],
+                    "rnbo_classname": "in",
+                    "rnbo_extra_attributes": {
+                        "meta": ""
+                    },
+                    "rnbo_serial": 3,
+                    "rnbo_uniqueid": "in_obj-3",
+                    "rnboinfo": {
+                        "needsInstanceInfo": 1,
+                        "argnames": {
+                            "index": {
+                                "attrOrProp": 2,
+                                "digest": "inlet number",
+                                "defaultarg": 1,
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 1,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "type": "number",
+                                "mandatory": 1
+                            },
+                            "comment": {
+                                "attrOrProp": 2,
+                                "digest": "mouse over comment",
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 1,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "type": "symbol"
+                            },
+                            "meta": {
+                                "attrOrProp": 2,
+                                "digest": "A JSON formatted string containing metadata for use by the exported code",
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 1,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "type": "symbol",
+                                "defaultValue": "",
+                                "label": "Metadata",
+                                "displayorder": 3
+                            }
+                        },
+                        "inputs": [],
+                        "outputs": [
+                            {
+                                "name": "out1",
+                                "type": [ "bang", "number", "list" ],
+                                "digest": "value from inlet with index 2",
+                                "displayName": "pans",
+                                "docked": 0
+                            }
+                        ],
+                        "helpname": "in",
+                        "aliasOf": "in",
+                        "classname": "in",
+                        "operator": 0,
+                        "versionId": 475235762,
+                        "changesPatcherIO": 1
+                    },
+                    "text": "in 2 @comment pans"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-2",
+                    "maxclass": "newobj",
+                    "numinlets": 0,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 71.0, 45.0, 114.0, 23.0 ],
+                    "rnbo_classname": "in",
+                    "rnbo_extra_attributes": {
+                        "meta": ""
+                    },
+                    "rnbo_serial": 1,
+                    "rnbo_uniqueid": "in_obj-2",
+                    "rnboinfo": {
+                        "needsInstanceInfo": 1,
+                        "argnames": {
+                            "index": {
+                                "attrOrProp": 2,
+                                "digest": "inlet number",
+                                "defaultarg": 1,
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 1,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "type": "number",
+                                "mandatory": 1
+                            },
+                            "comment": {
+                                "attrOrProp": 2,
+                                "digest": "mouse over comment",
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 1,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "type": "symbol"
+                            },
+                            "meta": {
+                                "attrOrProp": 2,
+                                "digest": "A JSON formatted string containing metadata for use by the exported code",
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 1,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "type": "symbol",
+                                "defaultValue": "",
+                                "label": "Metadata",
+                                "displayorder": 3
+                            }
+                        },
+                        "inputs": [],
+                        "outputs": [
+                            {
+                                "name": "out1",
+                                "type": [ "bang", "number", "list" ],
+                                "digest": "value from inlet with index 1",
+                                "displayName": "vols",
+                                "docked": 0
+                            }
+                        ],
+                        "helpname": "in",
+                        "aliasOf": "in",
+                        "classname": "in",
+                        "operator": 0,
+                        "versionId": 475235762,
+                        "changesPatcherIO": 1
+                    },
+                    "text": "in 1 @comment vols"
+                }
+            },
+            {
+                "box": {
+                    "code": "let vols : list = listin1;\r\nlet pans : list = listin2;\r\n\r\nfor(let i=0; i<16; i++){\r\n    \r\n    let base = vols[i] * 2;\r\n    let left = base * (1.0 - pans[i]);\r\n    let right = base * (pans[i]);\r\n    \r\n    let index = (i + 1) * 2\r\n    listout1 = [index - 2, left];\r\n    listout2 = [index - 1, right];\r\n}",
+                    "fontface": 0,
+                    "fontname": "<Monospaced>",
+                    "fontsize": 12.0,
+                    "id": "obj-1",
+                    "maxclass": "codebox",
+                    "numinlets": 2,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "" ],
+                    "patching_rect": [ 71.0, 90.0, 340.0, 313.0 ],
+                    "rnbo_classname": "codebox",
+                    "rnbo_extra_attributes": {
+                        "code": "let vols : list = listin1;\r\nlet pans : list = listin2;\r\n\r\nfor(let i=0; i<16; i++){\r\n    \r\n    let base = vols[i] * 2;\r\n    let left = base * (1.0 - pans[i]);\r\n    let right = base * (pans[i]);\r\n    \r\n    let index = (i + 1) * 2\r\n    listout1 = [index - 2, left];\r\n    listout2 = [index - 1, right];\r\n}",
+                        "hot": 1,
+                        "safemath": 1,
+                        "nocache": 0
+                    },
+                    "rnbo_serial": 8,
+                    "rnbo_uniqueid": "codebox_obj-1",
+                    "rnboinfo": {
+                        "needsInstanceInfo": 1,
+                        "argnames": {
+                            "reset": {
+                                "attrOrProp": 1,
+                                "digest": "Reset all state and params to initial values",
+                                "isalias": 0,
+                                "aliases": [],
+                                "attachable": 1,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "type": "bang"
+                            },
+                            "in1": {
+                                "attrOrProp": 1,
+                                "digest": "in1",
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 1,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "inlet": 1,
+                                "type": "list"
+                            },
+                            "in2": {
+                                "attrOrProp": 1,
+                                "digest": "in2",
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 1,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "inlet": 1,
+                                "type": "list"
+                            },
+                            "out1": {
+                                "attrOrProp": 1,
+                                "digest": "out1",
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 0,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "outlet": 1,
+                                "type": "list"
+                            },
+                            "out2": {
+                                "attrOrProp": 1,
+                                "digest": "out2",
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 0,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "outlet": 1,
+                                "type": "list"
+                            },
+                            "expr": {
+                                "attrOrProp": 2,
+                                "digest": "expr",
+                                "defaultarg": 1,
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 1,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "type": "symbol",
+                                "doNotShowInMaxInspector": 1
+                            },
+                            "hot": {
+                                "attrOrProp": 2,
+                                "digest": "Trigger computation on all inlets.",
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 1,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "type": "bool",
+                                "defaultValue": "false"
+                            },
+                            "safemath": {
+                                "attrOrProp": 2,
+                                "digest": "Use safe math expressions (e.g.: division by 0 will not crash).",
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 1,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "type": "bool",
+                                "defaultValue": "true"
+                            },
+                            "nocache": {
+                                "attrOrProp": 2,
+                                "digest": "Do not use parsing cache. This is only useful with very very big code sizes. Code generation will then take a looooong time.",
+                                "isalias": 0,
+                                "aliases": [],
+                                "settable": 1,
+                                "attachable": 0,
+                                "isparam": 0,
+                                "deprecated": 0,
+                                "touched": 0,
+                                "type": "bool",
+                                "defaultValue": "false"
+                            }
+                        },
+                        "inputs": [
+                            {
+                                "name": "in1",
+                                "type": "list",
+                                "digest": "in1",
+                                "hot": 1,
+                                "docked": 0
+                            },
+                            {
+                                "name": "in2",
+                                "type": "list",
+                                "digest": "in2",
+                                "docked": 0
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "name": "out1",
+                                "type": "list",
+                                "digest": "out1",
+                                "docked": 0
+                            },
+                            {
+                                "name": "out2",
+                                "type": "list",
+                                "digest": "out2",
+                                "docked": 0
+                            }
+                        ],
+                        "helpname": "codebox",
+                        "aliasOf": "expr",
+                        "classname": "codebox",
+                        "operator": 0,
+                        "versionId": 835263063,
+                        "changesPatcherIO": 0
+                    }
+                }
+            }
+        ],
+        "lines": [
+            {
+                "patchline": {
+                    "destination": [ "obj-4", 0 ],
+                    "source": [ "obj-1", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-5", 0 ],
+                    "source": [ "obj-1", 1 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-1", 0 ],
+                    "source": [ "obj-2", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-1", 1 ],
+                    "source": [ "obj-3", 0 ]
+                }
+            }
+        ]
+    }
+}

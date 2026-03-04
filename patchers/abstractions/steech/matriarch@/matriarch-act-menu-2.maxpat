@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 790.0, 498.0, 472.0, 390.0 ],
+        "rect": [ 793.0, 428.0, 472.0, 390.0 ],
         "openinpresentation": 1,
         "boxes": [
             {
@@ -154,10 +154,10 @@
                     "numoutlets": 0,
                     "patching_rect": [ 354.0, 88.0, 25.0, 18.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 18.0, 1.0, 27.0, 18.0 ],
+                    "presentation_rect": [ -1.0, 37.0, 46.0, 18.0 ],
                     "text": "1",
                     "textcolor": [ 1.0, 1.0, 1.0, 0.79 ],
-                    "textjustification": 2
+                    "textjustification": 1
                 }
             },
             {
@@ -218,7 +218,7 @@
                     "bgfillcolor_type": "color",
                     "fontsize": 8.0,
                     "id": "obj-118",
-                    "items": [ "no", ",", "ho_st1", ",", "sinus1", ",", "sinus2", ",", "matriarch@1" ],
+                    "items": [ "no", ",", "ho_st1", ",", "matriarch@1", ",", "sinus1", ",", "miVerb1", ",", "sinus2", ",", "sinus3" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -228,7 +228,7 @@
                     "patching_rect": [ 33.0, 157.0, 45.0, 17.0 ],
                     "pattrmode": 1,
                     "presentation": 1,
-                    "presentation_rect": [ 0.0, 16.0, 45.0, 17.0 ],
+                    "presentation_rect": [ 0.0, 1.0, 45.0, 17.0 ],
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
             },
@@ -254,7 +254,7 @@
                     "patching_rect": [ 80.0, 157.0, 45.0, 17.0 ],
                     "pattrmode": 1,
                     "presentation": 1,
-                    "presentation_rect": [ 0.0, 34.0, 45.0, 17.0 ],
+                    "presentation_rect": [ 0.0, 19.0, 45.0, 17.0 ],
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
             }
