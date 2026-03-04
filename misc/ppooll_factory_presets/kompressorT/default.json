@@ -20,7 +20,6 @@
     "source": {
         "patching_rect": [ 43.5, 95, 67.5, 22 ],
         "hidden": 0,
-        "applycolors": 0,
         "bgfillcolor": {
             "type": "color",
             "color1": [ 0.301961, 0.301961, 0.301961, 1 ],
@@ -31,7 +30,7 @@
             "proportion": 0.5
         },
         "color": [ 1, 0, 0, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "elementcolor": [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
         "fontsize": 12,
         "textcolor": [ 0, 0, 0, 1 ]
     },
@@ -39,13 +38,12 @@
         "patching_rect": [ 1, 115, 201, 8 ],
         "hidden": 0,
         "bgcolor": [ 0, 0, 0, 1 ],
-        "peakcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "peakcolor": [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
         "slidercolor": [ 1, 0, 0, 1 ]
     },
     "SCpar": {
         "patching_rect": [ 150, 74, 52, 21 ],
         "hidden": 0,
-        "applycolors": 0,
         "bgfillcolor": {
             "type": "color",
             "color1": [ 0.301961, 0.301961, 0.301961, 1 ],
@@ -56,14 +54,13 @@
             "proportion": 0.5
         },
         "color": [ 1, 0, 0, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "elementcolor": [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
         "fontsize": 11,
         "textcolor": [ 0, 0, 0, 1 ]
     },
     "SCact": {
         "patching_rect": [ 100, 74, 52, 21 ],
         "hidden": 0,
-        "applycolors": 0,
         "bgfillcolor": {
             "type": "color",
             "color1": [ 0.301961, 0.301961, 0.301961, 1 ],
@@ -74,7 +71,7 @@
             "proportion": 0.5
         },
         "color": [ 1, 0, 0, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "elementcolor": [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
         "fontsize": 11,
         "textcolor": [ 0, 0, 0, 1 ]
     },
@@ -134,7 +131,7 @@
         "textcolor": [ 1, 1, 1, 1 ],
         "textcolornofocus": [ 1, 1, 1, 1 ]
     },
-    "thresh[1]": {
+    "look": {
         "patching_rect": [ 100, 35, 100, 20 ],
         "hidden": 0,
         "bgcolor": [ 0, 0, 0, 1 ],
@@ -175,6 +172,7 @@
     },
     "presets": {
         "patching_rect": [ 87, 0, 113, 15 ],
-        "hidden": 0
+        "hidden": 0,
+        "boxsize": 13
     }
 }
