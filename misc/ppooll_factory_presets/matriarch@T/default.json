@@ -1,5 +1,5 @@
 {
-    "window": [ 171, 374, 427, 540 ],
+    "window": [ 343, 381, 596, 549 ],
     "input_meter": {
         "patching_rect": [ 0, 70, 70, 398 ],
         "hidden": 0,
@@ -54,7 +54,7 @@
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
     "toggleVolPan": {
-        "patching_rect": [ 3, 51, 67, 17 ],
+        "patching_rect": [ 3, 51, 64, 17 ],
         "hidden": 0,
         "bgcolor": [ 0.992156862745098, 0.501960784313725, 0.031372549019608, 1 ],
         "bgoncolor": [ 0.427450980392157, 0.843137254901961, 1, 1 ],
@@ -84,58 +84,58 @@
     },
     "row[5]": {
         "patching_rect": [ 0, 166, 806, 31 ],
-        "hidden": 0
+        "hidden": 1
     },
     "row[6]": {
         "patching_rect": [ 0, 190, 806, 31 ],
-        "hidden": 0
+        "hidden": 1
     },
     "row[7]": {
         "patching_rect": [ 0, 214, 806, 31 ],
-        "hidden": 0
+        "hidden": 1
     },
     "row[8]": {
         "patching_rect": [ 0, 238, 806, 31 ],
-        "hidden": 0
+        "hidden": 1
     },
     "row[9]": {
         "patching_rect": [ 0, 262, 806, 31 ],
-        "hidden": 0
+        "hidden": 1
     },
     "row[10]": {
         "patching_rect": [ 0, 286, 806, 31 ],
-        "hidden": 0
+        "hidden": 1
     },
     "row[11]": {
         "patching_rect": [ 0, 310, 806, 31 ],
-        "hidden": 0
+        "hidden": 1
     },
     "row[12]": {
         "patching_rect": [ 0, 334, 806, 31 ],
-        "hidden": 0
+        "hidden": 1
     },
     "row[13]": {
         "patching_rect": [ 0, 358, 806, 31 ],
-        "hidden": 0
+        "hidden": 1
     },
     "row[14]": {
         "patching_rect": [ 0, 382, 806, 31 ],
-        "hidden": 0
+        "hidden": 1
     },
     "row[15]": {
         "patching_rect": [ 0, 406, 806, 31 ],
-        "hidden": 0
+        "hidden": 1
     },
     "row[16]": {
         "patching_rect": [ 0, 430, 806, 31 ],
-        "hidden": 0
+        "hidden": 1
     },
     "routing": {
         "patching_rect": [ 71, 18, 752, 54 ],
         "hidden": 0
     },
     "num_inputs": {
-        "patching_rect": [ 3, 27, 33, 22 ],
+        "patching_rect": [ 3, 27, 31, 22 ],
         "hidden": 0,
         "bgcolor": [ 0.992156862745098, 1, 0, 1 ],
         "fontsize": 12,
@@ -144,7 +144,7 @@
         "tricolor": [ 0.992156862745098, 1, 0, 1 ]
     },
     "num_outputs": {
-        "patching_rect": [ 37, 27, 33, 22 ],
+        "patching_rect": [ 35, 27, 32, 22 ],
         "hidden": 0,
         "bgcolor": [ 0.992156862745098, 1, 0, 1 ],
         "fontsize": 12,

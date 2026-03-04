@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 171.0, 374.0, 256.0, 166.0 ],
+        "rect": [ 343.0, 381.0, 253.0, 168.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "matriarch@1",
         "boxes": [
@@ -64,7 +64,7 @@
                     "numoutlets": 2,
                     "outlettype": [ "", "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 37.0, 27.0, 33.0, 22.0 ],
+                    "patching_rect": [ 35.0, 27.0, 32.0, 22.0 ],
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "tricolor": [ 0.992156862745098, 1.0, 0.0, 1.0 ],
                     "varname": "num_outputs"
@@ -83,7 +83,7 @@
                     "numoutlets": 2,
                     "outlettype": [ "", "bang" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 3.0, 27.0, 33.0, 22.0 ],
+                    "patching_rect": [ 3.0, 27.0, 31.0, 22.0 ],
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "tricolor": [ 0.992156862745098, 1.0, 0.0, 1.0 ],
                     "varname": "num_inputs"
@@ -116,7 +116,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 580.0, 521.0, 270.0, 22.0 ],
-                    "restore": [ "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-" ],
+                    "restore": [ "no~-no-" ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -153,6 +153,7 @@
                     "clickthrough": 0,
                     "enablehscroll": 0,
                     "enablevscroll": 0,
+                    "hidden": 1,
                     "id": "obj-391",
                     "lockeddragscroll": 0,
                     "lockedsize": 0,
@@ -174,6 +175,7 @@
                     "clickthrough": 0,
                     "enablehscroll": 0,
                     "enablevscroll": 0,
+                    "hidden": 1,
                     "id": "obj-390",
                     "lockeddragscroll": 0,
                     "lockedsize": 0,
@@ -195,6 +197,7 @@
                     "clickthrough": 0,
                     "enablehscroll": 0,
                     "enablevscroll": 0,
+                    "hidden": 1,
                     "id": "obj-389",
                     "lockeddragscroll": 0,
                     "lockedsize": 0,
@@ -216,6 +219,7 @@
                     "clickthrough": 0,
                     "enablehscroll": 0,
                     "enablevscroll": 0,
+                    "hidden": 1,
                     "id": "obj-388",
                     "lockeddragscroll": 0,
                     "lockedsize": 0,
@@ -237,6 +241,7 @@
                     "clickthrough": 0,
                     "enablehscroll": 0,
                     "enablevscroll": 0,
+                    "hidden": 1,
                     "id": "obj-387",
                     "lockeddragscroll": 0,
                     "lockedsize": 0,
@@ -258,6 +263,7 @@
                     "clickthrough": 0,
                     "enablehscroll": 0,
                     "enablevscroll": 0,
+                    "hidden": 1,
                     "id": "obj-386",
                     "lockeddragscroll": 0,
                     "lockedsize": 0,
@@ -279,6 +285,7 @@
                     "clickthrough": 0,
                     "enablehscroll": 0,
                     "enablevscroll": 0,
+                    "hidden": 1,
                     "id": "obj-385",
                     "lockeddragscroll": 0,
                     "lockedsize": 0,
@@ -300,6 +307,7 @@
                     "clickthrough": 0,
                     "enablehscroll": 0,
                     "enablevscroll": 0,
+                    "hidden": 1,
                     "id": "obj-384",
                     "lockeddragscroll": 0,
                     "lockedsize": 0,
@@ -321,6 +329,7 @@
                     "clickthrough": 0,
                     "enablehscroll": 0,
                     "enablevscroll": 0,
+                    "hidden": 1,
                     "id": "obj-383",
                     "lockeddragscroll": 0,
                     "lockedsize": 0,
@@ -342,6 +351,7 @@
                     "clickthrough": 0,
                     "enablehscroll": 0,
                     "enablevscroll": 0,
+                    "hidden": 1,
                     "id": "obj-382",
                     "lockeddragscroll": 0,
                     "lockedsize": 0,
@@ -363,6 +373,7 @@
                     "clickthrough": 0,
                     "enablehscroll": 0,
                     "enablevscroll": 0,
+                    "hidden": 1,
                     "id": "obj-381",
                     "lockeddragscroll": 0,
                     "lockedsize": 0,
@@ -384,6 +395,7 @@
                     "clickthrough": 0,
                     "enablehscroll": 0,
                     "enablevscroll": 0,
+                    "hidden": 1,
                     "id": "obj-380",
                     "lockeddragscroll": 0,
                     "lockedsize": 0,
@@ -498,7 +510,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 836.0, 135.0, 394.0, 573.0 ],
+                        "rect": [ 870.0, 138.0, 394.0, 573.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -3257,7 +3269,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "int" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 3.0, 51.0, 67.0, 17.0 ],
+                    "patching_rect": [ 3.0, 51.0, 64.0, 17.0 ],
                     "text": "VOLUME",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "texton": "PANNING",
@@ -3275,7 +3287,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 0.0, 14.0, 74.0, 15.0 ],
-                    "text": " # INs        # OUTs",
+                    "text": "  # INs     # OUTs",
                     "textcolor": [ 0.992156862745098, 1.0, 0.0, 1.0 ]
                 }
             },
@@ -3322,9 +3334,10 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 880.0, 42.0, 100.0, 22.0 ],
                     "saved_object_attributes": {
-                        "client_rect": [ 1176, 213, 1791, 873 ],
+                        "client_rect": [ 400, 495, 1195, 847 ],
                         "parameter_enable": 0,
-                        "parameter_mappable": 0
+                        "parameter_mappable": 0,
+                        "storage_rect": [ 583, 68, 1034, 196 ]
                     },
                     "text": "pattrstorage pat",
                     "varname": "pat"

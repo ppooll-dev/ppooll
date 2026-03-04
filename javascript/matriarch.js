@@ -68,8 +68,12 @@ function num_outputs(num){
 }
 
 function wsize(){
-    let width = 72 + (n_outputs * 46);
-    let height = 70 + (n_inputs * 24);
+    for(let i=0; i<16; i++){
+        act_patcher.getnamed(`row[${i + 1}]`).hidden = i >= n_inputs;
+    }
+
+    let width = 69 + (n_outputs * 46);
+    let height = 72 + (n_inputs * 24);
     let out_meter_size = 28 + (n_inputs * 24);
     act_patcher.message("script", "size", "out_meter", 745, out_meter_size);
 
