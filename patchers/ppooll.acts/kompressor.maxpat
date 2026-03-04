@@ -115,7 +115,7 @@
                     "slidermin": -60.0,
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                     "textcolornofocus": [ 1.0, 1.0, 1.0, 1.0 ],
-                    "varname": "thresh[1]"
+                    "varname": "look"
                 }
             },
             {
@@ -268,7 +268,7 @@
                     "fontname": "Arial",
                     "fontsize": 11.0,
                     "id": "obj-61",
-                    "items": [ "no", ",", "ho_st1", ",", "kompressor1" ],
+                    "items": [ "no", ",", "buffer_host1", ",", "karma@1", ",", "kompressor1" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -2076,7 +2076,7 @@
                         "ll.blues::levels": 5
                     },
                     "saved_object_attributes": {
-                        "client_rect": [ 100, 87, 860, 1046 ],
+                        "client_rect": [ 100, 95, 860, 948 ],
                         "parameter_enable": 0,
                         "parameter_mappable": 0,
                         "storage_rect": [ 430, 270, 1276, 999 ]
@@ -2135,6 +2135,7 @@
                         "SCpar": [ "-no-" ],
                         "attack": [ 0 ],
                         "gainReduction": [ 5.551115123125783e-16 ],
+                        "look": [ 0 ],
                         "makeup": [ 0.0 ],
                         "preset-ramp": [ 0.0 ],
                         "presets": [ 0 ],
@@ -2142,8 +2143,7 @@
                         "release": [ 0 ],
                         "source": [ 0 ],
                         "source_chan": [ 0.0 ],
-                        "thresh": [ 0.0 ],
-                        "thresh[1]": [ 0 ]
+                        "thresh": [ -19.59 ]
                     },
                     "text": "autopattr autopattr",
                     "varname": "autopattr"
