@@ -22,9 +22,16 @@ function reset_params(){
     var no_ = "no~-no-";
     var output_menus = [];
     var input_labels = [];
+
+    var vol_values = Array(16).fill(0.);
+    var pan_values = Array(16).fill(0.5);
+
     for(let i=0; i<16; i++) {
         output_menus.push(no_)
         input_labels.push(`in_${i+1}`)
+
+        act_patcher.getnamed(`vol_${i+1}`).message(...vol_values)
+        act_patcher.getnamed(`pan_${i+1}`).message(...pan_values)
     }
         
     act_patcher.getnamed("out_L").message(...output_menus)
@@ -32,13 +39,14 @@ function reset_params(){
 
     act_patcher.getnamed("in_labels").message(...input_labels)
 
-    messnamed(`::${act_name}::RESET_PARAMS`, 'bang');
+    // messnamed(`::${act_name}::RESET_PARAMS`, 'bang');
 
     n_inputs = 4;
     n_outputs = 4;
 
     act_patcher.getnamed("num_inputs").setvalueof(4)
     act_patcher.getnamed("num_outputs").setvalueof(4)
+
     // update_inputs()
 }
 
@@ -60,8 +68,12 @@ function num_outputs(num){
 }
 
 function wsize(){
-    let width = 72 + (n_outputs * 46);
-    let height = 70 + (n_inputs * 24);
+    for(let i=0; i<16; i++){
+        act_patcher.getnamed(`row[${i + 1}]`).hidden = i >= n_inputs;
+    }
+
+    let width = 69 + (n_outputs * 46);
+    let height = 72 + (n_inputs * 24);
     let out_meter_size = 28 + (n_inputs * 24);
     act_patcher.message("script", "size", "out_meter", 745, out_meter_size);
 
