@@ -618,8 +618,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 51.0, 133.0, 129.0, 22.0 ],
-                    "text": "sprintf set ::%s::llc_%s"
+                    "patching_rect": [ 51.0, 133.0, 143.0, 22.0 ],
+                    "text": "sprintf set ::%s::llc_p_%d"
                 }
             },
             {
