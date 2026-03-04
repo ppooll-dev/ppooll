@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 955.0, 107.0, 1115.0, 779.0 ],
+        "rect": [ 627.0, 96.0, 1115.0, 779.0 ],
         "boxes": [
             {
                 "box": {
@@ -1015,7 +1015,7 @@
                                                     "maxclass": "comment",
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
-                                                    "patching_rect": [ 37.0, 47.0, 356.0, 35.0 ],
+                                                    "patching_rect": [ 37.0, 47.0, 356.0, 33.0 ],
                                                     "text": "you need to select your attached dial from the \nport menu,"
                                                 }
                                             },
@@ -1036,7 +1036,7 @@
                                                     "numoutlets": 3,
                                                     "outlettype": [ "int", "", "" ],
                                                     "parameter_enable": 0,
-                                                    "patching_rect": [ 95.0, 105.0, 34.0, 17.0 ],
+                                                    "patching_rect": [ 95.0, 105.0, 34.0, 19.0 ],
                                                     "textcolor": [ 0.149, 0.149, 0.149, 1.0 ],
                                                     "varname": "midi_channels"
                                                 }
@@ -1058,7 +1058,7 @@
                                                     "numoutlets": 3,
                                                     "outlettype": [ "int", "", "" ],
                                                     "parameter_enable": 0,
-                                                    "patching_rect": [ 37.0, 79.0, 58.0, 17.0 ],
+                                                    "patching_rect": [ 37.0, 79.0, 58.0, 19.0 ],
                                                     "pattrmode": 1,
                                                     "textcolor": [ 0.149, 0.149, 0.149, 1.0 ],
                                                     "varname": "midi_receive_port"
@@ -1074,7 +1074,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "", "" ],
-                                                    "patching_rect": [ 502.0, 27.5, 69.0, 20.0 ],
+                                                    "patching_rect": [ 502.0, 27.5, 69.0, 22.0 ],
                                                     "save": [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
                                                     "text": "thispatcher",
                                                     "varname": "dial"
@@ -1437,7 +1437,7 @@
                                                     "maxclass": "comment",
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
-                                                    "patching_rect": [ 111.0, 95.0, 503.0, 35.0 ],
+                                                    "patching_rect": [ 111.0, 95.0, 503.0, 33.0 ],
                                                     "text": "if you want ppooll to send back to the osc-device,\nyou need to define the ip and port of the device in the subwindow appearing if you press"
                                                 }
                                             },
@@ -1451,7 +1451,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "", "" ],
-                                                    "patching_rect": [ 502.0, 27.5, 69.0, 20.0 ],
+                                                    "patching_rect": [ 502.0, 27.5, 69.0, 22.0 ],
                                                     "save": [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
                                                     "text": "thispatcher",
                                                     "varname": "osc"
@@ -1478,7 +1478,7 @@
                                                     "maxclass": "comment",
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
-                                                    "patching_rect": [ 43.0, 43.0, 356.0, 35.0 ],
+                                                    "patching_rect": [ 43.0, 43.0, 356.0, 33.0 ],
                                                     "text": "you need to select the \nport number"
                                                 }
                                             },
@@ -1503,7 +1503,7 @@
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 111.0, 130.0, 65.0, 15.0 ],
+                                                    "patching_rect": [ 111.0, 130.0, 65.0, 19.0 ],
                                                     "text": "sendback_IP",
                                                     "varname": "sendbackIPW"
                                                 }
@@ -1521,7 +1521,7 @@
                                                     "numoutlets": 2,
                                                     "outlettype": [ "", "bang" ],
                                                     "parameter_enable": 0,
-                                                    "patching_rect": [ 43.0, 78.0, 33.0, 17.0 ],
+                                                    "patching_rect": [ 43.0, 78.0, 33.0, 19.0 ],
                                                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                                                     "triangle": 0,
                                                     "tricolor": [ 0.75, 0.75, 0.75, 1.0 ],
@@ -1905,7 +1905,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 6.0, 98.0, 470.0, 33.0 ],
-                    "text": "the next line (labeled with \"port\") will be contextually filled with more selections.\nin this help-patch, select from the menu above to get more info on different inputs"
+                    "text": "the line below will be contextually filled with more selections.\nin this help-patch, select from the menu above to get more info on different inputs"
                 }
             },
             {

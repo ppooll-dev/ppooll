@@ -130,6 +130,7 @@ function actname(an) {
     if(args[2] && ll_global.state[args[2]]) {
         tp.getnamed("handle_my_control").subpatcher().getnamed("route").message(args[2]);
     }
+	routing_sizes(0);
 }
 // handle all control pattrstorage output
 //      listblock handles interactions, updated pattr lists
@@ -138,7 +139,7 @@ function allpars() {
     let ar = arrayfromargs(arguments);
     let p = ar.shift();
 	if (p === "client_remove") return;
-	// post("allpars",p,"value:",ar,"\n");
+	//post("allpars",p,"value:",ar,"\n");
     if (p === "modes" && ar !== actpars[p]) 
         new_mode(ar); // create the llc. object if modes list changed "_ scale xt random"
 	
@@ -146,9 +147,7 @@ function allpars() {
 
     actpars[p] = ar;
 
-    if(p === "in_lo" || p === "in_hi") {
-        listblock_obj.message("bang"); //update listblock
-    } else if (Object.keys(defaults).includes(p)) {
+    if (Object.keys(defaults).includes(p) && p!="in_lo" && p!="in_hi") {
 		let p_len = actpars["input_name"].length;
         update_header_text()
         listblock_obj.message("bang"); //update listblock
@@ -156,7 +155,7 @@ function allpars() {
         for (let i = 1; i < p_len; i++) {
             //post(`::${act_name}::llc_${i}`, "props", p, ar[i],"\n");
             messnamed(
-				`::${act_name}::llc_${i}`,
+				`::${act_name}::llc_p_${i}`,
                 p,
                 ar[i]
             ); //properties to the send-abstractions
@@ -165,10 +164,9 @@ function allpars() {
         if (p === "acts" || p === "pars") acts_pars();
     } else if (p === "routingPos")
         windowbar_obj.message("set_wind", "location", ar);
-    else if (p === "routingW") {
+    else if (p === "routingW") 
         windowbar_obj.message("set_wind", "visible", ar);
-        check_size();
-    } else if (p === "output_menu") {
+    else if (p === "output_menu") {
     	//post("output_menu",ar,"\n");
 		let modesfix1 = ["none", "none", "text", "text", "tog_0_1", "num_1.2", "num_1.2", "menu"];
 		let modesfix2 = ["menu", "num_1.2","num_1.2", "num_1.2", "num_1.2"];
@@ -298,7 +296,7 @@ function new_mode(current_modes) {
         // remove mode
         if(llc){
 			sp.remove(llc);
-        	post("remove",i,"\n");
+        	//post("remove",i,"\n");
         } 
         // create mode
         let c = sp.newdefault(
@@ -318,7 +316,7 @@ function new_mode(current_modes) {
         // initalize row props
         for (let k of load_order) {
             messnamed(
-				`::${act_name}::llc_${i}`,
+				`::${act_name}::llc_p_${i}`,
                 k,
                 actpars[k][i]
             );
@@ -337,6 +335,7 @@ function new_mode(current_modes) {
 // _________________________________________________________specials
 function acts_pars(s) {
     // ::act::par string and par_type
+	if (!actpars["acts"][1]) return;
     for (let j = 0; j <= listlength; j++) {
         actpars["act_par"][
             j
@@ -598,7 +597,6 @@ function routing_sizes(len) {
     let ms_init = [];
     for (let i = 0; i < len; i++) ms_init.push(0);
     ms.message(ms_init);
-	
 }
 
 function update_header_text(){
