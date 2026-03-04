@@ -138,7 +138,7 @@ function allpars() {
     let ar = arrayfromargs(arguments);
     let p = ar.shift();
 	if (p === "client_remove") return;
-	//post("allpars",p,"value:",ar,"\n");
+	// post("allpars",p,"value:",ar,"\n");
     if (p === "modes" && ar !== actpars[p]) 
         new_mode(ar); // create the llc. object if modes list changed "_ scale xt random"
 	
@@ -146,7 +146,9 @@ function allpars() {
 
     actpars[p] = ar;
 
-    if (Object.keys(defaults).includes(p) && p!="in_lo" && p!="in_hi") {
+    if(p === "in_lo" || p === "in_hi") {
+        listblock_obj.message("bang"); //update listblock
+    } else if (Object.keys(defaults).includes(p)) {
 		let p_len = actpars["input_name"].length;
         update_header_text()
         listblock_obj.message("bang"); //update listblock
@@ -163,9 +165,10 @@ function allpars() {
         if (p === "acts" || p === "pars") acts_pars();
     } else if (p === "routingPos")
         windowbar_obj.message("set_wind", "location", ar);
-    else if (p === "routingW") 
+    else if (p === "routingW") {
         windowbar_obj.message("set_wind", "visible", ar);
-    else if (p === "output_menu") {
+        check_size();
+    } else if (p === "output_menu") {
     	//post("output_menu",ar,"\n");
 		let modesfix1 = ["none", "none", "text", "text", "tog_0_1", "num_1.2", "num_1.2", "menu"];
 		let modesfix2 = ["menu", "num_1.2","num_1.2", "num_1.2", "num_1.2"];

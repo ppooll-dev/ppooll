@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 306.0, 431.0, 189.0, 48.0 ],
+        "rect": [ 186.0, 487.0, 189.0, 48.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "control@1",
         "boxes": [
@@ -301,7 +301,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 260.0, 213.0, 66.0, 19.0 ],
-                    "restore": [ 0, 0 ],
+                    "restore": [ 0, 0, 0, 0, 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -621,7 +621,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 17.0, 144.0, 48.0, 19.0 ],
-                    "restore": [ 0.0 ],
+                    "restore": [ 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -794,7 +794,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 426.6666793823242, 68.6666687130928, 102.0, 19.0 ],
-                    "restore": [ "localhost", 8001 ],
+                    "restore": [ "192.168.1.193", 8002 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -1342,7 +1342,7 @@
                                                                     "allowdrag": 0,
                                                                     "fontsize": 9.0,
                                                                     "id": "obj-14",
-                                                                    "items": [ "AU DLS Synth 1", ",", "from Max 1", ",", "from Max 2", ",", "Komplete Audio 6 MK2" ],
+                                                                    "items": [ "AU DLS Synth 1", ",", "Network Session 1", ",", "from Max 1", ",", "from Max 2" ],
                                                                     "maxclass": "umenu",
                                                                     "numinlets": 1,
                                                                     "numoutlets": 3,
@@ -3063,8 +3063,52 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 661.0, 416.0, 998.0, 531.0 ],
+                                        "rect": [ 480.0, 366.0, 998.0, 531.0 ],
                                         "boxes": [
+                                            {
+                                                "box": {
+                                                    "id": "obj-37",
+                                                    "linecount": 2,
+                                                    "maxclass": "comment",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 0,
+                                                    "patching_rect": [ 593.0, 75.0, 150.0, 33.0 ],
+                                                    "text": "resize routing window when preset changed"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "id": "obj-36",
+                                                    "maxclass": "message",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 593.0, 173.0, 68.0, 22.0 ],
+                                                    "text": "check_size"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "id": "obj-35",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 593.0, 142.0, 55.0, 22.0 ],
+                                                    "text": "pipe 500"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "id": "obj-26",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 3,
+                                                    "numoutlets": 2,
+                                                    "outlettype": [ "", "bang" ],
+                                                    "patching_rect": [ 593.0, 110.0, 67.0, 22.0 ],
+                                                    "text": "ll.p presets"
+                                                }
+                                            },
                                             {
                                                 "box": {
                                                     "id": "obj-34",
@@ -3738,6 +3782,12 @@
                                             },
                                             {
                                                 "patchline": {
+                                                    "destination": [ "obj-35", 0 ],
+                                                    "source": [ "obj-26", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
                                                     "destination": [ "obj-1", 0 ],
                                                     "source": [ "obj-27", 0 ]
                                                 }
@@ -3776,6 +3826,18 @@
                                                 "patchline": {
                                                     "destination": [ "obj-30", 0 ],
                                                     "source": [ "obj-34", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-36", 0 ],
+                                                    "source": [ "obj-35", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-39", 0 ],
+                                                    "source": [ "obj-36", 0 ]
                                                 }
                                             },
                                             {
@@ -4628,7 +4690,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
                                                     "patching_rect": [ 680.0, -1.0, 46.0, 20.0 ],
-                                                    "text": "sel: 1",
+                                                    "text": "sel: 0",
                                                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                                                     "varname": "c_sel"
                                                 }
@@ -4692,7 +4754,7 @@
                                                     "outlettype": [ "", "", "", "" ],
                                                     "patching_rect": [ 860.0, 69.0, 65.0, 19.0 ],
                                                     "restore": {
-                                                        "listblock": [ "num", 6, 0 ],
+                                                        "listblock": [ "n" ],
                                                         "ll_tab": [ 0 ],
                                                         "lllbmenu": [ "audioON/OFF" ]
                                                     },
@@ -4908,7 +4970,7 @@
                             },
                             {
                                 "box": {
-                                    "id": "obj-1",
+                                    "id": "obj-2",
                                     "maxclass": "newobj",
                                     "numinlets": 0,
                                     "numoutlets": 1,
@@ -4923,13 +4985,13 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-8", 0 ],
-                                    "source": [ "obj-1", 0 ]
+                                    "source": [ "obj-17", 0 ]
                                 }
                             },
                             {
                                 "patchline": {
                                     "destination": [ "obj-8", 0 ],
-                                    "source": [ "obj-17", 0 ]
+                                    "source": [ "obj-2", 0 ]
                                 }
                             },
                             {
@@ -4998,15 +5060,15 @@
                         "midi_receive_port": [ "-no-" ],
                         "note_mode": [ "no_notes" ],
                         "on/off": [ 1 ],
-                        "osc_receive_port": [ 8000.0 ],
+                        "osc_receive_port": [ 8001 ],
                         "output_menu": [ 0 ],
-                        "presets": [ 0 ],
+                        "presets": [ 1 ],
                         "routingW": [ 0 ],
                         "send_back": [ 0 ],
                         "send_back_light": [ 0 ],
                         "serial_open-close": [ "open" ],
                         "serial_port": [ "debug-console" ],
-                        "throttle": [ 0.0 ],
+                        "throttle": [ 0 ],
                         "wacom_menu": [ 0 ]
                     },
                     "text": "autopattr autopattr",
@@ -5194,7 +5256,7 @@
                     "fontname": "Arial",
                     "hint": "midi_receive_port",
                     "id": "obj-26",
-                    "items": [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "to Max 1", ",", "to Max 2", ",", "Komplete Audio 6 MK2" ],
+                    "items": [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "Network Session 1", ",", "to Max 1", ",", "to Max 2" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
