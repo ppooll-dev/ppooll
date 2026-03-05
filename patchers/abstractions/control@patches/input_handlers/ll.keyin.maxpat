@@ -249,7 +249,7 @@
             },
             {
                 "box": {
-                    "code": "9, \"tab\";\r\n13, \"enter\";\r\n27, \"esc\";\r\n28, \"left\";\r\n29, \"right\";\r\n30, \"up\";\r\n31, \"down\";\r\n32, \"space\";\r\n127, \"delete\";\r\n",
+                    "code": "9, \"tab\";\r\n13, \"enter\";\r\n27, \"esc\";\r\n28, \"left\";\r\n29, \"right\";\r\n30, \"up\";\r\n31, \"down\";\r\n32, \"space\";\r\n95, \"undersc\";\r\n127, \"delete\";\r\n",
                     "fontface": 0,
                     "fontname": "<Monospaced>",
                     "fontsize": 12.0,

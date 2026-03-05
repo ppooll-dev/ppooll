@@ -147,7 +147,7 @@ function allpars() {
 
     actpars[p] = ar;
 
-    if (Object.keys(defaults).includes(p) && p!="in_lo" && p!="in_hi") {
+    if (Object.keys(defaults).includes(p) ) { //&& p!="in_lo" && p!="in_hi") {
 		let p_len = actpars["input_name"].length;
         update_header_text()
         listblock_obj.message("bang"); //update listblock
@@ -161,7 +161,7 @@ function allpars() {
             ); //properties to the send-abstractions
         }
 		//routing_sizes(p_len);
-        if (p === "acts" || p === "pars") acts_pars();
+        //if (p === "acts" || p === "pars") acts_pars();
     } else if (p === "routingPos")
         windowbar_obj.message("set_wind", "location", ar);
     else if (p === "routingW") 
@@ -178,7 +178,7 @@ function allpars() {
 function incoming(...args){ // from control@ source (midi, keys, ppooll, OSC, etc)
 	// send ::control@1::midiin was set 0 and 1 here in the original max-patcher, so maybe this is needed in special cases.
 	if (actpars["on/off"] == 1){
-		//post("income", actpars["on/off"],"\n");
+		//post("income",args,"\n");
 		ap.getnamed("led").message("bang");
 	    const param = args.shift();    
 	    let list_inputs = actpars["list_inputs"];
@@ -262,21 +262,26 @@ function old_input(param, ...args){
 	    const in_lo = actpars["in_lo"];
 	    const in_hi = actpars["in_hi"];;
 	    const out = [];
-	
+		let lo_changed = 0;
+		let hi_changed = 0;
 	    input_names.forEach((in_name, i) => {       
 	        if(in_name === param){
-	            if(in_lo[i] === "-" || val < in_lo[i])
+	            if(in_lo[i] === "-" || val < in_lo[i]){
 	                in_lo[i] = val;
+					lo_changed = 1;
+				}
             
-	            if(in_hi[i] === "-" || val > in_hi[i])
+	            if(in_hi[i] === "-" || val > in_hi[i]){
 	                in_hi[i] = val;
+					hi_changed = 1;
+				}
             
 	            out.push(i)
 	            out.push((val - in_lo[i]) / (in_hi[i] - in_lo[i]))
 	        }
 	    })
-	    ap.getnamed("in_lo").setvalueof(in_lo);
-	    ap.getnamed("in_hi").setvalueof(in_hi);    
+	    if(lo_changed) ap.getnamed("in_lo").setvalueof(in_lo);
+	    if(hi_changed) ap.getnamed("in_hi").setvalueof(in_hi);    
 	    rp.getnamed("ms").message("select", ...out)
 	}
 }
@@ -333,13 +338,13 @@ function new_mode(current_modes) {
 }
 
 // _________________________________________________________specials
-function acts_pars(s) {
+function acts_pars(s) { //DEPRECATED !
+	/*
     // ::act::par string and par_type
 	if (!actpars["acts"][1]) return;
-    for (let j = 0; j <= listlength; j++) {
-        actpars["act_par"][
-            j
-        ] = `::${actpars["acts"][j]}::${actpars["pars"][j]}`;
+    for (let j = 1; j <= listlength; j++) {
+
+        actpars["act_par"][j] = `::${actpars["acts"][j]}::${actpars["pars"][j]}`;
         let par_type = 0;
         let there_patcher = ll_global.patchers[actpars["acts"][j]];
         if (there_patcher) {
@@ -360,8 +365,10 @@ function acts_pars(s) {
         }
         actpars["par_type"][j] = par_type;
     }
+	
     ap.getnamed("act_par").message(actpars["act_par"]);
     ap.getnamed("par_type").message(actpars["par_type"]);
+	*/
 }
 
 function bang() {
