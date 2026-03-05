@@ -9,8 +9,19 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 470.0, 205.0, 411.0, 683.0 ],
+        "rect": [ 383.0, 233.0, 411.0, 683.0 ],
         "boxes": [
+            {
+                "box": {
+                    "comment": "bound value if changed in ppooll",
+                    "id": "obj-2",
+                    "index": 4,
+                    "maxclass": "outlet",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 318.0, 507.5, 30.0, 30.0 ]
+                }
+            },
             {
                 "box": {
                     "id": "obj-15",
@@ -322,7 +333,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 72.0, 216.0, 187.0, 22.0 ],
-                                    "text": "::#2::llc_p_0"
+                                    "text": "::control@1::llc_p_1"
                                 }
                             },
                             {
@@ -469,7 +480,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 227.0, 239.0, 157.0, 22.0 ],
-                                    "text": "send ::#2::sendback"
+                                    "text": "send ::control@1::sendback"
                                 }
                             },
                             {
@@ -851,12 +862,13 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-7",
+                                                                    "linecount": 2,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 465.0, 239.0, 157.0, 22.0 ],
-                                                                    "text": "send ::#2::midi_output"
+                                                                    "text": "send ::control@1::midi_output"
                                                                 }
                                                             },
                                                             {
@@ -895,12 +907,13 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-6",
+                                                                    "linecount": 2,
                                                                     "maxclass": "message",
                                                                     "numinlets": 2,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 227.0, 239.0, 157.0, 22.0 ],
-                                                                    "text": "send ::#2::osc_output"
+                                                                    "text": "send ::control@1::osc_output"
                                                                 }
                                                             },
                                                             {
@@ -1198,7 +1211,7 @@
                             {
                                 "box": {
                                     "id": "obj-9",
-                                    "linecount": 2,
+                                    "linecount": 4,
                                     "maxclass": "message",
                                     "numinlets": 2,
                                     "numoutlets": 1,
@@ -1559,7 +1572,7 @@
                 "box": {
                     "comment": "labels to be shown in the routing window",
                     "id": "obj-5",
-                    "index": 0,
+                    "index": 2,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -1571,7 +1584,7 @@
                 "box": {
                     "comment": "bound value if changed in ppooll",
                     "id": "obj-19",
-                    "index": 0,
+                    "index": 3,
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
@@ -1648,7 +1661,7 @@
                 "box": {
                     "comment": "back value",
                     "id": "obj-4",
-                    "index": 0,
+                    "index": 3,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -1660,7 +1673,7 @@
                 "box": {
                     "comment": "all routing pars",
                     "id": "obj-1",
-                    "index": 0,
+                    "index": 2,
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
@@ -2115,7 +2128,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 50.0, 164.0, 50.0, 22.0 ],
-                                                    "text": "0"
+                                                    "text": "1"
                                                 }
                                             },
                                             {
@@ -2158,7 +2171,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 289.0, 134.0, 135.0, 22.0 ],
-                                                                    "text": "no -no-"
+                                                                    "text": "xgroove@1 buffer"
                                                                 }
                                                             },
                                                             {
@@ -2170,7 +2183,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 258.0, 195.0, 55.0, 35.0 ],
-                                                                    "text": "ho_st1 -no-"
+                                                                    "text": "xgroove@1 -no-"
                                                                 }
                                                             },
                                                             {
@@ -2240,7 +2253,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 311.0, 484.0, 181.0, 22.0 ],
-                                                                    "text": "::ho_st1::vol 1"
+                                                                    "text": "::xgroove@1::buffer 1"
                                                                 }
                                                             },
                                                             {
@@ -2253,7 +2266,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 311.0, 437.0, 181.0, 22.0 ],
-                                                                    "text": "::ho_st1::vol 1"
+                                                                    "text": "::xgroove@1::buffer 1"
                                                                 }
                                                             },
                                                             {
@@ -2266,7 +2279,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 269.0, 390.0, 181.0, 22.0 ],
-                                                                    "text": "::ho_st1::vol"
+                                                                    "text": "::xgroove@1::buffer"
                                                                 }
                                                             },
                                                             {
@@ -3098,7 +3111,7 @@
                                     "numoutlets": 3,
                                     "outlettype": [ "", "", "" ],
                                     "patching_rect": [ 302.0, 149.0, 103.0, 22.0 ],
-                                    "restore": [ 0.0 ],
+                                    "restore": [ "hack_morte.wav" ],
                                     "saved_object_attributes": {
                                         "parameter_enable": 0,
                                         "parameter_mappable": 0
@@ -3387,7 +3400,7 @@
                 "box": {
                     "comment": "processed value",
                     "id": "obj-48",
-                    "index": 0,
+                    "index": 1,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -3399,7 +3412,7 @@
                 "box": {
                     "comment": "value comming in",
                     "id": "obj-49",
-                    "index": 0,
+                    "index": 1,
                     "maxclass": "outlet",
                     "numinlets": 1,
                     "numoutlets": 0,
@@ -3494,6 +3507,14 @@
             {
                 "patchline": {
                     "destination": [ "obj-16", 1 ],
+                    "order": 1,
+                    "source": [ "obj-47", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-2", 0 ],
+                    "order": 0,
                     "source": [ "obj-47", 0 ]
                 }
             },
@@ -3523,7 +3544,6 @@
                     "source": [ "obj-7", 0 ]
                 }
             }
-        ],
-        "autosave": 0
+        ]
     }
 }
