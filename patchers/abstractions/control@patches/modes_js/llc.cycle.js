@@ -16,17 +16,17 @@ function income(a){
 }
 
 function calc(){
-    check = "no";
+    let out;
+	let curr_max = Math.min(menu_size,omax);
     //post(odir,menu_size());
-    if (odir && pval+1 > omax) outlet(0,omin)
-    else if (!odir && pval-1 < omin) 
-        outlet(0,Math.min(menu_size,omax))
-    else {
-        check = pval;
-        outlet(0,odir ? pval+1 : pval-1); 
-        //pval did not change? (menu(?) is smaller than max) 
-        if (check === pval) outlet(0,odir ? omin : Math.min(menu_size,omax));  
-    }
+    if (odir) {
+    	if (pval+1 > curr_max) out = omin
+		else out = pval+1;
+	}		
+    else 
+		if (pval-1 < omin)  out = curr_max
+    	else out = pval-1;
+	outlet(0,out);
 }
 
 function par_val(a){
