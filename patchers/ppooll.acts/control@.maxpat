@@ -1342,7 +1342,7 @@
                                                                     "allowdrag": 0,
                                                                     "fontsize": 9.0,
                                                                     "id": "obj-14",
-                                                                    "items": [ "AU DLS Synth 1", ",", "Komplete Audio 6 MK2", ",", "from Max 1", ",", "from Max 2" ],
+                                                                    "items": [ "AU DLS Synth 1", ",", "Network Session 1", ",", "Scarlett 18i20 USB", ",", "from Max 1", ",", "from Max 2", ",", "MIDISPORT 1x1 Port A", ",", "XC-17986 Bluetooth" ],
                                                                     "maxclass": "umenu",
                                                                     "numinlets": 1,
                                                                     "numoutlets": 3,
@@ -3977,7 +3977,7 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 103.0, 705.0, 730.0, 60.0 ],
+                                        "rect": [ 103.0, 705.0, 730.0, 288.0 ],
                                         "toolbarvisible": 0,
                                         "boxes": [
                                             {
@@ -4452,7 +4452,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
                                                     "patching_rect": [ 680.0, -1.0, 46.0, 20.0 ],
-                                                    "text": "sel: 1",
+                                                    "text": "sel: 0",
                                                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                                                     "varname": "c_sel"
                                                 }
@@ -4516,8 +4516,8 @@
                                                     "outlettype": [ "", "", "", "" ],
                                                     "patching_rect": [ 860.0, 69.0, 65.0, 19.0 ],
                                                     "restore": {
-                                                        "listblock": [ "menu", 10, 12 ],
-                                                        "ll_tab": [ 12, 1 ],
+                                                        "listblock": [ "n" ],
+                                                        "ll_tab": [ 0 ],
                                                         "lllbmenu": [ "listscale" ]
                                                     },
                                                     "text": "autopattr ap",
@@ -4732,7 +4732,7 @@
                             },
                             {
                                 "box": {
-                                    "id": "obj-2",
+                                    "id": "obj-1",
                                     "maxclass": "newobj",
                                     "numinlets": 0,
                                     "numoutlets": 1,
@@ -4747,13 +4747,13 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-8", 0 ],
-                                    "source": [ "obj-17", 0 ]
+                                    "source": [ "obj-1", 0 ]
                                 }
                             },
                             {
                                 "patchline": {
                                     "destination": [ "obj-8", 0 ],
-                                    "source": [ "obj-2", 0 ]
+                                    "source": [ "obj-17", 0 ]
                                 }
                             },
                             {
@@ -4812,8 +4812,8 @@
                     "outlettype": [ "", "", "", "" ],
                     "patching_rect": [ 304.6666757464409, 106.66666984558105, 107.0, 22.0 ],
                     "restore": {
-                        "act_menu": [ "ho_st1" ],
-                        "act_suggested": [ "all" ],
+                        "act_menu": [ "no" ],
+                        "act_suggested": [ 0 ],
                         "baud_rate": [ "28800" ],
                         "chans": [ 1 ],
                         "hi_menu": [ "Keyboard Backlight" ],
@@ -5018,7 +5018,7 @@
                     "fontname": "Arial",
                     "hint": "midi_receive_port",
                     "id": "obj-26",
-                    "items": [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "Komplete Audio 6 MK2", ",", "to Max 1", ",", "to Max 2" ],
+                    "items": [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "Network Session 1", ",", "Scarlett 18i20 USB", ",", "to Max 1", ",", "to Max 2", ",", "MIDISPORT 1x1 Port A", ",", "XC-17986 Bluetooth" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -5130,7 +5130,6 @@
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
                     "patching_rect": [ 103.0, 16.0, 50.0, 16.0 ],
-                    "pattrmode": 1,
                     "prefix": "",
                     "varname": "act_suggested"
                 }
