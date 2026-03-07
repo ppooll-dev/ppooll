@@ -16,6 +16,8 @@ function actname(an){
     act_patcher = ll_global.patchers[an];
 
     sub_inputs = this.patcher.getnamed("inputs").subpatcher();
+
+    reset_params()
 }
 
 function reset_params(){

@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 343.0, 381.0, 253.0, 168.0 ],
+        "rect": [ 344.0, 380.0, 253.0, 168.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "matriarch@1",
         "boxes": [
@@ -116,7 +116,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 580.0, 521.0, 270.0, 22.0 ],
-                    "restore": [ "no~-no-" ],
+                    "restore": [ "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-", "no~-no-" ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -512,6 +512,17 @@
                         "classnamespace": "box",
                         "rect": [ 870.0, 138.0, 394.0, 573.0 ],
                         "boxes": [
+                            {
+                                "box": {
+                                    "id": "obj-4",
+                                    "maxclass": "newobj",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "bang" ],
+                                    "patching_rect": [ 82.0, 83.0, 48.0, 22.0 ],
+                                    "text": "del 200"
+                                }
+                            },
                             {
                                 "box": {
                                     "id": "obj-7",
@@ -1837,7 +1848,7 @@
                                     "numinlets": 2,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 40.0, 44.0, 82.0, 22.0 ],
+                                    "patching_rect": [ 40.0, 86.0, 82.0, 22.0 ],
                                     "text": "reset_params"
                                 }
                             },
@@ -1872,6 +1883,12 @@
                                 "patchline": {
                                     "destination": [ "obj-17", 0 ],
                                     "source": [ "obj-18", 1 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-4", 0 ],
+                                    "source": [ "obj-18", 0 ]
                                 }
                             },
                             {
@@ -1913,6 +1930,12 @@
                                 "patchline": {
                                     "destination": [ "obj-18", 0 ],
                                     "source": [ "obj-3", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-9", 0 ],
+                                    "source": [ "obj-4", 0 ]
                                 }
                             },
                             {
@@ -3337,7 +3360,7 @@
                         "client_rect": [ 400, 495, 1195, 847 ],
                         "parameter_enable": 0,
                         "parameter_mappable": 0,
-                        "storage_rect": [ 583, 68, 1034, 196 ]
+                        "storage_rect": [ 100, 172, 551, 300 ]
                     },
                     "text": "pattrstorage pat",
                     "varname": "pat"
