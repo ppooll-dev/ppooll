@@ -255,8 +255,14 @@ function set_favorite_acts() {
     preferences.set("act_usage::favorite_acts", favorite_acts);
 }
 
+let previous_favorite = null;
+function load_favorit(name) {
+    messnamed("lload", name);
+    previous_favorite = name;
+}
+
 function add_favorit() {
-    let actname = ll_global.patchers.ho_st1.getnamed("favorites").getvalueof();
+    let actname = ll_global.patchers.ho_st1.getnamed("act_menu").getvalueof();
 
     if (
         actname[0] === "(" ||
@@ -272,9 +278,7 @@ function add_favorit() {
 }
 
 function del_favorit() {
-    let actname = ll_global.patchers.ho_st1.getnamed("favorites").getvalueof();
-
-    favorite_acts = favorite_acts.filter((item) => item !== actname);
+    favorite_acts = favorite_acts.filter((item) => item !== previous_favorite);
     set_favorite_acts();
     ll_prf_rewrite();
 }
