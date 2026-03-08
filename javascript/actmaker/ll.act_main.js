@@ -64,6 +64,8 @@ let TEXT_updating = false;
 
 let actname_receivers = [];
 
+let is_menu_open = false;
+
 // [v8] attributes
 var isReady = 0;
 declareattribute("isReady", {
@@ -403,7 +405,7 @@ function request_actname(r_address) {
 function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
     yclick = y;
     xclick = x;
-
+    is_menu_open = false
     let uibr = this.box.rect;
 
     let drag_gate = x <= uibr[2] / 2;
@@ -412,7 +414,7 @@ function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
 
     if (!drag_gate) {
         mod = shift | option | ctrl;
-
+        is_menu_open = true;
         if (mod == 0) title_menu.message("show");
         else if (mod == 2) tetris_menu.message("show");
         else pres_menu.message("show");
@@ -420,7 +422,7 @@ function onclick(x, y, but, cmd, shift, capslock, option, ctrl) {
 }
 
 function ondrag(x, y, but, cmd, shift, capslock, option, ctrl) {
-    if (drag_gate) {
+    if (drag_gate && !is_menu_open) {
         //post("drag");
         xmove = x - xclick;
         ymove = y - yclick;
