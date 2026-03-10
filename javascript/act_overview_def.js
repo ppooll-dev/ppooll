@@ -10,20 +10,22 @@ var aop = this.patcher.parentpatcher;
 var ip = aop.parentpatcher;
 var tm = aop.getnamed("tags_menu");
 var d; //= new Dict("for_act_overview");
+var authors = [];
+var aon = new Dict("act_overview_new");
 
 function act_infos_folder(fold){
-	var fo = new Folder(fold);
-	
-	post("path",fo.pathname,"\n");
-
+	aon.clear();
+	var fo = new Folder(fold);	
+	//post("path",fo.pathname,"\n");
 	fo.reset();
 	while (!fo.end) {
-
 		//post("file",fo.filename,fo.filetype,fo.extension,"\n");
-		openf(fo.pathname + "/" + fo.filename)
+		if (fo.extension === ".maxhelp")
+			openf(fo.pathname + "/" + fo.filename);
 		fo.next();
 	}
 	fo.close();
+	to_dict();
 }
 
 function openf(s){
@@ -40,6 +42,7 @@ function readlines(s)
 	act_ovv_data =[];
 	let data = [];
 	i=0;
+
 	while ((a = f.readline()) != null) { // returns a string
 		//post("line[" + i + "]: " + a,"\n");
 		
@@ -61,13 +64,31 @@ function readlines(s)
 		i++;
 	}	
 	f.close();
+
 }
 function read_data(){
-	post("act_ovv_data",act_ovv_data,"\n");
-	//f.close();
+	
+	for(let k of act_ovv_data){
+		if (k.slice(-1) === ",") k = k.slice(0, -1); ;
+		let s = k.indexOf(":");
+		let t = k.slice(1,s-1);
+		let c = k.slice(s+1).trim().replace("[","").replace("]","");
+		c = c.split(",");
+	    if(!Array.isArray(c)) c = [c];
+		post("act_ovv_data",t,c,"\n"); 
+		if (t === "act") aon.append("acts",c);
+		//............
+		
+		
+		
+		
+	}
+
 }
-function closef(){
-	f.close();
+function to_dict(){
+	post("rrrrrrr");
+	for (let a of authors)
+		post("--------",a,"\n");
 }
 
 // ################################################################# register act

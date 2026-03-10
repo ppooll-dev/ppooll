@@ -14,8 +14,8 @@
             {
                 "box": {
                     "data": {
-                        "tags": [ "audio generator", "uses buffer_host" ],
                         "act": [ "xgroove@" ],
+                        "tags": [ "audio generator", "uses buffer_host" ],
                         "description": [ "sample player" ],
                         "authors": [ "filiip", "Joe Steccato" ],
                         "emails": [ "klaus@klingt.org", "joe@joesteccato.com" ]
