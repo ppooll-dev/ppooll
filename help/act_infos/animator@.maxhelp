@@ -9,8 +9,33 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 134.0, 167.0, 652.0, 503.0 ],
+        "rect": [ 100.0, 100.0, 652.0, 503.0 ],
         "boxes": [
+            {
+                "box": {
+                    "data": {
+                        "act": "animator@",
+                        "description": "5 band lfo",
+                        "tags": [ "plugin" ],
+                        "authors": [ "c. hausch" ]
+                    },
+                    "hidden": 1,
+                    "id": "obj-6",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 5,
+                    "outlettype": [ "dictionary", "", "", "", "" ],
+                    "patching_rect": [ 455.0, 75.0, 61.0, 22.0 ],
+                    "saved_object_attributes": {
+                        "embed": 1,
+                        "legacy": 0,
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "dict",
+                    "varname": "for_act_overview"
+                }
+            },
             {
                 "box": {
                     "fontname": "Arial",

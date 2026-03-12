@@ -4,7 +4,7 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 1,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
@@ -12,6 +12,31 @@
         "rect": [ 100.0, 100.0, 792.0, 848.0 ],
         "default_fontsize": 10.0,
         "boxes": [
+            {
+                "box": {
+                    "data": {
+                        "act": "modul.ator",
+                        "description": "modulates anything",
+                        "tags": [ "audio generator", "uses buffer_host", "controls parameters", "controls signals", "plugin", "synth" ],
+                        "authors": [ "filip" ]
+                    },
+                    "hidden": 1,
+                    "id": "obj-7",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 5,
+                    "outlettype": [ "dictionary", "", "", "", "" ],
+                    "patching_rect": [ 472.0, 49.0, 61.0, 20.0 ],
+                    "saved_object_attributes": {
+                        "embed": 1,
+                        "legacy": 0,
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "dict",
+                    "varname": "for_act_overview"
+                }
+            },
             {
                 "box": {
                     "annotation": "ring_in",
@@ -1545,6 +1570,14 @@
         "parameters": {
             "obj-125": [ "live.text", "live.text", 0 ],
             "obj-3": [ "rate[1]", "live.numbox", 0 ],
+            "parameterbanks": {
+                "0": {
+                    "index": 0,
+                    "name": "",
+                    "parameters": [ "-", "-", "-", "-", "-", "-", "-", "-" ],
+                    "buttons": [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+                }
+            },
             "inherited_shortname": 1
         },
         "autosave": 0

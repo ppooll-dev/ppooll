@@ -9,8 +9,33 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 300.0, 492.0, 643.0, 416.0 ],
+        "rect": [ 100.0, 100.0, 643.0, 416.0 ],
         "boxes": [
+            {
+                "box": {
+                    "data": {
+                        "act": "rez@",
+                        "description": "spectral rezonators",
+                        "tags": [ "audio generator", "plugin", "synth" ],
+                        "authors": [ "c. hausch" ]
+                    },
+                    "hidden": 1,
+                    "id": "obj-10",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 5,
+                    "outlettype": [ "dictionary", "", "", "", "" ],
+                    "patching_rect": [ 472.0, 49.0, 61.0, 22.0 ],
+                    "saved_object_attributes": {
+                        "embed": 1,
+                        "legacy": 0,
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "dict",
+                    "varname": "for_act_overview"
+                }
+            },
             {
                 "box": {
                     "fontname": "Arial",

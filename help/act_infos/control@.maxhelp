@@ -9,8 +9,33 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 627.0, 96.0, 1115.0, 779.0 ],
+        "rect": [ 100.0, 96.0, 1115.0, 779.0 ],
         "boxes": [
+            {
+                "box": {
+                    "data": {
+                        "act": "control@",
+                        "description": "external device input (midi-osc-etc)",
+                        "tags": [ "controls parameters", "midi", "network" ],
+                        "authors": [ "filip" ]
+                    },
+                    "hidden": 1,
+                    "id": "obj-3",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 5,
+                    "outlettype": [ "dictionary", "", "", "", "" ],
+                    "patching_rect": [ 472.0, 49.0, 61.0, 22.0 ],
+                    "saved_object_attributes": {
+                        "embed": 1,
+                        "legacy": 0,
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "dict",
+                    "varname": "for_act_overview"
+                }
+            },
             {
                 "box": {
                     "id": "obj-20",

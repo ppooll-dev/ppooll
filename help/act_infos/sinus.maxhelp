@@ -4,14 +4,39 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 0,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 942.0, 190.0, 636.0, 709.0 ],
+        "rect": [ 100.0, 100.0, 636.0, 709.0 ],
         "default_fontsize": 10.0,
         "boxes": [
+            {
+                "box": {
+                    "data": {
+                        "act": "sinus",
+                        "description": "sinus tone generator",
+                        "tags": [ "audio generator", "synth", "multichannel (mc)" ],
+                        "authors": [ "filip" ]
+                    },
+                    "hidden": 1,
+                    "id": "obj-9",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 5,
+                    "outlettype": [ "dictionary", "", "", "", "" ],
+                    "patching_rect": [ 472.0, 49.0, 61.0, 20.0 ],
+                    "saved_object_attributes": {
+                        "embed": 1,
+                        "legacy": 0,
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "dict",
+                    "varname": "for_act_overview"
+                }
+            },
             {
                 "box": {
                     "hidden": 1,

@@ -9,8 +9,33 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 766.0, 152.0, 602.0, 894.0 ],
+        "rect": [ 100.0, 100.0, 602.0, 894.0 ],
         "boxes": [
+            {
+                "box": {
+                    "data": {
+                        "act": "op@",
+                        "description": "signal/number operator",
+                        "tags": [ "controls parameters", "controls signals", "plugin", "audio converter", "multichannel (mc)" ],
+                        "authors": [ "c. hausch" ]
+                    },
+                    "hidden": 1,
+                    "id": "obj-14",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 5,
+                    "outlettype": [ "dictionary", "", "", "", "" ],
+                    "patching_rect": [ 472.0, 49.0, 61.0, 22.0 ],
+                    "saved_object_attributes": {
+                        "embed": 1,
+                        "legacy": 0,
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "dict",
+                    "varname": "for_act_overview"
+                }
+            },
             {
                 "box": {
                     "id": "obj-13",

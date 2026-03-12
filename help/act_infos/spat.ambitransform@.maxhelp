@@ -14,6 +14,31 @@
         "boxes": [
             {
                 "box": {
+                    "data": {
+                        "act": "spat.ambitransform@",
+                        "description": "ambisonics soundfield transform",
+                        "tags": [ "plugin", "audio converter", "multichannel (mc)" ],
+                        "authors": [ "c. hausch" ]
+                    },
+                    "hidden": 1,
+                    "id": "obj-9",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 5,
+                    "outlettype": [ "dictionary", "", "", "", "" ],
+                    "patching_rect": [ 0.0, 0.0, 61.0, 22.0 ],
+                    "saved_object_attributes": {
+                        "embed": 1,
+                        "legacy": 0,
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "dict",
+                    "varname": "for_act_overview"
+                }
+            },
+            {
+                "box": {
                     "id": "obj-13",
                     "linecount": 10,
                     "maxclass": "comment",

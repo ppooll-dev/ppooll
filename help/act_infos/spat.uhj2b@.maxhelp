@@ -9,12 +9,37 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 317.0, 387.0, 514.0, 359.0 ],
+        "rect": [ 100.0, 100.0, 514.0, 359.0 ],
         "default_fontsize": 18.0,
         "toolbarvisible": 0,
         "enablehscroll": 0,
         "enablevscroll": 0,
         "boxes": [
+            {
+                "box": {
+                    "data": {
+                        "act": "spat.uhj2b@",
+                        "description": "ambisonics uhj-to-b format converter",
+                        "tags": [ "plugin", "multichannel (mc)" ],
+                        "authors": [ "c. hausch" ]
+                    },
+                    "hidden": 1,
+                    "id": "obj-9",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 5,
+                    "outlettype": [ "dictionary", "", "", "", "" ],
+                    "patching_rect": [ 472.0, 49.0, 61.0, 29.0 ],
+                    "saved_object_attributes": {
+                        "embed": 1,
+                        "legacy": 0,
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "dict",
+                    "varname": "for_act_overview"
+                }
+            },
             {
                 "box": {
                     "fontface": 1,

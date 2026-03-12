@@ -1,209 +1,193 @@
 {
-	"patcher" : 	{
-		"fileversion" : 1,
-		"appversion" : 		{
-			"major" : 8,
-			"minor" : 5,
-			"revision" : 2,
-			"architecture" : "x64",
-			"modernui" : 1
-		}
-,
-		"classnamespace" : "box",
-		"rect" : [ 622.0, 90.0, 776.0, 906.0 ],
-		"bglocked" : 0,
-		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
-		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
-		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
-		"boxes" : [ 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-9",
-					"linecount" : 11,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 9.0, 713.0, 666.0, 154.0 ],
-					"presentation_linecount" : 13,
-					"text" : "act_developement\n\nthis section is only for programmers who design an act.\n\n- first note, that all the above can be used for your act-developement as well.\neg. setting the window-size on a window without titlebar is possible here and easier than choosing titlebar and drag the size.\n\n- \"write default\" should be pressed if you are finished with designing your act !!\nthis will write the current UI-layout and size as \"factory tetris\" available as \"ƒ default\" from the tetris menu.\n\n- the blue section is for easier writing arguments to ll.blues."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-5",
-					"linecount" : 3,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 6.0, 202.0, 538.0, 47.0 ],
-					"text" : "changing the tetris (layout) of an act does not affect any parameters. \nparameters that are hidden (not visible) are still active and remain in their functionality.\n(you may switch back to \"ƒ default\" to edit hidden parameters)"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-8",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 10.0, 163.0, 538.0, 20.0 ],
-					"text" : "tetris-layouts, will be loaded in environments."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-7",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 10.0, 139.0, 607.0, 20.0 ],
-					"text" : "in that menu (shift-click an act's title-menu) there is an entry called \"ƒ default\" to revert to the default layout."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-6",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 9.0, 258.0, 139.0, 20.0 ],
-					"text" : "step by step instruction:"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-15",
-					"linecount" : 30,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 6.0, 280.0, 607.0, 409.0 ],
-					"text" : "- first choose an act with the top menu.\n- window: you may want to enlarge the window of the selected act now with the numberboxes in the second line.\n- now the most convenient way to continue is to command-hover a user interface in the selected act.\n  (hold down the cmd key and move the mouse over any object in the slected act (do not click))\n  this object will blink, since the button \"blink\" is ON by default in tetris@.\n- now use the arrow keys to move the object around (actually thats why the whole thing is called tetris)\n- hold the shift key and using the arrows will change the size of an object.\n- if an object has a fontsize, hold down the alt-key and use up-down arrows to change the fontsize.\n- press h on your keyboard to toggle hide/visible of an object (see below)\n\nall that can be done manually in the tetris-act as well.\n- the object-menu will be filled with all the user interfaces of the selected act.\n  select an object here, the selected object will blink.\n- \"no_blues\" prevents the standard blue output section of acts to be listed in the menu\n- no_hidden prevents the currently hidden (not visible) user interfaces to be listed\n- blink makes the user interface blink, when you select it from the object window\n\n- the 2 numbers labeled with pos let you position the selected user interface\n- the 2 numbers labeled with size let you resize the selected user interface\n- visible/hidden lets you set it to be hidden or visual\n   (note that hidden parameters still work, and are loaded by environment etc. you only don't see it.\n  for example, the blue output section is usually in a fixed state in an environment and you will never touch \n  it while playing. a good reason to hide it with tetris@)\n- dims (2 or 3 numbers) are visible only at certain user interfaces (those that come with a LCD in its name)\n- fontsize is sometimes working for numbers etc.\n\n- after you did some editing you may want to write this tetris setting to disc with \"write\"\n\n- write_default is for ppooll developers to write the default tetris setting to disc.\n  do not press this button if you are not sure what it does !"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-11",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 10.0, 115.0, 695.0, 20.0 ],
-					"text" : "the stored tetris settings (settings you created by pressing \"write\") will be available via shift-click on the title menu in any act."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-3",
-					"linecount" : 5,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 11.0, 37.0, 698.0, 74.0 ],
-					"text" : "this is usefull for:\n- creating bigger user interfaces\n- hide user interfaces you do not use in the current environment (playing situation)\n\nif you have set up an environment to play with, there are many paramaeters in an act you do not want to change any more."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"id" : "obj-4",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 11.0, 313.0, 20.0 ],
-					"text" : "tetris@ lets you customize the layout of any act in ppooll."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"hidden" : 1,
-					"id" : "obj-1",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 518.0, 25.0, 100.0, 22.0 ],
-					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
-					"text" : "thispatcher",
-					"varname" : "iTP"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"hidden" : 1,
-					"id" : "obj-2",
-					"maxclass" : "newobj",
-					"numinlets" : 0,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 518.0, 5.0, 100.0, 22.0 ],
-					"text" : "r #0.iTP"
-				}
-
-			}
- ],
-		"lines" : [ 			{
-				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"hidden" : 1,
-					"source" : [ "obj-2", 0 ]
-				}
-
-			}
- ],
-		"dependency_cache" : [  ],
-		"autosave" : 0
-	}
-
+    "patcher": {
+        "fileversion": 1,
+        "appversion": {
+            "major": 9,
+            "minor": 1,
+            "revision": 2,
+            "architecture": "x64",
+            "modernui": 1
+        },
+        "classnamespace": "box",
+        "rect": [ 100.0, 90.0, 776.0, 906.0 ],
+        "boxes": [
+            {
+                "box": {
+                    "data": {
+                        "act": "tetris@",
+                        "description": "customize your act layout (and act-building)",
+                        "tags": [ 0 ],
+                        "authors": [ "filip" ]
+                    },
+                    "hidden": 1,
+                    "id": "obj-10",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 5,
+                    "outlettype": [ "dictionary", "", "", "", "" ],
+                    "patching_rect": [ 472.0, 49.0, 61.0, 22.0 ],
+                    "saved_object_attributes": {
+                        "embed": 1,
+                        "legacy": 0,
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "dict",
+                    "varname": "for_act_overview"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-9",
+                    "linecount": 11,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 9.0, 713.0, 666.0, 154.0 ],
+                    "text": "act_developement\n\nthis section is only for programmers who design an act.\n\n- first note, that all the above can be used for your act-developement as well.\neg. setting the window-size on a window without titlebar is possible here and easier than choosing titlebar and drag the size.\n\n- \"write default\" should be pressed if you are finished with designing your act !!\nthis will write the current UI-layout and size as \"factory tetris\" available as \"ƒ default\" from the tetris menu.\n\n- the blue section is for easier writing arguments to ll.blues."
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-5",
+                    "linecount": 3,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 6.0, 202.0, 538.0, 47.0 ],
+                    "text": "changing the tetris (layout) of an act does not affect any parameters. \nparameters that are hidden (not visible) are still active and remain in their functionality.\n(you may switch back to \"ƒ default\" to edit hidden parameters)"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-8",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 10.0, 163.0, 538.0, 20.0 ],
+                    "text": "tetris-layouts, will be loaded in environments."
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-7",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 10.0, 139.0, 607.0, 20.0 ],
+                    "text": "in that menu (shift-click an act's title-menu) there is an entry called \"ƒ default\" to revert to the default layout."
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-6",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 9.0, 258.0, 139.0, 20.0 ],
+                    "text": "step by step instruction:"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-15",
+                    "linecount": 30,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 6.0, 280.0, 607.0, 409.0 ],
+                    "text": "- first choose an act with the top menu.\n- window: you may want to enlarge the window of the selected act now with the numberboxes in the second line.\n- now the most convenient way to continue is to command-hover a user interface in the selected act.\n  (hold down the cmd key and move the mouse over any object in the slected act (do not click))\n  this object will blink, since the button \"blink\" is ON by default in tetris@.\n- now use the arrow keys to move the object around (actually thats why the whole thing is called tetris)\n- hold the shift key and using the arrows will change the size of an object.\n- if an object has a fontsize, hold down the alt-key and use up-down arrows to change the fontsize.\n- press h on your keyboard to toggle hide/visible of an object (see below)\n\nall that can be done manually in the tetris-act as well.\n- the object-menu will be filled with all the user interfaces of the selected act.\n  select an object here, the selected object will blink.\n- \"no_blues\" prevents the standard blue output section of acts to be listed in the menu\n- no_hidden prevents the currently hidden (not visible) user interfaces to be listed\n- blink makes the user interface blink, when you select it from the object window\n\n- the 2 numbers labeled with pos let you position the selected user interface\n- the 2 numbers labeled with size let you resize the selected user interface\n- visible/hidden lets you set it to be hidden or visual\n   (note that hidden parameters still work, and are loaded by environment etc. you only don't see it.\n  for example, the blue output section is usually in a fixed state in an environment and you will never touch \n  it while playing. a good reason to hide it with tetris@)\n- dims (2 or 3 numbers) are visible only at certain user interfaces (those that come with a LCD in its name)\n- fontsize is sometimes working for numbers etc.\n\n- after you did some editing you may want to write this tetris setting to disc with \"write\"\n\n- write_default is for ppooll developers to write the default tetris setting to disc.\n  do not press this button if you are not sure what it does !"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-11",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 10.0, 115.0, 695.0, 20.0 ],
+                    "text": "the stored tetris settings (settings you created by pressing \"write\") will be available via shift-click on the title menu in any act."
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-3",
+                    "linecount": 5,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 11.0, 37.0, 698.0, 74.0 ],
+                    "text": "this is usefull for:\n- creating bigger user interfaces\n- hide user interfaces you do not use in the current environment (playing situation)\n\nif you have set up an environment to play with, there are many paramaeters in an act you do not want to change any more."
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-4",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 26.0, 11.0, 313.0, 20.0 ],
+                    "text": "tetris@ lets you customize the layout of any act in ppooll."
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "hidden": 1,
+                    "id": "obj-1",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "" ],
+                    "patching_rect": [ 518.0, 25.0, 100.0, 22.0 ],
+                    "save": [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+                    "text": "thispatcher",
+                    "varname": "iTP"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "hidden": 1,
+                    "id": "obj-2",
+                    "maxclass": "newobj",
+                    "numinlets": 0,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 518.0, 5.0, 100.0, 22.0 ],
+                    "text": "r #0.iTP"
+                }
+            }
+        ],
+        "lines": [
+            {
+                "patchline": {
+                    "destination": [ "obj-1", 0 ],
+                    "hidden": 1,
+                    "source": [ "obj-2", 0 ]
+                }
+            }
+        ],
+        "autosave": 0
+    }
 }

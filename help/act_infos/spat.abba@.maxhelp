@@ -4,18 +4,19 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 3,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 481.0, 503.0, 499.0, 336.0 ],
+        "rect": [ 100.0, 100.0, 499.0, 336.0 ],
         "toolbarvisible": 0,
         "boxes": [
             {
                 "box": {
                     "data": {
                         "act": "spat.abba@",
+                        "description": "ambisonics a-to-b/b-to-a format converter",
                         "authors": [ "c. hausch" ],
                         "emails": [ "hausch@moozak.org" ],
                         "tags": "audio converter"
