@@ -69,6 +69,16 @@ function nofirst() {
 }
 
 function new_param_list(...new_list) {
+    // new_list must all be strings !
+    for(let i=0; i<new_list.length; i++){
+        const n = new_list[i];
+        // post(typeof n, n, "\n")
+        if(typeof n !== 'string'){
+            post("invalid ll.pm list:", ...new_list, "\n")
+            return
+        }
+    }
+
     // post(new_list, "\n");
     let out = tp.getnamed("out");
 
