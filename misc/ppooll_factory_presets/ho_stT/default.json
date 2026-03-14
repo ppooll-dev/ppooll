@@ -1,5 +1,5 @@
 {
-    "window": [ 193, 171, 323, 296 ],
+    "window": [ 279, 206, 409, 331 ],
     "logo": {
         "patching_rect": [ 2, 37, 49.3515625, 15 ],
         "hidden": 0,
@@ -46,7 +46,6 @@
     "act_menu": {
         "patching_rect": [ -1, 51, 76, 22 ],
         "hidden": 0,
-        "applycolors": 0,
         "bgfillcolor": {
             "type": "color",
             "color1": [ 0.376471, 0.384314, 0.4, 1 ],
@@ -55,15 +54,14 @@
             "angle": 270,
             "proportion": 0.39
         },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "color": [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ],
+        "elementcolor": [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
         "fontsize": 12,
         "textcolor": [ 1, 1, 1, 1 ]
     },
     "favorites": {
         "patching_rect": [ -1, 69, 76, 22 ],
         "hidden": 0,
-        "applycolors": 0,
         "bgfillcolor": {
             "type": "color",
             "color1": [ 0.376471, 0.384314, 0.4, 1 ],
@@ -72,8 +70,8 @@
             "angle": 270,
             "proportion": 0.39
         },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "color": [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ],
+        "elementcolor": [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
         "fontsize": 12,
         "textcolor": [ 1, 1, 1, 1 ]
     },
@@ -249,9 +247,8 @@
         "patching_rect": [ 16, 14, 41, 20 ],
         "hidden": 0,
         "bgcolor": [ 1, 1, 1, 0 ],
-        "bubble_bgcolor": [ 1, 1, 1, 1 ],
-        "bubble_outlinecolor": [ 0.75, 0.75, 0.75, 1 ],
-        "bubbleusescolors": 0,
+        "bubble_bgcolor": [ 0.235, 0.235, 0.235, 1 ],
+        "bubble_outlinecolor": [ 0.85, 0.85, 0.85, 1 ],
         "fontsize": 12,
         "textcolor": [ 1, 1, 1, 1 ]
     },
