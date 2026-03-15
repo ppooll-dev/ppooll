@@ -648,7 +648,8 @@ function handle_watch_selection(selection) {
     const watch_menu = act_patcher.getnamed("watch_menu");
 
     watch_menu.message("clear");
-    watch_menu.message("append", "time");
+    watch_menu.message("append", "time(24h)");
+	watch_menu.message("append", "time(12h)");
     watch_menu.message("append", "stopwatch");
     watch_menu.message("append", "-");
 
