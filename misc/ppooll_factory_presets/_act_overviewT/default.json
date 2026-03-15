@@ -1,11 +1,11 @@
 {
-    "window": [ 113, 415, 525, 1153 ],
+    "window": [ 106, 209, 694, 947 ],
     "act": {
         "patching_rect": [ 0, 0, 100.40234375, 16 ],
         "hidden": 0
     },
     "cellblock": {
-        "patching_rect": [ 2, 141, 408, 595 ],
+        "patching_rect": [ 2, 141, 588, 595 ],
         "hidden": 0,
         "bgcolor": [ 1, 1, 1, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -20,7 +20,7 @@
         "textcolor": [ 0, 0, 0, 1 ]
     },
     "jitwin": {
-        "patching_rect": [ 331.16666399999997, 0.5, 62, 140 ],
+        "patching_rect": [ 331.16666399999997, 0.5, 242, 140 ],
         "hidden": 0,
         "bordercolor": [ 0, 0, 0, 1 ],
         "colormode": "argb"
@@ -40,7 +40,7 @@
         "textcolor": [ 0.9, 0.9, 0.9, 1 ]
     },
     "commentbox": {
-        "patching_rect": [ 72, 31.25, 204.16666399999997, 94.5 ],
+        "patching_rect": [ 97, 31, 177, 88.5 ],
         "hidden": 0
     },
     "comment_desc": {

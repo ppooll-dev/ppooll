@@ -16,7 +16,7 @@
                     "data": {
                         "act": "tetris@",
                         "description": "customize your act layout (and act-building)",
-                        "tags": [ 0 ],
+                        "tags": [ "act_layout" ],
                         "authors": [ "filip" ]
                     },
                     "hidden": 1,

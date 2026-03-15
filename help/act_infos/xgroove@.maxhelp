@@ -17,8 +17,7 @@
                         "act": [ "xgroove@" ],
                         "tags": [ "audio generator", "uses buffer_host" ],
                         "description": [ "sample player" ],
-                        "authors": [ "filip", "Joe Steccato" ],
-                        "emails": [ "klaus@klingt.org", "joe@joesteccato.com" ]
+                        "authors": [ "filip", "Joe Steccato" ]
                     },
                     "hidden": 1,
                     "id": "obj-9",
