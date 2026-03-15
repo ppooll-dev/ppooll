@@ -91,6 +91,7 @@ function readlines(f,act){ // find and collect data from varname "for_act_overvi
 
 	if (dataS) {
 		data = JSON.parse(dataS);
+		data["act"] = act;
 		set_data(data);
 	}
 	else data = {act: act, description: "##### no data in info patch"};
