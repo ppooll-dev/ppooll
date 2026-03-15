@@ -619,6 +619,7 @@
             },
             {
                 "box": {
+                    "bgcolor": [ 0.1803921568627451, 0.03529411764705882, 0.6862745098039216, 1.0 ],
                     "data": {
                         "description": "",
                         "tags": "",
@@ -649,7 +650,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 14.0, 341.0, 456.0, 460.0 ],
-                    "text": "in general your act should have an info patch.\nthe info for _act_overview is taken from an act's info-patch.\n\ninfo patches are stored at:\nppooll/help/act_infos/  or\nppooll_contributions/help/act_infos/ \nand must be named exactly as your act, except the extension,\nwhich must be .maxhelp for the info-patch.\n\nthe info for_act_overview must then be stored in the info patch\nin a dict-object with the scripting name (varname) \"for_act_overview\" !\nlike this one here:\ndouble click, to see its contents\n\nyou may edit it in the \"Dictionary Editor\" window\n(make sure you keep the JSON syntax),\nor use the helper here >>>>>>\nafter that copy-paste the dict from here into your info-patch.\n\n\na note about tags:\ntags should be written exactly as they appear in _act_overview.\nif not, your patch will create a new tag !\nthis also means, you *can* create a new tag, just by writing it into the dict, if you are sure, your act needs that.\n\n\nafter updating your info patch, either close and reload _act_overview,\nor open its subpatch and press the big bang."
+                    "text": "in general your act should have an info patch.\nthe info for _act_overview is taken from an act's info-patch.\n\ninfo patches are stored at:\nppooll/help/act_infos/  or\nppooll_contributions/help/act_infos/ \nand must be named exactly as your act, except the extension,\nwhich must be .maxhelp for the info-patch.\n\nthe info for_act_overview must then be stored in the info patch\nin a dict-object with the scripting name (varname) \"for_act_overview\" !\nlike this one here:\ndouble click, to see its contents\n\nyou may edit it in the \"Dictionary Editor\" window\n(make sure you keep the JSON syntax),\nor use the helper here >>>>>>\nafter that copy-paste the blue dict-object from here into your info-patch.\n(you may hide it there.)\n\na note about tags:\ntags should be written exactly as they appear in _act_overview.\nif not, your patch will create a new tag !\nthis also means, you *can* create a new tag, just by writing it into the dict, if you are sure, your act needs that.\n\n\nafter updating your info patch, either close and reload _act_overview,\nor open its subpatch and press the big bang."
                 }
             },
             {
