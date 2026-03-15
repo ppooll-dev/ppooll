@@ -4,16 +4,81 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 2,
+            "revision": 3,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 106.0, 209.0, 588.0, 738.0 ],
+        "rect": [ 45.0, 82.0, 588.0, 738.0 ],
         "default_fontsize": 10.0,
         "toolbarvisible": 0,
         "globalpatchername": "_act_overview1",
         "boxes": [
+            {
+                "box": {
+                    "fontsize": 12.0,
+                    "id": "obj-14",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 7.0, 18.0, 142.0, 20.0 ],
+                    "text": "modul.ator",
+                    "textcolor": [ 0.8, 0.8, 0.902, 1.0 ],
+                    "varname": "act_name_comment"
+                }
+            },
+            {
+                "box": {
+                    "bgcolor": [ 0.0, 0.0, 0.0, 1.0 ],
+                    "bordercolor": [ 1.0, 1.0, 1.0, 0.0 ],
+                    "id": "obj-17",
+                    "ignoreclick": 1,
+                    "linecount": 2,
+                    "maxclass": "textedit",
+                    "nosymquotes": 1,
+                    "numinlets": 1,
+                    "numoutlets": 4,
+                    "outlettype": [ "", "int", "", "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 143.0, 35.0, 124.0, 84.0 ],
+                    "readonly": 1,
+                    "text": "authors:\n- filip",
+                    "varname": "authors_box"
+                }
+            },
+            {
+                "box": {
+                    "bgcolor": [ 0.0, 0.0, 0.0, 1.0 ],
+                    "bordercolor": [ 1.0, 1.0, 1.0, 0.0 ],
+                    "id": "obj-16",
+                    "ignoreclick": 1,
+                    "linecount": 7,
+                    "maxclass": "textedit",
+                    "nosymquotes": 1,
+                    "numinlets": 1,
+                    "numoutlets": 4,
+                    "outlettype": [ "", "int", "", "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 16.0, 35.0, 124.0, 84.0 ],
+                    "readonly": 1,
+                    "text": "tags:\n- audio generator\n- uses buffer_host\n- controls parameters\n- controls signals\n- plugin\n- synth",
+                    "varname": "tags_box"
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 11.0,
+                    "id": "obj-6",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 2.0, 121.0, 118.0, 19.0 ],
+                    "text": "click act to open",
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "varname": "comment_desc[1]"
+                }
+            },
             {
                 "box": {
                     "hidden": 1,
@@ -53,19 +118,8 @@
             },
             {
                 "box": {
-                    "id": "obj-14",
-                    "maxclass": "lcd",
-                    "numinlets": 1,
-                    "numoutlets": 4,
-                    "outlettype": [ "list", "list", "int", "" ],
-                    "patching_rect": [ 97.0, 31.0, 177.0, 88.5 ],
-                    "varname": "commentbox"
-                }
-            },
-            {
-                "box": {
                     "id": "obj-10",
-                    "items": [ "tags", ",", "authors" ],
+                    "items": [ "tags", ",", "authors", ",", "usage" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -110,7 +164,7 @@
                     "maxclass": "newobj",
                     "numinlets": 2,
                     "numoutlets": 0,
-                    "patching_rect": [ 5.0, 60.0, 65.0, 20.0 ],
+                    "patching_rect": [ 276.16666399999997, 91.0, 65.0, 20.0 ],
                     "text": "ll.s jitwin_out"
                 }
             },
@@ -148,7 +202,7 @@
                     "numoutlets": 4,
                     "outlettype": [ "list", "", "", "" ],
                     "patching_rect": [ 2.0, 141.0, 588.0, 595.0 ],
-                    "rows": 173,
+                    "rows": 215,
                     "varname": "cellblock"
                 }
             },
@@ -206,20 +260,6 @@
             },
             {
                 "box": {
-                    "fontname": "Arial",
-                    "fontsize": 12.0,
-                    "id": "obj-23",
-                    "linecount": 3,
-                    "maxclass": "comment",
-                    "numinlets": 1,
-                    "numoutlets": 0,
-                    "patching_rect": [ 5.0, 93.0, 74.0, 47.0 ],
-                    "text": "click on an \nact-name \nto open it.",
-                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
-                }
-            },
-            {
-                "box": {
                     "active": {
                         "act": 0,
                         "act::active_store": 0,
@@ -240,10 +280,9 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 696.0, 176.0, 100.0, 20.0 ],
                     "saved_object_attributes": {
-                        "client_rect": [ 499, 162, 1139, 402 ],
+                        "client_rect": [ 946, 414, 1534, 927 ],
                         "parameter_enable": 0,
-                        "parameter_mappable": 0,
-                        "storage_rect": [ 0, 0, 640, 240 ]
+                        "parameter_mappable": 0
                     },
                     "text": "pattrstorage pat",
                     "varname": "pat"
@@ -295,7 +334,9 @@
                     "outlettype": [ "", "", "", "" ],
                     "patching_rect": [ 683.0, 260.0, 107.0, 20.0 ],
                     "restore": {
-                        "tag_select": [ "tags" ]
+                        "authors_box": [ "authors:\n- filip" ],
+                        "tag_select": [ "tags" ],
+                        "tags_box": [ "tags:\n- audio generator\n- uses buffer_host\n- controls parameters\n- controls signals\n- plugin\n- synth" ]
                     },
                     "text": "autopattr autopattr",
                     "varname": "autopattr"
@@ -316,12 +357,12 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 587.0, 565.0, 644.0, 485.0 ],
+                        "rect": [ 719.0, 211.0, 644.0, 485.0 ],
                         "toolbarvisible": 0,
                         "boxes": [
                             {
@@ -394,7 +435,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },

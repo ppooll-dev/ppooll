@@ -1,5 +1,5 @@
 {
-    "window": [ 106, 209, 694, 947 ],
+    "window": [ 45, 82, 633, 820 ],
     "act": {
         "patching_rect": [ 0, 0, 100.40234375, 16 ],
         "hidden": 0
@@ -30,26 +30,56 @@
         "hidden": 0,
         "bgfillcolor": {
             "type": "gradient",
-            "color1": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-            "color2": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ],
-            "color": [ 0.172137149796092, 0.172137100044002, 0.172137113045018, 1 ]
+            "color1": [ 0.301961, 0.301961, 0.301961, 1 ],
+            "color2": [ 0.2, 0.2, 0.2, 1 ],
+            "color": [ 0.2, 0.2, 0.2, 1 ]
         },
-        "color": [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ],
-        "elementcolor": [ 0.221327066888467, 0.221327006361825, 0.221327022178404, 1 ],
+        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
+        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
         "fontsize": 10,
-        "textcolor": [ 0.9, 0.9, 0.9, 1 ]
-    },
-    "commentbox": {
-        "patching_rect": [ 97, 31, 177, 88.5 ],
-        "hidden": 0
+        "textcolor": [ 0.968627, 0.968627, 0.968627, 1 ]
     },
     "comment_desc": {
         "patching_rect": [ 122, 121.5, 208.16666399999997, 19 ],
         "hidden": 0,
         "bgcolor": [ 1, 1, 1, 0 ],
-        "bubble_bgcolor": [ 0.235, 0.235, 0.235, 1 ],
-        "bubble_outlinecolor": [ 0.85, 0.85, 0.85, 1 ],
+        "bubble_bgcolor": [ 1, 1, 1, 1 ],
+        "bubble_outlinecolor": [ 0.75, 0.75, 0.75, 1 ],
         "fontsize": 11,
         "textcolor": [ 1, 1, 1, 1 ]
+    },
+    "comment_desc[1]": {
+        "patching_rect": [ 2, 121, 118, 19 ],
+        "hidden": 0,
+        "bgcolor": [ 1, 1, 1, 0 ],
+        "bubble_bgcolor": [ 1, 1, 1, 1 ],
+        "bubble_outlinecolor": [ 0.75, 0.75, 0.75, 1 ],
+        "fontsize": 11,
+        "textcolor": [ 1, 1, 1, 1 ]
+    },
+    "tags_box": {
+        "patching_rect": [ 16, 35, 124, 84 ],
+        "hidden": 0,
+        "bgcolor": [ 0, 0, 0, 1 ],
+        "bordercolor": [ 1, 1, 1, 0 ],
+        "fontsize": 10,
+        "textcolor": [ 0.968627, 0.968627, 0.968627, 1 ]
+    },
+    "authors_box": {
+        "patching_rect": [ 143, 35, 124, 84 ],
+        "hidden": 0,
+        "bgcolor": [ 0, 0, 0, 1 ],
+        "bordercolor": [ 1, 1, 1, 0 ],
+        "fontsize": 10,
+        "textcolor": [ 0.968627, 0.968627, 0.968627, 1 ]
+    },
+    "act_name_comment": {
+        "patching_rect": [ 7, 18, 142, 20 ],
+        "hidden": 0,
+        "bgcolor": [ 1, 1, 1, 0 ],
+        "bubble_bgcolor": [ 1, 1, 1, 1 ],
+        "bubble_outlinecolor": [ 0.75, 0.75, 0.75, 1 ],
+        "fontsize": 12,
+        "textcolor": [ 0.8, 0.8, 0.902, 1 ]
     }
 }

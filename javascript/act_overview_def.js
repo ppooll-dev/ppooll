@@ -6,6 +6,8 @@ by klaus filip
 */
 outlets = 2;
 
+var ll_prefs = new Dict("ppooll-preferences");
+
 var help_path;
 var aon = new Dict("act_work");
 var collect_data = [];
@@ -16,12 +18,21 @@ var t_select = "tags";
 const ap = this.patcher.parentpatcher;
 const cb = ap.getnamed("cellblock");
 
-const cx = ap.getnamed("commentbox");
-cx.message("brgb",0,0,0);
-cx.message("frgb",200,200,200);
-cx.message("clear");
-cx.message("moveto",5,15)
-cx.message("write","scanning all acts .....")	
+const act_name_comment = ap.getnamed("act_name_comment")
+const tags_box = ap.getnamed("tags_box");
+const authors_box = ap.getnamed("authors_box");
+
+// const cx = ap.getnamed("commentbox");
+// cx.message("brgb",0,0,0);
+// cx.message("frgb",200,200,200);
+// cx.message("clear");
+// cx.message("moveto",5,15)
+// cx.message("write","scanning all acts .....")	
+
+let usage_prefs = ["favorite_acts", "never_used_acts", "sometimes_used_acts"]
+let usage_array = ["favorite", "never", "sometimes"]
+
+// act_usage => favorite_acts, never_used_acts, sometimes_used_acts
 
 
 function bang(){
@@ -38,7 +49,12 @@ function bang(){
 	aon.setparse("acts",JSON.stringify(acts));
 	
 	jitwin_out("all");
-	cx.message("clear");
+	// cx.message("clear");
+
+	act_name_comment.message("set", "");
+	tags_box.message("set", "tags:")
+	authors_box.message("set", "authors:")
+
 	//post("done");
 }
 
@@ -127,11 +143,16 @@ function set_data(data){ //parse tags_array and authors_array
 
 // ################################################################# interaction
 function tag_select(t){
+	// tags, authors, usage
+	
 	t_select = t;
 	ap.getnamed("comment_desc").message("set", 
-				"click on description for " + (t === "tags" ? "authors" : "tags"))	
+				"click on description for " + t)	
 	let table = (t === "tags") ? tags_array : authors_array;	
 	
+	if(t === "usage"){
+		table = usage_array;
+	}
 	
 	let amount = table.length;
 	let size = amount * 15 + 2;
@@ -198,6 +219,16 @@ function fill_cellblock(data,i){
 	cb.message("set",0,i,data["act"]);
 	if (data["description"]) cb.message("set",1,i,data["description"]);
 	let arr = toarray(data[t_select]); 
+	if(t_select === "usage"){
+		const act_usage = JSON.parse(ll_prefs.get("act_usage").stringify())
+		const is_favorite = toarray(act_usage.favorite_acts).indexOf(data["act"]) > -1
+		const is_never = toarray(act_usage.never_used_acts).indexOf(data["act"]) > -1
+		const is_sometimes = toarray(act_usage.sometimes_used_acts).indexOf(data["act"]) > -1
+		cb.message("set",2,i,is_favorite ? "X" : "");
+		cb.message("set",3,i,is_never ? "X" : "");
+		cb.message("set",4,i,is_sometimes ? "X" : "");
+		return
+	}
 	let lookup = (t_select === "tags") ? tags_array : authors_array;
 	arr.forEach((tag) => {
 		if (lookup.indexOf(tag) > -1)
@@ -206,6 +237,7 @@ function fill_cellblock(data,i){
 }
 function cellblock1(a,b,c){
 	if (a==0){
+		row1click(c);  // show info for opened act
 		messnamed("lload",c);
 	}
 	if (a==1){
@@ -214,24 +246,31 @@ function cellblock1(a,b,c){
 }
 function row1click(a){
 	let arr;
-	cx.message("clear");
+	// cx.message("clear");
+	let tag_list, author_list = [];
 	collect_data.forEach ((data,i) => {	
 		if (data["act"] === a) {
-			if (t_select === "tags"){
-				arr = toarray(data["authors"]);
-				cx.message("moveto",5,15)
-				cx.message("write","authors:")	
-			}
-			else {
-				arr = toarray(data["tags"]);
-				cx.message("moveto",5,15)
-				cx.message("write","tags:")	
-			}
-			arr.forEach((t,i) => {
-				cx.message("moveto",5,(i+2)*15)
-				cx.message("write",t)
-			})
+			// if (t_select === "tags"){
+			// 	arr = toarray(data["authors"]);
+			// 	cx.message("moveto",5,15)
+			// 	cx.message("write","authors:")	
+			// }
+			// else {
+			// 	arr = toarray(data["tags"]);
+			// 	cx.message("moveto",5,15)
+			// 	cx.message("write","tags:")	
+			// }
+			// arr.forEach((t,i) => {
+			// 	cx.message("moveto",5,(i+2)*15)
+			// 	cx.message("write",t)
+			// })
+			
+			act_name_comment.message("set", a);
+			tags_box.message("set", "tags:\n- " + toarray(data["tags"]).join("\n- "))
+			authors_box.message("set", "authors:\n- " + toarray(data["authors"]).join("\n- "))
 		}
+
+
 	})
 }
 	
