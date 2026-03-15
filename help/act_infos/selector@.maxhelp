@@ -4,13 +4,39 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 2,
+            "revision": 3,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 926.0, 590.0, 317.0, 292.0 ],
+        "rect": [ 100.0, 100.0, 317.0, 292.0 ],
+        "toolbarvisible": 0,
         "boxes": [
+            {
+                "box": {
+                    "data": {
+                        "act": "selector@",
+                        "description": "multichannel signal switcher",
+                        "tags": [ "controls signals", "plugin", "multichannel (mc)" ],
+                        "authors": [ "c. hausch" ]
+                    },
+                    "hidden": 1,
+                    "id": "obj-8",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 5,
+                    "outlettype": [ "dictionary", "", "", "", "" ],
+                    "patching_rect": [ 210.0, 19.0, 61.0, 22.0 ],
+                    "saved_object_attributes": {
+                        "embed": 1,
+                        "legacy": 0,
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "dict",
+                    "varname": "for_act_overview"
+                }
+            },
             {
                 "box": {
                     "fontface": 1,
@@ -42,8 +68,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 25.0, 57.0, 243.0, 47.0 ],
-                    "presentation_linecount": 8,
+                    "patching_rect": [ 25.0, 57.0, 246.0, 47.0 ],
                     "text": "exactly what it says on the tin: ppooll port of selector~,  with mc support & switchable per signal (use e.g. op@ for scaling)",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -59,8 +84,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 160.0, 117.0, 108.0, 52.0 ],
-                    "presentation_linecount": 2,
+                    "patching_rect": [ 160.0, 117.0, 109.0, 52.0 ],
                     "text": "select active input \n(0 = mute)",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
