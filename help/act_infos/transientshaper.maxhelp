@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 744.0, 390.0, 547.0, 383.0 ],
+        "rect": [ 100.0, 100.0, 547.0, 383.0 ],
         "toolbarvisible": 0,
         "boxes": [
             {
@@ -23,7 +23,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 366.0, 234.0, 142.0, 24.0 ],
-                    "presentation_linecount": 2,
                     "text": "detection range (dB)",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -41,7 +40,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 310.0, 296.0, 131.0, 52.0 ],
-                    "presentation_linecount": 2,
                     "text": "attack & decay shape (%, log-lin-exp)",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -56,7 +54,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 366.0, 265.0, 162.0, 24.0 ],
-                    "presentation_linecount": 2,
                     "text": "attack & decay time (ms)",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -74,7 +71,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 33.5, 265.0, 137.0, 51.0 ],
-                    "presentation_linecount": 3,
                     "text": "attack & decay attenuation / amplicifcation (dB)",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -90,7 +86,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 17.0, 239.5, 155.0, 24.0 ],
-                    "presentation_linecount": 8,
                     "text": "detection threshold (dB)",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -123,7 +118,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 310.0, 166.0, 155.0, 66.0 ],
-                    "presentation_linecount": 3,
                     "text": "extra dry-wet (outside of ll.blues, because of plugin latency)",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -140,7 +134,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 115.0, 183.0, 139.0, 52.0 ],
+                    "patching_rect": [ 115.0, 183.0, 142.0, 52.0 ],
                     "text": "latency analysis window (samples)",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -403,7 +397,7 @@
                         "act": "transientshaper",
                         "description": "compresses/excites dynamics of transients",
                         "tags": [ "plugin", "multichannel (mc)" ],
-                        "authors": [ "Peter McCulloch", "c. hausch" ]
+                        "authors": [ "c. hausch" ]
                     },
                     "hidden": 1,
                     "id": "obj-1",
