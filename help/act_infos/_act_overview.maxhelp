@@ -613,8 +613,8 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 420.0, 8.0, 58.0, 20.0 ],
-                    "text": "klaus fiiip"
+                    "patching_rect": [ 420.0, 8.0, 142.0, 20.0 ],
+                    "text": "klaus fiiip & Joe Steccato"
                 }
             },
             {
@@ -623,7 +623,7 @@
                     "data": {
                         "description": "",
                         "tags": "",
-                        "authors": ""
+                        "authors": "Joe Steccato"
                     },
                     "id": "obj-24",
                     "maxclass": "newobj",
