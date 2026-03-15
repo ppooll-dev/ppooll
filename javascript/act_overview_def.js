@@ -39,6 +39,7 @@ function bang(){
 	
 	jitwin_out("all");
 	cx.message("clear");
+	//post("done");
 }
 
 // ################################################################# collect data
@@ -55,6 +56,35 @@ function pp_acts(a){ //called from out there after dump
 	}
 }
 function readlines(f,act){ // find and collect data from varname "for_act_overview" in .maxhelp patcher file
+	let a;
+	let data;
+	let big_string = "";
+	let dataS = "";
+	let sample = 0;
+	
+	while ((a = f.readline()) != null) { // returns a string
+		if (a.includes('"data": {')){
+			sample = 1;
+			a = "{";
+		}
+		if (a.includes('},') && sample){
+			sample = 0;
+			dataS += " }"
+		} 
+		if (sample) dataS += a;
+		if (a.includes("for_act_overview")) break;	
+	}
+	f.close();	
+
+	if (dataS) {
+		data = JSON.parse(dataS);
+		set_data(data);
+	}
+	else data = {act: act, description: "##### no data in info patch"};
+
+	collect_data.push(data);
+}
+function readlin(f,act){ // bigObject version
 	let a;
 	let data;
 	let big_string = "";
