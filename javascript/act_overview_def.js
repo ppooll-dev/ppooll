@@ -46,13 +46,10 @@ function bang(){
 function pp_acts(a){ //called from out there after dump
 	if (a === "(__acts__)" ) help_path = "Package:/ppooll/help/act_infos/"; 
 	else if (a === "(community contributions)" ) help_path = "Package:/ppooll_contributions/help/act_infos/";
-	else if (a != "-" && a != "--unshared_acts--" && a != "_act_overview"){
+	else if (a != "-" && a != "--unshared_acts--" && a != "_act_overview" && a != "buffer_host"){
 		let f = new File(`${help_path}${a}.maxhelp`);
 		if (f.isopen) readlines(f,a)
-		else {
-			collect_data.push({act: a, description: "#### no info patch"});
-
-		}
+		else collect_data.push({act: a, description: "#### no info patch"});
 	}
 }
 function readlines(f,act){ // find and collect data from varname "for_act_overview" in .maxhelp patcher file
@@ -112,7 +109,6 @@ function readlin(f,act){ // bigObject version
 	collect_data.push(data);
 }
 function set_data(data){ //parse tags_array and authors_array
-	//post(data["act"],"\n");
 	if (data["tags"]){
 		let ta = toarray(data["tags"]);
 		for (let t of ta ) {
@@ -125,7 +121,6 @@ function set_data(data){ //parse tags_array and authors_array
 			if (!authors_array.includes(t)) authors_array.push(t);
 		}
 	}
-
 	let act = data["act"];
 	acts[act] = data;
 }
@@ -244,23 +239,6 @@ function row1click(a){
 function toarray(a){
 	if (!Array.isArray(a)) a = [a];
 	return a;
-}
-function fetch() { //?????
-	//import * as data from "/Users/klaus/Documents/Max 9/Packages/ppooll/help/act_infos/sinus.maxhelp";
-	//let x = require("/Users/klaus/Documents/Max 9/Packages/ppooll/help/act_infos/sinus.maxhelp");
-/*
-      fetch("Package:/ppooll/help/act_infos/xgroove@.maxhelp")
-          .then(response => {
-              if (!response.ok) {
-                  post(`HTTP error! Status: ${response.status}`);
-              }
-              return response.json();  
-          })
-          //.then(data => console.log(data))  
-          //.catch(error => console.error('Failed to fetch data:', error)); 
-  }
-  fetchJSONData(); 
-  */
 }
 
 outlet(0,"bang");
