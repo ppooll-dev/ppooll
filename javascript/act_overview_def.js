@@ -261,7 +261,7 @@ function cellblock1(a,b,c){
 	if (a==1){
 		cb.message("send", "act_overview_r", 0, b)
 	}
-	if(t_select === "usage"){
+	if(t_select === "usage" && a > 1){
 		// enable / disable usage type
 		// post(a, b, c, "\n")
 		let type = "favorite_acts";
