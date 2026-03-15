@@ -39,18 +39,13 @@ function author(s){
 }
 function menu2dict(m,s){
 	if (d.get(m) && d.get(m).includes(s)){
-
-		let tg = d.get(m);
-		let ar = [];
-		tg = toarray(tg);
-			
-			for (let k of tg)  
-				if (k != s) ar.push(k);	
-			post("ja?",ar.length);
+		let tg = toarray(d.get(m));
+		let ar = [];		
+		for (let k of tg)  
+			if (k != s) ar.push(k);	
 		if (ar.length == 0) d.set(m,"")
 		else if (ar.length == 1) d.set(m,ar[0])
 		else d.set(m,ar);
-		//if (!d.get(m)) d.set(m,"");
 	} 
 	else {
 		if (d.get(m) === "") d.set(m,s)
@@ -63,9 +58,7 @@ function description(s){
 	d.set("description",s)
 	reopend();
 }
-function dict_sub(k,...s){
-	d.set(k,s);
-}
+
 function clear(){ //button
 	clear_all();
 	reopend();
