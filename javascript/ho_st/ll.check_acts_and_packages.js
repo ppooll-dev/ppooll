@@ -4,13 +4,12 @@ if (typeof ll === "undefined") {
     var ll = require("ll._utilities");
 }
 
+var ll_global = new Global("ppooll");
+
 var MAIN = "Package:/ppooll/patchers/ppooll.acts";
 var CONTRIBUTIONS = "Package:/ppooll_contributions/patchers/ppooll.acts";
 var IGNORE_LIST = "";
 var count = 0;
-
-// for _act_overview
-var dict_act_overview_plus = new Dict("act_overview++");
 
 const PACKAGES_JSON = {
     macintosh:
@@ -177,15 +176,12 @@ function load_acts_from_folder(folder, desc) {
             if (file_ext[0] !== "_act_overview") {
                 store(file_ext[0]);
             }
-            if (desc) {
-                dict_act_overview_plus.setparse(
-                    "acts::" + file_ext[0],
-                    JSON.stringify({
-                        description: desc,
-                        authors: "",
-                        tags: "",
-                    })
-                );
+
+            if (file_ext[0] !== "_act_overview" && file_ext[0] !== "buffer_host") {
+                ll_global.act_overview.push({
+                    name: file_ext[0],
+                    parent: desc ? desc : "ppooll"
+                })
             }
         });
 }
@@ -195,9 +191,9 @@ function rebuild_menu() {
         outlet(0, dest, "clear")
     );
 
-    const ll_preferences = JSON.parse(ppooll_preferences_dict.stringify());
+    ll_global.act_overview = [];
 
-    dict_act_overview_plus.import_json("act_overview.json");
+    const ll_preferences = JSON.parse(ppooll_preferences_dict.stringify());
 
     count = 0;
 
@@ -228,10 +224,6 @@ function rebuild_menu() {
         load_acts_from_folder(UNSHARED, "--unshared_acts--");
         watch_folder(UNSHARED);
     }
-
-    var jsonOverviewPlus = JSON.parse(dict_act_overview_plus.stringify());
-    var newActs = sortObjects(jsonOverviewPlus.acts);
-    dict_act_overview_plus.setparse("acts", JSON.stringify(newActs));
 
     // outlet(0, "bang");
     package_compare();

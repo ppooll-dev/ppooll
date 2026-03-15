@@ -283,6 +283,13 @@ function del_favorit() {
     ll_prf_rewrite();
 }
 
+function refresh_favorites(){
+    favorite_acts = preferences.get("act_usage::favorite_acts");
+    if (!Array.isArray(favorite_acts)) favorite_acts = [favorite_acts];
+    favorite_acts = favorite_acts.sort()
+    set_favorite_acts();
+}
+
 var sort_envi_by = "name";
 declareattribute("sort_envi_by", {
     style: "enum",

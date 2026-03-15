@@ -6,6 +6,12 @@ by klaus filip
 */
 outlets = 2;
 
+if (typeof ll === "undefined") {
+	var ll = require("ll._utilities");
+}
+
+var ll_global = new Global("ppooll");
+
 var ll_prefs = new Dict("ppooll-preferences");
 
 var help_path;
@@ -42,7 +48,9 @@ function bang(){
 	authors_array = [];	
 	aon.clear();
 
-	outlet(0,"dump"); //dumps coll to function pp_acts()
+	// outlet(0,"dump"); //dumps coll to function pp_acts()
+
+	pp_acts_v2();
 	
 	aon.set("tags",tags_array);
 	aon.set("authors",authors_array);
@@ -59,15 +67,24 @@ function bang(){
 }
 
 // ################################################################# collect data
-function pp_acts(a){ //called from out there after dump
-	if (a === "(__acts__)" ) help_path = "Package:/ppooll/help/act_infos/"; 
-	else if (a === "(community contributions)" ) help_path = "Package:/ppooll_contributions/help/act_infos/";
-	else if (a != "-" && a != "--unshared_acts--" && a != "_act_overview" && a != "buffer_host"){
-		let f = new File(`${help_path}${a}.maxhelp`);
-		if (f.isopen) readlines(f,a)
-		else collect_data.push({act: a, description: "#### no info patch"});
-	}
+// function pp_acts(a){ //called from out there after dump
+// 	if (a === "(__acts__)" ) help_path = "Package:/ppooll/help/act_infos/"; 
+// 	else if (a === "(community contributions)" ) help_path = "Package:/ppooll_contributions/help/act_infos/";
+// 	else if (a != "-" && a != "--unshared_acts--" && a != "_act_overview" && a != "buffer_host"){
+// 		let f = new File(`${help_path}${a}.maxhelp`);
+// 		if (f.isopen) readlines(f,a)
+// 		else collect_data.push({act: a, description: "#### no info patch"});
+// 	}
+// }
+function pp_acts_v2(){
+	ll_global.act_overview
+		.forEach(act_info => {
+			let f = new File(`${act_info.name}.maxhelp`);
+			if (f.isopen) readlines(f, act_info.name)
+			else collect_data.push({act: act_info.name, description: "#### no info patch"});
+	})
 }
+
 function readlines(f,act){ // find and collect data from varname "for_act_overview" in .maxhelp patcher file
 	let a;
 	let data;
@@ -243,38 +260,53 @@ function cellblock1(a,b,c){
 	}
 	if (a==1){
 		cb.message("send", "act_overview_r", 0, b)
+	}
+	if(t_select === "usage"){
+		// enable / disable usage type
+		// post(a, b, c, "\n")
+		let type = "favorite_acts";
+		if(a === 3){
+			type = "never_used_acts";
+		}else if(a === 4){
+			type = "sometimes_used_acts";
+		}
+
+
+		const act_usage = JSON.parse(ll_prefs.get("act_usage").stringify());
+		act_usage[type] = toarray(act_usage[type]);
+		const act_name = ll_global.act_overview[b].name;
+		const isSelected = !(act_usage[type].indexOf(act_name) > -1);
+
+		if(isSelected){
+			act_usage[type].push(act_name)
+		}else{
+			act_usage[type] = act_usage[type].filter(a => a !== act_name)
+		}
+		ll_prefs.set("act_usage::" + type, act_usage[type])
+
+
+		messnamed("ll_prf_rewrite", "bang");
+		messnamed("ll_refresh_favorites", "bang");
+		// update menus
+
+
+		cb.message("set", a, b, isSelected ? "X" : "");
+
+		// post(ll_global.act_overview[b].name, "\n")
 	}	
 }
 function row1click(a){
 	let arr;
-	// cx.message("clear");
 	let tag_list, author_list = [];
 	collect_data.forEach ((data,i) => {	
 		if (data["act"] === a) {
-			// if (t_select === "tags"){
-			// 	arr = toarray(data["authors"]);
-			// 	cx.message("moveto",5,15)
-			// 	cx.message("write","authors:")	
-			// }
-			// else {
-			// 	arr = toarray(data["tags"]);
-			// 	cx.message("moveto",5,15)
-			// 	cx.message("write","tags:")	
-			// }
-			// arr.forEach((t,i) => {
-			// 	cx.message("moveto",5,(i+2)*15)
-			// 	cx.message("write",t)
-			// })
-			
 			act_name_comment.message("set", a);
 			tags_box.message("set", "tags:\n- " + toarray(data["tags"]).join("\n- "))
 			authors_box.message("set", "authors:\n- " + toarray(data["authors"]).join("\n- "))
 		}
-
-
 	})
 }
-	
+
 // ################################################################# helper
 function toarray(a){
 	if (!Array.isArray(a)) a = [a];
