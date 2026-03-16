@@ -545,27 +545,15 @@ function handleTitleBar() {
 }
 
 // when a "master" is selected, this is called via [r ll_master_selected]
+//  this is only responsible for turning off "master" for acts of the same class
+//  ie sinus1 is currently master, sinus2 is selected as a new master
+//      this method will uncheck and disable master in sinus1 (the old master)
 function masterSelected(master_act_name, master_act_index) {
-    if (master_act_name === act_args.name) {
-        if (master_act_index !== act_index) {
-            // post("master", master_act_name, master_act_index)
-            isMaster = 0;
-            act_patcher.getnamed("pat").message("act::master", isMaster);
-            title_menu.message(
-                "checkitem",
-                Object.keys(title_menu_options).indexOf("master"),
-                isMaster
-            );
-        } else {
-            // post("not master", master_act_name, master_act_index)
-            isMaster = 1;
-            act_patcher.getnamed("pat").message("act::master", isMaster);
-            title_menu.message(
-                "checkitem",
-                Object.keys(title_menu_options).indexOf("master"),
-                isMaster
-            );
-        }
+    if (master_act_name === act_args.name && master_act_index !== act_index) {
+        // post("master", master_act_name, master_act_index)
+        isMaster = 0;
+        act_patcher.getnamed("pat").message("act::master", isMaster);
+        title_menu.message("checksymbol", "master", isMaster);
     }
 }
 
@@ -609,6 +597,13 @@ function create_title_menu_options() {
             act_patcher.message("window", "exec");
         },
         master: () => {
+            isMaster = !this.patcher.getnamed("master").getvalueof();
+            this.patcher.getnamed("master").setvalueof(isMaster);
+            title_menu.message(
+                "checksymbol",
+                "master",
+                isMaster
+            )
             messnamed("ll_master_selected", act_args.name, act_index);
         },
         active_store: () => {
@@ -1638,21 +1633,7 @@ function _in2(...args) {
     //post("in2", args); post()
     const msg = args.shift();
 
-    if (msg === "act::master") {
-        const newMaster = args[0];
-
-        if (isMaster !== newMaster && newMaster === 1) {
-            isMaster = 1;
-            title_menu.message(
-                "checkitem",
-                Object.keys(title_menu_options).indexOf("master"),
-                isMaster
-            );
-        }
-
-        act_patcher.getnamed("pat").message("act::master", isMaster);
-        return;
-    } else if (msg === "act::active_store") {
+    if (msg === "act::active_store") {
         const active_clients = (Array.isArray(args) ? args : [args]).filter(
             (a) =>
                 a &&
