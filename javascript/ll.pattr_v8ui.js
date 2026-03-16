@@ -571,7 +571,7 @@ function store(slot) {
     pat = this.patcher.getnamed("pat");
     pat.message("store", slot);
     pat.message("getslotlist");
-    post(act_name, "\n");
+    // post(act_name, "\n");
     ll_global.patchers[act_name]
         .getnamed("act")
         .subpatcher()

@@ -4,7 +4,7 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 2,
+            "revision": 3,
             "architecture": "x64",
             "modernui": 1
         },
@@ -34,7 +34,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -260,7 +260,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -452,7 +452,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -613,7 +613,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -729,7 +729,7 @@
                             },
                             {
                                 "box": {
-                                    "cols": 1,
+                                    "cols": 6,
                                     "colwidth": 20,
                                     "fontface": 0,
                                     "fontname": "Arial",
@@ -740,9 +740,9 @@
                                     "numinlets": 2,
                                     "numoutlets": 4,
                                     "outlettype": [ "list", "", "", "" ],
-                                    "patching_rect": [ 13.0, 70.0, 0.0, 0.0 ],
+                                    "patching_rect": [ 13.0, 70.0, 120.0, 40.0 ],
                                     "rowheight": 20,
-                                    "rows": 1,
+                                    "rows": 2,
                                     "selmode": 5,
                                     "vscroll": 0
                                 }
@@ -782,7 +782,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 13.0, 2.0, 87.0, 22.0 ],
-                                    "text": "ho_st1"
+                                    "text": "sinus2"
                                 }
                             },
                             {
@@ -932,12 +932,12 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 559.0, 153.0, 382.0, 426.0 ],
+                        "rect": [ 861.0, 146.0, 380.0, 426.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -965,13 +965,25 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
                                         "rect": [ 695.0, 296.0, 343.0, 439.0 ],
+                                        "visible": 1,
                                         "boxes": [
+                                            {
+                                                "box": {
+                                                    "id": "obj-8",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 2,
+                                                    "outlettype": [ "", "" ],
+                                                    "patching_rect": [ 112.0, 363.0, 43.0, 22.0 ],
+                                                    "text": "zl.filter"
+                                                }
+                                            },
                                             {
                                                 "box": {
                                                     "id": "obj-1",
@@ -1011,8 +1023,8 @@
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 139.0, 396.0, 50.0, 22.0 ],
-                                                    "text": "none"
+                                                    "patching_rect": [ 139.0, 396.0, 81.0, 22.0 ],
+                                                    "text": "sinus1 sinus2"
                                                 }
                                             },
                                             {
@@ -1023,7 +1035,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 110.0, 290.0, 131.0, 22.0 ],
-                                                    "text": "sameclass ho_st1"
+                                                    "text": "sameclass sinus2"
                                                 }
                                             },
                                             {
@@ -1157,20 +1169,28 @@
                                             {
                                                 "patchline": {
                                                     "destination": [ "obj-46", 0 ],
+                                                    "order": 0,
                                                     "source": [ "obj-12", 0 ]
                                                 }
                                             },
                                             {
                                                 "patchline": {
-                                                    "destination": [ "obj-13", 0 ],
+                                                    "destination": [ "obj-8", 1 ],
                                                     "order": 1,
-                                                    "source": [ "obj-15", 0 ]
+                                                    "source": [ "obj-12", 0 ]
                                                 }
                                             },
                                             {
                                                 "patchline": {
                                                     "destination": [ "obj-22", 1 ],
                                                     "order": 0,
+                                                    "source": [ "obj-15", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-8", 0 ],
+                                                    "order": 1,
                                                     "source": [ "obj-15", 0 ]
                                                 }
                                             },
@@ -1222,6 +1242,12 @@
                                                 "patchline": {
                                                     "destination": [ "obj-9", 0 ],
                                                     "source": [ "obj-7", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-13", 0 ],
+                                                    "source": [ "obj-8", 0 ]
                                                 }
                                             },
                                             {
@@ -1296,7 +1322,7 @@
                                     "numinlets": 2,
                                     "numoutlets": 2,
                                     "outlettype": [ "", "" ],
-                                    "patching_rect": [ 159.0, 274.0, 58.5, 20.0 ],
+                                    "patching_rect": [ 159.0, 292.0, 58.5, 20.0 ],
                                     "text": "zl join"
                                 }
                             },
@@ -1309,7 +1335,7 @@
                                     "numinlets": 2,
                                     "numoutlets": 2,
                                     "outlettype": [ "", "" ],
-                                    "patching_rect": [ 159.0, 246.0, 43.0, 20.0 ],
+                                    "patching_rect": [ 159.0, 247.0, 43.0, 20.0 ],
                                     "text": "zl iter 1"
                                 }
                             },
@@ -1344,12 +1370,13 @@
                                     "fontname": "Arial",
                                     "fontsize": 10.0,
                                     "id": "obj-56",
+                                    "linecount": 2,
                                     "maxclass": "message",
                                     "numinlets": 2,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 36.0, 182.0, 102.0, 20.0 ],
-                                    "text": "time 28875"
+                                    "patching_rect": [ 36.0, 182.0, 102.0, 31.0 ],
+                                    "text": "act::title_menu master"
                                 }
                             },
                             {
@@ -1486,7 +1513,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1705,7 +1732,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1884,7 +1911,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1910,7 +1937,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 264.0, 0.5, 136.0, 22.0 ],
-                                    "text": "ho_st1"
+                                    "text": "sinus2"
                                 }
                             },
                             {
@@ -2029,7 +2056,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -2336,7 +2363,7 @@
                     "restore": {
                         "pres_menu": [ "(presets)" ],
                         "tetris_menu": [ "(tetris)" ],
-                        "title_menu": [ "" ]
+                        "title_menu": [ "master" ]
                     },
                     "text": "autopattr",
                     "varname": "u751015509"
@@ -2450,8 +2477,8 @@
             {
                 "box": {
                     "embedstate": [
-                        [ "act_index", 1 ],
-                        [ "act_name_index", "ho_st1" ],
+                        [ "act_index", 2 ],
+                        [ "act_name_index", "sinus2" ],
                         [ "isReady", 0 ]
                     ],
                     "filename": "ll.act_main.js",
@@ -2462,7 +2489,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, 0.0, 50.3515625, 16.0 ],
+                    "patching_rect": [ 0.0, 0.0, 49.689453125, 16.0 ],
                     "textfile": {
                         "filename": "ll.act_main.js",
                         "flags": 0,
@@ -2511,13 +2538,13 @@
                     "hidden": 1,
                     "id": "obj-80",
                     "ignoreclick": 1,
-                    "items": [ "info", ",", "clientwindow", ",", "-", ",", "max_console", ",", "clear_console", ",", "titlebar", ",", "all_titlebars", ",", "dsp(audio_settings)", ",", "tetris", ",", "refresh", ",", "-", ",", "time", ",", "stopwatch", ",", "-", ",", "close", ",", "closeall", ",", "back", ",", "grow", ",", "-", ",", "subpatch", ",", "actmaker", ",", "ppooll_state", ",", "clean", ",", "nan_clear", ",", "-", ",", "report" ],
+                    "items": [ "info", ",", "clientwindow", ",", "storagewindow", ",", "-", ",", "titlebar", ",", "close", ",", "back", ",", "grow", ",", "master", ",", "active_store", ",", "-", ",", "subpatch", ",", "actmaker" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, -7.0, 50.3515625, 23.0 ],
+                    "patching_rect": [ 0.0, -7.0, 49.689453125, 23.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "title_menu"
@@ -2532,13 +2559,13 @@
                     "hidden": 1,
                     "id": "obj-82",
                     "ignoreclick": 1,
-                    "items": [ "(presets)", ",", "-", ",", "-", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
+                    "items": [ "(presets)", ",", "-", ",", "active-store", ",", "cone-o-shame-TEXT", ",", "evil", ",", "testah", ",", "-", ",", "-", ",", "write", ",", "clear!", ",", "TEXT", ",", "_" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, -7.0, 50.3515625, 23.0 ],
+                    "patching_rect": [ 0.0, -7.0, 49.689453125, 23.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "pres_menu"
@@ -2553,13 +2580,13 @@
                     "hidden": 1,
                     "id": "obj-84",
                     "ignoreclick": 1,
-                    "items": [ "(tetris)", ",", "-", ",", "-", ",", "ƒ default.json", ",", "ƒ default_TEST.json", ",", "-" ],
+                    "items": [ "(tetris)", ",", "-", ",", "beeg.json", ",", "hahahah.json", ",", "hello?.json", ",", "-", ",", "ƒ default.json", ",", "-" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, -7.0, 50.3515625, 23.0 ],
+                    "patching_rect": [ 0.0, -7.0, 49.689453125, 23.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "tetris_menu"
