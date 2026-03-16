@@ -654,11 +654,11 @@ function handle_watch_selection(selection) {
     watch_menu.message("append", "-");
 
     let stopwatch_items = ["start", "stop", "resume"];
-    if (selection === "time")
+    if (selection.includes('time'))
         stopwatch_items = stopwatch_items.map((item) => `(${item})`);
 
     stopwatch_items.forEach((item) => watch_menu.message("append", item));
-
+	post(selection);
     watch_menu.message("symbol", selection);
     watch_menu.message("clearchecks");
     watch_menu.message("checksymbol", selection, 1);
