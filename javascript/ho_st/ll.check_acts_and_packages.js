@@ -182,6 +182,13 @@ function load_acts_from_folder(folder, desc) {
                     name: file_ext[0],
                     parent: desc ? desc : "ppooll"
                 })
+
+			    if (desc){
+			        if (!ll_global.all_acts[desc]) ll_global.all_acts[desc] = [];
+			        ll_global.all_acts[desc].push(file_ext[0]);
+			    }
+				else ll_global.all_acts.ppooll.push(file_ext[0]);
+
             }
         });
 }
@@ -192,6 +199,8 @@ function rebuild_menu() {
     );
 
     ll_global.act_overview = [];
+	ll_global.all_acts = {};
+	ll_global.all_acts.ppooll = [];
 
     const ll_preferences = JSON.parse(ppooll_preferences_dict.stringify());
 
