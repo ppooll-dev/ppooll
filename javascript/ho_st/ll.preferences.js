@@ -24,8 +24,7 @@ var empty_prf_DEFAULT = {
         flop_disable_cursor: 0,
         host_channels: 2,
         sort_envi_by: "name", // ["name", "recent"]
-        envi_history: [],
-        time_format: "24hr"
+        envi_history: []
     },
     file_paths: {
         quickrecord_path: 0,
@@ -233,6 +232,10 @@ function sethost_channels(c) {
 }
 
 function audio_key(key) {
+    if (key == "no_key") {
+        key = "no";
+        this.patcher.getnamed("audio_key").message("set", key);
+    }
     preferences.set("general::audioON/OFF", key);
     outlet(0, "audio_key", key);
     ll_prf_rewrite();
@@ -300,19 +303,6 @@ declareattribute("sort_envi_by", {
 function set_sort_envi_by(c) {
     sort_envi_by = c;
     preferences.set("general::sort_envi_by", c);
-    ll_prf_rewrite();
-}
-
-var host_timeformat = "24h";
-declareattribute("host_timeformat", {
-    style: "enum",
-    enumvals: ["24h", "12h"],
-    setter: "sethost_timeformat",
-});
-function sethost_timeformat(c) {
-    host_timeformat = c;
-    preferences.set("general::time_format", c);
-    messnamed("ll_time_format", c);
     ll_prf_rewrite();
 }
 
@@ -393,11 +383,6 @@ function readfile() {
 
     sort_envi_by = preferences.get("general::sort_envi_by");
     this.patcher.getnamed("attrui_sort_envi_by").message("attr", "sort_envi_by");
-
-    host_timeformat = preferences.get("general::time_format");
-    this.patcher
-        .getnamed("attrui_htf")
-        .message("attr", "host_timeformat");
 
     messnamed("ll_preferences_ready", "bang");
 }

@@ -51,6 +51,8 @@ function allacts() {
 
 function sameclass(a) {
     //eg. needed for master-acts
+    if (!ll_global.state[a]) 
+        return;
     let thisClass = ll_global.state[a].class;
 
     let keys = Object.keys(ll_global.state).filter(
