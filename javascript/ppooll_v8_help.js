@@ -85,7 +85,7 @@ function _refresh() {
 		nested_patcher: ll_global.nested_patcher,
 		live_ppooll_patcher: ll_global.live_ppooll_patcher,
 		envi_name: ll_global.envi_name,
-		act_overview: ll_global.act_overview,
+		//act_overview: ll_global.act_overview,
 		all_acts: ll_global.all_acts
     });
 }

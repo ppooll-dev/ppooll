@@ -85,6 +85,7 @@ function _refresh() {
         pat: ll_global.pat,
         buffers: ll_global.buffers,
         syncs: ll_global.syncs,
-        llc_modes: ll_global.llc_modes
+        llc_modes: ll_global.llc_modes,
+		all_acts: ll_global.all_acts
     });
 }
