@@ -1,0 +1,11 @@
+Ramp2Trig(ramp) {
+	// by graham wakefield
+	History ramp_prev(0);
+	changeAmt = abs((ramp - ramp_prev) / (ramp + ramp_prev)); // abs (difference / sum) gives absolute proportion of change
+	changeAmtHi = changeAmt > 0.5; // is it a significant proportional change?
+	changeTrigger = change(changeAmtHi); // trigger on false-to-true transition only (so that extreme inputs, including triggers, do not cause double-trigger outputs)
+	result = changeTrigger > 0;
+	ramp_prev_next = fixdenorm(ramp);
+	ramp_prev = ramp_prev_next;
+	return result;
+}

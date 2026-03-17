@@ -1,0 +1,15 @@
+// 260315 c. hausch
+
+EaseBipolar(sig, ExponentialEaseInOut) {
+	sigSign = (sig >= 0) + 1;
+	sig = abs(sig);
+	sigNeg, sigPos = gate(sigSign, sig, choices=2);
+	sigNegEased  = lookup(ExponentialEaseInOut, sigNeg, 0, channels=1);
+	sigPosEased = lookup(ExponentialEaseInOut, sigPos, 0, channels=1);
+	result = selector(sigSign, -sigNegEased, sigPosEased);
+	return result;
+}
+
+Buffer ExponentialEaseInOut("ExponentialEaseInOut");
+result = EaseBipolar(in1, ExponentialEaseInOut);
+out1 = result;

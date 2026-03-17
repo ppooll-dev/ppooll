@@ -1,0 +1,7 @@
+Chance(triggerSig, chance) {
+	noise_1 = noise();
+	abs_2 = abs(noise_1);
+	lt_3 = abs_2 < chance;
+	result = latch(lt_3, triggerSig);
+	return result;
+}

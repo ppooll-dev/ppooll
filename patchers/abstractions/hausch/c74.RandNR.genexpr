@@ -1,0 +1,11 @@
+Rand(ramp) {
+	History rand_prev(0);
+	rand_sig = noise();
+	ramp_delta = delta(ramp);
+	ramp_trigger = ramp_delta < 0;
+	sample_noise = latch(rand_sig, ramp_trigger);
+	sample_noise_prev = latch(rand_prev, ramp_trigger);
+	rand_crossfade = mix(sample_noise_prev, sample_noise, ramp);
+	rand_prev = fixdenorm(sample_noise);
+	return rand_crossfade;
+}

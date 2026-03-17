@@ -1,0 +1,12 @@
+FlipFlop(triggerSig) {
+	History prev_in(0);
+	History state(0);
+
+	trigger = (triggerSig > 0.5) && (prev_in <= 0.5); // Rising edge detection
+	next_state = trigger ? (1 - state) : state; // Toggle state on trigger
+
+	prev_in = triggerSig;  // Update previous input
+	state = next_state; // Store new state
+
+	return state;
+}

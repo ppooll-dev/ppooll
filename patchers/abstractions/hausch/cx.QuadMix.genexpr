@@ -1,0 +1,14 @@
+// 260315 c. hausch
+QuadMix(a, b, c, d, pos) {
+	t0 = clamp(pos, 0, 1);
+	t1 = clamp(pos - 1, 0, 1);
+	t2 = clamp(pos - 2, 0, 1);
+	blend01 = mix(a, b, t0);
+	blend12 = mix(b, c, t1);
+	blend23 = mix(c, d, t2);
+	segment = clamp(floor(pos), 0, 2);
+	sel1 = clamp(segment, 0, 1);
+	sel2 = clamp(segment - 1, 0, 1);
+	step1 = mix(blend01, blend12, sel1);
+	return mix(step1, blend23, sel2);
+}
