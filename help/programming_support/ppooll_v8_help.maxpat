@@ -10,8 +10,126 @@
         },
         "classnamespace": "box",
         "rect": [ 397.0, 183.0, 731.0, 801.0 ],
+        "toolbarvisible": 0,
         "subpatcher_template": "Untitled3_template",
         "boxes": [
+            {
+                "box": {
+                    "id": "obj-57",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 61.0, 1246.0, 150.0, 20.0 ],
+                    "text": "getBrightness example"
+                }
+            },
+            {
+                "box": {
+                    "code": "outlets = 1;\r\n//include ll._utilities like so:\nif (typeof ll === \"undefined\") {\n\tvar ll = require(\"ll._utilities\");\n}\n// use it by calling ll. followed by a function from there.\nfunction bw(...c){\n\toutlet(0, \"textcolor\", ll.getBrightness(c));\n}",
+                    "filename": "none",
+                    "fontface": 0,
+                    "fontname": "<Monospaced>",
+                    "fontsize": 12.0,
+                    "id": "obj-55",
+                    "maxclass": "v8.codebox",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 61.0, 1343.0, 489.0, 168.0 ],
+                    "saved_object_attributes": {
+                        "parameter_enable": 0
+                    }
+                }
+            },
+            {
+                "box": {
+                    "fontface": 1,
+                    "fontsize": 13.0,
+                    "id": "obj-54",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 246.0, 1305.0, 95.0, 21.0 ],
+                    "text": "black or white",
+                    "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
+                }
+            },
+            {
+                "box": {
+                    "angle": 0.0,
+                    "bgcolor": [ 0.0, 0.75, 0.01171875, 1.0 ],
+                    "border": 1,
+                    "id": "obj-48",
+                    "maxclass": "panel",
+                    "mode": 0,
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 221.0, 1304.0, 155.0, 22.0 ],
+                    "proportion": 0.39,
+                    "rounded": 0
+                }
+            },
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 13.0,
+                    "hidden": 1,
+                    "id": "obj-49",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 221.0, 1274.0, 105.0, 23.0 ],
+                    "text": "prepend bgcolor"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-47",
+                    "maxclass": "swatch",
+                    "numinlets": 3,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "float" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 61.0, 1274.0, 128.0, 32.0 ],
+                    "saturation": 1.0
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-46",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 61.0, 1312.0, 91.0, 22.0 ],
+                    "text": "bw $1 $2 $3 $4"
+                }
+            },
+            {
+                "box": {
+                    "fontsize": 14.0,
+                    "id": "obj-43",
+                    "linecount": 4,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 46.0, 1170.0, 455.0, 69.0 ],
+                    "presentation_linecount": 4,
+                    "text": "there is a js by joe steccato called ll._utilities.js\nwhich holds a bunch of sniplets that can be called from any other js.\nfind it at ppooll/javascript/ll._utilities.js \nand an example how to use it, here:"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-36",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 97.0, 676.0, 101.0, 22.0 ],
+                    "text": "open_sub ho_st1"
+                }
+            },
             {
                 "box": {
                     "fontsize": 14.0,
@@ -29,7 +147,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 105.0, 729.0, 291.0, 20.0 ],
+                    "patching_rect": [ 105.0, 769.0, 291.0, 20.0 ],
                     "text": "spool Global \"ppooll\" into a dict...."
                 }
             },
@@ -40,8 +158,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 51.0, 701.0, 559.0, 22.0 ],
-                    "presentation_linecount": 2,
+                    "patching_rect": [ 51.0, 736.0, 559.0, 22.0 ],
                     "text": "other keys of our Global \"ppooll\" are shared matter of special acts, not documented here."
                 }
             },
@@ -51,8 +168,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 99.0, 676.0, 291.0, 20.0 ],
-                    "presentation_linecount": 6,
+                    "patching_rect": [ 97.0, 707.0, 291.0, 20.0 ],
                     "text": "etc. etc. look into https://docs.cycling74.com/apiref/js/"
                 }
             },
@@ -64,7 +180,6 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 274.0, 649.0, 238.0, 22.0 ],
-                    "presentation_linecount": 2,
                     "text": "setattr ho_st1 vol_slider bgcolor 1. 0. 0.5 1."
                 }
             },
@@ -76,7 +191,6 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 97.0, 649.0, 172.0, 22.0 ],
-                    "presentation_linecount": 2,
                     "text": "getattrnames ho_st1 vol_slider"
                 }
             },
@@ -99,7 +213,6 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 50.0, 518.0, 62.0, 24.0 ],
-                    "presentation_linecount": 2,
                     "text": "patchers"
                 }
             },
@@ -111,7 +224,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 115.0, 511.0, 421.0, 60.0 ],
-                    "presentation_linecount": 6,
                     "text": "all act's jpatcher\nthis is extremely helpful in getting and setting literally anything in act patchers.\n(note, that patchers are not displayed in the dict.view below,\nbecause dict refuses to show jpatchers.)"
                 }
             },
@@ -296,7 +408,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 51.0, 189.0, 420.0, 33.0 ],
-                    "presentation_linecount": 2,
                     "text": "for the use in the code it has to have some local varname.\nwe use ll_global everywhere. "
                 }
             },
@@ -336,7 +447,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 51.0, 62.0, 420.0, 33.0 ],
-                    "presentation_linecount": 3,
                     "text": "one benifit of this is having global Objects.\nthey can be shared in any v8 code. "
                 }
             },
@@ -446,8 +556,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 50.0, 311.0, 628.0, 22.0 ],
-                    "text": "state, patchers, pat, buffers, syncs, llc_modes, paths, nested_patcher, live_ppooll_patcher, envi_name, act_overview"
+                    "patching_rect": [ 50.0, 311.0, 599.0, 22.0 ],
+                    "text": "state, patchers, pat, buffers, syncs, llc_modes, paths, nested_patcher, live_ppooll_patcher, envi_name, all_acts"
                 }
             },
             {
@@ -467,7 +577,7 @@
                     "maxclass": "dict.view",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 50.0, 799.0, 425.0, 151.0 ]
+                    "patching_rect": [ 50.0, 834.0, 430.0, 306.0 ]
                 }
             },
             {
@@ -477,19 +587,21 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 50.0, 727.0, 53.0, 22.0 ],
+                    "patching_rect": [ 50.0, 767.0, 53.0, 22.0 ],
                     "text": "_refresh"
                 }
             },
             {
                 "box": {
+                    "bgcolor": [ 0.11372549019607843, 0.23529411764705882, 0.5019607843137255, 1.0 ],
                     "filename": "ppooll_v8_help.js",
+                    "fontsize": 14.0,
                     "id": "obj-4",
                     "maxclass": "newobj",
                     "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 50.0, 760.0, 117.0, 22.0 ],
+                    "numoutlets": 2,
+                    "outlettype": [ "", "" ],
+                    "patching_rect": [ 50.0, 804.0, 135.0, 24.0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0
                     },
@@ -499,6 +611,24 @@
                         "flags": 0,
                         "embed": 0,
                         "autowatch": 1
+                    }
+                }
+            },
+            {
+                "box": {
+                    "arrows": 1,
+                    "border": 2.0,
+                    "id": "obj-14",
+                    "justification": 4,
+                    "linecolor": [ 0.3333333333333333, 0.3333333333333333, 0.3333333333333333, 1.0 ],
+                    "maxclass": "live.line",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 160.0, 257.0, 380.0, 549.0 ],
+                    "saved_attribute_attributes": {
+                        "linecolor": {
+                            "expression": ""
+                        }
                     }
                 }
             }
@@ -575,8 +705,50 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-4", 0 ],
+                    "hidden": 1,
+                    "source": [ "obj-36", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-12", 0 ],
                     "source": [ "obj-4", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-55", 0 ],
+                    "source": [ "obj-46", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-46", 0 ],
+                    "order": 1,
+                    "source": [ "obj-47", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-49", 0 ],
+                    "hidden": 1,
+                    "order": 0,
+                    "source": [ "obj-47", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-48", 0 ],
+                    "hidden": 1,
+                    "source": [ "obj-49", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-54", 0 ],
+                    "hidden": 1,
+                    "source": [ "obj-55", 0 ]
                 }
             },
             {

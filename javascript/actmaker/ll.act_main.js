@@ -560,9 +560,13 @@ function masterSelected(master_act_name, master_act_index) {
 function create_title_menu_options() {
     const opts = {
         info: () => {
-            this.patcher
-                .getnamed("pcontrol")
-                .message("load", `${act_args.name}.maxhelp`);
+			messnamed("max","openfile", `${Math.random()}_x`, 
+				`${act_args.name}.maxhelp`)
+			// method without pcontrol..
+			
+           // this.patcher
+             //   .getnamed("pcontrol")
+               // .message("load", `${act_args.name}.maxhelp`);
         },
         clientwindow: () => {
             act_patcher.getnamed("pat").message("clientwindow");

@@ -667,19 +667,6 @@
                 "box": {
                     "fontname": "Arial",
                     "fontsize": 12.0,
-                    "hidden": 1,
-                    "id": "obj-73",
-                    "maxclass": "newobj",
-                    "numinlets": 4,
-                    "numoutlets": 0,
-                    "patching_rect": [ 447.0, 473.0, 134.0, 22.0 ],
-                    "text": "bgcolor 180 177 199"
-                }
-            },
-            {
-                "box": {
-                    "fontname": "Arial",
-                    "fontsize": 12.0,
                     "id": "obj-82",
                     "maxclass": "comment",
                     "numinlets": 1,
@@ -755,6 +742,6 @@
         ],
         "lines": [],
         "autosave": 0,
-        "bgcolor": [ 0.2901960784313726, 0.2901960784313726, 0.35294117647058826, 1.0 ]
+        "bgcolor": [ 0.26666666666666666, 0.2549019607843137, 0.3137254901960784, 1.0 ]
     }
 }

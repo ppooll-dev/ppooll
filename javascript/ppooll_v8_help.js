@@ -1,4 +1,4 @@
-outlets = 1;
+outlets = 2;
 
 var ll_global = new Global("ppooll");
 //in ppooll javascripts this Global("ppooll") is refered as ll_global 
@@ -71,6 +71,11 @@ function setattr(a,p,...v){
 	if(!ll_global.patchers[a].getnamed(p)) return;
 	ll_global.patchers[a].getnamed(p).setattr(v);
 	//post(`attributes of the MaxObj ::${a}::${p} are:\n`, ll_global.patchers[a].getnamed(p).getattrnames(),"\n");
+}
+
+function open_sub(a){
+	post("sub of" , a , ll_global.patchers[a].getnamed("sub").subpatcher(),"\n");
+	ll_global.patchers[a].getnamed("sub").subpatcher().front();
 }
 
 
