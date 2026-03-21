@@ -840,6 +840,7 @@ function set_tetris_menu(selection) {
                 })
                 .forEach((attrName) => {
                     if (!obj[attrName]) {
+						return;
                         post(
                             "ppooll tetris: no object attr",
                             act_name_index,
@@ -847,7 +848,7 @@ function set_tetris_menu(selection) {
                             attrName,
                             "\n"
                         );
-                        return;
+                        
                     }
                     let attrValue = tetrisObj[objName][attrName];
                     //post("all_Attr",attrName," : ",attrValue,"\n");

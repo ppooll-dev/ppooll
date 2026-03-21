@@ -4,7 +4,7 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 2,
+            "revision": 3,
             "architecture": "x64",
             "modernui": 1
         },
@@ -22,7 +22,6 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 205.0, 22.0, 134.0, 20.0 ],
-                    "presentation_linecount": 2,
                     "text": "window notitle, window exec"
                 }
             },
@@ -204,7 +203,8 @@
                     "numoutlets": 4,
                     "outlettype": [ "", "", "", "" ],
                     "patching_rect": [ 471.0, 61.0, 218.0, 20.0 ],
-                    "text": "route bang path set"
+                    "text": "route bang path set",
+                    "varname": "in_route"
                 }
             },
             {
@@ -212,12 +212,11 @@
                     "fontname": "Arial",
                     "fontsize": 12.0,
                     "id": "obj-2",
-                    "linecount": 3,
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 8.0, 122.0, 266.0, 47.0 ],
-                    "text": "Macintosh HD:/Users/josephsteccato/Documents/Max 9/Library/ppooll_presets/ho_stP",
+                    "patching_rect": [ 8.0, 122.0, 253.0, 20.0 ],
+                    "text": "../ppooll_presets/sinus1P/",
                     "varname": "where"
                 }
             },
@@ -320,8 +319,9 @@
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 471.0, 35.0, 15.0, 15.0 ]
+                    "outlettype": [ "bang" ],
+                    "patching_rect": [ 471.0, 35.0, 15.0, 15.0 ],
+                    "varname": "in1"
                 }
             },
             {
@@ -393,7 +393,7 @@
                     "outlettype": [ "", "int", "", "" ],
                     "parameter_enable": 0,
                     "patching_rect": [ 8.0, 34.0, 253.0, 22.0 ],
-                    "text": "_"
+                    "text": "wew"
                 }
             },
             {
