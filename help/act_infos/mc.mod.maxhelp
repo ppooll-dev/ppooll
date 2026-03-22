@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 761.0, 170.0, 705.0, 646.0 ],
+        "rect": [ 100.0, 100.0, 705.0, 646.0 ],
         "toolbarvisible": 0,
         "enablehscroll": 0,
         "enablevscroll": 0,
@@ -24,8 +24,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 509.8543654382229, 353.0, 160.29126912355423, 64.0 ],
-                    "presentation_linecount": 3,
+                    "patching_rect": [ 509.8543654382229, 353.0, 164.0, 64.0 ],
                     "text": "spr is per-channel random spread value, always relates to leftmost parameter",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -41,7 +40,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 39.0, 496.0, 198.0, 33.0 ],
-                    "presentation_linecount": 2,
                     "text": "alternative sync settings (replaces frequency selection)",
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
@@ -57,7 +55,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 412.5, 530.0, 214.0, 37.0 ],
-                    "presentation_linecount": 3,
                     "text": "sync multiple. 0.5 = double speed, 2 = half, as in c74 rate~ object",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -75,7 +72,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 301.5, 552.0, 139.5, 52.0 ],
-                    "presentation_linecount": 7,
                     "text": "sync mode (hard resets on phase onset)",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -108,7 +104,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 81.55339694023132, 291.2621319293976, 141.5, 24.0 ],
-                    "presentation_linecount": 2,
                     "text": "activate external sync",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -124,7 +119,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 326.0, 173.0, 58.0, 106.0 ],
+                    "patching_rect": [ 326.0, 173.0, 59.0, 106.0 ],
                     "text": "switch between oneshot (1s) and loop mode",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -153,7 +148,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 510.0, 263.0, 160.0, 24.0 ],
+                    "patching_rect": [ 510.0, 270.0, 160.0, 24.0 ],
                     "text": "smooth parameters (ms)",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -202,7 +197,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 79.48786395788193, 379.5, 145.6310659646988, 66.0 ],
+                    "patching_rect": [ 79.48786395788193, 379.5, 149.0, 66.0 ],
                     "text": "frequency jitter, randomizes freq between cycles",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -218,7 +213,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 364.0, 373.0, 56.0, 79.0 ],
+                    "patching_rect": [ 364.0, 373.0, 59.0, 79.0 ],
                     "text": "limit amount of active voices",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -1127,7 +1122,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 385.0, 227.0, 236.0, 52.0 ],
+                    "patching_rect": [ 385.0, 227.0, 237.0, 52.0 ],
                     "text": "switch between lfo and ring modulation as well as unipolar and bipolar modes",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -1207,7 +1202,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 228.0, 206.0, 95.0, 66.0 ],
+                    "patching_rect": [ 228.0, 206.0, 97.0, 66.0 ],
                     "text": "trigger oneshot, also re-syncs in loop mode",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -1223,7 +1218,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 38.5, 121.0, 324.0, 33.0 ],
-                    "text": "v2 – 260317 – c. hausch – hausch@moozak.org, contains additional code by graham wakefield & gregory taylor",
+                    "text": "v2 – 260322 – c. hausch – hausch@moozak.org, contains additional code by graham wakefield & gregory taylor",
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
             },
