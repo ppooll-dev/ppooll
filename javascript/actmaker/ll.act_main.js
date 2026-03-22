@@ -560,9 +560,13 @@ function masterSelected(master_act_name, master_act_index) {
 function create_title_menu_options() {
     const opts = {
         info: () => {
-            this.patcher
-                .getnamed("pcontrol")
-                .message("load", `${act_args.name}.maxhelp`);
+			messnamed("max","openfile", `${Math.random()}_x`, 
+				`${act_args.name}.maxhelp`)
+			// method without pcontrol..
+			
+           // this.patcher
+             //   .getnamed("pcontrol")
+               // .message("load", `${act_args.name}.maxhelp`);
         },
         clientwindow: () => {
             act_patcher.getnamed("pat").message("clientwindow");
@@ -836,6 +840,7 @@ function set_tetris_menu(selection) {
                 })
                 .forEach((attrName) => {
                     if (!obj[attrName]) {
+						return;
                         post(
                             "ppooll tetris: no object attr",
                             act_name_index,
@@ -843,7 +848,7 @@ function set_tetris_menu(selection) {
                             attrName,
                             "\n"
                         );
-                        return;
+                        
                     }
                     let attrValue = tetrisObj[objName][attrName];
                     //post("all_Attr",attrName," : ",attrValue,"\n");

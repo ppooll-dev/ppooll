@@ -50,7 +50,7 @@ function bang(){
 
 	// outlet(0,"dump"); //dumps coll to function pp_acts()
 
-	pp_acts_v2();
+	pp_acts_v3();
 	
 	aon.set("tags",tags_array);
 	aon.set("authors",authors_array);
@@ -82,6 +82,15 @@ function pp_acts_v2(){
 			let f = new File(`${act_info.name}.maxhelp`);
 			if (f.isopen) readlines(f, act_info.name)
 			else collect_data.push({act: act_info.name, description: "#### no info patch"});
+	})
+}
+function pp_acts_v3(){
+	Object.keys(ll_global.all_acts).forEach(source => { //all possible sources (ppooll, community,..??)
+		ll_global.all_acts[source].forEach(act_info => {
+			let f = new File(`${act_info}.maxhelp`);
+			if (f.isopen) readlines(f, act_info)
+			else collect_data.push({act: act_info, description: "#### no info patch"});
+		})
 	})
 }
 

@@ -1,4 +1,4 @@
-outlets = 1;
+outlets = 2;
 
 var ll_global = new Global("ppooll");
 //in ppooll javascripts this Global("ppooll") is refered as ll_global 
@@ -73,6 +73,11 @@ function setattr(a,p,...v){
 	//post(`attributes of the MaxObj ::${a}::${p} are:\n`, ll_global.patchers[a].getnamed(p).getattrnames(),"\n");
 }
 
+function open_sub(a){
+	post("sub of" , a , ll_global.patchers[a].getnamed("sub").subpatcher(),"\n");
+	ll_global.patchers[a].getnamed("sub").subpatcher().front();
+}
+
 
 function _refresh() {
     outlet_dictionary(0, {
@@ -85,6 +90,7 @@ function _refresh() {
 		nested_patcher: ll_global.nested_patcher,
 		live_ppooll_patcher: ll_global.live_ppooll_patcher,
 		envi_name: ll_global.envi_name,
-		act_overview: ll_global.act_overview
+		//act_overview: ll_global.act_overview,
+		all_acts: ll_global.all_acts
     });
 }
