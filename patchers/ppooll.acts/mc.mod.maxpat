@@ -492,7 +492,6 @@
                     "numinlets": 2,
                     "numoutlets": 0,
                     "patching_rect": [ 203.0, 34.0, 97.0, 80.25 ],
-                    "range": [ 0.0, 1.0 ],
                     "varname": "scope"
                 }
             },
@@ -1022,7 +1021,7 @@
                         "chance": [ 1.0 ],
                         "chance_mcspread": [ 0.0 ],
                         "delay": [ 0.0 ],
-                        "external": [ 1 ],
+                        "external": [ 0 ],
                         "fold": [ 0.0 ],
                         "fold_mcspread": [ 0.0 ],
                         "freq": [ 1.0 ],
@@ -1033,7 +1032,7 @@
                         "loopMode": [ 1 ],
                         "max": [ 1.0 ],
                         "max_mcspread": [ 0.0 ],
-                        "min": [ 0.0 ],
+                        "min": [ -1.0 ],
                         "min_mcspread": [ 0.0 ],
                         "phase": [ 0.0 ],
                         "preset-ramp": [ 0.0 ],
@@ -1041,8 +1040,8 @@
                         "shape": [ 2.0 ],
                         "shape_mcspread": [ 0.0 ],
                         "shape_quicksel": [ 2.0 ],
-                        "smooth": [ 1070.59 ],
-                        "symmetry": [ 0 ],
+                        "smooth": [ 100.0 ],
+                        "symmetry": [ 1 ],
                         "syncMode": [ 0 ],
                         "syncMult": [ 1.0 ],
                         "syncto": [ "sync-off" ],
@@ -3080,8 +3079,8 @@
                                                 {
                                                     "box": {
                                                         "maxclass": "newobj",
-                                                        "text": "in 1 @comment freq @default 1 @min 0.001 @max samplerate/2",
-                                                        "patching_rect": [ 15.0, 150.0, 357.0, 22.0 ],
+                                                        "text": "in 1 @comment freq @default 1 @min 0.001",
+                                                        "patching_rect": [ 15.0, 150.0, 246.0, 22.0 ],
                                                         "numoutlets": 1,
                                                         "outlettype": [ "" ],
                                                         "id": "obj-10",
@@ -3094,12 +3093,6 @@
                                                     "patchline": {
                                                         "source": [ "obj-3", 0 ],
                                                         "destination": [ "obj-60", 13 ]
-                                                    }
-                                                },
-                                                {
-                                                    "patchline": {
-                                                        "source": [ "obj-10", 0 ],
-                                                        "destination": [ "obj-60", 0 ]
                                                     }
                                                 },
                                                 {
@@ -3191,6 +3184,12 @@
                                                         "source": [ "obj-60", 2 ],
                                                         "destination": [ "obj-46", 0 ]
                                                     }
+                                                },
+                                                {
+                                                    "patchline": {
+                                                        "source": [ "obj-10", 0 ],
+                                                        "destination": [ "obj-60", 0 ]
+                                                    }
                                                 }
                                             ]
                                         }
@@ -3202,7 +3201,7 @@
                                     "outlettype": [ "multichannelsignal", "multichannelsignal", "multichannelsignal" ],
                                     "patching_rect": [ 289.0, 417.0, 135.0, 22.0 ],
                                     "text": "mc.gen~ @title mc.mod",
-                                    "wrapper_uniquekey": "u272005199"
+                                    "wrapper_uniquekey": "u537011759"
                                 }
                             },
                             {
