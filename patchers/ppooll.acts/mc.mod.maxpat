@@ -434,10 +434,10 @@
             },
             {
                 "box": {
-                    "annotation": "ring mod off/on",
+                    "annotation": "off=direct wave out, on=ring mod mode on",
                     "bgcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                     "bgoncolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1.0 ],
-                    "hint": "ring mod off/on",
+                    "hint": "off=direct wave out, on=ring mod mode on",
                     "id": "obj-12",
                     "maxclass": "textbutton",
                     "mode": 1,
@@ -970,7 +970,7 @@
                         "ll.blues::levels": 5
                     },
                     "saved_object_attributes": {
-                        "client_rect": [ 1435, 93, 1920, 1047 ],
+                        "client_rect": [ 946, 414, 1534, 927 ],
                         "parameter_enable": 0,
                         "parameter_mappable": 0,
                         "storage_rect": [ 430, 270, 1276, 999 ]
@@ -1041,7 +1041,7 @@
                         "shape": [ 2.0 ],
                         "shape_mcspread": [ 0.0 ],
                         "shape_quicksel": [ 2.0 ],
-                        "smooth": [ 100.0 ],
+                        "smooth": [ 1070.59 ],
                         "symmetry": [ 0 ],
                         "syncMode": [ 0 ],
                         "syncMult": [ 1.0 ],
@@ -1085,8 +1085,19 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 1041.0, 347.0, 845.0, 626.0 ],
+                        "rect": [ 510.0, 322.0, 845.0, 626.0 ],
                         "boxes": [
+                            {
+                                "box": {
+                                    "id": "obj-20",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 2,
+                                    "outlettype": [ "", "bang" ],
+                                    "patching_rect": [ 467.0, 390.0, 46.0, 22.0 ],
+                                    "text": "ll.r limit"
+                                }
+                            },
                             {
                                 "box": {
                                     "id": "obj-52",
@@ -1883,7 +1894,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 0,
                                     "patching_rect": [ 112.0, 63.0, 125.0, 100.0 ],
-                                    "text": "v2, 20260322\nc. hausch\nhausch@moozak.org\ncontains additional code by graham wakefield & gregory taylor"
+                                    "text": "v2.260323\nc. hausch\nhausch@moozak.org\ncontains additional code by graham wakefield & gregory taylor"
                                 }
                             },
                             {
@@ -1916,8 +1927,8 @@
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 260.0, 69.0, 221.0, 35.0 ],
-                                    "text": "ll.pm loopMode symmetry sync syncMode limit freqMin delayBufferSize"
+                                    "patching_rect": [ 260.0, 69.0, 214.0, 35.0 ],
+                                    "text": "ll.pm loopMode symmetry sync syncMode freqMin delayBufferSize"
                                 }
                             },
                             {
@@ -2844,16 +2855,27 @@
                                                 "modernui": 1
                                             },
                                             "classnamespace": "dsp.gen",
-                                            "rect": [ 164.0, 95.0, 1060.0, 951.0 ],
+                                            "rect": [ 164.0, 95.0, 1060.0, 853.0 ],
                                             "boxes": [
+                                                {
+                                                    "box": {
+                                                        "maxclass": "newobj",
+                                                        "text": "in 14 @comment limit",
+                                                        "patching_rect": [ 887.0, 150.0, 124.0, 22.0 ],
+                                                        "numoutlets": 1,
+                                                        "outlettype": [ "" ],
+                                                        "id": "obj-3",
+                                                        "numinlets": 0
+                                                    }
+                                                },
                                                 {
                                                     "box": {
                                                         "maxclass": "newobj",
                                                         "text": "out 2 @comment trigger",
                                                         "patching_rect": [ 485.0, 894.0, 137.0, 22.0 ],
-                                                        "numinlets": 1,
                                                         "numoutlets": 0,
-                                                        "id": "obj-1"
+                                                        "id": "obj-1",
+                                                        "numinlets": 1
                                                     }
                                                 },
                                                 {
@@ -2861,24 +2883,24 @@
                                                         "maxclass": "newobj",
                                                         "text": "buffer ExponentialEaseInOut",
                                                         "patching_rect": [ 319.0, 15.0, 162.0, 22.0 ],
-                                                        "numinlets": 0,
                                                         "numoutlets": 2,
+                                                        "outlettype": [ "", "" ],
                                                         "id": "obj-2",
-                                                        "outlettype": [ "", "" ]
+                                                        "numinlets": 0
                                                     }
                                                 },
                                                 {
                                                     "box": {
                                                         "maxclass": "codebox",
                                                         "patching_rect": [ 15.0, 196.0, 959.0, 686.0 ],
-                                                        "fontname": "<Monospaced>",
-                                                        "numinlets": 13,
-                                                        "fontface": 0,
-                                                        "numoutlets": 3,
-                                                        "id": "obj-60",
-                                                        "outlettype": [ "", "", "" ],
                                                         "fontsize": 12.0,
-                                                        "code": "// mc.mod - a multichannel modulation oscillator\n// v2.260322 - cora hausch – hausch@moozak.org\n// includes code by graham wakefield\n\nrequire(\"cx.QuadMix\");\nrequire(\"c74.RandNR\");\nrequire(\"cx.TriMix\");\nrequire(\"cx.EaseBipolar\");\nrequire(\"go.Ramp2Trig.genexpr\");\nrequire(\"go.Chance.genexpr\");\nrequire(\"go.FlipFlop.genexpr\");\n\nJitter(value, jitterAmount, trigger) {\n\n\trandom = noise();\n\tsah_noise = latch(random, trigger); // sample noise on trigger to prevent multiple random values per cycle when jitter is applied to the accumulator increment.\n\tsah_jitter_val = latch(jitterAmount, trigger); // sample jitter amount on trigger to prevent multiple updates per cycle\n\t\n\tjitter = sah_noise * sah_jitter_val; // jitter is random value scaled by jitter amount\n\n\tresult = value * (1 + jitter); // jittery value\n\treturn result;\n}\n\nSyncSigDelta(sync, syncSig, syncMode) {\n\n\tsampledDelta, syncHoldGate = 0, 0;\n\tif(sync > 0) {\n\t\tsyncDelta = delta(syncSig);  // differential of sync signal\n\t\tpositiveEdge = syncDelta > 0;  // detect rising edges in sync signal\n\t\tsampledDelta = latch(syncDelta, positiveEdge);  // sample delta on positive edge to prevent delta of restarting ramp messing up frequency\n\t\tholdCondition = (positiveEdge == 0) ;  // hold gate when no rising edge\n\t\tsyncHoldGate = gate(syncMode, holdCondition, choices=1);  // gated hold signal based on mode\n\t\treturn sampledDelta, syncHoldGate;\n\t}\n\treturn sampledDelta, syncHoldGate;\n}\n\nLowFreqOsc(freq, chance, jitterAmount, triggerSig, loopMode, phaseOffset, activeChans, limit, delay, syncSig, sync, syncMode, delayBufferSize) {\n\n\t// setup\n\tDelay delayRamp(delayBufferSize); // 4 minutes max delay at 44.1kHz, for very slow frequencies and/or long delays\n\tHistory rampHistory(0);  // ramp accumulator\n\tHistory loopHistory(0);  // state memory for loop mode\n\trampValue = wrap(rampHistory, 0, 1);  // wrapped ramp value [0, 1)\n\n\t// trigger generation\n\trawRampTrigger = Ramp2Trig(rampValue);  // rising edge detector on the undelayed ramp wrap\n\tzero = int(0);  // zero constant for conditional assignments\n\n\t// select source wave – internal or external sync source\n\tsyncDelta, syncGate = SyncSigDelta(sync, syncSig, syncMode);  // sync delta and gating signal\n\n\t// frequency and accumulator control\n\tdelayChangeTrigger = rawRampTrigger + triggerSig;  // only update delay time on cycle/external trigger boundaries\n\tdelayMs = latch(max(delay, 0), delayChangeTrigger);  // prevent delay-time modulation from warping the ramp mid-cycle\n\tisDelay = delayMs > 0;  // check if delay is zero (immediate sync)\n\tlimitExceedsCount = limit >= mc_channelcount;  // check if limit exceeds channel count\n\tchannelsUnderLimit = activeChans < limit;  // check if active channels below limit\n\tconditionalChance = channelsUnderLimit * chance;  // conditional chance application\n\tchanceGate = limitExceedsCount ? chance : conditionalChance;  // select chance probability\n\tfreqIncrement = freq / SAMPLERATE;  // normalized frequency increment\n\taccumVal = sync ? syncDelta : freqIncrement;  // choose accumulator increment: freq or sync\n\n\t// frequency jitter\n\tjitteredIncrement = accumVal;\n\tif(jitterAmount > 0) {\n\t\tjitteredIncrement = Jitter(accumVal, jitterAmount, rawRampTrigger);  // apply jitter to accumulator increment\n\t}\n\n\t// delay\n\taccumulatedRamp = jitteredIncrement + rampValue;  // accumulated ramp with jitter\n\trampInput = triggerSig ? 0 : accumulatedRamp;  // reset accumulator on trigger signal\n\tchannelOffset = mc_channel - 1;  // zero-based channel offset\n\ttimedRamp = accumulatedRamp;  // default non-delay ramp source\n\ttimedTriggerSource = rampValue;  // preserve the original trigger timing when no delay is used\n\tif(isDelay) {\n\t\tsafeFreq = max(freq, 0.000001);  // minimum frequency to prevent division by zero\n\t\tperiodMs = 1000. / safeFreq;  // period in milliseconds\n\t\tphaseOffsetMs = periodMs * channelOffset;  // multi-channel phase offset (ms)\n\t\tsafeDelay = clamp(delayMs, 0, 1);  // normalize control range to expected 0..1 span\n\t\tdelayedOffsetMs = phaseOffsetMs * safeDelay;  // apply delay scaling\n\t\tdelayOffsetSamplesRaw = mstosamps(delayedOffsetMs);  // convert milliseconds to samples\n\t\tmaxDelaySamples = max(delayBufferSize - 1, 1);  // keep read tap within valid delay buffer bounds\n\t\tdelayOffsetSamples = floor(clamp(delayOffsetSamplesRaw, 0, maxDelaySamples) + 0.5);  // use integer taps to avoid wrap interpolation spikes\n\t\ttimedRamp = delayRamp.read(delayOffsetSamples);  // read the delayed ramp phase for this channel\n\t\ttimedTriggerSource = timedRamp;\n\t}\n\tresultTrigger = Ramp2Trig(timedTriggerSource);  // trigger follows the delayed ramp only when delay is active\n\n\t// active state gate, depending on chance value (0-1)\n\tresultState = Chance(syncGate + resultTrigger, chanceGate);  // probabilistic state output\n\n\t// ramp output with phase oiffset\n\tloopedState = loopMode ? resultState : loopHistory;  // loop mode toggles between state or memory\n\tgatedRampOutput = loopedState ? timedRamp : zero;  // use delayed ramp when delay is active\n\ttotalPhaseOffset = phaseOffset * channelOffset;  // multi-channel phase spread\n\tresultRamp = wrap(gatedRampOutput + totalPhaseOffset, 0, 1);  // ramp output with phase offset\n\n\t// waveform triggering\n\trampTrigger = Ramp2Trig(gatedRampOutput);  // trigger from modulated ramp\n\n\ttriggerLatch = FlipFlop(triggerSig + rampTrigger);  // latch logic combining input and generated triggers\n\n\t// history update\n\tnextRamp = fixdenorm(rampInput);  // next ramp value (denorm-safe)\n\tnextState = fixdenorm(triggerLatch);  // next state memory (denorm-safe)\n\tloopHistory = nextState;\n\trampHistory = nextRamp;\n\tdelayRamp.write(rampValue);  // keep a history of the ramp phase for per-channel delay taps\n\t\n\treturn resultRamp, resultTrigger, resultState;\n}\n\nRandWave(phase, tilt, ExponentialEaseInOut, ExponentialEaseIn) {\n\t// tilt morphs random shape response:\n\t// negative tilt uses in/out easing, positive tilt uses ease-in.\n\t// tilt of 0 results in straight noise, -1 is skewed towards an amplitide of 1 (and -1 in bipolar mode), +1 is is skewed towards 0.\n\ttiltScaled = tilt + 1; // scale tilt to [0, 2] range for morphing function\n\tnoiseBipolar = Rand(phase); // bipolar noise in [-1, 1]\n\tnoiseUnipolar = abs(noiseBipolar);\t// unipolar noise in [0, 1]\n\t// initialize all tilt slots, then enable only the needed ones based on tilt direction.\n\trandUnipolarTiltInOut = 0;\n\trandUnipolarTiltIn = 0;\n\trandBipolarTiltInOut = 0;\n\trandBipolarTiltIn = 0;\n\tif(tilt < 0) {\n\t\trandUnipolarTiltInOut = sample(ExponentialEaseInOut, noiseUnipolar, 0, channels=1);\n\t\trandBipolarTiltInOut = EaseBipolar(noiseBipolar, ExponentialEaseInOut);\n\t} else {\n\t\trandUnipolarTiltIn = sample(ExponentialEaseIn, noiseUnipolar, 0, channels=1);\n\t\trandBipolarTiltIn = EaseBipolar(noiseBipolar, ExponentialEaseIn);\n\t}\n\tresultUnipolar = TriMix(randUnipolarTiltInOut, noiseUnipolar, randUnipolarTiltIn, tiltScaled);\n\tresultBipolar = TriMix(randBipolarTiltInOut, noiseBipolar, randBipolarTiltIn, tiltScaled);\n\treturn resultUnipolar, resultBipolar;\n}\n\nTriWave(phase, tilt) {\n\t// triangle duty is skewed by tilt in [0..1].\n\ttiltScaled = (tilt + 1) * 0.5; // scale tilt to [0, 1] range for triangle function\n\ttriWaveUnipolar = triangle(phase, tiltScaled);\n\ttriWaveBipolar = (triWaveUnipolar * 2) - 1; // convert to bipolar\n\treturn triWaveUnipolar, triWaveBipolar;\n}\n\nSineWave(phase, tilt, ExponentialEaseOut, ExponentialEaseIn) {\n\t// phase is warped by tilt before the sine lookup.\n\ttiltScaled = tilt + 1;\n\tphaseTiltOut = 0;\n\tphaseTiltIn = 0;\n\tif(tilt < 0) {\n\t\tphaseTiltOut = sample(ExponentialEaseOut, phase, 0, channels=1);\n\t} else {\n\t\tphaseTiltIn = sample(ExponentialEaseIn, phase, 0, channels=1);\n\t}\n\tphaseResult = TriMix(phaseTiltOut, phase, phaseTiltIn, tiltScaled);\n\tsineWave = cycle(phaseResult, index=\"phase\");\n\t// correct phase to align sine with triangle shape\n\tsineWaveBipolar = -sineWave;\n\tsineWaveUnipolar = (sineWaveBipolar * 0.5) + 0.5;\n\treturn sineWaveUnipolar, sineWaveBipolar;\n}\n\nPulseWave(phase, tilt) {\n\t// thresholded comparator pulse from phase. uses sine wave as base for calulation.\n\ttiltScaled = (tilt + 1) * 0.5;\n\tpulseWaveUnipolar = phase > tiltScaled;\n\tpulseWaveBipolar = -(phase < tilt) + (phase > tilt);\n\treturn pulseWaveUnipolar, pulseWaveBipolar;\n}\n\nLowestPossibleFreq(bufferSize) {\n\tminFreq = SAMPLERATE / bufferSize;\n\treturn minFreq;\n}\n\n// buffer references for easing functions used in wave shaping\nBuffer ExponentialEaseInOut(\"ExponentialEaseInOut\");\nBuffer ExponentialEaseIn(\"ExponentialEaseIn\");\nBuffer ExponentialEaseOut(\"ExponentialEaseOut\");\n\n// parameter setup\nParam limit(1, min=1);\nParam loopMode(0, max=1, default=0, min=0);\nParam symmetry(0, max=1, default=0, min=0);\nParam sync(0, max=1, default=0, min=0);\nParam syncMode(0, max=1, default=0, min=0);\nParam freqMin(0, min=0, max=samplerate);\nParam delayBufferSize(14400000, min=48000); \n\n// signal inputs\nfreq = max(freqMin, in1); // failsafe to prevent blowing up delay buffer\nchance = in2; // chance @default 1 @min 0 @max 1\njitterAmount = in3; // @default 0 @min 0\ntriggerSig = in4; // external trigger signal\nphaseOffset = in5; // @default 0 @min 0 @max 1 - scales to period length for each channel, so max of 1 results in a full period phase offset for the last channel relative to the first.\ndelay = in6; // @default 0 @min 0 @max 1 - scales to period length for each channel, increasing per channel, so 0.5 is half delay on channel 2, and a full delay on channel 3 in relation to channel 1.\nsyncSig = in7; // external signal coming from ll.syncs\nshape = in8; // shape @default 1. @min 0 @max 3\ntilt = in9; // @default 0. @min -1 @max 1\nfoldAmt = in10; // @default 0. @min 0.\noutputMin = in11; // min @default 0\noutputMax = in12; // max @default 1 \nactiveChans = in13; // currently active channel count, calculated externally\n\n// core LFO ramp/trigger/state engine.\nramp, trigger, activeState = LowFreqOsc(freq, chance, jitterAmount, triggerSig, loopMode, phaseOffset, activeChans, limit, delay, syncSig, sync, syncMode, delayBufferSize);\n\n// symmetry switch between unipolar and bipolar behavior.\nphase = symmetry ? wrap(ramp + 0.25, 0, 1) : ramp;\n\n// update tilt only when a cycle trigger occurs.\ntiltTimed = latch(tilt, trigger);\n\n// smoothed control signals to avoid clicks.\nactiveStateSmoothed = slide(activeState, 10, 50);\nsymmetrySmoothed = slide(symmetry, 20, 20);\n\nactive = (activeStateSmoothed + activeState); // add active state to smoothed version for more immediate response when triggering, while still retaining a smooth release.\n\nresult = 0; // initialize result\n\nif(active > 0) {\n\t\n\t// initialize all wave slots, then enable only the needed shape windows.\n\trandWaveUnipolar, randWaveBipolar = 0, 0;\n\ttriWaveUnipolar, triWaveBipolar = 0, 0;\n\tsineWaveUnipolar, sineWaveBipolar = 0, 0;\n\tpulseWaveUnipolar, pulseWaveBipolar = 0, 0;\n\n\tif(shape < 1) {\n\t\trandWaveUnipolar, randWaveBipolar = RandWave(phase, tiltTimed, ExponentialEaseInOut, ExponentialEaseIn);\n\t}\n\tif(shape > 0 && shape < 2) {\n\t\ttriWaveUnipolar, triWaveBipolar = TriWave(phase, tiltTimed);\n\t}\n\tif(shape > 1) {\n\t\tsineWaveUnipolar, sineWaveBipolar = SineWave(phase, tiltTimed, ExponentialEaseOut, ExponentialEaseIn);\n\t}\n\tif(shape > 2) {\n\t\tpulseWaveUnipolar, pulseWaveBipolar = PulseWave(sineWaveBipolar, tiltTimed);\n\t}\n\n\t// continuous 4-way morph across random -> triangle -> sine -> pulse.\n\tmixUnipolar = QuadMix(randWaveUnipolar, triWaveUnipolar, sineWaveUnipolar, pulseWaveUnipolar, shape);\n\tmixBipolar = QuadMix(randWaveBipolar, triWaveBipolar, sineWaveBipolar, pulseWaveBipolar, shape);\n\n\tmixUnipolarFolded = mixUnipolar;\n\tmixBipolarFolded = mixBipolar;\n\n\tif(foldAmt > 0) {\n\t\tfoldScale = foldAmt + 1; // use 1 as base to ensure that foldAmt of 0 results in no change.\n\t\tactiveAmp = activeStateSmoothed * foldScale; // pre-wavefolding amplitude scaling.\n\t\tmixUnipolarPreFoldAmp = mixUnipolar * activeAmp;\n\t\tmixUnipolarFolded = fold(mixUnipolarPreFoldAmp, 0, 1); // fold to 0, 1 range for unipolar signal.\n\t\tmixBipolarPreFoldAmp = mixBipolar * activeAmp;\n\t\tmixBipolarFolded = fold(mixBipolarPreFoldAmp, -1, 1); // fold to -1, 1 range for bipolar signal.\n\t}\n\tmixUnipolarFinal = scale(mixUnipolarFolded, 0, 1, outputMin, outputMax, 1);\n\tmixBipolarFinal = scale(mixBipolarFolded, -1, 1, outputMin, outputMax, 1);\n\n\tresult = mix(mixUnipolarFinal, mixBipolarFinal, symmetrySmoothed); \t// symmetry blends final output flavor: unipolar <-> bipolar.\n}\n\nout1 = result; // main output\nout2 = trigger; // trigger output from ramp wrap\nout3 = activeState; // is voice active?"
+                                                        "numoutlets": 3,
+                                                        "fontname": "<Monospaced>",
+                                                        "outlettype": [ "", "", "" ],
+                                                        "fontface": 0,
+                                                        "id": "obj-60",
+                                                        "numinlets": 14,
+                                                        "code": "// mc.mod - a multichannel modulation oscillator\n// v2.260323 - cora hausch – hausch@moozak.org\n// includes code by graham wakefield & gregory taylor\n\nrequire(\"cx.QuadMix\");\nrequire(\"c74.RandNR\");\nrequire(\"cx.TriMix\");\nrequire(\"cx.EaseBipolar\");\nrequire(\"go.Ramp2Trig.genexpr\");\nrequire(\"go.Chance.genexpr\");\nrequire(\"go.FlipFlop.genexpr\");\n\nJitter(value, jitterAmount, trigger) {\n\n\trandom = noise();\n\tsah_noise = latch(random, trigger); // sample noise on trigger to prevent multiple random values per cycle when jitter is applied to the accumulator increment.\n\tsah_jitter_val = latch(jitterAmount, trigger); // sample jitter amount on trigger to prevent multiple updates per cycle\n\t\n\tjitter = sah_noise * sah_jitter_val; // jitter is random value scaled by jitter amount\n\n\tresult = value * (1 + jitter); // jittery value\n\treturn result;\n}\n\nSyncSigDelta(sync, syncSig, syncMode) {\n\n\tsampledDelta, syncHoldGate = 0, 0;\n\tif(sync > 0) {\n\t\tsyncDelta = delta(syncSig);  // differential of sync signal\n\t\tpositiveEdge = syncDelta > 0;  // detect rising edges in sync signal\n\t\tsampledDelta = latch(syncDelta, positiveEdge);  // sample delta on positive edge to prevent delta of restarting ramp messing up frequency\n\t\tholdCondition = (positiveEdge == 0) ;  // hold gate when no rising edge\n\t\tsyncHoldGate = gate(syncMode, holdCondition, choices=1);  // gated hold signal based on mode\n\t\treturn sampledDelta, syncHoldGate;\n\t}\n\treturn sampledDelta, syncHoldGate;\n}\n\nLowFreqOsc(freq, chance, jitterAmount, triggerSig, loopMode, phaseOffset, activeChans, limit, delay, syncSig, sync, syncMode, delayBufferSize) {\n\n\t// setup\n\tDelay delayRamp(delayBufferSize); // 4 minutes max delay at 44.1kHz, for very slow frequencies and/or long delays\n\tHistory rampHistory(0);  // ramp accumulator\n\tHistory loopHistory(0);  // state memory for loop mode\n\trampValue = wrap(rampHistory, 0, 1);  // wrapped ramp value [0, 1)\n\n\t// trigger generation\n\trawRampTrigger = Ramp2Trig(rampValue);  // rising edge detector on the undelayed ramp wrap\n\tzero = int(0);  // zero constant for conditional assignments\n\n\t// select source wave – internal or external sync source\n\tsyncDelta, syncGate = SyncSigDelta(sync, syncSig, syncMode);  // sync delta and gating signal\n\n\t// frequency and accumulator control\n\tdelayChangeTrigger = rawRampTrigger + triggerSig;  // only update delay time on cycle/external trigger boundaries\n\tdelayMs = latch(max(delay, 0), delayChangeTrigger);  // prevent delay-time modulation from warping the ramp mid-cycle\n\tisDelay = delayMs > 0;  // check if delay is zero (immediate sync)\n\tlimitExceedsCount = limit >= mc_channelcount;  // check if limit exceeds channel count\n\tchannelsUnderLimit = activeChans < limit;  // check if active channels below limit\n\tconditionalChance = channelsUnderLimit * chance;  // conditional chance application\n\tchanceGate = limitExceedsCount ? chance : conditionalChance;  // select chance probability\n\tfreqIncrement = freq / SAMPLERATE;  // normalized frequency increment\n\taccumVal = sync ? syncDelta : freqIncrement;  // choose accumulator increment: freq or sync\n\n\t// frequency jitter\n\tjitteredIncrement = accumVal;\n\tif(jitterAmount > 0) {\n\t\tjitteredIncrement = Jitter(accumVal, jitterAmount, rawRampTrigger);  // apply jitter to accumulator increment\n\t}\n\n\t// delay\n\taccumulatedRamp = jitteredIncrement + rampValue;  // accumulated ramp with jitter\n\trampInput = triggerSig ? 0 : accumulatedRamp;  // reset accumulator on trigger signal\n\tchannelOffset = mc_channel - 1;  // zero-based channel offset\n\ttimedRamp = accumulatedRamp;  // default non-delay ramp source\n\ttimedTriggerSource = rampValue;  // preserve the original trigger timing when no delay is used\n\tif(isDelay) {\n\t\tsafeFreq = max(freq, 0.000001);  // minimum frequency to prevent division by zero\n\t\tperiodMs = 1000. / safeFreq;  // period in milliseconds\n\t\tphaseOffsetMs = periodMs * channelOffset;  // multi-channel phase offset (ms)\n\t\tsafeDelay = clamp(delayMs, 0, 1);  // normalize control range to expected 0..1 span\n\t\tdelayedOffsetMs = phaseOffsetMs * safeDelay;  // apply delay scaling\n\t\tdelayOffsetSamplesRaw = mstosamps(delayedOffsetMs);  // convert milliseconds to samples\n\t\tmaxDelaySamples = max(delayBufferSize - 1, 1);  // keep read tap within valid delay buffer bounds\n\t\tdelayOffsetSamples = floor(clamp(delayOffsetSamplesRaw, 0, maxDelaySamples) + 0.5);  // use integer taps to avoid wrap interpolation spikes\n\t\ttimedRamp = delayRamp.read(delayOffsetSamples);  // read the delayed ramp phase for this channel\n\t\ttimedTriggerSource = timedRamp;\n\t}\n\tresultTrigger = Ramp2Trig(timedTriggerSource);  // trigger follows the delayed ramp only when delay is active\n\n\t// active state gate, depending on chance value (0-1)\n\tresultState = Chance(syncGate + resultTrigger, chanceGate);  // probabilistic state output\n\n\t// ramp output with phase oiffset\n\tloopedState = loopMode ? resultState : loopHistory;  // loop mode toggles between state or memory\n\tgatedRampOutput = loopedState ? timedRamp : zero;  // use delayed ramp when delay is active\n\ttotalPhaseOffset = phaseOffset * channelOffset;  // multi-channel phase spread\n\tresultRamp = wrap(gatedRampOutput + totalPhaseOffset, 0, 1);  // ramp output with phase offset\n\n\t// waveform triggering\n\trampTrigger = Ramp2Trig(gatedRampOutput);  // trigger from modulated ramp\n\n\ttriggerLatch = FlipFlop(triggerSig + rampTrigger);  // latch logic combining input and generated triggers\n\n\t// history update\n\tnextRamp = fixdenorm(rampInput);  // next ramp value (denorm-safe)\n\tnextState = fixdenorm(triggerLatch);  // next state memory (denorm-safe)\n\tloopHistory = nextState;\n\trampHistory = nextRamp;\n\tdelayRamp.write(rampValue);  // keep a history of the ramp phase for per-channel delay taps\n\t\n\treturn resultRamp, resultTrigger, resultState;\n}\n\nRandWave(phase, tilt, ExponentialEaseInOut, ExponentialEaseIn) {\n\t// tilt morphs random shape response:\n\t// negative tilt uses in/out easing, positive tilt uses ease-in.\n\t// tilt of 0 results in straight noise, -1 is skewed towards an amplitide of 1 (and -1 in bipolar mode), +1 is is skewed towards 0.\n\ttiltScaled = tilt + 1; // scale tilt to [0, 2] range for morphing function\n\tnoiseBipolar = Rand(phase); // bipolar noise in [-1, 1]\n\tnoiseUnipolar = abs(noiseBipolar);\t// unipolar noise in [0, 1]\n\t// initialize all tilt slots, then enable only the needed ones based on tilt direction.\n\trandUnipolarTiltInOut = 0;\n\trandUnipolarTiltIn = 0;\n\trandBipolarTiltInOut = 0;\n\trandBipolarTiltIn = 0;\n\tif(tilt < 0) {\n\t\trandUnipolarTiltInOut = sample(ExponentialEaseInOut, noiseUnipolar, 0, channels=1);\n\t\trandBipolarTiltInOut = EaseBipolar(noiseBipolar, ExponentialEaseInOut);\n\t} else {\n\t\trandUnipolarTiltIn = sample(ExponentialEaseIn, noiseUnipolar, 0, channels=1);\n\t\trandBipolarTiltIn = EaseBipolar(noiseBipolar, ExponentialEaseIn);\n\t}\n\tresultUnipolar = TriMix(randUnipolarTiltInOut, noiseUnipolar, randUnipolarTiltIn, tiltScaled);\n\tresultBipolar = TriMix(randBipolarTiltInOut, noiseBipolar, randBipolarTiltIn, tiltScaled);\n\treturn resultUnipolar, resultBipolar;\n}\n\nTriWave(phase, tilt) {\n\t// triangle duty is skewed by tilt in [0..1].\n\ttiltScaled = (tilt + 1) * 0.5; // scale tilt to [0, 1] range for triangle function\n\ttriWaveUnipolar = triangle(phase, tiltScaled);\n\ttriWaveBipolar = (triWaveUnipolar * 2) - 1; // convert to bipolar\n\treturn triWaveUnipolar, triWaveBipolar;\n}\n\nSineWave(phase, tilt, ExponentialEaseOut, ExponentialEaseIn) {\n\t// phase is warped by tilt before the sine lookup.\n\ttiltScaled = tilt + 1;\n\tphaseTiltOut = 0;\n\tphaseTiltIn = 0;\n\tif(tilt < 0) {\n\t\tphaseTiltOut = sample(ExponentialEaseOut, phase, 0, channels=1);\n\t} else {\n\t\tphaseTiltIn = sample(ExponentialEaseIn, phase, 0, channels=1);\n\t}\n\tphaseResult = TriMix(phaseTiltOut, phase, phaseTiltIn, tiltScaled);\n\tsineWave = cycle(phaseResult, index=\"phase\");\n\t// correct phase to align sine with triangle shape\n\tsineWaveBipolar = -sineWave;\n\tsineWaveUnipolar = (sineWaveBipolar * 0.5) + 0.5;\n\treturn sineWaveUnipolar, sineWaveBipolar;\n}\n\nPulseWave(phase, tilt) {\n\t// thresholded comparator pulse from phase. uses sine wave as base for calulation.\n\ttiltScaled = (tilt + 1) * 0.5;\n\tpulseWaveUnipolar = phase > tiltScaled;\n\tpulseWaveBipolar = -(phase < tilt) + (phase > tilt);\n\treturn pulseWaveUnipolar, pulseWaveBipolar;\n}\n\nLowestPossibleFreq(bufferSize) {\n\tminFreq = SAMPLERATE / bufferSize;\n\treturn minFreq;\n}\n\n// buffer references for easing functions used in wave shaping\nBuffer ExponentialEaseInOut(\"ExponentialEaseInOut\");\nBuffer ExponentialEaseIn(\"ExponentialEaseIn\");\nBuffer ExponentialEaseOut(\"ExponentialEaseOut\");\n\n// parameter setup\nParam loopMode(0, max=1, default=0, min=0);\nParam symmetry(0, max=1, default=0, min=0);\nParam sync(0, max=1, default=0, min=0);\nParam syncMode(0, max=1, default=0, min=0);\nParam freqMin(0, min=0, max=samplerate);\nParam delayBufferSize(14400000, min=48000); \n\n// signal inputs\nfreq = max(freqMin, in1); // failsafe to prevent blowing up delay buffer\nchance = in2; // chance @default 1 @min 0 @max 1\njitterAmount = in3; // @default 0 @min 0\ntriggerSig = in4; // external trigger signal\nphaseOffset = in5; // @default 0 @min 0 @max 1 - scales to period length for each channel, so max of 1 results in a full period phase offset for the last channel relative to the first.\ndelay = in6; // @default 0 @min 0 @max 1 - scales to period length for each channel, increasing per channel, so 0.5 is half delay on channel 2, and a full delay on channel 3 in relation to channel 1.\nsyncSig = in7; // external signal coming from ll.syncs\nshape = in8; // shape @default 1. @min 0 @max 3\ntilt = in9; // @default 0. @min -1 @max 1\nfoldAmt = in10; // @default 0. @min 0.\noutputMin = in11; // min @default 0\noutputMax = in12; // max @default 1 \nactiveChans = in13; // currently active channel count, calculated externally\nlimit = in14; // limit amount of active channels to number\r\n\n// core LFO ramp/trigger/state engine.\nramp, trigger, activeState = LowFreqOsc(freq, chance, jitterAmount, triggerSig, loopMode, phaseOffset, activeChans, limit, delay, syncSig, sync, syncMode, delayBufferSize);\n\n// symmetry switch between unipolar and bipolar behavior.\nphase = symmetry ? wrap(ramp + 0.25, 0, 1) : ramp;\n\n// update tilt only when a cycle trigger occurs.\ntiltTimed = latch(tilt, trigger);\n\nfoldTimed = latch(foldAmt, trigger);\n\n// smoothed control signals to avoid clicks.\nactiveStateSmoothed = slide(activeState, 10, 50);\nsymmetrySmoothed = slide(symmetry, 20, 20);\n\nactive = (activeStateSmoothed + activeState); // add active state to smoothed version for more immediate response when triggering, while still retaining a smooth release.\n\nresult = 0; // initialize result\n\nif(active > 0) {\n\t\n\t// initialize all wave slots, then enable only the needed shape windows.\n\trandWaveUnipolar, randWaveBipolar = 0, 0;\n\ttriWaveUnipolar, triWaveBipolar = 0, 0;\n\tsineWaveUnipolar, sineWaveBipolar = 0, 0;\n\tpulseWaveUnipolar, pulseWaveBipolar = 0, 0;\n\n\tif(shape < 1) {\n\t\trandWaveUnipolar, randWaveBipolar = RandWave(phase, tiltTimed, ExponentialEaseInOut, ExponentialEaseIn);\n\t}\n\tif(shape > 0 && shape < 2) {\n\t\ttriWaveUnipolar, triWaveBipolar = TriWave(phase, tiltTimed);\n\t}\n\tif(shape > 1) {\n\t\tsineWaveUnipolar, sineWaveBipolar = SineWave(phase, tiltTimed, ExponentialEaseOut, ExponentialEaseIn);\n\t}\n\tif(shape > 2) {\n\t\tpulseWaveUnipolar, pulseWaveBipolar = PulseWave(sineWaveBipolar, tiltTimed);\n\t}\n\n\t// continuous 4-way morph across random -> triangle -> sine -> pulse.\n\tmixUnipolar = QuadMix(randWaveUnipolar, triWaveUnipolar, sineWaveUnipolar, pulseWaveUnipolar, shape);\n\tmixBipolar = QuadMix(randWaveBipolar, triWaveBipolar, sineWaveBipolar, pulseWaveBipolar, shape);\n\n\tmixUnipolarFolded = mixUnipolar;\n\tmixBipolarFolded = mixBipolar;\n\n\tif(foldTimed > 0) {\n\t\tfoldScale = foldTimed + 1; // use 1 as base to ensure that foldAmt of 0 results in no change.\n\t\tactiveAmp = activeStateSmoothed * foldScale; // pre-wavefolding amplitude scaling.\n\t\tmixUnipolarPreFoldAmp = mixUnipolar * activeAmp;\n\t\tmixUnipolarFolded = fold(mixUnipolarPreFoldAmp, 0, 1); // fold to 0, 1 range for unipolar signal.\n\t\tmixBipolarPreFoldAmp = mixBipolar * activeAmp;\n\t\tmixBipolarFolded = fold(mixBipolarPreFoldAmp, -1, 1); // fold to -1, 1 range for bipolar signal.\n\t}\n\tmixUnipolarFinal = scale(mixUnipolarFolded, 0, 1, outputMin, outputMax, 1);\n\tmixBipolarFinal = scale(mixBipolarFolded, -1, 1, outputMin, outputMax, 1);\n\n\tresult = mix(mixUnipolarFinal, mixBipolarFinal, symmetrySmoothed); \t// symmetry blends final output flavor: unipolar <-> bipolar.\n}\n\nout1 = result; // main output\nout2 = trigger; // trigger output from ramp wrap\nout3 = activeState; // is voice active?"
                                                     }
                                                 },
                                                 {
@@ -2886,10 +2908,10 @@
                                                         "maxclass": "newobj",
                                                         "text": "in 7 @comment syncSig",
                                                         "patching_rect": [ 485.0, 125.0, 138.0, 22.0 ],
-                                                        "numinlets": 0,
                                                         "numoutlets": 1,
+                                                        "outlettype": [ "" ],
                                                         "id": "obj-32",
-                                                        "outlettype": [ "" ]
+                                                        "numinlets": 0
                                                     }
                                                 },
                                                 {
@@ -2897,9 +2919,9 @@
                                                         "maxclass": "newobj",
                                                         "text": "out 3 @comment gate",
                                                         "patching_rect": [ 847.0, 902.0, 127.0, 22.0 ],
-                                                        "numinlets": 1,
                                                         "numoutlets": 0,
-                                                        "id": "obj-46"
+                                                        "id": "obj-46",
+                                                        "numinlets": 1
                                                     }
                                                 },
                                                 {
@@ -2907,10 +2929,10 @@
                                                         "maxclass": "newobj",
                                                         "text": "in 13 @comment activechans",
                                                         "patching_rect": [ 856.0, 101.0, 166.0, 22.0 ],
-                                                        "numinlets": 0,
                                                         "numoutlets": 1,
+                                                        "outlettype": [ "" ],
                                                         "id": "obj-45",
-                                                        "outlettype": [ "" ]
+                                                        "numinlets": 0
                                                     }
                                                 },
                                                 {
@@ -2918,10 +2940,10 @@
                                                         "maxclass": "newobj",
                                                         "text": "in 6 @comment delay @default 0 @min 0 @max 1",
                                                         "patching_rect": [ 406.6666666666667, 150.0, 279.0, 22.0 ],
-                                                        "numinlets": 0,
                                                         "numoutlets": 1,
+                                                        "outlettype": [ "" ],
                                                         "id": "obj-30",
-                                                        "outlettype": [ "" ]
+                                                        "numinlets": 0
                                                     }
                                                 },
                                                 {
@@ -2929,10 +2951,10 @@
                                                         "maxclass": "newobj",
                                                         "text": "in 5 @comment phase @min 0 @max 1 @default 0",
                                                         "patching_rect": [ 328.0, 51.0, 283.0, 22.0 ],
-                                                        "numinlets": 0,
                                                         "numoutlets": 1,
+                                                        "outlettype": [ "" ],
                                                         "id": "obj-29",
-                                                        "outlettype": [ "" ]
+                                                        "numinlets": 0
                                                     }
                                                 },
                                                 {
@@ -2940,10 +2962,10 @@
                                                         "maxclass": "newobj",
                                                         "text": "in 4 @comment triggerSig",
                                                         "patching_rect": [ 250.0, 75.0, 147.0, 22.0 ],
-                                                        "numinlets": 0,
                                                         "numoutlets": 1,
+                                                        "outlettype": [ "" ],
                                                         "id": "obj-26",
-                                                        "outlettype": [ "" ]
+                                                        "numinlets": 0
                                                     }
                                                 },
                                                 {
@@ -2951,10 +2973,10 @@
                                                         "maxclass": "newobj",
                                                         "text": "in 12 @comment max @default 1",
                                                         "patching_rect": [ 778.0, 126.0, 187.0, 22.0 ],
-                                                        "numinlets": 0,
                                                         "numoutlets": 1,
+                                                        "outlettype": [ "" ],
                                                         "id": "obj-25",
-                                                        "outlettype": [ "" ]
+                                                        "numinlets": 0
                                                     }
                                                 },
                                                 {
@@ -2962,10 +2984,10 @@
                                                         "maxclass": "newobj",
                                                         "text": "in 11 @comment min @default 0",
                                                         "patching_rect": [ 700.0, 150.0, 183.0, 22.0 ],
-                                                        "numinlets": 0,
                                                         "numoutlets": 1,
+                                                        "outlettype": [ "" ],
                                                         "id": "obj-14",
-                                                        "outlettype": [ "" ]
+                                                        "numinlets": 0
                                                     }
                                                 },
                                                 {
@@ -2973,10 +2995,10 @@
                                                         "maxclass": "newobj",
                                                         "text": "in 10 @comment fold @default 0. @min 0.",
                                                         "patching_rect": [ 720.0, 51.0, 235.0, 22.0 ],
-                                                        "numinlets": 0,
                                                         "numoutlets": 1,
+                                                        "outlettype": [ "" ],
                                                         "id": "obj-23",
-                                                        "outlettype": [ "" ]
+                                                        "numinlets": 0
                                                     }
                                                 },
                                                 {
@@ -2984,10 +3006,10 @@
                                                         "maxclass": "newobj",
                                                         "text": "buffer ExponentialEaseOut",
                                                         "patching_rect": [ 161.5, 15.0, 152.0, 22.0 ],
-                                                        "numinlets": 0,
                                                         "numoutlets": 2,
+                                                        "outlettype": [ "", "" ],
                                                         "id": "obj-17",
-                                                        "outlettype": [ "", "" ]
+                                                        "numinlets": 0
                                                     }
                                                 },
                                                 {
@@ -2995,10 +3017,10 @@
                                                         "maxclass": "newobj",
                                                         "text": "buffer ExponentialEaseIn",
                                                         "patching_rect": [ 15.0, 15.0, 142.0, 22.0 ],
-                                                        "numinlets": 0,
                                                         "numoutlets": 2,
+                                                        "outlettype": [ "", "" ],
                                                         "id": "obj-15",
-                                                        "outlettype": [ "", "" ]
+                                                        "numinlets": 0
                                                     }
                                                 },
                                                 {
@@ -3006,10 +3028,10 @@
                                                         "maxclass": "newobj",
                                                         "text": "in 8 @comment shape @default 1. @min 0 @max 3",
                                                         "patching_rect": [ 563.0, 101.0, 287.0, 22.0 ],
-                                                        "numinlets": 0,
                                                         "numoutlets": 1,
+                                                        "outlettype": [ "" ],
                                                         "id": "obj-20",
-                                                        "outlettype": [ "" ]
+                                                        "numinlets": 0
                                                     }
                                                 },
                                                 {
@@ -3017,9 +3039,9 @@
                                                         "maxclass": "newobj",
                                                         "text": "out 1 @comment result",
                                                         "patching_rect": [ 15.0, 902.0, 133.0, 22.0 ],
-                                                        "numinlets": 1,
                                                         "numoutlets": 0,
-                                                        "id": "obj-34"
+                                                        "id": "obj-34",
+                                                        "numinlets": 1
                                                     }
                                                 },
                                                 {
@@ -3027,10 +3049,10 @@
                                                         "maxclass": "newobj",
                                                         "text": "in 9 @comment tilt @default 0. @min -1 @max 1",
                                                         "patching_rect": [ 642.0, 76.0, 270.0, 22.0 ],
-                                                        "numinlets": 0,
                                                         "numoutlets": 1,
+                                                        "outlettype": [ "" ],
                                                         "id": "obj-4",
-                                                        "outlettype": [ "" ]
+                                                        "numinlets": 0
                                                     }
                                                 },
                                                 {
@@ -3038,10 +3060,10 @@
                                                         "maxclass": "newobj",
                                                         "text": "in 2 @comment chance @default 1 @min 0 @max 1",
                                                         "patching_rect": [ 93.0, 124.0, 289.0, 22.0 ],
-                                                        "numinlets": 0,
                                                         "numoutlets": 1,
+                                                        "outlettype": [ "" ],
                                                         "id": "obj-38",
-                                                        "outlettype": [ "" ]
+                                                        "numinlets": 0
                                                     }
                                                 },
                                                 {
@@ -3049,10 +3071,10 @@
                                                         "maxclass": "newobj",
                                                         "text": "in 3 @comment jitter @default 0 @min 0",
                                                         "patching_rect": [ 171.66666666666666, 98.0, 225.0, 22.0 ],
-                                                        "numinlets": 0,
                                                         "numoutlets": 1,
+                                                        "outlettype": [ "" ],
                                                         "id": "obj-11",
-                                                        "outlettype": [ "" ]
+                                                        "numinlets": 0
                                                     }
                                                 },
                                                 {
@@ -3060,14 +3082,20 @@
                                                         "maxclass": "newobj",
                                                         "text": "in 1 @comment freq @default 1 @min 0.001 @max samplerate/2",
                                                         "patching_rect": [ 15.0, 150.0, 357.0, 22.0 ],
-                                                        "numinlets": 0,
                                                         "numoutlets": 1,
+                                                        "outlettype": [ "" ],
                                                         "id": "obj-10",
-                                                        "outlettype": [ "" ]
+                                                        "numinlets": 0
                                                     }
                                                 }
                                             ],
                                             "lines": [
+                                                {
+                                                    "patchline": {
+                                                        "source": [ "obj-3", 0 ],
+                                                        "destination": [ "obj-60", 13 ]
+                                                    }
+                                                },
                                                 {
                                                     "patchline": {
                                                         "source": [ "obj-10", 0 ],
@@ -3169,12 +3197,12 @@
                                     },
                                     "id": "obj-6",
                                     "maxclass": "newobj",
-                                    "numinlets": 13,
+                                    "numinlets": 14,
                                     "numoutlets": 3,
                                     "outlettype": [ "multichannelsignal", "multichannelsignal", "multichannelsignal" ],
                                     "patching_rect": [ 289.0, 417.0, 135.0, 22.0 ],
                                     "text": "mc.gen~ @title mc.mod",
-                                    "wrapper_uniquekey": "u968002836"
+                                    "wrapper_uniquekey": "u272005199"
                                 }
                             },
                             {
@@ -3250,35 +3278,35 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-6", 10 ],
-                                    "midpoints": [ 420.5, 393.83203125, 395.1666666666667, 393.83203125 ],
+                                    "midpoints": [ 420.5, 393.83203125, 387.7307692307692, 393.83203125 ],
                                     "source": [ "obj-10", 0 ]
                                 }
                             },
                             {
                                 "patchline": {
                                     "destination": [ "obj-6", 11 ],
-                                    "midpoints": [ 430.5, 398.26171875, 404.8333333333333, 398.26171875 ],
+                                    "midpoints": [ 430.5, 398.26171875, 396.6538461538462, 398.26171875 ],
                                     "source": [ "obj-11", 0 ]
                                 }
                             },
                             {
                                 "patchline": {
                                     "destination": [ "obj-6", 2 ],
-                                    "midpoints": [ 326.5, 298.5, 317.8333333333333, 298.5 ],
+                                    "midpoints": [ 326.5, 298.5, 316.34615384615387, 298.5 ],
                                     "source": [ "obj-114", 0 ]
                                 }
                             },
                             {
                                 "patchline": {
                                     "destination": [ "obj-6", 7 ],
-                                    "midpoints": [ 379.5, 372.57421875, 366.1666666666667, 372.57421875 ],
+                                    "midpoints": [ 379.5, 372.57421875, 360.96153846153845, 372.57421875 ],
                                     "source": [ "obj-119", 0 ]
                                 }
                             },
                             {
                                 "patchline": {
                                     "destination": [ "obj-6", 12 ],
-                                    "midpoints": [ 453.5, 409.0, 414.5, 409.0 ],
+                                    "midpoints": [ 453.5, 409.0, 405.5769230769231, 409.0 ],
                                     "source": [ "obj-13", 0 ]
                                 }
                             },
@@ -3312,7 +3340,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-6", 3 ],
-                                    "midpoints": [ 519.5, 337.7421875, 327.5, 337.7421875 ],
+                                    "midpoints": [ 519.5, 337.7421875, 325.2692307692308, 337.7421875 ],
                                     "source": [ "obj-19", 0 ]
                                 }
                             },
@@ -3325,6 +3353,12 @@
                             },
                             {
                                 "patchline": {
+                                    "destination": [ "obj-6", 13 ],
+                                    "source": [ "obj-20", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
                                     "destination": [ "obj-6", 0 ],
                                     "midpoints": [ 241.5, 410.5, 298.5, 410.5 ],
                                     "source": [ "obj-22", 0 ]
@@ -3333,7 +3367,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-6", 5 ],
-                                    "midpoints": [ 360.5, 368.46875, 346.8333333333333, 368.46875 ],
+                                    "midpoints": [ 360.5, 368.46875, 343.11538461538464, 368.46875 ],
                                     "source": [ "obj-24", 0 ]
                                 }
                             },
@@ -3371,7 +3405,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-6", 9 ],
-                                    "midpoints": [ 401.5, 388.3515625, 385.5, 388.3515625 ],
+                                    "midpoints": [ 401.5, 388.3515625, 378.8076923076923, 388.3515625 ],
                                     "source": [ "obj-3", 0 ]
                                 }
                             },
@@ -3430,7 +3464,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-6", 8 ],
-                                    "midpoints": [ 389.5, 377.80859375, 375.8333333333333, 377.80859375 ],
+                                    "midpoints": [ 389.5, 377.80859375, 369.88461538461536, 377.80859375 ],
                                     "source": [ "obj-4", 0 ]
                                 }
                             },
@@ -3475,7 +3509,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-6", 6 ],
-                                    "midpoints": [ 634.5, 386.7265625, 356.5, 386.7265625 ],
+                                    "midpoints": [ 634.5, 386.7265625, 352.03846153846155, 386.7265625 ],
                                     "source": [ "obj-52", 0 ]
                                 }
                             },
@@ -3504,14 +3538,14 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-6", 4 ],
-                                    "midpoints": [ 347.5, 367.0, 337.1666666666667, 367.0 ],
+                                    "midpoints": [ 347.5, 367.0, 334.1923076923077, 367.0 ],
                                     "source": [ "obj-8", 0 ]
                                 }
                             },
                             {
                                 "patchline": {
                                     "destination": [ "obj-6", 1 ],
-                                    "midpoints": [ 309.5, 314.0, 308.1666666666667, 314.0 ],
+                                    "midpoints": [ 309.5, 314.0, 307.4230769230769, 314.0 ],
                                     "source": [ "obj-9", 0 ]
                                 }
                             }

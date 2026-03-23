@@ -9,11 +9,26 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 100.0, 100.0, 705.0, 646.0 ],
+        "rect": [ 246.0, 288.0, 705.0, 646.0 ],
         "toolbarvisible": 0,
         "enablehscroll": 0,
         "enablevscroll": 0,
         "boxes": [
+            {
+                "box": {
+                    "bubbleusescolors": 1,
+                    "fontface": 0,
+                    "fontsize": 12.0,
+                    "id": "obj-1",
+                    "linecount": 4,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 435.0, 82.0, 235.0, 60.0 ],
+                    "text": "osc freq can be pushed into audio-range. waveforms are not anti-aliased, but most calculations are performed between cycles, like freq, jitter, chance, fold and tilt.",
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
+                }
+            },
             {
                 "box": {
                     "bubble": 1,
@@ -24,7 +39,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 509.8543654382229, 353.0, 164.0, 64.0 ],
+                    "patching_rect": [ 520.0, 347.0, 164.0, 64.0 ],
                     "text": "spr is per-channel random spread value, always relates to leftmost parameter",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -39,7 +54,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 39.0, 496.0, 198.0, 33.0 ],
+                    "patching_rect": [ 49.0, 490.0, 198.0, 33.0 ],
                     "text": "alternative sync settings (replaces frequency selection)",
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
@@ -54,7 +69,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 412.5, 530.0, 214.0, 37.0 ],
+                    "patching_rect": [ 423.0, 524.0, 214.0, 37.0 ],
                     "text": "sync multiple. 0.5 = double speed, 2 = half, as in c74 rate~ object",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -71,7 +86,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 301.5, 552.0, 139.5, 52.0 ],
+                    "patching_rect": [ 312.0, 546.0, 139.5, 52.0 ],
                     "text": "sync mode (hard resets on phase onset)",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -87,7 +102,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 180.5, 552.0, 87.0, 39.0 ],
+                    "patching_rect": [ 191.0, 546.0, 87.0, 39.0 ],
                     "text": "sync source",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -103,7 +118,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 81.55339694023132, 291.2621319293976, 141.5, 24.0 ],
+                    "patching_rect": [ 92.0, 286.0, 141.5, 24.0 ],
                     "text": "activate external sync",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -119,7 +134,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 326.0, 173.0, 59.0, 106.0 ],
+                    "patching_rect": [ 336.0, 167.0, 59.0, 106.0 ],
                     "text": "switch between oneshot (1s) and loop mode",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -134,7 +149,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 352.0, 327.0, 271.0, 24.0 ],
+                    "patching_rect": [ 362.0, 321.0, 271.0, 24.0 ],
                     "text": "delay between voices (0-1, phase dependent)",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -148,7 +163,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 510.0, 270.0, 160.0, 24.0 ],
+                    "patching_rect": [ 520.0, 264.0, 160.0, 24.0 ],
                     "text": "smooth parameters (ms)",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -163,7 +178,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 354.0, 301.0, 209.0, 24.0 ],
+                    "patching_rect": [ 364.0, 295.0, 209.0, 24.0 ],
                     "text": "frequency (goes up to audio rate)",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -180,7 +195,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 82.0, 214.0, 141.0, 78.0 ],
+                    "patching_rect": [ 92.0, 208.0, 141.0, 78.0 ],
                     "text": "select waveform – seamless morphable between random, triangle, sine and square",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -197,7 +212,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 79.48786395788193, 379.5, 149.0, 66.0 ],
+                    "patching_rect": [ 89.0, 374.0, 149.0, 66.0 ],
                     "text": "frequency jitter, randomizes freq between cycles",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -213,7 +228,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 364.0, 373.0, 59.0, 79.0 ],
+                    "patching_rect": [ 374.0, 367.0, 59.0, 79.0 ],
                     "text": "limit amount of active voices",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -233,7 +248,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 215.5, 541.0, 75.0, 16.0 ],
+                    "patching_rect": [ 226.0, 535.0, 75.0, 16.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "syncto[2]"
@@ -257,7 +272,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 325.5, 541.0, 91.0, 15.875 ],
+                    "patching_rect": [ 336.0, 535.0, 91.0, 15.875 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1.0 ],
                     "sliderlog": 8.0,
@@ -281,7 +296,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "int" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 290.5, 541.0, 33.0, 16.0 ],
+                    "patching_rect": [ 301.0, 535.0, 33.0, 16.0 ],
                     "text": "soft",
                     "textcolor": [ 0.835294117647059, 0.215686274509804, 0.317647058823529, 1.0 ],
                     "texton": "hard",
@@ -307,7 +322,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 216.0, 309.0, 17.0, 16.0 ],
+                    "patching_rect": [ 226.0, 303.0, 17.0, 16.0 ],
                     "pattrmode": 1,
                     "prefix": "",
                     "varname": "syncto"
@@ -331,7 +346,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 368.0, 343.0, 48.0, 16.0 ],
+                    "patching_rect": [ 378.0, 337.0, 48.0, 16.0 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.231, 0.376, 0.804, 0.502 ],
                     "slidermax": 32.0,
@@ -359,7 +374,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 368.0, 359.0, 48.0, 12.25 ],
+                    "patching_rect": [ 378.0, 353.0, 48.0, 12.25 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.231, 0.376, 0.804, 0.502 ],
                     "slidermax": 2.0,
@@ -388,7 +403,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 292.0, 345.0, 73.0, 12.0 ],
+                    "patching_rect": [ 302.0, 339.0, 73.0, 12.0 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1.0 ],
                     "slidermax": 1.0,
@@ -416,7 +431,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 216.0, 345.0, 74.0, 12.0 ],
+                    "patching_rect": [ 226.0, 339.0, 74.0, 12.0 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1.0 ],
                     "slidermax": 1.0,
@@ -438,7 +453,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "int" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 335.0, 274.0, 30.0, 16.0 ],
+                    "patching_rect": [ 345.0, 268.0, 30.0, 16.0 ],
                     "text": "1s",
                     "textcolor": [ 0.835294117647059, 0.215686274509804, 0.317647058823529, 1.0 ],
                     "texton": "loop",
@@ -461,7 +476,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "int" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 317.0, 274.0, 16.0, 16.0 ],
+                    "patching_rect": [ 327.0, 268.0, 16.0, 16.0 ],
                     "text": "T",
                     "textcolor": [ 0.835294117647059, 0.215686274509804, 0.317647058823529, 1.0 ],
                     "texton": "T",
@@ -485,7 +500,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "int" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 393.0, 274.0, 24.0, 16.0 ],
+                    "patching_rect": [ 403.0, 268.0, 24.0, 16.0 ],
                     "text": "uni",
                     "textcolor": [ 0.835294117647059, 0.215686274509804, 0.317647058823529, 1.0 ],
                     "texton": "bi",
@@ -513,7 +528,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 473.0, 387.0, 43.0, 12.0 ],
+                    "patching_rect": [ 483.0, 381.0, 43.0, 12.0 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1.0 ],
                     "slidermax": 1.0,
@@ -540,7 +555,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 473.0, 373.0, 43.0, 12.0 ],
+                    "patching_rect": [ 483.0, 367.0, 43.0, 12.0 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1.0 ],
                     "slidermax": 1.0,
@@ -566,7 +581,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 420.0, 387.0, 52.0, 12.0 ],
+                    "patching_rect": [ 430.0, 381.0, 52.0, 12.0 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1.0 ],
                     "sliderlog": 4.0,
@@ -595,7 +610,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 420.0, 373.0, 52.0, 12.0 ],
+                    "patching_rect": [ 430.0, 367.0, 52.0, 12.0 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1.0 ],
                     "sliderlog": 4.0,
@@ -621,7 +636,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "int" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 367.0, 274.0, 24.0, 16.0 ],
+                    "patching_rect": [ 377.0, 268.0, 24.0, 16.0 ],
                     "text": "lfo",
                     "textcolor": [ 0.835294117647059, 0.215686274509804, 0.317647058823529, 1.0 ],
                     "texton": "rm",
@@ -648,7 +663,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 419.0, 274.0, 96.0, 15.5 ],
+                    "patching_rect": [ 429.0, 268.0, 96.0, 15.5 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1.0 ],
                     "sliderlog": 8.0,
@@ -667,7 +682,7 @@
                     "maxclass": "scope~",
                     "numinlets": 2,
                     "numoutlets": 0,
-                    "patching_rect": [ 419.0, 291.0, 97.0, 80.25 ],
+                    "patching_rect": [ 429.0, 285.0, 97.0, 80.25 ],
                     "range": [ 0.0, 1.0 ],
                     "varname": "scope"
                 }
@@ -689,7 +704,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 317.0, 387.0, 48.0, 12.0 ],
+                    "patching_rect": [ 327.0, 381.0, 48.0, 12.0 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1.0 ],
                     "slidermax": 1.0,
@@ -716,7 +731,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 216.0, 387.0, 99.0, 12.0 ],
+                    "patching_rect": [ 226.0, 381.0, 99.0, 12.0 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.231, 0.376, 0.804, 0.502 ],
                     "sliderlog": 6.0,
@@ -745,7 +760,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 317.0, 373.0, 48.0, 12.0 ],
+                    "patching_rect": [ 327.0, 367.0, 48.0, 12.0 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1.0 ],
                     "slidermax": 1.0,
@@ -774,7 +789,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 216.0, 373.0, 99.0, 12.0 ],
+                    "patching_rect": [ 226.0, 367.0, 99.0, 12.0 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.231, 0.376, 0.804, 0.502 ],
                     "sliderlog": 6.0,
@@ -802,7 +817,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 317.0, 359.0, 48.0, 12.0 ],
+                    "patching_rect": [ 327.0, 353.0, 48.0, 12.0 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1.0 ],
                     "slidermax": 1.0,
@@ -831,7 +846,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 216.0, 359.0, 99.0, 12.0 ],
+                    "patching_rect": [ 226.0, 353.0, 99.0, 12.0 ],
                     "slidercolor": [ 0.231372549019608, 0.376470588235294, 0.803921568627451, 0.5 ],
                     "slidermax": 1.0,
                     "sliderstyle": 0,
@@ -856,7 +871,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 367.0, 327.0, 50.0, 16.0 ],
+                    "patching_rect": [ 377.0, 321.0, 50.0, 16.0 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1.0 ],
                     "slidermax": 1.0,
@@ -886,7 +901,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 216.0, 327.0, 149.0, 16.25 ],
+                    "patching_rect": [ 226.0, 321.0, 149.0, 16.25 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1.0 ],
                     "sliderlog": 2.0,
@@ -916,7 +931,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 216.0, 291.0, 149.0, 16.25 ],
+                    "patching_rect": [ 226.0, 285.0, 149.0, 16.25 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1.0 ],
                     "slidermax": 3.0,
@@ -942,7 +957,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 367.0, 309.0, 50.0, 16.0 ],
+                    "patching_rect": [ 377.0, 303.0, 50.0, 16.0 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1.0 ],
                     "sliderlog": 4.0,
@@ -970,7 +985,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 367.0, 291.0, 50.0, 16.0 ],
+                    "patching_rect": [ 377.0, 285.0, 50.0, 16.0 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1.0 ],
                     "slidermax": 3.0,
@@ -997,7 +1012,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 235.0, 309.0, 130.0, 15.875 ],
+                    "patching_rect": [ 245.0, 303.0, 130.0, 15.875 ],
                     "selectcolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 0.5 ],
                     "slidercolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1.0 ],
                     "sliderlog": 8.0,
@@ -1025,7 +1040,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "float" ],
                     "parameter_enable": 1,
-                    "patching_rect": [ 216.0, 274.0, 99.0, 16.0 ],
+                    "patching_rect": [ 226.0, 268.0, 99.0, 16.0 ],
                     "pictures": [ "random.svg", "updown.svg", "sine.svg", "square.svg" ],
                     "remapsvgcolors": 1,
                     "saved_attribute_attributes": {
@@ -1106,7 +1121,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 429.0, 401.0, 87.0, 79.0 ],
+                    "patching_rect": [ 439.0, 395.0, 87.0, 79.0 ],
                     "text": "output range (defined as minimum & maximum)",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -1118,12 +1133,12 @@
                     "bubblepoint": 0.0,
                     "bubbleside": 2,
                     "id": "obj-36",
-                    "linecount": 2,
+                    "linecount": 3,
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 385.0, 227.0, 237.0, 52.0 ],
-                    "text": "switch between lfo and ring modulation as well as unipolar and bipolar modes",
+                    "patching_rect": [ 397.0, 209.0, 237.0, 66.0 ],
+                    "text": "switch between lfo (direct wave out) and ring modulation (multiply with input) as well as unipolar and bipolar modes",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
             },
@@ -1138,7 +1153,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 232.03883177042007, 394.0, 124.27184295654297, 79.0 ],
+                    "patching_rect": [ 242.0, 388.0, 124.27184295654297, 79.0 ],
                     "text": "wavefolder – amplifies signal and folds between the defined output range",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -1154,7 +1169,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 110.67961013317108, 364.077664911747, 109.0, 24.0 ],
+                    "patching_rect": [ 121.0, 358.0, 109.0, 24.0 ],
                     "text": "trigger chance",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -1169,7 +1184,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 12.883496463298798, 339.0, 206.79611366987228, 24.0 ],
+                    "patching_rect": [ 23.0, 333.0, 206.79611366987228, 24.0 ],
                     "text": "phase offset between voices (0-1)",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -1185,7 +1200,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 119.41747409105301, 316.5048500299454, 100.0, 24.0 ],
+                    "patching_rect": [ 129.0, 311.0, 100.0, 24.0 ],
                     "text": "waveform tilt",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -1202,7 +1217,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 228.0, 206.0, 97.0, 66.0 ],
+                    "patching_rect": [ 238.0, 200.0, 97.0, 66.0 ],
                     "text": "trigger oneshot, also re-syncs in loop mode",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ]
                 }
@@ -1217,8 +1232,8 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 38.5, 121.0, 324.0, 33.0 ],
-                    "text": "v2 – 260322 – c. hausch – hausch@moozak.org, contains additional code by graham wakefield & gregory taylor",
+                    "patching_rect": [ 39.0, 119.0, 324.0, 33.0 ],
+                    "text": "v2 – 260323 – c. hausch – hausch@moozak.org, contains additional code by graham wakefield & gregory taylor",
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
             },
@@ -1232,7 +1247,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 38.5, 84.0, 198.0, 33.0 ],
+                    "patching_rect": [ 39.0, 82.0, 198.0, 33.0 ],
                     "text": "multichannel modulation source and ring modulator",
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
@@ -1246,7 +1261,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 38.0, 37.0, 388.0, 42.0 ],
+                    "patching_rect": [ 38.0, 35.0, 388.0, 42.0 ],
                     "text": "mc.mod",
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
