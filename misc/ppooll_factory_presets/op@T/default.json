@@ -1,5 +1,5 @@
 {
-    "window": [ 581, 128, 897, 234 ],
+    "window": [ 781, 493, 1097, 599 ],
     "rPreNum": {
         "patching_rect": [ 132, 18, 24, 34 ],
         "hidden": 1,
@@ -94,7 +94,7 @@
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
     "result~ui": {
-        "patching_rect": [ 246, 18, 69, 34 ],
+        "patching_rect": [ 246, 19.5, 69, 34 ],
         "hidden": 0,
         "bgcolor": [ 1, 0.890196078431372, 0.325490196078431, 1 ],
         "color": [ 0, 0, 0, 1 ],

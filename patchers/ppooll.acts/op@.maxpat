@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 581.0, 128.0, 316.0, 106.0 ],
+        "rect": [ 781.0, 493.0, 316.0, 106.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "op@1",
         "boxes": [
@@ -40,6 +40,42 @@
                         "autowatch": 1
                     },
                     "varname": "presets"
+                }
+            },
+            {
+                "box": {
+                    "hidden": 1,
+                    "id": "obj-5",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "" ],
+                    "patching_rect": [ 349.0, 36.0, 106.0, 22.0 ],
+                    "restore": [ 2 ],
+                    "saved_object_attributes": {
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "pattr right_storage",
+                    "varname": "right_storage"
+                }
+            },
+            {
+                "box": {
+                    "hidden": 1,
+                    "id": "obj-2",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "" ],
+                    "patching_rect": [ 349.0, 9.0, 99.0, 22.0 ],
+                    "restore": [ 2 ],
+                    "saved_object_attributes": {
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "pattr left_storage",
+                    "varname": "left_storage"
                 }
             },
             {
@@ -8110,7 +8146,7 @@
                     "patching_rect": [ 158.0, 18.0, 69.0, 34.0 ],
                     "presentation": 1,
                     "presentation_rect": [ 162.0, 18.0, 69.0, 34.0 ],
-                    "sig": 0.0,
+                    "sig": [ 0.0, 0.0 ],
                     "sigoutmode": 0,
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "varname": "right"
@@ -8134,7 +8170,7 @@
                     "patching_rect": [ 25.0, 18.0, 70.0, 34.0 ],
                     "presentation": 1,
                     "presentation_rect": [ 25.0, 18.0, 70.0, 34.0 ],
-                    "sig": 0.0,
+                    "sig": [ 2.0, 8.0 ],
                     "sigoutmode": 0,
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "varname": "left"
@@ -8155,10 +8191,10 @@
                     "numinlets": 2,
                     "numoutlets": 3,
                     "outlettype": [ "multichannelsignal", "float", "int" ],
-                    "patching_rect": [ 246.0, 18.0, 69.0, 34.0 ],
+                    "patching_rect": [ 246.0, 19.5, 69.0, 34.0 ],
                     "presentation": 1,
                     "presentation_rect": [ 250.25126194953918, 18.0, 67.0, 34.0 ],
-                    "sig": 0.0,
+                    "sig": [ 2.0, 8.0 ],
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "varname": "result~ui"
                 }
@@ -8200,10 +8236,10 @@
                         "ll.blues::levels": 5
                     },
                     "saved_object_attributes": {
-                        "client_rect": [ 400, 495, 1195, 847 ],
+                        "client_rect": [ 88, 341, 885, 948 ],
                         "parameter_enable": 0,
                         "parameter_mappable": 0,
-                        "storage_rect": [ 583, 68, 1034, 196 ]
+                        "storage_rect": [ 25, 119, 665, 359 ]
                     },
                     "text": "pattrstorage pat",
                     "varname": "pat"
@@ -8280,12 +8316,12 @@
                         "roundPos": [ 0.0 ],
                         "scaleExpVal": [ 1.0 ],
                         "scaleInMax": [ 1.0 ],
-                        "scaleInMin": [ -1.0 ],
-                        "scaleMode": [ 0 ],
+                        "scaleInMin": [ 0 ],
+                        "scaleMode": [ 1 ],
                         "scaleOutMax": [ 1.0 ],
-                        "scaleOutMin": [ -1.0 ],
+                        "scaleOutMin": [ 0 ],
                         "scaleSym": [ 0 ],
-                        "smoothDown": [ 0.0 ],
+                        "smoothDown": [ 8.0 ],
                         "smoothMode": [ 0 ],
                         "smoothUp": [ 0.0 ],
                         "switchOps": [ 0 ]
@@ -8314,7 +8350,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 885.0, 643.0, 753.0, 340.0 ],
+                        "rect": [ 725.0, 608.0, 753.0, 340.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -11807,9 +11843,37 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-22", 0 ],
+                    "hidden": 1,
+                    "source": [ "obj-2", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-5", 0 ],
+                    "hidden": 1,
+                    "source": [ "obj-21", 2 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-2", 0 ],
+                    "hidden": 1,
+                    "source": [ "obj-22", 2 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-90", 0 ],
                     "hidden": 1,
                     "source": [ "obj-22", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-21", 0 ],
+                    "hidden": 1,
+                    "source": [ "obj-5", 0 ]
                 }
             },
             {
