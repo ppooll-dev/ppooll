@@ -1,5 +1,5 @@
 {
-    "window": [ 997, 632, 1298, 802 ],
+    "window": [ 457, 302, 758, 472 ],
     "act": {
         "patching_rect": [ 0, 0, 64.35546493530273, 16 ],
         "hidden": 0
@@ -226,7 +226,7 @@
         "usetextovercolor": 1
     },
     "min": {
-        "patching_rect": [ 204, 116.25, 52, 12 ],
+        "patching_rect": [ 152, 116, 104, 12 ],
         "hidden": 0,
         "bgcolor": [ 1, 1, 1, 1 ],
         "bordercolor": [ 1, 1, 1, 1 ],
@@ -239,7 +239,7 @@
         "textcolornofocus": [ 0.835294117647059, 0.215686274509804, 0.317647058823529, 1 ]
     },
     "max": {
-        "patching_rect": [ 204, 130.25, 52, 12 ],
+        "patching_rect": [ 152, 130, 104, 12 ],
         "hidden": 0,
         "bgcolor": [ 1, 1, 1, 1 ],
         "bordercolor": [ 1, 1, 1, 1 ],
