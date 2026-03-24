@@ -1,7 +1,7 @@
 {
     "ho_st1": {
         "_actwindow": [ "ho_st", 296, 129, 426, 254 ],
-        "act_menu": "(__acts__)",
+        "act_menu": "scope@",
         "audioON/OFF": 1,
         "chans": 8,
         "def": -1,
@@ -14,7 +14,7 @@
         "rec": 0,
         "screen": 0,
         "stereo": 1,
-        "time": 50139,
+        "time": 52313,
         "vol": 1,
         "vol_ramp": 10,
         "vol_slider": 1,
@@ -34,7 +34,7 @@
         }
     },
     "control@1": {
-        "_actwindow": [ "control@", 459, 508, 648, 556 ],
+        "_actwindow": [ "control@", 458, 153, 647, 201 ],
         "list_inputs": "_",
         "osc_sendback": [ "192.168.1.193", 8002 ],
         "ignored": "_",
@@ -240,12 +240,12 @@
         "preset-ramp": 0
     },
     "notepad@1": {
-        "_actwindow": [ "notepad@", 454, 579, 754, 879 ],
+        "_actwindow": [ "notepad@", 457, 496, 757, 796 ],
         "fontlist": "Arial",
         "fontsize": 12,
         "height": 300,
         "presets": 0,
-        "textfield": "shepard riser tone. \n- mc.mod1 does the amplitude modulation for sinus, mc.mod2 generates the frequency. \n- op@ is used to scale the frequency sweep nonlinearly. \n\neach mc.mod is phase offset by 0.125 in order to cover the whole phase with an equal spacing.\n\nboth mc.mod are synced to modul.ator. \n\npress \"a\" key to resync modul.ator and mc.mods if needed.\n\nc. hausch 260324",
+        "textfield": "shepard riser tone. \n- mc.mod1 does the amplitude modulation for sinus, mc.mod2 generates the frequency. \n- op@ is used to scale the frequency sweep exponentially. \n\neach mc.mod's voices are phase offset against each other by 0.125 in order to cover the whole phase with an equal spacing.\n\nboth mc.mod are synced to modul.ator.\n\npress \"a\" key to resync modul.ator and mc.mods if needed.\n\nc. hausch 260324",
         "width": 300,
         "act": {
             "active_store": 0,
@@ -306,6 +306,36 @@
             "outputsMix~": [ "no~-no-", "_" ],
             "chans": [ 2, 8 ],
             "levels": [ 0, 0, 0, 0, 10, 0, 0.5 ]
+        }
+    },
+    "scope@1": {
+        "_actwindow": [ "scope@", 76, 526, 426, 721 ],
+        "automatic": 1,
+        "bufsize": 512,
+        "calccount": 64,
+        "chans": 8,
+        "configWindow": -1,
+        "mode": 0,
+        "presets": 0,
+        "range": 1,
+        "range_hi": 1,
+        "range_lo": -1,
+        "source-menu": 0,
+        "colors": [ 1, 0, 1, 1, 1, 0, 0, 0.3, 1, 1, 1, 1, 0, 0.5, 0.5, 0.5 ],
+        "act": {
+            "active_store": 0,
+            "master": 0,
+            "pres_menu": "(presets)",
+            "tetris_menu": "(tetris)",
+            "title_menu": ""
+        },
+        "config": {
+            "close": 0,
+            "colors_a": [ 1, 0.3, 1, 0.5 ],
+            "colors_b": [ 1, 0, 1, 0.5 ],
+            "colors_g": [ 0, 0, 1, 0.5 ],
+            "colors_r": [ 1, 1, 1, 0 ],
+            "drawstyle": 1
         }
     },
     "sinus1": {
