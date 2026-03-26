@@ -92,6 +92,7 @@
     },
     "presets": {
         "patching_rect": [ 128, 0, 36, 16 ],
-        "hidden": 0
+        "hidden": 0,
+        "boxsize": 17
     }
 }

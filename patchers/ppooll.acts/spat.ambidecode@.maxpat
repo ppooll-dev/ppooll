@@ -4,7 +4,7 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 2,
+            "revision": 3,
             "architecture": "x64",
             "modernui": 1
         },
@@ -54,7 +54,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -62,7 +62,6 @@
                         "rect": [ 199.0, 610.0, 484.0, 299.0 ],
                         "toolbarvisible": 0,
                         "title": "config",
-                        "visible": 1,
                         "boxes": [
                             {
                                 "box": {
@@ -290,7 +289,7 @@
                                     "prototypename": "small_light_grey",
                                     "save_points": 1,
                                     "varname": "speaker_monitor",
-                                    "zoom_scale": 0.62
+                                    "zoom_scale": 1.0
                                 }
                             },
                             {
@@ -495,7 +494,7 @@
                                     "outlettype": [ "", "", "", "" ],
                                     "patching_rect": [ 775.0, 516.0, 56.0, 22.0 ],
                                     "restore": {
-                                        "autoroute": [ 0 ],
+                                        "autoroute": [ 1 ],
                                         "clear": [ -1 ],
                                         "close": [ 0 ],
                                         "coord_angles": [ 0 ],
@@ -509,7 +508,7 @@
                                         "scale": [ 10.0 ],
                                         "type": [ 2 ],
                                         "writeconfig": [ -1 ],
-                                        "zoom_scale": [ 0.62 ]
+                                        "zoom_scale": [ 1.0 ]
                                     },
                                     "text": "autopattr",
                                     "varname": "u258002907"
@@ -528,7 +527,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -854,7 +853,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 501.0, 212.0, 62.0, 22.0 ],
-                    "restore": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+                    "restore": [ 0, 0, 0, 0, 0, 0, 0, 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -1023,7 +1022,7 @@
                         "order": [ 3.0 ],
                         "presets": [ 0 ],
                         "readconfig": [ -1 ],
-                        "spk_amt": [ 6.0 ],
+                        "spk_amt": [ 2.0 ],
                         "writeconfig": [ -1 ]
                     },
                     "text": "autopattr autopattr",
@@ -1043,7 +1042,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1061,7 +1060,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1080,15 +1079,7 @@
                                                         "1aed": [ 0.0, 0.0, 0.0 ],
                                                         "1xyz": [ 0.0, 0.0, 0.0 ],
                                                         "2aed": [ 0.0, 0.0, 0.0 ],
-                                                        "2xyz": [ 0.0, 0.0, 0.0 ],
-                                                        "3aed": [ 0.0, 0.0, 0.0 ],
-                                                        "3xyz": [ 0.0, 0.0, 0.0 ],
-                                                        "4aed": [ 0.0, 0.0, 0.0 ],
-                                                        "4xyz": [ 0.0, 0.0, 0.0 ],
-                                                        "5aed": [ 0.0, 0.0, 0.0 ],
-                                                        "5xyz": [ 0.0, 0.0, 0.0 ],
-                                                        "6aed": [ 0.0, 0.0, 0.0 ],
-                                                        "6xyz": [ 0.0, 0.0, 0.0 ]
+                                                        "2xyz": [ 0.0, 0.0, 0.0 ]
                                                     },
                                                     "text": "autopattr",
                                                     "varname": "u912020738"
@@ -1106,7 +1097,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 2,
+                                                            "revision": 3,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1163,7 +1154,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 2,
+                                                            "revision": 3,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1992,7 +1983,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 2,
+                                                            "revision": 3,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -2386,13 +2377,12 @@
                                             {
                                                 "box": {
                                                     "id": "obj-47",
-                                                    "linecount": 2,
                                                     "maxclass": "message",
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 1061.702120065689, 190.42553055286407, 129.0, 35.0 ],
-                                                    "text": "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+                                                    "text": "0 0 0 0 0 0 0 0"
                                                 }
                                             },
                                             {
@@ -2520,7 +2510,7 @@
                                                 "box": {
                                                     "amount": 3,
                                                     "fontface": 0,
-                                                    "id": "obj-4",
+                                                    "id": "obj-60",
                                                     "maxclass": "ll_number",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
@@ -2532,7 +2522,7 @@
                                             },
                                             {
                                                 "box": {
-                                                    "id": "obj-5",
+                                                    "id": "obj-61",
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
@@ -2546,7 +2536,7 @@
                                                 "box": {
                                                     "amount": 3,
                                                     "fontface": 0,
-                                                    "id": "obj-8",
+                                                    "id": "obj-63",
                                                     "maxclass": "ll_number",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
@@ -2558,7 +2548,7 @@
                                             },
                                             {
                                                 "box": {
-                                                    "id": "obj-9",
+                                                    "id": "obj-64",
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
@@ -2572,7 +2562,7 @@
                                                 "box": {
                                                     "amount": 3,
                                                     "fontface": 0,
-                                                    "id": "obj-11",
+                                                    "id": "obj-66",
                                                     "maxclass": "ll_number",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
@@ -2584,7 +2574,7 @@
                                             },
                                             {
                                                 "box": {
-                                                    "id": "obj-13",
+                                                    "id": "obj-67",
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
@@ -2598,7 +2588,7 @@
                                                 "box": {
                                                     "amount": 3,
                                                     "fontface": 0,
-                                                    "id": "obj-15",
+                                                    "id": "obj-69",
                                                     "maxclass": "ll_number",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
@@ -2610,7 +2600,7 @@
                                             },
                                             {
                                                 "box": {
-                                                    "id": "obj-16",
+                                                    "id": "obj-70",
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
@@ -2619,214 +2609,6 @@
                                                     "text": "prepend xyz 2",
                                                     "varname": "2xyz-pre"
                                                 }
-                                            },
-                                            {
-                                                "box": {
-                                                    "amount": 3,
-                                                    "fontface": 0,
-                                                    "id": "obj-19",
-                                                    "maxclass": "ll_number",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "parameter_enable": 0,
-                                                    "patching_rect": [ 50.0, 150.0, 70.0, 14.0 ],
-                                                    "varname": "3aed"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "id": "obj-20",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "patching_rect": [ 50.0, 250.0, 100.0, 0.0 ],
-                                                    "text": "prepend aed 3",
-                                                    "varname": "3aed-pre"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "amount": 3,
-                                                    "fontface": 0,
-                                                    "id": "obj-23",
-                                                    "maxclass": "ll_number",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "parameter_enable": 0,
-                                                    "patching_rect": [ 200.0, 150.0, 70.0, 14.0 ],
-                                                    "varname": "3xyz"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "id": "obj-24",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "patching_rect": [ 200.0, 250.0, 100.0, 0.0 ],
-                                                    "text": "prepend xyz 3",
-                                                    "varname": "3xyz-pre"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "amount": 3,
-                                                    "fontface": 0,
-                                                    "id": "obj-26",
-                                                    "maxclass": "ll_number",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "parameter_enable": 0,
-                                                    "patching_rect": [ 50.0, 150.0, 70.0, 14.0 ],
-                                                    "varname": "4aed"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "id": "obj-27",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "patching_rect": [ 50.0, 250.0, 100.0, 0.0 ],
-                                                    "text": "prepend aed 4",
-                                                    "varname": "4aed-pre"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "amount": 3,
-                                                    "fontface": 0,
-                                                    "id": "obj-29",
-                                                    "maxclass": "ll_number",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "parameter_enable": 0,
-                                                    "patching_rect": [ 200.0, 150.0, 70.0, 14.0 ],
-                                                    "varname": "4xyz"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "id": "obj-31",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "patching_rect": [ 200.0, 250.0, 100.0, 0.0 ],
-                                                    "text": "prepend xyz 4",
-                                                    "varname": "4xyz-pre"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "amount": 3,
-                                                    "fontface": 0,
-                                                    "id": "obj-35",
-                                                    "maxclass": "ll_number",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "parameter_enable": 0,
-                                                    "patching_rect": [ 50.0, 150.0, 70.0, 14.0 ],
-                                                    "varname": "5aed"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "id": "obj-41",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "patching_rect": [ 50.0, 250.0, 100.0, 0.0 ],
-                                                    "text": "prepend aed 5",
-                                                    "varname": "5aed-pre"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "amount": 3,
-                                                    "fontface": 0,
-                                                    "id": "obj-49",
-                                                    "maxclass": "ll_number",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "parameter_enable": 0,
-                                                    "patching_rect": [ 200.0, 150.0, 70.0, 14.0 ],
-                                                    "varname": "5xyz"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "id": "obj-50",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "patching_rect": [ 200.0, 250.0, 100.0, 0.0 ],
-                                                    "text": "prepend xyz 5",
-                                                    "varname": "5xyz-pre"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "amount": 3,
-                                                    "fontface": 0,
-                                                    "id": "obj-52",
-                                                    "maxclass": "ll_number",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "parameter_enable": 0,
-                                                    "patching_rect": [ 50.0, 150.0, 70.0, 14.0 ],
-                                                    "varname": "6aed"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "id": "obj-54",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "patching_rect": [ 50.0, 250.0, 100.0, 0.0 ],
-                                                    "text": "prepend aed 6",
-                                                    "varname": "6aed-pre"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "amount": 3,
-                                                    "fontface": 0,
-                                                    "id": "obj-57",
-                                                    "maxclass": "ll_number",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "parameter_enable": 0,
-                                                    "patching_rect": [ 200.0, 150.0, 70.0, 14.0 ],
-                                                    "varname": "6xyz"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "id": "obj-58",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "patching_rect": [ 200.0, 250.0, 100.0, 0.0 ],
-                                                    "text": "prepend xyz 6",
-                                                    "varname": "6xyz-pre"
-                                                }
                                             }
                                         ],
                                         "lines": [
@@ -2834,12 +2616,6 @@
                                                 "patchline": {
                                                     "destination": [ "obj-12", 0 ],
                                                     "source": [ "obj-1", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-13", 0 ],
-                                                    "source": [ "obj-11", 0 ]
                                                 }
                                             },
                                             {
@@ -2858,80 +2634,14 @@
                                             },
                                             {
                                                 "patchline": {
-                                                    "destination": [ "obj-12", 0 ],
-                                                    "source": [ "obj-13", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-16", 0 ],
-                                                    "source": [ "obj-15", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-12", 0 ],
-                                                    "source": [ "obj-16", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-20", 0 ],
-                                                    "source": [ "obj-19", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
                                                     "destination": [ "obj-1", 0 ],
                                                     "source": [ "obj-2", 0 ]
                                                 }
                                             },
                                             {
                                                 "patchline": {
-                                                    "destination": [ "obj-12", 0 ],
-                                                    "source": [ "obj-20", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-24", 0 ],
-                                                    "source": [ "obj-23", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-12", 0 ],
-                                                    "source": [ "obj-24", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-27", 0 ],
-                                                    "source": [ "obj-26", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-12", 0 ],
-                                                    "source": [ "obj-27", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-31", 0 ],
-                                                    "source": [ "obj-29", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
                                                     "destination": [ "obj-22", 0 ],
                                                     "source": [ "obj-30", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-12", 0 ],
-                                                    "source": [ "obj-31", 0 ]
                                                 }
                                             },
                                             {
@@ -2944,12 +2654,6 @@
                                                 "patchline": {
                                                     "destination": [ "obj-1", 1 ],
                                                     "source": [ "obj-34", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-41", 0 ],
-                                                    "source": [ "obj-35", 0 ]
                                                 }
                                             },
                                             {
@@ -2990,18 +2694,6 @@
                                             },
                                             {
                                                 "patchline": {
-                                                    "destination": [ "obj-5", 0 ],
-                                                    "source": [ "obj-4", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-12", 0 ],
-                                                    "source": [ "obj-41", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
                                                     "destination": [ "obj-34", 0 ],
                                                     "source": [ "obj-42", 0 ]
                                                 }
@@ -3034,38 +2726,8 @@
                                             },
                                             {
                                                 "patchline": {
-                                                    "destination": [ "obj-50", 0 ],
-                                                    "source": [ "obj-49", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-12", 0 ],
-                                                    "source": [ "obj-5", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-12", 0 ],
-                                                    "source": [ "obj-50", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-54", 0 ],
-                                                    "source": [ "obj-52", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
                                                     "destination": [ "obj-84", 1 ],
                                                     "source": [ "obj-53", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-12", 0 ],
-                                                    "source": [ "obj-54", 0 ]
                                                 }
                                             },
                                             {
@@ -3076,26 +2738,56 @@
                                             },
                                             {
                                                 "patchline": {
-                                                    "destination": [ "obj-58", 0 ],
-                                                    "source": [ "obj-57", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-12", 0 ],
-                                                    "source": [ "obj-58", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
                                                     "destination": [ "obj-45", 0 ],
                                                     "source": [ "obj-6", 0 ]
                                                 }
                                             },
                                             {
                                                 "patchline": {
-                                                    "destination": [ "obj-9", 0 ],
-                                                    "source": [ "obj-8", 0 ]
+                                                    "destination": [ "obj-61", 0 ],
+                                                    "source": [ "obj-60", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-12", 0 ],
+                                                    "source": [ "obj-61", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-64", 0 ],
+                                                    "source": [ "obj-63", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-12", 0 ],
+                                                    "source": [ "obj-64", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-67", 0 ],
+                                                    "source": [ "obj-66", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-12", 0 ],
+                                                    "source": [ "obj-67", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-70", 0 ],
+                                                    "source": [ "obj-69", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-12", 0 ],
+                                                    "source": [ "obj-70", 0 ]
                                                 }
                                             },
                                             {
@@ -3128,12 +2820,6 @@
                                                 "patchline": {
                                                     "destination": [ "obj-84", 0 ],
                                                     "source": [ "obj-87", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-12", 0 ],
-                                                    "source": [ "obj-9", 0 ]
                                                 }
                                             }
                                         ],
@@ -3172,7 +2858,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -3606,7 +3292,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -4307,7 +3993,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -4548,7 +4234,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -4918,21 +4604,20 @@
                             },
                             {
                                 "box": {
-                                    "id": "obj-3",
-                                    "linecount": 2,
+                                    "id": "obj-4",
                                     "maxclass": "newobj",
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "multichannelsignal" ],
-                                    "patching_rect": [ 270.0, 180.0, 100.0, 0.0 ],
+                                    "patching_rect": [ 270.0, 180.0, 120.0, 22.0 ],
                                     "saved_object_attributes": {
-                                        "active": [ 1, 1, 1, 1, 1, 1 ],
+                                        "active": [ 1, 1 ],
                                         "gain": 1.0,
                                         "interpolation": 1,
                                         "order": 3,
                                         "rotate_order": 0
                                     },
-                                    "text": "mc.ambidecode~ 3 6",
+                                    "text": "mc.ambidecode~ 3 2",
                                     "varname": "dec"
                                 }
                             }
@@ -4948,14 +4633,14 @@
                                 "patchline": {
                                     "destination": [ "obj-16", 0 ],
                                     "order": 1,
-                                    "source": [ "obj-3", 0 ]
+                                    "source": [ "obj-4", 0 ]
                                 }
                             },
                             {
                                 "patchline": {
                                     "destination": [ "obj-55", 0 ],
                                     "order": 0,
-                                    "source": [ "obj-3", 0 ]
+                                    "source": [ "obj-4", 0 ]
                                 }
                             },
                             {
@@ -4985,7 +4670,7 @@
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-3", 0 ],
+                                    "destination": [ "obj-4", 0 ],
                                     "order": 0,
                                     "source": [ "obj-60", 0 ]
                                 }
