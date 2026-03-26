@@ -1,0 +1,66 @@
+{
+    "pattrstorage": {
+        "name": "pat",
+        "slots": {
+            "1": {
+                "id": 1,
+                "data": {
+                    "min_distance": [ 0.100000001490116 ],
+                    "inputs": [ 3 ],
+                    "outputs": [ 2 ],
+                    "default": [ -1 ],
+                    "define": [ -1 ],
+                    "labels": [ 1 ],
+                    "edit_in_out": [ 1 ],
+                    "disp_mode": [ 0 ],
+                    "size": [ 264 ],
+                    "zoom": [ 1, 0, 0, 0 ],
+                    "grid": [ 1 ],
+                    "preset-ramp": [ 0 ],
+                    "presets": [ 2 ],
+                    "azimuths": [ -6.3401917458711035, -51.88473808718711, 29.82007256566351 ],
+                    "elevations": [ 0, 0, 0 ],
+                    "distances": [ 0.8232168307397913, 0.8714179598719761, 0.7160193117028457 ],
+                    "x": [ 0.6, 0, 0 ],
+                    "y": [ 0, 0, 0 ],
+                    "z": [ 0, 0, 0 ],
+                    "speaker_azi": [ -30, 30 ],
+                    "speaker_ele": [ 0, 0 ],
+                    "speaker_dis": [ 1, 1 ],
+                    "rename": [ "wavelets", "cll_cltl@", "paf@" ],
+                    "act::active_store": [ 0 ],
+                    "act::master": [ 0 ],
+                    "act::pres_menu": [ "(presets)" ],
+                    "act::tetris_menu": [ "(tetris)" ],
+                    "act::title_menu": [ "" ]
+                }
+            }
+        },
+        "clientstate": {
+            "active": {
+                "inputs": 0,
+                "outputs": 0,
+                "default": 0,
+                "define": 0,
+                "labels": 0,
+                "edit_in_out": 0,
+                "disp_mode": 0,
+                "size": 0,
+                "zoom": 0,
+                "grid": 0,
+                "preset-ramp": 0,
+                "presets": 0,
+                "act": 0,
+                "act::active_store": 0,
+                "act::master": 0,
+                "act::u751015509": 0,
+                "act::pres_menu": 0,
+                "act::tetris_menu": 0,
+                "act::title_menu": 0
+            }
+        },
+        "TEXT": {
+            "fontsize": 8
+        }
+    }
+}
