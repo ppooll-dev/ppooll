@@ -4,7 +4,7 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 2,
+            "revision": 3,
             "architecture": "x64",
             "modernui": 1
         },
@@ -1845,7 +1845,7 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 39.0, 46.0, 285.5, 20.0 ],
-                    "text": "v4.2 - 260222 - hausch@moozak.org"
+                    "text": "v4.3 - 260330 - hausch@moozak.org"
                 }
             },
             {

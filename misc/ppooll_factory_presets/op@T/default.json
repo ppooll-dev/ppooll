@@ -1,5 +1,5 @@
 {
-    "window": [ 781, 493, 1097, 599 ],
+    "window": [ 1064, 205, 1380, 311 ],
     "rPreNum": {
         "patching_rect": [ 132, 18, 24, 34 ],
         "hidden": 1,
@@ -304,7 +304,7 @@
         "hidden": 0
     },
     "pRampMs": {
-        "patching_rect": [ 1, 92, 62, 13 ],
+        "patching_rect": [ 1, 92, 50, 13 ],
         "hidden": 0,
         "bgcolor": [ 1, 1, 1, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -317,7 +317,7 @@
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
     "numOutInterval": {
-        "patching_rect": [ 128, 92, 25, 13 ],
+        "patching_rect": [ 129, 92, 25, 13 ],
         "hidden": 0,
         "bgcolor": [ 1, 1, 1, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -448,7 +448,7 @@
         "textcolor": null
     },
     "act_numoutput": {
-        "patching_rect": [ 65, 92, 30, 13 ],
+        "patching_rect": [ 53, 92, 30, 13 ],
         "hidden": 0,
         "bgcolor": [ 0.29411764705882354, 1, 0.29411764705882354, 1 ],
         "bordercolor": [ 0, 0, 0, 0 ],
@@ -457,7 +457,7 @@
         "textcolor": null
     },
     "par_numoutput": {
-        "patching_rect": [ 96, 92, 30, 13 ],
+        "patching_rect": [ 84, 92, 30, 13 ],
         "hidden": 0,
         "bgcolor": [ 0.29411764705882354, 1, 0.29411764705882354, 1 ],
         "bordercolor": [ 0, 0, 0, 0 ],
@@ -465,9 +465,31 @@
         "fontsize": 11,
         "textcolor": null
     },
+    "syncto": {
+        "patching_rect": [ 116, 92, 11, 13 ],
+        "hidden": 0,
+        "bgcolor": [ 0.173, 0.173, 0.173, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
+        "fontsize": 11,
+        "textcolor": null
+    },
     "presets": {
         "patching_rect": [ 47, 0, 198, 16 ],
         "hidden": 0,
         "boxsize": 14
+    },
+    "syncMult": {
+        "patching_rect": [ 129, 92, 25, 13 ],
+        "hidden": 1,
+        "bgcolor": [ 1, 1, 1, 1 ],
+        "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
+        "fontsize": 10,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45, 0.67, 1, 0.47 ],
+        "slidercolor": [ 0, 0, 0, 1 ],
+        "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     }
 }
