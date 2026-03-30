@@ -474,11 +474,6 @@
         "fontsize": 11,
         "textcolor": null
     },
-    "presets": {
-        "patching_rect": [ 47, 0, 198, 16 ],
-        "hidden": 0,
-        "boxsize": 14
-    },
     "syncMult": {
         "patching_rect": [ 129, 92, 25, 13 ],
         "hidden": 1,
@@ -491,5 +486,10 @@
         "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
         "textcolor": [ 0, 0, 0, 1 ],
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
+    },
+    "presets": {
+        "patching_rect": [ 47, 0, 198, 16 ],
+        "hidden": 0,
+        "boxsize": 14
     }
 }

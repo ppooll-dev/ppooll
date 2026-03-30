@@ -15,28 +15,6 @@
         "boxes": [
             {
                 "box": {
-                    "annotation": " multiple of sync source",
-                    "border": 0,
-                    "fontface": 0,
-                    "fontsize": 10.0,
-                    "format": [ 1.3 ],
-                    "hidden": 1,
-                    "hint": " multiple of sync source",
-                    "id": "obj-6",
-                    "maxclass": "ll_number",
-                    "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 129.0, 92.0, 25.0, 13.0 ],
-                    "presentation": 1,
-                    "presentation_rect": [ 126.0, 126.0, 35.0, 17.0 ],
-                    "sliderstyle": 2,
-                    "varname": "syncMult"
-                }
-            },
-            {
-                "box": {
                     "embedstate": [
                         [ "boxsize", 14 ],
                         [ "vbrgb", 0.19607843137254902, 0.19607843137254902, 0.19607843137254902, 1 ],
@@ -66,6 +44,28 @@
             },
             {
                 "box": {
+                    "annotation": " multiple of sync source",
+                    "border": 0,
+                    "fontface": 0,
+                    "fontsize": 10.0,
+                    "format": [ 1.3 ],
+                    "hidden": 1,
+                    "hint": " multiple of sync source",
+                    "id": "obj-6",
+                    "maxclass": "ll_number",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 129.0, 92.0, 25.0, 13.0 ],
+                    "presentation": 1,
+                    "presentation_rect": [ 126.0, 126.0, 35.0, 17.0 ],
+                    "sliderstyle": 2,
+                    "varname": "syncMult"
+                }
+            },
+            {
+                "box": {
                     "annotation": "sync base freq to external source",
                     "bgcolor": [ 0.173, 0.173, 0.173, 1.0 ],
                     "checkmode": 1,
@@ -73,7 +73,7 @@
                     "fontname": "Arial",
                     "hint": "sync base freq to external source",
                     "id": "obj-3",
-                    "items": [ "sync-off", ",", "sync_in", ",", "ext_midi", ",", "mc.mod2", ",", "mc.mod1" ],
+                    "items": [ "sync-off", ",", "sync_in", ",", "ext_midi" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -158,7 +158,7 @@
                     "fontname": "Arial",
                     "hint": "destination act par output",
                     "id": "obj-44",
-                    "items": [ "no", ",", "ho_st1", ",", "ltrosc@1", ",", "mc.mod1", ",", "mc.mod2", ",", "op@1" ],
+                    "items": [ "no", ",", "ho_st1", ",", "ltrosc@1", ",", "op@1" ],
                     "maxclass": "ll_menu",
                     "menufontsize": 10.0,
                     "numinlets": 1,
@@ -8368,7 +8368,7 @@
                         "numOutInterval": [ 100.0 ],
                         "op": [ 1 ],
                         "pRampMs": [ 0.0 ],
-                        "par_numoutput": [ "freq" ],
+                        "par_numoutput": [ "-no-" ],
                         "preset-ramp": [ 0.0 ],
                         "presets": [ 0 ],
                         "rPreNum": [ 0.0 ],
@@ -8379,9 +8379,9 @@
                         "scaleExpVal": [ 1.0 ],
                         "scaleInMax": [ 1.0 ],
                         "scaleInMin": [ 0 ],
-                        "scaleMode": [ 1 ],
-                        "scaleOutMax": [ 1000.0 ],
-                        "scaleOutMin": [ 100.0 ],
+                        "scaleMode": [ 0 ],
+                        "scaleOutMax": [ 1.0 ],
+                        "scaleOutMin": [ 0.0 ],
                         "scaleSym": [ 0 ],
                         "smoothDown": [ 8.0 ],
                         "smoothMode": [ 0 ],
