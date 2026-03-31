@@ -19,6 +19,11 @@ let sbCount = 0;
 
 let uiElements = null;
 
+function actname(an) {
+    // init buffer list (create and selected "new" from menu)
+    update_buffer_list();
+}
+
 function getUI() {
     if (uiElements) return uiElements;
 
@@ -334,15 +339,27 @@ function writeSelected() {
 }
 
 function onDrop(path){
-    if(path[-1] === "/"){
-        // TODO: Check that folder exists?
+    // Support files and folders.   
+
+    if(path.slice(-1) === "/"){
         // post("folder", path, "\n");
-        pb.readfolder(path);
-        update_buffer_list();
+        
+        clearAll();
+
+        ll.getFilesInFolder(path, ['AIFF', 'WAVE', "Mp3", "DATA", "NxTS"]).forEach(f => {
+            // post(f, "\n")
+            loadFilePath(`${path}${f}`);
+            selectedIndex = Object.keys(buffers).length;
+        })
+
+        outlet(0, "buffer_list", "select", 0, 0); // needs to get defered...
+
     }else{
         // post("file", path, "\n")
         loadFilePath(path)
+        selectedIndex = Object.keys(buffers).length;
     }
+
 }
 
 // Reinit on v8 js "save"

@@ -4,12 +4,12 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 0,
+            "revision": 3,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 367.0, 168.0, 119.0, 186.0 ],
+        "rect": [ 520.0, 133.0, 119.0, 186.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "buffer_host1",
         "boxes": [
@@ -199,7 +199,7 @@
                     "fontsize": 11.0,
                     "hint": "soundfiles in the folder selected above - select to load it into a buffer",
                     "id": "obj-60",
-                    "items": [ "221211_1026_mit_ibrahim.mp3", ",", "LS110213.WAV" ],
+                    "items": "<empty>",
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -207,7 +207,7 @@
                     "parameter_enable": 0,
                     "patching_rect": [ 0.0, 33.0, 118.0, 21.0 ],
                     "pattrmode": 1,
-                    "prefix": "~/Music/burkina/",
+                    "prefix": "<empty>",
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                     "varname": "file_menu"
                 }
@@ -227,7 +227,7 @@
                     "fontsize": 11.0,
                     "hint": "soundfile folder(s)",
                     "id": "obj-61",
-                    "items": [ "ischl_rec", ",", "burkina", ",", "-", ",", "clear_selected", ",", "clear_all", ",", "add_folder" ],
+                    "items": [ "ppooll_rec", ",", "voice_memos", ",", "video", ",", "trumpet", ",", "tamb", ",", "talking", ",", "sunn-o spring reverb IR", ",", "strings", ",", "other", ",", "mixes", ",", "Metamorphosis 21st Century Grooves", ",", "Liquid Grooves", ",", "hl2_sound", ",", "high_strings", ",", "hg-gtp", ",", "Henry Joe Samples 221009", ",", "Henry GtrCelloUkeKalima C Samples 221009", ",", "Henry Ambient", ",", "geetar", ",", "Future Music CD1", ",", "field recordings", ",", "djrone", ",", "cooler stuff", ",", "buffub", ",", "Bizzare Guitars", ",", "Bizarre Gt 43-48", ",", "bells_chimes", ",", "beauty snippets", ",", "b2tw", ",", "alex-strings", ",", "ppooll_rec", ",", "-", ",", "clear_selected", ",", "clear_all", ",", "add_folder" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -344,13 +344,24 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
                         "classnamespace": "box",
                         "rect": [ 468.0, 100.0, 986.0, 788.0 ],
                         "boxes": [
+                            {
+                                "box": {
+                                    "id": "obj-13",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 2,
+                                    "outlettype": [ "", "" ],
+                                    "patching_rect": [ 595.46, 233.55, 63.0, 22.0 ],
+                                    "text": "ll.actname"
+                                }
+                            },
                             {
                                 "box": {
                                     "id": "obj-9",
@@ -585,7 +596,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -771,7 +782,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -791,7 +802,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 0,
+                                                            "revision": 3,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1113,7 +1124,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 0,
+                                                            "revision": 3,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1134,7 +1145,7 @@
                                                                         "appversion": {
                                                                             "major": 9,
                                                                             "minor": 1,
-                                                                            "revision": 0,
+                                                                            "revision": 3,
                                                                             "architecture": "x64",
                                                                             "modernui": 1
                                                                         },
@@ -1770,7 +1781,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 0,
+                                                            "revision": 3,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -2255,8 +2266,8 @@
                                     "id": "obj-46",
                                     "maxclass": "newobj",
                                     "numinlets": 1,
-                                    "numoutlets": 2,
-                                    "outlettype": [ "", "" ],
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
                                     "patching_rect": [ 165.0, 32.0, 105.0, 22.0 ],
                                     "text": "ll.fff sound_folders"
                                 }
@@ -2399,6 +2410,12 @@
                                 "patchline": {
                                     "destination": [ "obj-5", 0 ],
                                     "source": [ "obj-12", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-16", 0 ],
+                                    "source": [ "obj-13", 1 ]
                                 }
                             },
                             {
@@ -2670,7 +2687,7 @@
                         "file_menu_out": 0,
                         "act": 0,
                         "act::active_store": 0,
-                        "act::master/activest": 0,
+                        "act::master": 0,
                         "act::u751015509": 0,
                         "act::pres_menu": 0,
                         "act::tetris_menu": 0,
@@ -2746,8 +2763,8 @@
                         "channels": [ 2 ],
                         "f": [ -1 ],
                         "ff": [ -1 ],
-                        "file_menu": [ "LS110213.WAV" ],
-                        "folder_menu": [ "burkina" ],
+                        "file_menu": [ "" ],
+                        "folder_menu": [ "ppooll_rec" ],
                         "ll_buffers": [
                             {
                                 "buffers": []
