@@ -1016,7 +1016,7 @@ function write_preset(name) {
     const tetrisName = name.replace("ƒ ", "");
     const basePath = ll_global.paths[isFactory ? "factory" : "user"];
     const actPath = `${basePath}/${act_args.name}P`;
-    const fullPath = `${actPath}/${name}.json`;
+    const fullPath = `${actPath}/${tetrisName}.json`;
 
     if (!ll.mkdir(actPath)) {
         post(

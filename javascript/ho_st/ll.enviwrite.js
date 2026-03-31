@@ -180,8 +180,11 @@ function write() {
     buffers = null;
     ppost(`writing '${envi_name}' (${type})`);
 
-    envi_name = envi_name.trim();
-    envi_path = `${ll_global.paths.user}/environmentsP/${envi_name}`;
+    const isFactory = envi_name.startsWith("ƒ ");
+
+    envi_name = envi_name.replace("ƒ ", "");
+    const basePath = ll_global.paths[isFactory ? "factory" : "user"];
+    envi_path = `${basePath}/environmentsP/${envi_name}`;
 
     // Get acts
     act_list = Object.keys(ll_global.state);
