@@ -1018,9 +1018,9 @@ function write_preset(name) {
     const actPath = `${basePath}/${act_args.name}P`;
     const fullPath = `${actPath}/${tetrisName}.json`;
 
-    if(ll_global.pat[act_name_index].getslotlist().length === 0){
-        act_patcher.getnamed("pat").message("store", 1000);
-    }
+   // if(ll_global.pat[act_name_index].getslotlist().length === 0){
+    act_patcher.getnamed("pat").message("store", 1000);
+		//}
 
     if (!ll.mkdir(actPath)) {
         post(
@@ -1083,9 +1083,9 @@ function read_preset_path(fullPath, presetName = 0) {
     act_patcher.getnamed("pat").message("read", fullPath);
 
     const slot_list = ll_global.pat[act_name_index].getslotlist();
-    if(slot_list.length === 1 && slot_list[0] === 1000){
-        act_patcher.getnamed("pat").message(1000);
-    }
+    //if(slot_list.length === 1 && slot_list[0] === 1000){
+    act_patcher.getnamed("pat").message(1000);
+		//}
 
     const presetDict = new Dict();
     presetDict.import_json(fullPath);
@@ -1117,11 +1117,6 @@ function set_preset_menu(args) {
         // special => send %s_%s, pattrforward
 
         return;
-    }
-
-    if (ll_global.pat[act_name_index].getslotlist().includes(1000)) {
-        // post("preset 1000 ! what now... \n")
-        // return
     }
 
     const msgs = Array.isArray(args) ? args : [args];
@@ -1710,7 +1705,7 @@ function from_pat(...args) {
             obj_presets.message("slotlist", ...args);
         }
         if (args.indexOf(1000) > -1) {
-            act_patcher.getnamed("pat").message("recall", 1000);
+           // act_patcher.getnamed("pat").message("recall", 1000);
         }
         if (ll_global.pat && ll_global.pat[act_name_index])
             ll_global.pat[act_name_index][msg] = args; // always store pat values
