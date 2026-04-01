@@ -1018,6 +1018,10 @@ function write_preset(name) {
     const actPath = `${basePath}/${act_args.name}P`;
     const fullPath = `${actPath}/${tetrisName}.json`;
 
+    if(ll_global.pat[act_name_index].getslotlist().length === 0){
+        act_patcher.getnamed("pat").message("store", 1000);
+    }
+
     if (!ll.mkdir(actPath)) {
         post(
             "ppooll write_preset error: folder could not be made:\n",
@@ -1077,6 +1081,11 @@ function anySlotHasActiveStore(pattrObj) {
 
 function read_preset_path(fullPath, presetName = 0) {
     act_patcher.getnamed("pat").message("read", fullPath);
+
+    const slot_list = ll_global.pat[act_name_index].getslotlist();
+    if(slot_list.length === 1 && slot_list[0] === 1000){
+        act_patcher.getnamed("pat").message(1000);
+    }
 
     const presetDict = new Dict();
     presetDict.import_json(fullPath);
