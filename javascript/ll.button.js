@@ -274,7 +274,7 @@ function msg_int(v)
 		if (modes[v] == "b") {
 			val[v] = 1;
 			out_val = "reset";
-			notifyclients();
+			//notifyclients();
 			outlet(0,"reset"); //used to reset buttons with max (Task is too unrelieable)
 			//callTimeout(v);
 		}
@@ -302,23 +302,24 @@ function list()
 			if (mod[i] == "t"){
 				val[i] = v[i];		
 				out_val = [i,v[i]];
-				notifyclients();
-				outlet(0,out_val);
+				//notifyclients();
+				//outlet(0,out_val);
 			}
 			else if (mod[i] == "b" && v[i] == 1){
 				val[i] = v[i];		
 				out_val = [i,v[i]];
 				callTimeout(i);
-				notifyclients();
-				outlet(0,out_val);
+				//notifyclients();
+				//outlet(0,out_val);
 			}
 		}
 	}
 	else {
-		bang();
+		//bang();
 	
 	}
-	mgraphics.redraw()
+	bang();
+	//mgraphics.redraw()
 }
 function select(c,v){
 	val[c] = v;
@@ -327,24 +328,24 @@ function select(c,v){
 }
 function bang()
 {
-	mgraphics.redraw()
 	if (output_click) out_val = cclick;
 	else out_val = val;
+    mgraphics.redraw()
 	notifyclients();
 	outlet(0,out_val);
 }
 
 function getvalueof()
 {
-	//post("getvo",val,"ov",out_val,"\n");
+	//post("getvo", out_val,"\n");
 	return out_val;
 }
 function setvalueof()
 {
-
 	let a = arrayfromargs(arguments);
-		//post("setvo1",val,"\n",a,"o",output_click,"\n");
 	if (output_click) ;//val[a[0]-1] = a[1];
 	else val = a;
+	//post("setvo",a,"outputC",output_click,"\n");
+    bang();
 }
 
