@@ -846,8 +846,11 @@ function chan_sep(a) { //calculate the channel structure from pattr value
 			let r_obj = result[1].split("~")[1];
 			let r_offset = parseInt(result[2]);
 			//post("act_obj_offs",r_act,r_obj,r_offset,"\n");
-			if (r_act == "no") dest_chs.push(1)
-            else dest_chs.push( ll_global.state[r_act]["inputs~"][r_obj] );	
+			if (r_act == "no" || !ll_global.state[r_act]) dest_chs.push(1)
+            else {
+				//post("rrrrr", r_act, ll_global.state[r_act],"\n");
+				dest_chs.push( ll_global.state[r_act]["inputs~"][r_obj] );	
+			}
             dests.push(result[1]);
             d_offsets.push(r_offset);
             if (i > 0) {
