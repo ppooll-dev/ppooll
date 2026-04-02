@@ -1,0 +1,83 @@
+{
+    "ho_st1": {
+        "_actwindow": [ "ho_st", 77, 92, 207, 217 ],
+        "act_menu": "notepad@",
+        "audioON/OFF": 1,
+        "chans": 2,
+        "def": -1,
+        "envi_menu": "ppooll-basic",
+        "favorites": "(favorites)",
+        "jit.on": 0,
+        "logo": 0,
+        "menubar": 0,
+        "ppooll": -1,
+        "rec": 0,
+        "screen": 0,
+        "stereo": 0,
+        "time": 45391,
+        "vol": 1,
+        "vol_ramp": 10,
+        "vol_slider": 1,
+        "watch_menu": "time",
+        "write_envi": -1,
+        "osc_port": 7400,
+        "ll.dims": 0,
+        "pfl_act_menu": "no",
+        "pfl_par_menu": "-no-",
+        "params_only": 0,
+        "act": {
+            "active_store": 0,
+            "master": 0,
+            "pres_menu": "(presets)",
+            "tetris_menu": "(tetris)",
+            "title_menu": ""
+        }
+    },
+    "notepad@1": {
+        "_actwindow": [ "notepad@", 220, 93, 890, 324 ],
+        "fontlist": "Arial",
+        "fontsize": 18,
+        "height": 231,
+        "presets": 0,
+        "textfield": "ppooll_basics\n\n\"acts\" are special patchers made for ppooll.  these acts can send and receive:\n  - parameters\n  - audio\n  - jitter\n\nppooll has special objects for sending/receiving data, as shown below:\n",
+        "width": 670,
+        "act": {
+            "active_store": 0,
+            "master": 0,
+            "pres_menu": "(presets)",
+            "tetris_menu": "(tetris)",
+            "title_menu": ""
+        }
+    },
+    "ppooll_basic1": {
+        "_actwindow": [ "ppooll_basic", 869, 348, 1319, 804 ],
+        "act": {
+            "active_store": 0,
+            "master": 0,
+            "pres_menu": "(presets)",
+            "tetris_menu": "(tetris)",
+            "title_menu": ""
+        },
+        "toni": 0,
+        "flo": 0,
+        "multi": [ 0.821428596973419, 0.535714268684387, 0.428571432828903, 0.321428567171097, -0.107142858207226, -0.357142865657806, -0.535714268684387, -0.642857134342194 ],
+        "rj_on": 1,
+        "jit_menu": "ppooll_send1"
+    },
+    "ppooll_send1": {
+        "_actwindow": [ "ppooll_send", 222, 348, 853, 804 ],
+        "actmenu": "ppooll_basic1",
+        "jit_on": 0,
+        "listitem": 0,
+        "parmenu": "toni",
+        "sigactmenu": "ppooll_basic1",
+        "sigparmenu": "sigi.1",
+        "act": {
+            "active_store": 0,
+            "master": 0,
+            "pres_menu": "(presets)",
+            "tetris_menu": "(tetris)",
+            "title_menu": ""
+        }
+    }
+}

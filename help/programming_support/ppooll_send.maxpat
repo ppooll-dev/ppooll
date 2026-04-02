@@ -4,12 +4,12 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 0,
+            "revision": 3,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 564.0, 54.0, 631.0, 456.0 ],
+        "rect": [ 556.0, 137.0, 631.0, 456.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "ppooll_send1",
         "boxes": [
@@ -356,7 +356,7 @@
                     "fontname": "Arial",
                     "fontsize": 12.0,
                     "id": "obj-14",
-                    "items": [ "no", ",", "ho_st1", ",", "ppooll_basic1" ],
+                    "items": [ "no", ",", "ho_st1", ",", "ppooll_basic1", ",", "ppooll_send1" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -453,7 +453,7 @@
                     "fontname": "Arial",
                     "fontsize": 11.595187,
                     "id": "obj-4",
-                    "items": [ "no", ",", "ho_st1", ",", "ppooll_basic1", ",", "ppooll_send1", ",", "uli1" ],
+                    "items": [ "no", ",", "ho_st1", ",", "ppooll_basic1", ",", "ppooll_send1" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -586,7 +586,11 @@
                     "active": {
                         "act": 0,
                         "act::active_store": 0,
-                        "actmake::active_store": 0
+                        "act::master": 0,
+                        "act::u751015509": 0,
+                        "act::pres_menu": 0,
+                        "act::tetris_menu": 0,
+                        "act::title_menu": 0
                     },
                     "hidden": 1,
                     "id": "obj-9",
@@ -598,7 +602,8 @@
                     "saved_object_attributes": {
                         "client_rect": [ 1176, 213, 1791, 873 ],
                         "parameter_enable": 0,
-                        "parameter_mappable": 0
+                        "parameter_mappable": 0,
+                        "storage_rect": [ 583, 68, 1034, 196 ]
                     },
                     "text": "pattrstorage pat",
                     "varname": "pat"
@@ -654,15 +659,76 @@
             },
             {
                 "box": {
-                    "color": [ 0.4, 0.4, 0.8, 1.0 ],
-                    "hidden": 1,
-                    "id": "obj-8",
-                    "maxclass": "newobj",
-                    "numinlets": 2,
+                    "args": [ "ppooll_send", 1 ],
+                    "bgmode": 0,
+                    "border": 0,
+                    "clickthrough": 0,
+                    "enablehscroll": 0,
+                    "enablevscroll": 0,
+                    "id": "obj-19",
+                    "lockeddragscroll": 0,
+                    "lockedsize": 0,
+                    "maxclass": "bpatcher",
+                    "name": "act.maxpat",
+                    "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 487.0, 298.0, 122.0, 22.0 ],
-                    "text": "actmake ppooll_send",
-                    "varname": "act"
+                    "offset": [ 0.0, 0.0 ],
+                    "patching_rect": [ 0.0, 0.0, 89.017578125, 16.0 ],
+                    "varname": "act",
+                    "viewvisibility": 1
+                }
+            },
+            {
+                "box": {
+                    "hidden": 1,
+                    "id": "obj-24",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 500.0, 298.0, 115.0, 22.0 ],
+                    "text": "pattrforward act::in2",
+                    "varname": "pf"
+                }
+            },
+            {
+                "box": {
+                    "hidden": 1,
+                    "id": "obj-28",
+                    "maxclass": "newobj",
+                    "numinlets": 0,
+                    "numoutlets": 0,
+                    "patcher": {
+                        "fileversion": 1,
+                        "appversion": {
+                            "major": 9,
+                            "minor": 1,
+                            "revision": 3,
+                            "architecture": "x64",
+                            "modernui": 1
+                        },
+                        "classnamespace": "box",
+                        "rect": [ 234.0, 134.0, 432.0, 332.0 ],
+                        "boxes": [
+                            {
+                                "box": {
+                                    "id": "obj-1",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 2,
+                                    "outlettype": [ "", "" ],
+                                    "patching_rect": [ 10.0, 20.0, 100.0, 22.0 ],
+                                    "save": [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+                                    "text": "thispatcher",
+                                    "varname": "subTP"
+                                }
+                            }
+                        ],
+                        "lines": []
+                    },
+                    "patching_rect": [ 400.0, 550.0, 109.0, 22.0 ],
+                    "text": "p ppooll_send_sub",
+                    "varname": "sub"
                 }
             }
         ],
@@ -751,7 +817,7 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-8", 1 ],
+                    "destination": [ "obj-24", 0 ],
                     "hidden": 1,
                     "source": [ "obj-9", 0 ]
                 }
@@ -783,6 +849,7 @@
                 "parentstyle": "",
                 "multi": 0
             }
-        ]
+        ],
+        "bgcolor": [ 1.0, 1.0, 1.0, 1.0 ]
     }
 }
