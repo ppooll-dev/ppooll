@@ -656,7 +656,7 @@ function handle_watch_selection(selection) {
         stopwatch_items = stopwatch_items.map((item) => `(${item})`);
 
     stopwatch_items.forEach((item) => watch_menu.message("append", item));
-	post(selection);
+	
     watch_menu.message("symbol", selection);
     watch_menu.message("clearchecks");
     watch_menu.message("checksymbol", selection, 1);
