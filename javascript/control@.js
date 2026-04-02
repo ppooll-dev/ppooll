@@ -237,6 +237,13 @@ function new_name(n) { //push actpars
             topush = "listscale";
         else if (k === "in_max" && actpars["input_menu"] == "midi")
             topush = 127;
+        else if (k === "in_min" && actpars["act_menu"].toString().search(/^banger/) !== -1){
+            topush = -1;
+        }
+        else if (k === "in_max" && actpars["act_menu"].toString().search(/^banger/) !== -1){
+            topush = 0;
+        }
+            
         ap.getnamed(k).message(actpars[k], topush);
     }
     let len = actpars["input_name"].length - 1;

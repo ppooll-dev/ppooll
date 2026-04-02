@@ -4,12 +4,12 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 2,
+            "revision": 3,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 186.0, 487.0, 189.0, 48.0 ],
+        "rect": [ 182.0, 472.0, 189.0, 48.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "control@1",
         "boxes": [
@@ -49,7 +49,7 @@
                     "hidden": 1,
                     "hint": "act_menu",
                     "id": "obj-35",
-                    "items": [ "no", ",", "control@1", ",", "ho_st1" ],
+                    "items": [ "no", ",", "banger1", ",", "control@1", ",", "ho_st1" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -854,12 +854,12 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 3,
                             "architecture": "x64",
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 876.0, 283.0, 542.0, 606.0 ],
+                        "rect": [ 571.0, 291.0, 542.0, 606.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -904,13 +904,57 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 287.0, 328.0, 623.0, 562.0 ],
+                                        "rect": [ 1546.0, 306.0, 690.0, 851.0 ],
                                         "boxes": [
+                                            {
+                                                "box": {
+                                                    "id": "obj-8",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 86.0, 72.0, 61.0, 22.0 ],
+                                                    "text": "pipe 2000"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "id": "obj-19",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 65.0, 581.0, 55.0, 22.0 ],
+                                                    "text": "pipe 500"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "id": "obj-18",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 3,
+                                                    "numoutlets": 2,
+                                                    "outlettype": [ "", "bang" ],
+                                                    "patching_rect": [ 65.0, 643.0, 83.0, 22.0 ],
+                                                    "text": "ll.pf act_menu"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "id": "obj-17",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 65.0, 612.0, 94.0, 22.0 ],
+                                                    "text": "prepend symbol"
+                                                }
+                                            },
                                             {
                                                 "box": {
                                                     "id": "obj-10",
@@ -918,7 +962,7 @@
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 158.65, 71.18, 53.0, 22.0 ],
+                                                    "patching_rect": [ 171.0, 72.0, 53.0, 22.0 ],
                                                     "text": "banger1"
                                                 }
                                             },
@@ -979,18 +1023,7 @@
                                             },
                                             {
                                                 "box": {
-                                                    "id": "obj-8",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 2,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "patching_rect": [ 86.0, 71.0, 61.0, 22.0 ],
-                                                    "text": "pipe 2000"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "code": "var act_name = null;\r\nvar mc_act_name = null;\r\n\r\nfunction my_control(this_an){\r\n    mc_act_name = this_an;\r\n    this.patcher\r\n        .parentpatcher\r\n        .parentpatcher\r\n        .getnamed(\"input_menu\").message(\"symbol\", \"ppooll\");\r\n    \r\n    this.patcher\r\n        .parentpatcher\r\n        .parentpatcher\r\n        .getnamed(\"act_menu\").message(\"symbol\", mc_act_name);\r\n        \r\n    messnamed(`::${mc_act_name}::send_back`, act_name); \r\n}\r\n\r\nfunction actname(a) { act_name = a }\r\n    \r\nfunction notifydeleted(){\r\n    messnamed(`::${mc_act_name}::send_back`, 0); \r\n    mc_act_name = null;\r\n}",
+                                                    "code": "var act_name = null;\r\nvar mc_act_name = null;\r\n\r\nfunction my_control(this_an){\r\n    mc_act_name = this_an;\r\n    this.patcher\r\n        .parentpatcher\r\n        .parentpatcher\r\n        .getnamed(\"input_menu\").message(\"symbol\", \"ppooll\");\r\n        \r\n    messnamed(`::${mc_act_name}::send_back`, act_name); \r\n        \r\n    outlet(0, mc_act_name);\r\n}\r\n\r\nfunction actname(a) { act_name = a }\r\n    \r\nfunction notifydeleted(){\r\n    messnamed(`::${mc_act_name}::send_back`, 0); \r\n    mc_act_name = null;\r\n}",
                                                     "filename": "none",
                                                     "fontface": 0,
                                                     "fontname": "<Monospaced>",
@@ -1000,7 +1033,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 65.0, 225.0, 520.0, 311.0 ],
+                                                    "patching_rect": [ 65.0, 225.0, 520.0, 348.0 ],
                                                     "saved_object_attributes": {
                                                         "parameter_enable": 0
                                                     }
@@ -1045,8 +1078,26 @@
                                             },
                                             {
                                                 "patchline": {
+                                                    "destination": [ "obj-18", 0 ],
+                                                    "source": [ "obj-17", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-17", 0 ],
+                                                    "source": [ "obj-19", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
                                                     "destination": [ "obj-4", 0 ],
                                                     "source": [ "obj-2", 1 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-19", 0 ],
+                                                    "source": [ "obj-4", 0 ]
                                                 }
                                             },
                                             {
@@ -1104,7 +1155,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1164,7 +1215,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 2,
+                                                            "revision": 3,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1342,7 +1393,7 @@
                                                                     "allowdrag": 0,
                                                                     "fontsize": 9.0,
                                                                     "id": "obj-14",
-                                                                    "items": [ "AU DLS Synth 1", ",", "Network Session 1", ",", "Scarlett 18i20 USB", ",", "from Max 1", ",", "from Max 2", ",", "MIDISPORT 1x1 Port A", ",", "XC-17986 Bluetooth" ],
+                                                                    "items": [ "AU DLS Synth 1", ",", "Network Session 1", ",", "from Max 1", ",", "from Max 2" ],
                                                                     "maxclass": "umenu",
                                                                     "numinlets": 1,
                                                                     "numoutlets": 3,
@@ -1705,7 +1756,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 2,
+                                                            "revision": 3,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1723,7 +1774,7 @@
                                                                         "appversion": {
                                                                             "major": 9,
                                                                             "minor": 1,
-                                                                            "revision": 2,
+                                                                            "revision": 3,
                                                                             "architecture": "x64",
                                                                             "modernui": 1
                                                                         },
@@ -2504,7 +2555,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 2,
+                                                            "revision": 3,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -3058,7 +3109,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -3142,7 +3193,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 2,
+                                                            "revision": 3,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -3944,7 +3995,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -3972,7 +4023,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 3,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -4083,7 +4134,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 2,
+                                                            "revision": 3,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -4236,7 +4287,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 2,
+                                                            "revision": 3,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -4812,8 +4863,8 @@
                     "outlettype": [ "", "", "", "" ],
                     "patching_rect": [ 304.6666757464409, 106.66666984558105, 107.0, 22.0 ],
                     "restore": {
-                        "act_menu": [ "no" ],
-                        "act_suggested": [ 0 ],
+                        "act_menu": [ "banger1" ],
+                        "act_suggested": [ 1 ],
                         "baud_rate": [ "28800" ],
                         "chans": [ 1 ],
                         "hi_menu": [ "Keyboard Backlight" ],
@@ -5018,7 +5069,7 @@
                     "fontname": "Arial",
                     "hint": "midi_receive_port",
                     "id": "obj-26",
-                    "items": [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "Network Session 1", ",", "Scarlett 18i20 USB", ",", "to Max 1", ",", "to Max 2", ",", "MIDISPORT 1x1 Port A", ",", "XC-17986 Bluetooth" ],
+                    "items": [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "Network Session 1", ",", "to Max 1", ",", "to Max 2" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
