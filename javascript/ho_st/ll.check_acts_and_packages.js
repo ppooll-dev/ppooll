@@ -193,6 +193,8 @@ function load_acts_from_folder(folder, desc) {
         });
 }
 
+const getFolderName = (path) => path.replace(/\/$/, "").split("/").pop();
+
 function rebuild_menu() {
     ["act_menu", "ppooll.acts", "actmenu", "filewatchers"].forEach((dest) =>
         outlet(0, dest, "clear")
@@ -206,13 +208,14 @@ function rebuild_menu() {
 
     count = 0;
 
-    var UNSHARED = ll_preferences.file_paths.unshared_acts;
     IGNORE_LIST =
         "," + ll_preferences.act_usage.never_used_acts + ",_act_overview,";
 
     // MAIN
     append("(__acts__)");
+    append("--def_folders--")
     append("_act_overview");
+    append("-")
     store("_act_overview");
 
     load_acts_from_folder(MAIN, false);
@@ -226,13 +229,26 @@ function rebuild_menu() {
         watch_folder(CONTRIBUTIONS);
     }
 
-    // UNSHARED
-    append("-");
-    append("--unshared_acts--");
-    if (UNSHARED !== "" && ll.folderExists(UNSHARED)) {
-        load_acts_from_folder(UNSHARED, "--unshared_acts--");
-        watch_folder(UNSHARED);
-    }
+    // ACT_FOLDERS
+    var ACT_FOLDERS = ll_preferences.file_paths.act_folders;
+
+    ACT_FOLDERS.forEach((act_folder, i) => {
+        const name = getFolderName(act_folder)
+        const full_path = `${act_folder}/patchers/ppooll.acts`
+        append("-");
+        append(`(${name})`);
+
+        if (ll.folderExists(act_folder)) {
+            if(ll.folderExists(full_path)){
+                load_acts_from_folder(full_path, `-- ${name} --`);
+                watch_folder(full_path);
+            } else {
+                post(`ppooll error - user act folder '${name}' does not have a /ppooll.acts subdirectory.\n`)
+            }
+        }else {
+            post(`ppooll error - user act folder '${name}' not found.\n`)
+        }
+    })
 
     // outlet(0, "bang");
     package_compare();

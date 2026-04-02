@@ -29,7 +29,7 @@ var empty_prf_DEFAULT = {
     },
     file_paths: {
         quickrecord_path: 0,
-        unshared_acts: "",
+        act_folders: [],
         sdif_folder: "",
         sound_folders: [],
         "vst@_folders": [],
@@ -62,6 +62,7 @@ function normalizeFolderArrays() {
         "file_paths::vst@_folders",
         "file_paths::amxd@_folders",
         "file_paths::jit.rec_folders",
+        "file_paths::act_folders",
     ];
     for (let key of folderKeys) {
         let val = preferences.get(key);
@@ -182,6 +183,7 @@ function setquickrecord_path(c) {
     quickrecord_path = c;
     preferences.set("file_paths::quickrecord_path", c);
     this.patcher.getnamed("attrui_qr_path").message("attr", "quickrecord_path");
+    this.patcher.getnamed("attrui_qr_path").message("hint", c)
     ll_prf_rewrite();
 }
 
@@ -374,6 +376,7 @@ function readfile() {
     // file_paths::quickrecord_path
     quickrecord_path = preferences.get("file_paths::quickrecord_path");
     this.patcher.getnamed("attrui_qr_path").message("attr", "quickrecord_path");
+    this.patcher.getnamed("attrui_qr_path").message("hint", quickrecord_path)
 
     // general::quickrecord_fileformat
     quickrecord_fileformat = preferences.get("general::quickrecord_fileformat");
@@ -402,6 +405,7 @@ function readfile() {
     this.patcher
         .getnamed("attrui_htf")
         .message("attr", "host_timeformat");
+     messnamed("ll_time_format", host_timeformat);
 
     messnamed("ll_preferences_ready", "bang");
 }
@@ -418,6 +422,12 @@ function newPref(path) {
 function readDict(path) {
     // get dict from path
     preferences.import_json(path);
+
+    let prev_unshared = preferences.get("file_paths::unshared_acts");
+    if(prev_unshared) {
+        preferences.set("file_paths::act_folders", [prev_unshared]);
+        preferences.remove("file_paths::unshared_acts")
+    }
 
     // get dict from default json
     var empty_prf = new Dict();
@@ -452,4 +462,8 @@ function set_preset_paths(max_library_path) {
 
     messnamed("ll_factorypath", factory);
     messnamed("ll_presetpath", user);
+}
+
+function clearPaths(){
+    this.patcher.getnamed("attrui_qr_path").message("hint", "")
 }
