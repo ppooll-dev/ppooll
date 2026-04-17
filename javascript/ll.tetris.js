@@ -219,3 +219,13 @@ outlet(0,"bang");
 tpp.getnamed("act_menu").message(2);
 tpp.getnamed("obj_menu").message(0);
 */
+
+function reload_acts(){
+	const act_menu = this.patcher.parentpatcher.getnamed("act_menu");
+	const act_names = Object.keys(ll_global.patchers);
+
+	const items = new Dict();
+	items.set("items", act_names);
+
+	act_menu.message("dictionary", items.name);
+}
