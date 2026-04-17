@@ -254,17 +254,27 @@ function selectEnvironment(name) {
     ll_global.envi_name = name;
 }
 
+//
+// TODO: Fix for "Collect All and Save"
+//
 // r ll_live_envi_name
 function ll_live_envi_name(name) {
-    post("name!", name, "\n");
+    // post("name!", name, "\n");
+    if(name === live_envi) {
+        // post("repeat" , name, "\n")
+        // return;
+    }
+
     if (!name || name === "") {
-        post("setLiveEnvi no name \n");
+        // post("setLiveEnvi no name \n");
         return;
     }
     if (isPrefsReady) {
         selectEnvironment(name);
+        // post("prefs ready, load this ish\n")
     } else {
         live_envi = name;
+        // post("save it for later\n")
     }
 }
 
