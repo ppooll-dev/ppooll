@@ -407,6 +407,8 @@ function readfile() {
         .message("attr", "host_timeformat");
      messnamed("ll_time_format", host_timeformat);
 
+    liveppooll_nested = preferences.get("live_ppooll::nested")
+
     messnamed("ll_preferences_ready", "bang");
 }
 
