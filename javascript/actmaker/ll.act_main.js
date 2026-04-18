@@ -385,6 +385,10 @@ function notifydeleted() {
         delete ll_global.patchers[act_name_index];
     if (ll_global.pat[act_name_index]) delete ll_global.pat[act_name_index];
 
+    if(act_args.name === "ho_st"){
+        max.showmenubar();
+    }
+
     messnamed("acting", act_args.name, act_index, -1);
 }
 
@@ -587,6 +591,7 @@ function create_title_menu_options() {
                     });
                 max.showmenubar();
             }
+            act_patcher.message("clean");
             act_patcher.message("dispose");
         },
         back: () => {
@@ -741,6 +746,10 @@ function create_host_title_menu_options() {
 
     if (ll_global.live_ppooll_patcher) {
         delete ho_st_opts.close;
+        ho_st_opts.separator6 = null;
+        ho_st_opts.hide = () => {
+            messnamed("ll_live_show_hide", 0)
+        };
     }
 
     return ho_st_opts;
@@ -1412,13 +1421,13 @@ function make_live() {
             coords[2] + coords[0],
             coords[3] + coords[1]
         ]
-        return;
+        // return;
+    } else {
+        ll_global.live_ppooll_patcher.message("script", "bringtofront", act_name_index);
+        messnamed(act_name_index, "TP", "front");
+        messnamed(act_name_index, "TP", "window", "flags", "float");
+        messnamed(act_name_index, "TP", "window", "exec");
     }
-
-    ll_global.live_ppooll_patcher.message("script", "bringtofront", act_name_index);
-    messnamed(act_name_index, "TP", "front");
-    messnamed(act_name_index, "TP", "window", "flags", "float");
-    messnamed(act_name_index, "TP", "window", "exec");
 
     // if this is the ho_st hide defined objects
     if (act_args.name === "ho_st") {
@@ -1429,6 +1438,16 @@ function make_live() {
             if (act_patcher.getnamed(TO_HIDE[i])) {
                 act_patcher.message("script", "hide", TO_HIDE[i]);
             }
+        }
+        if(ll_global.nested_patcher) {
+            var NESTED_TO_HIDE = ["screen"];
+
+            for (var i = 0; i < NESTED_TO_HIDE.length; i++) {
+                if (act_patcher.getnamed(NESTED_TO_HIDE[i])) {
+                    act_patcher.message("script", "hide", NESTED_TO_HIDE[i]);
+                }
+            }
+            messnamed("ll_live_nested", 1);
         }
     }
 }

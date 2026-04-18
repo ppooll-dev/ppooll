@@ -27,17 +27,21 @@ const SUBS_TO_SHOW = [
     },
 ];
 
-function loadbang() {
+function set_is_nested() {
     var d = new Dict();
 
-    d.import_json("ppooll-preferences.json")
+    d.import_json("ppooll-preferences.json");
 
-    var prefs = JSON.parse(d.stringify())
+    var prefs = JSON.parse(d.stringify());
     ll_global.nested_patcher = prefs.live_ppooll && prefs.live_ppooll.nested;
 
     ll_global.live_ppooll_patcher = this.patcher
         .getnamed("LIVE_PPOOLL_ENVIRONMENT")
         .subpatcher();
+}
+
+function loadbang() {
+    set_is_nested();
 
     if (ll_global.nested_patcher) {
         ll_global.live_ppooll_patcher.newobject(
@@ -51,7 +55,7 @@ function loadbang() {
             "@bgmode",
             1,
             "@border",
-            0
+            0,
         );
         return;
     }
@@ -67,6 +71,8 @@ function send_to_all_TP(msgs) {
 }
 
 function show_hide(v) {
+    set_is_nested();
+
     const front_wclose = v ? "front" : "wclose";
 
     if (ll_global.nested_patcher) {
