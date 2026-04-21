@@ -1,5 +1,5 @@
 {
-    "window": [ 445, 193, 696, 475 ],
+    "window": [ 535, 99, 786, 381 ],
     "envelope_display": {
         "patching_rect": [ -6, 98, 262, 94 ],
         "hidden": 0,
@@ -25,7 +25,6 @@
     "interp": {
         "patching_rect": [ 151, 62, 35, 21 ],
         "hidden": 0,
-        "applycolors": 0,
         "bgfillcolor": {
             "angle": 270,
             "autogradient": 0,
@@ -43,7 +42,6 @@
     "xfade_mode": {
         "patching_rect": [ -1, 212, 56, 19 ],
         "hidden": 0,
-        "applycolors": 0,
         "bgfillcolor": {
             "type": "color",
             "color1": [ 0.301961, 0.301961, 0.301961, 1 ],
@@ -74,7 +72,6 @@
     "xshape": {
         "patching_rect": [ 145, 212, 29, 19 ],
         "hidden": 0,
-        "applycolors": 0,
         "bgfillcolor": {
             "type": "color",
             "color1": [ 0.301961, 0.301961, 0.301961, 1 ],
@@ -135,7 +132,6 @@
     "buffer": {
         "patching_rect": [ 0, 62, 152, 21 ],
         "hidden": 0,
-        "applycolors": 0,
         "bgfillcolor": {
             "type": "color",
             "color1": [ 0.301961, 0.301961, 0.301961, 1 ],
@@ -153,7 +149,6 @@
     "loop_mode": {
         "patching_rect": [ 186, 62, 65, 21 ],
         "hidden": 0,
-        "applycolors": 0,
         "bgfillcolor": {
             "type": "color",
             "color1": [ 0.301961, 0.301961, 0.301961, 1 ],
@@ -378,6 +373,7 @@
     },
     "presets": {
         "patching_rect": [ 157, 230, 94, 36 ],
-        "hidden": 0
+        "hidden": 0,
+        "boxsize": 11
     }
 }
