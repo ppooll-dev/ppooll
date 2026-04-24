@@ -226,7 +226,7 @@ function saveBuffer(b) {
             pb.send(b.buffer_index, "write", newFile);
         }
         // Update the saved path in the copy array
-        b.full_path = newFile;
+        b.full_path = `environmentsP/${envi_name}/buffers/${b.file_name}`;
     } else if (write_sample_buffers) {
         newFile = `${envi_path}/buffers/${b.label}.${bufferFileExt}`;
 
@@ -235,7 +235,7 @@ function saveBuffer(b) {
 
         // Replace polybuffer~ with newly created files
         pb.send(b.buffer_index, "read", newFile);
-        b.full_path = newFile;
+        b.full_path = `environmentsP/${envi_name}/buffers/${b.file_name}`;
         b.label = `${b.label}.${bufferFileExt}`;
     }
 }

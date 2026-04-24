@@ -105,6 +105,14 @@ function loadAct() {
     // load buffers
     //  TODO: check for buffers loaded via pres_menu and do that first?
     if (environment.buffer_host1 && environment.buffer_host1.ll_buffers) {
+        environment.buffer_host1.ll_buffers.buffers.forEach(b => {
+            // if starts with environmentsP/, adjust the file path to read from this
+            //   environment folder
+            if(b.full_path.startsWith("environmentsP/")){
+                b.full_path = `${dict.props.path}/buffers/${b.file_name}`
+            }
+        })
+
         const buffer_dict = new Dict("ll_buffers");
         buffer_dict.parse(JSON.stringify(environment.buffer_host1.ll_buffers));
         messnamed("llenviread_loadbuffers", "bang");
