@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 315.0, 112.0, 190.0, 172.0 ],
+        "rect": [ 238.0, 105.0, 190.0, 172.0 ],
         "default_fontsize": 10.0,
         "toolbarvisible": 0,
         "globalpatchername": "simproov1",
@@ -39,6 +39,89 @@
                         "autowatch": 1
                     },
                     "varname": "presets"
+                }
+            },
+            {
+                "box": {
+                    "args": [ "simproov", "§969696" ],
+                    "bgmode": 0,
+                    "border": 0,
+                    "clickthrough": 0,
+                    "enablehscroll": 0,
+                    "enablevscroll": 0,
+                    "id": "obj-7",
+                    "lockeddragscroll": 0,
+                    "lockedsize": 0,
+                    "maxclass": "bpatcher",
+                    "name": "act.maxpat",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "offset": [ 0.0, 0.0 ],
+                    "patching_rect": [ 0.0, 0.0, 72.359375, 16.0 ],
+                    "varname": "act",
+                    "viewvisibility": 1
+                }
+            },
+            {
+                "box": {
+                    "bgcolor": [ 0.0, 0.522, 0.667, 1.0 ],
+                    "fontsize": 8.0,
+                    "id": "obj-13",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 69.5, 3.0, 30.5, 15.0 ],
+                    "text": "speed"
+                }
+            },
+            {
+                "box": {
+                    "annotation": "update-end",
+                    "bgcolor": [ 0.098039, 0.713726, 0.058824, 1.0 ],
+                    "bgoncolor": [ 0.501961, 1.0, 0.003922, 1.0 ],
+                    "fontsize": 8.0,
+                    "id": "obj-62",
+                    "legacytextcolor": 1,
+                    "maxclass": "textbutton",
+                    "mode": 1,
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "int" ],
+                    "outputmode": 0,
+                    "parameter_enable": 0,
+                    "patching_rect": [ 164.0, 2.5, 26.0, 14.5 ],
+                    "text": "keep",
+                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "texton": ">end",
+                    "textoncolor": [ 1.0, 0.0, 0.0, 1.0 ],
+                    "textovercolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "usebgoncolor": 1,
+                    "usetextovercolor": 1,
+                    "varname": "update-end"
+                }
+            },
+            {
+                "box": {
+                    "bgcolor": [ 0.545, 1.0, 0.227, 1.0 ],
+                    "fontsize": 8.0,
+                    "id": "obj-30",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 145.0, 3.0, 25.0, 15.0 ],
+                    "text": "end"
+                }
+            },
+            {
+                "box": {
+                    "bgcolor": [ 0.545, 1.0, 0.227, 1.0 ],
+                    "fontsize": 8.0,
+                    "id": "obj-29",
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 100.0, 3.0, 45.0, 15.0 ],
+                    "text": "start"
                 }
             },
             {
@@ -200,7 +283,7 @@
                     "fontsize": 9.0,
                     "id": "obj-17",
                     "items": "-no-",
-                    "maxclass": "umenu",
+                    "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
@@ -213,12 +296,20 @@
             },
             {
                 "box": {
+                    "bgcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "id": "obj-12",
-                    "maxclass": "meter~",
+                    "maxclass": "live.meter~",
                     "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "float" ],
-                    "patching_rect": [ 132.0, 139.0, 58.0, 19.0 ],
+                    "numoutlets": 2,
+                    "orientation": 1,
+                    "outlettype": [ "float", "int" ],
+                    "patching_rect": [ 150.0, 139.0, 40.0, 19.0 ],
+                    "saved_attribute_attributes": {
+                        "bgcolor": {
+                            "expression": ""
+                        }
+                    },
+                    "slidercolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "varname": "meter4"
                 }
             },
@@ -237,7 +328,7 @@
                     "fontsize": 9.0,
                     "id": "obj-20",
                     "items": "-no-",
-                    "maxclass": "umenu",
+                    "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
@@ -250,12 +341,20 @@
             },
             {
                 "box": {
+                    "bgcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "id": "obj-10",
-                    "maxclass": "meter~",
+                    "maxclass": "live.meter~",
                     "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "float" ],
-                    "patching_rect": [ 132.0, 104.0, 58.0, 19.0 ],
+                    "numoutlets": 2,
+                    "orientation": 1,
+                    "outlettype": [ "float", "int" ],
+                    "patching_rect": [ 150.0, 104.0, 40.0, 19.0 ],
+                    "saved_attribute_attributes": {
+                        "bgcolor": {
+                            "expression": ""
+                        }
+                    },
+                    "slidercolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "varname": "meter3"
                 }
             },
@@ -274,7 +373,7 @@
                     "fontsize": 9.0,
                     "id": "obj-22",
                     "items": "-no-",
-                    "maxclass": "umenu",
+                    "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
@@ -287,12 +386,20 @@
             },
             {
                 "box": {
+                    "bgcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "id": "obj-9",
-                    "maxclass": "meter~",
+                    "maxclass": "live.meter~",
                     "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "float" ],
-                    "patching_rect": [ 132.0, 69.0, 58.0, 19.0 ],
+                    "numoutlets": 2,
+                    "orientation": 1,
+                    "outlettype": [ "float", "int" ],
+                    "patching_rect": [ 150.0, 69.0, 40.0, 19.0 ],
+                    "saved_attribute_attributes": {
+                        "bgcolor": {
+                            "expression": ""
+                        }
+                    },
+                    "slidercolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "varname": "meter2"
                 }
             },
@@ -311,7 +418,7 @@
                     "fontsize": 9.0,
                     "id": "obj-73",
                     "items": [ "host", ",", ">addr>", ",", "mixed" ],
-                    "maxclass": "umenu",
+                    "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
@@ -335,7 +442,7 @@
                     "fontsize": 9.0,
                     "id": "obj-68",
                     "items": [ "host", ",", ">addr>", ",", "mixed" ],
-                    "maxclass": "umenu",
+                    "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
@@ -359,7 +466,7 @@
                     "fontsize": 9.0,
                     "id": "obj-55",
                     "items": [ "host", ",", ">addr>", ",", "mixed" ],
-                    "maxclass": "umenu",
+                    "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
@@ -435,38 +542,13 @@
                     "fontsize": 9.0,
                     "id": "obj-11",
                     "items": [ "host", ",", ">addr>", ",", "mixed" ],
-                    "maxclass": "umenu",
+                    "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
                     "parameter_enable": 0,
                     "patching_rect": [ 51.0, 33.0, 18.0, 19.0 ],
                     "varname": "toplug1"
-                }
-            },
-            {
-                "box": {
-                    "annotation": "update-end",
-                    "bgcolor": [ 0.098039, 0.713726, 0.058824, 1.0 ],
-                    "bgoncolor": [ 0.501961, 1.0, 0.003922, 1.0 ],
-                    "id": "obj-62",
-                    "legacytextcolor": 1,
-                    "maxclass": "textbutton",
-                    "mode": 1,
-                    "numinlets": 1,
-                    "numoutlets": 3,
-                    "outlettype": [ "", "", "int" ],
-                    "outputmode": 0,
-                    "parameter_enable": 0,
-                    "patching_rect": [ 159.0, 0.0, 31.0, 16.0 ],
-                    "text": "keep",
-                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
-                    "texton": ">end",
-                    "textoncolor": [ 1.0, 0.0, 0.0, 1.0 ],
-                    "textovercolor": [ 1.0, 1.0, 1.0, 1.0 ],
-                    "usebgoncolor": 1,
-                    "usetextovercolor": 1,
-                    "varname": "update-end"
                 }
             },
             {
@@ -592,8 +674,8 @@
                     "bgfillcolor_type": "color",
                     "fontsize": 9.0,
                     "id": "obj-18",
-                    "items": [ "no", ",", "ho_st1", ",", "buffer_host1", ",", "gverb@1", ",", "simproov1" ],
-                    "maxclass": "umenu",
+                    "items": [ "no", ",", "ho_st1", ",", "simproov1", ",", "buffer_host1" ],
+                    "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
@@ -619,7 +701,7 @@
                     "fontsize": 9.0,
                     "id": "obj-24",
                     "items": "-no-",
-                    "maxclass": "umenu",
+                    "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
@@ -644,8 +726,8 @@
                     "bgfillcolor_type": "color",
                     "fontsize": 9.0,
                     "id": "obj-25",
-                    "items": [ "no", ",", "ho_st1", ",", "buffer_host1", ",", "gverb@1", ",", "simproov1" ],
-                    "maxclass": "umenu",
+                    "items": [ "no", ",", "ho_st1", ",", "simproov1", ",", "buffer_host1" ],
+                    "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
@@ -692,7 +774,7 @@
                     "fontsize": 9.0,
                     "id": "obj-34",
                     "items": "<empty>",
-                    "maxclass": "umenu",
+                    "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
@@ -718,7 +800,7 @@
                     "fontsize": 9.0,
                     "id": "obj-38",
                     "items": "<empty>",
-                    "maxclass": "umenu",
+                    "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
@@ -744,7 +826,7 @@
                     "fontsize": 9.0,
                     "id": "obj-42",
                     "items": "<empty>",
-                    "maxclass": "umenu",
+                    "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
@@ -770,7 +852,7 @@
                     "fontsize": 9.0,
                     "id": "obj-46",
                     "items": "<empty>",
-                    "maxclass": "umenu",
+                    "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
@@ -783,22 +865,17 @@
             },
             {
                 "box": {
-                    "annotation": "speed1",
-                    "bgcolor": [ 0.0, 0.521569, 0.666667, 1.0 ],
-                    "fontname": "Arial",
-                    "fontsize": 9.0,
-                    "format": 6,
-                    "htricolor": [ 0.87, 0.82, 0.24, 1.0 ],
+                    "bgcolor": [ 0.0, 0.522, 0.667, 1.0 ],
+                    "fontface": 0,
+                    "fontsize": 10.0,
+                    "format": [ 1.2 ],
                     "id": "obj-49",
-                    "maxclass": "flonum",
+                    "maxclass": "ll_number",
                     "numinlets": 1,
-                    "numoutlets": 2,
-                    "outlettype": [ "", "bang" ],
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 68.0, 16.0, 32.0, 19.0 ],
-                    "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
-                    "tricolor": [ 0.75, 0.75, 0.75, 1.0 ],
-                    "triscale": 0.9,
+                    "patching_rect": [ 68.0, 16.0, 32.0, 17.0 ],
                     "varname": "speed1"
                 }
             },
@@ -1163,8 +1240,8 @@
                     "bgfillcolor_type": "color",
                     "fontsize": 9.0,
                     "id": "obj-74",
-                    "items": [ "no", ",", "ho_st1", ",", "buffer_host1", ",", "gverb@1", ",", "simproov1" ],
-                    "maxclass": "umenu",
+                    "items": [ "no", ",", "ho_st1", ",", "simproov1", ",", "buffer_host1" ],
+                    "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
@@ -1189,8 +1266,8 @@
                     "bgfillcolor_type": "color",
                     "fontsize": 9.0,
                     "id": "obj-75",
-                    "items": [ "no", ",", "ho_st1", ",", "buffer_host1", ",", "gverb@1", ",", "simproov1" ],
-                    "maxclass": "umenu",
+                    "items": [ "no", ",", "ho_st1", ",", "simproov1", ",", "buffer_host1" ],
+                    "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
@@ -1336,11 +1413,11 @@
                         "buffer2": [ "" ],
                         "buffer3": [ "" ],
                         "buffer4": [ "" ],
-                        "end1": [ 2000.0 ],
-                        "end2": [ 2000.0 ],
-                        "end3": [ 2000.0 ],
-                        "end4": [ 2000.0 ],
-                        "go/stop1": [ 1 ],
+                        "end1": [ 20000.0 ],
+                        "end2": [ 20000 ],
+                        "end3": [ 20000 ],
+                        "end4": [ 20000 ],
+                        "go/stop1": [ 0 ],
                         "go/stop2": [ 0 ],
                         "go/stop3": [ 0 ],
                         "go/stop4": [ 0 ],
@@ -1370,7 +1447,7 @@
                         "toplug2": [ 0 ],
                         "toplug3": [ 0 ],
                         "toplug4": [ 0 ],
-                        "update-end": [ 1 ],
+                        "update-end": [ 0 ],
                         "vol1": [ 1.0 ],
                         "vol2": [ 1.0 ],
                         "vol3": [ 1.0 ],
@@ -1382,64 +1459,49 @@
             },
             {
                 "box": {
-                    "annotation": "speed4",
-                    "bgcolor": [ 0.0, 0.521569, 0.666667, 1.0 ],
-                    "fontname": "Arial",
-                    "fontsize": 9.0,
-                    "format": 6,
-                    "htricolor": [ 0.87, 0.82, 0.24, 1.0 ],
+                    "bgcolor": [ 0.0, 0.522, 0.667, 1.0 ],
+                    "fontface": 0,
+                    "fontsize": 10.0,
+                    "format": [ 1.2 ],
                     "id": "obj-77",
-                    "maxclass": "flonum",
+                    "maxclass": "ll_number",
                     "numinlets": 1,
-                    "numoutlets": 2,
-                    "outlettype": [ "", "bang" ],
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 68.0, 122.0, 32.0, 19.0 ],
-                    "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
-                    "tricolor": [ 0.75, 0.75, 0.75, 1.0 ],
-                    "triscale": 0.9,
+                    "patching_rect": [ 68.0, 123.0, 32.0, 17.0 ],
                     "varname": "speed4"
                 }
             },
             {
                 "box": {
-                    "annotation": "speed3",
-                    "bgcolor": [ 0.0, 0.521569, 0.666667, 1.0 ],
-                    "fontname": "Arial",
-                    "fontsize": 9.0,
-                    "format": 6,
-                    "htricolor": [ 0.87, 0.82, 0.24, 1.0 ],
+                    "bgcolor": [ 0.0, 0.522, 0.667, 1.0 ],
+                    "fontface": 0,
+                    "fontsize": 10.0,
+                    "format": [ 1.2 ],
                     "id": "obj-70",
-                    "maxclass": "flonum",
+                    "maxclass": "ll_number",
                     "numinlets": 1,
-                    "numoutlets": 2,
-                    "outlettype": [ "", "bang" ],
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 68.0, 87.0, 32.0, 19.0 ],
-                    "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
-                    "tricolor": [ 0.75, 0.75, 0.75, 1.0 ],
-                    "triscale": 0.9,
+                    "patching_rect": [ 68.0, 88.0, 32.0, 17.0 ],
                     "varname": "speed3"
                 }
             },
             {
                 "box": {
-                    "annotation": "speed2",
-                    "bgcolor": [ 0.0, 0.521569, 0.666667, 1.0 ],
-                    "fontname": "Arial",
-                    "fontsize": 9.0,
-                    "format": 6,
-                    "htricolor": [ 0.87, 0.82, 0.24, 1.0 ],
+                    "bgcolor": [ 0.0, 0.522, 0.667, 1.0 ],
+                    "fontface": 0,
+                    "fontsize": 10.0,
+                    "format": [ 1.2 ],
                     "id": "obj-65",
-                    "maxclass": "flonum",
+                    "maxclass": "ll_number",
                     "numinlets": 1,
-                    "numoutlets": 2,
-                    "outlettype": [ "", "bang" ],
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 68.0, 52.0, 32.0, 19.0 ],
-                    "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
-                    "tricolor": [ 0.75, 0.75, 0.75, 1.0 ],
-                    "triscale": 0.9,
+                    "patching_rect": [ 68.0, 52.0, 32.0, 17.0 ],
                     "varname": "speed2"
                 }
             },
@@ -1676,27 +1738,6 @@
             },
             {
                 "box": {
-                    "args": [ "simproov", "§969696" ],
-                    "bgmode": 0,
-                    "border": 0,
-                    "clickthrough": 0,
-                    "enablehscroll": 0,
-                    "enablevscroll": 0,
-                    "id": "obj-7",
-                    "lockeddragscroll": 0,
-                    "lockedsize": 0,
-                    "maxclass": "bpatcher",
-                    "name": "act.maxpat",
-                    "numinlets": 1,
-                    "numoutlets": 0,
-                    "offset": [ 0.0, 0.0 ],
-                    "patching_rect": [ 0.0, 0.0, 72.359375, 16.0 ],
-                    "varname": "act",
-                    "viewvisibility": 1
-                }
-            },
-            {
-                "box": {
                     "hidden": 1,
                     "id": "obj-8",
                     "maxclass": "newobj",
@@ -1710,13 +1751,20 @@
             },
             {
                 "box": {
+                    "bgcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "id": "obj-5",
-                    "maxclass": "meter~",
+                    "maxclass": "live.meter~",
                     "numinlets": 1,
-                    "numleds": 10,
-                    "numoutlets": 1,
-                    "outlettype": [ "float" ],
-                    "patching_rect": [ 132.0, 33.0, 58.0, 19.0 ],
+                    "numoutlets": 2,
+                    "orientation": 1,
+                    "outlettype": [ "float", "int" ],
+                    "patching_rect": [ 150.0, 33.0, 40.0, 19.0 ],
+                    "saved_attribute_attributes": {
+                        "bgcolor": {
+                            "expression": ""
+                        }
+                    },
+                    "slidercolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "varname": "meter1"
                 }
             },
