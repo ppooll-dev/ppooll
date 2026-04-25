@@ -1,5 +1,5 @@
 {
-    "window": [ 238, 105, 428, 277 ],
+    "window": [ 102, 267, 292, 439 ],
     "end1": {
         "patching_rect": [ 145, 16, 45, 17 ],
         "hidden": 0,
@@ -183,34 +183,20 @@
     "act_menu3": {
         "patching_rect": [ 69, 104, 41, 19 ],
         "hidden": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 0.023529, 0, 0.847059, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
         "fontsize": 9,
-        "textcolor": [ 1, 1, 1, 1 ]
+        "textcolor": null
     },
     "act_menu2": {
         "patching_rect": [ 69, 69, 41, 19 ],
         "hidden": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 0.023529, 0, 0.847059, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
         "fontsize": 9,
-        "textcolor": [ 1, 1, 1, 1 ]
+        "textcolor": null
     },
     "speed1": {
         "patching_rect": [ 68, 16, 32, 17 ],
@@ -228,66 +214,38 @@
     "buffer1": {
         "patching_rect": [ 0, 33, 53, 19 ],
         "hidden": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 1, 0.392157, 0.392157, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "bgcolor": [ 1, 0.392157, 0.392157, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
         "fontsize": 9,
-        "textcolor": [ 0.121569, 0.121569, 0.121569, 1 ]
+        "textcolor": null
     },
     "buffer2": {
         "patching_rect": [ 0, 69, 53, 19 ],
         "hidden": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 1, 0.392157, 0.392157, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "bgcolor": [ 1, 0.392157, 0.392157, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
         "fontsize": 9,
-        "textcolor": [ 0.121569, 0.121569, 0.121569, 1 ]
+        "textcolor": null
     },
     "buffer3": {
         "patching_rect": [ 0, 104, 53, 19 ],
         "hidden": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 1, 0.392157, 0.392157, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "bgcolor": [ 1, 0.392157, 0.392157, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
         "fontsize": 9,
-        "textcolor": [ 0.121569, 0.121569, 0.121569, 1 ]
+        "textcolor": null
     },
     "buffer4": {
         "patching_rect": [ 0, 139, 53, 19 ],
         "hidden": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 1, 0.392157, 0.392157, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "bgcolor": [ 1, 0.392157, 0.392157, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
         "fontsize": 9,
-        "textcolor": [ 0.121569, 0.121569, 0.121569, 1 ]
+        "textcolor": null
     },
     "start1": {
         "patching_rect": [ 100, 16, 45, 17 ],
@@ -305,50 +263,29 @@
     "act_menu1": {
         "patching_rect": [ 69, 33, 41, 19 ],
         "hidden": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 0.023529, 0, 0.847059, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
         "fontsize": 9,
-        "textcolor": [ 1, 1, 1, 1 ]
+        "textcolor": null
     },
     "par_menu_L1": {
         "patching_rect": [ 109, 33, 41, 19 ],
         "hidden": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 0.023529, 0, 0.847059, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
         "fontsize": 9,
-        "textcolor": [ 1, 1, 1, 1 ]
+        "textcolor": null
     },
     "act_menu4": {
         "patching_rect": [ 69, 139, 41, 19 ],
         "hidden": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 0.023529, 0, 0.847059, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
         "fontsize": 9,
-        "textcolor": [ 1, 1, 1, 1 ]
+        "textcolor": null
     },
     "note1": {
         "patching_rect": [ 134, 196, 35, 19 ],
@@ -402,18 +339,11 @@
     "toplug1": {
         "patching_rect": [ 51, 33, 18, 19 ],
         "hidden": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 0.023529, 0, 0.847059, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
         "fontsize": 9,
-        "textcolor": [ 0.968627, 0.968627, 0.968627, 1 ]
+        "textcolor": null
     },
     "vol1": {
         "patching_rect": [ 0, 16, 38, 17 ],
@@ -444,50 +374,29 @@
     "toplug2": {
         "patching_rect": [ 51, 69, 18, 19 ],
         "hidden": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 0.023529, 0, 0.847059, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
         "fontsize": 9,
-        "textcolor": [ 0.968627, 0.968627, 0.968627, 1 ]
+        "textcolor": null
     },
     "toplug3": {
         "patching_rect": [ 51, 104, 18, 19 ],
         "hidden": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 0.023529, 0, 0.847059, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
         "fontsize": 9,
-        "textcolor": [ 0.968627, 0.968627, 0.968627, 1 ]
+        "textcolor": null
     },
     "toplug4": {
         "patching_rect": [ 51, 139, 18, 19 ],
         "hidden": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 0.023529, 0, 0.847059, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
         "fontsize": 9,
-        "textcolor": [ 0.968627, 0.968627, 0.968627, 1 ]
+        "textcolor": null
     },
     "meter2": {
         "patching_rect": [ 150, 69, 40, 19 ],
@@ -503,18 +412,11 @@
     "par_menu_L2": {
         "patching_rect": [ 109, 69, 41, 19 ],
         "hidden": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 0.023529, 0, 0.847059, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
         "fontsize": 9,
-        "textcolor": [ 1, 1, 1, 1 ]
+        "textcolor": null
     },
     "meter3": {
         "patching_rect": [ 150, 104, 40, 19 ],
@@ -530,18 +432,11 @@
     "par_menu_L3": {
         "patching_rect": [ 109, 104, 41, 19 ],
         "hidden": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 0.023529, 0, 0.847059, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
         "fontsize": 9,
-        "textcolor": [ 1, 1, 1, 1 ]
+        "textcolor": null
     },
     "meter4": {
         "patching_rect": [ 150, 139, 40, 19 ],
@@ -557,18 +452,11 @@
     "par_menu_L4": {
         "patching_rect": [ 109, 139, 41, 19 ],
         "hidden": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 0.023529, 0, 0.847059, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 1, 1, 1, 1 ],
         "fontsize": 9,
-        "textcolor": [ 1, 1, 1, 1 ]
+        "textcolor": null
     },
     "preset-ramp": {
         "patching_rect": [ 120, 156, 70, 16 ],
@@ -662,7 +550,7 @@
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
     "update-end": {
-        "patching_rect": [ 164, 2.5, 26, 14.5 ],
+        "patching_rect": [ 164, -2, 26, 18 ],
         "hidden": 0,
         "bgcolor": [ 0.098039, 0.713726, 0.058824, 1 ],
         "bgoncolor": [ 0.501961, 1, 0.003922, 1 ],

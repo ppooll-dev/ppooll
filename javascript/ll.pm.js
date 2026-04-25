@@ -96,7 +96,7 @@ function new_param_list(...new_list) {
         input_objects.push(r)
     })
 
-    if (btext[1]) {
+    if (btext && btext[1]) {
         at_args = btext[1].split(" ");
         nofirst();
     }
