@@ -1,5 +1,5 @@
 {
-    "window": [ 589, 127, 779, 299 ],
+    "window": [ 315, 112, 505, 284 ],
     "end1": {
         "patching_rect": [ 145, 16, 45, 17 ],
         "hidden": 0,
@@ -42,8 +42,8 @@
         "hidden": 0,
         "bgcolor": [ 0.505334, 0.705291, 1, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
-        "fontsize": 12,
-        "labelcolor": [ 0, 0, 0, 1 ],
+        "fontsize": 10,
+        "labelcolor": [ 0.4627450980392157, 0.4627450980392157, 0.4627450980392157, 1 ],
         "selectcolor": [ 0.45, 0.67, 1, 0.47 ],
         "slidercolor": [ 0, 0.070332, 0.752941, 1 ],
         "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
@@ -81,8 +81,8 @@
         "hidden": 0,
         "bgcolor": [ 0.505334, 0.705291, 1, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
-        "fontsize": 12,
-        "labelcolor": [ 0, 0, 0, 1 ],
+        "fontsize": 10,
+        "labelcolor": [ 0.44313725490196076, 0.44313725490196076, 0.44313725490196076, 1 ],
         "selectcolor": [ 0.45, 0.67, 1, 0.47 ],
         "slidercolor": [ 0, 0.070332, 0.752941, 1 ],
         "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
@@ -120,8 +120,8 @@
         "hidden": 0,
         "bgcolor": [ 0.505334, 0.705291, 1, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
-        "fontsize": 12,
-        "labelcolor": [ 0, 0, 0, 1 ],
+        "fontsize": 10,
+        "labelcolor": [ 0.5372549019607843, 0.5372549019607843, 0.5372549019607843, 1 ],
         "selectcolor": [ 0.45, 0.67, 1, 0.47 ],
         "slidercolor": [ 0, 0.070332, 0.752941, 1 ],
         "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
@@ -417,8 +417,8 @@
         "hidden": 0,
         "bgcolor": [ 0.505334, 0.705291, 1, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
-        "fontsize": 12,
-        "labelcolor": [ 0, 0, 0, 1 ],
+        "fontsize": 10,
+        "labelcolor": [ 0.5176470588235295, 0.5176470588235295, 0.5176470588235295, 1 ],
         "selectcolor": [ 0.45, 0.67, 1, 0.47 ],
         "slidercolor": [ 0, 0.070332, 0.752941, 1 ],
         "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
@@ -568,11 +568,6 @@
         "textcolor": [ 0, 0, 0, 1 ],
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
-    "presets": {
-        "patching_rect": [ 0, 156, 121, 16 ],
-        "hidden": 0,
-        "boxsize": 14
-    },
     "end2": {
         "patching_rect": [ 145, 52, 45, 17 ],
         "hidden": 0,
@@ -650,5 +645,10 @@
         "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
         "textcolor": [ 0, 0, 0, 1 ],
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
+    },
+    "presets": {
+        "patching_rect": [ 0, 156, 121, 16 ],
+        "hidden": 0,
+        "boxsize": 14
     }
 }

@@ -9,11 +9,38 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 589.0, 127.0, 190.0, 172.0 ],
+        "rect": [ 315.0, 112.0, 190.0, 172.0 ],
         "default_fontsize": 10.0,
         "toolbarvisible": 0,
         "globalpatchername": "simproov1",
         "boxes": [
+            {
+                "box": {
+                    "embedstate": [
+                        [ "boxsize", 14 ],
+                        [ "vbrgb", 0.19607843137254902, 0.19607843137254902, 0.19607843137254902, 1 ],
+                        [ "vfrgb", 1, 1, 1, 1 ],
+                        [ "vrgb2", 1, 0, 0, 1 ],
+                        [ "vrgb3", 0, 1, 0, 1 ]
+                    ],
+                    "filename": "ll.pattr_v8ui.js",
+                    "id": "obj-6",
+                    "jsarguments": [ "" ],
+                    "maxclass": "v8ui",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 0.0, 156.0, 121.0, 16.0 ],
+                    "textfile": {
+                        "filename": "ll.pattr_v8ui.js",
+                        "flags": 0,
+                        "embed": 0,
+                        "autowatch": 1
+                    },
+                    "varname": "presets"
+                }
+            },
             {
                 "box": {
                     "annotation": "start4",
@@ -138,33 +165,6 @@
                     "sliderstyle": 2,
                     "varname": "end2",
                     "zerosplitslog": 1
-                }
-            },
-            {
-                "box": {
-                    "embedstate": [
-                        [ "boxsize", 14 ],
-                        [ "vbrgb", 0.19607843137254902, 0.19607843137254902, 0.19607843137254902, 1 ],
-                        [ "vfrgb", 1, 1, 1, 1 ],
-                        [ "vrgb2", 1, 0, 0, 1 ],
-                        [ "vrgb3", 0, 1, 0, 1 ]
-                    ],
-                    "filename": "ll.pattr_v8ui.js",
-                    "id": "obj-6",
-                    "jsarguments": [ "" ],
-                    "maxclass": "v8ui",
-                    "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "parameter_enable": 0,
-                    "patching_rect": [ 0.0, 156.0, 121.0, 16.0 ],
-                    "textfile": {
-                        "filename": "ll.pattr_v8ui.js",
-                        "flags": 0,
-                        "embed": 0,
-                        "autowatch": 1
-                    },
-                    "varname": "presets"
                 }
             },
             {
@@ -399,8 +399,11 @@
                     "bgcolor": [ 0.505334, 0.705291, 1.0, 1.0 ],
                     "border": 0,
                     "fontface": 0,
+                    "fontsize": 10.0,
                     "format": [ 1.2 ],
                     "id": "obj-36",
+                    "label": [ "vol" ],
+                    "labelcolor": [ 0.5176470588235295, 0.5176470588235295, 0.5176470588235295, 1.0 ],
                     "maxclass": "ll_number",
                     "min": 0.0,
                     "mousefocus": 1,
@@ -589,7 +592,7 @@
                     "bgfillcolor_type": "color",
                     "fontsize": 9.0,
                     "id": "obj-18",
-                    "items": [ "no", ",", "ho_st1", ",", "buffer_host1", ",", "gverb@1", ",", "simproov1", ",", "xgroove@1" ],
+                    "items": [ "no", ",", "ho_st1", ",", "buffer_host1", ",", "gverb@1", ",", "simproov1" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -641,7 +644,7 @@
                     "bgfillcolor_type": "color",
                     "fontsize": 9.0,
                     "id": "obj-25",
-                    "items": [ "no", ",", "ho_st1", ",", "buffer_host1", ",", "gverb@1", ",", "simproov1", ",", "xgroove@1" ],
+                    "items": [ "no", ",", "ho_st1", ",", "buffer_host1", ",", "gverb@1", ",", "simproov1" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -818,7 +821,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 143.0, 295.0, 392.0, 239.0 ],
+                        "rect": [ 678.0, 227.0, 392.0, 239.0 ],
                         "default_fontsize": 8.0,
                         "boxes": [
                             {
@@ -1160,7 +1163,7 @@
                     "bgfillcolor_type": "color",
                     "fontsize": 9.0,
                     "id": "obj-74",
-                    "items": [ "no", ",", "ho_st1", ",", "buffer_host1", ",", "gverb@1", ",", "simproov1", ",", "xgroove@1" ],
+                    "items": [ "no", ",", "ho_st1", ",", "buffer_host1", ",", "gverb@1", ",", "simproov1" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -1186,7 +1189,7 @@
                     "bgfillcolor_type": "color",
                     "fontsize": 9.0,
                     "id": "obj-75",
-                    "items": [ "no", ",", "ho_st1", ",", "buffer_host1", ",", "gverb@1", ",", "simproov1", ",", "xgroove@1" ],
+                    "items": [ "no", ",", "ho_st1", ",", "buffer_host1", ",", "gverb@1", ",", "simproov1" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -1333,10 +1336,10 @@
                         "buffer2": [ "" ],
                         "buffer3": [ "" ],
                         "buffer4": [ "" ],
-                        "end1": [ 1.0 ],
-                        "end2": [ 1.0 ],
-                        "end3": [ 1.0 ],
-                        "end4": [ 1.0 ],
+                        "end1": [ 2000.0 ],
+                        "end2": [ 2000.0 ],
+                        "end3": [ 2000.0 ],
+                        "end4": [ 2000.0 ],
                         "go/stop1": [ 1 ],
                         "go/stop2": [ 0 ],
                         "go/stop3": [ 0 ],
@@ -1356,9 +1359,9 @@
                         "preset-ramp": [ 0.0 ],
                         "presets": [ 0 ],
                         "speed1": [ 1.0 ],
-                        "speed2": [ 1.0 ],
-                        "speed3": [ 1.0 ],
-                        "speed4": [ 1.0 ],
+                        "speed2": [ 0.5 ],
+                        "speed3": [ 2.0 ],
+                        "speed4": [ 4.0 ],
                         "start1": [ 0.0 ],
                         "start2": [ 0.0 ],
                         "start3": [ 0.0 ],
@@ -1471,8 +1474,11 @@
                     "bgcolor": [ 0.505334, 0.705291, 1.0, 1.0 ],
                     "border": 0,
                     "fontface": 0,
+                    "fontsize": 10.0,
                     "format": [ 1.2 ],
                     "id": "obj-47",
+                    "label": [ "vol" ],
+                    "labelcolor": [ 0.5372549019607843, 0.5372549019607843, 0.5372549019607843, 1.0 ],
                     "maxclass": "ll_number",
                     "min": 0.0,
                     "mousefocus": 1,
@@ -1545,8 +1551,11 @@
                     "bgcolor": [ 0.505334, 0.705291, 1.0, 1.0 ],
                     "border": 0,
                     "fontface": 0,
+                    "fontsize": 10.0,
                     "format": [ 1.2 ],
                     "id": "obj-72",
+                    "label": [ "vol" ],
+                    "labelcolor": [ 0.44313725490196076, 0.44313725490196076, 0.44313725490196076, 1.0 ],
                     "maxclass": "ll_number",
                     "min": 0.0,
                     "mousefocus": 1,
@@ -1619,8 +1628,11 @@
                     "bgcolor": [ 0.505334, 0.705291, 1.0, 1.0 ],
                     "border": 0,
                     "fontface": 0,
+                    "fontsize": 10.0,
                     "format": [ 1.2 ],
                     "id": "obj-67",
+                    "label": [ "vol" ],
+                    "labelcolor": [ 0.4627450980392157, 0.4627450980392157, 0.4627450980392157, 1.0 ],
                     "maxclass": "ll_number",
                     "min": 0.0,
                     "mousefocus": 1,
