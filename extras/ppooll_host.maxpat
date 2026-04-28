@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 64.0, 134.0, 130.0, 125.0 ],
+        "rect": [ 66.0, 136.0, 130.0, 125.0 ],
         "default_fontsize": 11.595187,
         "toolbarvisible": 0,
         "globalpatchername": "ho_st1",
@@ -5765,7 +5765,7 @@
                                                             "modernui": 1
                                                         },
                                                         "classnamespace": "box",
-                                                        "rect": [ 500.0, 300.0, 200.0, 190.0 ],
+                                                        "rect": [ 500.0, 300.0, 800.0, 800.0 ],
                                                         "openrect": [ 0.0, 0.0, 800.0, 800.0 ],
                                                         "openrectmode": 0,
                                                         "openinpresentation": 1,
@@ -5807,8 +5807,6 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 0,
-                                                                        "node_bin_path": "",
-                                                                        "npm_bin_path": "",
                                                                         "watch": 0
                                                                     },
                                                                     "text": "node.script ll.node.folders.js",
@@ -15257,6 +15255,28 @@
                                                         "boxes": [
                                                             {
                                                                 "box": {
+                                                                    "id": "obj-9",
+                                                                    "maxclass": "message",
+                                                                    "numinlets": 2,
+                                                                    "numoutlets": 1,
+                                                                    "outlettype": [ "" ],
+                                                                    "patching_rect": [ 73.22, 310.8, 123.0, 22.0 ],
+                                                                    "text": "setsymbol (__acts__)"
+                                                                }
+                                                            },
+                                                            {
+                                                                "box": {
+                                                                    "id": "obj-7",
+                                                                    "maxclass": "newobj",
+                                                                    "numinlets": 3,
+                                                                    "numoutlets": 2,
+                                                                    "outlettype": [ "", "bang" ],
+                                                                    "patching_rect": [ 72.5, 347.0, 83.0, 22.0 ],
+                                                                    "text": "ll.pf act_menu"
+                                                                }
+                                                            },
+                                                            {
+                                                                "box": {
                                                                     "id": "obj-8",
                                                                     "maxclass": "button",
                                                                     "numinlets": 1,
@@ -15598,7 +15618,6 @@
                                                                                                     "numinlets": 1,
                                                                                                     "numoutlets": 0,
                                                                                                     "patching_rect": [ 0.0, 1.5, 425.0, 60.0 ],
-                                                                                                    "presentation_linecount": 4,
                                                                                                     "text": "define, where ppooll can find folders of acts\n     must have subfolder: 'patchers/ppooll.acts' \n     for example, add \"~/Documents/Max 9/Library/ppooll_local\"\n     where acts are in: \"ppooll_local/patchers/ppooll.acts\""
                                                                                                 }
                                                                                             },
@@ -15619,7 +15638,7 @@
                                                                                                     "numoutlets": 4,
                                                                                                     "outlettype": [ "list", "", "", "" ],
                                                                                                     "patching_rect": [ 0.0, 58.0, 431.0, 175.0 ],
-                                                                                                    "rows": 1,
+                                                                                                    "rows": 2,
                                                                                                     "vscroll": 0
                                                                                                 }
                                                                                             },
@@ -15812,6 +15831,14 @@
                                                             {
                                                                 "patchline": {
                                                                     "destination": [ "obj-40", 0 ],
+                                                                    "order": 1,
+                                                                    "source": [ "obj-3", 0 ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "patchline": {
+                                                                    "destination": [ "obj-9", 0 ],
+                                                                    "order": 0,
                                                                     "source": [ "obj-3", 0 ]
                                                                 }
                                                             },
@@ -15824,7 +15851,7 @@
                                                             {
                                                                 "patchline": {
                                                                     "destination": [ "obj-1", 0 ],
-                                                                    "midpoints": [ 58.5, 263.0, 36.0, 263.0, 36.0, 143.0, 58.5, 143.0 ],
+                                                                    "midpoints": [ 58.5, 267.02734375, 36.0, 267.02734375, 36.0, 143.0, 58.5, 143.0 ],
                                                                     "source": [ "obj-40", 0 ]
                                                                 }
                                                             },
@@ -15850,6 +15877,12 @@
                                                                 "patchline": {
                                                                     "destination": [ "obj-5", 0 ],
                                                                     "source": [ "obj-8", 0 ]
+                                                                }
+                                                            },
+                                                            {
+                                                                "patchline": {
+                                                                    "destination": [ "obj-7", 0 ],
+                                                                    "source": [ "obj-9", 0 ]
                                                                 }
                                                             }
                                                         ]
@@ -18191,7 +18224,7 @@
                         "audioON/OFF": [ 0 ],
                         "chans": [ 16 ],
                         "def": [ -1 ],
-                        "envi_menu": [ "" ],
+                        "envi_menu": [ "(environments)" ],
                         "favorites": [ "(favorites)" ],
                         "jit.on": [ 0 ],
                         "menubar": [ 0 ],
@@ -18199,7 +18232,7 @@
                         "rec": [ 0 ],
                         "screen": [ 0 ],
                         "stereo": [ 0 ],
-                        "time": [ 81134.0 ],
+                        "time": [ 39986.0 ],
                         "vol": [ 1.0 ],
                         "vol_ramp": [ 10 ],
                         "vol_slider": [ 1.0 ],
