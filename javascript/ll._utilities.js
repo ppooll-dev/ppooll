@@ -173,10 +173,11 @@ exports.findInParentPatchers = function (varname, patcher) {
 // get all files in a folder
 exports.getFilesInFolder = (folder, typelist=[], omitExt=false) => {
     var f = new Folder(folder);
-    const files = [];
+    
     if(typelist.length)
         f.typelist = typelist;
-    //post("\n", "folder",folder,f,"\n");
+
+    const files = [];
     while (!f.end) {
         files.push(omitExt ? exports.getExtension(f.filename)[0] : f.filename);
         f.next();
@@ -185,10 +186,14 @@ exports.getFilesInFolder = (folder, typelist=[], omitExt=false) => {
 }
 
 // get file extension, return [name_only, ext]
-exports.getExtension = (filename) => {
+exports.getExtension = function(filename) {
+    var splitAt = filename.lastIndexOf(".");
+    if (splitAt === -1) {
+        return [filename, ""];  // no extension found
+    }
     return [
-        filename.substring(0, filename.lastIndexOf(".")),
-        filename.substring(filename.lastIndexOf(".") + 1),
+        filename.substring(0, splitAt),
+        filename.substring(splitAt + 1)
     ];
 };
 

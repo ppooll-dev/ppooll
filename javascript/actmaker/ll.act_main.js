@@ -999,7 +999,7 @@ function write_tetris(name) {
     }
 
     tetrisDict.export_json(fullPath);
-    messnamed("tetris_refresh_menu", "bang");
+    tetris_refresh_menu()
 
     // check in tetris_menu
     tetris_menu.message("clearchecks");
@@ -1039,7 +1039,7 @@ function write_preset(name) {
     }
 
     write_preset_path(fullPath);
-    messnamed("pres_refresh_menu", "bang");
+    pres_refresh_menu();
 
     // check in pres_menu
     prev_pres_menu = name;
@@ -1087,6 +1087,11 @@ function anySlotHasActiveStore(pattrObj) {
 }
 
 function read_preset_path(fullPath, presetName = 0) {
+    if(!ll.fileExistsStrict(fullPath)){
+        // post("old ppooll preset (not json)\n")
+        return
+    }
+
     act_patcher.getnamed("pat").message("read", fullPath);
     act_patcher.getnamed("pat").message(1000);
 
@@ -1138,7 +1143,7 @@ function set_preset_menu(args) {
     const pat = act_patcher.getnamed("pat");
 
     if (selection === "write" && !is_llenviread) {
-        post(selection, prev_pres_menu, "\n");
+        // post(selection, prev_pres_menu, "\n");
         // show popup with last selected name
         // messnamed("ll_preset_menu", act_name_index, "write", prev_pres_menu);
         const dialog = this.patcher
@@ -1221,7 +1226,7 @@ function pres_refresh_menu() {
 
     refresh_menu(
         "presets",
-        ["TEXT", "JSON"],
+        [], // ["DATA", "JSON"],
         "P",
         pres_menu,
         additionalItems,
