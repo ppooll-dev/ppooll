@@ -1,5 +1,57 @@
 {
-    "window": [ 102, 267, 292, 439 ],
+    "window": [ 192, 309, 382, 498 ],
+    "progress4": {
+        "patching_rect": [ 0, 163, 190, 10 ],
+        "hidden": 0,
+        "bgcolor": [ 0, 0, 0, 1 ],
+        "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
+        "fontsize": 12,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45, 0.67, 1, 0.47 ],
+        "slidercolor": [ 1, 0.9686274509803922, 0, 1 ],
+        "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
+        "textcolor": [ 0, 0, 0, 0 ],
+        "textcolornofocus": [ 0.48, 0.48, 0.48, 0 ]
+    },
+    "progress3": {
+        "patching_rect": [ 0, 124, 190, 10 ],
+        "hidden": 0,
+        "bgcolor": [ 0, 0, 0, 1 ],
+        "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
+        "fontsize": 12,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45, 0.67, 1, 0.47 ],
+        "slidercolor": [ 1, 0.9686274509803922, 0, 1 ],
+        "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
+        "textcolor": [ 0, 0, 0, 0 ],
+        "textcolornofocus": [ 0.48, 0.48, 0.48, 0 ]
+    },
+    "progress2": {
+        "patching_rect": [ 0, 85, 190, 10 ],
+        "hidden": 0,
+        "bgcolor": [ 0, 0, 0, 1 ],
+        "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
+        "fontsize": 12,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45, 0.67, 1, 0.47 ],
+        "slidercolor": [ 1, 0.9686274509803922, 0, 1 ],
+        "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
+        "textcolor": [ 0, 0, 0, 0 ],
+        "textcolornofocus": [ 0.48, 0.48, 0.48, 0 ]
+    },
+    "progress1": {
+        "patching_rect": [ 0, 50, 190, 10 ],
+        "hidden": 0,
+        "bgcolor": [ 0, 0, 0, 1 ],
+        "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
+        "fontsize": 12,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45, 0.67, 1, 0.47 ],
+        "slidercolor": [ 1, 0.9686274509803922, 0, 1 ],
+        "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
+        "textcolor": [ 0, 0, 0, 0 ],
+        "textcolornofocus": [ 0.48, 0.48, 0.48, 0 ]
+    },
     "end1": {
         "patching_rect": [ 145, 16, 45, 17 ],
         "hidden": 0,
@@ -25,7 +77,7 @@
         "warmcolor": [ 0.764706, 0.972549, 0.392157, 1 ]
     },
     "loop3": {
-        "patching_rect": [ 38, 87, 15, 17 ],
+        "patching_rect": [ 38, 94, 15, 17 ],
         "hidden": 0,
         "bgcolor": [ 0.75, 0.75, 0.75, 1 ],
         "bgoncolor": [ 1, 0, 0, 1 ],
@@ -38,7 +90,7 @@
         "usetextovercolor": 1
     },
     "vol3": {
-        "patching_rect": [ 0, 87, 38, 17 ],
+        "patching_rect": [ 0, 94, 38, 17 ],
         "hidden": 0,
         "bgcolor": [ 0.505334, 0.705291, 1, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -51,7 +103,7 @@
         "textcolornofocus": [ 0.862745, 0.870588, 0.878431, 0.788235 ]
     },
     "go/stop3": {
-        "patching_rect": [ 53, 87, 15, 17 ],
+        "patching_rect": [ 53, 94, 15, 17 ],
         "hidden": 0,
         "bgcolor": [ 0.75, 0.75, 0.75, 1 ],
         "bgoncolor": [ 1, 0, 0, 1 ],
@@ -64,7 +116,7 @@
         "usetextovercolor": 1
     },
     "loop4": {
-        "patching_rect": [ 38, 122, 15, 17 ],
+        "patching_rect": [ 38, 133, 15, 17 ],
         "hidden": 0,
         "bgcolor": [ 0.75, 0.75, 0.75, 1 ],
         "bgoncolor": [ 1, 0, 0, 1 ],
@@ -77,7 +129,7 @@
         "usetextovercolor": 1
     },
     "vol4": {
-        "patching_rect": [ 0, 122, 38, 17 ],
+        "patching_rect": [ 0, 133, 38, 17 ],
         "hidden": 0,
         "bgcolor": [ 0.505334, 0.705291, 1, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -90,7 +142,7 @@
         "textcolornofocus": [ 0.862745, 0.870588, 0.878431, 0.788235 ]
     },
     "go/stop4": {
-        "patching_rect": [ 53.000004, 122, 14.999999999999993, 17 ],
+        "patching_rect": [ 53, 133, 15, 17 ],
         "hidden": 0,
         "bgcolor": [ 0.75, 0.75, 0.75, 1 ],
         "bgoncolor": [ 1, 0, 0, 1 ],
@@ -103,7 +155,7 @@
         "usetextovercolor": 1
     },
     "loop2": {
-        "patching_rect": [ 38, 52, 15, 17 ],
+        "patching_rect": [ 38, 55, 15, 17 ],
         "hidden": 0,
         "bgcolor": [ 0.75, 0.75, 0.75, 1 ],
         "bgoncolor": [ 1, 0, 0, 1 ],
@@ -116,7 +168,7 @@
         "usetextovercolor": 1
     },
     "vol2": {
-        "patching_rect": [ 0, 52, 38, 17 ],
+        "patching_rect": [ 0, 55, 38, 17 ],
         "hidden": 0,
         "bgcolor": [ 0.505334, 0.705291, 1, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -129,7 +181,7 @@
         "textcolornofocus": [ 0.862745, 0.870588, 0.878431, 0.788235 ]
     },
     "go/stop2": {
-        "patching_rect": [ 53, 52, 15, 17 ],
+        "patching_rect": [ 53, 55, 15, 17 ],
         "hidden": 0,
         "bgcolor": [ 0.75, 0.75, 0.75, 1 ],
         "bgoncolor": [ 1, 0, 0, 1 ],
@@ -142,7 +194,7 @@
         "usetextovercolor": 1
     },
     "speed2": {
-        "patching_rect": [ 68, 52, 32, 17 ],
+        "patching_rect": [ 68, 55, 32, 17 ],
         "hidden": 0,
         "bgcolor": [ 0, 0.522, 0.667, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -155,7 +207,7 @@
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
     "speed3": {
-        "patching_rect": [ 68, 88, 32, 17 ],
+        "patching_rect": [ 68, 94, 32, 17 ],
         "hidden": 0,
         "bgcolor": [ 0, 0.522, 0.667, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -168,7 +220,7 @@
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
     "speed4": {
-        "patching_rect": [ 68, 123, 32, 17 ],
+        "patching_rect": [ 68, 133, 32, 17 ],
         "hidden": 0,
         "bgcolor": [ 0, 0.522, 0.667, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -181,7 +233,7 @@
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
     "act_menu3": {
-        "patching_rect": [ 69, 104, 41, 19 ],
+        "patching_rect": [ 69, 111, 41, 19 ],
         "hidden": 0,
         "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
         "bordercolor": [ 0, 0, 0, 0 ],
@@ -190,7 +242,7 @@
         "textcolor": null
     },
     "act_menu2": {
-        "patching_rect": [ 69, 69, 41, 19 ],
+        "patching_rect": [ 69, 72, 41, 19 ],
         "hidden": 0,
         "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
         "bordercolor": [ 0, 0, 0, 0 ],
@@ -221,7 +273,7 @@
         "textcolor": null
     },
     "buffer2": {
-        "patching_rect": [ 0, 69, 53, 19 ],
+        "patching_rect": [ 0, 72, 53, 19 ],
         "hidden": 0,
         "bgcolor": [ 1, 0.392157, 0.392157, 1 ],
         "bordercolor": [ 0, 0, 0, 0 ],
@@ -230,7 +282,7 @@
         "textcolor": null
     },
     "buffer3": {
-        "patching_rect": [ 0, 104, 53, 19 ],
+        "patching_rect": [ 0, 111, 53, 19 ],
         "hidden": 0,
         "bgcolor": [ 1, 0.392157, 0.392157, 1 ],
         "bordercolor": [ 0, 0, 0, 0 ],
@@ -239,7 +291,7 @@
         "textcolor": null
     },
     "buffer4": {
-        "patching_rect": [ 0, 139, 53, 19 ],
+        "patching_rect": [ 0, 150, 53, 19 ],
         "hidden": 0,
         "bgcolor": [ 1, 0.392157, 0.392157, 1 ],
         "bordercolor": [ 0, 0, 0, 0 ],
@@ -279,7 +331,7 @@
         "textcolor": null
     },
     "act_menu4": {
-        "patching_rect": [ 69, 139, 41, 19 ],
+        "patching_rect": [ 69, 150, 41, 19 ],
         "hidden": 0,
         "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
         "bordercolor": [ 0, 0, 0, 0 ],
@@ -288,7 +340,7 @@
         "textcolor": null
     },
     "note1": {
-        "patching_rect": [ 134, 196, 35, 19 ],
+        "patching_rect": [ 134, 244, 35, 19 ],
         "hidden": 1,
         "bgcolor": [ 0.866667, 0.866667, 0.866667, 1 ],
         "fontsize": 9,
@@ -297,7 +349,7 @@
         "tricolor": [ 0.75, 0.75, 0.75, 1 ]
     },
     "note2": {
-        "patching_rect": [ 134, 212, 35, 19 ],
+        "patching_rect": [ 134, 261, 35, 19 ],
         "hidden": 1,
         "bgcolor": [ 0.866667, 0.866667, 0.866667, 1 ],
         "fontsize": 9,
@@ -306,7 +358,7 @@
         "tricolor": [ 0.75, 0.75, 0.75, 1 ]
     },
     "note3": {
-        "patching_rect": [ 134, 228, 35, 19 ],
+        "patching_rect": [ 134, 277, 35, 19 ],
         "hidden": 1,
         "bgcolor": [ 0.866667, 0.866667, 0.866667, 1 ],
         "fontsize": 9,
@@ -315,7 +367,7 @@
         "tricolor": [ 0.75, 0.75, 0.75, 1 ]
     },
     "note4": {
-        "patching_rect": [ 134, 245, 35, 19 ],
+        "patching_rect": [ 134, 294, 35, 19 ],
         "hidden": 1,
         "bgcolor": [ 0.866667, 0.866667, 0.866667, 1 ],
         "fontsize": 9,
@@ -372,7 +424,7 @@
         "usetextovercolor": 1
     },
     "toplug2": {
-        "patching_rect": [ 51, 69, 18, 19 ],
+        "patching_rect": [ 51, 72, 18, 19 ],
         "hidden": 0,
         "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
         "bordercolor": [ 0, 0, 0, 0 ],
@@ -381,7 +433,7 @@
         "textcolor": null
     },
     "toplug3": {
-        "patching_rect": [ 51, 104, 18, 19 ],
+        "patching_rect": [ 51, 111, 18, 19 ],
         "hidden": 0,
         "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
         "bordercolor": [ 0, 0, 0, 0 ],
@@ -390,7 +442,7 @@
         "textcolor": null
     },
     "toplug4": {
-        "patching_rect": [ 51, 139, 18, 19 ],
+        "patching_rect": [ 51, 150, 18, 19 ],
         "hidden": 0,
         "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
         "bordercolor": [ 0, 0, 0, 0 ],
@@ -399,7 +451,7 @@
         "textcolor": null
     },
     "meter2": {
-        "patching_rect": [ 150, 69, 40, 19 ],
+        "patching_rect": [ 150, 72, 40, 19 ],
         "hidden": 0,
         "bgcolor": [ 0, 0, 0, 1 ],
         "coldcolor": [ 0.047059, 0.972549, 0.392157, 1 ],
@@ -410,7 +462,7 @@
         "warmcolor": [ 0.764706, 0.972549, 0.392157, 1 ]
     },
     "par_menu_L2": {
-        "patching_rect": [ 109, 69, 41, 19 ],
+        "patching_rect": [ 109, 72, 41, 19 ],
         "hidden": 0,
         "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
         "bordercolor": [ 0, 0, 0, 0 ],
@@ -419,7 +471,7 @@
         "textcolor": null
     },
     "meter3": {
-        "patching_rect": [ 150, 104, 40, 19 ],
+        "patching_rect": [ 150, 111, 40, 19 ],
         "hidden": 0,
         "bgcolor": [ 0, 0, 0, 1 ],
         "coldcolor": [ 0.047059, 0.972549, 0.392157, 1 ],
@@ -430,7 +482,7 @@
         "warmcolor": [ 0.764706, 0.972549, 0.392157, 1 ]
     },
     "par_menu_L3": {
-        "patching_rect": [ 109, 104, 41, 19 ],
+        "patching_rect": [ 109, 111, 41, 19 ],
         "hidden": 0,
         "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
         "bordercolor": [ 0, 0, 0, 0 ],
@@ -439,7 +491,7 @@
         "textcolor": null
     },
     "meter4": {
-        "patching_rect": [ 150, 139, 40, 19 ],
+        "patching_rect": [ 150, 150, 40, 19 ],
         "hidden": 0,
         "bgcolor": [ 0, 0, 0, 1 ],
         "coldcolor": [ 0.047059, 0.972549, 0.392157, 1 ],
@@ -450,7 +502,7 @@
         "warmcolor": [ 0.764706, 0.972549, 0.392157, 1 ]
     },
     "par_menu_L4": {
-        "patching_rect": [ 109, 139, 41, 19 ],
+        "patching_rect": [ 109, 150, 41, 19 ],
         "hidden": 0,
         "bgcolor": [ 0.023529, 0, 0.847059, 1 ],
         "bordercolor": [ 0, 0, 0, 0 ],
@@ -459,7 +511,7 @@
         "textcolor": null
     },
     "preset-ramp": {
-        "patching_rect": [ 120, 156, 70, 16 ],
+        "patching_rect": [ 120, 173, 70, 16 ],
         "hidden": 0,
         "bgcolor": [ 1, 1, 1, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -472,7 +524,7 @@
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
     "end2": {
-        "patching_rect": [ 145, 52, 45, 17 ],
+        "patching_rect": [ 145, 55, 45, 17 ],
         "hidden": 0,
         "bgcolor": [ 0.5450980392156862, 1, 0.22745098039215686, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -485,7 +537,7 @@
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
     "start2": {
-        "patching_rect": [ 100, 52, 45, 17 ],
+        "patching_rect": [ 100, 55, 45, 17 ],
         "hidden": 0,
         "bgcolor": [ 0.5450980392156862, 1, 0.22745098039215686, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -498,7 +550,7 @@
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
     "end3": {
-        "patching_rect": [ 145, 88, 45, 17 ],
+        "patching_rect": [ 145, 94, 45, 17 ],
         "hidden": 0,
         "bgcolor": [ 0.5450980392156862, 1, 0.22745098039215686, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -511,7 +563,7 @@
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
     "start3": {
-        "patching_rect": [ 100, 88, 45, 17 ],
+        "patching_rect": [ 100, 94, 45, 17 ],
         "hidden": 0,
         "bgcolor": [ 0.5450980392156862, 1, 0.22745098039215686, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -524,7 +576,7 @@
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
     "end4": {
-        "patching_rect": [ 145, 123, 45, 17 ],
+        "patching_rect": [ 145, 133, 45, 17 ],
         "hidden": 0,
         "bgcolor": [ 0.5450980392156862, 1, 0.22745098039215686, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -537,7 +589,7 @@
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
     "start4": {
-        "patching_rect": [ 100, 123, 45, 17 ],
+        "patching_rect": [ 100, 133, 45, 17 ],
         "hidden": 0,
         "bgcolor": [ 0.5450980392156862, 1, 0.22745098039215686, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -550,7 +602,7 @@
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
     "update-end": {
-        "patching_rect": [ 164, -2, 26, 18 ],
+        "patching_rect": [ 164, 0, 26, 16 ],
         "hidden": 0,
         "bgcolor": [ 0.098039, 0.713726, 0.058824, 1 ],
         "bgoncolor": [ 0.501961, 1, 0.003922, 1 ],
@@ -567,7 +619,7 @@
         "hidden": 0
     },
     "presets": {
-        "patching_rect": [ 0, 156, 121, 16 ],
+        "patching_rect": [ 0, 173, 121, 16 ],
         "hidden": 0,
         "boxsize": 14
     }
