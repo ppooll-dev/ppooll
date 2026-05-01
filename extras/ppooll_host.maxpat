@@ -620,6 +620,29 @@
                         "boxes": [
                             {
                                 "box": {
+                                    "id": "obj-3",
+                                    "linecount": 2,
+                                    "maxclass": "message",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 173.0, 404.0, 63.0, 35.0 ],
+                                    "text": ";\rmax clean"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "obj-1",
+                                    "maxclass": "newobj",
+                                    "numinlets": 0,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 173.0, 368.0, 50.0, 22.0 ],
+                                    "text": "ll.actout"
+                                }
+                            },
+                            {
+                                "box": {
                                     "color": [ 1.0, 0.360784, 0.682353, 1.0 ],
                                     "fontname": "Arial",
                                     "fontsize": 12.0,
@@ -3744,7 +3767,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 481.0, 37.0, 33.0, 22.0 ],
-                                                    "text": "no",
+                                                    "text": "27",
                                                     "textjustification": 1,
                                                     "varname": "audio_key"
                                                 }
@@ -3892,7 +3915,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 108.0, 187.0, 50.0, 22.0 ],
-                                                                    "text": "no"
+                                                                    "text": "27"
                                                                 }
                                                             },
                                                             {
@@ -10665,7 +10688,7 @@
                                                                     "embedstate": [
                                                                         [ "bgcolor", 0, 0, 0, 0 ],
                                                                         [ "crop", 0, 0, 1, 1 ],
-                                                                        [ "fgcolor", 0.4027662932872772, 0.38807994723320005, 0.4106276988983154, 1.1 ],
+                                                                        [ "fgcolor", 1.1, 1.1, 1.1, 1.1 ],
                                                                         [ "zoom", 0.92 ]
                                                                     ],
                                                                     "filename": "ll.logo.js",
@@ -11081,12 +11104,12 @@
                                                                 }
                                                             }
                                                         ],
-                                                        "bgcolor": [ 0.3027662932872772, 0.2880799472332001, 0.31062769889831543, 1.0 ]
+                                                        "bgcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                                                     },
                                                     "patching_rect": [ 427.0, 270.0, 64.0, 22.0 ],
                                                     "saved_object_attributes": {
                                                         "fontsize": 10.0,
-                                                        "locked_bgcolor": [ 0.3027662932872772, 0.2880799472332001, 0.31062769889831543, 1.0 ]
+                                                        "locked_bgcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                                                     },
                                                     "text": "p screen",
                                                     "varname": "screen"
@@ -18125,6 +18148,12 @@
                         "lines": [
                             {
                                 "patchline": {
+                                    "destination": [ "obj-3", 0 ],
+                                    "source": [ "obj-1", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
                                     "destination": [ "obj-21", 0 ],
                                     "midpoints": [ 129.0, 552.0 ],
                                     "source": [ "obj-12", 0 ]
@@ -18232,7 +18261,7 @@
                         "rec": [ 0 ],
                         "screen": [ 0 ],
                         "stereo": [ 0 ],
-                        "time": [ 39986.0 ],
+                        "time": [ 41744.0 ],
                         "vol": [ 1.0 ],
                         "vol_ramp": [ 10 ],
                         "vol_slider": [ 1.0 ],
