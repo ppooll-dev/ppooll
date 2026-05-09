@@ -14,7 +14,7 @@
         "rec": 0,
         "screen": 0,
         "stereo": 1,
-        "time": 40776,
+        "time": 66604,
         "vol": 1,
         "vol_ramp": 10,
         "vol_slider": 1,
@@ -96,6 +96,69 @@
             }
         }
     },
+    "control@2": {
+        "_actwindow": [ "control@", 663, 225, 852, 273 ],
+        "list_inputs": "_",
+        "osc_sendback": [ "192.168.1.193", 8002 ],
+        "ignored": [ "_", "voices_active", "limit" ],
+        "osc_send": [ "localhost", 8001 ],
+        "midi_send_port": "AU DLS Synth 1",
+        "midi_send_channel": 1,
+        "val1": [ 2, 3, 21 ],
+        "val2": [ 5, 6, 7 ],
+        "val3": 0,
+        "val4": 0,
+        "input_name": [ "_", "freq", "phase" ],
+        "in_lo": [ "-", 0.015, 0.015 ],
+        "in_hi": [ "-", 0.125, 0.125 ],
+        "name_user": [ "_", "nn", "nn" ],
+        "in_min": [ "_", 0, 0 ],
+        "in_max": [ "_", 1, 1 ],
+        "acts": [ "_", "mc.mod2", "mc.mod2" ],
+        "pars": [ "_", "freq", "phase" ],
+        "list_item": [ "_", 0, 0 ],
+        "modes": [ "_", "scale", "scale" ],
+        "opt1": [ "_", 0, 0 ],
+        "opt2": [ "_", 1, 1 ],
+        "opt3": [ "_", 0, 0 ],
+        "opt4": [ "_", 0, 0 ],
+        "ON": [ "_", 1, 1 ],
+        "par_type": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+        "act_par": "::_::_",
+        "routingPos": [ 103, 705, 833, 993 ],
+        "act": {
+            "active_store": 0,
+            "master": 0,
+            "pres_menu": "(presets)",
+            "tetris_menu": "(tetris)",
+            "title_menu": ""
+        },
+        "input_menu": "ppooll",
+        "on/off": 1,
+        "routingW": 0,
+        "throttle": 500,
+        "output_menu": 0,
+        "send_back": 0,
+        "send_back_light": 0,
+        "osc_receive_port": 8001,
+        "act_suggested": 1,
+        "chans": 1,
+        "act_menu": "mc.mod1",
+        "baud_rate": "28800",
+        "hi_menu": "Keyboard Backlight",
+        "midi_channels": "all_channels",
+        "midi_receive_port": "-no-",
+        "note_mode": "no_notes",
+        "serial_open-close": "open",
+        "serial_port": "debug-console",
+        "wacom_menu": 0,
+        "presets": 0,
+        "sub": {
+            "routing": {
+                "u711011814": -1
+            }
+        }
+    },
     "mc.mod1": {
         "_actwindow": [ "mc.mod", 457, 302, 758, 472 ],
         "chance": 1,
@@ -114,11 +177,12 @@
         "max_mcspread": 0,
         "min": 0,
         "min_mcspread": 0,
+        "more_button": 1,
         "phase": 0.125,
         "preset-ramp": 0,
         "presets": 0,
         "scope_auto": 0,
-        "scope_displaychan": 1,
+        "scope_displaychan": 8,
         "shape": 2,
         "shape_mcspread": 0,
         "shape_quicksel": 2,
@@ -137,6 +201,15 @@
             "pres_menu": "(presets)",
             "tetris_menu": "(tetris)",
             "title_menu": ""
+        },
+        "more": {
+            "act_gate": "no",
+            "act_ramp": "no",
+            "act_trigger": "no",
+            "close": 0,
+            "par_gate": "-no-",
+            "par_ramp": "-no-",
+            "par_trigger": "out.9"
         },
         "ll.blues": {
             "status": [ 1, 1, 0, 0, 0, 0, 0 ],
@@ -164,11 +237,12 @@
         "max_mcspread": 0,
         "min": 0,
         "min_mcspread": 0,
+        "more_button": 1,
         "phase": 0.125,
         "preset-ramp": 0,
         "presets": 0,
         "scope_auto": 0,
-        "scope_displaychan": 1,
+        "scope_displaychan": 8,
         "shape": 1,
         "shape_mcspread": 0,
         "shape_quicksel": 1,
@@ -187,6 +261,15 @@
             "pres_menu": "(presets)",
             "tetris_menu": "(tetris)",
             "title_menu": ""
+        },
+        "more": {
+            "act_gate": "no",
+            "act_ramp": "no",
+            "act_trigger": "no",
+            "close": 0,
+            "par_gate": "-no-",
+            "par_ramp": "-no-",
+            "par_trigger": "out.9"
         },
         "ll.blues": {
             "status": [ 1, 1, 0, 0, 0, 0, 0 ],
@@ -214,6 +297,8 @@
     },
     "op@1": {
         "_actwindow": [ "op@", 781, 493, 1097, 599 ],
+        "leftMode": 1,
+        "rightMode": 0,
         "act_numoutput": "no",
         "clipMax": 1,
         "clipMin": -1,
@@ -225,16 +310,14 @@
         "disp_rightchan": 0,
         "lPreNum": 0,
         "lPreSig": 0,
-        "leftMode": 1,
         "numOutInterval": 100,
         "op": 27,
-        "pRampMs": 1000,
+        "pRampMs": 0,
         "par_numoutput": "-no-",
         "preset-ramp": 0,
         "presets": 0,
         "rPreNum": 0,
         "rPreSig": 0,
-        "rightMode": 0,
         "roundMode": 0,
         "roundPos": 0,
         "scaleExpVal": 1,
@@ -248,8 +331,8 @@
         "smoothMode": 0,
         "smoothUp": 0,
         "switchOps": 0,
-        "left_storage": 8,
-        "right_storage": 8,
+        "syncMult": 0,
+        "syncto": "sync-off",
         "act": {
             "active_store": 0,
             "master": 0,
@@ -257,11 +340,21 @@
             "tetris_menu": "(tetris)",
             "title_menu": ""
         },
+        "sub": {
+            "inputrouting": {
+                "left-storage": {
+                    "leftStorage": [ 8, 0, 0, 0, 0, 0, 0, 0 ]
+                },
+                "right-storage": {
+                    "rightStorage": [ 0, 0, 0, 0, 0, 0, 0, 0 ]
+                }
+            }
+        },
         "ll.blues": {
             "status": [ 3, 0, 0, 0, 0, 0, 1 ],
             "outputs~": [ "sinus1~freq.1", "_", "_", "_", "_", "_", "_", "_" ],
             "outputsMix~": [ "no~-no-", "_" ],
-            "chans": [ 2, 8 ],
+            "chans": [ 8, 8 ],
             "levels": [ 0, 0, 0, 0, 10, 0, 0.5 ]
         }
     },
