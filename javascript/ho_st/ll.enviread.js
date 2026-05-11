@@ -108,7 +108,7 @@ function loadAct() {
         environment.buffer_host1.ll_buffers.buffers.forEach(b => {
             // if starts with environmentsP/, adjust the file path to read from this
             //   environment folder
-            if(b.full_path.startsWith("environmentsP/")){
+            if(b.full_path && b.full_path.startsWith("environmentsP/")){
                 b.full_path = `${dict.props.path}/buffers/${b.file_name}`
             }
         })
