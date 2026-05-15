@@ -1,5 +1,5 @@
 {
-    "window": [ 453, 373, 754, 543 ],
+    "window": [ 457, 301, 758, 471 ],
     "act": {
         "patching_rect": [ 0, 0, 64.35546493530273, 16 ],
         "hidden": 0
@@ -226,7 +226,7 @@
         "usetextovercolor": 1
     },
     "min": {
-        "patching_rect": [ 152, 116, 104, 12 ],
+        "patching_rect": [ 203, 116, 53, 12.25 ],
         "hidden": 0,
         "bgcolor": [ 1, 1, 1, 1 ],
         "bordercolor": [ 1, 1, 1, 1 ],
@@ -239,7 +239,7 @@
         "textcolornofocus": [ 0.835294117647059, 0.215686274509804, 0.317647058823529, 1 ]
     },
     "max": {
-        "patching_rect": [ 152, 130, 104, 12 ],
+        "patching_rect": [ 203, 130, 53, 12.25 ],
         "hidden": 0,
         "bgcolor": [ 1, 1, 1, 1 ],
         "bordercolor": [ 1, 1, 1, 1 ],
@@ -422,6 +422,23 @@
     },
     "scope_auto": {
         "patching_rect": [ 203, 98, 22, 16 ],
+        "hidden": 0,
+        "bgcolor": [ 1, 1, 1, 1 ],
+        "bgoncolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1 ],
+        "fontsize": 12,
+        "legacytextcolor": 0,
+        "textcolor": [ 0.835294117647059, 0.215686274509804, 0.317647058823529, 1 ],
+        "textoncolor": [ 0.835294117647059, 0.215686274509804, 0.317647058823529, 1 ],
+        "textovercolor": [ 1, 1, 1, 1 ],
+        "usebgoncolor": 1,
+        "usetextovercolor": 1
+    },
+    "more": {
+        "patching_rect": [ 409, 130.25, 48, 22 ],
+        "hidden": 1
+    },
+    "more_button": {
+        "patching_rect": [ 151, 129, 49, 13.25 ],
         "hidden": 0,
         "bgcolor": [ 1, 1, 1, 1 ],
         "bgoncolor": [ 0.333333333333333, 0.537254901960784, 0.96078431372549, 1 ],
