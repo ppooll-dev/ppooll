@@ -224,7 +224,7 @@ function ramp(a) {
 }
 
 function recall(prev, next, amount) {
-    post("do i happen ?", prev, next, amount, "\n");
+    post("ll.pattr_v8ui recall(): do i happen ?", prev, next, amount, "\n");
     // external recall message from pattrstorage-style logic:
     // match recall prev next amt
     // myval = [prev, next, amount];
@@ -571,6 +571,8 @@ function store(slot) {
     pat = this.patcher.getnamed("pat");
     pat.message("store", slot);
     pat.message("getslotlist");
+    outlet(0, "store", slot);
+
     // post(act_name, "\n");
     ll_global.patchers[act_name]
         .getnamed("act")
@@ -591,6 +593,7 @@ function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
             slots[click] = false;
             pat.message("delete", click);
             pat.message("getslotlist");
+            outlet(0, "delete", click)
             mgraphics.redraw();
             return;
         }
@@ -609,6 +612,7 @@ function onclick(x, y, but, mod1, shift, capslock, option, mod2) {
                 slots[click] = false;
                 pat.message("delete", click);
                 pat.message("getslotlist");
+                outlet(0, "delete", click)
                 mgraphics.redraw();
             } else {
                 // OPTION-click: do NOT change preset
