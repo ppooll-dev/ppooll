@@ -25,7 +25,8 @@ var empty_prf_DEFAULT = {
         host_channels: 2,
         sort_envi_by: "name", // ["name", "recent"]
         envi_history: [],
-        time_format: "24hr"
+        time_format: "24hr",
+        show_actupdate: 0,
     },
     file_paths: {
         quickrecord_path: 0,
@@ -175,6 +176,18 @@ function setcluewindow(c) {
     if (c) max.showclue();
 
     ll_prf_rewrite();
+}
+
+var show_actupdate = 0;
+declareattribute("show_actupdate", { style: "onoff", setter: "setshow_actupdate" });
+function setshow_actupdate(c) {
+    show_actupdate = c;
+    preferences.set("general::show_actupdate", c);
+    // if (c) max.showclue();
+
+    ll_prf_rewrite();
+
+    messnamed("ll_prf_actupdate", show_actupdate);
 }
 
 var quickrecord_path = "";
@@ -372,6 +385,10 @@ function readfile() {
     // general::clue_window
     cluewindow = preferences.get("general::cluewindow");
     if (cluewindow) max.showclue(); // can only be shown, not hidden
+
+    // general::show_actupdate
+    show_actupdate = preferences.get("general::show_actupdate");
+    if (show_actupdate) messnamed("ll_prf_actupdate", show_actupdate); // can only be shown, not hidden
 
     // file_paths::quickrecord_path
     quickrecord_path = preferences.get("file_paths::quickrecord_path");
