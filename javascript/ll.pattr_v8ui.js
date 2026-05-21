@@ -235,7 +235,10 @@ function recall(prev, next, amount) {
 }
 
 function write() {}
-function read() {}
+
+function read() {
+    outlet(0,"getslotlist"); // get a slotlist whenever new things are read.
+}
 
 function clear() {
     slots = [];
@@ -560,6 +563,7 @@ function slotlist() {
 
 function bang() {
     mgraphics.redraw();
+    outlet(0, current_slot());
 }
 
 function q_size(v) {

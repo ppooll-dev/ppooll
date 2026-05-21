@@ -22,8 +22,10 @@ function getJSONfromDictName(name){
     return JSON.parse((new Dict(name)).stringify());
 }
 
-function console(objname, message, type){
-    ll_report.console.push([objname, message, type]);
+function console(...args){
+    const objname = args.shift();
+    const type = args.pop();
+    ll_report.console.push([objname, args.join(" "), type]);
 }
 
 function write_report(){
