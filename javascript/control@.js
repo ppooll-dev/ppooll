@@ -168,8 +168,8 @@ function allpars() {
         windowbar_obj.message("set_wind", "visible", ar);
     else if (p === "output_menu") {
     	//post("output_menu",ar,"\n");
-		let modesfix1 = ["none", "none", "text", "text", "tog_0_1", "num_1.2", "num_1.2", "menu"];
-		let modesfix2 = ["menu", "num_1.2","num_1.2", "num_1.2", "num_1.2"];
+		let modesfix1 = ["none", "none", "text", "text", "tog_0_1", "num_auto", "num_auto", "menu"];
+		let modesfix2 = ["menu", "num_auto", "num_auto", "num_auto", "num_auto"];
 		if (ar == 0) listblock_obj.message("modes",[...modesfix1, "menu", "num", ...modesfix2]);
 		if (ar == 2) listblock_obj.message("modes",[...modesfix1, "num", "num", ...modesfix2]);
     }
@@ -715,8 +715,15 @@ function reset() {
     const midi_items = new Dict();
     midi_items.set("items", "-no-", "append", "~refresh~");
     ap.getnamed("midi_receive_port").message("dictionary", midi_items.name);
+
+    ap.getnamed("act_menu").setvalueof("no");
     
     //ap.getnamed("list_inputs_spread").setvalueof(0);
+    ap.getnamed("val1").setvalueof(0);
+    ap.getnamed("val2").setvalueof(0);
+    ap.getnamed("val3").setvalueof(0);
+    ap.getnamed("val4").setvalueof(0);
+
     ap.getnamed("list_inputs").setvalueof("_");
 	ap.getnamed("ignored").setvalueof("_");
 	ap.getnamed("send_back").setvalueof(0);

@@ -808,10 +808,15 @@ function m_button(x,y,drag){
 	}
 }
 function m_num(x,y,drag){
-	num_init()
+    num_init();
 
-	if (ccm1 != "none") lllnum.message("format",Number(ccm1))
-	else lllnum.message("format",1);
+    if (ccm1 != "none") {
+        let fmt = Number(ccm1);
+        if (isNaN(fmt)) lllnum.message("format", ccm1); // pass as symbol e.g. "auto"
+        else lllnum.message("format", fmt);
+    } else {
+        lllnum.message("format", 1);
+    }
 	//post("multinumber?",multinumber,"\n");
 	if (multinumber){
 		lllnum.rect = nrect(x,y,1);
