@@ -4,7 +4,7 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 2,
+            "revision": 4,
             "architecture": "x64",
             "modernui": 1
         },
@@ -233,7 +233,8 @@
             },
             {
                 "box": {
-                    "cols": 5,
+                    "cols": 1,
+                    "colwidth": 330,
                     "fontface": 0,
                     "fontname": "Arial",
                     "fontsize": 10.0,
@@ -320,7 +321,6 @@
             },
             {
                 "box": {
-                    "candycane": 4,
                     "chans": 21,
                     "classic_curve": 1,
                     "data": [
@@ -463,6 +463,7 @@
                     "outlettype": [ "", "", "", "" ],
                     "patching_rect": [ 719.0, 243.0, 107.0, 22.0 ],
                     "restore": {
+                        "chans": [ 0.0 ],
                         "env-length": [ 409 ],
                         "function": [ "data", 0, 19, 409.0, 0.0, 1.0, 0.0, 0.08641975308642, 0, 14.147798742138365, 1.0, 0, 74.59748427672956, 0.7530864197530864, 0, 384.562893081761, 0.41975308641975306, 0, 409.0, 0.0, 0, "linear", "data", 1, 13, 409.0, 0.0, 1.0, 0.0, 0.2716049382716049, 0, 96.4622641509434, 0.5185185185185185, 0, 409.0, 0.024691358024691357, 0, "linear", "data", 2, 16, 409.0, 0.0, 1.0, 0.0, 0.7222222222222222, 0, 186.4937106918239, 0.265432098765432, 0, 396.13836477987417, 0.5617283950617284, 0, 409.0, 0.0, 0, "linear", "data", 3, 16, 409.0, 0.0, 1.0, 0.0, 0.0, 0, 307.3930817610063, 0.6666666666666666, 0, 396.1383647798742, 0.314814814814815, 0, 409.0000000000003, 0.0, 0, "linear", "data", 4, 4, 409.0, 0.0, 1.0, "linear", "data", 5, 4, 409.0, 0.0, 1.0, "linear", "data", 6, 4, 409.0, 0.0, 1.0, "linear", "data", 7, 4, 409.0, 0.0, 1.0, "linear", "data", 8, 4, 409.0, 0.0, 1.0, "linear", "data", 9, 4, 409.0, 0.0, 1.0, "linear", "data", 10, 4, 409.0, 0.0, 1.0, "linear", "data", 11, 4, 409.0, 0.0, 1.0, "linear", "data", 12, 4, 409.0, 0.0, 1.0, "linear", "data", 13, 4, 409.0, 0.0, 1.0, "linear", "data", 14, 4, 409.0, 0.0, 1.0, "linear", "data", 15, 4, 409.0, 0.0, 1.0, "linear", "data", 16, 4, 409.0, 0.0, 1.0, "linear", "data", 17, 4, 409.0, 0.0, 1.0, "linear", "data", 18, 4, 409.0, 0.0, 1.0, "linear", "data", 19, 4, 409.0, 0.0, 1.0, "linear", "data", 20, 4, 409.0, 0.0, 1.0, "linear" ],
                         "loop": [ 0 ],
@@ -470,7 +471,7 @@
                         "p_trig": [ 1 ],
                         "presets": [ 0 ],
                         "s&h": [ 1.0 ],
-                        "sig_mess": [ "sig mess both" ],
+                        "sig_mess": [ "sig" ],
                         "trigger": [ 0.0 ]
                     },
                     "text": "autopattr autopattr",
@@ -489,7 +490,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -508,7 +509,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 4,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -733,7 +734,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 4,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -942,13 +943,12 @@
                                             {
                                                 "box": {
                                                     "id": "obj-4",
-                                                    "linecount": 3,
                                                     "maxclass": "message",
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 239.0, 57.0, 50.0, 22.0 ],
-                                                    "text": "\"sig mess both\""
+                                                    "text": "sig"
                                                 }
                                             },
                                             {
@@ -1135,7 +1135,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 4,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1210,7 +1210,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 2,
+                                                            "revision": 4,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1650,7 +1650,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 4,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1924,7 +1924,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 4,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -2270,7 +2270,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 4,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -2560,7 +2560,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 160.0, 250.0, 50.0, 22.0 ],
-                                                    "text": "0 0"
+                                                    "text": "0 0 0"
                                                 }
                                             },
                                             {
@@ -3038,7 +3038,7 @@
                     "fontface": 0,
                     "fontname": "Arial",
                     "id": "obj-14",
-                    "items": [ "sig", "mess", "both" ],
+                    "items": [ "sig", ",", "mess", ",", "both" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
