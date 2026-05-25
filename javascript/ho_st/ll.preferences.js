@@ -27,6 +27,7 @@ var empty_prf_DEFAULT = {
         envi_history: [],
         time_format: "24hr",
         show_actupdate: 0,
+        host_dcblock: 0,
     },
     file_paths: {
         quickrecord_path: 0,
@@ -183,11 +184,21 @@ declareattribute("show_actupdate", { style: "onoff", setter: "setshow_actupdate"
 function setshow_actupdate(c) {
     show_actupdate = c;
     preferences.set("general::show_actupdate", c);
-    // if (c) max.showclue();
 
     ll_prf_rewrite();
 
     messnamed("ll_prf_actupdate", show_actupdate);
+}
+
+var host_dcblock = 0;
+declareattribute("host_dcblock", { style: "onoff", setter: "sethost_dcblock" });
+function sethost_dcblock(c) {
+    host_dcblock = c;
+    preferences.set("general::host_dcblock", c);
+
+    ll_prf_rewrite();
+
+    messnamed("ll_prf_host_dcblock", host_dcblock);
 }
 
 var quickrecord_path = "";
@@ -389,6 +400,9 @@ function readfile() {
     // general::show_actupdate
     show_actupdate = preferences.get("general::show_actupdate");
     if (show_actupdate) messnamed("ll_prf_actupdate", show_actupdate); // can only be shown, not hidden
+
+    host_dcblock = preferences.get("general::host_dcblock");
+    if (host_dcblock) messnamed("ll_prf_host_dcblock", host_dcblock); // can only be shown, not hidden
 
     // file_paths::quickrecord_path
     quickrecord_path = preferences.get("file_paths::quickrecord_path");
