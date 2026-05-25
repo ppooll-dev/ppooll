@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 144.0, 155.0, 130.0, 125.0 ],
+        "rect": [ 130.0, 168.0, 130.0, 125.0 ],
         "default_fontsize": 11.595187,
         "toolbarvisible": 0,
         "globalpatchername": "ho_st1",
@@ -5947,8 +5947,6 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 0,
-                                                                        "node_bin_path": "",
-                                                                        "npm_bin_path": "",
                                                                         "watch": 0
                                                                     },
                                                                     "text": "node.script ll.node.folders.js",
@@ -16341,8 +16339,8 @@
                                                     "numinlets": 2,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "multichannelsignal", "multichannelsignal" ],
-                                                    "patching_rect": [ 332.75, 218.0, 86.25, 20.0 ],
-                                                    "text": "mc.gate~ 2"
+                                                    "patching_rect": [ 333.0, 218.0, 86.5, 20.0 ],
+                                                    "text": "mc.gate~ 2 1"
                                                 }
                                             },
                                             {
@@ -18496,7 +18494,7 @@
                         "rec": [ 0 ],
                         "screen": [ 0 ],
                         "stereo": [ 0 ],
-                        "time": [ 39844.0 ],
+                        "time": [ 42500.0 ],
                         "vol": [ 1.0 ],
                         "vol_ramp": [ 10 ],
                         "vol_slider": [ 1.0 ],
