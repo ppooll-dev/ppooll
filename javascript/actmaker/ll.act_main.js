@@ -368,8 +368,13 @@ function bang(alreadyRegistered = false) {
 function savebang() {
     // post("savebang\n")
 
-    // save tetris "ƒ default"
-    write_tetris("ƒ default");
+    // save tetris "ƒ default" if act is in main ppooll package
+    const isFactoryAct = ll_global.act_overview
+        .filter(a => a.name === act_args.name)
+        .some(a => a.parent === "ppooll");
+    
+    if(isFactoryAct)
+        write_tetris("ƒ default");
 
     act_patcher.getnamed("thispatcher").message("patcher", act_name_index);
 }
