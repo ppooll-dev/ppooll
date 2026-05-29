@@ -71,9 +71,8 @@ function c_menu(c) {
     var c_cha = c_chans[idx];
     c_item = c;
     checkitem(idx, "c_menu");
-    //post(a_item+"~"+c,c_cha);
-    outlet(0, "to_send", a_item + "~" + c_cha[0], c_cha);
-	script_sending(a_item + "~" + c_cha[0], c_cha);
+    outlet(0, "to_send", `${a_item}~${c_cha[0]}`, c_cha);
+	script_sending(`${a_item}~${c_cha[0]}`, c_cha);
 }
 function script_sending(path,c_cha){
     let tp = this.patcher;
@@ -82,8 +81,9 @@ function script_sending(path,c_cha){
 	let rs = tp.getnamed("resize");
 	let comb = tp.getnamed("comb");
 	let sig = tp.getnamed("sig");
-	//post("scse",path,c_cha,"uu",c_cha[1],rs,mc_offset,"\n");
-	send.message("set", path);
+	send.message("set", path); 
+	
+	// remove old state
 	if (mc_offset === 0 && rs) tp.remove(rs);
 	else if (mc_offset === 1) tp.disconnect(inp,0,send,0);
 	else {
@@ -92,6 +92,7 @@ function script_sending(path,c_cha){
 	}
 	if (mc_offset != c_cha[1]) messnamed("ll_audio", "bang");
 	mc_offset = c_cha[1];
+	// script new state
 	if (mc_offset === 0) {
 	    rs = tp.newdefault(
 	        40, 400,
@@ -108,8 +109,6 @@ function script_sending(path,c_cha){
 		tp.connect(inp, 0, comb, 1);
 		tp.connect(comb, 0, send, 0);
 	}
-	
-	
 }
 
 function a_menu(a) {
