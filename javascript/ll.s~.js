@@ -10,6 +10,7 @@ var c_item, a_item;
 var c_menu_state = [];
 var c_chans = [];
 var a_menu_state = [];
+var mc_offset = 0;
 
 var act_menu = null;
 var chan_menu = null;
@@ -17,6 +18,7 @@ var chan_menu = null;
 function actname(act_name) {
     outlet(0, "a_menu", "pattrmode", 1);
     outlet(0, "c_menu", "pattrmode", 1);
+	mc_offset = 0;
 
     if (jsarguments.length >= 3) {
         act_menu = ll_global.patchers[act_name].getnamed(jsarguments[1]);
@@ -71,7 +73,45 @@ function c_menu(c) {
     checkitem(idx, "c_menu");
     //post(a_item+"~"+c,c_cha);
     outlet(0, "to_send", a_item + "~" + c_cha[0], c_cha);
+	script_sending(a_item + "~" + c_cha[0], c_cha);
 }
+function script_sending(path,c_cha){
+    let tp = this.patcher;
+	let inp = tp.getnamed("in");
+	let send = tp.getnamed("send");
+	let rs = tp.getnamed("resize");
+	let comb = tp.getnamed("comb");
+	let sig = tp.getnamed("sig");
+	//post("scse",path,c_cha,"uu",c_cha[1],rs,mc_offset,"\n");
+	send.message("set", path);
+	if (mc_offset === 0 && rs) tp.remove(rs);
+	else if (mc_offset === 1) tp.disconnect(inp,0,send,0);
+	else {
+		tp.disconnect(inp, 0, comb, 1);
+		tp.disconnect(comb, 0, send, 0);
+	}
+	if (mc_offset != c_cha[1]) messnamed("ll_audio", "bang");
+	mc_offset = c_cha[1];
+	if (mc_offset === 0) {
+	    rs = tp.newdefault(
+	        40, 400,
+	        "mc.resize~", c_cha[2],
+	        "@replicate", 1
+	    );
+		rs.varname = "resize";
+		tp.connect(inp,0,rs,0);
+		tp.connect(rs,0,send,0);
+	}
+	else if (mc_offset === 1) tp.connect(inp,0,send,0);
+	else {
+		sig.message("chans", mc_offset-1);
+		tp.connect(inp, 0, comb, 1);
+		tp.connect(comb, 0, send, 0);
+	}
+	
+	
+}
+
 function a_menu(a) {
     a_item = a;
     checkitem(a_menu_state.indexOf(a), "a_menu");
