@@ -3,6 +3,10 @@
 // "def_folder" window for selecting plugin folders
 //
 
+if (typeof ll === "undefined") {
+	var ll = require("ll._utilities");
+}
+
 // Outlet helpers
 function out(...args){
     // post(...args, "\n")
@@ -44,6 +48,7 @@ function setDefFoldersJit() {
     act_folders.forEach((f, i) => {
         jit_define_folders("set", 0, i, "del");
         jit_define_folders("set", 1, i, f);
+        jit_define_folders("set", 2, i, "open");
     });
     jit_define_folders("set", 0, act_folders.length, "new");
 }
@@ -82,3 +87,17 @@ function deleteFolder(row) {
     setDefFoldersJit();
 }
 
+function openFolder(row) {
+    const ll_prefs = new Dict("ppooll-preferences");
+    let act_folders = ll_prefs.get("file_paths::act_folders");
+    if (row >= act_folders.length) {
+        return;
+    }
+    const path = ll.convertMaxPathToNative(act_folders[row]);
+
+    // Check Mac or Windows
+    const isMac = max.os === "macintosh";
+    const command = isMac ? [`open`, path] : [`explorer`, path];
+
+    outlet(0, "shell", command);
+}
