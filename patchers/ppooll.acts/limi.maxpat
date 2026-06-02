@@ -4,12 +4,12 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 2,
+            "revision": 4,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 528.0, 501.0, 200.0, 167.0 ],
+        "rect": [ 389.0, 33.0, 200.0, 167.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "limi1",
         "boxes": [
@@ -136,8 +136,8 @@
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
                     "patching_rect": [ 0.0, 82.0, 200.0, 14.0 ],
-                    "sliderlog": 4.0,
-                    "slidermax": 800.0,
+                    "sliderlog": 8.0,
+                    "slidermax": 5000.0,
                     "varname": "release"
                 }
             },
@@ -268,10 +268,10 @@
                         "ll.blues::levels": 5
                     },
                     "saved_object_attributes": {
-                        "client_rect": [ 768, 202, 1600, 741 ],
+                        "client_rect": [ 499, 162, 1139, 402 ],
                         "parameter_enable": 0,
                         "parameter_mappable": 0,
-                        "storage_rect": [ 365, 44, 816, 172 ]
+                        "storage_rect": [ 0, 0, 640, 240 ]
                     },
                     "text": "pattrstorage pat",
                     "varname": "pat"
@@ -318,16 +318,16 @@
                     "patching_rect": [ 357.0, 273.0, 107.0, 22.0 ],
                     "restore": {
                         "bypass": [ 0 ],
-                        "dcblockmode": [ 0 ],
-                        "lookahead": [ 0 ],
+                        "dcblockmode": [ 1 ],
+                        "lookahead": [ 2000 ],
                         "mode": [ 1 ],
                         "postamp": [ 0.0 ],
                         "preamp": [ 0.0 ],
                         "preset-ramp": [ 0.0 ],
                         "presets": [ 0 ],
-                        "release": [ 50.0 ],
+                        "release": [ 3000.0 ],
                         "reset": [ -1 ],
-                        "threshold": [ 0.0 ]
+                        "threshold": [ -1 ]
                     },
                     "text": "autopattr autopattr",
                     "varname": "autopattr"
@@ -345,13 +345,25 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
                         "classnamespace": "box",
                         "rect": [ 652.0, 363.0, 597.0, 435.0 ],
+                        "toolbars_unpinned_last_save": 1,
                         "boxes": [
+                            {
+                                "box": {
+                                    "id": "obj-3",
+                                    "maxclass": "message",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 62.0, 128.0, 57.0, 22.0 ],
+                                    "text": "chans $1"
+                                }
+                            },
                             {
                                 "box": {
                                     "id": "obj-15",
@@ -401,10 +413,10 @@
                                     "id": "obj-11",
                                     "maxclass": "newobj",
                                     "numinlets": 1,
-                                    "numoutlets": 1,
-                                    "outlettype": [ "clear" ],
-                                    "patching_rect": [ 99.0, 277.0, 41.0, 22.0 ],
-                                    "text": "t clear"
+                                    "numoutlets": 2,
+                                    "outlettype": [ "clear", "reset" ],
+                                    "patching_rect": [ 62.0, 207.0, 71.0, 22.0 ],
+                                    "text": "t clear reset"
                                 }
                             },
                             {
@@ -414,8 +426,8 @@
                                     "numinlets": 1,
                                     "numoutlets": 2,
                                     "outlettype": [ "", "bang" ],
-                                    "patching_rect": [ 99.0, 245.0, 51.0, 22.0 ],
-                                    "text": "ll.r clear"
+                                    "patching_rect": [ 62.0, 179.0, 51.0, 22.0 ],
+                                    "text": "ll.r reset"
                                 }
                             },
                             {
@@ -425,7 +437,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 192.0, 283.0, 356.0, 22.0 ],
+                                    "patching_rect": [ 62.0, 280.0, 356.0, 22.0 ],
                                     "text": "ll.pm lookahead preamp postamp threshold release bypass mode"
                                 }
                             },
@@ -447,8 +459,8 @@
                                     "numinlets": 1,
                                     "numoutlets": 2,
                                     "outlettype": [ "", "bang" ],
-                                    "patching_rect": [ 45.0, 60.0, 95.0, 22.0 ],
-                                    "text": "ll.r mcbluechans"
+                                    "patching_rect": [ 62.0, 84.0, 101.0, 22.0 ],
+                                    "text": "ll.r ll.blues::chans"
                                 }
                             },
                             {
@@ -493,7 +505,15 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-43", 0 ],
+                                    "midpoints": [ 71.5, 271.0, 174.5, 271.0 ],
                                     "source": [ "obj-11", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-7", 0 ],
+                                    "midpoints": [ 123.5, 235.0, 222.5, 235.0 ],
+                                    "source": [ "obj-11", 1 ]
                                 }
                             },
                             {
@@ -529,6 +549,13 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-14", 0 ],
+                                    "midpoints": [ 71.5, 162.96875, 173.5, 162.96875 ],
+                                    "source": [ "obj-3", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-3", 0 ],
                                     "source": [ "obj-4", 0 ]
                                 }
                             },
