@@ -154,6 +154,7 @@ function bang(alreadyRegistered = false) {
     act_patcher.locked_bgcolor = ll.makeColor(act_args.color);
 
     act_box = this.patcher.box;
+	post(act_patcher, act_box,"\n");
 
     title_menu = this.patcher.getnamed("title_menu");
     pres_menu = this.patcher.getnamed("pres_menu");
@@ -1096,9 +1097,25 @@ function read_preset_path(fullPath, presetName = 0) {
         // post("old ppooll preset (not json)\n")
         return
     }
-
-    act_patcher.getnamed("pat").message("read", fullPath);
-    act_patcher.getnamed("pat").message(1000);
+	
+	let pat = act_patcher.getnamed("pat");
+	
+	// ####################################################################  active hack
+    // set all active flags to 1
+	ll_global.pat[act_name_index].getclientlist().forEach((client) => {
+		pat.message("active",client,1);
+		let c_arr = client.split("::"); // parameter is in a subpatch
+		if (c_arr.length > 1){
+			pat.message("active",c_arr[0],1);
+			// ..even the active-flag for a subpatch set to 1 !!
+		}
+	});
+	// ppooll pattrstorages are all in activewritemode 1,
+	// which stores active-flags, but only if they are 0.
+	// reading the preset-file will set active flags to 0 if so defined
+	// ####################################################################  /active hack
+	pat.message("read", fullPath);	
+    pat.message(1000);
 
     const presetDict = new Dict();
     presetDict.import_json(fullPath);
@@ -1111,7 +1128,7 @@ function read_preset_path(fullPath, presetName = 0) {
             Object.keys(title_menu_options).indexOf("active_store"),
             isActiveStore
         );
-        act_patcher.getnamed("pat").message("act::active_store", 1);
+        pat.message("act::active_store", 1);
     }
 
     recall_TEXT_from_dict(act_args.name, presetName, fullPath);

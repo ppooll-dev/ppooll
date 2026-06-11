@@ -1,5 +1,5 @@
 {
-    "window": [ 218, 172, 443, 248 ],
+    "window": [ 289, 204, 514, 276 ],
     "act": {
         "patching_rect": [ 0, 0, 58.056640625, 16 ],
         "hidden": 0
@@ -7,7 +7,6 @@
     "select_acts": {
         "patching_rect": [ 60, 0, 57, 20 ],
         "hidden": 0,
-        "applycolors": 0,
         "bgfillcolor": {
             "type": "color",
             "color1": [ 0.376471, 0.384314, 0.4, 1 ],
@@ -16,7 +15,7 @@
             "angle": 270,
             "proportion": 0.39
         },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
+        "color": [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1 ],
         "elementcolor": [ 0.376471, 0.384314, 0.4, 1 ],
         "fontsize": 10,
         "textcolor": [ 0.15, 0.15, 0.15, 1 ]
@@ -49,6 +48,7 @@
     },
     "presets": {
         "patching_rect": [ 0, 16, 225, 56 ],
-        "hidden": 0
+        "hidden": 0,
+        "boxsize": 13
     }
 }

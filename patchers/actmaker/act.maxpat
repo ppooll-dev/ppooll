@@ -534,7 +534,8 @@
                                     "numoutlets": 2,
                                     "outlettype": [ "", "bang" ],
                                     "patching_rect": [ 110.0, 131.0, 49.0, 22.0 ],
-                                    "text": "ll.dialog"
+                                    "text": "ll.dialog",
+                                    "varname": "lldialog"
                                 }
                             }
                         ],
@@ -2376,7 +2377,7 @@
                 "box": {
                     "comment": "",
                     "id": "obj-8",
-                    "index": 1,
+                    "index": 0,
                     "maxclass": "inlet",
                     "numinlets": 0,
                     "numoutlets": 1,
@@ -2418,7 +2419,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, 0.0, 50.3515625, 16.0 ],
+                    "patching_rect": [ 0.0, 0.0, 31.6953125, 16.0 ],
                     "textfile": {
                         "filename": "ll.act_main.js",
                         "flags": 0,
@@ -2661,6 +2662,7 @@
                     "source": [ "obj-8", 0 ]
                 }
             }
-        ]
+        ],
+        "autosave": 0
     }
 }
