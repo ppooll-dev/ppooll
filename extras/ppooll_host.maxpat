@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 169.0, 165.0, 130.0, 125.0 ],
+        "rect": [ 119.0, 158.0, 130.0, 125.0 ],
         "default_fontsize": 11.595187,
         "toolbarvisible": 0,
         "globalpatchername": "ho_st1",
@@ -16504,9 +16504,20 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 267.0, 393.0, 718.0, 465.0 ],
+                                        "rect": [ 267.0, 392.0, 718.0, 465.0 ],
                                         "default_fontsize": 10.0,
                                         "boxes": [
+                                            {
+                                                "box": {
+                                                    "id": "obj-4",
+                                                    "maxclass": "message",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 298.0, 294.5, 31.0, 20.0 ],
+                                                    "text": "reset"
+                                                }
+                                            },
                                             {
                                                 "box": {
                                                     "id": "obj-28",
@@ -16558,7 +16569,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 424.0, 218.0, 75.0, 20.0 ],
+                                                    "patching_rect": [ 322.0, 74.5, 75.0, 20.0 ],
                                                     "text": "prepend chans"
                                                 }
                                             },
@@ -16631,9 +16642,9 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "multichannelsignal" ],
-                                                    "patching_rect": [ 400.5, 250.0, 47.0, 20.0 ],
+                                                    "patching_rect": [ 400.5, 252.0, 47.0, 20.0 ],
                                                     "text": "mc.gen~",
-                                                    "wrapper_uniquekey": "u331009625"
+                                                    "wrapper_uniquekey": "u726002343"
                                                 }
                                             },
                                             {
@@ -17377,7 +17388,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "", "bang" ],
-                                                    "patching_rect": [ 400.5, 44.0, 61.0, 23.0 ],
+                                                    "patching_rect": [ 400.5, 34.0, 61.0, 23.0 ],
                                                     "text": "ll.r chans"
                                                 }
                                             },
@@ -18456,13 +18467,20 @@
                                             {
                                                 "patchline": {
                                                     "destination": [ "obj-24", 0 ],
-                                                    "order": 1,
+                                                    "order": 2,
                                                     "source": [ "obj-13", 0 ]
                                                 }
                                             },
                                             {
                                                 "patchline": {
                                                     "destination": [ "obj-36", 0 ],
+                                                    "order": 1,
+                                                    "source": [ "obj-13", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-4", 0 ],
                                                     "order": 0,
                                                     "source": [ "obj-13", 0 ]
                                                 }
@@ -18608,21 +18626,35 @@
                                             },
                                             {
                                                 "patchline": {
-                                                    "destination": [ "obj-11", 0 ],
-                                                    "order": 1,
-                                                    "source": [ "obj-5", 0 ]
+                                                    "destination": [ "obj-3", 0 ],
+                                                    "source": [ "obj-4", 0 ]
                                                 }
                                             },
                                             {
                                                 "patchline": {
-                                                    "destination": [ "obj-6", 0 ],
+                                                    "destination": [ "obj-11", 0 ],
                                                     "order": 0,
                                                     "source": [ "obj-5", 0 ]
                                                 }
                                             },
                                             {
                                                 "patchline": {
+                                                    "destination": [ "obj-6", 0 ],
+                                                    "order": 1,
+                                                    "source": [ "obj-5", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-21", 0 ],
+                                                    "order": 1,
+                                                    "source": [ "obj-6", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
                                                     "destination": [ "obj-3", 0 ],
+                                                    "order": 0,
                                                     "source": [ "obj-6", 0 ]
                                                 }
                                             },
@@ -18696,6 +18728,11 @@
                         "vol_slider": 0,
                         "watch_menu": 0,
                         "write_envi": 0,
+                        "osc_port": 0,
+                        "ll.dims": 0,
+                        "pfl_act_menu": 0,
+                        "pfl_par_menu": 0,
+                        "params_only": 0,
                         "act": 0,
                         "act::active_store": 0,
                         "act::master": 0,
@@ -18782,7 +18819,7 @@
                         "rec": [ 0 ],
                         "screen": [ 0 ],
                         "stereo": [ 0 ],
-                        "time": [ 45518.0 ],
+                        "time": [ 20604.0 ],
                         "vol": [ 1.0 ],
                         "vol_ramp": [ 10 ],
                         "vol_slider": [ 1.0 ],
