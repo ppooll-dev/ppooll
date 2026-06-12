@@ -64,6 +64,12 @@ function addFolder(newFolder) {
         act_folders = []
     }
 
+    // TODO: check if new folder contains:
+    //  - patchers/ppooll.acts
+    //  - ppooll.acts
+    //
+    // otherwise, just use this folder
+
     act_folders.push(newFolder);
     ll_prefs.set("file_paths::act_folders", act_folders);
 
