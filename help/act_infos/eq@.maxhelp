@@ -4,12 +4,12 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 2,
+            "revision": 4,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 100.0, 100.0, 622.0, 459.0 ],
+        "rect": [ 620.0, 311.0, 622.0, 459.0 ],
         "toolbarvisible": 0,
         "boxes": [
             {
@@ -49,7 +49,7 @@
                     "outlettype": [ "", "", "int" ],
                     "outputmode": 0,
                     "parameter_enable": 0,
-                    "patching_rect": [ 41.0, 145.0, 292.8203125, 21.40625 ],
+                    "patching_rect": [ 41.0, 159.0, 292.8203125, 21.40625 ],
                     "style": "default",
                     "text": "https://sengpielaudio.com/calculator-octave.htm#top",
                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
@@ -91,8 +91,8 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 45.0, 123.0, 524.0, 20.0 ],
-                    "text": "1/3 octave band frequencies according to Eberhard Sengpiel."
+                    "patching_rect": [ 45.0, 139.0, 524.0, 20.0 ],
+                    "text": "1/3 octave band frequencies according to eberhard sengpiel."
                 }
             },
             {
@@ -135,7 +135,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 189.5, 177.0, 161.0, 52.0 ],
+                    "patching_rect": [ 190.0, 187.0, 161.0, 52.0 ],
                     "text": "bands multislider in front / band meters in the back "
                 }
             },
@@ -178,7 +178,7 @@
                     "outlettype": [ "int", "", "" ],
                     "parameter_enable": 0,
                     "patching_rect": [ 440.0, 414.0, 143.0, 22.0 ],
-                    "prefix": "Macintosh HD:/Users/klaus/Documents/Max 9/Packages/ppooll/ppooll-help/user_infos/",
+                    "prefix": "cxhmbp:/Users/cxh/Documents/Max 9/Packages/ppooll/ppooll-help/user_infos/",
                     "textcolor": [ 0.054902, 0.0, 0.972549, 1.0 ]
                 }
             },
@@ -197,7 +197,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -412,12 +412,12 @@
                 "box": {
                     "fontsize": 12.0,
                     "id": "obj-3",
-                    "linecount": 2,
+                    "linecount": 3,
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 45.0, 89.0, 524.0, 33.0 ],
-                    "text": "based on crossover filters by graham wakefield. quite cpu-hungry, might compile to an external later. gen~ based & mc-aware."
+                    "patching_rect": [ 45.0, 90.0, 488.0, 47.0 ],
+                    "text": "based on james a. moorer's parallel eq and phillip geffe's proportional-q biquad topology. biquad coefficient math derived from Robert Bristow-Johnson's \"audio eq cookbook\". gen~ based & mc-aware."
                 }
             },
             {
