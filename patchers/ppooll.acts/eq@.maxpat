@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 159.0, 453.0, 300.0, 180.0 ],
+        "rect": [ 159.0, 454.0, 300.0, 180.0 ],
         "toolbarvisible": 0,
         "enablevscroll": 0,
         "globalpatchername": "eq@1",
@@ -153,7 +153,7 @@
                     "parameter_enable": 0,
                     "patching_rect": [ 0.0, 18.0, 300.0, 95.0 ],
                     "peakcolor": [ 0.498039, 0.498039, 0.498039, 1.0 ],
-                    "setminmax": [ -99.0, 12.0 ],
+                    "setminmax": [ -99.0, 48.0 ],
                     "signed": 1,
                     "size": 30,
                     "varname": "multislider"
@@ -343,10 +343,10 @@
                         "ll.blues::levels": 5
                     },
                     "saved_object_attributes": {
-                        "client_rect": [ 897, 213, 1512, 873 ],
+                        "client_rect": [ 88, 417, 885, 1024 ],
                         "parameter_enable": 0,
                         "parameter_mappable": 0,
-                        "storage_rect": [ 0, 0, 640, 240 ]
+                        "storage_rect": [ 25, 119, 665, 359 ]
                     },
                     "text": "pattrstorage pat",
                     "varname": "pat"
@@ -390,7 +390,7 @@
                     "patching_rect": [ 623.0, 194.0, 107.0, 22.0 ],
                     "restore": {
                         "interp": [ 0.0 ],
-                        "max": [ 12.0 ],
+                        "max": [ 48.0 ],
                         "min": [ -99.0 ],
                         "multislider": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
                         "mutes": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
@@ -865,9 +865,9 @@
                                                                         "text": "buffer meter",
                                                                         "patching_rect": [ 409.0, 30.0, 73.0, 22.0 ],
                                                                         "numinlets": 0,
+                                                                        "id": "obj-11",
                                                                         "numoutlets": 2,
-                                                                        "outlettype": [ "", "" ],
-                                                                        "id": "obj-11"
+                                                                        "outlettype": [ "", "" ]
                                                                     }
                                                                 },
                                                                 {
@@ -876,8 +876,8 @@
                                                                         "text": "out 1",
                                                                         "patching_rect": [ 163.0, 471.0, 35.0, 22.0 ],
                                                                         "numinlets": 1,
-                                                                        "numoutlets": 0,
-                                                                        "id": "obj-10"
+                                                                        "id": "obj-10",
+                                                                        "numoutlets": 0
                                                                     }
                                                                 },
                                                                 {
@@ -886,9 +886,9 @@
                                                                         "text": "Param view_band",
                                                                         "patching_rect": [ 289.0, 30.0, 105.0, 22.0 ],
                                                                         "numinlets": 0,
+                                                                        "id": "obj-9",
                                                                         "numoutlets": 1,
-                                                                        "outlettype": [ "" ],
-                                                                        "id": "obj-9"
+                                                                        "outlettype": [ "" ]
                                                                     }
                                                                 },
                                                                 {
@@ -897,22 +897,22 @@
                                                                         "text": "Param chan_count",
                                                                         "patching_rect": [ 164.0, 30.0, 109.0, 22.0 ],
                                                                         "numinlets": 0,
+                                                                        "id": "obj-7",
                                                                         "numoutlets": 1,
-                                                                        "outlettype": [ "" ],
-                                                                        "id": "obj-7"
+                                                                        "outlettype": [ "" ]
                                                                     }
                                                                 },
                                                                 {
                                                                     "box": {
                                                                         "maxclass": "codebox",
                                                                         "patching_rect": [ 164.0, 71.0, 788.0, 369.0 ],
-                                                                        "fontsize": 12.0,
-                                                                        "numinlets": 1,
-                                                                        "numoutlets": 1,
                                                                         "fontname": "<Monospaced>",
-                                                                        "outlettype": [ "" ],
                                                                         "fontface": 0,
+                                                                        "numinlets": 1,
                                                                         "id": "obj-3",
+                                                                        "numoutlets": 1,
+                                                                        "fontsize": 12.0,
+                                                                        "outlettype": [ "" ],
                                                                         "code": "\r\nReadChan(buffer, view_band, current_band) {\n\tsample_result, index_result = peek(buffer, view_band, current_band);\n\treturn sample_result;\r\n}\r\n\r\nParam chan_count;\r\n\r\n\r\nBuffer meter(\"meter\");\r\n\r\nresult = 0;\r\n\r\ncurrent_band = mc_channel - 1;\r\n\r\nif(view_band != 0) {\r\n\tresult = ReadChan(meter, view_band - 1, current_band);\r\n} else {\r\n\tfor(i = 0; i <= chan_count; i += 1) {\r\n\t\ttemp_result = ReadChan(meter, i, current_band);\r\n\t\tresult = result + temp_result;\r\n\t}\r\n\tresult = result / chan_count;\r\n}\r\n\r\nout1 = result;"
                                                                     }
                                                                 }
@@ -920,8 +920,8 @@
                                                             "lines": [
                                                                 {
                                                                     "patchline": {
-                                                                        "source": [ "obj-3", 0 ],
-                                                                        "destination": [ "obj-10", 0 ]
+                                                                        "source": [ "obj-9", 0 ],
+                                                                        "destination": [ "obj-3", 0 ]
                                                                     }
                                                                 },
                                                                 {
@@ -932,8 +932,8 @@
                                                                 },
                                                                 {
                                                                     "patchline": {
-                                                                        "source": [ "obj-9", 0 ],
-                                                                        "destination": [ "obj-3", 0 ]
+                                                                        "source": [ "obj-3", 0 ],
+                                                                        "destination": [ "obj-10", 0 ]
                                                                     }
                                                                 }
                                                             ]
@@ -946,7 +946,7 @@
                                                     "outlettype": [ "multichannelsignal" ],
                                                     "patching_rect": [ 49.0, 305.0, 119.0, 22.0 ],
                                                     "text": "mc.gen~ @chans 30",
-                                                    "wrapper_uniquekey": "u078006111"
+                                                    "wrapper_uniquekey": "u770009491"
                                                 }
                                             },
                                             {
@@ -1174,8 +1174,8 @@
                                                                         "text": "out 3",
                                                                         "patching_rect": [ 311.0, 617.0, 35.0, 22.0 ],
                                                                         "numinlets": 1,
-                                                                        "numoutlets": 0,
-                                                                        "id": "obj-8"
+                                                                        "id": "obj-8",
+                                                                        "numoutlets": 0
                                                                     }
                                                                 },
                                                                 {
@@ -1184,8 +1184,8 @@
                                                                         "text": "out 2",
                                                                         "patching_rect": [ 154.0, 617.0, 35.0, 22.0 ],
                                                                         "numinlets": 1,
-                                                                        "numoutlets": 0,
-                                                                        "id": "obj-7"
+                                                                        "id": "obj-7",
+                                                                        "numoutlets": 0
                                                                     }
                                                                 },
                                                                 {
@@ -1194,8 +1194,8 @@
                                                                         "text": "out 1",
                                                                         "patching_rect": [ 50.0, 617.0, 35.0, 22.0 ],
                                                                         "numinlets": 1,
-                                                                        "numoutlets": 0,
-                                                                        "id": "obj-6"
+                                                                        "id": "obj-6",
+                                                                        "numoutlets": 0
                                                                     }
                                                                 },
                                                                 {
@@ -1204,9 +1204,9 @@
                                                                         "text": "in 3",
                                                                         "patching_rect": [ 311.0, 75.0, 28.0, 22.0 ],
                                                                         "numinlets": 0,
+                                                                        "id": "obj-3",
                                                                         "numoutlets": 1,
-                                                                        "outlettype": [ "" ],
-                                                                        "id": "obj-3"
+                                                                        "outlettype": [ "" ]
                                                                     }
                                                                 },
                                                                 {
@@ -1215,22 +1215,22 @@
                                                                         "text": "in 2",
                                                                         "patching_rect": [ 154.0, 75.0, 28.0, 22.0 ],
                                                                         "numinlets": 0,
+                                                                        "id": "obj-2",
                                                                         "numoutlets": 1,
-                                                                        "outlettype": [ "" ],
-                                                                        "id": "obj-2"
+                                                                        "outlettype": [ "" ]
                                                                     }
                                                                 },
                                                                 {
                                                                     "box": {
                                                                         "maxclass": "codebox",
                                                                         "patching_rect": [ 50.0, 154.0, 1139.0, 430.0 ],
-                                                                        "fontsize": 12.0,
-                                                                        "numinlets": 3,
-                                                                        "numoutlets": 3,
                                                                         "fontname": "<Monospaced>",
-                                                                        "outlettype": [ "", "", "" ],
                                                                         "fontface": 0,
+                                                                        "numinlets": 3,
                                                                         "id": "obj-5",
+                                                                        "numoutlets": 3,
+                                                                        "fontsize": 12.0,
+                                                                        "outlettype": [ "", "", "" ],
                                                                         "code": "Buffer mutes(\"mutes\");\nBuffer gains(\"gains\");\nBuffer solos(\"solos\");\n\nHistory muteVal_prev(0);\nHistory gainVal_prev(0);\nHistory soloVal_prev(0);\n\ngainVal = in1;\nmuteVal = in2;\nsoloVal = in3;\n\nchan = mc_channel - 1;\n\n\nif(muteVal != muteVal_prev){\n    poke(mutes, muteVal, 0, chan);\n}\n\nif(soloVal != soloVal_prev){\n    poke(solos, soloVal, 0, chan);\n}\n\nif(gainVal != gainVal_prev){\n    poke(gains, gainVal, 0, chan);\n}\n\nmuteVal_prev = muteVal;\nsoloVal_prev = soloVal;\ngainVal_prev = gainVal;\n\n// Provide a sink for the compiler to prevent AST pruning crashes\nout1 = gainVal;\r\nout2 = muteVal;\r\nout3 = soloVal;"
                                                                     }
                                                                 },
@@ -1240,35 +1240,17 @@
                                                                         "text": "in 1",
                                                                         "patching_rect": [ 50.0, 75.0, 28.0, 22.0 ],
                                                                         "numinlets": 0,
+                                                                        "id": "obj-1",
                                                                         "numoutlets": 1,
-                                                                        "outlettype": [ "" ],
-                                                                        "id": "obj-1"
+                                                                        "outlettype": [ "" ]
                                                                     }
                                                                 }
                                                             ],
                                                             "lines": [
                                                                 {
                                                                     "patchline": {
-                                                                        "source": [ "obj-5", 0 ],
-                                                                        "destination": [ "obj-6", 0 ]
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "patchline": {
-                                                                        "source": [ "obj-5", 1 ],
-                                                                        "destination": [ "obj-7", 0 ]
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "patchline": {
-                                                                        "source": [ "obj-5", 2 ],
-                                                                        "destination": [ "obj-8", 0 ]
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "patchline": {
-                                                                        "source": [ "obj-3", 0 ],
-                                                                        "destination": [ "obj-5", 2 ]
+                                                                        "source": [ "obj-1", 0 ],
+                                                                        "destination": [ "obj-5", 0 ]
                                                                     }
                                                                 },
                                                                 {
@@ -1279,8 +1261,26 @@
                                                                 },
                                                                 {
                                                                     "patchline": {
-                                                                        "source": [ "obj-1", 0 ],
-                                                                        "destination": [ "obj-5", 0 ]
+                                                                        "source": [ "obj-3", 0 ],
+                                                                        "destination": [ "obj-5", 2 ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "patchline": {
+                                                                        "source": [ "obj-5", 2 ],
+                                                                        "destination": [ "obj-8", 0 ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "patchline": {
+                                                                        "source": [ "obj-5", 1 ],
+                                                                        "destination": [ "obj-7", 0 ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "patchline": {
+                                                                        "source": [ "obj-5", 0 ],
+                                                                        "destination": [ "obj-6", 0 ]
                                                                     }
                                                                 }
                                                             ]
@@ -1293,7 +1293,7 @@
                                                     "outlettype": [ "multichannelsignal", "multichannelsignal", "multichannelsignal" ],
                                                     "patching_rect": [ 107.0, 433.0, 119.0, 22.0 ],
                                                     "text": "mc.gen~ @chans 31",
-                                                    "wrapper_uniquekey": "u456006606"
+                                                    "wrapper_uniquekey": "u429009379"
                                                 }
                                             },
                                             {
@@ -1529,7 +1529,7 @@
                                                 "modernui": 1
                                             },
                                             "classnamespace": "dsp.gen",
-                                            "rect": [ 508.0, 224.0, 1298.0, 740.0 ],
+                                            "rect": [ 588.0, 165.0, 1005.0, 740.0 ],
                                             "boxes": [
                                                 {
                                                     "box": {
@@ -1537,23 +1537,23 @@
                                                         "text": "in 1",
                                                         "patching_rect": [ 50.0, 14.0, 28.0, 22.0 ],
                                                         "numinlets": 0,
+                                                        "id": "obj-1",
                                                         "numoutlets": 1,
-                                                        "outlettype": [ "" ],
-                                                        "id": "obj-1"
+                                                        "outlettype": [ "" ]
                                                     }
                                                 },
                                                 {
                                                     "box": {
                                                         "maxclass": "codebox",
                                                         "patching_rect": [ 50.0, 105.76923429965973, 1185.0, 496.0 ],
-                                                        "fontsize": 12.0,
-                                                        "numinlets": 1,
-                                                        "numoutlets": 1,
                                                         "fontname": "<Monospaced>",
-                                                        "outlettype": [ "" ],
                                                         "fontface": 0,
+                                                        "numinlets": 1,
                                                         "id": "obj-3",
-                                                        "code": "RetrieveLevels(band_no, gains_buffer, mutes_buffer, solos_buffer) {\n\tband_gain = peek(gains_buffer, 0, (band_no - 1), boundmode=\"clamp\");\n\tband_mute = peek(mutes_buffer, 0, (band_no - 1), boundmode=\"clamp\");\n\tband_solo = peek(solos_buffer, 0, (band_no - 1), boundmode=\"clamp\");\n\treturn band_gain, band_mute, band_solo;\n}\n\nProcessMeter(isolated_band, current_chan, band_no, meter_buffer, meter_update) {\n\tpeak = abs(isolated_band);\n\tpoke(meter_buffer, peak, current_chan, (band_no - 1), meter_update, index=\"samples\");\n\treturn isolated_band;\n}\n\nCrossover(input, cutLow, cutHigh) {\n\tHistory history_1(0);\n\tHistory history_2(0);\n\tHistory history_3(0);\n\tHistory history_4(0);\n\tHistory history_5(0);\n\tmin_6 = min(cutLow, cutHigh);\n\tmul_7 = min_6 * twopi/samplerate;\n\tcos_8 = cos(mul_7);\n\tsin_9 = sin(mul_7);\n\tsub_10 = sin_9 - 1.;\n\tdiv_11 = sub_10 / cos_8;\n\tgen_12 = div_11;\n\tadd_13 = div_11 + 1;\n\tmul_14 = add_13 * 0.5;\n\tgen_15 = mul_14;\n\tmax_16 = max(cutLow, cutHigh);\n\tmul_17 = max_16 * twopi/samplerate;\n\tcos_18 = cos(mul_17);\n\tsin_19 = sin(mul_17);\n\tsub_20 = sin_19 - 1.;\n\tdiv_21 = sub_20 / cos_18;\n\tgen_22 = div_21;\n\tadd_23 = div_21 + 1;\n\tmul_24 = add_23 * 0.5;\n\tgen_25 = mul_24;\n\tsub_26 = input - history_1;\n\tmul_27 = sub_26 * gen_25;\n\tadd_28 = mul_27 + history_1;\n\tadd_29 = add_28 + mul_27;\n\tsub_30 = add_28 - history_2;\n\tmul_31 = sub_30 * gen_25;\n\tadd_32 = mul_31 + history_2;\n\tgen_33 = add_32;\n\tadd_34 = add_32 + mul_31;\n\thistory_1_next_35 = fixdenorm(add_29);\n\thistory_2_next_36 = fixdenorm(add_34);\n\tmul_37 = history_3 * gen_12;\n\tsub_38 = gen_33 - mul_37;\n\tmul_39 = sub_38 * gen_12;\n\tadd_40 = mul_39 + history_3;\n\tgen_41 = add_40;\n\thistory_3_next_42 = fixdenorm(sub_38);\n\tsub_43 = gen_33 - history_4;\n\tmul_44 = sub_43 * gen_15;\n\tadd_45 = mul_44 + history_4;\n\tadd_46 = add_45 + mul_44;\n\tsub_47 = add_45 - history_5;\n\tmul_48 = sub_47 * gen_15;\n\tadd_49 = mul_48 + history_5;\n\tgen_50 = add_49;\n\tadd_51 = add_49 + mul_48;\n\thistory_4_next_52 = fixdenorm(add_46);\n\thistory_5_next_53 = fixdenorm(add_51);\n\tisolated_band = fixnan(gen_41 - gen_50);\n\t\n\thistory_1 = history_1_next_35;\n\thistory_5 = history_5_next_53;\n\thistory_4 = history_4_next_52;\n\thistory_3 = history_3_next_42;\n\thistory_2 = history_2_next_36;\n\t\n\treturn isolated_band;\n}\n\nBuffer gains(\"gains\");\nBuffer meter(\"meter\");\nBuffer mutes(\"mutes\");\nBuffer solos(\"solos\");\nParam meter_update(0);\n\ninput = in1;\ncurrent_chan = mc_channel - 1;\n\nband00Input = Crossover(input, 0.0, 22.4);\nband01Input = Crossover(input, 22.4, 28.2);\nband02Input = Crossover(input, 28.2, 35.5);\nband03Input = Crossover(input, 35.5, 44.7);\nband04Input = Crossover(input, 44.7, 56.2);\nband05Input = Crossover(input, 56.20, 70.80);\nband06Input = Crossover(input, 70.80, 89.10);\nband07Input = Crossover(input, 89.10, 112.00);\nband08Input = Crossover(input, 112.00, 141.00);\nband09Input = Crossover(input, 141.00, 178.00);\nband10Input = Crossover(input, 178.00, 224.00);\nband11Input = Crossover(input, 224.00, 282.00);\nband12Input = Crossover(input, 282.00, 355.00);\nband13Input = Crossover(input, 355.00, 447.00);\nband14Input = Crossover(input, 447.00, 562.00);\nband15Input = Crossover(input, 562.00, 708.00);\nband16Input = Crossover(input, 708.00, 891.00);\nband17Input = Crossover(input, 891.00, 1122.00);\nband18Input = Crossover(input, 1122.00, 1413.00);\nband19Input = Crossover(input, 1413.00, 1778.00);\nband20Input = Crossover(input, 1778.00, 2239.00);\nband21Input = Crossover(input, 2239.00, 2818.00);\nband22Input = Crossover(input, 2818.00, 3548.00);\nband23Input = Crossover(input, 3548.00, 4467.00);\nband24Input = Crossover(input, 4467.00, 5623.00);\nband25Input = Crossover(input, 5623.00, 7079.00);\nband26Input = Crossover(input, 7079.00, 8913.00);\nband27Input = Crossover(input, 8913.00, 11220.00);\nband28Input = Crossover(input, 11220.00, 14130.00);\nband29Input = Crossover(input, 14130.00, 17780.00);\nband30Input = Crossover(input, 17780.00, 22390.00);\n\nband00Gain, band00Mute, band00Solo = RetrieveLevels(0, gains, mutes, solos);\nband01Gain, band01Mute, band01Solo = RetrieveLevels(1, gains, mutes, solos);\nband02Gain, band02Mute, band02Solo = RetrieveLevels(2, gains, mutes, solos);\nband03Gain, band03Mute, band03Solo = RetrieveLevels(3, gains, mutes, solos);\nband04Gain, band04Mute, band04Solo = RetrieveLevels(4, gains, mutes, solos);\nband05Gain, band05Mute, band05Solo = RetrieveLevels(5, gains, mutes, solos);\nband06Gain, band06Mute, band06Solo = RetrieveLevels(6, gains, mutes, solos);\nband07Gain, band07Mute, band07Solo = RetrieveLevels(7, gains, mutes, solos);\nband08Gain, band08Mute, band08Solo = RetrieveLevels(8, gains, mutes, solos);\nband09Gain, band09Mute, band09Solo = RetrieveLevels(9, gains, mutes, solos);\nband10Gain, band10Mute, band10Solo = RetrieveLevels(10, gains, mutes, solos);\nband11Gain, band11Mute, band11Solo = RetrieveLevels(11, gains, mutes, solos);\nband12Gain, band12Mute, band12Solo = RetrieveLevels(12, gains, mutes, solos);\nband13Gain, band13Mute, band13Solo = RetrieveLevels(13, gains, mutes, solos);\nband14Gain, band14Mute, band14Solo = RetrieveLevels(14, gains, mutes, solos);\nband15Gain, band15Mute, band15Solo = RetrieveLevels(15, gains, mutes, solos);\nband16Gain, band16Mute, band16Solo = RetrieveLevels(16, gains, mutes, solos);\nband17Gain, band17Mute, band17Solo = RetrieveLevels(17, gains, mutes, solos);\nband18Gain, band18Mute, band18Solo = RetrieveLevels(18, gains, mutes, solos);\nband19Gain, band19Mute, band19Solo = RetrieveLevels(19, gains, mutes, solos);\nband20Gain, band20Mute, band20Solo = RetrieveLevels(20, gains, mutes, solos);\nband21Gain, band21Mute, band21Solo = RetrieveLevels(21, gains, mutes, solos);\nband22Gain, band22Mute, band22Solo = RetrieveLevels(22, gains, mutes, solos);\nband23Gain, band23Mute, band23Solo = RetrieveLevels(23, gains, mutes, solos);\nband24Gain, band24Mute, band24Solo = RetrieveLevels(24, gains, mutes, solos);\nband25Gain, band25Mute, band25Solo = RetrieveLevels(25, gains, mutes, solos);\nband26Gain, band26Mute, band26Solo = RetrieveLevels(26, gains, mutes, solos);\nband27Gain, band27Mute, band27Solo = RetrieveLevels(27, gains, mutes, solos);\nband28Gain, band28Mute, band28Solo = RetrieveLevels(28, gains, mutes, solos);\nband29Gain, band29Mute, band29Solo = RetrieveLevels(29, gains, mutes, solos);\nband30Gain, band30Mute, band30Solo = RetrieveLevels(30, gains, mutes, solos);\n\nsoloMode = (band00Solo + band01Solo + band02Solo + band03Solo + band04Solo + band05Solo + band06Solo + band07Solo + band08Solo + band09Solo + band10Solo + band11Solo + band12Solo + band13Solo + band14Solo + band15Solo + band16Solo + band17Solo + band18Solo + band19Solo + band20Solo + band21Solo + band22Solo + band23Solo + band24Solo + band25Solo + band26Solo + band27Solo + band28Solo + band29Solo + band30Solo) > 0;\n\nband00State = soloMode ? (band00Solo ? 1 : 0) : (band00Mute ? 0 : 1);\nband01State = soloMode ? (band01Solo ? 1 : 0) : (band01Mute ? 0 : 1);\nband02State = soloMode ? (band02Solo ? 1 : 0) : (band02Mute ? 0 : 1);\nband03State = soloMode ? (band03Solo ? 1 : 0) : (band03Mute ? 0 : 1);\nband04State = soloMode ? (band04Solo ? 1 : 0) : (band04Mute ? 0 : 1);\nband05State = soloMode ? (band05Solo ? 1 : 0) : (band05Mute ? 0 : 1);\nband06State = soloMode ? (band06Solo ? 1 : 0) : (band06Mute ? 0 : 1);\nband07State = soloMode ? (band07Solo ? 1 : 0) : (band07Mute ? 0 : 1);\nband08State = soloMode ? (band08Solo ? 1 : 0) : (band08Mute ? 0 : 1);\nband09State = soloMode ? (band09Solo ? 1 : 0) : (band09Mute ? 0 : 1);\nband10State = soloMode ? (band10Solo ? 1 : 0) : (band10Mute ? 0 : 1);\nband11State = soloMode ? (band11Solo ? 1 : 0) : (band11Mute ? 0 : 1);\nband12State = soloMode ? (band12Solo ? 1 : 0) : (band12Mute ? 0 : 1);\nband13State = soloMode ? (band13Solo ? 1 : 0) : (band13Mute ? 0 : 1);\nband14State = soloMode ? (band14Solo ? 1 : 0) : (band14Mute ? 0 : 1);\nband15State = soloMode ? (band15Solo ? 1 : 0) : (band15Mute ? 0 : 1);\nband16State = soloMode ? (band16Solo ? 1 : 0) : (band16Mute ? 0 : 1);\nband17State = soloMode ? (band17Solo ? 1 : 0) : (band17Mute ? 0 : 1);\nband18State = soloMode ? (band18Solo ? 1 : 0) : (band18Mute ? 0 : 1);\nband19State = soloMode ? (band19Solo ? 1 : 0) : (band19Mute ? 0 : 1);\nband20State = soloMode ? (band20Solo ? 1 : 0) : (band20Mute ? 0 : 1);\nband21State = soloMode ? (band21Solo ? 1 : 0) : (band21Mute ? 0 : 1);\nband22State = soloMode ? (band22Solo ? 1 : 0) : (band22Mute ? 0 : 1);\nband23State = soloMode ? (band23Solo ? 1 : 0) : (band23Mute ? 0 : 1);\nband24State = soloMode ? (band24Solo ? 1 : 0) : (band24Mute ? 0 : 1);\nband25State = soloMode ? (band25Solo ? 1 : 0) : (band25Mute ? 0 : 1);\nband26State = soloMode ? (band26Solo ? 1 : 0) : (band26Mute ? 0 : 1);\nband27State = soloMode ? (band27Solo ? 1 : 0) : (band27Mute ? 0 : 1);\nband28State = soloMode ? (band28Solo ? 1 : 0) : (band28Mute ? 0 : 1);\nband29State = soloMode ? (band29Solo ? 1 : 0) : (band29Mute ? 0 : 1);\nband30State = soloMode ? (band30Solo ? 1 : 0) : (band30Mute ? 0 : 1);\n\nband00 = band00State ? band00Input * band00Gain : 0;\nband01 = band01State ? band01Input * band01Gain : 0;\nband02 = band02State ? band02Input * band02Gain : 0;\nband03 = band03State ? band03Input * band03Gain : 0;\nband04 = band04State ? band04Input * band04Gain : 0;\nband05 = band05State ? band05Input * band05Gain : 0;\nband06 = band06State ? band06Input * band06Gain : 0;\nband07 = band07State ? band07Input * band07Gain : 0;\nband08 = band08State ? band08Input * band08Gain : 0;\nband09 = band09State ? band09Input * band09Gain : 0;\nband10 = band10State ? band10Input * band10Gain : 0;\nband11 = band11State ? band11Input * band11Gain : 0;\nband12 = band12State ? band12Input * band12Gain : 0;\nband13 = band13State ? band13Input * band13Gain : 0;\nband14 = band14State ? band14Input * band14Gain : 0;\nband15 = band15State ? band15Input * band15Gain : 0;\nband16 = band16State ? band16Input * band16Gain : 0;\nband17 = band17State ? band17Input * band17Gain : 0;\nband18 = band18State ? band18Input * band18Gain : 0;\nband19 = band19State ? band19Input * band19Gain : 0;\nband20 = band20State ? band20Input * band20Gain : 0;\nband21 = band21State ? band21Input * band21Gain : 0;\nband22 = band22State ? band22Input * band22Gain : 0;\nband23 = band23State ? band23Input * band23Gain : 0;\nband24 = band24State ? band24Input * band24Gain : 0;\nband25 = band25State ? band25Input * band25Gain : 0;\nband26 = band26State ? band26Input * band26Gain : 0;\nband27 = band27State ? band27Input * band27Gain : 0;\nband28 = band28State ? band28Input * band28Gain : 0;\nband29 = band29State ? band29Input * band29Gain : 0;\nband30 = band30State ? band30Input * band30Gain : 0;\n\nband00Result = ProcessMeter(band00, current_chan, 0, meter, meter_update);\nband01Result = ProcessMeter(band01, current_chan, 1, meter, meter_update);\nband02Result = ProcessMeter(band02, current_chan, 2, meter, meter_update);\nband03Result = ProcessMeter(band03, current_chan, 3, meter, meter_update);\nband04Result = ProcessMeter(band04, current_chan, 4, meter, meter_update);\nband05Result = ProcessMeter(band05, current_chan, 5, meter, meter_update);\nband06Result = ProcessMeter(band06, current_chan, 6, meter, meter_update);\nband07Result = ProcessMeter(band07, current_chan, 7, meter, meter_update);\nband08Result = ProcessMeter(band08, current_chan, 8, meter, meter_update);\nband09Result = ProcessMeter(band09, current_chan, 9, meter, meter_update);\nband10Result = ProcessMeter(band10, current_chan, 10, meter, meter_update);\nband11Result = ProcessMeter(band11, current_chan, 11, meter, meter_update);\nband12Result = ProcessMeter(band12, current_chan, 12, meter, meter_update);\nband13Result = ProcessMeter(band13, current_chan, 13, meter, meter_update);\nband14Result = ProcessMeter(band14, current_chan, 14, meter, meter_update);\nband15Result = ProcessMeter(band15, current_chan, 15, meter, meter_update);\nband16Result = ProcessMeter(band16, current_chan, 16, meter, meter_update);\nband17Result = ProcessMeter(band17, current_chan, 17, meter, meter_update);\nband18Result = ProcessMeter(band18, current_chan, 18, meter, meter_update);\nband19Result = ProcessMeter(band19, current_chan, 19, meter, meter_update);\nband20Result = ProcessMeter(band20, current_chan, 20, meter, meter_update);\nband21Result = ProcessMeter(band21, current_chan, 21, meter, meter_update);\nband22Result = ProcessMeter(band22, current_chan, 22, meter, meter_update);\nband23Result = ProcessMeter(band23, current_chan, 23, meter, meter_update);\nband24Result = ProcessMeter(band24, current_chan, 24, meter, meter_update);\nband25Result = ProcessMeter(band25, current_chan, 25, meter, meter_update);\nband26Result = ProcessMeter(band26, current_chan, 26, meter, meter_update);\nband27Result = ProcessMeter(band27, current_chan, 27, meter, meter_update);\nband28Result = ProcessMeter(band28, current_chan, 28, meter, meter_update);\nband29Result = ProcessMeter(band29, current_chan, 29, meter, meter_update);\nband30Result = ProcessMeter(band30, current_chan, 30, meter, meter_update);\n\nout1 = band00Result + band01Result + band02Result + band03Result + band04Result + band05Result + band06Result + band07Result + band08Result + band09Result + band10Result + band11Result + band12Result + band13Result + band14Result + band15Result + band16Result + band17Result + band18Result + band19Result + band20Result + band21Result + band22Result + band23Result + band24Result + band25Result + band26Result + band27Result + band28Result + band29Result + band30Result;"
+                                                        "numoutlets": 1,
+                                                        "fontsize": 12.0,
+                                                        "outlettype": [ "" ],
+                                                        "code": "/**\n * Proportional-Q / Geffe Parallel Graphic EQ Implementation\n * \n * Sources & References:\n * - Structure based on Moorer's Parallel EQ and Phillip Geffe's Proportional-Q topology.\n * - Biquad Coefficient math derived from Robert Bristow-Johnson's \"Audio EQ Cookbook\" \n *   (specifically the constant skirt gain Bandpass structure).\n * \n * How it works:\n * Instead of crossing over and serially splitting the signal, this uses 30 parallel Bandpass filters. \n * The dry signal passes through essentially untouched. \n * To boost or cut a band, we simply add or subtract its specifically scaled bandpass \n * output from the dry wire. This guarantees mathematically perfect flat amplitude \n * and zero phase distortion when all bands are at 0 dB (gain = 1.0).\n */\n\nRetrieveLevels(band_no, gains_buffer, mutes_buffer, solos_buffer) {\n\t// Offset bounds: 0 to 29 (for 1-30)\n\tindex = clamp((band_no - 1), 0, 29);\n\tband_gain = peek(gains_buffer, 0, index);\n\tband_mute = peek(mutes_buffer, 0, index);\n\tband_solo = peek(solos_buffer, 0, index);\n\treturn band_gain, band_mute, band_solo;\n}\n\nProcessMeter(isolated_band, current_chan, band_no, meter_buffer, meter_update) {\n\tpeak = abs(isolated_band);\n\tpoke(meter_buffer, peak, current_chan, (band_no - 1), meter_update, index=\"samples\");\n\treturn isolated_band;\n}\n\n// Audio EQ Cookbook Constant-Q Bandpass (Constant Skirt Gain)\nBPCoeffs(freq, Q) {\n\tw0 = twopi * freq / samplerate;\n\talpha = sin(w0) / (2.0 * Q);\n\n\t// Bandpass (constant skirt gain, peak gain = Q) \n\t// This is the ideal structure for parallel summing EQs\n\tb0 =  alpha;\n\tb1 =  0.0;\n\tb2 = -alpha;\n\ta0 =  1.0 + alpha;\n\ta1 = -2.0 * cos(w0);\n\ta2 =  1.0 - alpha;\n\n\t// Normalize by a0\n\treturn b0/a0, b1/a0, b2/a0, a1/a0, a2/a0;\n}\n\n// Direct Form II Transposed is best for gen~ audio rate \nBiquadFilter(input, b0, b1, b2, a1, a2, delay1, delay2) {\n\toutput = (input * b0) + delay1;\n\tnext_delay1 = (input * b1) - (output * a1) + delay2;\n\tnext_delay2 = (input * b2) - (output * a2);\n\t\n\t// fixdenorm prevents CPU spiraling on near-zero signal tails\n\treturn output, fixdenorm(next_delay1), fixdenorm(next_delay2);\n}\n\n// Stateful function to generate a bandpass signal\n// Because freq and Q are static literals when called, gen~ will perfectly constant-fold BPCoeffs\nEQBand(input, freq, Q) {\n\tHistory d1(0);\n\tHistory d2(0);\n\t\n\tb0, b1, b2, a1, a2 = BPCoeffs(freq, Q);\n\tbandpass_sig, next_d1, next_d2 = BiquadFilter(input, b0, b1, b2, a1, a2, d1, d2);\n\t\n\td1 = next_d1;\n\td2 = next_d2;\n\t\n\treturn bandpass_sig;\n}\n\nBuffer gains(\"gains\");\nBuffer meter(\"meter\");\nBuffer mutes(\"mutes\");\nBuffer solos(\"solos\");\nParam meter_update(0);\n\ninput = in1;\ncurrent_chan = mc_channel - 1;\n\n// Q mapping that ensures 1/3 octave filters overlap at exactly -3dB\nConstantQ = 4.318; \n\n// Generate the 30 parallel bandpass signals covering the human hearing range\nband01BP = EQBand(input, 25.0, ConstantQ);\nband02BP = EQBand(input, 31.5, ConstantQ);\nband03BP = EQBand(input, 40.0, ConstantQ);\nband04BP = EQBand(input, 50.0, ConstantQ);\nband05BP = EQBand(input, 63.0, ConstantQ);\nband06BP = EQBand(input, 80.0, ConstantQ);\nband07BP = EQBand(input, 100.0, ConstantQ);\nband08BP = EQBand(input, 125.0, ConstantQ);\nband09BP = EQBand(input, 160.0, ConstantQ);\nband10BP = EQBand(input, 200.0, ConstantQ);\nband11BP = EQBand(input, 250.0, ConstantQ);\nband12BP = EQBand(input, 315.0, ConstantQ);\nband13BP = EQBand(input, 400.0, ConstantQ);\nband14BP = EQBand(input, 500.0, ConstantQ);\nband15BP = EQBand(input, 630.0, ConstantQ);\nband16BP = EQBand(input, 800.0, ConstantQ);\nband17BP = EQBand(input, 1000.0, ConstantQ);\nband18BP = EQBand(input, 1250.0, ConstantQ);\nband19BP = EQBand(input, 1600.0, ConstantQ);\nband20BP = EQBand(input, 2000.0, ConstantQ);\nband21BP = EQBand(input, 2500.0, ConstantQ);\nband22BP = EQBand(input, 3150.0, ConstantQ);\nband23BP = EQBand(input, 4000.0, ConstantQ);\nband24BP = EQBand(input, 5000.0, ConstantQ);\nband25BP = EQBand(input, 6300.0, ConstantQ);\nband26BP = EQBand(input, 8000.0, ConstantQ);\nband27BP = EQBand(input, 10000.0, ConstantQ);\nband28BP = EQBand(input, 12500.0, ConstantQ);\nband29BP = EQBand(input, 16000.0, ConstantQ);\nband30BP = EQBand(input, 20000.0, ConstantQ);\n\n// Retrieve user UI states\nband01Gain, band01Mute, band01Solo = RetrieveLevels(1, gains, mutes, solos);\nband02Gain, band02Mute, band02Solo = RetrieveLevels(2, gains, mutes, solos);\nband03Gain, band03Mute, band03Solo = RetrieveLevels(3, gains, mutes, solos);\nband04Gain, band04Mute, band04Solo = RetrieveLevels(4, gains, mutes, solos);\nband05Gain, band05Mute, band05Solo = RetrieveLevels(5, gains, mutes, solos);\nband06Gain, band06Mute, band06Solo = RetrieveLevels(6, gains, mutes, solos);\nband07Gain, band07Mute, band07Solo = RetrieveLevels(7, gains, mutes, solos);\nband08Gain, band08Mute, band08Solo = RetrieveLevels(8, gains, mutes, solos);\nband09Gain, band09Mute, band09Solo = RetrieveLevels(9, gains, mutes, solos);\nband10Gain, band10Mute, band10Solo = RetrieveLevels(10, gains, mutes, solos);\nband11Gain, band11Mute, band11Solo = RetrieveLevels(11, gains, mutes, solos);\nband12Gain, band12Mute, band12Solo = RetrieveLevels(12, gains, mutes, solos);\nband13Gain, band13Mute, band13Solo = RetrieveLevels(13, gains, mutes, solos);\nband14Gain, band14Mute, band14Solo = RetrieveLevels(14, gains, mutes, solos);\nband15Gain, band15Mute, band15Solo = RetrieveLevels(15, gains, mutes, solos);\nband16Gain, band16Mute, band16Solo = RetrieveLevels(16, gains, mutes, solos);\nband17Gain, band17Mute, band17Solo = RetrieveLevels(17, gains, mutes, solos);\nband18Gain, band18Mute, band18Solo = RetrieveLevels(18, gains, mutes, solos);\nband19Gain, band19Mute, band19Solo = RetrieveLevels(19, gains, mutes, solos);\nband20Gain, band20Mute, band20Solo = RetrieveLevels(20, gains, mutes, solos);\nband21Gain, band21Mute, band21Solo = RetrieveLevels(21, gains, mutes, solos);\nband22Gain, band22Mute, band22Solo = RetrieveLevels(22, gains, mutes, solos);\nband23Gain, band23Mute, band23Solo = RetrieveLevels(23, gains, mutes, solos);\nband24Gain, band24Mute, band24Solo = RetrieveLevels(24, gains, mutes, solos);\nband25Gain, band25Mute, band25Solo = RetrieveLevels(25, gains, mutes, solos);\nband26Gain, band26Mute, band26Solo = RetrieveLevels(26, gains, mutes, solos);\nband27Gain, band27Mute, band27Solo = RetrieveLevels(27, gains, mutes, solos);\nband28Gain, band28Mute, band28Solo = RetrieveLevels(28, gains, mutes, solos);\nband29Gain, band29Mute, band29Solo = RetrieveLevels(29, gains, mutes, solos);\nband30Gain, band30Mute, band30Solo = RetrieveLevels(30, gains, mutes, solos);\n\n// Ideally, this lone addition should be moved outside gen~ into Max/RNBO patcher for CPU savings\nsoloMode = (band01Solo + band02Solo + band03Solo + band04Solo + band05Solo + band06Solo + band07Solo + band08Solo + band09Solo + band10Solo + band11Solo + band12Solo + band13Solo + band14Solo + band15Solo + band16Solo + band17Solo + band18Solo + band19Solo + band20Solo + band21Solo + band22Solo + band23Solo + band24Solo + band25Solo + band26Solo + band27Solo + band28Solo + band29Solo + band30Solo) > 0;\n\n// Resolve true linear-amplitude multipliers for each band\nband01ActiveGain = soloMode ? (band01Solo ? band01Gain : 0) : (band01Mute ? 0 : band01Gain);\nband02ActiveGain = soloMode ? (band02Solo ? band02Gain : 0) : (band02Mute ? 0 : band02Gain);\nband03ActiveGain = soloMode ? (band03Solo ? band03Gain : 0) : (band03Mute ? 0 : band03Gain);\nband04ActiveGain = soloMode ? (band04Solo ? band04Gain : 0) : (band04Mute ? 0 : band04Gain);\nband05ActiveGain = soloMode ? (band05Solo ? band05Gain : 0) : (band05Mute ? 0 : band05Gain);\nband06ActiveGain = soloMode ? (band06Solo ? band06Gain : 0) : (band06Mute ? 0 : band06Gain);\nband07ActiveGain = soloMode ? (band07Solo ? band07Gain : 0) : (band07Mute ? 0 : band07Gain);\nband08ActiveGain = soloMode ? (band08Solo ? band08Gain : 0) : (band08Mute ? 0 : band08Gain);\nband09ActiveGain = soloMode ? (band09Solo ? band09Gain : 0) : (band09Mute ? 0 : band09Gain);\nband10ActiveGain = soloMode ? (band10Solo ? band10Gain : 0) : (band10Mute ? 0 : band10Gain);\nband11ActiveGain = soloMode ? (band11Solo ? band11Gain : 0) : (band11Mute ? 0 : band11Gain);\nband12ActiveGain = soloMode ? (band12Solo ? band12Gain : 0) : (band12Mute ? 0 : band12Gain);\nband13ActiveGain = soloMode ? (band13Solo ? band13Gain : 0) : (band13Mute ? 0 : band13Gain);\nband14ActiveGain = soloMode ? (band14Solo ? band14Gain : 0) : (band14Mute ? 0 : band14Gain);\nband15ActiveGain = soloMode ? (band15Solo ? band15Gain : 0) : (band15Mute ? 0 : band15Gain);\nband16ActiveGain = soloMode ? (band16Solo ? band16Gain : 0) : (band16Mute ? 0 : band16Gain);\nband17ActiveGain = soloMode ? (band17Solo ? band17Gain : 0) : (band17Mute ? 0 : band17Gain);\nband18ActiveGain = soloMode ? (band18Solo ? band18Gain : 0) : (band18Mute ? 0 : band18Gain);\nband19ActiveGain = soloMode ? (band19Solo ? band19Gain : 0) : (band19Mute ? 0 : band19Gain);\nband20ActiveGain = soloMode ? (band20Solo ? band20Gain : 0) : (band20Mute ? 0 : band20Gain);\nband21ActiveGain = soloMode ? (band21Solo ? band21Gain : 0) : (band21Mute ? 0 : band21Gain);\nband22ActiveGain = soloMode ? (band22Solo ? band22Gain : 0) : (band22Mute ? 0 : band22Gain);\nband23ActiveGain = soloMode ? (band23Solo ? band23Gain : 0) : (band23Mute ? 0 : band23Gain);\nband24ActiveGain = soloMode ? (band24Solo ? band24Gain : 0) : (band24Mute ? 0 : band24Gain);\nband25ActiveGain = soloMode ? (band25Solo ? band25Gain : 0) : (band25Mute ? 0 : band25Gain);\nband26ActiveGain = soloMode ? (band26Solo ? band26Gain : 0) : (band26Mute ? 0 : band26Gain);\nband27ActiveGain = soloMode ? (band27Solo ? band27Gain : 0) : (band27Mute ? 0 : band27Gain);\nband28ActiveGain = soloMode ? (band28Solo ? band28Gain : 0) : (band28Mute ? 0 : band28Gain);\nband29ActiveGain = soloMode ? (band29Solo ? band29Gain : 0) : (band29Mute ? 0 : band29Gain);\nband30ActiveGain = soloMode ? (band30Solo ? band30Gain : 0) : (band30Mute ? 0 : band30Gain);\n\n// Pure absolute energy path (for metering & Soloing isolation)\nband01Abs = band01BP * band01ActiveGain;\nband02Abs = band02BP * band02ActiveGain;\nband03Abs = band03BP * band03ActiveGain;\nband04Abs = band04BP * band04ActiveGain;\nband05Abs = band05BP * band05ActiveGain;\nband06Abs = band06BP * band06ActiveGain;\nband07Abs = band07BP * band07ActiveGain;\nband08Abs = band08BP * band08ActiveGain;\nband09Abs = band09BP * band09ActiveGain;\nband10Abs = band10BP * band10ActiveGain;\nband11Abs = band11BP * band11ActiveGain;\nband12Abs = band12BP * band12ActiveGain;\nband13Abs = band13BP * band13ActiveGain;\nband14Abs = band14BP * band14ActiveGain;\nband15Abs = band15BP * band15ActiveGain;\nband16Abs = band16BP * band16ActiveGain;\nband17Abs = band17BP * band17ActiveGain;\nband18Abs = band18BP * band18ActiveGain;\nband19Abs = band19BP * band19ActiveGain;\nband20Abs = band20BP * band20ActiveGain;\nband21Abs = band21BP * band21ActiveGain;\nband22Abs = band22BP * band22ActiveGain;\nband23Abs = band23BP * band23ActiveGain;\nband24Abs = band24BP * band24ActiveGain;\nband25Abs = band25BP * band25ActiveGain;\nband26Abs = band26BP * band26ActiveGain;\nband27Abs = band27BP * band27ActiveGain;\nband28Abs = band28BP * band28ActiveGain;\nband29Abs = band29BP * band29ActiveGain;\nband30Abs = band30BP * band30ActiveGain;\n\nband01Result = ProcessMeter(band01Abs, current_chan, 1, meter, meter_update);\nband02Result = ProcessMeter(band02Abs, current_chan, 2, meter, meter_update);\nband03Result = ProcessMeter(band03Abs, current_chan, 3, meter, meter_update);\nband04Result = ProcessMeter(band04Abs, current_chan, 4, meter, meter_update);\nband05Result = ProcessMeter(band05Abs, current_chan, 5, meter, meter_update);\nband06Result = ProcessMeter(band06Abs, current_chan, 6, meter, meter_update);\nband07Result = ProcessMeter(band07Abs, current_chan, 7, meter, meter_update);\nband08Result = ProcessMeter(band08Abs, current_chan, 8, meter, meter_update);\nband09Result = ProcessMeter(band09Abs, current_chan, 9, meter, meter_update);\nband10Result = ProcessMeter(band10Abs, current_chan, 10, meter, meter_update);\nband11Result = ProcessMeter(band11Abs, current_chan, 11, meter, meter_update);\nband12Result = ProcessMeter(band12Abs, current_chan, 12, meter, meter_update);\nband13Result = ProcessMeter(band13Abs, current_chan, 13, meter, meter_update);\nband14Result = ProcessMeter(band14Abs, current_chan, 14, meter, meter_update);\nband15Result = ProcessMeter(band15Abs, current_chan, 15, meter, meter_update);\nband16Result = ProcessMeter(band16Abs, current_chan, 16, meter, meter_update);\nband17Result = ProcessMeter(band17Abs, current_chan, 17, meter, meter_update);\nband18Result = ProcessMeter(band18Abs, current_chan, 18, meter, meter_update);\nband19Result = ProcessMeter(band19Abs, current_chan, 19, meter, meter_update);\nband20Result = ProcessMeter(band20Abs, current_chan, 20, meter, meter_update);\nband21Result = ProcessMeter(band21Abs, current_chan, 21, meter, meter_update);\nband22Result = ProcessMeter(band22Abs, current_chan, 22, meter, meter_update);\nband23Result = ProcessMeter(band23Abs, current_chan, 23, meter, meter_update);\nband24Result = ProcessMeter(band24Abs, current_chan, 24, meter, meter_update);\nband25Result = ProcessMeter(band25Abs, current_chan, 25, meter, meter_update);\nband26Result = ProcessMeter(band26Abs, current_chan, 26, meter, meter_update);\nband27Result = ProcessMeter(band27Abs, current_chan, 27, meter, meter_update);\nband28Result = ProcessMeter(band28Abs, current_chan, 28, meter, meter_update);\nband29Result = ProcessMeter(band29Abs, current_chan, 29, meter, meter_update);\nband30Result = ProcessMeter(band30Abs, current_chan, 30, meter, meter_update);\n\n\n// Delta path (for true Proportional-Q parallel summation)\n// Subtracting 1.0 from the linear gain converts it into the +/- difference we add to the dry wire\nband01Delta = band01BP * (band01ActiveGain - 1.0);\nband02Delta = band02BP * (band02ActiveGain - 1.0);\nband03Delta = band03BP * (band03ActiveGain - 1.0);\nband04Delta = band04BP * (band04ActiveGain - 1.0);\nband05Delta = band05BP * (band05ActiveGain - 1.0);\nband06Delta = band06BP * (band06ActiveGain - 1.0);\nband07Delta = band07BP * (band07ActiveGain - 1.0);\nband08Delta = band08BP * (band08ActiveGain - 1.0);\nband09Delta = band09BP * (band09ActiveGain - 1.0);\nband10Delta = band10BP * (band10ActiveGain - 1.0);\nband11Delta = band11BP * (band11ActiveGain - 1.0);\nband12Delta = band12BP * (band12ActiveGain - 1.0);\nband13Delta = band13BP * (band13ActiveGain - 1.0);\nband14Delta = band14BP * (band14ActiveGain - 1.0);\nband15Delta = band15BP * (band15ActiveGain - 1.0);\nband16Delta = band16BP * (band16ActiveGain - 1.0);\nband17Delta = band17BP * (band17ActiveGain - 1.0);\nband18Delta = band18BP * (band18ActiveGain - 1.0);\nband19Delta = band19BP * (band19ActiveGain - 1.0);\nband20Delta = band20BP * (band20ActiveGain - 1.0);\nband21Delta = band21BP * (band21ActiveGain - 1.0);\nband22Delta = band22BP * (band22ActiveGain - 1.0);\nband23Delta = band23BP * (band23ActiveGain - 1.0);\nband24Delta = band24BP * (band24ActiveGain - 1.0);\nband25Delta = band25BP * (band25ActiveGain - 1.0);\nband26Delta = band26BP * (band26ActiveGain - 1.0);\nband27Delta = band27BP * (band27ActiveGain - 1.0);\nband28Delta = band28BP * (band28ActiveGain - 1.0);\nband29Delta = band29BP * (band29ActiveGain - 1.0);\nband30Delta = band30BP * (band30ActiveGain - 1.0);\n\n// Aggregations\nabsSum = band01Result + band02Result + band03Result + band04Result + band05Result + band06Result + band07Result + band08Result + band09Result + band10Result + band11Result + band12Result + band13Result + band14Result + band15Result + band16Result + band17Result + band18Result + band19Result + band20Result + band21Result + band22Result + band23Result + band24Result + band25Result + band26Result + band27Result + band28Result + band29Result + band30Result;\n\ndeltaSum = band01Delta + band02Delta + band03Delta + band04Delta + band05Delta + band06Delta + band07Delta + band08Delta + band09Delta + band10Delta + band11Delta + band12Delta + band13Delta + band14Delta + band15Delta + band16Delta + band17Delta + band18Delta + band19Delta + band20Delta + band21Delta + band22Delta + band23Delta + band24Delta + band25Delta + band26Delta + band27Delta + band28Delta + band29Delta + band30Delta;\n\n// Final Routing:\n// If solo is activated, we disconnect the dry signal entirely to isolate the frequencies.\n// Otherwise, we take the pristine dry signal and apply the EQ boosts/cuts to it.\nout1 = soloMode ? absSum : (input + deltaSum);\n"
                                                     }
                                                 },
                                                 {
@@ -1562,22 +1562,22 @@
                                                         "text": "out 1",
                                                         "patching_rect": [ 50.0, 630.0970787405968, 35.0, 22.0 ],
                                                         "numinlets": 1,
-                                                        "numoutlets": 0,
-                                                        "id": "obj-4"
+                                                        "id": "obj-4",
+                                                        "numoutlets": 0
                                                     }
                                                 }
                                             ],
                                             "lines": [
                                                 {
                                                     "patchline": {
-                                                        "source": [ "obj-1", 0 ],
-                                                        "destination": [ "obj-3", 0 ]
+                                                        "source": [ "obj-3", 0 ],
+                                                        "destination": [ "obj-4", 0 ]
                                                     }
                                                 },
                                                 {
                                                     "patchline": {
-                                                        "source": [ "obj-3", 0 ],
-                                                        "destination": [ "obj-4", 0 ]
+                                                        "source": [ "obj-1", 0 ],
+                                                        "destination": [ "obj-3", 0 ]
                                                     }
                                                 }
                                             ]
@@ -1590,7 +1590,7 @@
                                     "outlettype": [ "multichannelsignal" ],
                                     "patching_rect": [ 234.0, 217.0, 334.0, 22.0 ],
                                     "text": "mc.gen~ @title pp.eq",
-                                    "wrapper_uniquekey": "u409006731"
+                                    "wrapper_uniquekey": "u849009278"
                                 }
                             },
                             {
