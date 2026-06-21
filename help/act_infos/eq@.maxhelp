@@ -412,12 +412,12 @@
                 "box": {
                     "fontsize": 12.0,
                     "id": "obj-3",
-                    "linecount": 3,
+                    "linecount": 2,
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 45.0, 90.0, 488.0, 47.0 ],
-                    "text": "based on james a. moorer's parallel eq and phillip geffe's proportional-q biquad topology. biquad coefficient math derived from Robert Bristow-Johnson's \"audio eq cookbook\". gen~ based & mc-aware."
+                    "patching_rect": [ 45.0, 90.0, 491.0, 33.0 ],
+                    "text": "based on crossover filters by graham wakefield. quite cpu-hungry, might compile to an external later. gen~ based & mc-aware."
                 }
             },
             {
