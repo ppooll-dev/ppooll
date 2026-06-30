@@ -103,19 +103,25 @@ function loadAct() {
     }
 
     // load buffers
-    //  TODO: check for buffers loaded via pres_menu and do that first?
-    if (environment.buffer_host1 && environment.buffer_host1.ll_buffers) {
-        environment.buffer_host1.ll_buffers.buffers.forEach(b => {
-            // if starts with environmentsP/, adjust the file path to read from this
-            //   environment folder
-            if(b.full_path && b.full_path.startsWith("environmentsP/")){
-                b.full_path = `${dict.props.path}/buffers/${b.file_name}`
-            }
-        })
+    if (environment.buffer_host1) {
 
-        const buffer_dict = new Dict("ll_buffers");
-        buffer_dict.parse(JSON.stringify(environment.buffer_host1.ll_buffers));
-        messnamed("llenviread_loadbuffers", "bang");
+        // if we have dict param "ll_buffers", load from the dict
+        //    otherwise, load from pres_menu
+        if(environment.buffer_host1.ll_buffers) {
+            environment.buffer_host1.ll_buffers.buffers.forEach(b => {
+                // if starts with environmentsP/, adjust the file path to read from this
+                //   environment folder
+                if(b.full_path && b.full_path.startsWith("environmentsP/")){
+                    b.full_path = `${dict.props.path}/buffers/${b.file_name}`
+                }
+            })
+
+            const buffer_dict = new Dict("ll_buffers");
+            buffer_dict.parse(JSON.stringify(environment.buffer_host1.ll_buffers));
+            messnamed("llenviread_loadbuffers", "bang");
+        } else {
+            ll_global.patchers["buffer_host1"].getnamed("act::pres_menu").setvalueof(environment.buffer_host1.act.pres_menu)
+        }
     }
 
     loadParams();
@@ -192,6 +198,11 @@ function walkEnvironment(actName, obj, path) {
 
 function setparam(a, p, v) {
     //act, param, value
+    if(a === "buffer_host1" && p === "act::pres_menu"){
+        // post("skip buffer_host1::act::pres_menu -- this is handled loadAct() \n")
+        return;
+    }
+
     if (
         !param_excludes.includes(p) &&
         !act_param_excludes.includes(a + p) &&

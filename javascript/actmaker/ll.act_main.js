@@ -154,7 +154,7 @@ function bang(alreadyRegistered = false) {
     act_patcher.locked_bgcolor = ll.makeColor(act_args.color);
 
     act_box = this.patcher.box;
-	post(act_patcher, act_box,"\n");
+	// post(act_patcher, act_box,"\n");
 
     title_menu = this.patcher.getnamed("title_menu");
     pres_menu = this.patcher.getnamed("pres_menu");
@@ -1906,7 +1906,7 @@ function sendto(...args) {
 function actname(to) {
     messnamed("actname", act_name_index);
     messnamed("::actname", "::" + act_name_index + "::");
-    if (to === "to") post("actname to seems useless");
+    if (to === "to") post("actname to seems useless\n");
 }
 
 // ############################################################### active_store
