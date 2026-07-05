@@ -116,3 +116,12 @@ function notifydeleted() {
     ll_global.live_ppooll_patcher = null;
     ll_global.nested_patcher = 0;
 }
+
+function onDrop(path){
+    if(!ll_global.state["buffer_host1"]){
+        messnamed("lload", "buffer_host")
+        outlet(0, "retryOnDrop", path)
+        return;
+    }
+    messnamed("::buffer_host1::dropfile", path);
+}
