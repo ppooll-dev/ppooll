@@ -46,7 +46,6 @@ function msg_dictionary(d) {
 
         const meta_dict = new Dict();
         meta_dict.parse(JSON.stringify(environment._meta));
-        post(JSON.stringify(environment._meta), "\n");
         
         const dialog = this.patcher.parentpatcher
             .getnamed("environment_dialog")
