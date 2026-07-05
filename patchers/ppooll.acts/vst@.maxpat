@@ -4286,7 +4286,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 213.5, 550.0, 484.0, 35.0 ],
-                                                    "text": "write \"Macintosh HD:/Users/josephsteccato/Documents/Max 8/Library/ppooll_presets/vst@P/ValhallaVintageVerb_x64.vst‚àèvst-testy.fxp\""
+                                                    "text": "write"
                                                 }
                                             },
                                             {

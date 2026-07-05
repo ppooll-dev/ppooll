@@ -81,7 +81,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 295.0, 156.0, 322.0, 35.0 ],
-					"text" : "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Library/ppooll_presets\""
+					"text" : ""
 				}
 
 			}

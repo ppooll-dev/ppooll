@@ -1575,7 +1575,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 18.0, 58.0, 214.0, 49.0 ],
-                                                    "text": "\"Macintosh HD:/Users/josephsteccato/Movies/_SOURCE/MT PLEASANT ARCHIVES/GATE OF HEAVEN CEMETERY  HAWTHORNE NY RECEIVING TOMB OCTOBER 2022-JsB7-k_DSck.mp4\""
+                                                    "text": ""
                                                 }
                                             },
                                             {

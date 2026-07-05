@@ -1793,7 +1793,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 358.5, 164.0, 215.0, 29.0 ],
-                                                                    "text": "\"Macintosh HD:/Users/josephsteccato/Music/ppooll/ppooll_rec/\""
+                                                                    "text": ""
                                                                 }
                                                             },
                                                             {
@@ -1805,7 +1805,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 304.0, 111.0, 212.0, 31.0 ],
-                                                                    "text": "\"Macintosh HD:/Users/klaus/Documents/Max 9/Packages/ppooll/media/ll.samples/\""
+                                                                    "text": ""
                                                                 }
                                                             },
                                                             {
@@ -1918,7 +1918,7 @@
                                                                                     "numoutlets": 1,
                                                                                     "outlettype": [ "" ],
                                                                                     "patching_rect": [ 273.063171, 330.69342, 330.0, 23.0 ],
-                                                                                    "text": "\"Macintosh HD:/Users/josephsteccato/Documents/Max 9/Library/\""
+                                                                                    "text": ""
                                                                                 }
                                                                             },
                                                                             {
@@ -2147,7 +2147,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 221.5, 199.0, 77.0, 59.0 ],
-                                                                    "text": "\"Macintosh HD:/Users/josephsteccato/Music/ppooll/ppooll_rec/\""
+                                                                    "text": ""
                                                                 }
                                                             },
                                                             {
