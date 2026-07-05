@@ -115,6 +115,17 @@ function set_write_sample_buffers(v) {
 }
 
 //============================= dialog =============================
+function set_meta_attributes(dictname){
+    const dict_temp = new Dict(dictname);
+    const temp = JSON.parse(dict_temp.stringify());
+    
+    set_envi_name(temp.envi_name);
+    set_type(temp.type);
+    set_copy_buffers(temp.copy_buffers);
+    set_write_files(temp.write_files);
+    set_write_sample_buffers(temp.write_sample_buffers);
+}
+
 function clear() {
     // post("clear\n")
     this.patcher.getnamed("textedit_envi_name").message("set", "");
@@ -235,8 +246,9 @@ function saveBuffer(b) {
 
         // Replace polybuffer~ with newly created files
         pb.send(b.buffer_index, "read", newFile);
-        b.full_path = `environmentsP/${envi_name}/buffers/${b.file_name}`;
-        b.label = `${b.label}.${bufferFileExt}`;
+        
+        b.full_path = `environmentsP/${envi_name}/buffers/${b.label}.${bufferFileExt}`;
+        b.file_name = `${b.label}.${bufferFileExt}`;
     }
 }
 
@@ -308,6 +320,15 @@ function writeJson(jsonPath) {
 
     if (buffers) {
         environment.buffer_host1.ll_buffers = { buffers };
+    }
+
+    environment._meta = {
+        envi_name,
+        type,
+        copy_buffers,
+        write_files,
+        write_sample_buffers,
+        version: ll_global.version
     }
 
     var enviDict = new Dict("environment");

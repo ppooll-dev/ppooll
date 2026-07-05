@@ -472,3 +472,50 @@ exports.reorderByTemplate = (obj, template) => {
 
     return reordered;
 }
+
+// read a "coll" exported file into JSON
+exports.readColl = (path) => {
+    var f = new File(path, "read");
+    if (!f.isopen) {
+        post("could not open file " + path + "\n");
+        return;
+    }
+    const store = [];
+
+    while (f.position < f.eof) {
+        var line = f.readline(65536);
+        if (!line) continue;
+
+        line = line.trim();
+        if (!line || line.charAt(0) === "#") continue; // skip blank/comment lines
+
+        // remove trailing semicolon
+        if (line.endsWith(";")) {
+            line = line.substring(0, line.length - 1);
+        }
+
+        // split into key + rest (first comma)
+        var c = line.indexOf(",");
+        if (c < 0) continue;
+
+        var key = line.substring(0, c).trim();
+        var body = line.substring(c + 1).trim();
+
+        // tokenization (keep quoted strings intact)
+        var tokens = [];
+        var re = /"([^"\\]*(?:\\.[^"\\]*)*)"|(\S+)/g;
+        var m;
+        while ((m = re.exec(body)) !== null) {
+            if (m[1] != null) {
+                tokens.push(m[1].replace(/\\"/g, '"'));
+            } else {
+                tokens.push(m[2]);
+            }
+        }
+
+        store.push(tokens);
+    }
+
+    f.close();
+    return store;
+}

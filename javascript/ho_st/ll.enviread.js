@@ -18,6 +18,7 @@ var act_param_excludes = [
 // Dict Objects
 let dict = null;
 let environment = null;
+let envi_meta = null;
 let acts = null;
 
 let actsAlreadyOpen = [];
@@ -40,6 +41,22 @@ function debug_post(a) {
 function msg_dictionary(d) {
     dict = d;
     environment = dict.environment;
+    if(environment._meta){
+        envi_meta = environment._meta;
+
+        const meta_dict = new Dict();
+        meta_dict.parse(JSON.stringify(environment._meta));
+        post(JSON.stringify(environment._meta), "\n");
+        
+        const dialog = this.patcher.parentpatcher
+            .getnamed("environment_dialog")
+            .subpatcher()
+            .getnamed("v8_AA");
+        dialog.message("set_meta_attributes", meta_dict.name);
+    }
+    
+    var enviDict = new Dict("environment");
+    enviDict.parse(JSON.stringify(environment));
 
     outlet(0, dict.props.path);
     loadActs();
@@ -51,7 +68,7 @@ function canonicalActOrder(allKeys) {
     const hasBuffer = allKeys.includes("buffer_host1");
 
     const filtered = allKeys
-        .filter((k) => k !== "ho_st1" && !/^buffer_host\d+$/.test(k)) // drop all buffer_hostN
+        .filter((k) => k !== "ho_st1" && !/^buffer_host\d+$/.test(k) && k !== "_meta") // drop all buffer_hostN
         .sort((a, b) => a.localeCompare(b));
 
     if (hasHo) filtered.unshift("ho_st1");
@@ -111,9 +128,9 @@ function loadAct() {
             environment.buffer_host1.ll_buffers.buffers.forEach(b => {
                 // if starts with environmentsP/, adjust the file path to read from this
                 //   environment folder
-                if(b.full_path && b.full_path.startsWith("environmentsP/")){
-                    b.full_path = `${dict.props.path}/buffers/${b.file_name}`
-                }
+                // if(b.full_path && b.full_path.startsWith("environmentsP/")){
+                //     b.full_path = `${dict.props.path}/buffers/${b.file_name}`
+                // }
             })
 
             const buffer_dict = new Dict("ll_buffers");

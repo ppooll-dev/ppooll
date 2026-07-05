@@ -52,53 +52,6 @@ function msg_dictionary(dict){
     update_buffer_list();
 }
 
-// Read a "coll" exported file into a dict
-function read_coll(path) {
-    var f = new File(path, "read");
-    if (!f.isopen) {
-        post("could not open file " + path + "\n");
-        return;
-    }
-    const store = [];
-
-    while (f.position < f.eof) {
-        var line = f.readline(65536);
-        if (!line) continue;
-
-        line = line.trim();
-        if (!line || line.charAt(0) === "#") continue; // skip blank/comment lines
-
-        // remove trailing semicolon
-        if (line.endsWith(";")) {
-            line = line.substring(0, line.length - 1);
-        }
-
-        // split into key + rest (first comma)
-        var c = line.indexOf(",");
-        if (c < 0) continue;
-
-        var key = line.substring(0, c).trim();
-        var body = line.substring(c + 1).trim();
-
-        // tokenization (keep quoted strings intact)
-        var tokens = [];
-        var re = /"([^"\\]*(?:\\.[^"\\]*)*)"|(\S+)/g;
-        var m;
-        while ((m = re.exec(body)) !== null) {
-            if (m[1] != null) {
-                tokens.push(m[1].replace(/\\"/g, '"'));
-            } else {
-                tokens.push(m[2]);
-            }
-        }
-
-        store.push(tokens);
-    }
-
-    f.close();
-    return store;
-}
-
 function pres_menu(name){
     if(["", "_", "write", "clear!", "TEXT", "(presets)"].indexOf(name) > -1)
         return;
@@ -136,7 +89,7 @@ function pres_menu(name){
 
 // Load from coll buffer_hostP file
 function readCollPreset(path) {
-    const dict = read_coll(path);
+    const coll = ll.readColl(path);
 
     pb.clear();
     buffersDeleted = {};
@@ -151,9 +104,9 @@ function readCollPreset(path) {
     //  length ms
     //  sample rate
 
-    Object.keys(dict)
+    Object.keys(coll)
         .map((r, i) => {
-            const row = dict[r];
+            const row = coll[r];
 
             if(row[3] === "-"){
                 const number = parseInt(row[0].match(/^sb(\d+)/)[1]);
@@ -176,11 +129,13 @@ function readCollPreset(path) {
 function initBuffer(b, i){
     buffers[b.buffer_name] = b;
     if (b.full_path) {
-        const full_path = ll.fileExists(b.full_path);
-        if(full_path){
+        let is_envi_folder = b.full_path.startsWith("environmentsP/");
+        let full_path = is_envi_folder ? `${ll_global.paths["user"]}/${b.full_path}` : b.full_path;
+        
+        if(ll.fileExists(full_path)){
             pb.append(full_path);
         }else{
-            error(`ll.buffer_bank: ${b.full_path} not found, adding empty\n`)
+            error(`ll.buffer_bank: ${full_path} not found for ${b.label}, adding empty\n`)
             pb.appendempty(b.length, b.chans);
         }
     }
@@ -263,18 +218,22 @@ function bhState() {
         .filter((b) => !buffersDeleted[b.buffer_name])
         .map((b) => {
             let label = "";
-
             if(buffers[b.buffer_name] && buffers[b.buffer_name].label) {
                 label = buffers[b.buffer_name].label;
             }
             else {
                 label = `sb${sbIndex}_${b.length}_${b.chans}`;
-                sbIndex++;
+            }
+
+            if(label.match(/^sb(\d+)/)){
+                sbIndex++
             }
             return {
                 ...b,
                 label,
-                full_path: (buffers[b.buffer_name] && buffers[b.buffer_name].full_path) ? ll.fileExists(buffers[b.buffer_name].full_path) : null
+                full_path: (buffers[b.buffer_name] && buffers[b.buffer_name].full_path) 
+                    ? ll.fileExists(buffers[b.buffer_name].full_path) 
+                    : null
             };
         });
 }
