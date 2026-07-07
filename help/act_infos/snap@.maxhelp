@@ -4,14 +4,27 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 2,
+            "revision": 4,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 100.0, 100.0, 603.0, 453.0 ],
+        "rect": [ 661.0, 145.0, 614.0, 645.0 ],
         "default_fontsize": 10.0,
         "boxes": [
+            {
+                "box": {
+                    "fontname": "Arial",
+                    "fontsize": 12.0,
+                    "id": "obj-2",
+                    "linecount": 2,
+                    "maxclass": "comment",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 7.0, 464.0, 384.0, 47.0 ],
+                    "text": "if you \"write\" a snap@ preset, snap@ creates a folder, where it saves all presets of the selected acts.\n"
+                }
+            },
             {
                 "box": {
                     "data": {
@@ -45,7 +58,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 43.0, 355.0, 123.0, 20.0 ],
+                    "patching_rect": [ 244.25, 161.0, 123.0, 20.0 ],
                     "text": "step through presets."
                 }
             },
@@ -61,7 +74,7 @@
                     "outlettype": [ "", "", "int" ],
                     "outputmode": 0,
                     "parameter_enable": 0,
-                    "patching_rect": [ 12.0, 358.0, 30.0, 16.0 ],
+                    "patching_rect": [ 213.25, 163.0, 30.0, 16.0 ],
                     "text": "next",
                     "usebgoncolor": 1,
                     "usetextovercolor": 1,
@@ -73,12 +86,12 @@
                     "fontname": "Arial",
                     "fontsize": 12.0,
                     "id": "obj-18",
-                    "linecount": 7,
+                    "linecount": 13,
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 6.0, 208.0, 429.0, 100.0 ],
-                    "text": "like with working with presets in other acts, its important to know about\n\"active setting\" of parameters.\noption-click on an act in the same menu to open the clientwindow of this act.\nthe checkboxes there on the very left tell which parameters are active, which means, they will affected by the preset.\nby default there should be a reasonable setting here, but there may be some more parameters, that you want to exclude from being set by your presets."
+                    "patching_rect": [ 4.0, 238.0, 484.0, 181.0 ],
+                    "text": "like when working with presets in other acts, it is important to know about\n\"active setting\" of parameters:\nonly \"active\" parameters are recalled from presets. (though all parameters are stored)\n\nsnap@ uses the local preset system in an act.\n(storing preset-slot 1001, 1002, ...)\n\nopen the clientwindow of any (selected) act.\nthe checkboxes at the very left tell which parameters are active.\n\nby default there should be a reasonable active setting there, but there may be some more parameters, that you want to exclude from being recalled by your presets\nby unchecking their active status."
                 }
             },
             {
@@ -99,7 +112,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 9.0, 163.0, 57.0, 20.0 ],
+                    "patching_rect": [ 7.0, 193.0, 57.0, 20.0 ],
                     "textcolor": [ 0.149, 0.149, 0.149, 1.0 ],
                     "varname": "select_acts"
                 }
@@ -183,7 +196,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -343,7 +356,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 6.0, 322.0, 359.0, 20.0 ],
+                    "patching_rect": [ 4.0, 424.0, 359.0, 20.0 ],
                     "text": "note, that active-settings here are the same for local presets then."
                 }
             },
@@ -355,8 +368,8 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 6.0, 187.0, 429.0, 20.0 ],
-                    "text": "logically you should deselct acts like control@ here !"
+                    "patching_rect": [ 4.0, 217.0, 429.0, 20.0 ],
+                    "text": "logically you should NOT selct acts like control@ or ho_st here !"
                 }
             },
             {
@@ -367,8 +380,8 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 73.0, 162.0, 332.0, 20.0 ],
-                    "text": "select (check √) the acts you want to work with in this menu."
+                    "patching_rect": [ 71.0, 192.0, 332.0, 20.0 ],
+                    "text": "select (check √) the acts you want to work with."
                 }
             },
             {
