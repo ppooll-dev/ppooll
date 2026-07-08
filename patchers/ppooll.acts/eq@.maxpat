@@ -31,7 +31,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 50.0, 0.0, 166.0, 16.0 ],
+                    "patching_rect": [ 46.052734375, 0.0, 166.0, 16.0 ],
                     "textfile": {
                         "filename": "ll.pattr_v8ui.js",
                         "flags": 0,
@@ -39,6 +39,41 @@
                         "autowatch": 1
                     },
                     "varname": "presets"
+                }
+            },
+            {
+                "box": {
+                    "bgoncolor": [ 0.2196078431372549, 0.2196078431372549, 0.2196078431372549, 1.0 ],
+                    "fontsize": 10.0,
+                    "id": "obj-15",
+                    "maxclass": "textbutton",
+                    "mode": 1,
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "int" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 94.0, 138.0, 20.0, 14.0 ],
+                    "text": "b",
+                    "texton": "f",
+                    "textoncolor": [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
+                    "varname": "spectrumMode"
+                }
+            },
+            {
+                "box": {
+                    "fontsize": 10.0,
+                    "id": "obj-11",
+                    "maxclass": "textbutton",
+                    "mode": 1,
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "int" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 69.0, 138.0, 23.0, 14.0 ],
+                    "text": "par",
+                    "texton": "ser",
+                    "textoncolor": [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
+                    "varname": "bandMode"
                 }
             },
             {
@@ -153,7 +188,7 @@
                     "parameter_enable": 0,
                     "patching_rect": [ 0.0, 18.0, 300.0, 95.0 ],
                     "peakcolor": [ 0.498039, 0.498039, 0.498039, 1.0 ],
-                    "setminmax": [ -90.0, 12.0 ],
+                    "setminmax": [ -120.0, 12.0 ],
                     "signed": 1,
                     "size": 30,
                     "varname": "multislider"
@@ -168,7 +203,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "int" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 287.0, 138.0, 14.0, 14.0 ],
+                    "patching_rect": [ 286.0, 2.0, 14.0, 14.0 ],
                     "text": "-",
                     "texton": "-",
                     "textoncolor": [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
@@ -211,7 +246,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 81.0, 138.0, 75.0, 14.0 ],
+                    "patching_rect": [ 117.0, 138.0, 72.0, 14.0 ],
                     "slidermax": 4.0,
                     "sliderstyle": 2,
                     "varname": "min"
@@ -232,7 +267,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 157.0, 137.75, 70.0, 14.5 ],
+                    "patching_rect": [ 190.0, 138.0, 68.0, 14.0 ],
                     "slidermax": 4.0,
                     "sliderstyle": 2,
                     "varname": "max"
@@ -253,7 +288,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 229.0, 138.0, 40.0, 14.0 ],
+                    "patching_rect": [ 260.0, 138.0, 40.0, 14.0 ],
                     "slidermax": 30000.0,
                     "sliderstyle": 2,
                     "varname": "view_band"
@@ -268,7 +303,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "int" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 271.0, 138.0, 14.0, 14.0 ],
+                    "patching_rect": [ 270.0, 2.0, 14.0, 14.0 ],
                     "text": "0",
                     "texton": "0",
                     "textoncolor": [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
@@ -288,7 +323,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, 138.0, 79.0, 14.0 ],
+                    "patching_rect": [ 0.0, 138.0, 67.0, 14.0 ],
                     "slidermax": 30000.0,
                     "varname": "interp"
                 }
@@ -305,7 +340,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 239.0, 0.0, 60.0, 16.0 ],
+                    "patching_rect": [ 211.0, 0.0, 58.0, 16.0 ],
                     "varname": "preset-ramp"
                 }
             },
@@ -343,10 +378,10 @@
                         "ll.blues::levels": 5
                     },
                     "saved_object_attributes": {
-                        "client_rect": [ 897, 213, 1512, 873 ],
+                        "client_rect": [ 499, 162, 1139, 402 ],
                         "parameter_enable": 0,
                         "parameter_mappable": 0,
-                        "storage_rect": [ 583, 68, 1034, 196 ]
+                        "storage_rect": [ 0, 0, 640, 240 ]
                     },
                     "text": "pattrstorage pat",
                     "varname": "pat"
@@ -389,15 +424,17 @@
                     "outlettype": [ "", "", "", "" ],
                     "patching_rect": [ 623.0, 194.0, 107.0, 22.0 ],
                     "restore": {
+                        "bandMode": [ 1 ],
                         "interp": [ 1000.0 ],
                         "max": [ 12.0 ],
-                        "min": [ -90.0 ],
+                        "min": [ -120.0 ],
                         "multislider": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
                         "mutes": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
                         "nogain": [ -1 ],
-                        "preset-ramp": [ 0 ],
+                        "preset-ramp": [ 0.0 ],
                         "presets": [ 0 ],
                         "solos": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+                        "spectrumMode": [ 1 ],
                         "view_band": [ 0.0 ],
                         "zero": [ -1 ]
                     },
@@ -424,6 +461,17 @@
                         "classnamespace": "box",
                         "rect": [ 1248.0, 678.0, 638.0, 368.0 ],
                         "boxes": [
+                            {
+                                "box": {
+                                    "id": "obj-13",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 285.0, 175.0, 177.0, 22.0 ],
+                                    "text": "ll.pm bandMode spectrumMode"
+                                }
+                            },
                             {
                                 "box": {
                                     "id": "obj-11",
@@ -864,10 +912,10 @@
                                                                         "maxclass": "newobj",
                                                                         "text": "buffer meter",
                                                                         "patching_rect": [ 409.0, 30.0, 73.0, 22.0 ],
+                                                                        "numinlets": 0,
                                                                         "numoutlets": 2,
-                                                                        "id": "obj-11",
                                                                         "outlettype": [ "", "" ],
-                                                                        "numinlets": 0
+                                                                        "id": "obj-11"
                                                                     }
                                                                 },
                                                                 {
@@ -875,9 +923,9 @@
                                                                         "maxclass": "newobj",
                                                                         "text": "out 1",
                                                                         "patching_rect": [ 163.0, 471.0, 35.0, 22.0 ],
+                                                                        "numinlets": 1,
                                                                         "numoutlets": 0,
-                                                                        "id": "obj-10",
-                                                                        "numinlets": 1
+                                                                        "id": "obj-10"
                                                                     }
                                                                 },
                                                                 {
@@ -885,10 +933,10 @@
                                                                         "maxclass": "newobj",
                                                                         "text": "Param view_band",
                                                                         "patching_rect": [ 289.0, 30.0, 105.0, 22.0 ],
+                                                                        "numinlets": 0,
                                                                         "numoutlets": 1,
-                                                                        "id": "obj-9",
                                                                         "outlettype": [ "" ],
-                                                                        "numinlets": 0
+                                                                        "id": "obj-9"
                                                                     }
                                                                 },
                                                                 {
@@ -896,23 +944,23 @@
                                                                         "maxclass": "newobj",
                                                                         "text": "Param chan_count",
                                                                         "patching_rect": [ 164.0, 30.0, 109.0, 22.0 ],
+                                                                        "numinlets": 0,
                                                                         "numoutlets": 1,
-                                                                        "id": "obj-7",
                                                                         "outlettype": [ "" ],
-                                                                        "numinlets": 0
+                                                                        "id": "obj-7"
                                                                     }
                                                                 },
                                                                 {
                                                                     "box": {
                                                                         "maxclass": "codebox",
                                                                         "patching_rect": [ 164.0, 71.0, 788.0, 369.0 ],
-                                                                        "numoutlets": 1,
-                                                                        "id": "obj-3",
                                                                         "fontsize": 12.0,
-                                                                        "outlettype": [ "" ],
                                                                         "fontname": "<Monospaced>",
                                                                         "numinlets": 1,
+                                                                        "numoutlets": 1,
                                                                         "fontface": 0,
+                                                                        "outlettype": [ "" ],
+                                                                        "id": "obj-3",
                                                                         "code": "\r\nReadChan(buffer, view_band, current_band) {\n\tsample_result, index_result = peek(buffer, view_band, current_band);\n\treturn sample_result;\r\n}\r\n\r\nParam chan_count;\r\n\r\n\r\nBuffer meter(\"meter\");\r\n\r\nresult = 0;\r\n\r\ncurrent_band = mc_channel - 1;\r\n\r\nif(view_band != 0) {\r\n\tresult = ReadChan(meter, view_band - 1, current_band);\r\n} else {\r\n\tfor(i = 0; i <= chan_count; i += 1) {\r\n\t\ttemp_result = ReadChan(meter, i, current_band);\r\n\t\tresult = result + temp_result;\r\n\t}\r\n\tresult = result / chan_count;\r\n}\r\n\r\nout1 = result;"
                                                                     }
                                                                 }
@@ -920,8 +968,8 @@
                                                             "lines": [
                                                                 {
                                                                     "patchline": {
-                                                                        "source": [ "obj-3", 0 ],
-                                                                        "destination": [ "obj-10", 0 ]
+                                                                        "source": [ "obj-9", 0 ],
+                                                                        "destination": [ "obj-3", 0 ]
                                                                     }
                                                                 },
                                                                 {
@@ -932,8 +980,8 @@
                                                                 },
                                                                 {
                                                                     "patchline": {
-                                                                        "source": [ "obj-9", 0 ],
-                                                                        "destination": [ "obj-3", 0 ]
+                                                                        "source": [ "obj-3", 0 ],
+                                                                        "destination": [ "obj-10", 0 ]
                                                                     }
                                                                 }
                                                             ]
@@ -946,7 +994,7 @@
                                                     "outlettype": [ "multichannelsignal" ],
                                                     "patching_rect": [ 49.0, 305.0, 119.0, 22.0 ],
                                                     "text": "mc.gen~ @chans 30",
-                                                    "wrapper_uniquekey": "u239027306"
+                                                    "wrapper_uniquekey": "u716002222"
                                                 }
                                             },
                                             {
@@ -1123,7 +1171,6 @@
                                             {
                                                 "box": {
                                                     "id": "obj-32",
-                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
@@ -1135,7 +1182,6 @@
                                             {
                                                 "box": {
                                                     "id": "obj-16",
-                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
@@ -1147,7 +1193,6 @@
                                             {
                                                 "box": {
                                                     "id": "obj-33",
-                                                    "linecount": 2,
                                                     "maxclass": "newobj",
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
@@ -1176,9 +1221,9 @@
                                                                         "maxclass": "newobj",
                                                                         "text": "out 3",
                                                                         "patching_rect": [ 311.0, 617.0, 35.0, 22.0 ],
+                                                                        "numinlets": 1,
                                                                         "numoutlets": 0,
-                                                                        "id": "obj-8",
-                                                                        "numinlets": 1
+                                                                        "id": "obj-8"
                                                                     }
                                                                 },
                                                                 {
@@ -1186,9 +1231,9 @@
                                                                         "maxclass": "newobj",
                                                                         "text": "out 2",
                                                                         "patching_rect": [ 154.0, 617.0, 35.0, 22.0 ],
+                                                                        "numinlets": 1,
                                                                         "numoutlets": 0,
-                                                                        "id": "obj-7",
-                                                                        "numinlets": 1
+                                                                        "id": "obj-7"
                                                                     }
                                                                 },
                                                                 {
@@ -1196,9 +1241,9 @@
                                                                         "maxclass": "newobj",
                                                                         "text": "out 1",
                                                                         "patching_rect": [ 50.0, 617.0, 35.0, 22.0 ],
+                                                                        "numinlets": 1,
                                                                         "numoutlets": 0,
-                                                                        "id": "obj-6",
-                                                                        "numinlets": 1
+                                                                        "id": "obj-6"
                                                                     }
                                                                 },
                                                                 {
@@ -1206,10 +1251,10 @@
                                                                         "maxclass": "newobj",
                                                                         "text": "in 3",
                                                                         "patching_rect": [ 311.0, 75.0, 28.0, 22.0 ],
+                                                                        "numinlets": 0,
                                                                         "numoutlets": 1,
-                                                                        "id": "obj-3",
                                                                         "outlettype": [ "" ],
-                                                                        "numinlets": 0
+                                                                        "id": "obj-3"
                                                                     }
                                                                 },
                                                                 {
@@ -1217,23 +1262,23 @@
                                                                         "maxclass": "newobj",
                                                                         "text": "in 2",
                                                                         "patching_rect": [ 154.0, 75.0, 28.0, 22.0 ],
+                                                                        "numinlets": 0,
                                                                         "numoutlets": 1,
-                                                                        "id": "obj-2",
                                                                         "outlettype": [ "" ],
-                                                                        "numinlets": 0
+                                                                        "id": "obj-2"
                                                                     }
                                                                 },
                                                                 {
                                                                     "box": {
                                                                         "maxclass": "codebox",
                                                                         "patching_rect": [ 50.0, 154.0, 1139.0, 430.0 ],
-                                                                        "numoutlets": 3,
-                                                                        "id": "obj-5",
                                                                         "fontsize": 12.0,
-                                                                        "outlettype": [ "", "", "" ],
                                                                         "fontname": "<Monospaced>",
                                                                         "numinlets": 3,
+                                                                        "numoutlets": 3,
                                                                         "fontface": 0,
+                                                                        "outlettype": [ "", "", "" ],
+                                                                        "id": "obj-5",
                                                                         "code": "Buffer mutes(\"mutes\");\nBuffer gains(\"gains\");\nBuffer solos(\"solos\");\n\nHistory muteVal_prev(0);\nHistory gainVal_prev(0);\nHistory soloVal_prev(0);\n\ngainVal = in1;\nmuteVal = in2;\nsoloVal = in3;\n\nchan = mc_channel - 1;\n\n\nif(muteVal != muteVal_prev){\n    poke(mutes, muteVal, 0, chan);\n}\n\nif(soloVal != soloVal_prev){\n    poke(solos, soloVal, 0, chan);\n}\n\nif(gainVal != gainVal_prev){\n    poke(gains, gainVal, 0, chan);\n}\n\nmuteVal_prev = muteVal;\nsoloVal_prev = soloVal;\ngainVal_prev = gainVal;\n\n// Provide a sink for the compiler to prevent AST pruning crashes\nout1 = gainVal;\r\nout2 = muteVal;\r\nout3 = soloVal;"
                                                                     }
                                                                 },
@@ -1242,36 +1287,18 @@
                                                                         "maxclass": "newobj",
                                                                         "text": "in 1",
                                                                         "patching_rect": [ 50.0, 75.0, 28.0, 22.0 ],
+                                                                        "numinlets": 0,
                                                                         "numoutlets": 1,
-                                                                        "id": "obj-1",
                                                                         "outlettype": [ "" ],
-                                                                        "numinlets": 0
+                                                                        "id": "obj-1"
                                                                     }
                                                                 }
                                                             ],
                                                             "lines": [
                                                                 {
                                                                     "patchline": {
-                                                                        "source": [ "obj-5", 0 ],
-                                                                        "destination": [ "obj-6", 0 ]
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "patchline": {
-                                                                        "source": [ "obj-5", 1 ],
-                                                                        "destination": [ "obj-7", 0 ]
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "patchline": {
-                                                                        "source": [ "obj-5", 2 ],
-                                                                        "destination": [ "obj-8", 0 ]
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "patchline": {
-                                                                        "source": [ "obj-3", 0 ],
-                                                                        "destination": [ "obj-5", 2 ]
+                                                                        "source": [ "obj-1", 0 ],
+                                                                        "destination": [ "obj-5", 0 ]
                                                                     }
                                                                 },
                                                                 {
@@ -1282,8 +1309,26 @@
                                                                 },
                                                                 {
                                                                     "patchline": {
-                                                                        "source": [ "obj-1", 0 ],
-                                                                        "destination": [ "obj-5", 0 ]
+                                                                        "source": [ "obj-3", 0 ],
+                                                                        "destination": [ "obj-5", 2 ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "patchline": {
+                                                                        "source": [ "obj-5", 2 ],
+                                                                        "destination": [ "obj-8", 0 ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "patchline": {
+                                                                        "source": [ "obj-5", 1 ],
+                                                                        "destination": [ "obj-7", 0 ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "patchline": {
+                                                                        "source": [ "obj-5", 0 ],
+                                                                        "destination": [ "obj-6", 0 ]
                                                                     }
                                                                 }
                                                             ]
@@ -1296,7 +1341,7 @@
                                                     "outlettype": [ "multichannelsignal", "multichannelsignal", "multichannelsignal" ],
                                                     "patching_rect": [ 107.0, 433.0, 119.0, 22.0 ],
                                                     "text": "mc.gen~ @chans 31",
-                                                    "wrapper_uniquekey": "u863027192"
+                                                    "wrapper_uniquekey": "u567002336"
                                                 }
                                             },
                                             {
@@ -1401,7 +1446,6 @@
                                             {
                                                 "box": {
                                                     "id": "obj-4",
-                                                    "linecount": 2,
                                                     "maxclass": "message",
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
@@ -1540,24 +1584,24 @@
                                                         "maxclass": "newobj",
                                                         "text": "in 1",
                                                         "patching_rect": [ 50.0, 14.0, 28.0, 22.0 ],
+                                                        "numinlets": 0,
                                                         "numoutlets": 1,
-                                                        "id": "obj-1",
                                                         "outlettype": [ "" ],
-                                                        "numinlets": 0
+                                                        "id": "obj-1"
                                                     }
                                                 },
                                                 {
                                                     "box": {
                                                         "maxclass": "codebox",
                                                         "patching_rect": [ 50.0, 105.76923429965973, 1185.0, 496.0 ],
-                                                        "numoutlets": 1,
-                                                        "id": "obj-3",
                                                         "fontsize": 12.0,
-                                                        "outlettype": [ "" ],
                                                         "fontname": "<Monospaced>",
                                                         "numinlets": 1,
+                                                        "numoutlets": 1,
                                                         "fontface": 0,
-                                                        "code": "RetrieveLevels(band_no, gains_buffer, mutes_buffer, solos_buffer) {\n\t// Offset bounds: 0 to 29 (for 1-30)\n\tindex = clamp((band_no - 1), 0, 29);\n\tband_gain = peek(gains_buffer, 0, index);\n\tband_mute = peek(mutes_buffer, 0, index);\n\tband_solo = peek(solos_buffer, 0, index);\n\treturn band_gain, band_mute, band_solo;\n}\n\nProcessMeter(isolated_band, current_chan, band_no, meter_buffer, meter_update) {\n\tpeak = abs(isolated_band);\n\tpoke(meter_buffer, peak, current_chan, (band_no - 1), meter_update, index=\"samples\");\n\treturn isolated_band;\n}\n\nXOverCoeffs(freq) {\n\tradPerSmp = (freq * twopi/samplerate); // radians per sample\n\tradPerSmpCos = cos(radPerSmp);\n\tradPerSmpSin = sin(radPerSmp);\n\tallpass = (radPerSmpSin - 1.) / radPerSmpCos;\n\tlowpass2 = (allpass + 1) * 0.5;\n\treturn lowpass2, allpass;\n}\n\nAllpassFilter(input, allpassCoeff) {\n\tHistory delay_state(0);\n\tfeedback = delay_state * allpassCoeff;\n\tintermediate_state = input - feedback;\n\tfeedforward = intermediate_state * allpassCoeff;\n\tresult = feedforward + delay_state;\n\tnext_delay_state = fixdenorm(intermediate_state);\n\tdelay_state = next_delay_state;\n\treturn result;\n}\n\nLowShelfFilter(input, lowpassCoeff) {\n\tHistory delay_state1(0);\n\tHistory delay_state2(0);\n\tdiff1 = input - delay_state1;\n\tscaled_diff1 = diff1 * lowpassCoeff;\n\tstage1_out = scaled_diff1 + delay_state1;\n\tstage1_next_accum = stage1_out + scaled_diff1;\n\tdiff2 = stage1_out - delay_state2;\n\tscaled_diff2 = diff2 * lowpassCoeff;\n\tresult = scaled_diff2 + delay_state2;\n\tstage2_next_accum = result + scaled_diff2;\n\tnext_delay_state1 = fixdenorm(stage1_next_accum);\n\tnext_delay_state2 = fixdenorm(stage2_next_accum);\n\tdelay_state1 = next_delay_state1;\n\tdelay_state2 = next_delay_state2;\n\treturn result;\n}\n\nCrossoverBand(input, lowerCoeffLP, lowerCoeffAP, upperCoeffLP, upperCoeffAP) {\n\n    // First: Lowpass at the HIGHER cutoff frequency\n    lowShelfResult = LowShelfFilter(input, upperCoeffLP);\n    \n    // Second: Highpass at the LOWER cutoff frequency\n    allPassResult = AllpassFilter(lowShelfResult, lowerCoeffAP);\n    lowShelfResult2 = LowShelfFilter(lowShelfResult, lowerCoeffLP);\n\n    midBand = allPassResult - lowShelfResult2;\n    return midBand;\n}\n\n\nBuffer gains(\"gains\");\nBuffer meter(\"meter\");\nBuffer mutes(\"mutes\");\nBuffer solos(\"solos\");\nParam meter_update(0);\n\nHistory init(0);\nHistory band1LowerCoeffLP(0);\nHistory band1LowerCoeffAP(0);\nHistory band1UpperCoeffLP(0);\nHistory band1UpperCoeffAP(0);\nHistory band2LowerCoeffLP(0);\nHistory band2LowerCoeffAP(0);\nHistory band2UpperCoeffLP(0);\nHistory band2UpperCoeffAP(0);\nHistory band3LowerCoeffLP(0);\nHistory band3LowerCoeffAP(0);\nHistory band3UpperCoeffLP(0);\nHistory band3UpperCoeffAP(0);\nHistory band4LowerCoeffLP(0);\nHistory band4LowerCoeffAP(0);\nHistory band4UpperCoeffLP(0);\nHistory band4UpperCoeffAP(0);\nHistory band5LowerCoeffLP(0);\nHistory band5LowerCoeffAP(0);\nHistory band5UpperCoeffLP(0);\nHistory band5UpperCoeffAP(0);\nHistory band6LowerCoeffLP(0);\nHistory band6LowerCoeffAP(0);\nHistory band6UpperCoeffLP(0);\nHistory band6UpperCoeffAP(0);\nHistory band7LowerCoeffLP(0);\nHistory band7LowerCoeffAP(0);\nHistory band7UpperCoeffLP(0);\nHistory band7UpperCoeffAP(0);\nHistory band8LowerCoeffLP(0);\nHistory band8LowerCoeffAP(0);\nHistory band8UpperCoeffLP(0);\nHistory band8UpperCoeffAP(0);\nHistory band9LowerCoeffLP(0);\nHistory band9LowerCoeffAP(0);\nHistory band9UpperCoeffLP(0);\nHistory band9UpperCoeffAP(0);\nHistory band10LowerCoeffLP(0);\nHistory band10LowerCoeffAP(0);\nHistory band10UpperCoeffLP(0);\nHistory band10UpperCoeffAP(0);\nHistory band11LowerCoeffLP(0);\nHistory band11LowerCoeffAP(0);\nHistory band11UpperCoeffLP(0);\nHistory band11UpperCoeffAP(0);\nHistory band12LowerCoeffLP(0);\nHistory band12LowerCoeffAP(0);\nHistory band12UpperCoeffLP(0);\nHistory band12UpperCoeffAP(0);\nHistory band13LowerCoeffLP(0);\nHistory band13LowerCoeffAP(0);\nHistory band13UpperCoeffLP(0);\nHistory band13UpperCoeffAP(0);\nHistory band14LowerCoeffLP(0);\nHistory band14LowerCoeffAP(0);\nHistory band14UpperCoeffLP(0);\nHistory band14UpperCoeffAP(0);\nHistory band15LowerCoeffLP(0);\nHistory band15LowerCoeffAP(0);\nHistory band15UpperCoeffLP(0);\nHistory band15UpperCoeffAP(0);\nHistory band16LowerCoeffLP(0);\nHistory band16LowerCoeffAP(0);\nHistory band16UpperCoeffLP(0);\nHistory band16UpperCoeffAP(0);\nHistory band17LowerCoeffLP(0);\nHistory band17LowerCoeffAP(0);\nHistory band17UpperCoeffLP(0);\nHistory band17UpperCoeffAP(0);\nHistory band18LowerCoeffLP(0);\nHistory band18LowerCoeffAP(0);\nHistory band18UpperCoeffLP(0);\nHistory band18UpperCoeffAP(0);\nHistory band19LowerCoeffLP(0);\nHistory band19LowerCoeffAP(0);\nHistory band19UpperCoeffLP(0);\nHistory band19UpperCoeffAP(0);\nHistory band20LowerCoeffLP(0);\nHistory band20LowerCoeffAP(0);\nHistory band20UpperCoeffLP(0);\nHistory band20UpperCoeffAP(0);\nHistory band21LowerCoeffLP(0);\nHistory band21LowerCoeffAP(0);\nHistory band21UpperCoeffLP(0);\nHistory band21UpperCoeffAP(0);\nHistory band22LowerCoeffLP(0);\nHistory band22LowerCoeffAP(0);\nHistory band22UpperCoeffLP(0);\nHistory band22UpperCoeffAP(0);\nHistory band23LowerCoeffLP(0);\nHistory band23LowerCoeffAP(0);\nHistory band23UpperCoeffLP(0);\nHistory band23UpperCoeffAP(0);\nHistory band24LowerCoeffLP(0);\nHistory band24LowerCoeffAP(0);\nHistory band24UpperCoeffLP(0);\nHistory band24UpperCoeffAP(0);\nHistory band25LowerCoeffLP(0);\nHistory band25LowerCoeffAP(0);\nHistory band25UpperCoeffLP(0);\nHistory band25UpperCoeffAP(0);\nHistory band26LowerCoeffLP(0);\nHistory band26LowerCoeffAP(0);\nHistory band26UpperCoeffLP(0);\nHistory band26UpperCoeffAP(0);\nHistory band27LowerCoeffLP(0);\nHistory band27LowerCoeffAP(0);\nHistory band27UpperCoeffLP(0);\nHistory band27UpperCoeffAP(0);\nHistory band28LowerCoeffLP(0);\nHistory band28LowerCoeffAP(0);\nHistory band28UpperCoeffLP(0);\nHistory band28UpperCoeffAP(0);\nHistory band29LowerCoeffLP(0);\nHistory band29LowerCoeffAP(0);\nHistory band29UpperCoeffLP(0);\nHistory band29UpperCoeffAP(0);\nHistory band30LowerCoeffLP(0);\nHistory band30LowerCoeffAP(0);\nHistory band30UpperCoeffLP(0);\nHistory band30UpperCoeffAP(0);\n\nif(init == 0) {\n\t// Pre-calculate all crossover coefficients at initialization\n\tband1LowerCoeffLP, band1LowerCoeffAP = XOverCoeffs(22.4);\n\tband1UpperCoeffLP, band1UpperCoeffAP = XOverCoeffs(28.2);\n\tband2LowerCoeffLP, band2LowerCoeffAP = XOverCoeffs(28.2);\n\tband2UpperCoeffLP, band2UpperCoeffAP = XOverCoeffs(35.5);\n\tband3LowerCoeffLP, band3LowerCoeffAP = XOverCoeffs(35.5);\n\tband3UpperCoeffLP, band3UpperCoeffAP = XOverCoeffs(44.7);\n\tband4LowerCoeffLP, band4LowerCoeffAP = XOverCoeffs(44.7);\n\tband4UpperCoeffLP, band4UpperCoeffAP = XOverCoeffs(56.2);\n\tband5LowerCoeffLP, band5LowerCoeffAP = XOverCoeffs(56.20);\n\tband5UpperCoeffLP, band5UpperCoeffAP = XOverCoeffs(70.80);\n\tband6LowerCoeffLP, band6LowerCoeffAP = XOverCoeffs(70.80);\n\tband6UpperCoeffLP, band6UpperCoeffAP = XOverCoeffs(89.10);\n\tband7LowerCoeffLP, band7LowerCoeffAP = XOverCoeffs(89.10);\n\tband7UpperCoeffLP, band7UpperCoeffAP = XOverCoeffs(112.00);\n\tband8LowerCoeffLP, band8LowerCoeffAP = XOverCoeffs(112.00);\n\tband8UpperCoeffLP, band8UpperCoeffAP = XOverCoeffs(141.00);\n\tband9LowerCoeffLP, band9LowerCoeffAP = XOverCoeffs(141.00);\n\tband9UpperCoeffLP, band9UpperCoeffAP = XOverCoeffs(178.00);\n\tband10LowerCoeffLP, band10LowerCoeffAP = XOverCoeffs(178.00);\n\tband10UpperCoeffLP, band10UpperCoeffAP = XOverCoeffs(224.00);\n\tband11LowerCoeffLP, band11LowerCoeffAP = XOverCoeffs(224.00);\n\tband11UpperCoeffLP, band11UpperCoeffAP = XOverCoeffs(282.00);\n\tband12LowerCoeffLP, band12LowerCoeffAP = XOverCoeffs(282.00);\n\tband12UpperCoeffLP, band12UpperCoeffAP = XOverCoeffs(355.00);\n\tband13LowerCoeffLP, band13LowerCoeffAP = XOverCoeffs(355.00);\n\tband13UpperCoeffLP, band13UpperCoeffAP = XOverCoeffs(447.00);\n\tband14LowerCoeffLP, band14LowerCoeffAP = XOverCoeffs(447.00);\n\tband14UpperCoeffLP, band14UpperCoeffAP = XOverCoeffs(562.00);\n\tband15LowerCoeffLP, band15LowerCoeffAP = XOverCoeffs(562.00);\n\tband15UpperCoeffLP, band15UpperCoeffAP = XOverCoeffs(708.00);\n\tband16LowerCoeffLP, band16LowerCoeffAP = XOverCoeffs(708.00);\n\tband16UpperCoeffLP, band16UpperCoeffAP = XOverCoeffs(891.00);\n\tband17LowerCoeffLP, band17LowerCoeffAP = XOverCoeffs(891.00);\n\tband17UpperCoeffLP, band17UpperCoeffAP = XOverCoeffs(1122.00);\n\tband18LowerCoeffLP, band18LowerCoeffAP = XOverCoeffs(1122.00);\n\tband18UpperCoeffLP, band18UpperCoeffAP = XOverCoeffs(1413.00);\n\tband19LowerCoeffLP, band19LowerCoeffAP = XOverCoeffs(1413.00);\n\tband19UpperCoeffLP, band19UpperCoeffAP = XOverCoeffs(1778.00);\n\tband20LowerCoeffLP, band20LowerCoeffAP = XOverCoeffs(1778.00);\n\tband20UpperCoeffLP, band20UpperCoeffAP = XOverCoeffs(2239.00);\n\tband21LowerCoeffLP, band21LowerCoeffAP = XOverCoeffs(2239.00);\n\tband21UpperCoeffLP, band21UpperCoeffAP = XOverCoeffs(2818.00);\n\tband22LowerCoeffLP, band22LowerCoeffAP = XOverCoeffs(2818.00);\n\tband22UpperCoeffLP, band22UpperCoeffAP = XOverCoeffs(3548.00);\n\tband23LowerCoeffLP, band23LowerCoeffAP = XOverCoeffs(3548.00);\n\tband23UpperCoeffLP, band23UpperCoeffAP = XOverCoeffs(4467.00);\n\tband24LowerCoeffLP, band24LowerCoeffAP = XOverCoeffs(4467.00);\n\tband24UpperCoeffLP, band24UpperCoeffAP = XOverCoeffs(5623.00);\n\tband25LowerCoeffLP, band25LowerCoeffAP = XOverCoeffs(5623.00);\n\tband25UpperCoeffLP, band25UpperCoeffAP = XOverCoeffs(7079.00);\n\tband26LowerCoeffLP, band26LowerCoeffAP = XOverCoeffs(7079.00);\n\tband26UpperCoeffLP, band26UpperCoeffAP = XOverCoeffs(8913.00);\n\tband27LowerCoeffLP, band27LowerCoeffAP = XOverCoeffs(8913.00);\n\tband27UpperCoeffLP, band27UpperCoeffAP = XOverCoeffs(11220.00);\n\tband28LowerCoeffLP, band28LowerCoeffAP = XOverCoeffs(11220.00);\n\tband28UpperCoeffLP, band28UpperCoeffAP = XOverCoeffs(14130.00);\n\tband29LowerCoeffLP, band29LowerCoeffAP = XOverCoeffs(14130.00);\n\tband29UpperCoeffLP, band29UpperCoeffAP = XOverCoeffs(17780.00);\n\tband30LowerCoeffLP, band30LowerCoeffAP = XOverCoeffs(17780.00);\n\tband30UpperCoeffLP, band30UpperCoeffAP = XOverCoeffs(min(20000.00, samplerate * 0.49));\n\t\n\tinit = 1;\n}\n\n\ninput = in1;\ncurrent_chan = mc_channel - 1;\n\nband01Input = CrossoverBand(input, band1LowerCoeffLP, band1LowerCoeffAP, band1UpperCoeffLP, band1UpperCoeffAP);\nband02Input = CrossoverBand(input, band2LowerCoeffLP, band2LowerCoeffAP, band2UpperCoeffLP, band2UpperCoeffAP);\nband03Input = CrossoverBand(input, band3LowerCoeffLP, band3LowerCoeffAP, band3UpperCoeffLP, band3UpperCoeffAP);\nband04Input = CrossoverBand(input, band4LowerCoeffLP, band4LowerCoeffAP, band4UpperCoeffLP, band4UpperCoeffAP);\nband05Input = CrossoverBand(input, band5LowerCoeffLP, band5LowerCoeffAP, band5UpperCoeffLP, band5UpperCoeffAP);\nband06Input = CrossoverBand(input, band6LowerCoeffLP, band6LowerCoeffAP, band6UpperCoeffLP, band6UpperCoeffAP);\nband07Input = CrossoverBand(input, band7LowerCoeffLP, band7LowerCoeffAP, band7UpperCoeffLP, band7UpperCoeffAP);\nband08Input = CrossoverBand(input, band8LowerCoeffLP, band8LowerCoeffAP, band8UpperCoeffLP, band8UpperCoeffAP);\nband09Input = CrossoverBand(input, band9LowerCoeffLP, band9LowerCoeffAP, band9UpperCoeffLP, band9UpperCoeffAP);\nband10Input = CrossoverBand(input, band10LowerCoeffLP, band10LowerCoeffAP, band10UpperCoeffLP, band10UpperCoeffAP);\nband11Input = CrossoverBand(input, band11LowerCoeffLP, band11LowerCoeffAP, band11UpperCoeffLP, band11UpperCoeffAP);\nband12Input = CrossoverBand(input, band12LowerCoeffLP, band12LowerCoeffAP, band12UpperCoeffLP, band12UpperCoeffAP);\nband13Input = CrossoverBand(input, band13LowerCoeffLP, band13LowerCoeffAP, band13UpperCoeffLP, band13UpperCoeffAP);\nband14Input = CrossoverBand(input, band14LowerCoeffLP, band14LowerCoeffAP, band14UpperCoeffLP, band14UpperCoeffAP);\nband15Input = CrossoverBand(input, band15LowerCoeffLP, band15LowerCoeffAP, band15UpperCoeffLP, band15UpperCoeffAP);\nband16Input = CrossoverBand(input, band16LowerCoeffLP, band16LowerCoeffAP, band16UpperCoeffLP, band16UpperCoeffAP);\nband17Input = CrossoverBand(input, band17LowerCoeffLP, band17LowerCoeffAP, band17UpperCoeffLP, band17UpperCoeffAP);\nband18Input = CrossoverBand(input, band18LowerCoeffLP, band18LowerCoeffAP, band18UpperCoeffLP, band18UpperCoeffAP);\nband19Input = CrossoverBand(input, band19LowerCoeffLP, band19LowerCoeffAP, band19UpperCoeffLP, band19UpperCoeffAP);\nband20Input = CrossoverBand(input, band20LowerCoeffLP, band20LowerCoeffAP, band20UpperCoeffLP, band20UpperCoeffAP);\nband21Input = CrossoverBand(input, band21LowerCoeffLP, band21LowerCoeffAP, band21UpperCoeffLP, band21UpperCoeffAP);\nband22Input = CrossoverBand(input, band22LowerCoeffLP, band22LowerCoeffAP, band22UpperCoeffLP, band22UpperCoeffAP);\nband23Input = CrossoverBand(input, band23LowerCoeffLP, band23LowerCoeffAP, band23UpperCoeffLP, band23UpperCoeffAP);\nband24Input = CrossoverBand(input, band24LowerCoeffLP, band24LowerCoeffAP, band24UpperCoeffLP, band24UpperCoeffAP);\nband25Input = CrossoverBand(input, band25LowerCoeffLP, band25LowerCoeffAP, band25UpperCoeffLP, band25UpperCoeffAP);\nband26Input = CrossoverBand(input, band26LowerCoeffLP, band26LowerCoeffAP, band26UpperCoeffLP, band26UpperCoeffAP);\nband27Input = CrossoverBand(input, band27LowerCoeffLP, band27LowerCoeffAP, band27UpperCoeffLP, band27UpperCoeffAP);\nband28Input = CrossoverBand(input, band28LowerCoeffLP, band28LowerCoeffAP, band28UpperCoeffLP, band28UpperCoeffAP);\nband29Input = CrossoverBand(input, band29LowerCoeffLP, band29LowerCoeffAP, band29UpperCoeffLP, band29UpperCoeffAP);\nband30Input = CrossoverBand(input, band30LowerCoeffLP, band30LowerCoeffAP, band30UpperCoeffLP, band30UpperCoeffAP);\n\nband01Gain, band01Mute, band01Solo = RetrieveLevels(1, gains, mutes, solos);\nband02Gain, band02Mute, band02Solo = RetrieveLevels(2, gains, mutes, solos);\nband03Gain, band03Mute, band03Solo = RetrieveLevels(3, gains, mutes, solos);\nband04Gain, band04Mute, band04Solo = RetrieveLevels(4, gains, mutes, solos);\nband05Gain, band05Mute, band05Solo = RetrieveLevels(5, gains, mutes, solos);\nband06Gain, band06Mute, band06Solo = RetrieveLevels(6, gains, mutes, solos);\nband07Gain, band07Mute, band07Solo = RetrieveLevels(7, gains, mutes, solos);\nband08Gain, band08Mute, band08Solo = RetrieveLevels(8, gains, mutes, solos);\nband09Gain, band09Mute, band09Solo = RetrieveLevels(9, gains, mutes, solos);\nband10Gain, band10Mute, band10Solo = RetrieveLevels(10, gains, mutes, solos);\nband11Gain, band11Mute, band11Solo = RetrieveLevels(11, gains, mutes, solos);\nband12Gain, band12Mute, band12Solo = RetrieveLevels(12, gains, mutes, solos);\nband13Gain, band13Mute, band13Solo = RetrieveLevels(13, gains, mutes, solos);\nband14Gain, band14Mute, band14Solo = RetrieveLevels(14, gains, mutes, solos);\nband15Gain, band15Mute, band15Solo = RetrieveLevels(15, gains, mutes, solos);\nband16Gain, band16Mute, band16Solo = RetrieveLevels(16, gains, mutes, solos);\nband17Gain, band17Mute, band17Solo = RetrieveLevels(17, gains, mutes, solos);\nband18Gain, band18Mute, band18Solo = RetrieveLevels(18, gains, mutes, solos);\nband19Gain, band19Mute, band19Solo = RetrieveLevels(19, gains, mutes, solos);\nband20Gain, band20Mute, band20Solo = RetrieveLevels(20, gains, mutes, solos);\nband21Gain, band21Mute, band21Solo = RetrieveLevels(21, gains, mutes, solos);\nband22Gain, band22Mute, band22Solo = RetrieveLevels(22, gains, mutes, solos);\nband23Gain, band23Mute, band23Solo = RetrieveLevels(23, gains, mutes, solos);\nband24Gain, band24Mute, band24Solo = RetrieveLevels(24, gains, mutes, solos);\nband25Gain, band25Mute, band25Solo = RetrieveLevels(25, gains, mutes, solos);\nband26Gain, band26Mute, band26Solo = RetrieveLevels(26, gains, mutes, solos);\nband27Gain, band27Mute, band27Solo = RetrieveLevels(27, gains, mutes, solos);\nband28Gain, band28Mute, band28Solo = RetrieveLevels(28, gains, mutes, solos);\nband29Gain, band29Mute, band29Solo = RetrieveLevels(29, gains, mutes, solos);\nband30Gain, band30Mute, band30Solo = RetrieveLevels(30, gains, mutes, solos);\n\nsoloMode = (band01Solo + band02Solo + band03Solo + band04Solo + band05Solo + band06Solo + band07Solo + band08Solo + band09Solo + band10Solo + band11Solo + band12Solo + band13Solo + band14Solo + band15Solo + band16Solo + band17Solo + band18Solo + band19Solo + band20Solo + band21Solo + band22Solo + band23Solo + band24Solo + band25Solo + band26Solo + band27Solo + band28Solo + band29Solo + band30Solo) > 0;\n\nband01State = soloMode ? (band01Solo ? 1 : 0) : (band01Mute ? 0 : 1);\nband02State = soloMode ? (band02Solo ? 1 : 0) : (band02Mute ? 0 : 1);\nband03State = soloMode ? (band03Solo ? 1 : 0) : (band03Mute ? 0 : 1);\nband04State = soloMode ? (band04Solo ? 1 : 0) : (band04Mute ? 0 : 1);\nband05State = soloMode ? (band05Solo ? 1 : 0) : (band05Mute ? 0 : 1);\nband06State = soloMode ? (band06Solo ? 1 : 0) : (band06Mute ? 0 : 1);\nband07State = soloMode ? (band07Solo ? 1 : 0) : (band07Mute ? 0 : 1);\nband08State = soloMode ? (band08Solo ? 1 : 0) : (band08Mute ? 0 : 1);\nband09State = soloMode ? (band09Solo ? 1 : 0) : (band09Mute ? 0 : 1);\nband10State = soloMode ? (band10Solo ? 1 : 0) : (band10Mute ? 0 : 1);\nband11State = soloMode ? (band11Solo ? 1 : 0) : (band11Mute ? 0 : 1);\nband12State = soloMode ? (band12Solo ? 1 : 0) : (band12Mute ? 0 : 1);\nband13State = soloMode ? (band13Solo ? 1 : 0) : (band13Mute ? 0 : 1);\nband14State = soloMode ? (band14Solo ? 1 : 0) : (band14Mute ? 0 : 1);\nband15State = soloMode ? (band15Solo ? 1 : 0) : (band15Mute ? 0 : 1);\nband16State = soloMode ? (band16Solo ? 1 : 0) : (band16Mute ? 0 : 1);\nband17State = soloMode ? (band17Solo ? 1 : 0) : (band17Mute ? 0 : 1);\nband18State = soloMode ? (band18Solo ? 1 : 0) : (band18Mute ? 0 : 1);\nband19State = soloMode ? (band19Solo ? 1 : 0) : (band19Mute ? 0 : 1);\nband20State = soloMode ? (band20Solo ? 1 : 0) : (band20Mute ? 0 : 1);\nband21State = soloMode ? (band21Solo ? 1 : 0) : (band21Mute ? 0 : 1);\nband22State = soloMode ? (band22Solo ? 1 : 0) : (band22Mute ? 0 : 1);\nband23State = soloMode ? (band23Solo ? 1 : 0) : (band23Mute ? 0 : 1);\nband24State = soloMode ? (band24Solo ? 1 : 0) : (band24Mute ? 0 : 1);\nband25State = soloMode ? (band25Solo ? 1 : 0) : (band25Mute ? 0 : 1);\nband26State = soloMode ? (band26Solo ? 1 : 0) : (band26Mute ? 0 : 1);\nband27State = soloMode ? (band27Solo ? 1 : 0) : (band27Mute ? 0 : 1);\nband28State = soloMode ? (band28Solo ? 1 : 0) : (band28Mute ? 0 : 1);\nband29State = soloMode ? (band29Solo ? 1 : 0) : (band29Mute ? 0 : 1);\nband30State = soloMode ? (band30Solo ? 1 : 0) : (band30Mute ? 0 : 1);\n\nband01 = band01State ? band01Input * band01Gain : 0;\nband02 = band02State ? band02Input * band02Gain : 0;\nband03 = band03State ? band03Input * band03Gain : 0;\nband04 = band04State ? band04Input * band04Gain : 0;\nband05 = band05State ? band05Input * band05Gain : 0;\nband06 = band06State ? band06Input * band06Gain : 0;\nband07 = band07State ? band07Input * band07Gain : 0;\nband08 = band08State ? band08Input * band08Gain : 0;\nband09 = band09State ? band09Input * band09Gain : 0;\nband10 = band10State ? band10Input * band10Gain : 0;\nband11 = band11State ? band11Input * band11Gain : 0;\nband12 = band12State ? band12Input * band12Gain : 0;\nband13 = band13State ? band13Input * band13Gain : 0;\nband14 = band14State ? band14Input * band14Gain : 0;\nband15 = band15State ? band15Input * band15Gain : 0;\nband16 = band16State ? band16Input * band16Gain : 0;\nband17 = band17State ? band17Input * band17Gain : 0;\nband18 = band18State ? band18Input * band18Gain : 0;\nband19 = band19State ? band19Input * band19Gain : 0;\nband20 = band20State ? band20Input * band20Gain : 0;\nband21 = band21State ? band21Input * band21Gain : 0;\nband22 = band22State ? band22Input * band22Gain : 0;\nband23 = band23State ? band23Input * band23Gain : 0;\nband24 = band24State ? band24Input * band24Gain : 0;\nband25 = band25State ? band25Input * band25Gain : 0;\nband26 = band26State ? band26Input * band26Gain : 0;\nband27 = band27State ? band27Input * band27Gain : 0;\nband28 = band28State ? band28Input * band28Gain : 0;\nband29 = band29State ? band29Input * band29Gain : 0;\nband30 = band30State ? band30Input * band30Gain : 0;\n\nband01Result = ProcessMeter(band01, current_chan, 1, meter, meter_update);\nband02Result = ProcessMeter(band02, current_chan, 2, meter, meter_update);\nband03Result = ProcessMeter(band03, current_chan, 3, meter, meter_update);\nband04Result = ProcessMeter(band04, current_chan, 4, meter, meter_update);\nband05Result = ProcessMeter(band05, current_chan, 5, meter, meter_update);\nband06Result = ProcessMeter(band06, current_chan, 6, meter, meter_update);\nband07Result = ProcessMeter(band07, current_chan, 7, meter, meter_update);\nband08Result = ProcessMeter(band08, current_chan, 8, meter, meter_update);\nband09Result = ProcessMeter(band09, current_chan, 9, meter, meter_update);\nband10Result = ProcessMeter(band10, current_chan, 10, meter, meter_update);\nband11Result = ProcessMeter(band11, current_chan, 11, meter, meter_update);\nband12Result = ProcessMeter(band12, current_chan, 12, meter, meter_update);\nband13Result = ProcessMeter(band13, current_chan, 13, meter, meter_update);\nband14Result = ProcessMeter(band14, current_chan, 14, meter, meter_update);\nband15Result = ProcessMeter(band15, current_chan, 15, meter, meter_update);\nband16Result = ProcessMeter(band16, current_chan, 16, meter, meter_update);\nband17Result = ProcessMeter(band17, current_chan, 17, meter, meter_update);\nband18Result = ProcessMeter(band18, current_chan, 18, meter, meter_update);\nband19Result = ProcessMeter(band19, current_chan, 19, meter, meter_update);\nband20Result = ProcessMeter(band20, current_chan, 20, meter, meter_update);\nband21Result = ProcessMeter(band21, current_chan, 21, meter, meter_update);\nband22Result = ProcessMeter(band22, current_chan, 22, meter, meter_update);\nband23Result = ProcessMeter(band23, current_chan, 23, meter, meter_update);\nband24Result = ProcessMeter(band24, current_chan, 24, meter, meter_update);\nband25Result = ProcessMeter(band25, current_chan, 25, meter, meter_update);\nband26Result = ProcessMeter(band26, current_chan, 26, meter, meter_update);\nband27Result = ProcessMeter(band27, current_chan, 27, meter, meter_update);\nband28Result = ProcessMeter(band28, current_chan, 28, meter, meter_update);\nband29Result = ProcessMeter(band29, current_chan, 29, meter, meter_update);\nband30Result = ProcessMeter(band30, current_chan, 30, meter, meter_update);\n\nout1 = band01Result + band02Result + band03Result + band04Result + band05Result + band06Result + band07Result + band08Result + band09Result + band10Result + band11Result + band12Result + band13Result + band14Result + band15Result + band16Result + band17Result + band18Result + band19Result + band20Result + band21Result + band22Result + band23Result + band24Result + band25Result + band26Result + band27Result + band28Result + band29Result + band30Result;"
+                                                        "outlettype": [ "" ],
+                                                        "id": "obj-3",
+                                                        "code": "RetrieveLevels(band_no, gains_buffer, mutes_buffer, solos_buffer) {\n\t// Offset bounds: 0 to 29 (for 1-30)\n\tindex = clamp((band_no - 1), 0, 29);\n\tband_gain = peek(gains_buffer, 0, index);\n\tband_mute = peek(mutes_buffer, 0, index);\n\tband_solo = peek(solos_buffer, 0, index);\n\treturn band_gain, band_mute, band_solo;\n}\n\nProcessMeter(isolated_band, current_chan, band_no, meter_buffer, meter_update) {\n\tpeak = abs(isolated_band);\n\tpoke(meter_buffer, peak, current_chan, (band_no - 1), meter_update, index=\"samples\");\n\treturn isolated_band;\n}\n\nXOverCoeffs(freq) {\n\tradPerSmp = (freq * twopi/samplerate); // radians per sample\n\tradPerSmpCos = cos(radPerSmp);\n\tradPerSmpSin = sin(radPerSmp);\n\tAPCoeff = (radPerSmpSin - 1.) / radPerSmpCos;\n\tLPCoeff = (APCoeff + 1) * 0.5;\n\treturn LPCoeff, APCoeff;\n}\n\nAllpassFilter(input, allpassCoeff) {\n\tHistory delay_state(0);\n\tfeedback = delay_state * allpassCoeff;\n\tintermediate_state = input - feedback;\n\tfeedforward = intermediate_state * allpassCoeff;\n\tresult = feedforward + delay_state;\n\tnext_delay_state = fixdenorm(intermediate_state);\n\tdelay_state = next_delay_state;\n\treturn result;\n}\n\nLowShelfFilter(input, lowpassCoeff) {\n\tHistory delay_state1(0);\n\tHistory delay_state2(0);\n\tdiff1 = input - delay_state1;\n\tscaled_diff1 = diff1 * lowpassCoeff;\n\tstage1_out = scaled_diff1 + delay_state1;\n\tstage1_next_accum = stage1_out + scaled_diff1;\n\tdiff2 = stage1_out - delay_state2;\n\tscaled_diff2 = diff2 * lowpassCoeff;\n\tresult = scaled_diff2 + delay_state2;\n\tstage2_next_accum = result + scaled_diff2;\n\tnext_delay_state1 = fixdenorm(stage1_next_accum);\n\tnext_delay_state2 = fixdenorm(stage2_next_accum);\n\tdelay_state1 = next_delay_state1;\n\tdelay_state2 = next_delay_state2;\n\treturn result;\n}\n\nCrossover3Band(input, lowerCoeffLP, lowerCoeffAP, upperCoeffLP, upperCoeffAP, allpassMode) {\n\tlpUpper = LowShelfFilter(input, upperCoeffLP);\n\tlpLower = 0;\r\n    midBand = 0;\n\tupperBand = input - lpUpper;\n \n\tif(allpassMode == 1) {\n\t\t// With allpass highpass extraction\n\t\tallPassResult = AllpassFilter(lpUpper, lowerCoeffAP);\n\t\tlpLower = LowShelfFilter(lpUpper, lowerCoeffLP);\n\t\tmidBand = allPassResult - lpLower;\n\t} else {\n\t\t// Complementary subtraction only (balanced with serial mode)\n\t\tlpLower = LowShelfFilter(lpUpper, lowerCoeffLP);\n\t\tmidBand = lpUpper - lpLower;\n\t}\n\n\tlowerBand = lpLower;\n\treturn lowerBand, midBand, upperBand;\n}\n\nCrossover2Band(input, LPCoeff, APCoeff, allpassMode) {\n\tlpOutput = LowShelfFilter(input, LPCoeff);\n\thigherBand = 0;\n\tif(allpassMode == 1) {\n\t\t// With allpass highpass extraction\n\t\tapOutput = AllpassFilter(input, APCoeff);\n\t\thigherBand = apOutput - lpOutput;\n\t} else {\n\t\t// Complementary residual only (balanced with parallel mode)\n\t\thigherBand = input - lpOutput;\n\t}\n\t\n\treturn lpOutput, higherBand;\n}\n\nBuffer gains(\"gains\");\nBuffer meter(\"meter\");\nBuffer mutes(\"mutes\");\nBuffer solos(\"solos\");\nParam meter_update(0);\nParam bandMode(0, min=0, max=1); // 0 = parallel, 1 = serial\nParam allpassMode(0, min=0, max=1); // 0 = complementary only, 1 = with allpass highpass\nParam spectrumMode(0, min=0, max=1); // 0 = mid band only, 1 = band01 includes sub-bass, band30 includes ultrasonic\n\nHistory init(0);\nHistory band1LowerCoeffLP(0);\nHistory band1LowerCoeffAP(0);\nHistory band1UpperCoeffLP(0);\nHistory band1UpperCoeffAP(0);\nHistory band2LowerCoeffLP(0);\nHistory band2LowerCoeffAP(0);\nHistory band2UpperCoeffLP(0);\nHistory band2UpperCoeffAP(0);\nHistory band3LowerCoeffLP(0);\nHistory band3LowerCoeffAP(0);\nHistory band3UpperCoeffLP(0);\nHistory band3UpperCoeffAP(0);\nHistory band4LowerCoeffLP(0);\nHistory band4LowerCoeffAP(0);\nHistory band4UpperCoeffLP(0);\nHistory band4UpperCoeffAP(0);\nHistory band5LowerCoeffLP(0);\nHistory band5LowerCoeffAP(0);\nHistory band5UpperCoeffLP(0);\nHistory band5UpperCoeffAP(0);\nHistory band6LowerCoeffLP(0);\nHistory band6LowerCoeffAP(0);\nHistory band6UpperCoeffLP(0);\nHistory band6UpperCoeffAP(0);\nHistory band7LowerCoeffLP(0);\nHistory band7LowerCoeffAP(0);\nHistory band7UpperCoeffLP(0);\nHistory band7UpperCoeffAP(0);\nHistory band8LowerCoeffLP(0);\nHistory band8LowerCoeffAP(0);\nHistory band8UpperCoeffLP(0);\nHistory band8UpperCoeffAP(0);\nHistory band9LowerCoeffLP(0);\nHistory band9LowerCoeffAP(0);\nHistory band9UpperCoeffLP(0);\nHistory band9UpperCoeffAP(0);\nHistory band10LowerCoeffLP(0);\nHistory band10LowerCoeffAP(0);\nHistory band10UpperCoeffLP(0);\nHistory band10UpperCoeffAP(0);\nHistory band11LowerCoeffLP(0);\nHistory band11LowerCoeffAP(0);\nHistory band11UpperCoeffLP(0);\nHistory band11UpperCoeffAP(0);\nHistory band12LowerCoeffLP(0);\nHistory band12LowerCoeffAP(0);\nHistory band12UpperCoeffLP(0);\nHistory band12UpperCoeffAP(0);\nHistory band13LowerCoeffLP(0);\nHistory band13LowerCoeffAP(0);\nHistory band13UpperCoeffLP(0);\nHistory band13UpperCoeffAP(0);\nHistory band14LowerCoeffLP(0);\nHistory band14LowerCoeffAP(0);\nHistory band14UpperCoeffLP(0);\nHistory band14UpperCoeffAP(0);\nHistory band15LowerCoeffLP(0);\nHistory band15LowerCoeffAP(0);\nHistory band15UpperCoeffLP(0);\nHistory band15UpperCoeffAP(0);\nHistory band16LowerCoeffLP(0);\nHistory band16LowerCoeffAP(0);\nHistory band16UpperCoeffLP(0);\nHistory band16UpperCoeffAP(0);\nHistory band17LowerCoeffLP(0);\nHistory band17LowerCoeffAP(0);\nHistory band17UpperCoeffLP(0);\nHistory band17UpperCoeffAP(0);\nHistory band18LowerCoeffLP(0);\nHistory band18LowerCoeffAP(0);\nHistory band18UpperCoeffLP(0);\nHistory band18UpperCoeffAP(0);\nHistory band19LowerCoeffLP(0);\nHistory band19LowerCoeffAP(0);\nHistory band19UpperCoeffLP(0);\nHistory band19UpperCoeffAP(0);\nHistory band20LowerCoeffLP(0);\nHistory band20LowerCoeffAP(0);\nHistory band20UpperCoeffLP(0);\nHistory band20UpperCoeffAP(0);\nHistory band21LowerCoeffLP(0);\nHistory band21LowerCoeffAP(0);\nHistory band21UpperCoeffLP(0);\nHistory band21UpperCoeffAP(0);\nHistory band22LowerCoeffLP(0);\nHistory band22LowerCoeffAP(0);\nHistory band22UpperCoeffLP(0);\nHistory band22UpperCoeffAP(0);\nHistory band23LowerCoeffLP(0);\nHistory band23LowerCoeffAP(0);\nHistory band23UpperCoeffLP(0);\nHistory band23UpperCoeffAP(0);\nHistory band24LowerCoeffLP(0);\nHistory band24LowerCoeffAP(0);\nHistory band24UpperCoeffLP(0);\nHistory band24UpperCoeffAP(0);\nHistory band25LowerCoeffLP(0);\nHistory band25LowerCoeffAP(0);\nHistory band25UpperCoeffLP(0);\nHistory band25UpperCoeffAP(0);\nHistory band26LowerCoeffLP(0);\nHistory band26LowerCoeffAP(0);\nHistory band26UpperCoeffLP(0);\nHistory band26UpperCoeffAP(0);\nHistory band27LowerCoeffLP(0);\nHistory band27LowerCoeffAP(0);\nHistory band27UpperCoeffLP(0);\nHistory band27UpperCoeffAP(0);\nHistory band28LowerCoeffLP(0);\nHistory band28LowerCoeffAP(0);\nHistory band28UpperCoeffLP(0);\nHistory band28UpperCoeffAP(0);\nHistory band29LowerCoeffLP(0);\nHistory band29LowerCoeffAP(0);\nHistory band29UpperCoeffLP(0);\nHistory band29UpperCoeffAP(0);\nHistory band30LowerCoeffLP(0);\nHistory band30LowerCoeffAP(0);\nHistory band30UpperCoeffLP(0);\nHistory band30UpperCoeffAP(0);\nHistory band01Iso(0);\nHistory band02Iso(0);\nHistory band03Iso(0);\nHistory band04Iso(0);\nHistory band05Iso(0);\nHistory band06Iso(0);\nHistory band07Iso(0);\nHistory band08Iso(0);\nHistory band09Iso(0);\nHistory band10Iso(0);\nHistory band11Iso(0);\nHistory band12Iso(0);\nHistory band13Iso(0);\nHistory band14Iso(0);\nHistory band15Iso(0);\nHistory band16Iso(0);\nHistory band17Iso(0);\nHistory band18Iso(0);\nHistory band19Iso(0);\nHistory band20Iso(0);\nHistory band21Iso(0);\nHistory band22Iso(0);\nHistory band23Iso(0);\nHistory band24Iso(0);\nHistory band25Iso(0);\nHistory band26Iso(0);\nHistory band27Iso(0);\nHistory band28Iso(0);\nHistory band29Iso(0);\nHistory band30Iso(0);\n\nif(init == 0) {\n\t// Pre-calculate all crossover coefficients at initialization\n\tband1LowerCoeffLP, band1LowerCoeffAP = XOverCoeffs(22.4);\n\tband1UpperCoeffLP, band1UpperCoeffAP = XOverCoeffs(28.2);\n\tband2LowerCoeffLP, band2LowerCoeffAP = XOverCoeffs(28.2);\n\tband2UpperCoeffLP, band2UpperCoeffAP = XOverCoeffs(35.5);\n\tband3LowerCoeffLP, band3LowerCoeffAP = XOverCoeffs(35.5);\n\tband3UpperCoeffLP, band3UpperCoeffAP = XOverCoeffs(44.7);\n\tband4LowerCoeffLP, band4LowerCoeffAP = XOverCoeffs(44.7);\n\tband4UpperCoeffLP, band4UpperCoeffAP = XOverCoeffs(56.2);\n\tband5LowerCoeffLP, band5LowerCoeffAP = XOverCoeffs(56.20);\n\tband5UpperCoeffLP, band5UpperCoeffAP = XOverCoeffs(70.80);\n\tband6LowerCoeffLP, band6LowerCoeffAP = XOverCoeffs(70.80);\n\tband6UpperCoeffLP, band6UpperCoeffAP = XOverCoeffs(89.10);\n\tband7LowerCoeffLP, band7LowerCoeffAP = XOverCoeffs(89.10);\n\tband7UpperCoeffLP, band7UpperCoeffAP = XOverCoeffs(112.00);\n\tband8LowerCoeffLP, band8LowerCoeffAP = XOverCoeffs(112.00);\n\tband8UpperCoeffLP, band8UpperCoeffAP = XOverCoeffs(141.00);\n\tband9LowerCoeffLP, band9LowerCoeffAP = XOverCoeffs(141.00);\n\tband9UpperCoeffLP, band9UpperCoeffAP = XOverCoeffs(178.00);\n\tband10LowerCoeffLP, band10LowerCoeffAP = XOverCoeffs(178.00);\n\tband10UpperCoeffLP, band10UpperCoeffAP = XOverCoeffs(224.00);\n\tband11LowerCoeffLP, band11LowerCoeffAP = XOverCoeffs(224.00);\n\tband11UpperCoeffLP, band11UpperCoeffAP = XOverCoeffs(282.00);\n\tband12LowerCoeffLP, band12LowerCoeffAP = XOverCoeffs(282.00);\n\tband12UpperCoeffLP, band12UpperCoeffAP = XOverCoeffs(355.00);\n\tband13LowerCoeffLP, band13LowerCoeffAP = XOverCoeffs(355.00);\n\tband13UpperCoeffLP, band13UpperCoeffAP = XOverCoeffs(447.00);\n\tband14LowerCoeffLP, band14LowerCoeffAP = XOverCoeffs(447.00);\n\tband14UpperCoeffLP, band14UpperCoeffAP = XOverCoeffs(562.00);\n\tband15LowerCoeffLP, band15LowerCoeffAP = XOverCoeffs(562.00);\n\tband15UpperCoeffLP, band15UpperCoeffAP = XOverCoeffs(708.00);\n\tband16LowerCoeffLP, band16LowerCoeffAP = XOverCoeffs(708.00);\n\tband16UpperCoeffLP, band16UpperCoeffAP = XOverCoeffs(891.00);\n\tband17LowerCoeffLP, band17LowerCoeffAP = XOverCoeffs(891.00);\n\tband17UpperCoeffLP, band17UpperCoeffAP = XOverCoeffs(1122.00);\n\tband18LowerCoeffLP, band18LowerCoeffAP = XOverCoeffs(1122.00);\n\tband18UpperCoeffLP, band18UpperCoeffAP = XOverCoeffs(1413.00);\n\tband19LowerCoeffLP, band19LowerCoeffAP = XOverCoeffs(1413.00);\n\tband19UpperCoeffLP, band19UpperCoeffAP = XOverCoeffs(1778.00);\n\tband20LowerCoeffLP, band20LowerCoeffAP = XOverCoeffs(1778.00);\n\tband20UpperCoeffLP, band20UpperCoeffAP = XOverCoeffs(2239.00);\n\tband21LowerCoeffLP, band21LowerCoeffAP = XOverCoeffs(2239.00);\n\tband21UpperCoeffLP, band21UpperCoeffAP = XOverCoeffs(2818.00);\n\tband22LowerCoeffLP, band22LowerCoeffAP = XOverCoeffs(2818.00);\n\tband22UpperCoeffLP, band22UpperCoeffAP = XOverCoeffs(3548.00);\n\tband23LowerCoeffLP, band23LowerCoeffAP = XOverCoeffs(3548.00);\n\tband23UpperCoeffLP, band23UpperCoeffAP = XOverCoeffs(4467.00);\n\tband24LowerCoeffLP, band24LowerCoeffAP = XOverCoeffs(4467.00);\n\tband24UpperCoeffLP, band24UpperCoeffAP = XOverCoeffs(5623.00);\n\tband25LowerCoeffLP, band25LowerCoeffAP = XOverCoeffs(5623.00);\n\tband25UpperCoeffLP, band25UpperCoeffAP = XOverCoeffs(7079.00);\n\tband26LowerCoeffLP, band26LowerCoeffAP = XOverCoeffs(7079.00);\n\tband26UpperCoeffLP, band26UpperCoeffAP = XOverCoeffs(8913.00);\n\tband27LowerCoeffLP, band27LowerCoeffAP = XOverCoeffs(8913.00);\n\tband27UpperCoeffLP, band27UpperCoeffAP = XOverCoeffs(11220.00);\n\tband28LowerCoeffLP, band28LowerCoeffAP = XOverCoeffs(11220.00);\n\tband28UpperCoeffLP, band28UpperCoeffAP = XOverCoeffs(14130.00);\n\tband29LowerCoeffLP, band29LowerCoeffAP = XOverCoeffs(14130.00);\n\tband29UpperCoeffLP, band29UpperCoeffAP = XOverCoeffs(17780.00);\n\tband30LowerCoeffLP, band30LowerCoeffAP = XOverCoeffs(17780.00);\n\tband30UpperCoeffLP, band30UpperCoeffAP = XOverCoeffs(min(20000.00, samplerate * 0.45));\n\tinit = 1;\n}\n\n\ninput = in1;\ncurrent_chan = mc_channel - 1;\n\nif(bandMode == 1) {\n\tband01Hi = 0;\n\tif(spectrumMode == 1) {\n\t\t// spectrumMode=1: band01 captures 0-28.2 Hz (includes sub-bass below 22.4 Hz)\n\t\tband01Iso, band01Hi = Crossover2Band(input, band1UpperCoeffLP, band1UpperCoeffAP, allpassMode);\n\t} else {\n\t\t// spectrumMode=0: band01 captures 22.4-28.2 Hz only (sub-bass discarded)\n\t\tband00Iso, band00Hi = Crossover2Band(input, band1LowerCoeffLP, band1LowerCoeffAP, 0);\n\t\tband01Iso, band01Hi = Crossover2Band(band00Hi, band1UpperCoeffLP, band1UpperCoeffAP, allpassMode);\n\t}\n\tband02Iso, band02Hi = Crossover2Band(band01Hi, band2UpperCoeffLP, band2UpperCoeffAP, allpassMode);\n\tband03Iso, band03Hi = Crossover2Band(band02Hi, band3UpperCoeffLP, band3UpperCoeffAP, allpassMode);\n\tband04Iso, band04Hi = Crossover2Band(band03Hi, band4UpperCoeffLP, band4UpperCoeffAP, allpassMode);\n\tband05Iso, band05Hi = Crossover2Band(band04Hi, band5UpperCoeffLP, band5UpperCoeffAP, allpassMode);\n\tband06Iso, band06Hi = Crossover2Band(band05Hi, band6UpperCoeffLP, band6UpperCoeffAP, allpassMode);\n\tband07Iso, band07Hi = Crossover2Band(band06Hi, band7UpperCoeffLP, band7UpperCoeffAP, allpassMode);\n\tband08Iso, band08Hi = Crossover2Band(band07Hi, band8UpperCoeffLP, band8UpperCoeffAP, allpassMode);\n\tband09Iso, band09Hi = Crossover2Band(band08Hi, band9UpperCoeffLP, band9UpperCoeffAP, allpassMode);\n\tband10Iso, band10Hi = Crossover2Band(band09Hi, band10UpperCoeffLP, band10UpperCoeffAP, allpassMode);\n\tband11Iso, band11Hi = Crossover2Band(band10Hi, band11UpperCoeffLP, band11UpperCoeffAP, allpassMode);\n\tband12Iso, band12Hi = Crossover2Band(band11Hi, band12UpperCoeffLP, band12UpperCoeffAP, allpassMode);\n\tband13Iso, band13Hi = Crossover2Band(band12Hi, band13UpperCoeffLP, band13UpperCoeffAP, allpassMode);\n\tband14Iso, band14Hi = Crossover2Band(band13Hi, band14UpperCoeffLP, band14UpperCoeffAP, allpassMode);\n\tband15Iso, band15Hi = Crossover2Band(band14Hi, band15UpperCoeffLP, band15UpperCoeffAP, allpassMode);\n\tband16Iso, band16Hi = Crossover2Band(band15Hi, band16UpperCoeffLP, band16UpperCoeffAP, allpassMode);\n\tband17Iso, band17Hi = Crossover2Band(band16Hi, band17UpperCoeffLP, band17UpperCoeffAP, allpassMode);\n\tband18Iso, band18Hi = Crossover2Band(band17Hi, band18UpperCoeffLP, band18UpperCoeffAP, allpassMode);\n\tband19Iso, band19Hi = Crossover2Band(band18Hi, band19UpperCoeffLP, band19UpperCoeffAP, allpassMode);\n\tband20Iso, band20Hi = Crossover2Band(band19Hi, band20UpperCoeffLP, band20UpperCoeffAP, allpassMode);\n\tband21Iso, band21Hi = Crossover2Band(band20Hi, band21UpperCoeffLP, band21UpperCoeffAP, allpassMode);\n\tband22Iso, band22Hi = Crossover2Band(band21Hi, band22UpperCoeffLP, band22UpperCoeffAP, allpassMode);\n\tband23Iso, band23Hi = Crossover2Band(band22Hi, band23UpperCoeffLP, band23UpperCoeffAP, allpassMode);\n\tband24Iso, band24Hi = Crossover2Band(band23Hi, band24UpperCoeffLP, band24UpperCoeffAP, allpassMode);\n\tband25Iso, band25Hi = Crossover2Band(band24Hi, band25UpperCoeffLP, band25UpperCoeffAP, allpassMode);\n\tband26Iso, band26Hi = Crossover2Band(band25Hi, band26UpperCoeffLP, band26UpperCoeffAP, allpassMode);\n\tband27Iso, band27Hi = Crossover2Band(band26Hi, band27UpperCoeffLP, band27UpperCoeffAP, allpassMode);\n\tband28Iso, band28Hi = Crossover2Band(band27Hi, band28UpperCoeffLP, band28UpperCoeffAP, allpassMode);\n\tband29Iso, band29Hi = Crossover2Band(band28Hi, band29UpperCoeffLP, band29UpperCoeffAP, allpassMode);\n\tband30Iso, band30Hi = Crossover2Band(band29Hi, band30UpperCoeffLP, band30UpperCoeffAP, allpassMode);\n\tif(spectrumMode == 1) {\n\t\tband30Iso = band30Iso + band30Hi; // Add residual above top cutoff to band30\n\t}\n} else {\n\t// Parallel mode: process each band's input independently\n\t// allpassMode = 1;\n\tband01Lo, band01Iso, band01Hi = Crossover3Band(input, band1LowerCoeffLP, band1LowerCoeffAP, band1UpperCoeffLP, band1UpperCoeffAP, allpassMode);\n\tband02Lo, band02Iso, band02Hi = Crossover3Band(input, band2LowerCoeffLP, band2LowerCoeffAP, band2UpperCoeffLP, band2UpperCoeffAP, allpassMode);\n\tband03Lo, band03Iso, band03Hi = Crossover3Band(input, band3LowerCoeffLP, band3LowerCoeffAP, band3UpperCoeffLP, band3UpperCoeffAP, allpassMode);\n\tband04Lo, band04Iso, band04Hi = Crossover3Band(input, band4LowerCoeffLP, band4LowerCoeffAP, band4UpperCoeffLP, band4UpperCoeffAP, allpassMode);\n\tband05Lo, band05Iso, band05Hi = Crossover3Band(input, band5LowerCoeffLP, band5LowerCoeffAP, band5UpperCoeffLP, band5UpperCoeffAP, allpassMode);\n\tband06Lo, band06Iso, band06Hi = Crossover3Band(input, band6LowerCoeffLP, band6LowerCoeffAP, band6UpperCoeffLP, band6UpperCoeffAP, allpassMode);\n\tband07Lo, band07Iso, band07Hi = Crossover3Band(input, band7LowerCoeffLP, band7LowerCoeffAP, band7UpperCoeffLP, band7UpperCoeffAP, allpassMode);\n\tband08Lo, band08Iso, band08Hi = Crossover3Band(input, band8LowerCoeffLP, band8LowerCoeffAP, band8UpperCoeffLP, band8UpperCoeffAP, allpassMode);\n\tband09Lo, band09Iso, band09Hi = Crossover3Band(input, band9LowerCoeffLP, band9LowerCoeffAP, band9UpperCoeffLP, band9UpperCoeffAP, allpassMode);\n\tband10Lo, band10Iso, band10Hi = Crossover3Band(input, band10LowerCoeffLP, band10LowerCoeffAP, band10UpperCoeffLP, band10UpperCoeffAP, allpassMode);\n\tband11Lo, band11Iso, band11Hi = Crossover3Band(input, band11LowerCoeffLP, band11LowerCoeffAP, band11UpperCoeffLP, band11UpperCoeffAP, allpassMode);\n\tband12Lo, band12Iso, band12Hi = Crossover3Band(input, band12LowerCoeffLP, band12LowerCoeffAP, band12UpperCoeffLP, band12UpperCoeffAP, allpassMode);\n\tband13Lo, band13Iso, band13Hi = Crossover3Band(input, band13LowerCoeffLP, band13LowerCoeffAP, band13UpperCoeffLP, band13UpperCoeffAP, allpassMode);\n\tband14Lo, band14Iso, band14Hi = Crossover3Band(input, band14LowerCoeffLP, band14LowerCoeffAP, band14UpperCoeffLP, band14UpperCoeffAP, allpassMode);\n\tband15Lo, band15Iso, band15Hi = Crossover3Band(input, band15LowerCoeffLP, band15LowerCoeffAP, band15UpperCoeffLP, band15UpperCoeffAP, allpassMode);\n\tband16Lo, band16Iso, band16Hi = Crossover3Band(input, band16LowerCoeffLP, band16LowerCoeffAP, band16UpperCoeffLP, band16UpperCoeffAP, allpassMode);\n\tband17Lo, band17Iso, band17Hi = Crossover3Band(input, band17LowerCoeffLP, band17LowerCoeffAP, band17UpperCoeffLP, band17UpperCoeffAP, allpassMode);\n\tband18Lo, band18Iso, band18Hi = Crossover3Band(input, band18LowerCoeffLP, band18LowerCoeffAP, band18UpperCoeffLP, band18UpperCoeffAP, allpassMode);\n\tband19Lo, band19Iso, band19Hi = Crossover3Band(input, band19LowerCoeffLP, band19LowerCoeffAP, band19UpperCoeffLP, band19UpperCoeffAP, allpassMode);\n\tband20Lo, band20Iso, band20Hi = Crossover3Band(input, band20LowerCoeffLP, band20LowerCoeffAP, band20UpperCoeffLP, band20UpperCoeffAP, allpassMode);\n\tband21Lo, band21Iso, band21Hi = Crossover3Band(input, band21LowerCoeffLP, band21LowerCoeffAP, band21UpperCoeffLP, band21UpperCoeffAP, allpassMode);\n\tband22Lo, band22Iso, band22Hi = Crossover3Band(input, band22LowerCoeffLP, band22LowerCoeffAP, band22UpperCoeffLP, band22UpperCoeffAP, allpassMode);\n\tband23Lo, band23Iso, band23Hi = Crossover3Band(input, band23LowerCoeffLP, band23LowerCoeffAP, band23UpperCoeffLP, band23UpperCoeffAP, allpassMode);\n\tband24Lo, band24Iso, band24Hi = Crossover3Band(input, band24LowerCoeffLP, band24LowerCoeffAP, band24UpperCoeffLP, band24UpperCoeffAP, allpassMode);\n\tband25Lo, band25Iso, band25Hi = Crossover3Band(input, band25LowerCoeffLP, band25LowerCoeffAP, band25UpperCoeffLP, band25UpperCoeffAP, allpassMode);\n\tband26Lo, band26Iso, band26Hi = Crossover3Band(input, band26LowerCoeffLP, band26LowerCoeffAP, band26UpperCoeffLP, band26UpperCoeffAP, allpassMode);\n\tband27Lo, band27Iso, band27Hi = Crossover3Band(input, band27LowerCoeffLP, band27LowerCoeffAP, band27UpperCoeffLP, band27UpperCoeffAP, allpassMode);\n\tband28Lo, band28Iso, band28Hi = Crossover3Band(input, band28LowerCoeffLP, band28LowerCoeffAP, band28UpperCoeffLP, band28UpperCoeffAP, allpassMode);\n\tband29Lo, band29Iso, band29Hi = Crossover3Band(input, band29LowerCoeffLP, band29LowerCoeffAP, band29UpperCoeffLP, band29UpperCoeffAP, allpassMode);\n\tband30Lo, band30Iso, band30Hi = Crossover3Band(input, band30LowerCoeffLP, band30LowerCoeffAP, band30UpperCoeffLP, band30UpperCoeffAP, allpassMode);\n\tif(\tspectrumMode == 1) {\n\t\tband01Iso = band01Iso + band01Lo; // Add the dc low band to the first band\n\t\tband30Iso = band30Iso + band30Hi; // Add the residual high band to the last band\n\t}\n}\n\nband01Gain, band01Mute, band01Solo = RetrieveLevels(1, gains, mutes, solos);\nband02Gain, band02Mute, band02Solo = RetrieveLevels(2, gains, mutes, solos);\nband03Gain, band03Mute, band03Solo = RetrieveLevels(3, gains, mutes, solos);\nband04Gain, band04Mute, band04Solo = RetrieveLevels(4, gains, mutes, solos);\nband05Gain, band05Mute, band05Solo = RetrieveLevels(5, gains, mutes, solos);\nband06Gain, band06Mute, band06Solo = RetrieveLevels(6, gains, mutes, solos);\nband07Gain, band07Mute, band07Solo = RetrieveLevels(7, gains, mutes, solos);\nband08Gain, band08Mute, band08Solo = RetrieveLevels(8, gains, mutes, solos);\nband09Gain, band09Mute, band09Solo = RetrieveLevels(9, gains, mutes, solos);\nband10Gain, band10Mute, band10Solo = RetrieveLevels(10, gains, mutes, solos);\nband11Gain, band11Mute, band11Solo = RetrieveLevels(11, gains, mutes, solos);\nband12Gain, band12Mute, band12Solo = RetrieveLevels(12, gains, mutes, solos);\nband13Gain, band13Mute, band13Solo = RetrieveLevels(13, gains, mutes, solos);\nband14Gain, band14Mute, band14Solo = RetrieveLevels(14, gains, mutes, solos);\nband15Gain, band15Mute, band15Solo = RetrieveLevels(15, gains, mutes, solos);\nband16Gain, band16Mute, band16Solo = RetrieveLevels(16, gains, mutes, solos);\nband17Gain, band17Mute, band17Solo = RetrieveLevels(17, gains, mutes, solos);\nband18Gain, band18Mute, band18Solo = RetrieveLevels(18, gains, mutes, solos);\nband19Gain, band19Mute, band19Solo = RetrieveLevels(19, gains, mutes, solos);\nband20Gain, band20Mute, band20Solo = RetrieveLevels(20, gains, mutes, solos);\nband21Gain, band21Mute, band21Solo = RetrieveLevels(21, gains, mutes, solos);\nband22Gain, band22Mute, band22Solo = RetrieveLevels(22, gains, mutes, solos);\nband23Gain, band23Mute, band23Solo = RetrieveLevels(23, gains, mutes, solos);\nband24Gain, band24Mute, band24Solo = RetrieveLevels(24, gains, mutes, solos);\nband25Gain, band25Mute, band25Solo = RetrieveLevels(25, gains, mutes, solos);\nband26Gain, band26Mute, band26Solo = RetrieveLevels(26, gains, mutes, solos);\nband27Gain, band27Mute, band27Solo = RetrieveLevels(27, gains, mutes, solos);\nband28Gain, band28Mute, band28Solo = RetrieveLevels(28, gains, mutes, solos);\nband29Gain, band29Mute, band29Solo = RetrieveLevels(29, gains, mutes, solos);\nband30Gain, band30Mute, band30Solo = RetrieveLevels(30, gains, mutes, solos);\n\nsoloMode = (band01Solo + band02Solo + band03Solo + band04Solo + band05Solo + band06Solo + band07Solo + band08Solo + band09Solo + band10Solo + band11Solo + band12Solo + band13Solo + band14Solo + band15Solo + band16Solo + band17Solo + band18Solo + band19Solo + band20Solo + band21Solo + band22Solo + band23Solo + band24Solo + band25Solo + band26Solo + band27Solo + band28Solo + band29Solo + band30Solo) > 0;\n\nband01State = soloMode ? (band01Solo ? 1 : 0) : (band01Mute ? 0 : 1);\nband02State = soloMode ? (band02Solo ? 1 : 0) : (band02Mute ? 0 : 1);\nband03State = soloMode ? (band03Solo ? 1 : 0) : (band03Mute ? 0 : 1);\nband04State = soloMode ? (band04Solo ? 1 : 0) : (band04Mute ? 0 : 1);\nband05State = soloMode ? (band05Solo ? 1 : 0) : (band05Mute ? 0 : 1);\nband06State = soloMode ? (band06Solo ? 1 : 0) : (band06Mute ? 0 : 1);\nband07State = soloMode ? (band07Solo ? 1 : 0) : (band07Mute ? 0 : 1);\nband08State = soloMode ? (band08Solo ? 1 : 0) : (band08Mute ? 0 : 1);\nband09State = soloMode ? (band09Solo ? 1 : 0) : (band09Mute ? 0 : 1);\nband10State = soloMode ? (band10Solo ? 1 : 0) : (band10Mute ? 0 : 1);\nband11State = soloMode ? (band11Solo ? 1 : 0) : (band11Mute ? 0 : 1);\nband12State = soloMode ? (band12Solo ? 1 : 0) : (band12Mute ? 0 : 1);\nband13State = soloMode ? (band13Solo ? 1 : 0) : (band13Mute ? 0 : 1);\nband14State = soloMode ? (band14Solo ? 1 : 0) : (band14Mute ? 0 : 1);\nband15State = soloMode ? (band15Solo ? 1 : 0) : (band15Mute ? 0 : 1);\nband16State = soloMode ? (band16Solo ? 1 : 0) : (band16Mute ? 0 : 1);\nband17State = soloMode ? (band17Solo ? 1 : 0) : (band17Mute ? 0 : 1);\nband18State = soloMode ? (band18Solo ? 1 : 0) : (band18Mute ? 0 : 1);\nband19State = soloMode ? (band19Solo ? 1 : 0) : (band19Mute ? 0 : 1);\nband20State = soloMode ? (band20Solo ? 1 : 0) : (band20Mute ? 0 : 1);\nband21State = soloMode ? (band21Solo ? 1 : 0) : (band21Mute ? 0 : 1);\nband22State = soloMode ? (band22Solo ? 1 : 0) : (band22Mute ? 0 : 1);\nband23State = soloMode ? (band23Solo ? 1 : 0) : (band23Mute ? 0 : 1);\nband24State = soloMode ? (band24Solo ? 1 : 0) : (band24Mute ? 0 : 1);\nband25State = soloMode ? (band25Solo ? 1 : 0) : (band25Mute ? 0 : 1);\nband26State = soloMode ? (band26Solo ? 1 : 0) : (band26Mute ? 0 : 1);\nband27State = soloMode ? (band27Solo ? 1 : 0) : (band27Mute ? 0 : 1);\nband28State = soloMode ? (band28Solo ? 1 : 0) : (band28Mute ? 0 : 1);\nband29State = soloMode ? (band29Solo ? 1 : 0) : (band29Mute ? 0 : 1);\nband30State = soloMode ? (band30Solo ? 1 : 0) : (band30Mute ? 0 : 1);\n\nband01 = band01State ? band01Iso * band01Gain : 0;\nband02 = band02State ? band02Iso * band02Gain : 0;\nband03 = band03State ? band03Iso * band03Gain : 0;\nband04 = band04State ? band04Iso * band04Gain : 0;\nband05 = band05State ? band05Iso * band05Gain : 0;\nband06 = band06State ? band06Iso * band06Gain : 0;\nband07 = band07State ? band07Iso * band07Gain : 0;\nband08 = band08State ? band08Iso * band08Gain : 0;\nband09 = band09State ? band09Iso * band09Gain : 0;\nband10 = band10State ? band10Iso * band10Gain : 0;\nband11 = band11State ? band11Iso * band11Gain : 0;\nband12 = band12State ? band12Iso * band12Gain : 0;\nband13 = band13State ? band13Iso * band13Gain : 0;\nband14 = band14State ? band14Iso * band14Gain : 0;\nband15 = band15State ? band15Iso * band15Gain : 0;\nband16 = band16State ? band16Iso * band16Gain : 0;\nband17 = band17State ? band17Iso * band17Gain : 0;\nband18 = band18State ? band18Iso * band18Gain : 0;\nband19 = band19State ? band19Iso * band19Gain : 0;\nband20 = band20State ? band20Iso * band20Gain : 0;\nband21 = band21State ? band21Iso * band21Gain : 0;\nband22 = band22State ? band22Iso * band22Gain : 0;\nband23 = band23State ? band23Iso * band23Gain : 0;\nband24 = band24State ? band24Iso * band24Gain : 0;\nband25 = band25State ? band25Iso * band25Gain : 0;\nband26 = band26State ? band26Iso * band26Gain : 0;\nband27 = band27State ? band27Iso * band27Gain : 0;\nband28 = band28State ? band28Iso * band28Gain : 0;\nband29 = band29State ? band29Iso * band29Gain : 0;\nband30 = band30State ? band30Iso * band30Gain : 0;\n\nband01Result = ProcessMeter(band01, current_chan, 1, meter, meter_update);\nband02Result = ProcessMeter(band02, current_chan, 2, meter, meter_update);\nband03Result = ProcessMeter(band03, current_chan, 3, meter, meter_update);\nband04Result = ProcessMeter(band04, current_chan, 4, meter, meter_update);\nband05Result = ProcessMeter(band05, current_chan, 5, meter, meter_update);\nband06Result = ProcessMeter(band06, current_chan, 6, meter, meter_update);\nband07Result = ProcessMeter(band07, current_chan, 7, meter, meter_update);\nband08Result = ProcessMeter(band08, current_chan, 8, meter, meter_update);\nband09Result = ProcessMeter(band09, current_chan, 9, meter, meter_update);\nband10Result = ProcessMeter(band10, current_chan, 10, meter, meter_update);\nband11Result = ProcessMeter(band11, current_chan, 11, meter, meter_update);\nband12Result = ProcessMeter(band12, current_chan, 12, meter, meter_update);\nband13Result = ProcessMeter(band13, current_chan, 13, meter, meter_update);\nband14Result = ProcessMeter(band14, current_chan, 14, meter, meter_update);\nband15Result = ProcessMeter(band15, current_chan, 15, meter, meter_update);\nband16Result = ProcessMeter(band16, current_chan, 16, meter, meter_update);\nband17Result = ProcessMeter(band17, current_chan, 17, meter, meter_update);\nband18Result = ProcessMeter(band18, current_chan, 18, meter, meter_update);\nband19Result = ProcessMeter(band19, current_chan, 19, meter, meter_update);\nband20Result = ProcessMeter(band20, current_chan, 20, meter, meter_update);\nband21Result = ProcessMeter(band21, current_chan, 21, meter, meter_update);\nband22Result = ProcessMeter(band22, current_chan, 22, meter, meter_update);\nband23Result = ProcessMeter(band23, current_chan, 23, meter, meter_update);\nband24Result = ProcessMeter(band24, current_chan, 24, meter, meter_update);\nband25Result = ProcessMeter(band25, current_chan, 25, meter, meter_update);\nband26Result = ProcessMeter(band26, current_chan, 26, meter, meter_update);\nband27Result = ProcessMeter(band27, current_chan, 27, meter, meter_update);\nband28Result = ProcessMeter(band28, current_chan, 28, meter, meter_update);\nband29Result = ProcessMeter(band29, current_chan, 29, meter, meter_update);\nband30Result = ProcessMeter(band30, current_chan, 30, meter, meter_update);\n\nout1 = band01Result + band02Result + band03Result + band04Result + band05Result + band06Result + band07Result + band08Result + band09Result + band10Result + band11Result + band12Result + band13Result + band14Result + band15Result + band16Result + band17Result + band18Result + band19Result + band20Result + band21Result + band22Result + band23Result + band24Result + band25Result + band26Result + band27Result + band28Result + band29Result + band30Result;"
                                                     }
                                                 },
                                                 {
@@ -1565,23 +1609,23 @@
                                                         "maxclass": "newobj",
                                                         "text": "out 1",
                                                         "patching_rect": [ 50.0, 630.0970787405968, 35.0, 22.0 ],
+                                                        "numinlets": 1,
                                                         "numoutlets": 0,
-                                                        "id": "obj-4",
-                                                        "numinlets": 1
+                                                        "id": "obj-4"
                                                     }
                                                 }
                                             ],
                                             "lines": [
                                                 {
                                                     "patchline": {
-                                                        "source": [ "obj-1", 0 ],
-                                                        "destination": [ "obj-3", 0 ]
+                                                        "source": [ "obj-3", 0 ],
+                                                        "destination": [ "obj-4", 0 ]
                                                     }
                                                 },
                                                 {
                                                     "patchline": {
-                                                        "source": [ "obj-3", 0 ],
-                                                        "destination": [ "obj-4", 0 ]
+                                                        "source": [ "obj-1", 0 ],
+                                                        "destination": [ "obj-3", 0 ]
                                                     }
                                                 }
                                             ]
@@ -1594,7 +1638,7 @@
                                     "outlettype": [ "multichannelsignal" ],
                                     "patching_rect": [ 234.0, 217.0, 334.0, 22.0 ],
                                     "text": "mc.gen~ @title pp.eq",
-                                    "wrapper_uniquekey": "u663027090"
+                                    "wrapper_uniquekey": "u270002441"
                                 }
                             },
                             {
@@ -1616,6 +1660,12 @@
                                 "patchline": {
                                     "destination": [ "obj-17", 0 ],
                                     "source": [ "obj-10", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-10", 0 ],
+                                    "source": [ "obj-13", 0 ]
                                 }
                             },
                             {
