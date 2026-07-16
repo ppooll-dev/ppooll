@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 159.0, 144.0, 130.0, 125.0 ],
+        "rect": [ 149.0, 150.0, 130.0, 125.0 ],
         "default_fontsize": 11.595187,
         "toolbarvisible": 0,
         "globalpatchername": "ho_st1",
@@ -3603,11 +3603,58 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 485.0, 148.0, 825.0, 548.0 ],
+                                        "rect": [ 0.0, 66.0, 841.0, 581.0 ],
                                         "toolbarvisible": 0,
                                         "enablehscroll": 0,
                                         "enablevscroll": 0,
                                         "boxes": [
+                                            {
+                                                "box": {
+                                                    "attr": "screen_logo",
+                                                    "attrfilter": [ "screen_logo" ],
+                                                    "bgcolor": [ 0.172549019607843, 0.172549019607843, 0.172549019607843, 1.0 ],
+                                                    "fontsize": 14.0,
+                                                    "id": "obj-36",
+                                                    "lock": 1,
+                                                    "maxclass": "attrui",
+                                                    "menu_display": 1,
+                                                    "numinlets": 1,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "parameter_enable": 0,
+                                                    "patching_rect": [ 315.0, 516.0, 239.0, 24.0 ],
+                                                    "storeinpreset": 0,
+                                                    "text_width": 160.0,
+                                                    "varname": "attrui_screen_logo"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "fontname": "Arial",
+                                                    "fontsize": 12.0,
+                                                    "id": "obj-37",
+                                                    "maxclass": "comment",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 0,
+                                                    "patching_rect": [ 12.0, 518.0, 297.0, 20.0 ],
+                                                    "text": "show ppooll logo in screen background",
+                                                    "textcolor": [ 1.0, 1.0, 1.0, 0.49 ]
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "angle": 270.0,
+                                                    "bgcolor": [ 0.172549019607843, 0.172549019607843, 0.172549019607843, 1.0 ],
+                                                    "id": "obj-38",
+                                                    "maxclass": "panel",
+                                                    "mode": 0,
+                                                    "numinlets": 1,
+                                                    "numoutlets": 0,
+                                                    "patching_rect": [ 2.0, 513.0, 839.0, 30.0 ],
+                                                    "proportion": 0.5,
+                                                    "rounded": 0
+                                                }
+                                            },
                                             {
                                                 "box": {
                                                     "attr": "host_dcblock",
@@ -3823,7 +3870,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "int" ],
-                                                    "patching_rect": [ 368.0, 600.0, 40.0, 22.0 ],
+                                                    "patching_rect": [ 368.0, 632.0, 40.0, 22.0 ],
                                                     "text": "active"
                                                 }
                                             },
@@ -3848,7 +3895,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 592.0, 547.0, 111.0, 22.0 ],
+                                                    "patching_rect": [ 592.0, 579.0, 111.0, 22.0 ],
                                                     "text": "prepend audio_key"
                                                 }
                                             },
@@ -3883,7 +3930,7 @@
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 206.0, 541.0, 48.0, 22.0 ],
+                                                    "patching_rect": [ 206.0, 573.0, 48.0, 22.0 ],
                                                     "text": "readfile"
                                                 }
                                             },
@@ -4177,7 +4224,7 @@
                                                             }
                                                         ]
                                                     },
-                                                    "patching_rect": [ 314.0, 628.0, 73.0, 22.0 ],
+                                                    "patching_rect": [ 314.0, 660.0, 73.0, 22.0 ],
                                                     "text": "p audio_key"
                                                 }
                                             },
@@ -4189,7 +4236,7 @@
                                                     "maxclass": "comment",
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
-                                                    "patching_rect": [ 12.0, 519.0, 322.0, 21.0 ],
+                                                    "patching_rect": [ 12.0, 551.0, 322.0, 21.0 ],
                                                     "text": "some other preferences are set in special acts.",
                                                     "textcolor": [ 1.0, 1.0, 1.0, 0.49 ]
                                                 }
@@ -4257,7 +4304,7 @@
                                                     "numinlets": 2,
                                                     "numoutlets": 5,
                                                     "outlettype": [ "dictionary", "", "", "", "" ],
-                                                    "patching_rect": [ 457.0, 519.0, 130.0, 22.0 ],
+                                                    "patching_rect": [ 457.0, 551.0, 130.0, 22.0 ],
                                                     "saved_object_attributes": {
                                                         "legacy": 1,
                                                         "parameter_enable": 0,
@@ -4452,7 +4499,7 @@
                                                             }
                                                         ]
                                                     },
-                                                    "patching_rect": [ 313.0, 541.0, 120.0, 22.0 ],
+                                                    "patching_rect": [ 313.0, 573.0, 120.0, 22.0 ],
                                                     "text": "p preferences_view"
                                                 }
                                             },
@@ -5140,7 +5187,7 @@
                                                             }
                                                         ]
                                                     },
-                                                    "patching_rect": [ 257.0, 541.0, 52.0, 22.0 ],
+                                                    "patching_rect": [ 257.0, 573.0, 52.0, 22.0 ],
                                                     "text": "p helper"
                                                 }
                                             },
@@ -5153,7 +5200,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 314.0, 574.0, 109.0, 22.0 ],
+                                                    "patching_rect": [ 314.0, 606.0, 109.0, 22.0 ],
                                                     "saved_object_attributes": {
                                                         "parameter_enable": 0
                                                     },
@@ -5205,7 +5252,7 @@
                                                     "outlettype": [ "", "", "int" ],
                                                     "outputmode": 0,
                                                     "parameter_enable": 0,
-                                                    "patching_rect": [ 313.0, 519.0, 135.0, 20.0 ],
+                                                    "patching_rect": [ 313.0, 551.0, 135.0, 20.0 ],
                                                     "rounded": 2.0,
                                                     "text": "view all preferences",
                                                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
@@ -5317,7 +5364,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "front" ],
-                                                    "patching_rect": [ 710.0, 547.0, 41.0, 22.0 ],
+                                                    "patching_rect": [ 710.0, 579.0, 41.0, 22.0 ],
                                                     "text": "t front"
                                                 }
                                             },
@@ -5331,7 +5378,7 @@
                                                     "numinlets": 3,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "", "bang" ],
-                                                    "patching_rect": [ 710.0, 518.0, 56.0, 22.0 ],
+                                                    "patching_rect": [ 710.0, 550.0, 56.0, 22.0 ],
                                                     "text": "ll.p def 1"
                                                 }
                                             },
@@ -5345,7 +5392,7 @@
                                                     "numinlets": 1,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "", "" ],
-                                                    "patching_rect": [ 710.0, 574.0, 69.0, 22.0 ],
+                                                    "patching_rect": [ 710.0, 606.0, 69.0, 22.0 ],
                                                     "save": [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
                                                     "text": "thispatcher"
                                                 }
@@ -5394,7 +5441,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "parameter_enable": 0,
-                                                    "patching_rect": [ 428.0, 574.0, 280.0, 22.0 ]
+                                                    "patching_rect": [ 428.0, 606.0, 280.0, 22.0 ]
                                                 }
                                             },
                                             {
@@ -5565,6 +5612,13 @@
                                                     "destination": [ "obj-12", 0 ],
                                                     "hidden": 1,
                                                     "source": [ "obj-31", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-12", 0 ],
+                                                    "hidden": 1,
+                                                    "source": [ "obj-36", 0 ]
                                                 }
                                             },
                                             {
@@ -5906,7 +5960,7 @@
                                                             "modernui": 1
                                                         },
                                                         "classnamespace": "box",
-                                                        "rect": [ 500.0, 300.0, 800.0, 800.0 ],
+                                                        "rect": [ 500.0, 300.0, 220.0, 190.0 ],
                                                         "openrect": [ 0.0, 0.0, 800.0, 800.0 ],
                                                         "openrectmode": 0,
                                                         "openinpresentation": 1,
@@ -5948,8 +6002,6 @@
                                                                     "saved_object_attributes": {
                                                                         "autostart": 1,
                                                                         "defer": 0,
-                                                                        "node_bin_path": "",
-                                                                        "npm_bin_path": "",
                                                                         "watch": 0
                                                                     },
                                                                     "text": "node.script ll.node.folders.js",
@@ -6004,7 +6056,7 @@
                                                                     "numoutlets": 0,
                                                                     "patching_rect": [ 295.02, 114.99, 150.0, 19.0 ],
                                                                     "presentation": 1,
-                                                                    "presentation_rect": [ 41.0, 51.0, 150.0, 19.0 ],
+                                                                    "presentation_rect": [ 61.0, 51.0, 150.0, 19.0 ],
                                                                     "textcolor": [ 1.0, 0.003921568627451, 0.003921568627451, 1.0 ],
                                                                     "textjustification": 2,
                                                                     "varname": "error_comment"
@@ -6218,7 +6270,7 @@
                                                                     "parameter_enable": 0,
                                                                     "patching_rect": [ 46.0, 93.0, 133.0, 18.0 ],
                                                                     "presentation": 1,
-                                                                    "presentation_rect": [ 41.0, 29.0, 157.0, 18.0 ],
+                                                                    "presentation_rect": [ 41.0, 29.0, 170.0, 18.0 ],
                                                                     "varname": "textedit_envi_name"
                                                                 }
                                                             },
@@ -6232,14 +6284,14 @@
                                                                     "numoutlets": 0,
                                                                     "patching_rect": [ 223.0, 160.0, 127.0, 18.0 ],
                                                                     "presentation": 1,
-                                                                    "presentation_rect": [ 88.0, 51.5, 103.0, 18.0 ],
+                                                                    "presentation_rect": [ 108.0, 52.0, 103.0, 18.0 ],
                                                                     "text": "or press enter/return",
                                                                     "varname": "write_comment"
                                                                 }
                                                             },
                                                             {
                                                                 "box": {
-                                                                    "bgcolor": [ 0.0, 0.0, 0.0, 0.74 ],
+                                                                    "bgcolor": [ 0.0, 0.0, 0.0, 0.54 ],
                                                                     "fontsize": 10.0,
                                                                     "id": "obj-3",
                                                                     "maxclass": "textbutton",
@@ -6249,7 +6301,7 @@
                                                                     "parameter_enable": 0,
                                                                     "patching_rect": [ 2.0, 204.0, 103.0, 18.0 ],
                                                                     "presentation": 1,
-                                                                    "presentation_rect": [ 21.0, 162.0, 161.0, 17.0 ],
+                                                                    "presentation_rect": [ 18.0, 162.0, 186.0, 17.0 ],
                                                                     "text": "save_as_default_preferences",
                                                                     "textoncolor": [ 1.0, 1.0, 1.0, 1.0 ],
                                                                     "varname": "save_as_default"
@@ -6297,7 +6349,7 @@
                                                                     "bgcolor": [ 0.2, 0.2, 0.2, 0.0 ],
                                                                     "fontsize": 10.0,
                                                                     "hidden": 1,
-                                                                    "hint": "write sample buffers as files with recorded contents",
+                                                                    "hint": "write sample buffers as files with recorded content",
                                                                     "id": "obj-26",
                                                                     "lock": 1,
                                                                     "maxclass": "attrui",
@@ -6307,8 +6359,8 @@
                                                                     "parameter_enable": 0,
                                                                     "patching_rect": [ 6.0, 180.0, 173.0, 20.0 ],
                                                                     "presentation": 1,
-                                                                    "presentation_rect": [ 18.0, 139.0, 173.0, 20.0 ],
-                                                                    "text_width": 120.0,
+                                                                    "presentation_rect": [ 13.0, 139.0, 198.0, 20.0 ],
+                                                                    "text_width": 150.0,
                                                                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                                                                     "varname": "attrui_write_sample_buffers"
                                                                 }
@@ -6320,7 +6372,7 @@
                                                                     "bgcolor": [ 0.2, 0.2, 0.2, 0.0 ],
                                                                     "fontsize": 10.0,
                                                                     "hidden": 1,
-                                                                    "hint": "save buffer files with changes",
+                                                                    "hint": "save file buffers with changes.  if you've modified a buffer loaded from a file (recorded over the original contents), enabling this option will save the modified buffer to the file.",
                                                                     "id": "obj-24",
                                                                     "lock": 1,
                                                                     "maxclass": "attrui",
@@ -6330,8 +6382,8 @@
                                                                     "parameter_enable": 0,
                                                                     "patching_rect": [ 6.0, 158.0, 173.0, 20.0 ],
                                                                     "presentation": 1,
-                                                                    "presentation_rect": [ 18.0, 117.0, 173.0, 20.0 ],
-                                                                    "text_width": 120.0,
+                                                                    "presentation_rect": [ 13.0, 117.0, 198.0, 20.0 ],
+                                                                    "text_width": 150.0,
                                                                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                                                                     "varname": "attrui_write_files"
                                                                 }
@@ -6342,7 +6394,7 @@
                                                                     "attr_display": 1,
                                                                     "bgcolor": [ 0.2, 0.2, 0.2, 0.0 ],
                                                                     "fontsize": 10.0,
-                                                                    "hint": "copy buffer files into environment folder",
+                                                                    "hint": "copy file buffers into environment folder",
                                                                     "id": "obj-21",
                                                                     "lock": 1,
                                                                     "maxclass": "attrui",
@@ -6352,8 +6404,8 @@
                                                                     "parameter_enable": 0,
                                                                     "patching_rect": [ 6.0, 136.0, 173.0, 20.0 ],
                                                                     "presentation": 1,
-                                                                    "presentation_rect": [ 18.0, 95.0, 173.0, 20.0 ],
-                                                                    "text_width": 120.0,
+                                                                    "presentation_rect": [ 13.0, 95.0, 198.0, 20.0 ],
+                                                                    "text_width": 150.0,
                                                                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                                                                     "varname": "attrui_copy_buffers"
                                                                 }
@@ -6396,8 +6448,8 @@
                                                                     "parameter_enable": 0,
                                                                     "patching_rect": [ 6.0, 114.0, 173.0, 20.0 ],
                                                                     "presentation": 1,
-                                                                    "presentation_rect": [ 18.0, 73.0, 173.0, 20.0 ],
-                                                                    "text_width": 120.0,
+                                                                    "presentation_rect": [ 13.0, 73.0, 198.0, 20.0 ],
+                                                                    "text_width": 150.0,
                                                                     "textcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                                                                     "varname": "attrui_type"
                                                                 }
@@ -6431,7 +6483,7 @@
                                                                     "parameter_enable": 0,
                                                                     "patching_rect": [ 92.0, 65.0, 233.0, 22.0 ],
                                                                     "presentation": 1,
-                                                                    "presentation_rect": [ 0.0, 0.0, 200.0, 24.0 ],
+                                                                    "presentation_rect": [ 0.0, 0.0, 220.0, 24.0 ],
                                                                     "textfile": {
                                                                         "filename": "ll.window_bar.js",
                                                                         "flags": 0,
@@ -6460,7 +6512,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 24.0, 31.0, 417.0, 22.0 ],
-                                                                    "text": "window notitle, window nozoom, window size 500 300 700 490, window exec"
+                                                                    "text": "window notitle, window nozoom, window size 500 300 720 490, window exec"
                                                                 }
                                                             },
                                                             {
@@ -6506,7 +6558,7 @@
                                                                     "numoutlets": 0,
                                                                     "patching_rect": [ 223.0, 92.0, 173.0, 64.0 ],
                                                                     "presentation": 1,
-                                                                    "presentation_rect": [ 9.0, 73.0, 182.0, 110.0 ],
+                                                                    "presentation_rect": [ 9.0, 73.0, 202.0, 110.0 ],
                                                                     "proportion": 0.5
                                                                 }
                                                             }
@@ -9681,9 +9733,60 @@
                                             "modernui": 1
                                         },
                                         "classnamespace": "box",
-                                        "rect": [ 134.0, 100.0, 1201.0, 788.0 ],
+                                        "rect": [ 790.0, 100.0, 688.0, 792.0 ],
                                         "default_fontsize": 10.0,
                                         "boxes": [
+                                            {
+                                                "box": {
+                                                    "id": "obj-34",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 0,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 733.0, 216.0, 91.0, 20.0 ],
+                                                    "text": "r ll_prf_screenlogo"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "id": "obj-31",
+                                                    "maxclass": "toggle",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "int" ],
+                                                    "parameter_enable": 0,
+                                                    "patching_rect": [ 733.0, 246.0, 24.0, 24.0 ]
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "id": "obj-28",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 733.0, 283.0, 71.0, 20.0 ],
+                                                    "text": "prepend show"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "code": "// show/hide screen logo\r\n\r\nfunction show(v){\r\n    const logo = this.patcher\r\n        .getnamed(\"screen\")\r\n        .subpatcher()\r\n        .getnamed(\"logo\");\r\n    logo.hidden = !v;\r\n}",
+                                                    "filename": "none",
+                                                    "fontface": 0,
+                                                    "fontname": "<Monospaced>",
+                                                    "fontsize": 10.0,
+                                                    "id": "obj-17",
+                                                    "maxclass": "v8.codebox",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 733.0, 314.0, 225.0, 174.0 ],
+                                                    "saved_object_attributes": {
+                                                        "parameter_enable": 0
+                                                    }
+                                                }
+                                            },
                                             {
                                                 "box": {
                                                     "id": "obj-16",
@@ -9845,7 +9948,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 176.0, 351.0, 96.0, 22.0 ],
-                                                                    "text": "263 363"
+                                                                    "text": "209 289"
                                                                 }
                                                             },
                                                             {
@@ -10172,7 +10275,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 70.0, 381.0, 137.0, 22.0 ],
-                                                    "text": "0 0 1920 1080"
+                                                    "text": "0 0 1512 982"
                                                 }
                                             },
                                             {
@@ -10798,7 +10901,7 @@
                                                             "modernui": 1
                                                         },
                                                         "classnamespace": "box",
-                                                        "rect": [ 0.0, 0.0, 1920.0, 1080.0 ],
+                                                        "rect": [ 0.0, 0.0, 1512.0, 982.0 ],
                                                         "default_fontsize": 10.0,
                                                         "toolbarvisible": 0,
                                                         "boxes": [
@@ -10812,13 +10915,14 @@
                                                                         [ "zoom", 0.92 ]
                                                                     ],
                                                                     "filename": "ll.logo.js",
+                                                                    "hidden": 1,
                                                                     "id": "obj-28",
                                                                     "maxclass": "v8ui",
                                                                     "numinlets": 1,
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "parameter_enable": 0,
-                                                                    "patching_rect": [ 829.0, 359.0, 263.0, 363.0 ],
+                                                                    "patching_rect": [ 652.0, 347.0, 209.0, 289.0 ],
                                                                     "textfile": {
                                                                         "filename": "ll.logo.js",
                                                                         "flags": 0,
@@ -10863,7 +10967,7 @@
                                                                     "numoutlets": 4,
                                                                     "outlettype": [ "bang", "bang", "", "int" ],
                                                                     "parameter_enable": 0,
-                                                                    "patching_rect": [ -0.5, -0.5, 1920.0, 1080.0 ],
+                                                                    "patching_rect": [ -0.5, -0.5, 1512.0, 982.0 ],
                                                                     "varname": "button"
                                                                 }
                                                             },
@@ -11656,6 +11760,12 @@
                                             },
                                             {
                                                 "patchline": {
+                                                    "destination": [ "obj-17", 0 ],
+                                                    "source": [ "obj-28", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
                                                     "destination": [ "obj-11", 0 ],
                                                     "source": [ "obj-3", 1 ]
                                                 }
@@ -11668,6 +11778,12 @@
                                             },
                                             {
                                                 "patchline": {
+                                                    "destination": [ "obj-28", 0 ],
+                                                    "source": [ "obj-31", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
                                                     "destination": [ "obj-50", 0 ],
                                                     "source": [ "obj-33", 0 ]
                                                 }
@@ -11676,6 +11792,12 @@
                                                 "patchline": {
                                                     "destination": [ "obj-51", 0 ],
                                                     "source": [ "obj-33", 1 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-31", 0 ],
+                                                    "source": [ "obj-34", 0 ]
                                                 }
                                             },
                                             {
@@ -16624,14 +16746,14 @@
                                                             "lines": [
                                                                 {
                                                                     "patchline": {
-                                                                        "source": [ "obj-3", 0 ],
-                                                                        "destination": [ "obj-4", 0 ]
+                                                                        "source": [ "obj-1", 0 ],
+                                                                        "destination": [ "obj-3", 0 ]
                                                                     }
                                                                 },
                                                                 {
                                                                     "patchline": {
-                                                                        "source": [ "obj-1", 0 ],
-                                                                        "destination": [ "obj-3", 0 ]
+                                                                        "source": [ "obj-3", 0 ],
+                                                                        "destination": [ "obj-4", 0 ]
                                                                     }
                                                                 }
                                                             ]
@@ -16644,7 +16766,7 @@
                                                     "outlettype": [ "multichannelsignal" ],
                                                     "patching_rect": [ 400.5, 252.0, 47.0, 20.0 ],
                                                     "text": "mc.gen~",
-                                                    "wrapper_uniquekey": "u422001561"
+                                                    "wrapper_uniquekey": "u584004818"
                                                 }
                                             },
                                             {
@@ -18734,11 +18856,6 @@
                         "vol_slider": 0,
                         "watch_menu": 0,
                         "write_envi": 0,
-                        "osc_port": 0,
-                        "ll.dims": 0,
-                        "pfl_act_menu": 0,
-                        "pfl_par_menu": 0,
-                        "params_only": 0,
                         "act": 0,
                         "act::active_store": 0,
                         "act::master": 0,
@@ -18825,7 +18942,7 @@
                         "rec": [ 0 ],
                         "screen": [ 0 ],
                         "stereo": [ 0 ],
-                        "time": [ 36744.0 ],
+                        "time": [ 16185.0 ],
                         "vol": [ 1.0 ],
                         "vol_ramp": [ 10 ],
                         "vol_slider": [ 1.0 ],

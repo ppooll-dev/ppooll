@@ -28,6 +28,7 @@ var empty_prf_DEFAULT = {
         time_format: "24hr",
         show_actupdate: 0,
         host_dcblock: 0,
+        screen_logo: 1,
     },
     file_paths: {
         quickrecord_path: 0,
@@ -199,6 +200,17 @@ function sethost_dcblock(c) {
     ll_prf_rewrite();
 
     messnamed("ll_prf_host_dcblock", host_dcblock);
+}
+
+var screen_logo = 0;
+declareattribute("screen_logo", { style: "onoff", setter: "setscreen_logo" });
+function setscreen_logo(c) {
+    screen_logo = c;
+    preferences.set("general::screen_logo", c);
+
+    ll_prf_rewrite();
+
+    messnamed("ll_prf_screenlogo", screen_logo);
 }
 
 var quickrecord_path = "";
@@ -403,6 +415,9 @@ function readfile() {
 
     host_dcblock = preferences.get("general::host_dcblock");
     if (host_dcblock) messnamed("ll_prf_host_dcblock", host_dcblock); // can only be shown, not hidden
+
+    screen_logo = preferences.get("general::screen_logo");
+    messnamed("ll_prf_screenlogo", screen_logo); // can only be shown, not hidden
 
     // file_paths::quickrecord_path
     quickrecord_path = preferences.get("file_paths::quickrecord_path");
