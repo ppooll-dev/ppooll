@@ -1,5 +1,9 @@
 autowatch = 1;
 
+if (typeof ll === "undefined") {
+    var ll = require("ll._utilities");
+}
+
 var ll_global = new Global("ppooll");
 
 const SUBS_TO_SHOW = [
@@ -44,18 +48,17 @@ function loadbang() {
     set_is_nested();
 
     if (ll_global.nested_patcher) {
-        ll_global.live_ppooll_patcher.newobject(
+        const maxpat = "ppooll_host.maxpat";
+        const rect = ll.getPatcherRectFromMaxpat(maxpat);
+        const obj = ll_global.live_ppooll_patcher.newdefault(
+            rect[0], rect[1],
             "bpatcher",
-            "@name",
-            "ppooll_host.maxpat",
-            "@args",
-            1,
-            "@varname",
-            "ho_st1",
-            "@bgmode",
-            1,
-            "@border",
-            0,
+            "@name", maxpat,
+            "@patching_rect", rect[0], rect[1], rect[2], rect[3],
+            "@bgmode", 1,
+            "@border", 0,
+            "@varname", "ho_st1",
+            "@args", 1, 0,
         );
         return;
     }
@@ -117,10 +120,10 @@ function notifydeleted() {
     ll_global.nested_patcher = 0;
 }
 
-function onDrop(path){
-    if(!ll_global.state["buffer_host1"]){
-        messnamed("lload", "buffer_host")
-        outlet(0, "retryOnDrop", path)
+function onDrop(path) {
+    if (!ll_global.state["buffer_host1"]) {
+        messnamed("lload", "buffer_host");
+        outlet(0, "retryOnDrop", path);
         return;
     }
     messnamed("::buffer_host1::dropfile", path);
