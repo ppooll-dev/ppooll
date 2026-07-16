@@ -86,6 +86,7 @@ function _refresh() {
         buffers: ll_global.buffers,
         syncs: ll_global.syncs,
         llc_modes: ll_global.llc_modes,
-		all_acts: ll_global.all_acts
+		all_acts: ll_global.all_acts,
+        matrix: ll_global.matrix
     });
 }
