@@ -81,10 +81,10 @@ function show_hide(v) {
     if (ll_global.nested_patcher) {
         ll_global.live_ppooll_patcher.message(front_wclose);
     } else {
+        ll_global.live_ppooll_patcher.message("wclose");
+        
         send_to_all_TP([front_wclose]);
-
         send_to_all_TP(["window", "flags", v ? "float" : "nofloat"]);
-
         send_to_all_TP(["window", "exec"]);
     }
 
