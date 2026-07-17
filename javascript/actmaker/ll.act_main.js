@@ -791,7 +791,11 @@ function refresh_menu(
 
     const userFiles = ll
         .getFilesInFolder(userPath, fileTypes, omitExt)
-        .filter((f) => f && f !== "");
+        .filter((f) => f && f !== "")
+        .filter(f => ll.getExtension(f)[1] 
+            ? ['fxp', 'fxp'].indexOf(ll.getExtension(f)[1]) === -1 : // hack for files in vst@P
+            true
+        );
     const factoryFiles = ll
         .getFilesInFolder(factoryPath, fileTypes, omitExt)
         .filter((f) => f && f !== "")
