@@ -23,6 +23,8 @@ let currentPath = null;
 let currentFiles = {};
 let currentSubNames = [];
 
+let vstscan_list = []; // list of plugins scanned by vstscan object for 'auto' mode
+
 let currentShell = null;
 
 let actname = null;
@@ -188,7 +190,7 @@ function loadVST(pluginPath) {
         mc_vst.message("floateditorwindow", 1);
 
     // set [ ll.s vst_AU ]
-    out("vst_AU", getPluginType(pluginPath))
+    messnamed(`::${actname}::vst_AU`, getPluginType(pluginPath))
 
     // check if shell plugin
     mc_vst.message("getsubnames");
@@ -200,7 +202,7 @@ function loadVST(pluginPath) {
         return;
     }
     refreshParams();
-    outlet(0, "getpgm", "bang");
+    messnamed(`::${actname}::getpgm`, "bang")
 }
 
 function loadShellPlug(subname) {
@@ -370,7 +372,7 @@ function vst_folder(selection) {
             // TODO: ll.p def_shell
         } else {
             pp.getnamed("def_folder").message(currentPath);
-            out("vst_name", selection)
+            messnamed(`::${actname}::vst_name`, selection);
             loadVST(currentPath === "auto" ? selection : currentFiles[selection]);
         }
     }
@@ -382,11 +384,11 @@ function setCurrentPath(path) {
     if (currentPath === path || path === "bla")
         return;
     
-    // TODO: need to handle "all", "auto"
     currentPath = path;
     pp.getnamed("def_folder").message(path);
 
     let menuItems = [];
+    // "all" - show all plugins from all user-defined folders
     if(path === "all"){
         const ll_prefs = new Dict("ppooll-preferences");
         const vst_folders = ll_prefs.get("file_paths::vst@_folders");
@@ -401,9 +403,18 @@ function setCurrentPath(path) {
                 currentFiles[plugFile] = `${folder}${plugFile}`
             });
         });
+    // "auto" - use Max's 'vstscan' object
     }else if(path === "auto"){
-        out("vstscan", "bang");
+        vstscan_list = []
+        
+        out("vstscan", "listvst");
+        out("vstscan", "listvst3");
+        out("vstscan", "listau");
+
+        resetMenu(vstscan_list);
+
         return; // wait for setAutoList
+    // "∆í" - prefix for user-defined folder, load that folder
     }else if(path.slice(0, 3) === "∆í "){
         let folder = path.slice(3);
         menuItems = ["<separator>", ...listFiles(folder)];
@@ -413,15 +424,18 @@ function setCurrentPath(path) {
     resetMenu(menuItems);
 }
 
-function setActname(name){
-    actname = name;
+function from_vstscan(type, name){
+    const allow = ['plug_vst', 'plug_au', 'plug_vst3'];
+    if(allow.indexOf(type) === -1) return;
+
+    vstscan_list.push(name)
 }
 
-// set vst-folder to "auto" plugin list
-function setAutoList(...list) {
-    // post(list, "\n")
-    resetMenu(list);
+function setActname(name){
+    actname = name;
+    setDefFoldersJit();
 }
+
 
 function resetMenu(itemsToAdd = [], setsymbol = null) {
     to_vst_menu("clear");

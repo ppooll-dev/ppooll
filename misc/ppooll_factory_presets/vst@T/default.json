@@ -1,5 +1,5 @@
 {
-    "window": [ 253, 407, 412, 511 ],
+    "window": [ 201, 354, 360, 458 ],
     "midi-channel": {
         "patching_rect": [ 143, 33, 16, 19 ],
         "hidden": 0,
@@ -20,7 +20,6 @@
     "program_files": {
         "patching_rect": [ 44, 32, 43, 19 ],
         "hidden": 0,
-        "applycolors": 0,
         "bgfillcolor": {
             "type": "color",
             "color1": [ 0.376471, 0.384314, 0.4, 1 ],
@@ -50,7 +49,6 @@
     "midi-port": {
         "patching_rect": [ 100, 33, 44, 19 ],
         "hidden": 0,
-        "applycolors": 0,
         "bgfillcolor": {
             "type": "color",
             "color1": [ 0.674509803921569, 0.674509803921569, 0.674509803921569, 1 ],
@@ -68,7 +66,6 @@
     "vst-folder": {
         "patching_rect": [ 50, 0, 75, 20 ],
         "hidden": 0,
-        "applycolors": 0,
         "bgfillcolor": {
             "type": "color",
             "color1": [ 0.376471, 0.384314, 0.4, 1 ],
@@ -101,7 +98,7 @@
     },
     "vst_program": {
         "patching_rect": [ 85, 33, 15, 18 ],
-        "hidden": 1,
+        "hidden": 0,
         "bgcolor": [ 0.107977, 0.766704, 0.422636, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
         "fontsize": 12,
@@ -114,6 +111,7 @@
     },
     "presets": {
         "patching_rect": [ 0, 16, 160, 17 ],
-        "hidden": 0
+        "hidden": 0,
+        "boxsize": 15
     }
 }
