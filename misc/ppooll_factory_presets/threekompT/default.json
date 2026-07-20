@@ -1,5 +1,5 @@
 {
-    "window": [ 357, 330, 660, 548 ],
+    "window": [ 598, 196, 901, 414 ],
     "act": {
         "patching_rect": [ 0, 0, 79.6953125, 16 ],
         "hidden": 0
@@ -83,7 +83,7 @@
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
     "cross1": {
-        "patching_rect": [ 52, 16, 100, 13 ],
+        "patching_rect": [ 52, 16, 87, 13 ],
         "hidden": 0,
         "bgcolor": [ 1, 1, 1, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -96,7 +96,7 @@
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
     },
     "cross2": {
-        "patching_rect": [ 154, 16, 100, 13 ],
+        "patching_rect": [ 141, 16, 86, 13 ],
         "hidden": 0,
         "bgcolor": [ 1, 1, 1, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
@@ -382,8 +382,8 @@
         "fgcolor": [ 1, 0, 0, 1 ],
         "gridcolor": [ 0.349019607843137, 0.349019607843137, 0.349019607843137, 0 ]
     },
-    "amp": {
-        "patching_rect": [ 256, 16, 50, 13 ],
+    "ramp": {
+        "patching_rect": [ 229, 16, 77, 13 ],
         "hidden": 0,
         "bgcolor": [ 1, 1, 1, 1 ],
         "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
