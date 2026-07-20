@@ -1103,14 +1103,32 @@ function read_preset_path(fullPath, presetName = 0) {
     }
 	
 	let pat = act_patcher.getnamed("pat");
-	
+    const presetDict = new Dict();
+    presetDict.import_json(fullPath);
+
+    const presetJson = JSON.parse(presetDict.stringify());
+
+    const presetState = presetJson.pattrstorage.slots["1000"].data;
+    ll_global.pat[act_name_index].getprioritylist().forEach(p => {
+        // post(`::${act_name_index}::${p.name}`, presetState[p.name])
+        // post()
+        messnamed(`::${act_name_index}::${p.name}`, presetState[p.name])
+    })
+
+        // const presetState = presetJson.pattrstorage.slots["1000"].data;
+    ll_global.pat[act_name_index].getprioritylist().forEach(p => {
+        // post(`::${act_name_index}::${p.name}`, presetState[p.name])
+        // post()
+        messnamed(`::${act_name_index}::${p.name}`, presetState[p.name])
+    })
+
 	// ####################################################################  active hack
     // set all active flags to 1
 	ll_global.pat[act_name_index].getclientlist().forEach((client) => {
-		pat.message("active",client,1);
+		pat.message("active", client, 1);
 		let c_arr = client.split("::"); // parameter is in a subpatch
 		if (c_arr.length > 1){
-			pat.message("active",c_arr[0],1);
+			pat.message("active", c_arr[0], 1);
 			// ..even the active-flag for a subpatch set to 1 !!
 		}
 	});
@@ -1118,13 +1136,9 @@ function read_preset_path(fullPath, presetName = 0) {
 	// which stores active-flags, but only if they are 0.
 	// reading the preset-file will set active flags to 0 if so defined
 	// ####################################################################  /active hack
-	pat.message("read", fullPath);	
-    pat.message(1000);
+    pat.message("read", fullPath);	
+    // pat.message(1000);
 
-    const presetDict = new Dict();
-    presetDict.import_json(fullPath);
-
-    const presetJson = JSON.parse(presetDict.stringify());
     if (anySlotHasActiveStore(presetJson)) {
         isActiveStore = 1;
         title_menu.message(

@@ -1,5 +1,5 @@
 {
-    "window": [ 201, 354, 360, 458 ],
+    "window": [ 245, 406, 404, 510 ],
     "midi-channel": {
         "patching_rect": [ 143, 33, 16, 19 ],
         "hidden": 0,
@@ -20,18 +20,11 @@
     "program_files": {
         "patching_rect": [ 44, 32, 43, 19 ],
         "hidden": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 0.107977, 0.766704, 0.422636, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "bgcolor": [ 0.107977, 0.766704, 0.422636, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 0, 0, 0, 1 ],
         "fontsize": 9,
-        "textcolor": [ 0.149, 0.149, 0.149, 1 ]
+        "textcolor": null
     },
     "preset-ramp": {
         "patching_rect": [ 0, 33, 45, 18 ],
@@ -49,35 +42,20 @@
     "midi-port": {
         "patching_rect": [ 100, 33, 44, 19 ],
         "hidden": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.674509803921569, 0.674509803921569, 0.674509803921569, 1 ],
-            "color2": [ 0.2, 0.2, 0.2, 1 ],
-            "color": [ 0.701960784313725, 0.701960784313725, 0.701960784313725, 1 ],
-            "angle": 270,
-            "autogradient": 0,
-            "proportion": 0.5
-        },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "bgcolor": [ 0.701960784313725, 0.701960784313725, 0.701960784313725, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 0, 0, 0, 1 ],
         "fontsize": 9,
-        "textcolor": [ 0, 0, 0, 1 ]
+        "textcolor": null
     },
     "vst-folder": {
         "patching_rect": [ 50, 0, 75, 20 ],
         "hidden": 0,
-        "bgfillcolor": {
-            "type": "color",
-            "color1": [ 0.376471, 0.384314, 0.4, 1 ],
-            "color2": [ 0.290196, 0.309804, 0.301961, 1 ],
-            "color": [ 1, 1, 1, 1 ],
-            "angle": 270,
-            "proportion": 0.39
-        },
-        "color": [ 0.807843, 0.898039, 0.909804, 1 ],
-        "elementcolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "bgcolor": [ 1, 1, 1, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 0, 0, 0, 1 ],
         "fontsize": 10,
-        "textcolor": [ 0, 0, 0, 1 ]
+        "textcolor": null
     },
     "open!": {
         "patching_rect": [ 124, 0, 35, 16 ],
