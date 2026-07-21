@@ -3,47 +3,62 @@ autowatch = 1;
 inlets = 1;
 outlets = 1;
 
-var actr = new Global("ppooll");
+if (typeof ll === "undefined") {
+    var ll = require("ll._utilities");
+}
+
+var ll_global = new Global("ppooll");
 
 let tp = this.patcher;
 let pp = tp.parentpatcher;
-let mc_vst = null;
+let actname = null;
+let isFirstLoad = true;
+
+let isLoadingPreset = false;
+let preset1000 = null;
+
+let chans_in = 4;
+let chans_out = 2;
+
+let mcs_vst = null;
 
 let paramNames = [];
 let isCollectingParams = false;
-let selectedPres = null;
 
 // vst window
 let isOpen = false;
 let position = [100, 100];
 
 // vst-folder, def_folders
-let currentPlug = null;
+let currentPlugName = null; // Name & extension only
+let currentPlug = null; // Full path
 let currentPath = null;
 let currentFiles = {};
 let currentSubNames = [];
 
-let currentShell = null;
+// Program & Preset files
+let currentProgramFile = "untitled";
+let currentProgramFiles = [];
+let program_files_ext = ".fxp";
+let vst_AU = 1; // 1 for VST/VST3, 0 for AU component
 
-let actname = null;
+// list of plugins scanned by vstscan object for 'auto' mode
+let vstscan_list = [];
 
-let isFirstLoad = true;
-
-let chans_in = 4;
-let chans_out = 2;
-
-const pm_map = {
-    "def_folder": setCurrentPath,
+const ll_pm_map = {
+    def_folder: setCurrentPath,
     "vst-folder": vst_folder,
-    "position": setPosition,
+    position: setPosition,
     "open!": setIsOpen,
     "act::pres_menu": pres_menu,
-    "presetsUI": presetsUI,
+    presetsUI: presetsUI,
     "ll.blues::chans": setChans,
+    // program_files: program_files,
 };
 
 function ll_pm(receive, ...args) {
-    const fn = pm_map[receive];
+    // post(receive, ...args, "\n")
+    const fn = ll_pm_map[receive];
     if (!fn) return post(`ll.amxd-helper: unknown receive '${receive}'\n`);
 
     // flatten a single array argument
@@ -51,21 +66,20 @@ function ll_pm(receive, ...args) {
     fn(...args);
 }
 
-function setChans(c_in, c_out){
-    if(chans_out !== c_out || chans_in !== c_in){
+function setChans(c_in, c_out) {
+    if (chans_out !== c_out || chans_in !== c_in) {
         vstCreate(c_in, c_out);
     }
 }
 
-function presetsUI(msg){
-    // post("presetUI?", msg, "\n")
-    if(msg === "store"){
-        getParamValues()
+function presetsUI(msg) {
+    if (msg === "store") {
+        getParamValues();
     }
 }
 
 // Outlet helpers
-function out(...args){
+function out(...args) {
     // post(...args, "\n")
     outlet(0, ...args);
 }
@@ -82,18 +96,15 @@ function jit_define_folders(...args) {
 
 // Loadbang
 function loadbang() {
-    const amxd_p = this.patcher.getnamed("amxd-window") ;
-    if(!amxd_p || !amxd_p.subpatcher())
-        return
-
-    mc_vst = amxd_p.subpatcher().getnamed("amxd");
-
+    const amxd_p = this.patcher.getnamed("amxd-window");
+    if (!amxd_p || !amxd_p.subpatcher()) return;
+    mcs_vst = amxd_p.subpatcher().getnamed("amxd");
     resetMenu();
 }
 
 // Request window position from vst~ object
 function getPosition() {
-    const amxd_p = this.patcher.getnamed("amxd-window").subpatcher() ;
+    const amxd_p = this.patcher.getnamed("amxd-window").subpatcher();
     const l = amxd_p.wind.location;
     pp.getnamed("position").setvalueof(l[0], l[1]);
 }
@@ -106,24 +117,25 @@ function setPosition(...pos) {
 // Open/close vst~ window
 function setIsOpen(state) {
     // post("setIsOpen", state)
-    if(!currentPlug)
-        return; 
+    if (!currentPlug) return;
 
     if (state !== isOpen) {
         isOpen = state;
         const amxd_p = tp.getnamed("amxd-window");
         if (isOpen) {
-            // mc_vst.message("open", ...position);
+            // mcs_vst.message("open", ...position);
             amxd_p.message("front");
-            tp.getnamed("amxd-window").subpatcher().wind.size = [200, 200]
+            tp.getnamed("amxd-window").subpatcher().wind.size = [200, 200];
             amxd_p.message("wclose");
 
-            var rect = mc_vst.getattr("patching_rect")
+            var rect = mcs_vst.getattr("patching_rect");
             // post("resize window", rect, "\n")
-            // mc_vst.message("autosize", 1);
-            tp.getnamed("amxd-window").subpatcher().wind.size = [rect[2] - rect[0], rect[3] - rect[1]]
+            // mcs_vst.message("autosize", 1);
+            tp.getnamed("amxd-window").subpatcher().wind.size = [
+                rect[2] - rect[0],
+                rect[3] - rect[1],
+            ];
             amxd_p.message("front");
-
         } else {
             getPosition();
             amxd_p.message("wclose");
@@ -153,66 +165,87 @@ function vstCreate(c_in, c_out) {
     // tp.script("connect", "to_vst~", 0, "vst", 0);
 
     // create with ll.blues in/out chans
-	var topTP = this.patcher.getnamed('amxd-window').subpatcher();
+    var topTP = this.patcher.getnamed("amxd-window").subpatcher();
 
-	if(!topTP){
-		console.log("no topTP")
-		return
-	}
+    if (!topTP) {
+        console.log("no topTP");
+        return;
+    }
 
-	topTP.message("script","delete","amxd")
+    topTP.message("script", "delete", "amxd");
 
-	topTP.message("script", "newdefault", "amxd", 0, 0, "mcs.amxd~", arguments[0], arguments[1], "@realtime_params", 1, "@showheader", 0)
-		
-	// topTP.message("script", "hidden", "connect", "amxd", 2, "p_amxd_loaded", 0);
-	topTP.message("script", "hidden", "connect", "amxd", 2, "out_3_msgs", 0);
-	topTP.message("script", "hidden", "connect", "amxd", 1, "out_2_midiout", 0);
-	topTP.message("script", "hidden", "connect", "amxd", 0, "out_1_audioout", 0);
-	topTP.message("script", "hidden", "connect", "in_1_audioin", 0, "amxd", 0);
-	topTP.message("script", "hidden", "connect", "in_2_midiin", 0, "amxd", 1);
+    topTP.message(
+        "script",
+        "newdefault",
+        "amxd",
+        0,
+        0,
+        "mcs.amxd~",
+        arguments[0],
+        arguments[1],
+        "@realtime_params",
+        1,
+        "@showheader",
+        0,
+    );
 
-	var amxd = topTP.getnamed("amxd");
-	if(!amxd){
-		console.log("no amxd")
-		return
-	}
-	amxd.setattr("viewvisibility", 1)
-	topTP.message("script", "size", "amxd", "49", "114")
+    // topTP.message("script", "hidden", "connect", "amxd", 2, "p_amxd_loaded", 0);
+    topTP.message("script", "hidden", "connect", "amxd", 2, "out_3_msgs", 0);
+    topTP.message("script", "hidden", "connect", "amxd", 1, "out_2_midiout", 0);
+    topTP.message(
+        "script",
+        "hidden",
+        "connect",
+        "amxd",
+        0,
+        "out_1_audioout",
+        0,
+    );
+    topTP.message("script", "hidden", "connect", "in_1_audioin", 0, "amxd", 0);
+    topTP.message("script", "hidden", "connect", "in_2_midiin", 0, "amxd", 1);
+
+    var amxd = topTP.getnamed("amxd");
+    if (!amxd) {
+        console.log("no amxd");
+        return;
+    }
+    amxd.setattr("viewvisibility", 1);
+    topTP.message("script", "size", "amxd", "49", "114");
 
     // post("hmmm\n")
     // Restore previous plugin state
     if (currentPlug) {
-        mc_vst = topTP.getnamed("amxd");
-        if (!mc_vst) {
+        mcs_vst = topTP.getnamed("amxd");
+        if (!mcs_vst) {
             post("No amxd~ !\n");
             return;
         }
         // Set the plugin instant
-        mc_vst.message("patchername", currentPlug);
-        if (isOpen) topTP.message("front")//, ...position);
+        mcs_vst.message("patchername", currentPlug);
+        if (isOpen) topTP.message("front"); //, ...position);
 
         // Re-init params
         paramNames.forEach((param) => {
-            let val = actr.patchers[actname].getnamed(param).getvalueof();
-            mc_vst.message(param, val)
-            post(param, val, "\n")
+            let val = ll_global.patchers[actname].getnamed(param).getvalueof();
+            mcs_vst.message(param, val);
+            post(param, val, "\n");
         });
-    }else{
+    } else {
         // post("no current plug\n")
     }
 }
 
 function getPluginType(pluginPath) {
-    if (!pluginPath || typeof pluginPath !== 'string') return null;
+    if (!pluginPath || typeof pluginPath !== "string") return null;
 
     // Normalize path to lowercase for consistent checking
     const path = pluginPath.toLowerCase();
 
-    if (path.endsWith('.vst3')) {
+    if (path.endsWith(".vst3")) {
         return 1;
-    } else if (path.endsWith('.vst')) {
+    } else if (path.endsWith(".vst")) {
         return 1;
-    } else if (path.endsWith('.component')) {
+    } else if (path.endsWith(".component")) {
         return 0;
     }
 }
@@ -222,44 +255,33 @@ function loadVST(pluginPath) {
     // post(pluginPath, "\n")
     if (currentPlug) getPosition(); // Get last position
 
-    mc_vst = tp.getnamed("amxd-window").subpatcher().getnamed("amxd");
-    mc_vst.message("patchername", pluginPath);
+    mcs_vst = tp.getnamed("amxd-window").subpatcher().getnamed("amxd");
+    mcs_vst.message("patchername", pluginPath);
     currentPlug = pluginPath;
-    currentShell = null;
     currentSubNames = [];
 
     pp.getnamed("open!").hidden = 0;
 
-    var rect = mc_vst.getattr("patching_rect")
-    tp.getnamed("amxd-window").subpatcher().wind.size = [rect[2] - rect[0], rect[3] - rect[1]]
-    // set [ ll.s vst_AU ]
-    // out("vst_AU", getPluginType(pluginPath))
+    var rect = mcs_vst.getattr("patching_rect");
+    tp.getnamed("amxd-window").subpatcher().wind.size = [
+        rect[2] - rect[0],
+        rect[3] - rect[1],
+    ];
 
-    // check if shell plugin
-    // mc_vst.message("getsubnames");
-    // if (currentSubNames.length) {
-    //     // mc_vst.message("drop")
-    //     currentShell = currentPlug;
-    //     currentSubNames.forEach((sub) => to_vst_menu("append", sub));
-    //     resetMenu(currentSubNames);
-    //     return;
-    // }
     refreshParams();
 }
 
-function loading_done(){
-    
-}
+function loading_done() {}
 
 function loadShellPlug(subname) {
     // post("load shell: ", subname)
-    mc_vst = tp.getnamed("amxd-window").subpatcher().getnamed("amxd");
+    mcs_vst = tp.getnamed("amxd-window").subpatcher().getnamed("amxd");
 
     if (currentPlug) {
         getPosition();
-        mc_vst.message("wclose");
+        mcs_vst.message("wclose");
     }
-    mc_vst.message("subname", subname);
+    mcs_vst.message("subname", subname);
     refreshParams();
 }
 
@@ -274,8 +296,8 @@ function refreshParams() {
     paramNames = [];
     isCollectingParams = true;
 
-    mc_vst = tp.getnamed("amxd-window").subpatcher().getnamed("amxd");
-    mc_vst.message("getparams");
+    mcs_vst = tp.getnamed("amxd-window").subpatcher().getnamed("amxd");
+    mcs_vst.message("getparams");
 
     out("collectParams", 100); // delay collectParams by 100 ms
 }
@@ -284,21 +306,24 @@ function collectParams() {
     out("check_pointing_acts", "bang");
     out("ll_pm", ...paramNames);
 
-    // refresh_pres_file
-    if (selectedPres) {
-        post("reload preset ?");
-        // TODO: need reload preset for when we are loading from environment?
-        out("act::pres_menu", "symbol", selectedPres);
+    mcs_vst = tp.getnamed("amxd-window").subpatcher().getnamed("amxd");
+
+    // If we're loading from a preset file,
+    if (isLoadingPreset) {
+        // Set vst~ object values from preset
+        paramNames.forEach((p) => {
+            mcs_vst.message(p, preset1000[p]);
+        });
+        isLoadingPreset = false;
+    } else {
+        // Set vst@ param values from vst~ object
+        getParamValues();
     }
 
-    getParamValues();
-
     if (isOpen) {
-        // mc_vst = tp.getnamed("amxd-window").subpatcher().getnamed("amxd");
-        // mc_vst.message("open", ...position)
         const amxd_p = tp.getnamed("amxd-window");
-        amxd_p.message("front");
-    };
+        setIsOpen(true);
+    }
 }
 
 function paramname(name) {
@@ -312,17 +337,26 @@ function subname(name) {
 
 function pres_menu(pres) {
     // post("pres_menu", pres, "\n");
-    if (!pres || ["", "_", "clear!", "TEXT", "write"].indexOf(pres) > -1) {
+    if (
+        !pres ||
+        ["", "_", "clear!", "TEXT", "write", "(presets)"].indexOf(pres) > -1
+    ) {
         return;
     }
-    selectedPreset = pres;
+    isLoadingPreset = true;
+
+    const presetDict = new Dict();
+    presetDict.import_json(`${get_vst_presets_path()}/${pres}.json`);
+
+    const presetJson = JSON.parse(presetDict.stringify());
+    preset1000 = presetJson.pattrstorage.slots["1000"].data;
 }
 
 function getParamValues() {
-    mc_vst = tp.getnamed("amxd-window").subpatcher().getnamed("amxd");
+    mcs_vst = tp.getnamed("amxd-window").subpatcher().getnamed("amxd");
 
     paramNames.forEach((name, i) => {
-        mc_vst.message("get", i + 1);
+        mcs_vst.message("get", i + 1);
         out("pat", "priority", name, i + 100);
         out("coll", "store", name, i + 1);
     });
@@ -353,7 +387,7 @@ function setDefFoldersJit() {
     jit_define_folders("set", 0, vst_folders.length, "new");
 }
 
-function ll_prf_rewrite(){
+function ll_prf_rewrite() {
     messnamed("ll_prf_rewrite", "bang");
 }
 
@@ -364,7 +398,7 @@ function addFolder(newFolder) {
     vst_folders.push(newFolder);
     ll_prefs.set("file_paths::amxd@_folders", vst_folders);
 
-    ll_prf_rewrite()
+    ll_prf_rewrite();
     resetMenu();
     setDefFoldersJit();
 }
@@ -376,7 +410,7 @@ function deleteFolder(row) {
     vst_folders.splice(row, 1);
     ll_prefs.set("file_paths::amxd@_folders", vst_folders);
 
-    ll_prf_rewrite()
+    ll_prf_rewrite();
     resetMenu();
     setDefFoldersJit();
 }
@@ -387,25 +421,17 @@ function deleteFolder(row) {
 
 // handle "vst-folder" value change
 function vst_folder(selection) {
-    // post("vst-folder", selection, "\n")
     if (selection === "def_folders") {
-        // post("show def_folders", "\n")
         if (isFirstLoad) {
-            // post("early\n")
             isFirstLoad = false;
             return;
         }
         setDefFoldersJit();
         jit_define_folders("open");
     } else if (selection.slice(0, 3) === "∆í ") {
-        // post("load folder: ", path)
         setCurrentPath(selection);
     } else if (selection === "all") {
-        // post("show all")
         setCurrentPath("all");
-    } else if (selection === "auto") {
-        // post("auto load")
-        setCurrentPath("auto");
     } else {
         // Load plugin or shell subname
         // post("currentpath", currentPath, "\n")
@@ -415,29 +441,22 @@ function vst_folder(selection) {
             return;
         }
 
-        if (currentShell) {
-            loadShellPlug(selection);
-            // TODO: ll.p def_shell
-        } else {
-            pp.getnamed("def_folder").message(currentPath);
-            out("vst_name", selection)
-            loadVST(currentPath === "auto" ? selection : currentFiles[selection]);
-        }
+        pp.getnamed("def_folder").message(currentPath);
+        loadVST(currentPath === "auto" ? selection : currentFiles[selection]);
     }
 }
 
 // set current path for "def_folder"
 function setCurrentPath(path) {
     // post("def_folders", path, "\n")
-    if (currentPath === path || path === "bla")
-        return;
-    
-    // TODO: need to handle "all", "auto"
+    if (currentPath === path || path === "bla") return;
+
+    // TODO: need to handle "all",
     currentPath = path;
     pp.getnamed("def_folder").message(path);
 
     let menuItems = [];
-    if(path === "all"){
+    if (path === "all") {
         const ll_prefs = new Dict("ppooll-preferences");
         const vst_folders = ll_prefs.get("file_paths::amxd@_folders");
         currentFiles = {};
@@ -446,24 +465,23 @@ function setCurrentPath(path) {
             menuItems.push("<separator>");
             menuItems.push(`(${folder})`);
 
-            listFiles(folder).forEach(plugFile => {
+            ll.getFilesInFolder(folder).forEach((plugFile) => {
                 menuItems.push(plugFile);
-                currentFiles[plugFile] = `${folder}${plugFile}`
+                currentFiles[plugFile] = `${folder}${plugFile}`;
             });
         });
-    }else if(path === "auto"){
-        out("vstscan", "bang");
-        return; // wait for setAutoList
-    }else if(path.slice(0, 3) === "∆í "){
+    } else if (path.slice(0, 3) === "∆í ") {
         let folder = path.slice(3);
-        menuItems = ["<separator>", ...listFiles(folder)];
-        menuItems.forEach(plugFile => { currentFiles[plugFile] = `${folder}${plugFile}` })
+        menuItems = ["<separator>", ...ll.getFilesInFolder(folder)];
+        menuItems.forEach((plugFile) => {
+            currentFiles[plugFile] = `${folder}${plugFile}`;
+        });
     }
 
     resetMenu(menuItems);
 }
 
-function setActname(name){
+function setActname(name) {
     actname = name;
 }
 
@@ -489,28 +507,22 @@ function resetMenu(itemsToAdd = [], setsymbol = null) {
     }
 }
 
-function listFiles(path) {
-    var f = new Folder(path);
-    if (f.end) {
-        post("Folder not found or empty:", path, "\n");
-        return ;
-    }
+//
+// Program & Preset Files
+//
+function get_vst_presets_path() {
+    const presets_path = `${ll_global.paths["user"]}/amxd@P`;
 
-    var files = [];
-    while (!f.end) {
-        if (f.filename) {
-            files.push(f.filename);
-        }
-        f.next();
+    if (!ll.folderExists(presets_path)) {
+        ll.mkdir(presets_path);
     }
-    f.close();
-    return files;
+    return presets_path;
 }
 
 //
 // reset state for saving vst@.maxpat
 //
-function reset(){
+function reset() {
     pp.getnamed("open!").message(0);
     pp.getnamed("open!").hidden = 1;
 
@@ -523,11 +535,11 @@ function reset(){
     items.forEach((i) => to_vst_menu("append", i));
 
     currentPlug = null;
-    // mc_vst = tp.getnamed("vst");
-    // mc_vst.message("drop");
+    // mcs_vst = tp.getnamed("vst");
+    // mcs_vst.message("drop");
     vstCreate(4, 2);
 
-    // mc_vst = tp.getnamed("vst");
+    // mcs_vst = tp.getnamed("vst");
 
     out("ll.blues::chans", 4, 2);
 

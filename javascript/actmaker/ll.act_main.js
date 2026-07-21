@@ -1108,19 +1108,18 @@ function read_preset_path(fullPath, presetName = 0) {
 
     const presetJson = JSON.parse(presetDict.stringify());
 
-    const presetState = presetJson.pattrstorage.slots["1000"].data;
-    ll_global.pat[act_name_index].getprioritylist().forEach(p => {
-        // post(`::${act_name_index}::${p.name}`, presetState[p.name])
-        // post()
-        messnamed(`::${act_name_index}::${p.name}`, presetState[p.name])
-    })
+    // recall all parameter values from slot 1000 directly from JSON
+    //      this includes parameters where active=0
+    if(presetJson.pattrstorage.slots["1000"]) {
+        const presetState = presetJson.pattrstorage.slots["1000"].data;
+        ll_global.pat[act_name_index].getprioritylist().forEach(p => {
+            if(["act::pres_menu", "act::title_menu"].indexOf(p.name) > -1) return;
+            const paramObj = act_patcher.getnamed(p.name);
+            if(paramObj) 
+                paramObj.setvalueof(presetState[p.name]);
+        })
+    }
 
-        // const presetState = presetJson.pattrstorage.slots["1000"].data;
-    ll_global.pat[act_name_index].getprioritylist().forEach(p => {
-        // post(`::${act_name_index}::${p.name}`, presetState[p.name])
-        // post()
-        messnamed(`::${act_name_index}::${p.name}`, presetState[p.name])
-    })
 
 	// ####################################################################  active hack
     // set all active flags to 1
@@ -1137,7 +1136,7 @@ function read_preset_path(fullPath, presetName = 0) {
 	// reading the preset-file will set active flags to 0 if so defined
 	// ####################################################################  /active hack
     pat.message("read", fullPath);	
-    // pat.message(1000);
+    pat.message(1000);
 
     if (anySlotHasActiveStore(presetJson)) {
         isActiveStore = 1;

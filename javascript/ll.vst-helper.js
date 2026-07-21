@@ -14,6 +14,9 @@ let pp = tp.parentpatcher;
 let actname = null;
 let isFirstLoad = true;
 
+let isLoadingPreset = false;
+let preset1000 = null;
+
 let chans_in = 4;
 let chans_out = 2;
 
@@ -21,21 +24,20 @@ let mcs_vst = null;
 
 let paramNames = [];
 let isCollectingParams = false;
-let selectedPres = null;
 
 // vst window
 let isOpen = false;
 let position = [100, 100];
 
 // vst-folder, def_folders
-let currentPlugName = null;
-let currentPlug = null;  // Full path
+let currentPlugName = null; // Name & extension only
+let currentPlug = null; // Full path
 let currentPath = null;
 let currentFiles = {};
 let currentSubNames = [];
 
 // Program & Preset files
-let currentPresetName = "untitled";
+let currentProgramFile = "untitled";
 let currentProgramFiles = [];
 let program_files_ext = ".fxp";
 let vst_AU = 1; // 1 for VST/VST3, 0 for AU component
@@ -43,7 +45,7 @@ let vst_AU = 1; // 1 for VST/VST3, 0 for AU component
 // list of plugins scanned by vstscan object for 'auto' mode
 let vstscan_list = [];
 
-const pm_map = {
+const ll_pm_map = {
     def_folder: setCurrentPath,
     "vst-folder": vst_folder,
     position: setPosition,
@@ -56,7 +58,7 @@ const pm_map = {
 
 function ll_pm(receive, ...args) {
     // post(receive, ...args, "\n")
-    const fn = pm_map[receive];
+    const fn = ll_pm_map[receive];
     if (!fn) return post(`ll.vst-helper: unknown receive '${receive}'\n`);
 
     // flatten a single array argument
@@ -71,7 +73,6 @@ function setChans(c_in, c_out) {
 }
 
 function presetsUI(msg) {
-    // post("presetUI?", msg, "\n")
     if (msg === "store") {
         getParamValues();
     }
@@ -96,7 +97,6 @@ function jit_define_folders(...args) {
 // Loadbang
 function loadbang() {
     mcs_vst = tp.getnamed("vst");
-
     resetMenu();
 }
 
@@ -190,7 +190,7 @@ function loadVST(pluginPath) {
     mcs_vst.message("plug", pluginPath);
     currentPlug = pluginPath;
     currentSubNames = [];
-    currentPresetName = "untitled";
+    currentProgramFile = "untitled";
     currentProgramFiles = [];
 
     pp.getnamed("def_shell").setvalueof("none");
@@ -249,14 +249,19 @@ function collectParams() {
     out("check_pointing_acts", "bang");
     out("ll_pm", ...paramNames);
 
-    // refresh_pres_file
-    if (selectedPres) {
-        post("reload preset ?");
-        // TODO: need reload preset for when we are loading from environment?
-        out("act::pres_menu", "symbol", selectedPres);
-    }
+    mcs_vst = tp.getnamed("vst");
 
-    getParamValues();
+    // If we're loading from a preset file,
+    if (isLoadingPreset) {
+        // Set vst~ object values from preset
+        paramNames.forEach((p) => {
+            mcs_vst.message(p, preset1000[p]);
+        });
+        isLoadingPreset = false;
+    } else {
+        // Set vst@ param values from vst~ object
+        getParamValues();
+    }
 
     if (isOpen) {
         mcs_vst = tp.getnamed("vst");
@@ -275,11 +280,19 @@ function subname(name) {
 
 function pres_menu(pres) {
     // post("pres_menu", pres, "\n");
-    if (!pres || ["", "_", "clear!", "TEXT", "write"].indexOf(pres) > -1) {
+    if (
+        !pres ||
+        ["", "_", "clear!", "TEXT", "write", "(presets)"].indexOf(pres) > -1
+    ) {
         return;
     }
-    selectedPreset = pres;
-    // post(`${get_vst_presets_path()}/${pres}.json`, "\n")
+    isLoadingPreset = true;
+
+    const presetDict = new Dict();
+    presetDict.import_json(`${get_vst_presets_path()}/${pres}.json`);
+
+    const presetJson = JSON.parse(presetDict.stringify());
+    preset1000 = presetJson.pattrstorage.slots["1000"].data;
 }
 
 function getParamValues() {
@@ -395,8 +408,8 @@ function setCurrentPath(path) {
     pp.getnamed("def_folder").message(path);
 
     let menuItems = [];
-    // "all" - show all plugins from all user-defined folders
     if (path === "all") {
+        // "all" - show all plugins from all user-defined folders
         const ll_prefs = new Dict("ppooll-preferences");
         const vst_folders = ll_prefs.get("file_paths::vst@_folders");
         currentFiles = {};
@@ -405,13 +418,13 @@ function setCurrentPath(path) {
             menuItems.push("<separator>");
             menuItems.push(`(${folder})`);
 
-            listFiles(folder).forEach((plugFile) => {
+            ll.getFilesInFolder(folder).forEach((plugFile) => {
                 menuItems.push(plugFile);
                 currentFiles[plugFile] = `${folder}${plugFile}`;
             });
         });
-        // "auto" - use Max's 'vstscan' object
     } else if (path === "auto") {
+        // "auto" - use Max's 'vstscan' object
         vstscan_list = [];
 
         out("vstscan", "listvst");
@@ -420,11 +433,11 @@ function setCurrentPath(path) {
 
         resetMenu(vstscan_list);
 
-        return; // wait for setAutoList
-        // "∆í" - prefix for user-defined folder, load that folder
+        return; 
     } else if (path.slice(0, 3) === "∆í ") {
+        // "∆í" - prefix for user-defined folder, load that folder
         let folder = path.slice(3);
-        menuItems = ["<separator>", ...listFiles(folder)];
+        menuItems = ["<separator>", ...ll.getFilesInFolder(folder)];
         menuItems.forEach((plugFile) => {
             currentFiles[plugFile] = `${folder}${plugFile}`;
         });
@@ -446,7 +459,6 @@ function setActname(name) {
 }
 
 function resetMenu(itemsToAdd = [], setsymbol = null) {
-    post("vst-folder", pp.getnamed("vst-folder").getvalueof(), "\n");
     to_vst_menu("clear");
 
     const items = ["def_folders"];
@@ -462,24 +474,6 @@ function resetMenu(itemsToAdd = [], setsymbol = null) {
     }
 }
 
-function listFiles(path) {
-    var f = new Folder(path);
-    if (f.end) {
-        post("Folder not found or empty:", path, "\n");
-        return;
-    }
-
-    var files = [];
-    while (!f.end) {
-        if (f.filename) {
-            files.push(f.filename);
-        }
-        f.next();
-    }
-    f.close();
-    return files;
-}
-
 //
 // Program & Preset Files
 //
@@ -492,12 +486,10 @@ function get_vst_presets_path() {
     return presets_path;
 }
 
-function refreshProgramFiles(to_select="") {
+function refreshProgramFiles(to_select = "") {
     if (!currentPlugName) return;
 
-    const items = vst_AU
-        ? ["writepgm", "writebank", "-"]
-        : ["write", "-"];
+    const items = vst_AU ? ["writepgm", "writebank", "-"] : ["write", "-"];
 
     currentProgramFiles = [];
 
@@ -529,48 +521,63 @@ function au_preset(name) {
     currentProgramFiles.push(name);
 }
 
-function invokeDialog(){
-    tp.getnamed("dialog_write").message("label", `Write preset for ${actname} ${currentPlugName}`);
-    tp.getnamed("dialog_write").message("symbol", currentPresetName);
+function invokeDialog() {
+    tp.getnamed("dialog_write").message(
+        "label",
+        `Write preset for ${actname} ${currentPlugName}`,
+    );
+    tp.getnamed("dialog_write").message("symbol", currentProgramFile);
 }
 
 function program_files(selection) {
-    if (selection === "read" || selection === "" || selection === "setsymbol") return;
+    if (selection === "read" || selection === "" || selection === "setsymbol")
+        return;
 
     if (vst_AU === 1) {
         if (selection === "writepgm" && !ll_global.enviread) {
             program_files_ext = ".fxp";
-            tp.getnamed("dialog_write").message("label", `writepgm for ${actname} ${currentPlugName}`);
-            tp.getnamed("dialog_write").message("symbol", currentPresetName);
+            tp.getnamed("dialog_write").message(
+                "label",
+                `writepgm for ${actname} ${currentPlugName}`,
+            );
+            tp.getnamed("dialog_write").message("symbol", currentProgramFile);
             return;
         }
 
         if (selection === "writebank" && !ll_global.enviread) {
             program_files_ext = ".fxb";
-            tp.getnamed("dialog_write").message("label", `writebank for ${actname} ${currentPlugName}`);
-            tp.getnamed("dialog_write").message("symbol", currentPresetName);
+            tp.getnamed("dialog_write").message(
+                "label",
+                `writebank for ${actname} ${currentPlugName}`,
+            );
+            tp.getnamed("dialog_write").message("symbol", currentProgramFile);
             return;
         }
 
-        mcs_vst.message("read", `${get_vst_presets_path()}/${currentPlugName}‚àè${selection}`);
-        currentPresetName = ll.getExtension(ll.getExtension(selection)[0])[0];
+        mcs_vst.message(
+            "read",
+            `${get_vst_presets_path()}/${currentPlugName}‚àè${selection}`,
+        );
+        currentProgramFile = ll.getExtension(ll.getExtension(selection)[0])[0];
         return;
     }
 
     if (selection === "write" && !ll_global.enviread) {
-        tp.getnamed("dialog_write").message("label", `write aupreset for ${actname} ${currentPlugName}`);
-        tp.getnamed("dialog_write").message("symbol", currentPresetName);
+        tp.getnamed("dialog_write").message(
+            "label",
+            `write aupreset for ${actname} ${currentPlugName}`,
+        );
+        tp.getnamed("dialog_write").message("symbol", currentProgramFile);
         return;
     }
 
     mcs_vst.message("read", selection);
-    currentPresetName = selection;
+    currentProgramFile = selection;
     return;
 }
 
 function dialog_write(arg1, arg2) {
-    post("dialog_write", arg1, arg2, "\n");
-
+    // post("dialog_write", arg1, arg2, "\n");
     const name = arg1 === "symbol" ? arg2 : arg1;
 
     if (vst_AU === 1) {
@@ -578,7 +585,7 @@ function dialog_write(arg1, arg2) {
         const preset_umenu_name = `${name}${program_files_ext}`;
         const preset_filepath = `${get_vst_presets_path()}/${currentPlugName}‚àè${preset_umenu_name}`;
 
-        const umenu_name = `${preset_umenu_name}${ll.getExtension(currentPlugName)[1] === "vst3" ? ".vst3preset" : ''}`
+        const umenu_name = `${preset_umenu_name}${ll.getExtension(currentPlugName)[1] === "vst3" ? ".vst3preset" : ""}`;
         mcs_vst.message("write", preset_filepath);
         refreshProgramFiles(umenu_name); // refresh program_files umenu
         return;
@@ -625,7 +632,7 @@ function reset() {
     ].forEach((msgs) => pp.getnamed("program_files").message(...msgs));
 
     pp.getnamed("program_files").message("setsymbol", "");
-    
+
     pp.getnamed("def_shell").setvalueof("none");
 
     tp.wclose();
