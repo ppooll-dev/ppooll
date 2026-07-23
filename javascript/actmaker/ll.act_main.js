@@ -54,6 +54,7 @@ let showHoverIcons = true;
 let is_llenviread = 0; // [r llenviread]
 
 let prev_pres_menu = "(presets)";
+let prev_tetris_menu = "(tetris)";
 
 // preset TEXT
 let TEXT_fontsize = 8;
@@ -820,6 +821,29 @@ function set_tetris_menu(selection) {
     tetris_menu.message("clearchecks");
     tetris_menu.message("checksymbol", selection, 1);
 
+    if (selection === "write" && !is_llenviread) {
+        // post(selection, prev_pres_menu, "\n");
+        // show popup with last selected name
+        // messnamed("ll_preset_menu", act_name_index, "write", prev_pres_menu);
+        const dialog = this.patcher
+            .getnamed("dialog")
+            .subpatcher()
+            .getnamed("route");
+        dialog.message("return", "write_tetris");
+        dialog.message("path", `${ll_global.paths.user}/${act_args.name}T`);
+        let write_tetris_name = prev_tetris_menu;
+        if (
+            write_tetris_name === "_" ||
+            write_tetris_name === "(tetris)" ||
+            write_tetris_name === ""
+        )
+            write_tetris_name = "_";
+
+        dialog.message("set", write_tetris_name);
+        dialog.message("bang");
+        return;
+    }
+
     // load tetris layout
     const isFactory = selection.startsWith("ƒ ");
     const basePath = ll_global.paths[isFactory ? "factory" : "user"];
@@ -1012,12 +1036,14 @@ function write_tetris(name) {
     tetris_refresh_menu()
 
     // check in tetris_menu
+    prev_tetris_menu = name;
+
     tetris_menu.message("clearchecks");
     tetris_menu.message("checksymbol", name, 1);
 }
 
 function tetris_refresh_menu() {
-    const additionalItems = [];
+    const additionalItems = ['-', 'write'];
     const current = tetris_menu.getvalueof();
     refresh_menu("tetris", [], "T", tetris_menu, additionalItems, false);
     tetris_menu.message("clearchecks");

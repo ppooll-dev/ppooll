@@ -388,6 +388,7 @@
                     "keymode": 1,
                     "lines": 1,
                     "maxclass": "textedit",
+                    "nosymquotes": 1,
                     "numinlets": 1,
                     "numoutlets": 4,
                     "outlettype": [ "", "int", "", "" ],
