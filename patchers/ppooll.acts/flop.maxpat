@@ -7304,12 +7304,6 @@
                                                     "destination": [ "obj-106", 0 ],
                                                     "source": [ "obj-101", 0 ]
                                                 }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-107", 0 ],
-                                                    "source": [ "obj-101", 0 ]
-                                                }
                                             }
                                         ]
                                     },
