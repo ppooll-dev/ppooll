@@ -360,7 +360,222 @@ function lightcolor(){
 
 /* ============================== LIFECYCLE ============================== */
 
+/*  local rebuild + fade
+    rebuilding audio only affects the act whose patcher changed  a channel change 
+    rebuilds only this act, and hides the gap behind a short fade:
+
+        fade out -> apply chans -> rebuild this act -> wait until rebuilt -> fade in
+*/
+var FADE_MS = 10;               // fade out / in time
+var APPLY_DELAY_MS = 10;        // wait for the fade-out before applying chans
+var SETTLE_MS = 5;              // safety margin after the rebuild is detected
+var PROBE_TIMEOUT_MS = 250;     // fade in anyway if the probe never reports
+
+
+var subp = null;           // this.patcher (p ll.blues.sub)
+var selfBox = null;        // this v8 box
+var actReady = false;      // no rebuilds/fades while the act is still loading
+var pendingChans = null;
+
+// objects created for the rebuild
+var probeSig = null, probeSnap = null, probeConnected = false;
+
+var actname = null;          
+var probeWaiting = false, probeExpect = 0;
+
+var applyTask = new Task(applyChans, this);
+var rebuildTask = new Task(doRebuild, this);
+var fadeInTask = new Task(fadeIn, this);
+var probeTimeoutTask = new Task(probeTimeout, this);
+
+function fadeObj() {
+    if (!subp) return null;
+    var v = subp.getnamed("volpanmix");
+    return v && v.subpatcher() ? v.subpatcher().getnamed("fade") : null;
+}
+function fadeTo(target) {
+    var f = fadeObj();
+    if (f) f.message("list", target, FADE_MS);
+}
+function fadeIn() { fadeTo(1); }
+
+// create the probe once (at load, when a rebuild of this act is harmless)
+function makeProbe() {
+    if (!subp) return;
+    probeSig = subp.getnamed("probe_sig");
+    probeSnap = subp.getnamed("probe_snap");
+    var probePre = subp.getnamed("probe_pre");
+    if (!probeSig) {
+        probeSig = subp.newdefault(-300, -300, "sig~", 1);
+        probeSig.varname = "probe_sig";
+        probeSig.hidden = 1;
+    }
+    if (!probeSnap) {
+        probeSnap = subp.newdefault(-300, -270, "snapshot~", 1);
+        probeSnap.varname = "probe_snap";
+        probeSnap.hidden = 1;
+    }
+    if (!probePre) {
+        probePre = subp.newdefault(-300, -240, "prepend", "probe");
+        probePre.varname = "probe_pre";
+        probePre.hidden = 1;
+        subp.connect(probeSnap, 0, probePre, 0);
+        subp.connect(probePre, 0, selfBox, 0);
+    }
+    // clock off until we wait for a rebuild
+    probeSnap.message(0);                 
+    try { subp.disconnect(probeSig, 0, probeSnap, 0); } catch (e) {}
+    probeConnected = false;
+}
+
+// user changed a channel count: fade out first, then apply
+function requestChans(cin, cout) {
+    if (!actReady || !fadeObj()) {
+        // loading, or no fader: old behaviour
+        UI.msg("chans", cin, cout);
+        return;
+    }
+    fadeInTask.cancel();
+    fadeTo(0);
+    pendingChans = [cin, cout];
+    applyTask.cancel();
+    applyTask.schedule(APPLY_DELAY_MS);
+}
+function applyChans() {
+    var p = pendingChans;
+    pendingChans = null;
+    if (!p) return;
+    if (p[0] === S.chIn && p[1] === S.chOut) {
+        // nothing changes: just fade back in
+        fadeIn();
+        return;
+    }
+    userFaded = true;   // tells requestRebuild the fade-out is already done
+    UI.msg("chans", p[0], p[1]);
+}
+
+// called from chans() when a count changed
+function requestRebuild() {
+    if (!actReady) return;
+    fadeInTask.cancel();
+    fadeTo(0);
+    rebuildTask.cancel();
+    if (userFaded) {
+        userFaded = false;
+        doRebuild();
+    } else {
+        // preset path: chans arrived without a fade-out; wait for the fade first
+        rebuildTask.schedule(FADE_MS + 2);
+    }
+}
+var userFaded = false;
+
+// trigger the rebuild by toggling the probe connection, then wait for it
+function doRebuild() {
+    if (!subp) return;
+    if (!probeSig || !probeSnap) makeProbe();
+    if (probeConnected) subp.disconnect(probeSig, 0, probeSnap, 0);
+    else subp.connect(probeSig, 0, probeSnap, 0);
+    probeConnected = !probeConnected;
+    probeExpect = probeConnected ? 1 : 0;
+    probeWaiting = true;
+    probeSnap.message(1);            // start reporting (every 1 ms)
+    probeTimeoutTask.cancel();
+    probeTimeoutTask.schedule(PROBE_TIMEOUT_MS);
+}
+
+// values from [snapshot~] via [prepend probe]
+function probe(v) {
+    if (!probeWaiting) return;
+    if (Math.round(v) !== probeExpect) return;   // still the old chain
+    probeWaiting = false;
+    probeSnap.message(0);
+    probeTimeoutTask.cancel();
+    notifyRebuilt();
+    fadeInTask.cancel();
+    fadeInTask.schedule(SETTLE_MS);
+}
+
+// tell objects in our act that new channels now exist: [r <actname>_rebuilt]
+function notifyRebuilt() {
+    if (!actname) {
+        var actui = findActui(subp);
+        try { actname = actui ? actui.getattr("act_name_index") : null; } catch (e) {}
+        if (Array.isArray(actname)) actname = actname[0];
+    }
+    if (actname) messnamed(actname + "_rebuilt", "bang");
+    else post("ll.blues: act name unknown, cannot send <act>_rebuilt\n");
+}
+function probeTimeout() {
+    if (!probeWaiting) return;
+    probeWaiting = false;
+    if (probeSnap) probeSnap.message(0);
+    post("ll.blues: rebuild not detected, fading in anyway\n");
+    notifyRebuilt();
+    fadeIn();
+}
+
+/*  act-ready handshake
+    ll.blues asks the actui to be notified once the act is ready
+    requires the box text:  [v8 ll.blues.js #0]   (inside p ll.blues.sub)
+*/
+var blues_hash = jsarguments[1];   // ll.blues's #0 (undefined if #0 arg missing)
+var RESEND_FALLBACK_MS = 300;      // only used if the handshake can't be set up
+var READY_RETRIES = 5;             // like ll.actname: retry every 100 ms
+
+var readyTries = 0;
+var resendTask = new Task(resendChans, this);   // top-level: must not be garbage-collected
+var readyTask = new Task(requestReady, this);
+
+function resendChans() {
+    var c = UI.get("chans");
+    if (c) c.message(S.chansV);      // same as setting chans by hand
+    actReady = true;                 // from now on, chans changes rebuild this act
+}
+
+function findActui(p) {
+    var act = null;
+    while (p) {
+        p = p.parentpatcher;
+        if (p && p.getnamed("act")) { act = p.getnamed("act"); break; }
+    }
+    if (!act || !act.subpatcher()) return null;
+    return act.subpatcher().getnamed("actui");
+}
+
+function requestReady() {
+    if (!blues_hash || blues_hash === "#0") {
+        post("ll.blues: no #0 argument on [v8 ll.blues.js], using timed resend\n");
+        resendTask.cancel();
+        resendTask.schedule(RESEND_FALLBACK_MS);
+        return;
+    }
+    var actui = findActui(this.patcher);
+    if (!actui) {
+        if (readyTries++ < READY_RETRIES) readyTask.schedule(100);
+        else post("ll.blues: could not find act::actui\n");
+        return;
+    }
+    actui.message("request_ready", blues_hash + "js");   // reply comes into [r #0js]
+}
+
+// reply from ll.act_main.js: our act is fully loaded
+function act_ready() {
+    try {
+        var actui = findActui(subp);
+        var n = actui ? actui.getattr("act_name_index") : null;
+        if (Array.isArray(n)) n = n[0];
+        if (n) actname = String(n);
+    } catch (e) {}
+    resendTask.cancel();
+    resendTask.schedule(0);   // run right after act_main has finished
+}
+
 function bang() {
+    subp = this.patcher;
+    selfBox = this.box;
+    makeProbe();                     // create the rebuild probe while the act loads
+    actReady = false;
     tpp = this.patcher.parentpatcher;
     actpatcher = tpp.parentpatcher;
     bpatcher = tpp.box;
@@ -378,6 +593,11 @@ function bang() {
     UI.get("chans") && UI.get("chans").message(S.chansV);
 	
 	size_obj();
+
+    // ask our act to tell us when it is fully loaded (see act-ready handshake above)
+    readyTries = 0;
+    readyTask.cancel();
+    readyTask.schedule(0);
 }
 function wsize(x){
 	let bp_rect = tpp.box.rect; //a.rect;
@@ -591,6 +811,7 @@ function chans() {
     const c = arrayfromargs(arguments);
     S.chansV = c;
 	//post("chans",S.chIn,S.chOut,"\n")
+    const changed = c[0] !== S.chIn || c[1] !== S.chOut;
     if (c[1] !== S.chOut) {
         S.chOut = c[1];
         listblockCompose();
@@ -604,6 +825,7 @@ function chans() {
         outlet(0, "chans_in", S.chIn);
 		size_meter();
     }
+    if (changed) requestRebuild();   // apply mc "chans" changes: rebuild this act only
 }
 function levels() {
     S.levelsV = arrayfromargs(arguments);
@@ -686,10 +908,10 @@ function pan(a) {
     UI.msg("levels", S.levelsV);
 }
 function chans_out(a) {
-    UI.msg("chans", S.linkChans ? a : S.chIn, a);
+    requestChans(S.linkChans ? a : S.chIn, a);
 }
 function chans_in(a) {
-    UI.msg("chans", a, S.linkChans ? a : S.chOut);
+    requestChans(a, S.linkChans ? a : S.chOut);
 }
 function x(a) {
     S.stateV[1] = a;
@@ -781,7 +1003,7 @@ function extra() {
 }
 
 function channels(a) {
-    if (a > 0) UI.msg("chans", S.chIn, parseInt(a, 10));
+    if (a > 0) requestChans(S.chIn, parseInt(a, 10));
 }
 
 /* ============================== AUDIO-CHAIN SCRIPTING ============================== */
@@ -864,29 +1086,71 @@ function chan_sep(a) { //calculate the channel structure from pattr value
     return [chans_sep, d_offsets, dests, dest_chs];
 }
 
+/*  script_outpatchers
+    Updates the send objects in p outputs~ / p outputsMix~ for a new outputs value.
+
+    Creating or deleting signal objects rebuilds this act's audio (~13 ms of silence
+    from this act, measured). So objects are only recreated when unavoidable:
+      - plain mc.send~ (offset 1) whose destination changed  -> "set <dest>"   (no rebuild)
+      - unchanged sends                                       -> left alone     (no rebuild)
+      - ll.mc.s~ (offset > 1) that changed, or a send whose
+        type changes (offset 1 <-> offset > 1)                -> recreated      (rebuild)
+      - number of sends or channel split changed              -> recreated      (rebuild)
+*/
 function script_outpatchers(a, b, out_p) {
     const chans_sep = a[0],
         d_offsets = a[1],
-        dests = a[2];
+        dests = a[2],
+        dest_ch = a[3] || [];
     const old_chans = b[0] || [],
         old_offs = b[1] || [],
-        old_dests = b[2] || [];
-	//post("changed1",chans_sep,old_chans,"st",JSON.stringify(chans_sep), JSON.stringify(old_chans),"\n");
-    const changed = [
-        JSON.stringify(chans_sep) !== JSON.stringify(old_chans),
-        JSON.stringify(d_offsets) !== JSON.stringify(old_offs),
-        JSON.stringify(dests) !== JSON.stringify(old_dests),
-    ];
-	//post("changed",changed,"\n");
-    let sep = out_p.getnamed("sep");
+        old_dests = b[2] || [],
+        old_dch = b[3] || [];
+
+    const sepChanged = JSON.stringify(chans_sep) !== JSON.stringify(old_chans);
     const al = chans_sep.length,
         bl = old_chans.length;
+    const created = []; // indices of newly created sends (need connecting)
 
-    if (changed[2]) newsends(al, bl, d_offsets, dests, a[3], out_p);
-    if (changed[1] && !changed[2]) newsends(al, bl, d_offsets, dests, a[3], out_p);
+    // 1. update, replace or create each send
+    for (let i = 0; i < al; i++) {
+        const existing = out_p.getnamed("send" + i);
+        const plain = d_offsets[i] === 1;
+        const wasPlain = old_offs[i] === 1;
 
-    if (changed[0]) {
-        out_p.remove(out_p.getnamed("sep"));
+        if (existing && i < bl && plain && wasPlain) {
+            // plain mc.send~ stays plain: just point it somewhere else
+            if (dests[i] !== old_dests[i]) existing.message("set", dests[i]);
+            continue;
+        }
+        if (existing && i < bl && !plain && !wasPlain &&
+            d_offsets[i] === old_offs[i] &&
+            dests[i] === old_dests[i] &&
+            dest_ch[i] === old_dch[i]) {
+            continue; // ll.mc.s~ unchanged
+        }
+
+        if (existing) out_p.remove(existing);
+        const s = plain
+            ? out_p.newdefault(100, 100, "mc.send~", dests[i])
+            : out_p.newdefault(100, 100, "ll.mc.s~", d_offsets[i] - 1, dests[i], dest_ch[i]);
+        s.varname = "send" + i;
+        s.rect = [40 + 80 * i, 120, 40 + 80 * i + 70, 132];
+        created.push(i);
+    }
+
+    // 2. remove sends that are no longer needed
+    for (let i = al; i < Math.max(bl, al + 16); i++) {
+        const o = out_p.getnamed("send" + i);
+        if (o) out_p.remove(o);
+        else if (i >= bl) break;
+    }
+
+    // 3. channel separator (only when the split changes)
+    let sep = out_p.getnamed("sep");
+    if (sepChanged) {
+        if (sep) out_p.remove(sep);
+        sep = null;
         if (al > 1) {
             sep = out_p.newdefault(40, 80, "mc.separate~", chans_sep);
             sep.varname = "sep";
@@ -895,38 +1159,18 @@ function script_outpatchers(a, b, out_p) {
         }
     }
 
-    if (changed[0] || changed[1] || changed[2]) {
-        if (al === 1)
-            out_p.connect(
-                out_p.getnamed("in"),
-                0,
-                out_p.getnamed("send0"),
-                0
-            );
-        else
-            for (let i = 0; i < al; i++)
-                out_p.connect(
-                    sep,
-                    i,
-                    out_p.getnamed("send" + i),
-                    0
-                );
-    }
-}
-
-function newsends(al, bl, d_offsets, dests, dest_ch, out_p) {
-    for (let i = 0; i < bl; i++)
-        out_p.remove(out_p.getnamed("send" + i));
-
-    for (let i = 0; i < al; i++) {
-        let s;
-        if (d_offsets[i] === 1)
-            s = out_p.newdefault(100, 100, "mc.send~", dests[i]);
-        else
-            s = out_p.newdefault(100, 100, "ll.mc.s~", d_offsets[i] - 1, dests[i], dest_ch[i] );
-        s.varname = "send" + i;
-        s.rect = [40 + 80 * i, 120, 40 + 80 * i + 70, 132];
-    }
+    // 4. connect: everything if the separator was rebuilt, otherwise only new sends
+    const toConnect = sepChanged ? Array.from({ length: al }, (_, i) => i) : created;
+    toConnect.forEach((i) => {
+        const s = out_p.getnamed("send" + i);
+        if (!s) return;
+        // a kept send may still be wired straight from "in" (old single-send layout)
+        if (sepChanged && created.indexOf(i) < 0) {
+            try { out_p.disconnect(out_p.getnamed("in"), 0, s, 0); } catch (e) {}
+        }
+        if (al === 1) out_p.connect(out_p.getnamed("in"), 0, s, 0);
+        else if (sep) out_p.connect(sep, i, s, 0);
+    });
 }
 
 /* ============================== UTILITY EXPORTED ============================== */

@@ -18,7 +18,8 @@ var chan_menu = null;
 function actname(act_name) {
     outlet(0, "a_menu", "pattrmode", 1);
     outlet(0, "c_menu", "pattrmode", 1);
-	mc_offset = 0;
+    mc_offset = 0;
+    current_layout = null;   // first choice after (re)naming always rebuilds the path
 
     if (jsarguments.length >= 3) {
         act_menu = ll_global.patchers[act_name].getnamed(jsarguments[1]);
@@ -72,43 +73,53 @@ function c_menu(c) {
     c_item = c;
     checkitem(idx, "c_menu");
     outlet(0, "to_send", `${a_item}~${c_cha[0]}`, c_cha);
-	script_sending(`${a_item}~${c_cha[0]}`, c_cha);
+    script_sending(`${a_item}~${c_cha[0]}`, c_cha);
 }
-function script_sending(path,c_cha){
+
+// Layout of the signal path we built last ("0:<width>", "1", "2", ...), or null.
+var current_layout = null;
+var DEBUG_LLS = 0;   // 1: print every routing choice to the Max window
+
+function script_sending(path, c_cha) {
     let tp = this.patcher;
-	let inp = tp.getnamed("in");
-	let send = tp.getnamed("send");
-	let rs = tp.getnamed("resize");
-	let comb = tp.getnamed("comb");
-	let sig = tp.getnamed("sig");
-	send.message("set", path); 
-	
-	// remove old state
-	if (mc_offset === 0 && rs) tp.remove(rs);
-	else if (mc_offset === 1) tp.disconnect(inp,0,send,0);
-	else {
-		tp.disconnect(inp, 0, comb, 1);
-		tp.disconnect(comb, 0, send, 0);
-	}
-	if (mc_offset != c_cha[1]) messnamed("ll_audio", "bang");
-	mc_offset = c_cha[1];
-	// script new state
-	if (mc_offset === 0) {
-	    rs = tp.newdefault(
-	        40, 400,
-	        "mc.resize~", c_cha[2],
-	        "@replicate", 1
-	    );
-		rs.varname = "resize";
-		tp.connect(inp,0,rs,0);
-		tp.connect(rs,0,send,0);
-	}
-	else if (mc_offset === 1) tp.connect(inp,0,send,0);
-	else {
-		sig.message("chans", mc_offset-1);
-		tp.connect(inp, 0, comb, 1);
-		tp.connect(comb, 0, send, 0);
-	}
+    let inp = tp.getnamed("in");
+    let send = tp.getnamed("send");
+    let comb = tp.getnamed("comb");
+    let sig = tp.getnamed("sig");
+    send.message("set", path);   // changing the destination never needs a rebuild
+
+    let off = Number(Array.isArray(c_cha[1]) ? c_cha[1][0] : c_cha[1]);
+    if (!isFinite(off) || off < 0) off = 1;           // unknown: plain send
+    let width = Number(Array.isArray(c_cha[2]) ? c_cha[2][0] : c_cha[2]);
+    if (!isFinite(width) || width < 1) width = 1;
+
+    const layout = off === 0 ? "0:" + width : String(off);
+    if (DEBUG_LLS) post("ll.s~:", path, JSON.stringify(c_cha), "layout", layout,
+                        "was", current_layout, layout === current_layout ? "(set only)" : "(re-script)", "\n");
+    if (layout === current_layout) return;
+    current_layout = layout;
+
+    // tear down every possible previous wiring
+    let rs = tp.getnamed("resize");
+    if (rs) tp.remove(rs);
+    try { tp.disconnect(inp, 0, send, 0); } catch (e) {}
+    try { tp.disconnect(inp, 0, comb, 1); } catch (e) {}
+    try { tp.disconnect(comb, 0, send, 0); } catch (e) {}
+
+    // build the new wiring
+    mc_offset = off;
+    if (off === 0) {
+        rs = tp.newdefault(40, 400, "mc.resize~", width, "@replicate", 1);
+        rs.varname = "resize";
+        tp.connect(inp, 0, rs, 0);
+        tp.connect(rs, 0, send, 0);
+    } else if (off === 1) {
+        tp.connect(inp, 0, send, 0);
+    } else {
+        sig.message("chans", off - 1);
+        tp.connect(inp, 0, comb, 1);
+        tp.connect(comb, 0, send, 0);
+    }
 }
 
 function a_menu(a) {
