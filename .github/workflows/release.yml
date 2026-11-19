@@ -1,11 +1,13 @@
 name: Release
 
-# Two ways to cut a release:
-#   1. Actions → Release → Run workflow, enter a version (e.g. 1.2.0).
-#      Bumps package-info.json, builds, then commits, tags and publishes.
-#   2. Bump + tag locally (bump_version.sh, release.sh), then
-#      `git push && git push --tags`. The v* tag triggers this workflow.
-# Pull requests that touch the build run a build-and-verify only (no release).
+# Release: Actions → Release → Run workflow (on main), enter a version.
+# Bumps package-info.json, builds, verifies, pushes the bump to main with the
+# release deploy key, tags and publishes.
+# Pushing a v* tag yourself also releases. Pull requests run build + verify only.
+#
+# If main is protected: a write deploy key whose private half is the
+# RELEASE_DEPLOY_KEY secret of the "release" environment (see RELEASING.md).
+# Without that secret the bump is pushed with the normal workflow token.
 #
 # Nothing is signed here; ll_externals releases are already signed.
 
@@ -37,16 +39,19 @@ on:
       - "package-info.json"
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.ref) || 'release' }}
   cancel-in-progress: false
 
 jobs:
-  release:
+  build:
     runs-on: macos-latest
     timeout-minutes: 15
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      tag: ${{ steps.version.outputs.tag }}
     steps:
       - name: Check out
         uses: actions/checkout@v4
@@ -73,11 +78,16 @@ jobs:
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
 
-      - name: Make sure the tag doesn't exist yet
+      - name: Check this release can be made
         if: github.event_name == 'workflow_dispatch' && !inputs.dry_run
         env:
           TAG: ${{ steps.version.outputs.tag }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
         run: |
+          if [ "$GITHUB_REF_NAME" != "$DEFAULT_BRANCH" ]; then
+            echo "::error::Run the release from $DEFAULT_BRANCH (or tick dry run)."
+            exit 1
+          fi
           if git rev-parse -q --verify "refs/tags/$TAG" >/dev/null; then
             echo "::error::Tag $TAG already exists"
             exit 1
@@ -108,47 +118,74 @@ jobs:
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ppooll-${{ steps.version.outputs.version }}
+          name: package
           path: |
             ppooll.maxpack
             ppooll.zip
           if-no-files-found: error
 
-      - name: Commit version bump and tag
-        if: github.event_name == 'workflow_dispatch' && !inputs.dry_run
+  publish:
+    needs: build
+    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && !inputs.dry_run)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: release
+    permissions:
+      contents: write
+    env:
+      VERSION: ${{ needs.build.outputs.version }}
+      TAG: ${{ needs.build.outputs.tag }}
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ssh-key: ${{ secrets.RELEASE_DEPLOY_KEY }}
+
+      # Pushed with the deploy key if RELEASE_DEPLOY_KEY is set (it bypasses
+      # main's rulesets), otherwise with the workflow token.
+      # Fails if main moved since the build, so the release always matches
+      # what was built.
+      - name: Commit and push version bump
+        if: github.event_name == 'workflow_dispatch'
         env:
-          VERSION: ${{ steps.version.outputs.version }}
-          TAG: ${{ steps.version.outputs.tag }}
           BRANCH: ${{ github.ref_name }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add package-info.json
-          git diff --cached --quiet || git commit -m "Release v$VERSION"
-          git tag "$TAG"
-          # Pushes made with GITHUB_TOKEN don't trigger workflows, so this tag
-          # won't start a second run of this workflow.
-          git push origin "HEAD:refs/heads/$BRANCH"
-          git push origin "refs/tags/$TAG"
+          bash scripts/bump_version.sh "$VERSION"
+          if git diff --quiet -- package-info.json; then
+            echo "package-info.json already at $VERSION"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Release v$VERSION" -- package-info.json
+            git push origin "HEAD:refs/heads/$BRANCH"
+          fi
+
+      - name: Download package
+        uses: actions/download-artifact@v4
+        with:
+          name: package
 
       - name: Publish GitHub release
-        if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && !inputs.dry_run)
         env:
           GH_TOKEN: ${{ github.token }}
-          TAG: ${{ steps.version.outputs.tag }}
         run: |
-          PREV=$(git describe --tags --abbrev=0 "$TAG^" 2>/dev/null || true)
+          # Previous release: before the tagged commit (tag push) or at/before HEAD.
+          REF=HEAD; [ "$GITHUB_EVENT_NAME" = "push" ] && REF=HEAD^
+          PREV=$(git describe --tags --abbrev=0 --match 'v*' "$REF" 2>/dev/null || true)
           if [ -n "$PREV" ]; then
             CHANGES="https://github.com/$GITHUB_REPOSITORY/compare/$PREV...$TAG"
           else
             CHANGES="https://github.com/$GITHUB_REPOSITORY/commits/$TAG"
           fi
           cat > release-notes.md <<EOF
-          Install: double click \`ppooll.maxpack\`, or drag onto the Max console.
+          Install: drag \`ppooll.maxpack\` onto the Max console.
 
           Changes: $CHANGES
           EOF
+          # Creates the tag on the release commit (tags made with GITHUB_TOKEN
+          # don't trigger this workflow again).
           gh release create "$TAG" ppooll.maxpack ppooll.zip \
+            --target "$(git rev-parse HEAD)" \
             --title "$TAG" \
-            --notes-file release-notes.md \
-            --verify-tag
+            --notes-file release-notes.md
