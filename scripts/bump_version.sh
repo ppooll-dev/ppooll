@@ -20,7 +20,8 @@ if [ ! -f "package-info.json" ]; then
 fi
 
 echo "Updating package-info.json version to $NEW_VERSION..."
-sed -i '' "s/\"version\": \".*\"/\"version\": \"$NEW_VERSION\"/" package-info.json
+jq --arg v "$NEW_VERSION" '.version = $v' package-info.json > package-info.json.tmp
+mv package-info.json.tmp package-info.json
 
 grep '"version"' package-info.json
 
