@@ -1,5 +1,5 @@
 {
-    "window": [ 476, 458, 726, 720 ],
+    "window": [ 476, 458, 726, 528 ],
     "act": {
         "patching_rect": [ 0, 0, 51.0078125, 16 ],
         "hidden": 0
@@ -167,11 +167,6 @@
         "usebgoncolor": 1,
         "usetextovercolor": 0
     },
-    "presets": {
-        "patching_rect": [ 59, 0, 191, 16 ],
-        "hidden": 0,
-        "boxsize": 16
-    },
     "inMin": {
         "patching_rect": [ 53, 36, 70, 16 ],
         "hidden": 0,
@@ -197,5 +192,10 @@
         "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
         "textcolor": [ 0, 0, 0, 1 ],
         "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
+    },
+    "presets": {
+        "patching_rect": [ 59, 0, 191, 16 ],
+        "hidden": 0,
+        "boxsize": 16
     }
 }

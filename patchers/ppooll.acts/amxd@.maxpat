@@ -4,12 +4,12 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 2,
+            "revision": 4,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 360.0, 210.0, 154.0, 104.0 ],
+        "rect": [ 325.0, 196.0, 154.0, 104.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "amxd@1",
         "boxes": [
@@ -62,9 +62,11 @@
             },
             {
                 "box": {
-                    "annotation": "midi-channel",
+                    "annotation": "midi-channel-out",
                     "fontface": 0,
+                    "fontsize": 10.0,
                     "format": [ 1 ],
+                    "hint": "midi-channel-out",
                     "id": "obj-79",
                     "max": 16.0,
                     "maxclass": "ll_number",
@@ -74,7 +76,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 137.0, 33.0, 16.0, 16.0 ],
+                    "patching_rect": [ 137.0, 33.0, 16.0, 19.0 ],
                     "slidercolor": [ 0.0, 0.0, 0.0, 0.0 ],
                     "slidermax": 16.0,
                     "slidermin": 1.0,
@@ -86,6 +88,7 @@
                 "box": {
                     "annotation": "ramp time between presets. click on ppooll in the ho_st to find info about it",
                     "fontface": 0,
+                    "fontsize": 11.0,
                     "format": [ 10000, 1000, ":", 100, 10, 1 ],
                     "id": "obj-230",
                     "maxclass": "ll_number",
@@ -94,7 +97,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 0.0, 33.0, 42.0, 19.0 ],
+                    "patching_rect": [ 0.0, 33.0, 41.0, 19.0 ],
                     "varname": "preset-ramp"
                 }
             },
@@ -113,7 +116,9 @@
                 "box": {
                     "annotation": "midi-channel",
                     "fontface": 0,
+                    "fontsize": 10.0,
                     "format": [ 1 ],
+                    "hint": "midi-channel-in",
                     "id": "obj-399",
                     "max": 16.0,
                     "maxclass": "ll_number",
@@ -123,7 +128,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 80.0, 33.0, 16.0, 16.0 ],
+                    "patching_rect": [ 80.0, 33.0, 15.0, 19.0 ],
                     "slidercolor": [ 0.0, 0.0, 0.0, 0.0 ],
                     "slidermax": 16.0,
                     "sliderstyle": 2,
@@ -263,28 +268,22 @@
             },
             {
                 "box": {
-                    "allowdrag": 0,
                     "annotation": "vst-folder",
                     "arrow": 0,
                     "bgcolor": [ 0.0, 0.0, 0.0, 1.0 ],
-                    "bgfillcolor_angle": 270.0,
-                    "bgfillcolor_autogradient": 0.0,
-                    "bgfillcolor_color": [ 0.0, 0.0, 0.0, 1.0 ],
-                    "bgfillcolor_color1": [ 0.376471, 0.384314, 0.4, 1.0 ],
-                    "bgfillcolor_color2": [ 0.290196, 0.309804, 0.301961, 1.0 ],
-                    "bgfillcolor_proportion": 0.39,
-                    "bgfillcolor_type": "color",
+                    "fontface": 0,
+                    "fontname": "Arial",
                     "fontsize": 10.0,
                     "id": "obj-6",
                     "items": [ "def_folders", ",", "all", ",", "-" ],
-                    "maxclass": "umenu",
+                    "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
-                    "outlettype": [ "int", "", "" ],
+                    "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
                     "patching_rect": [ 63.0, 0.0, 61.78125, 20.0 ],
                     "pattrmode": 1,
-                    "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "prefix": "",
                     "varname": "vst-folder"
                 }
             },
@@ -302,7 +301,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -323,26 +322,6 @@
                             },
                             {
                                 "box": {
-                                    "id": "obj-7",
-                                    "maxclass": "newobj",
-                                    "numinlets": 2,
-                                    "numoutlets": 0,
-                                    "patching_rect": [ 839.0, 239.0, 79.0, 22.0 ],
-                                    "text": "ll.s vst_name"
-                                }
-                            },
-                            {
-                                "box": {
-                                    "id": "obj-8",
-                                    "maxclass": "newobj",
-                                    "numinlets": 2,
-                                    "numoutlets": 0,
-                                    "patching_rect": [ 773.0, 239.0, 65.0, 22.0 ],
-                                    "text": "ll.s vst_AU"
-                                }
-                            },
-                            {
-                                "box": {
                                     "id": "obj-71",
                                     "maxclass": "newobj",
                                     "numinlets": 1,
@@ -352,7 +331,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 4,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -455,7 +434,7 @@
                                             }
                                         ]
                                     },
-                                    "patching_rect": [ 889.0, 202.0, 29.0, 22.0 ],
+                                    "patching_rect": [ 865.0, 238.5, 29.0, 22.0 ],
                                     "text": "p pf"
                                 }
                             },
@@ -476,7 +455,7 @@
                                     "maxclass": "newobj",
                                     "numinlets": 2,
                                     "numoutlets": 0,
-                                    "patching_rect": [ 691.0, 260.0, 56.0, 22.0 ],
+                                    "patching_rect": [ 710.0, 264.0, 56.0, 22.0 ],
                                     "text": "ll.s to_v8"
                                 }
                             },
@@ -527,227 +506,6 @@
                             },
                             {
                                 "box": {
-                                    "id": "obj-42",
-                                    "linecount": 2,
-                                    "maxclass": "newobj",
-                                    "numinlets": 1,
-                                    "numoutlets": 1,
-                                    "outlettype": [ "" ],
-                                    "patcher": {
-                                        "fileversion": 1,
-                                        "appversion": {
-                                            "major": 9,
-                                            "minor": 1,
-                                            "revision": 2,
-                                            "architecture": "x64",
-                                            "modernui": 1
-                                        },
-                                        "classnamespace": "box",
-                                        "rect": [ 790.0, 343.0, 688.0, 550.0 ],
-                                        "boxes": [
-                                            {
-                                                "box": {
-                                                    "comment": "",
-                                                    "id": "obj-2",
-                                                    "index": 1,
-                                                    "maxclass": "outlet",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 0,
-                                                    "patching_rect": [ 44.0, 507.0, 30.0, 30.0 ]
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "id": "obj-17",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "patching_rect": [ 44.0, 476.0, 115.0, 22.0 ],
-                                                    "text": "prepend setAutoList"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "code": "let plugs = [];\r\n\r\nfunction clear(){\r\n\tplugs = [];\r\n}\r\n\r\nfunction bang(){\r\n\toutlet(0, ...plugs);\r\n}\r\n\r\nfunction append(plug){\r\n\tplugs.push(plug)\r\n}",
-                                                    "filename": "none",
-                                                    "fontface": 0,
-                                                    "fontname": "<Monospaced>",
-                                                    "fontsize": 12.0,
-                                                    "id": "obj-14",
-                                                    "maxclass": "v8.codebox",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "patching_rect": [ 44.0, 243.0, 424.0, 222.0 ],
-                                                    "saved_object_attributes": {
-                                                        "parameter_enable": 0
-                                                    }
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "fontsize": 13.0,
-                                                    "id": "obj-8",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "patching_rect": [ 78.0, 207.0, 112.0, 23.0 ],
-                                                    "text": "prepend append"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "fontsize": 13.0,
-                                                    "id": "obj-9",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 7,
-                                                    "numoutlets": 7,
-                                                    "outlettype": [ "", "", "", "", "", "", "" ],
-                                                    "patching_rect": [ 78.0, 166.0, 564.0, 23.0 ],
-                                                    "text": "route plug_vst plug_au plug_vst3 plug_vst_blacklisted plug_vst3_blacklisted plug_au_blacklisted"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "id": "obj-7",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 2,
-                                                    "outlettype": [ "", "" ],
-                                                    "patching_rect": [ 78.0, 134.0, 49.0, 22.0 ],
-                                                    "text": "vstscan"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "id": "obj-5",
-                                                    "maxclass": "button",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "bang" ],
-                                                    "parameter_enable": 0,
-                                                    "patching_rect": [ 44.0, 62.0, 24.0, 24.0 ]
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "id": "obj-3",
-                                                    "maxclass": "newobj",
-                                                    "numinlets": 1,
-                                                    "numoutlets": 5,
-                                                    "outlettype": [ "bang", "listau", "listvst3", "listvst", "clear" ],
-                                                    "patching_rect": [ 44.0, 96.0, 156.0, 22.0 ],
-                                                    "text": "t b listau listvst3 listvst clear"
-                                                }
-                                            },
-                                            {
-                                                "box": {
-                                                    "comment": "",
-                                                    "id": "obj-1",
-                                                    "index": 1,
-                                                    "maxclass": "inlet",
-                                                    "numinlets": 0,
-                                                    "numoutlets": 1,
-                                                    "outlettype": [ "" ],
-                                                    "patching_rect": [ 44.0, 21.0, 30.0, 30.0 ]
-                                                }
-                                            }
-                                        ],
-                                        "lines": [
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-5", 0 ],
-                                                    "source": [ "obj-1", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-17", 0 ],
-                                                    "source": [ "obj-14", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-2", 0 ],
-                                                    "source": [ "obj-17", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-14", 0 ],
-                                                    "source": [ "obj-3", 4 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-14", 0 ],
-                                                    "source": [ "obj-3", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-7", 0 ],
-                                                    "source": [ "obj-3", 3 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-7", 0 ],
-                                                    "source": [ "obj-3", 2 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-7", 0 ],
-                                                    "source": [ "obj-3", 1 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-3", 0 ],
-                                                    "source": [ "obj-5", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-9", 0 ],
-                                                    "source": [ "obj-7", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-14", 0 ],
-                                                    "source": [ "obj-8", 0 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-8", 0 ],
-                                                    "source": [ "obj-9", 2 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-8", 0 ],
-                                                    "source": [ "obj-9", 1 ]
-                                                }
-                                            },
-                                            {
-                                                "patchline": {
-                                                    "destination": [ "obj-8", 0 ],
-                                                    "source": [ "obj-9", 0 ]
-                                                }
-                                            }
-                                        ]
-                                    },
-                                    "patching_rect": [ 743.0, 202.0, 50.0, 35.0 ],
-                                    "text": "p vstscan"
-                                }
-                            },
-                            {
-                                "box": {
                                     "id": "obj-41",
                                     "maxclass": "newobj",
                                     "numinlets": 1,
@@ -770,7 +528,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 4,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -937,7 +695,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 2,
+                                                            "revision": 4,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1204,7 +962,7 @@
                                             }
                                         ]
                                     },
-                                    "patching_rect": [ 669.0, 202.0, 72.0, 35.0 ],
+                                    "patching_rect": [ 710.0, 219.0, 72.0, 35.0 ],
                                     "text": "p def_folders"
                                 }
                             },
@@ -1220,7 +978,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 4,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1273,7 +1031,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 1,
-                                                            "revision": 2,
+                                                            "revision": 4,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1672,7 +1430,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 1,
                                     "outlettype": [ "collectParams" ],
-                                    "patching_rect": [ 547.0, 245.0, 86.0, 35.0 ],
+                                    "patching_rect": [ 513.0, 251.5, 86.0, 35.0 ],
                                     "text": "t collectParams"
                                 }
                             },
@@ -1683,7 +1441,7 @@
                                     "numinlets": 2,
                                     "numoutlets": 1,
                                     "outlettype": [ "bang" ],
-                                    "patching_rect": [ 546.0, 219.0, 48.0, 22.0 ],
+                                    "patching_rect": [ 512.0, 225.5, 48.0, 22.0 ],
                                     "text": "del 100"
                                 }
                             },
@@ -1692,6 +1450,7 @@
                                     "fontname": "Arial",
                                     "fontsize": 12.0,
                                     "id": "obj-32",
+                                    "linecount": 2,
                                     "maxclass": "newobj",
                                     "numinlets": 1,
                                     "numoutlets": 0,
@@ -1700,7 +1459,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 4,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -2223,7 +1982,7 @@
                                             }
                                         ]
                                     },
-                                    "patching_rect": [ 661.0, 293.0, 136.0, 22.0 ],
+                                    "patching_rect": [ 574.0, 208.0, 121.20000000000005, 35.0 ],
                                     "text": "p check_pointing_acts",
                                     "varname": "check_pointing_acts"
                                 }
@@ -2232,11 +1991,11 @@
                                 "box": {
                                     "id": "obj-6",
                                     "maxclass": "newobj",
-                                    "numinlets": 9,
-                                    "numoutlets": 9,
-                                    "outlettype": [ "", "", "", "", "", "", "", "", "" ],
-                                    "patching_rect": [ 424.0, 174.0, 484.0, 22.0 ],
-                                    "text": "route ll_pm coll collectParams check_pointing_acts def_folders vstscan vst_AU vst_name"
+                                    "numinlets": 6,
+                                    "numoutlets": 6,
+                                    "outlettype": [ "", "", "", "", "", "" ],
+                                    "patching_rect": [ 424.0, 174.0, 343.0, 22.0 ],
+                                    "text": "route ll_pm coll collectParams check_pointing_acts def_folders"
                                 }
                             },
                             {
@@ -2338,7 +2097,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 4,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -2547,7 +2306,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 2,
+                                            "revision": 4,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -2644,6 +2403,7 @@
                                                     "enablehscroll": 0,
                                                     "enablevscroll": 0,
                                                     "id": "obj-8",
+                                                    "linecount": 4,
                                                     "lockeddragscroll": 0,
                                                     "lockedsize": 0,
                                                     "maxclass": "newobj",
@@ -2651,7 +2411,7 @@
                                                     "numoutlets": 3,
                                                     "offset": [ 0.0, 0.0 ],
                                                     "outlettype": [ "multichannelsignal", "", "" ],
-                                                    "patching_rect": [ 0.0, 0.0, 296.0, 22.0 ],
+                                                    "patching_rect": [ 0.0, 0.0, 100.0, 0.0 ],
                                                     "saved_attribute_attributes": {
                                                         "valueof": {
                                                             "parameter_invisible": 1,
@@ -2802,7 +2562,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-9", 0 ],
-                                    "midpoints": [ 556.5, 299.5384375, 409.55999999999995, 299.5384375, 409.55999999999995, 140.3353125, 433.5, 140.3353125 ],
+                                    "midpoints": [ 522.5, 299.5384375, 409.55999999999995, 299.5384375, 409.55999999999995, 140.3353125, 433.5, 140.3353125 ],
                                     "source": [ "obj-2", 0 ]
                                 }
                             },
@@ -2880,12 +2640,6 @@
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-28", 0 ],
-                                    "source": [ "obj-42", 0 ]
-                                }
-                            },
-                            {
-                                "patchline": {
                                     "destination": [ "obj-2", 0 ],
                                     "source": [ "obj-5", 0 ]
                                 }
@@ -2916,12 +2670,6 @@
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-42", 0 ],
-                                    "source": [ "obj-6", 5 ]
-                                }
-                            },
-                            {
-                                "patchline": {
                                     "destination": [ "obj-5", 0 ],
                                     "source": [ "obj-6", 2 ]
                                 }
@@ -2940,20 +2688,8 @@
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-7", 0 ],
-                                    "source": [ "obj-6", 7 ]
-                                }
-                            },
-                            {
-                                "patchline": {
                                     "destination": [ "obj-71", 0 ],
-                                    "source": [ "obj-6", 8 ]
-                                }
-                            },
-                            {
-                                "patchline": {
-                                    "destination": [ "obj-8", 0 ],
-                                    "source": [ "obj-6", 6 ]
+                                    "source": [ "obj-6", 5 ]
                                 }
                             },
                             {
@@ -2989,19 +2725,24 @@
             },
             {
                 "box": {
-                    "allowdrag": 0,
-                    "annotation": "midi-port",
+                    "annotation": "midi-port-in",
                     "arrow": 0,
+                    "bgcolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "color": [ 0.0, 0.0, 0.0, 1.0 ],
+                    "fontface": 0,
+                    "fontname": "Arial",
                     "fontsize": 9.0,
+                    "hint": "midi-port-in",
                     "id": "obj-80",
                     "items": [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "Network Session 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "Scarlett 18i20 USB", ",", "MIDISPORT 1x1 Port A", ",", "Minilab3 MIDI", ",", "Minilab3 DIN THRU", ",", "Minilab3 MCU/HUI", ",", "Minilab3 ALV", ",", "to Max 1", ",", "to Max 2", ",", "Music Mouse", ",", "Chiral.amxd" ],
-                    "maxclass": "umenu",
+                    "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
-                    "outlettype": [ "int", "", "" ],
+                    "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 37.0, 33.0, 44.0, 19.0 ],
+                    "patching_rect": [ 43.0, 34.0, 42.0, 18.0 ],
                     "pattrmode": 1,
+                    "prefix": "",
                     "varname": "midi-port-in"
                 }
             },
@@ -3045,20 +2786,6 @@
                         "open!": 910,
                         "presets": 1016,
                         "preset-ramp": 1017,
-                        "Check": 100,
-                        "Feed": 101,
-                        "Level": 102,
-                        "Mode": 103,
-                        "Time": 104,
-                        "live.dial[1]": 100,
-                        "live.text[3]": 101,
-                        "Attack Time": 102,
-                        "Depth": 103,
-                        "Release Time": 104,
-                        "Side Chain": 105,
-                        "Solo Side Chain": 106,
-                        "Stereo Link": 107,
-                        "Stereo Mode": 108,
                         "ll.blues::status": 1,
                         "ll.blues::outputs~": 2,
                         "ll.blues::outputsMix~": 3,
@@ -3121,7 +2848,7 @@
                     "outlettype": [ "", "", "", "" ],
                     "patching_rect": [ 278.0, 365.0, 107.0, 22.0 ],
                     "restore": {
-                        "midi-channel-in": [ 0.0 ],
+                        "midi-channel-in": [ 1.0 ],
                         "midi-channel-out": [ 1.0 ],
                         "midi-port-in": [ "-no-" ],
                         "midi-port-out": [ "-no-" ],
@@ -3136,19 +2863,24 @@
             },
             {
                 "box": {
-                    "allowdrag": 0,
-                    "annotation": "midi-port",
+                    "annotation": "midi-port-out",
                     "arrow": 0,
+                    "bgcolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "color": [ 0.0, 0.0, 0.0, 1.0 ],
+                    "fontface": 0,
+                    "fontname": "Arial",
                     "fontsize": 9.0,
+                    "hint": "midi-port-out",
                     "id": "obj-81",
-                    "items": [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "AU DLS Synth 1", ",", "Network Session 1", ",", "IAC Driver Bus 1", ",", "IAC Driver Bus 2", ",", "Scarlett 18i20 USB", ",", "from Max 1", ",", "from Max 2" ],
-                    "maxclass": "umenu",
+                    "items": [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "AU DLS Synth 1", ",", "Network Session 1", ",", "Scarlett 18i20 USB", ",", "from Max 1", ",", "from Max 2" ],
+                    "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
-                    "outlettype": [ "int", "", "" ],
+                    "outlettype": [ "", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 94.0, 33.0, 45.0, 19.0 ],
+                    "patching_rect": [ 97.0, 34.0, 40.0, 18.0 ],
                     "pattrmode": 1,
+                    "prefix": "",
                     "varname": "midi-port-out"
                 }
             },
@@ -3212,6 +2944,14 @@
         ],
         "parameters": {
             "obj-18::obj-3::obj-8": [ "amxd", "amxd", 0 ],
+            "parameterbanks": {
+                "0": {
+                    "index": 0,
+                    "name": "",
+                    "parameters": [ "-", "-", "-", "-", "-", "-", "-", "-" ],
+                    "buttons": [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+                }
+            },
             "inherited_shortname": 1
         },
         "autosave": 0,

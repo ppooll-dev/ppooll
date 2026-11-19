@@ -86,7 +86,7 @@ function set_type(v) {
 // Copy Buffers
 declareattribute("copy_buffers", {
     style: "onoff",
-    label: "copy buffers",
+    label: "copy file buffers",
     setter: "set_copy_buffers",
 });
 function set_copy_buffers(v) {
@@ -97,7 +97,7 @@ function set_copy_buffers(v) {
 // Write Files
 declareattribute("write_files", {
     style: "onoff",
-    label: "write files",
+    label: "overwrite file buffers",
     setter: "set_write_files",
 });
 function set_write_files(v) {
@@ -107,7 +107,7 @@ function set_write_files(v) {
 // Write Sample Buffers
 declareattribute("write_sample_buffers", {
     style: "onoff",
-    label: "write sample buffers",
+    label: "create files from sample buffers",
     setter: "set_write_sample_buffers",
 });
 function set_write_sample_buffers(v) {

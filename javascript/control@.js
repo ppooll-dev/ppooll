@@ -35,7 +35,8 @@ const mode_order = [
 	"moveC",
 	"FOXrel",
 	"rel1",
-	"rel64"
+	"rel64",
+    "accum"
 ];
 const actpars = {}; // state of control@ params
 const header_fix = [

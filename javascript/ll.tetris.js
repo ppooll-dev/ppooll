@@ -200,20 +200,24 @@ function colorpicker(...v){
 
 //_____________________________________________________________________________write
 
-function write(){    
-	let act_class = ll_global.state[act_name]["class"];
-	let path = `${ll_global.paths["user"]}/${act_class}T`;
-	this.patcher.getnamed("lldialog").subpatcher().getnamed("in_route").message("path", "off");
-	this.patcher.getnamed("lldialog").subpatcher().getnamed("in_route").message("bang");
+function write(){
+	messnamed(act_name, "v8", "set_tetris_menu", "write");
 }
-function write_dialog(p){
-	tetrisDict.parse(JSON.stringify(actTetris));
-	messnamed(act_name, "v8", "write_tetris", p);
-}
-function write_default(){
-	tetrisDict.parse(JSON.stringify(actTetris));
-	messnamed(act_name, "v8", "write_tetris", "ƒ default");
-}
+
+// function write(){    
+// 	let act_class = ll_global.state[act_name]["class"];
+// 	let path = `${ll_global.paths["user"]}/${act_class}T`;
+// 	this.patcher.getnamed("lldialog").subpatcher().getnamed("in_route").message("path", "off");
+// 	this.patcher.getnamed("lldialog").subpatcher().getnamed("in_route").message("bang");
+// }
+// function write_dialog(p){
+// 	tetrisDict.parse(JSON.stringify(actTetris));
+// 	messnamed(act_name, "v8", "write_tetris", p);
+// }
+// function write_default(){
+// 	tetrisDict.parse(JSON.stringify(actTetris));
+// 	messnamed(act_name, "v8", "write_tetris", "ƒ default");
+// }
 /*
 outlet(0,"bang");
 tpp.getnamed("act_menu").message(2);

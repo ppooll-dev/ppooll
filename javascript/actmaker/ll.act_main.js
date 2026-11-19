@@ -54,6 +54,7 @@ let showHoverIcons = true;
 let is_llenviread = 0; // [r llenviread]
 
 let prev_pres_menu = "(presets)";
+let prev_tetris_menu = "(tetris)";
 
 // preset TEXT
 let TEXT_fontsize = 8;
@@ -791,7 +792,11 @@ function refresh_menu(
 
     const userFiles = ll
         .getFilesInFolder(userPath, fileTypes, omitExt)
-        .filter((f) => f && f !== "");
+        .filter((f) => f && f !== "")
+        .filter(f => ll.getExtension(f)[1] 
+            ? ['fxp', 'fxp'].indexOf(ll.getExtension(f)[1]) === -1 : // hack for files in vst@P
+            true
+        );
     const factoryFiles = ll
         .getFilesInFolder(factoryPath, fileTypes, omitExt)
         .filter((f) => f && f !== "")
@@ -815,6 +820,29 @@ function set_tetris_menu(selection) {
 
     tetris_menu.message("clearchecks");
     tetris_menu.message("checksymbol", selection, 1);
+
+    if (selection === "write" && !is_llenviread) {
+        // post(selection, prev_pres_menu, "\n");
+        // show popup with last selected name
+        // messnamed("ll_preset_menu", act_name_index, "write", prev_pres_menu);
+        const dialog = this.patcher
+            .getnamed("dialog")
+            .subpatcher()
+            .getnamed("route");
+        dialog.message("return", "write_tetris");
+        dialog.message("path", `${ll_global.paths.user}/${act_args.name}T`);
+        let write_tetris_name = prev_tetris_menu;
+        if (
+            write_tetris_name === "_" ||
+            write_tetris_name === "(tetris)" ||
+            write_tetris_name === ""
+        )
+            write_tetris_name = "_";
+
+        dialog.message("set", write_tetris_name);
+        dialog.message("bang");
+        return;
+    }
 
     // load tetris layout
     const isFactory = selection.startsWith("ƒ ");
@@ -1008,12 +1036,14 @@ function write_tetris(name) {
     tetris_refresh_menu()
 
     // check in tetris_menu
+    prev_tetris_menu = name;
+
     tetris_menu.message("clearchecks");
     tetris_menu.message("checksymbol", name, 1);
 }
 
 function tetris_refresh_menu() {
-    const additionalItems = [];
+    const additionalItems = ['-', 'write'];
     const current = tetris_menu.getvalueof();
     refresh_menu("tetris", [], "T", tetris_menu, additionalItems, false);
     tetris_menu.message("clearchecks");
@@ -1099,14 +1129,31 @@ function read_preset_path(fullPath, presetName = 0) {
     }
 	
 	let pat = act_patcher.getnamed("pat");
-	
+    const presetDict = new Dict();
+    presetDict.import_json(fullPath);
+
+    const presetJson = JSON.parse(presetDict.stringify());
+
+    // recall all parameter values from slot 1000 directly from JSON
+    //      this includes parameters where active=0
+    if(presetJson.pattrstorage.slots["1000"]) {
+        const presetState = presetJson.pattrstorage.slots["1000"].data;
+        ll_global.pat[act_name_index].getprioritylist().forEach(p => {
+            if(["act::pres_menu", "act::title_menu"].indexOf(p.name) > -1) return;
+            const paramObj = act_patcher.getnamed(p.name);
+            if(paramObj) 
+                paramObj.setvalueof(presetState[p.name]);
+        })
+    }
+
+
 	// ####################################################################  active hack
     // set all active flags to 1
 	ll_global.pat[act_name_index].getclientlist().forEach((client) => {
-		pat.message("active",client,1);
+		pat.message("active", client, 1);
 		let c_arr = client.split("::"); // parameter is in a subpatch
 		if (c_arr.length > 1){
-			pat.message("active",c_arr[0],1);
+			pat.message("active", c_arr[0], 1);
 			// ..even the active-flag for a subpatch set to 1 !!
 		}
 	});
@@ -1114,13 +1161,9 @@ function read_preset_path(fullPath, presetName = 0) {
 	// which stores active-flags, but only if they are 0.
 	// reading the preset-file will set active flags to 0 if so defined
 	// ####################################################################  /active hack
-	pat.message("read", fullPath);	
+    pat.message("read", fullPath);	
     pat.message(1000);
 
-    const presetDict = new Dict();
-    presetDict.import_json(fullPath);
-
-    const presetJson = JSON.parse(presetDict.stringify());
     if (anySlotHasActiveStore(presetJson)) {
         isActiveStore = 1;
         title_menu.message(

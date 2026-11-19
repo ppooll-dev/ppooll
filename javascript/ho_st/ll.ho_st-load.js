@@ -62,6 +62,9 @@ function checkVersion(thisVersion, latestVersion) {
         OUTPUT.push(
             "--------------------------up-to-date!------------------------------------------------------"
         );
+        this.patcher.parentpatcher
+            .getnamed("is_latest_version")
+            .message("set", "up to date!");
     }
 
     this.patcher.parentpatcher

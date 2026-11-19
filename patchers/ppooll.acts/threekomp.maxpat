@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 357.0, 330.0, 303.0, 218.0 ],
+        "rect": [ 598.0, 196.0, 303.0, 218.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "threekomp1",
         "boxes": [
@@ -46,7 +46,7 @@
                     "format": [ 1 ],
                     "id": "obj-21",
                     "label": [ 0 ],
-                    "max": 2.0,
+                    "max": 6.0,
                     "maxclass": "ll_number",
                     "min": 1.0,
                     "numinlets": 1,
@@ -55,7 +55,7 @@
                     "parameter_enable": 0,
                     "patching_rect": [ 0.0, 178.0, 18.0, 12.0 ],
                     "slidercolor": [ 1.0, 0.0, 0.0, 1.0 ],
-                    "slidermax": 2.0,
+                    "slidermax": 6.0,
                     "slidermin": 1.0,
                     "sliderstyle": 2,
                     "varname": "displaychan"
@@ -240,7 +240,7 @@
             {
                 "box": {
                     "fontface": 0,
-                    "format": [ 1.3 ],
+                    "format": [ 10000, 1000, ":", 100, 10, 1 ],
                     "id": "obj-48",
                     "label": [ "r" ],
                     "mark": 0.0,
@@ -251,12 +251,13 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 256.0, 16.0, 50.0, 13.0 ],
+                    "patching_rect": [ 229.0, 16.0, 77.0, 13.0 ],
                     "slidercolor": [ 1.0, 0.0, 0.0, 1.0 ],
                     "slidercolornofocus": [ 1.0, 0.0, 0.0, 0.5 ],
+                    "slidermax": 30000.0,
                     "sliderstyle": 0,
                     "textcolornofocus": [ 0.0, 0.0, 0.0, 1.0 ],
-                    "varname": "amp"
+                    "varname": "ramp"
                 }
             },
             {
@@ -814,7 +815,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 154.0, 16.0, 100.0, 13.0 ],
+                    "patching_rect": [ 141.0, 16.0, 86.0, 13.0 ],
                     "slidermax": 44100.0,
                     "sliderstyle": 2,
                     "varname": "cross2"
@@ -832,7 +833,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 52.0, 16.0, 100.0, 13.0 ],
+                    "patching_rect": [ 52.0, 16.0, 87.0, 13.0 ],
                     "slidermax": 44100.0,
                     "sliderstyle": 2,
                     "varname": "cross1"
@@ -1000,7 +1001,7 @@
                         "ll.blues::levels": 5
                     },
                     "saved_object_attributes": {
-                        "client_rect": [ 897, 213, 1512, 873 ],
+                        "client_rect": [ 434, 164, 1512, 407 ],
                         "parameter_enable": 0,
                         "parameter_mappable": 0,
                         "storage_rect": [ 0, 0, 640, 240 ]
@@ -1049,40 +1050,40 @@
                     "outlettype": [ "", "", "", "" ],
                     "patching_rect": [ 485.0, 297.0, 107.0, 22.0 ],
                     "restore": {
-                        "1attack": [ 50.0 ],
+                        "1attack": [ 15.0 ],
                         "1bypass": [ 0 ],
-                        "1knee": [ 3.0 ],
+                        "1knee": [ 6.0 ],
                         "1makeup": [ 0.0 ],
                         "1mute": [ 0 ],
-                        "1ratio": [ 2.0 ],
+                        "1ratio": [ 4.0 ],
                         "1release": [ 150.0 ],
-                        "1sidechain": [ 1 ],
+                        "1sidechain": [ 0 ],
                         "1threshold": [ 0.0 ],
-                        "2attack": [ 50.0 ],
+                        "2attack": [ 15.0 ],
                         "2bypass": [ 0 ],
-                        "2knee": [ 3.0 ],
+                        "2knee": [ 6.0 ],
                         "2makeup": [ 0.0 ],
                         "2mute": [ 0 ],
-                        "2ratio": [ 2.0 ],
+                        "2ratio": [ 4.0 ],
                         "2release": [ 150.0 ],
-                        "2sidechain": [ 1 ],
+                        "2sidechain": [ 0 ],
                         "2threshold": [ 0.0 ],
-                        "3attack": [ 50.0 ],
+                        "3attack": [ 15.0 ],
                         "3bypass": [ 0 ],
-                        "3knee": [ 3.0 ],
+                        "3knee": [ 6.0 ],
                         "3makeup": [ 0.0 ],
                         "3mute": [ 0 ],
-                        "3ratio": [ 2.0 ],
+                        "3ratio": [ 4.0 ],
                         "3release": [ 150.0 ],
-                        "3sidechain": [ 1 ],
+                        "3sidechain": [ 0 ],
                         "3threshold": [ 0.0 ],
-                        "amp": [ 100.0 ],
                         "cross1": [ 500 ],
                         "cross2": [ 2000 ],
                         "displaychan": [ 1.0 ],
                         "lookahead": [ 480.0 ],
                         "preset-ramp": [ 0.0 ],
-                        "presets": [ 0 ]
+                        "presets": [ 0 ],
+                        "ramp": [ 30000.0 ]
                     },
                     "text": "autopattr autopattr",
                     "varname": "autopattr"
@@ -1429,7 +1430,7 @@
                                             }
                                         ]
                                     },
-                                    "patching_rect": [ 41.0, 145.0, 28.0, 22.0 ],
+                                    "patching_rect": [ 41.0, 123.0, 28.0, 22.0 ],
                                     "text": "p ui"
                                 }
                             },
@@ -1765,8 +1766,8 @@
                                     "numinlets": 2,
                                     "numoutlets": 7,
                                     "outlettype": [ "multichannelsignal", "multichannelsignal", "multichannelsignal", "multichannelsignal", "multichannelsignal", "multichannelsignal", "multichannelsignal" ],
-                                    "patching_rect": [ 176.0, 234.0, 381.0, 22.0 ],
-                                    "text": "mc.poly~ threekomp_poly_250908.maxpat @parallel 1 @args #0",
+                                    "patching_rect": [ 176.0, 234.0, 368.0, 22.0 ],
+                                    "text": "mc.poly~ threekomp_poly_260616.maxpat @parallel 1 @args #0",
                                     "varname": "poly~"
                                 }
                             },
@@ -1914,7 +1915,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-12", 1 ],
-                                    "midpoints": [ 380.5, 212.0, 547.5, 212.0 ],
+                                    "midpoints": [ 380.5, 212.0, 534.5, 212.0 ],
                                     "source": [ "obj-2", 0 ]
                                 }
                             },

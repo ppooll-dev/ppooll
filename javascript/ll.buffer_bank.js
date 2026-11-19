@@ -254,6 +254,8 @@ function update_buffer_list() {
 		
 		ui.buffer_list.message("set", 0, bh.length, "new");
         outlet(0, "buffer_list", "select", 0, bh.length); // needs to get defered...
+
+        ui.buffer_list.message("col", 0, "width", ui.buffer_list.rect[2] - 30)
     }
 
     outlet_dictionary(1, { buffers: bh });

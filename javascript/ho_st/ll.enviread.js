@@ -165,6 +165,7 @@ function setloc(a) {
 //##################################################################____params
 function loadParams() {
     messnamed("llenviread", 1);
+    ll_global.enviread = 1;
     paramsCount = 0;
     messnamed("llenviread_getparams", PARAMS_DELAY);
 }
@@ -194,6 +195,7 @@ function params() { //called from max after delay
     } else {
         loadPresets();
         messnamed("llenviread", 0);
+        ll_global.enviread = 0;
         if (environment.ho_st1 && environment.ho_st1["audioON/OFF"] === 1)
             outlet(0, "dac~", 1);
         outlet(0, "done!");
