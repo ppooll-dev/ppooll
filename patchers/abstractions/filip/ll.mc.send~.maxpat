@@ -205,7 +205,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 860.333328247070312, 292.0, 59.0, 22.0 ],
-					"text" : "s ll_audio"
+					"text" : "v8 ll.audio_rebuild.js"
 				}
 
 			}

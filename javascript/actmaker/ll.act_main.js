@@ -118,15 +118,22 @@ let titlebarShown,
 let title_menu_options = {};
 let title_menu_options_list = [];
 
+let ready_receivers = [];
+
 // ######################################################################## general Handlers
 // ##########################################################################################
 // ##########################################################################################
 // ##########################################################################################
 
+function request_ready(r_address) {
+    if (ready_receivers.indexOf(r_address) < 0) ready_receivers.push(r_address);
+    if (isReady) messnamed(r_address, "act_ready");   // already ready: answer now
+}
+
 function set_isReady(v) {
     isReady = v;
     if (isReady) {
-        post("already ready!\n");
+        post("already ready!", act_name_index, "\n");
         bang(true);
     }
 }
@@ -363,6 +370,7 @@ function bang(alreadyRegistered = false) {
     windpos((act_index - 1) * -16, (act_index - 1) * 16);
 
     isReady = 1;
+    ready_receivers.forEach((r) => messnamed(r, "act_ready"));
     // post("ready\n");
     mgraphics.redraw();
 }
