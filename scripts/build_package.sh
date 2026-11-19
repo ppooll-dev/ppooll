@@ -2,112 +2,78 @@
 
 # =========================
 # build_package.sh
-# Build, Sign, Notarize, and Package ppooll
+# Assemble and package ppooll
+#
+# No signing here: ll_externals releases are already signed, and
+# verify_externals.sh checks every .mxo before release.
+#
+# The bundled ll_externals release is the one tagged at the submodule's commit
+# (externals/ll_externals), or the closest earlier v* tag, with a warning.
+#
+# Optional:
+#   LL_EXTERNALS_TAG   Bundle this ll_externals release instead
+#   LL_EXTERNALS_PATH  Submodule path (default: externals/ll_externals)
+#
+# Outputs (repo root): ppooll.maxpack, ppooll.zip
 # =========================
 
-set -e
+set -euo pipefail
 
-# ===== Load Environment Variables =====
-if [ -f ".env" ]; then
-    echo "Loading environment variables from .env file..."
-    set -a
-    source .env
-    set +a
-fi
-
-if [ -z "$PPOOLL_DEVELOPER_ID" ] || [ -z "$PPOOLL_NOTARIZATION_PROFILE" ]; then
-    echo "Error: Required environment variables PPOOLL_DEVELOPER_ID or PPOOLL_NOTARIZATION_PROFILE not set."
-    exit 1
-fi
-
-# ===== Path Setup =====
 REPO_ROOT="$(pwd)"
 PACKAGE_ROOT="$REPO_ROOT/package"
 PACKAGE_DIR="$PACKAGE_ROOT/ppooll"
-ZIP_NAME="ppooll.zip"
 
-# ===== Clean old builds =====
+LL_EXTERNALS_PATH="${LL_EXTERNALS_PATH:-externals/ll_externals}"
+
+if [ -z "${LL_EXTERNALS_TAG:-}" ]; then
+    if ! git -C "$LL_EXTERNALS_PATH" rev-parse HEAD >/dev/null 2>&1; then
+        echo "Error: $LL_EXTERNALS_PATH is not checked out. Run: git submodule update --init --recursive"
+        exit 1
+    fi
+    # Make sure tags (and enough history to find them) are present.
+    if [ "$(git -C "$LL_EXTERNALS_PATH" rev-parse --is-shallow-repository)" = "true" ]; then
+        git -C "$LL_EXTERNALS_PATH" fetch --quiet --tags --unshallow || true
+    else
+        git -C "$LL_EXTERNALS_PATH" fetch --quiet --tags || true
+    fi
+
+    SUB_COMMIT=$(git -C "$LL_EXTERNALS_PATH" rev-parse --short HEAD)
+    if LL_EXTERNALS_TAG=$(git -C "$LL_EXTERNALS_PATH" describe --tags --exact-match --match 'v*' HEAD 2>/dev/null); then
+        echo "ll_externals submodule at $SUB_COMMIT = $LL_EXTERNALS_TAG"
+    elif LL_EXTERNALS_TAG=$(git -C "$LL_EXTERNALS_PATH" describe --tags --abbrev=0 --match 'v*' HEAD 2>/dev/null); then
+        msg="ll_externals submodule at $SUB_COMMIT is not tagged; using the closest earlier release $LL_EXTERNALS_TAG, which doesn't include later commits."
+        echo "WARNING: $msg"
+        [ -n "${GITHUB_ACTIONS:-}" ] && echo "::warning::$msg"
+    else
+        echo "Error: no v* tag found at or before ll_externals commit $SUB_COMMIT."
+        exit 1
+    fi
+fi
+
+LL_EXTERNALS_URL="https://github.com/ppooll-dev/ll_externals/releases/download/$LL_EXTERNALS_TAG/ll_externals.zip"
+
 echo "Cleaning old package..."
-rm -rf "$PACKAGE_ROOT" "$REPO_ROOT/$ZIP_NAME" "$REPO_ROOT/ll_externals.zip" "$REPO_ROOT/tmp-ll"
-
-# ===== Create package structure =====
-echo "Creating package directory..."
-mkdir -p "$PACKAGE_DIR"
+rm -rf "$PACKAGE_ROOT" ppooll.zip ppooll.maxpack ll_externals.zip tmp-ll
 
 echo "Copying package contents..."
-cp -R externals "$PACKAGE_DIR/"
-cp -R help "$PACKAGE_DIR/"
-cp -R javascript "$PACKAGE_DIR/"
-cp -R media "$PACKAGE_DIR/"
-cp -R misc "$PACKAGE_DIR/"
-cp -R patchers "$PACKAGE_DIR/"
-cp -R devices "$PACKAGE_DIR/"
-cp -R clippings "$PACKAGE_DIR/"
-cp -R extras "$PACKAGE_DIR/"
-cp package-info.json "$PACKAGE_DIR/"
-cp README.md "$PACKAGE_DIR/"
-cp LICENSE.md "$PACKAGE_DIR/"
-cp CHANGELOG.md "$PACKAGE_DIR/"
+mkdir -p "$PACKAGE_DIR"
+cp -R externals help javascript media misc patchers devices clippings extras "$PACKAGE_DIR/"
+cp package-info.json README.md LICENSE.md CHANGELOG.md "$PACKAGE_DIR/"
 cp icon.png "$PACKAGE_DIR/" 2>/dev/null || true
 
-# ===== Remove local dev version of ll_externals =====
-echo "Removing local ll_externals development folder..."
+echo "Replacing externals/ll_externals with $LL_EXTERNALS_URL ..."
 rm -rf "$PACKAGE_DIR/externals/ll_externals"
+curl -fsSL --retry 3 --connect-timeout 30 "$LL_EXTERNALS_URL" -o ll_externals.zip
+unzip -q ll_externals.zip -d tmp-ll
+mv tmp-ll/ll_externals "$PACKAGE_DIR/externals/ll_externals"
+rm -rf tmp-ll ll_externals.zip
 
-# ===== Download latest ll_externals release =====
-echo "Downloading latest ll_externals.zip release..."
-curl -L "https://github.com/ppooll-dev/ll_externals/releases/latest/download/ll_externals.zip" -o "$REPO_ROOT/ll_externals.zip"
+# Clears quarantine etc. if files were downloaded with a browser (local builds).
+xattr -cr "$PACKAGE_DIR" 2>/dev/null || true
 
-echo "Unzipping ll_externals.zip..."
-unzip -q "$REPO_ROOT/ll_externals.zip" -d "$REPO_ROOT/tmp-ll"
+echo "Creating ppooll.zip and ppooll.maxpack..."
+# -y keeps symlinks inside .mxo bundles, which their signatures depend on.
+(cd "$PACKAGE_ROOT" && zip -qry "$REPO_ROOT/ppooll.zip" ppooll -x '*.DS_Store')
+cp ppooll.zip ppooll.maxpack
 
-echo "Moving ll_externals package into externals/ll_externals..."
-mkdir -p "$PACKAGE_DIR/externals"
-mv "$REPO_ROOT/tmp-ll/ll_externals" "$PACKAGE_DIR/externals/ll_externals"
-
-# Clean up temp files
-rm -rf "$REPO_ROOT/tmp-ll" "$REPO_ROOT/ll_externals.zip"
-
-# ===== Remove quarantine attributes =====
-echo "Removing ALL extended attributes from externals…"
-find "$PACKAGE_DIR/externals" -type f | while IFS= read -r f; do
-    xattr -c "$f" 2>/dev/null || true
-done
-
-# ===== Remove ALL extended attributes (quarantine, provenance, metadata, etc.) =====
-echo "Removing ALL extended attributes recursively..."
-find "$PACKAGE_DIR/externals" -exec xattr -c {} \; 2>/dev/null || true
-
-# ===== Sign all .mxo files =====
-echo "Signing macOS externals (.mxo files)..."
-
-# First sign any executable binaries inside the .mxo bundles
-find "$PACKAGE_DIR/externals" -name "*.mxo" | while IFS= read -r mxo; do
-    echo "  → Processing bundle: $mxo"
-
-    # Sign inner Mach-O binaries (anything executable inside the bundle)
-    find "$mxo" -type f -perm -111 2>/dev/null | while IFS= read -r bin; do
-        echo "    Signing inner binary: $bin"
-        codesign --force --timestamp --options runtime --sign "$PPOOLL_DEVELOPER_ID" "$bin"
-    done
-
-    # Now sign the bundle itself
-    echo "    Signing bundle: $mxo"
-    codesign --force --timestamp --options runtime --sign "$PPOOLL_DEVELOPER_ID" "$mxo"
-done
-
-# ===== Create final zip =====
-echo "Creating $ZIP_NAME..."
-cd "$PACKAGE_ROOT"
-zip -r "$REPO_ROOT/$ZIP_NAME" ppooll/
-cd "$REPO_ROOT"
-
-# ===== Notarize the zip =====
-echo "Submitting $ZIP_NAME for notarization..."
-xcrun notarytool submit "$ZIP_NAME" --keychain-profile "$PPOOLL_NOTARIZATION_PROFILE" --wait --output-format json
-
-echo "Stapling notarization ticket to $ZIP_NAME..."
-xcrun stapler staple "$ZIP_NAME"
-
-echo
-echo "✅ Build, signing, and notarization complete: $ZIP_NAME is ready!"
+echo "✅ Done: ppooll.maxpack, ppooll.zip"

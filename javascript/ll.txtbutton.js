@@ -4,6 +4,8 @@ mgraphics.autofill = 0;
 mgraphics.relative_coords = 0;
 outlets = 2;
 
+this.box.border = 0;
+
 var myval = 0;
 var myfont = "Arial";
 var fontsize = 11;
@@ -18,8 +20,8 @@ var bgcolor_on = [0.6,0.6,0.6,1];
 declareattribute("bgcolor_on", {embed: 1, style: "rgba", paint: 1});
 var bgcolor_off = [0.3,0.3,0.3,1];
 declareattribute("bgcolor_off", {embed: 1, style: "rgba", paint: 1});
-var bordercolor = [0.2, 0.2, 0.2, 1];
-declareattribute("bordercolor", {embed: 1, style: "rgba", paint: 1});
+var border_color = [0.2, 0.2, 0.2, 1];
+declareattribute("border_color", {embed: 1, style: "rgba", paint: 1});
 var txt_off = "off";
 declareattribute("txt_off", {embed: 1, paint: 1});
 var txt_on = "on";
@@ -28,6 +30,15 @@ var txtcolor_off = [1, 1, 1, 1];
 declareattribute("txtcolor_off", {embed: 1, style: "rgba", paint: 1});
 var txtcolor_on = [1, 1, 1, 1];
 declareattribute("txtcolor_on", {embed: 1, style: "rgba", paint: 1});
+
+var flashTask = new Task(function() {
+    myval = 0;
+    mgraphics.redraw();
+}, this);
+
+var redrawTask = new Task(function() {
+    mgraphics.redraw();
+}, this);
 
 function button_mode_setter(v) {
     button_mode = v;
@@ -38,9 +49,7 @@ function button_mode_setter(v) {
     notifyclients(); // notify pattr
     
     // defer the redraw 
-    var redrawTask = new Task(function() {
-        mgraphics.redraw();
-    }, this);
+    redrawTask.cancel();
     redrawTask.schedule(1);
 }
 
@@ -63,20 +72,21 @@ function output_mode_set(v) {
     notifyclients();
 }
 
+function fire_button() {
+    myval = 1;
+    mgraphics.redraw();
+    outlet(1, txt_off);
+    outlet(0, "bang");
+    notifyclients();
+    
+    flashTask.cancel();
+    flashTask.schedule(blinktime);
+}
+fire_button.local = 1;
+
 function onclick() {
     if (button_mode == "button") {
-        // button mode: flash and always output bang
-        myval = 1;
-        mgraphics.redraw();
-        outlet(1, txt_off);
-        outlet(0, "bang");
-        notifyclients();
-        // flash back after blinktime ms
-        var flashTask = new Task(function() {
-            myval = 0;
-            mgraphics.redraw();
-        }, this);
-        flashTask.schedule(blinktime);
+        fire_button();
     } else {
         // toggle mode: switch state
         bang();
@@ -86,18 +96,7 @@ onclick.local = 1;
 
 function bang() {
     if (button_mode == "button") {
-        // button mode: flash and output bang
-        myval = 1;
-        mgraphics.redraw();
-        outlet(1, txt_off);
-        outlet(0, "bang");
-        notifyclients();
-        
-        var flashTask = new Task(function() {
-            myval = 0;
-            mgraphics.redraw();
-        }, this);
-        flashTask.schedule(blinktime);
+        fire_button();
     } else {
         // toggle mode: toggle state
         myval = 1 - myval;
@@ -124,10 +123,11 @@ function paint() {
     mgraphics.rectangle(0, 0, width, height);
     mgraphics.fill();
     
-    mgraphics.set_source_rgba(bordercolor);
-    mgraphics.rectangle(0, 0, width, height);
-    mgraphics.stroke();
-    
+    if (border_color[3] > 0){
+        mgraphics.set_source_rgba(border_color);
+        mgraphics.rectangle(0.5, 0.5, width - 1, height - 1);
+        mgraphics.stroke();
+    }
     // in button mode, always show txt_off
     var current_txt = (button_mode == "button") ? txt_off : (myval ? txt_on : txt_off);
     
@@ -189,12 +189,10 @@ function set(v) {
 
 function getvalueof() {
     if (button_mode == "button") {
-        if (output_mode) {
-            return txt_off;
-        } else {
-            return "bang";
-        }
-    } else if (output_mode) {
+        return 0;
+    }
+    
+    if (output_mode) {
         var current_txt = myval ? txt_on : txt_off;
         return current_txt;
     } else {
@@ -203,5 +201,11 @@ function getvalueof() {
 }
 
 function setvalueof(v) {
+    if (button_mode == "button") {
+        myval = 0;
+        mgraphics.redraw();
+        return;
+    }
+    
     msg_int(v);
 }
