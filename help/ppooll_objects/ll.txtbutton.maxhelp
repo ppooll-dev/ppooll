@@ -3,13 +3,13 @@
         "fileversion": 1,
         "appversion": {
             "major": 9,
-            "minor": 1,
+            "minor": 2,
             "revision": 1,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 706.0, 185.0, 591.0, 446.0 ],
+        "rect": [ 307.0, 430.0, 591.0, 446.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "ll.txtbutton1",
         "boxes": [
@@ -137,7 +137,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 107.0, 194.0, 50.0, 22.0 ]
+                    "patching_rect": [ 107.0, 194.0, 50.0, 22.0 ],
+                    "text": "on"
                 }
             },
             {
@@ -147,7 +148,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 47.0, 194.0, 52.0, 22.0 ]
+                    "patching_rect": [ 47.0, 194.0, 52.0, 22.0 ],
+                    "text": "1"
                 }
             },
             {
@@ -193,11 +195,13 @@
             },
             {
                 "box": {
+                    "border": 0,
+                    "embed": 0,
                     "embedstate": [
                         [ "bgcolor_off", 0.3, 0.3, 0.3, 1 ],
                         [ "bgcolor_on", 0.6, 0.6, 0.6, 1 ],
                         [ "blinktime", 150 ],
-                        [ "bordercolor", 0.2, 0.2, 0.2, 1 ],
+                        [ "border_color", 0.2, 0.2, 0.2, 1 ],
                         [ "button_mode", "toggle" ],
                         [ "fontsize", 11 ],
                         [ "output_mode", 0 ],
@@ -330,6 +334,11 @@
                     "restore": {
                         "on/off": [ 0 ]
                     },
+                    "restore_extra": {
+                        "on/off": {
+                            "id": "obj-20"
+                        }
+                    },
                     "text": "autopattr autopattr",
                     "varname": "autopattr"
                 }
@@ -358,7 +367,7 @@
                         "fileversion": 1,
                         "appversion": {
                             "major": 9,
-                            "minor": 1,
+                            "minor": 2,
                             "revision": 1,
                             "architecture": "x64",
                             "modernui": 1
