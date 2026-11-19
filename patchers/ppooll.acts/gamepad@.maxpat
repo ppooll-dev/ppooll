@@ -3,13 +3,13 @@
         "fileversion": 1,
         "appversion": {
             "major": 9,
-            "minor": 1,
-            "revision": 2,
+            "minor": 2,
+            "revision": 1,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 753.0, 335.0, 260.0, 158.0 ],
+        "rect": [ 526.0, 272.0, 260.0, 158.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "gamepad@1",
         "boxes": [
@@ -34,11 +34,12 @@
                 "box": {
                     "fontsize": 10.0,
                     "id": "obj-15",
+                    "linecount": 2,
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 85.0, -1.0, 124.0, 18.0 ],
-                    "text": "Xbox Series X Controller",
+                    "patching_rect": [ 85.0, -1.0, 124.0, 29.0 ],
+                    "text": "DualSense Wireless Controller",
                     "varname": "device-name"
                 }
             },
@@ -81,10 +82,6 @@
                 "box": {
                     "active": {
                         "gamepad_jsui": 0,
-                        "master": 0,
-                        "pres_menu": 0,
-                        "tetris_menu": 0,
-                        "title_menu": 0,
                         "act": 0,
                         "act::active_store": 0,
                         "act::master": 0,
@@ -102,10 +99,10 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 360.0, 35.0, 100.0, 22.0 ],
                     "saved_object_attributes": {
-                        "client_rect": [ 257, 133, 1512, 849 ],
+                        "client_rect": [ 715, 79, 1255, 788 ],
                         "parameter_enable": 0,
                         "parameter_mappable": 0,
-                        "storage_rect": [ 583, 68, 1034, 196 ]
+                        "storage_rect": [ 365, 44, 816, 172 ]
                     },
                     "text": "pattrstorage pat",
                     "varname": "pat"
@@ -153,6 +150,11 @@
                     "restore": {
                         "rumble": [ 0 ]
                     },
+                    "restore_extra": {
+                        "rumble": {
+                            "id": "obj-13"
+                        }
+                    },
                     "text": "autopattr autopattr",
                     "varname": "autopattr"
                 }
@@ -168,14 +170,24 @@
                         "fileversion": 1,
                         "appversion": {
                             "major": 9,
-                            "minor": 1,
-                            "revision": 2,
+                            "minor": 2,
+                            "revision": 1,
                             "architecture": "x64",
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 722.0, 100.0, 688.0, 786.0 ],
+                        "rect": [ 666.0, 178.0, 688.0, 344.0 ],
                         "boxes": [
+                            {
+                                "box": {
+                                    "id": "obj-12",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [ 10.0, 279.0, 73.0, 22.0 ],
+                                    "text": "ll.suggested"
+                                }
+                            },
                             {
                                 "box": {
                                     "id": "obj-19",
@@ -250,7 +262,8 @@
                                     "numinlets": 2,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 280.0, 200.0, 212.53320961707618, 22.0 ]
+                                    "patching_rect": [ 280.0, 200.0, 212.53320961707618, 22.0 ],
+                                    "text": "\"DualSense Wireless Controller\""
                                 }
                             },
                             {
@@ -317,20 +330,8 @@
                                     "numinlets": 3,
                                     "numoutlets": 2,
                                     "outlettype": [ "", "bang" ],
-                                    "patching_rect": [ 25.0, 216.0, 105.0, 22.0 ],
+                                    "patching_rect": [ 49.0, 228.0, 105.0, 22.0 ],
                                     "text": "ll.pf gamepad_jsui"
-                                }
-                            },
-                            {
-                                "box": {
-                                    "fontname": "Arial",
-                                    "fontsize": 12.0,
-                                    "id": "obj-24",
-                                    "maxclass": "newobj",
-                                    "numinlets": 2,
-                                    "numoutlets": 0,
-                                    "patching_rect": [ 10.0, 243.0, 107.0, 22.0 ],
-                                    "text": "ll.s out_suggested"
                                 }
                             },
                             {
@@ -441,15 +442,15 @@
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-2", 0 ],
-                                    "order": 0,
+                                    "destination": [ "obj-12", 0 ],
+                                    "order": 1,
                                     "source": [ "obj-3", 0 ]
                                 }
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-24", 0 ],
-                                    "order": 1,
+                                    "destination": [ "obj-2", 0 ],
+                                    "order": 0,
                                     "source": [ "obj-3", 0 ]
                                 }
                             },

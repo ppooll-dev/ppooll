@@ -4,12 +4,13 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 0,
+            "revision": 4,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 100.0, 100.0, 521.0, 618.0 ],
+        "rect": [ 569.0, 1268.0, 521.0, 618.0 ],
+        "toolbarvisible": 0,
         "globalpatchername": "ll.jact.maxhelp1",
         "boxes": [
             {
@@ -139,13 +140,87 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 970.0, 473.0, 420.0, 404.0 ],
+                        "rect": [ 970.0, 473.0, 462.0, 486.0 ],
                         "boxes": [
+                            {
+                                "box": {
+                                    "id": "obj-10",
+                                    "maxclass": "message",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 263.0, 320.0, 109.0, 22.0 ],
+                                    "presentation_linecount": 2,
+                                    "text": "delete_matrix hello"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "obj-11",
+                                    "maxclass": "message",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 166.0, 320.0, 97.0, 22.0 ],
+                                    "presentation_linecount": 2,
+                                    "text": "add_matrix hello"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "obj-9",
+                                    "maxclass": "message",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 263.0, 290.0, 103.0, 22.0 ],
+                                    "presentation_linecount": 2,
+                                    "text": "delete_matrix test"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "id": "obj-8",
+                                    "maxclass": "message",
+                                    "numinlets": 2,
+                                    "numoutlets": 1,
+                                    "outlettype": [ "" ],
+                                    "patching_rect": [ 166.0, 290.0, 91.0, 22.0 ],
+                                    "text": "add_matrix test"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-6",
+                                    "linecount": 3,
+                                    "maxclass": "comment",
+                                    "numinlets": 1,
+                                    "numoutlets": 0,
+                                    "patching_rect": [ 27.0, 350.0, 335.0, 47.0 ],
+                                    "presentation_linecount": 3,
+                                    "text": "any argument will turn off automatic naming a default matrix.\ninstead, you may use the 3rd inlet to define custom matrix-names…"
+                                }
+                            },
+                            {
+                                "box": {
+                                    "fontname": "Arial",
+                                    "fontsize": 12.0,
+                                    "id": "obj-2",
+                                    "maxclass": "newobj",
+                                    "numinlets": 3,
+                                    "numoutlets": 3,
+                                    "outlettype": [ "", "", "" ],
+                                    "patching_rect": [ 88.0, 324.0, 46.0, 22.0 ],
+                                    "text": "ll.jact 1"
+                                }
+                            },
                             {
                                 "box": {
                                     "fontname": "Arial",
@@ -155,7 +230,7 @@
                                     "maxclass": "comment",
                                     "numinlets": 1,
                                     "numoutlets": 0,
-                                    "patching_rect": [ 19.0, 238.0, 335.0, 48.0 ],
+                                    "patching_rect": [ 19.0, 238.0, 335.0, 47.0 ],
                                     "text": "optional you may use the \"local_disp_on\" switch to turn off\nthe local_display and save some speed.\nthe matrix can still be grabbed from somewhere else."
                                 }
                             },
@@ -168,7 +243,7 @@
                                     "maxclass": "comment",
                                     "numinlets": 1,
                                     "numoutlets": 0,
-                                    "patching_rect": [ 20.0, 203.0, 335.0, 34.0 ],
+                                    "patching_rect": [ 20.0, 203.0, 335.0, 33.0 ],
                                     "text": "ll.act provides a qmetro, that listens to jit_on and jit_ms from the main patch."
                                 }
                             },
@@ -193,7 +268,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 2,
                                     "outlettype": [ "", "bang" ],
-                                    "patching_rect": [ 180.0, 56.0, 46.0, 20.0 ],
+                                    "patching_rect": [ 180.0, 56.0, 46.0, 22.0 ],
                                     "text": "ll.r dim"
                                 }
                             },
@@ -208,7 +283,7 @@
                                     "numoutlets": 2,
                                     "outlettype": [ "", "bang" ],
                                     "parameter_enable": 0,
-                                    "patching_rect": [ 180.0, 83.0, 50.0, 20.0 ]
+                                    "patching_rect": [ 180.0, 83.0, 50.0, 22.0 ]
                                 }
                             },
                             {
@@ -220,7 +295,7 @@
                                     "numinlets": 2,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 180.0, 108.0, 63.0, 18.0 ],
+                                    "patching_rect": [ 180.0, 108.0, 63.0, 22.0 ],
                                     "text": "dim $1 $1"
                                 }
                             },
@@ -233,7 +308,7 @@
                                     "numinlets": 1,
                                     "numoutlets": 2,
                                     "outlettype": [ "jit_matrix", "" ],
-                                    "patching_rect": [ 98.0, 125.0, 51.0, 20.0 ],
+                                    "patching_rect": [ 98.0, 125.0, 51.0, 22.0 ],
                                     "text": "jit.noise"
                                 }
                             },
@@ -243,10 +318,10 @@
                                     "fontsize": 12.0,
                                     "id": "obj-56",
                                     "maxclass": "newobj",
-                                    "numinlets": 2,
+                                    "numinlets": 3,
                                     "numoutlets": 3,
                                     "outlettype": [ "", "", "" ],
-                                    "patching_rect": [ 98.0, 96.0, 46.0, 20.0 ],
+                                    "patching_rect": [ 98.0, 96.0, 46.0, 22.0 ],
                                     "text": "ll.jact"
                                 }
                             }
@@ -256,6 +331,18 @@
                                 "patchline": {
                                     "destination": [ "obj-25", 0 ],
                                     "source": [ "obj-1", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-2", 2 ],
+                                    "source": [ "obj-10", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-2", 2 ],
+                                    "source": [ "obj-11", 0 ]
                                 }
                             },
                             {
@@ -287,6 +374,18 @@
                                 "patchline": {
                                     "destination": [ "obj-57", 0 ],
                                     "source": [ "obj-63", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-2", 2 ],
+                                    "source": [ "obj-8", 0 ]
+                                }
+                            },
+                            {
+                                "patchline": {
+                                    "destination": [ "obj-2", 2 ],
+                                    "source": [ "obj-9", 0 ]
                                 }
                             }
                         ]
@@ -442,7 +541,7 @@
                     "fontname": "Arial",
                     "fontsize": 12.0,
                     "id": "obj-9",
-                    "items": "ll.jact.maxhelp1",
+                    "items": [ "jit.display@1", ",", "ll.jact.maxhelp1", ",", "itracker1_input", ",", "itracker1_zoom", ",", "itracker1_bw", ",", "itracker1_invers", ",", "itracker1_binary", ",", "itracker1_track" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -496,7 +595,11 @@
                     "active": {
                         "act": 0,
                         "act::active_store": 0,
-                        "actmake::active_store": 0
+                        "act::master": 0,
+                        "act::u751015509": 0,
+                        "act::pres_menu": 0,
+                        "act::tetris_menu": 0,
+                        "act::title_menu": 0
                     },
                     "color": [ 0.0, 0.0, 0.0, 1.0 ],
                     "fontname": "Arial",
@@ -509,10 +612,10 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 378.0, 31.0, 95.0, 22.0 ],
                     "saved_object_attributes": {
-                        "client_rect": [ 499, 162, 1139, 402 ],
+                        "client_rect": [ 11, 206, 771, 948 ],
                         "parameter_enable": 0,
                         "parameter_mappable": 0,
-                        "storage_rect": [ 0, 0, 640, 240 ]
+                        "storage_rect": [ 97, 414, 716, 964 ]
                     },
                     "text": "pattrstorage pat",
                     "varname": "pat"
@@ -532,7 +635,7 @@
                     "patching_rect": [ 365.0, 102.0, 107.0, 22.0 ],
                     "restore": {
                         "dim": [ 8 ],
-                        "jit_menu": [ "ll.jact.maxhelp1" ],
+                        "jit_menu": [ "jit.display@1" ],
                         "jit_ms": [ 1 ],
                         "jit_on": [ 0 ],
                         "local_disp_on": [ 1 ],
@@ -544,22 +647,83 @@
             },
             {
                 "box": {
-                    "color": [ 0.4, 0.4, 0.8, 1.0 ],
-                    "hidden": 1,
-                    "id": "obj-11",
-                    "maxclass": "newobj",
-                    "numinlets": 2,
+                    "args": [ "ll.jact.maxhelp", 1 ],
+                    "bgmode": 0,
+                    "border": 0,
+                    "clickthrough": 0,
+                    "enablehscroll": 0,
+                    "enablevscroll": 0,
+                    "id": "obj-12",
+                    "lockeddragscroll": 0,
+                    "lockedsize": 0,
+                    "maxclass": "bpatcher",
+                    "name": "act.maxpat",
+                    "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 360.0, 52.0, 133.0, 22.0 ],
-                    "text": "actmake ll.jact.maxhelp",
-                    "varname": "act"
+                    "offset": [ 0.0, 0.0 ],
+                    "patching_rect": [ 0.0, 0.0, 101.046875, 16.0 ],
+                    "varname": "act",
+                    "viewvisibility": 1
+                }
+            },
+            {
+                "box": {
+                    "hidden": 1,
+                    "id": "obj-13",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 378.0, 52.0, 115.0, 22.0 ],
+                    "text": "pattrforward act::in2",
+                    "varname": "pf"
+                }
+            },
+            {
+                "box": {
+                    "hidden": 1,
+                    "id": "obj-14",
+                    "maxclass": "newobj",
+                    "numinlets": 0,
+                    "numoutlets": 0,
+                    "patcher": {
+                        "fileversion": 1,
+                        "appversion": {
+                            "major": 9,
+                            "minor": 1,
+                            "revision": 4,
+                            "architecture": "x64",
+                            "modernui": 1
+                        },
+                        "classnamespace": "box",
+                        "rect": [ 234.0, 134.0, 432.0, 332.0 ],
+                        "boxes": [
+                            {
+                                "box": {
+                                    "id": "obj-1",
+                                    "maxclass": "newobj",
+                                    "numinlets": 1,
+                                    "numoutlets": 2,
+                                    "outlettype": [ "", "" ],
+                                    "patching_rect": [ 10.0, 20.0, 100.0, 22.0 ],
+                                    "save": [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+                                    "text": "thispatcher",
+                                    "varname": "subTP"
+                                }
+                            }
+                        ],
+                        "lines": []
+                    },
+                    "patching_rect": [ 400.0, 550.0, 121.0, 22.0 ],
+                    "text": "p ll.jact.maxhelp_sub",
+                    "varname": "sub"
                 }
             }
         ],
         "lines": [
             {
                 "patchline": {
-                    "destination": [ "obj-11", 1 ],
+                    "destination": [ "obj-13", 0 ],
                     "hidden": 1,
                     "source": [ "obj-1", 0 ]
                 }
@@ -583,6 +747,7 @@
                 }
             }
         ],
-        "autosave": 0
+        "autosave": 0,
+        "bgcolor": [ 0.23921568627450981, 0.23921568627450981, 0.23921568627450981, 1.0 ]
     }
 }

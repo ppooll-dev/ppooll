@@ -2,6 +2,9 @@ max define ll.blues
     bpatcher @name ll.blues.maxpat;
 max define ll.txtbutton 
     v8ui @filename ll.txtbutton.js;
+max define ll.tab 
+    v8ui @filename ll.tab.js 
+    @default_size 300 24;
 max define ll.pattr_ui 
     v8ui @filename ll.pattr_v8ui.js
     @varname presets 
