@@ -1,0 +1,154 @@
+name: Release
+
+# Two ways to cut a release:
+#   1. Actions → Release → Run workflow, enter a version (e.g. 1.2.0).
+#      Bumps package-info.json, builds, then commits, tags and publishes.
+#   2. Bump + tag locally (bump_version.sh, release.sh), then
+#      `git push && git push --tags`. The v* tag triggers this workflow.
+# Pull requests that touch the build run a build-and-verify only (no release).
+#
+# Nothing is signed here; ll_externals releases are already signed.
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to release, e.g. 1.2.0"
+        required: true
+        type: string
+      dry_run:
+        description: "Build and verify only (no commit, tag or release)"
+        required: false
+        type: boolean
+        default: false
+      ll_externals_tag:
+        description: "ll_externals release tag to bundle (empty = the one matching the submodule)"
+        required: false
+        type: string
+        default: ""
+  push:
+    tags:
+      - "v*"
+  pull_request:
+    paths:
+      - ".github/workflows/release.yml"
+      - "scripts/**"
+      - "externals/**"
+      - "package-info.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.ref) || 'release' }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: macos-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Determine version
+        id: version
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+            VERSION="${INPUT_VERSION#v}"
+          elif [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
+            VERSION=$(jq -r .version package-info.json)
+          else
+            VERSION="${GITHUB_REF_NAME#v}"
+          fi
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::'$VERSION' is not a valid version (expected e.g. 1.2.0 or 1.2.0-beta.1)"
+            exit 1
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Make sure the tag doesn't exist yet
+        if: github.event_name == 'workflow_dispatch' && !inputs.dry_run
+        env:
+          TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          if git rev-parse -q --verify "refs/tags/$TAG" >/dev/null; then
+            echo "::error::Tag $TAG already exists"
+            exit 1
+          fi
+
+      - name: Bump version in package-info.json
+        if: github.event_name == 'workflow_dispatch'
+        run: bash scripts/bump_version.sh "${{ steps.version.outputs.version }}"
+
+      - name: Check package-info.json matches the release version
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          ACTUAL=$(jq -r .version package-info.json)
+          if [ "$ACTUAL" != "$VERSION" ]; then
+            echo "::error::package-info.json says $ACTUAL but releasing $VERSION. Run bump_version.sh before tagging."
+            exit 1
+          fi
+
+      - name: Build package
+        env:
+          LL_EXTERNALS_TAG: ${{ inputs.ll_externals_tag }}
+        run: bash scripts/build_package.sh
+
+      - name: Verify externals are signed
+        run: bash scripts/verify_externals.sh
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ppooll-${{ steps.version.outputs.version }}
+          path: |
+            ppooll.maxpack
+            ppooll.zip
+          if-no-files-found: error
+
+      - name: Commit version bump and tag
+        if: github.event_name == 'workflow_dispatch' && !inputs.dry_run
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          TAG: ${{ steps.version.outputs.tag }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package-info.json
+          git diff --cached --quiet || git commit -m "Release v$VERSION"
+          git tag "$TAG"
+          # Pushes made with GITHUB_TOKEN don't trigger workflows, so this tag
+          # won't start a second run of this workflow.
+          git push origin "HEAD:refs/heads/$BRANCH"
+          git push origin "refs/tags/$TAG"
+
+      - name: Publish GitHub release
+        if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && !inputs.dry_run)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.version.outputs.tag }}
+        run: |
+          PREV=$(git describe --tags --abbrev=0 "$TAG^" 2>/dev/null || true)
+          if [ -n "$PREV" ]; then
+            CHANGES="https://github.com/$GITHUB_REPOSITORY/compare/$PREV...$TAG"
+          else
+            CHANGES="https://github.com/$GITHUB_REPOSITORY/commits/$TAG"
+          fi
+          cat > release-notes.md <<EOF
+          Install: double click \`ppooll.maxpack\`, or drag onto the Max console.
+
+          Changes: $CHANGES
+          EOF
+          gh release create "$TAG" ppooll.maxpack ppooll.zip \
+            --title "$TAG" \
+            --notes-file release-notes.md \
+            --verify-tag
