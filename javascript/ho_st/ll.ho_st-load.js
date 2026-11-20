@@ -41,8 +41,14 @@ function getCurrentVersion() {
 function checkVersion(thisVersion, latestVersion) {
     var OUTPUT = [];
 
-    // checkVersion HTTP status !== 200
-    if (!latestVersion) return [];
+    this.patcher.parentpatcher
+        .getnamed("version_number")
+        .message("set", thisVersion);
+
+    ll_global.version = thisVersion;
+
+    // checkVersion HTTP status !== 200 (latestVersion is -1)
+    if (typeof latestVersion !== "string") return [];
 
     var needsUpdate = ll.cmpVersions(thisVersion, latestVersion);
 
@@ -69,13 +75,8 @@ function checkVersion(thisVersion, latestVersion) {
 
     this.patcher.parentpatcher
         .getnamed("is_latest_version")
-        .message("set", needsUpdate ? "update available!" : "up to date!");
+        .message("set", needsUpdate < 0 ? "update available!" : "up to date!");
 
-    this.patcher.parentpatcher
-        .getnamed("version_number")
-        .message("set", thisVersion);
-
-    ll_global.version = thisVersion;
     return OUTPUT;
 }
 
