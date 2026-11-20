@@ -36,7 +36,7 @@ function handle_update_response(req, prepend)
             post("JSON parse error: " + e + "\n");
             version = -1;
         }
-    } else {
+    } else if(req.status !== 0) {
         post("HTTP error: " + req.status + "\n");
     }
 
