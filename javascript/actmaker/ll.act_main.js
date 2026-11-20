@@ -405,6 +405,7 @@ function notifydeleted() {
     }
 
     messnamed("acting", act_args.name, act_index, -1);
+    messnamed("ll_act_closed", act_name_index);
 }
 
 function request_actname(r_address) {
