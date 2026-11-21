@@ -1,0 +1,172 @@
+{
+    "window": [ 365, 631, 585, 919 ],
+    "act": {
+        "patching_rect": [ 0, 0, 48.353515625, 16 ],
+        "hidden": 0
+    },
+    "carrier_freq_ramp": {
+        "patching_rect": [ 93, 104, 127, 15 ],
+        "hidden": 0,
+        "bgcolor": [ 0.278431, 0.27451, 0.941176, 1 ],
+        "bordercolor": [ 0, 0, 0, 1 ],
+        "fontsize": 13,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45098, 1, 0.533333, 0.470588 ],
+        "slidercolor": [ 0, 0, 0, 1 ],
+        "slidercolornofocus": [ 0.615686, 0.615686, 0.615686, 1 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.717647, 0.717647, 0.717647, 1 ]
+    },
+    "fm-fmaudio-mix": {
+        "patching_rect": [ 52, 0, 168, 16 ],
+        "hidden": 0,
+        "bgcolor": [ 0.2, 0.2, 0.2, 1 ],
+        "bordercolor": [ 0, 0, 0, 1 ],
+        "fontsize": 12,
+        "labelcolor": [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 0.5 ],
+        "selectcolor": [ 0.45098, 1, 0.533333, 0.470588 ],
+        "slidercolor": [ 0.541176470588235, 0.541176470588235, 0.541176470588235, 0.73 ],
+        "slidercolornofocus": [ 0.815686, 0.815686, 0.815686, 1 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.815686, 0.815686, 0.815686, 1 ]
+    },
+    "carrier_freq_mcspread": {
+        "patching_rect": [ 0, 104, 93, 15 ],
+        "hidden": 0,
+        "bgcolor": [ 0.278431, 0.27451, 0.941176, 1 ],
+        "bordercolor": [ 0, 0, 0, 1 ],
+        "fontsize": 13,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45098, 1, 0.533333, 0.470588 ],
+        "slidercolor": [ 0, 0, 0, 1 ],
+        "slidercolornofocus": [ 0.615686, 0.615686, 0.615686, 1 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.717647, 0.717647, 0.717647, 1 ]
+    },
+    "ll.blues": {
+        "patching_rect": [ 0, 235, 160, 53 ],
+        "hidden": 0
+    },
+    "presets": {
+        "patching_rect": [ 159, 235, 61, 38 ],
+        "hidden": 0,
+        "boxsize": 11
+    },
+    "preset-ramp": {
+        "patching_rect": [ 159, 273, 61, 14 ],
+        "hidden": 0,
+        "bgcolor": [ 1, 1, 1, 1 ],
+        "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
+        "fontsize": 12,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45, 0.67, 1, 0.47 ],
+        "slidercolor": [ 0, 0, 0, 1 ],
+        "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
+    },
+    "harmonicity_mcspread": {
+        "patching_rect": [ 0, 162, 93, 15 ],
+        "hidden": 0,
+        "bgcolor": [ 0, 0.698039, 0.388235, 1 ],
+        "bordercolor": [ 0, 0, 0, 1 ],
+        "fontsize": 13,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45098, 0.615686, 1, 0.470588 ],
+        "slidercolor": [ 0, 0, 0, 1 ],
+        "slidercolornofocus": [ 0.85098, 0.85098, 0.85098, 1 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.85098, 0.85098, 0.85098, 1 ]
+    },
+    "modindex_mcspread": {
+        "patching_rect": [ 0, 220, 93, 15 ],
+        "hidden": 0,
+        "bgcolor": [ 0.2, 0.47451, 0.388235, 1 ],
+        "bordercolor": [ 0, 0, 0, 1 ],
+        "fontsize": 13,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45098, 1, 0.533333, 0.470588 ],
+        "slidercolor": [ 0, 0, 0, 1 ],
+        "slidercolornofocus": [ 0.815686, 0.815686, 0.815686, 1 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.815686, 0.815686, 0.815686, 1 ]
+    },
+    "harmonicity_ramp": {
+        "patching_rect": [ 93, 162, 127, 15 ],
+        "hidden": 0,
+        "bgcolor": [ 0, 0.698039, 0.388235, 1 ],
+        "bordercolor": [ 0, 0, 0, 1 ],
+        "fontsize": 13,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45098, 0.615686, 1, 0.470588 ],
+        "slidercolor": [ 0, 0, 0, 1 ],
+        "slidercolornofocus": [ 0.85098, 0.85098, 0.85098, 1 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.85098, 0.85098, 0.85098, 1 ]
+    },
+    "modindex_ramp": {
+        "patching_rect": [ 93, 220, 127, 15 ],
+        "hidden": 0,
+        "bgcolor": [ 0.2, 0.47451, 0.388235, 1 ],
+        "bordercolor": [ 0, 0, 0, 1 ],
+        "fontsize": 13,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45098, 1, 0.533333, 0.470588 ],
+        "slidercolor": [ 0, 0, 0, 1 ],
+        "slidercolornofocus": [ 0.815686, 0.815686, 0.815686, 1 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.815686, 0.815686, 0.815686, 1 ]
+    },
+    "amplitude": {
+        "patching_rect": [ 0, 16, 220, 44 ],
+        "hidden": 0,
+        "bgcolor": [ 0.36078431372549, 0.788235294117647, 0.309803921568627, 1 ],
+        "bordercolor": [ 0, 0, 0, 1 ],
+        "fontsize": 15,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45098, 0.615686, 1, 0.470588 ],
+        "slidercolor": [ 0, 0, 0, 1 ],
+        "slidercolornofocus": [ 0.776471, 0.776471, 0.776471, 1 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.85098, 0.85098, 0.85098, 1 ]
+    },
+    "harmonicity": {
+        "patching_rect": [ 0, 119, 220, 44 ],
+        "hidden": 0,
+        "bgcolor": [ 0, 0.698039, 0.388235, 1 ],
+        "bordercolor": [ 0, 0, 0, 1 ],
+        "fontsize": 15,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45098, 0.615686, 1, 0.470588 ],
+        "slidercolor": [ 0, 0, 0, 1 ],
+        "slidercolornofocus": [ 0.776471, 0.776471, 0.776471, 1 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.85098, 0.85098, 0.85098, 1 ]
+    },
+    "carrier_freq": {
+        "patching_rect": [ 0, 60, 220, 44 ],
+        "hidden": 0,
+        "bgcolor": [ 0.278431, 0.27451, 0.941176, 1 ],
+        "bordercolor": [ 0, 0, 0, 1 ],
+        "fontsize": 15,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45098, 1, 0.533333, 0.470588 ],
+        "slidercolor": [ 0, 0, 0, 1 ],
+        "slidercolornofocus": [ 0.615686, 0.615686, 0.615686, 1 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.717647, 0.717647, 0.717647, 1 ]
+    },
+    "modindex": {
+        "patching_rect": [ 0, 177, 220, 44 ],
+        "hidden": 0,
+        "bgcolor": [ 0.2, 0.47451, 0.388235, 1 ],
+        "bordercolor": [ 0, 0, 0, 1 ],
+        "fontsize": 15,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45098, 1, 0.533333, 0.470588 ],
+        "slidercolor": [ 0, 0, 0, 1 ],
+        "slidercolornofocus": [ 0.815686, 0.815686, 0.815686, 1 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.815686, 0.815686, 0.815686, 1 ]
+    }
+}
