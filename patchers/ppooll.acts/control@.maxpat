@@ -3,18 +3,19 @@
         "fileversion": 1,
         "appversion": {
             "major": 9,
-            "minor": 1,
-            "revision": 4,
+            "minor": 2,
+            "revision": 1,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 194.0, 436.0, 189.0, 48.0 ],
+        "rect": [ 64.0, 359.0, 189.0, 48.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "control@1",
         "boxes": [
             {
                 "box": {
+                    "embed": 0,
                     "embedstate": [
                         [ "boxsize", 10 ],
                         [ "vbrgb", 0.19607843137254902, 0.19607843137254902, 0.19607843137254902, 1 ],
@@ -561,7 +562,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 10.3564453125, 213.0, 50.0, 19.0 ],
-                    "restore": [ "_" ],
+                    "restore": [ "-" ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -581,7 +582,7 @@
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
                     "patching_rect": [ 10.3564453125, 192.0, 50.0, 19.0 ],
-                    "restore": [ "_" ],
+                    "restore": [ "-" ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
@@ -853,8 +854,8 @@
                         "fileversion": 1,
                         "appversion": {
                             "major": 9,
-                            "minor": 1,
-                            "revision": 4,
+                            "minor": 2,
+                            "revision": 1,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -903,8 +904,8 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
-                                            "revision": 4,
+                                            "minor": 2,
+                                            "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1154,8 +1155,8 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
-                                            "revision": 4,
+                                            "minor": 2,
+                                            "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1214,8 +1215,8 @@
                                                         "fileversion": 1,
                                                         "appversion": {
                                                             "major": 9,
-                                                            "minor": 1,
-                                                            "revision": 4,
+                                                            "minor": 2,
+                                                            "revision": 1,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1393,7 +1394,7 @@
                                                                     "allowdrag": 0,
                                                                     "fontsize": 9.0,
                                                                     "id": "obj-14",
-                                                                    "items": [ "AU DLS Synth 1", ",", "Network Session 1", ",", "from Max 1", ",", "from Max 2" ],
+                                                                    "items": [ "AU DLS Synth 1", ",", "from Max 1", ",", "from Max 2" ],
                                                                     "maxclass": "umenu",
                                                                     "numinlets": 1,
                                                                     "numoutlets": 3,
@@ -1755,8 +1756,8 @@
                                                         "fileversion": 1,
                                                         "appversion": {
                                                             "major": 9,
-                                                            "minor": 1,
-                                                            "revision": 4,
+                                                            "minor": 2,
+                                                            "revision": 1,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1773,8 +1774,8 @@
                                                                         "fileversion": 1,
                                                                         "appversion": {
                                                                             "major": 9,
-                                                                            "minor": 1,
-                                                                            "revision": 4,
+                                                                            "minor": 2,
+                                                                            "revision": 1,
                                                                             "architecture": "x64",
                                                                             "modernui": 1
                                                                         },
@@ -2554,8 +2555,8 @@
                                                         "fileversion": 1,
                                                         "appversion": {
                                                             "major": 9,
-                                                            "minor": 1,
-                                                            "revision": 4,
+                                                            "minor": 2,
+                                                            "revision": 1,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -3108,8 +3109,8 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
-                                            "revision": 4,
+                                            "minor": 2,
+                                            "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -3118,12 +3119,66 @@
                                         "boxes": [
                                             {
                                                 "box": {
+                                                    "id": "obj-44",
+                                                    "maxclass": "comment",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 0,
+                                                    "patching_rect": [ 738.0, 183.0, 185.0, 20.0 ],
+                                                    "text": "send any list to control@"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "id": "obj-42",
+                                                    "maxclass": "message",
+                                                    "numinlets": 2,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 745.0, 158.0, 116.0, 22.0 ],
+                                                    "text": "control@1_list"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "id": "obj-40",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 724.0, 123.0, 102.0, 22.0 ],
+                                                    "text": "sprintf set %s_list"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "id": "obj-38",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 2,
+                                                    "outlettype": [ "", "" ],
+                                                    "patching_rect": [ 724.0, 90.0, 63.0, 22.0 ],
+                                                    "text": "ll.actname"
+                                                }
+                                            },
+                                            {
+                                                "box": {
+                                                    "id": "obj-31",
+                                                    "maxclass": "newobj",
+                                                    "numinlets": 1,
+                                                    "numoutlets": 1,
+                                                    "outlettype": [ "" ],
+                                                    "patching_rect": [ 724.0, 158.0, 19.0, 22.0 ],
+                                                    "text": "r"
+                                                }
+                                            },
+                                            {
+                                                "box": {
                                                     "id": "obj-37",
                                                     "linecount": 2,
                                                     "maxclass": "comment",
                                                     "numinlets": 1,
                                                     "numoutlets": 0,
-                                                    "patching_rect": [ 593.0, 75.0, 150.0, 33.0 ],
+                                                    "patching_rect": [ 544.0, 66.0, 150.0, 33.0 ],
                                                     "text": "resize routing window when preset changed"
                                                 }
                                             },
@@ -3134,7 +3189,7 @@
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 593.0, 173.0, 68.0, 22.0 ],
+                                                    "patching_rect": [ 544.0, 164.0, 68.0, 22.0 ],
                                                     "text": "check_size"
                                                 }
                                             },
@@ -3145,7 +3200,7 @@
                                                     "numinlets": 2,
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
-                                                    "patching_rect": [ 593.0, 142.0, 55.0, 22.0 ],
+                                                    "patching_rect": [ 544.0, 133.0, 55.0, 22.0 ],
                                                     "text": "pipe 500"
                                                 }
                                             },
@@ -3156,7 +3211,7 @@
                                                     "numinlets": 3,
                                                     "numoutlets": 2,
                                                     "outlettype": [ "", "bang" ],
-                                                    "patching_rect": [ 593.0, 110.0, 67.0, 22.0 ],
+                                                    "patching_rect": [ 544.0, 101.0, 67.0, 22.0 ],
                                                     "text": "ll.p presets"
                                                 }
                                             },
@@ -3192,8 +3247,8 @@
                                                         "fileversion": 1,
                                                         "appversion": {
                                                             "major": 9,
-                                                            "minor": 1,
-                                                            "revision": 4,
+                                                            "minor": 2,
+                                                            "revision": 1,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -3325,7 +3380,7 @@
                                                             }
                                                         ]
                                                     },
-                                                    "patching_rect": [ 812.5, 173.0, 59.0, 22.0 ],
+                                                    "patching_rect": [ 905.0, 59.0, 59.0, 22.0 ],
                                                     "text": "p test_list"
                                                 }
                                             },
@@ -3863,6 +3918,12 @@
                                             },
                                             {
                                                 "patchline": {
+                                                    "destination": [ "obj-32", 0 ],
+                                                    "source": [ "obj-31", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
                                                     "destination": [ "obj-39", 0 ],
                                                     "source": [ "obj-32", 0 ]
                                                 }
@@ -3893,6 +3954,12 @@
                                             },
                                             {
                                                 "patchline": {
+                                                    "destination": [ "obj-40", 0 ],
+                                                    "source": [ "obj-38", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
                                                     "destination": [ "obj-116", 0 ],
                                                     "source": [ "obj-4", 1 ]
                                                 }
@@ -3901,6 +3968,20 @@
                                                 "patchline": {
                                                     "destination": [ "obj-23", 1 ],
                                                     "source": [ "obj-4", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-31", 0 ],
+                                                    "order": 1,
+                                                    "source": [ "obj-40", 0 ]
+                                                }
+                                            },
+                                            {
+                                                "patchline": {
+                                                    "destination": [ "obj-42", 0 ],
+                                                    "order": 0,
+                                                    "source": [ "obj-40", 0 ]
                                                 }
                                             },
                                             {
@@ -3946,6 +4027,7 @@
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 140.0, 203.0, 97.0, 24.0 ],
                                     "saved_object_attributes": {
+                                        "embed": 0,
                                         "parameter_enable": 0
                                     },
                                     "text": "v8 control@.js",
@@ -3994,8 +4076,8 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
-                                            "revision": 4,
+                                            "minor": 2,
+                                            "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -4022,8 +4104,8 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
-                                            "revision": 4,
+                                            "minor": 2,
+                                            "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -4033,6 +4115,7 @@
                                         "boxes": [
                                             {
                                                 "box": {
+                                                    "embed": 0,
                                                     "embedstate": [
                                                         [ "bgcolor", 0.15, 0.15, 0.15, 1 ],
                                                         [ "bordercolor", 1, 1, 1, 1 ],
@@ -4133,8 +4216,8 @@
                                                         "fileversion": 1,
                                                         "appversion": {
                                                             "major": 9,
-                                                            "minor": 1,
-                                                            "revision": 4,
+                                                            "minor": 2,
+                                                            "revision": 1,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -4232,6 +4315,7 @@
                                             },
                                             {
                                                 "box": {
+                                                    "embed": 0,
                                                     "embedstate": [
                                                         [ "amount", 13 ],
                                                         [ "bgcolors", 3, 3, 2, 2, 2, 2, 3, 2 ],
@@ -4286,8 +4370,8 @@
                                                         "fileversion": 1,
                                                         "appversion": {
                                                             "major": 9,
-                                                            "minor": 1,
-                                                            "revision": 4,
+                                                            "minor": 2,
+                                                            "revision": 1,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -4571,6 +4655,17 @@
                                                         "ll_tab": [ 0 ],
                                                         "lllbmenu": [ "listscale" ]
                                                     },
+                                                    "restore_extra": {
+                                                        "listblock": {
+                                                            "id": "obj-59"
+                                                        },
+                                                        "ll_tab": {
+                                                            "id": "obj-2"
+                                                        },
+                                                        "lllbmenu": {
+                                                            "id": "obj-13"
+                                                        }
+                                                    },
                                                     "text": "autopattr ap",
                                                     "varname": "ap"
                                                 }
@@ -4615,6 +4710,7 @@
                                             },
                                             {
                                                 "box": {
+                                                    "embed": 0,
                                                     "embedstate": [
                                                         [ "bgcolors", 1, 1, 1, 1, 2, 1, 1, 3, 3, 3, 4, 1 ],
                                                         [ "c1", 1, 1, 1, 1 ],
@@ -4788,7 +4884,7 @@
                                     "numinlets": 0,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 140.0, 100.0, 100.0, 0.0 ],
+                                    "patching_rect": [ 140.0, 100.0, 100.0, 22.0 ],
                                     "text": "ll.ctlin",
                                     "varname": "in"
                                 }
@@ -4883,6 +4979,68 @@
                         "serial_port": [ "debug-console" ],
                         "throttle": [ 0 ],
                         "wacom_menu": [ 0 ]
+                    },
+                    "restore_extra": {
+                        "act_menu": {
+                            "id": "obj-35"
+                        },
+                        "act_suggested": {
+                            "id": "obj-38"
+                        },
+                        "baud_rate": {
+                            "id": "obj-13"
+                        },
+                        "chans": {
+                            "id": "obj-66"
+                        },
+                        "hi_menu": {
+                            "id": "obj-32"
+                        },
+                        "input_menu": {
+                            "id": "obj-1"
+                        },
+                        "midi_channels": {
+                            "id": "obj-27"
+                        },
+                        "midi_receive_port": {
+                            "id": "obj-26"
+                        },
+                        "note_mode": {
+                            "id": "obj-31"
+                        },
+                        "on/off": {
+                            "id": "obj-37"
+                        },
+                        "osc_receive_port": {
+                            "id": "obj-14"
+                        },
+                        "output_menu": {
+                            "id": "obj-20"
+                        },
+                        "presets": {
+                            "id": "obj-30"
+                        },
+                        "routingW": {
+                            "id": "obj-46"
+                        },
+                        "send_back": {
+                            "id": "obj-36"
+                        },
+                        "send_back_light": {
+                            "id": "obj-33"
+                        },
+                        "serial_open-close": {
+                            "id": "obj-15"
+                        },
+                        "serial_port": {
+                            "id": "obj-10"
+                        },
+                        "throttle": {
+                            "id": "obj-17"
+                        },
+                        "wacom_menu": {
+                            "id": "obj-6"
+                        }
                     },
                     "text": "autopattr autopattr",
                     "varname": "autopattr"
@@ -5069,7 +5227,7 @@
                     "fontname": "Arial",
                     "hint": "midi_receive_port",
                     "id": "obj-26",
-                    "items": [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "Network Session 1", ",", "to Max 1", ",", "to Max 2" ],
+                    "items": [ "-no-", ",", "~refresh~", ",", "ll.midi", ",", "to Max 1", ",", "to Max 2" ],
                     "maxclass": "ll_menu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -5232,11 +5390,12 @@
             {
                 "box": {
                     "border": 0,
+                    "embed": 0,
                     "embedstate": [
                         [ "bgcolor_off", 0.3, 0.3, 0.3, 1 ],
                         [ "bgcolor_on", 0.6, 0.6, 0.6, 1 ],
                         [ "blinktime", 150 ],
-                        [ "bordercolor", 0.2, 0.2, 0.2, 1 ],
+                        [ "border_color", 0.2, 0.2, 0.2, 1 ],
                         [ "button_mode", "button" ],
                         [ "fontsize", 10 ],
                         [ "output_mode", 0 ],

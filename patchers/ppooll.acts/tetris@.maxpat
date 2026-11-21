@@ -3,8 +3,8 @@
         "fileversion": 1,
         "appversion": {
             "major": 9,
-            "minor": 1,
-            "revision": 3,
+            "minor": 2,
+            "revision": 1,
             "architecture": "x64",
             "modernui": 1
         },
@@ -13,6 +13,58 @@
         "toolbarvisible": 0,
         "globalpatchername": "tetris@1",
         "boxes": [
+            {
+                "box": {
+                    "annotation": "hide/show the selected object in the act",
+                    "bgcolor": [ 0.796078431372549, 0.28627450980392155, 0.28627450980392155, 1.0 ],
+                    "bgoncolor": [ 0.752941, 0.023529, 0.247059, 1.0 ],
+                    "fontsize": 12.0,
+                    "hint": "hide/show the selected object in the act",
+                    "id": "obj-9",
+                    "maxclass": "textbutton",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "int" ],
+                    "outputmode": 0,
+                    "parameter_enable": 0,
+                    "patching_rect": [ 179.0, 194.0, 58.0, 14.0 ],
+                    "prototypename": "jit_on",
+                    "rounded": 2.0,
+                    "text": "show_all",
+                    "textcolor": [ 0.8509803921568627, 0.5333333333333333, 0.6862745098039216, 1.0 ],
+                    "texton": "",
+                    "textoncolor": [ 0.8509803921568627, 0.8509803921568627, 0.8509803921568627, 1.0 ],
+                    "textovercolor": [ 0.752941, 0.023529, 0.247059, 1.0 ],
+                    "usebgoncolor": 1,
+                    "varname": "show_all"
+                }
+            },
+            {
+                "box": {
+                    "annotation": "hide/show the selected object in the act",
+                    "bgcolor": [ 0.796078431372549, 0.28627450980392155, 0.28627450980392155, 1.0 ],
+                    "bgoncolor": [ 0.752941, 0.023529, 0.247059, 1.0 ],
+                    "fontsize": 12.0,
+                    "hint": "hide/show the selected object in the act",
+                    "id": "obj-6",
+                    "maxclass": "textbutton",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "int" ],
+                    "outputmode": 0,
+                    "parameter_enable": 0,
+                    "patching_rect": [ 179.0, 179.0, 58.0, 14.0 ],
+                    "prototypename": "jit_on",
+                    "rounded": 2.0,
+                    "text": "hide_all",
+                    "textcolor": [ 0.8509803921568627, 0.5333333333333333, 0.6862745098039216, 1.0 ],
+                    "texton": "",
+                    "textoncolor": [ 0.8509803921568627, 0.8509803921568627, 0.8509803921568627, 1.0 ],
+                    "textovercolor": [ 0.752941, 0.023529, 0.247059, 1.0 ],
+                    "usebgoncolor": 1,
+                    "varname": "hide_all"
+                }
+            },
             {
                 "box": {
                     "allowdrag": 0,
@@ -27,7 +79,7 @@
                     "fontsize": 16.0,
                     "hint": "select an act to work on",
                     "id": "obj-44",
-                    "items": [ "ho_st1", ",", "tetris@1", ",", "beauty1", ",", "beast1" ],
+                    "items": [ "ho_st1", ",", "score@1", ",", "tetris@1" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -61,7 +113,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 196.0, 181.0, 49.0, 19.0 ],
+                    "patching_rect": [ 133.0, 165.0, 49.0, 19.0 ],
                     "text": "(key h)",
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ]
                 }
@@ -74,7 +126,7 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 138.0, 160.0, 98.0, 19.0 ],
+                    "patching_rect": [ 34.0, 153.0, 98.0, 19.0 ],
                     "text": "object's attributes",
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                     "textjustification": 2
@@ -118,7 +170,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 53.0, 180.0, 72.0, 67.0 ],
+                    "patching_rect": [ 34.0, 180.0, 72.0, 67.0 ],
                     "sliderstyle": 2,
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                     "varname": "obj_rect"
@@ -143,7 +195,7 @@
                     "fontsize": 14.0,
                     "hint": "select an object to work on",
                     "id": "obj-32",
-                    "items": [ "bang-env", ",", "base-freq", ",", "envelope", ",", "f-rel>trigger", ",", "freq", ",", "freq-relative", ",", "freqNOramp", ",", "freq_mcspread", ",", "length", ",", "length-slider", ",", "ll.blues", ",", "loop-env", ",", "octdiv", ",", "preset-ramp", ",", "presets", ",", "takeover", ",", "use-env" ],
+                    "items": [ "auto_sel_edit", ",", "bars", ",", "clear_", ",", "comm1", ",", "comm10", ",", "comm11", ",", "comm2", ",", "comm3", ",", "comm4", ",", "comm5", ",", "comm6", ",", "comm7", ",", "comm8", ",", "comm9", ",", "current_pos", ",", "dict2score@pos", ",", "disp_props", ",", "disp_size", ",", "disp_x", ",", "disp_y", ",", "env_mode", ",", "event", ",", "event2text", ",", "event_mode", ",", "events", ",", "generative", ",", "get_end", ",", "goto0", ",", "import_spear", ",", "line1", ",", "line2", ",", "line3", ",", "line4", ",", "line5", ",", "line6", ",", "line@", ",", "ll.blues", ",", "loop", ",", "loop_se", ",", "mod_info", ",", "mute@stop", ",", "mv_size", ",", "new_event_w", ",", "ramps", ",", "read_", ",", "score", ",", "score2text", ",", "score_length", ",", "sel_clear", ",", "sel_edit", ",", "solo", ",", "speakers", ",", "speed2all", ",", "staff", ",", "staff_colors", ",", "start_at", ",", "startstop", ",", "text2score", ",", "trackpad", ",", "verbose_print", ",", "voices", ",", "white_log", ",", "white_offset", ",", "write_", ",", "zoom_b_x", ",", "zoom_b_y" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -172,13 +224,13 @@
                     "fontsize": 12.0,
                     "hint": "select an object to work on",
                     "id": "obj-47",
-                    "items": [ "bgcolor", ",", "bordercolor", ",", "labelcolor", ",", "selectcolor", ",", "slidercolor", ",", "slidercolornofocus", ",", "textcolor", ",", "textcolornofocus" ],
+                    "items": [ "bgcolor", ",", "bgoncolor", ",", "textcolor", ",", "textoncolor", ",", "textovercolor" ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "int", "", "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 53.0, 249.0, 150.0, 22.0 ],
+                    "patching_rect": [ 34.0, 249.0, 150.0, 22.0 ],
                     "pattrmode": 1,
                     "prototypename": "eckig",
                     "textcolor": [ 0.227450980392157, 0.815686274509804, 0.211764705882353, 1.0 ],
@@ -188,7 +240,7 @@
             {
                 "box": {
                     "id": "obj-46",
-                    "linecolor": [ 0.811764705882353, 0.811764705882353, 0.811764705882353, 1.0 ],
+                    "linecolor": [ 0.9058823529411765, 0.9058823529411765, 0.9058823529411765, 1.0 ],
                     "maxclass": "live.line",
                     "numinlets": 1,
                     "numoutlets": 0,
@@ -291,7 +343,7 @@
             {
                 "box": {
                     "id": "obj-31",
-                    "linecolor": [ 0.811764705882353, 0.811764705882353, 0.811764705882353, 1.0 ],
+                    "linecolor": [ 0.9058823529411765, 0.9058823529411765, 0.9058823529411765, 1.0 ],
                     "maxclass": "live.line",
                     "numinlets": 1,
                     "numoutlets": 0,
@@ -331,12 +383,14 @@
                     "fontsize": 12.0,
                     "id": "obj-30",
                     "keymode": 1,
+                    "linecount": 2,
                     "maxclass": "textedit",
                     "numinlets": 1,
                     "numoutlets": 4,
                     "outlettype": [ "", "int", "", "" ],
                     "parameter_enable": 0,
                     "patching_rect": [ 19.0, 408.0, 295.0, 81.0 ],
+                    "text": "@status 0 0 0 0 0 0 1 @rowheight 16 @levels 0.2 0.2 0 0 10 0 0.5",
                     "varname": "textedit"
                 }
             },
@@ -368,7 +422,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 127.0, 223.0, 76.0, 22.0 ],
+                    "patching_rect": [ 108.0, 223.0, 76.0, 22.0 ],
                     "sliderstyle": 2,
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                     "varname": "grid_size"
@@ -389,7 +443,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "parameter_enable": 0,
-                    "patching_rect": [ 127.0, 200.0, 69.0, 22.0 ],
+                    "patching_rect": [ 108.0, 200.0, 69.0, 22.0 ],
                     "sliderstyle": 2,
                     "textcolor": [ 1.0, 1.0, 1.0, 1.0 ],
                     "varname": "fontsize_"
@@ -442,7 +496,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 135.0, 501.0, 78.0, 22.0 ],
-                    "text": "doesnotexist",
+                    "text": "0 0 0 0 0 0 1",
                     "varname": "status_show"
                 }
             },
@@ -517,7 +571,7 @@
                     "outlettype": [ "", "", "int" ],
                     "outputmode": 0,
                     "parameter_enable": 0,
-                    "patching_rect": [ 129.0, 184.0, 65.0, 14.0 ],
+                    "patching_rect": [ 110.0, 184.0, 65.0, 14.0 ],
                     "prototypename": "jit_on",
                     "rounded": 2.0,
                     "text": "hide",
@@ -599,12 +653,12 @@
                     "outlettype": [ "", "", "int" ],
                     "outputmode": 0,
                     "parameter_enable": 0,
-                    "patching_rect": [ 207.0, 111.0, 101.0, 33.0 ],
+                    "patching_rect": [ 207.0, 114.0, 101.0, 33.0 ],
                     "prototypename": "jit_on",
                     "rounded": 2.0,
-                    "text": "hide_hidden in_objects_menu",
+                    "text": "<<< hide_hidden in this menu",
                     "textcolor": [ 0.752941, 0.023529, 0.247059, 1.0 ],
-                    "texton": "hide_hidden in_objects_menu",
+                    "texton": "<<< hide_hidden in this menu",
                     "textoncolor": [ 0.870588, 0.819608, 0.239216, 1.0 ],
                     "textovercolor": [ 0.752941, 0.023529, 0.247059, 1.0 ],
                     "truncate": 0,
@@ -689,20 +743,72 @@
                     "outlettype": [ "", "", "", "" ],
                     "patching_rect": [ 412.0, 237.0, 107.0, 21.0 ],
                     "restore": {
-                        "act_menu": [ "ho_st1" ],
+                        "act_menu": [ "score@1" ],
                         "blink": [ 1 ],
                         "color_menu": [ "bgcolor" ],
                         "fontsize_": [ 12.0 ],
                         "grid_size": [ 12.0 ],
                         "hidden": [ 0 ],
+                        "hide_all": [ -1 ],
                         "hover": [ 0 ],
                         "llblues_args": [ "@in_mix 1 (creates the in_mix section in ll.blues)" ],
                         "no_hidden": [ 0 ],
-                        "obj_menu": [ "bang-env" ],
-                        "obj_rect": [ 52.0, 27.0, 55.0, 15.0 ],
-                        "textedit": [ "" ],
-                        "w_rect": [ 200.0, 270.0, 132.0, 200.0 ],
+                        "obj_menu": [ "auto_sel_edit" ],
+                        "obj_rect": [ 5.0, 390.0, 36.0, 19.0 ],
+                        "show_all": [ -1 ],
+                        "textedit": [ "@status 0 0 0 0 0 0 1 @rowheight 16 @levels 0.2 0.2 0 0 10 0 0.5" ],
+                        "w_rect": [ 130, 25, 1785, 784 ],
                         "write": [ -1 ]
+                    },
+                    "restore_extra": {
+                        "act_menu": {
+                            "id": "obj-44"
+                        },
+                        "blink": {
+                            "id": "obj-1"
+                        },
+                        "color_menu": {
+                            "id": "obj-47"
+                        },
+                        "fontsize_": {
+                            "id": "obj-7"
+                        },
+                        "grid_size": {
+                            "id": "obj-8"
+                        },
+                        "hidden": {
+                            "id": "obj-4"
+                        },
+                        "hide_all": {
+                            "id": "obj-6"
+                        },
+                        "hover": {
+                            "id": "obj-45"
+                        },
+                        "llblues_args": {
+                            "id": "obj-35"
+                        },
+                        "no_hidden": {
+                            "id": "obj-13"
+                        },
+                        "obj_menu": {
+                            "id": "obj-32"
+                        },
+                        "obj_rect": {
+                            "id": "obj-2"
+                        },
+                        "show_all": {
+                            "id": "obj-9"
+                        },
+                        "textedit": {
+                            "id": "obj-30"
+                        },
+                        "w_rect": {
+                            "id": "obj-3"
+                        },
+                        "write": {
+                            "id": "obj-18"
+                        }
                     },
                     "text": "autopattr autopattr",
                     "varname": "autopattr"
@@ -722,8 +828,8 @@
                         "fileversion": 1,
                         "appversion": {
                             "major": 9,
-                            "minor": 1,
-                            "revision": 3,
+                            "minor": 2,
+                            "revision": 1,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -764,8 +870,8 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
-                                            "revision": 3,
+                                            "minor": 2,
+                                            "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -871,8 +977,8 @@
                                                         "fileversion": 1,
                                                         "appversion": {
                                                             "major": 9,
-                                                            "minor": 1,
-                                                            "revision": 3,
+                                                            "minor": 2,
+                                                            "revision": 1,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1212,8 +1318,8 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
-                                            "revision": 3,
+                                            "minor": 2,
+                                            "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1231,8 +1337,8 @@
                                                         "fileversion": 1,
                                                         "appversion": {
                                                             "major": 9,
-                                                            "minor": 1,
-                                                            "revision": 3,
+                                                            "minor": 2,
+                                                            "revision": 1,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1331,8 +1437,8 @@
                                                                         "fileversion": 1,
                                                                         "appversion": {
                                                                             "major": 9,
-                                                                            "minor": 1,
-                                                                            "revision": 3,
+                                                                            "minor": 2,
+                                                                            "revision": 1,
                                                                             "architecture": "x64",
                                                                             "modernui": 1
                                                                         },
@@ -1456,8 +1562,8 @@
                                                                         "fileversion": 1,
                                                                         "appversion": {
                                                                             "major": 9,
-                                                                            "minor": 1,
-                                                                            "revision": 3,
+                                                                            "minor": 2,
+                                                                            "revision": 1,
                                                                             "architecture": "x64",
                                                                             "modernui": 1
                                                                         },
@@ -1475,8 +1581,8 @@
                                                                                         "fileversion": 1,
                                                                                         "appversion": {
                                                                                             "major": 9,
-                                                                                            "minor": 1,
-                                                                                            "revision": 3,
+                                                                                            "minor": 2,
+                                                                                            "revision": 1,
                                                                                             "architecture": "x64",
                                                                                             "modernui": 1
                                                                                         },
@@ -1922,8 +2028,8 @@
                                                                                         "fileversion": 1,
                                                                                         "appversion": {
                                                                                             "major": 9,
-                                                                                            "minor": 1,
-                                                                                            "revision": 3,
+                                                                                            "minor": 2,
+                                                                                            "revision": 1,
                                                                                             "architecture": "x64",
                                                                                             "modernui": 1
                                                                                         },
@@ -2174,8 +2280,8 @@
                                                                                         "fileversion": 1,
                                                                                         "appversion": {
                                                                                             "major": 9,
-                                                                                            "minor": 1,
-                                                                                            "revision": 3,
+                                                                                            "minor": 2,
+                                                                                            "revision": 1,
                                                                                             "architecture": "x64",
                                                                                             "modernui": 1
                                                                                         },
@@ -2568,7 +2674,7 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-37",
-                                                                    "linecount": 3,
+                                                                    "linecount": 2,
                                                                     "maxclass": "newobj",
                                                                     "numinlets": 1,
                                                                     "numoutlets": 0,
@@ -2612,7 +2718,7 @@
                                                             {
                                                                 "box": {
                                                                     "id": "obj-39",
-                                                                    "linecount": 3,
+                                                                    "linecount": 2,
                                                                     "maxclass": "newobj",
                                                                     "numinlets": 1,
                                                                     "numoutlets": 0,
@@ -3074,8 +3180,8 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
-                                            "revision": 3,
+                                            "minor": 2,
+                                            "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -3090,7 +3196,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 482.0, 47.0, 50.0, 22.0 ],
-                                                    "text": "127"
+                                                    "text": "30"
                                                 }
                                             },
                                             {
@@ -3530,6 +3636,7 @@
                                     "outlettype": [ "", "" ],
                                     "patching_rect": [ 59.0, 198.0, 82.0, 24.0 ],
                                     "saved_object_attributes": {
+                                        "embed": 0,
                                         "parameter_enable": 0
                                     },
                                     "text": "v8 ll.tetris.js",
@@ -3623,8 +3730,8 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
-                                            "revision": 3,
+                                            "minor": 2,
+                                            "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -3699,8 +3806,8 @@
                                                         "fileversion": 1,
                                                         "appversion": {
                                                             "major": 9,
-                                                            "minor": 1,
-                                                            "revision": 3,
+                                                            "minor": 2,
+                                                            "revision": 1,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -4018,8 +4125,8 @@
                                                         "fileversion": 1,
                                                         "appversion": {
                                                             "major": 9,
-                                                            "minor": 1,
-                                                            "revision": 3,
+                                                            "minor": 2,
+                                                            "revision": 1,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -4256,7 +4363,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 427.0, 197.0, 143.0, 22.0 ],
-                                                    "text": "text  @in_mix 1"
+                                                    "text": "text @in_mix 1"
                                                 }
                                             },
                                             {
@@ -4370,7 +4477,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 499.0, 14.0, 161.0, 22.0 ],
-                                                    "text": "ho_st1"
+                                                    "text": "score@1"
                                                 }
                                             },
                                             {
@@ -4725,8 +4832,8 @@
                                         "fileversion": 1,
                                         "appversion": {
                                             "major": 9,
-                                            "minor": 1,
-                                            "revision": 3,
+                                            "minor": 2,
+                                            "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -4752,7 +4859,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 50.0, 231.0, 85.0, 22.0 ],
-                                                    "text": "ho_st1"
+                                                    "text": "score@1"
                                                 }
                                             },
                                             {
@@ -4763,7 +4870,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 77.0, 114.0, 171.0, 22.0 ],
-                                                    "text": "::ho_st1::tetris_menu"
+                                                    "text": "::score@1::tetris_menu"
                                                 }
                                             },
                                             {
@@ -5088,7 +5195,7 @@
                     "mode": 0,
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 44.0, 161.0, 197.0, 115.0 ],
+                    "patching_rect": [ 25.0, 153.0, 223.0, 129.0 ],
                     "proportion": 0.5
                 }
             }

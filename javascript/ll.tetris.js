@@ -83,7 +83,7 @@ function fill_obj_menu(){
 	obj_list.sort();
 	for (let o of obj_list){
 		if (o != "window" && o != "act"){
-			if (hide_hidden) {
+			if (hide_hidden === 1) {
 				if (!actTetris[o]["hidden"]) men.message("append", o);
 				}
 			else men.message("append", o);
@@ -96,7 +96,7 @@ function obj_menu(o) {
 	for (let u of UIs) if (tpp.getnamed(u)) tpp.getnamed(u).hidden = 1;
 	tpp.getnamed("color_menu").message("clear");
 	sel_name = o;
-	sel_obj = ap.getnamed(o);;
+	sel_obj = ap.getnamed(o);
 	
 	for (let a of Object.keys(actTetris[o])){
 		//post("ob", o, "a",a,actTetris[o][a],"\n");
@@ -156,7 +156,7 @@ function hover(x,y){
 }
 
 function no_hidden(v){
-	hide_hidden = v;
+	hide_hidden = Number(v);
 	fill_obj_menu();
 }
 
@@ -175,6 +175,22 @@ function hidden(v){
 	sel_obj.hidden = v;
 	ap.bringtofront(sel_obj);
 	actTetris[sel_name]["hidden"] = v;
+}
+function hide_all(){
+	Object.keys(actTetris).forEach((o) => {
+		if (o != "window" && o != "act"){
+			ap.getnamed(o).hidden = 1;
+			actTetris[o]["hidden"] = 1;
+		}	
+	});
+}
+function show_all(){
+	Object.keys(actTetris).forEach((o) => {
+		if (o != "window" && o != "act"){
+			ap.getnamed(o).hidden = 0;
+			actTetris[o]["hidden"] = 0;
+		}	
+	});
 }
 function fontsize_(v){
 	sel_obj.fontsize = v;
