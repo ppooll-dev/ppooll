@@ -130,6 +130,25 @@ function request_ready(r_address) {
     if (isReady) messnamed(r_address, "act_ready");   // already ready: answer now
 }
 
+// ---- soft close ----
+// fade this act's ll.blues out first, then dispose, so closing an act doesn't cut out audio
+const CLOSE_FADE_MS = 25;              // ll.blues fades in 10 ms; a little margin
+var closeTask = new Task(close_now, this);
+var isClosing = false;
+
+function close_soft(minDelay = 0) {
+    if (isClosing) return;
+    isClosing = true;
+    ready_receivers.forEach((r) => messnamed(r, "act_closing"));
+    const delay = Math.max(minDelay, ready_receivers.length ? CLOSE_FADE_MS : 0);
+    closeTask.schedule(delay);
+}
+
+function close_now() {
+    act_patcher.message("clean");
+    act_patcher.message("dispose");
+}
+
 function set_isReady(v) {
     isReady = v;
     if (isReady) {
@@ -599,16 +618,18 @@ function create_title_menu_options() {
         titlebar: () => handleTitleBar(),
         close: () => {
             if (act_args.name === "ho_st") {
-                // if ho_st1 'close', close all other acts first
+                // if ho_st1 'close', close all other acts first (each fades out)
                 ll.allActNames()
                     .filter((act) => act !== "ho_st1")
                     .forEach((act) => {
-                        messnamed(act, `TP`, "dispose");
+                        messnamed(act, "v8", "close_soft");
                     });
                 max.showmenubar();
+                // close the host only after the acts have faded out
+                close_soft(CLOSE_FADE_MS + 10);
+                return;
             }
-            act_patcher.message("clean");
-            act_patcher.message("dispose");
+            close_soft();
         },
         back: () => {
             // in old act sub, we had this message going into ll.wsendback
@@ -737,7 +758,8 @@ function create_host_title_menu_options() {
         close: opts.close,
         closeall: () => {
             ll.allActNames().forEach((act) => {
-                messnamed(act, "TP", act === "ho_st1" ? "clean" : "dispose");
+                if (act === "ho_st1") messnamed(act, "TP", "clean");
+                else messnamed(act, "v8", "close_soft");   // fade out, then dispose
             });
             ll_global.envi_name = 0;
         },

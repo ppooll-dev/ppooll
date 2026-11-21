@@ -428,6 +428,16 @@ function makeProbe() {
     probeConnected = false;
 }
 
+// from ll.act_main.js close_soft(): fade out for good, the act is about to be disposed
+function act_closing() {
+    actReady = false;
+    pendingChans = null;
+    probeWaiting = false;
+    applyTask.cancel(); rebuildTask.cancel(); fadeInTask.cancel();
+    probeTimeoutTask.cancel(); resendTask.cancel();
+    fadeTo(0);
+}
+
 // user changed a channel count: fade out first, then apply
 function requestChans(cin, cout) {
     if (!actReady || !fadeObj()) {
