@@ -6,70 +6,8 @@ mgraphics.relative_coords = 0;
 const score_d = new Dict("score_dict");
 const sel_d = new Dict("sel_dict");
 const key_d = new Dict("keys");
-let score_o = {}; //the score_object, displayed and played from, pos:
-let score_end = 20000;
-let event_o = {};
-let sel_data = {}; //selected by rectangle, -> no whole events
-let selected_events = []; //event# if whole event(s) selected
-let sel_whole_events = true;
-let rec_o = {};
-let rec_voice = {};
-let bass_clef = new MGraphicsSVG("bass_clef.svg");
-let treble_clef = new MGraphicsSVG("treble_clef.svg");
-let tp;
-let ap;
-let display_w;
-let events_ui;
-let current_pos;
-let do_loop;
-let linev8;
-let d_left,d_right,df_low,df_high;
-let dy_low, dy_high;
-let yrange;
-let width;
-let height;
-let mypath;
-let dispActive = 1;
-let curr_height;
-let yr_offset;
-let open_sel_edit;
-let sel_edit_w;
-let event_ID = 0;
-let playpos = 0;
-let recpos = 0;
-let loopstart = 100;
-let loopend = 1000;
-let start_stop = 0;
-let solo_event = 0;
-let rec2o = 0;
-let mvSize = 0;
-let event_pars = 5;
-let mscolors = [[1,0,0,1],[0,0,1,1],[0,0.7,0,1],[0,0.5,0.5,1],[0.5,0.7,0,1]];
-let param_labels = ["freq","vol","azimuth","elevation","distance"];
-let default_fun = ["data", 0, 12, 1, 0, 1, 0, 0.32, 0, 0, 1, 0.32, 0, 0, "curve", "data", 1, 20, 1, 0, 1, 0, 0, 0, 0, 0.02, 1, 0, 0, 0.83, 1, 0, 0, 1, 0, 0, 0, "curve", "data", 2, 12, 1, 0, 1, 0, 0.18, 0, 0, 1, 0.82, 0, 0, "curve", "data", 3, 12, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, "curve", "data", 4, 12, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, "curve"];
-let fun_state;
-let sel_edit_par = 0;
-let sel_edit_p;
-let fun_values = [];
-let store_fun_out = 0;
-let sc_keys = [];
-let ev_keys = [];
-let funA = [];
-let fun_out_store = 0;
-let par_idx = [];
-let fun_get_skip = 0;
-let current_fun;
-let v_post = 0;
-let mute_actout = false;
-let editwActive = 0;
-let line_rect = [];
-let copy_rect = [];
-let voicesV = 12;
-let voiceA = []; //voiceArray 
-let voiceNew = [];
-let chansout = 2;
-let wlabel = -1;
-let to_ppooll = 1;
+const bass_clef = new MGraphicsSVG("bass_clef.svg");
+const treble_clef = new MGraphicsSVG("treble_clef.svg");
 const freq_lines = {
 	1: [19, 23, 26, 29, 33, 43, 47, 50, 53, 57, 64, 67, 71, 74, 77, 88, 91, 95, 98, 101, 112, 115, 119, 122, 125],
 	2: [16, 17, 19, 21, 23, 24, 26, 28, 29,31,33,35,36,38,40,41,43,45,47,48,50,52,53,55,57,59,60,62,64,65,67,69,71,72,74,76,77,79,
@@ -235,40 +173,95 @@ const modifiers_map = {
 	6: ["shift+ctrl","paste_at_click-pos_keep_freq"]
 }
 
+let ap, tp, sel_edit_w; //_____patchers
+// ____________________________________max-pbjects
+let fun, linev8, events_ui, current_pos;
+//_____________________________________objects
+let score_o = {}; //the score_object, displayed and played from, pos:
+let event_o = {};
+let sel_data = {}; //selected by rectangle, -> no whole events
+let rec_o = {};
+let rec_voice = {};
+//_____________________________________arrays
+let selected_events = []; //event# if whole event(s) selected
+let fun_values = [];
+let sc_keys = [];
+let ev_keys = [];
+let funA = [];
+let par_idx = [];
+let line_rect = [];
+let copy_rect = [];
+let voiceA = []; //voiceArray 
+let voiceNew = [];
+let mscolors = [[1,0,0,1],[0,0,1,1],[0,0.7,0,1],[0,0.5,0.5,1],[0.5,0.7,0,1]];
+let param_labels = ["freq","vol","azimuth","elevation","distance"];
+let default_fun = ["data", 0, 12, 1, 0, 1, 0, 0.32, 0, 0, 1, 0.32, 0, 0, "curve", "data", 1, 20, 1, 0, 1, 0, 0, 0, 0, 0.02, 1, 0, 0, 0.83, 1, 0, 0, 1, 0, 0, 0, "curve", "data", 2, 12, 1, 0, 1, 0, 0.18, 0, 0, 1, 0.82, 0, 0, "curve", "data", 3, 12, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, "curve", "data", 4, 12, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, "curve"];
+
+// ___________________________________params
+let voicesV = 12;
+let fun_out_store = 0;
+let sel_whole_events = true;
+let score_end = 20000;
+let do_loop;
+let d_left, d_right, df_low, df_high;
+let dy_low, dy_high;
+let width, height, yrange, curr_height, yr_offset;
+let open_sel_edit;
+let fun_state;
+
+let dispActive = 1;
+let event_ID = 0;
+let playpos = 0;
+let recpos = 0;
+let loopstart = 100;
+let loopend = 1000;
+let start_stop = 0;
+let solo_event = 0;
+let rec2o = 0;
+let mvSize = 0;
+let event_pars = 5;
+let sel_edit_par = 0;
+let sel_edit_par_name;
+let sel_edit_point;
+let store_fun_out = 0;
+let fun_get_skip = 0;
+let current_fun;
+let v_post = 0;
+let mute_actout = false;
+let editwActive = 0;
+let chansout = 2;
+let write_label = -1;
+
+
 // ___________________________________________________________init & general
 var ready = 0;
 function init(){
 	tp = this.patcher.parentpatcher;
 	ap = this.patcher;
 	sub_w = ap.getnamed("sub").subpatcher();
-	display_w = ap;
 	sel_edit_w = sub_w.getnamed("sel_edit").subpatcher();
-	fun = sel_edit_w.getnamed("fun");
 	play_w = sub_w.getnamed("mc_play").subpatcher();
+	
 	linev8 = ap.getnamed("line@");
-	
-	mypath = ap.filepath;
-	current_pos = ap.getnamed("current_pos");	
-	ap.getnamed("pat").message("getdisp_size");
-	//ap.getnamed("pat").message("getdisp_range");
-	ap.getnamed("pat").message("getdisp_x");
-	ap.getnamed("pat").message("getdisp_y");
-	ap.getnamed("pat").message("getll.blues::chans");
-	ap.getnamed("pat").message("getloop_se");
-	ap.getnamed("pat").message("getmute@stop");
-	
 	events_ui = ap.getnamed("events");
+	current_pos = ap.getnamed("current_pos");
+	fun = sel_edit_w.getnamed("fun");	
+	
+	let pat = ap.getnamed("pat"); //pattrstorage, get values from the max-patch
+	pat.message("getdisp_size");
+	pat.message("getdisp_x");
+	pat.message("getdisp_y");
+	pat.message("getll.blues::chans");
+	pat.message("getloop_se");
+	pat.message("getmute@stop");
+	pat.message("getevent_params");
+	pat.message("getlabel");
+	
 	ready = 1;
 }
 function event_params(p){
 	param_labels = p.split(" ");
 	event_pars = param_labels.length;
-	sel_edit_w.getnamed("label").message("clear");
-	param_labels.forEach((par) =>{
-		sel_edit_w.getnamed("label").message("append",par);
-	})
-	
-	//post("em",param_labels,event_pars,"\n");
 }
 function bang(){
 	//post("bang");
@@ -289,7 +282,7 @@ function act_out(...m){
 	if (mess === "event2text") to_dict("sel");
 	if (mess === "event_params") event_params(...m);
 	if (mess === "get_end") get_end();
-	if (mess === "label") {wlabel = Number(m); mgraphics.redraw();};
+	if (mess === "label") {write_label = Number(m); mgraphics.redraw();};
 	if (mess === "ll.blues::chans") blueschans(...m);
 	if (mess === "loop") loop(Number(m));
 	if (mess === "loop_se") loop_se(...m);
@@ -469,7 +462,7 @@ function paint() {
 						mgraphics.line_to(i,y);
 						mgraphics.stroke();
 					} else {
-						if(wlabel > -1) write_label(i,y,pos,e);
+						if(write_label > -1) write_labels(i,y,pos,e);
 					}
 					coll[e] = [i,y];
 				}
@@ -588,14 +581,14 @@ function draw_bars(c,w,cw){
 		}
 	}
 }
-function write_label(x,y,pos,e){
+function write_labels(x,y,pos,e){
 	//post("the bars", c,w,cw);
 	let edata = score_o[pos][e];
 	let c = 1;
-	wlabel = Math.min(wlabel, event_pars);
-	let txt = (wlabel === 0) ? `${e}` : 
-			(wlabel === 3 && to_ppooll) ? `${Math.floor(edata[2]*100)}` : 
-							`${edata[wlabel-1].toFixed(2)}`;
+	write_label = Math.min(write_label, event_pars);
+	let txt = (write_label === 0) ? `${e}` : 
+			(write_label === 3 && param_labels[2] === "index") ? `${Math.floor(edata[2]*100)}` : 
+							`${edata[write_label-1].toFixed(2)}`;
 
 	mgraphics.set_source_rgba(c,c/2,c/4,1);
 	mgraphics.move_to(x,y);
@@ -676,15 +669,7 @@ function play(p){
 	linev8.message("line",playpos);
 	move_wind(playpos);
 } //deprecated. for timing issues, playing is done in the max-patch!
-function scoreplay(voice, ...event){
-	//post(event,"-----",event[0],"\n");	
-	if (param_labels[0] = "freq") event[0] = y2f(event[0]);
-	if (param_labels[1] = "vol") event[1] = llog(event[1],0,1,0,1,5);
-	if (param_labels[2] = "azimuth") event[2] = event[2]*360;
-	if (param_labels[3] = "elevation") event[3] = event[3]*90;		
-	messnamed("scoreplay",voice+1 ,event ); //target, pars		
-	//post("scoreplay",voice+1 ,"event",e,"\n");	
-}
+
 function mv_size(s){
 	mvSize = s;
 }
@@ -1055,7 +1040,7 @@ function sel_edit(){
 function new_default_w(){	
 	//sel_edit_w.getnamed("store_button").message("text", "store_new_default");	
 	sel_edit_w.getnamed("new_default").message(1);	
-	sel_edit_w.getnamed("label").message(1);
+	sel_edit_w.getnamed("label").message("set", sel_edit_par_name);	
 	fun_par_select(1);	
 	event_w_hide_freqs(1);
 }
@@ -1473,13 +1458,15 @@ function random(r){
 }
 function fun_par_select(c){
 	sel_edit_par = c;
-	sel_edit_w.getnamed("label").message("set", param_labels[sel_edit_par]);	
+	sel_edit_par_name = param_labels[c];
+	sel_edit_w.getnamed("label").message("set", sel_edit_par_name);	
 	current_fun = fun.getvalueof();
 	let np = fun_get(sel_edit_par,-1);
 	sel_edit_w.getnamed("pt").message("max", np-1);
-
-	sel_edit_w.getnamed("freq").hidden = sel_edit_par === 0 ? 0 : 1;
-	sel_edit_w.getnamed("kb").hidden = sel_edit_par === 0 ? 0 : 1;
+	
+	sel_edit_w.getnamed("freq").hidden = sel_edit_par_name === "freq" ? 0 : 1;
+	sel_edit_w.getnamed("kb").hidden = sel_edit_par_name === "freq" ? 0 : 1;
+	sel_edit_w.getnamed("index").hidden = sel_edit_par_name === "index" ? 0 : 1;
 
 }
 function all(a){
@@ -1503,8 +1490,8 @@ function mult(a){
 function pt(p){
 	sel_edit_w.getnamed("px").message("set", fun_get(sel_edit_par,p,0)); // fun_state[i-1]);
 	sel_edit_w.getnamed("py").message("set", fun_get(sel_edit_par,p,1)); //fun_state[i]);
-	sel_edit_p = p;	
-	if (param_labels[sel_edit_par] === "freq"){		
+	sel_edit_point = p;	
+	if (sel_edit_par_name === "freq"){		
 		let freq = y2f(sel_edit_w.getnamed("py").getvalueof());
 		mute_actout = true;
 		sel_edit_w.getnamed("freq").message(freq);
@@ -1512,13 +1499,13 @@ function pt(p){
 	} 
 }
 function px(p){
-	fun_set(sel_edit_par,sel_edit_p,"setpx",p,"sel");	
+	fun_set(sel_edit_par,sel_edit_point,"setpx",p,"sel");	
 }
 function py(p){
-	fun_set(sel_edit_par,sel_edit_p,"setpy",p,"sel");
+	fun_set(sel_edit_par,sel_edit_point,"setpy",p,"sel");
 }
 function freq(f){
-	if (param_labels[sel_edit_par] === "freq"){
+	if (sel_edit_par_name === "freq"){
 		let p = f2y(f);
 		//post(p);
 		py(p);
@@ -1737,7 +1724,6 @@ function zoom_calc(f){ //returns [d_left,d_right, df_low, df_right]
 // ___________________________________________________________display_dims
 function score_length(s){
 	score_end = s;
-	//display_w.getnamed("x_disp_range").message("size",s);
 	//post("score_length",s,typeof s,"\n");
 }
 function disp_x(left,right){
@@ -1745,7 +1731,6 @@ function disp_x(left,right){
 	d_right = right;
 	linev8.message("disp_range",d_left,d_right,df_low,df_high);
 	//mute_actout = true;
-	//display_w.getnamed("x_disp_range").message("set", d_left, d_right);
 	//mute_actout = false;
 	mgraphics.redraw();
 }
@@ -1758,7 +1743,6 @@ function disp_y(low,high){
 	yr_offset = 1-dy_high;
 	linev8.message("disp_range",d_left,d_right,df_low,df_high);
 	//mute_actout = true;
-	//display_w.getnamed("y_disp_range").message("set", dy_low, dy_high);
 	//mute_actout = false;
 	mgraphics.redraw();
 }
