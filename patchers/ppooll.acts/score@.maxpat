@@ -1487,8 +1487,8 @@
                         "dict2score@pos": [ -1 ],
                         "disp_props": [ 0, 0, 0, 0, 1, 0, 0, 1, 1 ],
                         "disp_size": [ 1286, 784 ],
-                        "disp_x": [ 0.0, 259.6 ],
-                        "disp_y": [ 20.0, 20000.0 ],
+                        "disp_x": [ 0.0, 249.0 ],
+                        "disp_y": [ 22.10610569386854, 18853.185966837038 ],
                         "event2text": [ -1 ],
                         "event_params": [ "freq vol azimuth elevation distance" ],
                         "generative": [ -1 ],
@@ -1516,7 +1516,7 @@
                         "startstop": [ 0 ],
                         "text2score": [ -1 ],
                         "trackpad": [ 1 ],
-                        "verbose_print": [ 1 ],
+                        "verbose_print": [ 0.0 ],
                         "voices": [ 3.0 ],
                         "white_log": [ 0.0 ],
                         "white_offset": [ 0.0 ],
@@ -6398,7 +6398,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 453.0, 120.0, 84.0, 22.0 ],
-                                                    "text": "score"
+                                                    "text": "verbose_print"
                                                 }
                                             },
                                             {
@@ -6560,7 +6560,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 468.0, 615.0, 69.0, 22.0 ],
-                                                                    "text": "0.001"
+                                                                    "text": "0."
                                                                 }
                                                             },
                                                             {
@@ -6571,7 +6571,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 397.0, 615.0, 69.0, 22.0 ],
-                                                                    "text": "0.004"
+                                                                    "text": "0."
                                                                 }
                                                             },
                                                             {
