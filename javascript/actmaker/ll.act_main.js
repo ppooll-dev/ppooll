@@ -1084,6 +1084,11 @@ function write_preset(name) {
 }
 
 function write_preset_path(fullPath) {
+	if (preset2act) {
+		messnamed(`::${act_name_index}::preset_write_path`, fullPath );
+		return;
+	}
+	
     act_patcher.getnamed("pat").message("write", fullPath);
 
     const presetDict = new Dict();
@@ -1121,13 +1126,20 @@ function anySlotHasActiveStore(pattrObj) {
     }
     return false; // none found
 }
-
+let preset2act = false;
+function preset_to_act(p){
+	preset2act = (p === 1) ? true : false;
+	//post(act_name_index,preset2act);
+}
 function read_preset_path(fullPath, presetName = 0) {
     if(!ll.fileExistsStrict(fullPath)){
         // post("old ppooll preset (not json)\n")
         return
     }
-	
+	if (preset2act) {
+		messnamed(`::${act_name_index}::preset_read_path`, fullPath );
+		return;
+	}
 	let pat = act_patcher.getnamed("pat");
     const presetDict = new Dict();
     presetDict.import_json(fullPath);
@@ -1136,6 +1148,7 @@ function read_preset_path(fullPath, presetName = 0) {
 
     // recall all parameter values from slot 1000 directly from JSON
     //      this includes parameters where active=0
+	/*
     if(presetJson.pattrstorage.slots["1000"]) {
         const presetState = presetJson.pattrstorage.slots["1000"].data;
         ll_global.pat[act_name_index].getprioritylist().forEach(p => {
@@ -1145,7 +1158,7 @@ function read_preset_path(fullPath, presetName = 0) {
                 paramObj.setvalueof(presetState[p.name]);
         })
     }
-
+*/
 
 	// ####################################################################  active hack
     // set all active flags to 1

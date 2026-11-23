@@ -811,6 +811,7 @@ function write(p){
 function read(p){
 	score_d.import_json(p);
 	from_dict();
+	zoom(0);
 }
 function import_spear(s){
 	var f = new File(s);
