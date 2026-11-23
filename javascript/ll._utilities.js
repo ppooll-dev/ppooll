@@ -67,32 +67,47 @@ exports.getNextActIndex = (act_class) => {
 // get audio inputs in an act
 exports.getinputs = function (act, curr_item) {
     let c_menu = ["-no-"]; // array to fill menu
-    let c_chans = [["-no-", 0, 0]]; //meta data array [name, offset,chans]
-    if (act != "no") {
-        //(a != "no")
-        let inputs = ll_global.state[act]["inputs~"];
-        let inpkeys = Object.keys(inputs);
-        for (let i in inpkeys) {
-            let k = inpkeys[i];
-            let c = inputs[k];
-            if (c > 1) {
-                let item = k + ".0";
-                c_menu.push(item);
-                c_chans.push([k, 0, c]);
-            }
-            for (let j = 1; j <= c; j++) {
-                let item = k + "." + j;
-                c_menu.push(item);
-                c_chans.push([k, j, c]);
-            }
-        }
-        if (c_menu.indexOf(curr_item) == -1 || curr_item == "-no-") {
-            if (c_menu.length > 1) {
-                if (c_chans[1][2] == 1) curr_item = c_menu[1];
-                else curr_item = c_menu[2];
-            } else curr_item = "-no-";
-        }
-    } else curr_item = "-no-";
+    let c_chans = [["-no-", 0, 0]]; //meta data array [name, offset, chans]
+
+    if (act === "no") {
+        return [c_menu, c_chans, "-no-"];
+    }
+
+    let inputs = ll_global.state[act]["inputs~"];
+    for (let k of Object.keys(inputs)) {
+        let c = inputs[k];
+        if (c > 1) c_chans.push([k, 0, c]);          // k.0 = all channels
+        for (let j = 1; j <= c; j++) c_chans.push([k, j, c]);
+    }
+
+    // 0 = "-no-", 1 = "in" / "in.<number>", 2 = everything else
+    function rank(name) {
+        if (name === "-no-") return 0;
+        if (/^in(\.\d+)?$/.test(name)) return 1;
+        return 2;
+    }
+
+    function compareChans(a, b) {
+        const ra = rank(a[0]), rb = rank(b[0]);
+        if (ra !== rb) return ra - rb;
+        const byName = a[0].localeCompare(b[0], undefined, { sensitivity: "base", numeric: true });
+        if (byName !== 0) return byName;
+        return a[1] - b[1];
+    }
+
+    c_chans.sort(compareChans);
+
+    // rebuild menu with the channel number
+    c_menu = c_chans.map(c => c[0] === "-no-" ? "-no-" : c[0] + "." + c[1]);
+
+    // pick default
+    if (c_menu.indexOf(curr_item) == -1 || curr_item == "-no-") {
+        if (c_menu.length > 1) {
+            if (c_chans[1][2] == 1) curr_item = c_menu[1];
+            else curr_item = c_menu[2];
+        } else curr_item = "-no-";
+    }
+
     return [c_menu, c_chans, curr_item];
 };
 
