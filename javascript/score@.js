@@ -194,7 +194,8 @@ let copy_rect = [];
 let voiceA = []; //voiceArray 
 let voiceNew = [];
 let mscolors = [[1,0,0,1],[0,0,1,1],[0,0.7,0,1],[0,0.5,0.5,1],[0.5,0.7,0,1]];
-let param_labels = ["freq","vol","azimuth","elevation","distance"];
+let param_names = ["freq","vol","azimuth","elevation","distance"];
+let custom_labels = [];
 let default_fun = ["data", 0, 12, 1, 0, 1, 0, 0.32, 0, 0, 1, 0.32, 0, 0, "curve", "data", 1, 20, 1, 0, 1, 0, 0, 0, 0, 0.02, 1, 0, 0, 0.83, 1, 0, 0, 1, 0, 0, 0, "curve", "data", 2, 12, 1, 0, 1, 0, 0.18, 0, 0, 1, 0.82, 0, 0, "curve", "data", 3, 12, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, "curve", "data", 4, 12, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, "curve"];
 
 // ___________________________________params
@@ -260,8 +261,8 @@ function init(){
 	ready = 1;
 }
 function event_params(p){
-	param_labels = p.split(" ");
-	event_pars = param_labels.length;
+	param_names = p.split(" ");
+	event_pars = param_names.length;
 }
 function bang(){
 	//post("bang");
@@ -581,13 +582,14 @@ function draw_bars(c,w,cw){
 		}
 	}
 }
-function write_labels(x,y,pos,e){
+function write_labels(x,y,pos,event){
 	//post("the bars", c,w,cw);
-	let edata = score_o[pos][e];
+	let edata = score_o[pos][event];
 	let c = 1;
+	if (custom_labels.length >= event) event = custom_labels[event-1];
 	write_label = Math.min(write_label, event_pars);
-	let txt = (write_label === 0) ? `${e}` : 
-			(write_label === 3 && param_labels[2] === "index") ? `${Math.floor(edata[2]*100)}` : 
+	let txt = (write_label === 0) ? `${event}` : 
+			(write_label === 3 && param_names[2] === "index") ? `${Math.floor(edata[2]*100)}` : 
 							`${edata[write_label-1].toFixed(2)}`;
 
 	mgraphics.set_source_rgba(c,c/2,c/4,1);
@@ -963,6 +965,8 @@ function new_event(p1,p2,y1,y2){
 	//post("new_event:",event_ID,"pos",p1,p2,"freq",y1,y2,"\n");
 	//
 	//post("eee",ap.getnamed("env_mode").getvalueof());
+	TODO: 
+	/*
 	let env_mode = ap.getnamed("env_mode").getvalueof().split(" ");
 
 	let par_mode = [];
@@ -974,6 +978,7 @@ function new_event(p1,p2,y1,y2){
 		par_mode.push(m);
 	}
 	//post(par_mode,"par_mode\n");
+	*/
 	fun.setvalueof(default_fun);
 	fun.message("target",1);
 	fun.message("clear");
@@ -1428,6 +1433,11 @@ function event_points(...l){
 	}
 	bang();	
 }
+function def_custom_labels(...l){
+	custom_labels = l;
+	mgraphics.redraw();
+	//post("cl",custom_labels, custom_labels.length);
+}
 // ___________________________________________________________sel_edit_window
 function check_fun_borders(){
 	for (let i = 0; i < event_pars; i++){
@@ -1458,7 +1468,7 @@ function random(r){
 }
 function fun_par_select(c){
 	sel_edit_par = c;
-	sel_edit_par_name = param_labels[c];
+	sel_edit_par_name = param_names[c];
 	sel_edit_w.getnamed("label").message("set", sel_edit_par_name);	
 	current_fun = fun.getvalueof();
 	let np = fun_get(sel_edit_par,-1);
