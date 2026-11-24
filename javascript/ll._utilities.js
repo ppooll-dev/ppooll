@@ -197,6 +197,7 @@ exports.getFilesInFolder = (folder, typelist=[], omitExt=false) => {
         files.push(omitExt ? exports.getExtension(f.filename)[0] : f.filename);
         f.next();
     }
+    f.close();
     return files;
 }
 
