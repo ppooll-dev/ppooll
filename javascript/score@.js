@@ -276,7 +276,7 @@ function act_out(...m){
 	
 	let mess = m.shift();
 	if (mess === "clear_") clear_();
-	if (mess === "dict2score@pos") from_dict_at();
+	if (mess === "dict2score@pos") from_dict("at");
 	if (mess === "disp_size") disp_size(...m);
 	if (mess === "disp_x") disp_x(...m);
 	if (mess === "disp_y") disp_y(...m);
@@ -1036,6 +1036,7 @@ function sel_edit(){
 	let ev_data = score_o["event_data"][e];
 	sel_edit_w.getnamed("start").message(ev_data[0]);
 	sel_edit_w.getnamed("end").message(ev_data[1]);
+	post("ed_new",ev_data[2],"\n" );
 	fun.setvalueof(ev_data.slice(2));
 	current_fun = ev_data.slice(2);
 	event_w_hide_freqs(0);
