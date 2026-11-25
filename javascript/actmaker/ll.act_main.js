@@ -120,6 +120,34 @@ let title_menu_options_list = [];
 
 let ready_receivers = [];
 
+// Acts can refresh stored values right before their state is dumped or
+// stored (plugin@ copies the plugin's full state into [pattr plugin_state]).
+// Opt-in: the act has an object named "prepare_dump" that accepts bang.
+function prepareDump() {
+    const prep = act_patcher.getnamed("prepare_dump");
+    if (prep) prep.message("bang");
+}
+
+// If a pattr value is a dictionary, return its contents as a plain object.
+//   v8 getvalueof() of a pattr bound to vst~/amxd~ returns the parsed object;
+//   other objects may return ["dictionary", <name>]
+function dictValueContents(value) {
+    if (value === null || value === undefined) return null;
+    if (Array.isArray(value)) {
+        if (value[0] === "dictionary" && typeof value[1] === "string") {
+            try {
+                return JSON.parse(new Dict(value[1]).stringify());
+            } catch (e) {
+                return null;
+            }
+        }
+        return null;
+    }
+    if (value instanceof Dict) return JSON.parse(value.stringify());
+    if (typeof value === "object") return value;
+    return null;
+}
+
 // ######################################################################## general Handlers
 // ##########################################################################################
 // ##########################################################################################
@@ -282,6 +310,7 @@ function bang(alreadyRegistered = false) {
             },
 
             getdump() {
+                prepareDump();
                 const dict_dump = new Dict();
                 const pat = act_patcher.getnamed("pat");
                 this.getprioritylist().forEach(({ name: full_name }) => {
@@ -314,7 +343,20 @@ function bang(alreadyRegistered = false) {
                         return;
                     }
 
-                    dict_dump.replace(full_name, param_obj.getvalueof());
+                    const value = param_obj.getvalueof();
+                    const dictContents = dictValueContents(value);
+                    if (dictContents) {
+                        // dictionary-valued param (e.g. plugin@ plugin_state):
+                        // store the contents, wrapped so ll.enviread treats it
+                        // as one value instead of a subpatcher path
+                        dict_dump.replace(full_name, 0); // create the key path
+                        dict_dump.setparse(
+                            full_name,
+                            JSON.stringify({ _ll_dict: dictContents })
+                        );
+                    } else {
+                        dict_dump.replace(full_name, value);
+                    }
                 });
                 return dict_dump;
             },
@@ -1094,6 +1136,7 @@ function write_preset(name) {
     const actPath = `${basePath}/${act_args.name}P`;
     const fullPath = `${actPath}/${tetrisName}.json`;
 
+    prepareDump();
     act_patcher.getnamed("pat").message("store", 1000);
 
     if (!ll.mkdir(actPath)) {
@@ -1172,8 +1215,12 @@ function read_preset_path(fullPath, presetName = 0) {
         ll_global.pat[act_name_index].getprioritylist().forEach(p => {
             if(["act::pres_menu", "act::title_menu"].indexOf(p.name) > -1) return;
             const paramObj = act_patcher.getnamed(p.name);
-            if(paramObj) 
-                paramObj.setvalueof(presetState[p.name]);
+            const value = presetState[p.name];
+            // dictionary values (e.g. plugin@ plugin_state) are recalled by
+            // "pat 1000" below; setvalueof can't take them
+            if (value && typeof value === "object" && !Array.isArray(value)) return;
+            if(paramObj)
+                paramObj.setvalueof(value);
         })
     }
 

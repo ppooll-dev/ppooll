@@ -1,0 +1,130 @@
+{
+    "window": [ 40, 384, 153, 553 ],
+    "midi-channel-out": {
+        "patching_rect": [ 97, 96, 16, 19 ],
+        "hidden": 0,
+        "bgcolor": [ 1, 1, 1, 1 ],
+        "bordercolor": [ 0.5, 0.5, 0.5, 0 ],
+        "fontsize": 10,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45, 0.67, 1, 0.47 ],
+        "slidercolor": [ 0, 0, 0, 0 ],
+        "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
+    },
+    "midi-port-out": {
+        "patching_rect": [ 31.462890625, 96, 65.537109375, 19 ],
+        "hidden": 0,
+        "bgcolor": [ 1, 1, 1, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 0, 0, 0, 1 ],
+        "fontsize": 9,
+        "textcolor": null
+    },
+    "midi-channel": {
+        "patching_rect": [ 96.462890625, 75, 16, 19 ],
+        "hidden": 0,
+        "bgcolor": [ 0.702, 0.702, 0.702, 1 ],
+        "bordercolor": [ 0.5, 0.5, 0.5, 0 ],
+        "fontsize": 12,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45, 0.67, 1, 0.47 ],
+        "slidercolor": [ 0, 0, 0, 0 ],
+        "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
+    },
+    "act": {
+        "patching_rect": [ 0, 0, 66.037109375, 16 ],
+        "hidden": 0
+    },
+    "program_files": {
+        "patching_rect": [ 44.25, 55.75, 57, 17.25 ],
+        "hidden": 0,
+        "bgcolor": [ 0.107977, 0.766704, 0.422636, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 0, 0, 0, 1 ],
+        "fontsize": 9,
+        "textcolor": null
+    },
+    "preset-ramp": {
+        "patching_rect": [ 0, 55, 45, 18 ],
+        "hidden": 0,
+        "bgcolor": [ 1, 1, 1, 1 ],
+        "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
+        "fontsize": 10,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45, 0.67, 1, 0.47 ],
+        "slidercolor": [ 0, 0, 0, 1 ],
+        "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
+    },
+    "midi-port": {
+        "patching_rect": [ 31.462890625, 75, 65.537109375, 19 ],
+        "hidden": 0,
+        "bgcolor": [ 0.701960784313725, 0.701960784313725, 0.701960784313725, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 0, 0, 0, 1 ],
+        "fontsize": 9,
+        "textcolor": null
+    },
+    "vst-folder": {
+        "patching_rect": [ 0, 16.5, 113, 19 ],
+        "hidden": 0,
+        "bgcolor": [ 1, 1, 1, 1 ],
+        "bordercolor": [ 0, 0, 0, 0 ],
+        "color": [ 0, 0, 0, 1 ],
+        "fontsize": 9,
+        "textcolor": null
+    },
+    "open!": {
+        "patching_rect": [ 65, -0.25, 32, 16.5 ],
+        "hidden": 1,
+        "bgcolor": [ 0.027451, 0.023529, 0.6, 1 ],
+        "bgoncolor": [ 0.55, 0.55, 0.55, 1 ],
+        "fontsize": 11,
+        "legacytextcolor": 1,
+        "textcolor": [ 1, 1, 1, 1 ],
+        "textoncolor": [ 1, 1, 1, 1 ],
+        "textovercolor": [ 0.846939, 0.846939, 0.846939, 1 ],
+        "usebgoncolor": 1,
+        "usetextovercolor": 1
+    },
+    "ll.blues": {
+        "patching_rect": [ 0, 117, 113, 53 ],
+        "hidden": 0
+    },
+    "vst_program": {
+        "patching_rect": [ 97.5, 56, 15.5, 17 ],
+        "hidden": 0,
+        "bgcolor": [ 0.107977, 0.766704, 0.422636, 1 ],
+        "bordercolor": [ 0.5, 0.5, 0.5, 1 ],
+        "fontsize": 12,
+        "labelcolor": [ 0, 0, 0, 1 ],
+        "selectcolor": [ 0.45, 0.67, 1, 0.47 ],
+        "slidercolor": [ 0, 0, 0, 0 ],
+        "slidercolornofocus": [ 0.48, 0.48, 0.48, 0.55 ],
+        "textcolor": [ 0, 0, 0, 1 ],
+        "textcolornofocus": [ 0.48, 0.48, 0.48, 0.79 ]
+    },
+    "extend": {
+        "patching_rect": [ 97, -0.25, 16, 16.5 ],
+        "hidden": 0,
+        "bgcolor": [ 0.2, 0.2, 0.2, 1 ],
+        "bgoncolor": [ 0.34902, 0.34902, 0.34902, 1 ],
+        "fontsize": 9,
+        "legacytextcolor": 0,
+        "textcolor": [ 0.501961, 0.501961, 0.501961, 1 ],
+        "textoncolor": [ 0.807843, 0.898039, 0.909804, 1 ],
+        "textovercolor": [ 0.929412, 0.929412, 0.352941, 1 ],
+        "usebgoncolor": 0,
+        "usetextovercolor": 0
+    },
+    "presets": {
+        "patching_rect": [ 0, 39, 113, 17 ],
+        "hidden": 0,
+        "boxsize": 15
+    }
+}

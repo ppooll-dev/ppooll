@@ -63,6 +63,29 @@ var ramp_time = 0;
 var ramp_start_time = 0;
 var ramp_task = new Task(ramp_tick, this);
 
+// Clients that hold a whole state (plugin@: the plugin's full state and the
+// parameter selection) can't be interpolated, and re-sending them on every
+// ramp tick makes ramps laggy. They take part in discrete recalls only:
+// inactive during ramps / scrubs, active again for the final recall.
+// Acts without these objects are unaffected.
+var DISCRETE_ONLY_CLIENTS = ["plugin_state", "param_select"];
+
+function setDiscreteClientsActive(on) {
+    var p = this.patcher;
+    var pt = p.getnamed("pat");
+    if (!pt) return;
+    DISCRETE_ONLY_CLIENTS.forEach(function (name) {
+        if (p.getnamed(name)) pt.message("active", name, on ? 1 : 0);
+    });
+}
+
+// let the act refresh stored values first (plugin@ copies the plugin's full
+// state into [pattr plugin_state]); same hook as ll.act_main prepareDump()
+function prepareStore() {
+    var prep = this.patcher.getnamed("prepare_dump");
+    if (prep) prep.message("bang");
+}
+
 var mouse_down = false;
 var option_down = false;
 var option_scrub_active = false;
@@ -573,6 +596,8 @@ function q_size(v) {
 function store(slot) {
     slots[slot] = true;
     pat = this.patcher.getnamed("pat");
+    setDiscreteClientsActive(true);
+    prepareStore();
     pat.message("store", slot);
     pat.message("getslotlist");
     outlet(0, "store", slot);
@@ -926,6 +951,7 @@ function setvalueof() {
                 .message("active_set", "recall", prev);
         // } catch (_) {}
 
+        setDiscreteClientsActive(true);
         this.patcher.getnamed("pat").message("recall", prev);
     } else {
         // ---- INTERPOLATION (recallmulti storage) ----
@@ -937,6 +963,7 @@ function setvalueof() {
 
         // boundary conversion:
         // length == 2 → recall prev next amt
+        setDiscreteClientsActive(false);
         this.patcher.getnamed("pat").message("recall", prev, next, amt);
     }
 

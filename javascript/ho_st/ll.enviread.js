@@ -40,6 +40,7 @@ function debug_post(a) {
 
 function msg_dictionary(d) {
     dict = d;
+    envDicts = [];
     environment = dict.environment;
     if(environment._meta){
         envi_meta = environment._meta;
@@ -205,7 +206,10 @@ function params() { //called from max after delay
 function walkEnvironment(actName, obj, path) {
     for (let key in obj) {
         let val = obj[key];
-        if (checkdict(val)) {
+        if (checkdict(val) && val._ll_dict !== undefined) {
+            // dictionary-valued param written by ll.act_main getdump()
+            setdictparam(actName, path.concat(key).join("::"), val._ll_dict);
+        } else if (checkdict(val)) {
             walkEnvironment(actName, val, path.concat(key));
         } else {
             let paramPath = path.concat(key).join("::");
@@ -233,6 +237,19 @@ function setparam(a, p, v) {
             messnamed(a, p, v);
         }
     }
+}
+
+// Dicts handed to pattrs during this read; kept referenced so they stay alive
+let envDicts = [];
+
+function setdictparam(a, p, contents) {
+    if (param_excludes.includes(p) || act_param_excludes.includes(a + p)) return;
+    if (debugpost > 1) post("dict parameter___", p, "\n");
+
+    const d = new Dict();
+    d.parse(JSON.stringify(contents));
+    envDicts.push(d);
+    senddict(a, p, ["dictionary", d.name]);
 }
 
 function checkdict(p) {
@@ -287,7 +304,3 @@ function loadPresets() {
         }
     }
 }
-
-
-
-
