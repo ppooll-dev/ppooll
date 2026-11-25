@@ -22,8 +22,30 @@ let chans_out = 2;
 
 let mcs_vst = null;
 
+// Parameters
+//   allParamNames: every parameter the plugin reports; position i <-> vst~ index i+1
+//   selectedIdx:   1-based vst~ indices that get a flonum (sorted)
+//   paramNames:    names of the selected parameters (= the flonums that exist)
+const MAX_AUTO_PARAMS = 100; // above this, the user picks which params get flonums
+const SKIP = "_skip"; // placeholder in the index->name lookup for unselected params
+let allParamNames = [];
+let selectedIdx = [];
 let paramNames = [];
 let isCollectingParams = false;
+let createdParamObjects = [];
+
+// selection coming from the param_select pattr (environment / preset recall)
+let pendingSelection = null;
+let pendingTask = null;
+// remembers the selection per plugin for this session
+let selectionByPlug = {};
+
+// parameter selector window state
+let selectorDraft = null; // Set of 1-based indices
+let selectorFilter = "";
+let selectorRows = []; // cellblock row -> 1-based index
+const PARAMS_MENU_ITEM = "params...";
+let lastProgramMenuItem = "";
 
 // vst window
 let isOpen = false;
@@ -54,6 +76,7 @@ const ll_pm_map = {
     presetsUI: presetsUI,
     "ll.blues::chans": setChans,
     program_files: program_files,
+    param_select: param_select,
 };
 
 function ll_pm(receive, ...args) {
@@ -228,16 +251,15 @@ function loadShellPlug(subname) {
     refreshParams();
 }
 
-function deleteParamObjects() {
-    pp.apply(removeParam);
-}
-
 function refreshParams() {
     out("coll", "clear");
     deleteParamObjects();
 
+    allParamNames = [];
+    selectedIdx = [];
     paramNames = [];
     isCollectingParams = true;
+    closeSelector();
 
     mcs_vst = tp.getnamed("vst");
     mcs_vst.message("params");
@@ -245,22 +267,43 @@ function refreshParams() {
     out("collectParams", 100); // delay collectParams by 100 ms
 }
 
+// vst~ reports every parameter name here (no flonums are created yet)
+function paramname(name) {
+    allParamNames.push(name);
+}
+
+// all names are in: decide which parameters get flonums
 function collectParams() {
-    out("check_pointing_acts", "bang");
-    out("ll_pm", ...paramNames);
+    isCollectingParams = false;
+    const n = allParamNames.length;
+    post(`ll.vst-helper: ${currentPlugName} has ${n} parameters\n`);
 
-    mcs_vst = tp.getnamed("vst");
+    let sel = null;
 
-    // If we're loading from a preset file,
-    if (isLoadingPreset) {
-        // Set vst~ object values from preset
-        paramNames.forEach((p) => {
-            mcs_vst.message(p, preset1000[p]);
-        });
-        isLoadingPreset = false;
+    // 1. a preset is being loaded: use the params stored in it
+    if (isLoadingPreset && preset1000) sel = selectionFromPreset(preset1000);
+
+    // 2. a stored selection arrived via the param_select pattr (envir / preset)
+    if (!sel && pendingSelection) sel = decodeSelection(pendingSelection);
+    pendingSelection = null;
+
+    // 3. this plugin was already set up in this session
+    if (!sel && currentPlug && selectionByPlug[currentPlug]) {
+        sel = selectionByPlug[currentPlug].slice();
+    }
+
+    // 4. small plugins, and old environments without a stored selection: all
+    if (!sel && (n <= MAX_AUTO_PARAMS || ll_global.enviread)) sel = range(1, n);
+
+    if (sel) {
+        applySelection(sel);
     } else {
-        // Set vst@ param values from vst~ object
-        getParamValues();
+        // big plugin, nothing stored: let the user choose
+        post(
+            `ll.vst-helper: more than ${MAX_AUTO_PARAMS} parameters -- choose which ones get flonums\n`,
+        );
+        applySelection([]);
+        openSelector();
     }
 
     if (isOpen) {
@@ -269,9 +312,270 @@ function collectParams() {
     }
 }
 
-function paramname(name) {
-    paramNames.push(name);
+// Create flonums for the given 1-based indices and wire everything up
+function applySelection(indices) {
+    const n = allParamNames.length;
+    selectedIdx = uniqueSorted(indices.filter((i) => i >= 1 && i <= n));
+    if (currentPlug) selectionByPlug[currentPlug] = selectedIdx.slice();
+
+    out("coll", "clear");
+    deleteParamObjects();
+
+    paramNames = selectedIdx.map((i) => allParamNames[i - 1]);
+    paramNames.forEach(createParamObject);
+
+    out("check_pointing_acts", "bang");
+    out("ll_pm", ...paramNames);
+
+    // index -> name list for param-handler's [zl lookup]: must keep every
+    // index, so unselected params become SKIP and are dropped by [route _skip]
+    const selectedSet = new Set(selectedIdx);
+    out(
+        "lookup",
+        ...allParamNames.map((name, i) => (selectedSet.has(i + 1) ? name : SKIP)),
+    );
+
+    storeSelection();
+
+    mcs_vst = tp.getnamed("vst");
+
+    // If we're loading from a preset file,
+    if (isLoadingPreset && preset1000) {
+        // Set vst~ object values from preset
+        paramNames.forEach((p) => {
+            if (preset1000[p] !== undefined) mcs_vst.message(p, preset1000[p]);
+        });
+        isLoadingPreset = false;
+    } else {
+        // Set vst@ param values from vst~ object
+        getParamValues();
+    }
+}
+
+function createParamObject(name) {
     pp.script("new", name, "newex", 66, 200, 57, 196617, "flonum");
+    const o = pp.getnamed(name);
+    if (o && (o.maxclass === "flonum" || o.maxclass === "number")) {
+        createdParamObjects.push(o);
+    }
+}
+
+//
+// selection encoding, stored in the "param_select" pattr:
+//   [-1]               all parameters
+//   [N, i1, i2, ...]   N = param count of the plugin, i = 1-based indices
+//   [N, 0]             no parameters
+//
+function encodeSelection() {
+    const n = allParamNames.length;
+    if (selectedIdx.length === n) return [-1];
+    if (!selectedIdx.length) return [n, 0];
+    return [n, ...selectedIdx];
+}
+
+function decodeSelection(vals) {
+    if (!vals || !vals.length) return null;
+    if (vals[0] === -1 || vals[0] === "all") {
+        return range(1, allParamNames.length);
+    }
+    return vals
+        .slice(1)
+        .map(Number)
+        .filter((i) => i >= 1);
+}
+
+function selectionFromPreset(preset) {
+    // newer presets carry the selection itself
+    if (preset.param_select !== undefined) {
+        const v = [].concat(preset.param_select);
+        return decodeSelection(v);
+    }
+    // older presets: every param that has a stored value
+    const sel = [];
+    allParamNames.forEach((name, i) => {
+        if (preset[name] !== undefined) sel.push(i + 1);
+    });
+    return sel.length ? sel : null;
+}
+
+function storeSelection() {
+    const p = pp.getnamed("param_select");
+    if (!p) return;
+    p.message("list", ...encodeSelection());
+}
+
+// pattr param_select changed (envir / preset recall, or our own echo)
+function param_select(...vals) {
+    if (!vals.length) return;
+    if (allParamNames.length && sameSelection(decodeSelection(vals))) return;
+
+    pendingSelection = vals;
+
+    // a plugin (re)load is in progress: collectParams() will use it
+    if (isCollectingParams || !allParamNames.length) return;
+
+    // same plugin, different selection: apply after things have settled
+    // (debounced, so a preset ramp doesn't rebuild the flonums on every step)
+    if (!pendingTask) pendingTask = new Task(applyPendingSelection);
+    pendingTask.cancel();
+    pendingTask.schedule(150);
+}
+
+function applyPendingSelection() {
+    if (!pendingSelection || isCollectingParams || !allParamNames.length) return;
+    const sel = decodeSelection(pendingSelection);
+    pendingSelection = null;
+    if (sel && !sameSelection(sel)) applySelection(sel);
+}
+
+function sameSelection(sel) {
+    if (!sel) return false;
+    const a = uniqueSorted(sel.filter((i) => i >= 1 && i <= allParamNames.length));
+    return (
+        a.length === selectedIdx.length && a.every((v, i) => v === selectedIdx[i])
+    );
+}
+
+function range(from, to) {
+    const r = [];
+    for (let i = from; i <= to; i++) r.push(i);
+    return r;
+}
+
+function uniqueSorted(arr) {
+    return [...new Set(arr)].sort((a, b) => a - b);
+}
+
+//
+// Parameter selector window ("p param_selector" in the sub patcher)
+//
+function getSelector() {
+    const box = tp.getnamed("param_selector");
+    return box ? box.subpatcher() : null;
+}
+
+function openSelector() {
+    const sp = getSelector();
+    if (!sp) {
+        error("ll.vst-helper: no param_selector subpatcher, using first 100 params\n");
+        applySelection(range(1, Math.min(MAX_AUTO_PARAMS, allParamNames.length)));
+        return;
+    }
+    if (!allParamNames.length) return;
+
+    selectorDraft = new Set(selectedIdx);
+    selectorFilter = "";
+    sp.getnamed("filter").message("set");
+
+    try {
+        sp.locked = 1;
+    } catch (e) {}
+    sp.front();
+    renderSelector();
+}
+
+function cells(...args) {
+    const sp = getSelector();
+    const c = sp && sp.getnamed("cells");
+    if (c) c.message(...args);
+}
+
+
+function closeSelector() {
+    const sp = getSelector();
+    if (sp) sp.wclose();
+    selectorDraft = null;
+}
+
+function renderSelector() {
+    const sp = getSelector();
+    if (!sp || !selectorDraft) return;
+    const f = selectorFilter.toLowerCase();
+
+    selectorRows = [];
+    allParamNames.forEach((name, i) => {
+        if (!f || name.toLowerCase().indexOf(f) > -1 || String(i + 1) === f) {
+            selectorRows.push(i + 1);
+        }
+    });
+
+    cells("clear", "all");
+    cells("rows", Math.max(selectorRows.length, 1));
+    selectorRows.forEach((idx, row) => {
+        cells("set", 0, row, selectorDraft.has(idx) ? "x" : "-");
+        cells("set", 1, row, `${idx}  ${allParamNames[idx - 1]}`);
+    });
+    updateSelectorInfo();
+}
+
+function updateSelectorInfo() {
+    const sp = getSelector();
+    if (!sp || !selectorDraft) return;
+    const n = allParamNames.length;
+    const shown = selectorRows.length === n ? "" : `, ${selectorRows.length} shown`;
+    const warn = selectorDraft.size > MAX_AUTO_PARAMS ? "  (that's a lot!)" : "";
+    sp.getnamed("info").message(
+        "set",
+        `${currentPlugName}: ${selectorDraft.size} of ${n} selected${shown}${warn}`,
+    );
+}
+
+// messages from the selector window
+function param_selector(cmd, ...args) {
+    if (!selectorDraft) return;
+    const sp = getSelector();
+
+    switch (cmd) {
+        case "cell": {
+            // jit.cellblock click: cell <col> <row> <contents...>
+            const row = args[1];
+            const idx = selectorRows[row];
+            if (idx === undefined) return;
+            if (selectorDraft.has(idx)) selectorDraft.delete(idx);
+            else selectorDraft.add(idx);
+            cells("set", 0, row, selectorDraft.has(idx) ? "x" : "-");
+            updateSelectorInfo();
+            return;
+        }
+        case "filter": {
+            // from textedit ("filter text foo bar") or the "filter" button (clear)
+            if (args[0] === "text") args = args.slice(1);
+            selectorFilter = args.join(" ").trim();
+            if (!selectorFilter) sp.getnamed("filter").message("set");
+            renderSelector();
+            return;
+        }
+        case "all":
+            selectorDraft = new Set(range(1, allParamNames.length));
+            break;
+        case "none":
+            selectorDraft = new Set();
+            break;
+        case "first":
+            selectorDraft = new Set(
+                range(1, Math.min(args[0] || MAX_AUTO_PARAMS, allParamNames.length)),
+            );
+            break;
+        case "add": // "add shown"
+            selectorRows.forEach((i) => selectorDraft.add(i));
+            break;
+        case "remove": // "remove shown"
+            selectorRows.forEach((i) => selectorDraft.delete(i));
+            break;
+        case "OK":
+        case "ok": {
+            const sel = [...selectorDraft];
+            closeSelector();
+            applySelection(sel);
+            return;
+        }
+        case "cancel":
+            closeSelector();
+            return;
+        default:
+            return;
+    }
+    renderSelector();
 }
 
 function subname(name) {
@@ -298,11 +602,23 @@ function pres_menu(pres) {
 function getParamValues() {
     mcs_vst = tp.getnamed("vst");
 
+    // selectedIdx holds the real vst~ index of each flonum in paramNames
     paramNames.forEach((name, i) => {
-        mcs_vst.message("get", i + 1);
+        const idx = selectedIdx[i];
+        mcs_vst.message("get", idx);
         out("pat", "priority", name, i + 100);
-        out("coll", "store", name, i + 1);
+        out("coll", "store", name, idx);
     });
+}
+
+function deleteParamObjects() {
+    createdParamObjects.forEach((o) => {
+        try {
+            pp.remove(o);
+        } catch (e) {}
+    });
+    createdParamObjects = [];
+    pp.apply(removeParam);
 }
 
 function removeParam(a) {
@@ -385,6 +701,10 @@ function vst_folder(selection) {
             post("no currentPath for plugin " + selection + "\n");
             return;
         }
+
+        // picked by hand: a param_select value left over from earlier
+        // recalls must not decide which flonums this plugin gets
+        if (!ll_global.enviread && !isLoadingPreset) pendingSelection = null;
 
         if (pp.getnamed("def_shell").getvalueof() !== "none") {
             loadShellPlug(selection);
@@ -489,7 +809,10 @@ function get_vst_presets_path() {
 function refreshProgramFiles(to_select = "") {
     if (!currentPlugName) return;
 
-    const items = vst_AU ? ["writepgm", "writebank", "-"] : ["write", "-"];
+    const items = vst_AU
+        ? ["writepgm", "writebank", PARAMS_MENU_ITEM, "-"]
+        : ["write", PARAMS_MENU_ITEM, "-"];
+    lastProgramMenuItem = to_select;
 
     currentProgramFiles = [];
 
@@ -532,6 +855,16 @@ function invokeDialog() {
 function program_files(selection) {
     if (selection === "read" || selection === "" || selection === "setsymbol")
         return;
+
+    // "params..." opens the parameter selector
+    if (selection === PARAMS_MENU_ITEM) {
+        if (!ll_global.enviread && allParamNames.length) openSelector();
+        pp.getnamed("program_files").message("setsymbol", lastProgramMenuItem);
+        return;
+    }
+    if (selection !== "writepgm" && selection !== "writebank" && selection !== "write") {
+        lastProgramMenuItem = selection;
+    }
 
     if (vst_AU === 1) {
         if (selection === "writepgm" && !ll_global.enviread) {
@@ -604,6 +937,13 @@ function reset() {
     pp.getnamed("open!").hidden = 1;
 
     deleteParamObjects();
+    closeSelector();
+    allParamNames = [];
+    selectedIdx = [];
+    paramNames = [];
+    pendingSelection = null;
+    selectionByPlug = {};
+    out("lookup", SKIP);
 
     pp.getnamed("def_folder").message("bla");
 
@@ -627,6 +967,7 @@ function reset() {
         ["clear"],
         ["append", "writepgm"],
         ["append", "writebank"],
+        ["append", PARAMS_MENU_ITEM],
         ["append", "read"],
         ["append", "-"],
     ].forEach((msgs) => pp.getnamed("program_files").message(...msgs));
