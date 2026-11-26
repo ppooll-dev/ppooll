@@ -4,9 +4,14 @@
     helper for the plugin@ act: hosts VST / VST3 / AU plug-ins (mcs.vst~) and
     Max for Live devices (mcs.amxd~) in one act.
 
-    - the plugin object is always named "plugin":
-          VST/AU:  sub::plugin               (mcs.vst~)
-          AMXD:    sub::amxd-window::plugin  (mcs.amxd~, shown in that window)
+    - the plugin object is always named "plugin", inside the top-level
+      bpatcher plugin_view (mcs.vst~ or mcs.amxd~). It talks to sub through
+      ll.s / ll.r (pv_names, pv_values, pv_midi, pv_subnames, pv_aupresets,
+      pv_amxd_msgs, plugin_midi_in).
+    - "open" shows the plugin's own editor (VST/AU) or the device in a
+      floating window (AMXD). "extend" shows the plugin's @viewvisibility view
+      (generic parameter list for VST/AU, the device UI for AMXD) to the right
+      of the act, inside the act window.
     - the full plugin state is stored by the top-level [pattr plugin_state]
       (unbound). [pattr plugin_live] is bound to the plugin only for an
       instant to read or apply the state: a permanently bound pattr snapshots
@@ -42,7 +47,7 @@ let preset1000 = null;
 let chans_in = 4;
 let chans_out = 2;
 
-// "vst" (mcs.vst~ in sub) or "amxd" (mcs.amxd~ in sub::amxd-window)
+// "vst" (mcs.vst~) or "amxd" (mcs.amxd~), both in plugin_view
 let kind = "vst";
 
 // Parameters
@@ -113,6 +118,8 @@ const ll_pm_map = {
     "act::pres_menu": pres_menu,
     presetsUI: presetsUI,
     "ll.blues::chans": setChans,
+    extend: setExtend,
+    bypass: setBypass,
     program_files: program_files,
     param_select: param_select,
 };
@@ -303,21 +310,14 @@ function toggleFavorite(add) {
 //
 // Plugin object (vst~ or amxd~)
 //
-function amxdWindowBox() {
-    return tp.getnamed("amxd-window");
-}
-
-function amxdWindow() {
-    const box = amxdWindowBox();
+function pluginView() {
+    const box = pp.getnamed("plugin_view");
     return box ? box.subpatcher() : null;
 }
 
 function plugin() {
-    if (kind === "amxd") {
-        const aw = amxdWindow();
-        return aw ? aw.getnamed("plugin") : null;
-    }
-    return tp.getnamed("plugin");
+    const pv = pluginView();
+    return pv ? pv.getnamed("plugin") : null;
 }
 
 function kindOf(pluginPath) {
@@ -328,7 +328,7 @@ function kindOf(pluginPath) {
 
 // pattr path of the plugin object, for [pattr plugin_live]
 function pluginPattrPath() {
-    return kind === "amxd" ? "sub::amxd-window::plugin" : "sub::plugin";
+    return "plugin_view::plugin";
 }
 
 // resting target while not bound to the plugin (a hidden number box in sub;
@@ -373,6 +373,7 @@ const SWITCH_AT = 0.99;
 function setInterpModes() {
     out("pat", "interp", "plugin_state", "thresh", SWITCH_AT);
     out("pat", "interp", "param_select", "thresh", SWITCH_AT);
+    out("pat", "interp", "bypass", "thresh", SWITCH_AT);
 }
 
 //
@@ -384,15 +385,30 @@ let reapplyTask = null;
 const CAPTURE_DELAY = 500; // ms after the plugin's last reported change
 
 // copy the plugin's current state into plugin_state (what presets store)
+// The state last captured into / applied from plugin_state, as Dict JSON.
+//   plugin_state outputs its own copy (with a new name) whenever it is set,
+//   so our own captures can't be recognised by name: compare the content.
+let lastStateJson = "";
+let settingOwnState = false;
+
 function captureState() {
     if (!currentPlug) return;
     const state = readLiveState();
     if (!state) return;
     const ps = pp.getnamed("plugin_state");
     if (!ps) return;
-    ownStateDict = new Dict();
-    ownStateDict.parse(JSON.stringify(state));
-    ps.message("dictionary", ownStateDict.name);
+    const d = new Dict();
+    d.parse(JSON.stringify(state));
+    const json = d.stringify();
+    if (json === lastStateJson) return; // nothing changed
+    lastStateJson = json;
+    ownStateDict = d;
+    settingOwnState = true;
+    try {
+        ps.message("dictionary", d.name);
+    } finally {
+        settingOwnState = false;
+    }
 }
 
 // from [t b] prepare_dump: right before an environment dump, a preset write
@@ -403,6 +419,7 @@ function capture_state() {
     // they must be active when stored
     out("pat", "active", "plugin_state", 1);
     out("pat", "active", "param_select", 1);
+    if (isOpen) getPosition(); // a window moved while open: store where it is now
     captureState();
 }
 
@@ -424,8 +441,13 @@ let skippedRepeats = 0;
 
 function plugin_state_in(sel, name) {
     if (sel !== "dictionary" || !name) return;
-    if (ownStateDict && name === ownStateDict.name) return; // our own capture
+    if (settingOwnState) return; // our own capture echoing back
+    if (ownStateDict && name === ownStateDict.name) return;
     if (!currentPlug) return;
+
+    // same content as what the plugin already has (our last capture / apply)
+    const json = new Dict(name).stringify();
+    if (json === lastStateJson) return;
 
     const now = Date.now();
     if (name === lastStateName && now - lastStateAt < REPEAT_WINDOW) {
@@ -439,6 +461,7 @@ function plugin_state_in(sel, name) {
     skippedRepeats = 0;
     lastStateName = name;
     lastStateAt = now;
+    lastStateJson = json;
     applyLiveState(name);
 
     // a restore can land after pattrstorage has set the flonums (e.g. at the
@@ -461,42 +484,42 @@ function reapplyFlonums() {
 }
 
 function deletePluginObjects() {
-    tp.script("delete", "plugin");
-    const aw = amxdWindow();
-    if (aw) aw.message("script", "delete", "plugin");
+    const pv = pluginView();
+    if (pv) pv.message("script", "delete", "plugin");
 }
 
-// (Re)create the plugin object for `newKind` with the current channel counts
+// (Re)create the plugin object for `newKind` with the current channel counts,
+// inside plugin_view, wired to the relays there
 function createPluginObject(newKind) {
     deletePluginObjects();
     kind = newKind;
+    openedSinceCreate = false;
+    const pv = pluginView();
+    if (!pv) return;
+    const s = (...a) => pv.message("script", ...a);
 
     if (kind === "vst") {
-        tp.script("newdefault", "plugin", 18, 145, "mcs.vst~", chans_in, chans_out);
-        tp.script("size", "plugin", 279, 22);
-        tp.script("connect", "plugin", 6, "prepend_au_preset", 0);
-        tp.script("connect", "plugin", 5, "prepend_subname", 0);
-        tp.script("connect", "plugin", 3, "midi_out", 0);
-        tp.script("connect", "plugin", 2, "subParamHandler", 0);
-        tp.script("connect", "plugin", 2, "plugin_changed", 0);
-        tp.script("connect", "plugin", 1, "prepend_paramName", 0);
-        tp.script("connect", "plugin", 0, "out", 0);
-        tp.script("connect", "in", 0, "plugin", 0);
-        tp.script("connect", "to_vst~", 0, "plugin", 0);
-        tp.script("connect", "to_vst_only", 0, "plugin", 0);
+        s("newdefault", "plugin", 0, 0, "mcs.vst~", chans_in, chans_out);
+        s("hidden", "connect", "plugin", 6, "pv_aupresets", 0);
+        s("hidden", "connect", "plugin", 5, "pv_subnames", 0);
+        s("hidden", "connect", "plugin", 3, "pv_midi", 0);
+        s("hidden", "connect", "plugin", 2, "pv_values", 0);
+        s("hidden", "connect", "plugin", 1, "pv_names", 0);
+        s("hidden", "connect", "plugin", 0, "out", 0);
+        s("hidden", "connect", "in", 0, "plugin", 0);
+        s("hidden", "connect", "to_vst~", 0, "plugin", 0);
+        s("hidden", "connect", "to_vst_only", 0, "plugin", 0);
     } else {
-        const aw = amxdWindow();
-        aw.message(
-            "script", "newdefault", "plugin", 0, 0, "mcs.amxd~",
+        s(
+            "newdefault", "plugin", 0, 0, "mcs.amxd~",
             chans_in, chans_out, "@realtime_params", 1, "@showheader", 0,
         );
-        aw.message("script", "hidden", "connect", "plugin", 2, "out_3_msgs", 0);
-        aw.message("script", "hidden", "connect", "plugin", 1, "out_2_midiout", 0);
-        aw.message("script", "hidden", "connect", "plugin", 0, "out_1_audioout", 0);
-        aw.message("script", "hidden", "connect", "in_1_audioin", 0, "plugin", 0);
-        aw.message("script", "hidden", "connect", "in_2_midiin", 0, "plugin", 1);
-        const p = aw.getnamed("plugin");
-        if (p) p.setattr("viewvisibility", 1);
+        s("hidden", "connect", "plugin", 2, "pv_amxd_msgs", 0);
+        s("hidden", "connect", "plugin", 1, "pv_midi", 0);
+        s("hidden", "connect", "plugin", 0, "out", 0);
+        s("hidden", "connect", "in", 0, "plugin", 0);
+        s("hidden", "connect", "to_vst~", 0, "plugin", 0);
+        s("hidden", "connect", "midi_in", 0, "plugin", 1);
     }
 
     // outgoing parameter changes: vst~ by index, amxd~ by name
@@ -505,6 +528,54 @@ function createPluginObject(newKind) {
 
     setInterpModes();
     updateKindUI();
+    watchBypass();
+    layoutExtended();
+}
+
+//
+// Bypass: the power button in the vst~ header <-> top-level [pattr bypass]
+//   (stored with presets / environments, mappable like any ppooll value)
+//
+let bypassState = 0;
+let bypassListener = null;
+let settingBypassPattr = false;
+
+function watchBypass() {
+    bypassListener = null;
+    const p = plugin();
+    if (!p || kind !== "vst") return;
+    try {
+        p.setattr("bypass", bypassState); // a recreated object keeps the state
+        bypassListener = new MaxobjListener(p, "bypass", onPluginBypass);
+    } catch (e) {
+        dpost("bypass: can't follow the plugin's bypass attribute");
+    }
+}
+
+// power button clicked (or bypass set any other way) -> pattr
+function onPluginBypass(data) {
+    let v = data && data.value !== undefined ? data.value : 0;
+    if (Array.isArray(v)) v = v[0];
+    v = v ? 1 : 0;
+    if (v === bypassState) return;
+    bypassState = v;
+    const b = pp.getnamed("bypass");
+    if (!b) return;
+    settingBypassPattr = true;
+    try {
+        b.message("int", v);
+    } finally {
+        settingBypassPattr = false;
+    }
+}
+
+// pattr bypass (recall, mapping) -> plugin
+function setBypass(v) {
+    if (settingBypassPattr) return; // our own update echoing back
+    v = v ? 1 : 0;
+    bypassState = v;
+    const p = plugin();
+    if (p && kind === "vst") p.setattr("bypass", v);
 }
 
 function updateKindUI() {
@@ -516,58 +587,102 @@ function updateKindUI() {
 
 // Loadbang
 function loadbang() {
-    const aw = amxdWindow();
-    kind = !tp.getnamed("plugin") && aw && aw.getnamed("plugin") ? "amxd" : "vst";
+    const p = plugin();
+    kind = p && p.understands && p.understands("patchername") ? "amxd" : "vst";
     resetMenu();
 }
 
 //
-// Plugin window
+// Plugin window ("open"): the plugin's own editor / the device's window
 //
+// The window position is kept in the top-level [pattr position], so it is
+// stored with presets and environments.
+//   VST/AU: vst~ answers "get -9" with its editor position
+//           (param-handler -> p set-position -> position pattr -> setPosition)
+//   AMXD:   read from the device's own patcher window (amxd~ subpatcher)
+// The stored position is used for the first "open" of a new plugin object
+// (e.g. after an environment reload); after that a plain "open" brings the
+// window back where it was.
+let hasStoredPosition = false;
+let openedSinceCreate = false;
+
+// the device's patcher window, or null
+function amxdWindow() {
+    const p = plugin();
+    if (!p || kind !== "amxd") return null;
+    try {
+        const sp = p.subpatcher();
+        return sp && sp.wind ? sp.wind : null;
+    } catch (e) {
+        return null;
+    }
+}
+
 function getPosition() {
+    const p = plugin();
+    if (!p) return;
     if (kind === "vst") {
-        const p = plugin();
-        if (p) p.message("get", -9); // answered via p set-position -> position pattr
+        p.message("get", -9);
         return;
     }
-    const aw = amxdWindow();
-    if (!aw) return;
-    const l = aw.wind.location;
-    position = [l[0], l[1]];
+    const w = amxdWindow();
+    if (!w) {
+        dpost("device window position: no access to the device's window");
+        return;
+    }
+    const l = w.location;
     const pos = pp.getnamed("position");
-    if (pos) pos.setvalueof(l[0], l[1]);
+    if (pos) pos.setvalueof(l[0], l[1]); // -> ll.pm -> setPosition
+    else setPosition(l[0], l[1]);
+}
+
+// move the device window to the stored position, keeping its size
+function placeAmxdWindow() {
+    const w = amxdWindow();
+    if (!w) return;
+    const l = w.location;
+    const x = position[0];
+    const y = position[1];
+    w.location = [x, y, x + (l[2] - l[0]), y + (l[3] - l[1])];
 }
 
 function setPosition(...pos) {
+    if (pos.length < 2) return;
     position = pos;
+    hasStoredPosition = true;
+    dpost(`editor position ${pos.join(" ")}`);
 }
 
 function openWindow() {
     const p = plugin();
     if (!p) return;
-    if (kind === "vst") {
+    const first = hasStoredPosition && !openedSinceCreate;
+    if (kind === "vst" && first) {
         p.message("open", ...position);
-        return;
+    } else {
+        p.message("open");
+        if (kind === "amxd" && first) placeAmxdWindow();
     }
-    const aw = amxdWindow();
-    const rect = p.getattr("patching_rect");
-    const w = rect[2] - rect[0];
-    const h = rect[3] - rect[1];
-    const x = position[0] || 100;
-    const y = position[1] || 100;
-    aw.wind.location = [x, y, x + w, y + h];
-    amxdWindowBox().message("front");
+    openedSinceCreate = true;
 }
 
 function closeWindow() {
     getPosition();
+    const p = plugin();
+    if (!p) return;
     if (kind === "vst") {
-        const p = plugin();
-        if (p) p.message("wclose");
-    } else {
-        const box = amxdWindowBox();
-        if (box) box.message("wclose");
+        p.message("wclose");
+        return;
     }
+    // amxd~ doesn't take "wclose": close the device's own patcher window
+    try {
+        const sp = p.subpatcher();
+        if (sp) {
+            sp.wclose();
+            return;
+        }
+    } catch (e) {}
+    dpost("device window: couldn't close it");
 }
 
 function setIsOpen(state) {
@@ -576,6 +691,106 @@ function setIsOpen(state) {
     isOpen = state;
     if (isOpen) openWindow();
     else closeWindow();
+}
+
+//
+// Extended view ("extend"): the plugin's @viewvisibility view, to the right
+// of the act controls, inside the act window
+//
+let isExtended = false;
+let baseHeight = null; // act window height while not extended
+const VIEW_HEIGHT = 169; // extended view height, VST/AU and devices
+const VST_VIEW_WIDTH = 320; // generic parameter list (scrolls)
+// VST/AU: the generic view's top row (power, name, wrench, camera, ...) is
+// scrolled out of sight with the vst~ object's own "offset" attribute.
+const VST_TOP_ROW_HEIGHT = 30;
+
+function setExtend(state) {
+    const on = !!state;
+    if (on === isExtended) return;
+    if (on) baseHeight = actWindowSize()[1];
+    isExtended = on;
+    layoutExtended();
+}
+
+// left edge of the extended view: right edge of the "extend" button
+function baseWidth() {
+    const ext = pp.getnamed("extend");
+    return ext ? ext.rect[2] : 113;
+}
+
+function actWindowSize() {
+    if (ll_global.nested_patcher) {
+        const r = pp.box.rect;
+        return [r[2] - r[0], r[3] - r[1]];
+    }
+    const l = pp.wind.location;
+    return [l[2] - l[0], l[3] - l[1]];
+}
+
+function setActWindowSize(w, h) {
+    if (ll_global.nested_patcher) {
+        const r = pp.box.rect;
+        pp.box.rect = [r[0], r[1], r[0] + w, r[1] + h];
+        return;
+    }
+    const l = pp.wind.location;
+    pp.wind.location = [l[0], l[1], l[0] + w, l[1] + h];
+}
+
+function layoutExtended() {
+    const box = pp.getnamed("plugin_view");
+    const p = plugin();
+    if (!box) return;
+    const x0 = baseWidth();
+
+    if (!isExtended || !p) {
+        if (p) p.setattr("viewvisibility", 0);
+        box.hidden = 1;
+        if (!isExtended && baseHeight !== null) {
+            setActWindowSize(x0, baseHeight);
+            baseHeight = null;
+        }
+        return;
+    }
+
+    p.setattr("viewvisibility", 1);
+    let w;
+    const h = VIEW_HEIGHT;
+    if (kind === "vst") {
+        w = VST_VIEW_WIDTH;
+        applyVstViewGeometry(p);
+    } else {
+        // devices size their own box to the device's UI: keep its width
+        const r = p.rect;
+        w = Math.max(r[2] - r[0], 50);
+        p.rect = [0, 0, w, h];
+    }
+    box.rect = [x0, 0, x0 + w, h];
+    box.hidden = 0;
+    const base = baseHeight !== null ? baseHeight : actWindowSize()[1];
+    setActWindowSize(x0 + w, Math.max(base, h));
+
+    // vst~ builds its view a moment after viewvisibility is switched on and
+    // ignores offset / size set before that: set them again shortly after
+    if (kind === "vst") {
+        if (!vstViewTask) vstViewTask = new Task(reapplyVstView);
+        vstViewTask.cancel();
+        vstViewTask.schedule(50);
+    }
+}
+
+// the vst~ box is taller by the hidden top row, so the visible part is still
+// VIEW_HEIGHT of parameter list (plugin_view clips the box at VIEW_HEIGHT)
+function applyVstViewGeometry(p) {
+    p.rect = [0, 0, VST_VIEW_WIDTH, VIEW_HEIGHT + VST_TOP_ROW_HEIGHT];
+    p.setattr("offset", 0, -VST_TOP_ROW_HEIGHT); // hide the top row
+}
+
+let vstViewTask = null;
+function reapplyVstView() {
+    const p = plugin();
+    if (p && isExtended && kind === "vst") applyVstViewGeometry(p);
 }
 
 //
@@ -605,7 +820,12 @@ function recreatePlugin(c_in, c_out) {
         applyLiveState(d.name);
     }
     if (isOpen) openWindow();
+    // a device knows its size only once it has loaded
+    if (!layoutTask) layoutTask = new Task(layoutExtended);
+    layoutTask.cancel();
+    layoutTask.schedule(500);
 }
+let layoutTask = null;
 
 function getPluginType(pluginPath) {
     if (!pluginPath || typeof pluginPath !== "string") return 1;
@@ -642,6 +862,7 @@ function loadPlugin(pluginPath) {
 
     pp.getnamed("def_shell").setvalueof("none");
     pp.getnamed("open!").hidden = 0;
+    pp.getnamed("extend").hidden = 0;
 
     vst_AU = kind === "vst" ? getPluginType(pluginPath) : 1;
     updateKindUI();
@@ -761,6 +982,7 @@ function collectParams() {
     }
 
     if (isOpen) openWindow();
+    layoutExtended(); // e.g. a device's size is only known once it has loaded
 
     // plugin_state should describe the newly loaded plugin
     plugin_changed();
@@ -1446,6 +1668,9 @@ function dialog_write(arg1, arg2) {
 function reset() {
     pp.getnamed("open!").message(0);
     pp.getnamed("open!").hidden = 1;
+
+    pp.getnamed("extend").message(0);
+    pp.getnamed("extend").hidden = 1;
     isOpen = false;
 
     deleteParamObjects();
@@ -1466,9 +1691,11 @@ function reset() {
     resetMenu();
     chans_in = 4;
     chans_out = 2;
+    bypassState = 0;
     createPluginObject("vst");
-    const amxdWin = amxdWindowBox();
-    if (amxdWin) amxdWin.message("wclose");
+    const ext = pp.getnamed("extend");
+    if (ext) ext.message("set", 0);
+    setExtend(0);
 
     out("ll.blues::chans", 4, 2);
 
