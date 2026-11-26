@@ -4,12 +4,12 @@
         "appversion": {
             "major": 9,
             "minor": 2,
-            "revision": 2,
+            "revision": 1,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 134.0, 318.0, 113.0, 169.0 ],
+        "rect": [ 121.0, 304.0, 113.0, 169.0 ],
         "toolbarvisible": 0,
         "globalpatchername": "plugin@1",
         "boxes": [
@@ -66,7 +66,7 @@
             {
                 "box": {
                     "annotation": "extend",
-                    "bgcolor": [ 0.8509803921568627, 0.8509803921568627, 0.8509803921568627, 1.0 ],
+                    "bgcolor": [ 0.8509803921568627, 0.8509803921568627, 0.8509803921568627, 0.0 ],
                     "bgoncolor": [ 1.0, 0.0, 0.0, 1.0 ],
                     "fontsize": 9.0,
                     "hidden": 1,
@@ -94,7 +94,7 @@
                     "maxclass": "newobj",
                     "numinlets": 2,
                     "numoutlets": 0,
-                    "patching_rect": [ 174.0, 13.5, 80.0, 22.0 ],
+                    "patching_rect": [ 8.0, 175.0, 80.0, 22.0 ],
                     "text": "ll.s presetsUI"
                 }
             },
@@ -130,7 +130,7 @@
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
-                    "patching_rect": [ 421.0, 201.0, 207.0, 22.0 ],
+                    "patching_rect": [ 7.5, 308.0, 207.0, 22.0 ],
                     "restore": [ 0.888889 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
@@ -150,7 +150,7 @@
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
-                    "patching_rect": [ 421.0, 175.0, 188.0, 22.0 ],
+                    "patching_rect": [ 7.5, 282.0, 188.0, 22.0 ],
                     "restore": [ "none" ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
@@ -165,32 +165,18 @@
                     "fontname": "Arial",
                     "fontsize": 12.0,
                     "hidden": 1,
-                    "id": "obj-117",
-                    "maxclass": "newobj",
-                    "numinlets": 1,
-                    "numoutlets": 1,
-                    "outlettype": [ "int" ],
-                    "patching_rect": [ 421.0, 84.0, 42.0, 22.0 ],
-                    "text": "active"
-                }
-            },
-            {
-                "box": {
-                    "fontname": "Arial",
-                    "fontsize": 12.0,
-                    "hidden": 1,
                     "id": "obj-116",
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
-                    "patching_rect": [ 421.0, 123.0, 194.0, 22.0 ],
-                    "restore": [ 214, 704 ],
+                    "patching_rect": [ 7.5, 230.0, 195.0, 22.0 ],
+                    "restore": [ 100, 600 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
                     },
-                    "text": "pattr position @default_priority 911",
+                    "text": "pattr position @default_priority 909",
                     "varname": "position"
                 }
             },
@@ -204,7 +190,7 @@
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
-                    "patching_rect": [ 421.0, 149.0, 193.0, 22.0 ],
+                    "patching_rect": [ 7.5, 256.0, 193.0, 22.0 ],
                     "restore": [ "bla" ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
@@ -233,34 +219,6 @@
                     "patching_rect": [ 0.0, 117.0, 113.0, 53.0 ],
                     "varname": "ll.blues",
                     "viewvisibility": 1
-                }
-            },
-            {
-                "box": {
-                    "fontname": "Arial",
-                    "fontsize": 12.0,
-                    "hidden": 1,
-                    "id": "obj-291",
-                    "maxclass": "message",
-                    "numinlets": 2,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 202.0, 100.0, 77.0, 22.0 ],
-                    "text": "getattributes"
-                }
-            },
-            {
-                "box": {
-                    "fontname": "Arial",
-                    "fontsize": 12.0,
-                    "hidden": 1,
-                    "id": "obj-289",
-                    "maxclass": "message",
-                    "numinlets": 2,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 343.0, 148.0, 50.0, 22.0 ],
-                    "text": "restore"
                 }
             },
             {
@@ -296,7 +254,7 @@
                 "box": {
                     "annotation": "vst-folder",
                     "arrow": 0,
-                    "bgcolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "bgcolor": [ 0.9058823529411765, 0.9019607843137255, 0.9019607843137255, 1.0 ],
                     "checkmode": 1,
                     "color": [ 0.0, 0.0, 0.0, 1.0 ],
                     "fontface": 0,
@@ -304,7 +262,7 @@
                     "fontsize": 9.0,
                     "hint": "folder definition and plugin loading",
                     "id": "obj-6",
-                    "items": [ "def_folders", ",", "∆í Macintosh HD:/Library/Audio/Plug-Ins/VST/", ",", "∆í Macintosh HD:/Library/Audio/Plug-Ins/VST/Audio Damage/", ",", "∆í Macintosh HD:/Library/Audio/Plug-Ins/VST/PSPaudioware/", ",", "∆í Macintosh HD:/Library/Audio/Plug-Ins/VST/Sonic Charge/", ",", "∆í Macintosh HD:/Library/Audio/Plug-Ins/VST/Soundtoys/", ",", "∆í Macintosh HD:/Library/Audio/Plug-Ins/Components/", ",", "∆í Macintosh HD:/Library/Audio/Plug-Ins/VST3/", ",", "∆í Macintosh HD:/Library/Audio/Plug-Ins/VST3/Eventide/", ",", "∆í Macintosh HD:/Library/Audio/Plug-Ins/Components/AirWindows/", ",", "∆í Macintosh HD:/Users/josephsteccato/Music/Ableton Devices/", ",", "all", ",", "auto", ",", "-", ",", "(favorites)", ",", "Blackhole.vst3" ],
+                    "items": [ "(select...)", ",", "-", ",", "def_folders", ",", "∆í Macintosh HD:/Library/Audio/Plug-Ins/VST/", ",", "∆í Macintosh HD:/Library/Audio/Plug-Ins/VST/Audio Damage/", ",", "∆í Macintosh HD:/Library/Audio/Plug-Ins/VST/PSPaudioware/", ",", "∆í Macintosh HD:/Library/Audio/Plug-Ins/VST/Sonic Charge/", ",", "∆í Macintosh HD:/Library/Audio/Plug-Ins/VST/Soundtoys/", ",", "∆í Macintosh HD:/Library/Audio/Plug-Ins/Components/", ",", "∆í Macintosh HD:/Library/Audio/Plug-Ins/VST3/", ",", "∆í Macintosh HD:/Library/Audio/Plug-Ins/VST3/Eventide/", ",", "∆í Macintosh HD:/Library/Audio/Plug-Ins/Components/AirWindows/", ",", "∆í Macintosh HD:/Users/josephsteccato/Music/Ableton Devices/", ",", "all", ",", "auto", ",", "-", ",", "(favorites)", ",", "Blackhole.vst3" ],
                     "maxclass": "ll.menu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -330,7 +288,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 2,
-                            "revision": 2,
+                            "revision": 1,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -441,7 +399,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 2,
-                                            "revision": 2,
+                                            "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -589,7 +547,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 577.0, 2.0, 106.0, 129.0 ],
-                                    "text": "ll.pm open! def_folder vst-folder position act::pres_menu presetsUI ll.blues::chans program_files param_select extend"
+                                    "text": "ll.pm open! def_folder vst-folder position act::pres_menu presetsUI ll.blues::chans program_files param_select extend vst_program"
                                 }
                             },
                             {
@@ -652,7 +610,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 2,
-                                            "revision": 2,
+                                            "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -819,7 +777,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 2,
-                                                            "revision": 2,
+                                                            "revision": 1,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1102,7 +1060,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 2,
-                                            "revision": 2,
+                                            "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1132,7 +1090,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 2,
-                                                            "revision": 2,
+                                                            "revision": 1,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -1247,7 +1205,7 @@
                                                                     "numoutlets": 1,
                                                                     "outlettype": [ "" ],
                                                                     "patching_rect": [ 169.0, 103.0, 201.0, 22.0 ],
-                                                                    "text": "100. 600. 574 924"
+                                                                    "text": "0. 0. 500 200"
                                                                 }
                                                             },
                                                             {
@@ -1421,7 +1379,7 @@
                                                         "appversion": {
                                                             "major": 9,
                                                             "minor": 2,
-                                                            "revision": 2,
+                                                            "revision": 1,
                                                             "architecture": "x64",
                                                             "modernui": 1
                                                         },
@@ -2129,7 +2087,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 2,
-                                            "revision": 2,
+                                            "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -2453,7 +2411,7 @@
                                                     "numoutlets": 1,
                                                     "outlettype": [ "" ],
                                                     "patching_rect": [ 48.0, 226.0, 144.0, 22.0 ],
-                                                    "text": "plugin@1 ho_st1"
+                                                    "text": "ho_st1 plugin@1"
                                                 }
                                             },
                                             {
@@ -2749,7 +2707,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 2,
-                                            "revision": 2,
+                                            "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -3033,7 +2991,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 2,
-                                            "revision": 2,
+                                            "revision": 1,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -3908,7 +3866,7 @@
                             }
                         ]
                     },
-                    "patching_rect": [ 213.0, 54.0, 41.0, 22.0 ],
+                    "patching_rect": [ 363.0, 316.0, 41.0, 22.0 ],
                     "text": "p sub",
                     "varname": "sub"
                 }
@@ -3917,7 +3875,7 @@
                 "box": {
                     "annotation": "midi-port",
                     "arrow": 0,
-                    "bgcolor": [ 0.701960784313725, 0.701960784313725, 0.701960784313725, 1.0 ],
+                    "bgcolor": [ 0.9058823529411765, 0.9019607843137255, 0.9019607843137255, 1.0 ],
                     "checkmode": 1,
                     "color": [ 0.0, 0.0, 0.0, 1.0 ],
                     "fontface": 0,
@@ -3973,8 +3931,10 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 421.0, 45.0, 100.0, 22.0 ],
+                    "patching_rect": [ 297.0, 200.0, 100.0, 22.0 ],
                     "priority": {
+                        "plugin_state": 7,
+                        "param_select": 8,
                         "vst-folder": 3,
                         "program_files": 5,
                         "vst_program": 6,
@@ -3982,6 +3942,7 @@
                         "midi-channel": 901,
                         "midi-port-out": 902,
                         "midi-channel-out": 903,
+                        "extend": 910,
                         "open!": 910,
                         "presets": 1016,
                         "preset-ramp": 1017,
@@ -3993,10 +3954,10 @@
                         "def_folder": 1,
                         "def_shell": 2,
                         "program_file": 4,
-                        "position": 911
+                        "position": 909
                     },
                     "saved_object_attributes": {
-                        "client_rect": [ 545, 133, 1800, 849 ],
+                        "client_rect": [ 257, 133, 1512, 849 ],
                         "parameter_enable": 0,
                         "parameter_mappable": 0,
                         "storage_rect": [ 583, 68, 1034, 196 ]
@@ -4016,7 +3977,7 @@
                     "numinlets": 1,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 286.0, 79.0, 107.0, 22.0 ],
+                    "patching_rect": [ 297.0, 245.0, 107.0, 22.0 ],
                     "save": [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
                     "text": "thispatcher",
                     "varname": "thispatcher"
@@ -4033,7 +3994,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 286.0, 100.0, 107.0, 22.0 ],
+                    "patching_rect": [ 297.0, 266.0, 107.0, 22.0 ],
                     "text": "pattrmarker no",
                     "varname": "pattrmarker"
                 }
@@ -4049,7 +4010,7 @@
                     "numinlets": 1,
                     "numoutlets": 4,
                     "outlettype": [ "", "", "", "" ],
-                    "patching_rect": [ 286.0, 121.0, 107.0, 22.0 ],
+                    "patching_rect": [ 297.0, 287.0, 107.0, 22.0 ],
                     "restore": {
                         "extend": [ 0 ],
                         "midi-channel": [ 0 ],
@@ -4060,7 +4021,7 @@
                         "preset-ramp": [ 0.0 ],
                         "presets": [ 0 ],
                         "program_files": [ "" ],
-                        "vst-folder": [ "def_folders" ],
+                        "vst-folder": [ "(select...)" ],
                         "vst_program": [ 1.0 ]
                     },
                     "restore_extra": {
@@ -4131,7 +4092,7 @@
                     "fontsize": 9.0,
                     "hint": "program_files, plugin-native preset handling",
                     "id": "obj-400",
-                    "items": [ "writepgm", ",", "writebank", ",", "params...", ",", "read", ",", "-" ],
+                    "items": [ "writepgm", ",", "writebank", ",", "read", ",", "-" ],
                     "maxclass": "ll.menu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -4145,7 +4106,7 @@
             },
             {
                 "box": {
-                    "args": [ "plugin@", "§ffffff" ],
+                    "args": [ "plugin@", "§E7E6E6" ],
                     "bgmode": 0,
                     "border": 0,
                     "clickthrough": 0,
@@ -4172,7 +4133,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 421.0, 66.0, 115.0, 22.0 ],
+                    "patching_rect": [ 297.0, 221.0, 115.0, 22.0 ],
                     "text": "pattrforward act::in2",
                     "varname": "pf"
                 }
@@ -4180,7 +4141,7 @@
             {
                 "box": {
                     "annotation": "midi-channel",
-                    "bgcolor": [ 0.702, 0.702, 0.702, 1.0 ],
+                    "bgcolor": [ 0.9058823529411765, 0.9019607843137255, 0.9019607843137255, 1.0 ],
                     "bordercolor": [ 0.5, 0.5, 0.5, 0.0 ],
                     "fontface": 0,
                     "format": [ 1 ],
@@ -4211,13 +4172,13 @@
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
-                    "patching_rect": [ 421.0, 227.0, 207.0, 22.0 ],
+                    "patching_rect": [ 7.5, 334.0, 298.0, 22.0 ],
                     "restore": [ 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
                     },
-                    "text": "pattr param_select @autorestore 0",
+                    "text": "pattr param_select @autorestore 0 @default_priority 8",
                     "varname": "param_select"
                 }
             },
@@ -4225,7 +4186,7 @@
                 "box": {
                     "annotation": "midi-port-out",
                     "arrow": 0,
-                    "bgcolor": [ 1.0, 1.0, 1.0, 1.0 ],
+                    "bgcolor": [ 0.9058823529411765, 0.9019607843137255, 0.9019607843137255, 1.0 ],
                     "color": [ 0.0, 0.0, 0.0, 1.0 ],
                     "fontface": 0,
                     "fontname": "Arial",
@@ -4247,6 +4208,7 @@
             {
                 "box": {
                     "annotation": "midi-channel-out",
+                    "bgcolor": [ 0.9058823529411765, 0.9019607843137255, 0.9019607843137255, 1.0 ],
                     "bordercolor": [ 0.5, 0.5, 0.5, 0.0 ],
                     "fontface": 0,
                     "fontsize": 10.0,
@@ -4279,13 +4241,13 @@
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
-                    "patching_rect": [ 421.0, 253.0, 200.0, 22.0 ],
+                    "patching_rect": [ 7.5, 360.0, 291.0, 22.0 ],
                     "restore": [ 0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
                         "parameter_mappable": 0
                     },
-                    "text": "pattr plugin_state @autorestore 0",
+                    "text": "pattr plugin_state @autorestore 0 @default_priority 7",
                     "varname": "plugin_state"
                 }
             },
@@ -4299,7 +4261,7 @@
                     "numinlets": 1,
                     "numoutlets": 3,
                     "outlettype": [ "", "", "" ],
-                    "patching_rect": [ 421.0, 330.0, 420.0, 22.0 ],
+                    "patching_rect": [ 7.5, 437.0, 420.0, 22.0 ],
                     "restore": [ 0.0 ],
                     "saved_object_attributes": {
                         "parameter_enable": 0,
@@ -4319,7 +4281,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 421.0, 278.0, 150.0, 22.0 ],
+                    "patching_rect": [ 7.5, 385.0, 150.0, 22.0 ],
                     "text": "prepend plugin_state_in"
                 }
             },
@@ -4330,7 +4292,7 @@
                     "maxclass": "newobj",
                     "numinlets": 2,
                     "numoutlets": 0,
-                    "patching_rect": [ 421.0, 303.0, 56.0, 22.0 ],
+                    "patching_rect": [ 7.5, 410.0, 56.0, 22.0 ],
                     "text": "ll.s to_v8"
                 }
             },
@@ -4342,7 +4304,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "bang" ],
-                    "patching_rect": [ 640.0, 253.0, 30.0, 22.0 ],
+                    "patching_rect": [ 317.0, 360.0, 30.0, 22.0 ],
                     "text": "t b",
                     "varname": "prepare_dump"
                 }
@@ -4357,7 +4319,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 640.0, 278.0, 140.0, 22.0 ],
+                    "patching_rect": [ 317.0, 385.0, 140.0, 22.0 ],
                     "text": "prepend capture_state"
                 }
             },
@@ -4382,7 +4344,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 2,
-                            "revision": 2,
+                            "revision": 1,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -4538,7 +4500,7 @@
                                     "clickthrough": 0,
                                     "enablehscroll": 0,
                                     "enablevscroll": 0,
-                                    "id": "obj-16",
+                                    "id": "obj-14",
                                     "lockeddragscroll": 0,
                                     "lockedsize": 0,
                                     "maxclass": "newobj",
@@ -4586,10 +4548,10 @@
                                                     "snapshot": {                                                    },
                                                     "fileref": {
                                                         "name": "",
-                                                        "filename": "_20261125_6.maxsnap",
+                                                        "filename": "_20261126_1.maxsnap",
                                                         "filepath": "~/Documents/Max 9/Snapshots",
                                                         "filepos": -1,
-                                                        "snapshotfileid": "f8744bfe8766e79520e724be99a3e3b5"
+                                                        "snapshotfileid": "2325db0470eac9bb72062900da57c1f7"
                                                     }
                                                 }
                                             ]
@@ -4606,61 +4568,61 @@
                                 "patchline": {
                                     "destination": [ "obj-10", 0 ],
                                     "hidden": 1,
-                                    "source": [ "obj-16", 5 ]
+                                    "source": [ "obj-14", 5 ]
                                 }
                             },
                             {
                                 "patchline": {
                                     "destination": [ "obj-11", 0 ],
                                     "hidden": 1,
-                                    "source": [ "obj-16", 6 ]
+                                    "source": [ "obj-14", 6 ]
                                 }
                             },
                             {
                                 "patchline": {
                                     "destination": [ "obj-6", 0 ],
                                     "hidden": 1,
-                                    "source": [ "obj-16", 0 ]
+                                    "source": [ "obj-14", 0 ]
                                 }
                             },
                             {
                                 "patchline": {
                                     "destination": [ "obj-7", 0 ],
                                     "hidden": 1,
-                                    "source": [ "obj-16", 1 ]
+                                    "source": [ "obj-14", 1 ]
                                 }
                             },
                             {
                                 "patchline": {
                                     "destination": [ "obj-8", 0 ],
                                     "hidden": 1,
-                                    "source": [ "obj-16", 2 ]
+                                    "source": [ "obj-14", 2 ]
                                 }
                             },
                             {
                                 "patchline": {
                                     "destination": [ "obj-9", 0 ],
                                     "hidden": 1,
-                                    "source": [ "obj-16", 3 ]
+                                    "source": [ "obj-14", 3 ]
                                 }
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-16", 0 ],
+                                    "destination": [ "obj-14", 0 ],
                                     "hidden": 1,
                                     "source": [ "obj-2", 0 ]
                                 }
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-16", 0 ],
+                                    "destination": [ "obj-14", 0 ],
                                     "hidden": 1,
                                     "source": [ "obj-3", 0 ]
                                 }
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-16", 0 ],
+                                    "destination": [ "obj-14", 0 ],
                                     "hidden": 1,
                                     "source": [ "obj-4", 0 ]
                                 }
@@ -4679,13 +4641,6 @@
                     "destination": [ "obj-6405", 0 ],
                     "hidden": 1,
                     "source": [ "obj-2", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-9", 0 ],
-                    "hidden": 1,
-                    "source": [ "obj-291", 0 ]
                 }
             },
             {
@@ -4722,17 +4677,10 @@
                     "hidden": 1,
                     "source": [ "obj-509", 0 ]
                 }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-289", 1 ],
-                    "hidden": 1,
-                    "source": [ "obj-9", 3 ]
-                }
             }
         ],
         "parameters": {
-            "obj-600::obj-16": [ "plugin", "plugin", 0 ],
+            "obj-600::obj-14": [ "plugin", "plugin", 0 ],
             "parameterbanks": {
                 "0": {
                     "index": 0,
@@ -4744,6 +4692,6 @@
             "inherited_shortname": 1
         },
         "autosave": 0,
-        "bgcolor": [ 1.0, 1.0, 1.0, 1.0 ]
+        "bgcolor": [ 0.9058823529411765, 0.9019607843137255, 0.9019607843137255, 1.0 ]
     }
 }

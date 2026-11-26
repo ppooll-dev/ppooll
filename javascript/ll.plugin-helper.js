@@ -39,7 +39,10 @@ var ll_global = new Global("ppooll");
 let tp = this.patcher;
 let pp = tp.parentpatcher;
 let actname = null;
-let isFirstLoad = true;
+// older acts / environments stored "def_folders" as the menu's value: its
+// restore right after loading must not open the folder window
+let loadedAt = Date.now();
+const LOAD_SETTLE = 2000; // ms
 
 let isLoadingPreset = false;
 let preset1000 = null;
@@ -74,15 +77,15 @@ let selectionByPlug = {};
 let selectorDraft = null; // Set of 1-based indices
 let selectorFilter = "";
 let selectorRows = []; // cellblock row -> 1-based index
-const PARAMS_MENU_ITEM = "params...";
 
 // plugin menu ("vst-folder") extras
 const FAV_HEADER = "(favorites)";
 const FAV_ADD = "+ favorite";
 const FAV_REMOVE = "- favorite";
+const SELECT_ITEM = "(select...)"; // header, shown while nothing is loaded
+const PARAM_SELECT_ITEM = "param_select"; // opens the parameter selector
 let lastMenuItems = []; // items of the current folder view
 let lastProgramMenuItem = "";
-let programMenuRefreshedAt = 0; // ignore the menu's own output right after a refresh
 
 // plugin window
 let isOpen = false;
@@ -119,9 +122,9 @@ const ll_pm_map = {
     presetsUI: presetsUI,
     "ll.blues::chans": setChans,
     extend: setExtend,
-    bypass: setBypass,
     program_files: program_files,
     param_select: param_select,
+    vst_program: setProgram,
 };
 
 function ll_pm(receive, ...args) {
@@ -373,7 +376,6 @@ const SWITCH_AT = 0.99;
 function setInterpModes() {
     out("pat", "interp", "plugin_state", "thresh", SWITCH_AT);
     out("pat", "interp", "param_select", "thresh", SWITCH_AT);
-    out("pat", "interp", "bypass", "thresh", SWITCH_AT);
 }
 
 //
@@ -528,65 +530,28 @@ function createPluginObject(newKind) {
 
     setInterpModes();
     updateKindUI();
-    watchBypass();
     layoutExtended();
-}
-
-//
-// Bypass: the power button in the vst~ header <-> top-level [pattr bypass]
-//   (stored with presets / environments, mappable like any ppooll value)
-//
-let bypassState = 0;
-let bypassListener = null;
-let settingBypassPattr = false;
-
-function watchBypass() {
-    bypassListener = null;
-    const p = plugin();
-    if (!p || kind !== "vst") return;
-    try {
-        p.setattr("bypass", bypassState); // a recreated object keeps the state
-        bypassListener = new MaxobjListener(p, "bypass", onPluginBypass);
-    } catch (e) {
-        dpost("bypass: can't follow the plugin's bypass attribute");
-    }
-}
-
-// power button clicked (or bypass set any other way) -> pattr
-function onPluginBypass(data) {
-    let v = data && data.value !== undefined ? data.value : 0;
-    if (Array.isArray(v)) v = v[0];
-    v = v ? 1 : 0;
-    if (v === bypassState) return;
-    bypassState = v;
-    const b = pp.getnamed("bypass");
-    if (!b) return;
-    settingBypassPattr = true;
-    try {
-        b.message("int", v);
-    } finally {
-        settingBypassPattr = false;
-    }
-}
-
-// pattr bypass (recall, mapping) -> plugin
-function setBypass(v) {
-    if (settingBypassPattr) return; // our own update echoing back
-    v = v ? 1 : 0;
-    bypassState = v;
-    const p = plugin();
-    if (p && kind === "vst") p.setattr("bypass", v);
 }
 
 function updateKindUI() {
     const isAmxd = kind === "amxd";
     const pf = pp.getnamed("program_files");
     if (pf) pf.hidden = isAmxd ? 1 : 0;
-    messnamed(`::${actname}::vst_program`, "hidden", isAmxd || !vst_AU ? 1 : 0);
+    // program number: VST / VST3 only (not AU, not devices, not while empty)
+    const vp = pp.getnamed("vst_program");
+    if (vp) vp.hidden = !currentPlug || isAmxd || !vst_AU ? 1 : 0;
+}
+
+// "vst_program" number box: load program N of the VST (vst~ takes an int)
+function setProgram(n) {
+    if (kind !== "vst" || !vst_AU || !currentPlug) return;
+    const p = plugin();
+    if (p && typeof n === "number") p.message("int", Math.round(n));
 }
 
 // Loadbang
 function loadbang() {
+    loadedAt = Date.now();
     const p = plugin();
     kind = p && p.understands && p.understands("patchername") ? "amxd" : "vst";
     resetMenu();
@@ -1033,6 +998,36 @@ function createParamObject(name) {
     }
 }
 
+// Flonums are restored after the plugin and its full state (7, 8) and before
+// MIDI / position / open / extend (900+). However many there are, they stay
+// in FLONUM_PRIORITY_FIRST..FLONUM_PRIORITY_LAST, in parameter order; above
+// that many flonums, neighbours share a priority.
+const FLONUM_PRIORITY_FIRST = 100;
+const FLONUM_PRIORITY_LAST = 899;
+function flonumPriority(i, count) {
+    const span = FLONUM_PRIORITY_LAST - FLONUM_PRIORITY_FIRST + 1; // 800
+    return FLONUM_PRIORITY_FIRST + Math.floor((i * span) / Math.max(count, 1));
+}
+
+// pattrstorage only learns about newly scripted flonums a moment later (via
+// autopattr), and silently ignores "priority" for clients it doesn't know
+// yet. So set the priorities after a short delay, and once more later in case
+// a big plugin took longer.
+let priorityTask = null;
+let priorityTries = 0;
+function applyFlonumPriorities() {
+    paramNames.forEach((name, i) => {
+        out("pat", "priority", name, flonumPriority(i, paramNames.length));
+    });
+    if (++priorityTries < 2) priorityTask.schedule(1000);
+}
+function scheduleFlonumPriorities() {
+    if (!priorityTask) priorityTask = new Task(applyFlonumPriorities);
+    priorityTask.cancel();
+    priorityTries = 0;
+    priorityTask.schedule(150);
+}
+
 function getParamValues() {
     const p = plugin();
     if (!p) return;
@@ -1041,8 +1036,8 @@ function getParamValues() {
     // fill the coll first: amxd~ answers by name and is mapped through it
     paramNames.forEach((name, i) => {
         out("coll", "store", name, selectedIdx[i]);
-        out("pat", "priority", name, i + 100);
     });
+    scheduleFlonumPriorities();
     paramNames.forEach((name, i) => {
         if (kind === "vst") p.message("get", selectedIdx[i]);
         else p.message("getvalue", name);
@@ -1374,13 +1369,18 @@ function deleteFolder(row) {
 // handle "vst-folder" value change
 function vst_folder(selection) {
     if (settingVstMenu) return; // our own setsymbol echoing back
-    if (selection === "def_folders") {
-        if (isFirstLoad) {
-            isFirstLoad = false;
-            return;
+    if (selection === SELECT_ITEM) {
+        restoreMenuSymbol();
+    } else if (selection === PARAM_SELECT_ITEM) {
+        // only when picked by hand, and once the plugin has reported its params
+        if (!ll_global.enviread && allParamNames.length) openSelector("plugin menu");
+        restoreMenuSymbol();
+    } else if (selection === "def_folders") {
+        if (!ll_global.enviread && Date.now() - loadedAt >= LOAD_SETTLE) {
+            setDefFoldersJit();
+            jit_define_folders("open");
         }
-        setDefFoldersJit();
-        jit_define_folders("open");
+        restoreMenuSymbol();
     } else if (selection.slice(0, 3) === "∆í ") {
         setCurrentPath(selection);
     } else if (selection === "all") {
@@ -1422,9 +1422,21 @@ function vst_folder(selection) {
     }
 }
 
-// show the loaded plugin in the menu again (after menu actions / headers)
+// show the loaded plugin in the menu again (after menu actions / headers),
+// or "(select...)" while nothing is loaded
 function restoreMenuSymbol() {
-    if (currentPlugName) to_vst_menu("setsymbol", currentPlugName);
+    to_vst_menu("setsymbol", currentPlugName || SELECT_ITEM);
+}
+
+// plugins and devices in a folder -- only names with a plugin extension, so
+// the folder itself, subfolders and other files don't show up in the menu
+const PLUGIN_EXTENSIONS = [".vst", ".vst3", ".component", ".amxd"];
+
+function pluginFilesIn(folder) {
+    return ll.getFilesInFolder(folder).filter((f) => {
+        const name = String(f).toLowerCase();
+        return PLUGIN_EXTENSIONS.some((ext) => name.endsWith(ext));
+    });
 }
 
 // set current path for "def_folder"
@@ -1442,7 +1454,7 @@ function setCurrentPath(path) {
             menuItems.push("<separator>");
             menuItems.push(`(${folder})`);
 
-            ll.getFilesInFolder(folder).forEach((plugFile) => {
+            pluginFilesIn(folder).forEach((plugFile) => {
                 menuItems.push(plugFile);
                 currentFiles[plugFile] = `${folder}${plugFile}`;
             });
@@ -1460,10 +1472,11 @@ function setCurrentPath(path) {
     } else if (path.slice(0, 3) === "∆í ") {
         // "∆í" - prefix for user-defined folder, load that folder
         let folder = path.slice(3);
-        menuItems = ["<separator>", ...ll.getFilesInFolder(folder)];
-        menuItems.forEach((plugFile) => {
+        const files = pluginFilesIn(folder);
+        files.forEach((plugFile) => {
             currentFiles[plugFile] = `${folder}${plugFile}`;
         });
+        menuItems = ["<separator>", ...files];
     }
 
     resetMenu(menuItems);
@@ -1479,38 +1492,79 @@ function from_vstscan(type, name) {
 function setActname(name) {
     actname = name;
     setDefFoldersJit();
+    hideRampLabel();
+    // ll.blues may still be loading: once more a little later
+    if (!rampLabelTask) rampLabelTask = new Task(hideRampLabel);
+    rampLabelTask.cancel();
+    rampLabelTask.schedule(500);
+}
+
+// remove the label of ll.blues' ramp number box (ll.blues::ramp)
+let rampLabelTask = null;
+function hideRampLabel() {
+    const blues = pp.getnamed("ll.blues");
+    const bp = blues && blues.subpatcher ? blues.subpatcher() : null;
+    const ramp = bp ? bp.getnamed("ramp") : null;
+    if (!ramp) {
+        dpost(`ramp label: ${!blues ? "no ll.blues" : !bp ? "ll.blues not loaded" : "no 'ramp' in ll.blues"}`);
+        return;
+    }
+    try {
+        ramp.message("label");
+    } catch (e) {
+        try {
+            ramp.setattr("label", "");
+        } catch (e2) {
+            dpost("ramp label: couldn't remove it");
+        }
+    }
 }
 
 function resetMenu(itemsToAdd = [], setsymbol = null) {
     lastMenuItems = itemsToAdd;
     to_vst_menu("clear");
 
-    const items = ["def_folders"];
+    //   (select...)                  header; shown while nothing is loaded
+    //   -
+    //   <loaded plugin>              ┐
+    //   + favorite / - favorite      │ only while a plugin is loaded
+    //   param_select                 │
+    //   -                            ┘
+    //   def_folders, ƒ folders, all, auto
+    //   -
+    //   (favorites), favorites, -    only if there are favorites
+    //   the chosen folder's contents
+    const items = [SELECT_ITEM, "-"];
+    if (currentPlug && currentPlugName) {
+        items.push(currentPlugName);
+        currentFiles[currentPlugName] = currentPlug;
+        items.push(isFavorite(currentPlug) ? FAV_REMOVE : FAV_ADD);
+        items.push(PARAM_SELECT_ITEM, "-");
+    }
+    items.push("def_folders");
     items.push(...getFolders().map((f) => `∆í ${f}`));
-    items.push("all", "auto", "-");
+    items.push("all", "auto");
 
-    // favorites: always, between the folder choices and the folder's contents
     const favs = favorites();
     if (favs.length) {
-        items.push(FAV_HEADER);
+        items.push("-", FAV_HEADER);
         favs.forEach((f) => {
             const name = displayName(f);
             items.push(name);
             currentFiles[name] = f;
         });
-        if (itemsToAdd.length) items.push("-");
     }
 
-    items.push(...itemsToAdd);
-
-    // add / remove the loaded plugin
-    if (currentPlug) items.push("-", isFavorite(currentPlug) ? FAV_REMOVE : FAV_ADD);
+    if (itemsToAdd.length) {
+        if (itemsToAdd[0] !== "<separator>") items.push("-");
+        items.push(...itemsToAdd);
+    }
 
     items.forEach((i) => to_vst_menu("append", i));
 
-    if (setsymbol) {
-        to_vst_menu("setsymbol", setsymbol);
-    }
+    // the menu always shows what's loaded (or "(select...)"), never the folder
+    // or other entry that was just picked to change the menu's contents
+    to_vst_menu("setsymbol", setsymbol || currentPlugName || SELECT_ITEM);
 }
 
 //
@@ -1526,21 +1580,17 @@ function refreshProgramFiles(to_select = "") {
     if (!currentPlugName) return;
 
     const pf = pp.getnamed("program_files");
-    programMenuRefreshedAt = Date.now();
     if (kind === "amxd") {
-        // no program files for devices; keep "params..." reachable
-        // ("-" first, so the menu never sits on "params..." by itself)
-        const d = new Dict();
-        d.parse(JSON.stringify({ items: ["-", PARAMS_MENU_ITEM] }));
-        to_program_menu("dictionary", d.name);
+        // no program files for devices (the menu is hidden for them)
+        to_program_menu("clear");
         to_program_menu("setsymbol", "");
         lastProgramMenuItem = "";
         return;
     }
 
     const items = vst_AU
-        ? ["writepgm", "writebank", PARAMS_MENU_ITEM, "-"]
-        : ["write", PARAMS_MENU_ITEM, "-"];
+        ? ["writepgm", "writebank", "-"]
+        : ["write", "-"];
     lastProgramMenuItem = to_select;
 
     currentProgramFiles = [];
@@ -1581,16 +1631,6 @@ function program_files(selection) {
     if (selection === "read" || selection === "" || selection === "setsymbol")
         return;
 
-    // "params..." opens the parameter selector -- only when picked by hand:
-    // not while reading an environment, not as the menu's echo of a refresh
-    if (selection === PARAMS_MENU_ITEM) {
-        const echo = Date.now() - programMenuRefreshedAt < 500;
-        if (echo) dpost("ignored 'params...' right after the program menu was refreshed");
-        if (!ll_global.enviread && !echo && allParamNames.length)
-            openSelector("params... menu");
-        to_program_menu("setsymbol", lastProgramMenuItem);
-        return;
-    }
     if (kind !== "vst") return;
 
     if (selection !== "writepgm" && selection !== "writebank" && selection !== "write") {
@@ -1691,13 +1731,13 @@ function reset() {
     resetMenu();
     chans_in = 4;
     chans_out = 2;
-    bypassState = 0;
     createPluginObject("vst");
     const ext = pp.getnamed("extend");
     if (ext) ext.message("set", 0);
     setExtend(0);
 
     out("ll.blues::chans", 4, 2);
+    hideRampLabel();
 
     out("act::pres_menu", "symbol", "clear!");
 
@@ -1706,7 +1746,6 @@ function reset() {
         ["clear"],
         ["append", "writepgm"],
         ["append", "writebank"],
-        ["append", PARAMS_MENU_ITEM],
         ["append", "read"],
         ["append", "-"],
     ].forEach((msgs) => to_program_menu(...msgs));
