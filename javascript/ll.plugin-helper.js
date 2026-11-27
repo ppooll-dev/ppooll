@@ -108,7 +108,7 @@ let vst_AU = 1; // 1 for VST/VST3, 0 for AU component
 let vstscan_list = [];
 
 // set to 0 once plugin@ is settled
-let debug = 1;
+let debug = 0;
 function dpost(...args) {
     if (debug) post("ll.plugin-helper:", ...args, "\n");
 }
