@@ -128,6 +128,31 @@ function prepareDump() {
     if (prep) prep.message("bang");
 }
 
+// ######################################################################## [ll.preset] grid
+let in_sendto = 0; // > 0 while sendto() redirects pattrstorage replies
+
+// message the act's [ll.preset] ("presets"), if it has one
+function presetsUI(...msg) {
+    const p = act_patcher.getnamed("presets");
+    if (p && p.maxclass === "ll.preset") p.message(...msg);
+}
+
+// tell [ll.preset] the parameters, which are included (active), and active_store
+function sendPresetsState() {
+    const p = act_patcher.getnamed("presets");
+    if (!p || p.maxclass !== "ll.preset") return;
+    const pat = ll_global.pat && ll_global.pat[act_name_index];
+    if (!pat) return;
+    if (in_sendto) return; // pattrstorage replies are redirected (see sendto)
+
+    const clients = [];
+    pat.getclientlist().forEach((c) => {
+        if (!isNeverRecalled(c)) clients.push(c, pat.getactive(c) ? 1 : 0);
+    });
+    p.message("clients", ...clients);
+    p.message("activestore", isActiveStore ? 1 : 0);
+}
+
 // If a pattr value is a dictionary, return its contents as a plain object.
 //   v8 getvalueof() of a pattr bound to vst~/amxd~ returns the parsed object;
 //   other objects may return ["dictionary", <name>]
@@ -288,7 +313,7 @@ function bang(alreadyRegistered = false) {
 
             getactive(client) {
                 act_patcher.getnamed("pat").message("getactive", client);
-                return this.priority[client];
+                return this.activelist[client];
             },
 
             getactivelist() {
@@ -422,6 +447,7 @@ function bang(alreadyRegistered = false) {
     }
 
     change_TEXT("refresh");
+    sendPresetsState();
 
     messnamed("acting", act_args.name, act_index, 1, act_args.hash);
     messnamed("act_ready", `${act_args.name}${act_index}`);
@@ -695,7 +721,7 @@ function create_title_menu_options() {
             messnamed("ll_master_selected", act_args.name, act_index);
         },
         active_store: () => {
-            isActiveStore = !isActiveStore;
+            isActiveStore = isActiveStore ? 0 : 1;
             act_patcher
                 .getnamed("pat")
                 .message("act::active_store", isActiveStore);
@@ -704,6 +730,7 @@ function create_title_menu_options() {
                 Object.keys(title_menu_options).indexOf("active_store"),
                 isActiveStore
             );
+            sendPresetsState();
         },
         separator2: null,
 
@@ -886,15 +913,33 @@ function refresh_menu(
 // ##########################################################################################
 // ##########################################################################################
 
+// write, clear!, TEXT are actions, not a state: the menus never keep them
+// as their value (it would be saved in environments and presets).
+const MENU_ACTIONS = ["write", "clear!", "TEXT"];
+const isMenuAction = (s) => MENU_ACTIONS.indexOf(s) > -1;
+
+// show the last loaded file (or the menu's title) again
+function showMenuFile(menu, file, title) {
+    const real = file && file !== "_" && file !== "-" && file !== title && !isMenuAction(file);
+    menu.message("setsymbol", real ? file : title);
+    menu.message("clearchecks");
+    if (real) menu.message("checksymbol", file, 1);
+}
+
 function set_tetris_menu(selection) {
     //post("set_tetris_menu", act_name_index, ...args, "\n")
     if (selection === "_" || selection === "(tetris)" || selection === "")
         return;
 
-    tetris_menu.message("clearchecks");
-    tetris_menu.message("checksymbol", selection, 1);
+    if (isMenuAction(selection)) {
+        showMenuFile(tetris_menu, prev_tetris_menu, "(tetris)");
+        if (selection !== "write" || is_llenviread) return;
+    } else {
+        tetris_menu.message("clearchecks");
+        tetris_menu.message("checksymbol", selection, 1);
+    }
 
-    if (selection === "write" && !is_llenviread) {
+    if (selection === "write") {
         // post(selection, prev_pres_menu, "\n");
         // show popup with last selected name
         // messnamed("ll_preset_menu", act_name_index, "write", prev_pres_menu);
@@ -918,6 +963,7 @@ function set_tetris_menu(selection) {
     }
 
     // load tetris layout
+    prev_tetris_menu = selection;
     const isFactory = selection.startsWith("ƒ ");
     const basePath = ll_global.paths[isFactory ? "factory" : "user"];
 
@@ -955,6 +1001,12 @@ function set_tetris_menu(selection) {
                     return true;
                 })
                 .forEach((attrName) => {
+                    // old tetris files set the preset grid's size with jsarguments
+                    if (objName === "presets" && obj.maxclass === "ll.preset" && attrName === "jsarguments") {
+                        const attrs = presetsAttrsFromArgs(tetrisObj[objName][attrName]);
+                        Object.keys(attrs).forEach((a) => obj.setattr(a, attrs[a]));
+                        return;
+                    }
                     if (!obj[attrName]) {
 						return;
                         post(
@@ -1110,9 +1162,7 @@ function write_tetris(name) {
 
     // check in tetris_menu
     prev_tetris_menu = name;
-
-    tetris_menu.message("clearchecks");
-    tetris_menu.message("checksymbol", name, 1);
+    showMenuFile(tetris_menu, name, "(tetris)");
 }
 
 function tetris_refresh_menu() {
@@ -1149,12 +1199,12 @@ function write_preset(name) {
     }
 
     write_preset_path(fullPath);
+    presetsUI("clean", "file");
     pres_refresh_menu();
 
     // check in pres_menu
     prev_pres_menu = name;
-    pres_menu.message("clearchecks");
-    pres_menu.message("checksymbol", name, 1);
+    showMenuFile(pres_menu, name, "(presets)");
 }
 
 function write_preset_path(fullPath) {
@@ -1196,6 +1246,10 @@ function anySlotHasActiveStore(pattrObj) {
     return false; // none found
 }
 
+// sent with pstoread: "menu" (preset menu / json environment) or "environment"
+// (folder environment, read by ll.enviread). snap@ only loads its acts for "menu".
+let preset_read_source = "menu";
+
 function read_preset_path(fullPath, presetName = 0) {
     if(!ll.fileExistsStrict(fullPath)){
         // post("old ppooll preset (not json)\n")
@@ -1219,6 +1273,9 @@ function read_preset_path(fullPath, presetName = 0) {
             // dictionary values (e.g. plugin@ plugin_state) are recalled by
             // "pat 1000" below; setvalueof can't take them
             if (value && typeof value === "object" && !Array.isArray(value)) return;
+            if (value === undefined) return;
+            // setting a momentary button's value presses it
+            if (isMomentary(paramObj)) return;
             if(paramObj)
                 paramObj.setvalueof(value);
         })
@@ -1239,8 +1296,12 @@ function read_preset_path(fullPath, presetName = 0) {
 	// which stores active-flags, but only if they are 0.
 	// reading the preset-file will set active flags to 0 if so defined
 	// ####################################################################  /active hack
+    preset_read_source = presetName ? "menu" : "environment";
     pat.message("read", fullPath);	
+    preset_read_source = "menu";
+    deactivateMomentary(); // the active hack switched them on again
     pat.message(1000);
+    deactivateNeverRecalled(); // after 1000, which restores their values
 
     if (anySlotHasActiveStore(presetJson)) {
         isActiveStore = 1;
@@ -1253,6 +1314,8 @@ function read_preset_path(fullPath, presetName = 0) {
     }
 
     recall_TEXT_from_dict(act_args.name, presetName, fullPath);
+    sendPresetsState();
+    presetsUI("clean");
 }
 
 function set_preset_menu(args) {
@@ -1285,7 +1348,12 @@ function set_preset_menu(args) {
 
     const pat = act_patcher.getnamed("pat");
 
-    if (selection === "write" && !is_llenviread) {
+    if (isMenuAction(selection)) {
+        showMenuFile(pres_menu, prev_pres_menu, "(presets)");
+        if (is_llenviread) return; // an old environment saved an action
+    }
+
+    if (selection === "write") {
         // post(selection, prev_pres_menu, "\n");
         // show popup with last selected name
         // messnamed("ll_preset_menu", act_name_index, "write", prev_pres_menu);
@@ -1310,17 +1378,18 @@ function set_preset_menu(args) {
 
     if (selection === "clear!") {
         // clear presets
-        const presetsUI = act_patcher.getnamed("presets");
-        if (presetsUI) presetsUI.message("clear");
+        const presetsObj = act_patcher.getnamed("presets");
+        if (presetsObj) presetsObj.message("clear");
 
         pat.message("clear");
         pat.message("getslotlist");
         pat.message("presets", 0);
 
-        pres_menu.message("setsymbol", "-");
         prev_pres_menu = "_";
+        showMenuFile(pres_menu, prev_pres_menu, "(presets)");
         clearTEXT();
         update_TEXT();
+        presetsUI("clean");
 
         return;
     }
@@ -1341,8 +1410,6 @@ function set_preset_menu(args) {
             l[1] + height,
         ];
 
-        // messnamed("ll_preset_menu", act_name_index, "TEXT", prev_pres_menu);
-        pres_menu.message("setsymbol", prev_pres_menu);
         return;
     }
 
@@ -1403,32 +1470,52 @@ function delete_old() {
         }
     });
 
-    const presetsUI = act_patcher.getnamed("presets");
-    if (presetsUI && presetsUI.maxclass === "jsui") {
-        // Object.keys(presetsUI).forEach(key => post(key, presetsUI[key], "\n"))
-        const rect = presetsUI.rect;
-        let jsarguments = presetsUI.getattr("jsarguments");
-        jsarguments = Array.isArray(jsarguments) ? jsarguments : [jsarguments];
+    // replace old js preset grids (jsui / v8ui) with [ll.preset]
+    const presetsObj = act_patcher.getnamed("presets");
+    if (presetsObj && (presetsObj.maxclass === "jsui" || presetsObj.maxclass === "v8ui")) {
+        const attrs = getOldPresetsAttrs(presetsObj);
+        const rect = presetsObj.rect;
+        const hidden = presetsObj.hidden;
 
-        // post("remove jsui presets", "\n")
-        act_patcher.remove(presetsUI);
+        act_patcher.remove(presetsObj);
 
-        const presets_v8 = act_patcher.newdefault(
-            rect[0],
-            rect[1],
-            "v8ui",
-            "@filename",
-            "ll.pattr_v8ui",
-            "@jsarguments",
-            ...jsarguments,
-            "@varname",
-            "presets"
-        );
-        presets_v8.rect = rect;
+        const presets_c = act_patcher.newdefault(rect[0], rect[1], "ll.preset");
+        presets_c.varname = "presets";
+        Object.keys(attrs).forEach((name) => presets_c.setattr(name, attrs[name]));
+        presets_c.rect = rect;
+        presets_c.hidden = hidden;
         did_delete = true;
     }
 
     if (did_delete) messnamed("ll_show_update_act", act_name_index);
+}
+
+// boxsize and colours of an old preset grid, as ll.preset attributes
+// old preset-grid arguments [boxsize, "r g b" x4 (0-255)] → ll.preset attributes
+function presetsAttrsFromArgs(args) {
+    const attrs = {};
+    args = (Array.isArray(args) ? args : [args]).filter((a) => a !== "" && a !== undefined && a !== null);
+    if (typeof args[0] === "number") attrs.boxsize = args[0];
+    ["vfrgb", "vbrgb", "vrgb2", "vrgb3"].forEach((name, i) => {
+        const s = args[i + 1];
+        if (typeof s === "string" && s.trim()) {
+            const rgb = s.trim().split(/\s+/).map((v) => Number(v) / 255);
+            attrs[name] = [rgb[0] || 0, rgb[1] || 0, rgb[2] || 0, 1];
+        }
+    });
+    return attrs;
+}
+
+function getOldPresetsAttrs(obj) {
+    const attrs = presetsAttrsFromArgs(obj.getattr("jsarguments"));
+
+    if (obj.maxclass === "v8ui") {
+        ["boxsize", "vbrgb", "vfrgb", "vrgb2", "vrgb3"].forEach((name) => {
+            const v = obj.getattr(name);
+            if (v !== null && v !== undefined) attrs[name] = v;
+        });
+    }
+    return attrs;
 }
 
 function createbasics() {
@@ -1499,6 +1586,11 @@ function createbasics() {
 
     this.patcher.getnamed("pf_pat").message("send", "parent::pat");
 
+    // parameter changes → [ll.preset]
+    const pf_presets = this.patcher.getnamed("pf_presets");
+    if (pf_presets && tpp.getnamed("presets") && tpp.getnamed("presets").maxclass === "ll.preset")
+        pf_presets.message("send", "parent::presets");
+
     if (tpp.getnamed("inputs~")) tpp.remove(tpp.getnamed("inputs~"));
 }
 
@@ -1539,6 +1631,44 @@ function create_rest() {
     messnamed("ll_p_reset", "bang");
 }
 
+// Momentary buttons (snap@'s "next") act when their value is set, so presets
+// would "press" them: in these acts they are never recalled.
+const MOMENTARY_NOT_RECALLED_ACTS = ["snap@"];
+
+function isMomentary(obj) {
+    if (MOMENTARY_NOT_RECALLED_ACTS.indexOf(act_args.name) < 0) return false;
+    if (!obj || !obj.maxclass) return false;
+    if (obj.maxclass === "button") return true;
+    if (obj.maxclass === "textbutton") return !obj.getattr("mode"); // 0 = button, 1 = toggle
+    return false;
+}
+
+// Parameters that slot recalls must never change (they are still saved and
+// restored on load). snap@'s act list: recalling a slot must not change which acts it drives.
+const NEVER_RECALLED = { "snap@": ["selected_acts"] };
+
+function isNeverRecalled(name) {
+    const list = NEVER_RECALLED[act_args.name];
+    return !!list && list.indexOf(name) > -1;
+}
+
+function deactivateNeverRecalled() {
+    const pat = act_patcher.getnamed("pat");
+    const list = NEVER_RECALLED[act_args.name];
+    if (pat && list) list.forEach((n) => pat.message("active", n, 0));
+}
+
+function deactivateMomentary() {
+    const pat = act_patcher.getnamed("pat");
+    if (!pat) return;
+    const names = [];
+    act_patcher.apply((obj) => {
+        if (obj.varname && isMomentary(obj)) names.push(obj.varname);
+        return true;
+    });
+    names.forEach((n) => pat.message("active", n, 0));
+}
+
 function first_dump() {
     obj_pat = act_patcher.getnamed("pat");
     [
@@ -1552,10 +1682,12 @@ function first_dump() {
         ["autorestore", 0],
         ["activewritemode", 1],
         ["outputmode", 1],
-        ["dump"],
     ].forEach((msgs) => {
         obj_pat.message(...msgs);
     });
+    deactivateMomentary();
+    deactivateNeverRecalled();
+    obj_pat.message("dump");
 }
 
 function make_live() {
@@ -1729,12 +1861,12 @@ function update_TEXT() {
             TEXT_presetsUI.push(text);
             editTEXT("grid", "set", col, row, text);
         }
-        const presetsUI = act_patcher.getnamed("presets");
-        if (presetsUI) {
+        const presetsObj = act_patcher.getnamed("presets");
+        if (presetsObj) {
             const d = new Dict();
             d.set("fontsize", TEXT_fontsize);
             d.set("text", [...TEXT_presetsUI]);
-            presetsUI.message("set_TEXT_data", d.name);
+            presetsObj.message("set_TEXT_data", d.name);
         }
     } catch (e) {
         post("error update_TEXT? \n");
@@ -1804,26 +1936,37 @@ function _in2(...args) {
     const msg = args.shift();
 
     if (msg === "act::active_store") {
-        const active_clients = (Array.isArray(args) ? args : [args]).filter(
-            (a) =>
-                a &&
-                a !== 0 &&
-                a !== 1 &&
-                a !== "_" &&
-                a !== " " &&
-                a !== "act::active_store"
-        );
+        // 0 / 1: the switch (echoed back by pattrstorage)
+        // client names: a recalled slot's parameter set
+        const vals = Array.isArray(args) ? args : [args];
+        const isSwitch =
+            vals.length === 1 &&
+            (vals[0] === 0 || vals[0] === 1 || vals[0] === true || vals[0] === false);
 
-        const newActiveStore = active_clients.length > 0;
-        if (isActiveStore !== newActiveStore) {
-            isActiveStore = newActiveStore;
+        const newActiveStore = isSwitch
+            ? Boolean(vals[0])
+            : vals.some(
+                  (a) =>
+                      typeof a === "string" &&
+                      a.trim() !== "" &&
+                      a !== "_" &&
+                      a !== "act::active_store"
+              );
+
+        const changed = Boolean(isActiveStore) !== newActiveStore;
+        if (changed) {
+            isActiveStore = newActiveStore ? 1 : 0;
             title_menu.message(
                 "checkitem",
                 Object.keys(title_menu_options).indexOf("active_store"),
                 isActiveStore
             );
         }
-        act_patcher.getnamed("pat").message("act::active_store", isActiveStore);
+        // a recalled list: put the switch back
+        if (!isSwitch)
+            act_patcher.getnamed("pat").message("act::active_store", isActiveStore);
+        // only on a change: this can run inside a recall
+        if (changed && isReady) sendPresetsState();
         return;
     }
 
@@ -1836,8 +1979,11 @@ function _in2(...args) {
     } else if (msg === "act::pres_menu" && !is_setting_pres_menu) {
         //if(args == "clear!") obj_pat.message("act::active_store","_");  //== better than === here
         is_setting_pres_menu = true;
-        set_preset_menu(Array.isArray(args) ? args : [args]);
-        is_setting_pres_menu = false;
+        try {
+            set_preset_menu(Array.isArray(args) ? args : [args]);
+        } finally {
+            is_setting_pres_menu = false; // an error must not lock the menu
+        }
     }
 }
 
@@ -1849,13 +1995,15 @@ function from_pat(...args) {
     if (msg === "client_add") {
         const client_name = args[0];
         messnamed(`::${act_name_index}::client_add`, client_name);
+        if (isReady) sendPresetsState();
     } else if (msg === "read") {
         const file_name = args[0];
         const shouldGetSlotList = args[1];
         messnamed(
             `::${act_name_index}::pstoread`,
             file_name,
-            shouldGetSlotList
+            shouldGetSlotList,
+            preset_read_source
         );
         act_patcher.getnamed("pat").message("getslotlist");
         if (ll_global.pat && ll_global.pat[act_name_index])
@@ -2002,7 +2150,7 @@ function sendto(...args) {
 
     msg = Array.isArray(msg) ? msg : [msg];
 
-    const obj_gate = (pa = this.patcher
+    const obj_gate = (this.patcher
         .getnamed("sendto")
         .subpatcher()
         .getnamed("sendto_gate")); //this.patcher.getnamed("sendto_gate");
@@ -2016,12 +2164,18 @@ function sendto(...args) {
         .getnamed("sendto_prepend");
     const obj_pat = act_patcher.getnamed("pat");
 
-    obj_gate.message(prep ? 1 : send1 ? 3 : 2);
-    obj_prepend.message("set", prep_mess);
-    obj_forward.message("send", dest);
-    obj_pat.message(...msg);
-    obj_gate.message(4);
-    obj_forward.message("send", "no");
+    // until the gate is set back, every pattrstorage reply goes to dest
+    in_sendto++;
+    try {
+        obj_gate.message(prep ? 1 : send1 ? 3 : 2);
+        obj_prepend.message("set", prep_mess);
+        obj_forward.message("send", dest);
+        obj_pat.message(...msg);
+    } finally {
+        obj_gate.message(4);
+        obj_forward.message("send", "no");
+        in_sendto--;
+    }
 }
 
 function actname(to) {
@@ -2054,6 +2208,8 @@ function active_set(...args) {
             pat_activelist
         );
     } else if (msg === "recall") {
+        // get_active_store can't query pattrstorage: refresh the list now
+        ll_global.pat[act_name_index].getclientlist();
         sendto(
             "prepend",
             "get_active_store",
@@ -2062,14 +2218,21 @@ function active_set(...args) {
             "act::active_store",
             slot
         );
+        sendPresetsState();
     }
 }
 
+// Runs inside sendto(): querying pattrstorage here would call this again forever,
+// so it uses the cached client list and ignores nested calls.
+let in_get_active_store = false;
 function get_active_store(...args) {
+    if (in_get_active_store) return;
+    in_get_active_store = true;
+
     const msg = args.shift();
     // post("recall_active_store", args, "\n");
     let active_params = args
-        .filter((p) => p !== "act::active_store" && p !== 0 && p !== 1)
+        .filter((p) => typeof p === "string" && p !== "act::active_store" && p !== "_")
         .map((p) => {
             if (p.includes("::")) {
                 //hack to activate subpatcher first
@@ -2078,11 +2241,14 @@ function get_active_store(...args) {
             return p;
         });
 
-    ll_global.pat[act_name_index].getclientlist().forEach((client) => {
+    const clients = (ll_global.pat[act_name_index] && ll_global.pat[act_name_index].clientlist) || [];
+    clients.forEach((client) => {
         if (client === "act::active_store") return;
 
-        let active = active_params.indexOf(client) > -1;
+        let active = active_params.indexOf(client) > -1 && !isNeverRecalled(client);
         // post("setactive", client, active, "\n");
-        obj_pat.message("active", client, active); // set parameter's activ_state
+        obj_pat.message("active", client, active ? 1 : 0); // set parameter's activ_state
     });
+
+    in_get_active_store = false;
 }

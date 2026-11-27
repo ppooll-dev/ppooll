@@ -75,7 +75,7 @@ function onMenuSelect(itemIndex){
         outlet(0, "selected_acts", ...newSelected)
     }
 
-    select_acts.message("setsymbol", "sel_acts");
+    select_acts.message("symbol", "(sel_acts)");
     isSelecting = false;
 }
 
