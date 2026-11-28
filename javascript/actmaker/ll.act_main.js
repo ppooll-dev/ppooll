@@ -36,6 +36,7 @@ const ll_presetsindict = new Dict("llpresetsindict");
 
 // globals
 var ll_global = new Global("ppooll");
+var preferences = new Dict("ppooll-preferences");
 
 // Mouse and Keyboard modifiers
 var drag_gate = 1;
@@ -830,7 +831,12 @@ function create_host_title_menu_options() {
                 if (act === "ho_st1") messnamed(act, "TP", "clean");
                 else messnamed(act, "v8", "close_soft");   // fade out, then dispose
             });
-            ll_global.envi_name = 0;
+            if(ll_global.envi_name) {
+                const envi_menu = ll_global.patchers["ho_st1"].getnamed("envi_menu");
+                envi_menu.message("checksymbol", ll_global.envi_name, 0);
+                envi_menu.message("setsymbol", "(environments)");
+                ll_global.envi_name = 0;
+            }
         },
         back: opts.back,
         grow: opts.grow,
@@ -1487,7 +1493,7 @@ function delete_old() {
         did_delete = true;
     }
 
-    if (did_delete) messnamed("ll_show_update_act", act_name_index);
+    if (did_delete && preferences.get("general::show_actupdate")) messnamed("ll_show_update_act", act_name_index);
 }
 
 // boxsize and colours of an old preset grid, as ll.preset attributes
